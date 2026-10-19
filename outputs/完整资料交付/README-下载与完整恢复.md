@@ -29,3 +29,6 @@ Unity使用`2022.3.62f3c1`打开`outputs/OccupyCityRecovered`。Library/Temp/Log
 python "outputs/完整资料交付/restore_all_materials.py" --download-only
 python "outputs/完整资料交付/restore_all_materials.py" --verify-only
 ```
+
+
+最终整合、当前运行限制和实际上传结果见[第52篇交付报告](../恢复过程文档/52-四路整合与完整Git资料交付.md)。Release清单附件使用英文名，文件内容与仓库中文清单的SHA相同；恢复脚本按5个英文分卷名自动下载。
