@@ -1,0 +1,46 @@
+--- before/StringTool.cs
++++ after/StringTool.cs
+@@ -1,5 +1,6 @@
+ using System;
+ using System.Collections.Generic;
++using System.Globalization;
+ using System.Numerics;
+ using Il2CppDummyDll;
+ 
+@@ -26,7 +27,9 @@
+ 		[Address(RVA = "0x3F73A70", Offset = "0x3F6FA70", VA = "0x3F73A70")]
+ 		public static int ToInt(this string str)
+ 		{
+-			return default;
++			int value = 0;
++			int.TryParse(str, NumberStyles.Float, CultureInfo.InvariantCulture, out value);
++			return value;
+ 		}
+ 
+ 		[Token(Token = "0x60006B0")]
+@@ -39,7 +42,7 @@
+ 		[Token(Token = "0x60006B1")]
+ 		public static T ToEnum<T>(this string str)
+ 		{
+-			return (T)null;
++			throw new NotImplementedException("Unrecovered IL2CPP method ToolModule.StringTool.ToEnum<T>; Token=0x060006B1; generic RVAs=0x4ED6794 (Int32Enum), 0x4ED68A4 (fully shared).");
+ 		}
+ 
+ 		[Token(Token = "0x60006B2")]
+@@ -80,7 +83,15 @@
+ 		[Address(RVA = "0x3F75418", Offset = "0x3F71418", VA = "0x3F75418")]
+ 		public static bool IsNullOrEmpty(this string s, bool trimSpaces = true)
+ 		{
+-			return default;
++			if (s == null)
++			{
++				return true;
++			}
++			if (trimSpaces)
++			{
++				s = s.Trim();
++			}
++			return s.Length == 0;
+ 		}
+ 
+ 		[Token(Token = "0x60006B8")]

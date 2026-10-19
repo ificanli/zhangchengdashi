@@ -1,0 +1,60 @@
+0x715b260: STP             D9, D8, [SP,#var_30]!
+0x715b264: STR             X30, [SP,#0x30+var_20]
+0x715b268: STP             X20, X19, [SP,#0x30+var_10]
+0x715b26c: ADRP            X20, #byte_90090D5@PAGE
+0x715b270: ADRP            X19, #off_8AF46A0@PAGE
+0x715b274: LDRB            W8, [X20,#byte_90090D5@PAGEOFF]
+0x715b278: LDR             X19, [X19,#off_8AF46A0@PAGEOFF]; off_8CE7B30
+0x715b27c: MOV             V8.16B, V1.16B
+0x715b280: MOV             V9.16B, V0.16B
+0x715b284: TBNZ            W8, #0, loc_715B2C0
+0x715b288: ADRP            X0, #off_8AF46A0@PAGE
+0x715b28c: LDR             X0, [X0,#off_8AF46A0@PAGEOFF]; off_8CE7B30 ; slot
+0x715b290: BL              il2cpp_codegen_initialize_runtime_metadata
+0x715b294: ADRP            X0, #off_8B16B88@PAGE
+0x715b298: LDR             X0, [X0,#off_8B16B88@PAGEOFF]; qword_8D07C48 ; slot
+0x715b29c: BL              il2cpp_codegen_initialize_runtime_metadata
+0x715b2a0: ADRP            X0, #off_8B16B90@PAGE
+0x715b2a4: LDR             X0, [X0,#off_8B16B90@PAGEOFF]; unk_8D07C58 ; slot
+0x715b2a8: BL              il2cpp_codegen_initialize_runtime_metadata
+0x715b2ac: ADRP            X0, #off_8B16B98@PAGE
+0x715b2b0: LDR             X0, [X0,#off_8B16B98@PAGEOFF]; unk_8D07D90 ; slot
+0x715b2b4: BL              il2cpp_codegen_initialize_runtime_metadata
+0x715b2b8: MOV             W8, #1
+0x715b2bc: STRB            W8, [X20,#byte_90090D5@PAGEOFF]
+0x715b2c0: LDR             X0, [X19]; klass
+0x715b2c4: LDR             W8, [X0,#0xE0]
+0x715b2c8: CBNZ            W8, loc_715B2D4
+0x715b2cc: BL              il2cpp_codegen_runtime_class_init
+0x715b2d0: LDR             X0, [X19]; klass
+0x715b2d4: LDR             X8, [X0,#0xB8]
+0x715b2d8: LDRB            W8, [X8,#8]
+0x715b2dc: CBZ             W8, loc_715B33C
+0x715b2e0: LDR             W8, [X0,#0xE0]
+0x715b2e4: CBNZ            W8, loc_715B2F0
+0x715b2e8: BL              il2cpp_codegen_runtime_class_init
+0x715b2ec: LDR             X0, [X19]
+0x715b2f0: LDR             X8, [X0,#0xB8]
+0x715b2f4: LDR             X8, [X8]
+0x715b2f8: CBZ             X8, loc_715B34C
+0x715b2fc: LDR             X19, [X8,#0x10]
+0x715b300: CBZ             X19, loc_715B33C
+0x715b304: ADRP            X20, #off_8B16B88@PAGE
+0x715b308: LDR             X20, [X20,#off_8B16B88@PAGEOFF]; qword_8D07C48
+0x715b30c: LDR             X0, [X19,#0x28]
+0x715b310: CBZ             X0, loc_715B34C
+0x715b314: LDR             X8, [X0]
+0x715b318: MOV             V0.16B, V9.16B
+0x715b31c: MOV             V1.16B, V8.16B
+0x715b320: LDP             X9, X1, [X8,#0x1A8]
+0x715b324: BLR             X9
+0x715b328: LDR             X1, [X20]
+0x715b32c: MOV             X0, X19
+0x715b330: BL              System.Collections.Generic.LinkedListNode_object_$$get_Next
+0x715b334: MOV             X19, X0
+0x715b338: CBNZ            X0, loc_715B30C
+0x715b33c: LDP             X20, X19, [SP,#0x30+var_10]
+0x715b340: LDR             X30, [SP,#0x30+var_20]
+0x715b344: LDP             D9, D8, [SP+0x30+var_30],#0x30
+0x715b348: RET
+0x715b34c: BL              il2cpp_codegen_raise_null_reference_exception

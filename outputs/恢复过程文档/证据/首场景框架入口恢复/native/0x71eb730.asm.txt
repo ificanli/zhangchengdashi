@@ -1,0 +1,16 @@
+0x71eb730: fe0f1ef8 str      x30, [sp, #-0x20]!
+0x71eb734: f44f01a9 stp      x20, x19, [sp, #0x10]
+0x71eb738: f40300aa mov      x20, x0
+0x71eb73c: e0031faa mov      x0, xzr
+0x71eb740: ed70fa97 bl       #0x7087af4 // UpdateManager$$get_Instance
+0x71eb744: f30300aa mov      x19, x0
+0x71eb748: e00314aa mov      x0, x20
+0x71eb74c: 09000094 bl       #0x71eb770 // GameFramework.VersionMondule$$Init
+0x71eb750: f30000b4 cbz      x19, #0x71eb76c
+0x71eb754: e10300aa mov      x1, x0
+0x71eb758: e00313aa mov      x0, x19
+0x71eb75c: f44f41a9 ldp      x20, x19, [sp, #0x10]
+0x71eb760: e2031faa mov      x2, xzr
+0x71eb764: fe0742f8 ldr      x30, [sp], #0x20
+0x71eb768: 98094414 b        #0x82eddc8 // UnityEngine.MonoBehaviour$$StartCoroutine
+0x71eb76c: 58472997 bl       #0x3c3d4cc

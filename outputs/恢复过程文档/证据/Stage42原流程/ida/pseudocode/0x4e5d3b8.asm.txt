@@ -1,0 +1,56 @@
+0x4e5d3b8: STR             X30, [SP,#var_20]!
+0x4e5d3bc: STP             X20, X19, [SP,#0x20+var_10]
+0x4e5d3c0: LDR             X8, [X1,#0x38]
+0x4e5d3c4: MOV             X20, X1
+0x4e5d3c8: MOV             X19, X0
+0x4e5d3cc: CBNZ            X8, loc_4E5D3D8
+0x4e5d3d0: MOV             X0, X20
+0x4e5d3d4: BL              unk_3C503FC
+0x4e5d3d8: LDR             X19, [X19,#0x28]
+0x4e5d3dc: CBZ             X19, loc_4E5D45C
+0x4e5d3e0: LDR             X9, [X20,#0x38]
+0x4e5d3e4: LDR             X8, [X19]
+0x4e5d3e8: LDR             X20, [X9]
+0x4e5d3ec: LDRH            W9, [X8,#0x12E]
+0x4e5d3f0: LDR             X1, [X20,#0x20]
+0x4e5d3f4: LDRH            W2, [X20,#0x50]
+0x4e5d3f8: CBZ             X9, loc_4E5D41C
+0x4e5d3fc: LDR             X10, [X8,#0xB0]
+0x4e5d400: ADD             X10, X10, #8
+0x4e5d404: LDUR            X11, [X10,#-8]
+0x4e5d408: CMP             X11, X1
+0x4e5d40c: B.EQ            loc_4E5D428
+0x4e5d410: SUBS            X9, X9, #1
+0x4e5d414: ADD             X10, X10, #0x10
+0x4e5d418: B.NE            loc_4E5D404
+0x4e5d41c: MOV             X0, X19
+0x4e5d420: BL              unk_3C504A4
+0x4e5d424: B               loc_4E5D438
+0x4e5d428: LDR             W9, [X10]
+0x4e5d42c: ADD             W9, W9, W2
+0x4e5d430: ADD             X8, X8, W9,SXTW#4
+0x4e5d434: ADD             X0, X8, #0x138
+0x4e5d438: LDR             X0, [X0,#8]
+0x4e5d43c: MOV             X1, X20
+0x4e5d440: BL              unk_3C3D3AC
+0x4e5d444: MOV             X1, X0
+0x4e5d448: LDR             X2, [X0,#8]
+0x4e5d44c: MOV             X0, X19
+0x4e5d450: LDP             X20, X19, [SP,#0x20+var_10]
+0x4e5d454: LDR             X30, [SP+0x20+var_20],#0x20
+0x4e5d458: BR              X2
+0x4e5d45c: ADRP            X0, #off_8B0CF78@PAGE
+0x4e5d460: LDR             X0, [X0,#off_8B0CF78@PAGEOFF]; unk_8CE7B50
+0x4e5d464: BL              unk_3C3D294
+0x4e5d468: BL              unk_3C3D4C4
+0x4e5d46c: MOV             X19, X0
+0x4e5d470: ADRP            X0, #off_8B0E7C8@PAGE
+0x4e5d474: LDR             X0, [X0,#off_8B0E7C8@PAGEOFF]; unk_8D78218
+0x4e5d478: BL              unk_3C3D294
+0x4e5d47c: MOV             X1, X0
+0x4e5d480: MOV             X0, X19
+0x4e5d484: MOV             X2, XZR
+0x4e5d488: BL              GameFramework.GameFrameworkException$$.ctor
+0x4e5d48c: MOV             X0, X19
+0x4e5d490: MOV             X1, X20
+0x4e5d494: BL              unk_3C3D3A0

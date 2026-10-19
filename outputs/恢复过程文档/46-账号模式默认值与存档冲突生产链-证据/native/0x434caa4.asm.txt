@@ -1,0 +1,21 @@
+0x434caa4: STP             X30, X19, [SP,#var_10]!
+0x434caa8: MOV             X19, X0
+0x434caac: LDR             X0, [X0,#0x10]
+0x434cab0: CBZ             X0, loc_434CAF4
+0x434cab4: LDR             X8, [X0,#0x50]
+0x434cab8: CBZ             X8, loc_434CAD8
+0x434cabc: LDRB            W1, [X19,#0x18]
+0x434cac0: LDR             X9, [X8,#0x18]
+0x434cac4: LDR             X0, [X8,#0x40]
+0x434cac8: LDR             X2, [X8,#0x28]
+0x434cacc: BLR             X9
+0x434cad0: LDR             X0, [X19,#0x10]
+0x434cad4: CBZ             X0, loc_434CAF4
+0x434cad8: MOV             X1, XZR
+0x434cadc: BL              UnityEngine.Component$$get_gameObject
+0x434cae0: CBZ             X0, loc_434CAF4
+0x434cae4: MOV             W1, WZR
+0x434cae8: MOV             X2, XZR
+0x434caec: LDP             X30, X19, [SP+0x10+var_10],#0x10
+0x434caf0: B               UnityEngine.GameObject$$SetActive
+0x434caf4: BL              il2cpp_codegen_raise_null_reference_exception

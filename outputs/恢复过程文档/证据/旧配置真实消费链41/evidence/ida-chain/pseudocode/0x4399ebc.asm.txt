@@ -1,0 +1,23 @@
+0x4399ebc: STP             X30, X21, [SP,#var_20]!
+0x4399ec0: STP             X20, X19, [SP,#0x20+var_10]
+0x4399ec4: ADRP            X21, #byte_900085A@PAGE
+0x4399ec8: ADRP            X20, #off_8AF4278@PAGE
+0x4399ecc: LDRB            W8, [X21,#byte_900085A@PAGEOFF]
+0x4399ed0: LDR             X20, [X20,#off_8AF4278@PAGEOFF]; off_8CE5BB8
+0x4399ed4: MOV             X19, X1
+0x4399ed8: TBNZ            W8, #0, loc_4399EF0
+0x4399edc: ADRP            X0, #off_8AF4278@PAGE
+0x4399ee0: LDR             X0, [X0,#off_8AF4278@PAGEOFF]; off_8CE5BB8 ; slot
+0x4399ee4: BL              il2cpp_codegen_initialize_runtime_metadata
+0x4399ee8: MOV             W8, #1
+0x4399eec: STRB            W8, [X21,#byte_900085A@PAGEOFF]
+0x4399ef0: LDR             X0, [X20]; klass
+0x4399ef4: LDR             W8, [X0,#0xE0]
+0x4399ef8: CBNZ            W8, loc_4399F04
+0x4399efc: BL              il2cpp_codegen_runtime_class_init
+0x4399f00: LDR             X0, [X20]
+0x4399f04: LDR             X8, [X0,#0xB8]
+0x4399f08: STR             X19, [X8,#0x10]
+0x4399f0c: LDP             X20, X19, [SP,#0x20+var_10]
+0x4399f10: LDP             X30, X21, [SP+0x20+var_20],#0x20
+0x4399f14: RET

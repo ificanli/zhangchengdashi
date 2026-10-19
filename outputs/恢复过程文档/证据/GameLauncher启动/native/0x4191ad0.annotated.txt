@@ -1,0 +1,29 @@
+void CoreModule_GameLauncher__ApplyThirtyFpsRenderingSettings(void *self, void *asset, const MethodInfo *method)
+{
+  __int64 v5; // x0
+
+  if ( (byte_8FFF6B1 & 1) == 0 )
+  {
+    il2cpp_codegen_initialize_runtime_metadata((void **)&off_8CE64E8 /* UnityEngine.Debug_TypeInfo */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&off_8CEB3E0 /* UnityEngine.Object_TypeInfo */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D6D690 /* Render Effects */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D54198 /* 30帧策略：未能关闭Render Effects描边 */);
+    byte_8FFF6B1 = 1;
+  }
+  if ( *((_DWORD *)off_8CEB3E0 /* UnityEngine.Object_TypeInfo */ + 56) == 0 )
+    il2cpp_codegen_runtime_class_init(off_8CEB3E0 /* UnityEngine.Object_TypeInfo */);
+  if ( (UnityEngine_Object__op_Equality(asset, 0, 0) & 1) == 0 )
+  {
+    if ( asset == nullptr )
+      il2cpp_codegen_raise_null_reference_exception();
+    *((_DWORD *)asset + 23) = 1;
+    v5 = CoreModule_GameLauncher__ApplyThirtyFpsLightingSettings(self, asset);
+    CoreModule_GameLauncher__DisablePostProcessingForLoadedCameras(v5);
+    if ( (CoreModule_GameLauncher__TrySetRendererFeatureActive(self, asset, qword_8D6D690 /* Render Effects */, 0) & 1) == 0 )
+    {
+      if ( *((_DWORD *)off_8CE64E8 /* UnityEngine.Debug_TypeInfo */ + 56) == 0 )
+        il2cpp_codegen_runtime_class_init(off_8CE64E8 /* UnityEngine.Debug_TypeInfo */);
+      UnityEngine_Debug__LogWarning(qword_8D54198 /* 30帧策略：未能关闭Render Effects描边 */, 0);
+    }
+  }
+}

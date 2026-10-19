@@ -1,0 +1,245 @@
+{
+  "stage": 44,
+  "reviewer": "/root/legacy_data_delivery_v2",
+  "reviewedUtc": "2026-10-19T09:31:07.051452+00:00",
+  "verdict": "no_blocking_defect_found_in_reviewed_scope",
+  "recommendation": "可按既有SHA门整合这197个恢复正文；保持main_chain_complete=false和unity_runtime=not-run，不扩大为完整战斗或玩法通过。",
+  "main_chain_complete": false,
+  "unity_runtime": "not-run by this reviewer",
+  "coreGameplayAccepted": false,
+  "productionSourceEdits": 0,
+  "blockingFindings": [],
+  "nonBlockingFindings": [],
+  "sourceIntegrity": {
+    "files": [
+      {
+        "path": "Assets/Scripts/Assembly-CSharp/GameModule/BattleGameSceneManager.cs",
+        "candidateSha256": "eef332ac7c5471f3e7b7add4a1dff2f29b177c2f64bac758c5d0d62d27a9750f",
+        "productionSha256": "0adeb82e5ac636ff1a955c63540dcede5e1a4688582b5b7c09f3fe59661d54bb",
+        "candidateHashMatchesDelivery": true,
+        "productionStillSourceBefore": true,
+        "metaMatchesDelivery": true,
+        "originalTokenRvaMultisetsEqual": true,
+        "protectedExistingBodies": 2,
+        "protectedExistingBodyChanges": [],
+        "deliveredRestoredBodies": 65
+      },
+      {
+        "path": "Assets/Scripts/Assembly-CSharp/GameModule/BattleGameManager.cs",
+        "candidateSha256": "13228c84736658776651f1bbd6cb3093e4e9f8be4f670320b32a398c8a38bba8",
+        "productionSha256": "6f6856106346c1792bd042138ce08b10c2570310a9a359fba13b8f93ad897829",
+        "candidateHashMatchesDelivery": true,
+        "productionStillSourceBefore": true,
+        "metaMatchesDelivery": true,
+        "originalTokenRvaMultisetsEqual": true,
+        "protectedExistingBodies": 3,
+        "protectedExistingBodyChanges": [],
+        "deliveredRestoredBodies": 34
+      },
+      {
+        "path": "Assets/Scripts/Assembly-CSharp/GameModule/RoleBehaviour.cs",
+        "candidateSha256": "f49977604d96f417b7f2b3f3ec869e5bd07842488ceb14ad3d6d230cd5011d9e",
+        "productionSha256": "6bcd6f2a91c7e646dfa943b305469379855ab1ae4145a7f1813faed08089a454",
+        "candidateHashMatchesDelivery": true,
+        "productionStillSourceBefore": true,
+        "metaMatchesDelivery": true,
+        "originalTokenRvaMultisetsEqual": true,
+        "protectedExistingBodies": 3,
+        "protectedExistingBodyChanges": [],
+        "deliveredRestoredBodies": 64
+      },
+      {
+        "path": "Assets/Scripts/Assembly-CSharp/GameModule/SynergyEffectManager.cs",
+        "candidateSha256": "d51152b9fb2ae5eae0a33071259e9ed2dc95de39a68ecea41680c656ee86109d",
+        "productionSha256": "9ef81382d7ff42dd9ee69e669cb085bbd400b7cdeb69f3d5c29848281b5dff33",
+        "candidateHashMatchesDelivery": true,
+        "productionStillSourceBefore": true,
+        "metaMatchesDelivery": true,
+        "originalTokenRvaMultisetsEqual": true,
+        "protectedExistingBodies": 1,
+        "protectedExistingBodyChanges": [],
+        "deliveredRestoredBodies": 34
+      }
+    ],
+    "allPassed": true,
+    "productionEditsByReview": 0,
+    "identityNote": "Duplicate IEnumerator wrapper/helper Token+RVA identities matched by full original signature; no false overwrite conclusion from a lossy token-only dictionary."
+  },
+  "nativeExportClaim": {
+    "deliveredMethods": 476,
+    "note": "476为原证据导出数量；本复核没有把476全部业务体均完成恢复作为结论。"
+  },
+  "nativeIndependentRegeneration": {
+    "scriptsRun": 5,
+    "oracleFilesCompared": 6,
+    "allEqualToDeliveredData": true,
+    "originalElfSha256": "72770d00b2b404acf44cc75cc8bf7a3e06850e9ace1237c9cbb2bc72894220ed",
+    "results": [
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage44-independent-review\\native-scene-results.json",
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage44-independent-review\\native-manager-results.json",
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage44-independent-review\\native-role-results.json",
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage44-independent-review\\native-synergy-results.json"
+    ]
+  },
+  "highRiskSemanticsReviewed": [
+    {
+      "area": "目标搜索/范围/排序",
+      "nativeRvas": [
+        "0x3DF06BC",
+        "0x3DF08A8",
+        "0x3DF0E24",
+        "0x3DF0FBC",
+        "0x3DF13F8",
+        "0x3DF1684",
+        "0x3DF1A0C",
+        "0x3DF0A50"
+      ],
+      "conclusion": "阵营反转、缓存命中后范围复核、Hex已实际搜索则不回退列表、边界<=与最近严格距离比较一致。原nearest的B.GT/B.GE对NaN的行为与collection的B.HI不同；候选保留，排序使用MI对应的严格<而非按通用排序改写。未发现实质偏差。"
+    },
+    {
+      "area": "槽位预占/释放",
+      "nativeRvas": [
+        "0x3DED8F4",
+        "0x3DED9AC",
+        "0x3DEDA80",
+        "0x3DEDB3C"
+      ],
+      "conclusion": "AB关闭时无限额/不写预占；开启时按int32溢出后计算，释放钳零。480组原指令场景已重新生成并与交付oracle一致，候选实际对照通过。"
+    },
+    {
+      "area": "StartGame/LoadMapGround await顺序",
+      "nativeRvas": [
+        "0x3DFE48C",
+        "0x3DFCE18",
+        "0x3DFD310"
+      ],
+      "conclusion": "StartGame原async-void无await，先原字段重置/导航/Prewarm.Forget，再读取原arena配置、AB取偶、向零除2、最后Generate；不擅自清预占/列表。LoadMapGround复用或创建GenerateHex且仅await一次LoadGround，失败不继续。候选与原状态机控制流一致。Prewarm原仅完成builder，不应因方法名发明预热业务。"
+    },
+    {
+      "area": "Wound/Dead",
+      "nativeRvas": [
+        "0x3D86A44",
+        "0x3D90878",
+        "0x3D914E4",
+        "0x3D876CC"
+      ],
+      "conclusion": "Wound先天赋/闪避，再按float32乘法与FCVTZS及正∞特判减伤；契约递归按当前剩余伤害消费，健康变化天赋后再判死。Dead原状态机含奖励、阵营移除、真实动画等待和恢复回调。240+64原ARM64场景重新生成且候选重提取执行全部通过，未发现顺序偏差。"
+    },
+    {
+      "area": "死亡回调/战后回收",
+      "nativeRvas": [
+        "0x3D878E4",
+        "0x3D8CDD8",
+        "0x3D8CE8C"
+      ],
+      "conclusion": "只读抽样核对实际native：DeadCallBack先失活/对象池Recycle，再HellFire回调/OnRecycle/hadInit=false/禁止移动；战后路径仅在!hadRecycle时清理，然后失活/回池。OnRecycle格子注销、导航/阴影/动画/事件/UI/临时效果与天赋清理顺序未见丢失。此项主要是静态native抽样，不宣称实际Unity对象池验收。"
+    },
+    {
+      "area": "胜负/倒计时顺序",
+      "nativeRvas": [
+        "0x3DE3F34",
+        "0x3DEA22C",
+        "0x3DEA61C",
+        "0x3DE9E4C",
+        "0x3DE3FD8"
+      ],
+      "conclusion": "优先比较双方Hex数，再比较角色数，平局加10秒并重新启动；暂停先停止原协程后直接返回。Countdown暂停恢复门与0..100随机门已对原ASM核实；GameEnd事件/停计时/教程和UI处理在可选2.3秒等待之前，HidePanel不新增await。实际候选/原空桩负对照均已重跑。"
+    },
+    {
+      "area": "Synergy float转换",
+      "nativeRvas": [
+        "0x3E0F6D4",
+        "0x3E0F6F0",
+        "0x3E0F7C8",
+        "0x3E0F8AC",
+        "0x3E0FC98"
+      ],
+      "conclusion": "保留float32先乘后截断再int32加减，不能合并成乘总系数或改用double。已保护既有InternalCalculateDamage正文。原32方法共3200 native场景重跑产物一致，真实候选6408检查0失败、原空桩3339失败。"
+    }
+  ],
+  "independentExecutedTests": [
+    {
+      "name": "Scene actual candidate body extraction",
+      "scenarios": 1283,
+      "candidateChecks": 4589,
+      "candidateFailures": 0,
+      "candidateExit": 0,
+      "baselineFailures": 1280,
+      "baselineExit": 1,
+      "scope": "容量/预占/角色登记/目标搜索与排序/缓存/LoadGround await/StartGame/批次更新"
+    },
+    {
+      "name": "Manager win/countdown",
+      "scenarios": 160,
+      "candidateChecks": 413,
+      "candidateFailures": 0,
+      "candidateExit": 0,
+      "baselineScenarios": 105,
+      "baselineChecks": 306,
+      "baselineFailures": 129,
+      "baselineExit": 1,
+      "scope": "倒计时胜负优先级、平局加时、暂停恢复、Random.Range(0,101)<=79、金币与动画暂停"
+    },
+    {
+      "name": "Manager Init/GameEnd/StartGame",
+      "scenarios": 102,
+      "candidateChecks": 1195,
+      "candidateFailures": 0,
+      "candidateExit": 0,
+      "baselineChecks": 1195,
+      "baselineFailures": 935,
+      "baselineExit": 1,
+      "scope": "真实候选正文的await/失败边界、监听与结算调用顺序"
+    },
+    {
+      "name": "Role Wound",
+      "scenarios": 240,
+      "candidateChecks": 1200,
+      "candidateFailures": 0,
+      "candidateExit": 0,
+      "baselineFailures": 631,
+      "baselineExit": 1,
+      "scope": "门/闪避/float32减伤转换/羁绊/契约分摊/健康变化后重新判死/击杀与音效顺序"
+    },
+    {
+      "name": "Role Dead state machine",
+      "scenarios": 64,
+      "candidateChecks": 384,
+      "candidateFailures": 0,
+      "candidateExit": 0,
+      "baselineFailures": 312,
+      "baselineExit": 1,
+      "scope": "初始/已死/等待/恢复路径、奖励/解绑/死亡回调与awaiter字段"
+    },
+    {
+      "name": "Synergy",
+      "nativeCases": 3200,
+      "candidateChecks": 6408,
+      "candidateFailures": 0,
+      "candidateExit": 0,
+      "baselineFailures": 3339,
+      "baselineExit": 1,
+      "scope": "原32业务方法、构造AB读取/原Init、float32运算及整数截断顺序"
+    }
+  ],
+  "provenance": {
+    "method": "Copied candidate/source-before bytes to isolated work fixtures; re-extracted actual method bodies; only dependency surface and async return/access adaptation; no production edits and no duplicated game implementation in reviewer tests.",
+    "candidateHashesMatchDelivery": true,
+    "testLogsAndCommands": [
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage44-independent-review\\scene-results.json",
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage44-independent-review\\manager-results.json",
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage44-independent-review\\lifecycle-results.json",
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage44-independent-review\\role-results.json",
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage44-independent-review\\synergy-results.json"
+    ],
+    "negativeControl": "The exact source-before empty/stub bodies, compiled against the same dependency adapters; expected exit1 verified."
+  },
+  "materialLimits": [
+    "RoleBehaviour.Init/MyUpdate/FindTarget/Move/Atk/AtkCallBack和派生兵种伤害生成等仍非本批完整恢复；可执行Wound/Dead不表示真实战斗可闭环。",
+    "GetRoleBornPos、若干Hex采样与GenerateHex真实业务和当前map资源消费依赖仍需各自闭合。",
+    "SettlementAnimation/EndGame、奖励与存档后半链仍不完整。",
+    "测试Unity/管理器/动画/对象池/UI/导航等依赖由可控adapter提供；async-void在部分测试中改Task观察失败，不证明真实PlayerLoop/Unity对象生命周期/异常路由。",
+    "原native执行也将外部Unity/单例API作为边界hooks；它验证原业务指令与调用顺序，不验证被hook依赖的真实实现。",
+    "本复核没有启动Unity、进入Play、创建地图或验证GPU/视觉/核心玩法。"
+  ]
+}

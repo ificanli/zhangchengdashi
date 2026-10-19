@@ -1,0 +1,42 @@
+0x3e32a30: STP             X30, X21, [SP,#var_20]!
+0x3e32a34: STP             X20, X19, [SP,#0x20+var_10]
+0x3e32a38: ADRP            X21, #byte_8FFDA0A@PAGE
+0x3e32a3c: LDRB            W8, [X21,#byte_8FFDA0A@PAGEOFF]
+0x3e32a40: MOV             X19, X1
+0x3e32a44: MOV             X20, X0
+0x3e32a48: TBNZ            W8, #0, loc_3E32A6C
+0x3e32a4c: ADRP            X0, #off_8AD57B0@PAGE
+0x3e32a50: LDR             X0, [X0,#off_8AD57B0@PAGEOFF]; qword_8CFFC98 ; slot
+0x3e32a54: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3e32a58: ADRP            X0, #off_8AD57B8@PAGE
+0x3e32a5c: LDR             X0, [X0,#off_8AD57B8@PAGEOFF]; qword_8CFFCB0 ; slot
+0x3e32a60: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3e32a64: MOV             W8, #1
+0x3e32a68: STRB            W8, [X21,#byte_8FFDA0A@PAGEOFF]
+0x3e32a6c: MOV             W1, #1
+0x3e32a70: MOV             X0, X19
+0x3e32a74: MOV             X2, XZR
+0x3e32a78: BL              ToolModule.StringTool$$IsNullOrEmpty
+0x3e32a7c: TBNZ            W0, #0, loc_3E32AC4
+0x3e32a80: LDR             X0, [X20,#0x28]
+0x3e32a84: CBZ             X0, loc_3E32AD4
+0x3e32a88: ADRP            X8, #off_8AD57B0@PAGE
+0x3e32a8c: LDR             X8, [X8,#off_8AD57B0@PAGEOFF]; qword_8CFFC98
+0x3e32a90: MOV             X1, X19
+0x3e32a94: LDR             X2, [X8]
+0x3e32a98: BL              System.Collections.Generic.Dictionary_object__object_$$ContainsKey
+0x3e32a9c: TBZ             W0, #0, loc_3E32AC4
+0x3e32aa0: LDR             X0, [X20,#0x28]
+0x3e32aa4: CBZ             X0, loc_3E32AD4
+0x3e32aa8: ADRP            X8, #off_8AD57B8@PAGE
+0x3e32aac: LDR             X8, [X8,#off_8AD57B8@PAGEOFF]; qword_8CFFCB0
+0x3e32ab0: MOV             X1, X19
+0x3e32ab4: LDP             X20, X19, [SP,#0x20+var_10]
+0x3e32ab8: LDR             X2, [X8]
+0x3e32abc: LDP             X30, X21, [SP+0x20+var_20],#0x20
+0x3e32ac0: B               System.Collections.Generic.Dictionary_object__object_$$get_Item
+0x3e32ac4: LDP             X20, X19, [SP,#0x20+var_10]
+0x3e32ac8: MOV             X0, XZR
+0x3e32acc: LDP             X30, X21, [SP+0x20+var_20],#0x20
+0x3e32ad0: RET
+0x3e32ad4: BL              il2cpp_codegen_raise_null_reference_exception

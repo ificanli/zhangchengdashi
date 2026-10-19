@@ -1,0 +1,40 @@
+__int64 __fastcall GameModule_RoleBehaviour__ShouldSkipFindTarget(__int64 a1, long double a2)
+{
+  __int64 v4; // x20
+  float time; // s0
+  int v6; // w8
+  float v7; // s1
+  __int64 v8; // x8
+
+  if ( (byte_8FFD459 & 1) == 0 )
+  {
+    il2cpp_codegen_initialize_runtime_metadata((void **)&off_8CEB3E0);
+    byte_8FFD459 = 1;
+  }
+  v4 = *(_QWORD *)(a1 + 88);
+  if ( *((_DWORD *)off_8CEB3E0 + 56) == 0 )
+    il2cpp_codegen_runtime_class_init(off_8CEB3E0);
+  if ( (UnityEngine_Object__op_Inequality(v4, 0, 0) & 1) != 0 )
+  {
+    if ( (GameModule_RoleBehaviour__IsRoleTargetValidInRange(a1, *(_QWORD *)(a1 + 88), a2) & 1) != 0 )
+      return 1;
+    *(_QWORD *)(a1 + 88) = 0;
+    *(_DWORD *)(a1 + 272) = 0;
+    *(_QWORD *)(a1 + 280) = 0;
+    *(_DWORD *)(a1 + 288) = -1;
+  }
+  time = UnityEngine_Time__get_time(0);
+  if ( time < *(float *)(a1 + 272) && vabds_f32(*(float *)(a1 + 276), *(float *)&a2) <= 0.01 )
+    return 1;
+  v6 = *(_DWORD *)(a1 + 204);
+  v7 = 0.15;
+  *(_DWORD *)(a1 + 276) = LODWORD(a2);
+  if ( v6 != 1 && *(float *)(a1 + 292) <= 0.0 )
+  {
+    v8 = *(_QWORD *)(a1 + 64);
+    if ( v8 == 0 || *(_DWORD *)(v8 + 80) != 3 )
+      v7 = 0.25;
+  }
+  *(float *)(a1 + 272) = time + v7;
+  return 0;
+}

@@ -1,0 +1,22 @@
+0x3dfb4e8: STR             X30, [SP,#var_30]!
+0x3dfb4ec: STP             X22, X21, [SP,#0x30+var_20]
+0x3dfb4f0: STP             X20, X19, [SP,#0x30+var_10]
+0x3dfb4f4: ADRP            X22, #byte_8FFD7E8@PAGE
+0x3dfb4f8: ADRP            X21, #off_8AD3FB8@PAGE
+0x3dfb4fc: LDRB            W8, [X22,#byte_8FFD7E8@PAGEOFF]
+0x3dfb500: LDR             X21, [X21,#off_8AD3FB8@PAGEOFF]; qword_8CF8EA8
+0x3dfb504: MOV             X19, X1
+0x3dfb508: MOV             X20, X0
+0x3dfb50c: TBNZ            W8, #0, loc_3DFB524
+0x3dfb510: ADRP            X0, #off_8AD3FB8@PAGE
+0x3dfb514: LDR             X0, [X0,#off_8AD3FB8@PAGEOFF]; qword_8CF8EA8 ; slot
+0x3dfb518: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3dfb51c: MOV             W8, #1
+0x3dfb520: STRB            W8, [X22,#byte_8FFD7E8@PAGEOFF]
+0x3dfb524: LDR             X2, [X21]
+0x3dfb528: ADD             X0, X20, #8
+0x3dfb52c: MOV             X1, X19
+0x3dfb530: LDP             X20, X19, [SP,#0x30+var_10]
+0x3dfb534: LDP             X22, X21, [SP,#0x30+var_20]
+0x3dfb538: LDR             X30, [SP+0x30+var_30],#0x30
+0x3dfb53c: B               Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder_object_$$SetStateMachine

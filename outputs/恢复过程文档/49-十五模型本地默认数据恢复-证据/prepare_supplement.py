@@ -1,0 +1,6 @@
+from pathlib import Path
+import json,bisect
+r=Path(__file__).resolve().parents[2];w=r/'work/stage49-model-defaults';s=json.loads((r/'work/il2cpp-dump-decoded/script.json').read_text(encoding='utf-8-sig'));ms={m['Address']:m for m in s['ScriptMethod']};ends=sorted(set(s['Addresses']));a=0x436A224;n=ms[a]
+targets=[dict(name=n['Name'],address=a,end=ends[bisect.bisect_right(ends,a)],signature=n['Signature'],prototype='void SeasonDataCtor(void* self,const MethodInfo* method);',method_token='0x600593D',file='Assets/Scripts/Assembly-CSharp/DataModule/SeasonData.cs',note='Only direct child constructor of original PlayerCoreData ctor; no gameplay/SDK expansion'),dict(name='Readonly.PlayerArenaData.CtorOutlinedBlock',address=0x856E7E0,end=0x856E810,signature='Outlined block entered after original ctor saved X19/X20/X21/X22; not independent managed method',prototype='void ArenaCtorOutlinedBlock(void);',method_token=None,file='Assets/Scripts/Assembly-CSharp/DataModule/PlayerArenaData.cs',note='Readonly ARM64 block for original ctor0x436BFE4; need branch side effects and return-to0x436C008; do not invent standalone source method')]
+(w/'supplement-targets.json').write_text(json.dumps(targets,ensure_ascii=False,indent=2),encoding='utf-8')
+print('Prepared 1 exact child ctor and 1 bounded outlined block; production unchanged')

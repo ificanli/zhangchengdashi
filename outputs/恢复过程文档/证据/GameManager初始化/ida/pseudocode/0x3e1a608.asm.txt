@@ -1,0 +1,34 @@
+0x3e1a608: SUB             SP, SP, #0x80
+0x3e1a60c: STR             X30, [SP,#0x80+var_20]
+0x3e1a610: STP             X20, X19, [SP,#0x80+var_10]
+0x3e1a614: ADRP            X20, #byte_8FFD89A@PAGE
+0x3e1a618: ADRP            X19, #off_8AD4DE8@PAGE
+0x3e1a61c: LDRB            W8, [X20,#byte_8FFD89A@PAGEOFF]
+0x3e1a620: LDR             X19, [X19,#off_8AD4DE8@PAGEOFF]; qword_8D22CB8
+0x3e1a624: TBNZ            W8, #0, loc_3E1A63C
+0x3e1a628: ADRP            X0, #off_8AD4DE8@PAGE
+0x3e1a62c: LDR             X0, [X0,#off_8AD4DE8@PAGEOFF]; qword_8D22CB8 ; slot
+0x3e1a630: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3e1a634: MOV             W8, #1
+0x3e1a638: STRB            W8, [X20,#byte_8FFD89A@PAGEOFF]
+0x3e1a63c: MOVI            V0.2D, #0
+0x3e1a640: MOV             X8, SP
+0x3e1a644: MOV             X0, XZR
+0x3e1a648: STR             XZR, [SP,#0x80+var_30]
+0x3e1a64c: STP             Q0, Q0, [SP,#0x80+var_50]
+0x3e1a650: STR             Q0, [SP,#0x80+var_60]
+0x3e1a654: BL              System.Runtime.CompilerServices.AsyncVoidMethodBuilder$$Create
+0x3e1a658: LDP             Q0, Q1, [SP,#0x80+var_80]
+0x3e1a65c: LDR             X2, [X19]
+0x3e1a660: ADD             X8, SP, #0x80+var_60
+0x3e1a664: MOV             W9, #0xFFFFFFFF
+0x3e1a668: ORR             X0, X8, #8
+0x3e1a66c: ADD             X1, SP, #0x80+var_60
+0x3e1a670: STUR            Q0, [SP,#0x80+var_60+8]
+0x3e1a674: STUR            Q1, [SP,#0x80+var_50+8]
+0x3e1a678: STR             W9, [SP,#0x80+var_60]
+0x3e1a67c: BL              System.Runtime.CompilerServices.AsyncVoidMethodBuilder$$Start_GameManager._ShowCardProbabilityPanel_d__24_
+0x3e1a680: LDP             X20, X19, [SP,#0x80+var_10]
+0x3e1a684: LDR             X30, [SP,#0x80+var_20]
+0x3e1a688: ADD             SP, SP, #0x80
+0x3e1a68c: RET

@@ -1,0 +1,268 @@
+--- AssetsManager.before.cs
++++ AssetsManager.cs
+@@ -5,9 +5,11 @@
+ using System.Threading;
+ using Cysharp.Threading.Tasks;
+ using Cysharp.Threading.Tasks.CompilerServices;
++using EventModule;
+ using Il2CppDummyDll;
+ using ToolModule;
+ using UnityEngine;
++using UnityEngine.AddressableAssets;
+ using UnityEngine.ResourceManagement.AsyncOperations;
+ 
+ namespace AssetsModule
+@@ -65,6 +67,25 @@
+ 			[Token(Token = "0x60020C9")]
+ 			internal void _003CLoadAssetAsync_003Eb__0(AsyncOperationHandle<T> operationHandle)
+ 			{
++				_003C_003E4__this._lock.EnterWriteLock();
++				try
++				{
++					if (operationHandle.Status != AsyncOperationStatus.Succeeded)
++					{
++						UnityEngine.Debug.LogError(string.Format("加载 Addressable 资源失败: {0}, 状态: {1}, 错误信息: {2}", assetPath, operationHandle.Status, operationHandle.OperationException?.Message));
++						_003C_003E4__this._assetHandleMap.Remove(assetPath);
++						Addressables.Release(operationHandle);
++						if (_003C_003E4__this._assetGroupDict.ContainsKey(groupName))
++						{
++							_003C_003E4__this._assetGroupDict[groupName].Remove(assetPath);
++						}
++					}
++					newHandleInfo.WaitSource?.TrySetResult(null);
++				}
++				finally
++				{
++					_003C_003E4__this._lock.ExitWriteLock();
++				}
+ 			}
+ 		}
+ 
+@@ -262,51 +283,166 @@
+ 			[Token(Token = "0x60020BC")]
+ 			[Address(RVA = "0x3F12974", Offset = "0x3F0E974", VA = "0x3F12974")]
+ 			[CompilerGenerated]
+-			get
+-			{
+-				return default;
+-			}
++			get;
+ 			[Token(Token = "0x60020BD")]
+ 			[Address(RVA = "0x3F1297C", Offset = "0x3F0E97C", VA = "0x3F1297C")]
+ 			[CompilerGenerated]
+-			private set
+-			{
+-			}
++			private set;
+ 		}
+ 
+ 		[Token(Token = "0x60020BE")]
+ 		[Address(RVA = "0x3F12988", Offset = "0x3F0E988", VA = "0x3F12988", Slot = "4")]
+-		[AsyncStateMachine(typeof(_003CInit_003Ed__15))]
+-		public override UniTask Init()
+-		{
+-			return default;
++		public override async UniTask Init()
++		{
++			await GenerateGroupsMap();
++			BundleLoadingProgress = 1f;
++			_ = ObjPoolManager.Instance.Init();
++			EventManager.Instance.TriggerEvent("AssetsManagerInitComplete", null);
++			initcomplete = true;
+ 		}
+ 
+ 		[Token(Token = "0x60020BF")]
+ 		[Address(RVA = "0x3F12A14", Offset = "0x3F0EA14", VA = "0x3F12A14")]
+-		[AsyncStateMachine(typeof(_003CGenerateGroupsMap_003Ed__18))]
+-		private UniTask GenerateGroupsMap()
+-		{
+-			return default;
++		private async UniTask GenerateGroupsMap()
++		{
++			_assetGroupDict = new Dictionary<string, List<string>>();
++			TextAsset config = UnityEngine.Resources.Load<TextAsset>("AddressablesConfig");
++			List<AssetsPathInfo> items = JsonUtility.FromJson<AssetsPathInfoCollection>(config.text).items;
++			_assetGroupNameDict = new Dictionary<string, AssetsPathInfo>();
++			foreach (AssetsPathInfo item in items)
++			{
++				_assetGroupNameDict.Add(item.assetPath, item);
++				if (!_assetGroupDict.ContainsKey(item.groupName))
++				{
++					_assetGroupDict.Add(item.groupName, new List<string>());
++				}
++			}
+ 		}
+ 
+ 		[Token(Token = "0x60020C0")]
+-		[AsyncStateMachine(typeof(_003CLoadAssetAsync_003Ed__19<>))]
+-		public UniTask<T> LoadAssetAsync<T>(string assetPath) where T : Object
+-		{
+-			return default;
++		public async UniTask<T> LoadAssetAsync<T>(string assetPath) where T : Object
++		{
++			var context = new _003C_003Ec__DisplayClass19_0<T>
++			{
++				_003C_003E4__this = this,
++				assetPath = assetPath
++			};
++			_lock.EnterUpgradeableReadLock();
++			try
++			{
++				if (_assetHandleMap.TryGetValue(assetPath, out AssetHandleInfo existingHandle))
++				{
++					if (!existingHandle.Handle.IsDone)
++					{
++						Interlocked.Increment(ref existingHandle.RefCount);
++						await existingHandle.Handle.Task;
++						return (T)existingHandle.Handle.Result;
++					}
++					if (existingHandle.Handle.Status == AsyncOperationStatus.Succeeded)
++					{
++						Interlocked.Increment(ref existingHandle.RefCount);
++						return (T)existingHandle.Handle.Result;
++					}
++				}
++				_lock.EnterWriteLock();
++				try
++				{
++					if (_assetHandleMap.TryGetValue(assetPath, out AssetHandleInfo handleInfo))
++					{
++						Interlocked.Increment(ref handleInfo.RefCount);
++						await handleInfo.Handle.Task;
++						return (T)handleInfo.Handle.Result;
++					}
++					if (!_assetGroupNameDict.ContainsKey(assetPath))
++					{
++						UnityEngine.Debug.LogError("资源路径 " + assetPath + " 不在 AddressablesConfig.json 中，请运行 Tools/AddressableConfig保存配置到JSON文件 更新配置");
++						throw new global::System.Exception("资源路径 " + assetPath + " 未在 Addressable 配置中找到");
++					}
++					AsyncOperationHandle<T> newHandle = Addressables.LoadAssetAsync<T>(assetPath);
++					context.newHandleInfo = new AssetHandleInfo
++					{
++						Handle = newHandle,
++						RefCount = 1,
++						WaitSource = new UniTaskCompletionSource<object>()
++					};
++					_assetHandleMap[assetPath] = context.newHandleInfo;
++					context.groupName = _assetGroupNameDict[assetPath].groupName;
++					if (!_assetGroupDict.ContainsKey(context.groupName))
++					{
++						_assetGroupDict[context.groupName] = new List<string>();
++					}
++					_assetGroupDict[context.groupName].Add(assetPath);
++					newHandle.Completed += context._003CLoadAssetAsync_003Eb__0;
++					await newHandle.Task;
++					if (newHandle.Status == AsyncOperationStatus.Succeeded)
++					{
++						if (newHandle.Result == null)
++						{
++							UnityEngine.Debug.LogError("加载 Addressable 资源返回 null: " + assetPath);
++							_assetHandleMap.Remove(assetPath);
++							throw new global::System.Exception("加载 Addressable 资源返回 null: " + assetPath);
++						}
++						return newHandle.Result;
++					}
++					string error = newHandle.OperationException != null ? newHandle.OperationException.Message : string.Format("加载失败，状态: {0}", newHandle.Status);
++					UnityEngine.Debug.LogError("加载 Addressable 资源失败: " + assetPath + ", " + error);
++					_assetHandleMap.Remove(assetPath);
++					throw new global::System.Exception("加载 Addressable 资源失败: " + assetPath + ", " + error);
++				}
++				finally
++				{
++					_lock.ExitWriteLock();
++				}
++			}
++			finally
++			{
++				_lock.ExitUpgradeableReadLock();
++			}
+ 		}
+ 
+ 		[Token(Token = "0x60020C1")]
+ 		[Address(RVA = "0x3F12A98", Offset = "0x3F0EA98", VA = "0x3F12A98")]
+ 		public void UnloadAsset(string assetPath)
+ 		{
++			_lock.EnterUpgradeableReadLock();
++			try
++			{
++				if (_assetHandleMap.TryGetValue(assetPath, out AssetHandleInfo handleInfo))
++				{
++					_lock.EnterWriteLock();
++					try
++					{
++						if (Interlocked.Decrement(ref handleInfo.RefCount) == 0)
++						{
++							if (handleInfo.Handle.IsValid())
++							{
++								Addressables.Release(handleInfo.Handle);
++								_assetGroupDict[_assetGroupNameDict[assetPath].groupName].Remove(assetPath);
++							}
++							_assetHandleMap.Remove(assetPath);
++						}
++					}
++					finally
++					{
++						_lock.ExitWriteLock();
++					}
++				}
++			}
++			finally
++			{
++				_lock.ExitUpgradeableReadLock();
++			}
+ 		}
+ 
+ 		[Token(Token = "0x60020C2")]
+ 		[Address(RVA = "0x3F12DB8", Offset = "0x3F0EDB8", VA = "0x3F12DB8")]
+ 		public void UnloadGroup(string groupName)
+ 		{
++			foreach (string assetPath in new List<string>(_assetGroupDict[groupName]))
++			{
++				UnloadAsset(assetPath);
++			}
++			UnityEngine.Resources.UnloadUnusedAssets();
+ 		}
+ 
+ 		[Token(Token = "0x60020C3")]
+@@ -319,18 +455,41 @@
+ 		[Address(RVA = "0x3F1337C", Offset = "0x3F0F37C", VA = "0x3F1337C")]
+ 		public void ForceUnloadUnusedAssets()
+ 		{
++			UnityEngine.Resources.UnloadUnusedAssets();
++			global::System.GC.Collect();
+ 		}
+ 
+ 		[Token(Token = "0x60020C5")]
+ 		[Address(RVA = "0x3F133D4", Offset = "0x3F0F3D4", VA = "0x3F133D4")]
+ 		public void ForceUnloadAsset(string assetPath)
+ 		{
++			_lock.EnterWriteLock();
++			try
++			{
++				if (_assetHandleMap.TryGetValue(assetPath, out AssetHandleInfo handleInfo))
++				{
++					if (handleInfo.Handle.IsValid())
++					{
++						Addressables.Release(handleInfo.Handle);
++					}
++					_assetHandleMap.Remove(assetPath);
++				}
++			}
++			finally
++			{
++				_lock.ExitWriteLock();
++			}
+ 		}
+ 
+ 		[Token(Token = "0x60020C6")]
+ 		[Address(RVA = "0x3F13590", Offset = "0x3F0F590", VA = "0x3F13590")]
+ 		public AssetsManager()
+ 		{
++			_assetHandles = new Dictionary<string, List<AsyncOperationHandle>>();
++			_assetHandleMap = new Dictionary<string, AssetHandleInfo>();
++			_lock = new ReaderWriterLockSlim(LockRecursionPolicy.SupportsRecursion);
++			_showDetails = true;
++			_fontSizeScale = 1.2f;
+ 		}
+ 	}
+ }

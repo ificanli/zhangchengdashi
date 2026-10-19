@@ -1,0 +1,26 @@
+0x3dee670: SUB             SP, SP, #0x30
+0x3dee674: STR             X30, [SP,#0x30+var_20]
+0x3dee678: STP             X20, X19, [SP,#0x30+var_10]
+0x3dee67c: ADRP            X20, #byte_8FFD77B@PAGE
+0x3dee680: ADRP            X19, #off_8AD3BA8@PAGE
+0x3dee684: LDRB            W8, [X20,#byte_8FFD77B@PAGEOFF]
+0x3dee688: LDR             X19, [X19,#off_8AD3BA8@PAGEOFF]; qword_8D21658
+0x3dee68c: TBNZ            W8, #0, loc_3DEE6A4
+0x3dee690: ADRP            X0, #off_8AD3BA8@PAGE
+0x3dee694: LDR             X0, [X0,#off_8AD3BA8@PAGEOFF]; qword_8D21658 ; slot
+0x3dee698: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3dee69c: MOV             W8, #1
+0x3dee6a0: STRB            W8, [X20,#byte_8FFD77B@PAGEOFF]
+0x3dee6a4: LDR             X2, [X19]
+0x3dee6a8: MOV             X8, SP
+0x3dee6ac: ADD             X0, X8, #8
+0x3dee6b0: MOV             W8, #0xFFFFFFFF
+0x3dee6b4: MOV             X1, SP
+0x3dee6b8: STP             XZR, XZR, [SP,#0x30+var_30]
+0x3dee6bc: STR             W8, [SP,#0x30+var_30]
+0x3dee6c0: BL              Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder$$Start_BattleGameSceneManager._PrewarmBattleRuntimePools_d__143_
+0x3dee6c4: LDP             X20, X19, [SP,#0x30+var_10]
+0x3dee6c8: LDR             X30, [SP,#0x30+var_20]
+0x3dee6cc: MOV             X0, XZR
+0x3dee6d0: ADD             SP, SP, #0x30 ; '0'
+0x3dee6d4: RET

@@ -1,0 +1,8 @@
+0x4275280: fe0f1ff8 str      x30, [sp, #-0x10]!
+0x4275284: e1031faa mov      x1, xzr
+0x4275288: 2dcf0195 bl       #0x82e8f3c // UnityEngine.Component$$get_gameObject
+0x427528c: 800000b4 cbz      x0, #0x427529c
+0x4275290: e1031faa mov      x1, xzr
+0x4275294: fe0741f8 ldr      x30, [sp], #0x10
+0x4275298: 44dc0115 b        #0x82ec3a8 // UnityEngine.GameObject$$get_activeSelf
+0x427529c: 8c20e797 bl       #0x3c3d4cc

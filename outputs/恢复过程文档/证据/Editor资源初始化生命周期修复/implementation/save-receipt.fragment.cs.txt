@@ -1,0 +1,23 @@
+        private void Save()
+        {
+            if (_receipt == null || string.IsNullOrEmpty(_receiptPath)) return;
+            string json = JsonUtility.ToJson(_receipt, true);
+            if (!string.IsNullOrEmpty(_sessionReceiptPath)) WriteReceiptFile(_sessionReceiptPath, json);
+            bool ownsCurrentReceipt = !_publishedCanonicalReceipt || !File.Exists(_receiptPath);
+            if (!ownsCurrentReceipt)
+            {
+                Receipt current = JsonUtility.FromJson<Receipt>(File.ReadAllText(_receiptPath));
+                ownsCurrentReceipt = current != null && current.runId == _receipt.runId;
+            }
+            if (ownsCurrentReceipt) WriteReceiptFile(_receiptPath, json);
+            _publishedCanonicalReceipt = true;
+        }
+
+        private static void WriteReceiptFile(string path, string json)
+        {
+            Directory.CreateDirectory(Path.GetDirectoryName(path));
+            string temporary = path + ".tmp";
+            File.WriteAllText(temporary, json, new UTF8Encoding(false));
+            File.Copy(temporary, path, true);
+            File.Delete(temporary);
+        }

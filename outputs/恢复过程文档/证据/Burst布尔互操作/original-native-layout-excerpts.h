@@ -1,0 +1,14 @@
+struct Pathfinding_ECS_JobRepairPathHelpers_PathTracerInfo_Fields {
+	struct Unity_Mathematics_float3_o endPointOfFirstPart;
+	int32_t partCount;
+	bool isStale;
+	bool hasValidEndPoint;
+};
+
+struct Pathfinding_Graphs_Navmesh_TileHandler_CutCollection_Fields {
+	struct Unity_Collections_LowLevel_Unsafe_UnsafeList_TileHandler_Point64Wrapper__o contourVertices;
+	struct Unity_Collections_LowLevel_Unsafe_UnsafeList_NavmeshCut_ContourBurst__o contours;
+	struct Unity_Collections_LowLevel_Unsafe_UnsafeList_TileHandler_ContourMeta__o contoursExtra;
+	struct Unity_Collections_LowLevel_Unsafe_UnsafeList_TileHandler_TileCuts__o tileCuts;
+	bool cuttingRequired;
+};

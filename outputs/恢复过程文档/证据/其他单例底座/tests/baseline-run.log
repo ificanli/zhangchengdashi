@@ -1,0 +1,15 @@
+C:\Users\luxinyu\Documents\Codex\2026-10-19\x20\work\other-singleton-recovery\tests\Program.cs(37,40): warning CS0649: 从未对字段“Program.ValueItem.Number”赋值，字段将一直保持其默认值 0 [C:\Users\luxinyu\Documents\Codex\2026-10-19\x20\work\other-singleton-recovery\tests\OtherSingletonTests.csproj]
+C:\Users\luxinyu\Documents\Codex\2026-10-19\x20\work\other-singleton-recovery\tests\baseline\QuickTutor.Singleton.cs(41,35): warning CS0169: 从不使用字段“Singleton<T>.instance” [C:\Users\luxinyu\Documents\Codex\2026-10-19\x20\work\other-singleton-recovery\tests\OtherSingletonTests.csproj]
+C:\Users\luxinyu\Documents\Codex\2026-10-19\x20\work\other-singleton-recovery\tests\baseline\L_Tools.Singleton.cs(13,31): warning CS0649: 从未对字段“Singleton<T>.SingletonCreator.instance”赋值，字段将一直保持其默认值 [C:\Users\luxinyu\Documents\Codex\2026-10-19\x20\work\other-singleton-recovery\tests\OtherSingletonTests.csproj]
+FAIL L_Tools creates once and returns stable identity: stable nonnull instance
+FAIL QuickTutor Lazy creates once and returns stable identity: stable nonnull instance
+FAIL separate closed generic arguments keep independent instances: separate L_Tools closures
+FAIL L_Tools parallel access creates one object: parallel access shares object
+FAIL QuickTutor Lazy parallel access creates one object: parallel access shares object
+FAIL type reflection does not eagerly run QuickTutor value factory: first Value access constructs
+FAIL L_Tools static constructor failure is cached: static initializer failure shape
+FAIL QuickTutor Lazy caches value factory failure: Lazy caches same Activator exception
+PASS L_Tools supports value type under original new constraint
+PASS QuickTutor supports value type under original new constraint
+PASS original readonly fields and BeforeFieldInit remain
+RESULT scenarios=11 checks=16 failures=8

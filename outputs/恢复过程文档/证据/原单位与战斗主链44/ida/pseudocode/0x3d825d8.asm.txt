@@ -1,0 +1,20 @@
+0x3d825d8: STR             X30, [SP,#var_10]!
+0x3d825dc: LDR             X8, [X0,#0x40]
+0x3d825e0: CBZ             X8, loc_3D82624
+0x3d825e4: LDUR            D1, [X8,#0x1C]
+0x3d825e8: MOV             W9, #0x7F800000
+0x3d825ec: MOVI            V2.2S, #0x80,LSL#24
+0x3d825f0: SCVTF           V1.2S, V1.2S
+0x3d825f4: FMUL            V0.2S, V1.2S, V0.S[0]
+0x3d825f8: DUP             V1.2S, W9
+0x3d825fc: FCMEQ           V1.2S, V0.2S, V1.2S
+0x3d82600: FCVTZS          V0.2S, V0.2S
+0x3d82604: BIT             V0.8B, V2.8B, V1.8B
+0x3d82608: STR             S0, [X8,#0x18]
+0x3d8260c: STUR            D0, [X8,#0x1C]
+0x3d82610: LDR             X8, [X0]
+0x3d82614: LDR             X2, [X8,#0x2A8]
+0x3d82618: LDR             X1, [X8,#0x2B0]
+0x3d8261c: LDR             X30, [SP+0x10+var_10],#0x10
+0x3d82620: BR              X2
+0x3d82624: BL              il2cpp_codegen_raise_null_reference_exception

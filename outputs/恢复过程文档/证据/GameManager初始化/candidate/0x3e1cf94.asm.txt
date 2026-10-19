@@ -1,0 +1,212 @@
+0x3e1cf94: fe57bea9 stp      x30, x21, [sp, #-0x20]!
+0x3e1cf98: f44f01a9 stp      x20, x19, [sp, #0x10]
+0x3e1cf9c: 148f02b0 adrp     x20, #0x8ffd000
+0x3e1cfa0: 88b26239 ldrb     w8, [x20, #0x8ac]
+0x3e1cfa4: f30300aa mov      x19, x0
+0x3e1cfa8: a8020037 tbnz     w8, #0, #0x3e1cffc
+0x3e1cfac: a06502f0 adrp     x0, #0x8ad3000
+0x3e1cfb0: 00d843f9 ldr      x0, [x0, #0x7b0] // GameModule.BattleResult_TypeInfo
+0x3e1cfb4: b380f897 bl       #0x3c3d280
+0x3e1cfb8: 806502d0 adrp     x0, #0x8ace000
+0x3e1cfbc: 004442f9 ldr      x0, [x0, #0x488] // Method$ToolModule.ManagerBase<BattleGameManager>.get_Instance()
+0x3e1cfc0: b080f897 bl       #0x3c3d280
+0x3e1cfc4: a06502f0 adrp     x0, #0x8ad3000
+0x3e1cfc8: 009845f9 ldr      x0, [x0, #0xb30] // Method$ToolModule.ManagerBase<SubGameChaosTrailsManager>.get_Instance()
+0x3e1cfcc: ad80f897 bl       #0x3c3d280
+0x3e1cfd0: a06502f0 adrp     x0, #0x8ad3000
+0x3e1cfd4: 009c45f9 ldr      x0, [x0, #0xb38] // Method$ToolModule.ManagerBase<PanelPopHandleManager>.get_Instance()
+0x3e1cfd8: aa80f897 bl       #0x3c3d280
+0x3e1cfdc: c0650290 adrp     x0, #0x8ad4000
+0x3e1cfe0: 00cc40f9 ldr      x0, [x0, #0x198] // Method$ToolModule.ManagerBase<MetaGameManager>.get_Instance()
+0x3e1cfe4: a780f897 bl       #0x3c3d280
+0x3e1cfe8: 80650290 adrp     x0, #0x8acc000
+0x3e1cfec: 006844f9 ldr      x0, [x0, #0x8d0] // UnityEngine.Object_TypeInfo
+0x3e1cff0: a480f897 bl       #0x3c3d280
+0x3e1cff4: 28008052 mov      w8, #1
+0x3e1cff8: 88b22239 strb     w8, [x20, #0x8ac]
+0x3e1cffc: e0031faa mov      x0, xzr
+0x3e1d000: b3ccff97 bl       #0x3e102cc // GameModule.TrainingGroundManager$$get_IsInTrainingGround
+0x3e1d004: e0020036 tbz      w0, #0, #0x3e1d060
+0x3e1d008: a86502f0 adrp     x8, #0x8ad4000
+0x3e1d00c: 08cd40f9 ldr      x8, [x8, #0x198] // Method$ToolModule.ManagerBase<MetaGameManager>.get_Instance()
+0x3e1d010: 000140f9 ldr      x0, [x8]
+0x3e1d014: 136d6d94 bl       #0x5978460 // ToolModule.ManagerBase<object>$$get_Instance
+0x3e1d018: 000f00b4 cbz      x0, #0x3e1d1f8
+0x3e1d01c: 41008052 mov      w1, #2
+0x3e1d020: e2031faa mov      x2, xzr
+0x3e1d024: 28b10194 bl       #0x3e894c4 // GameModule.MetaGameManager$$ShowMetaSwitchPanel
+0x3e1d028: a86502d0 adrp     x8, #0x8ad3000
+0x3e1d02c: 089d45f9 ldr      x8, [x8, #0xb38] // Method$ToolModule.ManagerBase<PanelPopHandleManager>.get_Instance()
+0x3e1d030: 000140f9 ldr      x0, [x8]
+0x3e1d034: 0b6d6d94 bl       #0x5978460 // ToolModule.ManagerBase<object>$$get_Instance
+0x3e1d038: 400e00b4 cbz      x0, #0x3e1d200
+0x3e1d03c: e1031faa mov      x1, xzr
+0x3e1d040: 5b7b0294 bl       #0x3ebbdac // GameModule.PanelPopHandleManager$$PanelPopPlay
+0x3e1d044: 28008012 mov      w8, #-2
+0x3e1d048: 688600b8 str      w8, [x19], #8
+0x3e1d04c: e00313aa mov      x0, x19
+0x3e1d050: f44f41a9 ldp      x20, x19, [sp, #0x10]
+0x3e1d054: e1031faa mov      x1, xzr
+0x3e1d058: fe57c2a8 ldp      x30, x21, [sp], #0x20
+0x3e1d05c: 394cde14 b        #0x75b0140 // System.Runtime.CompilerServices.AsyncVoidMethodBuilder$$SetResult
+0x3e1d060: 886502b0 adrp     x8, #0x8ace000
+0x3e1d064: 084542f9 ldr      x8, [x8, #0x488] // Method$ToolModule.ManagerBase<BattleGameManager>.get_Instance()
+0x3e1d068: 000140f9 ldr      x0, [x8]
+0x3e1d06c: fd6c6d94 bl       #0x5978460 // ToolModule.ManagerBase<object>$$get_Instance
+0x3e1d070: 600c00b4 cbz      x0, #0x3e1d1fc
+0x3e1d074: 08f040b9 ldr      w8, [x0, #0xf0]
+0x3e1d078: 1f0d0071 cmp      w8, #3
+0x3e1d07c: 48feff54 b.hi     #0x3e1d044
+0x3e1d080: 49d3fe90 adrp     x9, #0x1885000
+0x3e1d084: 29ed3791 add      x9, x9, #0xdfb
+0x3e1d088: 8a000010 adr      x10, #0x3e1d098
+0x3e1d08c: 2b696838 ldrb     w11, [x9, x8]
+0x3e1d090: 4a090b8b add      x10, x10, x11, lsl #2
+0x3e1d094: 40011fd6 br       x10
+0x3e1d098: a86502f0 adrp     x8, #0x8ad4000
+0x3e1d09c: 08cd40f9 ldr      x8, [x8, #0x198] // Method$ToolModule.ManagerBase<MetaGameManager>.get_Instance()
+0x3e1d0a0: 000140f9 ldr      x0, [x8]
+0x3e1d0a4: ef6c6d94 bl       #0x5978460 // ToolModule.ManagerBase<object>$$get_Instance
+0x3e1d0a8: 200b00b4 cbz      x0, #0x3e1d20c
+0x3e1d0ac: 41008052 mov      w1, #2
+0x3e1d0b0: e2031faa mov      x2, xzr
+0x3e1d0b4: 04b10194 bl       #0x3e894c4 // GameModule.MetaGameManager$$ShowMetaSwitchPanel
+0x3e1d0b8: a86502d0 adrp     x8, #0x8ad3000
+0x3e1d0bc: 089d45f9 ldr      x8, [x8, #0xb38] // Method$ToolModule.ManagerBase<PanelPopHandleManager>.get_Instance()
+0x3e1d0c0: 000140f9 ldr      x0, [x8]
+0x3e1d0c4: e76c6d94 bl       #0x5978460 // ToolModule.ManagerBase<object>$$get_Instance
+0x3e1d0c8: 800a00b4 cbz      x0, #0x3e1d218
+0x3e1d0cc: e1031faa mov      x1, xzr
+0x3e1d0d0: 377b0294 bl       #0x3ebbdac // GameModule.PanelPopHandleManager$$PanelPopPlay
+0x3e1d0d4: dcffff17 b        #0x3e1d044
+0x3e1d0d8: a86502f0 adrp     x8, #0x8ad4000
+0x3e1d0dc: 08cd40f9 ldr      x8, [x8, #0x198] // Method$ToolModule.ManagerBase<MetaGameManager>.get_Instance()
+0x3e1d0e0: 000140f9 ldr      x0, [x8]
+0x3e1d0e4: df6c6d94 bl       #0x5978460 // ToolModule.ManagerBase<object>$$get_Instance
+0x3e1d0e8: e00800b4 cbz      x0, #0x3e1d204
+0x3e1d0ec: 41008052 mov      w1, #2
+0x3e1d0f0: e2031faa mov      x2, xzr
+0x3e1d0f4: f4b00194 bl       #0x3e894c4 // GameModule.MetaGameManager$$ShowMetaSwitchPanel
+0x3e1d0f8: d3ffff17 b        #0x3e1d044
+0x3e1d0fc: a86502f0 adrp     x8, #0x8ad4000
+0x3e1d100: 08cd40f9 ldr      x8, [x8, #0x198] // Method$ToolModule.ManagerBase<MetaGameManager>.get_Instance()
+0x3e1d104: 000140f9 ldr      x0, [x8]
+0x3e1d108: d66c6d94 bl       #0x5978460 // ToolModule.ManagerBase<object>$$get_Instance
+0x3e1d10c: e00700b4 cbz      x0, #0x3e1d208
+0x3e1d110: 41008052 mov      w1, #2
+0x3e1d114: e2031faa mov      x2, xzr
+0x3e1d118: ebb00194 bl       #0x3e894c4 // GameModule.MetaGameManager$$ShowMetaSwitchPanel
+0x3e1d11c: a86502d0 adrp     x8, #0x8ad3000
+0x3e1d120: 089d45f9 ldr      x8, [x8, #0xb38] // Method$ToolModule.ManagerBase<PanelPopHandleManager>.get_Instance()
+0x3e1d124: 000140f9 ldr      x0, [x8]
+0x3e1d128: ce6c6d94 bl       #0x5978460 // ToolModule.ManagerBase<object>$$get_Instance
+0x3e1d12c: 400700b4 cbz      x0, #0x3e1d214
+0x3e1d130: e1031faa mov      x1, xzr
+0x3e1d134: 1e7b0294 bl       #0x3ebbdac // GameModule.PanelPopHandleManager$$PanelPopPlay
+0x3e1d138: b56502d0 adrp     x21, #0x8ad3000
+0x3e1d13c: b59a45f9 ldr      x21, [x21, #0xb30] // Method$ToolModule.ManagerBase<SubGameChaosTrailsManager>.get_Instance()
+0x3e1d140: a00240f9 ldr      x0, [x21]
+0x3e1d144: c76c6d94 bl       #0x5978460 // ToolModule.ManagerBase<object>$$get_Instance
+0x3e1d148: 686502f0 adrp     x8, #0x8acc000
+0x3e1d14c: 086944f9 ldr      x8, [x8, #0x8d0] // UnityEngine.Object_TypeInfo
+0x3e1d150: f40300aa mov      x20, x0
+0x3e1d154: 000140f9 ldr      x0, [x8]
+0x3e1d158: 08e040b9 ldr      w8, [x0, #0xe0]
+0x3e1d15c: 48000035 cbnz     w8, #0x3e1d164
+0x3e1d160: 9480f897 bl       #0x3c3d3b0
+0x3e1d164: e00314aa mov      x0, x20
+0x3e1d168: e1031faa mov      x1, xzr
+0x3e1d16c: e2031faa mov      x2, xzr
+0x3e1d170: bf3a1395 bl       #0x82ebc6c // UnityEngine.Object$$op_Inequality
+0x3e1d174: 80f60736 tbz      w0, #0, #0x3e1d044
+0x3e1d178: a00240f9 ldr      x0, [x21]
+0x3e1d17c: b96c6d94 bl       #0x5978460 // ToolModule.ManagerBase<object>$$get_Instance
+0x3e1d180: e00400b4 cbz      x0, #0x3e1d21c
+0x3e1d184: 681640f9 ldr      x8, [x19, #0x28]
+0x3e1d188: 280100b4 cbz      x8, #0x3e1d1ac
+0x3e1d18c: a96502d0 adrp     x9, #0x8ad3000
+0x3e1d190: 29d943f9 ldr      x9, [x9, #0x7b0] // GameModule.BattleResult_TypeInfo
+0x3e1d194: 0a0140f9 ldr      x10, [x8]
+0x3e1d198: 290140f9 ldr      x9, [x9]
+0x3e1d19c: 4cc14439 ldrb     w12, [x10, #0x130]
+0x3e1d1a0: 2bc14439 ldrb     w11, [x9, #0x130]
+0x3e1d1a4: 9f010b6b cmp      w12, w11
+0x3e1d1a8: 82010054 b.hs     #0x3e1d1d8
+0x3e1d1ac: e1031faa mov      x1, xzr
+0x3e1d1b0: 0f000014 b        #0x3e1d1ec
+0x3e1d1b4: a86502f0 adrp     x8, #0x8ad4000
+0x3e1d1b8: 08cd40f9 ldr      x8, [x8, #0x198] // Method$ToolModule.ManagerBase<MetaGameManager>.get_Instance()
+0x3e1d1bc: 000140f9 ldr      x0, [x8]
+0x3e1d1c0: a86c6d94 bl       #0x5978460 // ToolModule.ManagerBase<object>$$get_Instance
+0x3e1d1c4: 600200b4 cbz      x0, #0x3e1d210
+0x3e1d1c8: 61008052 mov      w1, #3
+0x3e1d1cc: e2031faa mov      x2, xzr
+0x3e1d1d0: bdb00194 bl       #0x3e894c4 // GameModule.MetaGameManager$$ShowMetaSwitchPanel
+0x3e1d1d4: 9cffff17 b        #0x3e1d044
+0x3e1d1d8: 4a6540f9 ldr      x10, [x10, #0xc8]
+0x3e1d1dc: 4a0d0b8b add      x10, x10, x11, lsl #3
+0x3e1d1e0: 4a815ff8 ldur     x10, [x10, #-8]
+0x3e1d1e4: 5f0109eb cmp      x10, x9
+0x3e1d1e8: 01019f9a csel     x1, x8, xzr, eq
+0x3e1d1ec: e2031faa mov      x2, xzr
+0x3e1d1f0: a6510394 bl       #0x3ef1888 // GameModule.SubGameChaosTrailsManager$$TryReturnToPanelAfterEnterMeta
+0x3e1d1f4: 94ffff17 b        #0x3e1d044
+0x3e1d1f8: b580f897 bl       #0x3c3d4cc
+0x3e1d1fc: b480f897 bl       #0x3c3d4cc
+0x3e1d200: b380f897 bl       #0x3c3d4cc
+0x3e1d204: b280f897 bl       #0x3c3d4cc
+0x3e1d208: b180f897 bl       #0x3c3d4cc
+0x3e1d20c: b080f897 bl       #0x3c3d4cc
+0x3e1d210: af80f897 bl       #0x3c3d4cc
+0x3e1d214: ae80f897 bl       #0x3c3d4cc
+0x3e1d218: ad80f897 bl       #0x3c3d4cc
+0x3e1d21c: ac80f897 bl       #0x3c3d4cc
+0x3e1d220: 0d000014 b        #0x3e1d254
+0x3e1d224: 0c000014 b        #0x3e1d254
+0x3e1d228: 0b000014 b        #0x3e1d254
+0x3e1d22c: 0a000014 b        #0x3e1d254
+0x3e1d230: 09000014 b        #0x3e1d254
+0x3e1d234: 08000014 b        #0x3e1d254
+0x3e1d238: 07000014 b        #0x3e1d254
+0x3e1d23c: 06000014 b        #0x3e1d254
+0x3e1d240: 05000014 b        #0x3e1d254
+0x3e1d244: 04000014 b        #0x3e1d254
+0x3e1d248: 03000014 b        #0x3e1d254
+0x3e1d24c: 02000014 b        #0x3e1d254
+0x3e1d250: 01000014 b        #0x3e1d254
+0x3e1d254: f40300aa mov      x20, x0
+0x3e1d258: 3f040071 cmp      w1, #1
+0x3e1d25c: e1030054 b.ne     #0x3e1d2d8
+0x3e1d260: e00314aa mov      x0, x20
+0x3e1d264: cf461d95 bl       #0x856eda0
+0x3e1d268: f40300aa mov      x20, x0
+0x3e1d26c: 606502f0 adrp     x0, #0x8acc000
+0x3e1d270: 00c847f9 ldr      x0, [x0, #0xf90] // System.Exception_TypeInfo
+0x3e1d274: 0880f897 bl       #0x3c3d294
+0x3e1d278: 880240f9 ldr      x8, [x20]
+0x3e1d27c: 010140f9 ldr      x1, [x8]
+0x3e1d280: 9e81f897 bl       #0x3c3d8f8
+0x3e1d284: 60010036 tbz      w0, #0, #0x3e1d2b0
+0x3e1d288: 940240f9 ldr      x20, [x20]
+0x3e1d28c: c9461d95 bl       #0x856edb0
+0x3e1d290: 28008012 mov      w8, #-2
+0x3e1d294: 688600b8 str      w8, [x19], #8
+0x3e1d298: e00313aa mov      x0, x19
+0x3e1d29c: e10314aa mov      x1, x20
+0x3e1d2a0: f44f41a9 ldp      x20, x19, [sp, #0x10]
+0x3e1d2a4: e2031faa mov      x2, xzr
+0x3e1d2a8: fe57c2a8 ldp      x30, x21, [sp], #0x20
+0x3e1d2ac: fe4bde14 b        #0x75b02a4 // System.Runtime.CompilerServices.AsyncVoidMethodBuilder$$SetException
+0x3e1d2b0: 00018052 mov      w0, #8
+0x3e1d2b4: c3461d95 bl       #0x856edc0
+0x3e1d2b8: 880240f9 ldr      x8, [x20]
+0x3e1d2bc: 080000f9 str      x8, [x0]
+0x3e1d2c0: c13a0290 adrp     x1, #0x8575000
+0x3e1d2c4: 21a00891 add      x1, x1, #0x228
+0x3e1d2c8: e2031faa mov      x2, xzr
+0x3e1d2cc: c1461d95 bl       #0x856edd0
+0x3e1d2d0: f40300aa mov      x20, x0
+0x3e1d2d4: b7461d95 bl       #0x856edb0
+0x3e1d2d8: e00314aa mov      x0, x20
+0x3e1d2dc: 3a28fb97 bl       #0x3ce73c4
+0x3e1d2e0: 887cde97 bl       #0x35bc500

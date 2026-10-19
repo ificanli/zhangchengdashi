@@ -1,0 +1,157 @@
+{
+  "stage": 48,
+  "status": "read-only-work-candidate-preflight-awaiting-root-scope",
+  "proposedOwnedFiles": [
+    "Assets/Scripts/Assembly-CSharp/UIFramework/UIManager.cs"
+  ],
+  "proposedMinimumMethods": [
+    {
+      "file": "Assets/Scripts/Assembly-CSharp/UIFramework/UIManager.cs",
+      "method": "Init",
+      "token": "0x06004C57",
+      "rva": "0x4275c18",
+      "body": "0x4276f18",
+      "awaits": 0,
+      "nativeBodyBytes": 652,
+      "nativeBodySha256": "4e784097893b7a89c1fb1d5c3a3489469096c7780e24326e36fca67ef938fb28"
+    },
+    {
+      "file": "Assets/Scripts/Assembly-CSharp/UIFramework/UIManager.cs",
+      "method": "GetPanel",
+      "token": "0x06004C58",
+      "rva": "0x4275c9c",
+      "body": "0x42767ac",
+      "awaits": 1,
+      "nativeBodyBytes": 852,
+      "nativeBodySha256": "d11c5940bc9ef068c0e5c8ee1d567497fb578987db9b297b1b45a42611c06e97"
+    },
+    {
+      "file": "Assets/Scripts/Assembly-CSharp/UIFramework/UIManager.cs",
+      "method": "LoadPanel",
+      "token": "0x06004C5C",
+      "rva": "0x4275fec",
+      "body": "0x42771b0",
+      "awaits": 1,
+      "nativeBodyBytes": 2044,
+      "nativeBodySha256": "d92970a98211781cbdfd1433057dafe251a751d0a2094c8b2d512af2742dca48"
+    }
+  ],
+  "requiredNarrowLeafExtension": {
+    "file": "Assets/Scripts/Assembly-CSharp/UIFramework/UIPanel.cs",
+    "method": "Init(PanelConfig)",
+    "token": "0x06004C4C",
+    "rva": "0x4275658",
+    "currentBody": "empty",
+    "neededScope": "proposed exact leaf extension; original 8-byte field store to +0x38, no other UIPanel edits"
+  },
+  "dependencies": [
+    {
+      "file": "Assets/Scripts/Assembly-CSharp/CameraModule/CameraManager.cs",
+      "method": "UICamera getter",
+      "token": "0x060020A7",
+      "rva": "0x3f0e8cc",
+      "currentBody": "return null",
+      "neededScope": "separate native camera producer/retrieval audit before claiming original worldCamera binding"
+    },
+    {
+      "file": "Assets/Scripts/Assembly-CSharp/UIFramework/UIPanel.cs",
+      "method": "Show/Hide/IsShowing/Canvas/TweenRoot",
+      "token": "0x06004C44 / 45 / 41 / 42 / 3E / 3F",
+      "rva": "0x4275338 / 0x42753bc / 0x4275280 / 0x42752a0 / 0x427520c / 0x4275214",
+      "currentBody": "exported stubs",
+      "neededScope": "later actual display/animation closure; minimum preload does not call Show"
+    },
+    {
+      "file": "Assets/Scripts/Assembly-CSharp/UIModuleO/NoInternetPanel.cs",
+      "method": "Show override and component binding",
+      "token": "0x06003E88",
+      "rva": "0x416f664",
+      "body": "0x416fee0",
+      "currentBody": "exported stubs",
+      "neededScope": "later concrete first-panel display/connection policy; not authorized in minimum manager-only step"
+    },
+    {
+      "file": "Assets/Scripts/Assembly-CSharp/DataModule/GlobalInfo.cs",
+      "method": "panelConfigs real load/deserialize",
+      "currentBody": "stage41 owner",
+      "neededScope": "read-only dependency; use actual loaded config, no injected substitute rows"
+    }
+  ],
+  "protectedNonempty": [
+    {
+      "file": "Assets/Scripts/Assembly-CSharp/UIFramework/UIManager.cs",
+      "method": "IsPanelShowing",
+      "token": "0x06004C59",
+      "rva": "0x4275d78",
+      "protection": "explicit RECOVERY_UNIMPLEMENTED diagnostic retained byte-for-byte; not part of minimum candidate"
+    },
+    {
+      "file": "Assets/Scripts/Assembly-CSharp/UIFramework/UIPanel.cs",
+      "method": "IsPlayTween getter",
+      "token": "0x06004C40",
+      "rva": "0x4275278",
+      "protection": "existing restored field getter untouched"
+    },
+    {
+      "file": "Assets/Scripts/Assembly-CSharp/AssetsModule/AssetsManager.cs",
+      "method": "LoadAssetAsync<T>",
+      "protection": "reuse actual typed Addressables/cache/reference-count implementation; do not replace with placeholder/provider shortcut"
+    }
+  ],
+  "baselines": [
+    {
+      "path": "Assets/Scripts/Assembly-CSharp/UIFramework/UIManager.cs",
+      "sha256": "bed0b6d3bbbc19f750a0788ea6a03d04c9cb74e768aa02ad69459b77cd125ef7",
+      "metaSha256": "5de2955a2830fe0fd7c06b378c2d26badf260c0433849a0829893e5cc77a386d"
+    },
+    {
+      "path": "Assets/Scripts/Assembly-CSharp/UIFramework/UIPanel.cs",
+      "sha256": "9e4341d8e5282556f645c26fd4003f420619b80db5a32a4bee687eafad078a30",
+      "metaSha256": "2ade62ecb7a07be41b763d86c518cc4328f3df0b15df196b8defd954c6aaf671"
+    },
+    {
+      "path": "Assets/Scripts/Assembly-CSharp/CameraModule/CameraManager.cs",
+      "sha256": "1f80236a91c12b440fd68dba7da7127e9dca77af3d2b3f492522ab15b86635ac",
+      "metaSha256": "a35fcfe468325d083554fd74b0359029f11f4826a58f1d191228513ebef68907"
+    },
+    {
+      "path": "Assets/Scripts/Assembly-CSharp/UIModuleO/NoInternetPanel.cs",
+      "sha256": "6b2b55409b99c51b2be7ea616415717c83acc31fc91bf2272e4adac3770781d0",
+      "metaSha256": "b4ca0e5832780227e25de68f021129eb1c5c455ab8e5ea3c36166c6bdc527c63"
+    },
+    {
+      "path": "Assets/Scripts/Assembly-CSharp/AssetsModule/AssetsManager.cs",
+      "sha256": "34bae1e67fcdee17010e10ccd1de37cba7de3732df6aad02e28b14a0bf6a811b",
+      "metaSha256": "f71c284f7a2de6fb07d250f57d20a8d5d1c350f5aa97979d074ffc2091b67aa8"
+    },
+    {
+      "path": "Assets/Scripts/Assembly-CSharp/CoreModule/GameLauncher.cs",
+      "sha256": "437b3dfddb47e0813a63019b9d78a5f484efb213615c662d2c66901ce045335a",
+      "metaSha256": "249a9997c419f406e8f77685e1ff943100cb3b476679f528ab1a780806d078e3"
+    }
+  ],
+  "firstRoot": "Original new GameObject(\"UIPanelsRoot\").transform in async-no-await Init; no GF UIRoot prefab or GFUICanvas dependency",
+  "firstPanel": "GameLauncher.InitManager only preloads NoInternetPanel through GetPanel; originally hidden in cache, not a mandated visible first screen",
+  "candidate": {
+    "path": "work/stage48-new-ui/UIManager.candidate.cs",
+    "sha256": "845f55cd139cbdb070ecdbee1f01a386e131266b286e2e27eee76fdd00b3310a",
+    "independentCompileErrors": 0,
+    "independentCompileWarnings": 9,
+    "referenceSource": "Formally imported actual Unity/UniTask/Main/GF metadata; no experiment DLL installed"
+  },
+  "nativeTargets": "work/stage48-new-ui/ida/targets.json",
+  "nativeTargetsBounded": 21,
+  "inspectedMethods": 38,
+  "inspectedBytes": 11772,
+  "productionSourceEdits": 0,
+  "UnityLaunches": 0,
+  "actualTypedUnityLoad": false,
+  "UIVisibleAcceptance": false,
+  "tests": "not-run in this read-only planning stage",
+  "plannedVerification": [
+    "actual source vs candidate narrow/Token/meta readback",
+    "controlled Task/UniTask cold/cache/after-await race/failure/null/missing-component/config-order tests",
+    "full Main source compile with real dependencies",
+    "root GUI official typed Addressables load + actual clone/cache/activeSelf/config/camera identities without forced Show or flags"
+  ]
+}

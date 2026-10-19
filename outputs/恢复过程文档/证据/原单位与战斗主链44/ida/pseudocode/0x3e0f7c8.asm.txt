@@ -1,0 +1,23 @@
+0x3e0f7c8: STP             X30, X19, [SP,#var_10]!
+0x3e0f7cc: LDRB            W8, [X0,#0x20]
+0x3e0f7d0: MOV             W19, W1
+0x3e0f7d4: CBNZ            W8, loc_3E0F818
+0x3e0f7d8: AND             W2, W2, #1
+0x3e0f7dc: MOV             W1, #2
+0x3e0f7e0: BL              GameModule.SynergyEffectManager$$GetFetterCount
+0x3e0f7e4: CMP             W0, #6
+0x3e0f7e8: B.LT            loc_3E0F818
+0x3e0f7ec: ADRP            X8, #dword_18374B0@PAGE
+0x3e0f7f0: LDR             S0, [X8,#dword_18374B0@PAGEOFF]
+0x3e0f7f4: MOV             W8, #0x7F800000
+0x3e0f7f8: SCVTF           S1, W19
+0x3e0f7fc: FMOV            S2, W8
+0x3e0f800: FMUL            S0, S1, S0
+0x3e0f804: FCVTZS          W8, S0
+0x3e0f808: FCMP            S0, S2
+0x3e0f80c: MOV             W9, #0x80000000
+0x3e0f810: CSEL            W8, W9, W8, EQ
+0x3e0f814: ADD             W19, W8, W19
+0x3e0f818: MOV             W0, W19
+0x3e0f81c: LDP             X30, X19, [SP+0x10+var_10],#0x10
+0x3e0f820: RET

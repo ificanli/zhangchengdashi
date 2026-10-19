@@ -1,0 +1,41 @@
+0x3e452c4: STP             X30, X21, [SP,#var_20]!
+0x3e452c8: STP             X20, X19, [SP,#0x20+var_10]
+0x3e452cc: ADRP            X21, #byte_8FFD9EE@PAGE
+0x3e452d0: ADRP            X20, #off_8AD4F18@PAGE
+0x3e452d4: LDRB            W8, [X21,#byte_8FFD9EE@PAGEOFF]
+0x3e452d8: LDR             X20, [X20,#off_8AD4F18@PAGEOFF]; off_8CD9258
+0x3e452dc: MOV             X19, X0
+0x3e452e0: TBNZ            W8, #0, loc_3E45310
+0x3e452e4: ADRP            X0, #off_8AD4F10@PAGE
+0x3e452e8: LDR             X0, [X0,#off_8AD4F10@PAGEOFF]; qword_8CFB3E0 ; slot
+0x3e452ec: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3e452f0: ADRP            X0, #off_8AD57C0@PAGE
+0x3e452f4: LDR             X0, [X0,#off_8AD57C0@PAGEOFF]; unk_8CFB3E8 ; slot
+0x3e452f8: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3e452fc: ADRP            X0, #off_8AD4F18@PAGE
+0x3e45300: LDR             X0, [X0,#off_8AD4F18@PAGEOFF]; off_8CD9258 ; slot
+0x3e45304: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3e45308: MOV             W8, #1
+0x3e4530c: STRB            W8, [X21,#byte_8FFD9EE@PAGEOFF]
+0x3e45310: MOV             X0, X19; self
+0x3e45314: BL              TimeModuleO.TimeManager$$GetLocalNetworkTime
+0x3e45318: LDR             X8, [X20]
+0x3e4531c: LDR             X9, [X8,#0xB8]
+0x3e45320: LDR             X9, [X9]
+0x3e45324: CBZ             X9, loc_3E45364
+0x3e45328: LDR             X9, [X9,#0x30]
+0x3e4532c: CBZ             X9, loc_3E45358
+0x3e45330: STR             X0, [X9,#0x18]
+0x3e45334: LDR             X8, [X8,#0xB8]
+0x3e45338: LDR             X0, [X8]
+0x3e4533c: CBZ             X0, loc_3E45364
+0x3e45340: ADRP            X8, #off_8AD4F10@PAGE
+0x3e45344: LDR             X8, [X8,#off_8AD4F10@PAGEOFF]; qword_8CFB3E0
+0x3e45348: LDP             X20, X19, [SP,#0x20+var_10]
+0x3e4534c: LDR             X1, [X8]
+0x3e45350: LDP             X30, X21, [SP+0x20+var_20],#0x20
+0x3e45354: B               DbtSaveDataManagerBase_object__object_$$Save
+0x3e45358: LDP             X20, X19, [SP,#0x20+var_10]
+0x3e4535c: LDP             X30, X21, [SP+0x20+var_20],#0x20
+0x3e45360: RET
+0x3e45364: BL              il2cpp_codegen_raise_null_reference_exception

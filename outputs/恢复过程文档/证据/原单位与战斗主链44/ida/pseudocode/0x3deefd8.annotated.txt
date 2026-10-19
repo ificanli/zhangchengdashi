@@ -1,0 +1,56 @@
+int32_t GameModule_BattleGameSceneManager__GetGoldMinePrice(
+        GameModule_BattleGameSceneManager_o *this,
+        bool isEnemyHex,
+        const MethodInfo *method)
+{
+  _QWORD *Instance; // x0
+  __int64 v6; // x8
+  __int64 v7; // x0
+  __int64 Item; // x0
+  __int64 v9; // x1
+  __int64 v10; // x2
+  int32_t v11; // w21
+  __int64 v12; // x0
+  __int64 v13; // x8
+
+  if ( (byte_8FFD786 & 1) == 0 )
+  {
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D0AFD8 /* Method$System.Collections.Generic.List<GlobalHexInfo>.get_Item() */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D12118 /* Method$ToolModule.ManagerBase<DataManager>.get_Instance() */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D17890 /* Method$QuickTutor.Singleton<ABTestManager>.get_Instance() */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&off_8CE1928 /* QuickTutor.Singleton<ABTestManager>_TypeInfo */);
+    byte_8FFD786 = 1;
+  }
+  Instance = ToolModule_ManagerBase_object___get_Instance((const MethodInfo *)qword_8D12118 /* Method$ToolModule.ManagerBase<DataManager>.get_Instance() */);
+  if ( Instance != nullptr )
+  {
+    v6 = Instance[5];
+    if ( v6 != 0 )
+    {
+      v7 = *(_QWORD *)(v6 + 232);
+      if ( v7 != 0 )
+      {
+        Item = System_Collections_Generic_List_object___get_Item(v7, 0, qword_8D0AFD8 /* Method$System.Collections.Generic.List<GlobalHexInfo>.get_Item() */);
+        if ( Item != 0 )
+        {
+          v11 = ToolModule_StringTool__ToInt(*(_QWORD *)(Item + 32), 0);
+          if ( *((_DWORD *)off_8CE1928 /* QuickTutor.Singleton<ABTestManager>_TypeInfo */ + 56) == 0 )
+            il2cpp_codegen_runtime_class_init(off_8CE1928 /* QuickTutor.Singleton<ABTestManager>_TypeInfo */);
+          v12 = QuickTutor_Singleton_object___get_Instance(qword_8D17890 /* Method$QuickTutor.Singleton<ABTestManager>.get_Instance() */, v9, v10);
+          if ( v12 != 0 )
+          {
+            if ( (SDKModule_ABTestManager__get_GoldMinePriceV2IsBTest(v12, 0) & 1) != 0 )
+            {
+              v13 = 436;
+              if ( isEnemyHex )
+                v13 = 440;
+              v11 += 5 * *(_DWORD *)((char *)&this->klass + v13);
+            }
+            return v11;
+          }
+        }
+      }
+    }
+  }
+  il2cpp_codegen_raise_null_reference_exception();
+}

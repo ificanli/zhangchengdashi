@@ -1,0 +1,156 @@
+0x72e6fbc: fe5fbda9 stp      x30, x23, [sp, #-0x30]!
+0x72e6fc0: f65701a9 stp      x22, x21, [sp, #0x10]
+0x72e6fc4: f44f02a9 stp      x20, x19, [sp, #0x20]
+0x72e6fc8: 34e90090 adrp     x20, #0x900a000
+0x72e6fcc: 75c000d0 adrp     x21, #0x8af4000
+0x72e6fd0: 88024139 ldrb     w8, [x20, #0x40]
+0x72e6fd4: b55243f9 ldr      x21, [x21, #0x6a0] // GameFramework.GameFrameEntry_TypeInfo
+0x72e6fd8: f30300aa mov      x19, x0
+0x72e6fdc: 28040037 tbnz     w8, #0, #0x72e7060
+0x72e6fe0: 20bf00f0 adrp     x0, #0x8acd000
+0x72e6fe4: 003044f9 ldr      x0, [x0, #0x860] // GameFramework.CLog_TypeInfo
+0x72e6fe8: a6582597 bl       #0x3c3d280
+0x72e6fec: a0c000d0 adrp     x0, #0x8afc000
+0x72e6ff0: 000843f9 ldr      x0, [x0, #0x610] // Method$GameFramework.GameFrameEntry.GetModule<LangModule>()
+0x72e6ff4: a3582597 bl       #0x3c3d280
+0x72e6ff8: 60c000d0 adrp     x0, #0x8af4000
+0x72e6ffc: 005043f9 ldr      x0, [x0, #0x6a0] // GameFramework.GameFrameEntry_TypeInfo
+0x72e7000: a0582597 bl       #0x3c3d280
+0x72e7004: 40c000f0 adrp     x0, #0x8af2000
+0x72e7008: 002841f9 ldr      x0, [x0, #0x250] // GameFramework.GlobalData_TypeInfo
+0x72e700c: 9d582597 bl       #0x3c3d280
+0x72e7010: 20bf00d0 adrp     x0, #0x8acd000
+0x72e7014: 001042f9 ldr      x0, [x0, #0x420] // DBTSDK.ReportManager_TypeInfo
+0x72e7018: 9a582597 bl       #0x3c3d280
+0x72e701c: 20bf00d0 adrp     x0, #0x8acd000
+0x72e7020: 001442f9 ldr      x0, [x0, #0x428] // DBTSDK.SDKToolManager_TypeInfo
+0x72e7024: 97582597 bl       #0x3c3d280
+0x72e7028: 80c100d0 adrp     x0, #0x8b19000
+0x72e702c: 003c47f9 ldr      x0, [x0, #0xe78] // 警告：正式包开启了日志
+0x72e7030: 94582597 bl       #0x3c3d280
+0x72e7034: 60c100d0 adrp     x0, #0x8b15000
+0x72e7038: 005047f9 ldr      x0, [x0, #0xea0] // GF_InitFinish
+0x72e703c: 91582597 bl       #0x3c3d280
+0x72e7040: 40c10090 adrp     x0, #0x8b0f000
+0x72e7044: 00b043f9 ldr      x0, [x0, #0x760] // 核心模块初始化完成
+0x72e7048: 8e582597 bl       #0x3c3d280
+0x72e704c: 80c100d0 adrp     x0, #0x8b19000
+0x72e7050: 006446f9 ldr      x0, [x0, #0xcc8] // 警告：当前测试包开启了深度混淆，请注意验证数据存储
+0x72e7054: 8b582597 bl       #0x3c3d280
+0x72e7058: 28008052 mov      w8, #1
+0x72e705c: 88020139 strb     w8, [x20, #0x40]
+0x72e7060: a00240f9 ldr      x0, [x21]
+0x72e7064: 54c10090 adrp     x20, #0x8b0f000
+0x72e7068: 57c000f0 adrp     x23, #0x8af2000
+0x72e706c: 08e040b9 ldr      w8, [x0, #0xe0]
+0x72e7070: 94b243f9 ldr      x20, [x20, #0x760] // 核心模块初始化完成
+0x72e7074: f72a41f9 ldr      x23, [x23, #0x250] // GameFramework.GlobalData_TypeInfo
+0x72e7078: 48000035 cbnz     w8, #0x72e7080
+0x72e707c: cd582597 bl       #0x3c3d3b0
+0x72e7080: e0031faa mov      x0, xzr
+0x72e7084: becff997 bl       #0x715af7c // GameFramework.GameFrameEntry$$Start
+0x72e7088: 810240f9 ldr      x1, [x20]
+0x72e708c: e00313aa mov      x0, x19
+0x72e7090: 19faff97 bl       #0x72e58f4 // GameFramework.Base.GameStartEntry$$M¬a
+0x72e7094: e00240f9 ldr      x0, [x23]
+0x72e7098: 08e040b9 ldr      w8, [x0, #0xe0]
+0x72e709c: 48000035 cbnz     w8, #0x72e70a4
+0x72e70a0: c4582597 bl       #0x3c3d3b0
+0x72e70a4: 36bf00d0 adrp     x22, #0x8acd000
+0x72e70a8: d61642f9 ldr      x22, [x22, #0x428] // DBTSDK.SDKToolManager_TypeInfo
+0x72e70ac: e0031faa mov      x0, xzr
+0x72e70b0: ad7bfa97 bl       #0x7185f64 // GameFramework.GlobalData$$get_IsReleaseVersion
+0x72e70b4: 20010036 tbz      w0, #0, #0x72e70d8
+0x72e70b8: c80240f9 ldr      x8, [x22]
+0x72e70bc: 085d40f9 ldr      x8, [x8, #0xb8]
+0x72e70c0: 000140f9 ldr      x0, [x8]
+0x72e70c4: 200b00b4 cbz      x0, #0x72e7228
+0x72e70c8: e1031faa mov      x1, xzr
+0x72e70cc: 580cf797 bl       #0x70aa22c // DBTSDK.SDKToolManager$$IsSupportLogStatic
+0x72e70d0: f403002a mov      w20, w0
+0x72e70d4: 02000014 b        #0x72e70dc
+0x72e70d8: 34008052 mov      w20, #1
+0x72e70dc: 28bf00d0 adrp     x8, #0x8acd000
+0x72e70e0: 083144f9 ldr      x8, [x8, #0x860] // GameFramework.CLog_TypeInfo
+0x72e70e4: 000140f9 ldr      x0, [x8]
+0x72e70e8: 08e040b9 ldr      w8, [x0, #0xe0]
+0x72e70ec: 48000035 cbnz     w8, #0x72e70f4
+0x72e70f0: b0582597 bl       #0x3c3d3b0
+0x72e70f4: 80020012 and      w0, w20, #1
+0x72e70f8: e1031faa mov      x1, xzr
+0x72e70fc: b367fc97 bl       #0x7200fc8 // GameFramework.CLog$$SetIsShowLog
+0x72e7100: e00240f9 ldr      x0, [x23]
+0x72e7104: 08e040b9 ldr      w8, [x0, #0xe0]
+0x72e7108: 48000035 cbnz     w8, #0x72e7110
+0x72e710c: a9582597 bl       #0x3c3d3b0
+0x72e7110: e0031faa mov      x0, xzr
+0x72e7114: 947bfa97 bl       #0x7185f64 // GameFramework.GlobalData$$get_IsReleaseVersion
+0x72e7118: 00030036 tbz      w0, #0, #0x72e7178
+0x72e711c: 74040036 tbz      w20, #0, #0x72e71a8
+0x72e7120: c80240f9 ldr      x8, [x22]
+0x72e7124: 085d40f9 ldr      x8, [x8, #0xb8]
+0x72e7128: 000140f9 ldr      x0, [x8]
+0x72e712c: e00700b4 cbz      x0, #0x72e7228
+0x72e7130: 88c100d0 adrp     x8, #0x8b19000
+0x72e7134: 083d47f9 ldr      x8, [x8, #0xe78] // 警告：正式包开启了日志
+0x72e7138: e2031faa mov      x2, xzr
+0x72e713c: 010140f9 ldr      x1, [x8]
+0x72e7140: 7804f797 bl       #0x70a8320 // DBTSDK.SDKToolManager$$ShowToast
+0x72e7144: 34bf00d0 adrp     x20, #0x8acd000
+0x72e7148: 941242f9 ldr      x20, [x20, #0x420] // DBTSDK.ReportManager_TypeInfo
+0x72e714c: 800240f9 ldr      x0, [x20]
+0x72e7150: 08e040b9 ldr      w8, [x0, #0xe0]
+0x72e7154: 68000035 cbnz     w8, #0x72e7160
+0x72e7158: 96582597 bl       #0x3c3d3b0
+0x72e715c: 800240f9 ldr      x0, [x20]
+0x72e7160: 085c40f9 ldr      x8, [x0, #0xb8]
+0x72e7164: 000540f9 ldr      x0, [x8, #8]
+0x72e7168: 000600b4 cbz      x0, #0x72e7228
+0x72e716c: e1031faa mov      x1, xzr
+0x72e7170: 5c930294 bl       #0x738bee0 // DBTSDK.ReportManager$$ReportGMLogOpen
+0x72e7174: 0d000014 b        #0x72e71a8
+0x72e7178: e0031faa mov      x0, xzr
+0x72e717c: 6e2bf997 bl       #0x7131f34 // GameFramework.NewResLoadHelper$$GetIsDeepObf
+0x72e7180: 40010036 tbz      w0, #0, #0x72e71a8
+0x72e7184: c80240f9 ldr      x8, [x22]
+0x72e7188: 085d40f9 ldr      x8, [x8, #0xb8]
+0x72e718c: 000140f9 ldr      x0, [x8]
+0x72e7190: c00400b4 cbz      x0, #0x72e7228
+0x72e7194: 88c100d0 adrp     x8, #0x8b19000
+0x72e7198: 086546f9 ldr      x8, [x8, #0xcc8] // 警告：当前测试包开启了深度混淆，请注意验证数据存储
+0x72e719c: e2031faa mov      x2, xzr
+0x72e71a0: 010140f9 ldr      x1, [x8]
+0x72e71a4: 5f04f797 bl       #0x70a8320 // DBTSDK.SDKToolManager$$ShowToast
+0x72e71a8: e0031faa mov      x0, xzr
+0x72e71ac: da2cf697 bl       #0x7072514 // GamePath$$get_Instance
+0x72e71b0: c00300b4 cbz      x0, #0x72e7228
+0x72e71b4: b4c000b0 adrp     x20, #0x8afc000
+0x72e71b8: 940a43f9 ldr      x20, [x20, #0x610] // Method$GameFramework.GameFrameEntry.GetModule<LangModule>()
+0x72e71bc: e1031faa mov      x1, xzr
+0x72e71c0: 172df697 bl       #0x707261c // GamePath$$FindMineGamePath
+0x72e71c4: 28008052 mov      w8, #1
+0x72e71c8: 682a0139 strb     w8, [x19, #0x4a]
+0x72e71cc: a00240f9 ldr      x0, [x21]
+0x72e71d0: 08e040b9 ldr      w8, [x0, #0xe0]
+0x72e71d4: 48000035 cbnz     w8, #0x72e71dc
+0x72e71d8: 76582597 bl       #0x3c3d3b0
+0x72e71dc: 800240f9 ldr      x0, [x20]
+0x72e71e0: f8946697 bl       #0x4c8c5c0 // GameFramework.GameFrameEntry$$GetModule<object>
+0x72e71e4: 200200b4 cbz      x0, #0x72e7228
+0x72e71e8: 610a4829 ldp      w1, w2, [x19, #0x40]
+0x72e71ec: 74c100d0 adrp     x20, #0x8b15000
+0x72e71f0: 945247f9 ldr      x20, [x20, #0xea0] // GF_InitFinish
+0x72e71f4: e3031faa mov      x3, xzr
+0x72e71f8: aef3fa97 bl       #0x71a40b0 // GameFramework.LangModule$$SetLocalLangLibrary
+0x72e71fc: 800240f9 ldr      x0, [x20]
+0x72e7200: e1031faa mov      x1, xzr
+0x72e7204: e478fa97 bl       #0x7185594 // GameFramework.MsgDispatcher$$SendMessage
+0x72e7208: 602a40f9 ldr      x0, [x19, #0x50]
+0x72e720c: e00000b4 cbz      x0, #0x72e7228
+0x72e7210: 080040f9 ldr      x8, [x0]
+0x72e7214: f44f42a9 ldp      x20, x19, [sp, #0x20]
+0x72e7218: f65741a9 ldp      x22, x21, [sp, #0x10]
+0x72e721c: 028557a9 ldp      x2, x1, [x8, #0x178]
+0x72e7220: fe5fc3a8 ldp      x30, x23, [sp], #0x30
+0x72e7224: 40001fd6 br       x2
+0x72e7228: a9582597 bl       #0x3c3d4cc

@@ -1,0 +1,38 @@
+0x4299090: ff8301d1 sub      sp, sp, #0x60
+0x4299094: fe5704a9 stp      x30, x21, [sp, #0x40]
+0x4299098: f44f05a9 stp      x20, x19, [sp, #0x50]
+0x429909c: 356b02f0 adrp     x21, #0x9000000
+0x42990a0: 944202f0 adrp     x20, #0x8aec000
+0x42990a4: a8464339 ldrb     w8, [x21, #0xd1]
+0x42990a8: 948640f9 ldr      x20, [x20, #0x108] // Method$Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder.Start<BarracksArchitectureBehaviour.<RefreshCreatRoleConfigAsync>d__29>()
+0x42990ac: f30300aa mov      x19, x0
+0x42990b0: c8000037 tbnz     w8, #0, #0x42990c8
+0x42990b4: 804202f0 adrp     x0, #0x8aec000
+0x42990b8: 008440f9 ldr      x0, [x0, #0x108] // Method$Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder.Start<BarracksArchitectureBehaviour.<RefreshCreatRoleConfigAsync>d__29>()
+0x42990bc: 7190e697 bl       #0x3c3d280
+0x42990c0: 28008052 mov      w8, #1
+0x42990c4: a8460339 strb     w8, [x21, #0xd1]
+0x42990c8: 940240f9 ldr      x20, [x20]
+0x42990cc: 00e4006f movi     v0.2d, #0000000000000000
+0x42990d0: 08008012 mov      w8, #-1
+0x42990d4: e00300ad stp      q0, q0, [sp]
+0x42990d8: e00301ad stp      q0, q0, [sp, #0x20]
+0x42990dc: f30f00f9 str      x19, [sp, #0x18]
+0x42990e0: e80300b9 str      w8, [sp]
+0x42990e4: 881e40f9 ldr      x8, [x20, #0x38]
+0x42990e8: 880000b5 cbnz     x8, #0x42990f8
+0x42990ec: e00314aa mov      x0, x20
+0x42990f0: c3dce697 bl       #0x3c503fc
+0x42990f4: 881e40f9 ldr      x8, [x20, #0x38]
+0x42990f8: 010940f9 ldr      x1, [x8, #0x10]
+0x42990fc: e8030091 mov      x8, sp
+0x4299100: e0030091 mov      x0, sp
+0x4299104: 13017db2 orr      x19, x8, #8
+0x4299108: 63890394 bl       #0x437b694 // GameModule.BarracksArchitectureBehaviour.<RefreshCreatRoleConfigAsync>d__29$$MoveNext
+0x429910c: e00313aa mov      x0, x19
+0x4299110: e1031faa mov      x1, xzr
+0x4299114: 9bf9e997 bl       #0x3d17780
+0x4299118: f44f45a9 ldp      x20, x19, [sp, #0x50]
+0x429911c: fe5744a9 ldp      x30, x21, [sp, #0x40]
+0x4299120: ff830191 add      sp, sp, #0x60
+0x4299124: c0035fd6 ret      

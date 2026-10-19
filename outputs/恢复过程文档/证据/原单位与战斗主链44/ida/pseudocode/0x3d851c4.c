@@ -1,0 +1,22 @@
+__int64 __fastcall GameModule_RoleBehaviour__EnemyEmitSkill(_BYTE *a1, __int64 a2, __int64 a3)
+{
+  __int64 Instance; // x0
+  __int64 result; // x0
+
+  if ( (byte_8FFD499 & 1) == 0 )
+  {
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D178A0);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&off_8CE1930);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D537B0);
+    byte_8FFD499 = 1;
+  }
+  if ( *((_DWORD *)off_8CE1930 + 56) == 0 )
+    il2cpp_codegen_runtime_class_init(off_8CE1930);
+  Instance = QuickTutor_Singleton_object___get_Instance(qword_8D178A0, a2, a3);
+  if ( Instance == 0 )
+    il2cpp_codegen_raise_null_reference_exception();
+  result = QuickTutor_TutorialManager__IsStepComplete(Instance, qword_8D537B0, 0);
+  if ( (result & 1) != 0 && a1[224] == 0 && a1[33] == 0 )
+    return (*(__int64 (__fastcall **)(_BYTE *, _QWORD))(*(_QWORD *)a1 + 808LL))(a1, *(_QWORD *)(*(_QWORD *)a1 + 816LL));
+  return result;
+}

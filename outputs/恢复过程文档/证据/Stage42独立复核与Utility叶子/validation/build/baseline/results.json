@@ -1,0 +1,374 @@
+{
+  "mode": "baseline",
+  "testCount": 52,
+  "passed": 0,
+  "failed": 52,
+  "sourcePolicy": "Actual byte-identical baseline or candidate files compiled; no duplicated FSM/Procedure business implementation",
+  "level": "Independent CLR lifecycle semantics with explicit Utility/GameFrameEntry/CLog test boundaries; not Unity/native runtime acceptance",
+  "tests": [
+    {
+      "name": "construct_retains_owner_and_initializes_states_in_input_order",
+      "passed": false,
+      "error": "System.Exception: Expected same instance\r\n   at Program.Same(Object expected, Object actual) in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 264\r\n   at Program.\u003C\u003Ec.\u003CMain\u003Eb__3_0() in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 20\r\n   at Program.Run(String name, Action action) in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 259",
+      "trace": [],
+      "boundaryTrace": []
+    },
+    {
+      "name": "null_owner_rejected",
+      "passed": false,
+      "error": "System.Exception: Expected exception GameFrameworkException\r\n   at Program.Throws[T](Action action) in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 268\r\n   at Program.\u003C\u003Ec.\u003CMain\u003Eb__3_1() in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 24\r\n   at Program.Run(String name, Action action) in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 259",
+      "trace": [],
+      "boundaryTrace": []
+    },
+    {
+      "name": "null_states_rejected",
+      "passed": false,
+      "error": "System.Exception: Expected exception GameFrameworkException\r\n   at Program.Throws[T](Action action) in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 268\r\n   at Program.\u003C\u003Ec.\u003CMain\u003Eb__3_2() in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 25\r\n   at Program.Run(String name, Action action) in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 259",
+      "trace": [],
+      "boundaryTrace": []
+    },
+    {
+      "name": "empty_states_rejected",
+      "passed": false,
+      "error": "System.Exception: Expected exception GameFrameworkException\r\n   at Program.Throws[T](Action action) in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 268\r\n   at Program.\u003C\u003Ec.\u003CMain\u003Eb__3_3() in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 26\r\n   at Program.Run(String name, Action action) in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 259",
+      "trace": [],
+      "boundaryTrace": []
+    },
+    {
+      "name": "null_state_rejected_after_previous_state_init",
+      "passed": false,
+      "error": "System.Exception: Expected exception GameFrameworkException\r\n   at Program.Throws[T](Action action) in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 268\r\n   at Program.\u003C\u003Ec.\u003CMain\u003Eb__3_4() in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 28\r\n   at Program.Run(String name, Action action) in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 259",
+      "trace": [],
+      "boundaryTrace": []
+    },
+    {
+      "name": "duplicate_state_rejected_after_first_state_init",
+      "passed": false,
+      "error": "System.Exception: Expected exception GameFrameworkException\r\n   at Program.Throws[T](Action action) in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 268\r\n   at Program.\u003C\u003Ec.\u003CMain\u003Eb__3_5() in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 30\r\n   at Program.Run(String name, Action action) in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 259",
+      "trace": [],
+      "boundaryTrace": []
+    },
+    {
+      "name": "start_without_args_uses_noargs_overload_and_sets_current_first",
+      "passed": false,
+      "error": "System.Exception: Expected same instance\r\n   at Program.Same(Object expected, Object actual) in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 264\r\n   at Program.\u003C\u003Ec.\u003CMain\u003Eb__3_6() in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 35\r\n   at Program.Run(String name, Action action) in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 259",
+      "trace": [],
+      "boundaryTrace": []
+    },
+    {
+      "name": "start_nonempty_args_preserves_original_array_identity",
+      "passed": false,
+      "error": "System.Exception: Expected same instance\r\n   at Program.Same(Object expected, Object actual) in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 264\r\n   at Program.\u003C\u003Ec.\u003CMain\u003Eb__3_7() in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 40\r\n   at Program.Run(String name, Action action) in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 259",
+      "trace": [],
+      "boundaryTrace": []
+    },
+    {
+      "name": "start_null_args_uses_noargs_overload",
+      "passed": false,
+      "error": "System.Exception: Expected trace A.enter; actual \r\n   at Program.Sequence(String[] expected) in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 266\r\n   at Program.\u003C\u003Ec.\u003CMain\u003Eb__3_8() in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 43\r\n   at Program.Run(String name, Action action) in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 259",
+      "trace": [],
+      "boundaryTrace": []
+    },
+    {
+      "name": "start_empty_args_uses_noargs_overload",
+      "passed": false,
+      "error": "System.Exception: Expected trace A.enter; actual \r\n   at Program.Sequence(String[] expected) in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 266\r\n   at Program.\u003C\u003Ec.\u003CMain\u003Eb__3_9() in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 45\r\n   at Program.Run(String name, Action action) in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 259",
+      "trace": [],
+      "boundaryTrace": []
+    },
+    {
+      "name": "start_twice_throws_without_extra_enter",
+      "passed": false,
+      "error": "System.Exception: Expected exception GameFrameworkException\r\n   at Program.Throws[T](Action action) in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 268\r\n   at Program.\u003C\u003Ec.\u003CMain\u003Eb__3_10() in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 47\r\n   at Program.Run(String name, Action action) in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 259",
+      "trace": [],
+      "boundaryTrace": []
+    },
+    {
+      "name": "unknown_start_state_throws_and_stays_not_running",
+      "passed": false,
+      "error": "System.Exception: Expected exception GameFrameworkException\r\n   at Program.Throws[T](Action action) in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 268\r\n   at Program.\u003C\u003Ec.\u003CMain\u003Eb__3_11() in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 49\r\n   at Program.Run(String name, Action action) in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 259",
+      "trace": [],
+      "boundaryTrace": []
+    },
+    {
+      "name": "state_queries_and_null_type_contract",
+      "passed": false,
+      "error": "System.Exception: Expected true\r\n   at Program.True(Boolean value) in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 262\r\n   at Program.\u003C\u003Ec.\u003CMain\u003Eb__3_12() in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 52\r\n   at Program.Run(String name, Action action) in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 259",
+      "trace": [],
+      "boundaryTrace": []
+    },
+    {
+      "name": "update_increments_scaled_time_before_callback_and_preserves_both_deltas",
+      "passed": false,
+      "error": "System.Exception: Expected trace A.update; actual \r\n   at Program.Sequence(String[] expected) in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 266\r\n   at Program.\u003C\u003Ec.\u003CMain\u003Eb__3_13() in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 60\r\n   at Program.Run(String name, Action action) in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 259",
+      "trace": [],
+      "boundaryTrace": []
+    },
+    {
+      "name": "change_before_start_rejected",
+      "passed": false,
+      "error": "System.Exception: Expected exception GameFrameworkException\r\n   at Program.Throws[T](Action action) in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 268\r\n   at Program.\u003C\u003Ec.\u003CMain\u003Eb__3_14() in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 63\r\n   at Program.Run(String name, Action action) in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 259",
+      "trace": [],
+      "boundaryTrace": []
+    },
+    {
+      "name": "change_leaves_old_before_setting_new_and_entering_new",
+      "passed": false,
+      "error": "System.Exception: Expected trace A.leave:False,B.enter; actual \r\n   at Program.Sequence(String[] expected) in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 266\r\n   at Program.\u003C\u003Ec.\u003CMain\u003Eb__3_15() in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 69\r\n   at Program.Run(String name, Action action) in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 259",
+      "trace": [],
+      "boundaryTrace": []
+    },
+    {
+      "name": "change_type_nonempty_args_preserves_identity",
+      "passed": false,
+      "error": "System.Exception: Expected same instance\r\n   at Program.Same(Object expected, Object actual) in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 264\r\n   at Program.\u003C\u003Ec.\u003CMain\u003Eb__3_16() in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 74\r\n   at Program.Run(String name, Action action) in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 259",
+      "trace": [],
+      "boundaryTrace": []
+    },
+    {
+      "name": "same_state_change_runs_leave_and_enter",
+      "passed": false,
+      "error": "System.Exception: Expected trace A.leave:False,A.enter; actual \r\n   at Program.Sequence(String[] expected) in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 266\r\n   at Program.\u003C\u003Ec.\u003CMain\u003Eb__3_17() in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 77\r\n   at Program.Run(String name, Action action) in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 259",
+      "trace": [],
+      "boundaryTrace": []
+    },
+    {
+      "name": "missing_change_target_does_not_leave_or_reset_time",
+      "passed": false,
+      "error": "System.Exception: Expected exception GameFrameworkException\r\n   at Program.Throws[T](Action action) in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 268\r\n   at Program.\u003C\u003Ec.\u003CMain\u003Eb__3_18() in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 81\r\n   at Program.Run(String name, Action action) in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 259",
+      "trace": [],
+      "boundaryTrace": []
+    },
+    {
+      "name": "enter_reentrancy_completes_nested_change_synchronously",
+      "passed": false,
+      "error": "System.Exception: Expected same instance\r\n   at Program.Same(Object expected, Object actual) in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 264\r\n   at Program.\u003C\u003Ec.\u003CMain\u003Eb__3_19() in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 87\r\n   at Program.Run(String name, Action action) in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 259",
+      "trace": [],
+      "boundaryTrace": []
+    },
+    {
+      "name": "leave_reentrancy_retains_original_outer_target",
+      "passed": false,
+      "error": "System.Exception: Expected same instance\r\n   at Program.Same(Object expected, Object actual) in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 264\r\n   at Program.\u003C\u003Ec.\u003CMain\u003Eb__3_20() in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 93\r\n   at Program.Run(String name, Action action) in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 259",
+      "trace": [],
+      "boundaryTrace": []
+    },
+    {
+      "name": "leave_exception_keeps_old_current_and_time",
+      "passed": false,
+      "error": "System.Exception: Expected exception ProbeException\r\n   at Program.Throws[T](Action action) in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 268\r\n   at Program.\u003C\u003Ec.\u003CMain\u003Eb__3_21() in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 98\r\n   at Program.Run(String name, Action action) in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 259",
+      "trace": [],
+      "boundaryTrace": []
+    },
+    {
+      "name": "enter_exception_keeps_assigned_target_and_zero_time",
+      "passed": false,
+      "error": "System.Exception: Expected exception ProbeException\r\n   at Program.Throws[T](Action action) in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 268\r\n   at Program.\u003C\u003Ec.\u003CMain\u003Eb__3_22() in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 103\r\n   at Program.Run(String name, Action action) in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 259",
+      "trace": [],
+      "boundaryTrace": []
+    },
+    {
+      "name": "shutdown_leaves_then_destroys_all_states_and_clears_storage",
+      "passed": false,
+      "error": "System.Exception: Expected true\r\n   at Program.True(Boolean value) in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 262\r\n   at Program.\u003C\u003Ec.\u003CMain\u003Eb__3_23() in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 110\r\n   at Program.Run(String name, Action action) in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 259",
+      "trace": [],
+      "boundaryTrace": []
+    },
+    {
+      "name": "data_roundtrip_replace_remove_and_invalid_names",
+      "passed": false,
+      "error": "System.Exception: Expected true\r\n   at Program.True(Boolean value) in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 262\r\n   at Program.\u003C\u003Ec.\u003CMain\u003Eb__3_24() in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 116\r\n   at Program.Run(String name, Action action) in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 259",
+      "trace": [],
+      "boundaryTrace": []
+    },
+    {
+      "name": "events_multicast_current_state_only_and_unsubscribe",
+      "passed": false,
+      "error": "System.Exception: Expected trace h1,h2; actual \r\n   at Program.Sequence(String[] expected) in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 266\r\n   at Program.\u003C\u003Ec.\u003CMain\u003Eb__3_25() in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 126\r\n   at Program.Run(String name, Action action) in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 259",
+      "trace": [],
+      "boundaryTrace": []
+    },
+    {
+      "name": "manager_initialization_sets_ready_before_saved_callback",
+      "passed": false,
+      "error": "System.Exception: Expected true\r\n   at Program.True(Boolean value) in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 262\r\n   at Program.\u003C\u003Ec.\u003CMain\u003Eb__3_26() in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 133\r\n   at Program.Run(String name, Action action) in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 259",
+      "trace": [],
+      "boundaryTrace": []
+    },
+    {
+      "name": "manager_named_create_lookup_duplicate_destroy",
+      "passed": false,
+      "error": "System.Exception: Expected 1, actual 0\r\n   at Program.Eq[T](T expected, T actual) in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 265\r\n   at Program.\u003C\u003Ec.\u003CMain\u003Eb__3_27() in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 138\r\n   at Program.Run(String name, Action action) in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 259",
+      "trace": [],
+      "boundaryTrace": []
+    },
+    {
+      "name": "manager_self_removal_skips_shifted_next_entry_native_contract",
+      "passed": false,
+      "error": "System.NullReferenceException: Object reference not set to an instance of an object.\r\n   at Program.\u003C\u003Ec.\u003CMain\u003Eb__3_28() in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 146\r\n   at Program.Run(String name, Action action) in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 259",
+      "trace": [],
+      "boundaryTrace": []
+    },
+    {
+      "name": "manager_new_entry_updates_in_same_frame_native_contract",
+      "passed": false,
+      "error": "System.NullReferenceException: Object reference not set to an instance of an object.\r\n   at Program.\u003C\u003Ec.\u003CMain\u003Eb__3_29() in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 152\r\n   at Program.Run(String name, Action action) in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 259",
+      "trace": [],
+      "boundaryTrace": []
+    },
+    {
+      "name": "manager_shutdown_destroys_all_and_clears_ready",
+      "passed": false,
+      "error": "System.NullReferenceException: Object reference not set to an instance of an object.\r\n   at Program.\u003C\u003Ec.\u003CMain\u003Eb__3_30() in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 158\r\n   at Program.Run(String name, Action action) in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 259",
+      "trace": [],
+      "boundaryTrace": []
+    },
+    {
+      "name": "procedure_initialize_does_not_register_or_enter",
+      "passed": false,
+      "error": "System.Exception: Expected true\r\n   at Program.True(Boolean value) in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 262\r\n   at Program.\u003C\u003Ec.\u003CMain\u003Eb__3_31() in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 164\r\n   at Program.Run(String name, Action action) in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 259",
+      "trace": [],
+      "boundaryTrace": []
+    },
+    {
+      "name": "procedure_register_and_start_uses_real_fsm_and_updates_once",
+      "passed": false,
+      "error": "System.Exception: Expected true\r\n   at Program.True(Boolean value) in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 262\r\n   at Program.\u003C\u003Ec.\u003CMain\u003Eb__3_32() in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 169\r\n   at Program.Run(String name, Action action) in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 259",
+      "trace": [],
+      "boundaryTrace": []
+    },
+    {
+      "name": "procedure_enter_changes_state_through_original_generic_bridge",
+      "passed": false,
+      "error": "System.Exception: Expected same instance\r\n   at Program.Same(Object expected, Object actual) in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 264\r\n   at Program.\u003C\u003Ec.\u003CMain\u003Eb__3_33() in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 177\r\n   at Program.Run(String name, Action action) in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 259",
+      "trace": [],
+      "boundaryTrace": []
+    },
+    {
+      "name": "procedure_missing_fsm_manager_is_real_error",
+      "passed": false,
+      "error": "System.Exception: Expected exception GameFrameworkException\r\n   at Program.Throws[T](Action action) in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 268\r\n   at Program.\u003C\u003Ec.\u003CMain\u003Eb__3_34() in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 180\r\n   at Program.Run(String name, Action action) in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 259",
+      "trace": [],
+      "boundaryTrace": []
+    },
+    {
+      "name": "production_empty_Utility_key_is_explicit_integration_blocker",
+      "passed": false,
+      "error": "System.Exception: Expected exception ArgumentNullException\r\n   at Program.Throws[T](Action action) in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 268\r\n   at Program.\u003C\u003Ec.\u003CMain\u003Eb__3_35() in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 184\r\n   at Program.Run(String name, Action action) in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 259",
+      "trace": [],
+      "boundaryTrace": []
+    },
+    {
+      "name": "default_FsmBase_constructor_normalizes_name_to_empty",
+      "passed": false,
+      "error": "System.Exception: Expected , actual \r\n   at Program.Eq[T](T expected, T actual) in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 265\r\n   at Program.\u003C\u003Ec.\u003CMain\u003Eb__3_36() in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 189\r\n   at Program.Run(String name, Action action) in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 259",
+      "trace": [],
+      "boundaryTrace": []
+    },
+    {
+      "name": "FsmState_args_enter_does_not_forward_to_noargs_overload",
+      "passed": false,
+      "error": "System.Exception: Expected true\r\n   at Program.True(Boolean value) in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 262\r\n   at Program.\u003C\u003Ec.\u003CMain\u003Eb__3_37() in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 193\r\n   at Program.Run(String name, Action action) in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 259",
+      "trace": [],
+      "boundaryTrace": []
+    },
+    {
+      "name": "constructor_init_may_start_and_reenter_but_finally_resets_current",
+      "passed": false,
+      "error": "System.Exception: Expected trace A.init,A.enter,B.init,A.leave:False,B.enter; actual \r\n   at Program.Sequence(String[] expected) in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 266\r\n   at Program.\u003C\u003Ec.\u003CMain\u003Eb__3_38() in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 200\r\n   at Program.Run(String name, Action action) in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 259",
+      "trace": [],
+      "boundaryTrace": []
+    },
+    {
+      "name": "state_change_bridge_rejects_null_and_foreign_Ifsm",
+      "passed": false,
+      "error": "System.Exception: Expected exception GameFrameworkException\r\n   at Program.Throws[T](Action action) in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 268\r\n   at Program.\u003C\u003Ec.\u003CMain\u003Eb__3_39() in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 204\r\n   at Program.Run(String name, Action action) in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 259",
+      "trace": [],
+      "boundaryTrace": []
+    },
+    {
+      "name": "shutdown_leave_exception_retains_current_time_storage_and_manager_entry",
+      "passed": false,
+      "error": "System.NullReferenceException: Object reference not set to an instance of an object.\r\n   at Program.\u003C\u003Ec.\u003CMain\u003Eb__3_40() in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 210\r\n   at Program.Run(String name, Action action) in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 259",
+      "trace": [],
+      "boundaryTrace": []
+    },
+    {
+      "name": "shutdown_destroy_exception_has_cleared_current_but_keeps_storage_and_flag",
+      "passed": false,
+      "error": "System.NullReferenceException: Object reference not set to an instance of an object.\r\n   at Program.\u003C\u003Ec.\u003CMain\u003Eb__3_41() in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 217\r\n   at Program.Run(String name, Action action) in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 259",
+      "trace": [],
+      "boundaryTrace": []
+    },
+    {
+      "name": "unregistered_procedure_CurrentProcedure_throws",
+      "passed": false,
+      "error": "System.Exception: Expected exception GameFrameworkException\r\n   at Program.Throws[T](Action action) in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 268\r\n   at Program.\u003C\u003Ec.\u003CMain\u003Eb__3_42() in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 221\r\n   at Program.Run(String name, Action action) in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 259",
+      "trace": [],
+      "boundaryTrace": []
+    },
+    {
+      "name": "unregistered_procedure_CurrentProcedureTime_throws",
+      "passed": false,
+      "error": "System.Exception: Expected exception GameFrameworkException\r\n   at Program.Throws[T](Action action) in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 268\r\n   at Program.\u003C\u003Ec.\u003CMain\u003Eb__3_43() in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 222\r\n   at Program.Run(String name, Action action) in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 259",
+      "trace": [],
+      "boundaryTrace": []
+    },
+    {
+      "name": "unregistered_procedure_Start_generic_throws",
+      "passed": false,
+      "error": "System.Exception: Expected exception GameFrameworkException\r\n   at Program.Throws[T](Action action) in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 268\r\n   at Program.\u003C\u003Ec.\u003CMain\u003Eb__3_44() in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 223\r\n   at Program.Run(String name, Action action) in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 259",
+      "trace": [],
+      "boundaryTrace": []
+    },
+    {
+      "name": "unregistered_procedure_Start_type_throws",
+      "passed": false,
+      "error": "System.Exception: Expected exception GameFrameworkException\r\n   at Program.Throws[T](Action action) in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 268\r\n   at Program.\u003C\u003Ec.\u003CMain\u003Eb__3_45() in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 224\r\n   at Program.Run(String name, Action action) in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 259",
+      "trace": [],
+      "boundaryTrace": []
+    },
+    {
+      "name": "unregistered_procedure_Has_generic_throws",
+      "passed": false,
+      "error": "System.Exception: Expected exception GameFrameworkException\r\n   at Program.Throws[T](Action action) in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 268\r\n   at Program.\u003C\u003Ec.\u003CMain\u003Eb__3_46() in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 225\r\n   at Program.Run(String name, Action action) in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 259",
+      "trace": [],
+      "boundaryTrace": []
+    },
+    {
+      "name": "unregistered_procedure_Has_type_throws",
+      "passed": false,
+      "error": "System.Exception: Expected exception GameFrameworkException\r\n   at Program.Throws[T](Action action) in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 268\r\n   at Program.\u003C\u003Ec.\u003CMain\u003Eb__3_47() in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 226\r\n   at Program.Run(String name, Action action) in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 259",
+      "trace": [],
+      "boundaryTrace": []
+    },
+    {
+      "name": "unregistered_procedure_Get_generic_throws",
+      "passed": false,
+      "error": "System.Exception: Expected exception GameFrameworkException\r\n   at Program.Throws[T](Action action) in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 268\r\n   at Program.\u003C\u003Ec.\u003CMain\u003Eb__3_48() in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 227\r\n   at Program.Run(String name, Action action) in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 259",
+      "trace": [],
+      "boundaryTrace": []
+    },
+    {
+      "name": "unregistered_procedure_Get_type_throws",
+      "passed": false,
+      "error": "System.Exception: Expected exception GameFrameworkException\r\n   at Program.Throws[T](Action action) in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 268\r\n   at Program.\u003C\u003Ec.\u003CMain\u003Eb__3_49() in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 228\r\n   at Program.Run(String name, Action action) in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 259",
+      "trace": [],
+      "boundaryTrace": []
+    },
+    {
+      "name": "duplicate_register_reacquires_manager_but_retains_previous_fsm_on_error",
+      "passed": false,
+      "error": "System.Exception: Expected exception GameFrameworkException\r\n   at Program.Throws[T](Action action) in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 268\r\n   at Program.\u003C\u003Ec.\u003CMain\u003Eb__3_50() in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 233\r\n   at Program.Run(String name, Action action) in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 259",
+      "trace": [],
+      "boundaryTrace": []
+    },
+    {
+      "name": "procedure_shutdown_destroy_error_retains_fields_ready_and_current",
+      "passed": false,
+      "error": "System.Exception: Expected exception ProbeException\r\n   at Program.Throws[T](Action action) in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 268\r\n   at Program.\u003C\u003Ec.\u003CMain\u003Eb__3_51() in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 241\r\n   at Program.Run(String name, Action action) in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\Program.cs:line 259",
+      "trace": [],
+      "boundaryTrace": []
+    }
+  ]
+}

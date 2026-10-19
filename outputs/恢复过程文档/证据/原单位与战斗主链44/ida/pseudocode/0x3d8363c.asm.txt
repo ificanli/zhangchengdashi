@@ -1,0 +1,92 @@
+0x3d8363c: STR             X30, [SP,#var_30]!
+0x3d83640: STP             X22, X21, [SP,#0x30+var_20]
+0x3d83644: STP             X20, X19, [SP,#0x30+var_10]
+0x3d83648: ADRP            X20, #byte_8FFD463@PAGE
+0x3d8364c: LDRB            W8, [X20,#byte_8FFD463@PAGEOFF]
+0x3d83650: MOV             X19, X0
+0x3d83654: TBNZ            W8, #0, loc_3D83684
+0x3d83658: ADRP            X0, #off_8AD1298@PAGE
+0x3d8365c: LDR             X0, [X0,#off_8AD1298@PAGEOFF]; qword_8CE7B28 ; slot
+0x3d83660: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3d83664: ADRP            X0, #off_8AD12A0@PAGE
+0x3d83668: LDR             X0, [X0,#off_8AD12A0@PAGEOFF]; qword_8D0EBD8 ; slot
+0x3d8366c: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3d83670: ADRP            X0, #off_8AD12A8@PAGE
+0x3d83674: LDR             X0, [X0,#off_8AD12A8@PAGEOFF]; qword_8D0EBE0 ; slot
+0x3d83678: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3d8367c: MOV             W8, #1
+0x3d83680: STRB            W8, [X20,#byte_8FFD463@PAGEOFF]
+0x3d83684: ADRP            X8, #off_8AD1298@PAGE
+0x3d83688: ADRP            X22, #off_8AD12A8@PAGE
+0x3d8368c: LDR             X9, [X19,#0x168]
+0x3d83690: LDR             X8, [X8,#off_8AD1298@PAGEOFF]; qword_8CE7B28
+0x3d83694: LDR             X22, [X22,#off_8AD12A8@PAGEOFF]; qword_8D0EBE0
+0x3d83698: CBZ             X9, loc_3D83718
+0x3d8369c: LDR             X0, [X8]
+0x3d836a0: BL              unk_3C3D4C4
+0x3d836a4: FMOV            S0, WZR
+0x3d836a8: FMOV            S1, WZR
+0x3d836ac: MOV             X1, X19
+0x3d836b0: MOV             X2, XZR
+0x3d836b4: MOV             X3, XZR
+0x3d836b8: MOV             W4, WZR
+0x3d836bc: MOV             X5, XZR
+0x3d836c0: MOV             X6, XZR
+0x3d836c4: MOV             X20, X0
+0x3d836c8: BL              GameModule.GameEventArgs$$.ctor
+0x3d836cc: LDR             X0, [X19,#0x168]
+0x3d836d0: CBZ             X0, loc_3D83798
+0x3d836d4: MOV             W21, WZR
+0x3d836d8: LDR             W8, [X0,#0x18]
+0x3d836dc: CMP             W21, W8
+0x3d836e0: B.GE            loc_3D8379C
+0x3d836e4: LDR             X2, [X22]
+0x3d836e8: MOV             W1, W21
+0x3d836ec: BL              System.Collections.Generic.List_object_$$get_Item
+0x3d836f0: CBZ             X0, loc_3D83798
+0x3d836f4: LDR             X8, [X0]
+0x3d836f8: MOV             W1, #2
+0x3d836fc: MOV             X2, X20
+0x3d83700: LDP             X9, X3, [X8,#0x188]
+0x3d83704: BLR             X9
+0x3d83708: LDR             X0, [X19,#0x168]
+0x3d8370c: ADD             W21, W21, #1
+0x3d83710: CBNZ            X0, loc_3D836D8
+0x3d83714: B               loc_3D83798
+0x3d83718: LDR             X9, [X19,#0x160]
+0x3d8371c: CBZ             X9, loc_3D8379C
+0x3d83720: LDR             X0, [X8]
+0x3d83724: BL              unk_3C3D4C4
+0x3d83728: FMOV            S0, WZR
+0x3d8372c: FMOV            S1, WZR
+0x3d83730: MOV             X1, X19
+0x3d83734: MOV             X2, XZR
+0x3d83738: MOV             X3, XZR
+0x3d8373c: MOV             W4, WZR
+0x3d83740: MOV             X5, XZR
+0x3d83744: MOV             X6, XZR
+0x3d83748: MOV             X20, X0
+0x3d8374c: BL              GameModule.GameEventArgs$$.ctor
+0x3d83750: LDR             X0, [X19,#0x160]
+0x3d83754: CBZ             X0, loc_3D83798
+0x3d83758: MOV             W21, WZR
+0x3d8375c: LDR             W8, [X0,#0x18]
+0x3d83760: CMP             W21, W8
+0x3d83764: B.GE            loc_3D8379C
+0x3d83768: LDR             X2, [X22]
+0x3d8376c: MOV             W1, W21
+0x3d83770: BL              System.Collections.Generic.List_object_$$get_Item
+0x3d83774: CBZ             X0, loc_3D83798
+0x3d83778: LDR             X8, [X0]
+0x3d8377c: MOV             W1, #2
+0x3d83780: MOV             X2, X20
+0x3d83784: LDP             X9, X3, [X8,#0x188]
+0x3d83788: BLR             X9
+0x3d8378c: LDR             X0, [X19,#0x160]
+0x3d83790: ADD             W21, W21, #1
+0x3d83794: CBNZ            X0, loc_3D8375C
+0x3d83798: BL              il2cpp_codegen_raise_null_reference_exception
+0x3d8379c: LDP             X20, X19, [SP,#0x30+var_10]
+0x3d837a0: LDP             X22, X21, [SP,#0x30+var_20]
+0x3d837a4: LDR             X30, [SP+0x30+var_30],#0x30
+0x3d837a8: RET

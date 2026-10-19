@@ -1,0 +1,35 @@
+0x3d84514: STP             X30, X19, [SP,#var_10]!
+0x3d84518: LDRB            W8, [X0,#0x241]
+0x3d8451c: CBZ             W8, loc_3D84580
+0x3d84520: LDRB            W8, [X0,#0x148]
+0x3d84524: MOV             X19, X0
+0x3d84528: CBZ             W8, loc_3D84580
+0x3d8452c: LDRB            W8, [X19,#0x27C]
+0x3d84530: CBNZ            W8, loc_3D84580
+0x3d84534: LDRB            W8, [X19,#0x27D]
+0x3d84538: CBNZ            W8, loc_3D84580
+0x3d8453c: LDRB            W8, [X19,#0x21]
+0x3d84540: CBNZ            W8, loc_3D84580
+0x3d84544: MOV             X0, X19
+0x3d84548: MOV             X1, XZR
+0x3d8454c: BL              UnityEngine.Component$$get_gameObject
+0x3d84550: CBZ             X0, loc_3D8459C
+0x3d84554: MOV             X1, XZR
+0x3d84558: BL              UnityEngine.GameObject$$get_activeInHierarchy
+0x3d8455c: TBZ             W0, #0, loc_3D84580
+0x3d84560: LDRB            W8, [X19,#0xBC]
+0x3d84564: CBNZ            W8, loc_3D84580
+0x3d84568: LDRB            W8, [X19,#0xE0]
+0x3d8456c: CBNZ            W8, loc_3D84580
+0x3d84570: LDRB            W8, [X19,#0x194]
+0x3d84574: CBNZ            W8, loc_3D84580
+0x3d84578: LDRB            W8, [X19,#0x250]
+0x3d8457c: CBZ             W8, loc_3D8458C
+0x3d84580: MOV             W0, WZR
+0x3d84584: LDP             X30, X19, [SP+0x10+var_10],#0x10
+0x3d84588: RET
+0x3d8458c: LDRB            W8, [X19,#0x242]
+0x3d84590: CMP             W8, #0
+0x3d84594: CSET            W0, EQ
+0x3d84598: B               loc_3D84584
+0x3d8459c: BL              il2cpp_codegen_raise_null_reference_exception

@@ -1,0 +1,81 @@
+0x439bee4: fe0f1df8 str      x30, [sp, #-0x30]!
+0x439bee8: f65701a9 stp      x22, x21, [sp, #0x10]
+0x439beec: f44f02a9 stp      x20, x19, [sp, #0x20]
+0x439bef0: 346302b0 adrp     x20, #0x9000000
+0x439bef4: d53a02b0 adrp     x21, #0x8af4000
+0x439bef8: 882e6239 ldrb     w8, [x20, #0x88b]
+0x439befc: b55243f9 ldr      x21, [x21, #0x6a0] // GameFramework.GameFrameEntry_TypeInfo
+0x439bf00: f30300aa mov      x19, x0
+0x439bf04: 48020037 tbnz     w8, #0, #0x439bf4c
+0x439bf08: c03a02b0 adrp     x0, #0x8af4000
+0x439bf0c: 007043f9 ldr      x0, [x0, #0x6e0] // Method$GameFramework.ControlBase<EmailControl>.get_I()
+0x439bf10: dc84e297 bl       #0x3c3d280
+0x439bf14: c03a02b0 adrp     x0, #0x8af4000
+0x439bf18: 007443f9 ldr      x0, [x0, #0x6e8] // Method$GameFramework.GameFrameEntry.GetModule<MineGameLogicModule>()
+0x439bf1c: d984e297 bl       #0x3c3d280
+0x439bf20: c03a02b0 adrp     x0, #0x8af4000
+0x439bf24: 005043f9 ldr      x0, [x0, #0x6a0] // GameFramework.GameFrameEntry_TypeInfo
+0x439bf28: d684e297 bl       #0x3c3d280
+0x439bf2c: 003a0290 adrp     x0, #0x8adb000
+0x439bf30: 004c46f9 ldr      x0, [x0, #0xc98] // Method$L_Tools.RichControlBase<PurchaseControl>.get_I()
+0x439bf34: d384e297 bl       #0x3c3d280
+0x439bf38: 003a02b0 adrp     x0, #0x8adc000
+0x439bf3c: 008445f9 ldr      x0, [x0, #0xb08] // Method$L_Tools.RichControlBase<ServerTimeMgr>.get_I()
+0x439bf40: d084e297 bl       #0x3c3d280
+0x439bf44: 28008052 mov      w8, #1
+0x439bf48: 882e2239 strb     w8, [x20, #0x88b]
+0x439bf4c: d43a02b0 adrp     x20, #0x8af4000
+0x439bf50: 163a02b0 adrp     x22, #0x8adc000
+0x439bf54: 947643f9 ldr      x20, [x20, #0x6e8] // Method$GameFramework.GameFrameEntry.GetModule<MineGameLogicModule>()
+0x439bf58: d68645f9 ldr      x22, [x22, #0xb08] // Method$L_Tools.RichControlBase<ServerTimeMgr>.get_I()
+0x439bf5c: e00313aa mov      x0, x19
+0x439bf60: e1031faa mov      x1, xzr
+0x439bf64: d73bbd94 bl       #0x72eaec0 // GameFramework.Base.IGameStart$$RegisterLogicCtr
+0x439bf68: a00240f9 ldr      x0, [x21]
+0x439bf6c: 08e040b9 ldr      w8, [x0, #0xe0]
+0x439bf70: 48000035 cbnz     w8, #0x439bf78
+0x439bf74: 0f85e297 bl       #0x3c3d3b0
+0x439bf78: 800240f9 ldr      x0, [x20]
+0x439bf7c: 91c12394 bl       #0x4c8c5c0 // GameFramework.GameFrameEntry$$GetModule<object>
+0x439bf80: c80240f9 ldr      x8, [x22]
+0x439bf84: f30300aa mov      x19, x0
+0x439bf88: e00308aa mov      x0, x8
+0x439bf8c: 9b2a7094 bl       #0x5fa69f8 // L_Tools.RichControlBase<object>$$get_I
+0x439bf90: b30400b4 cbz      x19, #0x439c024
+0x439bf94: 153a0290 adrp     x21, #0x8adb000
+0x439bf98: b54e46f9 ldr      x21, [x21, #0xc98] // Method$L_Tools.RichControlBase<PurchaseControl>.get_I()
+0x439bf9c: e10300aa mov      x1, x0
+0x439bfa0: e00313aa mov      x0, x19
+0x439bfa4: e2031f2a mov      w2, wzr
+0x439bfa8: e3031faa mov      x3, xzr
+0x439bfac: 8825b894 bl       #0x71a55cc // GameFramework.MineGameLogicModule$$RegisterLogicCtr
+0x439bfb0: 800240f9 ldr      x0, [x20]
+0x439bfb4: 83c12394 bl       #0x4c8c5c0 // GameFramework.GameFrameEntry$$GetModule<object>
+0x439bfb8: a80240f9 ldr      x8, [x21]
+0x439bfbc: f30300aa mov      x19, x0
+0x439bfc0: e00308aa mov      x0, x8
+0x439bfc4: 8d2a7094 bl       #0x5fa69f8 // L_Tools.RichControlBase<object>$$get_I
+0x439bfc8: f30200b4 cbz      x19, #0x439c024
+0x439bfcc: d53a02b0 adrp     x21, #0x8af4000
+0x439bfd0: b57243f9 ldr      x21, [x21, #0x6e0] // Method$GameFramework.ControlBase<EmailControl>.get_I()
+0x439bfd4: e10300aa mov      x1, x0
+0x439bfd8: e00313aa mov      x0, x19
+0x439bfdc: e2031f2a mov      w2, wzr
+0x439bfe0: e3031faa mov      x3, xzr
+0x439bfe4: 7a25b894 bl       #0x71a55cc // GameFramework.MineGameLogicModule$$RegisterLogicCtr
+0x439bfe8: 800240f9 ldr      x0, [x20]
+0x439bfec: 75c12394 bl       #0x4c8c5c0 // GameFramework.GameFrameEntry$$GetModule<object>
+0x439bff0: a80240f9 ldr      x8, [x21]
+0x439bff4: f30300aa mov      x19, x0
+0x439bff8: e00308aa mov      x0, x8
+0x439bffc: 20499d94 bl       #0x6aee47c // GameFramework.ControlBase<object>$$get_I
+0x439c000: 330100b4 cbz      x19, #0x439c024
+0x439c004: e10300aa mov      x1, x0
+0x439c008: e00313aa mov      x0, x19
+0x439c00c: f44f42a9 ldp      x20, x19, [sp, #0x20]
+0x439c010: f65741a9 ldp      x22, x21, [sp, #0x10]
+0x439c014: e2031f2a mov      w2, wzr
+0x439c018: e3031faa mov      x3, xzr
+0x439c01c: fe0743f8 ldr      x30, [sp], #0x30
+0x439c020: 6b25b814 b        #0x71a55cc // GameFramework.MineGameLogicModule$$RegisterLogicCtr
+0x439c024: 2a85e297 bl       #0x3c3d4cc

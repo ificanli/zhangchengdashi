@@ -1,0 +1,21 @@
+0x3e0fa9c: fe4fbfa9 stp      x30, x19, [sp, #-0x10]!
+0x3e0faa0: 22000012 and      w2, w1, #1
+0x3e0faa4: 21008052 mov      w1, #1
+0x3e0faa8: f30300aa mov      x19, x0
+0x3e0faac: 75feff97 bl       #0x3e0f480 // GameModule.SynergyEffectManager$$GetFetterCount
+0x3e0fab0: 1f180071 cmp      w0, #6
+0x3e0fab4: 6a000054 b.ge     #0x3e0fac0
+0x3e0fab8: e0031f2a mov      w0, wzr
+0x3e0fabc: 0b000014 b        #0x3e0fae8
+0x3e0fac0: 68824039 ldrb     w8, [x19, #0x20]
+0x3e0fac4: 68000034 cbz      w8, #0x3e0fad0
+0x3e0fac8: 20008052 mov      w0, #1
+0x3e0facc: 07000014 b        #0x3e0fae8
+0x3e0fad0: 810c8052 mov      w1, #0x64
+0x3e0fad4: e0031f2a mov      w0, wzr
+0x3e0fad8: e2031faa mov      x2, xzr
+0x3e0fadc: c5591395 bl       #0x82e61f0 // UnityEngine.Random$$Range
+0x3e0fae0: 1f280071 cmp      w0, #0xa
+0x3e0fae4: e0a79f1a cset     w0, lt
+0x3e0fae8: fe4fc1a8 ldp      x30, x19, [sp], #0x10
+0x3e0faec: c0035fd6 ret      

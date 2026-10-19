@@ -1,0 +1,50 @@
+0x3e46278: STR             X30, [SP,#var_20]!
+0x3e4627c: STP             X20, X19, [SP,#0x20+var_10]
+0x3e46280: ADRP            X20, #byte_8FFD9FF@PAGE
+0x3e46284: LDRB            W8, [X20,#byte_8FFD9FF@PAGEOFF]
+0x3e46288: MOV             X19, X0
+0x3e4628c: TBNZ            W8, #0, loc_3E462B0
+0x3e46290: ADRP            X0, #off_8ACDB30@PAGE
+0x3e46294: LDR             X0, [X0,#off_8ACDB30@PAGEOFF]; off_8CE6460 ; slot
+0x3e46298: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3e4629c: ADRP            X0, #off_8ACD4B0@PAGE
+0x3e462a0: LDR             X0, [X0,#off_8ACD4B0@PAGEOFF]; off_8CE64C0 ; slot
+0x3e462a4: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3e462a8: MOV             W8, #1
+0x3e462ac: STRB            W8, [X20,#byte_8FFD9FF@PAGEOFF]
+0x3e462b0: LDR             W8, [X19,#0x20]
+0x3e462b4: ADRP            X20, #off_8ACDB30@PAGE
+0x3e462b8: LDR             X20, [X20,#off_8ACDB30@PAGEOFF]; off_8CE6460
+0x3e462bc: CMP             W8, #1
+0x3e462c0: B.NE            loc_3E462E8
+0x3e462c4: LDR             X0, [X20]; klass
+0x3e462c8: LDR             W8, [X0,#0xE0]
+0x3e462cc: CBNZ            W8, loc_3E462D4
+0x3e462d0: BL              il2cpp_codegen_runtime_class_init
+0x3e462d4: MOV             X0, XZR
+0x3e462d8: BL              System.DateTime$$get_UtcNow
+0x3e462dc: STR             X0, [SP,#0x20+var_18]
+0x3e462e0: LDR             W19, [X19,#0x50]
+0x3e462e4: B               loc_3E46324
+0x3e462e8: ADRP            X8, #off_8ACD4B0@PAGE
+0x3e462ec: LDR             X8, [X8,#off_8ACD4B0@PAGEOFF]; off_8CE64C0
+0x3e462f0: LDR             X0, [X8]; klass
+0x3e462f4: LDR             W8, [X0,#0xE0]
+0x3e462f8: CBNZ            W8, loc_3E46300
+0x3e462fc: BL              il2cpp_codegen_runtime_class_init
+0x3e46300: MOV             X0, XZR
+0x3e46304: BL              L_Tools.DateTools$$GetUTCNow
+0x3e46308: LDR             X8, [X20]
+0x3e4630c: STR             X0, [SP,#0x20+var_18]
+0x3e46310: LDR             W19, [X19,#0x50]
+0x3e46314: LDR             W9, [X8,#0xE0]
+0x3e46318: CBNZ            W9, loc_3E46324
+0x3e4631c: MOV             X0, X8; klass
+0x3e46320: BL              il2cpp_codegen_runtime_class_init
+0x3e46324: SCVTF           D0, W19
+0x3e46328: ADD             X0, SP, #0x20+var_18
+0x3e4632c: MOV             X1, XZR
+0x3e46330: BL              System.DateTime$$AddHours
+0x3e46334: LDP             X20, X19, [SP,#0x20+var_10]
+0x3e46338: LDR             X30, [SP+0x20+var_20],#0x20
+0x3e4633c: RET

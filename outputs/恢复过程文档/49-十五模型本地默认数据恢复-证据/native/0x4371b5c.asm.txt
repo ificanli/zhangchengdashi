@@ -1,0 +1,77 @@
+0x4371b5c: STP             X30, X27, [SP,#var_50]!
+0x4371b60: STP             X26, X25, [SP,#0x50+var_40]
+0x4371b64: STP             X24, X23, [SP,#0x50+var_30]
+0x4371b68: STP             X22, X21, [SP,#0x50+var_20]
+0x4371b6c: STP             X20, X19, [SP,#0x50+var_10]
+0x4371b70: ADRP            X26, #byte_9000730@PAGE
+0x4371b74: ADRP            X27, #off_8ACDFB8@PAGE
+0x4371b78: ADRP            X20, #off_8ACDFA0@PAGE
+0x4371b7c: ADRP            X25, #off_8AF37A8@PAGE
+0x4371b80: ADRP            X24, #off_8ACD720@PAGE
+0x4371b84: ADRP            X23, #off_8ACD740@PAGE
+0x4371b88: ADRP            X22, #off_8AD8FA0@PAGE
+0x4371b8c: ADRP            X21, #off_8AD8F88@PAGE
+0x4371b90: LDR             X27, [X27,#off_8ACDFB8@PAGEOFF]; qword_8CDDA40
+0x4371b94: LDR             X20, [X20,#off_8ACDFA0@PAGEOFF]; qword_8D0BE60
+0x4371b98: LDRB            W8, [X26,#byte_9000730@PAGEOFF]
+0x4371b9c: LDR             X25, [X25,#off_8AF37A8@PAGEOFF]; qword_8CECFD8
+0x4371ba0: LDR             X24, [X24,#off_8ACD720@PAGEOFF]; qword_8CDE178
+0x4371ba4: LDR             X23, [X23,#off_8ACD740@PAGEOFF]; qword_8D0E5E0
+0x4371ba8: LDR             X22, [X22,#off_8AD8FA0@PAGEOFF]; qword_8CD9C90
+0x4371bac: LDR             X21, [X21,#off_8AD8F88@PAGEOFF]; qword_8CFE288
+0x4371bb0: MOV             X19, X0
+0x4371bb4: TBNZ            W8, #0, loc_4371C14
+0x4371bb8: ADRP            X0, #off_8AD8F88@PAGE
+0x4371bbc: LDR             X0, [X0,#off_8AD8F88@PAGEOFF]; qword_8CFE288 ; slot
+0x4371bc0: BL              il2cpp_codegen_initialize_runtime_metadata
+0x4371bc4: ADRP            X0, #off_8AD8FA0@PAGE
+0x4371bc8: LDR             X0, [X0,#off_8AD8FA0@PAGEOFF]; qword_8CD9C90 ; slot
+0x4371bcc: BL              il2cpp_codegen_initialize_runtime_metadata
+0x4371bd0: ADRP            X0, #off_8ACDFA0@PAGE
+0x4371bd4: LDR             X0, [X0,#off_8ACDFA0@PAGEOFF]; qword_8D0BE60 ; slot
+0x4371bd8: BL              il2cpp_codegen_initialize_runtime_metadata
+0x4371bdc: ADRP            X0, #off_8ACD740@PAGE
+0x4371be0: LDR             X0, [X0,#off_8ACD740@PAGEOFF]; qword_8D0E5E0 ; slot
+0x4371be4: BL              il2cpp_codegen_initialize_runtime_metadata
+0x4371be8: ADRP            X0, #off_8ACDFB8@PAGE
+0x4371bec: LDR             X0, [X0,#off_8ACDFB8@PAGEOFF]; qword_8CDDA40 ; slot
+0x4371bf0: BL              il2cpp_codegen_initialize_runtime_metadata
+0x4371bf4: ADRP            X0, #off_8ACD720@PAGE
+0x4371bf8: LDR             X0, [X0,#off_8ACD720@PAGEOFF]; qword_8CDE178 ; slot
+0x4371bfc: BL              il2cpp_codegen_initialize_runtime_metadata
+0x4371c00: ADRP            X0, #off_8AF37A8@PAGE
+0x4371c04: LDR             X0, [X0,#off_8AF37A8@PAGEOFF]; qword_8CECFD8 ; slot
+0x4371c08: BL              il2cpp_codegen_initialize_runtime_metadata
+0x4371c0c: MOV             W8, #1
+0x4371c10: STRB            W8, [X26,#byte_9000730@PAGEOFF]
+0x4371c14: LDR             X0, [X27]
+0x4371c18: BL              unk_3C3D4C4
+0x4371c1c: LDR             X1, [X20]
+0x4371c20: MOV             X20, X0
+0x4371c24: BL              System.Collections.Generic.List_int_$$.ctor
+0x4371c28: STR             X20, [X19,#0x60]
+0x4371c2c: LDR             X0, [X25]
+0x4371c30: BL              unk_3C3D4C4
+0x4371c34: MOV             X20, X0
+0x4371c38: BL              DataModule.SeasonData$$.ctor
+0x4371c3c: STR             X20, [X19,#0x90]
+0x4371c40: LDR             X0, [X24]
+0x4371c44: BL              unk_3C3D4C4
+0x4371c48: LDR             X1, [X23]
+0x4371c4c: MOV             X20, X0
+0x4371c50: BL              System.Collections.Generic.List_object_$$.ctor
+0x4371c54: STR             X20, [X19,#0x98]
+0x4371c58: LDR             X0, [X22]
+0x4371c5c: BL              unk_3C3D4C4
+0x4371c60: LDR             X1, [X21]
+0x4371c64: MOV             X20, X0
+0x4371c68: BL              System.Collections.Generic.Dictionary_object__object_$$.ctor
+0x4371c6c: STR             X20, [X19,#0xB8]
+0x4371c70: MOV             X0, X19
+0x4371c74: LDP             X20, X19, [SP,#0x50+var_10]
+0x4371c78: LDP             X22, X21, [SP,#0x50+var_20]
+0x4371c7c: LDP             X24, X23, [SP,#0x50+var_30]
+0x4371c80: LDP             X26, X25, [SP,#0x50+var_40]
+0x4371c84: MOV             X1, XZR
+0x4371c88: LDP             X30, X27, [SP+0x50+var_50],#0x50
+0x4371c8c: B               ServerBaseData$$.ctor

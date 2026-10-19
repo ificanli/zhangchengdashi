@@ -1,0 +1,49 @@
+0x7180528: STP             D13, D12, [SP,#var_70]!
+0x718052c: STP             D11, D10, [SP,#0x70+var_60]
+0x7180530: STP             D9, D8, [SP,#0x70+var_50]
+0x7180534: STR             X30, [SP,#0x70+var_40]
+0x7180538: STP             X24, X23, [SP,#0x70+var_30]
+0x718053c: STP             X22, X21, [SP,#0x70+var_20]
+0x7180540: STP             X20, X19, [SP,#0x70+var_10]
+0x7180544: ADRP            X24, #byte_900922D@PAGE
+0x7180548: ADRP            X23, #off_8B0D928@PAGE
+0x718054c: LDRB            W8, [X24,#byte_900922D@PAGEOFF]
+0x7180550: LDR             X23, [X23,#off_8B0D928@PAGEOFF]; off_8CE4930
+0x7180554: MOV             W20, W3
+0x7180558: MOV             X19, X2
+0x718055c: MOV             V8.16B, V5.16B
+0x7180560: MOV             V9.16B, V4.16B
+0x7180564: MOV             V10.16B, V3.16B
+0x7180568: MOV             V11.16B, V2.16B
+0x718056c: MOV             V12.16B, V1.16B
+0x7180570: MOV             V13.16B, V0.16B
+0x7180574: MOV             X21, X1
+0x7180578: MOV             X22, X0
+0x718057c: TBNZ            W8, #0, loc_7180594
+0x7180580: ADRP            X0, #off_8B0D928@PAGE
+0x7180584: LDR             X0, [X0,#off_8B0D928@PAGEOFF]; off_8CE4930 ; slot
+0x7180588: BL              il2cpp_codegen_initialize_runtime_metadata
+0x718058c: MOV             W8, #1
+0x7180590: STRB            W8, [X24,#byte_900922D@PAGEOFF]
+0x7180594: LDR             X0, [X23]; klass
+0x7180598: LDR             W8, [X0,#0xE0]
+0x718059c: CBNZ            W8, loc_71805A4
+0x71805a0: BL              il2cpp_codegen_runtime_class_init
+0x71805a4: AND             W3, W20, #1
+0x71805a8: MOV             X0, X22
+0x71805ac: MOV             X1, X21
+0x71805b0: MOV             V2.16B, V11.16B
+0x71805b4: MOV             V3.16B, V10.16B
+0x71805b8: MOV             V4.16B, V9.16B
+0x71805bc: MOV             V5.16B, V8.16B
+0x71805c0: MOV             X2, X19
+0x71805c4: LDP             X20, X19, [SP,#0x70+var_10]
+0x71805c8: LDP             X22, X21, [SP,#0x70+var_20]
+0x71805cc: LDP             X24, X23, [SP,#0x70+var_30]
+0x71805d0: LDR             X30, [SP,#0x70+var_40]
+0x71805d4: LDP             D9, D8, [SP,#0x70+var_50]
+0x71805d8: LDP             D11, D10, [SP,#0x70+var_60]
+0x71805dc: MOV             V0.16B, V13.16B
+0x71805e0: MOV             V1.16B, V12.16B
+0x71805e4: LDP             D13, D12, [SP+0x70+var_70],#0x70
+0x71805e8: B               GameFramework.BaseEffect$$.ctor

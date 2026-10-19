@@ -1,0 +1,9 @@
+0x7171ae4: STR             X30, [SP,#var_10]!
+0x7171ae8: MOV             X1, XZR
+0x7171aec: BL              System.Object$$GetType
+0x7171af0: CBZ             X0, loc_7171B04
+0x7171af4: LDR             X8, [X0]
+0x7171af8: LDP             X2, X1, [X8,#0x1B8]
+0x7171afc: LDR             X30, [SP+0x10+var_10],#0x10
+0x7171b00: BR              X2
+0x7171b04: BL              il2cpp_codegen_raise_null_reference_exception

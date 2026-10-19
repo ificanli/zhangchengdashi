@@ -1,0 +1,40 @@
+0x3d87fb0: SUB             SP, SP, #0xA0
+0x3d87fb4: STR             X30, [SP,#0xA0+var_30]
+0x3d87fb8: STP             X22, X21, [SP,#0xA0+var_20]
+0x3d87fbc: STP             X20, X19, [SP,#0xA0+var_10]
+0x3d87fc0: ADRP            X22, #byte_8FFD485@PAGE
+0x3d87fc4: ADRP            X21, #off_8AD1458@PAGE
+0x3d87fc8: LDRB            W8, [X22,#byte_8FFD485@PAGEOFF]
+0x3d87fcc: LDR             X21, [X21,#off_8AD1458@PAGEOFF]; qword_8D232D0
+0x3d87fd0: MOV             W19, W1
+0x3d87fd4: MOV             X20, X0
+0x3d87fd8: TBNZ            W8, #0, loc_3D87FF0
+0x3d87fdc: ADRP            X0, #off_8AD1458@PAGE
+0x3d87fe0: LDR             X0, [X0,#off_8AD1458@PAGEOFF]; qword_8D232D0 ; slot
+0x3d87fe4: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3d87fe8: MOV             W8, #1
+0x3d87fec: STRB            W8, [X22,#byte_8FFD485@PAGEOFF]
+0x3d87ff0: MOVI            V0.2D, #0
+0x3d87ff4: MOV             X8, SP
+0x3d87ff8: MOV             X0, XZR
+0x3d87ffc: STR             XZR, [SP,#0xA0+var_40]
+0x3d88000: STP             Q0, Q0, [SP,#0xA0+var_60]
+0x3d88004: STP             Q0, Q0, [SP,#0xA0+var_80]
+0x3d88008: BL              System.Runtime.CompilerServices.AsyncVoidMethodBuilder$$Create
+0x3d8800c: LDP             Q0, Q1, [SP,#0xA0+var_A0]
+0x3d88010: LDR             X2, [X21]
+0x3d88014: ADD             X8, SP, #0xA0+var_80
+0x3d88018: MOV             W9, #0xFFFFFFFF
+0x3d8801c: ORR             X0, X8, #8
+0x3d88020: ADD             X1, SP, #0xA0+var_80
+0x3d88024: STR             X20, [SP,#0xA0+var_60+8]
+0x3d88028: STR             W19, [SP,#0xA0+var_50]
+0x3d8802c: STUR            Q0, [SP,#0xA0+var_80+8]
+0x3d88030: STUR            Q1, [SP,#0x38]
+0x3d88034: STR             W9, [SP,#0xA0+var_80]
+0x3d88038: BL              System.Runtime.CompilerServices.AsyncVoidMethodBuilder$$Start_RoleBehaviour._Atk_d__198_
+0x3d8803c: LDP             X20, X19, [SP,#0xA0+var_10]
+0x3d88040: LDP             X22, X21, [SP,#0xA0+var_20]
+0x3d88044: LDR             X30, [SP,#0xA0+var_30]
+0x3d88048: ADD             SP, SP, #0xA0
+0x3d8804c: RET

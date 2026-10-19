@@ -1,0 +1,22 @@
+0x4275e1c: STP             X30, X21, [SP,#var_20]!
+0x4275e20: STP             X20, X19, [SP,#0x20+var_10]
+0x4275e24: ADRP            X21, #byte_8FFFFD4@PAGE
+0x4275e28: LDRB            W8, [X21,#byte_8FFFFD4@PAGEOFF]
+0x4275e2c: MOV             X19, X1
+0x4275e30: MOV             X20, X0
+0x4275e34: TBNZ            W8, #0, loc_4275E4C
+0x4275e38: ADRP            X0, #off_8AEB6B8@PAGE
+0x4275e3c: LDR             X0, [X0,#off_8AEB6B8@PAGEOFF]; qword_8CFF540 ; slot
+0x4275e40: BL              il2cpp_codegen_initialize_runtime_metadata
+0x4275e44: MOV             W8, #1
+0x4275e48: STRB            W8, [X21,#byte_8FFFFD4@PAGEOFF]
+0x4275e4c: LDR             X0, [X20,#0x28]
+0x4275e50: CBZ             X0, loc_4275E70
+0x4275e54: ADRP            X8, #off_8AEB6B8@PAGE
+0x4275e58: LDR             X8, [X8,#off_8AEB6B8@PAGEOFF]; qword_8CFF540
+0x4275e5c: MOV             X1, X19
+0x4275e60: LDP             X20, X19, [SP,#0x20+var_10]
+0x4275e64: LDR             X2, [X8]
+0x4275e68: LDP             X30, X21, [SP+0x20+var_20],#0x20
+0x4275e6c: B               System.Collections.Generic.Dictionary_object__object_$$ContainsKey
+0x4275e70: BL              il2cpp_codegen_raise_null_reference_exception

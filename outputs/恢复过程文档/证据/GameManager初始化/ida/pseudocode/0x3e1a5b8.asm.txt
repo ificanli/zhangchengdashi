@@ -1,0 +1,20 @@
+0x3e1a5b8: STR             X30, [SP,#var_20]!
+0x3e1a5bc: STP             X20, X19, [SP,#0x20+var_10]
+0x3e1a5c0: ADRP            X19, #byte_8FFD899@PAGE
+0x3e1a5c4: ADRP            X20, #off_8AD4880@PAGE
+0x3e1a5c8: LDRB            W8, [X19,#byte_8FFD899@PAGEOFF]
+0x3e1a5cc: LDR             X20, [X20,#off_8AD4880@PAGEOFF]; qword_8D123B0
+0x3e1a5d0: TBNZ            W8, #0, loc_3E1A5E8
+0x3e1a5d4: ADRP            X0, #off_8AD4880@PAGE
+0x3e1a5d8: LDR             X0, [X0,#off_8AD4880@PAGEOFF]; qword_8D123B0 ; slot
+0x3e1a5dc: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3e1a5e0: MOV             W8, #1
+0x3e1a5e4: STRB            W8, [X19,#byte_8FFD899@PAGEOFF]
+0x3e1a5e8: LDR             X0, [X20]
+0x3e1a5ec: BL              ToolModule.ManagerBase_object_$$get_Instance
+0x3e1a5f0: CBZ             X0, loc_3E1A604
+0x3e1a5f4: LDP             X20, X19, [SP,#0x20+var_10]
+0x3e1a5f8: MOV             X1, XZR
+0x3e1a5fc: LDR             X30, [SP+0x20+var_20],#0x20
+0x3e1a600: B               GameModule.RankManager$$UpdateRankInfo
+0x3e1a604: BL              il2cpp_codegen_raise_null_reference_exception

@@ -1,0 +1,45 @@
+0x3d8db24: SUB             SP, SP, #0xA0
+0x3d8db28: STR             D8, [SP,#0xA0+var_30]
+0x3d8db2c: STR             X30, [SP,#0xA0+var_28]
+0x3d8db30: STP             X22, X21, [SP,#0xA0+var_20]
+0x3d8db34: STP             X20, X19, [SP,#0xA0+var_10]
+0x3d8db38: ADRP            X22, #byte_8FFD4AD@PAGE
+0x3d8db3c: ADRP            X21, #off_8AD15C8@PAGE
+0x3d8db40: LDRB            W8, [X22,#byte_8FFD4AD@PAGEOFF]
+0x3d8db44: LDR             X21, [X21,#off_8AD15C8@PAGEOFF]; qword_8D232B8
+0x3d8db48: MOV             W20, W1
+0x3d8db4c: MOV             V8.16B, V0.16B
+0x3d8db50: MOV             X19, X0
+0x3d8db54: TBNZ            W8, #0, loc_3D8DB6C
+0x3d8db58: ADRP            X0, #off_8AD15C8@PAGE
+0x3d8db5c: LDR             X0, [X0,#off_8AD15C8@PAGEOFF]; qword_8D232B8 ; slot
+0x3d8db60: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3d8db64: MOV             W8, #1
+0x3d8db68: STRB            W8, [X22,#byte_8FFD4AD@PAGEOFF]
+0x3d8db6c: MOVI            V0.2D, #0
+0x3d8db70: MOV             X8, SP
+0x3d8db74: MOV             X0, XZR
+0x3d8db78: AND             W20, W20, #1
+0x3d8db7c: STP             Q0, Q0, [SP,#0xA0+var_50]
+0x3d8db80: STP             Q0, Q0, [SP,#0xA0+var_70]
+0x3d8db84: STR             Q0, [SP,#0xA0+var_80]
+0x3d8db88: BL              System.Runtime.CompilerServices.AsyncVoidMethodBuilder$$Create
+0x3d8db8c: LDP             Q0, Q1, [SP,#0xA0+var_A0]
+0x3d8db90: LDR             X2, [X21]
+0x3d8db94: ADD             X8, SP, #0xA0+var_80
+0x3d8db98: MOV             W9, #0xFFFFFFFF
+0x3d8db9c: ORR             X0, X8, #8
+0x3d8dba0: ADD             X1, SP, #0xA0+var_80
+0x3d8dba4: STR             X19, [SP,#0xA0+var_58]
+0x3d8dba8: STR             S8, [SP,#0xA0+var_50]
+0x3d8dbac: STRB            W20, [SP,#0xA0+var_50+4]
+0x3d8dbb0: STUR            Q0, [SP,#0xA0+var_80+8]
+0x3d8dbb4: STUR            Q1, [SP,#0xA0+var_70+8]
+0x3d8dbb8: STR             W9, [SP,#0xA0+var_80]
+0x3d8dbbc: BL              System.Runtime.CompilerServices.AsyncVoidMethodBuilder$$Start_RoleBehaviour._AddTempAttack_d__272_
+0x3d8dbc0: LDP             X20, X19, [SP,#0xA0+var_10]
+0x3d8dbc4: LDP             X22, X21, [SP,#0xA0+var_20]
+0x3d8dbc8: LDR             X30, [SP,#0xA0+var_28]
+0x3d8dbcc: LDR             D8, [SP,#0xA0+var_30]
+0x3d8dbd0: ADD             SP, SP, #0xA0
+0x3d8dbd4: RET

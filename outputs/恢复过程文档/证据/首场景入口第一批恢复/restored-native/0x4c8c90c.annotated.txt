@@ -1,0 +1,73 @@
+void *GameFramework_GameFrameEntry__K______object_(const MethodInfo *method)
+{
+  __int64 *v1; // x8
+  __int64 v3; // x20
+  __int64 TypeFromHandle; // x0
+  __int64 v5; // x20
+  __int64 v6; // x0
+  char v7; // w0
+  __int64 v8; // x8
+  __int64 v9; // x21
+  __int64 v10; // x0
+  __int64 v11; // x20
+  void *v12; // x21
+  void *v14; // x0
+  __int64 v15; // x0
+  __int64 v16; // x20
+  __int64 v17; // x0
+  __int64 v18; // x21
+
+  v1 = *((__int64 **)method + 7);
+  if ( v1 == nullptr )
+  {
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D3BED8 /* Method$System.Type.GetType() */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&off_8CEEA50 /* System.Type_TypeInfo */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D857D0 /* {0}.{1} */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D61430 /* GameFramework. */);
+    v1 = *((__int64 **)method + 7);
+    if ( v1 == nullptr )
+    {
+      ((void (__fastcall *)(const MethodInfo *))unk_3C503FC)(method);
+      v1 = *((__int64 **)method + 7);
+    }
+  }
+  v3 = *v1;
+  if ( *((_DWORD *)off_8CEEA50 /* System.Type_TypeInfo */ + 56) == 0 )
+    il2cpp_codegen_runtime_class_init(off_8CEEA50 /* System.Type_TypeInfo */);
+  TypeFromHandle = System_Type__GetTypeFromHandle(v3, 0);
+  if ( TypeFromHandle == 0
+    || (v5 = TypeFromHandle,
+        (v6 = (*(__int64 (__fastcall **)(__int64, _QWORD))(*(_QWORD *)TypeFromHandle + 776LL))(
+                TypeFromHandle,
+                *(_QWORD *)(*(_QWORD *)TypeFromHandle + 784LL))) == 0) )
+  {
+    il2cpp_codegen_raise_null_reference_exception();
+  }
+  v7 = System_String__StartsWith(v6, qword_8D61430 /* GameFramework. */, 0);
+  v8 = *(_QWORD *)v5;
+  if ( (v7 & 1) == 0 )
+  {
+    v11 = (*(__int64 (__fastcall **)(__int64, _QWORD))(v8 + 776))(v5, *(_QWORD *)(v8 + 784));
+    v14 = &unk_8D78208 /* You must get a Game Framework module, but '{0}' is not. */;
+LABEL_16:
+    v15 = ((__int64 (__fastcall *)(void *))unk_3C3D294)(v14);
+    v16 = sub_7501E3C(v15, v11, 0);
+    v17 = ((__int64 (__fastcall *)(void *))unk_3C3D294)(&unk_8CE71D0 /* System.Exception_TypeInfo */);
+    v18 = ((__int64 (__fastcall *)(__int64))unk_3C3D4C4)(v17);
+    System_Exception___ctor(v18, v16, 0);
+    ((void (__fastcall *)(__int64, const MethodInfo *))unk_3C3D3A0)(v18, method);
+    JUMPOUT(0x4C8CAD0);
+  }
+  v9 = (*(__int64 (__fastcall **)(__int64, _QWORD))(v8 + 744))(v5, *(_QWORD *)(v8 + 752));
+  v10 = (*(__int64 (__fastcall **)(__int64, _QWORD))(*(_QWORD *)v5 + 440LL))(v5, *(_QWORD *)(*(_QWORD *)v5 + 448LL));
+  v11 = System_String__Format(qword_8D857D0 /* {0}.{1} */, v9, v10, 0);
+  if ( *((_DWORD *)off_8CEEA50 /* System.Type_TypeInfo */ + 56) == 0 )
+    il2cpp_codegen_runtime_class_init(off_8CEEA50 /* System.Type_TypeInfo */);
+  v12 = (void *)((__int64 (__fastcall *)(__int64, __int64, const MethodInfo *))unk_3C3D6C4)(v11, qword_8D3BED8 /* Method$System.Type.GetType() */, method);
+  if ( (System_Type__op_Equality(v12, 0, 0) & 1) != 0 )
+  {
+    v14 = &unk_8D5A3B0 /* Can not find Game Framework module type '{0}'. */;
+    goto LABEL_16;
+  }
+  return v12;
+}

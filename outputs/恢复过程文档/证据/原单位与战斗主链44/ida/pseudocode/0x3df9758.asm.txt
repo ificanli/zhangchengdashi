@@ -1,0 +1,13 @@
+0x3df9758: LDRB            W8, [X0]
+0x3df975c: LDP             W9, W10, [X0,#4]
+0x3df9760: MOV             W12, #0x267A9
+0x3df9768: CMP             W8, #0
+0x3df976c: CSEL            W8, WZR, W12, EQ
+0x3df9770: LDR             W11, [X0,#0xC]
+0x3df9774: EOR             W8, W8, W9
+0x3df9778: MOV             W9, #0x18D
+0x3df977c: MUL             W8, W8, W9
+0x3df9780: EOR             W8, W8, W10
+0x3df9784: MUL             W8, W8, W9
+0x3df9788: EOR             W0, W8, W11
+0x3df978c: RET

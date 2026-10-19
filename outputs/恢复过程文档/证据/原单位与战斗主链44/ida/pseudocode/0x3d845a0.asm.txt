@@ -1,0 +1,30 @@
+0x3d845a0: STP             X30, X21, [SP,#var_20]!
+0x3d845a4: STP             X20, X19, [SP,#0x20+var_10]
+0x3d845a8: ADRP            X21, #byte_8FFD46C@PAGE
+0x3d845ac: ADRP            X20, #off_8ACC8D0@PAGE
+0x3d845b0: LDRB            W8, [X21,#byte_8FFD46C@PAGEOFF]
+0x3d845b4: LDR             X20, [X20,#off_8ACC8D0@PAGEOFF]; off_8CEB3E0
+0x3d845b8: MOV             X19, X0
+0x3d845bc: TBNZ            W8, #0, loc_3D845D4
+0x3d845c0: ADRP            X0, #off_8ACC8D0@PAGE
+0x3d845c4: LDR             X0, [X0,#off_8ACC8D0@PAGEOFF]; off_8CEB3E0 ; slot
+0x3d845c8: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3d845cc: MOV             W8, #1
+0x3d845d0: STRB            W8, [X21,#byte_8FFD46C@PAGEOFF]
+0x3d845d4: LDR             X0, [X20]; klass
+0x3d845d8: LDR             X20, [X19,#0x70]
+0x3d845dc: LDR             W8, [X0,#0xE0]
+0x3d845e0: CBNZ            W8, loc_3D845E8
+0x3d845e4: BL              il2cpp_codegen_runtime_class_init
+0x3d845e8: MOV             X0, X20
+0x3d845ec: MOV             X1, XZR
+0x3d845f0: MOV             X2, XZR
+0x3d845f4: BL              UnityEngine.Object$$op_Inequality
+0x3d845f8: TST             W0, #1
+0x3d845fc: MOV             W8, #0x1B0
+0x3d84600: MOV             W9, #0x70 ; 'p'
+0x3d84604: CSEL            X8, X9, X8, NE
+0x3d84608: LDR             X0, [X19,X8]
+0x3d8460c: LDP             X20, X19, [SP,#0x20+var_10]
+0x3d84610: LDP             X30, X21, [SP+0x20+var_20],#0x20
+0x3d84614: RET

@@ -1,0 +1,26 @@
+using System.Threading.Tasks;
+namespace SDKModule { public class HWLeaderboardManager { public static HWLeaderboardManager Instance {get;}=new(); public Task Init()=>Env.Begin("HWLeaderboardManager"); } }
+namespace GameModule { public class HomelLandCtrl { public static HomelLandCtrl Instance {get;}=new(); public Task Init()=>Env.Begin("HomelLandCtrl"); } }
+namespace GameModule { public class HomelLandCtrlNew { public static HomelLandCtrlNew Instance {get;}=new(); public Task Init()=>Env.Begin("HomelLandCtrlNew"); } }
+namespace BadgeGraph { public class BadgeManager { public static BadgeManager Instance {get;}=new(); public Task Init()=>Env.Begin("BadgeManager"); } }
+namespace GameModule { public class BoxManager { public static BoxManager Instance {get;}=new(); public Task Init()=>Env.Begin("BoxManager"); } }
+namespace GameModule { public class ArenaProgressManager { public static ArenaProgressManager Instance {get;}=new(); public Task Init()=>Env.Begin("ArenaProgressManager"); } }
+namespace GameModule { public class TrophyProgressManager { public static TrophyProgressManager Instance {get;}=new(); public Task Init()=>Env.Begin("TrophyProgressManager"); } }
+namespace GameModule { public class PlayerCustomizationManager { public static PlayerCustomizationManager Instance {get;}=new(); public Task Init()=>Env.Begin("PlayerCustomizationManager"); } }
+namespace GameModule { public class PlayerLevelManager { public static PlayerLevelManager Instance {get;}=new(); public Task Init()=>Env.Begin("PlayerLevelManager"); } }
+namespace GameModule { public class UserLableManager { public static UserLableManager Instance {get;}=new(); public Task Init()=>Env.Begin("UserLableManager"); } }
+namespace GameModule { public class UserLablePushPackManager { public static UserLablePushPackManager Instance {get;}=new(); public Task Init()=>Env.Begin("UserLablePushPackManager"); } }
+namespace GameModule { public class MetaBtnSecondClickManager { public static MetaBtnSecondClickManager Instance {get;}=new(); public Task Init()=>Env.Begin("MetaBtnSecondClickManager"); } }
+namespace GameModule { public class SkinManager { public static SkinManager Instance {get;}=new(); public Task Init()=>Env.Begin("SkinManager"); } }
+namespace GameModule { public class SynergyEffectManager { public static SynergyEffectManager Instance {get;}=new(); public Task Init()=>Env.Begin("SynergyEffectManager"); } }
+namespace GameModule { public class RoleShadowManager { public static RoleShadowManager Instance {get;}=new(); public Task Init()=>Env.Begin("RoleShadowManager"); } }
+namespace GameModule { public class GiftChainManager { public static GiftChainManager Instance {get;}=new(); public Task Init()=>Env.Begin("GiftChainManager"); } }
+namespace GameModule { public class GiftChainManager2 { public static GiftChainManager2 Instance {get;}=new(); public Task Init()=>Env.Begin("GiftChainManager2"); } }
+namespace GameModule { public class MultistageNewcomerPackageManager { public static MultistageNewcomerPackageManager Instance {get;}=new(); public Task Init()=>Env.Begin("MultistageNewcomerPackageManager"); } }
+namespace GameModule { public class UpgradeRewardManager { public static UpgradeRewardManager Instance {get;}=new(); public Task Init()=>Env.Begin("UpgradeRewardManager"); } }
+namespace GameModule { public class MysteriousStoreManager { public static MysteriousStoreManager Instance {get;}=new(); public Task Init()=>Env.Begin("MysteriousStoreManager"); } }
+namespace GameModule { public class BackpackManager { public static BackpackManager Instance {get;}=new(); public Task Init()=>Env.Begin("BackpackManager"); } }
+namespace GameModule { public class WeeklyCardActivityManager { public static WeeklyCardActivityManager Instance {get;}=new(); public Task Init()=>Env.Begin("WeeklyCardActivityManager"); } }
+namespace GameModule { public class MysteryAdventureManager { public static MysteryAdventureManager Instance {get;}=new(); public Task Init()=>Env.Begin("MysteryAdventureManager"); } }
+namespace GameModule { public class WorldCupActivityManager { public static WorldCupActivityManager Instance {get;}=new(); public Task Init()=>Env.Begin("WorldCupActivityManager"); } }
+namespace GameModule { public class FundManager { public static FundManager Instance {get;}=new(); public Task Init()=>Env.Begin("FundManager"); } }

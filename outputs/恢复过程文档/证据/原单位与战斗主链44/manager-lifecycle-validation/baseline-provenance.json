@@ -1,0 +1,38 @@
+{
+  "baseline": true,
+  "source": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\source-before\\Assets\\Scripts\\Assembly-CSharp\\GameModule\\BattleGameManager.cs",
+  "sourceSha256": "6f6856106346c1792bd042138ce08b10c2570310a9a359fba13b8f93ad897829",
+  "methods": [
+    {
+      "name": "Init",
+      "rva": "0x3de3b50",
+      "token": "0x600136B",
+      "sourceSignature": "[AsyncStateMachine(typeof(_003CInit_003Ed__43))]\n\t\tpublic override UniTask Init()",
+      "bodyOriginal": "\n\t\t\treturn default;\n\t\t",
+      "bodySha256": "0446c1171b7a95a47bf8abc5b5d18ed6eeb71ed38cc1e921a2a3ac96cd5cadc7",
+      "adaptations": [
+        "default completed UniTask struct -> Task.CompletedTask"
+      ]
+    },
+    {
+      "name": "GameEnd",
+      "rva": "0x3de3fd8",
+      "token": "0x6001374",
+      "sourceSignature": "[AsyncStateMachine(typeof(_003CGameEnd_003Ed__52))]\n\t\tpublic void GameEnd(bool isVictory, bool doTxtAni)",
+      "bodyOriginal": "\n\t\t",
+      "bodySha256": "3e13fafe8992426ccfcfbe1e1135fcbb8364b4a0a7331c64ba06546009b758f1",
+      "adaptations": [
+        "async void -> async Task; await exception observation only"
+      ]
+    },
+    {
+      "name": "StartGame",
+      "rva": "0x3de6814",
+      "token": "0x6001393",
+      "sourceSignature": "public void StartGame(BattleContext battleContext)",
+      "bodyOriginal": "\n\t\t",
+      "bodySha256": "3e13fafe8992426ccfcfbe1e1135fcbb8364b4a0a7331c64ba06546009b758f1",
+      "adaptations": []
+    }
+  ]
+}

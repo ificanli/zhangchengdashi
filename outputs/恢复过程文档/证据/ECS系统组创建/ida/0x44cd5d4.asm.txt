@@ -1,0 +1,33 @@
+0x44cd5d4: STR             X30, [SP,#var_20]!
+0x44cd5d8: STP             X20, X19, [SP,#0x20+var_10]
+0x44cd5dc: ADRP            X20, #byte_90010B8@PAGE
+0x44cd5e0: LDRB            W8, [X20,#byte_90010B8@PAGEOFF]
+0x44cd5e4: MOV             X19, X0
+0x44cd5e8: TBNZ            W8, #0, loc_44CD600
+0x44cd5ec: ADRP            X0, #off_8B00D50@PAGE
+0x44cd5f0: LDR             X0, [X0,#off_8B00D50@PAGEOFF]; off_8CF0CC0 ; slot
+0x44cd5f4: BL              il2cpp_codegen_initialize_runtime_metadata
+0x44cd5f8: MOV             W8, #1
+0x44cd5fc: STRB            W8, [X20,#byte_90010B8@PAGEOFF]
+0x44cd600: MOV             X0, X19
+0x44cd604: MOV             X1, XZR
+0x44cd608: BL              Unity.Entities.ComponentSystemGroup$$OnDestroy
+0x44cd60c: LDR             X0, [X19,#0x88]
+0x44cd610: CBZ             X0, loc_44CD654
+0x44cd614: ADRP            X8, #off_8B00D50@PAGE
+0x44cd618: LDR             X8, [X8,#off_8B00D50@PAGEOFF]; off_8CF0CC0
+0x44cd61c: LDR             X9, [X0]
+0x44cd620: LDR             X8, [X8]
+0x44cd624: LDRB            W11, [X9,#0x130]
+0x44cd628: LDRB            W10, [X8,#0x130]
+0x44cd62c: CMP             W11, W10
+0x44cd630: B.CC            loc_44CD654
+0x44cd634: LDR             X9, [X9,#0xC8]
+0x44cd638: ADD             X9, X9, X10,LSL#3
+0x44cd63c: LDUR            X9, [X9,#-8]
+0x44cd640: CMP             X9, X8
+0x44cd644: B.NE            loc_44CD654
+0x44cd648: LDP             X20, X19, [SP,#0x20+var_10]
+0x44cd64c: LDR             X30, [SP+0x20+var_20],#0x20
+0x44cd650: B               Pathfinding.ECS.AIMovementSystemGroup.TimeScaledRateManager$$Dispose
+0x44cd654: BL              il2cpp_codegen_raise_null_reference_exception

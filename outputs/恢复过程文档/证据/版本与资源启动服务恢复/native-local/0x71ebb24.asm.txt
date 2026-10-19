@@ -1,0 +1,35 @@
+0x71ebb24: fe0f1df8 str      x30, [sp, #-0x30]!
+0x71ebb28: f65701a9 stp      x22, x21, [sp, #0x10]
+0x71ebb2c: f44f02a9 stp      x20, x19, [sp, #0x20]
+0x71ebb30: f5f000d0 adrp     x21, #0x9009000
+0x71ebb34: 76c900b0 adrp     x22, #0x8b18000
+0x71ebb38: 73c900b0 adrp     x19, #0x8b18000
+0x71ebb3c: 74c900b0 adrp     x20, #0x8b18000
+0x71ebb40: a8ae5b39 ldrb     w8, [x21, #0x6eb]
+0x71ebb44: d66646f9 ldr      x22, [x22, #0xcc8] // System.Collections.Generic.Dictionary<string, IBundleServices>_TypeInfo
+0x71ebb48: 736a46f9 ldr      x19, [x19, #0xcd0] // Method$System.Collections.Generic.Dictionary<string, IBundleServices>..ctor()
+0x71ebb4c: 946e46f9 ldr      x20, [x20, #0xcd8] // GameFramework.VersionMondule_TypeInfo
+0x71ebb50: 88010037 tbnz     w8, #0, #0x71ebb80
+0x71ebb54: 60c900b0 adrp     x0, #0x8b18000
+0x71ebb58: 006846f9 ldr      x0, [x0, #0xcd0] // Method$System.Collections.Generic.Dictionary<string, IBundleServices>..ctor()
+0x71ebb5c: c9452997 bl       #0x3c3d280
+0x71ebb60: 60c900b0 adrp     x0, #0x8b18000
+0x71ebb64: 006446f9 ldr      x0, [x0, #0xcc8] // System.Collections.Generic.Dictionary<string, IBundleServices>_TypeInfo
+0x71ebb68: c6452997 bl       #0x3c3d280
+0x71ebb6c: 60c900b0 adrp     x0, #0x8b18000
+0x71ebb70: 006c46f9 ldr      x0, [x0, #0xcd8] // GameFramework.VersionMondule_TypeInfo
+0x71ebb74: c3452997 bl       #0x3c3d280
+0x71ebb78: 28008052 mov      w8, #1
+0x71ebb7c: a8ae1b39 strb     w8, [x21, #0x6eb]
+0x71ebb80: c00240f9 ldr      x0, [x22]
+0x71ebb84: 50462997 bl       #0x3c3d4c4
+0x71ebb88: 610240f9 ldr      x1, [x19]
+0x71ebb8c: f30300aa mov      x19, x0
+0x71ebb90: f468e897 bl       #0x6c05f60 // System.Collections.Generic.Dictionary<object, object>$$.ctor
+0x71ebb94: 880240f9 ldr      x8, [x20]
+0x71ebb98: f65741a9 ldp      x22, x21, [sp, #0x10]
+0x71ebb9c: 085d40f9 ldr      x8, [x8, #0xb8]
+0x71ebba0: 130100f9 str      x19, [x8]
+0x71ebba4: f44f42a9 ldp      x20, x19, [sp, #0x20]
+0x71ebba8: fe0743f8 ldr      x30, [sp], #0x30
+0x71ebbac: c0035fd6 ret      

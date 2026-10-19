@@ -1,0 +1,39 @@
+0x7175d04: STP             X30, X21, [SP,#var_20]!
+0x7175d08: STP             X20, X19, [SP,#0x20+var_10]
+0x7175d0c: ADRP            X20, #byte_90091C4@PAGE
+0x7175d10: ADRP            X21, #off_8B127E0@PAGE
+0x7175d14: LDRB            W8, [X20,#byte_90091C4@PAGEOFF]
+0x7175d18: LDR             X21, [X21,#off_8B127E0@PAGEOFF]; qword_8D778E8
+0x7175d1c: MOV             X19, X0
+0x7175d20: TBNZ            W8, #0, loc_7175D44
+0x7175d24: ADRP            X0, #off_8B127E0@PAGE
+0x7175d28: LDR             X0, [X0,#off_8B127E0@PAGEOFF]; qword_8D778E8 ; slot
+0x7175d2c: BL              il2cpp_codegen_initialize_runtime_metadata
+0x7175d30: ADRP            X0, #off_8ACC908@PAGE
+0x7175d34: LDR             X0, [X0,#off_8ACC908@PAGEOFF]; qword_8D4ECC0 ; slot
+0x7175d38: BL              il2cpp_codegen_initialize_runtime_metadata
+0x7175d3c: MOV             W8, #1
+0x7175d40: STRB            W8, [X20,#byte_90091C4@PAGEOFF]
+0x7175d44: LDR             X1, [X21]
+0x7175d48: MOV             X0, X19
+0x7175d4c: MOV             X2, XZR
+0x7175d50: BL              GameFramework.Tools.UIGradientBlender$$SplitColors
+0x7175d54: CBZ             X0, loc_7175D84
+0x7175d58: MOV             X19, X0
+0x7175d5c: MOV             X0, XZR
+0x7175d60: BL              System.Text.Encoding$$get_Default
+0x7175d64: CBZ             X0, loc_7175D9C
+0x7175d68: LDR             X8, [X0]
+0x7175d6c: MOV             X1, X19
+0x7175d70: LDP             X20, X19, [SP,#0x20+var_10]
+0x7175d74: LDR             X3, [X8,#0x378]
+0x7175d78: LDR             X2, [X8,#0x380]
+0x7175d7c: LDP             X30, X21, [SP+0x20+var_20],#0x20
+0x7175d80: BR              X3
+0x7175d84: ADRP            X8, #off_8ACC908@PAGE
+0x7175d88: LDR             X8, [X8,#off_8ACC908@PAGEOFF]; qword_8D4ECC0
+0x7175d8c: LDP             X20, X19, [SP,#0x20+var_10]
+0x7175d90: LDR             X0, [X8]
+0x7175d94: LDP             X30, X21, [SP+0x20+var_20],#0x20
+0x7175d98: RET
+0x7175d9c: BL              il2cpp_codegen_raise_null_reference_exception

@@ -1,0 +1,53 @@
+0x3e1a918: STP             X30, X21, [SP,#var_20]!
+0x3e1a91c: STP             X20, X19, [SP,#0x20+var_10]
+0x3e1a920: ADRP            X21, #byte_8FFD89D@PAGE
+0x3e1a924: ADRP            X20, #off_8ACD428@PAGE
+0x3e1a928: LDRB            W8, [X21,#byte_8FFD89D@PAGEOFF]
+0x3e1a92c: LDR             X20, [X20,#off_8ACD428@PAGEOFF]; off_8CECCD8
+0x3e1a930: MOV             X19, X0
+0x3e1a934: TBNZ            W8, #0, loc_3E1A970
+0x3e1a938: ADRP            X0, #off_8AD4E00@PAGE
+0x3e1a93c: LDR             X0, [X0,#off_8AD4E00@PAGEOFF]; qword_8D12348 ; slot
+0x3e1a940: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3e1a944: ADRP            X0, #off_8ACD428@PAGE
+0x3e1a948: LDR             X0, [X0,#off_8ACD428@PAGEOFF]; off_8CECCD8 ; slot
+0x3e1a94c: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3e1a950: ADRP            X0, #off_8AD4E08@PAGE
+0x3e1a954: LDR             X0, [X0,#off_8AD4E08@PAGEOFF]; off_8CEDA10 ; slot
+0x3e1a958: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3e1a95c: ADRP            X0, #off_8ACC908@PAGE
+0x3e1a960: LDR             X0, [X0,#off_8ACC908@PAGEOFF]; qword_8D4ECC0 ; slot
+0x3e1a964: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3e1a968: MOV             W8, #1
+0x3e1a96c: STRB            W8, [X21,#byte_8FFD89D@PAGEOFF]
+0x3e1a970: MOV             W8, #1
+0x3e1a974: STRB            W8, [X19,#0x70]
+0x3e1a978: LDR             X8, [X20]
+0x3e1a97c: LDR             X8, [X8,#0xB8]
+0x3e1a980: LDR             X0, [X8]
+0x3e1a984: CBZ             X0, loc_3E1A9E8
+0x3e1a988: ADRP            X8, #off_8ACC908@PAGE
+0x3e1a98c: LDR             X8, [X8,#off_8ACC908@PAGEOFF]; qword_8D4ECC0
+0x3e1a990: MOV             X2, XZR
+0x3e1a994: LDR             X1, [X8]
+0x3e1a998: BL              DBTSDK.SDKToolManager$$ReportGameInteractive
+0x3e1a99c: LDRB            W8, [X19,#0x21]
+0x3e1a9a0: CBNZ            W8, loc_3E1A9C0
+0x3e1a9a4: ADRP            X8, #off_8AD4E00@PAGE
+0x3e1a9a8: LDR             X8, [X8,#off_8AD4E00@PAGEOFF]; qword_8D12348
+0x3e1a9ac: LDR             X0, [X8]
+0x3e1a9b0: BL              ToolModule.ManagerBase_object_$$get_Instance
+0x3e1a9b4: CBZ             X0, loc_3E1A9E8
+0x3e1a9b8: MOV             X1, XZR
+0x3e1a9bc: BL              GameModule.PacksTipManager$$FirstPopPacks
+0x3e1a9c0: ADRP            X8, #off_8AD4E08@PAGE
+0x3e1a9c4: LDR             X8, [X8,#off_8AD4E08@PAGEOFF]; off_8CEDA10
+0x3e1a9c8: LDR             X0, [X8]; klass
+0x3e1a9cc: LDR             W8, [X0,#0xE0]
+0x3e1a9d0: CBNZ            W8, loc_3E1A9D8
+0x3e1a9d4: BL              il2cpp_codegen_runtime_class_init
+0x3e1a9d8: LDP             X20, X19, [SP,#0x20+var_10]
+0x3e1a9dc: MOV             X0, XZR
+0x3e1a9e0: LDP             X30, X21, [SP+0x20+var_20],#0x20
+0x3e1a9e4: B               DBT.StartupGift.StartupGiftSystem$$CheckAndGrantGift
+0x3e1a9e8: BL              il2cpp_codegen_raise_null_reference_exception

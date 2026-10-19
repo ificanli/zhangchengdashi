@@ -1,0 +1,52 @@
+{
+  "stage": 46,
+  "status": "stable",
+  "owned": [
+    "Assets/Scripts/GFRunning/GameFramework/Login/ILoginProcedure.cs"
+  ],
+  "productionWriteFreeze": true,
+  "changes": {
+    "originalMethods": [
+      "get_accountType 0x60074DF/0x7301010",
+      "set_accountType 0x60074E0/0x7301068",
+      "cctor 0x60074EE/0x7301214"
+    ],
+    "originalDefault": "AccountType.None=10",
+    "explicitOriginalField": "0x4002009 static offset0",
+    "nonTargetMembersUnchanged": 16,
+    "metaUnchanged": true,
+    "noProvider": "No Editor login provider; original default only",
+    "noFlagWrites": "No adjacent IsLoginInvalid or instance or SDK login-success fields written"
+  },
+  "tests": {
+    "GF_csc_exit": 0,
+    "GF_csc_errors": 0,
+    "actualCandidateDllChecks": 55,
+    "actualSource": "Reflected actual Unity-compiled candidate GF DLL; IL asserts no SDK/Unity calls and only one original mode-field write",
+    "Unity": "not-run; existing GUI3808 not operated"
+  },
+  "remaining": [
+    "Conflict decision producers and original ChooseConflict callers readonly audit continues; no Finish/SDK state written",
+    "No new login success path implemented; unknown raw int enum values preserved by original setter",
+    "DataManager45 remains frozen and unchanged"
+  ],
+  "sourceRecords": [
+    {
+      "file": "Assets/Scripts/GFRunning/GameFramework/Login/ILoginProcedure.cs",
+      "methods": 2,
+      "autoProperties": 0,
+      "addedHelper": true,
+      "beforeSha256": "CCC7AD83136B9B27D71035F705D2E83AA2806A5FE993B6354816056C27A93A5D",
+      "candidateSha256": "92BE0A91D7E01315891A90C47CBED1933077FF2AEB2B07185A2EC7EF10798294",
+      "metaSha256": "B76BEB31F945A88976FCB2AEE7796C08F3FC254E1D6805479F1320F0F4E68AD7",
+      "productionSha256": "92BE0A91D7E01315891A90C47CBED1933077FF2AEB2B07185A2EC7EF10798294",
+      "backup": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\recovery-stubs\\stage46-account-mode-before\\Assets\\Scripts\\GFRunning\\GameFramework\\Login\\ILoginProcedure.cs"
+    }
+  ],
+  "readonlyConflictAudit": {
+    "nativeMethods": 9,
+    "status": "complete readonly; production scope not authorized",
+    "scope": "DataCompareMgr plus SaveConflictCanvas original decision/confirm boundaries",
+    "remaining": "VersionConflict / CheckSaveUserID / OnLTDataCallback and original server/UI closures require separate scope; no fake proxy or Finish writes"
+  }
+}

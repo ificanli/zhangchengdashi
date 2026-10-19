@@ -1,0 +1,52 @@
+0x4b8d6e0: SUB             SP, SP, #0x90
+0x4b8d6e4: STR             X30, [SP,#0x90+var_30]
+0x4b8d6e8: STP             X22, X21, [SP,#0x90+var_20]
+0x4b8d6ec: STP             X20, X19, [SP,#0x90+var_10]
+0x4b8d6f0: LDR             X8, [X3,#0x38]
+0x4b8d6f4: MOV             X19, X3
+0x4b8d6f8: MOV             W20, W2
+0x4b8d6fc: MOV             X21, X1
+0x4b8d700: MOV             X22, X0
+0x4b8d704: CBNZ            X8, loc_4B8D724
+0x4b8d708: ADRP            X0, #off_8AD5AD0@PAGE
+0x4b8d70c: LDR             X0, [X0,#off_8AD5AD0@PAGEOFF]; off_8CE4558 ; slot
+0x4b8d710: BL              il2cpp_codegen_initialize_runtime_metadata
+0x4b8d714: LDR             X8, [X19,#0x38]
+0x4b8d718: CBNZ            X8, loc_4B8D724
+0x4b8d71c: MOV             X0, X19
+0x4b8d720: BL              unk_3C503FC
+0x4b8d724: ADRP            X8, #off_8AD5AD0@PAGE
+0x4b8d728: LDR             X8, [X8,#off_8AD5AD0@PAGEOFF]; off_8CE4558
+0x4b8d72c: MOVI            V0.2D, #0
+0x4b8d730: STP             Q0, Q0, [SP,#0x90+var_50]
+0x4b8d734: STP             Q0, Q0, [SP,#0x90+var_70]
+0x4b8d738: LDR             X0, [X8]; klass
+0x4b8d73c: LDR             W8, [X0,#0xE0]
+0x4b8d740: CBNZ            W8, loc_4B8D748
+0x4b8d744: BL              il2cpp_codegen_runtime_class_init
+0x4b8d748: ADD             X8, SP, #0x90+var_88
+0x4b8d74c: MOV             X0, XZR
+0x4b8d750: BL              System.Runtime.CompilerServices.AsyncTaskMethodBuilder$$Create
+0x4b8d754: LDUR            Q0, [SP,#0x90+var_88]
+0x4b8d758: LDR             X8, [SP,#0x90+var_78]
+0x4b8d75c: MOV             W9, #0xFFFFFFFF
+0x4b8d760: STP             X22, X21, [SP,#0x90+var_50+8]
+0x4b8d764: STR             W20, [SP,#0x90+var_50]
+0x4b8d768: STUR            Q0, [SP,#0x90+var_70+8]
+0x4b8d76c: STR             X8, [SP,#0x90+var_58]
+0x4b8d770: STR             W9, [SP,#0x90+var_70]
+0x4b8d774: LDR             X8, [X19,#0x38]
+0x4b8d778: ADD             X1, SP, #0x90+var_70
+0x4b8d77c: LDR             X2, [X8,#0x10]
+0x4b8d780: ADD             X8, SP, #0x90+var_70
+0x4b8d784: ORR             X19, X8, #8
+0x4b8d788: MOV             X0, X19
+0x4b8d78c: BL              System.Runtime.CompilerServices.AsyncTaskMethodBuilder$$Start_ConfigRead.__slS__object__
+0x4b8d790: MOV             X0, X19
+0x4b8d794: MOV             X1, XZR
+0x4b8d798: BL              System.Runtime.CompilerServices.AsyncTaskMethodBuilder$$get_Task
+0x4b8d79c: LDP             X20, X19, [SP,#0x90+var_10]
+0x4b8d7a0: LDP             X22, X21, [SP,#0x90+var_20]
+0x4b8d7a4: LDR             X30, [SP,#0x90+var_30]
+0x4b8d7a8: ADD             SP, SP, #0x90
+0x4b8d7ac: RET

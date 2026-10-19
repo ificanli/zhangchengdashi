@@ -1,0 +1,2100 @@
+{
+  "summary": {
+    "scenarios": 102,
+    "checks": 1195,
+    "failures": 0
+  },
+  "results": [
+    {
+      "name": "Init awaits success and preserves 13 listener\u002B4 dictionary order",
+      "failures": 0,
+      "trace": [
+        "floating:init",
+        "listen:CoinChangeUpdateGamePanel:CoinChangeUpdateGamePanel",
+        "listen:HasHexDestroy:GameEndCheck",
+        "listen:PlayerBeginOpenHex:PlayerOpenHexCountAdd",
+        "listen:PlayerHornEmitIng:PlayerHornEmitIng",
+        "listen:OnGameOver:ShowInterstitial",
+        "listen:PlayerHornEmitEnd:PlayerHornEmitEnd",
+        "listen:SettlementAnimationEnd:SettlementAnimationEnd",
+        "listen:BetStartGame:BetRecordRewardNum",
+        "listen:GameSteerEndShowCardProbabilityPanel:BeginStartCountDown",
+        "listen:GameSteerEndShowCardProbabilityPanel:GuidOneEndAddCoin",
+        "listen:CloseMatchPanel:CloseMatchPanel",
+        "listen:PauseGame:OnPauseGame",
+        "listen:ResumeGame:OnResumeGame",
+        "dict:role",
+        "dict:tower",
+        "dict:card",
+        "dict:dead"
+      ],
+      "observations": [
+        "listen:dictsNull=True",
+        "listen:dictsNull=True",
+        "listen:dictsNull=True",
+        "listen:dictsNull=True",
+        "listen:dictsNull=True",
+        "listen:dictsNull=True",
+        "listen:dictsNull=True",
+        "listen:dictsNull=True",
+        "listen:dictsNull=True",
+        "listen:dictsNull=True",
+        "listen:dictsNull=True",
+        "listen:dictsNull=True",
+        "listen:dictsNull=True"
+      ]
+    },
+    {
+      "name": "Init floating failure never registers or creates",
+      "failures": 0,
+      "trace": [
+        "floating:init"
+      ],
+      "observations": []
+    },
+    {
+      "name": "Init listener failure stops at exact registration",
+      "failures": 0,
+      "trace": [
+        "floating:init",
+        "listen:CoinChangeUpdateGamePanel:CoinChangeUpdateGamePanel",
+        "listen:HasHexDestroy:GameEndCheck",
+        "listen:PlayerBeginOpenHex:PlayerOpenHexCountAdd",
+        "listen:PlayerHornEmitIng:PlayerHornEmitIng",
+        "listen:OnGameOver:ShowInterstitial",
+        "listen:PlayerHornEmitEnd:PlayerHornEmitEnd"
+      ],
+      "observations": [
+        "listen:dictsNull=True",
+        "listen:dictsNull=True",
+        "listen:dictsNull=True",
+        "listen:dictsNull=True",
+        "listen:dictsNull=True",
+        "listen:dictsNull=True"
+      ]
+    },
+    {
+      "name": "GameEnd v=False weekly=False ani=False panel=False coroutine=False",
+      "failures": 0,
+      "trace": [
+        "gaming:False",
+        "event:GameEnd",
+        "tutorial:close",
+        "ui:is-showing",
+        "settlement:False"
+      ],
+      "observations": [
+        "event:gaming=False:victory=False:counting=True",
+        "settlement:counting=False:gaming=False"
+      ]
+    },
+    {
+      "name": "GameEnd v=False weekly=False ani=False panel=False coroutine=True",
+      "failures": 0,
+      "trace": [
+        "gaming:False",
+        "event:GameEnd",
+        "stop-coroutine",
+        "tutorial:close",
+        "ui:is-showing",
+        "settlement:False"
+      ],
+      "observations": [
+        "event:gaming=False:victory=False:counting=True",
+        "stop:counting=False",
+        "settlement:counting=False:gaming=False"
+      ]
+    },
+    {
+      "name": "GameEnd v=False weekly=False ani=False panel=True coroutine=False",
+      "failures": 0,
+      "trace": [
+        "gaming:False",
+        "event:GameEnd",
+        "tutorial:close",
+        "ui:is-showing",
+        "ui:hide",
+        "settlement:False"
+      ],
+      "observations": [
+        "event:gaming=False:victory=False:counting=True",
+        "settlement:counting=False:gaming=False"
+      ]
+    },
+    {
+      "name": "GameEnd v=False weekly=False ani=False panel=True coroutine=True",
+      "failures": 0,
+      "trace": [
+        "gaming:False",
+        "event:GameEnd",
+        "stop-coroutine",
+        "tutorial:close",
+        "ui:is-showing",
+        "ui:hide",
+        "settlement:False"
+      ],
+      "observations": [
+        "event:gaming=False:victory=False:counting=True",
+        "stop:counting=False",
+        "settlement:counting=False:gaming=False"
+      ]
+    },
+    {
+      "name": "GameEnd v=False weekly=False ani=True panel=False coroutine=False",
+      "failures": 0,
+      "trace": [
+        "panel:ani",
+        "gaming:False",
+        "event:GameEnd",
+        "tutorial:close",
+        "ui:is-showing",
+        "delay:2.3",
+        "settlement:False"
+      ],
+      "observations": [
+        "ani:victory=False",
+        "event:gaming=False:victory=False:counting=True",
+        "settlement:counting=False:gaming=False"
+      ]
+    },
+    {
+      "name": "GameEnd v=False weekly=False ani=True panel=False coroutine=True",
+      "failures": 0,
+      "trace": [
+        "panel:ani",
+        "gaming:False",
+        "event:GameEnd",
+        "stop-coroutine",
+        "tutorial:close",
+        "ui:is-showing",
+        "delay:2.3",
+        "settlement:False"
+      ],
+      "observations": [
+        "ani:victory=False",
+        "event:gaming=False:victory=False:counting=True",
+        "stop:counting=False",
+        "settlement:counting=False:gaming=False"
+      ]
+    },
+    {
+      "name": "GameEnd v=False weekly=False ani=True panel=True coroutine=False",
+      "failures": 0,
+      "trace": [
+        "panel:ani",
+        "gaming:False",
+        "event:GameEnd",
+        "tutorial:close",
+        "ui:is-showing",
+        "ui:hide",
+        "delay:2.3",
+        "settlement:False"
+      ],
+      "observations": [
+        "ani:victory=False",
+        "event:gaming=False:victory=False:counting=True",
+        "settlement:counting=False:gaming=False"
+      ]
+    },
+    {
+      "name": "GameEnd v=False weekly=False ani=True panel=True coroutine=True",
+      "failures": 0,
+      "trace": [
+        "panel:ani",
+        "gaming:False",
+        "event:GameEnd",
+        "stop-coroutine",
+        "tutorial:close",
+        "ui:is-showing",
+        "ui:hide",
+        "delay:2.3",
+        "settlement:False"
+      ],
+      "observations": [
+        "ani:victory=False",
+        "event:gaming=False:victory=False:counting=True",
+        "stop:counting=False",
+        "settlement:counting=False:gaming=False"
+      ]
+    },
+    {
+      "name": "GameEnd v=False weekly=True ani=False panel=False coroutine=False",
+      "failures": 0,
+      "trace": [
+        "gaming:False",
+        "event:GameEnd",
+        "tutorial:close",
+        "ui:is-showing",
+        "settlement:False"
+      ],
+      "observations": [
+        "event:gaming=False:victory=False:counting=True",
+        "settlement:counting=False:gaming=False"
+      ]
+    },
+    {
+      "name": "GameEnd v=False weekly=True ani=False panel=False coroutine=True",
+      "failures": 0,
+      "trace": [
+        "gaming:False",
+        "event:GameEnd",
+        "stop-coroutine",
+        "tutorial:close",
+        "ui:is-showing",
+        "settlement:False"
+      ],
+      "observations": [
+        "event:gaming=False:victory=False:counting=True",
+        "stop:counting=False",
+        "settlement:counting=False:gaming=False"
+      ]
+    },
+    {
+      "name": "GameEnd v=False weekly=True ani=False panel=True coroutine=False",
+      "failures": 0,
+      "trace": [
+        "gaming:False",
+        "event:GameEnd",
+        "tutorial:close",
+        "ui:is-showing",
+        "ui:hide",
+        "settlement:False"
+      ],
+      "observations": [
+        "event:gaming=False:victory=False:counting=True",
+        "settlement:counting=False:gaming=False"
+      ]
+    },
+    {
+      "name": "GameEnd v=False weekly=True ani=False panel=True coroutine=True",
+      "failures": 0,
+      "trace": [
+        "gaming:False",
+        "event:GameEnd",
+        "stop-coroutine",
+        "tutorial:close",
+        "ui:is-showing",
+        "ui:hide",
+        "settlement:False"
+      ],
+      "observations": [
+        "event:gaming=False:victory=False:counting=True",
+        "stop:counting=False",
+        "settlement:counting=False:gaming=False"
+      ]
+    },
+    {
+      "name": "GameEnd v=False weekly=True ani=True panel=False coroutine=False",
+      "failures": 0,
+      "trace": [
+        "panel:ani",
+        "gaming:False",
+        "event:GameEnd",
+        "tutorial:close",
+        "ui:is-showing",
+        "delay:2.3",
+        "settlement:False"
+      ],
+      "observations": [
+        "ani:victory=False",
+        "event:gaming=False:victory=False:counting=True",
+        "settlement:counting=False:gaming=False"
+      ]
+    },
+    {
+      "name": "GameEnd v=False weekly=True ani=True panel=False coroutine=True",
+      "failures": 0,
+      "trace": [
+        "panel:ani",
+        "gaming:False",
+        "event:GameEnd",
+        "stop-coroutine",
+        "tutorial:close",
+        "ui:is-showing",
+        "delay:2.3",
+        "settlement:False"
+      ],
+      "observations": [
+        "ani:victory=False",
+        "event:gaming=False:victory=False:counting=True",
+        "stop:counting=False",
+        "settlement:counting=False:gaming=False"
+      ]
+    },
+    {
+      "name": "GameEnd v=False weekly=True ani=True panel=True coroutine=False",
+      "failures": 0,
+      "trace": [
+        "panel:ani",
+        "gaming:False",
+        "event:GameEnd",
+        "tutorial:close",
+        "ui:is-showing",
+        "ui:hide",
+        "delay:2.3",
+        "settlement:False"
+      ],
+      "observations": [
+        "ani:victory=False",
+        "event:gaming=False:victory=False:counting=True",
+        "settlement:counting=False:gaming=False"
+      ]
+    },
+    {
+      "name": "GameEnd v=False weekly=True ani=True panel=True coroutine=True",
+      "failures": 0,
+      "trace": [
+        "panel:ani",
+        "gaming:False",
+        "event:GameEnd",
+        "stop-coroutine",
+        "tutorial:close",
+        "ui:is-showing",
+        "ui:hide",
+        "delay:2.3",
+        "settlement:False"
+      ],
+      "observations": [
+        "ani:victory=False",
+        "event:gaming=False:victory=False:counting=True",
+        "stop:counting=False",
+        "settlement:counting=False:gaming=False"
+      ]
+    },
+    {
+      "name": "GameEnd v=True weekly=False ani=False panel=False coroutine=False",
+      "failures": 0,
+      "trace": [
+        "weekly:check",
+        "gaming:False",
+        "event:GameEnd",
+        "tutorial:close",
+        "ui:is-showing",
+        "settlement:True"
+      ],
+      "observations": [
+        "event:gaming=False:victory=True:counting=True",
+        "settlement:counting=False:gaming=False"
+      ]
+    },
+    {
+      "name": "GameEnd v=True weekly=False ani=False panel=False coroutine=True",
+      "failures": 0,
+      "trace": [
+        "weekly:check",
+        "gaming:False",
+        "event:GameEnd",
+        "stop-coroutine",
+        "tutorial:close",
+        "ui:is-showing",
+        "settlement:True"
+      ],
+      "observations": [
+        "event:gaming=False:victory=True:counting=True",
+        "stop:counting=False",
+        "settlement:counting=False:gaming=False"
+      ]
+    },
+    {
+      "name": "GameEnd v=True weekly=False ani=False panel=True coroutine=False",
+      "failures": 0,
+      "trace": [
+        "weekly:check",
+        "gaming:False",
+        "event:GameEnd",
+        "tutorial:close",
+        "ui:is-showing",
+        "ui:hide",
+        "settlement:True"
+      ],
+      "observations": [
+        "event:gaming=False:victory=True:counting=True",
+        "settlement:counting=False:gaming=False"
+      ]
+    },
+    {
+      "name": "GameEnd v=True weekly=False ani=False panel=True coroutine=True",
+      "failures": 0,
+      "trace": [
+        "weekly:check",
+        "gaming:False",
+        "event:GameEnd",
+        "stop-coroutine",
+        "tutorial:close",
+        "ui:is-showing",
+        "ui:hide",
+        "settlement:True"
+      ],
+      "observations": [
+        "event:gaming=False:victory=True:counting=True",
+        "stop:counting=False",
+        "settlement:counting=False:gaming=False"
+      ]
+    },
+    {
+      "name": "GameEnd v=True weekly=False ani=True panel=False coroutine=False",
+      "failures": 0,
+      "trace": [
+        "weekly:check",
+        "panel:ani",
+        "gaming:False",
+        "event:GameEnd",
+        "tutorial:close",
+        "ui:is-showing",
+        "delay:2.3",
+        "settlement:True"
+      ],
+      "observations": [
+        "ani:victory=True",
+        "event:gaming=False:victory=True:counting=True",
+        "settlement:counting=False:gaming=False"
+      ]
+    },
+    {
+      "name": "GameEnd v=True weekly=False ani=True panel=False coroutine=True",
+      "failures": 0,
+      "trace": [
+        "weekly:check",
+        "panel:ani",
+        "gaming:False",
+        "event:GameEnd",
+        "stop-coroutine",
+        "tutorial:close",
+        "ui:is-showing",
+        "delay:2.3",
+        "settlement:True"
+      ],
+      "observations": [
+        "ani:victory=True",
+        "event:gaming=False:victory=True:counting=True",
+        "stop:counting=False",
+        "settlement:counting=False:gaming=False"
+      ]
+    },
+    {
+      "name": "GameEnd v=True weekly=False ani=True panel=True coroutine=False",
+      "failures": 0,
+      "trace": [
+        "weekly:check",
+        "panel:ani",
+        "gaming:False",
+        "event:GameEnd",
+        "tutorial:close",
+        "ui:is-showing",
+        "ui:hide",
+        "delay:2.3",
+        "settlement:True"
+      ],
+      "observations": [
+        "ani:victory=True",
+        "event:gaming=False:victory=True:counting=True",
+        "settlement:counting=False:gaming=False"
+      ]
+    },
+    {
+      "name": "GameEnd v=True weekly=False ani=True panel=True coroutine=True",
+      "failures": 0,
+      "trace": [
+        "weekly:check",
+        "panel:ani",
+        "gaming:False",
+        "event:GameEnd",
+        "stop-coroutine",
+        "tutorial:close",
+        "ui:is-showing",
+        "ui:hide",
+        "delay:2.3",
+        "settlement:True"
+      ],
+      "observations": [
+        "ani:victory=True",
+        "event:gaming=False:victory=True:counting=True",
+        "stop:counting=False",
+        "settlement:counting=False:gaming=False"
+      ]
+    },
+    {
+      "name": "GameEnd v=True weekly=True ani=False panel=False coroutine=False",
+      "failures": 0,
+      "trace": [
+        "weekly:check",
+        "event:WeeklyCardActivityTaskTrigger",
+        "gaming:False",
+        "event:GameEnd",
+        "tutorial:close",
+        "ui:is-showing",
+        "settlement:True"
+      ],
+      "observations": [
+        "weekly:1:1",
+        "event:gaming=False:victory=True:counting=True",
+        "settlement:counting=False:gaming=False"
+      ]
+    },
+    {
+      "name": "GameEnd v=True weekly=True ani=False panel=False coroutine=True",
+      "failures": 0,
+      "trace": [
+        "weekly:check",
+        "event:WeeklyCardActivityTaskTrigger",
+        "gaming:False",
+        "event:GameEnd",
+        "stop-coroutine",
+        "tutorial:close",
+        "ui:is-showing",
+        "settlement:True"
+      ],
+      "observations": [
+        "weekly:1:1",
+        "event:gaming=False:victory=True:counting=True",
+        "stop:counting=False",
+        "settlement:counting=False:gaming=False"
+      ]
+    },
+    {
+      "name": "GameEnd v=True weekly=True ani=False panel=True coroutine=False",
+      "failures": 0,
+      "trace": [
+        "weekly:check",
+        "event:WeeklyCardActivityTaskTrigger",
+        "gaming:False",
+        "event:GameEnd",
+        "tutorial:close",
+        "ui:is-showing",
+        "ui:hide",
+        "settlement:True"
+      ],
+      "observations": [
+        "weekly:1:1",
+        "event:gaming=False:victory=True:counting=True",
+        "settlement:counting=False:gaming=False"
+      ]
+    },
+    {
+      "name": "GameEnd v=True weekly=True ani=False panel=True coroutine=True",
+      "failures": 0,
+      "trace": [
+        "weekly:check",
+        "event:WeeklyCardActivityTaskTrigger",
+        "gaming:False",
+        "event:GameEnd",
+        "stop-coroutine",
+        "tutorial:close",
+        "ui:is-showing",
+        "ui:hide",
+        "settlement:True"
+      ],
+      "observations": [
+        "weekly:1:1",
+        "event:gaming=False:victory=True:counting=True",
+        "stop:counting=False",
+        "settlement:counting=False:gaming=False"
+      ]
+    },
+    {
+      "name": "GameEnd v=True weekly=True ani=True panel=False coroutine=False",
+      "failures": 0,
+      "trace": [
+        "weekly:check",
+        "event:WeeklyCardActivityTaskTrigger",
+        "panel:ani",
+        "gaming:False",
+        "event:GameEnd",
+        "tutorial:close",
+        "ui:is-showing",
+        "delay:2.3",
+        "settlement:True"
+      ],
+      "observations": [
+        "weekly:1:1",
+        "ani:victory=True",
+        "event:gaming=False:victory=True:counting=True",
+        "settlement:counting=False:gaming=False"
+      ]
+    },
+    {
+      "name": "GameEnd v=True weekly=True ani=True panel=False coroutine=True",
+      "failures": 0,
+      "trace": [
+        "weekly:check",
+        "event:WeeklyCardActivityTaskTrigger",
+        "panel:ani",
+        "gaming:False",
+        "event:GameEnd",
+        "stop-coroutine",
+        "tutorial:close",
+        "ui:is-showing",
+        "delay:2.3",
+        "settlement:True"
+      ],
+      "observations": [
+        "weekly:1:1",
+        "ani:victory=True",
+        "event:gaming=False:victory=True:counting=True",
+        "stop:counting=False",
+        "settlement:counting=False:gaming=False"
+      ]
+    },
+    {
+      "name": "GameEnd v=True weekly=True ani=True panel=True coroutine=False",
+      "failures": 0,
+      "trace": [
+        "weekly:check",
+        "event:WeeklyCardActivityTaskTrigger",
+        "panel:ani",
+        "gaming:False",
+        "event:GameEnd",
+        "tutorial:close",
+        "ui:is-showing",
+        "ui:hide",
+        "delay:2.3",
+        "settlement:True"
+      ],
+      "observations": [
+        "weekly:1:1",
+        "ani:victory=True",
+        "event:gaming=False:victory=True:counting=True",
+        "settlement:counting=False:gaming=False"
+      ]
+    },
+    {
+      "name": "GameEnd v=True weekly=True ani=True panel=True coroutine=True",
+      "failures": 0,
+      "trace": [
+        "weekly:check",
+        "event:WeeklyCardActivityTaskTrigger",
+        "panel:ani",
+        "gaming:False",
+        "event:GameEnd",
+        "stop-coroutine",
+        "tutorial:close",
+        "ui:is-showing",
+        "ui:hide",
+        "delay:2.3",
+        "settlement:True"
+      ],
+      "observations": [
+        "weekly:1:1",
+        "ani:victory=True",
+        "event:gaming=False:victory=True:counting=True",
+        "stop:counting=False",
+        "settlement:counting=False:gaming=False"
+      ]
+    },
+    {
+      "name": "GameEnd event fault stops later side effects",
+      "failures": 0,
+      "trace": [
+        "panel:ani",
+        "gaming:False",
+        "event:GameEnd"
+      ],
+      "observations": [
+        "ani:victory=False",
+        "event:gaming=False:victory=False:counting=True"
+      ]
+    },
+    {
+      "name": "StartGame arena=null guided=False first=False existing=False fps=False",
+      "failures": 0,
+      "trace": [
+        "string:null-check:null",
+        "config:arena:1001",
+        "string:parse:347",
+        "buff:time:347",
+        "format:360",
+        "panel:update:7:formatted:360",
+        "training:check",
+        "guide:first-through",
+        "guide:first-through",
+        "begin-countdown:null",
+        "paused:False",
+        "snapshots:clear",
+        "perf:reset",
+        "card:get-list",
+        "dict:card"
+      ],
+      "observations": []
+    },
+    {
+      "name": "StartGame arena=null guided=False first=False existing=False fps=True",
+      "failures": 0,
+      "trace": [
+        "string:null-check:null",
+        "config:arena:1001",
+        "string:parse:347",
+        "buff:time:347",
+        "format:360",
+        "panel:update:7:formatted:360",
+        "training:check",
+        "guide:first-through",
+        "guide:first-through",
+        "begin-countdown:null",
+        "paused:False",
+        "snapshots:clear",
+        "perf:reset",
+        "fps:start",
+        "card:get-list",
+        "dict:card"
+      ],
+      "observations": []
+    },
+    {
+      "name": "StartGame arena=null guided=False first=False existing=True fps=False",
+      "failures": 0,
+      "trace": [
+        "string:null-check:null",
+        "config:arena:1001",
+        "string:parse:347",
+        "buff:time:347",
+        "format:360",
+        "panel:update:7:formatted:360",
+        "training:check",
+        "guide:first-through",
+        "guide:first-through",
+        "begin-countdown:null",
+        "paused:False",
+        "snapshots:clear",
+        "perf:reset",
+        "card:get-list"
+      ],
+      "observations": []
+    },
+    {
+      "name": "StartGame arena=null guided=False first=False existing=True fps=True",
+      "failures": 0,
+      "trace": [
+        "string:null-check:null",
+        "config:arena:1001",
+        "string:parse:347",
+        "buff:time:347",
+        "format:360",
+        "panel:update:7:formatted:360",
+        "training:check",
+        "guide:first-through",
+        "guide:first-through",
+        "begin-countdown:null",
+        "paused:False",
+        "snapshots:clear",
+        "perf:reset",
+        "fps:start",
+        "card:get-list"
+      ],
+      "observations": []
+    },
+    {
+      "name": "StartGame arena=null guided=False first=True existing=False fps=False",
+      "failures": 0,
+      "trace": [
+        "string:null-check:null",
+        "config:arena:1001",
+        "string:parse:347",
+        "buff:time:347",
+        "format:360",
+        "panel:update:7:formatted:360",
+        "training:check",
+        "guide:first-through",
+        "guide:first-through",
+        "paused:False",
+        "snapshots:clear",
+        "perf:reset",
+        "card:get-list",
+        "dict:card"
+      ],
+      "observations": []
+    },
+    {
+      "name": "StartGame arena=null guided=False first=True existing=False fps=True",
+      "failures": 0,
+      "trace": [
+        "string:null-check:null",
+        "config:arena:1001",
+        "string:parse:347",
+        "buff:time:347",
+        "format:360",
+        "panel:update:7:formatted:360",
+        "training:check",
+        "guide:first-through",
+        "guide:first-through",
+        "paused:False",
+        "snapshots:clear",
+        "perf:reset",
+        "fps:start",
+        "card:get-list",
+        "dict:card"
+      ],
+      "observations": []
+    },
+    {
+      "name": "StartGame arena=null guided=False first=True existing=True fps=False",
+      "failures": 0,
+      "trace": [
+        "string:null-check:null",
+        "config:arena:1001",
+        "string:parse:347",
+        "buff:time:347",
+        "format:360",
+        "panel:update:7:formatted:360",
+        "training:check",
+        "guide:first-through",
+        "guide:first-through",
+        "paused:False",
+        "snapshots:clear",
+        "perf:reset",
+        "card:get-list"
+      ],
+      "observations": []
+    },
+    {
+      "name": "StartGame arena=null guided=False first=True existing=True fps=True",
+      "failures": 0,
+      "trace": [
+        "string:null-check:null",
+        "config:arena:1001",
+        "string:parse:347",
+        "buff:time:347",
+        "format:360",
+        "panel:update:7:formatted:360",
+        "training:check",
+        "guide:first-through",
+        "guide:first-through",
+        "paused:False",
+        "snapshots:clear",
+        "perf:reset",
+        "fps:start",
+        "card:get-list"
+      ],
+      "observations": []
+    },
+    {
+      "name": "StartGame arena=null guided=True first=False existing=False fps=False",
+      "failures": 0,
+      "trace": [
+        "string:null-check:null",
+        "config:arena:1001",
+        "string:parse:347",
+        "buff:time:347",
+        "format:360",
+        "panel:update:7:formatted:360",
+        "training:check",
+        "training:coin",
+        "guide:first-through",
+        "begin-countdown:null",
+        "paused:False",
+        "snapshots:clear",
+        "perf:reset",
+        "card:get-list",
+        "dict:card"
+      ],
+      "observations": []
+    },
+    {
+      "name": "StartGame arena=null guided=True first=False existing=False fps=True",
+      "failures": 0,
+      "trace": [
+        "string:null-check:null",
+        "config:arena:1001",
+        "string:parse:347",
+        "buff:time:347",
+        "format:360",
+        "panel:update:7:formatted:360",
+        "training:check",
+        "training:coin",
+        "guide:first-through",
+        "begin-countdown:null",
+        "paused:False",
+        "snapshots:clear",
+        "perf:reset",
+        "fps:start",
+        "card:get-list",
+        "dict:card"
+      ],
+      "observations": []
+    },
+    {
+      "name": "StartGame arena=null guided=True first=False existing=True fps=False",
+      "failures": 0,
+      "trace": [
+        "string:null-check:null",
+        "config:arena:1001",
+        "string:parse:347",
+        "buff:time:347",
+        "format:360",
+        "panel:update:7:formatted:360",
+        "training:check",
+        "training:coin",
+        "guide:first-through",
+        "begin-countdown:null",
+        "paused:False",
+        "snapshots:clear",
+        "perf:reset",
+        "card:get-list"
+      ],
+      "observations": []
+    },
+    {
+      "name": "StartGame arena=null guided=True first=False existing=True fps=True",
+      "failures": 0,
+      "trace": [
+        "string:null-check:null",
+        "config:arena:1001",
+        "string:parse:347",
+        "buff:time:347",
+        "format:360",
+        "panel:update:7:formatted:360",
+        "training:check",
+        "training:coin",
+        "guide:first-through",
+        "begin-countdown:null",
+        "paused:False",
+        "snapshots:clear",
+        "perf:reset",
+        "fps:start",
+        "card:get-list"
+      ],
+      "observations": []
+    },
+    {
+      "name": "StartGame arena=null guided=True first=True existing=False fps=False",
+      "failures": 0,
+      "trace": [
+        "string:null-check:null",
+        "config:arena:1001",
+        "string:parse:347",
+        "buff:time:347",
+        "format:360",
+        "panel:update:7:formatted:360",
+        "training:check",
+        "training:coin",
+        "guide:first-through",
+        "paused:False",
+        "snapshots:clear",
+        "perf:reset",
+        "card:get-list",
+        "dict:card"
+      ],
+      "observations": []
+    },
+    {
+      "name": "StartGame arena=null guided=True first=True existing=False fps=True",
+      "failures": 0,
+      "trace": [
+        "string:null-check:null",
+        "config:arena:1001",
+        "string:parse:347",
+        "buff:time:347",
+        "format:360",
+        "panel:update:7:formatted:360",
+        "training:check",
+        "training:coin",
+        "guide:first-through",
+        "paused:False",
+        "snapshots:clear",
+        "perf:reset",
+        "fps:start",
+        "card:get-list",
+        "dict:card"
+      ],
+      "observations": []
+    },
+    {
+      "name": "StartGame arena=null guided=True first=True existing=True fps=False",
+      "failures": 0,
+      "trace": [
+        "string:null-check:null",
+        "config:arena:1001",
+        "string:parse:347",
+        "buff:time:347",
+        "format:360",
+        "panel:update:7:formatted:360",
+        "training:check",
+        "training:coin",
+        "guide:first-through",
+        "paused:False",
+        "snapshots:clear",
+        "perf:reset",
+        "card:get-list"
+      ],
+      "observations": []
+    },
+    {
+      "name": "StartGame arena=null guided=True first=True existing=True fps=True",
+      "failures": 0,
+      "trace": [
+        "string:null-check:null",
+        "config:arena:1001",
+        "string:parse:347",
+        "buff:time:347",
+        "format:360",
+        "panel:update:7:formatted:360",
+        "training:check",
+        "training:coin",
+        "guide:first-through",
+        "paused:False",
+        "snapshots:clear",
+        "perf:reset",
+        "fps:start",
+        "card:get-list"
+      ],
+      "observations": []
+    },
+    {
+      "name": "StartGame arena= guided=False first=False existing=False fps=False",
+      "failures": 0,
+      "trace": [
+        "string:null-check:",
+        "config:arena:1001",
+        "string:parse:347",
+        "buff:time:347",
+        "format:360",
+        "panel:update:7:formatted:360",
+        "training:check",
+        "guide:first-through",
+        "guide:first-through",
+        "begin-countdown:null",
+        "paused:False",
+        "snapshots:clear",
+        "perf:reset",
+        "card:get-list",
+        "dict:card"
+      ],
+      "observations": []
+    },
+    {
+      "name": "StartGame arena= guided=False first=False existing=False fps=True",
+      "failures": 0,
+      "trace": [
+        "string:null-check:",
+        "config:arena:1001",
+        "string:parse:347",
+        "buff:time:347",
+        "format:360",
+        "panel:update:7:formatted:360",
+        "training:check",
+        "guide:first-through",
+        "guide:first-through",
+        "begin-countdown:null",
+        "paused:False",
+        "snapshots:clear",
+        "perf:reset",
+        "fps:start",
+        "card:get-list",
+        "dict:card"
+      ],
+      "observations": []
+    },
+    {
+      "name": "StartGame arena= guided=False first=False existing=True fps=False",
+      "failures": 0,
+      "trace": [
+        "string:null-check:",
+        "config:arena:1001",
+        "string:parse:347",
+        "buff:time:347",
+        "format:360",
+        "panel:update:7:formatted:360",
+        "training:check",
+        "guide:first-through",
+        "guide:first-through",
+        "begin-countdown:null",
+        "paused:False",
+        "snapshots:clear",
+        "perf:reset",
+        "card:get-list"
+      ],
+      "observations": []
+    },
+    {
+      "name": "StartGame arena= guided=False first=False existing=True fps=True",
+      "failures": 0,
+      "trace": [
+        "string:null-check:",
+        "config:arena:1001",
+        "string:parse:347",
+        "buff:time:347",
+        "format:360",
+        "panel:update:7:formatted:360",
+        "training:check",
+        "guide:first-through",
+        "guide:first-through",
+        "begin-countdown:null",
+        "paused:False",
+        "snapshots:clear",
+        "perf:reset",
+        "fps:start",
+        "card:get-list"
+      ],
+      "observations": []
+    },
+    {
+      "name": "StartGame arena= guided=False first=True existing=False fps=False",
+      "failures": 0,
+      "trace": [
+        "string:null-check:",
+        "config:arena:1001",
+        "string:parse:347",
+        "buff:time:347",
+        "format:360",
+        "panel:update:7:formatted:360",
+        "training:check",
+        "guide:first-through",
+        "guide:first-through",
+        "paused:False",
+        "snapshots:clear",
+        "perf:reset",
+        "card:get-list",
+        "dict:card"
+      ],
+      "observations": []
+    },
+    {
+      "name": "StartGame arena= guided=False first=True existing=False fps=True",
+      "failures": 0,
+      "trace": [
+        "string:null-check:",
+        "config:arena:1001",
+        "string:parse:347",
+        "buff:time:347",
+        "format:360",
+        "panel:update:7:formatted:360",
+        "training:check",
+        "guide:first-through",
+        "guide:first-through",
+        "paused:False",
+        "snapshots:clear",
+        "perf:reset",
+        "fps:start",
+        "card:get-list",
+        "dict:card"
+      ],
+      "observations": []
+    },
+    {
+      "name": "StartGame arena= guided=False first=True existing=True fps=False",
+      "failures": 0,
+      "trace": [
+        "string:null-check:",
+        "config:arena:1001",
+        "string:parse:347",
+        "buff:time:347",
+        "format:360",
+        "panel:update:7:formatted:360",
+        "training:check",
+        "guide:first-through",
+        "guide:first-through",
+        "paused:False",
+        "snapshots:clear",
+        "perf:reset",
+        "card:get-list"
+      ],
+      "observations": []
+    },
+    {
+      "name": "StartGame arena= guided=False first=True existing=True fps=True",
+      "failures": 0,
+      "trace": [
+        "string:null-check:",
+        "config:arena:1001",
+        "string:parse:347",
+        "buff:time:347",
+        "format:360",
+        "panel:update:7:formatted:360",
+        "training:check",
+        "guide:first-through",
+        "guide:first-through",
+        "paused:False",
+        "snapshots:clear",
+        "perf:reset",
+        "fps:start",
+        "card:get-list"
+      ],
+      "observations": []
+    },
+    {
+      "name": "StartGame arena= guided=True first=False existing=False fps=False",
+      "failures": 0,
+      "trace": [
+        "string:null-check:",
+        "config:arena:1001",
+        "string:parse:347",
+        "buff:time:347",
+        "format:360",
+        "panel:update:7:formatted:360",
+        "training:check",
+        "training:coin",
+        "guide:first-through",
+        "begin-countdown:null",
+        "paused:False",
+        "snapshots:clear",
+        "perf:reset",
+        "card:get-list",
+        "dict:card"
+      ],
+      "observations": []
+    },
+    {
+      "name": "StartGame arena= guided=True first=False existing=False fps=True",
+      "failures": 0,
+      "trace": [
+        "string:null-check:",
+        "config:arena:1001",
+        "string:parse:347",
+        "buff:time:347",
+        "format:360",
+        "panel:update:7:formatted:360",
+        "training:check",
+        "training:coin",
+        "guide:first-through",
+        "begin-countdown:null",
+        "paused:False",
+        "snapshots:clear",
+        "perf:reset",
+        "fps:start",
+        "card:get-list",
+        "dict:card"
+      ],
+      "observations": []
+    },
+    {
+      "name": "StartGame arena= guided=True first=False existing=True fps=False",
+      "failures": 0,
+      "trace": [
+        "string:null-check:",
+        "config:arena:1001",
+        "string:parse:347",
+        "buff:time:347",
+        "format:360",
+        "panel:update:7:formatted:360",
+        "training:check",
+        "training:coin",
+        "guide:first-through",
+        "begin-countdown:null",
+        "paused:False",
+        "snapshots:clear",
+        "perf:reset",
+        "card:get-list"
+      ],
+      "observations": []
+    },
+    {
+      "name": "StartGame arena= guided=True first=False existing=True fps=True",
+      "failures": 0,
+      "trace": [
+        "string:null-check:",
+        "config:arena:1001",
+        "string:parse:347",
+        "buff:time:347",
+        "format:360",
+        "panel:update:7:formatted:360",
+        "training:check",
+        "training:coin",
+        "guide:first-through",
+        "begin-countdown:null",
+        "paused:False",
+        "snapshots:clear",
+        "perf:reset",
+        "fps:start",
+        "card:get-list"
+      ],
+      "observations": []
+    },
+    {
+      "name": "StartGame arena= guided=True first=True existing=False fps=False",
+      "failures": 0,
+      "trace": [
+        "string:null-check:",
+        "config:arena:1001",
+        "string:parse:347",
+        "buff:time:347",
+        "format:360",
+        "panel:update:7:formatted:360",
+        "training:check",
+        "training:coin",
+        "guide:first-through",
+        "paused:False",
+        "snapshots:clear",
+        "perf:reset",
+        "card:get-list",
+        "dict:card"
+      ],
+      "observations": []
+    },
+    {
+      "name": "StartGame arena= guided=True first=True existing=False fps=True",
+      "failures": 0,
+      "trace": [
+        "string:null-check:",
+        "config:arena:1001",
+        "string:parse:347",
+        "buff:time:347",
+        "format:360",
+        "panel:update:7:formatted:360",
+        "training:check",
+        "training:coin",
+        "guide:first-through",
+        "paused:False",
+        "snapshots:clear",
+        "perf:reset",
+        "fps:start",
+        "card:get-list",
+        "dict:card"
+      ],
+      "observations": []
+    },
+    {
+      "name": "StartGame arena= guided=True first=True existing=True fps=False",
+      "failures": 0,
+      "trace": [
+        "string:null-check:",
+        "config:arena:1001",
+        "string:parse:347",
+        "buff:time:347",
+        "format:360",
+        "panel:update:7:formatted:360",
+        "training:check",
+        "training:coin",
+        "guide:first-through",
+        "paused:False",
+        "snapshots:clear",
+        "perf:reset",
+        "card:get-list"
+      ],
+      "observations": []
+    },
+    {
+      "name": "StartGame arena= guided=True first=True existing=True fps=True",
+      "failures": 0,
+      "trace": [
+        "string:null-check:",
+        "config:arena:1001",
+        "string:parse:347",
+        "buff:time:347",
+        "format:360",
+        "panel:update:7:formatted:360",
+        "training:check",
+        "training:coin",
+        "guide:first-through",
+        "paused:False",
+        "snapshots:clear",
+        "perf:reset",
+        "fps:start",
+        "card:get-list"
+      ],
+      "observations": []
+    },
+    {
+      "name": "StartGame arena=    guided=False first=False existing=False fps=False",
+      "failures": 0,
+      "trace": [
+        "string:null-check:   ",
+        "config:arena:1001",
+        "string:parse:347",
+        "buff:time:347",
+        "format:360",
+        "panel:update:7:formatted:360",
+        "training:check",
+        "guide:first-through",
+        "guide:first-through",
+        "begin-countdown:null",
+        "paused:False",
+        "snapshots:clear",
+        "perf:reset",
+        "card:get-list",
+        "dict:card"
+      ],
+      "observations": []
+    },
+    {
+      "name": "StartGame arena=    guided=False first=False existing=False fps=True",
+      "failures": 0,
+      "trace": [
+        "string:null-check:   ",
+        "config:arena:1001",
+        "string:parse:347",
+        "buff:time:347",
+        "format:360",
+        "panel:update:7:formatted:360",
+        "training:check",
+        "guide:first-through",
+        "guide:first-through",
+        "begin-countdown:null",
+        "paused:False",
+        "snapshots:clear",
+        "perf:reset",
+        "fps:start",
+        "card:get-list",
+        "dict:card"
+      ],
+      "observations": []
+    },
+    {
+      "name": "StartGame arena=    guided=False first=False existing=True fps=False",
+      "failures": 0,
+      "trace": [
+        "string:null-check:   ",
+        "config:arena:1001",
+        "string:parse:347",
+        "buff:time:347",
+        "format:360",
+        "panel:update:7:formatted:360",
+        "training:check",
+        "guide:first-through",
+        "guide:first-through",
+        "begin-countdown:null",
+        "paused:False",
+        "snapshots:clear",
+        "perf:reset",
+        "card:get-list"
+      ],
+      "observations": []
+    },
+    {
+      "name": "StartGame arena=    guided=False first=False existing=True fps=True",
+      "failures": 0,
+      "trace": [
+        "string:null-check:   ",
+        "config:arena:1001",
+        "string:parse:347",
+        "buff:time:347",
+        "format:360",
+        "panel:update:7:formatted:360",
+        "training:check",
+        "guide:first-through",
+        "guide:first-through",
+        "begin-countdown:null",
+        "paused:False",
+        "snapshots:clear",
+        "perf:reset",
+        "fps:start",
+        "card:get-list"
+      ],
+      "observations": []
+    },
+    {
+      "name": "StartGame arena=    guided=False first=True existing=False fps=False",
+      "failures": 0,
+      "trace": [
+        "string:null-check:   ",
+        "config:arena:1001",
+        "string:parse:347",
+        "buff:time:347",
+        "format:360",
+        "panel:update:7:formatted:360",
+        "training:check",
+        "guide:first-through",
+        "guide:first-through",
+        "paused:False",
+        "snapshots:clear",
+        "perf:reset",
+        "card:get-list",
+        "dict:card"
+      ],
+      "observations": []
+    },
+    {
+      "name": "StartGame arena=    guided=False first=True existing=False fps=True",
+      "failures": 0,
+      "trace": [
+        "string:null-check:   ",
+        "config:arena:1001",
+        "string:parse:347",
+        "buff:time:347",
+        "format:360",
+        "panel:update:7:formatted:360",
+        "training:check",
+        "guide:first-through",
+        "guide:first-through",
+        "paused:False",
+        "snapshots:clear",
+        "perf:reset",
+        "fps:start",
+        "card:get-list",
+        "dict:card"
+      ],
+      "observations": []
+    },
+    {
+      "name": "StartGame arena=    guided=False first=True existing=True fps=False",
+      "failures": 0,
+      "trace": [
+        "string:null-check:   ",
+        "config:arena:1001",
+        "string:parse:347",
+        "buff:time:347",
+        "format:360",
+        "panel:update:7:formatted:360",
+        "training:check",
+        "guide:first-through",
+        "guide:first-through",
+        "paused:False",
+        "snapshots:clear",
+        "perf:reset",
+        "card:get-list"
+      ],
+      "observations": []
+    },
+    {
+      "name": "StartGame arena=    guided=False first=True existing=True fps=True",
+      "failures": 0,
+      "trace": [
+        "string:null-check:   ",
+        "config:arena:1001",
+        "string:parse:347",
+        "buff:time:347",
+        "format:360",
+        "panel:update:7:formatted:360",
+        "training:check",
+        "guide:first-through",
+        "guide:first-through",
+        "paused:False",
+        "snapshots:clear",
+        "perf:reset",
+        "fps:start",
+        "card:get-list"
+      ],
+      "observations": []
+    },
+    {
+      "name": "StartGame arena=    guided=True first=False existing=False fps=False",
+      "failures": 0,
+      "trace": [
+        "string:null-check:   ",
+        "config:arena:1001",
+        "string:parse:347",
+        "buff:time:347",
+        "format:360",
+        "panel:update:7:formatted:360",
+        "training:check",
+        "training:coin",
+        "guide:first-through",
+        "begin-countdown:null",
+        "paused:False",
+        "snapshots:clear",
+        "perf:reset",
+        "card:get-list",
+        "dict:card"
+      ],
+      "observations": []
+    },
+    {
+      "name": "StartGame arena=    guided=True first=False existing=False fps=True",
+      "failures": 0,
+      "trace": [
+        "string:null-check:   ",
+        "config:arena:1001",
+        "string:parse:347",
+        "buff:time:347",
+        "format:360",
+        "panel:update:7:formatted:360",
+        "training:check",
+        "training:coin",
+        "guide:first-through",
+        "begin-countdown:null",
+        "paused:False",
+        "snapshots:clear",
+        "perf:reset",
+        "fps:start",
+        "card:get-list",
+        "dict:card"
+      ],
+      "observations": []
+    },
+    {
+      "name": "StartGame arena=    guided=True first=False existing=True fps=False",
+      "failures": 0,
+      "trace": [
+        "string:null-check:   ",
+        "config:arena:1001",
+        "string:parse:347",
+        "buff:time:347",
+        "format:360",
+        "panel:update:7:formatted:360",
+        "training:check",
+        "training:coin",
+        "guide:first-through",
+        "begin-countdown:null",
+        "paused:False",
+        "snapshots:clear",
+        "perf:reset",
+        "card:get-list"
+      ],
+      "observations": []
+    },
+    {
+      "name": "StartGame arena=    guided=True first=False existing=True fps=True",
+      "failures": 0,
+      "trace": [
+        "string:null-check:   ",
+        "config:arena:1001",
+        "string:parse:347",
+        "buff:time:347",
+        "format:360",
+        "panel:update:7:formatted:360",
+        "training:check",
+        "training:coin",
+        "guide:first-through",
+        "begin-countdown:null",
+        "paused:False",
+        "snapshots:clear",
+        "perf:reset",
+        "fps:start",
+        "card:get-list"
+      ],
+      "observations": []
+    },
+    {
+      "name": "StartGame arena=    guided=True first=True existing=False fps=False",
+      "failures": 0,
+      "trace": [
+        "string:null-check:   ",
+        "config:arena:1001",
+        "string:parse:347",
+        "buff:time:347",
+        "format:360",
+        "panel:update:7:formatted:360",
+        "training:check",
+        "training:coin",
+        "guide:first-through",
+        "paused:False",
+        "snapshots:clear",
+        "perf:reset",
+        "card:get-list",
+        "dict:card"
+      ],
+      "observations": []
+    },
+    {
+      "name": "StartGame arena=    guided=True first=True existing=False fps=True",
+      "failures": 0,
+      "trace": [
+        "string:null-check:   ",
+        "config:arena:1001",
+        "string:parse:347",
+        "buff:time:347",
+        "format:360",
+        "panel:update:7:formatted:360",
+        "training:check",
+        "training:coin",
+        "guide:first-through",
+        "paused:False",
+        "snapshots:clear",
+        "perf:reset",
+        "fps:start",
+        "card:get-list",
+        "dict:card"
+      ],
+      "observations": []
+    },
+    {
+      "name": "StartGame arena=    guided=True first=True existing=True fps=False",
+      "failures": 0,
+      "trace": [
+        "string:null-check:   ",
+        "config:arena:1001",
+        "string:parse:347",
+        "buff:time:347",
+        "format:360",
+        "panel:update:7:formatted:360",
+        "training:check",
+        "training:coin",
+        "guide:first-through",
+        "paused:False",
+        "snapshots:clear",
+        "perf:reset",
+        "card:get-list"
+      ],
+      "observations": []
+    },
+    {
+      "name": "StartGame arena=    guided=True first=True existing=True fps=True",
+      "failures": 0,
+      "trace": [
+        "string:null-check:   ",
+        "config:arena:1001",
+        "string:parse:347",
+        "buff:time:347",
+        "format:360",
+        "panel:update:7:formatted:360",
+        "training:check",
+        "training:coin",
+        "guide:first-through",
+        "paused:False",
+        "snapshots:clear",
+        "perf:reset",
+        "fps:start",
+        "card:get-list"
+      ],
+      "observations": []
+    },
+    {
+      "name": "StartGame arena=2042 guided=False first=False existing=False fps=False",
+      "failures": 0,
+      "trace": [
+        "string:null-check:2042",
+        "config:arena:2042",
+        "string:parse:347",
+        "buff:time:347",
+        "format:360",
+        "panel:update:7:formatted:360",
+        "training:check",
+        "guide:first-through",
+        "guide:first-through",
+        "begin-countdown:null",
+        "paused:False",
+        "snapshots:clear",
+        "perf:reset",
+        "card:get-list",
+        "dict:card"
+      ],
+      "observations": []
+    },
+    {
+      "name": "StartGame arena=2042 guided=False first=False existing=False fps=True",
+      "failures": 0,
+      "trace": [
+        "string:null-check:2042",
+        "config:arena:2042",
+        "string:parse:347",
+        "buff:time:347",
+        "format:360",
+        "panel:update:7:formatted:360",
+        "training:check",
+        "guide:first-through",
+        "guide:first-through",
+        "begin-countdown:null",
+        "paused:False",
+        "snapshots:clear",
+        "perf:reset",
+        "fps:start",
+        "card:get-list",
+        "dict:card"
+      ],
+      "observations": []
+    },
+    {
+      "name": "StartGame arena=2042 guided=False first=False existing=True fps=False",
+      "failures": 0,
+      "trace": [
+        "string:null-check:2042",
+        "config:arena:2042",
+        "string:parse:347",
+        "buff:time:347",
+        "format:360",
+        "panel:update:7:formatted:360",
+        "training:check",
+        "guide:first-through",
+        "guide:first-through",
+        "begin-countdown:null",
+        "paused:False",
+        "snapshots:clear",
+        "perf:reset",
+        "card:get-list"
+      ],
+      "observations": []
+    },
+    {
+      "name": "StartGame arena=2042 guided=False first=False existing=True fps=True",
+      "failures": 0,
+      "trace": [
+        "string:null-check:2042",
+        "config:arena:2042",
+        "string:parse:347",
+        "buff:time:347",
+        "format:360",
+        "panel:update:7:formatted:360",
+        "training:check",
+        "guide:first-through",
+        "guide:first-through",
+        "begin-countdown:null",
+        "paused:False",
+        "snapshots:clear",
+        "perf:reset",
+        "fps:start",
+        "card:get-list"
+      ],
+      "observations": []
+    },
+    {
+      "name": "StartGame arena=2042 guided=False first=True existing=False fps=False",
+      "failures": 0,
+      "trace": [
+        "string:null-check:2042",
+        "config:arena:2042",
+        "string:parse:347",
+        "buff:time:347",
+        "format:360",
+        "panel:update:7:formatted:360",
+        "training:check",
+        "guide:first-through",
+        "guide:first-through",
+        "paused:False",
+        "snapshots:clear",
+        "perf:reset",
+        "card:get-list",
+        "dict:card"
+      ],
+      "observations": []
+    },
+    {
+      "name": "StartGame arena=2042 guided=False first=True existing=False fps=True",
+      "failures": 0,
+      "trace": [
+        "string:null-check:2042",
+        "config:arena:2042",
+        "string:parse:347",
+        "buff:time:347",
+        "format:360",
+        "panel:update:7:formatted:360",
+        "training:check",
+        "guide:first-through",
+        "guide:first-through",
+        "paused:False",
+        "snapshots:clear",
+        "perf:reset",
+        "fps:start",
+        "card:get-list",
+        "dict:card"
+      ],
+      "observations": []
+    },
+    {
+      "name": "StartGame arena=2042 guided=False first=True existing=True fps=False",
+      "failures": 0,
+      "trace": [
+        "string:null-check:2042",
+        "config:arena:2042",
+        "string:parse:347",
+        "buff:time:347",
+        "format:360",
+        "panel:update:7:formatted:360",
+        "training:check",
+        "guide:first-through",
+        "guide:first-through",
+        "paused:False",
+        "snapshots:clear",
+        "perf:reset",
+        "card:get-list"
+      ],
+      "observations": []
+    },
+    {
+      "name": "StartGame arena=2042 guided=False first=True existing=True fps=True",
+      "failures": 0,
+      "trace": [
+        "string:null-check:2042",
+        "config:arena:2042",
+        "string:parse:347",
+        "buff:time:347",
+        "format:360",
+        "panel:update:7:formatted:360",
+        "training:check",
+        "guide:first-through",
+        "guide:first-through",
+        "paused:False",
+        "snapshots:clear",
+        "perf:reset",
+        "fps:start",
+        "card:get-list"
+      ],
+      "observations": []
+    },
+    {
+      "name": "StartGame arena=2042 guided=True first=False existing=False fps=False",
+      "failures": 0,
+      "trace": [
+        "string:null-check:2042",
+        "config:arena:2042",
+        "string:parse:347",
+        "buff:time:347",
+        "format:360",
+        "panel:update:7:formatted:360",
+        "training:check",
+        "training:coin",
+        "guide:first-through",
+        "begin-countdown:null",
+        "paused:False",
+        "snapshots:clear",
+        "perf:reset",
+        "card:get-list",
+        "dict:card"
+      ],
+      "observations": []
+    },
+    {
+      "name": "StartGame arena=2042 guided=True first=False existing=False fps=True",
+      "failures": 0,
+      "trace": [
+        "string:null-check:2042",
+        "config:arena:2042",
+        "string:parse:347",
+        "buff:time:347",
+        "format:360",
+        "panel:update:7:formatted:360",
+        "training:check",
+        "training:coin",
+        "guide:first-through",
+        "begin-countdown:null",
+        "paused:False",
+        "snapshots:clear",
+        "perf:reset",
+        "fps:start",
+        "card:get-list",
+        "dict:card"
+      ],
+      "observations": []
+    },
+    {
+      "name": "StartGame arena=2042 guided=True first=False existing=True fps=False",
+      "failures": 0,
+      "trace": [
+        "string:null-check:2042",
+        "config:arena:2042",
+        "string:parse:347",
+        "buff:time:347",
+        "format:360",
+        "panel:update:7:formatted:360",
+        "training:check",
+        "training:coin",
+        "guide:first-through",
+        "begin-countdown:null",
+        "paused:False",
+        "snapshots:clear",
+        "perf:reset",
+        "card:get-list"
+      ],
+      "observations": []
+    },
+    {
+      "name": "StartGame arena=2042 guided=True first=False existing=True fps=True",
+      "failures": 0,
+      "trace": [
+        "string:null-check:2042",
+        "config:arena:2042",
+        "string:parse:347",
+        "buff:time:347",
+        "format:360",
+        "panel:update:7:formatted:360",
+        "training:check",
+        "training:coin",
+        "guide:first-through",
+        "begin-countdown:null",
+        "paused:False",
+        "snapshots:clear",
+        "perf:reset",
+        "fps:start",
+        "card:get-list"
+      ],
+      "observations": []
+    },
+    {
+      "name": "StartGame arena=2042 guided=True first=True existing=False fps=False",
+      "failures": 0,
+      "trace": [
+        "string:null-check:2042",
+        "config:arena:2042",
+        "string:parse:347",
+        "buff:time:347",
+        "format:360",
+        "panel:update:7:formatted:360",
+        "training:check",
+        "training:coin",
+        "guide:first-through",
+        "paused:False",
+        "snapshots:clear",
+        "perf:reset",
+        "card:get-list",
+        "dict:card"
+      ],
+      "observations": []
+    },
+    {
+      "name": "StartGame arena=2042 guided=True first=True existing=False fps=True",
+      "failures": 0,
+      "trace": [
+        "string:null-check:2042",
+        "config:arena:2042",
+        "string:parse:347",
+        "buff:time:347",
+        "format:360",
+        "panel:update:7:formatted:360",
+        "training:check",
+        "training:coin",
+        "guide:first-through",
+        "paused:False",
+        "snapshots:clear",
+        "perf:reset",
+        "fps:start",
+        "card:get-list",
+        "dict:card"
+      ],
+      "observations": []
+    },
+    {
+      "name": "StartGame arena=2042 guided=True first=True existing=True fps=False",
+      "failures": 0,
+      "trace": [
+        "string:null-check:2042",
+        "config:arena:2042",
+        "string:parse:347",
+        "buff:time:347",
+        "format:360",
+        "panel:update:7:formatted:360",
+        "training:check",
+        "training:coin",
+        "guide:first-through",
+        "paused:False",
+        "snapshots:clear",
+        "perf:reset",
+        "card:get-list"
+      ],
+      "observations": []
+    },
+    {
+      "name": "StartGame arena=2042 guided=True first=True existing=True fps=True",
+      "failures": 0,
+      "trace": [
+        "string:null-check:2042",
+        "config:arena:2042",
+        "string:parse:347",
+        "buff:time:347",
+        "format:360",
+        "panel:update:7:formatted:360",
+        "training:check",
+        "training:coin",
+        "guide:first-through",
+        "paused:False",
+        "snapshots:clear",
+        "perf:reset",
+        "fps:start",
+        "card:get-list"
+      ],
+      "observations": []
+    },
+    {
+      "name": "StartGame missing arena fails before buff/UI/coins",
+      "failures": 0,
+      "trace": [
+        "string:null-check:missing",
+        "config:arena:missing"
+      ],
+      "observations": []
+    },
+    {
+      "name": "StartGame null context preserves native partial order",
+      "failures": 0,
+      "trace": [
+        "string:null-check:null",
+        "config:arena:1001",
+        "string:parse:121",
+        "buff:time:121",
+        "format:121",
+        "panel:update:7:formatted:121",
+        "training:check",
+        "guide:first-through",
+        "guide:first-through",
+        "begin-countdown:null"
+      ],
+      "observations": []
+    }
+  ]
+}

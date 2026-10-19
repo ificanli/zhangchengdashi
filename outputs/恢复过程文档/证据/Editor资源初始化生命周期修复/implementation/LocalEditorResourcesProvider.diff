@@ -1,0 +1,194 @@
+--- source-before/Assets/RecoveryTools/Editor/LocalResources/LocalEditorResourcesProvider.cs
++++ candidate/Assets/RecoveryTools/Editor/LocalResources/LocalEditorResourcesProvider.cs
+@@ -54,6 +54,8 @@
+         [Serializable] public sealed class Receipt
+         {
+             public string providerId, runId, startedUtc, finishedUtc, status, failure, applicationName, receiptPath;
++            public long initializationLeaseId;
++            public string initializationSessionKind, sessionReceiptPath, cancellationReason;
+             public string apkPath, apkSha256, manifestSha256, registrySha256, planSha256, settingsSha256, officialBuildReportSha256;
+             public bool ready, originalManifestParsed, actualTypedLoadsCompleted, originalSdkCalled, nativeAndroidAssetBundleRuntimeSelected;
+             public bool coreGameplayAccepted;
+@@ -91,31 +93,126 @@
+         }
+         [Serializable] public sealed class Issue { public string message; }
+ 
++        private sealed class InitializationLease
++        {
++            internal long Id;
++            internal bool StartedInPlayMode, Finished, Completed, CoreDisposed;
++            internal string CancellationReason;
++            internal IEnumerator Operation;
++            internal Exception TerminalFailure;
++        }
++        private long _nextInitializationLeaseId;
++        private InitializationLease _initializationLease;
++        private string _sessionReceiptPath;
++        private bool _publishedCanonicalReceipt;
++        internal bool IsInitializing { get { return _initializing; } }
++        internal long ActiveInitializationLeaseId { get { return _initializationLease == null ? 0 : _initializationLease.Id; } }
++        internal bool InitializationStartedInPlayMode { get { return _initializationLease != null && _initializationLease.StartedInPlayMode; } }
++        internal string CurrentRunId { get { return _receipt == null ? string.Empty : _receipt.runId; } }
++
+         public IEnumerator Initialize(string applicationName)
+         {
+-            if (Failure != null) throw new InvalidOperationException("This Editor provider has a sticky failure; repair and reload the domain before retrying.", Failure);
++            if (Failure != null) throw new InvalidOperationException("This Editor provider has a sticky failure or cancelled session; a new explicit Editor session/domain reload is required.", Failure);
+             if (IsReady)
+             {
+                 if (applicationName != _registry.applicationName) throw new InvalidOperationException("A different application requested the initialized provider.");
+                 yield break;
+             }
+             if (_initializing) throw new InvalidOperationException("LocalEditorResourcesProvider initialization is already in progress.");
++            var lease = new InitializationLease { Id = checked(++_nextInitializationLeaseId), StartedInPlayMode = EditorApplication.isPlaying };
++            _initializationLease = lease;
+             _initializing = true;
+-            IEnumerator operation = InitializeCore(applicationName);
+-            while (true)
+-            {
+-                bool next; object current = null;
+-                try { next = operation.MoveNext(); if (next) current = operation.Current; }
+-                catch (Exception exception)
++            try
++            {
++                lease.Operation = InitializeCore(applicationName);
++                while (true)
+                 {
+-                    Failure = exception; IsReady = false; _initializing = false;
+-                    if (_receipt != null) { _receipt.status = "failed_actual_resource_validation"; _receipt.failure = exception.ToString(); _receipt.ready = false; Save(); }
++                    bool next; object current = null;
++                    try
++                    {
++                        if (lease.Finished) throw lease.TerminalFailure ?? new InvalidOperationException("This initialization lease already ended.");
++                        next = lease.Operation.MoveNext();
++                        if (next) current = lease.Operation.Current;
++                        else if (!IsReady || BundleServices == null)
++                            throw new InvalidOperationException("Actual resource initialization ended without ready services and a saved receipt.");
++                    }
++                    catch (Exception exception)
++                    {
++                        FinishInitializationLease(lease, exception, exception is OperationCanceledException ? "cancelled_editor_session" : "failed_actual_resource_validation");
++                        throw;
++                    }
++                    if (!next) { lease.Completed = true; break; }
++                    yield return current;
++                }
++            }
++            finally
++            {
++                if (!lease.Finished && !lease.Completed)
++                    FinishInitializationLease(lease, new OperationCanceledException("The owner disposed initialization before actual resource completion."), "cancelled_editor_session");
++                try { DisposeInitializationCore(lease); }
++                finally
++                {
++                    if (!lease.Finished) FinishInitializationLease(lease, null, null);
++                }
++            }
++        }
++
++        internal bool CancelInitialization(long leaseId, string reason)
++        {
++            InitializationLease lease = _initializationLease;
++            if (lease == null || lease.Finished || lease.Id != leaseId) return false;
++            lease.CancellationReason = string.IsNullOrEmpty(reason) ? "Editor session ended before resource initialization completed." : reason;
++            FinishInitializationLease(lease, new OperationCanceledException(lease.CancellationReason), "cancelled_editor_session");
++            DisposeInitializationCore(lease);
++            return true;
++        }
++
++        private void FinishInitializationLease(InitializationLease lease, Exception exception, string failureStatus)
++        {
++            if (lease.Finished) return;
++            lease.Finished = true;
++            lease.TerminalFailure = exception;
++            if (ReferenceEquals(_initializationLease, lease)) { _initializationLease = null; _initializing = false; }
++            if (exception == null) return; // InitializeCore already saved actual success before IsReady=true.
++            Failure = exception;
++            IsReady = false;
++            BundleServices = null;
++            if (_receipt != null)
++            {
++                _receipt.status = failureStatus;
++                _receipt.failure = exception.ToString();
++                _receipt.cancellationReason = exception is OperationCanceledException ? (lease.CancellationReason ?? exception.Message) : string.Empty;
++                _receipt.ready = false;
++                _receipt.finishedUtc = DateTime.UtcNow.ToString("o");
++                SaveFailureReceipt(exception);
++            }
++        }
++
++        private void DisposeInitializationCore(InitializationLease lease)
++        {
++            if (lease.CoreDisposed) return;
++            lease.CoreDisposed = true;
++            try { (lease.Operation as IDisposable)?.Dispose(); }
++            catch (Exception exception)
++            {
++                if (lease.TerminalFailure == null)
++                {
++                    FinishInitializationLease(lease, exception, "failed_initialization_disposal");
+                     throw;
+                 }
+-                if (!next) break;
+-                yield return current;
+-            }
+-            _initializing = false;
++                lease.TerminalFailure.Data["InitializationDisposeFailure"] = exception;
++                if (_receipt != null) { _receipt.operationFailures.Add(exception.ToString()); SaveFailureReceipt(lease.TerminalFailure); }
++            }
++        }
++
++        private void SaveFailureReceipt(Exception originalFailure)
++        {
++            try { Save(); }
++            catch (Exception saveFailure)
++            {
++                originalFailure.Data["ReceiptPersistenceFailure"] = saveFailure;
++                Debug.LogError("The resource initialization failed and its terminal receipt could not be saved: " + saveFailure);
++            }
+         }
+ 
+         private IEnumerator InitializeCore(string applicationName)
+@@ -124,9 +221,12 @@
+             _workspace = Directory.GetParent(_project).Parent.FullName;
+             _receiptPath = Path.Combine(_project, "RecoveryReports", "local-editor-resources-receipt.json");
+             Directory.CreateDirectory(Path.GetDirectoryName(_receiptPath));
++            string runId = DateTime.UtcNow.ToString("yyyyMMdd-HHmmss-fff") + "-" + Guid.NewGuid().ToString("N").Substring(0, 8);
++            _sessionReceiptPath = Path.Combine(_project, "RecoveryReports", "LocalResourcesSessions", runId + ".json");
+             _receipt = new Receipt
+             {
+-                providerId = ProviderId, runId = DateTime.UtcNow.ToString("yyyyMMdd-HHmmss-fff") + "-" + Guid.NewGuid().ToString("N").Substring(0, 8),
++                providerId = ProviderId, runId = runId,
++                initializationLeaseId = _initializationLease.Id, initializationSessionKind = _initializationLease.StartedInPlayMode ? "play_owner" : "independent_editor_owner", sessionReceiptPath = _sessionReceiptPath,
+                 startedUtc = DateTime.UtcNow.ToString("o"), status = "checking_actual_local_resources", applicationName = applicationName, receiptPath = _receiptPath,
+                 originalSdkCalled = false, nativeAndroidAssetBundleRuntimeSelected = false, coreGameplayAccepted = false,
+                 capabilities = new[] { "Original APK manifest and verified local payload bytes", "Exact imported legacy TextAsset registry", "Actual original-mapped UIRoot GameObject", "Official Addressables Editor settings locator and typed AssetDatabase loads" },
+@@ -297,9 +397,25 @@
+         private void Save()
+         {
+             if (_receipt == null || string.IsNullOrEmpty(_receiptPath)) return;
+-            string temporary = _receiptPath + ".tmp";
+-            File.WriteAllText(temporary, JsonUtility.ToJson(_receipt, true), new UTF8Encoding(false));
+-            File.Copy(temporary, _receiptPath, true); File.Delete(temporary);
++            string json = JsonUtility.ToJson(_receipt, true);
++            if (!string.IsNullOrEmpty(_sessionReceiptPath)) WriteReceiptFile(_sessionReceiptPath, json);
++            bool ownsCurrentReceipt = !_publishedCanonicalReceipt || !File.Exists(_receiptPath);
++            if (!ownsCurrentReceipt)
++            {
++                Receipt current = JsonUtility.FromJson<Receipt>(File.ReadAllText(_receiptPath));
++                ownsCurrentReceipt = current != null && current.runId == _receipt.runId;
++            }
++            if (ownsCurrentReceipt) WriteReceiptFile(_receiptPath, json);
++            _publishedCanonicalReceipt = true;
++        }
++
++        private static void WriteReceiptFile(string path, string json)
++        {
++            Directory.CreateDirectory(Path.GetDirectoryName(path));
++            string temporary = path + ".tmp";
++            File.WriteAllText(temporary, json, new UTF8Encoding(false));
++            File.Copy(temporary, path, true);
++            File.Delete(temporary);
+         }
+         private static string ResourceKey(string bundle, string asset) { return bundle + "\n" + asset; }
+         private static byte[] ReadEntry(ZipArchiveEntry entry) { using (Stream input = entry.Open()) using (var output = new MemoryStream()) { input.CopyTo(output); return output.ToArray(); } }

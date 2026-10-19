@@ -1,0 +1,74 @@
+0x435bc28: fe0f1cf8 str      x30, [sp, #-0x40]!
+0x435bc2c: f85f01a9 stp      x24, x23, [sp, #0x10]
+0x435bc30: f65702a9 stp      x22, x21, [sp, #0x20]
+0x435bc34: f44f03a9 stp      x20, x19, [sp, #0x30]
+0x435bc38: 376502b0 adrp     x23, #0x9000000
+0x435bc3c: b63c02f0 adrp     x22, #0x8af2000
+0x435bc40: b53c02f0 adrp     x21, #0x8af2000
+0x435bc44: e8f65939 ldrb     w8, [x23, #0x67d]
+0x435bc48: d6ee43f9 ldr      x22, [x22, #0x7d8] // System.Collections.Generic.Dictionary<string, GlobalSummonInfo>_TypeInfo
+0x435bc4c: b5f243f9 ldr      x21, [x21, #0x7e0] // Method$System.Collections.Generic.Dictionary<string, GlobalSummonInfo>..ctor()
+0x435bc50: f40301aa mov      x20, x1
+0x435bc54: f30300aa mov      x19, x0
+0x435bc58: 48020037 tbnz     w8, #0, #0x435bca0
+0x435bc5c: a03c02f0 adrp     x0, #0x8af2000
+0x435bc60: 00f443f9 ldr      x0, [x0, #0x7e8] // Method$System.Collections.Generic.Dictionary<string, GlobalSummonInfo>.Add()
+0x435bc64: 8785e397 bl       #0x3c3d280
+0x435bc68: a03c02f0 adrp     x0, #0x8af2000
+0x435bc6c: 00f043f9 ldr      x0, [x0, #0x7e0] // Method$System.Collections.Generic.Dictionary<string, GlobalSummonInfo>..ctor()
+0x435bc70: 8485e397 bl       #0x3c3d280
+0x435bc74: a03c02f0 adrp     x0, #0x8af2000
+0x435bc78: 00ec43f9 ldr      x0, [x0, #0x7d8] // System.Collections.Generic.Dictionary<string, GlobalSummonInfo>_TypeInfo
+0x435bc7c: 8185e397 bl       #0x3c3d280
+0x435bc80: e03b02f0 adrp     x0, #0x8ada000
+0x435bc84: 004c43f9 ldr      x0, [x0, #0x698] // Method$System.Collections.Generic.List<GlobalSummonInfo>.get_Count()
+0x435bc88: 7e85e397 bl       #0x3c3d280
+0x435bc8c: e03b02f0 adrp     x0, #0x8ada000
+0x435bc90: 005043f9 ldr      x0, [x0, #0x6a0] // Method$System.Collections.Generic.List<GlobalSummonInfo>.get_Item()
+0x435bc94: 7b85e397 bl       #0x3c3d280
+0x435bc98: 28008052 mov      w8, #1
+0x435bc9c: e8f61939 strb     w8, [x23, #0x67d]
+0x435bca0: 74a600f9 str      x20, [x19, #0x148]
+0x435bca4: c00240f9 ldr      x0, [x22]
+0x435bca8: 0786e397 bl       #0x3c3d4c4
+0x435bcac: a10240f9 ldr      x1, [x21]
+0x435bcb0: f40300aa mov      x20, x0
+0x435bcb4: aba8a294 bl       #0x6c05f60 // System.Collections.Generic.Dictionary<object, object>$$.ctor
+0x435bcb8: 60a640f9 ldr      x0, [x19, #0x148]
+0x435bcbc: 74be00f9 str      x20, [x19, #0x178]
+0x435bcc0: c00300b4 cbz      x0, #0x435bd38
+0x435bcc4: f73b02f0 adrp     x23, #0x8ada000
+0x435bcc8: b83c02f0 adrp     x24, #0x8af2000
+0x435bccc: f75243f9 ldr      x23, [x23, #0x6a0] // Method$System.Collections.Generic.List<GlobalSummonInfo>.get_Item()
+0x435bcd0: 18f743f9 ldr      x24, [x24, #0x7e8] // Method$System.Collections.Generic.Dictionary<string, GlobalSummonInfo>.Add()
+0x435bcd4: f4031f2a mov      w20, wzr
+0x435bcd8: 081840b9 ldr      w8, [x0, #0x18]
+0x435bcdc: 9f02086b cmp      w20, w8
+0x435bce0: ea020054 b.ge     #0x435bd3c
+0x435bce4: e20240f9 ldr      x2, [x23]
+0x435bce8: 75be40f9 ldr      x21, [x19, #0x178]
+0x435bcec: e103142a mov      w1, w20
+0x435bcf0: 5fcd4f94 bl       #0x574f26c // System.Collections.Generic.List<object>$$get_Item
+0x435bcf4: 200200b4 cbz      x0, #0x435bd38
+0x435bcf8: 68a640f9 ldr      x8, [x19, #0x148]
+0x435bcfc: e80100b4 cbz      x8, #0x435bd38
+0x435bd00: e20240f9 ldr      x2, [x23]
+0x435bd04: 160c40f9 ldr      x22, [x0, #0x18]
+0x435bd08: e00308aa mov      x0, x8
+0x435bd0c: e103142a mov      w1, w20
+0x435bd10: 57cd4f94 bl       #0x574f26c // System.Collections.Generic.List<object>$$get_Item
+0x435bd14: 350100b4 cbz      x21, #0x435bd38
+0x435bd18: 030340f9 ldr      x3, [x24]
+0x435bd1c: e20300aa mov      x2, x0
+0x435bd20: e00315aa mov      x0, x21
+0x435bd24: e10316aa mov      x1, x22
+0x435bd28: e6aba294 bl       #0x6c06cc0 // System.Collections.Generic.Dictionary<object, object>$$Add
+0x435bd2c: 60a640f9 ldr      x0, [x19, #0x148]
+0x435bd30: 94060011 add      w20, w20, #1
+0x435bd34: 20fdffb5 cbnz     x0, #0x435bcd8
+0x435bd38: e585e397 bl       #0x3c3d4cc
+0x435bd3c: f44f43a9 ldp      x20, x19, [sp, #0x30]
+0x435bd40: f65742a9 ldp      x22, x21, [sp, #0x20]
+0x435bd44: f85f41a9 ldp      x24, x23, [sp, #0x10]
+0x435bd48: fe0744f8 ldr      x30, [sp], #0x40
+0x435bd4c: c0035fd6 ret      

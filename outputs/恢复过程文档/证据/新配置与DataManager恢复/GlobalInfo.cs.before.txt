@@ -1,0 +1,489 @@
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
+using System.Threading.Tasks;
+using Cysharp.Threading.Tasks;
+using Il2CppDummyDll;
+
+namespace DataModule
+{
+	[Token(Token = "0x2000E6C")]
+	public class GlobalInfo
+	{
+		[StructLayout((LayoutKind)3)]
+		[Token(Token = "0x2000E6D")]
+		[CompilerGenerated]
+		private struct _003CInitInfo_003Ed__92 : IAsyncStateMachine
+		{
+			[Token(Token = "0x40064A5")]
+			[Il2CppDummyDll.FieldOffset(Offset = "0x0")]
+			public int _003C_003E1__state;
+
+			[Token(Token = "0x40064A6")]
+			[Il2CppDummyDll.FieldOffset(Offset = "0x8")]
+			public AsyncTaskMethodBuilder _003C_003Et__builder;
+
+			[Token(Token = "0x40064A7")]
+			[Il2CppDummyDll.FieldOffset(Offset = "0x20")]
+			public GlobalInfo _003C_003E4__this;
+
+			[Token(Token = "0x40064A8")]
+			[Il2CppDummyDll.FieldOffset(Offset = "0x28")]
+			private UniTask.Awaiter _003C_003Eu__1;
+
+			[Token(Token = "0x600587A")]
+			[Address(RVA = "0x435DF2C", Offset = "0x4359F2C", VA = "0x435DF2C", Slot = "4")]
+void System.Runtime.CompilerServices.IAsyncStateMachine.MoveNext()
+			{
+			}
+
+			[Token(Token = "0x600587B")]
+			[Address(RVA = "0x4361218", Offset = "0x435D218", VA = "0x4361218", Slot = "5")]
+			[DebuggerHidden]
+void System.Runtime.CompilerServices.IAsyncStateMachine.SetStateMachine(IAsyncStateMachine stateMachine)
+			{
+			}
+		}
+
+		[StructLayout((LayoutKind)3)]
+		[Token(Token = "0x2000E6E")]
+		[CompilerGenerated]
+		private struct _003CLoadGlobalInfo_003Ed__94<T> : IAsyncStateMachine
+		{
+			[Token(Token = "0x40064A9")]
+			[Il2CppDummyDll.FieldOffset(Offset = "0x0")]
+			public int _003C_003E1__state;
+
+			[Token(Token = "0x40064AA")]
+			[Il2CppDummyDll.FieldOffset(Offset = "0x0")]
+			public AsyncVoidMethodBuilder _003C_003Et__builder;
+
+			[Token(Token = "0x40064AB")]
+			[Il2CppDummyDll.FieldOffset(Offset = "0x0")]
+			public GlobalInfo _003C_003E4__this;
+
+			[Token(Token = "0x40064AC")]
+			[Il2CppDummyDll.FieldOffset(Offset = "0x0")]
+			public string jsonPath;
+
+			[Token(Token = "0x40064AD")]
+			[Il2CppDummyDll.FieldOffset(Offset = "0x0")]
+			public Action<List<T>> onComplete;
+
+			[Token(Token = "0x40064AE")]
+			[Il2CppDummyDll.FieldOffset(Offset = "0x0")]
+			private UniTask<UnityEngine.TextAsset>.Awaiter _003C_003Eu__1;
+
+			[Token(Token = "0x600587C")]
+void System.Runtime.CompilerServices.IAsyncStateMachine.MoveNext()
+			{
+			}
+
+			[Token(Token = "0x600587D")]
+			[DebuggerHidden]
+void System.Runtime.CompilerServices.IAsyncStateMachine.SetStateMachine(IAsyncStateMachine stateMachine)
+			{
+			}
+		}
+
+		[Token(Token = "0x4006448")]
+		[Il2CppDummyDll.FieldOffset(Offset = "0x10")]
+		private List<string> loadingConfig;
+
+		[Token(Token = "0x4006449")]
+		[Il2CppDummyDll.FieldOffset(Offset = "0x18")]
+		public List<GlobalFormulaInfo> formulaInfos;
+
+		[Token(Token = "0x400644A")]
+		[Il2CppDummyDll.FieldOffset(Offset = "0x20")]
+		public List<GlobalStrategyInfo> strategyInfos;
+
+		[Token(Token = "0x400644B")]
+		[Il2CppDummyDll.FieldOffset(Offset = "0x28")]
+		public List<GlobalTalentFormulasInfo> talentFormulasInfos;
+
+		[Token(Token = "0x400644C")]
+		[Il2CppDummyDll.FieldOffset(Offset = "0x30")]
+		public Dictionary<string, GlobalTalentFormulasInfo> talentFormulasInfoDic;
+
+		[Token(Token = "0x400644D")]
+		[Il2CppDummyDll.FieldOffset(Offset = "0x38")]
+		public List<GlobalProgressInfo> progressInfos;
+
+		[Token(Token = "0x400644E")]
+		[Il2CppDummyDll.FieldOffset(Offset = "0x40")]
+		public List<GlobalMetaModuleInfo> metaModuleInfos;
+
+		[Token(Token = "0x400644F")]
+		[Il2CppDummyDll.FieldOffset(Offset = "0x48")]
+		public List<GlobalSubMetaModuleInfo> subMetaModuleInfos;
+
+		[Token(Token = "0x4006450")]
+		[Il2CppDummyDll.FieldOffset(Offset = "0x50")]
+		public List<GlobalAssetInfo> baseAssetInfos;
+
+		[Token(Token = "0x4006451")]
+		[Il2CppDummyDll.FieldOffset(Offset = "0x58")]
+		public List<GlobalHeroCardInfo> heroCardInfos;
+
+		[Token(Token = "0x4006452")]
+		[Il2CppDummyDll.FieldOffset(Offset = "0x60")]
+		public List<GlobalRandomHeroCardInfo> randomHeroCardInfos;
+
+		[Token(Token = "0x4006453")]
+		[Il2CppDummyDll.FieldOffset(Offset = "0x68")]
+		public Dictionary<string, GlobalHeroCardInfo> heroCardDic;
+
+		[Token(Token = "0x4006454")]
+		[Il2CppDummyDll.FieldOffset(Offset = "0x70")]
+		public List<GlobalArchitectureInfo> architectureInfos;
+
+		[Token(Token = "0x4006455")]
+		[Il2CppDummyDll.FieldOffset(Offset = "0x78")]
+		public Dictionary<string, GlobalArchitectureInfo> architectureInfoDic;
+
+		[Token(Token = "0x4006456")]
+		[Il2CppDummyDll.FieldOffset(Offset = "0x80")]
+		public List<GlobalRoleInfo> roleInfos;
+
+		[Token(Token = "0x4006457")]
+		[Il2CppDummyDll.FieldOffset(Offset = "0x88")]
+		public Dictionary<string, GlobalRoleInfo> roleInfoDic;
+
+		[Token(Token = "0x4006458")]
+		[Il2CppDummyDll.FieldOffset(Offset = "0x90")]
+		public List<GlobalDanInfo> danInfos;
+
+		[Token(Token = "0x4006459")]
+		[Il2CppDummyDll.FieldOffset(Offset = "0x98")]
+		public List<GlobalBotNameInfo> botNameInfos;
+
+		[Token(Token = "0x400645A")]
+		[Il2CppDummyDll.FieldOffset(Offset = "0xA0")]
+		public List<GlobalArenaInfo> arenaInfos;
+
+		[Token(Token = "0x400645B")]
+		[Il2CppDummyDll.FieldOffset(Offset = "0xA8")]
+		public List<GlobalTrophyProgressInfo> trophyProgressInfos;
+
+		[Token(Token = "0x400645C")]
+		[Il2CppDummyDll.FieldOffset(Offset = "0xB0")]
+		public List<GlobalPolygonArenaInfo> polygonArenaInfos;
+
+		[Token(Token = "0x400645D")]
+		[Il2CppDummyDll.FieldOffset(Offset = "0xB8")]
+		public Dictionary<string, GlobalArenaInfo> arenaInfoDic;
+
+		[Token(Token = "0x400645E")]
+		[Il2CppDummyDll.FieldOffset(Offset = "0xC0")]
+		public Dictionary<string, GlobalPolygonArenaInfo> polygonArenaInfoDic;
+
+		[Token(Token = "0x400645F")]
+		[Il2CppDummyDll.FieldOffset(Offset = "0xC8")]
+		public List<GlobalTrainingMapInfo> trainingMapInfos;
+
+		[Token(Token = "0x4006460")]
+		[Il2CppDummyDll.FieldOffset(Offset = "0xD0")]
+		public Dictionary<string, GlobalTrainingMapInfo> trainingMapInfoDic;
+
+		[Token(Token = "0x4006461")]
+		[Il2CppDummyDll.FieldOffset(Offset = "0xD8")]
+		public List<GlobalBoxInfo> boxInfos;
+
+		[Token(Token = "0x4006462")]
+		[Il2CppDummyDll.FieldOffset(Offset = "0xE0")]
+		public Dictionary<string, ArenaEnemyBalanceInfo> arenaEnemyBalanceInfoDic;
+
+		[Token(Token = "0x4006463")]
+		[Il2CppDummyDll.FieldOffset(Offset = "0xE8")]
+		public List<GlobalHexInfo> hexInfos;
+
+		[Token(Token = "0x4006464")]
+		[Il2CppDummyDll.FieldOffset(Offset = "0xF0")]
+		public List<GlobalBuildInfo> buildInfos;
+
+		[Token(Token = "0x4006465")]
+		[Il2CppDummyDll.FieldOffset(Offset = "0xF8")]
+		public List<UserLevelInfo> UserLevelInfos;
+
+		[Token(Token = "0x4006466")]
+		[Il2CppDummyDll.FieldOffset(Offset = "0x100")]
+		public Dictionary<int, UserLevelInfo> UserLevelDic;
+
+		[Token(Token = "0x4006467")]
+		[Il2CppDummyDll.FieldOffset(Offset = "0x108")]
+		public List<ArenaEnemyBalanceInfo> arenaEnemyBalanceInfos;
+
+		[Token(Token = "0x4006468")]
+		[Il2CppDummyDll.FieldOffset(Offset = "0x110")]
+		public List<ArenaEnemyCardsInfo> arenaEnemyCardsInfoList;
+
+		[Token(Token = "0x4006469")]
+		[Il2CppDummyDll.FieldOffset(Offset = "0x118")]
+		public List<EnemyDifficultLevelInfos> enemyDifficultLevelInfoList;
+
+		[Token(Token = "0x400646A")]
+		[Il2CppDummyDll.FieldOffset(Offset = "0x120")]
+		public Dictionary<int, EnemyDifficultLevelInfos> enemyDifficultLevelInfoDic;
+
+		[Token(Token = "0x400646B")]
+		[Il2CppDummyDll.FieldOffset(Offset = "0x128")]
+		public List<GlobalShopInfo> shopInfoList;
+
+		[Token(Token = "0x400646C")]
+		[Il2CppDummyDll.FieldOffset(Offset = "0x130")]
+		public List<GlobalIAPInfo> iapInfoList;
+
+		[Token(Token = "0x400646D")]
+		[Il2CppDummyDll.FieldOffset(Offset = "0x138")]
+		public List<GlobaMultistageNewcomerPackageInfo> multistageNewcomerPackage;
+
+		[Token(Token = "0x400646E")]
+		[Il2CppDummyDll.FieldOffset(Offset = "0x140")]
+		public List<GlobalTipInfo> tipInfoList;
+
+		[Token(Token = "0x400646F")]
+		[Il2CppDummyDll.FieldOffset(Offset = "0x148")]
+		public List<GlobalSummonInfo> summonInfoList;
+
+		[Token(Token = "0x4006470")]
+		[Il2CppDummyDll.FieldOffset(Offset = "0x150")]
+		public List<GlobalArtifactsForgeInfo> artifactsForgeInfoList;
+
+		[Token(Token = "0x4006471")]
+		[Il2CppDummyDll.FieldOffset(Offset = "0x158")]
+		public Dictionary<string, GlobalArtifactsForgeInfo> artifactsForgeInfoDic;
+
+		[Token(Token = "0x4006472")]
+		[Il2CppDummyDll.FieldOffset(Offset = "0x160")]
+		public List<GlobalArtifactAIReleaseInfo> artifactAIReleaseInfoList;
+
+		[Token(Token = "0x4006473")]
+		[Il2CppDummyDll.FieldOffset(Offset = "0x168")]
+		public Dictionary<string, GlobalArtifactAIReleaseInfo> artifactAIReleaseInfoDic;
+
+		[Token(Token = "0x4006474")]
+		[Il2CppDummyDll.FieldOffset(Offset = "0x170")]
+		public List<GlobalPropInfo> propInfoList;
+
+		[Token(Token = "0x4006475")]
+		[Il2CppDummyDll.FieldOffset(Offset = "0x178")]
+		public Dictionary<string, GlobalSummonInfo> summonInfoDic;
+
+		[Token(Token = "0x4006476")]
+		[Il2CppDummyDll.FieldOffset(Offset = "0x180")]
+		public Dictionary<string, GlobalPropInfo> propInfoDic;
+
+		[Token(Token = "0x4006477")]
+		[Il2CppDummyDll.FieldOffset(Offset = "0x188")]
+		public List<GlobalMainCityMapInfo> mapInfos;
+
+		[Token(Token = "0x4006478")]
+		[Il2CppDummyDll.FieldOffset(Offset = "0x190")]
+		public List<GlobalMapInfo> tileInfos;
+
+		[Token(Token = "0x4006479")]
+		[Il2CppDummyDll.FieldOffset(Offset = "0x198")]
+		public Dictionary<string, GlobalMapInfo> tileInfoDic;
+
+		[Token(Token = "0x400647A")]
+		[Il2CppDummyDll.FieldOffset(Offset = "0x1A0")]
+		public List<GlobalMainCityAssetsInfo> metaModelAssets;
+
+		[Token(Token = "0x400647B")]
+		[Il2CppDummyDll.FieldOffset(Offset = "0x1A8")]
+		public List<GlobalMainCityTitleInfo> mainCityTitleInfos;
+
+		[Token(Token = "0x400647C")]
+		[Il2CppDummyDll.FieldOffset(Offset = "0x1B0")]
+		public List<GlobalMainCityHouseInfo> mainCityHouseInfos;
+
+		[Token(Token = "0x400647D")]
+		[Il2CppDummyDll.FieldOffset(Offset = "0x1B8")]
+		public List<GlobalMainCityBuildTalentInfo> mainCityTalentInfos;
+
+		[Token(Token = "0x400647E")]
+		[Il2CppDummyDll.FieldOffset(Offset = "0x1C0")]
+		public List<GlobalCardTalentInfo> cardTalentInfoList;
+
+		[Token(Token = "0x400647F")]
+		[Il2CppDummyDll.FieldOffset(Offset = "0x1C8")]
+		public Dictionary<string, GlobalCardTalentInfo> cardTalentInfoDic;
+
+		[Token(Token = "0x4006480")]
+		[Il2CppDummyDll.FieldOffset(Offset = "0x1D0")]
+		public List<GlobalCardTalenTreeInfo> cardTalentTreeInfoList;
+
+		[Token(Token = "0x4006481")]
+		[Il2CppDummyDll.FieldOffset(Offset = "0x1D8")]
+		public Dictionary<string, GlobalCardTalenTreeInfo> cardTalentTreeInfoDic;
+
+		[Token(Token = "0x4006482")]
+		[Il2CppDummyDll.FieldOffset(Offset = "0x1E0")]
+		public List<GlobalFundInfo> globalFundInfos_AbilityFund;
+
+		[Token(Token = "0x4006483")]
+		[Il2CppDummyDll.FieldOffset(Offset = "0x1E8")]
+		public List<GlobalFundInfo> globalFundInfos_SummonFund;
+
+		[Token(Token = "0x4006484")]
+		[Il2CppDummyDll.FieldOffset(Offset = "0x1F0")]
+		public List<GlobalFundInfo> globalFundInfos_CardFund;
+
+		[Token(Token = "0x4006485")]
+		[Il2CppDummyDll.FieldOffset(Offset = "0x1F8")]
+		public List<GlobalFundInfo> globalFundInfos_MainCityPass;
+
+		[Token(Token = "0x4006486")]
+		[Il2CppDummyDll.FieldOffset(Offset = "0x200")]
+		public List<GlobalFundInfo> globalFundInfos_SeasonPass;
+
+		[Token(Token = "0x4006487")]
+		[Il2CppDummyDll.FieldOffset(Offset = "0x208")]
+		public List<FundIAPInfo> fundIAPInfos;
+
+		[Token(Token = "0x4006488")]
+		[Il2CppDummyDll.FieldOffset(Offset = "0x210")]
+		public List<GlobalGiftChainInfo> globalGiftChainInfos_chain1;
+
+		[Token(Token = "0x4006489")]
+		[Il2CppDummyDll.FieldOffset(Offset = "0x218")]
+		public List<GlobalTutorialInfo> globalTutorialInfos;
+
+		[Token(Token = "0x400648A")]
+		[Il2CppDummyDll.FieldOffset(Offset = "0x220")]
+		public List<GlobalFeatureUnlockInfo> globalFeatureUnlockInfos;
+
+		[Token(Token = "0x400648B")]
+		[Il2CppDummyDll.FieldOffset(Offset = "0x228")]
+		public List<GlobaUpgradeReward> globaUpgradeRewards;
+
+		[Token(Token = "0x400648C")]
+		[Il2CppDummyDll.FieldOffset(Offset = "0x230")]
+		public List<UserLablePushPackInfo> userLablePushPackInfoS;
+
+		[Token(Token = "0x400648D")]
+		[Il2CppDummyDll.FieldOffset(Offset = "0x238")]
+		public List<SeasonRankingRewardConfig> seasonRewardConfigs;
+
+		[Token(Token = "0x400648E")]
+		[Il2CppDummyDll.FieldOffset(Offset = "0x240")]
+		public List<ShopArenaPackInfos> shopArenaPackInfos;
+
+		[Token(Token = "0x400648F")]
+		[Il2CppDummyDll.FieldOffset(Offset = "0x248")]
+		public List<GlobalBannerInfo> GlobalBannerInfos;
+
+		[Token(Token = "0x4006490")]
+		[Il2CppDummyDll.FieldOffset(Offset = "0x250")]
+		public List<GlobalExpression> GlobalExpressionInfos;
+
+		[Token(Token = "0x4006491")]
+		[Il2CppDummyDll.FieldOffset(Offset = "0x258")]
+		public List<GameSettingConfig> gameSettingConfigs;
+
+		[Token(Token = "0x4006492")]
+		[Il2CppDummyDll.FieldOffset(Offset = "0x260")]
+		public List<WeeklyClashDifficultyConfig> weeklyClashDifficultyConfigs;
+
+		[Token(Token = "0x4006493")]
+		[Il2CppDummyDll.FieldOffset(Offset = "0x268")]
+		public List<GlobalGiftChainInfo2> globalGiftChainInfos_chain2;
+
+		[Token(Token = "0x4006494")]
+		[Il2CppDummyDll.FieldOffset(Offset = "0x270")]
+		public List<GlobalCardTalent2Info> globalCardTalent2BaseInfos;
+
+		[Token(Token = "0x4006495")]
+		[Il2CppDummyDll.FieldOffset(Offset = "0x278")]
+		public Dictionary<string, GlobalCardTalent2Info> globalCardTalent2BaseInfoDic;
+
+		[Token(Token = "0x4006496")]
+		[Il2CppDummyDll.FieldOffset(Offset = "0x280")]
+		public List<GlobalCardTalentInfo> cardTalent2InfoList;
+
+		[Token(Token = "0x4006497")]
+		[Il2CppDummyDll.FieldOffset(Offset = "0x288")]
+		public Dictionary<string, GlobalCardTalentInfo> cardTalent2InfoDic;
+
+		[Token(Token = "0x4006498")]
+		[Il2CppDummyDll.FieldOffset(Offset = "0x290")]
+		public List<GlobalUpgradeTalentPriceInfo> upgradeTalentPriceInfos;
+
+		[Token(Token = "0x4006499")]
+		[Il2CppDummyDll.FieldOffset(Offset = "0x298")]
+		public Dictionary<string, GlobalUpgradeTalentPriceInfo> upgradeTalentPriceDic;
+
+		[Token(Token = "0x400649A")]
+		[Il2CppDummyDll.FieldOffset(Offset = "0x2A0")]
+		public List<PanelConfig> panelConfigs;
+
+		[Token(Token = "0x400649B")]
+		[Il2CppDummyDll.FieldOffset(Offset = "0x2A8")]
+		public List<GlobalMysteriousStore> globalMysteriousStoreInfos;
+
+		[Token(Token = "0x400649C")]
+		[Il2CppDummyDll.FieldOffset(Offset = "0x2B0")]
+		public List<GlobalBlessInfo> globalBlessInfos;
+
+		[Token(Token = "0x400649D")]
+		[Il2CppDummyDll.FieldOffset(Offset = "0x2B8")]
+		public List<SeasonInfo> globalSeasonInfos;
+
+		[Token(Token = "0x400649E")]
+		[Il2CppDummyDll.FieldOffset(Offset = "0x2C0")]
+		public Dictionary<string, GlobalBlessInfo> globalBlessInfoDic;
+
+		[Token(Token = "0x400649F")]
+		[Il2CppDummyDll.FieldOffset(Offset = "0x2C8")]
+		public List<GlobalWeeklyCardDailyTaskInfo> globalWeeklyCardDailyTaskInfo;
+
+		[Token(Token = "0x40064A0")]
+		[Il2CppDummyDll.FieldOffset(Offset = "0x2D0")]
+		public Dictionary<string, GlobalWeeklyCardDailyTaskInfo> globalWeeklyCardDailyTaskInfoDic;
+
+		[Token(Token = "0x40064A1")]
+		[Il2CppDummyDll.FieldOffset(Offset = "0x2D8")]
+		public List<GlobalWeeklyCardStageInfo> globalWeeklyCardStageInfo;
+
+		[Token(Token = "0x40064A2")]
+		[Il2CppDummyDll.FieldOffset(Offset = "0x2E0")]
+		public Dictionary<string, GlobalWeeklyCardStageInfo> globalWeeklyCardStageInfoDic;
+
+		[Token(Token = "0x40064A3")]
+		[Il2CppDummyDll.FieldOffset(Offset = "0x2E8")]
+		public List<string> HeadShotIDS;
+
+		[Token(Token = "0x40064A4")]
+		[Il2CppDummyDll.FieldOffset(Offset = "0x2F0")]
+		private List<string> hadLoadInfo;
+
+		[Token(Token = "0x600582D")]
+		[Address(RVA = "0x4350578", Offset = "0x434C578", VA = "0x4350578")]
+		[AsyncStateMachine(typeof(_003CInitInfo_003Ed__92))]
+		public Task InitInfo()
+		{
+			return null;
+		}
+
+		[Token(Token = "0x600582E")]
+		[AsyncStateMachine(typeof(_003CLoadGlobalInfo_003Ed__94<>))]
+		private void LoadGlobalInfo<T>(string jsonPath, Action<List<T>> onComplete)
+		{
+		}
+
+		[Token(Token = "0x600582F")]
+		private List<T> GlobalStringToConfig<T>(string jsonPath, string jsonStr)
+		{
+			return null;
+		}
+
+		[Token(Token = "0x6005830")]
+		[Address(RVA = "0x434FB94", Offset = "0x434BB94", VA = "0x434FB94")]
+		public GlobalInfo()
+		{
+		}
+	}
+}

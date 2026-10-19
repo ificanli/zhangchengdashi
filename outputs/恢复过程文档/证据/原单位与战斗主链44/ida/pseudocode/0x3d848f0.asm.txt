@@ -1,0 +1,53 @@
+0x3d848f0: STP             D13, D12, [SP,#var_50]!
+0x3d848f4: STP             D11, D10, [SP,#0x50+var_40]
+0x3d848f8: STP             D9, D8, [SP,#0x50+var_30]
+0x3d848fc: STR             X30, [SP,#0x50+var_20]
+0x3d84900: STP             X20, X19, [SP,#0x50+var_10]
+0x3d84904: MOV             X19, X0
+0x3d84908: MOV             X0, XZR
+0x3d8490c: MOV             V8.16B, V5.16B
+0x3d84910: MOV             V9.16B, V4.16B
+0x3d84914: MOV             V11.16B, V3.16B
+0x3d84918: MOV             V10.16B, V2.16B
+0x3d8491c: MOV             V12.16B, V1.16B
+0x3d84920: MOV             V13.16B, V0.16B
+0x3d84924: MOV             W20, W1
+0x3d84928: BL              Pathfinding.AstarWebGLRuntimeConfig$$get_UseWebGLNavigation
+0x3d8492c: MOV             W8, W0
+0x3d84930: MOV             W0, #1
+0x3d84934: TBZ             W8, #0, loc_3D849AC
+0x3d84938: TBNZ            W20, #0, loc_3D849AC
+0x3d8493c: ADRP            X8, #dword_1836B08@PAGE
+0x3d84940: FSUB            S0, S11, S13
+0x3d84944: FSUB            S1, S9, S12
+0x3d84948: LDR             S3, [X8,#dword_1836B08@PAGEOFF]
+0x3d8494c: FSUB            S2, S8, S10
+0x3d84950: FMUL            S0, S0, S0
+0x3d84954: FMUL            S1, S1, S1
+0x3d84958: FADD            S0, S0, S1
+0x3d8495c: FMUL            S1, S2, S2
+0x3d84960: FADD            S0, S1, S0
+0x3d84964: FCMP            S0, S3
+0x3d84968: B.LS            loc_3D849A0
+0x3d8496c: ADRP            X8, #dword_1836D70@PAGE
+0x3d84970: LDR             S1, [X8,#dword_1836D70@PAGEOFF]
+0x3d84974: FCMP            S0, S1
+0x3d84978: B.GE            loc_3D849A8
+0x3d8497c: MOV             X0, XZR
+0x3d84980: BL              UnityEngine.Time$$get_time
+0x3d84984: LDR             S1, [X19,#0x1CC]
+0x3d84988: ADRP            X8, #dword_1836B04@PAGE
+0x3d8498c: LDR             S2, [X8,#dword_1836B04@PAGEOFF]
+0x3d84990: FSUB            S0, S0, S1
+0x3d84994: FCMP            S0, S2
+0x3d84998: CSET            W0, GE
+0x3d8499c: B               loc_3D849AC
+0x3d849a0: MOV             W0, WZR
+0x3d849a4: B               loc_3D849AC
+0x3d849a8: MOV             W0, #1
+0x3d849ac: LDP             X20, X19, [SP,#0x50+var_10]
+0x3d849b0: LDR             X30, [SP,#0x50+var_20]
+0x3d849b4: LDP             D9, D8, [SP,#0x50+var_30]
+0x3d849b8: LDP             D11, D10, [SP,#0x50+var_40]
+0x3d849bc: LDP             D13, D12, [SP+0x50+var_50],#0x50
+0x3d849c0: RET

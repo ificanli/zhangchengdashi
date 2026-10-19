@@ -1,0 +1,41 @@
+void GameModule_BattleGameSceneManager__DestroyAllROle(
+        GameModule_BattleGameSceneManager_o *this,
+        const MethodInfo *method)
+{
+  __int64 v3; // x0
+  __int64 v4; // x8
+  int v5; // w2
+  int v6; // w9
+  __int64 v7; // x8
+  int v8; // w2
+  int v9; // w9
+
+  if ( (byte_8FFD7B0 & 1) == 0 )
+  {
+    il2cpp_codegen_initialize_runtime_metadata(&qword_8D0DD90);
+    byte_8FFD7B0 = 1;
+  }
+  v3 = GameModule_BattleGameSceneManager__DestroyRoleList(
+         this,
+         *(_QWORD *)&this->fields._unknown_object_0010_to_01FF[184]);
+  GameModule_BattleGameSceneManager__DestroyRoleList(v3, *(_QWORD *)&this->fields._unknown_object_0010_to_01FF[176]);
+  v4 = *(_QWORD *)&this->fields._unknown_object_0010_to_01FF[184];
+  if ( v4 == 0 )
+    goto LABEL_10;
+  v5 = *(_DWORD *)(v4 + 24);
+  v6 = *(_DWORD *)(v4 + 28) + 1;
+  *(_DWORD *)(v4 + 24) = 0;
+  *(_DWORD *)(v4 + 28) = v6;
+  if ( v5 >= 1 )
+    System_Array__Clear(*(_QWORD *)(v4 + 16), 0);
+  v7 = *(_QWORD *)&this->fields._unknown_object_0010_to_01FF[176];
+  if ( v7 == 0 )
+LABEL_10:
+    il2cpp_codegen_raise_null_reference_exception();
+  v8 = *(_DWORD *)(v7 + 24);
+  v9 = *(_DWORD *)(v7 + 28) + 1;
+  *(_DWORD *)(v7 + 24) = 0;
+  *(_DWORD *)(v7 + 28) = v9;
+  if ( v8 >= 1 )
+    System_Array__Clear(*(_QWORD *)(v7 + 16), 0);
+}

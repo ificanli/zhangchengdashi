@@ -1,0 +1,80 @@
+0x3f11b48: STR             X30, [SP,#var_30]!
+0x3f11b4c: STP             X22, X21, [SP,#0x30+var_20]
+0x3f11b50: STP             X20, X19, [SP,#0x30+var_10]
+0x3f11b54: ADRP            X22, #byte_8FFE05E@PAGE
+0x3f11b58: LDRB            W8, [X22,#byte_8FFE05E@PAGEOFF]
+0x3f11b5c: MOV             X20, X2
+0x3f11b60: MOV             X19, X1
+0x3f11b64: MOV             X21, X0
+0x3f11b68: TBNZ            W8, #0, loc_3F11B98
+0x3f11b6c: ADRP            X0, #off_8ACDE30@PAGE
+0x3f11b70: LDR             X0, [X0,#off_8ACDE30@PAGEOFF]; qword_8CD84E8 ; slot
+0x3f11b74: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3f11b78: ADRP            X0, #off_8ADAA30@PAGE
+0x3f11b7c: LDR             X0, [X0,#off_8ADAA30@PAGEOFF]; qword_8CFDB70 ; slot
+0x3f11b80: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3f11b84: ADRP            X0, #off_8ADAA38@PAGE
+0x3f11b88: LDR             X0, [X0,#off_8ADAA38@PAGEOFF]; qword_8CFDB80 ; slot
+0x3f11b8c: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3f11b90: MOV             W8, #1
+0x3f11b94: STRB            W8, [X22,#byte_8FFE05E@PAGEOFF]
+0x3f11b98: STR             XZR, [SP,#0x30+var_28]
+0x3f11b9c: LDR             X0, [X21,#0x28]
+0x3f11ba0: CBZ             X0, loc_3F11C44
+0x3f11ba4: ADRP            X8, #off_8ADAA30@PAGE
+0x3f11ba8: LDR             X8, [X8,#off_8ADAA30@PAGEOFF]; qword_8CFDB70
+0x3f11bac: LDR             X3, [X8]
+0x3f11bb0: ADD             X2, SP, #0x30+var_28
+0x3f11bb4: MOV             X1, X19
+0x3f11bb8: BL              System.Collections.Generic.Dictionary_object__object_$$TryGetValue
+0x3f11bbc: MOV             W8, W0
+0x3f11bc0: LDR             X0, [SP,#0x30+var_28]
+0x3f11bc4: CBZ             X0, loc_3F11C34
+0x3f11bc8: EOR             W8, W8, #1
+0x3f11bcc: TBNZ            W8, #0, loc_3F11C34
+0x3f11bd0: LDR             X21, [X21,#0x28]
+0x3f11bd4: MOV             X1, X20
+0x3f11bd8: MOV             X2, XZR
+0x3f11bdc: BL              System.Delegate$$Remove
+0x3f11be0: CBZ             X21, loc_3F11C48
+0x3f11be4: MOV             X20, X0
+0x3f11be8: CBZ             X0, loc_3F11C18
+0x3f11bec: ADRP            X8, #off_8ACDE30@PAGE
+0x3f11bf0: LDR             X8, [X8,#off_8ACDE30@PAGEOFF]; qword_8CD84E8
+0x3f11bf4: LDR             X22, [X8]
+0x3f11bf8: MOV             X0, X20
+0x3f11bfc: MOV             X1, X22
+0x3f11c00: BL              unk_3C3D3B4
+0x3f11c04: MOV             X2, X0
+0x3f11c08: CBNZ            X0, loc_3F11C1C
+0x3f11c0c: MOV             X0, X20
+0x3f11c10: MOV             X1, X22
+0x3f11c14: BL              unk_3C3D868
+0x3f11c18: MOV             X2, XZR
+0x3f11c1c: ADRP            X8, #off_8ADAA38@PAGE
+0x3f11c20: LDR             X8, [X8,#off_8ADAA38@PAGEOFF]; qword_8CFDB80
+0x3f11c24: LDR             X3, [X8]
+0x3f11c28: MOV             X0, X21
+0x3f11c2c: MOV             X1, X19
+0x3f11c30: BL              System.Collections.Generic.Dictionary_object__object_$$set_Item
+0x3f11c34: LDP             X20, X19, [SP,#0x30+var_10]
+0x3f11c38: LDP             X22, X21, [SP,#0x30+var_20]
+0x3f11c3c: LDR             X30, [SP+0x30+var_30],#0x30
+0x3f11c40: RET
+0x3f11c44: BL              il2cpp_codegen_raise_null_reference_exception
+0x3f11c48: BL              il2cpp_codegen_raise_null_reference_exception
+0x3f11c4c: B               loc_3F11C54
+0x3f11c50: B               loc_3F11C54
+0x3f11c54: CMP             W1, #1
+0x3f11c58: B.NE            loc_3F11C78
+0x3f11c5c: BL              .__cxa_begin_catch
+0x3f11c60: LDR             X19, [X0]
+0x3f11c64: BL              .__cxa_end_catch
+0x3f11c68: CBZ             X19, loc_3F11C34
+0x3f11c6c: MOV             X0, X19
+0x3f11c70: BL              loc_3C38CF8
+0x3f11c74: CBNZ            X19, loc_3F11C7C
+0x3f11c78: BL              sub_3CE73C4
+0x3f11c7c: MOV             X0, X19
+0x3f11c80: BL              loc_3C38CF8
+0x3f11c84: BL              unk_35BC500

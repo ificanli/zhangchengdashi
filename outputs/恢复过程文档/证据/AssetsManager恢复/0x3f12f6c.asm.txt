@@ -1,0 +1,260 @@
+0x3f12f6c: e923bb6d stp      d9, d8, [sp, #-0x50]!
+0x3f12f70: fe0b00f9 str      x30, [sp, #0x10]
+0x3f12f74: f85f02a9 stp      x24, x23, [sp, #0x20]
+0x3f12f78: f65703a9 stp      x22, x21, [sp, #0x30]
+0x3f12f7c: f44f04a9 stp      x20, x19, [sp, #0x40]
+0x3f12f80: 74870290 adrp     x20, #0x8ffe000
+0x3f12f84: d55d02f0 adrp     x21, #0x8acd000
+0x3f12f88: 88ca4139 ldrb     w8, [x20, #0x72]
+0x3f12f8c: b59241f9 ldr      x21, [x21, #0x320] // UnityEngine.GUI_TypeInfo
+0x3f12f90: f30300aa mov      x19, x0
+0x3f12f94: 88010037 tbnz     w8, #0, #0x3f12fc4
+0x3f12f98: e05d0290 adrp     x0, #0x8ace000
+0x3f12f9c: 006845f9 ldr      x0, [x0, #0xad0] // UnityEngine.GUIStyle_TypeInfo
+0x3f12fa0: b8a8f497 bl       #0x3c3d280
+0x3f12fa4: c05d02f0 adrp     x0, #0x8acd000
+0x3f12fa8: 009041f9 ldr      x0, [x0, #0x320] // UnityEngine.GUI_TypeInfo
+0x3f12fac: b5a8f497 bl       #0x3c3d280
+0x3f12fb0: e05d0290 adrp     x0, #0x8ace000
+0x3f12fb4: 006c45f9 ldr      x0, [x0, #0xad8] // UnityEngine.RectOffset_TypeInfo
+0x3f12fb8: b2a8f497 bl       #0x3c3d280
+0x3f12fbc: 28008052 mov      w8, #1
+0x3f12fc0: 88ca0139 strb     w8, [x20, #0x72]
+0x3f12fc4: a00240f9 ldr      x0, [x21]
+0x3f12fc8: 08e040b9 ldr      w8, [x0, #0xe0]
+0x3f12fcc: 48000035 cbnz     w8, #0x3f12fd4
+0x3f12fd0: f8a8f497 bl       #0x3c3d3b0
+0x3f12fd4: e0031faa mov      x0, xzr
+0x3f12fd8: d0531095 bl       #0x8327f18 // UnityEngine.GUI$$get_skin
+0x3f12fdc: e01c00b4 cbz      x0, #0x3f13378
+0x3f12fe0: f75d0290 adrp     x23, #0x8ace000
+0x3f12fe4: f76a45f9 ldr      x23, [x23, #0xad0] // UnityEngine.GUIStyle_TypeInfo
+0x3f12fe8: e1031faa mov      x1, xzr
+0x3f12fec: f6541095 bl       #0x83283c4 // UnityEngine.GUISkin$$get_label
+0x3f12ff0: e80240f9 ldr      x8, [x23]
+0x3f12ff4: f50300aa mov      x21, x0
+0x3f12ff8: e00308aa mov      x0, x8
+0x3f12ffc: 32a9f497 bl       #0x3c3d4c4
+0x3f13000: e10315aa mov      x1, x21
+0x3f13004: e2031faa mov      x2, xzr
+0x3f13008: f40300aa mov      x20, x0
+0x3f1300c: 11921095 bl       #0x8337850 // UnityEngine.GUIStyle$$.ctor
+0x3f13010: 568702d0 adrp     x22, #0x8ffd000
+0x3f13014: c8a24639 ldrb     w8, [x22, #0x1a8]
+0x3f13018: 687e40bd ldr      s8, [x19, #0x7c]
+0x3f1301c: 0910251e fmov     s9, #12.00000000
+0x3f13020: c8000035 cbnz     w8, #0x3f13038
+0x3f13024: c05d02b0 adrp     x0, #0x8acc000
+0x3f13028: 007844f9 ldr      x0, [x0, #0x8f0] // System.Math_TypeInfo
+0x3f1302c: 95a8f497 bl       #0x3c3d280
+0x3f13030: 28008052 mov      w8, #1
+0x3f13034: c8a20639 strb     w8, [x22, #0x1a8]
+0x3f13038: d85d02b0 adrp     x24, #0x8acc000
+0x3f1303c: 187b44f9 ldr      x24, [x24, #0x8f0] // System.Math_TypeInfo
+0x3f13040: 0909291e fmul     s9, s8, s9
+0x3f13044: 000340f9 ldr      x0, [x24]
+0x3f13048: 08e040b9 ldr      w8, [x0, #0xe0]
+0x3f1304c: 48000035 cbnz     w8, #0x3f13054
+0x3f13050: d8a8f497 bl       #0x3c3d3b0
+0x3f13054: 28c1221e fcvt     d8, s9
+0x3f13058: e0630091 add      x0, sp, #0x18
+0x3f1305c: 001da84e mov      v0.16b, v8.16b
+0x3f13060: 886f1995 bl       #0x856ee80
+0x3f13064: 2821201e fcmp     s9, #0.0
+0x3f13068: ea000054 b.ge     #0x3f13084
+0x3f1306c: 01107c1e fmov     d1, #-0.50000000
+0x3f13070: 0020611e fcmp     d0, d1
+0x3f13074: c1010054 b.ne     #0x3f130ac
+0x3f13078: e00f40fd ldr      d0, [sp, #0x18]
+0x3f1307c: 01107e1e fmov     d1, #-1.00000000
+0x3f13080: 06000014 b        #0x3f13098
+0x3f13084: 01106c1e fmov     d1, #0.50000000
+0x3f13088: 0020611e fcmp     d0, d1
+0x3f1308c: 61010054 b.ne     #0x3f130b8
+0x3f13090: e00f40fd ldr      d0, [sp, #0x18]
+0x3f13094: 01106e1e fmov     d1, #1.00000000
+0x3f13098: 0800789e fcvtzs   x8, d0
+0x3f1309c: 0128611e fadd     d1, d0, d1
+0x3f130a0: 1f0140f2 tst      x8, #1
+0x3f130a4: 000c611e fcsel    d0, d0, d1, eq
+0x3f130a8: 06000014 b        #0x3f130c0
+0x3f130ac: 0029611e fadd     d0, d8, d1
+0x3f130b0: 00c0641e frintp   d0, d0
+0x3f130b4: 03000014 b        #0x3f130c0
+0x3f130b8: 0029611e fadd     d0, d8, d1
+0x3f130bc: 0040651e frintm   d0, d0
+0x3f130c0: d41500b4 cbz      x20, #0x3f13378
+0x3f130c4: 08feefd2 mov      x8, #0x7ff0000000000000
+0x3f130c8: 0101679e fmov     d1, x8
+0x3f130cc: 0900781e fcvtzs   w9, d0
+0x3f130d0: 0020611e fcmp     d0, d1
+0x3f130d4: 0800b052 mov      w8, #-0xffffffff80000000
+0x3f130d8: 0101891a csel     w1, w8, w9, eq
+0x3f130dc: e00314aa mov      x0, x20
+0x3f130e0: e2031faa mov      x2, xzr
+0x3f130e4: a08e1095 bl       #0x8336b64 // UnityEngine.GUIStyle$$set_fontSize
+0x3f130e8: 21008052 mov      w1, #1
+0x3f130ec: e00314aa mov      x0, x20
+0x3f130f0: e2031faa mov      x2, xzr
+0x3f130f4: be8e1095 bl       #0x8336bec // UnityEngine.GUIStyle$$set_richText
+0x3f130f8: e0031faa mov      x0, xzr
+0x3f130fc: 743200f9 str      x20, [x19, #0x60]
+0x3f13100: 86531095 bl       #0x8327f18 // UnityEngine.GUI$$get_skin
+0x3f13104: a01300b4 cbz      x0, #0x3f13378
+0x3f13108: e1031faa mov      x1, xzr
+0x3f1310c: ea761095 bl       #0x8330cb4 // UnityEngine.GUISkin$$get_button
+0x3f13110: e80240f9 ldr      x8, [x23]
+0x3f13114: f50300aa mov      x21, x0
+0x3f13118: e00308aa mov      x0, x8
+0x3f1311c: eaa8f497 bl       #0x3c3d4c4
+0x3f13120: e10315aa mov      x1, x21
+0x3f13124: e2031faa mov      x2, xzr
+0x3f13128: f40300aa mov      x20, x0
+0x3f1312c: c9911095 bl       #0x8337850 // UnityEngine.GUIStyle$$.ctor
+0x3f13130: c8a24639 ldrb     w8, [x22, #0x1a8]
+0x3f13134: 687e40bd ldr      s8, [x19, #0x7c]
+0x3f13138: 0910251e fmov     s9, #12.00000000
+0x3f1313c: c8000035 cbnz     w8, #0x3f13154
+0x3f13140: c05d02b0 adrp     x0, #0x8acc000
+0x3f13144: 007844f9 ldr      x0, [x0, #0x8f0] // System.Math_TypeInfo
+0x3f13148: 4ea8f497 bl       #0x3c3d280
+0x3f1314c: 28008052 mov      w8, #1
+0x3f13150: c8a20639 strb     w8, [x22, #0x1a8]
+0x3f13154: 000340f9 ldr      x0, [x24]
+0x3f13158: 0909291e fmul     s9, s8, s9
+0x3f1315c: 08e040b9 ldr      w8, [x0, #0xe0]
+0x3f13160: 48000035 cbnz     w8, #0x3f13168
+0x3f13164: 93a8f497 bl       #0x3c3d3b0
+0x3f13168: 28c1221e fcvt     d8, s9
+0x3f1316c: e0630091 add      x0, sp, #0x18
+0x3f13170: 001da84e mov      v0.16b, v8.16b
+0x3f13174: 436f1995 bl       #0x856ee80
+0x3f13178: 2821201e fcmp     s9, #0.0
+0x3f1317c: ea000054 b.ge     #0x3f13198
+0x3f13180: 01107c1e fmov     d1, #-0.50000000
+0x3f13184: 0020611e fcmp     d0, d1
+0x3f13188: c1010054 b.ne     #0x3f131c0
+0x3f1318c: e00f40fd ldr      d0, [sp, #0x18]
+0x3f13190: 01107e1e fmov     d1, #-1.00000000
+0x3f13194: 06000014 b        #0x3f131ac
+0x3f13198: 01106c1e fmov     d1, #0.50000000
+0x3f1319c: 0020611e fcmp     d0, d1
+0x3f131a0: 61010054 b.ne     #0x3f131cc
+0x3f131a4: e00f40fd ldr      d0, [sp, #0x18]
+0x3f131a8: 01106e1e fmov     d1, #1.00000000
+0x3f131ac: 0800789e fcvtzs   x8, d0
+0x3f131b0: 0128611e fadd     d1, d0, d1
+0x3f131b4: 1f0140f2 tst      x8, #1
+0x3f131b8: 000c611e fcsel    d0, d0, d1, eq
+0x3f131bc: 06000014 b        #0x3f131d4
+0x3f131c0: 0029611e fadd     d0, d8, d1
+0x3f131c4: 00c0641e frintp   d0, d0
+0x3f131c8: 03000014 b        #0x3f131d4
+0x3f131cc: 0029611e fadd     d0, d8, d1
+0x3f131d0: 0040651e frintm   d0, d0
+0x3f131d4: 340d00b4 cbz      x20, #0x3f13378
+0x3f131d8: d55d02f0 adrp     x21, #0x8ace000
+0x3f131dc: 08feefd2 mov      x8, #0x7ff0000000000000
+0x3f131e0: b56e45f9 ldr      x21, [x21, #0xad8] // UnityEngine.RectOffset_TypeInfo
+0x3f131e4: 0101679e fmov     d1, x8
+0x3f131e8: 0900781e fcvtzs   w9, d0
+0x3f131ec: 0020611e fcmp     d0, d1
+0x3f131f0: 0800b052 mov      w8, #-0xffffffff80000000
+0x3f131f4: 0101891a csel     w1, w8, w9, eq
+0x3f131f8: e00314aa mov      x0, x20
+0x3f131fc: e2031faa mov      x2, xzr
+0x3f13200: 598e1095 bl       #0x8336b64 // UnityEngine.GUIStyle$$set_fontSize
+0x3f13204: a00240f9 ldr      x0, [x21]
+0x3f13208: afa8f497 bl       #0x3c3d4c4
+0x3f1320c: 41018052 mov      w1, #0xa
+0x3f13210: 42018052 mov      w2, #0xa
+0x3f13214: a3008052 mov      w3, #5
+0x3f13218: a4008052 mov      w4, #5
+0x3f1321c: e5031faa mov      x5, xzr
+0x3f13220: f50300aa mov      x21, x0
+0x3f13224: ba5c0e95 bl       #0x82aa50c // UnityEngine.RectOffset$$.ctor
+0x3f13228: e00314aa mov      x0, x20
+0x3f1322c: e10315aa mov      x1, x21
+0x3f13230: e2031faa mov      x2, xzr
+0x3f13234: 3f921095 bl       #0x8337b30 // UnityEngine.GUIStyle$$set_padding
+0x3f13238: e0031faa mov      x0, xzr
+0x3f1323c: 743600f9 str      x20, [x19, #0x68]
+0x3f13240: 36531095 bl       #0x8327f18 // UnityEngine.GUI$$get_skin
+0x3f13244: a00900b4 cbz      x0, #0x3f13378
+0x3f13248: e1031faa mov      x1, xzr
+0x3f1324c: 5e541095 bl       #0x83283c4 // UnityEngine.GUISkin$$get_label
+0x3f13250: e80240f9 ldr      x8, [x23]
+0x3f13254: f50300aa mov      x21, x0
+0x3f13258: e00308aa mov      x0, x8
+0x3f1325c: 9aa8f497 bl       #0x3c3d4c4
+0x3f13260: e10315aa mov      x1, x21
+0x3f13264: e2031faa mov      x2, xzr
+0x3f13268: f40300aa mov      x20, x0
+0x3f1326c: 79911095 bl       #0x8337850 // UnityEngine.GUIStyle$$.ctor
+0x3f13270: c8a24639 ldrb     w8, [x22, #0x1a8]
+0x3f13274: 687e40bd ldr      s8, [x19, #0x7c]
+0x3f13278: 0990251e fmov     s9, #14.00000000
+0x3f1327c: c8000035 cbnz     w8, #0x3f13294
+0x3f13280: c05d02b0 adrp     x0, #0x8acc000
+0x3f13284: 007844f9 ldr      x0, [x0, #0x8f0] // System.Math_TypeInfo
+0x3f13288: fea7f497 bl       #0x3c3d280
+0x3f1328c: 28008052 mov      w8, #1
+0x3f13290: c8a20639 strb     w8, [x22, #0x1a8]
+0x3f13294: 000340f9 ldr      x0, [x24]
+0x3f13298: 0909291e fmul     s9, s8, s9
+0x3f1329c: 08e040b9 ldr      w8, [x0, #0xe0]
+0x3f132a0: 48000035 cbnz     w8, #0x3f132a8
+0x3f132a4: 43a8f497 bl       #0x3c3d3b0
+0x3f132a8: 28c1221e fcvt     d8, s9
+0x3f132ac: e0630091 add      x0, sp, #0x18
+0x3f132b0: 001da84e mov      v0.16b, v8.16b
+0x3f132b4: f36e1995 bl       #0x856ee80
+0x3f132b8: 2821201e fcmp     s9, #0.0
+0x3f132bc: ea000054 b.ge     #0x3f132d8
+0x3f132c0: 01107c1e fmov     d1, #-0.50000000
+0x3f132c4: 0020611e fcmp     d0, d1
+0x3f132c8: c1010054 b.ne     #0x3f13300
+0x3f132cc: e00f40fd ldr      d0, [sp, #0x18]
+0x3f132d0: 01107e1e fmov     d1, #-1.00000000
+0x3f132d4: 06000014 b        #0x3f132ec
+0x3f132d8: 01106c1e fmov     d1, #0.50000000
+0x3f132dc: 0020611e fcmp     d0, d1
+0x3f132e0: 61010054 b.ne     #0x3f1330c
+0x3f132e4: e00f40fd ldr      d0, [sp, #0x18]
+0x3f132e8: 01106e1e fmov     d1, #1.00000000
+0x3f132ec: 0800789e fcvtzs   x8, d0
+0x3f132f0: 0128611e fadd     d1, d0, d1
+0x3f132f4: 1f0140f2 tst      x8, #1
+0x3f132f8: 000c611e fcsel    d0, d0, d1, eq
+0x3f132fc: 06000014 b        #0x3f13314
+0x3f13300: 0029611e fadd     d0, d8, d1
+0x3f13304: 00c0641e frintp   d0, d0
+0x3f13308: 03000014 b        #0x3f13314
+0x3f1330c: 0029611e fadd     d0, d8, d1
+0x3f13310: 0040651e frintm   d0, d0
+0x3f13314: 340300b4 cbz      x20, #0x3f13378
+0x3f13318: 08feefd2 mov      x8, #0x7ff0000000000000
+0x3f1331c: 0101679e fmov     d1, x8
+0x3f13320: 0900781e fcvtzs   w9, d0
+0x3f13324: 0020611e fcmp     d0, d1
+0x3f13328: 0800b052 mov      w8, #-0xffffffff80000000
+0x3f1332c: 0101891a csel     w1, w8, w9, eq
+0x3f13330: e00314aa mov      x0, x20
+0x3f13334: e2031faa mov      x2, xzr
+0x3f13338: 0b8e1095 bl       #0x8336b64 // UnityEngine.GUIStyle$$set_fontSize
+0x3f1333c: 21008052 mov      w1, #1
+0x3f13340: e00314aa mov      x0, x20
+0x3f13344: e2031faa mov      x2, xzr
+0x3f13348: 188e1095 bl       #0x8336ba8 // UnityEngine.GUIStyle$$set_fontStyle
+0x3f1334c: 81008052 mov      w1, #4
+0x3f13350: e00314aa mov      x0, x20
+0x3f13354: e2031faa mov      x2, xzr
+0x3f13358: 478d1095 bl       #0x8336874 // UnityEngine.GUIStyle$$set_alignment
+0x3f1335c: 743a00f9 str      x20, [x19, #0x70]
+0x3f13360: f44f44a9 ldp      x20, x19, [sp, #0x40]
+0x3f13364: f65743a9 ldp      x22, x21, [sp, #0x30]
+0x3f13368: f85f42a9 ldp      x24, x23, [sp, #0x20]
+0x3f1336c: fe0b40f9 ldr      x30, [sp, #0x10]
+0x3f13370: e923c56c ldp      d9, d8, [sp], #0x50
+0x3f13374: c0035fd6 ret      
+0x3f13378: 55a8f497 bl       #0x3c3d4cc

@@ -1,0 +1,18 @@
+__int64 GameModule_BattleGameSceneManager__PrewarmBattleRuntimePools()
+{
+  __int64 v1; // [xsp+0h] [xbp-30h] BYREF
+  __int64 v2; // [xsp+8h] [xbp-28h] BYREF
+
+  if ( (byte_8FFD77B & 1) == 0 )
+  {
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D21658);
+    byte_8FFD77B = 1;
+  }
+  v2 = 0;
+  v1 = 0xFFFFFFFFLL;
+  Cysharp_Threading_Tasks_CompilerServices_AsyncUniTaskVoidMethodBuilder__Start_BattleGameSceneManager__PrewarmBattleRuntimePools_d__143_(
+    &v2,
+    &v1,
+    qword_8D21658);
+  return 0;
+}

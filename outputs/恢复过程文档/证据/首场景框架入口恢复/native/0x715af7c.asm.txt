@@ -1,0 +1,114 @@
+0x715af7c: ff4301d1 sub      sp, sp, #0x50
+0x715af80: fe5703a9 stp      x30, x21, [sp, #0x30]
+0x715af84: f44f04a9 stp      x20, x19, [sp, #0x40]
+0x715af88: 74f500f0 adrp     x20, #0x9009000
+0x715af8c: 93cb00f0 adrp     x19, #0x8acd000
+0x715af90: 884e4339 ldrb     w8, [x20, #0xd3]
+0x715af94: 73e242f9 ldr      x19, [x19, #0x5c0] // GameFramework.AppSetting_TypeInfo
+0x715af98: a8020037 tbnz     w8, #0, #0x715afec
+0x715af9c: 80cb00f0 adrp     x0, #0x8acd000
+0x715afa0: 00e042f9 ldr      x0, [x0, #0x5c0] // GameFramework.AppSetting_TypeInfo
+0x715afa4: b7882b97 bl       #0x3c3d280
+0x715afa8: 80cd00f0 adrp     x0, #0x8b0d000
+0x715afac: 002447f9 ldr      x0, [x0, #0xe48] // Method$System.Collections.Generic.LinkedList.Enumerator<GameFrameModule>.Dispose()
+0x715afb0: b4882b97 bl       #0x3c3d280
+0x715afb4: 80cd00f0 adrp     x0, #0x8b0d000
+0x715afb8: 002847f9 ldr      x0, [x0, #0xe50] // Method$System.Collections.Generic.LinkedList.Enumerator<GameFrameModule>.MoveNext()
+0x715afbc: b1882b97 bl       #0x3c3d280
+0x715afc0: 80cd00f0 adrp     x0, #0x8b0d000
+0x715afc4: 002c47f9 ldr      x0, [x0, #0xe58] // Method$System.Collections.Generic.LinkedList.Enumerator<GameFrameModule>.get_Current()
+0x715afc8: ae882b97 bl       #0x3c3d280
+0x715afcc: c0cc00d0 adrp     x0, #0x8af4000
+0x715afd0: 005043f9 ldr      x0, [x0, #0x6a0] // GameFramework.GameFrameEntry_TypeInfo
+0x715afd4: ab882b97 bl       #0x3c3d280
+0x715afd8: 80cd00f0 adrp     x0, #0x8b0d000
+0x715afdc: 003047f9 ldr      x0, [x0, #0xe60] // Method$System.Collections.Generic.LinkedList<GameFrameModule>.GetEnumerator()
+0x715afe0: a8882b97 bl       #0x3c3d280
+0x715afe4: 28008052 mov      w8, #1
+0x715afe8: 884e0339 strb     w8, [x20, #0xd3]
+0x715afec: 600240f9 ldr      x0, [x19]
+0x715aff0: 00e4006f movi     v0.2d, #0000000000000000
+0x715aff4: ff1300f9 str      xzr, [sp, #0x20]
+0x715aff8: e00300ad stp      q0, q0, [sp]
+0x715affc: d5cc00d0 adrp     x21, #0x8af4000
+0x715b000: 08e040b9 ldr      w8, [x0, #0xe0]
+0x715b004: bd4e5014 b        #0x856eaf8
+0x715b008: 48000035 cbnz     w8, #0x715b010
+0x715b00c: e9882b97 bl       #0x3c3d3b0
+0x715b010: e0031faa mov      x0, xzr
+0x715b014: 0412ff97 bl       #0x711f824 // GameFramework.AppSetting$$SetCultureBasedOnSetting
+0x715b018: a00240f9 ldr      x0, [x21] // Method$Unity.Collections.FixedList512Bytes<Line>.get_Item()
+0x715b01c: 08e040b9 ldr      w8, [x0, #0xe0]
+0x715b020: 68000035 cbnz     w8, #0x715b02c
+0x715b024: e3882b97 bl       #0x3c3d3b0
+0x715b028: a00240f9 ldr      x0, [x21] // Method$Unity.Collections.FixedList512Bytes<Line>.get_Item()
+0x715b02c: 085c40f9 ldr      x8, [x0, #0xb8]
+0x715b030: 000140f9 ldr      x0, [x8]
+0x715b034: 800400b4 cbz      x0, #0x715b0c4
+0x715b038: 88cd00d0 adrp     x8, #0x8b0d000
+0x715b03c: 083147f9 ldr      x8, [x8, #0xe60] // Method$System.Collections.Generic.LinkedList<GameFrameModule>.GetEnumerator()
+0x715b040: 94cd00d0 adrp     x20, #0x8b0d000
+0x715b044: 93cd00d0 adrp     x19, #0x8b0d000
+0x715b048: 010140f9 ldr      x1, [x8]
+0x715b04c: 942a47f9 ldr      x20, [x20, #0xe50] // Method$System.Collections.Generic.LinkedList.Enumerator<GameFrameModule>.MoveNext()
+0x715b050: 732647f9 ldr      x19, [x19, #0xe48] // Method$System.Collections.Generic.LinkedList.Enumerator<GameFrameModule>.Dispose()
+0x715b054: e8030091 mov      x8, sp
+0x715b058: c2959197 bl       #0x55c0760 // System.Collections.Generic.LinkedList<object>$$GetEnumerator
+0x715b05c: 810240f9 ldr      x1, [x20]
+0x715b060: e0030091 mov      x0, sp
+0x715b064: 5748f297 bl       #0x6ded1c0 // System.Collections.Generic.LinkedList.Enumerator<object>$$MoveNext
+0x715b068: e0000036 tbz      w0, #0, #0x715b084
+0x715b06c: e00f40f9 ldr      x0, [sp, #0x18]
+0x715b070: 800200b4 cbz      x0, #0x715b0c0
+0x715b074: 080040f9 ldr      x8, [x0]
+0x715b078: 098559a9 ldp      x9, x1, [x8, #0x198]
+0x715b07c: 20013fd6 blr      x9
+0x715b080: f7ffff17 b        #0x715b05c
+0x715b084: 610240f9 ldr      x1, [x19]
+0x715b088: e0030091 mov      x0, sp
+0x715b08c: a048f297 bl       #0x6ded30c // System.Collections.Generic.LinkedList.Enumerator<object>$$Dispose
+0x715b090: a00240f9 ldr      x0, [x21] // Method$Unity.Collections.FixedList512Bytes<Line>.get_Item()
+0x715b094: 08e040b9 ldr      w8, [x0, #0xe0]
+0x715b098: 68000035 cbnz     w8, #0x715b0a4
+0x715b09c: c5882b97 bl       #0x3c3d3b0
+0x715b0a0: a00240f9 ldr      x0, [x21] // Method$Unity.Collections.FixedList512Bytes<Line>.get_Item()
+0x715b0a4: 085c40f9 ldr      x8, [x0, #0xb8]
+0x715b0a8: f44f44a9 ldp      x20, x19, [sp, #0x40]
+0x715b0ac: fe5743a9 ldp      x30, x21, [sp, #0x30]
+0x715b0b0: 29008052 mov      w9, #1
+0x715b0b4: 09210039 strb     w9, [x8, #8]
+0x715b0b8: ff430191 add      sp, sp, #0x50
+0x715b0bc: c0035fd6 ret      
+0x715b0c0: 03892b97 bl       #0x3c3d4cc
+0x715b0c4: 02892b97 bl       #0x3c3d4cc
+0x715b0c8: 02000014 b        #0x715b0d0
+0x715b0cc: 01000014 b        #0x715b0d0
+0x715b0d0: f30300aa mov      x19, x0
+0x715b0d4: 3f040071 cmp      w1, #1
+0x715b0d8: a1010054 b.ne     #0x715b10c
+0x715b0dc: e00313aa mov      x0, x19
+0x715b0e0: 304f5094 bl       #0x856eda0
+0x715b0e4: 140040f9 ldr      x20, [x0]
+0x715b0e8: 324f5094 bl       #0x856edb0
+0x715b0ec: 88cd00d0 adrp     x8, #0x8b0d000
+0x715b0f0: 082547f9 ldr      x8, [x8, #0xe48] // Method$System.Collections.Generic.LinkedList.Enumerator<GameFrameModule>.Dispose()
+0x715b0f4: e0030091 mov      x0, sp
+0x715b0f8: 010140f9 ldr      x1, [x8]
+0x715b0fc: 8448f297 bl       #0x6ded30c // System.Collections.Generic.LinkedList.Enumerator<object>$$Dispose
+0x715b100: 94fcffb4 cbz      x20, #0x715b090
+0x715b104: e00314aa mov      x0, x20
+0x715b108: fc762b97 bl       #0x3c38cf8
+0x715b10c: f4031faa mov      x20, xzr
+0x715b110: 02000014 b        #0x715b118
+0x715b114: f30300aa mov      x19, x0
+0x715b118: 88cd00d0 adrp     x8, #0x8b0d000
+0x715b11c: 082547f9 ldr      x8, [x8, #0xe48] // Method$System.Collections.Generic.LinkedList.Enumerator<GameFrameModule>.Dispose()
+0x715b120: 010140f9 ldr      x1, [x8]
+0x715b124: e0030091 mov      x0, sp
+0x715b128: 7948f297 bl       #0x6ded30c // System.Collections.Generic.LinkedList.Enumerator<object>$$Dispose
+0x715b12c: 740000b5 cbnz     x20, #0x715b138
+0x715b130: e00313aa mov      x0, x19
+0x715b134: a4302e97 bl       #0x3ce73c4
+0x715b138: e00314aa mov      x0, x20
+0x715b13c: ef762b97 bl       #0x3c38cf8
+0x715b140: f0841197 bl       #0x35bc500

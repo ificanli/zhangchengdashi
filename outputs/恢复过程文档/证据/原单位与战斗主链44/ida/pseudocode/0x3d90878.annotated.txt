@@ -1,0 +1,358 @@
+__int64 __fastcall GameModule_RoleBehaviour__Dead_d__190__MoveNext(__int64 a1)
+{
+  __int64 v2; // x20
+  __int64 v3; // x21
+  __int64 v4; // x0
+  __int64 transform; // x0
+  void *Instance; // x21
+  void *gameObject; // x0
+  __int64 v8; // x0
+  __int64 v9; // x0
+  int v10; // w22
+  __int64 v11; // x21
+  __int64 v12; // x0
+  long double position; // q0
+  __int64 v14; // x1
+  __int64 v15; // x2
+  __int64 v16; // x0
+  int v17; // w23
+  void *v18; // x0
+  __int64 v19; // x0
+  __int64 v20; // x0
+  __int64 v21; // x1
+  void *v22; // x21
+  __int64 v23; // x1
+  __int64 v24; // x22
+  __int64 v25; // x0
+  long double v26; // q0
+  void *v27; // x0
+  __int64 v28; // x8
+  __int64 v29; // x9
+  _DWORD *v30; // x10
+  __int64 v31; // x0
+  void *v32; // x0
+  __int64 GameGlobalConfig; // x0
+  __int64 v35; // x1
+  __int64 v36; // x2
+  __int64 v37; // x0
+  __int64 v38; // x3
+  _QWORD *v39; // x0
+  __int64 v40; // x3
+  _QWORD *v41; // x0
+  void *v42; // x0
+  void *v43; // x21
+  __int64 v44; // x1
+  void *v45; // x21
+  __int64 v46; // x1
+  __int64 *v47; // x21
+  __int64 v48; // x8
+  __int64 v49; // x9
+  _DWORD *v50; // x10
+  __int64 v51; // x0
+  float v52; // s0
+  float v53; // s8
+  __int64 v54; // x1
+  __int64 v55; // x8
+  __int64 v56; // x9
+  int *v57; // x10
+  __int64 v58; // x0
+  __int128 v59; // [xsp+0h] [xbp-50h] BYREF
+  int v60; // [xsp+18h] [xbp-38h] BYREF
+  int coinNum; // [xsp+1Ch] [xbp-34h] BYREF
+
+  if ( (byte_8FFD4BF & 1) == 0 )
+  {
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D22518 /* Method$System.Runtime.CompilerServices.AsyncVoidMethodBuilder.AwaitUnsafeOnCompleted<UniTask.Awaiter, RoleBehaviour.<Dead>d__190>() */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&off_8CE5E20 /* GameModule.CoreGameManager_TypeInfo */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8CE8430 /* IAnimation_TypeInfo */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8CE95C0 /* int_TypeInfo */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D12058 /* Method$ToolModule.ManagerBase<BattleGameSceneManager>.get_Instance() */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D12148 /* Method$ToolModule.ManagerBase<EventManager>.get_Instance() */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D124D8 /* Method$ToolModule.ManagerBase<UITextEffectManager>.get_Instance() */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D12108 /* Method$ToolModule.ManagerBase<DailyBlessManager>.get_Instance() */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D12048 /* Method$ToolModule.ManagerBase<BattleGameManager>.get_Instance() */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D11FA8 /* Method$ToolModule.ManagerBase<AIBehaviourManager>.get_Instance() */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D12400 /* Method$ToolModule.ManagerBase<RoleShadowManager>.get_Instance() */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&off_8CEB3E0 /* UnityEngine.Object_TypeInfo */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D17890 /* Method$QuickTutor.Singleton<ABTestManager>.get_Instance() */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&off_8CE1928 /* QuickTutor.Singleton<ABTestManager>_TypeInfo */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&off_8CEEDF8 /* Cysharp.Threading.Tasks.UniTask_TypeInfo */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D624F0 /* HasRoleDead */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D53708 /* 1002 */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D54B00 /* <color=#FFFF00>+{0}</color> */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D536B8 /* 1001 */);
+    byte_8FFD4BF = 1;
+  }
+  coinNum = 0;
+  v59 = 0u;
+  v2 = *(_QWORD *)(a1 + 40);
+  if ( *(_DWORD *)a1 == 0 )
+  {
+    v59 = *(_OWORD *)(a1 + 56);
+    *(_QWORD *)(a1 + 56) = 0;
+    *(_QWORD *)(a1 + 64) = 0;
+    *(_DWORD *)a1 = -1;
+    goto LABEL_28;
+  }
+  if ( v2 == 0 )
+    il2cpp_codegen_raise_null_reference_exception();
+  if ( *(_BYTE *)(v2 + 33) != 0 )
+  {
+LABEL_41:
+    *(_DWORD *)a1 = -2;
+    return System_Runtime_CompilerServices_AsyncVoidMethodBuilder__SetResult(a1 + 8, 0);
+  }
+  *(_BYTE *)(v2 + 576) = 0;
+  GameModule_RoleBehaviour__SetPathfindingEnabled(v2, 0, 0);
+  *(_BYTE *)(v2 + 33) = 1;
+  v3 = *(_QWORD *)(v2 + 640);
+  if ( *((_DWORD *)off_8CEB3E0 /* UnityEngine.Object_TypeInfo */ + 56) == 0 )
+    il2cpp_codegen_runtime_class_init(off_8CEB3E0 /* UnityEngine.Object_TypeInfo */);
+  if ( (UnityEngine_Object__op_Inequality(v3, 0, 0) & 1) != 0 )
+  {
+    v4 = *(_QWORD *)(v2 + 640);
+    if ( v4 == 0 )
+      il2cpp_codegen_raise_null_reference_exception();
+    GameModule_HexBehaviour__RemoveRole(v4, *(unsigned int *)(v2 + 56));
+  }
+  transform = UnityEngine_Component__get_transform(v2, 0);
+  DG_Tweening_ShortcutExtensions__DOKill(transform, 0, 0);
+  Instance = ToolModule_ManagerBase_object___get_Instance((const MethodInfo *)qword_8D12148 /* Method$ToolModule.ManagerBase<EventManager>.get_Instance() */);
+  gameObject = (void *)UnityEngine_Component__get_gameObject(v2, 0);
+  if ( Instance == nullptr )
+    il2cpp_codegen_raise_null_reference_exception();
+  EventModule_EventManager__TriggerEvent(Instance, (void *)qword_8D624F0 /* HasRoleDead */, gameObject, nullptr);
+  v9 = GameModule_SubGameBuffManager__get_Instance(v8);
+  v10 = *(unsigned __int8 *)(v2 + 32);
+  v11 = v9;
+  v12 = UnityEngine_Component__get_transform(v2, 0);
+  if ( v12 == 0 )
+    il2cpp_codegen_raise_null_reference_exception();
+  position = UnityEngine_Transform__get_position(v12, 0);
+  if ( v11 == 0 )
+    il2cpp_codegen_raise_null_reference_exception();
+  GameModule_SubGameBuffManager__OnFriendlyUnitDead(v11, v10 != 0, position);
+  GameModule_RoleBehaviour__RemoveHPUI(v2, 0);
+  if ( *((_DWORD *)off_8CE1928 /* QuickTutor.Singleton<ABTestManager>_TypeInfo */ + 56) == 0 )
+    il2cpp_codegen_runtime_class_init(off_8CE1928 /* QuickTutor.Singleton<ABTestManager>_TypeInfo */);
+  v16 = QuickTutor_Singleton_object___get_Instance(qword_8D17890 /* Method$QuickTutor.Singleton<ABTestManager>.get_Instance() */, v14, v15);
+  if ( v16 == 0 )
+    il2cpp_codegen_raise_null_reference_exception();
+  if ( (SDKModule_ABTestManager__get_GamePlayImprove01IsBTest(v16, 0) & 1) != 0 )
+    v17 = 1;
+  else
+    v17 = 5;
+  coinNum = v17;
+  v18 = ToolModule_ManagerBase_object___get_Instance((const MethodInfo *)qword_8D12108 /* Method$ToolModule.ManagerBase<DailyBlessManager>.get_Instance() */);
+  if ( v18 == nullptr )
+    il2cpp_codegen_raise_null_reference_exception();
+  v19 = GameModule_DailyBlessManager__KillUnitCoinHandle(v18, *(unsigned __int8 *)(v2 + 32));
+  coinNum = v19 + v17;
+  v20 = GameModule_SubGameBuffManager__get_Instance(v19);
+  if ( v20 == 0 )
+    il2cpp_codegen_raise_null_reference_exception();
+  GameModule_SubGameBuffManager__ModifyKillCoin(v20, &coinNum);
+  if ( *(_BYTE *)(v2 + 32) != 0 )
+  {
+    v22 = ToolModule_ManagerBase_object___get_Instance((const MethodInfo *)qword_8D124D8 /* Method$ToolModule.ManagerBase<UITextEffectManager>.get_Instance() */);
+    v60 = coinNum;
+    v23 = ((__int64 (__fastcall *)(__int64, int *))unk_3C3D3B8)(qword_8CE95C0 /* int_TypeInfo */, &v60);
+    v24 = System_String__Format(qword_8D54B00 /* <color=#FFFF00>+{0}</color> */, v23, 0);
+    v25 = UnityEngine_Component__get_transform(v2, 0);
+    if ( v25 == 0 )
+      il2cpp_codegen_raise_null_reference_exception();
+    v26 = UnityEngine_Transform__get_position(v25, 0);
+    if ( v22 == nullptr )
+      il2cpp_codegen_raise_null_reference_exception();
+    UIModuleO_UITextEffectManager__ShowTextEffect(v22, v24, 1, 0, 0, v26);
+    v27 = ToolModule_ManagerBase_object___get_Instance((const MethodInfo *)qword_8D12048 /* Method$ToolModule.ManagerBase<BattleGameManager>.get_Instance() */);
+    if ( v27 == nullptr )
+      il2cpp_codegen_raise_null_reference_exception();
+    GameModule_BattleGameManager__ChangeCoin(v27, coinNum, nullptr);
+  }
+  else
+  {
+    GameGlobalConfig = GameConfigModule_GameConfigManager__get_GameGlobalConfig(0, v21);
+    if ( GameGlobalConfig == 0 )
+      il2cpp_codegen_raise_null_reference_exception();
+    if ( *(_BYTE *)(GameGlobalConfig + 20) == 0 )
+      goto LABEL_62;
+    if ( *((_DWORD *)off_8CE1928 /* QuickTutor.Singleton<ABTestManager>_TypeInfo */ + 56) == 0 )
+      il2cpp_codegen_runtime_class_init(off_8CE1928 /* QuickTutor.Singleton<ABTestManager>_TypeInfo */);
+    v37 = QuickTutor_Singleton_object___get_Instance(qword_8D17890 /* Method$QuickTutor.Singleton<ABTestManager>.get_Instance() */, v35, v36);
+    if ( v37 == 0 )
+      il2cpp_codegen_raise_null_reference_exception();
+    if ( (SDKModule_ABTestManager__get_GamePlayImprove01IsBTest(v37, 0) & 1) == 0 )
+      goto LABEL_62;
+    if ( *((_DWORD *)off_8CE5E20 /* GameModule.CoreGameManager_TypeInfo */ + 56) == 0 )
+      il2cpp_codegen_runtime_class_init(off_8CE5E20 /* GameModule.CoreGameManager_TypeInfo */);
+    if ( byte_8FFD3A7 == 0 )
+    {
+      il2cpp_codegen_initialize_runtime_metadata((void **)&off_8CE5E20 /* GameModule.CoreGameManager_TypeInfo */);
+      byte_8FFD3A7 = 1;
+    }
+    v39 = off_8CE5E20 /* GameModule.CoreGameManager_TypeInfo */;
+    if ( *((_DWORD *)off_8CE5E20 /* GameModule.CoreGameManager_TypeInfo */ + 56) == 0 )
+    {
+      il2cpp_codegen_runtime_class_init(off_8CE5E20 /* GameModule.CoreGameManager_TypeInfo */);
+      v39 = off_8CE5E20 /* GameModule.CoreGameManager_TypeInfo */;
+    }
+    if ( (System_String__op_Equality(*(_QWORD *)(v39[23] + 8LL), qword_8D536B8 /* 1001 */, 0, v38) & 1) == 0 )
+    {
+      if ( *((_DWORD *)off_8CE5E20 /* GameModule.CoreGameManager_TypeInfo */ + 56) == 0 )
+        il2cpp_codegen_runtime_class_init(off_8CE5E20 /* GameModule.CoreGameManager_TypeInfo */);
+      if ( byte_8FFD3A7 == 0 )
+      {
+        il2cpp_codegen_initialize_runtime_metadata((void **)&off_8CE5E20 /* GameModule.CoreGameManager_TypeInfo */);
+        byte_8FFD3A7 = 1;
+      }
+      v41 = off_8CE5E20 /* GameModule.CoreGameManager_TypeInfo */;
+      if ( *((_DWORD *)off_8CE5E20 /* GameModule.CoreGameManager_TypeInfo */ + 56) == 0 )
+      {
+        il2cpp_codegen_runtime_class_init(off_8CE5E20 /* GameModule.CoreGameManager_TypeInfo */);
+        v41 = off_8CE5E20 /* GameModule.CoreGameManager_TypeInfo */;
+      }
+      if ( (System_String__op_Equality(*(_QWORD *)(v41[23] + 8LL), qword_8D53708 /* 1002 */, 0, v40) & 1) == 0 )
+      {
+LABEL_62:
+        v42 = ToolModule_ManagerBase_object___get_Instance((const MethodInfo *)qword_8D11FA8 /* Method$ToolModule.ManagerBase<AIBehaviourManager>.get_Instance() */);
+        if ( v42 == nullptr )
+          il2cpp_codegen_raise_null_reference_exception();
+        GameModule_AIBehaviourManager__ChangeCoin(v42, (unsigned int)coinNum, 0);
+      }
+    }
+  }
+  (*(void (__fastcall **)(__int64, _QWORD))(*(_QWORD *)v2 + 728LL))(v2, *(_QWORD *)(*(_QWORD *)v2 + 736LL));
+  sub_3D7F628(v2, 2, 1, 0);
+  GameModule_RoleBehaviour__SetAiCanMove(v2, 0, 0);
+  if ( *(_BYTE *)(v2 + 32) != 0 )
+  {
+    v43 = ToolModule_ManagerBase_object___get_Instance((const MethodInfo *)qword_8D12058 /* Method$ToolModule.ManagerBase<BattleGameSceneManager>.get_Instance() */);
+    v44 = UnityEngine_Component__get_gameObject(v2, 0);
+    if ( v43 == nullptr )
+      il2cpp_codegen_raise_null_reference_exception();
+    GameModule_BattleGameSceneManager__RemoveEnemyRole((__int64)v43, v44, 1);
+  }
+  else
+  {
+    v45 = ToolModule_ManagerBase_object___get_Instance((const MethodInfo *)qword_8D12058 /* Method$ToolModule.ManagerBase<BattleGameSceneManager>.get_Instance() */);
+    v46 = UnityEngine_Component__get_gameObject(v2, 0);
+    if ( v45 == nullptr )
+      il2cpp_codegen_raise_null_reference_exception();
+    GameModule_BattleGameSceneManager__RemovePlayerRole((__int64)v45, v46, 1);
+  }
+  v47 = *(__int64 **)(v2 + 320);
+  if ( v47 == nullptr )
+    il2cpp_codegen_raise_null_reference_exception();
+  v48 = *v47;
+  v49 = *(unsigned __int16 *)(*v47 + 302);
+  if ( *(_WORD *)(*v47 + 302) != 0 )
+  {
+    v50 = (_DWORD *)(*(_QWORD *)(v48 + 176) + 8LL);
+    while ( *((_QWORD *)v50 - 1) != qword_8CE8430 /* IAnimation_TypeInfo */ )
+    {
+      --v49;
+      v50 += 4;
+      if ( v49 == 0 )
+        goto LABEL_74;
+    }
+    v51 = v48 + 16LL * (*v50 + 4) + 312;
+  }
+  else
+  {
+LABEL_74:
+    v51 = ((__int64 (__fastcall *)(_QWORD, __int64, __int64))unk_3C504A4)(*(_QWORD *)(v2 + 320), qword_8CE8430 /* IAnimation_TypeInfo */, 4);
+  }
+  v52 = (*(float (__fastcall **)(__int64 *, __int64, _QWORD))v51)(v47, 2, *(_QWORD *)(v51 + 8)) + -0.1;
+  if ( v52 <= 0.0 )
+    v53 = 0.1;
+  else
+    v53 = v52;
+  if ( *((_DWORD *)off_8CEEDF8 /* Cysharp.Threading.Tasks.UniTask_TypeInfo */ + 56) == 0 )
+    il2cpp_codegen_runtime_class_init(off_8CEEDF8 /* Cysharp.Threading.Tasks.UniTask_TypeInfo */);
+  *(_QWORD *)&v59 = Cysharp_Threading_Tasks_UniTask__WaitForSeconds(0, 8, 0, 0, 0, v53);
+  *((_QWORD *)&v59 + 1) = v54;
+  if ( byte_8FFD1AD == 0 )
+  {
+    il2cpp_codegen_initialize_runtime_metadata((void **)&off_8CEEDF8 /* Cysharp.Threading.Tasks.UniTask_TypeInfo */);
+    byte_8FFD1AD = 1;
+  }
+  if ( *((_DWORD *)off_8CEEDF8 /* Cysharp.Threading.Tasks.UniTask_TypeInfo */ + 56) == 0 )
+    il2cpp_codegen_runtime_class_init(off_8CEEDF8 /* Cysharp.Threading.Tasks.UniTask_TypeInfo */);
+  if ( byte_8FFD1AE == 0 )
+  {
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8CE91C8 /* Cysharp.Threading.Tasks.IUniTaskSource_TypeInfo */);
+    byte_8FFD1AE = 1;
+  }
+  if ( (_QWORD)v59 == 0 )
+    goto LABEL_28;
+  v55 = *(_QWORD *)v59;
+  v56 = *(unsigned __int16 *)(*(_QWORD *)v59 + 302LL);
+  if ( *(_WORD *)(*(_QWORD *)v59 + 302LL) != 0 )
+  {
+    v57 = (int *)(*(_QWORD *)(v55 + 176) + 8LL);
+    while ( *((_QWORD *)v57 - 1) != qword_8CE91C8 /* Cysharp.Threading.Tasks.IUniTaskSource_TypeInfo */ )
+    {
+      --v56;
+      v57 += 4;
+      if ( v56 == 0 )
+        goto LABEL_92;
+    }
+    v58 = v55 + 16LL * *v57 + 312;
+  }
+  else
+  {
+LABEL_92:
+    v58 = ((__int64 (__fastcall *)(_QWORD, __int64, _QWORD))unk_3C504A4)(v59, qword_8CE91C8 /* Cysharp.Threading.Tasks.IUniTaskSource_TypeInfo */, 0);
+  }
+  if ( (*(unsigned int (__fastcall **)(_QWORD, _QWORD, _QWORD))v58)(v59, WORD4(v59), *(_QWORD *)(v58 + 8)) != 0 )
+  {
+LABEL_28:
+    if ( byte_8FFD1AF == 0 )
+    {
+      il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8CE91C8 /* Cysharp.Threading.Tasks.IUniTaskSource_TypeInfo */);
+      byte_8FFD1AF = 1;
+    }
+    if ( (_QWORD)v59 != 0 )
+    {
+      v28 = *(_QWORD *)v59;
+      v29 = *(unsigned __int16 *)(*(_QWORD *)v59 + 302LL);
+      if ( *(_WORD *)(*(_QWORD *)v59 + 302LL) != 0 )
+      {
+        v30 = (_DWORD *)(*(_QWORD *)(v28 + 176) + 8LL);
+        while ( *((_QWORD *)v30 - 1) != qword_8CE91C8 /* Cysharp.Threading.Tasks.IUniTaskSource_TypeInfo */ )
+        {
+          --v29;
+          v30 += 4;
+          if ( v29 == 0 )
+            goto LABEL_35;
+        }
+        v31 = v28 + 16LL * (*v30 + 2) + 312;
+      }
+      else
+      {
+LABEL_35:
+        v31 = ((__int64 (__fastcall *)(_QWORD, __int64, __int64))unk_3C504A4)(v59, qword_8CE91C8 /* Cysharp.Threading.Tasks.IUniTaskSource_TypeInfo */, 2);
+      }
+      (*(void (__fastcall **)(_QWORD, _QWORD, _QWORD))v31)(v59, WORD4(v59), *(_QWORD *)(v31 + 8));
+    }
+    v32 = ToolModule_ManagerBase_object___get_Instance((const MethodInfo *)qword_8D12400 /* Method$ToolModule.ManagerBase<RoleShadowManager>.get_Instance() */);
+    if ( v32 == nullptr )
+      il2cpp_codegen_raise_null_reference_exception();
+    GameModule_RoleShadowManager__Unbind(v32, v2, 0);
+    if ( v2 == 0 )
+      il2cpp_codegen_raise_null_reference_exception();
+    (*(void (__fastcall **)(__int64, _QWORD, _QWORD))(*(_QWORD *)v2 + 744LL))(
+      v2,
+      *(unsigned int *)(a1 + 48),
+      *(_QWORD *)(*(_QWORD *)v2 + 752LL));
+    goto LABEL_41;
+  }
+  *(_DWORD *)a1 = 0;
+  *(_OWORD *)(a1 + 56) = v59;
+  return System_Runtime_CompilerServices_AsyncVoidMethodBuilder__AwaitUnsafeOnCompleted_UniTask_Awaiter__RoleBehaviour__Dead_d__190_(
+           a1 + 8,
+           &v59,
+           a1,
+           qword_8D22518 /* Method$System.Runtime.CompilerServices.AsyncVoidMethodBuilder.AwaitUnsafeOnCompleted<UniTask.Awaiter, RoleBehaviour.<Dead>d__190>() */);
+}

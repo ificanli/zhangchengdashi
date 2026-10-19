@@ -1,0 +1,477 @@
+{
+  "stage": "complete",
+  "methods": [
+    {
+      "name": "L_Tools.ServerTimeMgr$$InitAfterLogin",
+      "address": 71012520,
+      "end": 71013128,
+      "signature": "void L_Tools_ServerTimeMgr__InitAfterLogin (L_Tools_ServerTimeMgr_o* __this, const MethodInfo* method);",
+      "prototype": "void ServerInitAfterLogin(void* self,const MethodInfo* method);",
+      "range_analysis": 1,
+      "direct_callees": [
+        {
+          "callsite": "0x43b9180",
+          "address": "0x7665ad8",
+          "name": "System.DateTime$$get_UtcNow",
+          "signature": "System_DateTime_o System_DateTime__get_UtcNow (const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x43b9188",
+          "address": "0x43fa8a0",
+          "name": "L_Tools.DateExtention$$ToTimestampLong_UTC",
+          "signature": "int64_t L_Tools_DateExtention__ToTimestampLong_UTC (System_DateTime_o dateTime, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x43b91e8",
+          "address": "0x70893c0",
+          "name": "UpdateManager.UpdateHandle$$.ctor",
+          "signature": "void UpdateManager_UpdateHandle___ctor (UpdateManager_UpdateHandle_o* __this, Il2CppObject* _r__FU, intptr_t q___dt, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x43b91f4",
+          "address": "0x7089448",
+          "name": "UpdateManager$$AddHandle",
+          "signature": "int32_t UpdateManager__AddHandle (UpdateManager_UpdateHandle_o* A____r, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x43b9224",
+          "address": "0x7185b30",
+          "name": "GameFramework.MsgDispatcher.EventHandler$$.ctor",
+          "signature": "void GameFramework_MsgDispatcher_EventHandler___ctor (GameFramework_MsgDispatcher_EventHandler_o* __this, Il2CppObject* _r__FU, intptr_t q___dt, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x43b923c",
+          "address": "0x718518c",
+          "name": "GameFramework.MsgDispatcher$$AddEventListener",
+          "signature": "void GameFramework_MsgDispatcher__AddEventListener (System_String_o* _gpR_V, GameFramework_MsgDispatcher_EventHandler_o* ___B_x, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x43b9264",
+          "address": "0x5fbdc64",
+          "name": "L_Tools.SingletonComponent<object>$$get_Instance",
+          "signature": "Il2CppObject* L_Tools_SingletonComponent_object___get_Instance (const MethodInfo_5FBDC64* method);"
+        },
+        {
+          "callsite": "0x43b9298",
+          "address": "0x6b3fe78",
+          "name": "System.Action<bool>$$.ctor",
+          "signature": "void System_Action_bool____ctor (System_Action_bool__o* __this, Il2CppObject* object, intptr_t method, const MethodInfo_6B3FE78* method);"
+        },
+        {
+          "callsite": "0x43b92b4",
+          "address": "0x3d02ccc",
+          "name": "UnityAgencyManager$$AddEvent",
+          "signature": "void UnityAgencyManager__AddEvent (UnityAgencyManager_o* __this, int32_t ume, System_Action_bool__o* action, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x43b92bc",
+          "address": "0x43b9308",
+          "name": "L_Tools.ServerTimeMgr$$CheatCode",
+          "signature": "void L_Tools_ServerTimeMgr__CheatCode (L_Tools_ServerTimeMgr_o* __this, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x43b92ec",
+          "address": "0x43f96e4",
+          "name": "L_Tools.DateTools$$UpdateTime",
+          "signature": "void L_Tools_DateTools__UpdateTime (int64_t serverTime, const MethodInfo* method);"
+        }
+      ],
+      "prototype_applied": true,
+      "actual_function_start": "0x43b90a8",
+      "actual_function_end": "0x43b9308",
+      "pseudocode_chars": 2859,
+      "unresolved_jumpout": false
+    },
+    {
+      "name": "L_Tools.ServerTimeMgr$$TryCheck",
+      "address": 71013608,
+      "end": 71013636,
+      "signature": "void L_Tools_ServerTimeMgr__TryCheck (L_Tools_ServerTimeMgr_o* __this, bool state, const MethodInfo* method);",
+      "prototype": "void ServerTryCheck(void* self,unsigned char state,const MethodInfo* method);",
+      "range_analysis": 1,
+      "direct_callees": [
+        {
+          "callsite": "0x43b94f4",
+          "address": "0x43b96fc",
+          "name": "L_Tools.ServerTimeMgr$$GetCurrentServerTime",
+          "signature": "void L_Tools_ServerTimeMgr__GetCurrentServerTime (L_Tools_ServerTimeMgr_o* __this, const MethodInfo* method);"
+        }
+      ],
+      "prototype_applied": true,
+      "actual_function_start": "0x43b94e8",
+      "actual_function_end": "0x43b9504",
+      "pseudocode_chars": 223,
+      "unresolved_jumpout": false
+    },
+    {
+      "name": "L_Tools.ServerTimeMgr$$MakeCheck",
+      "address": 71013636,
+      "end": 71013660,
+      "signature": "void L_Tools_ServerTimeMgr__MakeCheck (L_Tools_ServerTimeMgr_o* __this, const MethodInfo* method);",
+      "prototype": "void ServerMakeCheck(void* self,const MethodInfo* method);",
+      "range_analysis": 1,
+      "direct_callees": [
+        {
+          "callsite": "0x43b950c",
+          "address": "0x43b96fc",
+          "name": "L_Tools.ServerTimeMgr$$GetCurrentServerTime",
+          "signature": "void L_Tools_ServerTimeMgr__GetCurrentServerTime (L_Tools_ServerTimeMgr_o* __this, const MethodInfo* method);"
+        }
+      ],
+      "prototype_applied": true,
+      "actual_function_start": "0x43b9504",
+      "actual_function_end": "0x43b951c",
+      "pseudocode_chars": 163,
+      "unresolved_jumpout": false
+    },
+    {
+      "name": "L_Tools.ServerTimeMgr$$get_IsUpdateFinish",
+      "address": 71013660,
+      "end": 71013748,
+      "signature": "bool L_Tools_ServerTimeMgr__get_IsUpdateFinish (const MethodInfo* method);",
+      "prototype": "unsigned char ServerIsUpdateFinish(const MethodInfo* method);",
+      "range_analysis": 1,
+      "direct_callees": [],
+      "prototype_applied": true,
+      "actual_function_start": "0x43b951c",
+      "actual_function_end": "0x43b9574",
+      "pseudocode_chars": 427,
+      "unresolved_jumpout": false
+    },
+    {
+      "name": "L_Tools.ServerTimeMgr$$UpdateCheck",
+      "address": 71013748,
+      "end": 71013980,
+      "signature": "void L_Tools_ServerTimeMgr__UpdateCheck (L_Tools_ServerTimeMgr_o* __this, const MethodInfo* method);",
+      "prototype": "void ServerUpdateCheck(void* self,const MethodInfo* method);",
+      "range_analysis": 1,
+      "direct_callees": [
+        {
+          "callsite": "0x43b95b8",
+          "address": "0x82f5df0",
+          "name": "UnityEngine.Time$$get_unscaledDeltaTime",
+          "signature": "float UnityEngine_Time__get_unscaledDeltaTime (const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x43b95fc",
+          "address": "0x43b965c",
+          "name": "L_Tools.ServerTimeMgr$$GetServerTime",
+          "signature": "int64_t L_Tools_ServerTimeMgr__GetServerTime (const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x43b9620",
+          "address": "0x43f96e4",
+          "name": "L_Tools.DateTools$$UpdateTime",
+          "signature": "void L_Tools_DateTools__UpdateTime (int64_t serverTime, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x43b962c",
+          "address": "0x82f5df0",
+          "name": "UnityEngine.Time$$get_unscaledDeltaTime",
+          "signature": "float UnityEngine_Time__get_unscaledDeltaTime (const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x43b9644",
+          "address": "0x43b96fc",
+          "name": "L_Tools.ServerTimeMgr$$GetCurrentServerTime",
+          "signature": "void L_Tools_ServerTimeMgr__GetCurrentServerTime (L_Tools_ServerTimeMgr_o* __this, const MethodInfo* method);"
+        }
+      ],
+      "prototype_applied": true,
+      "actual_function_start": "0x43b9574",
+      "actual_function_end": "0x43b965c",
+      "pseudocode_chars": 1373,
+      "unresolved_jumpout": false
+    },
+    {
+      "name": "L_Tools.ServerTimeMgr$$GetServerTime",
+      "address": 71013980,
+      "end": 71014140,
+      "signature": "int64_t L_Tools_ServerTimeMgr__GetServerTime (const MethodInfo* method);",
+      "prototype": "long long ServerGetTime(const MethodInfo* method);",
+      "range_analysis": 1,
+      "direct_callees": [
+        {
+          "callsite": "0x43b96ac",
+          "address": "0x82f2b64",
+          "name": "UnityEngine.Time$$get_realtimeSinceStartup",
+          "signature": "float UnityEngine_Time__get_realtimeSinceStartup (const MethodInfo* method);"
+        }
+      ],
+      "prototype_applied": true,
+      "actual_function_start": "0x43b965c",
+      "actual_function_end": "0x43b96fc",
+      "pseudocode_chars": 863,
+      "unresolved_jumpout": false
+    },
+    {
+      "name": "L_Tools.ServerTimeMgr$$GetCurrentServerTime",
+      "address": 71014140,
+      "end": 71014324,
+      "signature": "void L_Tools_ServerTimeMgr__GetCurrentServerTime (L_Tools_ServerTimeMgr_o* __this, const MethodInfo* method);",
+      "prototype": "void ServerRequestTime(void* self,const MethodInfo* method);",
+      "range_analysis": 1,
+      "direct_callees": [
+        {
+          "callsite": "0x43b978c",
+          "address": "0x728e83c",
+          "name": "GameFramework.Net.Http.HttpManager$$get_Instance",
+          "signature": "GameFramework_Net_Http_HttpManager_o* GameFramework_Net_Http_HttpManager__get_Instance (const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x43b97a0",
+          "address": "0x728ef3c",
+          "name": "GameFramework.Net.Http.HttpManager$$RequestServerTime",
+          "signature": "void GameFramework_Net_Http_HttpManager__RequestServerTime (GameFramework_Net_Http_HttpManager_o* __this, const MethodInfo* method);"
+        }
+      ],
+      "prototype_applied": true,
+      "actual_function_start": "0x43b96fc",
+      "actual_function_end": "0x43b97b4",
+      "pseudocode_chars": 1035,
+      "unresolved_jumpout": false
+    },
+    {
+      "name": "L_Tools.ServerTimeMgr$$ReceiveServerTime",
+      "address": 71014768,
+      "end": 71015084,
+      "signature": "void L_Tools_ServerTimeMgr__ReceiveServerTime (L_Tools_ServerTimeMgr_o* __this, System_Object_array* args, const MethodInfo* method);",
+      "prototype": "void ServerReceiveTime(void* self,void* args,const MethodInfo* method);",
+      "range_analysis": 1,
+      "direct_callees": [
+        {
+          "callsite": "0x43b9a54",
+          "address": "0x43f96e4",
+          "name": "L_Tools.DateTools$$UpdateTime",
+          "signature": "void L_Tools_DateTools__UpdateTime (int64_t serverTime, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x43b9a5c",
+          "address": "0x82f2b64",
+          "name": "UnityEngine.Time$$get_realtimeSinceStartup",
+          "signature": "float UnityEngine_Time__get_realtimeSinceStartup (const MethodInfo* method);"
+        }
+      ],
+      "prototype_applied": true,
+      "actual_function_start": "0x43b9970",
+      "actual_function_end": "0x43b9aac",
+      "pseudocode_chars": 1652,
+      "unresolved_jumpout": true
+    },
+    {
+      "name": "L_Tools.DateTools$$StampToDatetime",
+      "address": 71276504,
+      "end": 71276672,
+      "signature": "System_DateTime_o L_Tools_DateTools__StampToDatetime (int64_t TimeStamp, bool isMinSeconds, const MethodInfo* method);",
+      "prototype": "long long DateStampToDatetime(long long stamp,unsigned char milliseconds,const MethodInfo* method);",
+      "range_analysis": 1,
+      "direct_callees": [
+        {
+          "callsite": "0x43f986c",
+          "address": "0x766417c",
+          "name": "System.DateTime$$AddMilliseconds",
+          "signature": "System_DateTime_o System_DateTime__AddMilliseconds (System_DateTime_o __this, double value, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x43f987c",
+          "address": "0x76647b0",
+          "name": "System.DateTime$$AddSeconds",
+          "signature": "System_DateTime_o System_DateTime__AddSeconds (System_DateTime_o __this, double value, const MethodInfo* method);"
+        }
+      ],
+      "prototype_applied": true,
+      "actual_function_start": "0x43f97d8",
+      "actual_function_end": "0x43f9880",
+      "pseudocode_chars": 784,
+      "unresolved_jumpout": false
+    },
+    {
+      "name": "TimeModuleO.TimeManager$$GetTimeSpanToZero",
+      "address": 65219704,
+      "end": 65219856,
+      "signature": "System_TimeSpan_o TimeModuleO_TimeManager__GetTimeSpanToZero (TimeModuleO_TimeManager_o* __this, const MethodInfo* method);",
+      "prototype": "long long TimeSpanToZero(void* self,const MethodInfo* method);",
+      "range_analysis": 1,
+      "direct_callees": [
+        {
+          "callsite": "0x3e32cb8",
+          "address": "0x3e33908",
+          "name": "TimeModuleO.TimeManager$$GetLocalNetworkTime",
+          "signature": "System_DateTime_o TimeModuleO_TimeManager__GetLocalNetworkTime (TimeModuleO_TimeManager_o* __this, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x3e32cdc",
+          "address": "0x766538c",
+          "name": "System.DateTime$$get_Date",
+          "signature": "System_DateTime_o System_DateTime__get_Date (System_DateTime_o __this, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x3e32cf0",
+          "address": "0x76640a4",
+          "name": "System.DateTime$$AddDays",
+          "signature": "System_DateTime_o System_DateTime__AddDays (System_DateTime_o __this, double value, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x3e32cfc",
+          "address": "0x766790c",
+          "name": "System.DateTime$$op_Subtraction",
+          "signature": "System_TimeSpan_o System_DateTime__op_Subtraction (System_DateTime_o d1, System_DateTime_o d2, const MethodInfo* method);"
+        }
+      ],
+      "prototype_applied": true,
+      "actual_function_start": "0x3e32c78",
+      "actual_function_end": "0x3e32d10",
+      "pseudocode_chars": 710,
+      "unresolved_jumpout": false
+    },
+    {
+      "name": "TimeModuleO.TimeManager$$GetTimeSpanToZeroStandardNetworkTime",
+      "address": 65296252,
+      "end": 65296404,
+      "signature": "System_TimeSpan_o TimeModuleO_TimeManager__GetTimeSpanToZeroStandardNetworkTime (TimeModuleO_TimeManager_o* __this, const MethodInfo* method);",
+      "prototype": "long long TimeSpanToStandardZero(void* self,const MethodInfo* method);",
+      "range_analysis": 1,
+      "direct_callees": [
+        {
+          "callsite": "0x3e457bc",
+          "address": "0x3e46278",
+          "name": "TimeModuleO.TimeManager$$GetStandardNetworkTime",
+          "signature": "System_DateTime_o TimeModuleO_TimeManager__GetStandardNetworkTime (TimeModuleO_TimeManager_o* __this, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x3e457e0",
+          "address": "0x766538c",
+          "name": "System.DateTime$$get_Date",
+          "signature": "System_DateTime_o System_DateTime__get_Date (System_DateTime_o __this, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x3e457f4",
+          "address": "0x76640a4",
+          "name": "System.DateTime$$AddDays",
+          "signature": "System_DateTime_o System_DateTime__AddDays (System_DateTime_o __this, double value, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x3e45800",
+          "address": "0x766790c",
+          "name": "System.DateTime$$op_Subtraction",
+          "signature": "System_TimeSpan_o System_DateTime__op_Subtraction (System_DateTime_o d1, System_DateTime_o d2, const MethodInfo* method);"
+        }
+      ],
+      "prototype_applied": true,
+      "actual_function_start": "0x3e4577c",
+      "actual_function_end": "0x3e45814",
+      "pseudocode_chars": 744,
+      "unresolved_jumpout": false
+    },
+    {
+      "name": "TimeModuleO.TimeManager$$GetTimeSpanToWeek",
+      "address": 65296404,
+      "end": 65296648,
+      "signature": "System_TimeSpan_o TimeModuleO_TimeManager__GetTimeSpanToWeek (TimeModuleO_TimeManager_o* __this, const MethodInfo* method);",
+      "prototype": "long long TimeSpanToWeek(void* self,const MethodInfo* method);",
+      "range_analysis": 1,
+      "direct_callees": [
+        {
+          "callsite": "0x3e45854",
+          "address": "0x3e33908",
+          "name": "TimeModuleO.TimeManager$$GetLocalNetworkTime",
+          "signature": "System_DateTime_o TimeModuleO_TimeManager__GetLocalNetworkTime (TimeModuleO_TimeManager_o* __this, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x3e45878",
+          "address": "0x7665668",
+          "name": "System.DateTime$$get_DayOfWeek",
+          "signature": "int32_t System_DateTime__get_DayOfWeek (System_DateTime_o __this, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x3e458d8",
+          "address": "0x76640a4",
+          "name": "System.DateTime$$AddDays",
+          "signature": "System_DateTime_o System_DateTime__AddDays (System_DateTime_o __this, double value, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x3e458e8",
+          "address": "0x766538c",
+          "name": "System.DateTime$$get_Date",
+          "signature": "System_DateTime_o System_DateTime__get_Date (System_DateTime_o __this, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x3e458f4",
+          "address": "0x766790c",
+          "name": "System.DateTime$$op_Subtraction",
+          "signature": "System_TimeSpan_o System_DateTime__op_Subtraction (System_DateTime_o d1, System_DateTime_o d2, const MethodInfo* method);"
+        }
+      ],
+      "prototype_applied": true,
+      "actual_function_start": "0x3e45814",
+      "actual_function_end": "0x3e45908",
+      "pseudocode_chars": 1082,
+      "unresolved_jumpout": false
+    },
+    {
+      "name": "TimeModuleO.TimeManager.Timer$$IsCompleted",
+      "address": 66511556,
+      "end": 66511708,
+      "signature": "bool TimeModuleO_TimeManager_Timer__IsCompleted (TimeModuleO_TimeManager_Timer_o* __this, const MethodInfo* method);",
+      "prototype": "unsigned char TimerIsCompleted(void* self,const MethodInfo* method);",
+      "range_analysis": 1,
+      "direct_callees": [
+        {
+          "callsite": "0x3f6e308",
+          "address": "0x5978460",
+          "name": "ToolModule.ManagerBase<object>$$get_Instance",
+          "signature": "Il2CppObject* ToolModule_ManagerBase_object___get_Instance (const MethodInfo_5978460* method);"
+        },
+        {
+          "callsite": "0x3f6e320",
+          "address": "0x3e454b0",
+          "name": "TimeModuleO.TimeManager$$GetNetworkTime",
+          "signature": "System_DateTime_o TimeModuleO_TimeManager__GetNetworkTime (TimeModuleO_TimeManager_o* __this, bool useStandardNetworkTime, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x3f6e354",
+          "address": "0x7667b88",
+          "name": "System.DateTime$$op_GreaterThanOrEqual",
+          "signature": "bool System_DateTime__op_GreaterThanOrEqual (System_DateTime_o t1, System_DateTime_o t2, const MethodInfo* method);"
+        }
+      ],
+      "prototype_applied": true,
+      "actual_function_start": "0x3f6e2c4",
+      "actual_function_end": "0x3f6e35c",
+      "pseudocode_chars": 885,
+      "unresolved_jumpout": false
+    },
+    {
+      "name": "L_Tools.DateTools$$.cctor",
+      "address": 71280612,
+      "end": 71280800,
+      "signature": "void L_Tools_DateTools___cctor (const MethodInfo* method);",
+      "prototype": "void DateStaticConstructor(const MethodInfo* method);",
+      "range_analysis": 1,
+      "direct_callees": [
+        {
+          "callsite": "0x43fa844",
+          "address": "0x76635c4",
+          "name": "System.DateTime$$.ctor",
+          "signature": "void System_DateTime___ctor (System_DateTime_o __this, int32_t year, int32_t month, int32_t day, int32_t hour, int32_t minute, int32_t second, int32_t kind, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x43fa87c",
+          "address": "0x76635c4",
+          "name": "System.DateTime$$.ctor",
+          "signature": "void System_DateTime___ctor (System_DateTime_o __this, int32_t year, int32_t month, int32_t day, int32_t hour, int32_t minute, int32_t second, int32_t kind, const MethodInfo* method);"
+        }
+      ],
+      "prototype_applied": true,
+      "actual_function_start": "0x43fa7e4",
+      "actual_function_end": "0x43fa8a0",
+      "pseudocode_chars": 601,
+      "unresolved_jumpout": false
+    }
+  ],
+  "image_base": "0x0",
+  "type_errors": 0,
+  "hexrays_available": true,
+  "hexrays_version": "9.4.0.260713",
+  "database_saved": true
+}

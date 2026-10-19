@@ -1,0 +1,71 @@
+{
+  "sourcePath": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\outputs/OccupyCityRecovered/Assets/Scripts/Assembly-CSharp/EventModule/EventManager.cs",
+  "sourceSha256": "453662DD3F3E899AE44FBB3D236F6E9F8311708CEAC00F7676DA24BC55DCCA86",
+  "negativeControl": false,
+  "entries": [
+    {
+      "kind": "field",
+      "source": "[Token(Token = \u00220x400328F\u0022)]\r\n\t\t[Il2CppDummyDll.FieldOffset(Offset = \u00220x20\u0022)]\r\n\t\tprivate readonly Dictionary\u003Cstring, Action\u003Cobject\u003E\u003E _eventWithObjectDictionary = new Dictionary\u003Cstring, Action\u003Cobject\u003E\u003E();",
+      "sha256": "58BB2C41B295C14BF6A40B0C12B6DAD93B35D42766A98D25EACA680B14BF95FD"
+    },
+    {
+      "kind": "field",
+      "source": "[Token(Token = \u00220x4003290\u0022)]\r\n\t\t[Il2CppDummyDll.FieldOffset(Offset = \u00220x28\u0022)]\r\n\t\tprivate readonly Dictionary\u003Cstring, Action\u003Cobject\u003E\u003E _eventOnceObjectDictionary = new Dictionary\u003Cstring, Action\u003Cobject\u003E\u003E();",
+      "sha256": "AC225A03E3579429B5F28EC97039CC632B9F94EE046658D7926047FDD63FC93C"
+    },
+    {
+      "kind": "method",
+      "name": "Init",
+      "rva": "0x3F11934",
+      "body": "{\r\n\t\t\treturn UniTask.CompletedTask;\r\n\t\t}",
+      "bodySha256": "F7AB361DF36B394F70CCAF92C8CF1A8FBA54C4C763004D12C11F4A4370B56D4E",
+      "signature": "()"
+    },
+    {
+      "kind": "method",
+      "name": "StartListening",
+      "rva": "0x3F07F3C",
+      "body": "{\r\n\t\t\tif (_eventWithObjectDictionary.TryGetValue(eventName, out Action\u003Cobject\u003E eventListeners) \u0026\u0026 eventListeners != null)\r\n\t\t\t{\r\n\t\t\t\t_eventWithObjectDictionary[eventName] \u002B= listener;\r\n\t\t\t}\r\n\t\t\telse\r\n\t\t\t{\r\n\t\t\t\t_eventWithObjectDictionary[eventName] = listener;\r\n\t\t\t}\r\n\t\t}",
+      "bodySha256": "97CD777B5B79DF73DF677C2706A4F4C9B6CB53EB3A5D5A252366AFC1649D56D9",
+      "signature": "(string eventName, Action\u003Cobject\u003E listener)"
+    },
+    {
+      "kind": "method",
+      "name": "StopListening",
+      "rva": "0x3F05D94",
+      "body": "{\r\n\t\t\tif (_eventWithObjectDictionary.TryGetValue(eventName, out Action\u003Cobject\u003E eventListeners) \u0026\u0026 eventListeners != null)\r\n\t\t\t{\r\n\t\t\t\t_eventWithObjectDictionary[eventName] = eventListeners - listener;\r\n\t\t\t}\r\n\t\t}",
+      "bodySha256": "E6679DF4337B3E530C2660DFCCAC8968BC290FFCDE5FE25F1E0A70693727A96D",
+      "signature": "(string eventName, Action\u003Cobject\u003E listener)"
+    },
+    {
+      "kind": "method",
+      "name": "StartListeningOnce",
+      "rva": "0x3F119B4",
+      "body": "{\r\n\t\t\tif (_eventOnceObjectDictionary.TryGetValue(eventName, out Action\u003Cobject\u003E eventListeners) \u0026\u0026 eventListeners != null)\r\n\t\t\t{\r\n\t\t\t\t_eventOnceObjectDictionary[eventName] \u002B= listener;\r\n\t\t\t}\r\n\t\t\telse\r\n\t\t\t{\r\n\t\t\t\t_eventOnceObjectDictionary[eventName] = listener;\r\n\t\t\t}\r\n\t\t}",
+      "bodySha256": "2A7AFBB5FD85C85C580ED00208881F956AFC340E0F7BD5E50CDC774A5F99E751",
+      "signature": "(string eventName, Action\u003Cobject\u003E listener)"
+    },
+    {
+      "kind": "method",
+      "name": "StopListeningOnce",
+      "rva": "0x3F11B48",
+      "body": "{\r\n\t\t\tif (_eventOnceObjectDictionary.TryGetValue(eventName, out Action\u003Cobject\u003E eventListeners) \u0026\u0026 eventListeners != null)\r\n\t\t\t{\r\n\t\t\t\t_eventOnceObjectDictionary[eventName] = eventListeners - listener;\r\n\t\t\t}\r\n\t\t}",
+      "bodySha256": "82ED53D0AD693E50F42DDA0BC60F9AAC951765E48772D0BBC72A01C6DBED55D2",
+      "signature": "(string eventName, Action\u003Cobject\u003E listener)"
+    },
+    {
+      "kind": "method",
+      "name": "TriggerEvent",
+      "rva": "0x3F05F64",
+      "body": "{\r\n\t\t\tif (_eventWithObjectDictionary.TryGetValue(eventName, out Action\u003Cobject\u003E eventListeners) \u0026\u0026 eventListeners != null)\r\n\t\t\t{\r\n\t\t\t\teventListeners.Invoke(parameter);\r\n\t\t\t}\r\n\t\t\tif (_eventOnceObjectDictionary.TryGetValue(eventName, out Action\u003Cobject\u003E onceListeners) \u0026\u0026 onceListeners != null)\r\n\t\t\t{\r\n\t\t\t\t_eventOnceObjectDictionary.Remove(eventName);\r\n\t\t\t\tonceListeners.Invoke(parameter);\r\n\t\t\t}\r\n\t\t}",
+      "bodySha256": "FD3B19F96A33C2EF0BFECA9CC3C02EC1E982990A7449A9E82B7E97722D08024F",
+      "signature": "(string eventName, object parameter = null)"
+    },
+    {
+      "kind": "constructor",
+      "body": "{\r\n\t\t}",
+      "bodySha256": "93F43BEF8054B9E547381BF419249293763C0ABE2F7972327A2B9D3AA3321B9B",
+      "note": "Exact source field initializers execute before base construction"
+    }
+  ]
+}

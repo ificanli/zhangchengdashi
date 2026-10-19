@@ -1,0 +1,31 @@
+0x3de4e98: STP             X30, X21, [SP,#var_20]!
+0x3de4e9c: STP             X20, X19, [SP,#0x20+var_10]
+0x3de4ea0: ADRP            X21, #byte_8FFD738@PAGE
+0x3de4ea4: LDRB            W8, [X21,#byte_8FFD738@PAGEOFF]
+0x3de4ea8: MOV             X19, X1
+0x3de4eac: MOV             X20, X0
+0x3de4eb0: TBNZ            W8, #0, loc_3DE4EC8
+0x3de4eb4: ADRP            X0, #off_8ACD988@PAGE
+0x3de4eb8: LDR             X0, [X0,#off_8ACD988@PAGEOFF]; qword_8D123F0 ; slot
+0x3de4ebc: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3de4ec0: MOV             W8, #1
+0x3de4ec4: STRB            W8, [X21,#byte_8FFD738@PAGEOFF]
+0x3de4ec8: LDR             W8, [X20,#0xF0]
+0x3de4ecc: CMP             W8, #3
+0x3de4ed0: B.HI            loc_3DE4F04
+0x3de4ed4: CBZ             X19, loc_3DE4F00
+0x3de4ed8: ADRP            X8, #off_8ACD988@PAGE
+0x3de4edc: LDR             X8, [X8,#off_8ACD988@PAGEOFF]; qword_8D123F0
+0x3de4ee0: LDR             X0, [X8]; method
+0x3de4ee4: BL              ToolModule.ManagerBase_object_$$get_Instance
+0x3de4ee8: CBZ             X0, loc_3DE4F10
+0x3de4eec: MOV             X1, X19
+0x3de4ef0: MOV             X2, XZR
+0x3de4ef4: BL              GameModule.RewardManager$$RewardUser
+0x3de4ef8: STP             X19, X19, [X20,#0xC0]
+0x3de4efc: B               loc_3DE4F04
+0x3de4f00: STP             XZR, XZR, [X20,#0xC0]
+0x3de4f04: LDP             X20, X19, [SP,#0x20+var_10]
+0x3de4f08: LDP             X30, X21, [SP+0x20+var_20],#0x20
+0x3de4f0c: RET
+0x3de4f10: BL              il2cpp_codegen_raise_null_reference_exception

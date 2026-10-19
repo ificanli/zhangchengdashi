@@ -1,0 +1,46 @@
+0x71d82d0: fe57bea9 stp      x30, x21, [sp, #-0x20]!
+0x71d82d4: f44f01a9 stp      x20, x19, [sp, #0x10]
+0x71d82d8: 95f100b0 adrp     x21, #0x9009000
+0x71d82dc: b4c70090 adrp     x20, #0x8acc000
+0x71d82e0: a8765739 ldrb     w8, [x21, #0x5dd]
+0x71d82e4: 946a44f9 ldr      x20, [x20, #0x8d0] // UnityEngine.Object_TypeInfo
+0x71d82e8: f30300aa mov      x19, x0
+0x71d82ec: 28010037 tbnz     w8, #0, #0x71d8310
+0x71d82f0: a0c70090 adrp     x0, #0x8acc000
+0x71d82f4: 006844f9 ldr      x0, [x0, #0x8d0] // UnityEngine.Object_TypeInfo
+0x71d82f8: e2932997 bl       #0x3c3d280
+0x71d82fc: 00ca0090 adrp     x0, #0x8b18000
+0x71d8300: 005c44f9 ldr      x0, [x0, #0x8b8] // Loading
+0x71d8304: df932997 bl       #0x3c3d280
+0x71d8308: 28008052 mov      w8, #1
+0x71d830c: a8761739 strb     w8, [x21, #0x5dd]
+0x71d8310: 800240f9 ldr      x0, [x20]
+0x71d8314: 743a40f9 ldr      x20, [x19, #0x70]
+0x71d8318: 08e040b9 ldr      w8, [x0, #0xe0]
+0x71d831c: 48000035 cbnz     w8, #0x71d8324
+0x71d8320: 24942997 bl       #0x3c3d3b0
+0x71d8324: e00314aa mov      x0, x20
+0x71d8328: e1031faa mov      x1, xzr
+0x71d832c: e2031faa mov      x2, xzr
+0x71d8330: f9544494 bl       #0x82ed714 // UnityEngine.Object$$op_Equality
+0x71d8334: 00020036 tbz      w0, #0, #0x71d8374
+0x71d8338: 601640f9 ldr      x0, [x19, #0x28]
+0x71d833c: 400200b4 cbz      x0, #0x71d8384
+0x71d8340: e1031faa mov      x1, xzr
+0x71d8344: ef424494 bl       #0x82e8f00 // UnityEngine.Component$$get_transform
+0x71d8348: e00100b4 cbz      x0, #0x71d8384
+0x71d834c: 08ca0090 adrp     x8, #0x8b18000
+0x71d8350: 085d44f9 ldr      x8, [x8, #0x8b8] // Loading
+0x71d8354: e2031faa mov      x2, xzr
+0x71d8358: 010140f9 ldr      x1, [x8]
+0x71d835c: 2f8d4494 bl       #0x82fb818 // UnityEngine.Transform$$Find
+0x71d8360: 200100b4 cbz      x0, #0x71d8384
+0x71d8364: e1031faa mov      x1, xzr
+0x71d8368: f5424494 bl       #0x82e8f3c // UnityEngine.Component$$get_gameObject
+0x71d836c: 603a00f9 str      x0, [x19, #0x70]
+0x71d8370: 02000014 b        #0x71d8378
+0x71d8374: 603a40f9 ldr      x0, [x19, #0x70]
+0x71d8378: f44f41a9 ldp      x20, x19, [sp, #0x10]
+0x71d837c: fe57c2a8 ldp      x30, x21, [sp], #0x20
+0x71d8380: c0035fd6 ret      
+0x71d8384: 52942997 bl       #0x3c3d4cc

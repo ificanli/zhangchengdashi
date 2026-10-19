@@ -1,0 +1,76 @@
+0x72eab28: STP             X30, X23, [SP,#var_30]!
+0x72eab2c: STP             X22, X21, [SP,#0x30+var_20]
+0x72eab30: STP             X20, X19, [SP,#0x30+var_10]
+0x72eab34: ADRP            X20, #byte_900A05E@PAGE
+0x72eab38: ADRP            X19, #off_8AF46A0@PAGE
+0x72eab3c: LDRB            W8, [X20,#byte_900A05E@PAGEOFF]
+0x72eab40: LDR             X19, [X19,#off_8AF46A0@PAGEOFF]; off_8CE7B30
+0x72eab44: MOV             X21, X0
+0x72eab48: TBNZ            W8, #0, loc_72EAB90
+0x72eab4c: ADRP            X0, #off_8ACD910@PAGE
+0x72eab50: LDR             X0, [X0,#off_8ACD910@PAGEOFF]; qword_8CE3CE0 ; slot
+0x72eab54: BL              il2cpp_codegen_initialize_runtime_metadata
+0x72eab58: ADRP            X0, #off_8ACD660@PAGE
+0x72eab5c: LDR             X0, [X0,#off_8ACD660@PAGEOFF]; off_8D1D5E8 ; slot
+0x72eab60: BL              il2cpp_codegen_initialize_runtime_metadata
+0x72eab64: ADRP            X0, #off_8AFC7E8@PAGE
+0x72eab68: LDR             X0, [X0,#off_8AFC7E8@PAGEOFF]; qword_8D2D190 ; slot
+0x72eab6c: BL              il2cpp_codegen_initialize_runtime_metadata
+0x72eab70: ADRP            X0, #off_8AF46A0@PAGE
+0x72eab74: LDR             X0, [X0,#off_8AF46A0@PAGEOFF]; off_8CE7B30 ; slot
+0x72eab78: BL              il2cpp_codegen_initialize_runtime_metadata
+0x72eab7c: ADRP            X0, #off_8B1AC20@PAGE
+0x72eab80: LDR             X0, [X0,#off_8B1AC20@PAGEOFF]; qword_8D2E1C0 ; slot
+0x72eab84: BL              il2cpp_codegen_initialize_runtime_metadata
+0x72eab88: MOV             W8, #1
+0x72eab8c: STRB            W8, [X20,#byte_900A05E@PAGEOFF]
+0x72eab90: LDR             X0, [X19]; klass
+0x72eab94: ADRP            X23, #off_8AFC7E8@PAGE
+0x72eab98: ADRP            X19, #off_8ACD910@PAGE
+0x72eab9c: ADRP            X20, #off_8B1AC20@PAGE
+0x72eaba0: ADRP            X22, #off_8ACD660@PAGE
+0x72eaba4: LDR             W8, [X0,#0xE0]
+0x72eaba8: LDR             X23, [X23,#off_8AFC7E8@PAGEOFF]; qword_8D2D190
+0x72eabac: LDR             X19, [X19,#off_8ACD910@PAGEOFF]; qword_8CE3CE0
+0x72eabb0: LDR             X20, [X20,#off_8B1AC20@PAGEOFF]; qword_8D2E1C0
+0x72eabb4: LDR             X22, [X22,#off_8ACD660@PAGEOFF]; off_8D1D5E8
+0x72eabb8: CBNZ            W8, loc_72EABC0
+0x72eabbc: BL              il2cpp_codegen_runtime_class_init
+0x72eabc0: LDR             X0, [X23]
+0x72eabc4: BL              GameFramework.GameFrameEntry$$GetModule_object_
+0x72eabc8: LDR             X8, [X19]
+0x72eabcc: MOV             X19, X0
+0x72eabd0: MOV             X0, X8
+0x72eabd4: BL              unk_3C3D4C4
+0x72eabd8: LDR             X2, [X20]
+0x72eabdc: MOV             X1, X21
+0x72eabe0: MOV             X3, XZR
+0x72eabe4: MOV             X20, X0
+0x72eabe8: BL              System.Action$$.ctor
+0x72eabec: LDR             X21, [X22]
+0x72eabf0: LDR             X8, [X21,#0x38]
+0x72eabf4: CBNZ            X8, loc_72EAC04
+0x72eabf8: MOV             X0, X21
+0x72eabfc: BL              unk_3C503FC
+0x72eac00: LDR             X8, [X21,#0x38]
+0x72eac04: LDR             X0, [X8,#0x10]
+0x72eac08: LDRB            W8, [X0,#0x135]
+0x72eac0c: TBNZ            W8, #0, loc_72EAC14
+0x72eac10: BL              unk_3C503A0
+0x72eac14: LDR             W8, [X0,#0xE0]
+0x72eac18: CBNZ            W8, loc_72EAC20
+0x72eac1c: BL              il2cpp_codegen_runtime_class_init
+0x72eac20: LDR             X8, [X21,#0x38]
+0x72eac24: LDR             X0, [X8,#0x10]
+0x72eac28: LDRB            W8, [X0,#0x135]
+0x72eac2c: TBNZ            W8, #0, loc_72EAC34
+0x72eac30: BL              unk_3C503A0
+0x72eac34: LDR             X8, [X0,#0xB8]
+0x72eac38: MOV             X0, X19
+0x72eac3c: MOV             X1, X20
+0x72eac40: LDP             X20, X19, [SP,#0x30+var_10]
+0x72eac44: LDR             X2, [X8]
+0x72eac48: LDP             X22, X21, [SP,#0x30+var_20]
+0x72eac4c: MOV             X3, XZR
+0x72eac50: LDP             X30, X23, [SP+0x30+var_30],#0x30
+0x72eac54: B               GameFramework.GameFrameEntry$$Initialize

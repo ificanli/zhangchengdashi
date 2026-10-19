@@ -1,0 +1,97 @@
+0x3decc08: SUB             SP, SP, #0x40
+0x3decc0c: STP             X30, X21, [SP,#0x40+var_20]
+0x3decc10: STP             X20, X19, [SP,#0x40+var_10]
+0x3decc14: ADRP            X21, #byte_8FFD764@PAGE
+0x3decc18: ADRP            X20, #off_8AD31C0@PAGE
+0x3decc1c: LDRB            W8, [X21,#byte_8FFD764@PAGEOFF]
+0x3decc20: LDR             X20, [X20,#off_8AD31C0@PAGEOFF]; off_8CE4A38
+0x3decc24: MOV             X19, X0
+0x3decc28: TBNZ            W8, #0, loc_3DECC64
+0x3decc2c: ADRP            X0, #off_8AD31C0@PAGE
+0x3decc30: LDR             X0, [X0,#off_8AD31C0@PAGEOFF]; off_8CE4A38 ; slot
+0x3decc34: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3decc38: ADRP            X0, #off_8ACF928@PAGE
+0x3decc3c: LDR             X0, [X0,#off_8ACF928@PAGEOFF]; unk_8D15DC8 ; slot
+0x3decc40: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3decc44: ADRP            X0, #off_8ACF930@PAGE
+0x3decc48: LDR             X0, [X0,#off_8ACF930@PAGEOFF]; qword_8D15DD0 ; slot
+0x3decc4c: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3decc50: ADRP            X0, #off_8ACC8D0@PAGE
+0x3decc54: LDR             X0, [X0,#off_8ACC8D0@PAGEOFF]; off_8CEB3E0 ; slot
+0x3decc58: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3decc5c: MOV             W8, #1
+0x3decc60: STRB            W8, [X21,#byte_8FFD764@PAGEOFF]
+0x3decc64: STP             XZR, XZR, [X19,#0x190]
+0x3decc68: LDR             X0, [X20]; klass
+0x3decc6c: LDR             W8, [X0,#0xE0]
+0x3decc70: CBNZ            W8, loc_3DECC78
+0x3decc74: BL              il2cpp_codegen_runtime_class_init
+0x3decc78: BL              GameModule.BattleGameSceneManager$$IsLegendaryTileV1EnabledThisBattle
+0x3decc7c: TBZ             W0, #0, loc_3DECD78
+0x3decc80: MOV             X0, X19
+0x3decc84: MOV             W1, WZR
+0x3decc88: BL              GameModule.BattleGameSceneManager$$GetMainTowerHexCoord
+0x3decc8c: MOV             X20, X0
+0x3decc90: STR             X0, [SP,#0x40+var_30]
+0x3decc94: STR             W1, [SP,#0x40+var_28]
+0x3decc98: MOV             W1, #1
+0x3decc9c: MOV             X0, X19
+0x3decca0: BL              GameModule.BattleGameSceneManager$$GetMainTowerHexCoord
+0x3decca4: TST             W20, #0xFF
+0x3decca8: STR             X0, [SP,#0x40+var_40]
+0x3deccac: STR             W1, [SP,#0x40+var_38]
+0x3deccb0: B.EQ            loc_3DECD78
+0x3deccb4: TST             W0, #0xFF
+0x3deccb8: B.EQ            loc_3DECD78
+0x3deccbc: ADRP            X20, #off_8ACF930@PAGE
+0x3deccc0: LDR             X20, [X20,#off_8ACF930@PAGEOFF]; qword_8D15DD0
+0x3deccc4: ADD             X0, SP, #0x40+var_30
+0x3deccc8: LDR             X1, [X20]
+0x3decccc: BL              System.Nullable_HexManager.HexCoord_$$get_Value
+0x3deccd0: MOV             X2, X0
+0x3deccd4: MOV             X0, X19
+0x3deccd8: MOV             W1, WZR
+0x3deccdc: BL              GameModule.BattleGameSceneManager$$LegendaryTileV1PickOneHalf
+0x3decce0: LDR             X1, [X20]
+0x3decce4: MOV             X21, X0
+0x3decce8: MOV             X0, SP
+0x3deccec: BL              System.Nullable_HexManager.HexCoord_$$get_Value
+0x3deccf0: MOV             X2, X0
+0x3deccf4: MOV             W1, #1
+0x3deccf8: MOV             X0, X19
+0x3deccfc: BL              GameModule.BattleGameSceneManager$$LegendaryTileV1PickOneHalf
+0x3decd00: STP             X21, X0, [X19,#0x190]
+0x3decd04: ADRP            X19, #off_8ACC8D0@PAGE
+0x3decd08: LDR             X19, [X19,#off_8ACC8D0@PAGEOFF]; off_8CEB3E0
+0x3decd0c: MOV             X20, X0
+0x3decd10: LDR             X0, [X19]; klass
+0x3decd14: LDR             W8, [X0,#0xE0]
+0x3decd18: CBNZ            W8, loc_3DECD20
+0x3decd1c: BL              il2cpp_codegen_runtime_class_init
+0x3decd20: MOV             X0, X21
+0x3decd24: MOV             X1, XZR
+0x3decd28: MOV             X2, XZR
+0x3decd2c: BL              UnityEngine.Object$$op_Inequality
+0x3decd30: TBZ             W0, #0, loc_3DECD44
+0x3decd34: CBZ             X21, loc_3DECD88
+0x3decd38: MOV             X0, X21
+0x3decd3c: MOV             X1, XZR
+0x3decd40: BL              GameModule.HexBehaviour$$ApplyLegendaryTileV1
+0x3decd44: LDR             X0, [X19]; klass
+0x3decd48: LDR             W8, [X0,#0xE0]
+0x3decd4c: CBNZ            W8, loc_3DECD54
+0x3decd50: BL              il2cpp_codegen_runtime_class_init
+0x3decd54: MOV             X0, X20
+0x3decd58: MOV             X1, XZR
+0x3decd5c: MOV             X2, XZR
+0x3decd60: BL              UnityEngine.Object$$op_Inequality
+0x3decd64: TBZ             W0, #0, loc_3DECD78
+0x3decd68: CBZ             X20, loc_3DECD88
+0x3decd6c: MOV             X0, X20
+0x3decd70: MOV             X1, XZR
+0x3decd74: BL              GameModule.HexBehaviour$$ApplyLegendaryTileV1
+0x3decd78: LDP             X20, X19, [SP,#0x40+var_10]
+0x3decd7c: LDP             X30, X21, [SP,#0x40+var_20]
+0x3decd80: ADD             SP, SP, #0x40 ; '@'
+0x3decd84: RET
+0x3decd88: BL              il2cpp_codegen_raise_null_reference_exception

@@ -1,0 +1,33 @@
+0x72faae0: STR             X30, [SP,#var_30]!
+0x72faae4: STP             X22, X21, [SP,#0x30+var_20]
+0x72faae8: STP             X20, X19, [SP,#0x30+var_10]
+0x72faaec: ADRP            X22, #byte_900A16A@PAGE
+0x72faaf0: ADRP            X21, #off_8B0E370@PAGE
+0x72faaf4: LDRB            W8, [X22,#byte_900A16A@PAGEOFF]
+0x72faaf8: LDR             X21, [X21,#off_8B0E370@PAGEOFF]; off_8CE3F28
+0x72faafc: MOV             X19, X1
+0x72fab00: MOV             X20, X0
+0x72fab04: TBNZ            W8, #0, loc_72FAB28
+0x72fab08: ADRP            X0, #off_8B0E370@PAGE
+0x72fab0c: LDR             X0, [X0,#off_8B0E370@PAGEOFF]; off_8CE3F28 ; slot
+0x72fab10: BL              il2cpp_codegen_initialize_runtime_metadata
+0x72fab14: ADRP            X0, #off_8B1AFC0@PAGE
+0x72fab18: LDR             X0, [X0,#off_8B1AFC0@PAGEOFF]; qword_8D7C8B8 ; slot
+0x72fab1c: BL              il2cpp_codegen_initialize_runtime_metadata
+0x72fab20: MOV             W8, #1
+0x72fab24: STRB            W8, [X22,#byte_900A16A@PAGEOFF]
+0x72fab28: LDR             X0, [X21]; klass
+0x72fab2c: ADRP            X21, #off_8B1AFC0@PAGE
+0x72fab30: LDR             W8, [X0,#0xE0]
+0x72fab34: LDR             X21, [X21,#off_8B1AFC0@PAGEOFF]; qword_8D7C8B8
+0x72fab38: CBNZ            W8, loc_72FAB40
+0x72fab3c: BL              il2cpp_codegen_runtime_class_init
+0x72fab40: LDR             X1, [X21]
+0x72fab44: MOV             X0, X20
+0x72fab48: MOV             X2, XZR
+0x72fab4c: BL              UnityEngine.AndroidJavaProxy$$.ctor
+0x72fab50: STR             X19, [X20,#0x20]
+0x72fab54: LDP             X20, X19, [SP,#0x30+var_10]
+0x72fab58: LDP             X22, X21, [SP,#0x30+var_20]
+0x72fab5c: LDR             X30, [SP+0x30+var_30],#0x30
+0x72fab60: RET

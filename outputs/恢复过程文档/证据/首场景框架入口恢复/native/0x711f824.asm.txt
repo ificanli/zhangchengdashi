@@ -1,0 +1,64 @@
+0x711f824: fe0f1ef8 str      x30, [sp, #-0x20]!
+0x711f828: f44f01a9 stp      x20, x19, [sp, #0x10]
+0x711f82c: 54f700b0 adrp     x20, #0x9008000
+0x711f830: 73cd00d0 adrp     x19, #0x8acd000
+0x711f834: 881e7739 ldrb     w8, [x20, #0xdc7]
+0x711f838: 73e242f9 ldr      x19, [x19, #0x5c0] // GameFramework.AppSetting_TypeInfo
+0x711f83c: 88010037 tbnz     w8, #0, #0x711f86c
+0x711f840: 60cd00d0 adrp     x0, #0x8acd000
+0x711f844: 00e042f9 ldr      x0, [x0, #0x5c0] // GameFramework.AppSetting_TypeInfo
+0x711f848: 8e762c97 bl       #0x3c3d280
+0x711f84c: 80cd00b0 adrp     x0, #0x8ad0000
+0x711f850: 000044f9 ldr      x0, [x0, #0x800] // System.Globalization.CultureInfo_TypeInfo
+0x711f854: 8b762c97 bl       #0x3c3d280
+0x711f858: 80ce0090 adrp     x0, #0x8aef000
+0x711f85c: 009845f9 ldr      x0, [x0, #0xb30] // en-US
+0x711f860: 88762c97 bl       #0x3c3d280
+0x711f864: 28008052 mov      w8, #1
+0x711f868: 881e3739 strb     w8, [x20, #0xdc7]
+0x711f86c: 600240f9 ldr      x0, [x19]
+0x711f870: 08e040b9 ldr      w8, [x0, #0xe0]
+0x711f874: 48000035 cbnz     w8, #0x711f87c
+0x711f878: ce762c97 bl       #0x3c3d3b0
+0x711f87c: 54f700b0 adrp     x20, #0x9008000
+0x711f880: 88ae5d39 ldrb     w8, [x20, #0x76b]
+0x711f884: c8000035 cbnz     w8, #0x711f89c
+0x711f888: 60cd00d0 adrp     x0, #0x8acd000
+0x711f88c: 00e042f9 ldr      x0, [x0, #0x5c0] // GameFramework.AppSetting_TypeInfo
+0x711f890: 7c762c97 bl       #0x3c3d280
+0x711f894: 28008052 mov      w8, #1
+0x711f898: 88ae1d39 strb     w8, [x20, #0x76b]
+0x711f89c: 600240f9 ldr      x0, [x19]
+0x711f8a0: 94cd00b0 adrp     x20, #0x8ad0000
+0x711f8a4: 08e040b9 ldr      w8, [x0, #0xe0]
+0x711f8a8: 940244f9 ldr      x20, [x20, #0x800] // System.Globalization.CultureInfo_TypeInfo
+0x711f8ac: 68000035 cbnz     w8, #0x711f8b8
+0x711f8b0: c0762c97 bl       #0x3c3d3b0
+0x711f8b4: 600240f9 ldr      x0, [x19]
+0x711f8b8: 880240f9 ldr      x8, [x20]
+0x711f8bc: 095c40f9 ldr      x9, [x0, #0xb8]
+0x711f8c0: 0ae140b9 ldr      w10, [x8, #0xe0]
+0x711f8c4: 330d4239 ldrb     w19, [x9, #0x83]
+0x711f8c8: aa000034 cbz      w10, #0x711f8dc
+0x711f8cc: f3000034 cbz      w19, #0x711f8e8
+0x711f8d0: e0031faa mov      x0, xzr
+0x711f8d4: e0991494 bl       #0x7646054 // System.Globalization.CultureInfo$$get_InvariantCulture
+0x711f8d8: 09000014 b        #0x711f8fc
+0x711f8dc: e00308aa mov      x0, x8
+0x711f8e0: b4762c97 bl       #0x3c3d3b0
+0x711f8e4: 73ffff35 cbnz     w19, #0x711f8d0
+0x711f8e8: 88ce0090 adrp     x8, #0x8aef000
+0x711f8ec: 089945f9 ldr      x8, [x8, #0xb30] // en-US
+0x711f8f0: e1031faa mov      x1, xzr
+0x711f8f4: 000140f9 ldr      x0, [x8]
+0x711f8f8: 839a1494 bl       #0x7646304 // System.Globalization.CultureInfo$$CreateSpecificCulture
+0x711f8fc: f30300aa mov      x19, x0
+0x711f900: 800240f9 ldr      x0, [x20]
+0x711f904: 08e040b9 ldr      w8, [x0, #0xe0]
+0x711f908: 48000035 cbnz     w8, #0x711f910
+0x711f90c: a9762c97 bl       #0x3c3d3b0
+0x711f910: e00313aa mov      x0, x19
+0x711f914: f44f41a9 ldp      x20, x19, [sp, #0x10]
+0x711f918: e1031faa mov      x1, xzr
+0x711f91c: fe0742f8 ldr      x30, [sp], #0x20
+0x711f920: ed991414 b        #0x76460d4 // System.Globalization.CultureInfo$$set_CurrentCulture

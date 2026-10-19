@@ -1,0 +1,20 @@
+0x3f81270: STR             X30, [SP,#var_20]!
+0x3f81274: STP             X20, X19, [SP,#0x20+var_10]
+0x3f81278: ADRP            X20, #byte_8FFE417@PAGE
+0x3f8127c: ADRP            X19, #off_8AD5EB8@PAGE
+0x3f81280: LDRB            W8, [X20,#byte_8FFE417@PAGEOFF]
+0x3f81284: LDR             X19, [X19,#off_8AD5EB8@PAGEOFF]; off_8CE7AE8
+0x3f81288: TBNZ            W8, #0, loc_3F812A0
+0x3f8128c: ADRP            X0, #off_8AD5EB8@PAGE
+0x3f81290: LDR             X0, [X0,#off_8AD5EB8@PAGEOFF]; off_8CE7AE8 ; slot
+0x3f81294: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3f81298: MOV             W8, #1
+0x3f8129c: STRB            W8, [X20,#byte_8FFE417@PAGEOFF]
+0x3f812a0: MOV             X0, XZR
+0x3f812a4: BL              System.Text.Encoding$$get_UTF8
+0x3f812a8: LDR             X8, [X19]
+0x3f812ac: LDP             X20, X19, [SP,#0x20+var_10]
+0x3f812b0: LDR             X8, [X8,#0xB8]
+0x3f812b4: STR             X0, [X8]
+0x3f812b8: LDR             X30, [SP+0x20+var_20],#0x20
+0x3f812bc: RET

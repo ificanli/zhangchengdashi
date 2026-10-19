@@ -1,0 +1,9 @@
+FAIL original group creation permits ECS registration and releases owned lists: group-not-created
+FAIL standalone manager creates distinct persistent queues then disposes both: constructor queue allocation
+FAIL base create failure does not create or assign rate manager: missing InvalidOperationException: base create failure
+FAIL second native allocation failure does not synthesize rollback: missing InvalidOperationException: allocation failure
+FAIL base destroy failure stops before rate manager disposal: missing InvalidOperationException: base destroy failure
+FAIL null manager produces original null failure after base destroy: missing NullReferenceException: null manager
+FAIL wrong manager type produces original null failure after base destroy: missing NullReferenceException: wrong manager type
+FAIL first dispose failure stops before second native queue disposal: missing InvalidOperationException: first disposal failure
+RESULT scenarios=8 checks=2 failures=8

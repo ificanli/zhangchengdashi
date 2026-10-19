@@ -1,0 +1,15 @@
+0x72c1c60: STR             X30, [SP,#var_30]!
+0x72c1c64: STP             X22, X21, [SP,#0x30+var_20]
+0x72c1c68: STP             X20, X19, [SP,#0x30+var_10]
+0x72c1c6c: MOV             W19, W6
+0x72c1c70: MOV             W20, W4
+0x72c1c74: MOV             X21, X0
+0x72c1c78: AND             W22, W5, #1
+0x72c1c7c: BL              ___Hcp$$.ctor
+0x72c1c80: STR             W20, [X21,#0xB0]
+0x72c1c84: STRB            W22, [X21,#0xB4]
+0x72c1c88: STR             W19, [X21,#0xB8]
+0x72c1c8c: LDP             X20, X19, [SP,#0x30+var_10]
+0x72c1c90: LDP             X22, X21, [SP,#0x30+var_20]
+0x72c1c94: LDR             X30, [SP+0x30+var_30],#0x30
+0x72c1c98: RET

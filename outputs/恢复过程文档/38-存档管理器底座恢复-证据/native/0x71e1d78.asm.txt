@@ -1,0 +1,51 @@
+0x71e1d78: STR             X30, [SP,#var_20]!
+0x71e1d7c: STP             X20, X19, [SP,#0x20+var_10]
+0x71e1d80: ADRP            X20, #byte_900965D@PAGE
+0x71e1d84: ADRP            X19, #off_8B173D8@PAGE
+0x71e1d88: LDRB            W8, [X20,#byte_900965D@PAGEOFF]
+0x71e1d8c: LDR             X19, [X19,#off_8B173D8@PAGEOFF]; off_8CF6750
+0x71e1d90: TBNZ            W8, #0, loc_71E1DCC
+0x71e1d94: ADRP            X0, #off_8B173D8@PAGE
+0x71e1d98: LDR             X0, [X0,#off_8B173D8@PAGEOFF]; off_8CF6750 ; slot
+0x71e1d9c: BL              il2cpp_codegen_initialize_runtime_metadata
+0x71e1da0: ADRP            X0, #off_8ACC8C8@PAGE
+0x71e1da4: LDR             X0, [X0,#off_8ACC8C8@PAGEOFF]; off_8CE64E8 ; slot
+0x71e1da8: BL              il2cpp_codegen_initialize_runtime_metadata
+0x71e1dac: ADRP            X0, #off_8B18B08@PAGE
+0x71e1db0: LDR             X0, [X0,#off_8B18B08@PAGEOFF]; qword_8D86710 ; slot
+0x71e1db4: BL              il2cpp_codegen_initialize_runtime_metadata
+0x71e1db8: ADRP            X0, #off_8AF9E08@PAGE
+0x71e1dbc: LDR             X0, [X0,#off_8AF9E08@PAGEOFF]; qword_8D56B20 ; slot
+0x71e1dc0: BL              il2cpp_codegen_initialize_runtime_metadata
+0x71e1dc4: MOV             W8, #1
+0x71e1dc8: STRB            W8, [X20,#byte_900965D@PAGEOFF]
+0x71e1dcc: LDR             X0, [X19]; klass
+0x71e1dd0: ADRP            X19, #off_8AF9E08@PAGE
+0x71e1dd4: LDR             W8, [X0,#0xE0]
+0x71e1dd8: LDR             X19, [X19,#off_8AF9E08@PAGEOFF]; qword_8D56B20
+0x71e1ddc: CBNZ            W8, loc_71E1DE4
+0x71e1de0: BL              il2cpp_codegen_runtime_class_init
+0x71e1de4: LDR             X0, [X19]; name
+0x71e1de8: BL              GameFramework.Utility.AssemblyUtility$$LoadAssembly
+0x71e1dec: MOV             X19, X0
+0x71e1df0: MOV             X0, XZR
+0x71e1df4: MOV             X1, X19
+0x71e1df8: MOV             X2, XZR
+0x71e1dfc: BL              System.Reflection.Assembly$$op_Equality
+0x71e1e00: TBZ             W0, #0, loc_71E1E34
+0x71e1e04: ADRP            X8, #off_8ACC8C8@PAGE
+0x71e1e08: LDR             X8, [X8,#off_8ACC8C8@PAGEOFF]; off_8CE64E8
+0x71e1e0c: ADRP            X19, #off_8B18B08@PAGE
+0x71e1e10: LDR             X0, [X8]; klass
+0x71e1e14: LDR             W8, [X0,#0xE0]
+0x71e1e18: LDR             X19, [X19,#off_8B18B08@PAGEOFF]; qword_8D86710
+0x71e1e1c: CBNZ            W8, loc_71E1E24
+0x71e1e20: BL              il2cpp_codegen_runtime_class_init
+0x71e1e24: LDR             X0, [X19]
+0x71e1e28: MOV             X1, XZR
+0x71e1e2c: BL              UnityEngine.Debug$$LogError
+0x71e1e30: MOV             X19, XZR
+0x71e1e34: MOV             X0, X19
+0x71e1e38: LDP             X20, X19, [SP,#0x20+var_10]
+0x71e1e3c: LDR             X30, [SP+0x20+var_20],#0x20
+0x71e1e40: RET

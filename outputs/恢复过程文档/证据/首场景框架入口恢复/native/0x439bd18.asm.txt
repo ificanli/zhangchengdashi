@@ -1,0 +1,24 @@
+0x439bd18: fe57bea9 stp      x30, x21, [sp, #-0x20]!
+0x439bd1c: f44f01a9 stp      x20, x19, [sp, #0x10]
+0x439bd20: 346302b0 adrp     x20, #0x9000000
+0x439bd24: d53a02b0 adrp     x21, #0x8af4000
+0x439bd28: 882a6239 ldrb     w8, [x20, #0x88a]
+0x439bd2c: b56a43f9 ldr      x21, [x21, #0x6d0] // ljzs_lt.GameStart.<OpenLoadingUI>d__4_TypeInfo
+0x439bd30: f30301aa mov      x19, x1
+0x439bd34: c8000037 tbnz     w8, #0, #0x439bd4c
+0x439bd38: c03a02b0 adrp     x0, #0x8af4000
+0x439bd3c: 006843f9 ldr      x0, [x0, #0x6d0] // ljzs_lt.GameStart.<OpenLoadingUI>d__4_TypeInfo
+0x439bd40: 5085e297 bl       #0x3c3d280
+0x439bd44: 28008052 mov      w8, #1
+0x439bd48: 882a2239 strb     w8, [x20, #0x88a]
+0x439bd4c: a00240f9 ldr      x0, [x21]
+0x439bd50: dd85e297 bl       #0x3c3d4c4
+0x439bd54: e1031faa mov      x1, xzr
+0x439bd58: f40300aa mov      x20, x0
+0x439bd5c: 6caecc94 bl       #0x76c770c // System.Object$$.ctor
+0x439bd60: 9f1200b9 str      wzr, [x20, #0x10]
+0x439bd64: 931200f9 str      x19, [x20, #0x20]
+0x439bd68: e00314aa mov      x0, x20
+0x439bd6c: f44f41a9 ldp      x20, x19, [sp, #0x10]
+0x439bd70: fe57c2a8 ldp      x30, x21, [sp], #0x20
+0x439bd74: c0035fd6 ret      

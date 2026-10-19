@@ -1,0 +1,47 @@
+0x468de38: STR             X30, [SP,#var_40]!
+0x468de3c: STP             X24, X23, [SP,#0x40+var_30]
+0x468de40: STP             X22, X21, [SP,#0x40+var_20]
+0x468de44: STP             X20, X19, [SP,#0x40+var_10]
+0x468de48: ADRP            X23, #byte_9001E26@PAGE
+0x468de4c: ADRP            X24, #off_8B0AAE0@PAGE
+0x468de50: ADRP            X21, #off_8B0AAE8@PAGE
+0x468de54: ADRP            X22, #off_8ACDB30@PAGE
+0x468de58: LDRB            W8, [X23,#byte_9001E26@PAGEOFF]
+0x468de5c: LDR             X24, [X24,#off_8B0AAE0@PAGEOFF]; qword_8CDEA08
+0x468de60: LDR             X21, [X21,#off_8B0AAE8@PAGEOFF]; qword_8D11598
+0x468de64: LDR             X22, [X22,#off_8ACDB30@PAGEOFF]; off_8CE6460
+0x468de68: MOV             X19, X1
+0x468de6c: MOV             X20, X0
+0x468de70: TBNZ            W8, #0, loc_468DEA0
+0x468de74: ADRP            X0, #off_8ACDB30@PAGE
+0x468de78: LDR             X0, [X0,#off_8ACDB30@PAGEOFF]; off_8CE6460 ; slot
+0x468de7c: BL              il2cpp_codegen_initialize_runtime_metadata
+0x468de80: ADRP            X0, #off_8B0AAE8@PAGE
+0x468de84: LDR             X0, [X0,#off_8B0AAE8@PAGEOFF]; qword_8D11598 ; slot
+0x468de88: BL              il2cpp_codegen_initialize_runtime_metadata
+0x468de8c: ADRP            X0, #off_8B0AAE0@PAGE
+0x468de90: LDR             X0, [X0,#off_8B0AAE0@PAGEOFF]; qword_8CDEA08 ; slot
+0x468de94: BL              il2cpp_codegen_initialize_runtime_metadata
+0x468de98: MOV             W8, #1
+0x468de9c: STRB            W8, [X23,#byte_9001E26@PAGEOFF]
+0x468dea0: LDR             X0, [X24]
+0x468dea4: BL              unk_3C3D4C4
+0x468dea8: LDR             X1, [X21]
+0x468deac: MOV             X21, X0
+0x468deb0: BL              System.Collections.Generic.List_object_$$.ctor
+0x468deb4: STR             X21, [X20,#0x30]
+0x468deb8: LDR             X0, [X22]; klass
+0x468debc: LDR             W8, [X0,#0xE0]
+0x468dec0: CBNZ            W8, loc_468DECC
+0x468dec4: BL              il2cpp_codegen_runtime_class_init
+0x468dec8: LDR             X0, [X22]
+0x468decc: LDR             X8, [X0,#0xB8]
+0x468ded0: MOV             X0, X20
+0x468ded4: MOV             X1, X19
+0x468ded8: LDP             X22, X21, [SP,#0x40+var_20]
+0x468dedc: LDR             X8, [X8,#0x10]
+0x468dee0: LDP             X24, X23, [SP,#0x40+var_30]
+0x468dee4: STR             X8, [X20,#0x38]
+0x468dee8: LDP             X20, X19, [SP,#0x40+var_10]
+0x468deec: LDR             X30, [SP+0x40+var_40],#0x40
+0x468def0: B               CommonGameModule.Debugger.UGUI.BaseInformationWindowUGUI$$.ctor

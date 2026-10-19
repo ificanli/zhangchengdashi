@@ -1,0 +1,451 @@
+// Extracted actual source bodies. Task/Unity adapters only exist in this work fixture.
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using BadgeGraph;
+using DataModule;
+using EventModule;
+using SDKModule;
+using QuickTutor;
+using UIFramework;
+using ljzs_lt;
+using TimeModuleO;
+using ToolModule;
+using UnityEngine;
+namespace GameModule { public class GameManager : MonoBehaviour {
+public bool InitComplete; private bool _isFirstThroghGame; public UpdateController updateController = new UpdateController(); private GameObject APostProcess,BPostProcess; private TimeManager.Timer canPushGiftPackTimer; private Action onGameManagerInitComplete; private bool showNoInternetPanel,closeLoadPanel;
+public async Task Init()
+		{
+		    if (!PlayerPrefs.HasKey("VibratorEnable"))
+		        PlayerPrefs.SetInt("VibratorEnable", 0);
+		    _ = HWLeaderboardManager.Instance.Init();
+		    _ = HomelLandCtrl.Instance.Init();
+		    _ = HomelLandCtrlNew.Instance.Init();
+		    _ = BadgeManager.Instance.Init();
+		    _ = BoxManager.Instance.Init();
+		    _ = ArenaManager.Instance.Init();
+		    _ = ArenaProgressManager.Instance.Init();
+		    _ = TrainingGroundManager.Instance.Init();
+		    _ = TrophyProgressManager.Instance.Init();
+		    _ = PlayerCustomizationManager.Instance.Init();
+		    _ = PlayerLevelManager.Instance.Init();
+		    _ = UserLableManager.Instance.Init();
+		    _ = UserLablePushPackManager.Instance.Init();
+		    _ = MetaBtnSecondClickManager.Instance.Init();
+		    _ = SkinManager.Instance.Init();
+		    _ = MonthlyPassManager.Instance.Init();
+		    _ = DailyBlessManager.Instance.Init();
+		    _ = SynergyEffectManager.Instance.Init();
+		    _ = RoleShadowManager.Instance.Init();
+		    _ = GameCenterManager.Instance.Init();
+		    APostProcess = GameObject.Find("Base/ATestPostProcess");
+		    BPostProcess = GameObject.Find("Base/BTestPostProcess");
+		    APostProcess.SetActive(!ABTestManager.Instance.WeeklyClashImprove02IsBTest);
+		    BPostProcess.SetActive(ABTestManager.Instance.WeeklyClashImprove02IsBTest);
+		    _isFirstThroghGame = DbtSaveDataManager_PlayerGuideData.I.Data.isFirstThroghGame;
+		    RegisterOnTimeToZero();
+		    RegisterOnTimeToMonDayZero();
+		    if (DbtSaveDataManager_PlayerShopData.I.Data.timingPushGiftPackageCdIng)
+		    {
+		        DbtSaveDataManager_PlayerShopData.I.Data.timingPushGiftPackageCdIng = false;
+		        DbtSaveDataManager_PlayerShopData.I.Save();
+		    }
+		    if (!DbtSaveDataManager_PlayerShopData.I.Data.hadHandleTwoSixOneBug)
+		    {
+		        if (DbtSaveDataManager_PlayerShopData.I.Data.isShowNewBieGiftPack)
+		        {
+		            TimeManager.Timer timer = TimeManager.Instance.GetTimer("NewBieGiftPackKey");
+		            if (timer != null && (timer.StartTime.Year < 2025 || timer.TargetEndTime.Year <= 2024))
+		                timer.Restart(TimeSpan.FromDays(2), true);
+		        }
+		        if (DbtSaveDataManager_PlayerShopData.I.Data.canTimingPushGiftPackage)
+		        {
+		            TimeManager.Timer timer = TimeManager.Instance.GetTimer("GiftPackagePushCountdownKey");
+		            if (timer != null && (timer.StartTime.Year < 2025 || timer.TargetEndTime.Year <= 2024))
+		                timer.Restart(TimeSpan.FromDays(2), true);
+		        }
+		        else
+		        {
+		            TimeManager.Timer timer = TimeManager.Instance.GetTimer("CanGiftPackagePushKey");
+		            if (timer != null && (timer.StartTime.Year < 2025 || timer.TargetEndTime.Year <= 2024))
+		                timer.Restart(TimeSpan.FromDays(4), true);
+		        }
+		        DbtSaveDataManager_PlayerShopData.I.Data.hadHandleTwoSixOneBug = true;
+		        DbtSaveDataManager_PlayerShopData.I.Save();
+		        DbtSaveDataManager_PlayerTimeData.I.Save();
+		    }
+		    if (ABTestManager.Instance.SelectableOfferIsOn)
+		    {
+		        Debug.Log("ZZZZ进入定时礼包判断");
+		        if (_isFirstThroghGame)
+		        {
+		            canPushGiftPackTimer = TimeManager.Instance.CreateTimer("CanGiftPackagePushKey", TimeSpan.FromDays(4), true, false);
+		            DbtSaveDataManager_PlayerShopData.I.Save();
+		            DbtSaveDataManager_PlayerTimeData.I.Save();
+		        }
+		        else if (!DbtSaveDataManager_PlayerShopData.I.Data.isShowNewBieGiftPack)
+		        {
+		            canPushGiftPackTimer = TimeManager.Instance.GetTimer("CanGiftPackagePushKey");
+		            if (canPushGiftPackTimer == null && !DbtSaveDataManager_PlayerShopData.I.Data.canTimingPushGiftPackage)
+		            {
+		                DbtSaveDataManager_PlayerShopData.I.Data.canTimingPushGiftPackage = true;
+		                _ = TimeManager.Instance.GetTimer("GiftPackagePushOffsetKey");
+		                Debug.Log("ZZZZ不是第一次进游戏，新手礼包不在，直接可以推送礼包");
+		                DbtSaveDataManager_PlayerShopData.I.Save();
+		            }
+		        }
+		        else
+		        {
+		            canPushGiftPackTimer = TimeManager.Instance.GetTimer("CanGiftPackagePushKey");
+		            if (canPushGiftPackTimer == null && !DbtSaveDataManager_PlayerShopData.I.Data.canTimingPushGiftPackage)
+		            {
+		                TimeManager.Timer newbieTimer = TimeManager.Instance.GetTimer("NewBieGiftPackKey");
+		                canPushGiftPackTimer = TimeManager.Instance.CreateTimer("CanGiftPackagePushKey",
+		                    TimeSpan.FromDays(4) - (newbieTimer != null ? newbieTimer.GetRemainingTime() : TimeSpan.Zero), true, false);
+		                Debug.Log(string.Format("ZZZZ不是第一次进游戏，新手礼包在，创建倒计时,begintime{0},endtime{1}",
+		                    canPushGiftPackTimer.StartTime, canPushGiftPackTimer.TargetEndTime));
+		                DbtSaveDataManager_PlayerShopData.I.Save();
+		                DbtSaveDataManager_PlayerTimeData.I.Save();
+		            }
+		        }
+		    }
+		    await MetaGameManager.Instance.Init();
+		    _ = GetNewCardPanelManager.Instance.Init();
+		    if (!_isFirstThroghGame)
+		    {
+		        _ = UIManager.Instance.GetPanel("Assets/_Res/Addressable/Prefabs/UI/Panels/ClimbRankPanel.prefab");
+		        MetaGameManager.Instance.ShowMetaSwitchPanel(2);
+		        EventManager.Instance.TriggerEvent("InitGameEndCheckIsHasLegacyBox", null);
+		    }
+		    _ = UIManager.Instance.GetPanel("Assets/_Res/Addressable/02CoreGameBundle/Prefabs/UI/Panels/FoundEnemyPanel.prefab");
+		    await CoreGameManager.Instance.Init();
+		    _ = SeasonManager.Instance.Init();
+		    _ = FundManager.Instance.Init();
+		    GiftPackageManager.Instance.Init();
+		    _ = GiftChainManager.Instance.Init();
+		    _ = GiftChainManager2.Instance.Init();
+		    _ = MultistageNewcomerPackageManager.Instance.Init();
+		    _ = UpgradeRewardManager.Instance.Init();
+		    _ = MysteriousStoreManager.Instance.Init();
+		    _ = BackpackManager.Instance.Init();
+		    _ = WeeklyCardActivityManager.Instance.Init();
+		    Debug.Log("金卡周管理器初始化完成");
+		    _ = MysteryAdventureManager.Instance.Init();
+		    Debug.Log("秘境大冒险管理器初始化完成");
+		    _ = WorldCupActivityManager.Instance.Init();
+		    Debug.Log("世界杯狂欢管理器初始化完成");
+		    ReportEventsManager.Instance.ArenaUnLockRbi();
+		    EventManager.Instance.StartListening("GameSteerEndShowCardProbabilityPanel", ShowCardProbabilityPanel);
+		    if (!TutorialManager.Instance.IsStepComplete("1009"))
+		        EventManager.Instance.StartListening("CardSteerEnd", CardSteerEnd);
+		    if (!TutorialManager.Instance.IsStepComplete("1016"))
+		        EventManager.Instance.StartListening("FetterSteerEnd", FetterSteerEnd);
+		    EventManager.Instance.StartListening("DanChange", DanChangeUpdateInfo);
+		    if (_isFirstThroghGame)
+		        EventManager.Instance.TriggerEvent("DanChange", null);
+		    EventManager.Instance.StartListening("OnArenaUIBGItemStartBtnClicked", StartCoreGame);
+		    EventManager.Instance.StartListening("OnGameOver", EnterMeta);
+		    EventManager.Instance.StartListening("CloseLoadPanel", CloseLoadPanel);
+		    EventManager.Instance.StartListening("LoadEnd", LoadEnd);
+		    onGameManagerInitComplete?.Invoke();
+		    InitComplete = true;
+		    ReportEventsManager.Instance.AppOpenEvent();
+		    LTEmailControl.Instance.InitEmail();
+		    FixedRandomTools.Load();
+		    StartCoroutine(CheckNetworkState());
+		}
+private void RegisterOnTimeToZero()
+		{
+		    TimeManager.Instance.RegisterOnTimeToZero(ShopManager.Instance.RefreshUserUniversalCardData);
+		    TimeManager.Instance.RegisterOnTimeToZero(ShopManager.Instance.ResetWatchAdCount);
+		    TimeManager.Instance.RegisterOnTimeToZero(ShopManager.Instance.ResetPopPacks);
+		    TimeManager.Instance.RegisterOnTimeToZero(() =>
+		    {
+		        DbtSaveDataManager_PlayerAdData.I.Data.InitializeVideosNumber();
+		        DbtSaveDataManager_PlayerAdData.I.Save();
+		        ShopManager.Instance.redDotThrottleTrigger?.RegisterOneTrigger();
+		        EventManager.Instance.TriggerEvent("TimeToZeroRefreshFreeResUI", null);
+		    });
+		    TimeManager.Instance.RegisterOnTimeToZero(() =>
+		    {
+		        DbtSaveDataManager_PlayerCoreData.I.Data.nowLingquReward = false;
+		        DbtSaveDataManager_PlayerAdData.I.Save();
+		        EventManager.Instance.TriggerEvent("TimeToZeroRefreshSubscription", null);
+		    });
+		    TimeManager.Instance.RegisterOnTimeToZero(() =>
+		    {
+		        DbtSaveDataManager_PlayerAdData.I.Data.ShowInterstitialEd = false;
+		        DbtSaveDataManager_PlayerAdData.I.Save();
+		    });
+		    TimeManager.Instance.RegisterOnTimeToZero(() =>
+		    {
+		        DbtSaveDataManager_PlayerChestData.I.Data.userGetBoxCount = 0;
+		        DbtSaveDataManager_PlayerChestData.I.Save();
+		    });
+		    if (DailyBlessManager.Instance.IsBTest())
+		    {
+		        TimeManager.Instance.RegisterOnTimeToZero(() =>
+		        {
+		            DailyBlessManager.Instance.RefreshDailyBless();
+		            EventManager.Instance.TriggerEvent("DailyBlessBtnActive", true);
+		            if (UIManager.Instance.IsPanelShowing("Assets/_Res/Addressable/04MetaGameBundle/Prefabs/UI/Panels/DailyBlessPanel.prefab", out UIPanel panel))
+		                _ = UIManager.Instance.HidePanel("Assets/_Res/Addressable/04MetaGameBundle/Prefabs/UI/Panels/DailyBlessPanel.prefab");
+		        });
+		    }
+		}
+private void RegisterOnTimeToMonDayZero()
+		{
+		    TimeManager.Instance.RegisterOnWeekPassed(() =>
+		    {
+		        Dictionary<string, int> counts = DbtSaveDataManager_PlayerShopData.I.Data.cardPackBuyCountNowWeek;
+		        foreach (string key in counts.Keys.ToList())
+		            counts[key] = 0;
+		        DbtSaveDataManager_PlayerShopData.I.Save();
+		    });
+		    TimeManager.Instance.RegisterOnTimeToZero(() =>
+		    {
+		        DbtSaveDataManager_PlayerCoreData.I.Data.PlayerDailyPlayGameCount = 0;
+		        DbtSaveDataManager_PlayerCoreData.I.Data.PlayerDailyWonGameCount = 0;
+		        DbtSaveDataManager_PlayerCoreData.I.Data.seasonData.PlayerDailyGetSeasonPassCount = 0;
+		        DbtSaveDataManager_PlayerCoreData.I.Data.seasonData.PlayerDailyGetSeasonPassScore = 0;
+		        DbtSaveDataManager_PlayerCoreData.I.Data.DailyNoBetGoldEarned = 0;
+		        DbtSaveDataManager_PlayerCoreData.I.Save();
+		    });
+		    TimeManager.Instance.RegisterOnWeekPassed(() =>
+		    {
+		        DbtSaveDataManager_PlayerCoreData.I.Data.PlayerWeeklyPlayGameCount = 0;
+		        DbtSaveDataManager_PlayerCoreData.I.Data.PlayerWeeklyWonGameCount = 0;
+		        DbtSaveDataManager_PlayerCoreData.I.Save();
+		    });
+		    TimeManager.Instance.RegisterOnWeekPassed(() =>
+		    {
+		        Dictionary<string, bool> states = DbtSaveDataManager_PlayerShopData.I.Data.playerRuneStoneBuyState;
+		        foreach (string key in states.Keys.ToList())
+		            states[key] = false;
+		        DbtSaveDataManager_PlayerShopData.I.Save();
+		        EventManager.Instance.TriggerEvent("RefreshRuneStonePack", null);
+		    });
+		}
+private IEnumerator CheckNetworkState()
+		{
+		    while (this != null)
+		    {
+		        if (InitComplete && TimeManager.Instance.initComplete && DataManager.Instance.LoadDataCompleted)
+		        {
+		            yield return new WaitForSeconds(0.02f);
+		            if (!TutorialManager.Instance.IsStepComplete("1008"))
+		                continue;
+		            if (!TimeManager.Instance.IsNetworkConnected && !showNoInternetPanel)
+		            {
+		                if (UIManager.Instance.IsPanelShowing("Assets/_Res/Addressable/Prefabs/UI/Panels/MaskPanel.prefab", out UIPanel panel))
+		                    yield break;
+		                yield return UIManager.Instance.ShowPanel("Assets/_Res/Addressable/01FirstBundle/Prefabs/UI/Panels/NoInternetPanel.prefab", Array.Empty<object>());
+		                showNoInternetPanel = true;
+		                if (CoreGameManager.Gaming)
+		                    PauseGame();
+		            }
+		            else if (TimeManager.Instance.IsNetworkConnected && showNoInternetPanel)
+		            {
+		                yield return UIManager.Instance.HidePanel("Assets/_Res/Addressable/01FirstBundle/Prefabs/UI/Panels/NoInternetPanel.prefab");
+		                showNoInternetPanel = false;
+		                if (CoreGameManager.Gaming)
+		                    ResumeGame();
+		            }
+		        }
+		    }
+		}
+private void StartCoreGame(object obj)
+		{
+		    Func<bool, RewardConfig> rewardCallback = null;
+		    rewardCallback += win =>
+		    {
+		        RewardConfig config = null;
+		        if (TrainingGroundManager.IsInTrainingGround)
+		        {
+		            config = new RewardConfig(CurrencyTransactionSceneType.game_finish);
+		            int exp = GameConfigModule.GameConfigManager.Instance.GetConfigInt(win ? "NormalPVPWinExp" : "NormalPVPLoseExp");
+		            config.AddAssetDataList(new List<RewardConfigSingle> { new RewardConfigSingle("20007", exp.ToString(), null) });
+		        }
+		        if (TrainingGroundManager.IsInGuidedGame)
+		            TrainingGroundManager.Instance.OnTrainingGameComplete(win);
+		        if (config == null)
+		        {
+		            config = new RewardConfig(CurrencyTransactionSceneType.game_finish);
+		            List<RewardConfigSingle> assets;
+		            if (win)
+		            {
+		                string trophies = BattleGameManager.Instance.GameSuccessGetTrophyNumber();
+		                string gold = DataManager.Instance.GlobalInfo.arenaInfoDic[CoreGameManager.NowPlayEdArenaID].diamondReward;
+		                string keys = DataManager.Instance.GlobalInfo.arenaInfoDic[CoreGameManager.NowPlayEdArenaID].keyReward;
+		                int exp = GameConfigModule.GameConfigManager.Instance.GetConfigInt("NormalPVPWinExp");
+		                if (ABTestManager.Instance.NoBetIsBTest)
+		                {
+		                    gold = BattleGameManager.Instance.BetRewardNum;
+		                    ArenaManager.Instance.ApplyNoBetVictoryGold(StringTool.ToInt(gold));
+		                }
+		                else if (!StringTool.IsNullOrEmpty(CoreGameManager.NowPlayEdArenaID, true) && CoreGameManager.NowPlayEdArenaID != "1001")
+		                {
+		                    gold = BattleGameManager.Instance.BetRewardNum;
+		                }
+		                if (MonthlyPassManager.Instance.HadBuyMonthPass())
+		                {
+		                    float bonusGold = (float)StringTool.ToInt(gold) * 1.2f;
+		                    int scaledGold = float.IsNaN(bonusGold) ? 0 : bonusGold >= 2147483648f ? int.MaxValue
+		                        : bonusGold <= -2147483648f ? int.MinValue : (int)bonusGold;
+		                    gold = scaledGold.ToString();
+		                }
+		                assets = new List<RewardConfigSingle>
+		                {
+		                    new RewardConfigSingle("20005", gold, null),
+		                    new RewardConfigSingle("20006", keys, null),
+		                    new RewardConfigSingle("20007", exp.ToString(), null)
+		                };
+		                if (!ArenaManager.Instance.GetArenaIsCollectAllTrophy(CoreGameManager.NowPlayEdArenaID))
+		                {
+		                    assets.Add(new RewardConfigSingle("20004", trophies, null));
+		                    if (ABTestManager.Instance.NewArenaProcessIsBTest)
+		                    {
+		                        int currentTrophies = ArenaManager.Instance.GetArenaTrophyNumber(CoreGameManager.NowPlayEdArenaID);
+		                        int remaining = unchecked(StringTool.ToInt(DataManager.Instance.GlobalInfo.arenaInfoDic[CoreGameManager.NowPlayEdArenaID].completeTrophyRequire) - currentTrophies);
+		                        int wonTrophies = StringTool.ToInt(trophies);
+		                        if (wonTrophies > remaining)
+		                            UserResourcesManager.Instance.LoseResourceCount("20004", new System.Numerics.BigInteger(unchecked(wonTrophies - remaining)), false, CurrencyTransactionSceneType.none);
+		                    }
+		                    ArenaManager.Instance.ChangeArenaTrophy(CoreGameManager.NowPlayEdArenaID, StringTool.ToInt(trophies), false);
+		                }
+		                if (ABTestManager.Instance.SeasonIsBTest)
+		                {
+		                    int seasonExp = SeasonManager.Instance.CalculatePVPWinSeasonPassExpReward();
+		                    if (seasonExp > 0)
+		                        assets.Add(new RewardConfigSingle("20017", seasonExp.ToString(), null));
+		                }
+		            }
+		            else
+		            {
+		                string trophyPunish = DataManager.Instance.GlobalInfo.arenaInfoDic[CoreGameManager.NowPlayEdArenaID].trophyPunish;
+		                int exp = GameConfigModule.GameConfigManager.Instance.GetConfigInt("NormalPVPLoseExp");
+		                assets = new List<RewardConfigSingle> { new RewardConfigSingle("20007", exp.ToString(), null) };
+		                if (!ArenaManager.Instance.GetArenaIsCollectAllTrophy(CoreGameManager.NowPlayEdArenaID) && BattleGameManager.Instance.ElapseTime > 10f)
+		                {
+		                    string loss;
+		                    if (ABTestManager.Instance.NewArenaProcessIsBTest)
+		                    {
+		                        int currentTrophies = ArenaManager.Instance.GetArenaTrophyNumber(CoreGameManager.NowPlayEdArenaID);
+		                        if (currentTrophies > 0)
+		                        {
+		                            loss = Mathf.Min(StringTool.ToInt(trophyPunish), currentTrophies).ToString();
+		                            assets.Add(new RewardConfigSingle("20004", "-" + loss, null));
+		                            ArenaManager.Instance.ChangeArenaTrophy(CoreGameManager.NowPlayEdArenaID, unchecked(-StringTool.ToInt(trophyPunish)), false);
+		                        }
+		                    }
+		                    else
+		                    {
+		                        loss = trophyPunish;
+		                        assets.Add(new RewardConfigSingle("20004", "-" + loss, null));
+		                        ArenaManager.Instance.ChangeArenaTrophy(CoreGameManager.NowPlayEdArenaID, unchecked(-StringTool.ToInt(trophyPunish)), false);
+		                    }
+		                }
+		            }
+		            config.AddAssetDataList(assets);
+		            BattleGameManager.Instance.rewardConfig = config;
+		            BattleGameManager.Instance.tempConfig = config;
+		            ReportEventsManager.Instance.OnGameFinish(win, 0, GameType.PVP);
+		        }
+		        return config;
+		    };
+		    BattleContext context = new BattleContext(true, null, rewardCallback, null, null);
+		    context.GameType = GameType.PVP;
+		    CoreGameManager.Instance.StartGame(context);
+		}
+public void RegisterOnGameManagerInitComplete(Action action)
+		{
+		    if (InitComplete)
+		        action?.Invoke();
+		    else
+		        onGameManagerInitComplete += action;
+		}
+private void Update()
+		{
+		    if (InitComplete)
+		        updateController?.ToUpdate(Time.deltaTime);
+		}
+private void PauseGame()
+		{
+		    if (BattleGameManager.Instance != null)
+		        BattleGameManager.Instance.SetGamePaused(true);
+		    if (AIBehaviourManager.Instance != null)
+		        AIBehaviourManager.Instance.SetGamePaused(true);
+		}
+private void ResumeGame()
+		{
+		    if (BattleGameManager.Instance != null)
+		        BattleGameManager.Instance.SetGamePaused(false);
+		    if (AIBehaviourManager.Instance != null)
+		        AIBehaviourManager.Instance.SetGamePaused(false);
+		}
+private async void EnterMeta(object obj)
+		{
+		    if (TrainingGroundManager.IsInTrainingGround)
+		    {
+		        MetaGameManager.Instance.ShowMetaSwitchPanel(2);
+		        PanelPopHandleManager.Instance.PanelPopPlay();
+		    }
+		    else
+		    {
+		        switch (BattleGameManager.Instance.GameType)
+		        {
+		            case GameType.PVP:
+		                MetaGameManager.Instance.ShowMetaSwitchPanel(2);
+		                PanelPopHandleManager.Instance.PanelPopPlay();
+		                break;
+		            case GameType.PVE:
+		                MetaGameManager.Instance.ShowMetaSwitchPanel(3);
+		                break;
+		            case GameType.SeasonPVP:
+		                MetaGameManager.Instance.ShowMetaSwitchPanel(2);
+		                break;
+		            case GameType.SubGamePVP:
+		                MetaGameManager.Instance.ShowMetaSwitchPanel(2);
+		                PanelPopHandleManager.Instance.PanelPopPlay();
+		                if (SubGameChaosTrailsManager.Instance != null)
+		                    SubGameChaosTrailsManager.Instance.TryReturnToPanelAfterEnterMeta(obj as BattleResult);
+		                break;
+		        }
+		    }
+		}
+private void DanChangeUpdateInfo(object o)
+		{
+		    RankManager.Instance.UpdateRankInfo();
+		}
+private async void ShowCardProbabilityPanel(object o)
+		{
+		    await TestTasks.WaitForSeconds(0.05f);
+		    _ = UIManager.Instance.ShowPanel("Assets/_Res/Addressable/02CoreGameBundle/Prefabs/UI/Panels/HexDescribesPanel.prefab", Array.Empty<object>());
+		}
+public void ShowConfirmPanel(string titleStr, string contentStr, string buttonTextStr, bool canCancelPanel, Action<bool> onClick)
+		{
+		    _ = UIManager.Instance.ShowPanel("Assets/_Res/Addressable/Prefabs/UI/Panels/ConfirmPanel.prefab",
+		        new object[] { titleStr, contentStr, buttonTextStr, canCancelPanel, onClick });
+		}
+private void FetterSteerEnd(object o)
+		{
+		    if (ABTestManager.Instance.GameCenterIsBTest)
+		        GameCenterManager.Instance.AllowGameCenter().Forget();
+		}
+private void CloseLoadPanel(object o)
+		{
+		    closeLoadPanel = true;
+		    DBTSDK.SDKToolManager.Instance.ReportGameInteractive("");
+		    if (!_isFirstThroghGame)
+		        PacksTipManager.Instance.FirstPopPacks();
+		    DBT.StartupGift.StartupGiftSystem.CheckAndGrantGift();
+		}
+private void LoadEnd(object o)
+		{
+		    if (_isFirstThroghGame)
+		        EventManager.Instance.TriggerEvent("OnArenaUIBGItemStartBtnClicked", null);
+		}
+private void CardSteerEnd(object o) {}
+}}

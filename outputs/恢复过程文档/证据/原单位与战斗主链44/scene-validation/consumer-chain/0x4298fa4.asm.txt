@@ -1,0 +1,59 @@
+0x4298fa4: ffc303d1 sub      sp, sp, #0xf0
+0x4298fa8: fd7b09a9 stp      x29, x30, [sp, #0x90]
+0x4298fac: fc6f0aa9 stp      x28, x27, [sp, #0xa0]
+0x4298fb0: fa670ba9 stp      x26, x25, [sp, #0xb0]
+0x4298fb4: f85f0ca9 stp      x24, x23, [sp, #0xc0]
+0x4298fb8: f6570da9 stp      x22, x21, [sp, #0xd0]
+0x4298fbc: f44f0ea9 stp      x20, x19, [sp, #0xe0]
+0x4298fc0: 5d6b0290 adrp     x29, #0x9000000
+0x4298fc4: bb420290 adrp     x27, #0x8aec000
+0x4298fc8: a8434339 ldrb     w8, [x29, #0xd0]
+0x4298fcc: fcf340b9 ldr      w28, [sp, #0xf0]
+0x4298fd0: 7b8340f9 ldr      x27, [x27, #0x100] // Method$System.Runtime.CompilerServices.AsyncVoidMethodBuilder.Start<BarracksArchitectureBehaviour.<Init>d__28>()
+0x4298fd4: f303072a mov      w19, w7
+0x4298fd8: f40306aa mov      x20, x6
+0x4298fdc: f503052a mov      w21, w5
+0x4298fe0: f603042a mov      w22, w4
+0x4298fe4: fa03032a mov      w26, w3
+0x4298fe8: f70302aa mov      x23, x2
+0x4298fec: f80301aa mov      x24, x1
+0x4298ff0: f90300aa mov      x25, x0
+0x4298ff4: c8000037 tbnz     w8, #0, #0x429900c
+0x4298ff8: a0420290 adrp     x0, #0x8aec000
+0x4298ffc: 008040f9 ldr      x0, [x0, #0x100] // Method$System.Runtime.CompilerServices.AsyncVoidMethodBuilder.Start<BarracksArchitectureBehaviour.<Init>d__28>()
+0x4299000: a090e697 bl       #0x3c3d280
+0x4299004: 28008052 mov      w8, #1
+0x4299008: a8430339 strb     w8, [x29, #0xd0]
+0x429900c: 00e4006f movi     v0.2d, #0000000000000000
+0x4299010: e8030091 mov      x8, sp
+0x4299014: e0031faa mov      x0, xzr
+0x4299018: 5a030012 and      w26, w26, #1
+0x429901c: e08303ad stp      q0, q0, [sp, #0x70]
+0x4299020: e08302ad stp      q0, q0, [sp, #0x50]
+0x4299024: e08301ad stp      q0, q0, [sp, #0x30]
+0x4299028: e00b803d str      q0, [sp, #0x20]
+0x429902c: 045ccc94 bl       #0x75b003c // System.Runtime.CompilerServices.AsyncVoidMethodBuilder$$Create
+0x4299030: e00740ad ldp      q0, q1, [sp]
+0x4299034: 620340f9 ldr      x2, [x27]
+0x4299038: e8830091 add      x8, sp, #0x20
+0x429903c: 09008012 mov      w9, #-1
+0x4299040: 00017db2 orr      x0, x8, #8
+0x4299044: e1830091 add      x1, sp, #0x20
+0x4299048: e083823c stur     q0, [sp, #0x28]
+0x429904c: f9e304a9 stp      x25, x24, [sp, #0x48]
+0x4299050: f72f00f9 str      x23, [sp, #0x58]
+0x4299054: fa830139 strb     w26, [sp, #0x60]
+0x4299058: f6d70c29 stp      w22, w21, [sp, #0x64]
+0x429905c: f43b00f9 str      x20, [sp, #0x70]
+0x4299060: f3730f29 stp      w19, w28, [sp, #0x78]
+0x4299064: e183833c stur     q1, [sp, #0x38]
+0x4299068: e92300b9 str      w9, [sp, #0x20]
+0x429906c: 346c2194 bl       #0x4af413c // System.Runtime.CompilerServices.AsyncVoidMethodBuilder$$Start<BarracksArchitectureBehaviour.<Init>d__28>
+0x4299070: f44f4ea9 ldp      x20, x19, [sp, #0xe0]
+0x4299074: f6574da9 ldp      x22, x21, [sp, #0xd0]
+0x4299078: f85f4ca9 ldp      x24, x23, [sp, #0xc0]
+0x429907c: fa674ba9 ldp      x26, x25, [sp, #0xb0]
+0x4299080: fc6f4aa9 ldp      x28, x27, [sp, #0xa0]
+0x4299084: fd7b49a9 ldp      x29, x30, [sp, #0x90]
+0x4299088: ffc30391 add      sp, sp, #0xf0
+0x429908c: c0035fd6 ret      

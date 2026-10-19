@@ -1,0 +1,47 @@
+0x52a8758: STR             X30, [SP,#var_30]!
+0x52a875c: STP             X22, X21, [SP,#0x30+var_20]
+0x52a8760: STP             X20, X19, [SP,#0x30+var_10]
+0x52a8764: LDR             X8, [X4,#0x20]
+0x52a8768: MOV             X19, X4
+0x52a876c: MOV             X20, X3
+0x52a8770: MOV             X21, X2
+0x52a8774: LDR             X8, [X8,#0xC0]
+0x52a8778: MOV             X22, X1
+0x52a877c: LDR             X8, [X8,#0x48]
+0x52a8780: LDRB            W9, [X8,#0x135]
+0x52a8784: TBNZ            W9, #0, loc_52A8794
+0x52a8788: MOV             X0, X8
+0x52a878c: BL              unk_3C503A0
+0x52a8790: MOV             X8, X0
+0x52a8794: CBZ             X22, loc_52A87CC
+0x52a8798: LDR             X9, [X22]
+0x52a879c: CMP             X9, X8
+0x52a87a0: B.NE            loc_52A8808
+0x52a87a4: LDR             X8, [X19,#0x20]
+0x52a87a8: MOV             X0, X22
+0x52a87ac: MOV             X1, X21
+0x52a87b0: MOV             X2, X20
+0x52a87b4: LDR             X8, [X8,#0xC0]
+0x52a87b8: LDP             X20, X19, [SP,#0x30+var_10]
+0x52a87bc: LDP             X22, X21, [SP,#0x30+var_20]
+0x52a87c0: LDR             X3, [X8,#0x50]
+0x52a87c4: LDR             X30, [SP+0x30+var_30],#0x30
+0x52a87c8: B               GameFramework.Fsm.Fsm_object_$$ChangeState
+0x52a87cc: ADRP            X0, #off_8B0CF78@PAGE
+0x52a87d0: LDR             X0, [X0,#off_8B0CF78@PAGEOFF]; unk_8CE7B50
+0x52a87d4: BL              unk_3C3D294
+0x52a87d8: BL              unk_3C3D4C4
+0x52a87dc: MOV             X20, X0
+0x52a87e0: ADRP            X0, #off_8B0CF80@PAGE
+0x52a87e4: LDR             X0, [X0,#off_8B0CF80@PAGEOFF]; unk_8D600D0
+0x52a87e8: BL              unk_3C3D294
+0x52a87ec: MOV             X1, X0
+0x52a87f0: MOV             X0, X20
+0x52a87f4: MOV             X2, XZR
+0x52a87f8: BL              GameFramework.GameFrameworkException$$.ctor
+0x52a87fc: MOV             X0, X20
+0x52a8800: MOV             X1, X19
+0x52a8804: BL              unk_3C3D3A0
+0x52a8808: MOV             X0, X22
+0x52a880c: MOV             X1, X8
+0x52a8810: BL              unk_3C3D868

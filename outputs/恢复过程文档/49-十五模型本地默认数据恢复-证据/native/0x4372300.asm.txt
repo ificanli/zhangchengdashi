@@ -1,0 +1,24 @@
+0x4372300: STP             X30, X21, [SP,#var_20]!
+0x4372304: STP             X20, X19, [SP,#0x20+var_10]
+0x4372308: ADRP            X21, #byte_9000733@PAGE
+0x437230c: ADRP            X20, #off_8ACFCA0@PAGE
+0x4372310: LDRB            W8, [X21,#byte_9000733@PAGEOFF]
+0x4372314: LDR             X20, [X20,#off_8ACFCA0@PAGEOFF]; qword_8D53728
+0x4372318: MOV             X19, X0
+0x437231c: TBNZ            W8, #0, loc_4372334
+0x4372320: ADRP            X0, #off_8ACFCA0@PAGE
+0x4372324: LDR             X0, [X0,#off_8ACFCA0@PAGEOFF]; qword_8D53728 ; slot
+0x4372328: BL              il2cpp_codegen_initialize_runtime_metadata
+0x437232c: MOV             W8, #1
+0x4372330: STRB            W8, [X21,#byte_9000733@PAGEOFF]
+0x4372334: MOV             W8, #0x101
+0x4372338: MOV             W9, #1
+0x437233c: STRH            W8, [X19,#0x10]
+0x4372340: STRB            W9, [X19,#0x12]
+0x4372344: LDR             X8, [X20]
+0x4372348: MOV             X0, X19
+0x437234c: MOV             X1, XZR
+0x4372350: STR             X8, [X19,#0x20]
+0x4372354: LDP             X20, X19, [SP,#0x20+var_10]
+0x4372358: LDP             X30, X21, [SP+0x20+var_20],#0x20
+0x437235c: B               ServerBaseData$$.ctor

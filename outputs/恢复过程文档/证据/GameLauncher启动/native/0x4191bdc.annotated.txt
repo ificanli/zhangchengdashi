@@ -1,0 +1,22 @@
+void CoreModule_GameLauncher__ApplyThirtyFpsLightingSettings(void *self, void *asset, const MethodInfo *method)
+{
+  if ( (byte_8FFF6B2 & 1) == 0 )
+  {
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D2D1D8 /* Method$CoreModule.GameLauncher.TrySetPropertyOrField<bool>() */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D80620 /* m_AnyShadowsSupported */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D80690 /* m_MainLightShadowsSupported */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D80610 /* m_AdditionalLightShadowsSupported */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D806B8 /* m_SoftShadowsSupported */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D83520 /* supportsSoftShadows */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D83518 /* supportsMainLightShadows */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D83510 /* supportsAdditionalLightShadows */);
+    byte_8FFF6B2 = 1;
+  }
+  if ( asset == nullptr )
+    il2cpp_codegen_raise_null_reference_exception();
+  UnityEngine_Rendering_Universal_UniversalRenderPipelineAsset__set_shadowDistance(asset, 0, method, 0.0);
+  CoreModule_GameLauncher__TrySetPropertyOrField_bool_(self, asset, qword_8D83518 /* supportsMainLightShadows */, qword_8D80690 /* m_MainLightShadowsSupported */, 0, qword_8D2D1D8 /* Method$CoreModule.GameLauncher.TrySetPropertyOrField<bool>() */);
+  CoreModule_GameLauncher__TrySetPropertyOrField_bool_(self, asset, qword_8D83510 /* supportsAdditionalLightShadows */, qword_8D80610 /* m_AdditionalLightShadowsSupported */, 0, qword_8D2D1D8 /* Method$CoreModule.GameLauncher.TrySetPropertyOrField<bool>() */);
+  CoreModule_GameLauncher__TrySetPropertyOrField_bool_(self, asset, qword_8D83520 /* supportsSoftShadows */, qword_8D806B8 /* m_SoftShadowsSupported */, 0, qword_8D2D1D8 /* Method$CoreModule.GameLauncher.TrySetPropertyOrField<bool>() */);
+  CoreModule_GameLauncher__TrySetPropertyOrField_bool_(self, asset, qword_8D80620 /* m_AnyShadowsSupported */, qword_8D80620 /* m_AnyShadowsSupported */, 0, qword_8D2D1D8 /* Method$CoreModule.GameLauncher.TrySetPropertyOrField<bool>() */);
+}

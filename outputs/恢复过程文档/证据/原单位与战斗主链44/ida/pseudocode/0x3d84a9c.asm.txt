@@ -1,0 +1,10 @@
+0x3d84a9c: ADRP            X8, #dword_18375D4@PAGE
+0x3d84aa0: LDR             S1, [X0,#0xB8]
+0x3d84aa4: LDR             S2, [X8,#dword_18375D4@PAGEOFF]
+0x3d84aa8: ADRP            X8, #dword_1836DC0@PAGE
+0x3d84aac: LDR             S3, [X8,#dword_1836DC0@PAGEOFF]
+0x3d84ab0: FDIV            S4, S0, S1
+0x3d84ab4: FCMP            S1, S2
+0x3d84ab8: FCSEL           S0, S4, S0, HI
+0x3d84abc: FMUL            S0, S0, S3
+0x3d84ac0: RET

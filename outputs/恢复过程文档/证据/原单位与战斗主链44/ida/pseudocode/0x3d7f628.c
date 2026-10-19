@@ -1,0 +1,57 @@
+__int64 __fastcall sub_3D7F628(__int64 a1, unsigned int a2, char a3)
+{
+  __int64 result; // x0
+  float time; // s0
+  __int64 *v8; // x21
+  __int64 v9; // x8
+  __int64 v10; // x9
+  _DWORD *v11; // x10
+  __int64 v12; // x0
+
+  if ( (byte_8FFD487 & 1) == 0 )
+  {
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8CE8430);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&off_8CEB3E0);
+    byte_8FFD487 = 1;
+  }
+  if ( *((_DWORD *)off_8CEB3E0 + 56) == 0 )
+    il2cpp_codegen_runtime_class_init(off_8CEB3E0);
+  result = UnityEngine_Object__op_Equality(a1, 0, 0);
+  if ( (result & 1) == 0 )
+  {
+    if ( *(_QWORD *)(a1 + 320) != 0
+      || (result = GameModule_RoleBehaviour__ResolveAnimationBehaviour(a1), *(_QWORD *)(a1 + 320) = result, result != 0) )
+    {
+      if ( (a2 == 2 || *(_BYTE *)(a1 + 33) == 0) && ((a3 & 1) != 0 || *(_BYTE *)(a1 + 576) == 0) )
+      {
+        *(_BYTE *)(a1 + 576) = 0;
+        time = UnityEngine_Time__get_time(0);
+        v8 = *(__int64 **)(a1 + 320);
+        *(float *)(a1 + 572) = time;
+        if ( v8 == nullptr )
+          il2cpp_codegen_raise_null_reference_exception();
+        v9 = *v8;
+        v10 = *(unsigned __int16 *)(*v8 + 302);
+        if ( *(_WORD *)(*v8 + 302) != 0 )
+        {
+          v11 = (_DWORD *)(*(_QWORD *)(v9 + 176) + 8LL);
+          while ( *((_QWORD *)v11 - 1) != qword_8CE8430 )
+          {
+            --v10;
+            v11 += 4;
+            if ( v10 == 0 )
+              goto LABEL_18;
+          }
+          v12 = v9 + 16LL * (*v11 + 7) + 312;
+        }
+        else
+        {
+LABEL_18:
+          v12 = ((__int64 (__fastcall *)(__int64 *, __int64, __int64))unk_3C504A4)(v8, qword_8CE8430, 7);
+        }
+        return (*(__int64 (__fastcall **)(__int64 *, _QWORD, _QWORD))v12)(v8, a2, *(_QWORD *)(v12 + 8));
+      }
+    }
+  }
+  return result;
+}

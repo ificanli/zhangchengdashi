@@ -1,0 +1,53 @@
+0x3df5b60: STR             D10, [SP,#var_30]!
+0x3df5b64: STP             D9, D8, [SP,#0x30+var_28]
+0x3df5b68: STR             X30, [SP,#0x30+var_18]
+0x3df5b6c: STP             X20, X19, [SP,#0x30+var_10]
+0x3df5b70: ADRP            X20, #byte_8FFD7B4@PAGE
+0x3df5b74: LDRB            W8, [X20,#byte_8FFD7B4@PAGEOFF]
+0x3df5b78: MOV             V8.16B, V2.16B
+0x3df5b7c: MOV             V9.16B, V1.16B
+0x3df5b80: MOV             V10.16B, V0.16B
+0x3df5b84: MOV             X19, X0
+0x3df5b88: TBNZ            W8, #0, loc_3DF5BA0
+0x3df5b8c: ADRP            X0, #off_8ACF8D0@PAGE
+0x3df5b90: LDR             X0, [X0,#off_8ACF8D0@PAGEOFF]; off_8D0F7C8 ; slot
+0x3df5b94: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3df5b98: MOV             W8, #1
+0x3df5b9c: STRB            W8, [X20,#byte_8FFD7B4@PAGEOFF]
+0x3df5ba0: LDR             X0, [X19,#0x178]
+0x3df5ba4: CBZ             X0, loc_3DF5C30
+0x3df5ba8: ADRP            X9, #off_8ACF8D0@PAGE
+0x3df5bac: LDR             X9, [X9,#off_8ACF8D0@PAGEOFF]; off_8D0F7C8
+0x3df5bb0: LDR             W10, [X0,#0x1C]
+0x3df5bb4: LDR             X8, [X0,#0x10]
+0x3df5bb8: LDR             X9, [X9]
+0x3df5bbc: ADD             W10, W10, #1
+0x3df5bc0: STR             W10, [X0,#0x1C]
+0x3df5bc4: CBZ             X8, loc_3DF5C30
+0x3df5bc8: LDRSW           X10, [X0,#0x18]
+0x3df5bcc: LDR             W11, [X8,#0x18]
+0x3df5bd0: CMP             W10, W11
+0x3df5bd4: B.CS            loc_3DF5C04
+0x3df5bd8: MOV             W11, #0xC
+0x3df5bdc: ADD             W9, W10, #1
+0x3df5be0: MADD            X8, X10, X11, X8
+0x3df5be4: STR             W9, [X0,#0x18]
+0x3df5be8: STP             S10, S9, [X8,#0x20]
+0x3df5bec: STR             S8, [X8,#0x28]
+0x3df5bf0: LDP             X20, X19, [SP,#0x30+var_10]
+0x3df5bf4: LDR             X30, [SP,#0x30+var_18]
+0x3df5bf8: LDP             D9, D8, [SP,#0x30+var_28]
+0x3df5bfc: LDR             D10, [SP+0x30+var_30],#0x30
+0x3df5c00: RET
+0x3df5c04: LDR             X8, [X9,#0x20]
+0x3df5c08: MOV             V1.16B, V9.16B
+0x3df5c0c: MOV             V2.16B, V8.16B
+0x3df5c10: LDP             X20, X19, [SP,#0x30+var_10]
+0x3df5c14: LDR             X8, [X8,#0xC0]
+0x3df5c18: LDR             X30, [SP,#0x30+var_18]
+0x3df5c1c: LDP             D9, D8, [SP,#0x30+var_28]
+0x3df5c20: MOV             V0.16B, V10.16B
+0x3df5c24: LDR             X1, [X8,#0x70]
+0x3df5c28: LDR             D10, [SP+0x30+var_30],#0x30
+0x3df5c2c: B               System.Collections.Generic.List_Vector3_$$AddWithResize
+0x3df5c30: BL              il2cpp_codegen_raise_null_reference_exception

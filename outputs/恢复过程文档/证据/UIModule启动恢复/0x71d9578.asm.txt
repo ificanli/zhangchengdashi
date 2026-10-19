@@ -1,0 +1,74 @@
+0x71d9578: e80f1efc str      d8, [sp, #-0x20]!
+0x71d957c: fe0700f9 str      x30, [sp, #8]
+0x71d9580: f44f01a9 stp      x20, x19, [sp, #0x10]
+0x71d9584: 94f10090 adrp     x20, #0x9009000
+0x71d9588: 88aa5739 ldrb     w8, [x20, #0x5ea]
+0x71d958c: f30300aa mov      x19, x0
+0x71d9590: c8000037 tbnz     w8, #0, #0x71d95a8
+0x71d9594: e0c900f0 adrp     x0, #0x8b18000
+0x71d9598: 006044f9 ldr      x0, [x0, #0x8c0] // GameFramework.UIModule_TypeInfo
+0x71d959c: 398f2997 bl       #0x3c3d280
+0x71d95a0: 28008052 mov      w8, #1
+0x71d95a4: 88aa1739 strb     w8, [x20, #0x5ea]
+0x71d95a8: 681240b9 ldr      w8, [x19, #0x10]
+0x71d95ac: e0031f2a mov      w0, wzr
+0x71d95b0: 1f050071 cmp      w8, #1
+0x71d95b4: 60030054 b.eq     #0x71d9620
+0x71d95b8: a8060035 cbnz     w8, #0x71d968c
+0x71d95bc: 08008012 mov      w8, #-1
+0x71d95c0: 681200b9 str      w8, [x19, #0x10]
+0x71d95c4: f4c900f0 adrp     x20, #0x8b18000
+0x71d95c8: 946244f9 ldr      x20, [x20, #0x8c0] // GameFramework.UIModule_TypeInfo
+0x71d95cc: 800240f9 ldr      x0, [x20]
+0x71d95d0: 08e040b9 ldr      w8, [x0, #0xe0]
+0x71d95d4: 68000035 cbnz     w8, #0x71d95e0
+0x71d95d8: 768f2997 bl       #0x3c3d3b0
+0x71d95dc: 800240f9 ldr      x0, [x20]
+0x71d95e0: 682240bd ldr      s8, [x19, #0x20]
+0x71d95e4: 0821201e fcmp     s8, #0.0
+0x71d95e8: 0c030054 b.gt     #0x71d9648
+0x71d95ec: 692640b9 ldr      w9, [x19, #0x24]
+0x71d95f0: 085c40f9 ldr      x8, [x0, #0xb8]
+0x71d95f4: 3f110071 cmp      w9, #4
+0x71d95f8: 80010054 b.eq     #0x71d9628
+0x71d95fc: 3f090071 cmp      w9, #2
+0x71d9600: 21020054 b.ne     #0x71d9644
+0x71d9604: 09e040b9 ldr      w9, [x0, #0xe0]
+0x71d9608: 89000035 cbnz     w9, #0x71d9618
+0x71d960c: 698f2997 bl       #0x3c3d3b0
+0x71d9610: 880240f9 ldr      x8, [x20]
+0x71d9614: 085d40f9 ldr      x8, [x8, #0xb8]
+0x71d9618: 080540bd ldr      s8, [x8, #4]
+0x71d961c: 0b000014 b        #0x71d9648
+0x71d9620: 08008012 mov      w8, #-1
+0x71d9624: 19000014 b        #0x71d9688
+0x71d9628: 09e040b9 ldr      w9, [x0, #0xe0]
+0x71d962c: 89000035 cbnz     w9, #0x71d963c
+0x71d9630: 608f2997 bl       #0x3c3d3b0
+0x71d9634: 880240f9 ldr      x8, [x20]
+0x71d9638: 085d40f9 ldr      x8, [x8, #0xb8]
+0x71d963c: 080940bd ldr      s8, [x8, #8]
+0x71d9640: 02000014 b        #0x71d9648
+0x71d9644: 080140bd ldr      s8, [x8]
+0x71d9648: e0031faa mov      x0, xzr
+0x71d964c: 2ab9fa97 bl       #0x7087af4 // UpdateManager$$get_Instance
+0x71d9650: 681640f9 ldr      x8, [x19, #0x28]
+0x71d9654: 612640b9 ldr      w1, [x19, #0x24]
+0x71d9658: f40300aa mov      x20, x0
+0x71d965c: 001da84e mov      v0.16b, v8.16b
+0x71d9660: e00308aa mov      x0, x8
+0x71d9664: 0f000094 bl       #0x71d96a0 // GameFramework.UIUtils$$ObjectAnim
+0x71d9668: b40100b4 cbz      x20, #0x71d969c
+0x71d966c: e10300aa mov      x1, x0
+0x71d9670: e00314aa mov      x0, x20
+0x71d9674: e2031faa mov      x2, xzr
+0x71d9678: d4514494 bl       #0x82eddc8 // UnityEngine.MonoBehaviour$$StartCoroutine
+0x71d967c: 600e00f9 str      x0, [x19, #0x18]
+0x71d9680: 28008052 mov      w8, #1
+0x71d9684: 20008052 mov      w0, #1
+0x71d9688: 681200b9 str      w8, [x19, #0x10]
+0x71d968c: f44f41a9 ldp      x20, x19, [sp, #0x10]
+0x71d9690: fe0740f9 ldr      x30, [sp, #8]
+0x71d9694: e80742fc ldr      d8, [sp], #0x20
+0x71d9698: c0035fd6 ret      
+0x71d969c: 8c8f2997 bl       #0x3c3d4cc

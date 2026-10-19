@@ -1,0 +1,193 @@
+0x713c474: fe0f1df8 str      x30, [sp, #-0x30]!
+0x713c478: f65701a9 stp      x22, x21, [sp, #0x10]
+0x713c47c: f44f02a9 stp      x20, x19, [sp, #0x20]
+0x713c480: 74f60090 adrp     x20, #0x9008000
+0x713c484: 88427d39 ldrb     w8, [x20, #0xf50]
+0x713c488: f30300aa mov      x19, x0
+0x713c48c: 08030037 tbnz     w8, #0, #0x713c4ec
+0x713c490: 80cc00b0 adrp     x0, #0x8acd000
+0x713c494: 00e042f9 ldr      x0, [x0, #0x5c0] // GameFramework.AppSetting_TypeInfo
+0x713c498: 7a032c97 bl       #0x3c3d280
+0x713c49c: a0ce00b0 adrp     x0, #0x8b11000
+0x713c4a0: 00f844f9 ldr      x0, [x0, #0x9f0] // AssetBundles.AssetBundleManager_TypeInfo
+0x713c4a4: 77032c97 bl       #0x3c3d280
+0x713c4a8: 80cc00b0 adrp     x0, #0x8acd000
+0x713c4ac: 003044f9 ldr      x0, [x0, #0x860] // GameFramework.CLog_TypeInfo
+0x713c4b0: 74032c97 bl       #0x3c3d280
+0x713c4b4: 80cc00b0 adrp     x0, #0x8acd000
+0x713c4b8: 006045f9 ldr      x0, [x0, #0xac0] // int_TypeInfo
+0x713c4bc: 71032c97 bl       #0x3c3d280
+0x713c4c0: 80cc00b0 adrp     x0, #0x8acd000
+0x713c4c4: 002c44f9 ldr      x0, [x0, #0x858] // object[]_TypeInfo
+0x713c4c8: 6e032c97 bl       #0x3c3d280
+0x713c4cc: c0ce00d0 adrp     x0, #0x8b16000
+0x713c4d0: 00a041f9 ldr      x0, [x0, #0x340] // AssetbundleModule初始化完成
+0x713c4d4: 6b032c97 bl       #0x3c3d280
+0x713c4d8: c0ce00d0 adrp     x0, #0x8b16000
+0x713c4dc: 00a441f9 ldr      x0, [x0, #0x348] // 的Manifest文件加载失败
+0x713c4e0: 68032c97 bl       #0x3c3d280
+0x713c4e4: 28008052 mov      w8, #1
+0x713c4e8: 88423d39 strb     w8, [x20, #0xf50]
+0x713c4ec: 681240b9 ldr      w8, [x19, #0x10]
+0x713c4f0: 1f0d0071 cmp      w8, #3
+0x713c4f4: 480d0054 b.hi     #0x713c69c
+0x713c4f8: 751240f9 ldr      x21, [x19, #0x20]
+0x713c4fc: 493afdf0 adrp     x9, #0x1887000
+0x713c500: 29e52a91 add      x9, x9, #0xab9
+0x713c504: 8a000010 adr      x10, #0x713c514
+0x713c508: 2b696838 ldrb     w11, [x9, x8]
+0x713c50c: 4a090b8b add      x10, x10, x11, lsl #2
+0x713c510: 40011fd6 br       x10
+0x713c514: 08008012 mov      w8, #-1
+0x713c518: 681200b9 str      w8, [x19, #0x10]
+0x713c51c: 96cc00b0 adrp     x22, #0x8acd000
+0x713c520: d6e242f9 ldr      x22, [x22, #0x5c0] // GameFramework.AppSetting_TypeInfo
+0x713c524: c00240f9 ldr      x0, [x22]
+0x713c528: 08e040b9 ldr      w8, [x0, #0xe0]
+0x713c52c: 48000035 cbnz     w8, #0x713c534
+0x713c530: a0032c97 bl       #0x3c3d3b0
+0x713c534: e0031faa mov      x0, xzr
+0x713c538: 9c8eff97 bl       #0x711ffa8 // GameFramework.AppSetting$$get_MineGameName
+0x713c53c: a8ce00b0 adrp     x8, #0x8b11000
+0x713c540: 08f944f9 ldr      x8, [x8, #0x9f0] // AssetBundles.AssetBundleManager_TypeInfo
+0x713c544: f40300aa mov      x20, x0
+0x713c548: 080140f9 ldr      x8, [x8]
+0x713c54c: 09e140b9 ldr      w9, [x8, #0xe0]
+0x713c550: 69000035 cbnz     w9, #0x713c55c
+0x713c554: e00308aa mov      x0, x8
+0x713c558: 96032c97 bl       #0x3c3d3b0
+0x713c55c: e00314aa mov      x0, x20
+0x713c560: e1031faa mov      x1, xzr
+0x713c564: 139d0894 bl       #0x73639b0 // AssetBundles.AssetBundleManager$$LoadManifest
+0x713c568: 600a00b4 cbz      x0, #0x713c6b4
+0x713c56c: f40300aa mov      x20, x0
+0x713c570: e0031faa mov      x0, xzr
+0x713c574: 602dfd97 bl       #0x7087af4 // UpdateManager$$get_Instance
+0x713c578: 600f00b4 cbz      x0, #0x713c764
+0x713c57c: e10314aa mov      x1, x20
+0x713c580: e2031faa mov      x2, xzr
+0x713c584: 11c64694 bl       #0x82eddc8 // UnityEngine.MonoBehaviour$$StartCoroutine
+0x713c588: 34008052 mov      w20, #1
+0x713c58c: 600e00f9 str      x0, [x19, #0x18]
+0x713c590: 741200b9 str      w20, [x19, #0x10]
+0x713c594: 43000014 b        #0x713c6a0
+0x713c598: 08008012 mov      w8, #-1
+0x713c59c: 681200b9 str      w8, [x19, #0x10]
+0x713c5a0: 350e00b4 cbz      x21, #0x713c764
+0x713c5a4: 34008052 mov      w20, #1
+0x713c5a8: b4420039 strb     w20, [x21, #0x10]
+0x713c5ac: 88cc00b0 adrp     x8, #0x8acd000
+0x713c5b0: 086145f9 ldr      x8, [x8, #0xac0] // int_TypeInfo
+0x713c5b4: e1330091 add      x1, sp, #0xc
+0x713c5b8: ff0f00b9 str      wzr, [sp, #0xc]
+0x713c5bc: 000140f9 ldr      x0, [x8]
+0x713c5c0: 7e032c97 bl       #0x3c3d3b8
+0x713c5c4: 48008052 mov      w8, #2
+0x713c5c8: 600e00f9 str      x0, [x19, #0x18]
+0x713c5cc: 681200b9 str      w8, [x19, #0x10]
+0x713c5d0: 34000014 b        #0x713c6a0
+0x713c5d4: 08008012 mov      w8, #-1
+0x713c5d8: 681200b9 str      w8, [x19, #0x10]
+0x713c5dc: 88cc00b0 adrp     x8, #0x8acd000
+0x713c5e0: 086145f9 ldr      x8, [x8, #0xac0] // int_TypeInfo
+0x713c5e4: e1230091 add      x1, sp, #8
+0x713c5e8: ff0b00b9 str      wzr, [sp, #8]
+0x713c5ec: 000140f9 ldr      x0, [x8]
+0x713c5f0: 72032c97 bl       #0x3c3d3b8
+0x713c5f4: 68008052 mov      w8, #3
+0x713c5f8: 600e00f9 str      x0, [x19, #0x18]
+0x713c5fc: 681200b9 str      w8, [x19, #0x10]
+0x713c600: 34008052 mov      w20, #1
+0x713c604: 27000014 b        #0x713c6a0
+0x713c608: 08008012 mov      w8, #-1
+0x713c60c: 681200b9 str      w8, [x19, #0x10]
+0x713c610: 88cc00b0 adrp     x8, #0x8acd000
+0x713c614: 082d44f9 ldr      x8, [x8, #0x858] // object[]_TypeInfo
+0x713c618: 21008052 mov      w1, #1
+0x713c61c: 000140f9 ldr      x0, [x8]
+0x713c620: 40032c97 bl       #0x3c3d320
+0x713c624: 000a00b4 cbz      x0, #0x713c764
+0x713c628: d4ce00d0 adrp     x20, #0x8b16000
+0x713c62c: 94a241f9 ldr      x20, [x20, #0x340] // AssetbundleModule初始化完成
+0x713c630: f30300aa mov      x19, x0
+0x713c634: 800240f9 ldr      x0, [x20]
+0x713c638: a00000b4 cbz      x0, #0x713c64c
+0x713c63c: 680240f9 ldr      x8, [x19]
+0x713c640: 012140f9 ldr      x1, [x8, #0x40]
+0x713c644: 5c032c97 bl       #0x3c3d3b4
+0x713c648: 200900b4 cbz      x0, #0x713c76c
+0x713c64c: 681a40b9 ldr      w8, [x19, #0x18]
+0x713c650: c8080034 cbz      w8, #0x713c768
+0x713c654: 880240f9 ldr      x8, [x20]
+0x713c658: 681200f9 str      x8, [x19, #0x20]
+0x713c65c: 88cc00b0 adrp     x8, #0x8acd000
+0x713c660: 083144f9 ldr      x8, [x8, #0x860] // GameFramework.CLog_TypeInfo
+0x713c664: 000140f9 ldr      x0, [x8]
+0x713c668: 08e040b9 ldr      w8, [x0, #0xe0]
+0x713c66c: 48000035 cbnz     w8, #0x713c674
+0x713c670: 50032c97 bl       #0x3c3d3b0
+0x713c674: e00313aa mov      x0, x19
+0x713c678: e1031faa mov      x1, xzr
+0x713c67c: fd0c0394 bl       #0x71ffa70 // GameFramework.CLog$$R½¯ue
+0x713c680: 350700b4 cbz      x21, #0x713c764
+0x713c684: a80e40f9 ldr      x8, [x21, #0x18]
+0x713c688: a80000b4 cbz      x8, #0x713c69c
+0x713c68c: 090d40f9 ldr      x9, [x8, #0x18]
+0x713c690: 002140f9 ldr      x0, [x8, #0x40]
+0x713c694: 011540f9 ldr      x1, [x8, #0x28]
+0x713c698: 20013fd6 blr      x9
+0x713c69c: f4031f2a mov      w20, wzr
+0x713c6a0: e003142a mov      w0, w20
+0x713c6a4: f44f42a9 ldp      x20, x19, [sp, #0x20]
+0x713c6a8: f65741a9 ldp      x22, x21, [sp, #0x10]
+0x713c6ac: fe0743f8 ldr      x30, [sp], #0x30
+0x713c6b0: c0035fd6 ret      
+0x713c6b4: 88cc00b0 adrp     x8, #0x8acd000
+0x713c6b8: 082d44f9 ldr      x8, [x8, #0x858] // object[]_TypeInfo
+0x713c6bc: 21008052 mov      w1, #1
+0x713c6c0: 000140f9 ldr      x0, [x8]
+0x713c6c4: 17032c97 bl       #0x3c3d320
+0x713c6c8: c80240f9 ldr      x8, [x22]
+0x713c6cc: f30300aa mov      x19, x0
+0x713c6d0: 09e140b9 ldr      w9, [x8, #0xe0]
+0x713c6d4: 69000035 cbnz     w9, #0x713c6e0
+0x713c6d8: e00308aa mov      x0, x8
+0x713c6dc: 35032c97 bl       #0x3c3d3b0
+0x713c6e0: e0031faa mov      x0, xzr
+0x713c6e4: 318eff97 bl       #0x711ffa8 // GameFramework.AppSetting$$get_MineGameName
+0x713c6e8: c8ce00d0 adrp     x8, #0x8b16000
+0x713c6ec: 08a541f9 ldr      x8, [x8, #0x348] // 的Manifest文件加载失败
+0x713c6f0: e2031faa mov      x2, xzr
+0x713c6f4: 010140f9 ldr      x1, [x8]
+0x713c6f8: 2b080f94 bl       #0x74fe7a4 // System.String$$Concat
+0x713c6fc: 530300b4 cbz      x19, #0x713c764
+0x713c700: f40300aa mov      x20, x0
+0x713c704: c00000b4 cbz      x0, #0x713c71c
+0x713c708: 680240f9 ldr      x8, [x19]
+0x713c70c: e00314aa mov      x0, x20
+0x713c710: 012140f9 ldr      x1, [x8, #0x40]
+0x713c714: 28032c97 bl       #0x3c3d3b4
+0x713c718: a00200b4 cbz      x0, #0x713c76c
+0x713c71c: 681a40b9 ldr      w8, [x19, #0x18]
+0x713c720: 48020034 cbz      w8, #0x713c768
+0x713c724: 741200f9 str      x20, [x19, #0x20]
+0x713c728: 88cc00b0 adrp     x8, #0x8acd000
+0x713c72c: 083144f9 ldr      x8, [x8, #0x860] // GameFramework.CLog_TypeInfo
+0x713c730: 000140f9 ldr      x0, [x8]
+0x713c734: 08e040b9 ldr      w8, [x0, #0xe0]
+0x713c738: 48000035 cbnz     w8, #0x713c740
+0x713c73c: 1d032c97 bl       #0x3c3d3b0
+0x713c740: e00313aa mov      x0, x19
+0x713c744: e1031faa mov      x1, xzr
+0x713c748: ca0c0394 bl       #0x71ffa70 // GameFramework.CLog$$R½¯ue
+0x713c74c: d50000b4 cbz      x21, #0x713c764
+0x713c750: a80e40f9 ldr      x8, [x21, #0x18]
+0x713c754: 29008052 mov      w9, #1
+0x713c758: a9420039 strb     w9, [x21, #0x10]
+0x713c75c: 88f9ffb5 cbnz     x8, #0x713c68c
+0x713c760: cfffff17 b        #0x713c69c
+0x713c764: 5a032c97 bl       #0x3c3d4cc
+0x713c768: 5b032c97 bl       #0x3c3d4d4
+0x713c76c: 61032c97 bl       #0x3c3d4f0
+0x713c770: e1031faa mov      x1, xzr
+0x713c774: 0b032c97 bl       #0x3c3d3a0

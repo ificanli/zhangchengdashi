@@ -1,0 +1,999 @@
+{
+  "caseCount": 16,
+  "codeStart": "0x4b8bf38",
+  "codeEnd": "0x4b8c16c",
+  "codeSha256": "ed7c79941946c4c06f264bd4f87b70fb28a9fea1ab89cc7d82237d4e72487cf4",
+  "scope": "Original helper instructions; only parser, List/Dictionary, virtual UniqueID, allocation/format/log are boundary hooks. No C# candidate executes.",
+  "cases": [
+    {
+      "name": "nullList_nullSource",
+      "input": {
+        "name": "nullList_nullSource",
+        "nullList": true,
+        "nullSource": true,
+        "expected": {
+          "dictionary": {},
+          "uidCallCounts": {},
+          "error": null
+        }
+      },
+      "dictionary": {},
+      "uidCallCounts": {},
+      "duplicateLogKeys": [],
+      "error": null,
+      "calls": [
+        {
+          "call": "parse"
+        }
+      ]
+    },
+    {
+      "name": "emptyList_nullSource",
+      "input": {
+        "name": "emptyList_nullSource",
+        "rows": [],
+        "nullSource": true,
+        "expected": {
+          "dictionary": {},
+          "uidCallCounts": {},
+          "error": null
+        }
+      },
+      "dictionary": {},
+      "uidCallCounts": {},
+      "duplicateLogKeys": [],
+      "error": null,
+      "calls": [
+        {
+          "call": "parse"
+        }
+      ]
+    },
+    {
+      "name": "single",
+      "input": {
+        "name": "single",
+        "rows": [
+          1
+        ],
+        "expected": {
+          "dictionary": {
+            "1": "row0"
+          },
+          "uidCallCounts": {
+            "0": 2
+          },
+          "error": null
+        }
+      },
+      "dictionary": {
+        "1": "row0"
+      },
+      "uidCallCounts": {
+        "0": 2
+      },
+      "duplicateLogKeys": [],
+      "error": null,
+      "calls": [
+        {
+          "call": "parse"
+        },
+        {
+          "call": "get_Item",
+          "index": 0
+        },
+        {
+          "call": "UniqueID",
+          "index": 0,
+          "time": 1
+        },
+        {
+          "call": "ContainsKey",
+          "key": 1
+        },
+        {
+          "call": "get_Item",
+          "index": 0
+        },
+        {
+          "call": "UniqueID",
+          "index": 0,
+          "time": 2
+        },
+        {
+          "call": "get_Item",
+          "index": 0
+        },
+        {
+          "call": "Add",
+          "key": 1,
+          "row": 0
+        }
+      ]
+    },
+    {
+      "name": "threeUnique",
+      "input": {
+        "name": "threeUnique",
+        "rows": [
+          1,
+          2,
+          3
+        ],
+        "expected": {
+          "dictionary": {
+            "1": "row0",
+            "2": "row1",
+            "3": "row2"
+          },
+          "uidCallCounts": {
+            "0": 2,
+            "1": 2,
+            "2": 2
+          },
+          "error": null
+        }
+      },
+      "dictionary": {
+        "1": "row0",
+        "2": "row1",
+        "3": "row2"
+      },
+      "uidCallCounts": {
+        "0": 2,
+        "1": 2,
+        "2": 2
+      },
+      "duplicateLogKeys": [],
+      "error": null,
+      "calls": [
+        {
+          "call": "parse"
+        },
+        {
+          "call": "get_Item",
+          "index": 0
+        },
+        {
+          "call": "UniqueID",
+          "index": 0,
+          "time": 1
+        },
+        {
+          "call": "ContainsKey",
+          "key": 1
+        },
+        {
+          "call": "get_Item",
+          "index": 0
+        },
+        {
+          "call": "UniqueID",
+          "index": 0,
+          "time": 2
+        },
+        {
+          "call": "get_Item",
+          "index": 0
+        },
+        {
+          "call": "Add",
+          "key": 1,
+          "row": 0
+        },
+        {
+          "call": "get_Item",
+          "index": 1
+        },
+        {
+          "call": "UniqueID",
+          "index": 1,
+          "time": 1
+        },
+        {
+          "call": "ContainsKey",
+          "key": 2
+        },
+        {
+          "call": "get_Item",
+          "index": 1
+        },
+        {
+          "call": "UniqueID",
+          "index": 1,
+          "time": 2
+        },
+        {
+          "call": "get_Item",
+          "index": 1
+        },
+        {
+          "call": "Add",
+          "key": 2,
+          "row": 1
+        },
+        {
+          "call": "get_Item",
+          "index": 2
+        },
+        {
+          "call": "UniqueID",
+          "index": 2,
+          "time": 1
+        },
+        {
+          "call": "ContainsKey",
+          "key": 3
+        },
+        {
+          "call": "get_Item",
+          "index": 2
+        },
+        {
+          "call": "UniqueID",
+          "index": 2,
+          "time": 2
+        },
+        {
+          "call": "get_Item",
+          "index": 2
+        },
+        {
+          "call": "Add",
+          "key": 3,
+          "row": 2
+        }
+      ]
+    },
+    {
+      "name": "duplicateRetainsFirst",
+      "input": {
+        "name": "duplicateRetainsFirst",
+        "rows": [
+          1,
+          1
+        ],
+        "expected": {
+          "dictionary": {
+            "1": "row0"
+          },
+          "uidCallCounts": {
+            "0": 2,
+            "1": 2
+          },
+          "duplicateLogKeys": [
+            1
+          ],
+          "error": null
+        }
+      },
+      "dictionary": {
+        "1": "row0"
+      },
+      "uidCallCounts": {
+        "0": 2,
+        "1": 2
+      },
+      "duplicateLogKeys": [
+        1
+      ],
+      "error": null,
+      "calls": [
+        {
+          "call": "parse"
+        },
+        {
+          "call": "get_Item",
+          "index": 0
+        },
+        {
+          "call": "UniqueID",
+          "index": 0,
+          "time": 1
+        },
+        {
+          "call": "ContainsKey",
+          "key": 1
+        },
+        {
+          "call": "get_Item",
+          "index": 0
+        },
+        {
+          "call": "UniqueID",
+          "index": 0,
+          "time": 2
+        },
+        {
+          "call": "get_Item",
+          "index": 0
+        },
+        {
+          "call": "Add",
+          "key": 1,
+          "row": 0
+        },
+        {
+          "call": "get_Item",
+          "index": 1
+        },
+        {
+          "call": "UniqueID",
+          "index": 1,
+          "time": 1
+        },
+        {
+          "call": "ContainsKey",
+          "key": 1
+        },
+        {
+          "call": "get_Item",
+          "index": 1
+        },
+        {
+          "call": "UniqueID",
+          "index": 1,
+          "time": 2
+        },
+        {
+          "call": "FormatDuplicate",
+          "key": 1
+        },
+        {
+          "call": "Error"
+        }
+      ]
+    },
+    {
+      "name": "existingRetained",
+      "input": {
+        "name": "existingRetained",
+        "rows": [
+          1
+        ],
+        "existing": {
+          "1": "existing"
+        },
+        "expected": {
+          "dictionary": {
+            "1": "existing"
+          },
+          "uidCallCounts": {
+            "0": 2
+          },
+          "duplicateLogKeys": [
+            1
+          ],
+          "error": null
+        }
+      },
+      "dictionary": {
+        "1": "existing"
+      },
+      "uidCallCounts": {
+        "0": 2
+      },
+      "duplicateLogKeys": [
+        1
+      ],
+      "error": null,
+      "calls": [
+        {
+          "call": "parse"
+        },
+        {
+          "call": "get_Item",
+          "index": 0
+        },
+        {
+          "call": "UniqueID",
+          "index": 0,
+          "time": 1
+        },
+        {
+          "call": "ContainsKey",
+          "key": 1
+        },
+        {
+          "call": "get_Item",
+          "index": 0
+        },
+        {
+          "call": "UniqueID",
+          "index": 0,
+          "time": 2
+        },
+        {
+          "call": "FormatDuplicate",
+          "key": 1
+        },
+        {
+          "call": "Error"
+        }
+      ]
+    },
+    {
+      "name": "nullSourceAfterFirstUID",
+      "input": {
+        "name": "nullSourceAfterFirstUID",
+        "rows": [
+          1
+        ],
+        "nullSource": true,
+        "expected": {
+          "dictionary": {},
+          "uidCallCounts": {
+            "0": 1
+          },
+          "error": "NullReferenceException"
+        }
+      },
+      "dictionary": {},
+      "uidCallCounts": {
+        "0": 1
+      },
+      "duplicateLogKeys": [],
+      "error": "NullReferenceException",
+      "calls": [
+        {
+          "call": "parse"
+        },
+        {
+          "call": "get_Item",
+          "index": 0
+        },
+        {
+          "call": "UniqueID",
+          "index": 0,
+          "time": 1
+        }
+      ]
+    },
+    {
+      "name": "nullFirstRow",
+      "input": {
+        "name": "nullFirstRow",
+        "rows": [
+          "null_row",
+          1
+        ],
+        "expected": {
+          "dictionary": {},
+          "uidCallCounts": {},
+          "error": "NullReferenceException"
+        }
+      },
+      "dictionary": {},
+      "uidCallCounts": {},
+      "duplicateLogKeys": [],
+      "error": "NullReferenceException",
+      "calls": [
+        {
+          "call": "parse"
+        },
+        {
+          "call": "get_Item",
+          "index": 0
+        }
+      ]
+    },
+    {
+      "name": "nullSecondRowPreservesPrefix",
+      "input": {
+        "name": "nullSecondRowPreservesPrefix",
+        "rows": [
+          1,
+          "null_row",
+          3
+        ],
+        "expected": {
+          "dictionary": {
+            "1": "row0"
+          },
+          "uidCallCounts": {
+            "0": 2
+          },
+          "error": "NullReferenceException"
+        }
+      },
+      "dictionary": {
+        "1": "row0"
+      },
+      "uidCallCounts": {
+        "0": 2
+      },
+      "duplicateLogKeys": [],
+      "error": "NullReferenceException",
+      "calls": [
+        {
+          "call": "parse"
+        },
+        {
+          "call": "get_Item",
+          "index": 0
+        },
+        {
+          "call": "UniqueID",
+          "index": 0,
+          "time": 1
+        },
+        {
+          "call": "ContainsKey",
+          "key": 1
+        },
+        {
+          "call": "get_Item",
+          "index": 0
+        },
+        {
+          "call": "UniqueID",
+          "index": 0,
+          "time": 2
+        },
+        {
+          "call": "get_Item",
+          "index": 0
+        },
+        {
+          "call": "Add",
+          "key": 1,
+          "row": 0
+        },
+        {
+          "call": "get_Item",
+          "index": 1
+        }
+      ]
+    },
+    {
+      "name": "UIDThrowsFirst",
+      "input": {
+        "name": "UIDThrowsFirst",
+        "rows": [
+          1,
+          2
+        ],
+        "uidFail": [
+          0,
+          1
+        ],
+        "expected": {
+          "dictionary": {},
+          "uidCallCounts": {
+            "0": 1
+          },
+          "error": "UniqueIDException"
+        }
+      },
+      "dictionary": {},
+      "uidCallCounts": {
+        "0": 1
+      },
+      "duplicateLogKeys": [],
+      "error": "UniqueIDException",
+      "calls": [
+        {
+          "call": "parse"
+        },
+        {
+          "call": "get_Item",
+          "index": 0
+        },
+        {
+          "call": "UniqueID",
+          "index": 0,
+          "time": 1
+        }
+      ]
+    },
+    {
+      "name": "UIDThrowsSecond",
+      "input": {
+        "name": "UIDThrowsSecond",
+        "rows": [
+          1,
+          2
+        ],
+        "uidFail": [
+          0,
+          2
+        ],
+        "expected": {
+          "dictionary": {},
+          "uidCallCounts": {
+            "0": 2
+          },
+          "error": "UniqueIDException"
+        }
+      },
+      "dictionary": {},
+      "uidCallCounts": {
+        "0": 2
+      },
+      "duplicateLogKeys": [],
+      "error": "UniqueIDException",
+      "calls": [
+        {
+          "call": "parse"
+        },
+        {
+          "call": "get_Item",
+          "index": 0
+        },
+        {
+          "call": "UniqueID",
+          "index": 0,
+          "time": 1
+        },
+        {
+          "call": "ContainsKey",
+          "key": 1
+        },
+        {
+          "call": "get_Item",
+          "index": 0
+        },
+        {
+          "call": "UniqueID",
+          "index": 0,
+          "time": 2
+        }
+      ]
+    },
+    {
+      "name": "ContainsThrowsPreservesPrefix",
+      "input": {
+        "name": "ContainsThrowsPreservesPrefix",
+        "rows": [
+          1,
+          2,
+          3
+        ],
+        "containsFail": 2,
+        "expected": {
+          "dictionary": {
+            "1": "row0"
+          },
+          "uidCallCounts": {
+            "0": 2,
+            "1": 1
+          },
+          "error": "ContainsException"
+        }
+      },
+      "dictionary": {
+        "1": "row0"
+      },
+      "uidCallCounts": {
+        "0": 2,
+        "1": 1
+      },
+      "duplicateLogKeys": [],
+      "error": "ContainsException",
+      "calls": [
+        {
+          "call": "parse"
+        },
+        {
+          "call": "get_Item",
+          "index": 0
+        },
+        {
+          "call": "UniqueID",
+          "index": 0,
+          "time": 1
+        },
+        {
+          "call": "ContainsKey",
+          "key": 1
+        },
+        {
+          "call": "get_Item",
+          "index": 0
+        },
+        {
+          "call": "UniqueID",
+          "index": 0,
+          "time": 2
+        },
+        {
+          "call": "get_Item",
+          "index": 0
+        },
+        {
+          "call": "Add",
+          "key": 1,
+          "row": 0
+        },
+        {
+          "call": "get_Item",
+          "index": 1
+        },
+        {
+          "call": "UniqueID",
+          "index": 1,
+          "time": 1
+        },
+        {
+          "call": "ContainsKey",
+          "key": 2
+        }
+      ]
+    },
+    {
+      "name": "AddThrowsPreservesPrefix",
+      "input": {
+        "name": "AddThrowsPreservesPrefix",
+        "rows": [
+          1,
+          2,
+          3
+        ],
+        "addFail": 2,
+        "expected": {
+          "dictionary": {
+            "1": "row0"
+          },
+          "uidCallCounts": {
+            "0": 2,
+            "1": 2
+          },
+          "error": "AddException"
+        }
+      },
+      "dictionary": {
+        "1": "row0"
+      },
+      "uidCallCounts": {
+        "0": 2,
+        "1": 2
+      },
+      "duplicateLogKeys": [],
+      "error": "AddException",
+      "calls": [
+        {
+          "call": "parse"
+        },
+        {
+          "call": "get_Item",
+          "index": 0
+        },
+        {
+          "call": "UniqueID",
+          "index": 0,
+          "time": 1
+        },
+        {
+          "call": "ContainsKey",
+          "key": 1
+        },
+        {
+          "call": "get_Item",
+          "index": 0
+        },
+        {
+          "call": "UniqueID",
+          "index": 0,
+          "time": 2
+        },
+        {
+          "call": "get_Item",
+          "index": 0
+        },
+        {
+          "call": "Add",
+          "key": 1,
+          "row": 0
+        },
+        {
+          "call": "get_Item",
+          "index": 1
+        },
+        {
+          "call": "UniqueID",
+          "index": 1,
+          "time": 1
+        },
+        {
+          "call": "ContainsKey",
+          "key": 2
+        },
+        {
+          "call": "get_Item",
+          "index": 1
+        },
+        {
+          "call": "UniqueID",
+          "index": 1,
+          "time": 2
+        },
+        {
+          "call": "get_Item",
+          "index": 1
+        },
+        {
+          "call": "Add",
+          "key": 2,
+          "row": 1
+        }
+      ]
+    },
+    {
+      "name": "nullKeyRejectedAtContains",
+      "input": {
+        "name": "nullKeyRejectedAtContains",
+        "rows": [
+          null,
+          2
+        ],
+        "expected": {
+          "dictionary": {},
+          "uidCallCounts": {
+            "0": 1
+          },
+          "error": "ArgumentNullException"
+        }
+      },
+      "dictionary": {},
+      "uidCallCounts": {
+        "0": 1
+      },
+      "duplicateLogKeys": [],
+      "error": "ArgumentNullException",
+      "calls": [
+        {
+          "call": "parse"
+        },
+        {
+          "call": "get_Item",
+          "index": 0
+        },
+        {
+          "call": "UniqueID",
+          "index": 0,
+          "time": 1
+        },
+        {
+          "call": "ContainsKey",
+          "key": 0
+        }
+      ]
+    },
+    {
+      "name": "changingUIDUsedAgainForAdd",
+      "input": {
+        "name": "changingUIDUsedAgainForAdd",
+        "rows": [
+          [
+            1,
+            2
+          ]
+        ],
+        "expected": {
+          "dictionary": {
+            "2": "row0"
+          },
+          "uidCallCounts": {
+            "0": 2
+          },
+          "error": null
+        }
+      },
+      "dictionary": {
+        "2": "row0"
+      },
+      "uidCallCounts": {
+        "0": 2
+      },
+      "duplicateLogKeys": [],
+      "error": null,
+      "calls": [
+        {
+          "call": "parse"
+        },
+        {
+          "call": "get_Item",
+          "index": 0
+        },
+        {
+          "call": "UniqueID",
+          "index": 0,
+          "time": 1
+        },
+        {
+          "call": "ContainsKey",
+          "key": 1
+        },
+        {
+          "call": "get_Item",
+          "index": 0
+        },
+        {
+          "call": "UniqueID",
+          "index": 0,
+          "time": 2
+        },
+        {
+          "call": "get_Item",
+          "index": 0
+        },
+        {
+          "call": "Add",
+          "key": 2,
+          "row": 0
+        }
+      ]
+    },
+    {
+      "name": "changingUIDUsedAgainForLog",
+      "input": {
+        "name": "changingUIDUsedAgainForLog",
+        "rows": [
+          [
+            1,
+            2
+          ]
+        ],
+        "existing": {
+          "1": "existing"
+        },
+        "expected": {
+          "dictionary": {
+            "1": "existing"
+          },
+          "uidCallCounts": {
+            "0": 2
+          },
+          "duplicateLogKeys": [
+            2
+          ],
+          "error": null
+        }
+      },
+      "dictionary": {
+        "1": "existing"
+      },
+      "uidCallCounts": {
+        "0": 2
+      },
+      "duplicateLogKeys": [
+        2
+      ],
+      "error": null,
+      "calls": [
+        {
+          "call": "parse"
+        },
+        {
+          "call": "get_Item",
+          "index": 0
+        },
+        {
+          "call": "UniqueID",
+          "index": 0,
+          "time": 1
+        },
+        {
+          "call": "ContainsKey",
+          "key": 1
+        },
+        {
+          "call": "get_Item",
+          "index": 0
+        },
+        {
+          "call": "UniqueID",
+          "index": 0,
+          "time": 2
+        },
+        {
+          "call": "FormatDuplicate",
+          "key": 2
+        },
+        {
+          "call": "Error"
+        }
+      ]
+    }
+  ]
+}

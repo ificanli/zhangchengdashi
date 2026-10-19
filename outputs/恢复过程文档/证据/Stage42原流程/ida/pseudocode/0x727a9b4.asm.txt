@@ -1,0 +1,18 @@
+0x727a9b4: STP             X30, X21, [SP,#var_20]!
+0x727a9b8: STP             X20, X19, [SP,#0x20+var_10]
+0x727a9bc: ADRP            X20, #byte_9009C31@PAGE
+0x727a9c0: ADRP            X21, #off_8B19968@PAGE
+0x727a9c4: LDRB            W8, [X20,#byte_9009C31@PAGEOFF]
+0x727a9c8: LDR             X21, [X21,#off_8B19968@PAGEOFF]; qword_8D061B0
+0x727a9cc: MOV             X19, X0
+0x727a9d0: TBNZ            W8, #0, loc_727A9E8
+0x727a9d4: ADRP            X0, #off_8B19968@PAGE
+0x727a9d8: LDR             X0, [X0,#off_8B19968@PAGEOFF]; qword_8D061B0 ; slot
+0x727a9dc: BL              il2cpp_codegen_initialize_runtime_metadata
+0x727a9e0: MOV             W8, #1
+0x727a9e4: STRB            W8, [X20,#byte_9009C31@PAGEOFF]
+0x727a9e8: LDR             X1, [X21]
+0x727a9ec: MOV             X0, X19
+0x727a9f0: LDP             X20, X19, [SP,#0x20+var_10]
+0x727a9f4: LDP             X30, X21, [SP+0x20+var_20],#0x20
+0x727a9f8: B               GameFramework.Fsm.FsmState_object_$$.ctor

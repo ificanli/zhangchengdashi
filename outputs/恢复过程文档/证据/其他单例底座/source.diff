@@ -1,0 +1,57 @@
+--- before/L_Tools/Singleton.cs
++++ after/L_Tools/Singleton.cs
+@@ -10,7 +10,7 @@
+ 		{
+ 			[Token(Token = "0x4006B99")]
+ 			[FieldOffset(Offset = "0x0")]
+-			internal static readonly T instance;
++			internal static readonly T instance = new T();
+ 
+ 			[Token(Token = "0x6005E2F")]
+ 			public SingletonCreator()
+@@ -24,7 +24,7 @@
+ 			[Token(Token = "0x6005E2D")]
+ 			get
+ 			{
+-				return (T)null;
++				return SingletonCreator.instance;
+ 			}
+ 		}
+ 
+--- before/QuickTutor/Singleton.cs
++++ after/QuickTutor/Singleton.cs
+@@ -38,7 +38,7 @@
+ 
+ 		[Token(Token = "0x4005A96")]
+ 		[Il2CppDummyDll.FieldOffset(Offset = "0x0")]
+-		private static readonly Lazy<T> instance;
++		private static readonly Lazy<T> instance = new Lazy<T>(() => new T());
+ 
+ 		[Token(Token = "0x17000E1E")]
+ 		public static T Instance
+@@ -46,7 +46,7 @@
+ 			[Token(Token = "0x6004F24")]
+ 			get
+ 			{
+-				return (T)null;
++				return instance.Value;
+ 			}
+ 		}
+ 
+--- before/LocalizationModule/Runtime/CustomBundlesManager.cs
++++ after/LocalizationModule/Runtime/CustomBundlesManager.cs
+@@ -154,7 +154,13 @@
+ 			[Address(RVA = "0x408159C", Offset = "0x407D59C", VA = "0x408159C")]
+ 			get
+ 			{
+-				return null;
++				if (_instance == null)
++				{
++					GameObject managerObject = new GameObject("CustomBundlesManager");
++					_instance = managerObject.AddComponent<CustomBundlesManager>();
++					UnityEngine.Object.DontDestroyOnLoad(_instance.gameObject);
++				}
++				return _instance;
+ 			}
+ 		}
+ 

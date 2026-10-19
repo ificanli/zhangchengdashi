@@ -1,0 +1,15 @@
+0x73130d4: STR             X30, [SP,#var_20]!
+0x73130d8: STP             X20, X19, [SP,#0x20+var_10]
+0x73130dc: MOV             X20, X1
+0x73130e0: MOV             X19, X0
+0x73130e4: BL              ___Mpb$$.ctor
+0x73130e8: CBZ             X20, loc_731310C
+0x73130ec: LDR             X0, [X20,#0x10]
+0x73130f0: CBZ             X0, loc_731310C
+0x73130f4: MOV             X1, XZR
+0x73130f8: BL              YooAsset.PackageBundle$$get_TempDataFilePath
+0x73130fc: STR             X0, [X19,#0x80]
+0x7313100: LDP             X20, X19, [SP,#0x20+var_10]
+0x7313104: LDR             X30, [SP+0x20+var_20],#0x20
+0x7313108: RET
+0x731310c: BL              il2cpp_codegen_raise_null_reference_exception

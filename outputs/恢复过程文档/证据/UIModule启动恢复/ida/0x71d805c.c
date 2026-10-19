@@ -1,0 +1,81 @@
+void *GameFramework_UIModule___GetUINode(void *self, void *node, const MethodInfo *method)
+{
+  __int64 v5; // x0
+  __int64 v6; // x0
+  __int64 transform; // x0
+  void *v8; // x21
+  __int64 v9; // x21
+  __int64 v10; // x0
+  __int64 v11; // x22
+  __int64 v12; // x0
+  __int64 v13; // x0
+  __int64 v14; // x0
+  __int64 v16; // x0
+  void *v17; // [xsp+8h] [xbp-28h] BYREF
+
+  if ( (byte_90095DB & 1) == 0 )
+  {
+    il2cpp_codegen_initialize_runtime_metadata((void **)&off_8CE5250);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8CFF4B0);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8CFF4B8);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8CE3258);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&off_8CEB3E0);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D877F0);
+    byte_90095DB = 1;
+  }
+  v17 = nullptr;
+  v5 = *((_QWORD *)self + 8);
+  if ( v5 == 0 )
+    goto LABEL_21;
+  if ( (System_Collections_Generic_Dictionary_object__object___TryGetValue(v5, node, &v17, qword_8CFF4B8) & 1) == 0 )
+  {
+    v6 = *((_QWORD *)self + 5);
+    if ( v6 == 0 )
+      goto LABEL_21;
+    transform = UnityEngine_Component__get_transform(v6, 0);
+    if ( transform == 0 )
+      goto LABEL_21;
+    v17 = (void *)UnityEngine_Transform__Find(transform, node, 0);
+    v8 = v17;
+    if ( *((_DWORD *)off_8CEB3E0 + 56) == 0 )
+      il2cpp_codegen_runtime_class_init(off_8CEB3E0);
+    if ( (UnityEngine_Object__op_Equality(v8, 0, 0) & 1) != 0 )
+    {
+      v9 = ((__int64 (__fastcall *)(__int64, __int64))unk_3C3D320)(qword_8CE3258, 1);
+      v10 = sub_74FE7A4(qword_8D877F0, node, 0);
+      if ( v9 == 0 )
+        goto LABEL_21;
+      v11 = v10;
+      if ( v10 == 0
+        || (v12 = ((__int64 (__fastcall *)(__int64, _QWORD))unk_3C3D3B4)(v10, *(_QWORD *)(*(_QWORD *)v9 + 64LL))) != 0 )
+      {
+        if ( *(_DWORD *)(v9 + 24) != 0 )
+        {
+          *(_QWORD *)(v9 + 32) = v11;
+          if ( *((_DWORD *)off_8CE5250 + 56) == 0 )
+            il2cpp_codegen_runtime_class_init(off_8CE5250);
+          GameFramework_CLog__Error(v9, 0);
+          v13 = *((_QWORD *)self + 4);
+          if ( v13 == 0 )
+            goto LABEL_21;
+          v17 = (void *)UnityEngine_GameObject__get_transform(v13, 0);
+          goto LABEL_18;
+        }
+        v12 = ((__int64 (*)(void))unk_3C3D4D4)();
+      }
+      v16 = ((__int64 (__fastcall *)(__int64))unk_3C3D4F0)(v12);
+      ((void (__fastcall *)(__int64, _QWORD))unk_3C3D3A0)(v16, 0);
+      JUMPOUT(0x71D822C);
+    }
+LABEL_18:
+    v14 = *((_QWORD *)self + 8);
+    if ( v14 != 0 )
+    {
+      System_Collections_Generic_Dictionary_object__object___Add(v14, node, v17, qword_8CFF4B0);
+      return v17;
+    }
+LABEL_21:
+    il2cpp_codegen_raise_null_reference_exception();
+  }
+  return v17;
+}

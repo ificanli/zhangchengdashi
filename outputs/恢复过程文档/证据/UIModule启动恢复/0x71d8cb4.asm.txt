@@ -1,0 +1,32 @@
+0x71d8cb4: e80f1dfc str      d8, [sp, #-0x30]!
+0x71d8cb8: fe0700f9 str      x30, [sp, #8]
+0x71d8cbc: f65701a9 stp      x22, x21, [sp, #0x10]
+0x71d8cc0: f44f02a9 stp      x20, x19, [sp, #0x20]
+0x71d8cc4: 95f100b0 adrp     x21, #0x9009000
+0x71d8cc8: 16ca0090 adrp     x22, #0x8b18000
+0x71d8ccc: a8965739 ldrb     w8, [x21, #0x5e5]
+0x71d8cd0: d68a44f9 ldr      x22, [x22, #0x910] // GameFramework.UIModule.<UIAnim>d__48_TypeInfo
+0x71d8cd4: 081ca04e mov      v8.16b, v0.16b
+0x71d8cd8: f303022a mov      w19, w2
+0x71d8cdc: f40301aa mov      x20, x1
+0x71d8ce0: c8000037 tbnz     w8, #0, #0x71d8cf8
+0x71d8ce4: 00ca0090 adrp     x0, #0x8b18000
+0x71d8ce8: 008844f9 ldr      x0, [x0, #0x910] // GameFramework.UIModule.<UIAnim>d__48_TypeInfo
+0x71d8cec: 65912997 bl       #0x3c3d280
+0x71d8cf0: 28008052 mov      w8, #1
+0x71d8cf4: a8961739 strb     w8, [x21, #0x5e5]
+0x71d8cf8: c00240f9 ldr      x0, [x22]
+0x71d8cfc: f2912997 bl       #0x3c3d4c4
+0x71d8d00: e1031faa mov      x1, xzr
+0x71d8d04: f50300aa mov      x21, x0
+0x71d8d08: 81ba1394 bl       #0x76c770c // System.Object$$.ctor
+0x71d8d0c: bf1200b9 str      wzr, [x21, #0x10]
+0x71d8d10: b41600f9 str      x20, [x21, #0x28]
+0x71d8d14: b32600b9 str      w19, [x21, #0x24]
+0x71d8d18: a82200bd str      s8, [x21, #0x20]
+0x71d8d1c: e00315aa mov      x0, x21
+0x71d8d20: f44f42a9 ldp      x20, x19, [sp, #0x20]
+0x71d8d24: f65741a9 ldp      x22, x21, [sp, #0x10]
+0x71d8d28: fe0740f9 ldr      x30, [sp, #8]
+0x71d8d2c: e80743fc ldr      d8, [sp], #0x30
+0x71d8d30: c0035fd6 ret      

@@ -1,0 +1,25 @@
+--- before/Assets/Scripts/GFRunning/GameFramework/Base/IGameStart.cs
++++ after/Assets/Scripts/GFRunning/GameFramework/Base/IGameStart.cs
+@@ -16,6 +16,7 @@
+ 		[Address(RVA = "0x72EAE70", Offset = "0x72E6E70", VA = "0x72EAE70")]
+ 		internal void _007Dye_0080_00BCa(GameStartEntry _00B4_0098p_00BDg_008A)
+ 		{
++			this._00B4_0098p_00BDg_008A = _00B4_0098p_00BDg_008A;
+ 		}
+ 
+ 		[Token(Token = "0x60071A9")]
+@@ -25,12 +26,14 @@
+ 		[Address(RVA = "0x72EAE78", Offset = "0x72E6E78", VA = "0x72EAE78")]
+ 		protected void LoadingUIShow()
+ 		{
++			_00B4_0098p_00BDg_008A.O_008AJy_0085_00BF();
+ 		}
+ 
+ 		[Token(Token = "0x60071AB")]
+ 		[Address(RVA = "0x72EAE90", Offset = "0x72E6E90", VA = "0x72EAE90")]
+ 		protected void InitConfigOver()
+ 		{
++			_00B4_0098p_00BDg_008A.whJq_00B8_00B9();
+ 		}
+ 
+ 		[Token(Token = "0x60071AC")]

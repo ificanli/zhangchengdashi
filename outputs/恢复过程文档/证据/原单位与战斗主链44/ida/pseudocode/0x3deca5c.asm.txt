@@ -1,0 +1,35 @@
+0x3deca5c: STR             X30, [SP,#var_20]!
+0x3deca60: STP             X20, X19, [SP,#0x20+var_10]
+0x3deca64: ADRP            X20, #byte_8FFD761@PAGE
+0x3deca68: ADRP            X19, #off_8AD31C0@PAGE
+0x3deca6c: LDRB            W8, [X20,#byte_8FFD761@PAGEOFF]
+0x3deca70: LDR             X19, [X19,#off_8AD31C0@PAGEOFF]; off_8CE4A38
+0x3deca74: TBNZ            W8, #0, loc_3DECA8C
+0x3deca78: ADRP            X0, #off_8AD31C0@PAGE
+0x3deca7c: LDR             X0, [X0,#off_8AD31C0@PAGEOFF]; off_8CE4A38 ; slot
+0x3deca80: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3deca84: MOV             W8, #1
+0x3deca88: STRB            W8, [X20,#byte_8FFD761@PAGEOFF]
+0x3deca8c: LDR             X0, [X19]; klass
+0x3deca90: STRB            WZR, [SP,#0x20+var_14]
+0x3deca94: STR             WZR, [SP,#0x20+var_18]
+0x3deca98: LDR             W8, [X0,#0xE0]
+0x3deca9c: CBNZ            W8, loc_3DECAA4
+0x3decaa0: BL              il2cpp_codegen_runtime_class_init
+0x3decaa4: ADD             X0, SP, #0x20+var_14
+0x3decaa8: ADD             X1, SP, #0x20+var_18
+0x3decaac: BL              GameModule.BattleGameSceneManager$$TryParseLegendaryTileV1OnlineParam
+0x3decab0: LDR             W8, [SP,#0x20+var_18]
+0x3decab4: CMP             W8, #1
+0x3decab8: B.LT            loc_3DECAC0
+0x3decabc: TBNZ            W0, #0, loc_3DECAD8
+0x3decac0: LDR             X0, [X19]; klass
+0x3decac4: LDR             W8, [X0,#0xE0]
+0x3decac8: CBNZ            W8, loc_3DECAD0
+0x3decacc: BL              il2cpp_codegen_runtime_class_init
+0x3decad0: BL              GameModule.BattleGameSceneManager$$GetLegendaryTileV1ConfigPriceFallback
+0x3decad4: MOV             W8, W0
+0x3decad8: LDP             X20, X19, [SP,#0x20+var_10]
+0x3decadc: MOV             W0, W8
+0x3decae0: LDR             X30, [SP+0x20+var_20],#0x20
+0x3decae4: RET

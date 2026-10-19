@@ -1,0 +1,99 @@
+0x3f70868: STR             D8, [SP,#var_30]!
+0x3f7086c: STR             X30, [SP,#0x30+var_28]
+0x3f70870: STP             X22, X21, [SP,#0x30+var_20]
+0x3f70874: STP             X20, X19, [SP,#0x30+var_10]
+0x3f70878: ADRP            X20, #byte_8FFE394@PAGE
+0x3f7087c: LDRB            W8, [X20,#byte_8FFE394@PAGEOFF]
+0x3f70880: MOV             X19, X0
+0x3f70884: TBNZ            W8, #0, loc_3F708A8
+0x3f70888: ADRP            X0, #off_8ADCB08@PAGE
+0x3f7088c: LDR             X0, [X0,#off_8ADCB08@PAGEOFF]; qword_8D173C8 ; slot
+0x3f70890: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3f70894: ADRP            X0, #off_8ACDB38@PAGE
+0x3f70898: LDR             X0, [X0,#off_8ACDB38@PAGEOFF]; off_8CED280 ; slot
+0x3f7089c: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3f708a0: MOV             W8, #1
+0x3f708a4: STRB            W8, [X20,#byte_8FFE394@PAGEOFF]
+0x3f708a8: LDR             W8, [X19,#0x10]
+0x3f708ac: LDR             X20, [X19,#0x20]
+0x3f708b0: CMP             W8, #1
+0x3f708b4: B.EQ            loc_3F708E0
+0x3f708b8: CBNZ            W8, loc_3F708EC
+0x3f708bc: MOV             W8, #0xFFFFFFFF
+0x3f708c0: STR             W8, [X19,#0x10]
+0x3f708c4: CBZ             X20, loc_3F709F0
+0x3f708c8: LDR             W8, [X20,#0x20]
+0x3f708cc: CBZ             W8, loc_3F708F4
+0x3f708d0: MOV             W8, #1
+0x3f708d4: MOV             W0, WZR
+0x3f708d8: STRB            W8, [X20,#0x25]
+0x3f708dc: B               loc_3F709DC
+0x3f708e0: MOV             W8, #0xFFFFFFFF
+0x3f708e4: STR             W8, [X19,#0x10]
+0x3f708e8: B               loc_3F70920
+0x3f708ec: MOV             W0, WZR
+0x3f708f0: B               loc_3F709DC
+0x3f708f4: MOV             W8, #1
+0x3f708f8: STRB            W8, [X20,#0x24]
+0x3f708fc: ADRP            X8, #off_8ADCB08@PAGE
+0x3f70900: LDR             X8, [X8,#off_8ADCB08@PAGEOFF]; qword_8D173C8
+0x3f70904: LDR             X0, [X8]
+0x3f70908: BL              L_Tools.RichControlBase_object_$$get_I
+0x3f7090c: CBZ             X0, loc_3F709F0
+0x3f70910: MOV             W1, #1
+0x3f70914: MOV             X2, XZR
+0x3f70918: BL              L_Tools.ServerTimeMgr$$TryCheck
+0x3f7091c: STR             WZR, [X19,#0x28]
+0x3f70920: ADRP            X21, #off_8ACDB38@PAGE
+0x3f70924: LDR             X21, [X21,#off_8ACDB38@PAGEOFF]; off_8CED280
+0x3f70928: LDR             X0, [X21]; klass
+0x3f7092c: LDR             W8, [X0,#0xE0]
+0x3f70930: CBNZ            W8, loc_3F70938
+0x3f70934: BL              il2cpp_codegen_runtime_class_init
+0x3f70938: ADRP            X22, #byte_8FFE449@PAGE
+0x3f7093c: LDRB            W8, [X22,#byte_8FFE449@PAGEOFF]
+0x3f70940: CBNZ            W8, loc_3F70958
+0x3f70944: ADRP            X0, #off_8ACDB38@PAGE
+0x3f70948: LDR             X0, [X0,#off_8ACDB38@PAGEOFF]; off_8CED280 ; slot
+0x3f7094c: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3f70950: MOV             W8, #1
+0x3f70954: STRB            W8, [X22,#byte_8FFE449@PAGEOFF]
+0x3f70958: LDR             X0, [X21]; klass
+0x3f7095c: LDR             W8, [X0,#0xE0]
+0x3f70960: CBNZ            W8, loc_3F7096C
+0x3f70964: BL              il2cpp_codegen_runtime_class_init
+0x3f70968: LDR             X0, [X21]
+0x3f7096c: LDR             X8, [X0,#0xB8]
+0x3f70970: LDRB            W8, [X8]
+0x3f70974: CBZ             W8, loc_3F7098C
+0x3f70978: CBZ             X20, loc_3F709F0
+0x3f7097c: MOV             W0, WZR
+0x3f70980: MOV             W8, #0x100
+0x3f70984: STRH            W8, [X20,#0x24]
+0x3f70988: B               loc_3F709DC
+0x3f7098c: LDR             S8, [X19,#0x28]
+0x3f70990: MOV             X0, XZR
+0x3f70994: BL              UnityEngine.Time$$get_deltaTime
+0x3f70998: FADD            S0, S8, S0
+0x3f7099c: FMOV            S1, #3.0
+0x3f709a0: FCMP            S0, S1
+0x3f709a4: STR             S0, [X19,#0x28]
+0x3f709a8: B.LE            loc_3F709D0
+0x3f709ac: STR             WZR, [X19,#0x28]
+0x3f709b0: ADRP            X8, #off_8ADCB08@PAGE
+0x3f709b4: LDR             X8, [X8,#off_8ADCB08@PAGEOFF]; qword_8D173C8
+0x3f709b8: LDR             X0, [X8]
+0x3f709bc: BL              L_Tools.RichControlBase_object_$$get_I
+0x3f709c0: CBZ             X0, loc_3F709F0
+0x3f709c4: MOV             W1, #1
+0x3f709c8: MOV             X2, XZR
+0x3f709cc: BL              L_Tools.ServerTimeMgr$$TryCheck
+0x3f709d0: MOV             W0, #1
+0x3f709d4: STR             XZR, [X19,#0x18]
+0x3f709d8: STR             W0, [X19,#0x10]
+0x3f709dc: LDP             X20, X19, [SP,#0x30+var_10]
+0x3f709e0: LDP             X22, X21, [SP,#0x30+var_20]
+0x3f709e4: LDR             X30, [SP,#0x30+var_28]
+0x3f709e8: LDR             D8, [SP+0x30+var_30],#0x30
+0x3f709ec: RET
+0x3f709f0: BL              il2cpp_codegen_raise_null_reference_exception

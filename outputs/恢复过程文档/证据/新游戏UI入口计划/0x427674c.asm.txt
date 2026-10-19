@@ -1,0 +1,13 @@
+0x427674c: fe4fbfa9 stp      x30, x19, [sp, #-0x10]!
+0x4276750: 610100b4 cbz      x1, #0x427677c
+0x4276754: 000840f9 ldr      x0, [x0, #0x10]
+0x4276758: 200100b4 cbz      x0, #0x427677c
+0x427675c: 330c40f9 ldr      x19, [x1, #0x18]
+0x4276760: e1031faa mov      x1, xzr
+0x4276764: 6be70195 bl       #0x82f0510 // UnityEngine.Object$$get_name
+0x4276768: e10300aa mov      x1, x0
+0x427676c: e00313aa mov      x0, x19
+0x4276770: e2031faa mov      x2, xzr
+0x4276774: fe4fc1a8 ldp      x30, x19, [sp], #0x10
+0x4276778: 3f20ca14 b        #0x74fe874 // System.String$$op_Equality
+0x427677c: 541be797 bl       #0x3c3d4cc

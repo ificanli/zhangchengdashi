@@ -1,0 +1,15 @@
+0x71918a8: STR             X30, [SP,#var_20]!
+0x71918ac: STP             X20, X19, [SP,#0x20+var_10]
+0x71918b0: MOV             X20, X1
+0x71918b4: MOV             X1, XZR
+0x71918b8: MOV             X19, X0
+0x71918bc: BL              System.Object$$.ctor
+0x71918c0: STR             X20, [X19,#0x18]
+0x71918c4: CBZ             X20, loc_71918D0
+0x71918c8: LDR             X8, [X20,#0x20]
+0x71918cc: B               loc_71918D4
+0x71918d0: MOV             X8, XZR
+0x71918d4: STR             X8, [X19,#0x10]
+0x71918d8: LDP             X20, X19, [SP,#0x20+var_10]
+0x71918dc: LDR             X30, [SP+0x20+var_20],#0x20
+0x71918e0: RET

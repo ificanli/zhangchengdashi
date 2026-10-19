@@ -1,0 +1,102 @@
+{
+    Func<bool, RewardConfig> rewardCallback = null;
+    rewardCallback += win =>
+    {
+        RewardConfig config = null;
+        if (TrainingGroundManager.IsInTrainingGround)
+        {
+            config = new RewardConfig(CurrencyTransactionSceneType.game_finish);
+            int exp = GameConfigModule.GameConfigManager.Instance.GetConfigInt(win ? "NormalPVPWinExp" : "NormalPVPLoseExp");
+            config.AddAssetDataList(new List<RewardConfigSingle> { new RewardConfigSingle("20007", exp.ToString(), null) });
+        }
+        if (TrainingGroundManager.IsInGuidedGame)
+            TrainingGroundManager.Instance.OnTrainingGameComplete(win);
+        if (config == null)
+        {
+            config = new RewardConfig(CurrencyTransactionSceneType.game_finish);
+            List<RewardConfigSingle> assets;
+            if (win)
+            {
+                string trophies = BattleGameManager.Instance.GameSuccessGetTrophyNumber();
+                string gold = DataManager.Instance.GlobalInfo.arenaInfoDic[CoreGameManager.NowPlayEdArenaID].diamondReward;
+                string keys = DataManager.Instance.GlobalInfo.arenaInfoDic[CoreGameManager.NowPlayEdArenaID].keyReward;
+                int exp = GameConfigModule.GameConfigManager.Instance.GetConfigInt("NormalPVPWinExp");
+                if (ABTestManager.Instance.NoBetIsBTest)
+                {
+                    gold = BattleGameManager.Instance.BetRewardNum;
+                    ArenaManager.Instance.ApplyNoBetVictoryGold(StringTool.ToInt(gold));
+                }
+                else if (!StringTool.IsNullOrEmpty(CoreGameManager.NowPlayEdArenaID, true) && CoreGameManager.NowPlayEdArenaID != "1001")
+                {
+                    gold = BattleGameManager.Instance.BetRewardNum;
+                }
+                if (MonthlyPassManager.Instance.HadBuyMonthPass())
+                {
+                    float bonusGold = (float)StringTool.ToInt(gold) * 1.2f;
+                    int scaledGold = float.IsNaN(bonusGold) ? 0 : bonusGold >= 2147483648f ? int.MaxValue
+                        : bonusGold <= -2147483648f ? int.MinValue : (int)bonusGold;
+                    gold = scaledGold.ToString();
+                }
+                assets = new List<RewardConfigSingle>
+                {
+                    new RewardConfigSingle("20005", gold, null),
+                    new RewardConfigSingle("20006", keys, null),
+                    new RewardConfigSingle("20007", exp.ToString(), null)
+                };
+                if (!ArenaManager.Instance.GetArenaIsCollectAllTrophy(CoreGameManager.NowPlayEdArenaID))
+                {
+                    assets.Add(new RewardConfigSingle("20004", trophies, null));
+                    if (ABTestManager.Instance.NewArenaProcessIsBTest)
+                    {
+                        int currentTrophies = ArenaManager.Instance.GetArenaTrophyNumber(CoreGameManager.NowPlayEdArenaID);
+                        int remaining = unchecked(StringTool.ToInt(DataManager.Instance.GlobalInfo.arenaInfoDic[CoreGameManager.NowPlayEdArenaID].completeTrophyRequire) - currentTrophies);
+                        int wonTrophies = StringTool.ToInt(trophies);
+                        if (wonTrophies > remaining)
+                            UserResourcesManager.Instance.LoseResourceCount("20004", new System.Numerics.BigInteger(unchecked(wonTrophies - remaining)), false, CurrencyTransactionSceneType.none);
+                    }
+                    ArenaManager.Instance.ChangeArenaTrophy(CoreGameManager.NowPlayEdArenaID, StringTool.ToInt(trophies), false);
+                }
+                if (ABTestManager.Instance.SeasonIsBTest)
+                {
+                    int seasonExp = SeasonManager.Instance.CalculatePVPWinSeasonPassExpReward();
+                    if (seasonExp > 0)
+                        assets.Add(new RewardConfigSingle("20017", seasonExp.ToString(), null));
+                }
+            }
+            else
+            {
+                string trophyPunish = DataManager.Instance.GlobalInfo.arenaInfoDic[CoreGameManager.NowPlayEdArenaID].trophyPunish;
+                int exp = GameConfigModule.GameConfigManager.Instance.GetConfigInt("NormalPVPLoseExp");
+                assets = new List<RewardConfigSingle> { new RewardConfigSingle("20007", exp.ToString(), null) };
+                if (!ArenaManager.Instance.GetArenaIsCollectAllTrophy(CoreGameManager.NowPlayEdArenaID) && BattleGameManager.Instance.ElapseTime > 10f)
+                {
+                    string loss;
+                    if (ABTestManager.Instance.NewArenaProcessIsBTest)
+                    {
+                        int currentTrophies = ArenaManager.Instance.GetArenaTrophyNumber(CoreGameManager.NowPlayEdArenaID);
+                        if (currentTrophies > 0)
+                        {
+                            loss = Mathf.Min(StringTool.ToInt(trophyPunish), currentTrophies).ToString();
+                            assets.Add(new RewardConfigSingle("20004", "-" + loss, null));
+                            ArenaManager.Instance.ChangeArenaTrophy(CoreGameManager.NowPlayEdArenaID, unchecked(-StringTool.ToInt(trophyPunish)), false);
+                        }
+                    }
+                    else
+                    {
+                        loss = trophyPunish;
+                        assets.Add(new RewardConfigSingle("20004", "-" + loss, null));
+                        ArenaManager.Instance.ChangeArenaTrophy(CoreGameManager.NowPlayEdArenaID, unchecked(-StringTool.ToInt(trophyPunish)), false);
+                    }
+                }
+            }
+            config.AddAssetDataList(assets);
+            BattleGameManager.Instance.rewardConfig = config;
+            BattleGameManager.Instance.tempConfig = config;
+            ReportEventsManager.Instance.OnGameFinish(win, 0, GameType.PVP);
+        }
+        return config;
+    };
+    BattleContext context = new BattleContext(true, null, rewardCallback, null, null);
+    context.GameType = GameType.PVP;
+    CoreGameManager.Instance.StartGame(context);
+}

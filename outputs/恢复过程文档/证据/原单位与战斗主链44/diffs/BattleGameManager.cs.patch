@@ -1,0 +1,505 @@
+--- source-before/Assets/Scripts/Assembly-CSharp/GameModule/BattleGameManager.cs
++++ candidate/Assets/Scripts/Assembly-CSharp/GameModule/BattleGameManager.cs
+@@ -302,7 +302,7 @@
+ 
+ 		[Token(Token = "0x40028D0")]
+ 		[Il2CppDummyDll.FieldOffset(Offset = "0x20")]
+-		private readonly Dictionary<int, AnimationPauseSnapshot> _pausedRoleAnimationSnapshots;
++		private readonly Dictionary<int, AnimationPauseSnapshot> _pausedRoleAnimationSnapshots = new Dictionary<int, AnimationPauseSnapshot>();
+ 
+ 		[Token(Token = "0x40028D1")]
+ 		[Il2CppDummyDll.FieldOffset(Offset = "0x28")]
+@@ -334,7 +334,7 @@
+ 
+ 		[Token(Token = "0x40028D8")]
+ 		[Il2CppDummyDll.FieldOffset(Offset = "0x48")]
+-		private string _timeString;
++		private string _timeString = "3:00";
+ 
+ 		[Token(Token = "0x40028D9")]
+ 		[Il2CppDummyDll.FieldOffset(Offset = "0x50")]
+@@ -354,7 +354,7 @@
+ 
+ 		[Token(Token = "0x40028DD")]
+ 		[Il2CppDummyDll.FieldOffset(Offset = "0x68")]
+-		public float hornTime;
++		public float hornTime = 5f;
+ 
+ 		[Token(Token = "0x40028DE")]
+ 		[Il2CppDummyDll.FieldOffset(Offset = "0x70")]
+@@ -426,7 +426,7 @@
+ 
+ 		[Token(Token = "0x40028EF")]
+ 		[Il2CppDummyDll.FieldOffset(Offset = "0xE0")]
+-		public readonly int[] PropBTestChargeTime;
++		public readonly int[] PropBTestChargeTime = new int[] { 30, 90, 210 };
+ 
+ 		[Token(Token = "0x40028F0")]
+ 		[Il2CppDummyDll.FieldOffset(Offset = "0xE8")]
+@@ -470,7 +470,7 @@
+ 
+ 		[Token(Token = "0x40028FA")]
+ 		[Il2CppDummyDll.FieldOffset(Offset = "0x134")]
+-		private float _perfPanelScale;
++		private float _perfPanelScale = 1f;
+ 
+ 		[Token(Token = "0x40028FB")]
+ 		[Il2CppDummyDll.FieldOffset(Offset = "0x138")]
+@@ -491,8 +491,8 @@
+ 			[Address(RVA = "0x3DE3A9C", Offset = "0x3DDFA9C", VA = "0x3DE3A9C")]
+ 			get
+ 			{
+-				return default;
+-			}
++			return (float)countDownTime - _timeLeft;
++		}
+ 		}
+ 
+ 		[Token(Token = "0x1700012B")]
+@@ -502,8 +502,8 @@
+ 			[Address(RVA = "0x3DE3AAC", Offset = "0x3DDFAAC", VA = "0x3DE3AAC")]
+ 			get
+ 			{
+-				return default;
+-			}
++			return _isGamePaused || QuickTutor.TutorialManager.Instance.tutorialing;
++		}
+ 			[Token(Token = "0x6001369")]
+ 			[Address(RVA = "0x3DE3B3C", Offset = "0x3DDFB3C", VA = "0x3DE3B3C")]
+ 			private set
+@@ -519,71 +519,112 @@
+ 			[Address(RVA = "0x3DE3B48", Offset = "0x3DDFB48", VA = "0x3DE3B48")]
+ 			get
+ 			{
+-				return null;
+-			}
++			return betRewardNum;
++		}
+ 		}
+ 
+ 		[Token(Token = "0x600136B")]
+ 		[Address(RVA = "0x3DE3B50", Offset = "0x3DDFB50", VA = "0x3DE3B50", Slot = "4")]
+ 		[AsyncStateMachine(typeof(_003CInit_003Ed__43))]
+-		public override UniTask Init()
+-		{
+-			return default;
++		public override async UniTask Init()
++		{
++			await FloatingTextManager.Instance.Init();
++			EventModule.EventManager.Instance.StartListening("CoinChangeUpdateGamePanel", CoinChangeUpdateGamePanel);
++			EventModule.EventManager.Instance.StartListening("HasHexDestroy", GameEndCheck);
++			EventModule.EventManager.Instance.StartListening("PlayerBeginOpenHex", PlayerOpenHexCountAdd);
++			EventModule.EventManager.Instance.StartListening("PlayerHornEmitIng", PlayerHornEmitIng);
++			EventModule.EventManager.Instance.StartListening("OnGameOver", ShowInterstitial);
++			EventModule.EventManager.Instance.StartListening("PlayerHornEmitEnd", PlayerHornEmitEnd);
++			EventModule.EventManager.Instance.StartListening("SettlementAnimationEnd", SettlementAnimationEnd);
++			EventModule.EventManager.Instance.StartListening("BetStartGame", BetRecordRewardNum);
++			EventModule.EventManager.Instance.StartListening("GameSteerEndShowCardProbabilityPanel", BeginStartCountDown);
++			EventModule.EventManager.Instance.StartListening("GameSteerEndShowCardProbabilityPanel", GuidOneEndAddCoin);
++			EventModule.EventManager.Instance.StartListening("CloseMatchPanel", CloseMatchPanel);
++			EventModule.EventManager.Instance.StartListening("PauseGame", OnPauseGame);
++			EventModule.EventManager.Instance.StartListening("ResumeGame", OnResumeGame);
++			roleAllDamageDic = new Dictionary<string, int>();
++			towerAllDamageDic = new Dictionary<string, int>();
++			cardOpenCount = new Dictionary<string, int>();
++			GameDeadUnitInfoDic = new Dictionary<int, DeadUnitInfo>();
+ 		}
+ 
+ 		[Token(Token = "0x600136C")]
+ 		[Address(RVA = "0x3DE3BDC", Offset = "0x3DDFBDC", VA = "0x3DE3BDC")]
+ 		private void BetRecordRewardNum(object o)
+ 		{
++			betRewardNum = o.ToString();
+ 		}
+ 
+ 		[Token(Token = "0x600136D")]
+ 		[Address(RVA = "0x3DE3C0C", Offset = "0x3DDFC0C", VA = "0x3DE3C0C")]
+ 		public void RecordCardCount(string id)
+ 		{
++			if (cardOpenCount.ContainsKey(id)) cardOpenCount[id] = unchecked(cardOpenCount[id] + 1);
++			else cardOpenCount.Add(id, 1);
+ 		}
+ 
+ 		[Token(Token = "0x600136E")]
+ 		[Address(RVA = "0x3DE3CEC", Offset = "0x3DDFCEC", VA = "0x3DE3CEC")]
+ 		private void GuidOneEndAddCoin(object o)
+ 		{
++			ChangeCoin(200);
+ 		}
+ 
+ 		[Token(Token = "0x600136F")]
+ 		[Address(RVA = "0x3DE3F10", Offset = "0x3DDFF10", VA = "0x3DE3F10")]
+ 		public void RecordCoinCount(int num)
+ 		{
++			gameUseCoinNums = unchecked(gameUseCoinNums + num);
+ 		}
+ 
+ 		[Token(Token = "0x6001370")]
+ 		[Address(RVA = "0x3DE3F20", Offset = "0x3DDFF20", VA = "0x3DE3F20")]
+ 		private void PlayerHornEmitIng(object o)
+ 		{
++			hornIng = true;
+ 		}
+ 
+ 		[Token(Token = "0x6001371")]
+ 		[Address(RVA = "0x3DE3F2C", Offset = "0x3DDFF2C", VA = "0x3DE3F2C")]
+ 		private void PlayerHornEmitEnd(object o)
+ 		{
++			hornIng = false;
+ 		}
+ 
+ 		[Token(Token = "0x6001372")]
+ 		[Address(RVA = "0x3DE3F34", Offset = "0x3DDFF34", VA = "0x3DE3F34")]
+ 		private void GameEndCheck(object o)
+ 		{
++			int playerCount = BattleGameSceneManager.Instance.allPlayerArchitectureObj.Count;
++			if (playerCount == 0 || BattleGameSceneManager.Instance.allEnemyArchitectureObj.Count == 0)
++			    GameEnd(playerCount != 0, false);
+ 		}
+ 
+ 		[Token(Token = "0x6001373")]
+ 		[Address(RVA = "0x3DE4088", Offset = "0x3DE0088", VA = "0x3DE4088")]
+ 		private void CloseMatchPanel(object o)
+ 		{
++			canCutDown = true;
+ 		}
+ 
+ 		[Token(Token = "0x6001374")]
+ 		[Address(RVA = "0x3DE3FD8", Offset = "0x3DDFFD8", VA = "0x3DE3FD8")]
+ 		[AsyncStateMachine(typeof(_003CGameEnd_003Ed__52))]
+-		public void GameEnd(bool isVictory, bool doTxtAni)
+-		{
++		public async void GameEnd(bool isVictory, bool doTxtAni)
++		{
++			if (isVictory && WeeklyCardActivityManager.Instance.IsBTest())
++			    EventModule.EventManager.Instance.TriggerEvent("WeeklyCardActivityTaskTrigger", new object[] { WeeklyCardActivityManager.WeekLyTaskType.GameWin, 1 });
++			this.isVictory = isVictory;
++			if (doTxtAni) GamePanelManager.Instance.DoAni();
++			CoreGameManager.Gaming = false;
++			EventModule.EventManager.Instance.TriggerEvent("GameEnd");
++			isCountDowning = false;
++			if (_myCoroutine != null) StopCoroutine(_myCoroutine);
++			QuickTutor.TutorialManager.Instance.ForceCloseTutorial();
++			const string panel = "Assets/_Res/Addressable/02CoreGameBundle/Prefabs/UI/Panels/HexDescribesPanel.prefab";
++			if (UIFramework.UIManager.Instance.IsPanelShowing(panel, out _)) UIFramework.UIManager.Instance.HidePanel(panel);
++			if (doTxtAni) await UniTask.WaitForSeconds(2.3f);
++			BattleGameSceneManager.Instance.SettlementAnimation(isVictory);
+ 		}
+ 
+ 		[Token(Token = "0x6001375")]
+@@ -655,24 +696,41 @@
+ 		[Address(RVA = "0x3DE50F8", Offset = "0x3DE10F8", VA = "0x3DE50F8")]
+ 		private void PlayerOpenHexCountAdd(object o)
+ 		{
++			openHexCount = unchecked(openHexCount + 1);
+ 		}
+ 
+ 		[Token(Token = "0x6001380")]
+ 		[Address(RVA = "0x3DE5108", Offset = "0x3DE1108", VA = "0x3DE5108")]
+ 		private void Update()
+ 		{
++			if (isCountDowning && hornIng && hornTime > 0f) hornTime -= Time.deltaTime;
+ 		}
+ 
+ 		[Token(Token = "0x6001381")]
+ 		[Address(RVA = "0x3DE3CF4", Offset = "0x3DDFCF4", VA = "0x3DE3CF4")]
+ 		public void ChangeCoin(int coinNum)
+ 		{
++			unchecked
++			{
++			    if (coinNum < 0)
++			    {
++			        EventModule.EventManager.Instance.TriggerEvent("PlayerGameCostCoin", coinNum < 0 ? -coinNum : coinNum);
++			        if (hasCoin < -coinNum) coinNum = -hasCoin;
++			        battleTotalCost += coinNum < 0 ? -coinNum : coinNum;
++			    }
++			    else if (coinNum != 0) battleTotalEarned += coinNum;
++			    hasCoin = Mathf.Clamp(hasCoin + coinNum, 0, 10000000);
++			}
++			EventModule.EventManager.Instance.TriggerEvent("CoinChangeUpdateGamePanel");
++			EventModule.EventManager.Instance.TriggerEvent("PlayerCoinChange", hasCoin);
++			SubGameBuffManager.Instance.OnCoinChanged(false, hasCoin);
+ 		}
+ 
+ 		[Token(Token = "0x6001382")]
+ 		[Address(RVA = "0x3DE514C", Offset = "0x3DE114C", VA = "0x3DE514C")]
+ 		private void CoinChangeUpdateGamePanel(object o)
+ 		{
++			GamePanelManager.Instance.UpdateInfo(new object[] { hasCoin, _timeString });
+ 		}
+ 
+ 		[Token(Token = "0x6001383")]
+@@ -680,68 +738,160 @@
+ 		[IteratorStateMachine(typeof(_003CCountdown_003Ed__67))]
+ 		private IEnumerator Countdown()
+ 		{
+-			return null;
++			while (_timeLeft > 0f)
++			{
++			    while (IsGamePaused) yield return new WaitForSeconds(0.1f);
++			    _timeString = GetTimeCutDownString();
++			    GamePanelManager.Instance.UpdateInfo(new object[] { hasCoin, _timeString });
++			    yield return new WaitForSeconds(1f);
++			    _timeLeft -= 1f;
++			    if (_timeLeft == 10f && UnityEngine.Random.Range(0, 101) <= 79)
++			        EventModule.EventManager.Instance.TriggerEvent("CountDownIsTen", 3);
++			    if (_timeLeft <= 0f) CountDownEnd();
++			}
+ 		}
+ 
+ 		[Token(Token = "0x6001384")]
+ 		[Address(RVA = "0x3DE5300", Offset = "0x3DE1300", VA = "0x3DE5300")]
+ 		public void SetGamePaused(bool paused)
+ 		{
++			if (_isGamePaused == paused) return;
++			IsGamePaused = paused;
++			ApplyAnimationPauseToAllRoles(paused);
+ 		}
+ 
+ 		[Token(Token = "0x6001385")]
+ 		[Address(RVA = "0x3DE5424", Offset = "0x3DE1424", VA = "0x3DE5424")]
+ 		private void OnPauseGame(object o)
+ 		{
++			SetGamePaused(true);
+ 		}
+ 
+ 		[Token(Token = "0x6001386")]
+ 		[Address(RVA = "0x3DE5444", Offset = "0x3DE1444", VA = "0x3DE5444")]
+ 		private void OnResumeGame(object o)
+ 		{
++			SetGamePaused(false);
+ 		}
+ 
+ 		[Token(Token = "0x6001387")]
+ 		[Address(RVA = "0x3DE531C", Offset = "0x3DE131C", VA = "0x3DE531C")]
+ 		private void ApplyAnimationPauseToAllRoles(bool paused)
+ 		{
++			if (BattleGameSceneManager.Instance == null) return;
++			ApplyAnimationPauseToRoleList(BattleGameSceneManager.Instance.allPlayerRoleObj, paused);
++			ApplyAnimationPauseToRoleList(BattleGameSceneManager.Instance.allEnemyRoleObj, paused);
++			if (!paused) _pausedRoleAnimationSnapshots.Clear();
+ 		}
+ 
+ 		[Token(Token = "0x6001388")]
+ 		[Address(RVA = "0x3DE545C", Offset = "0x3DE145C", VA = "0x3DE545C")]
+ 		private void ApplyAnimationPauseToRoleList(List<GameObject> roles, bool paused)
+ 		{
++			if (roles == null || roles.Count == 0) return;
++			for (int i = roles.Count - 1; i >= 0; --i)
++			    if (roles[i] != null) ApplyAnimationPauseToSingleRole(roles[i], paused);
+ 		}
+ 
+ 		[Token(Token = "0x6001389")]
+ 		[Address(RVA = "0x3DE5D94", Offset = "0x3DE1D94", VA = "0x3DE5D94")]
+ 		public void TryApplyPauseToNewRole(GameObject roleObj)
+ 		{
++			if (IsGamePaused && roleObj != null) ApplyAnimationPauseToSingleRole(roleObj, true);
+ 		}
+ 
+ 		[Token(Token = "0x600138A")]
+ 		[Address(RVA = "0x3DE5540", Offset = "0x3DE1540", VA = "0x3DE5540")]
+ 		private void ApplyAnimationPauseToSingleRole(GameObject roleObj, bool paused)
+ 		{
++			int instanceID = roleObj.GetInstanceID();
++			if (paused)
++			{
++			    if (_pausedRoleAnimationSnapshots.ContainsKey(instanceID)) return;
++			    AnimationPauseSnapshot snapshot = new AnimationPauseSnapshot { animatorInstanceSpeed = new Dictionary<int, float>(4) };
++			    Animator[] animators = roleObj.GetComponentsInChildren<Animator>(true);
++			    if (animators != null)
++			        foreach (Animator animator in animators)
++			            if (animator != null)
++			            {
++			                int id = animator.GetInstanceID();
++			                if (!snapshot.animatorInstanceSpeed.ContainsKey(id)) snapshot.animatorInstanceSpeed.Add(id, animator.speed);
++			                animator.speed = 0f;
++			            }
++			    RoleBehaviour role = roleObj.GetComponent<RoleBehaviour>();
++			    IAnimation animation = role != null ? role.GetAnimationBehaviour() : null;
++			    RoleAnimationDriverType driver = role != null ? role.GetAnimationDriverType() : RoleAnimationDriverType.GPUInstancer;
++			    var instancing = animation as AnimationInstancing.AnimationInstancing;
++			    snapshot.gpuiAnimationSpeed = 1f;
++			    if (animation is AnimationInstancing.AnimationInstancing && (driver == RoleAnimationDriverType.AniInstancing || roleObj.GetComponent<GPUInstanceAnimationBehaviour>() == null))
++			    {
++			        if (instancing != null && !instancing.IsPause()) { instancing.Pause(); snapshot.shouldResumeAniInstancing = true; }
++			    }
++			    else if (HWGPUInstancerManager.IsGPUInstancerSupported())
++			    {
++			        var crowd = roleObj.GetComponent<GPUInstancer.CrowdAnimations.GPUICrowdPrefab>();
++			        if (crowd != null)
++			        {
++			            float speed = animation != null ? animation.GetAnimatorSpeed(animation.GetCurrentAnimationName()) : 1f;
++			            if (speed <= 0f) speed = 1f;
++			            snapshot.gpuiAnimationSpeed = speed;
++			            GPUInstancer.CrowdAnimations.GPUICrowdAPI.SetAnimationSpeed(crowd, 0f);
++			            snapshot.hasGpuiCrowdPrefab = true;
++			        }
++			    }
++			    _pausedRoleAnimationSnapshots.Add(instanceID, snapshot);
++			    return;
++			}
++			AnimationPauseSnapshot saved;
++			if (!_pausedRoleAnimationSnapshots.TryGetValue(instanceID, out saved)) return;
++			Animator[] current = roleObj.GetComponentsInChildren<Animator>(true);
++			if (current != null)
++			    foreach (Animator animator in current)
++			        if (animator != null)
++			        {
++			            float speed;
++			            if (saved.animatorInstanceSpeed != null && saved.animatorInstanceSpeed.TryGetValue(animator.GetInstanceID(), out speed)) animator.speed = speed;
++			            else if (animator.speed == 0f) animator.speed = 1f;
++			        }
++			RoleBehaviour currentRole = roleObj.GetComponent<RoleBehaviour>();
++			IAnimation currentAnimation = currentRole != null ? currentRole.GetAnimationBehaviour() : null;
++			if (saved.shouldResumeAniInstancing)
++			{
++			    var instancing = currentAnimation as AnimationInstancing.AnimationInstancing;
++			    if (instancing != null && instancing.IsPause()) instancing.Resume();
++			}
++			if (saved.hasGpuiCrowdPrefab && HWGPUInstancerManager.IsGPUInstancerSupported())
++			{
++			    var crowd = roleObj.GetComponent<GPUInstancer.CrowdAnimations.GPUICrowdPrefab>();
++			    if (crowd != null) GPUInstancer.CrowdAnimations.GPUICrowdAPI.SetAnimationSpeed(crowd, saved.gpuiAnimationSpeed);
++			}
++			_pausedRoleAnimationSnapshots.Remove(instanceID);
+ 		}
+ 
+ 		[Token(Token = "0x600138B")]
+ 		[Address(RVA = "0x3DE5E20", Offset = "0x3DE1E20", VA = "0x3DE5E20")]
+ 		private string GetTimeCutDownString()
+ 		{
+-			return null;
++			int minutes = Mathf.FloorToInt(_timeLeft / 60f);
++			int seconds = Mathf.FloorToInt(_timeLeft % 60f);
++			string format = seconds == 0 ? "{0}:{1}0" : seconds <= 9 ? "{0}:0{1}" : "{0}:{1}";
++			return string.Format(string.Format(format, minutes, seconds), Array.Empty<object>());
+ 		}
+ 
+ 		[Token(Token = "0x600138C")]
+ 		[Address(RVA = "0x3DE6088", Offset = "0x3DE2088", VA = "0x3DE6088")]
+ 		public void RecordDamage(string id, int damage)
+ 		{
++			if (roleAllDamageDic.ContainsKey(id)) roleAllDamageDic[id] = unchecked(roleAllDamageDic[id] + damage);
++			else roleAllDamageDic.Add(id, damage);
+ 		}
+ 
+ 		[Token(Token = "0x600138D")]
+ 		[Address(RVA = "0x3DE6178", Offset = "0x3DE2178", VA = "0x3DE6178")]
+ 		public void RecordBuildDamage(string id, int damage)
+ 		{
++			if (towerAllDamageDic.ContainsKey(id)) towerAllDamageDic[id] = unchecked(towerAllDamageDic[id] + damage);
++			else towerAllDamageDic.Add(id, damage);
+ 		}
+ 
+ 		[Token(Token = "0x600138E")]
+@@ -755,38 +905,106 @@
+ 		[Address(RVA = "0x3DE65C8", Offset = "0x3DE25C8", VA = "0x3DE65C8")]
+ 		public void AddDeadUnit(int id, DeadUnitInfo unitInfo)
+ 		{
++			if (!GameDeadUnitInfoDic.ContainsKey(id)) GameDeadUnitInfoDic.Add(id, unitInfo);
+ 		}
+ 
+ 		[Token(Token = "0x6001390")]
+ 		[Address(RVA = "0x3DE666C", Offset = "0x3DE266C", VA = "0x3DE666C")]
+ 		public void RemoveDeadUnit(int id)
+ 		{
++			if (GameDeadUnitInfoDic.ContainsKey(id)) GameDeadUnitInfoDic.Remove(id);
+ 		}
+ 
+ 		[Token(Token = "0x6001391")]
+ 		[Address(RVA = "0x3DE66FC", Offset = "0x3DE26FC", VA = "0x3DE66FC")]
+ 		[AsyncStateMachine(typeof(_003CCountDownEnd_003Ed__81))]
+-		private void CountDownEnd()
+-		{
++		private async void CountDownEnd()
++		{
++			if (_myCoroutine != null) StopCoroutine(_myCoroutine);
++			if (Time.timeScale == 0f) return;
++			if (BattleGameSceneManager.Instance.PlayerHasHex > BattleGameSceneManager.Instance.EnemyHasHex) GameEnd(true, true);
++			else if (BattleGameSceneManager.Instance.PlayerHasHex < BattleGameSceneManager.Instance.EnemyHasHex) GameEnd(false, true);
++			else if (BattleGameSceneManager.Instance.allPlayerRoleObj.Count > BattleGameSceneManager.Instance.allEnemyRoleObj.Count) GameEnd(true, true);
++			else if (BattleGameSceneManager.Instance.allPlayerRoleObj.Count < BattleGameSceneManager.Instance.allEnemyRoleObj.Count) GameEnd(false, true);
++			else if (Time.timeScale != 0f)
++			{
++			    _timeLeft += 10f;
++			    isCountDowning = true;
++			    if (_myCoroutine != null) StopCoroutine(_myCoroutine);
++			    _myCoroutine = StartCoroutine(Countdown());
++			}
+ 		}
+ 
+ 		[Token(Token = "0x6001392")]
+ 		[Address(RVA = "0x3DE6788", Offset = "0x3DE2788", VA = "0x3DE6788")]
+ 		[AsyncStateMachine(typeof(_003CBeginStartCountDown_003Ed__82))]
+-		private void BeginStartCountDown(object o)
+-		{
++		private async void BeginStartCountDown(object o)
++		{
++			if (isCountDowning) return;
++			await UniTask.WaitUntil(() => canCutDown);
++			if (this == null || isCountDowning) return;
++			isCountDowning = true;
++			if (_myCoroutine != null) StopCoroutine(_myCoroutine);
++			_myCoroutine = StartCoroutine(Countdown());
+ 		}
+ 
+ 		[Token(Token = "0x6001393")]
+ 		[Address(RVA = "0x3DE6814", Offset = "0x3DE2814", VA = "0x3DE6814")]
+ 		public void StartGame(BattleContext battleContext)
+ 		{
++			string arenaID = StringTool.IsNullOrEmpty(CoreGameManager.NowPlayEdArenaID) ? "1001" : CoreGameManager.NowPlayEdArenaID;
++			countDownTime = StringTool.ToInt(DataModule.DataManager.Instance.GlobalInfo.arenaInfoDic[arenaID].countDownTime);
++			SubGameBuffManager.Instance.ModifyCountDownTime(ref countDownTime);
++			_timeLeft = countDownTime;
++			_timeString = GetTimeCutDownString();
++			GamePanelManager.Instance.UpdateInfo(new object[] { hasCoin, _timeString });
++			if (TrainingGroundManager.IsInGuidedGame) hasCoin = TrainingGroundManager.Instance.GetPlayerInitialCoin();
++			else hasCoin = global::DbtSaveDataManager_PlayerGuideData.I.Data.isFirstThroghGame ? 150 : 50;
++			battleInitCoin = hasCoin;
++			battleTotalEarned = hasCoin;
++			battleTotalCost = 0;
++			_isAddCoining = true;
++			if (!global::DbtSaveDataManager_PlayerGuideData.I.Data.isFirstThroghGame) BeginStartCountDown(null);
++			GameType = battleContext.GameType;
++			_battleContext = battleContext;
++			IsGamePaused = false;
++			gameEndCallBack = battleContext.gameEndCallBack;
++			applyRewardCallBack = battleContext.gameEndApplyRewardCallBack;
++			_pausedRoleAnimationSnapshots.Clear();
++			CheatControl.ResetPerfStates();
++			if (BattleFPSController.Instance != null) BattleFPSController.Instance.StartMonitoring();
++			List<int> ids = global::DbtSaveDataManager_PlayerCardData.I.Data.GetBattleCardIDList();
++			if (cardOpenCount == null) cardOpenCount = new Dictionary<string, int>();
++			for (int i = 0; i < ids.Count; ++i) cardOpenCount.TryAdd(ids[i].ToString(), 0);
+ 		}
+ 
+ 		[Token(Token = "0x6001394")]
+ 		[Address(RVA = "0x3DE6DAC", Offset = "0x3DE2DAC", VA = "0x3DE6DAC")]
+ 		public void EndGame()
+ 		{
++			if (BattleFPSController.Instance != null) BattleFPSController.Instance.StopMonitoring();
++			playerNowGameOpenGoldCardEd = false;
++			gameEndCallBack?.Invoke(isVictory);
++			isCountDowning = false;
++			openHexCount = 0;
++			gameEndCallBack = null;
++			applyRewardCallBack = null;
++			rewardConfig = null;
++			if (_myCoroutine != null) StopCoroutine(_myCoroutine);
++			_isAddCoining = false;
++			hasCoin = 0;
++			_timeLeft = 0f;
++			roleAllDamageDic.Clear();
++			IsGamePaused = false;
++			_pausedRoleAnimationSnapshots.Clear();
++			GameDeadUnitInfoDic.Clear();
++			towerAllDamageDic.Clear();
++			hornIng = false;
++			hornTime = 5f;
++			cardOpenCount.Clear();
++			gameUseCoinNums = 0;
++			countDownTime = 0;
++			canCutDown = false;
+ 		}
+ 
+ 		[Token(Token = "0x6001395")]

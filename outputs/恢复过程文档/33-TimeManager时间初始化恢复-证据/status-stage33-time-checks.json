@@ -1,0 +1,475 @@
+{
+  "stage": "complete",
+  "methods": [
+    {
+      "name": "TimeModuleO.TimeManager$$CheckTimerToZero",
+      "address": 65293392,
+      "end": 65294112,
+      "signature": "void TimeModuleO_TimeManager__CheckTimerToZero (TimeModuleO_TimeManager_o* __this, const MethodInfo* method);",
+      "prototype": "void CheckTimerToZero(void* self,const MethodInfo* method);",
+      "range_analysis": 1,
+      "direct_callees": [
+        {
+          "callsite": "0x3e44cfc",
+          "address": "0x3f6e2c4",
+          "name": "TimeModuleO.TimeManager.Timer$$IsCompleted",
+          "signature": "bool TimeModuleO_TimeManager_Timer__IsCompleted (TimeModuleO_TimeManager_Timer_o* __this, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x3e44d0c",
+          "address": "0x3e32c78",
+          "name": "TimeModuleO.TimeManager$$GetTimeSpanToZero",
+          "signature": "System_TimeSpan_o TimeModuleO_TimeManager__GetTimeSpanToZero (TimeModuleO_TimeManager_o* __this, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x3e44d24",
+          "address": "0x3f6c934",
+          "name": "TimeModuleO.TimeManager.Timer$$Restart",
+          "signature": "void TimeModuleO_TimeManager_Timer__Restart (TimeModuleO_TimeManager_Timer_o* __this, System_TimeSpan_o duration, bool isCountdown, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x3e44d58",
+          "address": "0x3e44f20",
+          "name": "TimeModuleO.TimeManager$$ChangeTimeInfoEndTime",
+          "signature": "void TimeModuleO_TimeManager__ChangeTimeInfoEndTime (System_String_o* key, System_DateTime_o endTime, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x3e44d84",
+          "address": "0x82a3fc4",
+          "name": "UnityEngine.Debug$$Log",
+          "signature": "void UnityEngine_Debug__Log (Il2CppObject* message, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x3e44d94",
+          "address": "0x5978460",
+          "name": "ToolModule.ManagerBase<object>$$get_Instance",
+          "signature": "Il2CppObject* ToolModule_ManagerBase_object___get_Instance (const MethodInfo_5978460* method);"
+        },
+        {
+          "callsite": "0x3e44db0",
+          "address": "0x3f05f64",
+          "name": "EventModule.EventManager$$TriggerEvent",
+          "signature": "void EventModule_EventManager__TriggerEvent (EventModule_EventManager_o* __this, System_String_o* eventName, Il2CppObject* parameter, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x3e44db8",
+          "address": "0x3e33908",
+          "name": "TimeModuleO.TimeManager$$GetLocalNetworkTime",
+          "signature": "System_DateTime_o TimeModuleO_TimeManager__GetLocalNetworkTime (TimeModuleO_TimeManager_o* __this, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x3e44de4",
+          "address": "0x7665668",
+          "name": "System.DateTime$$get_DayOfWeek",
+          "signature": "int32_t System_DateTime__get_DayOfWeek (System_DateTime_o __this, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x3e44df8",
+          "address": "0x3e45814",
+          "name": "TimeModuleO.TimeManager$$GetTimeSpanToWeek",
+          "signature": "System_TimeSpan_o TimeModuleO_TimeManager__GetTimeSpanToWeek (TimeModuleO_TimeManager_o* __this, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x3e44e10",
+          "address": "0x3f6c934",
+          "name": "TimeModuleO.TimeManager.Timer$$Restart",
+          "signature": "void TimeModuleO_TimeManager_Timer__Restart (TimeModuleO_TimeManager_Timer_o* __this, System_TimeSpan_o duration, bool isCountdown, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x3e44e4c",
+          "address": "0x82a3fc4",
+          "name": "UnityEngine.Debug$$Log",
+          "signature": "void UnityEngine_Debug__Log (Il2CppObject* message, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x3e44e54",
+          "address": "0x5978460",
+          "name": "ToolModule.ManagerBase<object>$$get_Instance",
+          "signature": "Il2CppObject* ToolModule_ManagerBase_object___get_Instance (const MethodInfo_5978460* method);"
+        },
+        {
+          "callsite": "0x3e44e70",
+          "address": "0x3f05f64",
+          "name": "EventModule.EventManager$$TriggerEvent",
+          "signature": "void EventModule_EventManager__TriggerEvent (EventModule_EventManager_o* __this, System_String_o* eventName, Il2CppObject* parameter, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x3e44e80",
+          "address": "0x3f6e2c4",
+          "name": "TimeModuleO.TimeManager.Timer$$IsCompleted",
+          "signature": "bool TimeModuleO_TimeManager_Timer__IsCompleted (TimeModuleO_TimeManager_Timer_o* __this, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x3e44e90",
+          "address": "0x3e4577c",
+          "name": "TimeModuleO.TimeManager$$GetTimeSpanToZeroStandardNetworkTime",
+          "signature": "System_TimeSpan_o TimeModuleO_TimeManager__GetTimeSpanToZeroStandardNetworkTime (TimeModuleO_TimeManager_o* __this, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x3e44ea8",
+          "address": "0x3f6c934",
+          "name": "TimeModuleO.TimeManager.Timer$$Restart",
+          "signature": "void TimeModuleO_TimeManager_Timer__Restart (TimeModuleO_TimeManager_Timer_o* __this, System_TimeSpan_o duration, bool isCountdown, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x3e44edc",
+          "address": "0x3e44f20",
+          "name": "TimeModuleO.TimeManager$$ChangeTimeInfoEndTime",
+          "signature": "void TimeModuleO_TimeManager__ChangeTimeInfoEndTime (System_String_o* key, System_DateTime_o endTime, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x3e44eec",
+          "address": "0x5978460",
+          "name": "ToolModule.ManagerBase<object>$$get_Instance",
+          "signature": "Il2CppObject* ToolModule_ManagerBase_object___get_Instance (const MethodInfo_5978460* method);"
+        },
+        {
+          "callsite": "0x3e44f08",
+          "address": "0x3f05f64",
+          "name": "EventModule.EventManager$$TriggerEvent",
+          "signature": "void EventModule_EventManager__TriggerEvent (EventModule_EventManager_o* __this, System_String_o* eventName, Il2CppObject* parameter, const MethodInfo* method);"
+        }
+      ],
+      "prototype_applied": true,
+      "actual_function_start": "0x3e44c50",
+      "actual_function_end": "0x3e44f20",
+      "pseudocode_chars": 4692,
+      "unresolved_jumpout": false
+    },
+    {
+      "name": "TimeModuleO.TimeManager$$CheckTimerEndEvent",
+      "address": 65297408,
+      "end": 65298248,
+      "signature": "void TimeModuleO_TimeManager__CheckTimerEndEvent (TimeModuleO_TimeManager_o* __this, const MethodInfo* method);",
+      "prototype": "void CheckTimerEndEvent(void* self,const MethodInfo* method);",
+      "range_analysis": 1,
+      "direct_callees": [
+        {
+          "callsite": "0x3e45cf8",
+          "address": "0x76a7674",
+          "name": "System.Array$$Clear",
+          "signature": "void System_Array__Clear (System_Array_o* array, int32_t index, int32_t length, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x3e45d44",
+          "address": "0x6c070e4",
+          "name": "System.Collections.Generic.Dictionary<object, object>$$GetEnumerator",
+          "signature": "System_Collections_Generic_Dictionary_Enumerator_TKey__TValue__o System_Collections_Generic_Dictionary_object__object___GetEnumerator (System_Collections_Generic_Dictionary_object__object__o* __this, const MethodInfo_6C070E4* method);"
+        },
+        {
+          "callsite": "0x3e45d64",
+          "address": "0x6ea5088",
+          "name": "System.Collections.Generic.Dictionary.Enumerator<object, object>$$MoveNext",
+          "signature": "bool System_Collections_Generic_Dictionary_Enumerator_object__object___MoveNext (System_Collections_Generic_Dictionary_Enumerator_TKey__TValue__o __this, const MethodInfo_6EA5088* method);"
+        },
+        {
+          "callsite": "0x3e45d7c",
+          "address": "0x3f6e2c4",
+          "name": "TimeModuleO.TimeManager.Timer$$IsCompleted",
+          "signature": "bool TimeModuleO_TimeManager_Timer__IsCompleted (TimeModuleO_TimeManager_Timer_o* __this, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x3e45d94",
+          "address": "0x6c06eb4",
+          "name": "System.Collections.Generic.Dictionary<object, object>$$ContainsKey",
+          "signature": "bool System_Collections_Generic_Dictionary_object__object___ContainsKey (System_Collections_Generic_Dictionary_object__object__o* __this, Il2CppObject* key, const MethodInfo_6C06EB4* method);"
+        },
+        {
+          "callsite": "0x3e45df0",
+          "address": "0x574f530",
+          "name": "System.Collections.Generic.List<object>$$AddWithResize",
+          "signature": "void System_Collections_Generic_List_object___AddWithResize (System_Collections_Generic_List_object__o* __this, Il2CppObject* item, const MethodInfo_574F530* method);"
+        },
+        {
+          "callsite": "0x3e45e00",
+          "address": "0x6ea519c",
+          "name": "System.Collections.Generic.Dictionary.Enumerator<object, object>$$Dispose",
+          "signature": "void System_Collections_Generic_Dictionary_Enumerator_object__object___Dispose (System_Collections_Generic_Dictionary_Enumerator_TKey__TValue__o __this, const MethodInfo_6EA519C* method);"
+        },
+        {
+          "callsite": "0x3e45e24",
+          "address": "0x574f26c",
+          "name": "System.Collections.Generic.List<object>$$get_Item",
+          "signature": "Il2CppObject* System_Collections_Generic_List_object___get_Item (System_Collections_Generic_List_object__o* __this, int32_t index, const MethodInfo_574F26C* method);"
+        },
+        {
+          "callsite": "0x3e45e44",
+          "address": "0x6c08430",
+          "name": "System.Collections.Generic.Dictionary<object, object>$$TryGetValue",
+          "signature": "bool System_Collections_Generic_Dictionary_object__object___TryGetValue (System_Collections_Generic_Dictionary_object__object__o* __this, Il2CppObject* key, Il2CppObject** value, const MethodInfo_6C08430* method);"
+        },
+        {
+          "callsite": "0x3e45e6c",
+          "address": "0x3e3304c",
+          "name": "TimeModuleO.TimeManager$$RemoveTimerEvent",
+          "signature": "void TimeModuleO_TimeManager__RemoveTimerEvent (TimeModuleO_TimeManager_o* __this, System_String_o* timerKey, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x3e45ea0",
+          "address": "0x76a7674",
+          "name": "System.Array$$Clear",
+          "signature": "void System_Array__Clear (System_Array_o* array, int32_t index, int32_t length, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x3e45f04",
+          "address": "0x6ea519c",
+          "name": "System.Collections.Generic.Dictionary.Enumerator<object, object>$$Dispose",
+          "signature": "void System_Collections_Generic_Dictionary_Enumerator_object__object___Dispose (System_Collections_Generic_Dictionary_Enumerator_TKey__TValue__o __this, const MethodInfo_6EA519C* method);"
+        },
+        {
+          "callsite": "0x3e45f2c",
+          "address": "0x6ea519c",
+          "name": "System.Collections.Generic.Dictionary.Enumerator<object, object>$$Dispose",
+          "signature": "void System_Collections_Generic_Dictionary_Enumerator_object__object___Dispose (System_Collections_Generic_Dictionary_Enumerator_TKey__TValue__o __this, const MethodInfo_6EA519C* method);"
+        }
+      ],
+      "prototype_applied": true,
+      "actual_function_start": "0x3e45c00",
+      "actual_function_end": "0x3e45f48",
+      "pseudocode_chars": 4354,
+      "unresolved_jumpout": false
+    },
+    {
+      "name": "TimeModuleO.TimeManager$$CheckWeekPassed",
+      "address": 65297084,
+      "end": 65297408,
+      "signature": "void TimeModuleO_TimeManager__CheckWeekPassed (TimeModuleO_TimeManager_o* __this, const MethodInfo* method);",
+      "prototype": "void CheckWeekPassed(void* self,const MethodInfo* method);",
+      "range_analysis": 1,
+      "direct_callees": [
+        {
+          "callsite": "0x3e45b54",
+          "address": "0x7667974",
+          "name": "System.DateTime$$op_Equality",
+          "signature": "bool System_DateTime__op_Equality (System_DateTime_o d1, System_DateTime_o d2, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x3e45b60",
+          "address": "0x3e33908",
+          "name": "TimeModuleO.TimeManager$$GetLocalNetworkTime",
+          "signature": "System_DateTime_o TimeModuleO_TimeManager__GetLocalNetworkTime (TimeModuleO_TimeManager_o* __this, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x3e45b6c",
+          "address": "0x3e45400",
+          "name": "TimeModuleO.TimeManager$$GetStartOfWeekForTimeManager",
+          "signature": "System_DateTime_o TimeModuleO_TimeManager__GetStartOfWeekForTimeManager (TimeModuleO_TimeManager_o* __this, System_DateTime_o dt, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x3e45b78",
+          "address": "0x3e45400",
+          "name": "TimeModuleO.TimeManager$$GetStartOfWeekForTimeManager",
+          "signature": "System_DateTime_o TimeModuleO_TimeManager__GetStartOfWeekForTimeManager (TimeModuleO_TimeManager_o* __this, System_DateTime_o dt, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x3e45ba0",
+          "address": "0x7667b1c",
+          "name": "System.DateTime$$op_GreaterThan",
+          "signature": "bool System_DateTime__op_GreaterThan (System_DateTime_o t1, System_DateTime_o t2, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x3e45bc4",
+          "address": "0x3e452c4",
+          "name": "TimeModuleO.TimeManager$$SaveLastExitTime",
+          "signature": "void TimeModuleO_TimeManager__SaveLastExitTime (TimeModuleO_TimeManager_o* __this, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x3e45bf8",
+          "address": "0x3e452c4",
+          "name": "TimeModuleO.TimeManager$$SaveLastExitTime",
+          "signature": "void TimeModuleO_TimeManager__SaveLastExitTime (TimeModuleO_TimeManager_o* __this, const MethodInfo* method);"
+        }
+      ],
+      "prototype_applied": true,
+      "actual_function_start": "0x3e45abc",
+      "actual_function_end": "0x3e45c00",
+      "pseudocode_chars": 2213,
+      "unresolved_jumpout": false
+    },
+    {
+      "name": "TimeModuleO.TimeManager.<CheckTimerToZeroCoroutine>d__45$$MoveNext",
+      "address": 66512228,
+      "end": 66512404,
+      "signature": "bool TimeModuleO_TimeManager__CheckTimerToZeroCoroutine_d__45__MoveNext (TimeModuleO_TimeManager__CheckTimerToZeroCoroutine_d__45_o* __this, const MethodInfo* method);",
+      "prototype": "unsigned char CheckTimerToZeroMoveNext(void* self,const MethodInfo* method);",
+      "range_analysis": 1,
+      "direct_callees": [
+        {
+          "callsite": "0x3f6e5b4",
+          "address": "0x3e44c50",
+          "name": "TimeModuleO.TimeManager$$CheckTimerToZero",
+          "signature": "void TimeModuleO_TimeManager__CheckTimerToZero (TimeModuleO_TimeManager_o* __this, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x3f6e5ec",
+          "address": "0x82f2a90",
+          "name": "UnityEngine.WaitForSeconds$$.ctor",
+          "signature": "void UnityEngine_WaitForSeconds___ctor (UnityEngine_WaitForSeconds_o* __this, float seconds, const MethodInfo* method);"
+        }
+      ],
+      "prototype_applied": true,
+      "actual_function_start": "0x3f6e564",
+      "actual_function_end": "0x3f6e614",
+      "pseudocode_chars": 949,
+      "unresolved_jumpout": false
+    },
+    {
+      "name": "TimeModuleO.TimeManager.<CheckTimerEndEventCoroutine>d__46$$MoveNext",
+      "address": 66511936,
+      "end": 66512112,
+      "signature": "bool TimeModuleO_TimeManager__CheckTimerEndEventCoroutine_d__46__MoveNext (TimeModuleO_TimeManager__CheckTimerEndEventCoroutine_d__46_o* __this, const MethodInfo* method);",
+      "prototype": "unsigned char CheckTimerEndMoveNext(void* self,const MethodInfo* method);",
+      "range_analysis": 1,
+      "direct_callees": [
+        {
+          "callsite": "0x3f6e490",
+          "address": "0x3e45c00",
+          "name": "TimeModuleO.TimeManager$$CheckTimerEndEvent",
+          "signature": "void TimeModuleO_TimeManager__CheckTimerEndEvent (TimeModuleO_TimeManager_o* __this, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x3f6e4c8",
+          "address": "0x82f2a90",
+          "name": "UnityEngine.WaitForSeconds$$.ctor",
+          "signature": "void UnityEngine_WaitForSeconds___ctor (UnityEngine_WaitForSeconds_o* __this, float seconds, const MethodInfo* method);"
+        }
+      ],
+      "prototype_applied": true,
+      "actual_function_start": "0x3f6e440",
+      "actual_function_end": "0x3f6e4f0",
+      "pseudocode_chars": 953,
+      "unresolved_jumpout": false
+    },
+    {
+      "name": "TimeModuleO.TimeManager.<CheckWeekPassedCoroutine>d__47$$MoveNext",
+      "address": 66512520,
+      "end": 66512696,
+      "signature": "bool TimeModuleO_TimeManager__CheckWeekPassedCoroutine_d__47__MoveNext (TimeModuleO_TimeManager__CheckWeekPassedCoroutine_d__47_o* __this, const MethodInfo* method);",
+      "prototype": "unsigned char CheckWeekMoveNext(void* self,const MethodInfo* method);",
+      "range_analysis": 1,
+      "direct_callees": [
+        {
+          "callsite": "0x3f6e6d8",
+          "address": "0x3e45abc",
+          "name": "TimeModuleO.TimeManager$$CheckWeekPassed",
+          "signature": "void TimeModuleO_TimeManager__CheckWeekPassed (TimeModuleO_TimeManager_o* __this, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x3f6e710",
+          "address": "0x82f2a90",
+          "name": "UnityEngine.WaitForSeconds$$.ctor",
+          "signature": "void UnityEngine_WaitForSeconds___ctor (UnityEngine_WaitForSeconds_o* __this, float seconds, const MethodInfo* method);"
+        }
+      ],
+      "prototype_applied": true,
+      "actual_function_start": "0x3f6e688",
+      "actual_function_end": "0x3f6e738",
+      "pseudocode_chars": 930,
+      "unresolved_jumpout": false
+    },
+    {
+      "name": "TimeModuleO.TimeManager$$RegisterOnTimeToZero",
+      "address": 65300740,
+      "end": 65300868,
+      "signature": "void TimeModuleO_TimeManager__RegisterOnTimeToZero (TimeModuleO_TimeManager_o* __this, System_Action_o* action, const MethodInfo* method);",
+      "prototype": "void RegisterTimeZero(void* self,void* action,const MethodInfo* method);",
+      "range_analysis": 1,
+      "direct_callees": [
+        {
+          "callsite": "0x3e46940",
+          "address": "0x76ca818",
+          "name": "System.Delegate$$Combine",
+          "signature": "System_Delegate_o* System_Delegate__Combine (System_Delegate_o* a, System_Delegate_o* b, const MethodInfo* method);"
+        }
+      ],
+      "prototype_applied": true,
+      "actual_function_start": "0x3e46904",
+      "actual_function_end": "0x3e46984",
+      "pseudocode_chars": 601,
+      "unresolved_jumpout": false
+    },
+    {
+      "name": "TimeModuleO.TimeManager$$RegisterOnTimeToMondayZero",
+      "address": 65301252,
+      "end": 65301380,
+      "signature": "void TimeModuleO_TimeManager__RegisterOnTimeToMondayZero (TimeModuleO_TimeManager_o* __this, System_Action_o* action, const MethodInfo* method);",
+      "prototype": "void RegisterMondayZero(void* self,void* action,const MethodInfo* method);",
+      "range_analysis": 1,
+      "direct_callees": [
+        {
+          "callsite": "0x3e46b40",
+          "address": "0x76ca818",
+          "name": "System.Delegate$$Combine",
+          "signature": "System_Delegate_o* System_Delegate__Combine (System_Delegate_o* a, System_Delegate_o* b, const MethodInfo* method);"
+        }
+      ],
+      "prototype_applied": true,
+      "actual_function_start": "0x3e46b04",
+      "actual_function_end": "0x3e46b84",
+      "pseudocode_chars": 607,
+      "unresolved_jumpout": false
+    },
+    {
+      "name": "TimeModuleO.TimeManager$$CheckTimerToWeek",
+      "address": 65296772,
+      "end": 65297084,
+      "signature": "void TimeModuleO_TimeManager__CheckTimerToWeek (TimeModuleO_TimeManager_o* __this, const MethodInfo* method);",
+      "prototype": "void CheckTimerToWeek(void* self,const MethodInfo* method);",
+      "range_analysis": 1,
+      "direct_callees": [
+        {
+          "callsite": "0x3e459ec",
+          "address": "0x3f6e2c4",
+          "name": "TimeModuleO.TimeManager.Timer$$IsCompleted",
+          "signature": "bool TimeModuleO_TimeManager_Timer__IsCompleted (TimeModuleO_TimeManager_Timer_o* __this, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x3e459fc",
+          "address": "0x3e45814",
+          "name": "TimeModuleO.TimeManager$$GetTimeSpanToWeek",
+          "signature": "System_TimeSpan_o TimeModuleO_TimeManager__GetTimeSpanToWeek (TimeModuleO_TimeManager_o* __this, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x3e45a14",
+          "address": "0x3f6c934",
+          "name": "TimeModuleO.TimeManager.Timer$$Restart",
+          "signature": "void TimeModuleO_TimeManager_Timer__Restart (TimeModuleO_TimeManager_Timer_o* __this, System_TimeSpan_o duration, bool isCountdown, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x3e45a48",
+          "address": "0x3e44f20",
+          "name": "TimeModuleO.TimeManager$$ChangeTimeInfoEndTime",
+          "signature": "void TimeModuleO_TimeManager__ChangeTimeInfoEndTime (System_String_o* key, System_DateTime_o endTime, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x3e45a74",
+          "address": "0x82a3fc4",
+          "name": "UnityEngine.Debug$$Log",
+          "signature": "void UnityEngine_Debug__Log (Il2CppObject* message, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x3e45a84",
+          "address": "0x5978460",
+          "name": "ToolModule.ManagerBase<object>$$get_Instance",
+          "signature": "Il2CppObject* ToolModule_ManagerBase_object___get_Instance (const MethodInfo_5978460* method);"
+        },
+        {
+          "callsite": "0x3e45aa8",
+          "address": "0x3f05f64",
+          "name": "EventModule.EventManager$$TriggerEvent",
+          "signature": "void EventModule_EventManager__TriggerEvent (EventModule_EventManager_o* __this, System_String_o* eventName, Il2CppObject* parameter, const MethodInfo* method);"
+        }
+      ],
+      "prototype_applied": true,
+      "actual_function_start": "0x3e45984",
+      "actual_function_end": "0x3e45abc",
+      "pseudocode_chars": 1877,
+      "unresolved_jumpout": false
+    }
+  ],
+  "image_base": "0x0",
+  "type_errors": 0,
+  "hexrays_available": true,
+  "hexrays_version": "9.4.0.260713",
+  "database_saved": true
+}

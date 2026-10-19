@@ -1,0 +1,683 @@
+{
+  "stage": 32,
+  "status": "read-only-plan-awaiting-root-scope-confirmation",
+  "preparedUtc": "2026-10-19T07:50:21.230547+00:00",
+  "sourceEdits": 0,
+  "unityLaunchesByThisAgent": 0,
+  "execution": "not-run",
+  "coreGameplayAccepted": false,
+  "nativeEvidenceScope": {
+    "originalElfSha256": "72770d00b2b404acf44cc75cc8bf7a3e06850e9ace1237c9cbb2bc72894220ed",
+    "methodsInspected": 104,
+    "nativeBytes": 34440,
+    "note": "Inspected candidates include alternate obfuscated methods; not a claim to restore 104 methods"
+  },
+  "proposedMainSourceOwnership": [
+    "Assets/Scripts/GFRunning/GameFramework/Base/GameStartEntry.cs",
+    "Assets/Scripts/GFRunning/GameFramework/GameFrameEntry.cs",
+    "Assets/Scripts/Assembly-CSharp/ljzs_lt/GameStart.cs"
+  ],
+  "necessaryNarrowOwnershipExtension": [
+    "Assets/Scripts/GFRunning/GameFramework/Base/IGameStart.cs"
+  ],
+  "sourceBaseline": [
+    {
+      "path": "Assets/Scripts/GFRunning/GameFramework/Base/GameStartEntry.cs",
+      "bytes": 10596,
+      "sha256": "75b4661d3f661a7c1606f37f3acdf86d2b59417bd6d6032fad50d80843d9eb81"
+    },
+    {
+      "path": "Assets/Scripts/GFRunning/GameFramework/GameFrameEntry.cs",
+      "bytes": 5724,
+      "sha256": "2aa7333bbdaa7a898605bdd2d352fea8de99347284ed8983b139c0aa595a5385"
+    },
+    {
+      "path": "Assets/Scripts/Assembly-CSharp/ljzs_lt/GameStart.cs",
+      "bytes": 4659,
+      "sha256": "24d33231175485771081ec421fd9d13146eb038e99a776d88a9360a28c31e9b4"
+    },
+    {
+      "path": "Assets/Scripts/GFRunning/GameFramework/Base/IGameStart.cs",
+      "bytes": 3319,
+      "sha256": "484303852f6432c104634259e5e5210da7dd1a07f942c350999cb2a101852a5b"
+    }
+  ],
+  "firstClosedImplementationTarget": "Original Awake/IGameStart binding -> original module type lookup/create -> actual VersionMondule.Initialize entry, preserving unresolved completion gate",
+  "batches": [
+    {
+      "name": "32A",
+      "scope": "Three assigned entry files plus three precise IGameStart bridge methods, after root confirms and source freeze ends",
+      "acceptance": "Original dispatch/body/metadata source and independent Unity rsp compilation; runtime progress only to the actual restored dependency reached; never claim entry pipeline closes"
+    },
+    {
+      "name": "32B",
+      "scope": "Independent VersionMondule, UpdateManager and real old/new resource initialization contracts, with bounded dependency audit",
+      "acceptance": "Actual native-defined callback fires only after its real original prerequisites; original ABFiles payload must be consumed, not merely archived"
+    },
+    {
+      "name": "32C",
+      "scope": "Actual Resources/UI and seven secondary module Initialize/Start contracts, old ConfigMgr consumption and controller/Fsm/Procedure bridge",
+      "acceptance": "Actual loading callback, old config consumption, InitCtrl(!Fastmode), and ProcedurePreLoad entry; separate from Play Mode/gameplay acceptance"
+    },
+    {
+      "name": "platform",
+      "scope": "SDK/telemetry/app lifecycle/native service interfaces are documented and adapted separately; no external messages, telemetry or real SDK service is invoked in this work",
+      "acceptance": "Adapter must state capability and original contract limits; cannot set original version/config/logic completion state to mask an absent service"
+    }
+  ],
+  "requiredBeforeSourceIntegration": [
+    "Root confirms whether three precise IGameStart methods may be added to scope",
+    "Root ends current project source freeze",
+    "Keep existing scene/meta/ABFiles/assets unchanged; preserve m_Fastmode=false",
+    "Re-read shared sources and apply narrow method changes against recorded hashes; no snapshot overwrite"
+  ],
+  "boundedExternalDependencies": [
+    "AppSetting static defaults and culture",
+    "UserDataPrefs.OnInit",
+    "VersionMondule Init and UpdateManager coroutine host",
+    "AssetbundleModule/AssetBundleManager manifest or NewResLoadHelper backend",
+    "ResourcesModule and UIModule",
+    "Lang/Fsm/MineLogic/Time/Effect/ObjectPool/Procedure module callbacks",
+    "Old ConfigMgr/ConfigRead/ResourcesInfo",
+    "Actual PurchaseControl/ServerTimeMgr/EmailControl registration and InitCtrl",
+    "SDK/platform interfaces in core completion/CommonSettings"
+  ],
+  "methodInventory": [
+    {
+      "rva": "0x72e86a4",
+      "alias": "Awake",
+      "scope": "entry",
+      "purpose": "Bind actual IGameStart, original settings/prefs hook, and VersionMondule initialization",
+      "declaringType": "GameFramework.Base.GameStartEntry",
+      "method": "Awake",
+      "token": "0x6007193",
+      "nativeBodyExtractedThisStage": true,
+      "nativeBytes": 1136,
+      "nativeBodySha256": "d14c13da29f7ed6a75fc23f8711d656efffff39dc2850fb60fc9c4125b7aa1f2"
+    },
+    {
+      "rva": "0x72e9368",
+      "alias": "constructor",
+      "scope": "entry",
+      "purpose": "Original log flag=true, internal int=3001, language library=1",
+      "declaringType": "GameFramework.Base.GameStartEntry",
+      "method": ".ctor",
+      "token": "0x6007198",
+      "nativeBodyExtractedThisStage": true,
+      "nativeBytes": 28,
+      "nativeBodySha256": "a202f3a94ed18861461de1bd8d124dc5fc4ead151d4cfa9d3263d698cbdc42a1"
+    },
+    {
+      "rva": "0x72e58f4",
+      "alias": "initialization log",
+      "scope": "entry",
+      "purpose": "Preserve original log gate; never substitute readiness",
+      "declaringType": "GameFramework.Base.GameStartEntry",
+      "method": "M¬a",
+      "token": "0x6007177",
+      "nativeBodyExtractedThisStage": true,
+      "nativeBytes": 208,
+      "nativeBodySha256": "35547bb51c5675f27224e3bbac35bde6feae12de02d7b175dd09ff68e6dcd271"
+    },
+    {
+      "rva": "0x72e5dd0",
+      "alias": "version completed callback",
+      "scope": "entry",
+      "purpose": "Select original new helper or old AssetbundleModule branch",
+      "declaringType": "GameFramework.Base.GameStartEntry",
+      "method": "vj·",
+      "token": "0x6007179",
+      "nativeBodyExtractedThisStage": true,
+      "nativeBytes": 1372,
+      "nativeBodySha256": "5c23085cf684536602216cfa976d48c122812258f9d12aa1c7ead5fad0ffed5d"
+    },
+    {
+      "rva": "0x72e692c",
+      "alias": "resource backend completed callback",
+      "scope": "entry",
+      "purpose": "Actual AfterGameFrameworkInit; select ResourcesModule/UIModule",
+      "declaringType": "GameFramework.Base.GameStartEntry",
+      "method": "fÂ§]",
+      "token": "0x6007182",
+      "nativeBodyExtractedThisStage": true,
+      "nativeBytes": 536,
+      "nativeBodySha256": "f97ecd4448e9432a75ec34b29905ae4ed34a9a87ba1a912e7bfeab088e5186dd"
+    },
+    {
+      "rva": "0x72eab28",
+      "alias": "old ResourcesModule completed callback",
+      "scope": "entry",
+      "purpose": "Initialize actual UIModule with UI callback",
+      "declaringType": "GameFramework.Base.GameStartEntry",
+      "method": "r·Mu",
+      "token": "0x60071A6",
+      "nativeBodyExtractedThisStage": true,
+      "nativeBytes": 304,
+      "nativeBodySha256": "86ed6f68073ed4e560ebebaa7dec378457162985b83f5ff900e739e91b3e0aee"
+    },
+    {
+      "rva": "0x72e8b14",
+      "alias": "UI completed callback",
+      "scope": "entry",
+      "purpose": "Initialize Lang,Fsm,MineLogic,Time,Effect,ObjectPool,Procedure in original order",
+      "declaringType": "GameFramework.Base.GameStartEntry",
+      "method": "»f¸]",
+      "token": "0x6007194",
+      "nativeBodyExtractedThisStage": true,
+      "nativeBytes": 1112,
+      "nativeBodySha256": "d67e84e45f67edcb4c9a411ab19a57abca2815b4db9e13a432e1cc91141f34a3"
+    },
+    {
+      "rva": "0x72e6fbc",
+      "alias": "core modules completed callback",
+      "scope": "entry",
+      "purpose": "Actual framework Start, original language/event hooks, actual InitPatchManager; SDK calls remain a separate boundary",
+      "declaringType": "GameFramework.Base.GameStartEntry",
+      "method": "JKM¬",
+      "token": "0x6007185",
+      "nativeBodyExtractedThisStage": true,
+      "nativeBytes": 624,
+      "nativeBodySha256": "8ccb092dd1ce63712bf6b8e26c0f3d2070ec5da57464e794c018ca543d0f9630"
+    },
+    {
+      "rva": "0x72ea93c",
+      "alias": "LoadingUI opened callback",
+      "scope": "entry",
+      "purpose": "Original SDK hook and actual config loading branch; old address data/config",
+      "declaringType": "GameFramework.Base.GameStartEntry",
+      "method": "OJy¿",
+      "token": "0x60071A5",
+      "nativeBodyExtractedThisStage": true,
+      "nativeBytes": 492,
+      "nativeBodySha256": "d7ca7326a9ca7d21539b64706e5b731fffaa8cd6f8738cdd13f1ac97b2ff33fa"
+    },
+    {
+      "rva": "0x72e7ff4",
+      "alias": "old config loaded callback",
+      "scope": "entry",
+      "purpose": "Call actual IGameStart.InitConfig(ResourcesInfo)",
+      "declaringType": "GameFramework.Base.GameStartEntry",
+      "method": "§YW",
+      "token": "0x600718F",
+      "nativeBodyExtractedThisStage": true,
+      "nativeBytes": 112,
+      "nativeBodySha256": "c7d8b5ad81adeb3c208bec1576c7cb9e951d1be2276700e2364abc77ba48a6c4"
+    },
+    {
+      "rva": "0x72e5690",
+      "alias": "config initialized -> start original logic",
+      "scope": "entry",
+      "purpose": "Original virtual registration calls, InitCtrl(!Fastmode), original flags and actual StartGame",
+      "declaringType": "GameFramework.Base.GameStartEntry",
+      "method": "ª«V^",
+      "token": "0x6007175",
+      "nativeBodyExtractedThisStage": true,
+      "nativeBytes": 612,
+      "nativeBodySha256": "f3515786acd4a6023d744639c7f0b3fb45a9ca1ce8a40feab3a7634592b5f1bf"
+    },
+    {
+      "rva": "0x72e59c4",
+      "alias": "conditional project physics settings",
+      "scope": "entry",
+      "purpose": "Preserve original conditional gate; recover float constants before implementation",
+      "declaringType": "GameFramework.Base.GameStartEntry",
+      "method": "ªOlF",
+      "token": "0x600719A",
+      "nativeBodyExtractedThisStage": true,
+      "nativeBytes": 308,
+      "nativeBodySha256": "38ed6be955e49b32a17371dd9dd9ffdfa5a0136ff993e8c8e49bc0f426a16e6a"
+    },
+    {
+      "rva": "0x72e75a0",
+      "alias": "Update",
+      "scope": "entry",
+      "purpose": "Preserve paused/resource-only/full-update branches driven by original state",
+      "declaringType": "GameFramework.Base.GameStartEntry",
+      "method": "Update",
+      "token": "0x6007189",
+      "nativeBodyExtractedThisStage": true,
+      "nativeBytes": 228,
+      "nativeBodySha256": "5c39706ceeb56f256ca1a983bfbc384b35a1104df3824ce76fa7ecb01769eb45"
+    },
+    {
+      "rva": "0x715bae8",
+      "alias": ".cctor",
+      "scope": "frame",
+      "purpose": "Original LinkedList, empty menu name and IsGoGameMenu=false; absent from current source",
+      "declaringType": "GameFramework.GameFrameEntry",
+      "method": ".cctor",
+      "token": "0x60055DE",
+      "nativeBodyExtractedThisStage": true,
+      "nativeBytes": 180,
+      "nativeBodySha256": "bbb311070bb105f0cdb8afcc3b3a6f206b43c50bbeba959ba5026705d9139345"
+    },
+    {
+      "rva": "0x715af54",
+      "alias": "Initialize",
+      "scope": "frame",
+      "purpose": "Store actual callback at module+0x18 then call actual module.Initialize(args); no ready write",
+      "declaringType": "GameFramework.GameFrameEntry",
+      "method": "Initialize",
+      "token": "0x60055D2",
+      "nativeBodyExtractedThisStage": true,
+      "nativeBytes": 40,
+      "nativeBodySha256": "acc1081e19d00ca756b063e12fd0db9d79c272d5b6f726a768f804c070857d5b"
+    },
+    {
+      "rva": "0x715b680",
+      "alias": "module lookup",
+      "scope": "frame",
+      "purpose": "Search module list backwards by exact runtime type; create only if absent",
+      "declaringType": "GameFramework.GameFrameEntry",
+      "method": "K~^«b",
+      "token": "0x60055DC",
+      "nativeBodyExtractedThisStage": true,
+      "nativeBytes": 328,
+      "nativeBodySha256": "b95b762faf99486048e58009a1d5351e9365736d62c6a6fb10bac5ab43b5cee0"
+    },
+    {
+      "rva": "0x715b7c8",
+      "alias": "module creation",
+      "scope": "frame",
+      "purpose": "Activator construction and descending priority stable insertion, original exception semantics",
+      "declaringType": "GameFramework.GameFrameEntry",
+      "method": "¹X",
+      "token": "0x60055DD",
+      "nativeBodyExtractedThisStage": true,
+      "nativeBytes": 800,
+      "nativeBodySha256": "a8ece20bcc32529ea99affbbda2523ccef068e51d4a4fadc8b30f5f7d1e462b5"
+    },
+    {
+      "rva": "0x715af7c",
+      "alias": "Start",
+      "scope": "frame",
+      "purpose": "Original once gate and real Start calls for registered modules",
+      "declaringType": "GameFramework.GameFrameEntry",
+      "method": "Start",
+      "token": "0x60055D3",
+      "nativeBodyExtractedThisStage": true,
+      "nativeBytes": 456,
+      "nativeBodySha256": "fcd210b25c0df41afb035c8bbd748225b98e4ea034759af488be4b86fd2fcc3b"
+    },
+    {
+      "rva": "0x715b144",
+      "alias": "ResourcesModuleUpdate",
+      "scope": "frame",
+      "purpose": "Original per-frame resource update gate",
+      "declaringType": "GameFramework.GameFrameEntry",
+      "method": "ResourcesModuleUpdate",
+      "token": "0x60055D4",
+      "nativeBodyExtractedThisStage": true,
+      "nativeBytes": 284,
+      "nativeBodySha256": "cae456bf93ce5039dfb6b9797fbab456767d2e3a7a2eed447e3d42605acee82d"
+    },
+    {
+      "rva": "0x715b260",
+      "alias": "Update",
+      "scope": "frame",
+      "purpose": "Original module list traversal and Update calls",
+      "declaringType": "GameFramework.GameFrameEntry",
+      "method": "Update",
+      "token": "0x60055D5",
+      "nativeBodyExtractedThisStage": true,
+      "nativeBytes": 240,
+      "nativeBodySha256": "171660bd0dbe8e89bb73e71efd681608cc509a46cde657bf2c8b4861018225c5"
+    },
+    {
+      "rva": "0x715a5d8",
+      "alias": "CommonSettings",
+      "scope": "frame-platform-boundary",
+      "purpose": "Original SDK, frame/Screen/culture and ResourceCollection hooks; platform contract must be separated",
+      "declaringType": "GameFramework.GameFrameEntry",
+      "method": "CommonSettings",
+      "token": "0x60055CB",
+      "nativeBodyExtractedThisStage": true,
+      "nativeBytes": 592,
+      "nativeBodySha256": "bb55130ce655aa28c17839c167826f18897373976532cf8a6deb76a5f6e24273"
+    },
+    {
+      "rva": "0x72eae70",
+      "alias": "IGameStart binding helper",
+      "scope": "required-scope-extension",
+      "purpose": "Store actual GameStartEntry reference at IGameStart+0x20",
+      "declaringType": "GameFramework.Base.IGameStart",
+      "method": "}ye¼a",
+      "token": "0x60071A8",
+      "nativeBodyExtractedThisStage": true,
+      "nativeBytes": 8,
+      "nativeBodySha256": "e2049e634203975b3ab577fcedd5fcebf7eb16547f254b69f38a7efd4d28f8c7"
+    },
+    {
+      "rva": "0x72eae78",
+      "alias": "LoadingUIShow",
+      "scope": "required-scope-extension",
+      "purpose": "Bridge to actual entry LoadingUI opened callback",
+      "declaringType": "GameFramework.Base.IGameStart",
+      "method": "LoadingUIShow",
+      "token": "0x60071AA",
+      "nativeBodyExtractedThisStage": true,
+      "nativeBytes": 24,
+      "nativeBodySha256": "ed2b3bc006c52af6d660f6cb17ab88afd39ffc63cd841979959fdcb0b8a1ca20"
+    },
+    {
+      "rva": "0x72eae90",
+      "alias": "InitConfigOver",
+      "scope": "required-scope-extension",
+      "purpose": "Original config completion write and actual start-logic callback; only invoked after real config init",
+      "declaringType": "GameFramework.Base.IGameStart",
+      "method": "InitConfigOver",
+      "token": "0x60071AB",
+      "nativeBodyExtractedThisStage": true,
+      "nativeBytes": 32,
+      "nativeBodySha256": "6d37081c064b47804935a71a7f6a2b221dc0115ac1db030e68138646018800cc"
+    },
+    {
+      "rva": "0x439bc8c",
+      "alias": "GameStart.InitPatchManager",
+      "scope": "game-start",
+      "purpose": "Start actual OpenLoadingUI(LoadingUIShow) coroutine",
+      "declaringType": "ljzs_lt.GameStart",
+      "method": "InitPatchManager",
+      "token": "0x6005B43",
+      "nativeBodyExtractedThisStage": true,
+      "nativeBytes": 140,
+      "nativeBodySha256": "e950807e29b4f85f8eaa616af7058e04883f8e943892b0b76f776ec7c2ccf135"
+    },
+    {
+      "rva": "0x439bd18",
+      "alias": "OpenLoadingUI iterator factory",
+      "scope": "game-start",
+      "purpose": "Create original iterator; native MoveNext yields int 0 then invokes callback",
+      "declaringType": "ljzs_lt.GameStart",
+      "method": "OpenLoadingUI",
+      "token": "0x6005B45",
+      "nativeBodyExtractedThisStage": true,
+      "nativeBytes": 96,
+      "nativeBodySha256": "7dd65121a8ab55724a55955cb4b591e40e85eed40c9b5e5f7fdabd82f0d1d868"
+    },
+    {
+      "rva": "0x439b9b0",
+      "alias": "InitConfig",
+      "scope": "game-start",
+      "purpose": "Set real ConfigMgr ResourcesInfo, Initialize, then actual InitConfigOver",
+      "declaringType": "ljzs_lt.GameStart",
+      "method": "InitConfig",
+      "token": "0x6005B41",
+      "nativeBodyExtractedThisStage": true,
+      "nativeBytes": 68,
+      "nativeBodySha256": "c1f7a56873b15394c20f0024fecebaa3d75cb7e044e9dede020ce1e5ec358f31"
+    },
+    {
+      "rva": "0x439b9f4",
+      "alias": "RegisterProcedure",
+      "scope": "game-start",
+      "purpose": "Register original PreLoad,StarGame,ExitGame procedure objects",
+      "declaringType": "ljzs_lt.GameStart",
+      "method": "RegisterProcedure",
+      "token": "0x6005B42",
+      "nativeBodyExtractedThisStage": true,
+      "nativeBytes": 640,
+      "nativeBodySha256": "ba643d1265d7e6636de17760292507a29036858c5ff4919258c5f87bd61ed8b0"
+    },
+    {
+      "rva": "0x439bee4",
+      "alias": "RegisterLogicCtr",
+      "scope": "game-start",
+      "purpose": "Original PurchaseControl,ServerTimeMgr,EmailControl registration",
+      "declaringType": "ljzs_lt.GameStart",
+      "method": "RegisterLogicCtr",
+      "token": "0x6005B48",
+      "nativeBodyExtractedThisStage": true,
+      "nativeBytes": 324,
+      "nativeBodySha256": "d2fc1e6394469dafbdabf47ce4b378cad85a5549ae71053607d790b598c57ad7"
+    },
+    {
+      "rva": "0x439c028",
+      "alias": "StartGame",
+      "scope": "game-start",
+      "purpose": "Get actual ProcedureManager and StartProcedure<ProcedurePreLoad>",
+      "declaringType": "ljzs_lt.GameStart",
+      "method": "StartGame",
+      "token": "0x6005B49",
+      "nativeBodyExtractedThisStage": true,
+      "nativeBytes": 136,
+      "nativeBodySha256": "1db8f3f4a3dcd3795964f6a28364af9c9c1a696ac71657c97ff356a838a257d5"
+    },
+    {
+      "rva": "0x71eb634",
+      "alias": "VersionMondule.Initialize",
+      "scope": "external-first-gate",
+      "purpose": "Preserve already-initialized callback and new/old path",
+      "declaringType": "GameFramework.VersionMondule",
+      "method": "Initialize",
+      "token": "0x60060DB",
+      "nativeBodyExtractedThisStage": true,
+      "nativeBytes": 252,
+      "nativeBodySha256": "1eaec8f97f1797d39e06689b4f88b1a96884fc39577f1fdb7d8280827e046c75"
+    },
+    {
+      "rva": "0x71eb730",
+      "alias": "VersionMondule.InitForNewRes",
+      "scope": "external-first-gate",
+      "purpose": "Still runs actual Init coroutine; not a direct-completion branch",
+      "declaringType": "GameFramework.VersionMondule",
+      "method": "InitForNewRes",
+      "token": "0x60060DC",
+      "nativeBodyExtractedThisStage": true,
+      "nativeBytes": 64,
+      "nativeBodySha256": "87385b7c0f6a424812a67157d388e187f7ef446ce29d0895ab504741120dc05f"
+    },
+    {
+      "rva": "0x71eb770",
+      "alias": "VersionMondule.Init iterator factory",
+      "scope": "external-first-gate",
+      "purpose": "Create actual original state machine",
+      "declaringType": "GameFramework.VersionMondule",
+      "method": "Init",
+      "token": "0x60060DD",
+      "nativeBodyExtractedThisStage": true,
+      "nativeBytes": 96,
+      "nativeBodySha256": "abca55fadaf0106f042b7cb7f0b3c13f12788d895bbf83a0d449c38c46b8e519"
+    },
+    {
+      "rva": "0x712fdec",
+      "alias": "new resource backend selector",
+      "scope": "external-resource-gate",
+      "purpose": "Choose KeWanResLoadModule or YOResourcesModule by original bool",
+      "declaringType": "GameFramework.NewResLoadHelper",
+      "method": "GetNewResModule",
+      "token": "0x600527D",
+      "nativeBodyExtractedThisStage": true,
+      "nativeBytes": 132,
+      "nativeBodySha256": "bd25a92311d01117a904725f21401130ec99b85ba1d51f4d4e0f5c184732b77b"
+    },
+    {
+      "rva": "0x712fe70",
+      "alias": "new resource initialization helper",
+      "scope": "external-resource-gate",
+      "purpose": "Forward actual play mode/team parameters to actual module initialization",
+      "declaringType": "GameFramework.NewResLoadHelper",
+      "method": "Initialize",
+      "token": "0x600527E",
+      "nativeBodyExtractedThisStage": true,
+      "nativeBytes": 352,
+      "nativeBodySha256": "2067f07b4a17e8ee6abf83f93d86e303ff5ede296977f654f96a512d0a110954"
+    },
+    {
+      "rva": "0x713b4ec",
+      "alias": "AssetbundleModule.Initialize",
+      "scope": "external-resource-gate",
+      "purpose": "Actual AssetBundleManager and manifest load coroutine before callback",
+      "declaringType": "GameFramework.AssetbundleModule",
+      "method": "Initialize",
+      "token": "0x6005366",
+      "nativeBodyExtractedThisStage": true,
+      "nativeBytes": 372,
+      "nativeBodySha256": "2f78b60db897a71576333e13c4839bb102b71f80476bba05ad460f06af8a67ea"
+    },
+    {
+      "rva": "0x72f5548",
+      "alias": "ResourcesModule.Initialize",
+      "scope": "external-resource-gate",
+      "purpose": "Original old backend resource module completion bridge required",
+      "declaringType": "GameFramework.Resources.ResourcesModule",
+      "method": "Initialize",
+      "token": "0x60073F5",
+      "nativeBodyExtractedThisStage": false,
+      "nativeBytes": null,
+      "nativeBodySha256": null
+    },
+    {
+      "rva": "0x71d7558",
+      "alias": "UIModule.Initialize",
+      "scope": "external-resource-gate",
+      "purpose": "Original UI module callback required",
+      "declaringType": "GameFramework.UIModule",
+      "method": "Initialize",
+      "token": "0x6005F48",
+      "nativeBodyExtractedThisStage": false,
+      "nativeBytes": null,
+      "nativeBodySha256": null
+    },
+    {
+      "rva": "0x711f824",
+      "alias": "AppSetting.SetCultureBasedOnSetting",
+      "scope": "external-bootstrap",
+      "purpose": "Original culture method; current body empty",
+      "declaringType": "GameFramework.AppSetting",
+      "method": "SetCultureBasedOnSetting",
+      "token": "0x6005162",
+      "nativeBodyExtractedThisStage": true,
+      "nativeBytes": 256,
+      "nativeBodySha256": "795282a46b57a0943a196b2794ef88584444c070db717922009ab1d7ab1f67ce"
+    },
+    {
+      "rva": "0x711f97c",
+      "alias": "AppSetting..cctor",
+      "scope": "external-bootstrap",
+      "purpose": "Original dictionaries/defaults; current source omits original static constructor",
+      "declaringType": "GameFramework.AppSetting",
+      "method": ".cctor",
+      "token": "0x6005164",
+      "nativeBodyExtractedThisStage": true,
+      "nativeBytes": 408,
+      "nativeBodySha256": "d0a55c292545aba75bf3ac2aa59a4adda36571d40bed8e4839ba482b6f01a5f7"
+    },
+    {
+      "rva": "0x71dd24c",
+      "alias": "UserDataPrefs.OnInit",
+      "scope": "external-bootstrap",
+      "purpose": "Original persistence hook called before version initialization",
+      "declaringType": "GameFramework.UserDataPrefs",
+      "method": "OnInit",
+      "token": "0x6005FD0",
+      "nativeBodyExtractedThisStage": false,
+      "nativeBytes": null,
+      "nativeBodySha256": null
+    },
+    {
+      "rva": "0x4399578",
+      "alias": "ConfigMgr.Initialize",
+      "scope": "external-config-gate",
+      "purpose": "Old configuration consumer; distinct from GlobalInfo",
+      "declaringType": "ljzs_lt.ConfigMgr",
+      "method": "Initialize",
+      "token": "0x6005AE7",
+      "nativeBodyExtractedThisStage": false,
+      "nativeBytes": null,
+      "nativeBodySha256": null
+    },
+    {
+      "rva": "0x4399658",
+      "alias": "ConfigMgr.ReadConfig",
+      "scope": "external-config-gate",
+      "purpose": "Old typed tables must really be consumed",
+      "declaringType": "ljzs_lt.ConfigMgr",
+      "method": "ReadConfig",
+      "token": "0x6005AE8",
+      "nativeBodyExtractedThisStage": false,
+      "nativeBytes": null,
+      "nativeBodySha256": null
+    },
+    {
+      "rva": "0x4399ebc",
+      "alias": "ConfigMgr.SetConfigABRes",
+      "scope": "external-config-gate",
+      "purpose": "Actual old ResourcesInfo binding",
+      "declaringType": "ljzs_lt.ConfigMgr",
+      "method": "SetConfigABRes",
+      "token": "0x6005AE9",
+      "nativeBodyExtractedThisStage": false,
+      "nativeBytes": null,
+      "nativeBodySha256": null
+    },
+    {
+      "rva": "0x4399f1c",
+      "alias": "ConfigMgr.Instance",
+      "scope": "external-config-gate",
+      "purpose": "Actual singleton construction needed",
+      "declaringType": "ljzs_lt.ConfigMgr",
+      "method": "get_Instance",
+      "token": "0x6005AEA",
+      "nativeBodyExtractedThisStage": false,
+      "nativeBytes": null,
+      "nativeBodySha256": null
+    },
+    {
+      "rva": "0x4399bec",
+      "alias": "ConfigMgr.customRead",
+      "scope": "external-config-gate",
+      "purpose": "Original custom typed payload read",
+      "declaringType": "ljzs_lt.ConfigMgr",
+      "method": "customRead",
+      "token": "0x6005AEB",
+      "nativeBodyExtractedThisStage": false,
+      "nativeBytes": null,
+      "nativeBodySha256": null
+    },
+    {
+      "rva": "0x4399f90",
+      "alias": "ConfigMgr constructor",
+      "scope": "external-config-gate",
+      "purpose": "Actual dictionaries must be constructed",
+      "declaringType": "ljzs_lt.ConfigMgr",
+      "method": ".ctor",
+      "token": "0x6005AED",
+      "nativeBodyExtractedThisStage": false,
+      "nativeBytes": null,
+      "nativeBodySha256": null
+    },
+    {
+      "declaringType": "GameFramework.GameFrameEntry",
+      "method": "GetModule<T>",
+      "token": "0x60055D9",
+      "rva": "0x4c8c5c0",
+      "scope": "frame",
+      "purpose": "Native generic shared body plus actual method metadata argument"
+    },
+    {
+      "declaringType": "GameFramework.GameFrameEntry",
+      "method": "module type resolver<T>",
+      "token": "0x60055DB",
+      "rva": "0x4c8c90c",
+      "scope": "frame",
+      "purpose": "Original GameFramework type restriction and resolution"
+    },
+    {
+      "declaringType": "ljzs_lt.GameStart.<OpenLoadingUI>d__4",
+      "method": "MoveNext",
+      "token": "0x6005B4D",
+      "rva": "0x439c0bc",
+      "scope": "game-start",
+      "purpose": "Actual original one-frame yield and callback; iterator helper tokens 0x6005B4B-0x6005B50"
+    },
+    {
+      "declaringType": "GameFramework.VersionMondule.<Init>d__9",
+      "method": "MoveNext",
+      "token": "0x60060E9",
+      "rva": "0x71ebbb4",
+      "scope": "external-first-gate",
+      "purpose": "Real SDK/file/ABFiles/Google delivery state machine; never replaced by ready flags"
+    }
+  ]
+}

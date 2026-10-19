@@ -1,0 +1,149 @@
+0x71d8f50: fe67bca9 stp      x30, x25, [sp, #-0x40]!
+0x71d8f54: f85f01a9 stp      x24, x23, [sp, #0x10]
+0x71d8f58: f65702a9 stp      x22, x21, [sp, #0x20]
+0x71d8f5c: f44f03a9 stp      x20, x19, [sp, #0x30]
+0x71d8f60: 94f100b0 adrp     x20, #0x9009000
+0x71d8f64: 16ca0090 adrp     x22, #0x8b18000
+0x71d8f68: 88a25739 ldrb     w8, [x20, #0x5e8]
+0x71d8f6c: d69e44f9 ldr      x22, [x22, #0x938] // GameFramework.UIModule.<>c__DisplayClass17_1_TypeInfo
+0x71d8f70: f50301aa mov      x21, x1
+0x71d8f74: f30300aa mov      x19, x0
+0x71d8f78: e8010037 tbnz     w8, #0, #0x71d8fb4
+0x71d8f7c: a0c700b0 adrp     x0, #0x8acd000
+0x71d8f80: 008844f9 ldr      x0, [x0, #0x910] // System.Action_TypeInfo
+0x71d8f84: bf902997 bl       #0x3c3d280
+0x71d8f88: 00c800f0 adrp     x0, #0x8adb000
+0x71d8f8c: 00fc41f9 ldr      x0, [x0, #0x3f8] // Method$UnityEngine.GameObject.GetComponent<RectTransform>()
+0x71d8f90: bc902997 bl       #0x3c3d280
+0x71d8f94: 00ca0090 adrp     x0, #0x8b18000
+0x71d8f98: 00a044f9 ldr      x0, [x0, #0x940] // Method$GameFramework.UIModule.<>c__DisplayClass17_1.<LoadUI>b__1()
+0x71d8f9c: b9902997 bl       #0x3c3d280
+0x71d8fa0: 00ca0090 adrp     x0, #0x8b18000
+0x71d8fa4: 009c44f9 ldr      x0, [x0, #0x938] // GameFramework.UIModule.<>c__DisplayClass17_1_TypeInfo
+0x71d8fa8: b6902997 bl       #0x3c3d280
+0x71d8fac: 28008052 mov      w8, #1
+0x71d8fb0: 88a21739 strb     w8, [x20, #0x5e8]
+0x71d8fb4: c00240f9 ldr      x0, [x22]
+0x71d8fb8: 43912997 bl       #0x3c3d4c4
+0x71d8fbc: e1031faa mov      x1, xzr
+0x71d8fc0: f40300aa mov      x20, x0
+0x71d8fc4: d2b91394 bl       #0x76c770c // System.Object$$.ctor
+0x71d8fc8: d40e00b4 cbz      x20, #0x71d91a0
+0x71d8fcc: 95ce01a9 stp      x21, x19, [x20, #0x18]
+0x71d8fd0: 950e00b4 cbz      x21, #0x71d91a0
+0x71d8fd4: e00315aa mov      x0, x21
+0x71d8fd8: e1031faa mov      x1, xzr
+0x71d8fdc: fed2fe97 bl       #0x718dbd4 // YooAsset.AssetOperationHandle$$Instantiate
+0x71d8fe0: 800a00f9 str      x0, [x20, #0x10]
+0x71d8fe4: e00d00b4 cbz      x0, #0x71d91a0
+0x71d8fe8: e1031f2a mov      w1, wzr
+0x71d8fec: e2031faa mov      x2, xzr
+0x71d8ff0: dd4c4494 bl       #0x82ec364 // UnityEngine.GameObject$$SetActive
+0x71d8ff4: 800a40f9 ldr      x0, [x20, #0x10]
+0x71d8ff8: 400d00b4 cbz      x0, #0x71d91a0
+0x71d8ffc: e1031faa mov      x1, xzr
+0x71d9000: 8a4c4494 bl       #0x82ec228 // UnityEngine.GameObject$$get_transform
+0x71d9004: 680a40f9 ldr      x8, [x19, #0x10]
+0x71d9008: c80c00b4 cbz      x8, #0x71d91a0
+0x71d900c: 610e40f9 ldr      x1, [x19, #0x18]
+0x71d9010: f50300aa mov      x21, x0
+0x71d9014: e00308aa mov      x0, x8
+0x71d9018: 11fcff97 bl       #0x71d805c // GameFramework.UIModule$$_GetUINode
+0x71d901c: 350c00b4 cbz      x21, #0x71d91a0
+0x71d9020: e10300aa mov      x1, x0
+0x71d9024: e00315aa mov      x0, x21
+0x71d9028: e2031faa mov      x2, xzr
+0x71d902c: c9814494 bl       #0x82f9750 // UnityEngine.Transform$$SetParent
+0x71d9030: 800a40f9 ldr      x0, [x20, #0x10]
+0x71d9034: 600b00b4 cbz      x0, #0x71d91a0
+0x71d9038: 08c800d0 adrp     x8, #0x8adb000
+0x71d903c: 08fd41f9 ldr      x8, [x8, #0x3f8] // Method$UnityEngine.GameObject.GetComponent<RectTransform>()
+0x71d9040: 010140f9 ldr      x1, [x8]
+0x71d9044: 98d06a97 bl       #0x4c8d2a4 // UnityEngine.GameObject$$GetComponent<object>
+0x71d9048: 16f100f0 adrp     x22, #0x8ffc000
+0x71d904c: c8fe7f39 ldrb     w8, [x22, #0xfff]
+0x71d9050: f50300aa mov      x21, x0
+0x71d9054: c8000035 cbnz     w8, #0x71d906c
+0x71d9058: 80c700f0 adrp     x0, #0x8acc000
+0x71d905c: 00cc45f9 ldr      x0, [x0, #0xb98] // UnityEngine.Vector2_TypeInfo
+0x71d9060: 88902997 bl       #0x3c3d280
+0x71d9064: 28008052 mov      w8, #1
+0x71d9068: c8fe3f39 strb     w8, [x22, #0xfff]
+0x71d906c: b50900b4 cbz      x21, #0x71d91a0
+0x71d9070: 97c700f0 adrp     x23, #0x8acc000
+0x71d9074: f7ce45f9 ldr      x23, [x23, #0xb98] // UnityEngine.Vector2_TypeInfo
+0x71d9078: e00315aa mov      x0, x21
+0x71d907c: e1031faa mov      x1, xzr
+0x71d9080: e80240f9 ldr      x8, [x23]
+0x71d9084: 085d40f9 ldr      x8, [x8, #0xb8]
+0x71d9088: 0005402d ldp      s0, s1, [x8]
+0x71d908c: 9c794494 bl       #0x82f76fc // UnityEngine.RectTransform$$set_anchorMin
+0x71d9090: 38f10090 adrp     x24, #0x8ffd000
+0x71d9094: 08034039 ldrb     w8, [x24]
+0x71d9098: c8000035 cbnz     w8, #0x71d90b0
+0x71d909c: 80c700f0 adrp     x0, #0x8acc000
+0x71d90a0: 00cc45f9 ldr      x0, [x0, #0xb98] // UnityEngine.Vector2_TypeInfo
+0x71d90a4: 77902997 bl       #0x3c3d280
+0x71d90a8: 28008052 mov      w8, #1
+0x71d90ac: 08030039 strb     w8, [x24]
+0x71d90b0: e80240f9 ldr      x8, [x23]
+0x71d90b4: e00315aa mov      x0, x21
+0x71d90b8: e1031faa mov      x1, xzr
+0x71d90bc: 085d40f9 ldr      x8, [x8, #0xb8]
+0x71d90c0: 0005412d ldp      s0, s1, [x8, #8]
+0x71d90c4: d5794494 bl       #0x82f7818 // UnityEngine.RectTransform$$set_anchorMax
+0x71d90c8: c8fe7f39 ldrb     w8, [x22, #0xfff]
+0x71d90cc: c8000035 cbnz     w8, #0x71d90e4
+0x71d90d0: 80c700f0 adrp     x0, #0x8acc000
+0x71d90d4: 00cc45f9 ldr      x0, [x0, #0xb98] // UnityEngine.Vector2_TypeInfo
+0x71d90d8: 6a902997 bl       #0x3c3d280
+0x71d90dc: 28008052 mov      w8, #1
+0x71d90e0: c8fe3f39 strb     w8, [x22, #0xfff]
+0x71d90e4: e80240f9 ldr      x8, [x23]
+0x71d90e8: b9c70090 adrp     x25, #0x8acd000
+0x71d90ec: f8c900f0 adrp     x24, #0x8b18000
+0x71d90f0: e00315aa mov      x0, x21
+0x71d90f4: 085d40f9 ldr      x8, [x8, #0xb8]
+0x71d90f8: e1031faa mov      x1, xzr
+0x71d90fc: 0005402d ldp      s0, s1, [x8]
+0x71d9100: 398b44f9 ldr      x25, [x25, #0x910] // System.Action_TypeInfo
+0x71d9104: 18a344f9 ldr      x24, [x24, #0x940] // Method$GameFramework.UIModule.<>c__DisplayClass17_1.<LoadUI>b__1()
+0x71d9108: 167b4494 bl       #0x82f7d60 // UnityEngine.RectTransform$$set_offsetMin
+0x71d910c: c8fe7f39 ldrb     w8, [x22, #0xfff]
+0x71d9110: c8000035 cbnz     w8, #0x71d9128
+0x71d9114: 80c700f0 adrp     x0, #0x8acc000
+0x71d9118: 00cc45f9 ldr      x0, [x0, #0xb98] // UnityEngine.Vector2_TypeInfo
+0x71d911c: 59902997 bl       #0x3c3d280
+0x71d9120: 28008052 mov      w8, #1
+0x71d9124: c8fe3f39 strb     w8, [x22, #0xfff]
+0x71d9128: e80240f9 ldr      x8, [x23]
+0x71d912c: e00315aa mov      x0, x21
+0x71d9130: e1031faa mov      x1, xzr
+0x71d9134: 085d40f9 ldr      x8, [x8, #0xb8]
+0x71d9138: 0005402d ldp      s0, s1, [x8]
+0x71d913c: 6e7b4494 bl       #0x82f7ef4 // UnityEngine.RectTransform$$set_offsetMax
+0x71d9140: e0031faa mov      x0, xzr
+0x71d9144: 6cbafa97 bl       #0x7087af4 // UpdateManager$$get_Instance
+0x71d9148: 280340f9 ldr      x8, [x25]
+0x71d914c: 760a40f9 ldr      x22, [x19, #0x10]
+0x71d9150: f30300aa mov      x19, x0
+0x71d9154: e00308aa mov      x0, x8
+0x71d9158: db902997 bl       #0x3c3d4c4
+0x71d915c: 020340f9 ldr      x2, [x24]
+0x71d9160: e10314aa mov      x1, x20
+0x71d9164: e3031faa mov      x3, xzr
+0x71d9168: f50300aa mov      x21, x0
+0x71d916c: 8e831094 bl       #0x75f9fa4 // System.Action$$.ctor
+0x71d9170: 960100b4 cbz      x22, #0x71d91a0
+0x71d9174: e10315aa mov      x1, x21
+0x71d9178: 97fbff97 bl       #0x71d7fd4 // GameFramework.UIModule$$wait2Fram
+0x71d917c: 330100b4 cbz      x19, #0x71d91a0
+0x71d9180: e10300aa mov      x1, x0
+0x71d9184: e00313aa mov      x0, x19
+0x71d9188: f44f43a9 ldp      x20, x19, [sp, #0x30]
+0x71d918c: f65742a9 ldp      x22, x21, [sp, #0x20]
+0x71d9190: f85f41a9 ldp      x24, x23, [sp, #0x10]
+0x71d9194: e2031faa mov      x2, xzr
+0x71d9198: fe67c4a8 ldp      x30, x25, [sp], #0x40
+0x71d919c: 0b534414 b        #0x82eddc8 // UnityEngine.MonoBehaviour$$StartCoroutine
+0x71d91a0: cb902997 bl       #0x3c3d4cc

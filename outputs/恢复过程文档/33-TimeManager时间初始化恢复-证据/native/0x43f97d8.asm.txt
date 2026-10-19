@@ -1,0 +1,42 @@
+0x43f97d8: STR             X30, [SP,#var_30]!
+0x43f97dc: STP             X22, X21, [SP,#0x30+var_20]
+0x43f97e0: STP             X20, X19, [SP,#0x30+var_10]
+0x43f97e4: ADRP            X22, #byte_9000A3D@PAGE
+0x43f97e8: ADRP            X21, #off_8ACD4B0@PAGE
+0x43f97ec: LDRB            W8, [X22,#byte_9000A3D@PAGEOFF]
+0x43f97f0: LDR             X21, [X21,#off_8ACD4B0@PAGEOFF]; off_8CE64C0
+0x43f97f4: MOV             W19, W1
+0x43f97f8: MOV             X20, X0
+0x43f97fc: TBNZ            W8, #0, loc_43F9820
+0x43f9800: ADRP            X0, #off_8ACDB30@PAGE
+0x43f9804: LDR             X0, [X0,#off_8ACDB30@PAGEOFF]; off_8CE6460 ; slot
+0x43f9808: BL              il2cpp_codegen_initialize_runtime_metadata
+0x43f980c: ADRP            X0, #off_8ACD4B0@PAGE
+0x43f9810: LDR             X0, [X0,#off_8ACD4B0@PAGEOFF]; off_8CE64C0 ; slot
+0x43f9814: BL              il2cpp_codegen_initialize_runtime_metadata
+0x43f9818: MOV             W8, #1
+0x43f981c: STRB            W8, [X22,#byte_9000A3D@PAGEOFF]
+0x43f9820: LDR             X0, [X21]; klass
+0x43f9824: ADRP            X22, #off_8ACDB30@PAGE
+0x43f9828: LDR             W8, [X0,#0xE0]
+0x43f982c: LDR             X22, [X22,#off_8ACDB30@PAGEOFF]; off_8CE6460
+0x43f9830: CBNZ            W8, loc_43F9838
+0x43f9834: BL              il2cpp_codegen_runtime_class_init
+0x43f9838: LDR             X0, [X22]; klass
+0x43f983c: LDR             W8, [X0,#0xE0]
+0x43f9840: CBNZ            W8, loc_43F9848
+0x43f9844: BL              il2cpp_codegen_runtime_class_init
+0x43f9848: LDR             X8, [X21]
+0x43f984c: SCVTF           D0, X20
+0x43f9850: MOV             X1, XZR
+0x43f9854: LDR             X8, [X8,#0xB8]
+0x43f9858: ADD             X0, X8, #8
+0x43f985c: TBZ             W19, #0, loc_43F9870
+0x43f9860: LDP             X20, X19, [SP,#0x30+var_10]
+0x43f9864: LDP             X22, X21, [SP,#0x30+var_20]
+0x43f9868: LDR             X30, [SP+0x30+var_30],#0x30
+0x43f986c: B               System.DateTime$$AddMilliseconds
+0x43f9870: LDP             X20, X19, [SP,#0x30+var_10]
+0x43f9874: LDP             X22, X21, [SP,#0x30+var_20]
+0x43f9878: LDR             X30, [SP+0x30+var_30],#0x30
+0x43f987c: B               System.DateTime$$AddSeconds

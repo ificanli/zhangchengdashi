@@ -1,0 +1,22 @@
+0x71ebacc: fe57bea9 stp      x30, x21, [sp, #-0x20]!
+0x71ebad0: f44f01a9 stp      x20, x19, [sp, #0x10]
+0x71ebad4: f4f000d0 adrp     x20, #0x9009000
+0x71ebad8: 15c700d0 adrp     x21, #0x8acd000
+0x71ebadc: 88aa5b39 ldrb     w8, [x20, #0x6ea]
+0x71ebae0: b53e42f9 ldr      x21, [x21, #0x478] // string_TypeInfo
+0x71ebae4: f30300aa mov      x19, x0
+0x71ebae8: c8000037 tbnz     w8, #0, #0x71ebb00
+0x71ebaec: 00c700d0 adrp     x0, #0x8acd000
+0x71ebaf0: 003c42f9 ldr      x0, [x0, #0x478] // string_TypeInfo
+0x71ebaf4: e3452997 bl       #0x3c3d280
+0x71ebaf8: 28008052 mov      w8, #1
+0x71ebafc: 88aa1b39 strb     w8, [x20, #0x6ea]
+0x71ebb00: a80240f9 ldr      x8, [x21]
+0x71ebb04: e00313aa mov      x0, x19
+0x71ebb08: e1031faa mov      x1, xzr
+0x71ebb0c: 085d40f9 ldr      x8, [x8, #0xb8]
+0x71ebb10: 080140f9 ldr      x8, [x8]
+0x71ebb14: 681e00f9 str      x8, [x19, #0x38]
+0x71ebb18: f44f41a9 ldp      x20, x19, [sp, #0x10]
+0x71ebb1c: fe57c2a8 ldp      x30, x21, [sp], #0x20
+0x71ebb20: f7c0fd17 b        #0x715befc // GameFramework.GameFrameModule$$.ctor

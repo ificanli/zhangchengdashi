@@ -1,0 +1,45 @@
+0x3e1a864: fe0f1ef8 str      x30, [sp, #-0x20]!
+0x3e1a868: f44f01a9 stp      x20, x19, [sp, #0x10]
+0x3e1a86c: 148f02f0 adrp     x20, #0x8ffd000
+0x3e1a870: 936502f0 adrp     x19, #0x8acd000
+0x3e1a874: 88726239 ldrb     w8, [x20, #0x89c]
+0x3e1a878: 73be47f9 ldr      x19, [x19, #0xf78] // QuickTutor.Singleton<ABTestManager>_TypeInfo
+0x3e1a87c: 88010037 tbnz     w8, #0, #0x3e1a8ac
+0x3e1a880: c06502d0 adrp     x0, #0x8ad4000
+0x3e1a884: 00fc46f9 ldr      x0, [x0, #0xdf8] // Method$ToolModule.ManagerBase<GameCenterManager>.get_Instance()
+0x3e1a888: 7e8af897 bl       #0x3c3d280
+0x3e1a88c: 806502f0 adrp     x0, #0x8acd000
+0x3e1a890: 00c447f9 ldr      x0, [x0, #0xf88] // Method$QuickTutor.Singleton<ABTestManager>.get_Instance()
+0x3e1a894: 7b8af897 bl       #0x3c3d280
+0x3e1a898: 806502f0 adrp     x0, #0x8acd000
+0x3e1a89c: 00bc47f9 ldr      x0, [x0, #0xf78] // QuickTutor.Singleton<ABTestManager>_TypeInfo
+0x3e1a8a0: 788af897 bl       #0x3c3d280
+0x3e1a8a4: 28008052 mov      w8, #1
+0x3e1a8a8: 88722239 strb     w8, [x20, #0x89c]
+0x3e1a8ac: 600240f9 ldr      x0, [x19]
+0x3e1a8b0: 936502f0 adrp     x19, #0x8acd000
+0x3e1a8b4: 08e040b9 ldr      w8, [x0, #0xe0]
+0x3e1a8b8: 73c647f9 ldr      x19, [x19, #0xf88] // Method$QuickTutor.Singleton<ABTestManager>.get_Instance()
+0x3e1a8bc: 48000035 cbnz     w8, #0x3e1a8c4
+0x3e1a8c0: bc8af897 bl       #0x3c3d3b0
+0x3e1a8c4: 600240f9 ldr      x0, [x19]
+0x3e1a8c8: a7908694 bl       #0x5fbeb64 // QuickTutor.Singleton<object>$$get_Instance
+0x3e1a8cc: 400200b4 cbz      x0, #0x3e1a914
+0x3e1a8d0: e1031faa mov      x1, xzr
+0x3e1a8d4: 525f0594 bl       #0x3f7261c // SDKModule.ABTestManager$$get_GameCenterIsBTest
+0x3e1a8d8: 80010036 tbz      w0, #0, #0x3e1a908
+0x3e1a8dc: c86502d0 adrp     x8, #0x8ad4000
+0x3e1a8e0: 08fd46f9 ldr      x8, [x8, #0xdf8] // Method$ToolModule.ManagerBase<GameCenterManager>.get_Instance()
+0x3e1a8e4: 000140f9 ldr      x0, [x8]
+0x3e1a8e8: de766d94 bl       #0x5978460 // ToolModule.ManagerBase<object>$$get_Instance
+0x3e1a8ec: 400100b4 cbz      x0, #0x3e1a914
+0x3e1a8f0: e1031faa mov      x1, xzr
+0x3e1a8f4: b6640594 bl       #0x3f73bcc // SDKModule.GameCenterManager$$AllowGameCenter
+0x3e1a8f8: e0230039 strb     w0, [sp, #8]
+0x3e1a8fc: e0230091 add      x0, sp, #8
+0x3e1a900: e1031faa mov      x1, xzr
+0x3e1a904: 10bffd94 bl       #0x7d8a544 // Cysharp.Threading.Tasks.UniTaskVoid$$Forget
+0x3e1a908: f44f41a9 ldp      x20, x19, [sp, #0x10]
+0x3e1a90c: fe0742f8 ldr      x30, [sp], #0x20
+0x3e1a910: c0035fd6 ret      
+0x3e1a914: ee8af897 bl       #0x3c3d4cc

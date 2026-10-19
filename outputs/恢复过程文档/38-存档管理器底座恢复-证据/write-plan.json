@@ -1,0 +1,314 @@
+{
+  "files": [
+    {
+      "path": "Assets/Scripts/Assembly-CSharp/DbtSaveDataManagerBase.cs",
+      "methods": [
+        {
+          "token": "0x6000267",
+          "body": "{\nLog(0, \"OnInit\");\nI = this as T;\n_name = typeof(T).Name;\n_lastSaveData = ReadLocalData();\nUpdataData(false);\n}",
+          "makeAsync": false,
+          "iterator": false
+        },
+        {
+          "token": "0x6000268",
+          "body": "{\n_lastSaveData = ReadLocalData();\nreturn _lastSaveData;\n}",
+          "makeAsync": false,
+          "iterator": false
+        },
+        {
+          "token": "0x6000269",
+          "body": "{\nLog(1, \"UpdateDataCallBack:   \" + str);\nif (!string.IsNullOrEmpty(str) || L_Tools.LoginControl.I != null && L_Tools.LoginControl.I.IsProxyLogin)\n{\n    _lastSaveData = str;\n}\nelse if (!string.IsNullOrEmpty(_lastSaveData) && !L_Tools.PlayerPrefs2RunTime.IsBindingAccount)\n{\n    Log(2, \"本地有数据而服务器数据为空\");\n    var report = DBTSDK.ReportManager.Instance.GetNewReportJsonData<DBTSDK.NewReport.JsonProperties.activity_complete>(true, false);\n    report.game_name = AppSetting.MineGameName;\n    report.activity_name = \"LTDataEmpty\";\n    report.activity_mode1 = \"LTDataEmpty\";\n    DBTSDK.ReportManager.Instance.NewReport_activity_complete(report);\n}\n}",
+          "makeAsync": false,
+          "iterator": false
+        },
+        {
+          "token": "0x600026A",
+          "body": "{\nif (!_cleared) SaveLocalData(_lastSaveData);\n}",
+          "makeAsync": false,
+          "iterator": false
+        },
+        {
+          "token": "0x600026C",
+          "body": "{\nif (Data == null)\n{\n    if (string.IsNullOrEmpty(_lastSaveData)) _lastSaveData = ReadLocalData();\n    if (string.IsNullOrEmpty(_lastSaveData))\n    {\n        Data = new TD();\n        Data.InitFromDefaults();\n    }\n    else\n    {\n        Data = Newtonsoft.Json.JsonConvert.DeserializeObject<TD>(L_Tools.DataCompressTools.GZipDecompressString(_lastSaveData));\n    }\n    Data.Init();\n}\n}",
+          "makeAsync": false,
+          "iterator": false
+        },
+        {
+          "token": "0x600026D",
+          "body": "{\nif (string.IsNullOrEmpty(str))\n{\n    TD data = new TD();\n    data.InitFromDefaults();\n    return data;\n}\nreturn Newtonsoft.Json.JsonConvert.DeserializeObject<TD>(L_Tools.DataCompressTools.GZipDecompressString(str));\n}",
+          "makeAsync": false,
+          "iterator": false
+        },
+        {
+          "token": "0x600026E",
+          "body": "{\nData = data;\nData.Init();\n}",
+          "makeAsync": false,
+          "iterator": false
+        },
+        {
+          "token": "0x600026F",
+          "body": "{\nif (!_cleared && CanSave && LoadingModule.LoadingManager.EnterHome)\n{\n    OnBeforeSerializeForSave();\n    string str = L_Tools.DataCompressTools.GZipCompressString(Newtonsoft.Json.JsonConvert.SerializeObject(Data));\n    if (!string.IsNullOrEmpty(str))\n    {\n        _lastSaveData = str;\n        SaveLocalData(str);\n    }\n}\n}",
+          "makeAsync": false,
+          "iterator": false
+        },
+        {
+          "token": "0x6000272",
+          "body": "{\nif (!_cleared)\n{\n    _cleared = true;\n    Log(0, \"Clear Save\");\n    SaveLocalData(\"\");\n}\n}",
+          "makeAsync": false,
+          "iterator": false
+        },
+        {
+          "token": "0x6000273",
+          "body": "{\nif (type == 0) CLog.Log(_name + \"   \" + msg);\nelse if (type == 1) CLog.Warning(_name + \"   \" + msg);\nelse if (type == 2) CLog.Error(_name + \"   \" + msg);\n}",
+          "makeAsync": false,
+          "iterator": false
+        },
+        {
+          "token": "0x6000274",
+          "body": "{\n_lastSaveData = \"\";\n}",
+          "makeAsync": false,
+          "iterator": false
+        }
+      ],
+      "autoProperties": [
+        "0x1700001F"
+      ]
+    },
+    {
+      "path": "Assets/Scripts/GFRunning/GameFramework/DataManagerBase.cs",
+      "methods": [
+        {
+          "token": "0x6005815",
+          "body": "{\nreturn GetType().Name;\n}",
+          "makeAsync": false,
+          "iterator": false
+        },
+        {
+          "token": "0x600581A",
+          "body": "{\n#if UNITY_EDITOR\nif (UnityEngine.Application.isEditor)\n{\n    if (_007C_007Ev_00A8G_00BB && DataManagerPool.CanSaveLocalData && (int)GameFramework.Login.ILoginProcedure.accountType >= 10)\n        LocalEditorStore.Write(DataKey, _008C_00A8_00A1cf_00A6);\n    return;\n}\n#endif\nthrow new System.NotImplementedException(\"RECOVERY_UNIMPLEMENTED original DataManagerBase.SaveLocalData RVA=0x7171E48: native user/server storage dependencies remain unresolved; LocalEditorStore is Editor only.\");\n}",
+          "makeAsync": false,
+          "iterator": false
+        },
+        {
+          "token": "0x600581C",
+          "body": "{\n#if UNITY_EDITOR\nif (UnityEngine.Application.isEditor) return LocalEditorStore.Read(DataKey);\n#endif\nthrow new System.NotImplementedException(\"RECOVERY_UNIMPLEMENTED original DataManagerBase.ReadLocalData RVA=0x717284C: native user/server storage dependencies remain unresolved; LocalEditorStore is Editor only.\");\n}",
+          "makeAsync": false,
+          "iterator": false
+        },
+        {
+          "token": "0x600581D",
+          "body": "{\nif (L_008AM_0060_005D_0080 && DBTSDK.AppUserManager.Instance.IsUseServer && _00B1_009C_00AB_007DRS)\n{\n    GameFramework.GameData.GameDataVersionMgr.Instance.Á_0090_0090_00B8_00B9_0086(DataKey);\n    return;\n}\nUpdateDataCallBack(ReadLocalData());\n}",
+          "makeAsync": false,
+          "iterator": false
+        },
+        {
+          "token": "0x600581E",
+          "body": "{\nstring str = _008C_00A8_00A1cf_00A6;\nif (Rr_00A1_00B8f_008C) str = Utils.DecompressData(DataKey, str);\nUpdateDataCallBack(str);\nif (DataManagerPool.CanSaveLocalData) T_00BD_007BLGZ(str);\n}",
+          "makeAsync": false,
+          "iterator": false
+        },
+        {
+          "token": "0x600581B",
+          "body": "{\n#if UNITY_EDITOR\nif (UnityEngine.Application.isEditor)\n{\n    if ((int)GameFramework.Login.ILoginProcedure.accountType >= 10 && DataManagerPool.CanSaveLocalData)\n        LocalEditorStore.Write(DataKey, _008C_00A8_00A1cf_00A6);\n    return;\n}\n#endif\nthrow new System.NotImplementedException(\"RECOVERY_UNIMPLEMENTED original DataManagerBase local storage writer RVA=0x71722B8: native file service remains unresolved.\");\n}",
+          "makeAsync": false,
+          "iterator": false
+        },
+        {
+          "token": "0x6005820",
+          "body": "{\nSynServerTime(_0081_007Dº_0093u_008D);\n}",
+          "makeAsync": false,
+          "iterator": false
+        },
+        {
+          "token": "0x6005822",
+          "body": "{\n_007C_007Ev_00A8G_00BB = true;\n_00B1_009C_00AB_007DRS = true;\ns_00B0W_0099w_009C = string.Empty;\n}",
+          "makeAsync": false,
+          "iterator": false
+        }
+      ],
+      "autoProperties": [],
+      "helperClassToken": "0x200035A",
+      "addHelper": "// Explicit Editor platform adapter. It stores original compressed strings only under this recovery task's work folder.\nprivate static class LocalEditorStore\n{\n    private static readonly string Root = System.IO.Path.GetFullPath(System.IO.Path.Combine(UnityEngine.Application.dataPath, \"../../../work/occupycity-localeditor-store\"));\n    private static string PathFor(string key)\n    {\n        byte[] bytes = System.Text.Encoding.UTF8.GetBytes(key);\n        using (var sha = System.Security.Cryptography.SHA256.Create())\n        {\n            string name = System.BitConverter.ToString(sha.ComputeHash(bytes)).Replace(\"-\", \"\");\n            return System.IO.Path.Combine(Root, name + \".save\");\n        }\n    }\n    internal static string Read(string key)\n    {\n        string path = PathFor(key);\n        UnityEngine.Debug.Log(\"[Recovery] LocalEditorStore read: \" + path + \" key=\" + key);\n        return System.IO.File.Exists(path) ? System.IO.File.ReadAllText(path, System.Text.Encoding.UTF8) : string.Empty;\n    }\n    internal static void Write(string key, string value)\n    {\n        string path = PathFor(key);\n        System.IO.Directory.CreateDirectory(Root);\n        System.IO.File.WriteAllText(path, value, new System.Text.UTF8Encoding(false));\n        UnityEngine.Debug.Log(\"[Recovery] LocalEditorStore write: \" + path + \" key=\" + key);\n    }\n}\n"
+    },
+    {
+      "path": "Assets/Scripts/Assembly-CSharp/DataModule/PlayerTimeData.cs",
+      "methods": [
+        {
+          "token": "0x60059C2",
+          "body": "{\ntimeInfoDic = new Dictionary<string, TimeInfo>();\n}",
+          "makeAsync": false,
+          "iterator": false
+        }
+      ],
+      "autoProperties": []
+    },
+    {
+      "path": "Assets/Scripts/Assembly-CSharp/L_Tools/DataCompressTools.cs",
+      "methods": [
+        {
+          "token": "0x6005E08",
+          "body": "{\nif (string.IsNullOrEmpty(rawString)) return string.Empty;\nbyte[] data = System.Text.Encoding.UTF8.GetBytes(rawString);\nfor (int i = 0; i < data.Length; i++) data[i] ^= unchecked((byte)~_encryptKey);\nreturn System.Convert.ToBase64String(data) + _swapString;\n}",
+          "makeAsync": false,
+          "iterator": false
+        },
+        {
+          "token": "0x6005E09",
+          "body": "{\nif (string.IsNullOrEmpty(encryptedString)) return string.Empty;\nif (!encryptedString.EndsWith(_swapString)) return encryptedString;\nbyte[] data = System.Convert.FromBase64String(encryptedString.Substring(0, encryptedString.Length - _swapString.Length));\nfor (int i = 0; i < data.Length; i++) data[i] ^= unchecked((byte)~_encryptKey);\nreturn System.Text.Encoding.UTF8.GetString(data);\n}",
+          "makeAsync": false,
+          "iterator": false
+        },
+        {
+          "token": "0x6005E0A",
+          "body": "{\nif (string.IsNullOrEmpty(rawString) || rawString.Length == 0) return string.Empty;\nbyte[] data = System.Text.Encoding.UTF8.GetBytes(rawString.ToString());\nreturn EncryptString(System.Convert.ToBase64String(Compress(data)));\n}",
+          "makeAsync": false,
+          "iterator": false
+        },
+        {
+          "token": "0x6005E0B",
+          "body": "{\nusing (var stream = new System.IO.MemoryStream())\n{\n    using (var gzip = new System.IO.Compression.GZipStream(stream, System.IO.Compression.CompressionMode.Compress, true))\n    {\n        gzip.Write(rawData, 0, rawData.Length);\n        gzip.Close();\n    }\n    return stream.ToArray();\n}\n}",
+          "makeAsync": false,
+          "iterator": false
+        },
+        {
+          "token": "0x6005E0C",
+          "body": "{\nif (string.IsNullOrEmpty(zippedString) || zippedString.Length == 0) return string.Empty;\nbyte[] data = System.Convert.FromBase64String(DecryptString(zippedString).ToString());\nreturn System.Text.Encoding.UTF8.GetString(Decompress(data));\n}",
+          "makeAsync": false,
+          "iterator": false
+        },
+        {
+          "token": "0x6005E0D",
+          "body": "{\nusing (var input = new System.IO.MemoryStream(zippedData))\nusing (var gzip = new System.IO.Compression.GZipStream(input, System.IO.Compression.CompressionMode.Decompress))\nusing (var output = new System.IO.MemoryStream())\n{\n    byte[] buffer = new byte[32768];\n    int count;\n    while ((count = gzip.Read(buffer, 0, buffer.Length)) > 0) output.Write(buffer, 0, count);\n    return output.ToArray();\n}\n}",
+          "makeAsync": false,
+          "iterator": false
+        }
+      ],
+      "autoProperties": [],
+      "helperClassToken": "0x2000FB1",
+      "addHelper": "[Token(Token = \"0x6005E0E\")]\n[Address(RVA = \"0x43F9614\", Offset = \"0x43F5614\", VA = \"0x43F9614\")]\nstatic DataCompressTools() { _swapString = \"1234567890\"; _encryptKey = 90; }"
+    },
+    {
+      "path": "Assets/Scripts/GFRunning/GameFramework/DataManagerPool.cs",
+      "methods": [
+        {
+          "token": "0x6005866",
+          "body": "{\nif (_0060_0083_00A4_00A6_0095t == null) _0060_0083_00A4_00A6_0095t = new DataManagerPool();\nreturn _0060_0083_00A4_00A6_0095t;\n}",
+          "makeAsync": false,
+          "iterator": false
+        },
+        {
+          "token": "0x600585D",
+          "body": "{\nE_00BDb_009C_00A3_0080 = true;\n}",
+          "makeAsync": false,
+          "iterator": false
+        },
+        {
+          "token": "0x6005861",
+          "body": "{\nu_0080ÂF_008BÁ = false;\n_00A3_00A3_0094ÁD_0083 = new Dictionary<Type, DataManagerBase>();\ni_00A6a_0099_007D_00A3 = new _00B3_0092_00BF_0080d_0084();\ni_00A6a_0099_007D_00A3._007Dye_0080_00BCa();\nif (E_00BDb_009C_00A3_0080) _00A3ºFe_0091p();\nCLog._009Ay_0097Eo_007D(\"初始化DataManagerPool完成\");\n}",
+          "makeAsync": false,
+          "iterator": false
+        },
+        {
+          "token": "0x600585B",
+          "body": "{\nT model = SqR_0089Z_00AD;\nType type = model.GetType();\nif (_00A3_00A3_0094ÁD_0083.ContainsKey(type))\n{\n    CLog.Error(\"已添加过数据管理器:\" + model.ToString());\n    return model;\n}\nvar attr = System.Reflection.CustomAttributeExtensions.GetCustomAttribute<ModelRegister>(type);\nmodel._00B1_009C_00AB_007DRS = attr != null && attr.AutoSyn;\n_00A3_00A3_0094ÁD_0083[type] = model;\nif (J_0098SX_00AD_00A7) model.OnInit();\nreturn model;\n}",
+          "makeAsync": false,
+          "iterator": false
+        },
+        {
+          "token": "0x6005860",
+          "body": "{\nType type = typeof(T);\nif (_00A3_00A3_0094ÁD_0083 != null && _00A3_00A3_0094ÁD_0083.ContainsKey(type))\n    return _00A3_00A3_0094ÁD_0083[type] as T;\nCLog.Warning(\"未找到[\" + type.FullName + \"]数据管理器\");\nreturn null;\n}",
+          "makeAsync": false,
+          "iterator": false
+        },
+        {
+          "token": "0x6005864",
+          "body": "{\nType type = h_00B9_00B8_005E_00BDY;\nif (type == null)\n{\n    object[] args = new object[1];\n    args[1] = \"Web file request timeout : \";\n    CLog.Error(args);\n    return null;\n}\nif (_00A3_00A3_0094ÁD_0083 != null && _00A3_00A3_0094ÁD_0083.ContainsKey(type))\n    return _00A3_00A3_0094ÁD_0083[type];\nobject[] missingArgs = new object[1];\nmissingArgs[1] = \"请检查商品配置表，商品配置表未包含GameKey\" + type.FullName + \"kewan is not support\";\nCLog.Error(missingArgs);\nreturn null;\n}",
+          "makeAsync": false,
+          "iterator": false
+        },
+        {
+          "token": "0x6005869",
+          "body": "{\nreturn _00A3_00A3_0094ÁD_0083;\n}",
+          "makeAsync": false,
+          "iterator": false
+        },
+        {
+          "token": "0x6005877",
+          "body": "{\nType[] types = Utility.AssemblyUtility.LoadCSharpAssembly().GetTypes();\nforeach (Type type in types)\n{\n    if (!type.IsSubclassOf(typeof(DataManagerBase))) continue;\n    var attr = System.Reflection.CustomAttributeExtensions.GetCustomAttribute<ModelRegister>(type);\n    if (attr == null || attr.GameName != AppSetting.MineGameName) continue;\n    var model = (DataManagerBase)Activator.CreateInstance(type);\n    model._00B1_009C_00AB_007DRS = attr.AutoSyn;\n    model.Rr_00A1_00B8f_008C = attr.CompressData;\n    model.OnInit();\n    _00A3_00A3_0094ÁD_0083[type] = model;\n}\n}",
+          "makeAsync": false,
+          "iterator": false
+        }
+      ],
+      "autoProperties": [],
+      "helperClassToken": "0x200035C",
+      "addHelper": "[Token(Token = \"0x600587E\")]\n[Address(RVA = \"0x717B0B8\", Offset = \"0x71770B8\", VA = \"0x717B0B8\")]\nstatic DataManagerPool() { u_0080ÂF_008BÁ = false; CanSaveLocalData = true; }"
+    },
+    {
+      "path": "Assets/Scripts/GFRunning/GameFramework/ModelRegister.cs",
+      "methods": [
+        {
+          "token": "0x60057EB",
+          "body": "{\nzjH_005B_00A8_00B1 = true;\n_00A3_00BBC_005E_00ABY = _00A3_00A9h_007Fqn;\nzjH_005B_00A8_00B1 = _00B7_005D_00A7u_007CJ;\n_0060E_007FhjN = _00A5_008Eg_008Cu_009D;\n}",
+          "makeAsync": false,
+          "iterator": false
+        },
+        {
+          "token": "0x60057E4",
+          "body": "{\nreturn _00A3_00BBC_005E_00ABY;\n}",
+          "makeAsync": false,
+          "iterator": false
+        },
+        {
+          "token": "0x60057D1",
+          "body": "{\nreturn zjH_005B_00A8_00B1;\n}",
+          "makeAsync": false,
+          "iterator": false
+        },
+        {
+          "token": "0x60057F1",
+          "body": "{\nreturn _0060E_007FhjN;\n}",
+          "makeAsync": false,
+          "iterator": false
+        }
+      ],
+      "autoProperties": []
+    },
+    {
+      "path": "Assets/Scripts/GFRunning/----d-.cs",
+      "methods": [
+        {
+          "token": "0x60070A8",
+          "body": "{\n_0083UV_00A0_00A5_0091 = new List<_00A5_0091_007FQ_0080_00A6>();\nDkwÂ_00A9Z = true;\nDo_00AC_009Co_0093 = 3;\n_0088_0080_00A3_0096_00B3c = 8192;\nm_008B_008FX_008Fq = new List<_00B4bv_00B0C_00BE>();\n}",
+          "makeAsync": false,
+          "iterator": false
+        },
+        {
+          "token": "0x60070B1",
+          "body": "{\n_0083UV_00A0_00A5_0091.Clear();\n_0085_00A5ª_0081_00BDl = UpdateManager.AddHandle(_0090_00A2Y_00B2_00B4_0094);\nGameFramework.MsgDispatcher.AddEventListener(\"GF_HttpServerErrorCode\", Â_0080TU_00BEn);\nGameFramework.MsgDispatcher.AddEventListener(\"GF_HttpWebRequestError\", Y_00A9cR_0088B);\nGameFramework.MsgDispatcher.AddEventListener(\"GF_HttpServerSuccess\", _00A5dWfk_0081);\nUnityEngine.Debug.LogWarning(\"[Recovery] Save backend registered its original Update/Msg callbacks; callback consumers and MsgDispatcher are unresolved. This does not confirm server storage readiness.\");\n}",
+          "makeAsync": false,
+          "iterator": false
+        }
+      ],
+      "autoProperties": []
+    },
+    {
+      "path": "Assets/Scripts/GFRunning/GameFramework/Utility.cs",
+      "methods": [
+        {
+          "token": "0x6006008",
+          "body": "{\nAssembly assembly;\nif (!_00A2_0090qª_009Bº.TryGetValue(_008DtSh_005Dq, out assembly))\n{\n    assembly = Assembly.Load(_008DtSh_005Dq);\n    if (assembly != null) _00A2_0090qª_009Bº.Add(_008DtSh_005Dq, assembly);\n}\nreturn assembly;\n}",
+          "makeAsync": false,
+          "iterator": false
+        },
+        {
+          "token": "0x6006009",
+          "body": "{\nAssembly assembly = LoadAssembly(\"Assembly-CSharp\");\nif (assembly == null)\n{\n    UnityEngine.Debug.LogError(\"加载C#程序集错误\");\n    return null;\n}\nreturn assembly;\n}",
+          "makeAsync": false,
+          "iterator": false
+        }
+      ],
+      "autoProperties": [],
+      "helperClassToken": "0x20003D7",
+      "addHelper": "[Token(Token = \"0x600600A\")]\n[Address(RVA = \"0x71E1E44\", Offset = \"0x71DDE44\", VA = \"0x71E1E44\")]\nstatic AssemblyUtility() { _00A2_0090qª_009Bº = new Dictionary<string, Assembly>(); }"
+    }
+  ]
+}

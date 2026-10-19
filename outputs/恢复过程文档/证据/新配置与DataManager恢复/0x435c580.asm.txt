@@ -1,0 +1,104 @@
+0x435c580: fe0f1bf8 str      x30, [sp, #-0x50]!
+0x435c584: fa6701a9 stp      x26, x25, [sp, #0x10]
+0x435c588: f85f02a9 stp      x24, x23, [sp, #0x20]
+0x435c58c: f65703a9 stp      x22, x21, [sp, #0x30]
+0x435c590: f44f04a9 stp      x20, x19, [sp, #0x40]
+0x435c594: 37650290 adrp     x23, #0x9000000
+0x435c598: b63c02d0 adrp     x22, #0x8af2000
+0x435c59c: b53c02d0 adrp     x21, #0x8af2000
+0x435c5a0: e8165a39 ldrb     w8, [x23, #0x685]
+0x435c5a4: d66244f9 ldr      x22, [x22, #0x8c0] // System.Collections.Generic.Dictionary<string, GlobalHeroCardInfo>_TypeInfo
+0x435c5a8: b56644f9 ldr      x21, [x21, #0x8c8] // Method$System.Collections.Generic.Dictionary<string, GlobalHeroCardInfo>..ctor()
+0x435c5ac: f40301aa mov      x20, x1
+0x435c5b0: f30300aa mov      x19, x0
+0x435c5b4: 08030037 tbnz     w8, #0, #0x435c614
+0x435c5b8: 803b0290 adrp     x0, #0x8acc000
+0x435c5bc: 006444f9 ldr      x0, [x0, #0x8c8] // UnityEngine.Debug_TypeInfo
+0x435c5c0: 3083e397 bl       #0x3c3d280
+0x435c5c4: a03c02d0 adrp     x0, #0x8af2000
+0x435c5c8: 006844f9 ldr      x0, [x0, #0x8d0] // Method$System.Collections.Generic.Dictionary<string, GlobalHeroCardInfo>.Add()
+0x435c5cc: 2d83e397 bl       #0x3c3d280
+0x435c5d0: a03c02d0 adrp     x0, #0x8af2000
+0x435c5d4: 006444f9 ldr      x0, [x0, #0x8c8] // Method$System.Collections.Generic.Dictionary<string, GlobalHeroCardInfo>..ctor()
+0x435c5d8: 2a83e397 bl       #0x3c3d280
+0x435c5dc: a03c02d0 adrp     x0, #0x8af2000
+0x435c5e0: 006044f9 ldr      x0, [x0, #0x8c0] // System.Collections.Generic.Dictionary<string, GlobalHeroCardInfo>_TypeInfo
+0x435c5e4: 2783e397 bl       #0x3c3d280
+0x435c5e8: 803b02f0 adrp     x0, #0x8acf000
+0x435c5ec: 008c47f9 ldr      x0, [x0, #0xf18] // Method$System.Collections.Generic.List<GlobalHeroCardInfo>.get_Count()
+0x435c5f0: 2483e397 bl       #0x3c3d280
+0x435c5f4: 803b02f0 adrp     x0, #0x8acf000
+0x435c5f8: 009047f9 ldr      x0, [x0, #0xf20] // Method$System.Collections.Generic.List<GlobalHeroCardInfo>.get_Item()
+0x435c5fc: 2183e397 bl       #0x3c3d280
+0x435c600: a03c02d0 adrp     x0, #0x8af2000
+0x435c604: 006c44f9 ldr      x0, [x0, #0x8d8] // OOO卡牌B测试，加载完配置，一共条数据
+0x435c608: 1e83e397 bl       #0x3c3d280
+0x435c60c: 28008052 mov      w8, #1
+0x435c610: e8161a39 strb     w8, [x23, #0x685]
+0x435c614: 742e00f9 str      x20, [x19, #0x58]
+0x435c618: c00240f9 ldr      x0, [x22]
+0x435c61c: aa83e397 bl       #0x3c3d4c4
+0x435c620: a10240f9 ldr      x1, [x21]
+0x435c624: f40300aa mov      x20, x0
+0x435c628: 4ea6a294 bl       #0x6c05f60 // System.Collections.Generic.Dictionary<object, object>$$.ctor
+0x435c62c: 602e40f9 ldr      x0, [x19, #0x58]
+0x435c630: 743600f9 str      x20, [x19, #0x68]
+0x435c634: 400400b4 cbz      x0, #0x435c6bc
+0x435c638: 993b02f0 adrp     x25, #0x8acf000
+0x435c63c: ba3c02d0 adrp     x26, #0x8af2000
+0x435c640: b83c02d0 adrp     x24, #0x8af2000
+0x435c644: 973b0290 adrp     x23, #0x8acc000
+0x435c648: 399347f9 ldr      x25, [x25, #0xf20] // Method$System.Collections.Generic.List<GlobalHeroCardInfo>.get_Item()
+0x435c64c: 5a6b44f9 ldr      x26, [x26, #0x8d0] // Method$System.Collections.Generic.Dictionary<string, GlobalHeroCardInfo>.Add()
+0x435c650: 186f44f9 ldr      x24, [x24, #0x8d8] // OOO卡牌B测试，加载完配置，一共条数据
+0x435c654: f76644f9 ldr      x23, [x23, #0x8c8] // UnityEngine.Debug_TypeInfo
+0x435c658: f4031f2a mov      w20, wzr
+0x435c65c: 081840b9 ldr      w8, [x0, #0x18]
+0x435c660: 9f02086b cmp      w20, w8
+0x435c664: ea020054 b.ge     #0x435c6c0
+0x435c668: 220340f9 ldr      x2, [x25]
+0x435c66c: 753640f9 ldr      x21, [x19, #0x68]
+0x435c670: e103142a mov      w1, w20
+0x435c674: feca4f94 bl       #0x574f26c // System.Collections.Generic.List<object>$$get_Item
+0x435c678: 200200b4 cbz      x0, #0x435c6bc
+0x435c67c: 682e40f9 ldr      x8, [x19, #0x58]
+0x435c680: e80100b4 cbz      x8, #0x435c6bc
+0x435c684: 220340f9 ldr      x2, [x25]
+0x435c688: 160840f9 ldr      x22, [x0, #0x10]
+0x435c68c: e00308aa mov      x0, x8
+0x435c690: e103142a mov      w1, w20
+0x435c694: f6ca4f94 bl       #0x574f26c // System.Collections.Generic.List<object>$$get_Item
+0x435c698: 350100b4 cbz      x21, #0x435c6bc
+0x435c69c: 430340f9 ldr      x3, [x26]
+0x435c6a0: e20300aa mov      x2, x0
+0x435c6a4: e00315aa mov      x0, x21
+0x435c6a8: e10316aa mov      x1, x22
+0x435c6ac: 85a9a294 bl       #0x6c06cc0 // System.Collections.Generic.Dictionary<object, object>$$Add
+0x435c6b0: 602e40f9 ldr      x0, [x19, #0x58]
+0x435c6b4: 94060011 add      w20, w20, #1
+0x435c6b8: 20fdffb5 cbnz     x0, #0x435c65c
+0x435c6bc: 8483e397 bl       #0x3c3d4cc
+0x435c6c0: e0330091 add      x0, sp, #0xc
+0x435c6c4: e1031faa mov      x1, xzr
+0x435c6c8: e80f00b9 str      w8, [sp, #0xc]
+0x435c6cc: 7d96cc94 bl       #0x76820c0 // System.Int32$$ToString
+0x435c6d0: 080340f9 ldr      x8, [x24]
+0x435c6d4: e10300aa mov      x1, x0
+0x435c6d8: e2031faa mov      x2, xzr
+0x435c6dc: e00308aa mov      x0, x8
+0x435c6e0: 3188c694 bl       #0x74fe7a4 // System.String$$Concat
+0x435c6e4: e80240f9 ldr      x8, [x23]
+0x435c6e8: f30300aa mov      x19, x0
+0x435c6ec: 09e140b9 ldr      w9, [x8, #0xe0]
+0x435c6f0: 69000035 cbnz     w9, #0x435c6fc
+0x435c6f4: e00308aa mov      x0, x8
+0x435c6f8: 2e83e397 bl       #0x3c3d3b0
+0x435c6fc: e00313aa mov      x0, x19
+0x435c700: e1031faa mov      x1, xzr
+0x435c704: 301efd94 bl       #0x82a3fc4 // UnityEngine.Debug$$Log
+0x435c708: f44f44a9 ldp      x20, x19, [sp, #0x40]
+0x435c70c: f65743a9 ldp      x22, x21, [sp, #0x30]
+0x435c710: f85f42a9 ldp      x24, x23, [sp, #0x20]
+0x435c714: fa6741a9 ldp      x26, x25, [sp, #0x10]
+0x435c718: fe0745f8 ldr      x30, [sp], #0x50
+0x435c71c: c0035fd6 ret      

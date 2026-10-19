@@ -1,0 +1,52 @@
+void GameModule_BattleGameSceneManager__Update(GameModule_BattleGameSceneManager_o *this, const MethodInfo *method)
+{
+  _BYTE **v3; // x0
+  float deltaTime; // s0
+  const MethodInfo *v5; // x1
+  float v6; // s8
+  __int64 v7; // x1
+  float v8; // s0
+  float v9; // s1
+  float v10; // s0
+  int v11; // w8
+  __int64 updated; // x0
+
+  if ( (byte_8FFD780 & 1) == 0 )
+  {
+    il2cpp_codegen_initialize_runtime_metadata((void **)&off_8CE5E20);
+    byte_8FFD780 = 1;
+  }
+  if ( *((_DWORD *)off_8CE5E20 + 56) == 0 )
+    il2cpp_codegen_runtime_class_init(off_8CE5E20);
+  if ( byte_8FFD1AB == 0 )
+  {
+    il2cpp_codegen_initialize_runtime_metadata((void **)&off_8CE5E20);
+    byte_8FFD1AB = 1;
+  }
+  v3 = (_BYTE **)off_8CE5E20;
+  if ( *((_DWORD *)off_8CE5E20 + 56) == 0 )
+  {
+    il2cpp_codegen_runtime_class_init(off_8CE5E20);
+    v3 = (_BYTE **)off_8CE5E20;
+  }
+  if ( *v3[23] != 0 )
+  {
+    deltaTime = UnityEngine_Time__get_deltaTime(0, method);
+    GameModule_BattleGameSceneManager__TickWebGLNavigation(this, deltaTime, v5);
+    v6 = *((float *)this + 144);
+    v8 = UnityEngine_Time__get_deltaTime(0, v7);
+    v9 = *((float *)this + 145);
+    v10 = v6 + v8;
+    *((float *)this + 144) = v10;
+    if ( v10 > v9 )
+    {
+      v11 = *((unsigned __int8 *)this + 584);
+      *((_DWORD *)this + 144) = 0;
+      if ( v11 == 0 )
+      {
+        updated = GameModule_BattleGameSceneManager__UpdateAllList(this);
+        Cysharp_Threading_Tasks_UniTaskExtensions__Forget(updated);
+      }
+    }
+  }
+}

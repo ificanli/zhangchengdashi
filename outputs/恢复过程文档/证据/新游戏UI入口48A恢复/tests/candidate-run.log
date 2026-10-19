@@ -1,0 +1,20 @@
+PASS Init creates original root and cache before its own completion
+PASS cold request suspends without instance or cache before typed asset result
+PASS cold completed result is a real hidden clone under original panels parent
+PASS hot request returns exact cached instance without another asset load
+PASS two cold awaits recheck after completion and instantiate only once
+PASS typed asset failure propagates without instance or cache
+PASS null asset result preserves original null return without cache
+PASS missing UIPanel logs original error and does not cache a placeholder
+PASS instance failure does not cache
+PASS hidden and cache insertion precede camera and config boundary calls
+PASS camera failure retains original already inserted hidden cache entry
+PASS no Canvas branch returns cached panel without camera config or Init
+PASS missing configuration logs and preserves prefab sorting and null config
+PASS config predicate compares exact instance name with original case
+PASS cached destroyed Unity reference is not silently replaced
+PASS repeated Init resets cache and creates a new original root
+PASS original leaf Init stores provided config including null
+PASS GetPanel before Init fails through task without auto initialization
+PASS Init allocation failure does not write its own completion flag
+RESULT scenarios=19 checks=92 failures=0

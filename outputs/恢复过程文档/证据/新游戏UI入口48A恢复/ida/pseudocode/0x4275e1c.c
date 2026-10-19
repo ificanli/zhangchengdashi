@@ -1,0 +1,14 @@
+unsigned __int8 UIFramework_UIManager__IsHavePanel(void *self, void *path, const MethodInfo *method)
+{
+  __int64 v5; // x0
+
+  if ( (byte_8FFFFD4 & 1) == 0 )
+  {
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8CFF540);
+    byte_8FFFFD4 = 1;
+  }
+  v5 = *((_QWORD *)self + 5);
+  if ( v5 == 0 )
+    il2cpp_codegen_raise_null_reference_exception();
+  return System_Collections_Generic_Dictionary_object__object___ContainsKey(v5, path, qword_8CFF540);
+}

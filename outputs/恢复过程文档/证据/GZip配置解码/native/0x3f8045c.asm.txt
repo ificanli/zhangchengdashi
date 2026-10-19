@@ -1,0 +1,46 @@
+0x3f8045c: STR             X30, [SP,#var_20]!
+0x3f80460: STP             X20, X19, [SP,#0x20+var_10]
+0x3f80464: ADRP            X20, #byte_8FFE411@PAGE
+0x3f80468: LDRB            W8, [X20,#byte_8FFE411@PAGEOFF]
+0x3f8046c: MOV             X19, X0
+0x3f80470: TBNZ            W8, #0, loc_3F80494
+0x3f80474: ADRP            X0, #off_8AD5EB8@PAGE
+0x3f80478: LDR             X0, [X0,#off_8AD5EB8@PAGEOFF]; off_8CE7AE8 ; slot
+0x3f8047c: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3f80480: ADRP            X0, #off_8ACD478@PAGE
+0x3f80484: LDR             X0, [X0,#off_8ACD478@PAGEOFF]; off_8CEDAE8 ; slot
+0x3f80488: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3f8048c: MOV             W8, #1
+0x3f80490: STRB            W8, [X20,#byte_8FFE411@PAGEOFF]
+0x3f80494: MOV             X0, X19
+0x3f80498: MOV             X1, XZR
+0x3f8049c: BL              System.String$$IsNullOrEmpty
+0x3f804a0: TBZ             W0, #0, loc_3F804C4
+0x3f804a4: ADRP            X8, #off_8ACD478@PAGE
+0x3f804a8: LDR             X8, [X8,#off_8ACD478@PAGEOFF]; off_8CEDAE8
+0x3f804ac: LDP             X20, X19, [SP,#0x20+var_10]
+0x3f804b0: LDR             X8, [X8]
+0x3f804b4: LDR             X8, [X8,#0xB8]
+0x3f804b8: LDR             X0, [X8]
+0x3f804bc: LDR             X30, [SP+0x20+var_20],#0x20
+0x3f804c0: RET
+0x3f804c4: ADRP            X20, #off_8AD5EB8@PAGE
+0x3f804c8: LDR             X20, [X20,#off_8AD5EB8@PAGEOFF]; off_8CE7AE8
+0x3f804cc: LDR             X0, [X20]; klass
+0x3f804d0: LDR             W8, [X0,#0xE0]
+0x3f804d4: CBNZ            W8, loc_3F804E0
+0x3f804d8: BL              il2cpp_codegen_runtime_class_init
+0x3f804dc: LDR             X0, [X20]
+0x3f804e0: LDR             X8, [X0,#0xB8]
+0x3f804e4: LDR             X0, [X8]
+0x3f804e8: CBZ             X0, loc_3F80510
+0x3f804ec: LDR             X8, [X0]
+0x3f804f0: MOV             X1, X19
+0x3f804f4: LDR             X9, [X8,#0x258]
+0x3f804f8: LDR             X2, [X8,#0x260]
+0x3f804fc: BLR             X9
+0x3f80500: BL              ToolModule.GZipTool$$CompressCore
+0x3f80504: LDP             X20, X19, [SP,#0x20+var_10]
+0x3f80508: LDR             X30, [SP+0x20+var_20],#0x20
+0x3f8050c: B               ToolModule.StringTool$$ToBase64String
+0x3f80510: BL              il2cpp_codegen_raise_null_reference_exception

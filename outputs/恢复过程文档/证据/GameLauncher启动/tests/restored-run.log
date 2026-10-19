@@ -1,0 +1,24 @@
+PASS Awake stores live base task before CheatControl.Init
+PASS InitBaseManager waits event, asset flag, parent, then config
+PASS Start waits stored base task before subscribing and loading
+PASS Login pending and failed states block until Success
+PASS GameLogic waits AB before progress and fire-and-forget InitManager
+PASS InitManager preserves 11 await gates and concurrent task start
+PASS firstEnterGameTime uses network time with guide=True
+PASS firstEnterGameTime uses network time with guide=False
+PASS existing firstEnterGameTime is preserved
+PASS failed awaited dependency stops InitManager with original exception
+PASS loading listener is idempotent and unsubscribes before game initialization
+PASS background initialization launches all 17 without waiting
+PASS performance ram=2048 compute=True URP=True
+PASS performance ram=4096 compute=True URP=True
+PASS performance ram=2048 compute=False URP=True
+PASS performance ram=4096 compute=False URP=True
+PASS performance ram=2048 compute=False URP=False
+PASS performance ram=4096 compute=False URP=False
+PASS renderer data property, fallback fields, invalid index and null
+PASS renderer feature name comparison and warning results
+PASS reflection setter priority, private fallback, public-field exclusion and exception
+PASS camera post processing and antialiasing disable
+PASS explicit thirty FPS rendering helper retains lighting and feature effects
+RESULT scenarios=23 checks=87 failures=0

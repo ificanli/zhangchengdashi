@@ -1,0 +1,78 @@
+__int64 __fastcall GameModule_BattleGameSceneManager__CollectRoleTargetsInRangeFromList(
+        __int64 a1,
+        __int64 a2,
+        float a3,
+        float a4,
+        float a5,
+        float a6)
+{
+  unsigned int v12; // w21
+  __int64 Item; // x22
+  __int64 transform; // x0
+  long double position; // q0
+  float v16; // s1
+  float v17; // s2
+  __int64 v18; // x8
+  _QWORD *v19; // x9
+  __int64 v20; // x10
+
+  if ( (byte_8FFD79F & 1) == 0 )
+  {
+    il2cpp_codegen_initialize_runtime_metadata((void **)&off_8CE4A38 /* GameModule.BattleGameSceneManager_TypeInfo */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&off_8D0DD80 /* Method$System.Collections.Generic.List<RoleBehaviour>.Add() */);
+    il2cpp_codegen_initialize_runtime_metadata(&qword_8D0DDC0 /* Method$System.Collections.Generic.List<RoleBehaviour>.get_Count() */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D0DDC8 /* Method$System.Collections.Generic.List<RoleBehaviour>.get_Item() */);
+    byte_8FFD79F = 1;
+  }
+  if ( a1 == 0 )
+    goto LABEL_20;
+  if ( *(int *)(a1 + 24) >= 1 )
+  {
+    v12 = 0;
+    do
+    {
+      Item = System_Collections_Generic_List_object___get_Item(a1, v12, qword_8D0DDC8 /* Method$System.Collections.Generic.List<RoleBehaviour>.get_Item() */);
+      if ( *((_DWORD *)off_8CE4A38 /* GameModule.BattleGameSceneManager_TypeInfo */ + 56) == 0 )
+        il2cpp_codegen_runtime_class_init(off_8CE4A38 /* GameModule.BattleGameSceneManager_TypeInfo */);
+      if ( GameModule_BattleGameSceneManager__IsRoleTargetValid(Item) )
+      {
+        if ( Item == 0 )
+          goto LABEL_20;
+        transform = UnityEngine_Component__get_transform(Item, 0);
+        if ( transform == 0 )
+          goto LABEL_20;
+        position = UnityEngine_Transform__get_position(transform, 0);
+        if ( (float)((float)((float)(a5 - v17) * (float)(a5 - v17))
+                   + (float)((float)((float)(a3 - *(float *)&position) * (float)(a3 - *(float *)&position))
+                           + (float)((float)(a4 - v16) * (float)(a4 - v16)))) <= a6 )
+        {
+          if ( a2 == 0 )
+            goto LABEL_20;
+          v18 = *(_QWORD *)(a2 + 16);
+          v19 = off_8D0DD80 /* Method$System.Collections.Generic.List<RoleBehaviour>.Add() */;
+          ++*(_DWORD *)(a2 + 28);
+          if ( v18 == 0 )
+            goto LABEL_20;
+          v20 = *(int *)(a2 + 24);
+          if ( (unsigned int)v20 >= *(_DWORD *)(v18 + 24) )
+          {
+            System_Collections_Generic_List_object___AddWithResize(
+              a2,
+              Item,
+              *(_QWORD *)(*(_QWORD *)(v19[4] + 192LL) + 112LL));
+          }
+          else
+          {
+            *(_DWORD *)(a2 + 24) = v20 + 1;
+            *(_QWORD *)(v18 + 8 * v20 + 32) = Item;
+          }
+        }
+      }
+    }
+    while ( (signed int)++v12 < *(_DWORD *)(a1 + 24) );
+  }
+  if ( a2 == 0 )
+LABEL_20:
+    il2cpp_codegen_raise_null_reference_exception();
+  return *(unsigned int *)(a2 + 24);
+}

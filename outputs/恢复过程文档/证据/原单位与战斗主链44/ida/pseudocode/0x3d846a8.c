@@ -1,0 +1,31 @@
+__int64 __fastcall GameModule_RoleBehaviour__WebGLNavigationApplyPosition(
+        __int64 a1,
+        char a2,
+        __int64 a3,
+        long double a4,
+        float a5,
+        long double a6)
+{
+  __int64 transform; // x0
+  __int64 result; // x0
+
+  if ( (byte_8FFD46D & 1) == 0 )
+  {
+    il2cpp_codegen_initialize_runtime_metadata((void **)&off_8CEB3E0);
+    byte_8FFD46D = 1;
+  }
+  transform = UnityEngine_Component__get_transform(a1, 0);
+  if ( transform == 0 )
+    il2cpp_codegen_raise_null_reference_exception();
+  result = UnityEngine_Transform__set_position(transform, 0, a4, a5, a6);
+  if ( (a2 & 1) != 0 )
+  {
+    if ( *((_DWORD *)off_8CEB3E0 + 56) == 0 )
+      il2cpp_codegen_runtime_class_init(off_8CEB3E0);
+    if ( (UnityEngine_Object__op_Inequality(a3, 0, 0) & 1) != 0 )
+      return GameModule_RoleBehaviour__UpdateHexPosition(a1, a3);
+    else
+      return sub_3D847E4(a1);
+  }
+  return result;
+}

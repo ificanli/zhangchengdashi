@@ -1,0 +1,90 @@
+0x3f05f64: SUB             SP, SP, #0x40
+0x3f05f68: STR             X30, [SP,#0x40+var_30]
+0x3f05f6c: STP             X22, X21, [SP,#0x40+var_20]
+0x3f05f70: STP             X20, X19, [SP,#0x40+var_10]
+0x3f05f74: ADRP            X22, #byte_8FFE05F@PAGE
+0x3f05f78: LDRB            W8, [X22,#byte_8FFE05F@PAGEOFF]
+0x3f05f7c: MOV             X19, X2
+0x3f05f80: MOV             X20, X1
+0x3f05f84: MOV             X21, X0
+0x3f05f88: TBNZ            W8, #0, loc_3F05FAC
+0x3f05f8c: ADRP            X0, #off_8ADAA48@PAGE
+0x3f05f90: LDR             X0, [X0,#off_8ADAA48@PAGEOFF]; qword_8CFDB68 ; slot
+0x3f05f94: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3f05f98: ADRP            X0, #off_8ADAA30@PAGE
+0x3f05f9c: LDR             X0, [X0,#off_8ADAA30@PAGEOFF]; qword_8CFDB70 ; slot
+0x3f05fa0: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3f05fa4: MOV             W8, #1
+0x3f05fa8: STRB            W8, [X22,#byte_8FFE05F@PAGEOFF]
+0x3f05fac: STR             XZR, [SP,#0x40+var_28]
+0x3f05fb0: STR             XZR, [SP,#0x40+var_38]
+0x3f05fb4: LDR             X0, [X21,#0x20]
+0x3f05fb8: CBZ             X0, loc_3F0606C
+0x3f05fbc: ADRP            X22, #off_8ADAA30@PAGE
+0x3f05fc0: LDR             X22, [X22,#off_8ADAA30@PAGEOFF]; qword_8CFDB70
+0x3f05fc4: LDR             X3, [X22]
+0x3f05fc8: ADD             X2, SP, #0x40+var_28
+0x3f05fcc: MOV             X1, X20
+0x3f05fd0: BL              System.Collections.Generic.Dictionary_object__object_$$TryGetValue
+0x3f05fd4: LDR             X8, [SP,#0x40+var_28]
+0x3f05fd8: CBZ             X8, loc_3F05FF8
+0x3f05fdc: EOR             W9, W0, #1
+0x3f05fe0: TBNZ            W9, #0, loc_3F05FF8
+0x3f05fe4: LDR             X0, [X8,#0x40]
+0x3f05fe8: LDR             X9, [X8,#0x18]
+0x3f05fec: LDR             X2, [X8,#0x28]
+0x3f05ff0: MOV             X1, X19
+0x3f05ff4: BLR             X9
+0x3f05ff8: LDR             X0, [X21,#0x28]
+0x3f05ffc: CBZ             X0, loc_3F06070
+0x3f06000: LDR             X3, [X22]
+0x3f06004: ADD             X2, SP, #0x40+var_38
+0x3f06008: MOV             X1, X20
+0x3f0600c: BL              System.Collections.Generic.Dictionary_object__object_$$TryGetValue
+0x3f06010: LDR             X8, [SP,#0x40+var_38]
+0x3f06014: CBZ             X8, loc_3F06058
+0x3f06018: EOR             W8, W0, #1
+0x3f0601c: TBNZ            W8, #0, loc_3F06058
+0x3f06020: LDR             X0, [X21,#0x28]
+0x3f06024: CBZ             X0, loc_3F06074
+0x3f06028: ADRP            X8, #off_8ADAA48@PAGE
+0x3f0602c: LDR             X8, [X8,#off_8ADAA48@PAGEOFF]; qword_8CFDB68
+0x3f06030: LDR             X2, [X8]
+0x3f06034: MOV             X1, X20
+0x3f06038: BL              System.Collections.Generic.Dictionary_object__object_$$Remove
+0x3f0603c: LDR             X8, [SP,#0x40+var_38]
+0x3f06040: CBZ             X8, loc_3F06078
+0x3f06044: LDR             X0, [X8,#0x40]
+0x3f06048: LDR             X9, [X8,#0x18]
+0x3f0604c: LDR             X2, [X8,#0x28]
+0x3f06050: MOV             X1, X19
+0x3f06054: BLR             X9
+0x3f06058: LDP             X20, X19, [SP,#0x40+var_10]
+0x3f0605c: LDP             X22, X21, [SP,#0x40+var_20]
+0x3f06060: LDR             X30, [SP,#0x40+var_30]
+0x3f06064: ADD             SP, SP, #0x40 ; '@'
+0x3f06068: RET
+0x3f0606c: BL              il2cpp_codegen_raise_null_reference_exception
+0x3f06070: BL              il2cpp_codegen_raise_null_reference_exception
+0x3f06074: BL              il2cpp_codegen_raise_null_reference_exception
+0x3f06078: BL              il2cpp_codegen_raise_null_reference_exception
+0x3f0607c: B               loc_3F06098
+0x3f06080: B               loc_3F06098
+0x3f06084: B               loc_3F06098
+0x3f06088: B               loc_3F06098
+0x3f0608c: B               loc_3F06098
+0x3f06090: B               loc_3F06098
+0x3f06094: B               loc_3F06098
+0x3f06098: CMP             W1, #1
+0x3f0609c: B.NE            loc_3F060BC
+0x3f060a0: BL              .__cxa_begin_catch
+0x3f060a4: LDR             X19, [X0]
+0x3f060a8: BL              .__cxa_end_catch
+0x3f060ac: CBZ             X19, loc_3F06058
+0x3f060b0: MOV             X0, X19
+0x3f060b4: BL              unk_3C38CF8
+0x3f060b8: CBNZ            X19, loc_3F060C0
+0x3f060bc: BL              unk_3CE73C4
+0x3f060c0: MOV             X0, X19
+0x3f060c4: BL              unk_3C38CF8
+0x3f060c8: BL              unk_35BC500

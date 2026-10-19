@@ -1,0 +1,89 @@
+{
+  "scope": "Original ARM64 executes all four methods; external Unity allocation/base APIs are hooks, not Unity runtime",
+  "normalTrace": [
+    "base-create",
+    "new-manager",
+    {
+      "call": "object-ctor",
+      "maximumDtBits": 1023969417,
+      "customScale": 1.0
+    },
+    {
+      "call": "list-ctor",
+      "allocator": 4,
+      "index": 1
+    },
+    {
+      "call": "list-ctor",
+      "allocator": 4,
+      "index": 2
+    },
+    "base-destroy",
+    {
+      "call": "list-dispose",
+      "fieldOffset": 40
+    },
+    {
+      "call": "list-dispose",
+      "fieldOffset": 48
+    }
+  ],
+  "createdTrace": [
+    "base-create",
+    "new-manager",
+    {
+      "call": "object-ctor",
+      "maximumDtBits": 1023969417,
+      "customScale": 1.0
+    },
+    {
+      "call": "list-ctor",
+      "allocator": 4,
+      "index": 1
+    },
+    {
+      "call": "list-ctor",
+      "allocator": 4,
+      "index": 2
+    }
+  ],
+  "nullManagerTrace": [
+    "base-destroy",
+    "null-reference"
+  ],
+  "wrongTypeTrace": [
+    "base-destroy",
+    "null-reference"
+  ],
+  "groupRateManagerOffset": "0x88",
+  "maximumDtBits": 1023969417,
+  "customTimeScale": 1.0,
+  "queueOffsets": [
+    "0x28",
+    "0x30"
+  ],
+  "persistentAllocator": 4,
+  "cases": 3,
+  "methods": [
+    {
+      "address": "0x44cd6ac",
+      "end": "0x44cd70c",
+      "sha256": "9884ece05ab64187091726b8dd1ef93a00662676838c5b747b66d5e712279266"
+    },
+    {
+      "address": "0x44cd70c",
+      "end": "0x44cd7c4",
+      "sha256": "f4537938f7397014fde79bbad924e14fca762b99bcc14b9bb097992b7a59f09c"
+    },
+    {
+      "address": "0x44cd5d4",
+      "end": "0x44cd658",
+      "sha256": "3f21d26cdb6236c6a4902f9c5df72000fa9cc7ab380242ce6ee9df560cd60bcd"
+    },
+    {
+      "address": "0x44cd658",
+      "end": "0x44cd6ac",
+      "sha256": "10088ef3fe92cfddf9e83230d04d942af025f807c2cded2a808cd9c9bc310355"
+    }
+  ]
+}

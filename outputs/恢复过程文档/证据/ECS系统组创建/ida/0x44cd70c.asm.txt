@@ -1,0 +1,45 @@
+0x44cd70c: SUB             SP, SP, #0x30
+0x44cd710: STP             X30, X21, [SP,#0x30+var_20]
+0x44cd714: STP             X20, X19, [SP,#0x30+var_10]
+0x44cd718: ADRP            X21, #byte_90010BE@PAGE
+0x44cd71c: ADRP            X20, #off_8B00D80@PAGE
+0x44cd720: LDRB            W8, [X21,#byte_90010BE@PAGEOFF]
+0x44cd724: LDR             X20, [X20,#off_8B00D80@PAGEOFF]; qword_8D13ED0
+0x44cd728: MOV             X19, X0
+0x44cd72c: TBNZ            W8, #0, loc_44CD744
+0x44cd730: ADRP            X0, #off_8B00D80@PAGE
+0x44cd734: LDR             X0, [X0,#off_8B00D80@PAGEOFF]; qword_8D13ED0 ; slot
+0x44cd738: BL              il2cpp_codegen_initialize_runtime_metadata
+0x44cd73c: MOV             W8, #1
+0x44cd740: STRB            W8, [X21,#byte_90010BE@PAGEOFF]
+0x44cd744: MOV             W8, #0x3D088889
+0x44cd74c: MOV             X9, #0x3FF0000000000000
+0x44cd750: MOV             X0, X19
+0x44cd754: MOV             X1, XZR
+0x44cd758: STR             W8, [X19,#0x1C]
+0x44cd75c: STR             X9, [X19,#0x48]
+0x44cd760: BL              System.Object$$.ctor
+0x44cd764: MOV             W0, #4
+0x44cd768: MOV             X1, XZR
+0x44cd76c: BL              Unity.Collections.AllocatorManager.AllocatorHandle$$op_Implicit
+0x44cd770: LDR             X2, [X20]
+0x44cd774: AND             X1, X0, #0xFFFFFFFF
+0x44cd778: ADD             X0, SP, #0x30+var_28
+0x44cd77c: STR             XZR, [SP,#0x30+var_28]
+0x44cd780: BL              Unity.Collections.NativeList_TimeData_$$.ctor
+0x44cd784: LDR             X8, [SP,#0x30+var_28]
+0x44cd788: MOV             W0, #4
+0x44cd78c: MOV             X1, XZR
+0x44cd790: STR             X8, [X19,#0x28]
+0x44cd794: BL              Unity.Collections.AllocatorManager.AllocatorHandle$$op_Implicit
+0x44cd798: LDR             X2, [X20]
+0x44cd79c: AND             X1, X0, #0xFFFFFFFF
+0x44cd7a0: MOV             X0, SP
+0x44cd7a4: STR             XZR, [SP,#0x30+var_30]
+0x44cd7a8: BL              Unity.Collections.NativeList_TimeData_$$.ctor
+0x44cd7ac: LDR             X8, [SP,#0x30+var_30]
+0x44cd7b0: LDP             X30, X21, [SP,#0x30+var_20]
+0x44cd7b4: STR             X8, [X19,#0x30]
+0x44cd7b8: LDP             X20, X19, [SP,#0x30+var_10]
+0x44cd7bc: ADD             SP, SP, #0x30 ; '0'
+0x44cd7c0: RET

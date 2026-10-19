@@ -1,0 +1,32 @@
+0x52a8fe0: STR             X30, [SP,#var_20]!
+0x52a8fe4: STP             X20, X19, [SP,#0x20+var_10]
+0x52a8fe8: MOV             X9, X0
+0x52a8fec: LDR             X0, [X0,#0x38]
+0x52a8ff0: CBZ             X0, loc_52A9020
+0x52a8ff4: LDR             X10, [X3,#0x20]
+0x52a8ff8: LDP             X20, X19, [SP,#0x20+var_10]
+0x52a8ffc: MOV             W8, W2
+0x52a9000: MOV             X2, X1
+0x52a9004: LDR             X10, [X10,#0xC0]
+0x52a9008: MOV             X1, X9
+0x52a900c: MOV             W3, W8
+0x52a9010: MOV             X4, XZR
+0x52a9014: LDR             X5, [X10,#0x108]
+0x52a9018: LDR             X30, [SP+0x20+var_20],#0x20
+0x52a901c: B               GameFramework.Fsm.FsmState_object_$$OnEvent
+0x52a9020: ADRP            X0, #off_8B0CF78@PAGE
+0x52a9024: LDR             X0, [X0,#off_8B0CF78@PAGEOFF]; unk_8CE7B50
+0x52a9028: MOV             X19, X3
+0x52a902c: BL              unk_3C3D294
+0x52a9030: BL              unk_3C3D4C4
+0x52a9034: MOV             X20, X0
+0x52a9038: ADRP            X0, #off_8B0F5D0@PAGE
+0x52a903c: LDR             X0, [X0,#off_8B0F5D0@PAGEOFF]; unk_8D5D620
+0x52a9040: BL              unk_3C3D294
+0x52a9044: MOV             X1, X0
+0x52a9048: MOV             X0, X20
+0x52a904c: MOV             X2, XZR
+0x52a9050: BL              GameFramework.GameFrameworkException$$.ctor
+0x52a9054: MOV             X0, X20
+0x52a9058: MOV             X1, X19
+0x52a905c: BL              unk_3C3D3A0

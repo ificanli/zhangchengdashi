@@ -1,0 +1,56 @@
+0x3decd8c: SUB             SP, SP, #0x30
+0x3decd90: STP             X30, X21, [SP,#0x30+var_20]
+0x3decd94: STP             X20, X19, [SP,#0x30+var_10]
+0x3decd98: ADRP            X21, #byte_8FFD7AE@PAGE
+0x3decd9c: LDRB            W8, [X21,#byte_8FFD7AE@PAGEOFF]
+0x3decda0: MOV             W20, W1
+0x3decda4: MOV             X19, X0
+0x3decda8: TBNZ            W8, #0, loc_3DECDCC
+0x3decdac: ADRP            X0, #off_8AD3B70@PAGE
+0x3decdb0: LDR             X0, [X0,#off_8AD3B70@PAGEOFF]; qword_8D15DC0 ; slot
+0x3decdb4: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3decdb8: ADRP            X0, #off_8ACC8D0@PAGE
+0x3decdbc: LDR             X0, [X0,#off_8ACC8D0@PAGEOFF]; off_8CEB3E0 ; slot
+0x3decdc0: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3decdc4: MOV             W8, #1
+0x3decdc8: STRB            W8, [X21,#byte_8FFD7AE@PAGEOFF]
+0x3decdcc: CBZ             X19, loc_3DECE68
+0x3decdd0: TST             W20, #1
+0x3decdd4: MOV             W8, #0x160
+0x3decdd8: MOV             W9, #0x158
+0x3decddc: CSEL            X8, X9, X8, NE
+0x3decde0: LDR             X1, [X19,X8]
+0x3decde4: ADRP            X20, #off_8ACC8D0@PAGE
+0x3decde8: LDR             X20, [X20,#off_8ACC8D0@PAGEOFF]; off_8CEB3E0
+0x3decdec: MOV             X0, X19
+0x3decdf0: BL              GameModule.BattleGameSceneManager$$GetDesignatedKeyHex
+0x3decdf4: LDR             X8, [X20]
+0x3decdf8: MOV             X19, X0
+0x3decdfc: LDR             W9, [X8,#0xE0]
+0x3dece00: CBNZ            W9, loc_3DECE0C
+0x3dece04: MOV             X0, X8; klass
+0x3dece08: BL              il2cpp_codegen_runtime_class_init
+0x3dece0c: MOV             X0, X19
+0x3dece10: MOV             X1, XZR
+0x3dece14: MOV             X2, XZR
+0x3dece18: BL              UnityEngine.Object$$op_Inequality
+0x3dece1c: TBZ             W0, #0, loc_3DECE48
+0x3dece20: CBZ             X19, loc_3DECE68
+0x3dece24: ADRP            X8, #off_8AD3B70@PAGE
+0x3dece28: LDR             X1, [X19,#0x20]
+0x3dece2c: LDR             X8, [X8,#off_8AD3B70@PAGEOFF]; qword_8D15DC0
+0x3dece30: MOV             X0, SP
+0x3dece34: STR             WZR, [SP,#0x30+var_28]
+0x3dece38: STR             XZR, [SP,#0x30+var_30]
+0x3dece3c: LDR             X2, [X8]
+0x3dece40: BL              System.Nullable_HexManager.HexCoord_$$.ctor
+0x3dece44: B               loc_3DECE50
+0x3dece48: STR             WZR, [SP,#0x30+var_28]
+0x3dece4c: STR             XZR, [SP,#0x30+var_30]
+0x3dece50: LDR             X0, [SP,#0x30+var_30]
+0x3dece54: LDR             W1, [SP,#0x30+var_28]
+0x3dece58: LDP             X20, X19, [SP,#0x30+var_10]
+0x3dece5c: LDP             X30, X21, [SP,#0x30+var_20]
+0x3dece60: ADD             SP, SP, #0x30 ; '0'
+0x3dece64: RET
+0x3dece68: BL              il2cpp_codegen_raise_null_reference_exception

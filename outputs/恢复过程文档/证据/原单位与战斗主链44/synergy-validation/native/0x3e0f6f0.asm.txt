@@ -1,0 +1,14 @@
+0x3e0f6f0: 7f00046b cmp      w3, w4
+0x3e0f6f4: e003012a mov      w0, w1
+0x3e0f6f8: 6b010054 b.lt     #0x3e0f724
+0x3e0f6fc: 0000221e scvtf    s0, w0
+0x3e0f700: 01102c1e fmov     s1, #0.50000000
+0x3e0f704: 08f0af52 mov      w8, #0x7f800000
+0x3e0f708: 0008211e fmul     s0, s0, s1
+0x3e0f70c: 0101271e fmov     s1, w8
+0x3e0f710: 0800381e fcvtzs   w8, s0
+0x3e0f714: 0020211e fcmp     s0, s1
+0x3e0f718: 0900b052 mov      w9, #-0xffffffff80000000
+0x3e0f71c: 2801881a csel     w8, w9, w8, eq
+0x3e0f720: 0001000b add      w0, w8, w0
+0x3e0f724: c0035fd6 ret      

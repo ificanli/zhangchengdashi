@@ -1,0 +1,89 @@
+0x72f51bc: STR             X30, [SP,#var_30]!
+0x72f51c0: STP             X22, X21, [SP,#0x30+var_20]
+0x72f51c4: STP             X20, X19, [SP,#0x30+var_10]
+0x72f51c8: ADRP            X22, #byte_900A0F9@PAGE
+0x72f51cc: LDRB            W8, [X22,#byte_900A0F9@PAGEOFF]
+0x72f51d0: MOV             W19, W2
+0x72f51d4: MOV             X20, X1
+0x72f51d8: MOV             X21, X0
+0x72f51dc: TBNZ            W8, #0, loc_72F5218
+0x72f51e0: ADRP            X0, #off_8ACEAC0@PAGE
+0x72f51e4: LDR             X0, [X0,#off_8ACEAC0@PAGEOFF]; qword_8CE7B80 ; slot
+0x72f51e8: BL              il2cpp_codegen_initialize_runtime_metadata
+0x72f51ec: ADRP            X0, #off_8ACDE18@PAGE
+0x72f51f0: LDR             X0, [X0,#off_8ACDE18@PAGEOFF]; qword_8D34FB0 ; slot
+0x72f51f4: BL              il2cpp_codegen_initialize_runtime_metadata
+0x72f51f8: ADRP            X0, #off_8ACC8D0@PAGE
+0x72f51fc: LDR             X0, [X0,#off_8ACC8D0@PAGEOFF]; off_8CEB3E0 ; slot
+0x72f5200: BL              il2cpp_codegen_initialize_runtime_metadata
+0x72f5204: ADRP            X0, #off_8B0FF28@PAGE
+0x72f5208: LDR             X0, [X0,#off_8B0FF28@PAGEOFF]; off_8CEF230 ; slot
+0x72f520c: BL              il2cpp_codegen_initialize_runtime_metadata
+0x72f5210: MOV             W8, #1
+0x72f5214: STRB            W8, [X22,#byte_900A0F9@PAGEOFF]
+0x72f5218: LDR             X0, [X21,#0x28]
+0x72f521c: CBZ             X0, loc_72F531C
+0x72f5220: ADRP            X22, #off_8ACC8D0@PAGE
+0x72f5224: LDR             X22, [X22,#off_8ACC8D0@PAGEOFF]; off_8CEB3E0
+0x72f5228: MOV             X1, X20
+0x72f522c: MOV             X2, XZR
+0x72f5230: BL              UnityEngine.AssetBundle$$LoadAsset
+0x72f5234: LDR             X8, [X22]
+0x72f5238: MOV             X20, X0
+0x72f523c: LDR             W9, [X8,#0xE0]
+0x72f5240: CBNZ            W9, loc_72F524C
+0x72f5244: MOV             X0, X8; klass
+0x72f5248: BL              il2cpp_codegen_runtime_class_init
+0x72f524c: MOV             X0, X20
+0x72f5250: MOV             X1, XZR
+0x72f5254: MOV             X2, XZR
+0x72f5258: BL              UnityEngine.Object$$op_Inequality
+0x72f525c: MOV             X21, XZR
+0x72f5260: TBZ             W0, #0, loc_72F5308
+0x72f5264: CBZ             X20, loc_72F5280
+0x72f5268: ADRP            X8, #off_8ACEAC0@PAGE
+0x72f526c: LDR             X8, [X8,#off_8ACEAC0@PAGEOFF]; qword_8CE7B80
+0x72f5270: LDR             X9, [X20]
+0x72f5274: LDR             X8, [X8]
+0x72f5278: CMP             X9, X8
+0x72f527c: B.EQ            loc_72F5288
+0x72f5280: MOV             X21, XZR
+0x72f5284: B               loc_72F5308
+0x72f5288: ADRP            X8, #off_8B0FF28@PAGE
+0x72f528c: LDR             X8, [X8,#off_8B0FF28@PAGEOFF]; off_8CEF230
+0x72f5290: LDR             X0, [X8]; klass
+0x72f5294: LDR             W8, [X0,#0xE0]
+0x72f5298: CBNZ            W8, loc_72F52A0
+0x72f529c: BL              il2cpp_codegen_runtime_class_init
+0x72f52a0: MOV             X0, X20
+0x72f52a4: MOV             X1, XZR
+0x72f52a8: BL              GameFramework.Utils$$ResetShader
+0x72f52ac: LDR             X0, [X22]; klass
+0x72f52b0: LDR             W8, [X0,#0xE0]
+0x72f52b4: CBNZ            W8, loc_72F52BC
+0x72f52b8: BL              il2cpp_codegen_runtime_class_init
+0x72f52bc: ADRP            X8, #off_8ACDE18@PAGE
+0x72f52c0: LDR             X8, [X8,#off_8ACDE18@PAGEOFF]; qword_8D34FB0
+0x72f52c4: MOV             X0, X20
+0x72f52c8: LDR             X1, [X8]
+0x72f52cc: BL              UnityEngine.Object$$Instantiate_object_
+0x72f52d0: CBZ             X0, loc_72F531C
+0x72f52d4: AND             W1, W19, #1
+0x72f52d8: MOV             X2, XZR
+0x72f52dc: MOV             X21, X0
+0x72f52e0: BL              UnityEngine.GameObject$$SetActive
+0x72f52e4: MOV             X0, X20
+0x72f52e8: MOV             X1, XZR
+0x72f52ec: BL              UnityEngine.Object$$get_name
+0x72f52f0: MOV             X1, X0
+0x72f52f4: MOV             X0, X21
+0x72f52f8: MOV             X2, XZR
+0x72f52fc: BL              UnityEngine.Object$$set_name
+0x72f5300: MOV             X1, X21
+0x72f5304: BL              GameFramework.Resources.ResourcesInfo$$__E_g_
+0x72f5308: MOV             X0, X21
+0x72f530c: LDP             X20, X19, [SP,#0x30+var_10]
+0x72f5310: LDP             X22, X21, [SP,#0x30+var_20]
+0x72f5314: LDR             X30, [SP+0x30+var_30],#0x30
+0x72f5318: RET
+0x72f531c: BL              il2cpp_codegen_raise_null_reference_exception

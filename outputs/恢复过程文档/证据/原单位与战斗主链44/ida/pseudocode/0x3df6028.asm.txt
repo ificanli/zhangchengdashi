@@ -1,0 +1,41 @@
+0x3df6028: STP             X30, X21, [SP,#var_20]!
+0x3df602c: STP             X20, X19, [SP,#0x20+var_10]
+0x3df6030: ADRP            X21, #byte_8FFD7BB@PAGE
+0x3df6034: LDRB            W8, [X21,#byte_8FFD7BB@PAGEOFF]
+0x3df6038: MOV             X19, X1
+0x3df603c: MOV             X20, X0
+0x3df6040: TBNZ            W8, #0, loc_3DF6058
+0x3df6044: ADRP            X0, #off_8AD1E50@PAGE
+0x3df6048: LDR             X0, [X0,#off_8AD1E50@PAGEOFF]; off_8D0AC98 ; slot
+0x3df604c: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3df6050: MOV             W8, #1
+0x3df6054: STRB            W8, [X21,#byte_8FFD7BB@PAGEOFF]
+0x3df6058: LDR             X0, [X20,#0x90]
+0x3df605c: CBZ             X0, loc_3DF60C8
+0x3df6060: ADRP            X9, #off_8AD1E50@PAGE
+0x3df6064: LDR             X9, [X9,#off_8AD1E50@PAGEOFF]; off_8D0AC98
+0x3df6068: LDR             W10, [X0,#0x1C]
+0x3df606c: LDR             X8, [X0,#0x10]
+0x3df6070: LDR             X9, [X9]
+0x3df6074: ADD             W10, W10, #1
+0x3df6078: STR             W10, [X0,#0x1C]
+0x3df607c: CBZ             X8, loc_3DF60C8
+0x3df6080: LDRSW           X10, [X0,#0x18]
+0x3df6084: LDR             W11, [X8,#0x18]
+0x3df6088: CMP             W10, W11
+0x3df608c: B.CS            loc_3DF60AC
+0x3df6090: ADD             W9, W10, #1
+0x3df6094: ADD             X8, X8, X10,LSL#3
+0x3df6098: STR             W9, [X0,#0x18]
+0x3df609c: STR             X19, [X8,#0x20]
+0x3df60a0: LDP             X20, X19, [SP,#0x20+var_10]
+0x3df60a4: LDP             X30, X21, [SP+0x20+var_20],#0x20
+0x3df60a8: RET
+0x3df60ac: LDR             X8, [X9,#0x20]
+0x3df60b0: MOV             X1, X19
+0x3df60b4: LDP             X20, X19, [SP,#0x20+var_10]
+0x3df60b8: LDR             X8, [X8,#0xC0]
+0x3df60bc: LDR             X2, [X8,#0x70]
+0x3df60c0: LDP             X30, X21, [SP+0x20+var_20],#0x20
+0x3df60c4: B               System.Collections.Generic.List_object_$$AddWithResize
+0x3df60c8: BL              il2cpp_codegen_raise_null_reference_exception

@@ -1,0 +1,37 @@
+0x3e01674: fe0f1ef8 str      x30, [sp, #-0x20]!
+0x3e01678: f44f01a9 stp      x20, x19, [sp, #0x10]
+0x3e0167c: f38f0290 adrp     x19, #0x8ffd000
+0x3e01680: 74660290 adrp     x20, #0x8acd000
+0x3e01684: 680e6039 ldrb     w8, [x19, #0x803]
+0x3e01688: 947e47f9 ldr      x20, [x20, #0xef8] // Method$ToolModule.ManagerBase<UIManager>.get_Instance()
+0x3e0168c: 88010037 tbnz     w8, #0, #0x3e016bc
+0x3e01690: 60660290 adrp     x0, #0x8acd000
+0x3e01694: 007c47f9 ldr      x0, [x0, #0xef8] // Method$ToolModule.ManagerBase<UIManager>.get_Instance()
+0x3e01698: faeef897 bl       #0x3c3d280
+0x3e0169c: 806602f0 adrp     x0, #0x8ad4000
+0x3e016a0: 00cc40f9 ldr      x0, [x0, #0x198] // Method$ToolModule.ManagerBase<MetaGameManager>.get_Instance()
+0x3e016a4: f7eef897 bl       #0x3c3d280
+0x3e016a8: 806602d0 adrp     x0, #0x8ad3000
+0x3e016ac: 00b443f9 ldr      x0, [x0, #0x768] // Assets/_Res/Addressable/02CoreGameBundle/Prefabs/UI/Panels/FoundEnemyPanel.prefab
+0x3e016b0: f4eef897 bl       #0x3c3d280
+0x3e016b4: 28008052 mov      w8, #1
+0x3e016b8: 680e2039 strb     w8, [x19, #0x803]
+0x3e016bc: 800240f9 ldr      x0, [x20]
+0x3e016c0: 68db6d94 bl       #0x5978460 // ToolModule.ManagerBase<object>$$get_Instance
+0x3e016c4: 000200b4 cbz      x0, #0x3e01704
+0x3e016c8: 886602d0 adrp     x8, #0x8ad3000
+0x3e016cc: 08b543f9 ldr      x8, [x8, #0x768] // Assets/_Res/Addressable/02CoreGameBundle/Prefabs/UI/Panels/FoundEnemyPanel.prefab
+0x3e016d0: 936602f0 adrp     x19, #0x8ad4000
+0x3e016d4: e2031faa mov      x2, xzr
+0x3e016d8: 010140f9 ldr      x1, [x8]
+0x3e016dc: 73ce40f9 ldr      x19, [x19, #0x198] // Method$ToolModule.ManagerBase<MetaGameManager>.get_Instance()
+0x3e016e0: a8d21194 bl       #0x4276180 // UIFramework.UIManager$$HidePanel
+0x3e016e4: 600240f9 ldr      x0, [x19]
+0x3e016e8: 5edb6d94 bl       #0x5978460 // ToolModule.ManagerBase<object>$$get_Instance
+0x3e016ec: c00000b4 cbz      x0, #0x3e01704
+0x3e016f0: f44f41a9 ldp      x20, x19, [sp, #0x10]
+0x3e016f4: 41008052 mov      w1, #2
+0x3e016f8: e2031faa mov      x2, xzr
+0x3e016fc: fe0742f8 ldr      x30, [sp], #0x20
+0x3e01700: 711f0214 b        #0x3e894c4 // GameModule.MetaGameManager$$ShowMetaSwitchPanel
+0x3e01704: 72eff897 bl       #0x3c3d4cc

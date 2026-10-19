@@ -1,0 +1,13 @@
+Initializing metadata...
+System.IO.EndOfStreamException: Unable to read beyond the end of the stream.
+   at System.IO.BinaryReader.InternalRead(Int32 numBytes)
+   at System.IO.BinaryReader.ReadUInt32()
+   at Il2CppDumper.BinaryStream.ReadUInt32() in C:\projects\il2cppdumper\Il2CppDumper\IO\BinaryStream.cs:line 48
+   at Il2CppDumper.BinaryStream.ReadPrimitive(Type type) in C:\projects\il2cppdumper\Il2CppDumper\IO\BinaryStream.cs:line 99
+   at Il2CppDumper.BinaryStream.ReadClass[T]() in C:\projects\il2cppdumper\Il2CppDumper\IO\BinaryStream.cs:line 154
+   at Il2CppDumper.BinaryStream.ReadClassArray[T](Int64 count) in C:\projects\il2cppdumper\Il2CppDumper\IO\BinaryStream.cs:line 190
+   at Il2CppDumper.BinaryStream.ReadClassArray[T](UInt64 addr, Int64 count) in C:\projects\il2cppdumper\Il2CppDumper\IO\BinaryStream.cs:line 203
+   at Il2CppDumper.Metadata.ReadMetadataClassArray[T](UInt32 addr, Int32 count) in C:\projects\il2cppdumper\Il2CppDumper\Il2Cpp\Metadata.cs:line 162
+   at Il2CppDumper.Metadata..ctor(Stream stream) in C:\projects\il2cppdumper\Il2CppDumper\Il2Cpp\Metadata.cs:line 77
+   at Il2CppDumper.Program.Init(String il2cppPath, String metadataPath, Metadata& metadata, Il2Cpp& il2Cpp) in C:\projects\il2cppdumper\Il2CppDumper\Program.cs:line 123
+   at Il2CppDumper.Program.Main(String[] args) in C:\projects\il2cppdumper\Il2CppDumper\Program.cs:line 97

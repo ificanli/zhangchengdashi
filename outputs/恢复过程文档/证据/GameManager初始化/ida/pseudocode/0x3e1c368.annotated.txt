@@ -1,0 +1,18 @@
+void GameModule_GameManager___c___RegisterOnTimeToZero_b__21_2(void *self, const MethodInfo *method)
+{
+  __int64 v2; // x0
+  __int64 v3; // x8
+
+  if ( (byte_8FFD8A4 & 1) == 0 )
+  {
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8CFB168 /* Method$DbtSaveDataManagerBase<DbtSaveDataManager_PlayerAdData, PlayerAdData>.Save() */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&unk_8CFB170 /* Method$DbtSaveDataManagerBase<DbtSaveDataManager_PlayerAdData, PlayerAdData>.get_Data() */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&off_8CD91F0 /* DbtSaveDataManagerBase<DbtSaveDataManager_PlayerAdData, PlayerAdData>_TypeInfo */);
+    byte_8FFD8A4 = 1;
+  }
+  v2 = **((_QWORD **)off_8CD91F0 /* DbtSaveDataManagerBase<DbtSaveDataManager_PlayerAdData, PlayerAdData>_TypeInfo */ + 23);
+  if ( v2 == 0 || (v3 = *(_QWORD *)(v2 + 48)) == 0 )
+    il2cpp_codegen_raise_null_reference_exception();
+  *(_BYTE *)(v3 + 44) = 0;
+  DbtSaveDataManagerBase_object__object___Save(v2, qword_8CFB168 /* Method$DbtSaveDataManagerBase<DbtSaveDataManager_PlayerAdData, PlayerAdData>.Save() */);
+}

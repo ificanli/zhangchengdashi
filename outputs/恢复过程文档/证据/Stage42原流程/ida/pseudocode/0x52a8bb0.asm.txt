@@ -1,0 +1,14 @@
+0x52a8bb0: STR             X30, [SP,#var_10]!
+0x52a8bb4: LDR             X0, [X0,#0x38]
+0x52a8bb8: CBZ             X0, loc_52A8BDC
+0x52a8bbc: MOV             X1, XZR
+0x52a8bc0: BL              System.Object$$GetType
+0x52a8bc4: CBZ             X0, loc_52A8BE4
+0x52a8bc8: LDR             X8, [X0]
+0x52a8bcc: LDR             X2, [X8,#0x308]
+0x52a8bd0: LDR             X1, [X8,#0x310]
+0x52a8bd4: LDR             X30, [SP+0x10+var_10],#0x10
+0x52a8bd8: BR              X2
+0x52a8bdc: LDR             X30, [SP+0x10+var_10],#0x10
+0x52a8be0: RET
+0x52a8be4: BL              il2cpp_codegen_raise_null_reference_exception

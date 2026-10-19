@@ -1,0 +1,198 @@
+--- before/UIModule.cs
++++ after/UIModule.cs
+@@ -131,7 +131,7 @@
+ 				[DebuggerHidden]
+ 				get
+ 				{
+-					return System_002ECollections_002EGeneric_002EIEnumerator_003CSystem_002EObject_003E_002Eget_Current();
++					return _003C_003E2__current;
+ 				}
+ 			}
+ 
+@@ -143,7 +143,7 @@
+ 				[DebuggerHidden]
+ 				get
+ 				{
+-					return System_002ECollections_002EIEnumerator_002Eget_Current();
++					return _003C_003E2__current;
+ 				}
+ 			}
+ 
+@@ -152,6 +152,7 @@
+ 			[DebuggerHidden]
+ 			public _003Cwait2Fram_003Ed__19(int _003C_003E1__state)
+ 			{
++				this._003C_003E1__state = _003C_003E1__state;
+ 			}
+ 
+ 			[Token(Token = "0x6005F74")]
+@@ -165,7 +166,24 @@
+ 			[Address(RVA = "0x71D976C", Offset = "0x71D576C", VA = "0x71D976C", Slot = "6")]
+ bool System.Collections.IEnumerator.MoveNext()
+ 			{
+-				return default;
++				if (_003C_003E1__state == 0)
++				{
++				    _003C_003E2__current = null;
++				    _003C_003E1__state = 1;
++				    return true;
++				}
++				if (_003C_003E1__state == 1)
++				{
++				    _003C_003E2__current = null;
++				    _003C_003E1__state = 2;
++				    return true;
++				}
++				if (_003C_003E1__state == 2)
++				{
++				    _003C_003E1__state = -1;
++				    action?.Invoke();
++				}
++				return false;
+ 			}
+ 
+ 			[Token(Token = "0x6005F76")]
+@@ -181,6 +199,7 @@
+ 			[DebuggerHidden]
+ void System.Collections.IEnumerator.Reset()
+ 			{
++				throw new NotSupportedException();
+ 			}
+ 
+ 			[Token(Token = "0x6005F78")]
+@@ -222,23 +241,23 @@
+ 
+ 		[Token(Token = "0x4001C61")]
+ 		[FieldOffset(Offset = "0x40")]
+-		private Dictionary<string, Transform> _uiNodeList;
++		private Dictionary<string, Transform> _uiNodeList = new Dictionary<string, Transform>();
+ 
+ 		[Token(Token = "0x4001C62")]
+ 		[FieldOffset(Offset = "0x48")]
+-		private WaitForEndOfFrame wait;
++		private WaitForEndOfFrame wait = new WaitForEndOfFrame();
+ 
+ 		[Token(Token = "0x4001C63")]
+ 		[FieldOffset(Offset = "0x50")]
+-		private WaitForSeconds waitAnim5;
++		private WaitForSeconds waitAnim5 = new WaitForSeconds(0.5f);
+ 
+ 		[Token(Token = "0x4001C64")]
+ 		[FieldOffset(Offset = "0x58")]
+-		private WaitForSeconds waitAnim3;
++		private WaitForSeconds waitAnim3 = new WaitForSeconds(0.3f);
+ 
+ 		[Token(Token = "0x4001C65")]
+ 		[FieldOffset(Offset = "0x60")]
+-		private Dictionary<string, BaseUI> _uiList;
++		private Dictionary<string, BaseUI> _uiList = new Dictionary<string, BaseUI>();
+ 
+ 		[Token(Token = "0x4001C66")]
+ 		[FieldOffset(Offset = "0x10")]
+@@ -263,8 +282,8 @@
+ 			[Address(RVA = "0x71D7550", Offset = "0x71D3550", VA = "0x71D7550", Slot = "4")]
+ 			get
+ 			{
+-				return default;
+-			}
++					return 40;
++				}
+ 		}
+ 
+ 		[Token(Token = "0x17001160")]
+@@ -315,11 +334,51 @@
+ 		[Address(RVA = "0x71D7558", Offset = "0x71D3558", VA = "0x71D7558", Slot = "5")]
+ 		internal override void Initialize(params object[] arg)
+ 		{
++			if (x_0080_008D_00B1f_0086)
++			{
++			    Àª_00A6_00A3_00BDE?.Invoke();
++			    return;
++			}
++			CLog.ReleaseLog("开始加载UIModule");
++			canvas = GameObject.FindGameObjectWithTag("GFUICanvas");
++			if (canvas == null)
++			    UnityEngine.Debug.LogError("UIcanvas未找到");
++			GameObject cameraObject = canvas != null ? canvas.transform.Find("UICamera").gameObject : null;
++			if (cameraObject == null)
++			    UnityEngine.Debug.LogError("UI相机未找到");
++			UICamera = cameraObject?.GetComponent<Camera>();
++			UnityEngine.Object.DontDestroyOnLoad(canvas);
++			if (AppSetting.UseNewRes)
++			    NewResLoadHelper.LoadPrefabOri("UI/UIRoot", LoadUIRootOver<AssetOperationHandle>, Array.Empty<object>());
++			else
++			{
++			    GameFrameEntry.GetModule<ResourcesModule>().LoadPrefab("UI/UIRoot", LoadUIRootOver<ResourcesInfo>, null);
++			    GameFrameEntry.GetModule<ResourcesModule>().Update(0f, 0f);
++			}
+ 		}
+ 
+ 		[Token(Token = "0x6005F49")]
+ 		private void LoadUIRootOver<T>(T resources) where T : IResCallBackInfo
+ 		{
++			UIRoot = resources.Instantiate("UIRoot", true).GetComponent<RectTransform>();
++			UIRoot.transform.SetParent(canvas.transform);
++			UIRoot.localScale = Vector3.one;
++			UIRoot.anchorMin = Vector2.zero;
++			UIRoot.anchorMax = Vector2.one;
++			UIRoot.offsetMin = Vector2.zero;
++			UIRoot.offsetMax = Vector2.zero;
++			if (AppSetting.IsPortrait && canvas.GetComponent<UnityEngine.UI.CanvasScaler>().matchWidthOrHeight == 1f && AppSetting.isHeightCtrWidthFixedWidth)
++			{
++			    float width = canvas.GetComponent<RectTransform>().sizeDelta.x;
++			    if (width > 720f)
++			    {
++			        float margin = (width - 720f) * 0.5f;
++			        UIRoot.offsetMax = new Vector2(-margin, 0f);
++			        UIRoot.offsetMin = new Vector2(margin, 0f);
++			    }
++			}
++			x_0080_008D_00B1f_0086 = true;
++			Àª_00A6_00A3_00BDE?.Invoke();
+ 		}
+ 
+ 		[Token(Token = "0x6005F4A")]
+@@ -364,14 +423,25 @@
+ 		[IteratorStateMachine(typeof(_003Cwait2Fram_003Ed__19))]
+ 		private IEnumerator wait2Fram(Action action)
+ 		{
+-			return null;
++			return new _003Cwait2Fram_003Ed__19(0) { action = action };
+ 		}
+ 
+ 		[Token(Token = "0x6005F51")]
+ 		[Address(RVA = "0x71D805C", Offset = "0x71D405C", VA = "0x71D805C")]
+ 		public Transform _GetUINode(string node)
+ 		{
+-			return null;
++			Transform result;
++			if (!_uiNodeList.TryGetValue(node, out result))
++			{
++			    result = UIRoot.transform.Find(node);
++			    if (result == null)
++			    {
++			        CLog.Error("\u672a\u627e\u5230UI\u8282\u70b9:" + node);
++			        result = canvas.transform;
++			    }
++			    _uiNodeList.Add(node, result);
++			}
++			return result;
+ 		}
+ 
+ 		[Token(Token = "0x6005F56")]
+@@ -458,5 +528,15 @@
+ 		public UIModule()
+ 		{
+ 		}
++		[Token(Token = "0x6005F64")]
++		[Address(RVA = "0x71D8EA4", Offset = "0x71D4EA4", VA = "0x71D8EA4")]
++		static UIModule()
++		{
++			UIScaleInTime = 0.5f;
++			UIFadeOutTime = 0.3f;
++			UIScaleOutTime = 0.2f;
++			openUIStack = new List<BaseUI>();
++		}
++
+ 	}
+ }

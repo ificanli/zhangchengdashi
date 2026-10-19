@@ -1,0 +1,129 @@
+{
+  "stage": "42-required-Utility-leaf",
+  "status": "stable-two-original-helpers-applied-and-verified",
+  "stable": true,
+  "source": "Assets/Scripts/GFRunning/GameFramework/Utility.cs",
+  "sourceBeforeSha256": "136e8c6f72a38ed6281b046d8769b93a6b310289a7240f92cd4d5b40e606817f",
+  "sourceSha256": "c05441f64bafe988ce17fe718226f248f5bd6bbcae78991c39ae0f96753d2d61",
+  "metaSha256": "1ffe6ebe33ebdaa60c90352f3436234bf8252e550748da0bca8edeba83e78de3",
+  "tokens": [
+    "0x0600603C",
+    "0x0600603D"
+  ],
+  "nativeRanges": [
+    {
+      "start": "0x511D668",
+      "end": "0x511D6DC",
+      "bytes": 116
+    },
+    {
+      "start": "0x71E37C0",
+      "end": "0x71E3854",
+      "bytes": 148
+    }
+  ],
+  "sourceScope": {
+    "onlyTwoMethodBodies": true,
+    "allOtherRawBytesUnchanged": true,
+    "AssemblyUtilityBodiesProtected": true,
+    "originalAttributesPreserved": true,
+    "metaUnchanged": true
+  },
+  "tests": {
+    "scenarios": 9,
+    "checks": 43,
+    "failures": 0,
+    "baselineScenarios": 9,
+    "baselineFailures": 9
+  },
+  "native": {
+    "passed": 27,
+    "codeHashes": {
+      "0x511d668": "2b5716f4e85c23cc02a7e2c6bc616b444ed27f16c88f2ee877874806ad8becce",
+      "0x71e37c0": "671d05a445702feeed6b3e5338404086c0087db0fa9eaa5d139989f0e7bbece7"
+    },
+    "boundaries": [
+      "System.Type.FullName virtual accessor, Type.GetTypeFromHandle, string.IsNullOrEmpty and string.Format are runtime boundary adapters",
+      "The original helper machine branches, generic dispatch, exact returned reference and ordering execute in Unicorn",
+      "Getter error stops at the callback boundary; managed exception unwinding is verified by C# fixtures"
+    ]
+  },
+  "ILChecks": {
+    "generic_typeof_handle_before_typed_overload": true,
+    "typed_original_virtual_FullName_before_name_branch": true,
+    "exact_original_format_and_two_object_overload": true,
+    "empty_branch_returns_original_FullName_local": true,
+    "no_added_catch_guard_or_side_effect_store": true
+  },
+  "fullGFCompile": {
+    "mode": "actual",
+    "assembly": "GFRunning",
+    "exitCode": 0,
+    "errorCount": 0,
+    "warningCount": 5824,
+    "errors": [],
+    "sourceRspSha256": "397442f99fe97eee26f5b4d84e8e88d2bd23bbec7b1ca252c6e1b5cd1ca1fd51",
+    "rsp": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\utility\\compile\\actual\\GFRunning.Stage42.rsp",
+    "assemblyPath": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\utility\\compile\\actual\\GFRunning.Stage42.dll",
+    "assemblySha256": "0b13a7b962c1d1f740bfbb8ef0a9a1a3bdd293036e31b0f50445b9f6d043294a",
+    "sources": [
+      {
+        "path": "Assets/Scripts/GFRunning/GameFramework/Fsm/Fsm.cs",
+        "source": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-42-fsm\\candidate\\Assets\\Scripts\\GFRunning\\GameFramework\\Fsm\\Fsm.cs",
+        "sha256": "4d60f516bfef75de0011f16226c6dc6a36da604b3f7ac87d8fa064ee0cfc0a38"
+      },
+      {
+        "path": "Assets/Scripts/GFRunning/GameFramework/Fsm/FsmBase.cs",
+        "source": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-42-fsm\\candidate\\Assets\\Scripts\\GFRunning\\GameFramework\\Fsm\\FsmBase.cs",
+        "sha256": "ef3a82efb89f08879f2309139621284ed18def584b5beabdafc849c46be734ad"
+      },
+      {
+        "path": "Assets/Scripts/GFRunning/GameFramework/Fsm/FsmManager.cs",
+        "source": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-42-fsm\\candidate\\Assets\\Scripts\\GFRunning\\GameFramework\\Fsm\\FsmManager.cs",
+        "sha256": "d648fb2c55cc859b36eec9db17877405d822ac65a5abbda4d2496e3cfbb9b5af"
+      },
+      {
+        "path": "Assets/Scripts/GFRunning/GameFramework/Fsm/FsmState.cs",
+        "source": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-42-fsm\\candidate\\Assets\\Scripts\\GFRunning\\GameFramework\\Fsm\\FsmState.cs",
+        "sha256": "fd60636ed75beffa1c85d594b97d73bb4ee09c03f29b687e14266c0d3f73d806"
+      },
+      {
+        "path": "Assets/Scripts/GFRunning/GameFramework/Procedure/ProcedureBase.cs",
+        "source": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-42-fsm\\candidate\\Assets\\Scripts\\GFRunning\\GameFramework\\Procedure\\ProcedureBase.cs",
+        "sha256": "14213b47384fbed47826c44fe23fd855dc1cb109c2f79e14079da31efd5e0e31"
+      },
+      {
+        "path": "Assets/Scripts/GFRunning/GameFramework/Procedure/ProcedureManager.cs",
+        "source": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-42-fsm\\candidate\\Assets\\Scripts\\GFRunning\\GameFramework\\Procedure\\ProcedureManager.cs",
+        "sha256": "9da25263f0e31fde86eed8f752c9a256ab6ea236f6e53106d8a612b37d30c925"
+      },
+      {
+        "path": "Assets/Scripts/GFRunning/GameFramework/Utility.cs",
+        "source": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\outputs\\OccupyCityRecovered\\Assets\\Scripts\\GFRunning\\GameFramework\\Utility.cs",
+        "sha256": "c05441f64bafe988ce17fe718226f248f5bd6bbcae78991c39ae0f96753d2d61"
+      }
+    ],
+    "UnityStarted": false,
+    "experimentDllInstalled": false
+  },
+  "fullGFActualUtilityProbe": {
+    "mode": "actual",
+    "passed": true,
+    "checks": 16,
+    "fullProductionAssembly": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\utility\\compile\\actual\\GFRunning.Stage42.dll",
+    "assemblySha256": "0b13a7b962c1d1f740bfbb8ef0a9a1a3bdd293036e31b0f50445b9f6d043294a",
+    "noBoundaryAdapters": true,
+    "testStates": "Two dynamically defined subclasses inherit actual ProcedureBase/FsmState bodies; no FSM or Utility logic substituted",
+    "actualChain": "Real Utility -> actual GameFrameEntry.GetModule<FsmManager> -> ProcedureManager.Register -> CreateFsm<IProcedureManager> -> original constructors -> StartProcedure/Update/ChangeState/Shutdown",
+    "UnityStarted": false,
+    "visibleUIAccepted": false,
+    "coreGameplayAccepted": false
+  },
+  "compileScope": "Full GFRunning production sources with six stage42 candidates substituted and actual restored Utility.cs. Stage42 integration itself remains root-owned.",
+  "UnityOperations": 0,
+  "experimentDllInstalled": false,
+  "runtimeAcceptance": false,
+  "coreGameplayAccepted": false,
+  "report": "outputs/恢复过程文档/42A-原流程独立复核与命名依赖扩展.md",
+  "evidence": "outputs/恢复过程文档/证据/Stage42独立复核与Utility叶子"
+}

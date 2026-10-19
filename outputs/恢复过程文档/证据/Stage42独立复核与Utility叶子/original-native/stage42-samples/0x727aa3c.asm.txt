@@ -1,0 +1,87 @@
+0x727aa3c: STR             X30, [SP,#var_30]!
+0x727aa40: STP             X22, X21, [SP,#0x30+var_20]
+0x727aa44: STP             X20, X19, [SP,#0x30+var_10]
+0x727aa48: ADRP            X22, #byte_9009C32@PAGE
+0x727aa4c: ADRP            X21, #off_8AF46A0@PAGE
+0x727aa50: LDRB            W8, [X22,#byte_9009C32@PAGEOFF]
+0x727aa54: LDR             X21, [X21,#off_8AF46A0@PAGEOFF]; off_8CE7B30
+0x727aa58: MOV             X20, X1
+0x727aa5c: MOV             X19, X0
+0x727aa60: TBNZ            W8, #0, loc_727AA90
+0x727aa64: ADRP            X0, #off_8AFC920@PAGE
+0x727aa68: LDR             X0, [X0,#off_8AFC920@PAGEOFF]; qword_8D2D148 ; slot
+0x727aa6c: BL              il2cpp_codegen_initialize_runtime_metadata
+0x727aa70: ADRP            X0, #off_8AF46A0@PAGE
+0x727aa74: LDR             X0, [X0,#off_8AF46A0@PAGEOFF]; off_8CE7B30 ; slot
+0x727aa78: BL              il2cpp_codegen_initialize_runtime_metadata
+0x727aa7c: ADRP            X0, #off_8B19970@PAGE
+0x727aa80: LDR             X0, [X0,#off_8B19970@PAGEOFF]; off_8D2F548 ; slot
+0x727aa84: BL              il2cpp_codegen_initialize_runtime_metadata
+0x727aa88: MOV             W8, #1
+0x727aa8c: STRB            W8, [X22,#byte_9009C32@PAGEOFF]
+0x727aa90: LDR             X0, [X21]; klass
+0x727aa94: ADRP            X21, #off_8AFC920@PAGE
+0x727aa98: LDR             W8, [X0,#0xE0]
+0x727aa9c: LDR             X21, [X21,#off_8AFC920@PAGEOFF]; qword_8D2D148
+0x727aaa0: CBNZ            W8, loc_727AAA8
+0x727aaa4: BL              il2cpp_codegen_runtime_class_init
+0x727aaa8: LDR             X0, [X21]; method
+0x727aaac: BL              GameFramework.GameFrameEntry$$GetModule_object_
+0x727aab0: STR             X0, [X19,#0x20]
+0x727aab4: CBZ             X0, loc_727AB50
+0x727aab8: ADRP            X9, #off_8B19970@PAGE
+0x727aabc: LDR             X9, [X9,#off_8B19970@PAGEOFF]; off_8D2F548
+0x727aac0: LDR             X8, [X0]
+0x727aac4: MOV             X21, X0
+0x727aac8: LDR             X22, [X9]
+0x727aacc: LDRH            W9, [X8,#0x12E]
+0x727aad0: LDR             X1, [X22,#0x20]
+0x727aad4: LDRH            W2, [X22,#0x50]
+0x727aad8: CBZ             X9, loc_727AAFC
+0x727aadc: LDR             X10, [X8,#0xB0]
+0x727aae0: ADD             X10, X10, #8
+0x727aae4: LDUR            X11, [X10,#-8]
+0x727aae8: CMP             X11, X1
+0x727aaec: B.EQ            loc_727AB08
+0x727aaf0: SUBS            X9, X9, #1
+0x727aaf4: ADD             X10, X10, #0x10
+0x727aaf8: B.NE            loc_727AAE4
+0x727aafc: MOV             X0, X21
+0x727ab00: BL              unk_3C504A4
+0x727ab04: B               loc_727AB18
+0x727ab08: LDR             W9, [X10]
+0x727ab0c: ADD             W9, W9, W2
+0x727ab10: ADD             X8, X8, W9,SXTW#4
+0x727ab14: ADD             X0, X8, #0x138
+0x727ab18: LDR             X0, [X0,#8]
+0x727ab1c: MOV             X1, X22
+0x727ab20: BL              unk_3C3D3AC
+0x727ab24: LDR             X8, [X0,#8]
+0x727ab28: MOV             X3, X0
+0x727ab2c: MOV             X0, X21
+0x727ab30: MOV             X1, X19
+0x727ab34: MOV             X2, X20
+0x727ab38: BLR             X8
+0x727ab3c: STR             X0, [X19,#0x28]
+0x727ab40: LDP             X20, X19, [SP,#0x30+var_10]
+0x727ab44: LDP             X22, X21, [SP,#0x30+var_20]
+0x727ab48: LDR             X30, [SP+0x30+var_30],#0x30
+0x727ab4c: RET
+0x727ab50: ADRP            X0, #off_8B0CF78@PAGE
+0x727ab54: LDR             X0, [X0,#off_8B0CF78@PAGEOFF]; unk_8CE7B50
+0x727ab58: BL              unk_3C3D294
+0x727ab5c: BL              unk_3C3D4C4
+0x727ab60: MOV             X19, X0
+0x727ab64: ADRP            X0, #off_8B19978@PAGE
+0x727ab68: LDR             X0, [X0,#off_8B19978@PAGEOFF]; unk_8D600E0
+0x727ab6c: BL              unk_3C3D294
+0x727ab70: MOV             X1, X0
+0x727ab74: MOV             X0, X19
+0x727ab78: MOV             X2, XZR
+0x727ab7c: BL              GameFramework.GameFrameworkException$$.ctor
+0x727ab80: ADRP            X0, #off_8B19980@PAGE
+0x727ab84: LDR             X0, [X0,#off_8B19980@PAGEOFF]; unk_8D36020
+0x727ab88: BL              unk_3C3D294
+0x727ab8c: MOV             X1, X0
+0x727ab90: MOV             X0, X19
+0x727ab94: BL              unk_3C3D3A0

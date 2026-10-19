@@ -1,0 +1,41 @@
+0x3d79130: SUB             SP, SP, #0xB0
+0x3d79134: STR             X30, [SP,#0xB0+var_30]
+0x3d79138: STP             X22, X21, [SP,#0xB0+var_20]
+0x3d7913c: STP             X20, X19, [SP,#0xB0+var_10]
+0x3d79140: ADRP            X22, #byte_8FFD4A1@PAGE
+0x3d79144: ADRP            X21, #off_8AD10C0@PAGE
+0x3d79148: LDRB            W8, [X22,#byte_8FFD4A1@PAGEOFF]
+0x3d7914c: LDR             X21, [X21,#off_8AD10C0@PAGEOFF]; qword_8D232F8
+0x3d79150: MOV             W19, W1
+0x3d79154: MOV             X20, X0
+0x3d79158: TBNZ            W8, #0, loc_3D79170
+0x3d7915c: ADRP            X0, #off_8AD10C0@PAGE
+0x3d79160: LDR             X0, [X0,#off_8AD10C0@PAGEOFF]; qword_8D232F8 ; slot
+0x3d79164: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3d79168: MOV             W8, #1
+0x3d7916c: STRB            W8, [X22,#byte_8FFD4A1@PAGEOFF]
+0x3d79170: MOVI            V0.2D, #0
+0x3d79174: MOV             X8, SP
+0x3d79178: MOV             X0, XZR
+0x3d7917c: STR             XZR, [SP,#0xB0+var_40]
+0x3d79180: STP             Q0, Q0, [SP,#0xB0+var_60]
+0x3d79184: STP             Q0, Q0, [SP,#0xB0+var_80]
+0x3d79188: STR             Q0, [SP,#0xB0+var_90]
+0x3d7918c: BL              System.Runtime.CompilerServices.AsyncVoidMethodBuilder$$Create
+0x3d79190: LDP             Q0, Q1, [SP,#0xB0+var_B0]
+0x3d79194: LDR             X2, [X21]
+0x3d79198: ADD             X8, SP, #0xB0+var_90
+0x3d7919c: MOV             W9, #0xFFFFFFFF
+0x3d791a0: ORR             X0, X8, #8
+0x3d791a4: ADD             X1, SP, #0xB0+var_90
+0x3d791a8: STR             X20, [SP,#0xB0+var_60]
+0x3d791ac: STR             W19, [SP,#0xB0+var_68]
+0x3d791b0: STUR            Q0, [SP,#0xB0+var_90+8]
+0x3d791b4: STUR            Q1, [SP,#0xB0+var_80+8]
+0x3d791b8: STR             W9, [SP,#0xB0+var_90]
+0x3d791bc: BL              System.Runtime.CompilerServices.AsyncVoidMethodBuilder$$Start_RoleBehaviour._MeleeAtkCallBackLogic_d__248_
+0x3d791c0: LDP             X20, X19, [SP,#0xB0+var_10]
+0x3d791c4: LDP             X22, X21, [SP,#0xB0+var_20]
+0x3d791c8: LDR             X30, [SP,#0xB0+var_30]
+0x3d791cc: ADD             SP, SP, #0xB0
+0x3d791d0: RET

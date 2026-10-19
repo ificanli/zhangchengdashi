@@ -1,0 +1,32 @@
+0x3f73a70: SUB             SP, SP, #0x30
+0x3f73a74: STP             X30, X21, [SP,#0x30+var_20]
+0x3f73a78: STP             X20, X19, [SP,#0x30+var_10]
+0x3f73a7c: ADRP            X21, #byte_8FFE424@PAGE
+0x3f73a80: ADRP            X20, #off_8AD0800@PAGE
+0x3f73a84: LDRB            W8, [X21,#byte_8FFE424@PAGEOFF]
+0x3f73a88: LDR             X20, [X20,#off_8AD0800@PAGEOFF]; off_8CE5F18
+0x3f73a8c: MOV             X19, X0
+0x3f73a90: TBNZ            W8, #0, loc_3F73AA8
+0x3f73a94: ADRP            X0, #off_8AD0800@PAGE
+0x3f73a98: LDR             X0, [X0,#off_8AD0800@PAGEOFF]; off_8CE5F18 ; slot
+0x3f73a9c: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3f73aa0: MOV             W8, #1
+0x3f73aa4: STRB            W8, [X21,#byte_8FFE424@PAGEOFF]
+0x3f73aa8: LDR             X0, [X20]; klass
+0x3f73aac: STR             WZR, [SP,#0x30+var_24]
+0x3f73ab0: LDR             W8, [X0,#0xE0]
+0x3f73ab4: CBNZ            W8, loc_3F73ABC
+0x3f73ab8: BL              il2cpp_codegen_runtime_class_init
+0x3f73abc: MOV             X0, XZR
+0x3f73ac0: BL              System.Globalization.CultureInfo$$get_InvariantCulture
+0x3f73ac4: MOV             X2, X0
+0x3f73ac8: ADD             X3, SP, #0x30+var_24
+0x3f73acc: MOV             W1, #0xA7
+0x3f73ad0: MOV             X0, X19
+0x3f73ad4: MOV             X4, XZR
+0x3f73ad8: BL              System.Int32$$TryParse
+0x3f73adc: LDR             W0, [SP,#0x30+var_24]
+0x3f73ae0: LDP             X20, X19, [SP,#0x30+var_10]
+0x3f73ae4: LDP             X30, X21, [SP,#0x30+var_20]
+0x3f73ae8: ADD             SP, SP, #0x30 ; '0'
+0x3f73aec: RET

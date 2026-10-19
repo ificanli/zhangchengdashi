@@ -1,0 +1,39 @@
+0x71d8234: fe57bea9 stp      x30, x21, [sp, #-0x20]!
+0x71d8238: f44f01a9 stp      x20, x19, [sp, #0x10]
+0x71d823c: 95f100b0 adrp     x21, #0x9009000
+0x71d8240: b4c70090 adrp     x20, #0x8acc000
+0x71d8244: a8725739 ldrb     w8, [x21, #0x5dc]
+0x71d8248: 946a44f9 ldr      x20, [x20, #0x8d0] // UnityEngine.Object_TypeInfo
+0x71d824c: f30300aa mov      x19, x0
+0x71d8250: 28010037 tbnz     w8, #0, #0x71d8274
+0x71d8254: 00c800d0 adrp     x0, #0x8ada000
+0x71d8258: 00a445f9 ldr      x0, [x0, #0xb48] // Method$UnityEngine.GameObject.GetComponent<Canvas>()
+0x71d825c: 09942997 bl       #0x3c3d280
+0x71d8260: a0c70090 adrp     x0, #0x8acc000
+0x71d8264: 006844f9 ldr      x0, [x0, #0x8d0] // UnityEngine.Object_TypeInfo
+0x71d8268: 06942997 bl       #0x3c3d280
+0x71d826c: 28008052 mov      w8, #1
+0x71d8270: a8721739 strb     w8, [x21, #0x5dc]
+0x71d8274: 800240f9 ldr      x0, [x20]
+0x71d8278: 743640f9 ldr      x20, [x19, #0x68]
+0x71d827c: 08e040b9 ldr      w8, [x0, #0xe0]
+0x71d8280: 48000035 cbnz     w8, #0x71d8288
+0x71d8284: 4b942997 bl       #0x3c3d3b0
+0x71d8288: e00314aa mov      x0, x20
+0x71d828c: e1031faa mov      x1, xzr
+0x71d8290: e2031faa mov      x2, xzr
+0x71d8294: 20554494 bl       #0x82ed714 // UnityEngine.Object$$op_Equality
+0x71d8298: 20010036 tbz      w0, #0, #0x71d82bc
+0x71d829c: 601240f9 ldr      x0, [x19, #0x20]
+0x71d82a0: 600100b4 cbz      x0, #0x71d82cc
+0x71d82a4: 08c800d0 adrp     x8, #0x8ada000
+0x71d82a8: 08a545f9 ldr      x8, [x8, #0xb48] // Method$UnityEngine.GameObject.GetComponent<Canvas>()
+0x71d82ac: 010140f9 ldr      x1, [x8]
+0x71d82b0: fdd36a97 bl       #0x4c8d2a4 // UnityEngine.GameObject$$GetComponent<object>
+0x71d82b4: 603600f9 str      x0, [x19, #0x68]
+0x71d82b8: 02000014 b        #0x71d82c0
+0x71d82bc: 603640f9 ldr      x0, [x19, #0x68]
+0x71d82c0: f44f41a9 ldp      x20, x19, [sp, #0x10]
+0x71d82c4: fe57c2a8 ldp      x30, x21, [sp], #0x20
+0x71d82c8: c0035fd6 ret      
+0x71d82cc: 80942997 bl       #0x3c3d4cc

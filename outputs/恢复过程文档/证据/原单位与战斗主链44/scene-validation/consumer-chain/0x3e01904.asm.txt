@@ -1,0 +1,60 @@
+0x3e01904: ffc302d1 sub      sp, sp, #0xb0
+0x3e01908: fe3b00f9 str      x30, [sp, #0x70]
+0x3e0190c: f85f08a9 stp      x24, x23, [sp, #0x80]
+0x3e01910: f65709a9 stp      x22, x21, [sp, #0x90]
+0x3e01914: f44f0aa9 stp      x20, x19, [sp, #0xa0]
+0x3e01918: f88f0290 adrp     x24, #0x8ffd000
+0x3e0191c: 976602f0 adrp     x23, #0x8ad4000
+0x3e01920: f30308aa mov      x19, x8
+0x3e01924: 08176039 ldrb     w8, [x24, #0x805]
+0x3e01928: f7d240f9 ldr      x23, [x23, #0x1a0] // Method$Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<GameObject>.Start<CoreGameManager.<LoadRoleAssets>d__21>()
+0x3e0192c: f403022a mov      w20, w2
+0x3e01930: f50301aa mov      x21, x1
+0x3e01934: f60300aa mov      x22, x0
+0x3e01938: 88010037 tbnz     w8, #0, #0x3e01968
+0x3e0193c: 806602f0 adrp     x0, #0x8ad4000
+0x3e01940: 00d440f9 ldr      x0, [x0, #0x1a8] // Method$Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<GameObject>.Create()
+0x3e01944: 4feef897 bl       #0x3c3d280
+0x3e01948: 806602f0 adrp     x0, #0x8ad4000
+0x3e0194c: 00d040f9 ldr      x0, [x0, #0x1a0] // Method$Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<GameObject>.Start<CoreGameManager.<LoadRoleAssets>d__21>()
+0x3e01950: 4ceef897 bl       #0x3c3d280
+0x3e01954: 806602f0 adrp     x0, #0x8ad4000
+0x3e01958: 00d840f9 ldr      x0, [x0, #0x1b0] // Method$Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<GameObject>.get_Task()
+0x3e0195c: 49eef897 bl       #0x3c3d280
+0x3e01960: 28008052 mov      w8, #1
+0x3e01964: 08172039 strb     w8, [x24, #0x805]
+0x3e01968: e00240f9 ldr      x0, [x23]
+0x3e0196c: 00e4006f movi     v0.2d, #0000000000000000
+0x3e01970: 08008012 mov      w8, #-1
+0x3e01974: e00301ad stp      q0, q0, [sp, #0x20]
+0x3e01978: e00302ad stp      q0, q0, [sp, #0x40]
+0x3e0197c: e01b803d str      q0, [sp, #0x60]
+0x3e01980: ff7f03a9 stp      xzr, xzr, [sp, #0x30]
+0x3e01984: ff1700f9 str      xzr, [sp, #0x28]
+0x3e01988: f62b00f9 str      x22, [sp, #0x50]
+0x3e0198c: f52300f9 str      x21, [sp, #0x40]
+0x3e01990: f44b00b9 str      w20, [sp, #0x48]
+0x3e01994: e82300b9 str      w8, [sp, #0x20]
+0x3e01998: 956602f0 adrp     x21, #0x8ad4000
+0x3e0199c: 081c40f9 ldr      x8, [x0, #0x38]
+0x3e019a0: b5da40f9 ldr      x21, [x21, #0x1b0] // Method$Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<GameObject>.get_Task()
+0x3e019a4: e9830091 add      x9, sp, #0x20
+0x3e019a8: 34017db2 orr      x20, x9, #8
+0x3e019ac: 480000b5 cbnz     x8, #0x3e019b4
+0x3e019b0: 933af997 bl       #0x3c503fc
+0x3e019b4: e0830091 add      x0, sp, #0x20
+0x3e019b8: b9040094 bl       #0x3e02c9c // GameModule.CoreGameManager.<LoadRoleAssets>d__21$$MoveNext
+0x3e019bc: a10240f9 ldr      x1, [x21]
+0x3e019c0: e8230091 add      x8, sp, #8
+0x3e019c4: e00314aa mov      x0, x20
+0x3e019c8: 7ec0fc97 bl       #0x3d31bc0
+0x3e019cc: e80f40f9 ldr      x8, [sp, #0x18]
+0x3e019d0: e083c03c ldur     q0, [sp, #8]
+0x3e019d4: f65749a9 ldp      x22, x21, [sp, #0x90]
+0x3e019d8: f85f48a9 ldp      x24, x23, [sp, #0x80]
+0x3e019dc: 680a00f9 str      x8, [x19, #0x10]
+0x3e019e0: 6002803d str      q0, [x19]
+0x3e019e4: f44f4aa9 ldp      x20, x19, [sp, #0xa0]
+0x3e019e8: fe3b40f9 ldr      x30, [sp, #0x70]
+0x3e019ec: ffc30291 add      sp, sp, #0xb0
+0x3e019f0: c0035fd6 ret      

@@ -1,0 +1,74 @@
+void UIFramework_UIPanel__Hide(void *self, const MethodInfo *method)
+{
+  __int64 v3; // x8
+  void *Instance; // x20
+  __int64 transform; // x0
+  __int64 name; // x0
+  __int64 v7; // x20
+  __int64 v8; // x0
+  __int64 v9; // x20
+  __int64 v10; // x21
+  __int64 Canvas; // x20
+  __int64 v12; // x0
+  __int64 gameObject; // x0
+
+  if ( (byte_8FFFFCC & 1) == 0 )
+  {
+    il2cpp_codegen_initialize_runtime_metadata((void **)&off_8CEB3E0);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D178A0);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&off_8CE1930);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8CEEA18);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D3BAF8);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D3BC78);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D3C4C0);
+    byte_8FFFFCC = 1;
+  }
+  if ( *((_BYTE *)self + 40) == 0 )
+  {
+    v3 = *((_QWORD *)self + 7);
+    if ( v3 != 0 && *(_BYTE *)(v3 + 56) != 0 )
+    {
+      if ( *((_DWORD *)off_8CE1930 + 56) == 0 )
+        il2cpp_codegen_runtime_class_init(off_8CE1930);
+      Instance = QuickTutor_Singleton_object___get_Instance((const MethodInfo *)qword_8D178A0);
+      transform = UnityEngine_Component__get_transform(self, 0);
+      if ( transform == 0 )
+        goto LABEL_22;
+      name = UnityEngine_Object__get_name(transform, 0);
+      if ( Instance == nullptr )
+        goto LABEL_22;
+      QuickTutor_TutorialManager__RemoveOneBlockTutorialTriggerKey(Instance, name, 0);
+    }
+    v7 = *((_QWORD *)self + 4);
+    if ( *((_DWORD *)off_8CEB3E0 + 56) == 0 )
+      il2cpp_codegen_runtime_class_init(off_8CEB3E0);
+    if ( (UnityEngine_Object__op_Inequality(v7, 0, 0) & 1) != 0 )
+    {
+      *((_BYTE *)self + 40) = 1;
+      v8 = DG_Tweening_ShortcutExtensions__DOScale(*((_QWORD *)self + 4), 0, 0.0, 0.3);
+      v9 = DG_Tweening_TweenSettingsExtensions__SetEase_object_(v8, 26, qword_8D3BC78);
+      v10 = ((__int64 (__fastcall *)(__int64))unk_3C3D4C4)(qword_8CEEA18);
+      DG_Tweening_TweenCallback___ctor(v10, self, qword_8D3C4C0, 0);
+      DG_Tweening_TweenSettingsExtensions__OnComplete_object_(v9, v10, qword_8D3BAF8);
+      return;
+    }
+    Canvas = UIFramework_UIPanel__get_Canvas(self);
+    if ( *((_DWORD *)off_8CEB3E0 + 56) == 0 )
+      il2cpp_codegen_runtime_class_init(off_8CEB3E0);
+    if ( (UnityEngine_Object__op_Inequality(Canvas, 0, 0) & 1) != 0 )
+    {
+      v12 = UIFramework_UIPanel__get_Canvas(self);
+      if ( v12 == 0 )
+        goto LABEL_22;
+      UnityEngine_Behaviour__set_enabled(v12, 0, 0);
+    }
+    gameObject = UnityEngine_Component__get_gameObject(self, 0);
+    if ( gameObject != 0 )
+    {
+      UnityEngine_GameObject__SetActive(gameObject, 0, 0);
+      return;
+    }
+LABEL_22:
+    il2cpp_codegen_raise_null_reference_exception();
+  }
+}

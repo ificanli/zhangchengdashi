@@ -1,0 +1,22 @@
+0x3d844bc: LDRB            W8, [X0,#0x1B8]
+0x3d844c0: CBZ             W8, loc_3D844FC
+0x3d844c4: LDRB            W8, [X0,#0x241]
+0x3d844c8: CBNZ            W8, loc_3D844FC
+0x3d844cc: LDRB            W8, [X0,#0xBC]
+0x3d844d0: CBNZ            W8, loc_3D844FC
+0x3d844d4: LDRB            W8, [X0,#0xE0]
+0x3d844d8: CBNZ            W8, loc_3D844FC
+0x3d844dc: LDRB            W8, [X0,#0x194]
+0x3d844e0: CBNZ            W8, loc_3D844FC
+0x3d844e4: LDRB            W8, [X0,#0x250]
+0x3d844e8: CBNZ            W8, loc_3D844FC
+0x3d844ec: LDRB            W8, [X0,#0x242]
+0x3d844f0: CBNZ            W8, loc_3D844FC
+0x3d844f4: LDRB            W8, [X0,#0x21]
+0x3d844f8: CBZ             W8, loc_3D84504
+0x3d844fc: MOV             W0, WZR
+0x3d84500: RET
+0x3d84504: LDRB            W8, [X0,#0x27C]
+0x3d84508: CMP             W8, #0
+0x3d8450c: CSET            W0, EQ
+0x3d84510: RET

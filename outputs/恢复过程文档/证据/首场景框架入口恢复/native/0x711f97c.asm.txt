@@ -1,0 +1,102 @@
+0x711f97c: fe0f1cf8 str      x30, [sp, #-0x40]!
+0x711f980: f85f01a9 stp      x24, x23, [sp, #0x10]
+0x711f984: f65702a9 stp      x22, x21, [sp, #0x20]
+0x711f988: f44f03a9 stp      x20, x19, [sp, #0x30]
+0x711f98c: 58f700b0 adrp     x24, #0x9008000
+0x711f990: 74cd00d0 adrp     x20, #0x8acd000
+0x711f994: 77cd00d0 adrp     x23, #0x8acd000
+0x711f998: 73cd00d0 adrp     x19, #0x8acd000
+0x711f99c: 56cf00d0 adrp     x22, #0x8b09000
+0x711f9a0: 75cd00d0 adrp     x21, #0x8acd000
+0x711f9a4: 08277739 ldrb     w8, [x24, #0xdc9]
+0x711f9a8: 94e242f9 ldr      x20, [x20, #0x5c0] // GameFramework.AppSetting_TypeInfo
+0x711f9ac: f76e43f9 ldr      x23, [x23, #0x6d8] // System.Collections.Generic.Dictionary<string, string>_TypeInfo
+0x711f9b0: 737243f9 ldr      x19, [x19, #0x6e0] // Method$System.Collections.Generic.Dictionary<string, string>..ctor()
+0x711f9b4: d6ee42f9 ldr      x22, [x22, #0x5d8] // None
+0x711f9b8: b55241f9 ldr      x21, [x21, #0x2a0] // string[]_TypeInfo
+0x711f9bc: c8030037 tbnz     w8, #0, #0x711fa34
+0x711f9c0: 60cd00d0 adrp     x0, #0x8acd000
+0x711f9c4: 00e042f9 ldr      x0, [x0, #0x5c0] // GameFramework.AppSetting_TypeInfo
+0x711f9c8: 2e762c97 bl       #0x3c3d280
+0x711f9cc: 60cd00d0 adrp     x0, #0x8acd000
+0x711f9d0: 007043f9 ldr      x0, [x0, #0x6e0] // Method$System.Collections.Generic.Dictionary<string, string>..ctor()
+0x711f9d4: 2b762c97 bl       #0x3c3d280
+0x711f9d8: 60cd00d0 adrp     x0, #0x8acd000
+0x711f9dc: 006c43f9 ldr      x0, [x0, #0x6d8] // System.Collections.Generic.Dictionary<string, string>_TypeInfo
+0x711f9e0: 28762c97 bl       #0x3c3d280
+0x711f9e4: 60cd00d0 adrp     x0, #0x8acd000
+0x711f9e8: 005041f9 ldr      x0, [x0, #0x2a0] // string[]_TypeInfo
+0x711f9ec: 25762c97 bl       #0x3c3d280
+0x711f9f0: a0cf00d0 adrp     x0, #0x8b15000
+0x711f9f4: 007c46f9 ldr      x0, [x0, #0xcf8] // Prefabs
+0x711f9f8: 22762c97 bl       #0x3c3d280
+0x711f9fc: 40cf00d0 adrp     x0, #0x8b09000
+0x711fa00: 00ec42f9 ldr      x0, [x0, #0x5d8] // None
+0x711fa04: 1f762c97 bl       #0x3c3d280
+0x711fa08: a0cf00d0 adrp     x0, #0x8b15000
+0x711fa0c: 008046f9 ldr      x0, [x0, #0xd00] // Materials
+0x711fa10: 1c762c97 bl       #0x3c3d280
+0x711fa14: a0cf00d0 adrp     x0, #0x8b15000
+0x711fa18: 008446f9 ldr      x0, [x0, #0xd08] // Textures
+0x711fa1c: 19762c97 bl       #0x3c3d280
+0x711fa20: a0cf00d0 adrp     x0, #0x8b15000
+0x711fa24: 008846f9 ldr      x0, [x0, #0xd10] // Model
+0x711fa28: 16762c97 bl       #0x3c3d280
+0x711fa2c: 28008052 mov      w8, #1
+0x711fa30: 08273739 strb     w8, [x24, #0xdc9]
+0x711fa34: 880240f9 ldr      x8, [x20]
+0x711fa38: 29008052 mov      w9, #1
+0x711fa3c: 085d40f9 ldr      x8, [x8, #0xb8]
+0x711fa40: 09210039 strb     w9, [x8, #8]
+0x711fa44: e00240f9 ldr      x0, [x23]
+0x711fa48: 9f762c97 bl       #0x3c3d4c4
+0x711fa4c: 610240f9 ldr      x1, [x19]
+0x711fa50: f30300aa mov      x19, x0
+0x711fa54: 4399eb97 bl       #0x6c05f60 // System.Collections.Generic.Dictionary<object, object>$$.ctor
+0x711fa58: 880240f9 ldr      x8, [x20]
+0x711fa5c: 81008052 mov      w1, #4
+0x711fa60: 085d40f9 ldr      x8, [x8, #0xb8]
+0x711fa64: 131100f9 str      x19, [x8, #0x20]
+0x711fa68: 1f4100b9 str      wzr, [x8, #0x40]
+0x711fa6c: c90240f9 ldr      x9, [x22]
+0x711fa70: 1fa10079 strh     wzr, [x8, #0x50]
+0x711fa74: 092500f9 str      x9, [x8, #0x48]
+0x711fa78: a00240f9 ldr      x0, [x21]
+0x711fa7c: 29762c97 bl       #0x3c3d320
+0x711fa80: 800400b4 cbz      x0, #0x711fb10
+0x711fa84: 081840b9 ldr      w8, [x0, #0x18]
+0x711fa88: 28040034 cbz      w8, #0x711fb0c
+0x711fa8c: a9cf00d0 adrp     x9, #0x8b15000
+0x711fa90: 298546f9 ldr      x9, [x9, #0xd08] // Textures
+0x711fa94: 1f050071 cmp      w8, #1
+0x711fa98: 290140f9 ldr      x9, [x9]
+0x711fa9c: 091000f9 str      x9, [x0, #0x20]
+0x711faa0: 60030054 b.eq     #0x711fb0c
+0x711faa4: a9cf00d0 adrp     x9, #0x8b15000
+0x711faa8: 297d46f9 ldr      x9, [x9, #0xcf8] // Prefabs
+0x711faac: 1f090071 cmp      w8, #2
+0x711fab0: 290140f9 ldr      x9, [x9]
+0x711fab4: 091400f9 str      x9, [x0, #0x28]
+0x711fab8: a9020054 b.ls     #0x711fb0c
+0x711fabc: a9cf00d0 adrp     x9, #0x8b15000
+0x711fac0: 298146f9 ldr      x9, [x9, #0xd00] // Materials
+0x711fac4: 1f0d0071 cmp      w8, #3
+0x711fac8: 290140f9 ldr      x9, [x9]
+0x711facc: 091800f9 str      x9, [x0, #0x30]
+0x711fad0: e0010054 b.eq     #0x711fb0c
+0x711fad4: a8cf00d0 adrp     x8, #0x8b15000
+0x711fad8: 088946f9 ldr      x8, [x8, #0xd10] // Model
+0x711fadc: f65742a9 ldp      x22, x21, [sp, #0x20]
+0x711fae0: f85f41a9 ldp      x24, x23, [sp, #0x10]
+0x711fae4: 080140f9 ldr      x8, [x8]
+0x711fae8: 081c00f9 str      x8, [x0, #0x38]
+0x711faec: 880240f9 ldr      x8, [x20]
+0x711faf0: f44f43a9 ldp      x20, x19, [sp, #0x30]
+0x711faf4: 085d40f9 ldr      x8, [x8, #0xb8]
+0x711faf8: 003d00f9 str      x0, [x8, #0x78]
+0x711fafc: 1f010179 strh     wzr, [x8, #0x80]
+0x711fb00: 1f090239 strb     wzr, [x8, #0x82]
+0x711fb04: fe0744f8 ldr      x30, [sp], #0x40
+0x711fb08: c0035fd6 ret      
+0x711fb0c: 72762c97 bl       #0x3c3d4d4
+0x711fb10: 6f762c97 bl       #0x3c3d4cc

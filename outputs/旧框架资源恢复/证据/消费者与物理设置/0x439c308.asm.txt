@@ -1,0 +1,10 @@
+0x439c308: fe4fbfa9 stp      x30, x19, [sp, #-0x10]!
+0x439c30c: f30300aa mov      x19, x0
+0x439c310: 03f7ff97 bl       #0x4399f1c // ljzs_lt.ConfigMgr$$get_Instance
+0x439c314: c00000b4 cbz      x0, #0x439c32c
+0x439c318: 98f4ff97 bl       #0x4399578 // ljzs_lt.ConfigMgr$$Initialize
+0x439c31c: e00313aa mov      x0, x19
+0x439c320: e1031faa mov      x1, xzr
+0x439c324: fe4fc1a8 ldp      x30, x19, [sp], #0x10
+0x439c328: da3abd14 b        #0x72eae90 // GameFramework.Base.IGameStart$$InitConfigOver
+0x439c32c: 6884e297 bl       #0x3c3d4cc

@@ -1,0 +1,24 @@
+0x71eb800: fe57bea9 stp      x30, x21, [sp, #-0x20]!
+0x71eb804: f44f01a9 stp      x20, x19, [sp, #0x10]
+0x71eb808: f4f000d0 adrp     x20, #0x9009000
+0x71eb80c: 75c900b0 adrp     x21, #0x8b18000
+0x71eb810: 889e5b39 ldrb     w8, [x20, #0x6e7]
+0x71eb814: b55a46f9 ldr      x21, [x21, #0xcb0] // GameFramework.VersionMondule.<LoadABFileStreaming>d__11_TypeInfo
+0x71eb818: f30300aa mov      x19, x0
+0x71eb81c: c8000037 tbnz     w8, #0, #0x71eb834
+0x71eb820: 60c900b0 adrp     x0, #0x8b18000
+0x71eb824: 005846f9 ldr      x0, [x0, #0xcb0] // GameFramework.VersionMondule.<LoadABFileStreaming>d__11_TypeInfo
+0x71eb828: 96462997 bl       #0x3c3d280
+0x71eb82c: 28008052 mov      w8, #1
+0x71eb830: 889e1b39 strb     w8, [x20, #0x6e7]
+0x71eb834: a00240f9 ldr      x0, [x21]
+0x71eb838: 23472997 bl       #0x3c3d4c4
+0x71eb83c: e1031faa mov      x1, xzr
+0x71eb840: f40300aa mov      x20, x0
+0x71eb844: b26f1394 bl       #0x76c770c // System.Object$$.ctor
+0x71eb848: 9f1200b9 str      wzr, [x20, #0x10]
+0x71eb84c: 931200f9 str      x19, [x20, #0x20]
+0x71eb850: e00314aa mov      x0, x20
+0x71eb854: f44f41a9 ldp      x20, x19, [sp, #0x10]
+0x71eb858: fe57c2a8 ldp      x30, x21, [sp], #0x20
+0x71eb85c: c0035fd6 ret      

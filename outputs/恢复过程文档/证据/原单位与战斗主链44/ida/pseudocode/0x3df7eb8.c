@@ -1,0 +1,35 @@
+__int64 __fastcall GameModule_BattleGameSceneManager__UnregisterWaitingBarracks(__int64 a1, __int64 a2, __int64 a3)
+{
+  char v3; // w21
+  __int64 Instance; // x0
+  __int64 result; // x0
+  __int64 v8; // x8
+  __int64 v9; // x0
+
+  v3 = a3;
+  if ( (byte_8FFD7C8 & 1) == 0 )
+  {
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D093D8);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D17890);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&off_8CE1928);
+    byte_8FFD7C8 = 1;
+  }
+  if ( *((_DWORD *)off_8CE1928 + 56) == 0 )
+    il2cpp_codegen_runtime_class_init(off_8CE1928);
+  Instance = QuickTutor_Singleton_object___get_Instance(qword_8D17890, a2, a3);
+  if ( Instance == 0 )
+    goto LABEL_12;
+  result = SDKModule_ABTestManager__get_GamePlayImprove01IsBTest(Instance, 0);
+  if ( (result & 1) != 0 )
+  {
+    v8 = 528;
+    if ( (v3 & 1) != 0 )
+      v8 = 536;
+    v9 = *(_QWORD *)(a1 + v8);
+    if ( v9 != 0 )
+      return System_Collections_Generic_List_object___Remove(v9, a2, qword_8D093D8);
+LABEL_12:
+    il2cpp_codegen_raise_null_reference_exception();
+  }
+  return result;
+}

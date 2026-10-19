@@ -1,0 +1,413 @@
+__int64 __fastcall GameModule_RoleBehaviour__RemoteAtkCallBackLogic(__int64 a1, int a2, __int64 a3)
+{
+  long double v3; // q8
+  __int64 result; // x0
+  __int64 v8; // x22
+  int v9; // w0
+  __int64 v10; // x8
+  __int64 v11; // x3
+  int v12; // w20
+  _QWORD *v13; // x8
+  float v14; // s8
+  float v15; // s9
+  double v16; // d0
+  double v17; // d0
+  double v18; // d1
+  double v19; // d1
+  float v20; // s0
+  unsigned int v21; // w20
+  void *Instance; // x22
+  __int64 v23; // x0
+  __int64 v24; // x21
+  __int64 transform; // x22
+  __int64 v26; // x0
+  long double position; // q0
+  float v28; // s1
+  long double v29; // q2
+  __int64 v30; // x3
+  __int64 v31; // x8
+  __int64 v32; // x23
+  __int64 v33; // x3
+  __int64 v34; // x8
+  char v35; // w0
+  _QWORD *v36; // x8
+  __int64 Component_object; // x0
+  __int64 v38; // x3
+  __int64 v39; // x8
+  __int64 v40; // x22
+  __int64 v41; // x23
+  int v42; // w21
+  int v43; // w0
+  __int64 v44; // x3
+  unsigned int v45; // w21
+  __int64 v46; // x25
+  __int64 v47; // x26
+  unsigned int v48; // w24
+  __int64 v49; // x8
+  int v50; // w0
+  __int64 v51; // x27
+  __int64 v52; // x28
+  int v53; // w29
+  unsigned int v54; // w25
+  __int64 v55; // x8
+  char v56; // w0
+  __int64 v57; // x8
+  __int64 v58; // x21
+  __int64 v59; // x22
+  __int64 v60; // x8
+  int v61; // w0
+  __int64 v62; // x22
+  __int64 v63; // x23
+  unsigned int v64; // w9
+  __int64 v65; // x8
+  unsigned int v66; // w26
+  int v67; // w0
+  __int64 v68; // x24
+  __int64 v69; // x10
+  unsigned int v70; // w25
+  __int64 v71; // x8
+  __int64 v72; // x29
+  __int64 v73; // x28
+  __int64 v74; // x27
+  int v75; // w0
+  __int64 v76; // x8
+  int v77; // w0
+  __int64 v78; // x8
+  __int64 v79; // [xsp+10h] [xbp-80h]
+  double v80; // [xsp+18h] [xbp-78h] BYREF
+
+  if ( (byte_8FFD4A2 & 1) == 0 )
+  {
+    il2cpp_codegen_initialize_runtime_metadata((void **)&off_8CE40D8);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&off_8CE5558);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&unk_8D2D828);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&unk_8D2D878);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D12338);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&off_8CEB3E0);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8CEEE50);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D53810);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D53840);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D53780);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D537B0);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D53890);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D537E0);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D80100);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D537C0);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D537F8);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D53818);
+    byte_8FFD4A2 = 1;
+  }
+  if ( *((_DWORD *)off_8CE40D8 + 56) == 0 )
+    il2cpp_codegen_runtime_class_init(off_8CE40D8);
+  result = UnityEngine_Application__get_isPlaying(0);
+  if ( (result & 1) != 0 )
+  {
+    v8 = *(_QWORD *)(a1 + 168);
+    if ( *((_DWORD *)off_8CEB3E0 + 56) == 0 )
+      il2cpp_codegen_runtime_class_init(off_8CEB3E0);
+    result = UnityEngine_Object__op_Equality(v8, 0, 0);
+    if ( (result & 1) == 0 )
+    {
+      v9 = UnityEngine_Random__Range(0);
+      v10 = *(_QWORD *)(a1 + 64);
+      if ( v10 == 0 )
+        goto LABEL_129;
+      v12 = GameModule_RoleBehaviour__OnAttackTalentTrigger(
+              a1,
+              a2 << ((float)(*(float *)(v10 + 68) * 100.0) > (float)v9));
+      v13 = off_8CE5558;
+      if ( *((_DWORD *)off_8CE5558 + 56) == 0 )
+      {
+        il2cpp_codegen_runtime_class_init(off_8CE5558);
+        v13 = off_8CE5558;
+      }
+      v14 = *(float *)(v13[23] + 16LL);
+      if ( v14 == 1.0 )
+      {
+LABEL_32:
+        if ( *(_BYTE *)(a1 + 396) != 0 )
+        {
+          v20 = *(float *)(a1 + 400) * (float)v12;
+          if ( v20 == INFINITY )
+            v12 = 0x80000000;
+          else
+            v12 = (int)v20;
+          *(_BYTE *)(a1 + 396) = 0;
+        }
+        v21 = GameModule_RoleBehaviour__ApplyBuildingDamageMultiplierIfNeeded(
+                a1,
+                (unsigned int)v12,
+                *(_QWORD *)(a1 + 104),
+                v11);
+        Instance = ToolModule_ManagerBase_object___get_Instance((const MethodInfo *)qword_8D12338);
+        if ( *((_DWORD *)off_8CEB3E0 + 56) == 0 )
+          il2cpp_codegen_runtime_class_init(off_8CEB3E0);
+        if ( (UnityEngine_Object__op_Equality(a3, 0, 0) & 1) != 0 )
+          a3 = *(_QWORD *)(a1 + 168);
+        if ( Instance == nullptr )
+          goto LABEL_129;
+        v23 = AssetsModule_ObjPoolManager__GetFromPool(Instance, a3, 1, 3, 0, -1.0);
+        if ( v23 == 0 )
+          goto LABEL_129;
+        v24 = v23;
+        transform = UnityEngine_GameObject__get_transform(v23, 0);
+        v26 = UnityEngine_Component__get_transform(a1, 0);
+        if ( v26 == 0 )
+          goto LABEL_129;
+        position = UnityEngine_Transform__get_position(v26, 0);
+        if ( transform == 0 )
+          goto LABEL_129;
+        UnityEngine_Transform__set_position(transform, 0, position, v28, v29);
+        v31 = *(_QWORD *)(a1 + 64);
+        if ( v31 == 0 )
+          goto LABEL_129;
+        v32 = *(_QWORD *)(v31 + 16);
+        if ( (System_String__op_Equality(v32, qword_8D537E0, 0, v30) & 1) != 0 && *(_BYTE *)(a1 + 552) != 0 )
+          v32 = qword_8D53818;
+        v34 = *(_QWORD *)(a1 + 64);
+        if ( v34 == 0 )
+          goto LABEL_129;
+        v35 = System_String__op_Equality(*(_QWORD *)(v34 + 16), qword_8D537B0, 0, v33);
+        v36 = &unk_8D2D878;
+        if ( (v35 & 1) == 0 )
+          v36 = &unk_8D2D828;
+        Component_object = UnityEngine_GameObject__GetComponent_object_(v24, *v36);
+        if ( Component_object == 0 )
+          goto LABEL_129;
+        *(_QWORD *)(Component_object + 80) = v32;
+        v39 = *(_QWORD *)(a1 + 64);
+        v40 = Component_object;
+        *(_QWORD *)(a1 + 208) = Component_object;
+        if ( v39 == 0 )
+          goto LABEL_129;
+        v41 = *(_QWORD *)(a1 + 104);
+        v42 = *(unsigned __int8 *)(a1 + 32);
+        v43 = System_String__op_Equality(*(_QWORD *)(v39 + 16), qword_8D53780, 0, v38);
+        v45 = v42 != 0;
+        if ( (v43 & 1) != 0 )
+          v46 = 0;
+        else
+          v46 = v40;
+        if ( (v43 & 1) != 0 )
+          v47 = 0;
+        else
+          v47 = v41;
+        if ( (v43 & 1) != 0 )
+          v48 = 0;
+        else
+          v48 = v21;
+        if ( (v43 & 1) != 0 )
+          goto LABEL_75;
+        v49 = *(_QWORD *)(a1 + 64);
+        if ( v49 == 0 )
+          goto LABEL_129;
+        v45 &= v43 ^ 1;
+        v50 = System_String__op_Equality(*(_QWORD *)(v49 + 16), qword_8D537C0, 0, v44);
+        v51 = (v50 & 1) != 0 ? 0LL : v46;
+        v52 = (v50 & 1) != 0 ? 0LL : v47;
+        v53 = (v50 & 1) != 0 ? 0 : v48;
+        if ( (v50 & 1) != 0 )
+        {
+LABEL_75:
+          v48 = v21;
+        }
+        else
+        {
+          v60 = *(_QWORD *)(a1 + 64);
+          if ( v60 == 0 )
+            goto LABEL_129;
+          v45 &= v50 ^ 1;
+          v61 = System_String__op_Equality(*(_QWORD *)(v60 + 16), qword_8D537F8, 0, v44);
+          if ( (v61 & 1) != 0 )
+            v62 = 0;
+          else
+            v62 = v51;
+          if ( (v61 & 1) != 0 )
+            v63 = 0;
+          else
+            v63 = v52;
+          if ( (v61 & 1) != 0 )
+            v64 = 0;
+          else
+            v64 = v53;
+          if ( (v61 & 1) != 0 )
+          {
+            v40 = v46;
+            v41 = v47;
+          }
+          else
+          {
+            v65 = *(_QWORD *)(a1 + 64);
+            if ( v65 == 0 )
+              goto LABEL_129;
+            v66 = v64;
+            v45 &= v61 ^ 1;
+            v67 = System_String__op_Equality(*(_QWORD *)(v65 + 16), qword_8D53810, 0, v44);
+            if ( (v67 & 1) != 0 )
+              v68 = 0;
+            else
+              v68 = v62;
+            if ( (v67 & 1) != 0 )
+              v69 = 0;
+            else
+              v69 = v63;
+            if ( (v67 & 1) != 0 )
+              v70 = 0;
+            else
+              v70 = v66;
+            if ( (v67 & 1) != 0 )
+            {
+              v40 = v51;
+              v41 = v52;
+              v48 = v53;
+            }
+            else
+            {
+              v71 = *(_QWORD *)(a1 + 64);
+              if ( v71 == 0 )
+                goto LABEL_129;
+              v72 = v69;
+              v73 = v63;
+              v74 = v62;
+              v45 &= v67 ^ 1;
+              v75 = System_String__op_Equality(*(_QWORD *)(v71 + 16), qword_8D53818, 0, v44);
+              v79 = v68;
+              if ( (v75 & 1) != 0 )
+                v40 = 0;
+              else
+                v40 = v68;
+              if ( (v75 & 1) != 0 )
+                v41 = 0;
+              else
+                v41 = v72;
+              if ( (v75 & 1) != 0 )
+                v48 = 0;
+              else
+                v48 = v70;
+              if ( (v75 & 1) != 0 )
+              {
+                v40 = v74;
+                v41 = v73;
+                v48 = v66;
+              }
+              else
+              {
+                v76 = *(_QWORD *)(a1 + 64);
+                if ( v76 == 0 )
+                  goto LABEL_129;
+                v45 &= v75 ^ 1;
+                v77 = System_String__op_Equality(*(_QWORD *)(v76 + 16), qword_8D53840, 0, v44);
+                if ( (v77 & 1) != 0 )
+                {
+                  v40 = v79;
+                  v41 = v72;
+                  v48 = v70;
+                }
+                else
+                {
+                  v78 = *(_QWORD *)(a1 + 64);
+                  if ( v78 == 0 )
+                    goto LABEL_129;
+                  v45 &= v77 ^ 1;
+                  if ( (System_String__op_Equality(*(_QWORD *)(v78 + 16), qword_8D53890, 0, v44) & 1) == 0 )
+                  {
+                    v54 = 0;
+                    goto LABEL_77;
+                  }
+                }
+              }
+            }
+          }
+        }
+        v54 = 1;
+LABEL_77:
+        v55 = *(_QWORD *)(a1 + 64);
+        if ( v55 != 0 )
+        {
+          v56 = System_String__op_Equality(*(_QWORD *)(v55 + 56), qword_8D80100, 0, v44);
+          if ( v40 != 0 )
+          {
+            result = (*(__int64 (__fastcall **)(__int64, __int64, _QWORD, _QWORD, _QWORD, __int64, _QWORD, _QWORD, _QWORD))(*(_QWORD *)v40 + 376LL))(
+                       v40,
+                       v41,
+                       v48,
+                       v45,
+                       v54,
+                       a1,
+                       v56 & 1,
+                       *(unsigned int *)(a1 + 200),
+                       *(_QWORD *)(*(_QWORD *)v40 + 384LL));
+            v57 = *(_QWORD *)(a1 + 64);
+            if ( v57 != 0 )
+            {
+              if ( *(float *)(v57 + 72) <= 0.0 )
+                goto LABEL_83;
+              v58 = *(_QWORD *)(a1 + 208);
+              v59 = ((__int64 (__fastcall *)(__int64))unk_3C3D4C4)(qword_8CEEE50);
+              UnityEngine_Events_UnityAction___ctor(v59, a1, *(_QWORD *)(*(_QWORD *)a1 + 864LL), 0);
+              if ( v58 != 0 )
+              {
+                result = GameModule_BulletBehaviour__AddCallBack(v58, v59, 0);
+LABEL_83:
+                if ( *(_DWORD *)(a1 + 316) != 6 && *(_BYTE *)(a1 + 376) == 0 )
+                  return (*(__int64 (__fastcall **)(__int64, _QWORD, _QWORD))(*(_QWORD *)a1 + 888LL))(
+                           a1,
+                           v21,
+                           *(_QWORD *)(*(_QWORD *)a1 + 896LL));
+                return result;
+              }
+            }
+          }
+        }
+LABEL_129:
+        il2cpp_codegen_raise_null_reference_exception();
+      }
+      if ( *((_DWORD *)v13 + 56) == 0 )
+      {
+        il2cpp_codegen_runtime_class_init(v13);
+        v14 = *(float *)(*((_QWORD *)off_8CE5558 + 23) + 16LL);
+      }
+      if ( byte_8FFD1A8 == 0 )
+      {
+        il2cpp_codegen_initialize_runtime_metadata((void **)&off_8CEA738);
+        byte_8FFD1A8 = 1;
+      }
+      v15 = v14 * (float)v12;
+      if ( *((_DWORD *)off_8CEA738 + 56) == 0 )
+        il2cpp_codegen_runtime_class_init(off_8CEA738);
+      *(double *)&v3 = v15;
+      ((void (__fastcall *)(double *, long double))modf)(&v80, v3);
+      if ( v15 >= 0.0 )
+      {
+        if ( v16 == 0.5 )
+        {
+          v17 = v80;
+          v18 = 1.0;
+LABEL_24:
+          v19 = v17 + v18;
+          if ( ((__int64)v17 & 1) != 0 )
+            v17 = v19;
+          goto LABEL_29;
+        }
+        v17 = floor(*(double *)&v3 + 0.5);
+      }
+      else
+      {
+        if ( v16 == -0.5 )
+        {
+          v17 = v80;
+          v18 = -1.0;
+          goto LABEL_24;
+        }
+        v17 = ceil(*(double *)&v3 + -0.5);
+      }
+LABEL_29:
+      if ( v17 == INFINITY )
+        v12 = 0x80000000;
+      else
+        v12 = (int)v17;
+      goto LABEL_32;
+    }
+  }
+  return result;
+}

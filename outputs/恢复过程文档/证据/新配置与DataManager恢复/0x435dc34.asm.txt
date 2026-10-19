@@ -1,0 +1,74 @@
+0x435dc34: fe0f1cf8 str      x30, [sp, #-0x40]!
+0x435dc38: f85f01a9 stp      x24, x23, [sp, #0x10]
+0x435dc3c: f65702a9 stp      x22, x21, [sp, #0x20]
+0x435dc40: f44f03a9 stp      x20, x19, [sp, #0x30]
+0x435dc44: 176502f0 adrp     x23, #0x9000000
+0x435dc48: b63c02b0 adrp     x22, #0x8af2000
+0x435dc4c: b53c02b0 adrp     x21, #0x8af2000
+0x435dc50: e8565a39 ldrb     w8, [x23, #0x695]
+0x435dc54: d64245f9 ldr      x22, [x22, #0xa80] // System.Collections.Generic.Dictionary<string, GlobalWeeklyCardDailyTaskInfo>_TypeInfo
+0x435dc58: b54645f9 ldr      x21, [x21, #0xa88] // Method$System.Collections.Generic.Dictionary<string, GlobalWeeklyCardDailyTaskInfo>..ctor()
+0x435dc5c: f40301aa mov      x20, x1
+0x435dc60: f30300aa mov      x19, x0
+0x435dc64: 48020037 tbnz     w8, #0, #0x435dcac
+0x435dc68: a03c02b0 adrp     x0, #0x8af2000
+0x435dc6c: 004845f9 ldr      x0, [x0, #0xa90] // Method$System.Collections.Generic.Dictionary<string, GlobalWeeklyCardDailyTaskInfo>.Add()
+0x435dc70: 847de397 bl       #0x3c3d280
+0x435dc74: a03c02b0 adrp     x0, #0x8af2000
+0x435dc78: 004445f9 ldr      x0, [x0, #0xa88] // Method$System.Collections.Generic.Dictionary<string, GlobalWeeklyCardDailyTaskInfo>..ctor()
+0x435dc7c: 817de397 bl       #0x3c3d280
+0x435dc80: a03c02b0 adrp     x0, #0x8af2000
+0x435dc84: 004045f9 ldr      x0, [x0, #0xa80] // System.Collections.Generic.Dictionary<string, GlobalWeeklyCardDailyTaskInfo>_TypeInfo
+0x435dc88: 7e7de397 bl       #0x3c3d280
+0x435dc8c: c03b02b0 adrp     x0, #0x8ad6000
+0x435dc90: 000846f9 ldr      x0, [x0, #0xc10] // Method$System.Collections.Generic.List<GlobalWeeklyCardDailyTaskInfo>.get_Count()
+0x435dc94: 7b7de397 bl       #0x3c3d280
+0x435dc98: c03b02b0 adrp     x0, #0x8ad6000
+0x435dc9c: 003846f9 ldr      x0, [x0, #0xc70] // Method$System.Collections.Generic.List<GlobalWeeklyCardDailyTaskInfo>.get_Item()
+0x435dca0: 787de397 bl       #0x3c3d280
+0x435dca4: 28008052 mov      w8, #1
+0x435dca8: e8561a39 strb     w8, [x23, #0x695]
+0x435dcac: 746601f9 str      x20, [x19, #0x2c8]
+0x435dcb0: c00240f9 ldr      x0, [x22]
+0x435dcb4: 047ee397 bl       #0x3c3d4c4
+0x435dcb8: a10240f9 ldr      x1, [x21]
+0x435dcbc: f40300aa mov      x20, x0
+0x435dcc0: a8a0a294 bl       #0x6c05f60 // System.Collections.Generic.Dictionary<object, object>$$.ctor
+0x435dcc4: 606641f9 ldr      x0, [x19, #0x2c8]
+0x435dcc8: 746a01f9 str      x20, [x19, #0x2d0]
+0x435dccc: c00300b4 cbz      x0, #0x435dd44
+0x435dcd0: d73b02b0 adrp     x23, #0x8ad6000
+0x435dcd4: b83c02b0 adrp     x24, #0x8af2000
+0x435dcd8: f73a46f9 ldr      x23, [x23, #0xc70] // Method$System.Collections.Generic.List<GlobalWeeklyCardDailyTaskInfo>.get_Item()
+0x435dcdc: 184b45f9 ldr      x24, [x24, #0xa90] // Method$System.Collections.Generic.Dictionary<string, GlobalWeeklyCardDailyTaskInfo>.Add()
+0x435dce0: f4031f2a mov      w20, wzr
+0x435dce4: 081840b9 ldr      w8, [x0, #0x18]
+0x435dce8: 9f02086b cmp      w20, w8
+0x435dcec: ea020054 b.ge     #0x435dd48
+0x435dcf0: e20240f9 ldr      x2, [x23]
+0x435dcf4: 756a41f9 ldr      x21, [x19, #0x2d0]
+0x435dcf8: e103142a mov      w1, w20
+0x435dcfc: 5cc54f94 bl       #0x574f26c // System.Collections.Generic.List<object>$$get_Item
+0x435dd00: 200200b4 cbz      x0, #0x435dd44
+0x435dd04: 686641f9 ldr      x8, [x19, #0x2c8]
+0x435dd08: e80100b4 cbz      x8, #0x435dd44
+0x435dd0c: e20240f9 ldr      x2, [x23]
+0x435dd10: 160840f9 ldr      x22, [x0, #0x10]
+0x435dd14: e00308aa mov      x0, x8
+0x435dd18: e103142a mov      w1, w20
+0x435dd1c: 54c54f94 bl       #0x574f26c // System.Collections.Generic.List<object>$$get_Item
+0x435dd20: 350100b4 cbz      x21, #0x435dd44
+0x435dd24: 030340f9 ldr      x3, [x24]
+0x435dd28: e20300aa mov      x2, x0
+0x435dd2c: e00315aa mov      x0, x21
+0x435dd30: e10316aa mov      x1, x22
+0x435dd34: e3a3a294 bl       #0x6c06cc0 // System.Collections.Generic.Dictionary<object, object>$$Add
+0x435dd38: 606641f9 ldr      x0, [x19, #0x2c8]
+0x435dd3c: 94060011 add      w20, w20, #1
+0x435dd40: 20fdffb5 cbnz     x0, #0x435dce4
+0x435dd44: e27de397 bl       #0x3c3d4cc
+0x435dd48: f44f43a9 ldp      x20, x19, [sp, #0x30]
+0x435dd4c: f65742a9 ldp      x22, x21, [sp, #0x20]
+0x435dd50: f85f41a9 ldp      x24, x23, [sp, #0x10]
+0x435dd54: fe0744f8 ldr      x30, [sp], #0x40
+0x435dd58: c0035fd6 ret      

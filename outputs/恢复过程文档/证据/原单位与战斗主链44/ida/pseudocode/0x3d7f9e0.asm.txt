@@ -1,0 +1,18 @@
+0x3d7f9e0: STR             D8, [SP,#var_10]!
+0x3d7f9e4: STR             X30, [SP,#0x10+var_8]
+0x3d7f9e8: MOV             V8.16B, V0.16B
+0x3d7f9ec: FCMP            S0, #0.0
+0x3d7f9f0: B.MI            loc_3D7FA14
+0x3d7f9f4: MOV             X1, XZR
+0x3d7f9f8: BL              UnityEngine.Component$$get_transform
+0x3d7f9fc: CBZ             X0, loc_3D7FA24
+0x3d7fa00: MOV             X1, XZR
+0x3d7fa04: BL              UnityEngine.Transform$$get_localScale
+0x3d7fa08: FMOV            S1, #0.5
+0x3d7fa0c: FDIV            S0, S1, S0
+0x3d7fa10: FMUL            S8, S0, S8
+0x3d7fa14: LDR             X30, [SP,#0x10+var_8]
+0x3d7fa18: MOV             V0.16B, V8.16B
+0x3d7fa1c: LDR             D8, [SP+0x10+var_10],#0x10
+0x3d7fa20: RET
+0x3d7fa24: BL              il2cpp_codegen_raise_null_reference_exception

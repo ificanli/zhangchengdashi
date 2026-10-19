@@ -1,0 +1,19 @@
+0x3d82f9c: STP             X30, X19, [SP,#var_10]!
+0x3d82fa0: LDR             X8, [X0,#0x40]
+0x3d82fa4: CBZ             X8, loc_3D82FE4
+0x3d82fa8: LDR             W8, [X8,#0x50]
+0x3d82fac: FMOV            S0, #20.0
+0x3d82fb0: FMOV            S1, #15.0
+0x3d82fb4: MOV             X19, X0
+0x3d82fb8: CMP             W8, #3
+0x3d82fbc: FCSEL           S0, S1, S0, EQ
+0x3d82fc0: STR             S0, [X0,#0x124]
+0x3d82fc4: MOV             X0, XZR
+0x3d82fc8: BL              UnityEngine.Time$$get_time
+0x3d82fcc: FMOV            S1, #3.0
+0x3d82fd0: FADD            S0, S0, S1
+0x3d82fd4: STR             S0, [X19,#0x128]
+0x3d82fd8: STRB            WZR, [X19,#0x12C]
+0x3d82fdc: LDP             X30, X19, [SP+0x10+var_10],#0x10
+0x3d82fe0: RET
+0x3d82fe4: BL              il2cpp_codegen_raise_null_reference_exception

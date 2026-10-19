@@ -1,0 +1,83 @@
+PASS native NumberStyles value
+PASS ToInt null
+PASS ToInt ""
+PASS ToInt " "
+PASS ToInt "\r\n\t"
+PASS ToInt "0"
+PASS ToInt "17"
+PASS ToInt "-7"
+PASS ToInt "\u002B42"
+PASS ToInt " \t-12\r\n"
+PASS ToInt "000012"
+PASS ToInt "2147483647"
+PASS ToInt "2147483648"
+PASS ToInt "-2147483648"
+PASS ToInt "-2147483649"
+PASS ToInt "99999999999999999999999999999999999"
+PASS ToInt "3.0"
+PASS ToInt "3.000"
+PASS ToInt "3."
+PASS ToInt "0.000"
+PASS ToInt "0.1"
+PASS ToInt "-3.0"
+PASS ToInt "2147483647.0"
+PASS ToInt "-2147483648.000"
+PASS ToInt "1e3"
+PASS ToInt "1E\u002B3"
+PASS ToInt "1.2e1"
+PASS ToInt "120e-1"
+PASS ToInt "12e-1"
+PASS ToInt "1e-1"
+PASS ToInt "1e0"
+PASS ToInt "2.147483647e9"
+PASS ToInt "2.147483648e9"
+PASS ToInt "-2.147483648e9"
+PASS ToInt "-2.147483649e9"
+PASS ToInt "1e100000"
+PASS ToInt "1,000"
+PASS ToInt "1,0"
+PASS ToInt "1 000"
+PASS ToInt "0x10"
+PASS ToInt "NaN"
+PASS ToInt "Infinity"
+PASS ToInt "123-"
+PASS ToInt "(123)"
+PASS ToInt "\uFFE53"
+PASS ToInt "text"
+PASS ToInt "\uFF11\uFF12"
+PASS ToInt "\u0661\u0662"
+PASS ToInt "\u221212"
+PASS ToInt "\u00A012\u00A0"
+PASS InvariantCulture ignores current en-US
+PASS InvariantCulture ignores current de-DE
+PASS InvariantCulture ignores current fr-FR
+PASS InvariantCulture ignores current tr-TR
+PASS InvariantCulture ignores current ar-SA
+PASS custom current-culture signs cannot change native conversion
+PASS IsNullOrEmpty null trim=True
+PASS IsNullOrEmpty null trim=False
+PASS IsNullOrEmpty "" trim=True
+PASS IsNullOrEmpty "" trim=False
+PASS IsNullOrEmpty " " trim=True
+PASS IsNullOrEmpty " " trim=False
+PASS IsNullOrEmpty "\t\r\n" trim=True
+PASS IsNullOrEmpty "\t\r\n" trim=False
+PASS IsNullOrEmpty "\u00A0\u2003\u202F\u3000" trim=True
+PASS IsNullOrEmpty "\u00A0\u2003\u202F\u3000" trim=False
+PASS IsNullOrEmpty "\u200B" trim=True
+PASS IsNullOrEmpty "\uFEFF" trim=True
+PASS IsNullOrEmpty "\u0000" trim=True
+PASS IsNullOrEmpty " a " trim=True
+PASS IsNullOrEmpty " a " trim=False
+PASS IsNullOrEmpty " Assets/JsonData " trim=True
+PASS trimSpaces default remains optional true
+PASS ToEnum is diagnostic-only unrecovered member
+PASS original dictionary keys original-addressable-81 EnemyDifficultLevelInfosgameplay_improve_01.json
+PASS original dictionary keys original-addressable-81 EnemyDifficultLevelInfosgameplay_improve_v2_01.json
+PASS original dictionary keys original-addressable-81 EnemyDifficultLevelInfosgameplay_improve_v2_02.json
+PASS original dictionary keys original-addressable-81 UserLevelInfo.json
+PASS original dictionary keys resources-matching-original-81 EnemyDifficultLevelInfosgameplay_improve_01.txt
+PASS original dictionary keys resources-matching-original-81 EnemyDifficultLevelInfosgameplay_improve_v2_01.txt
+PASS original dictionary keys resources-matching-original-81 EnemyDifficultLevelInfosgameplay_improve_v2_02.txt
+PASS original dictionary keys resources-matching-original-81 UserLevelInfo.txt
+RESULT scenarios=82 checks=474 failures=0 dictionaryFilesPassed=8

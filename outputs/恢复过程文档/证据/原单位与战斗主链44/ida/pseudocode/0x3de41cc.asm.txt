@@ -1,0 +1,26 @@
+0x3de41cc: STR             X30, [SP,#var_20]!
+0x3de41d0: STP             X20, X19, [SP,#0x20+var_10]
+0x3de41d4: ADRP            X19, #byte_8FFD732@PAGE
+0x3de41d8: ADRP            X20, #off_8ACDEF8@PAGE
+0x3de41dc: LDRB            W8, [X19,#byte_8FFD732@PAGEOFF]
+0x3de41e0: LDR             X20, [X20,#off_8ACDEF8@PAGEOFF]; qword_8D124C8
+0x3de41e4: TBNZ            W8, #0, loc_3DE4208
+0x3de41e8: ADRP            X0, #off_8ACDEF8@PAGE
+0x3de41ec: LDR             X0, [X0,#off_8ACDEF8@PAGEOFF]; qword_8D124C8 ; slot
+0x3de41f0: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3de41f4: ADRP            X0, #off_8AD3768@PAGE
+0x3de41f8: LDR             X0, [X0,#off_8AD3768@PAGEOFF]; qword_8D57448 ; slot
+0x3de41fc: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3de4200: MOV             W8, #1
+0x3de4204: STRB            W8, [X19,#byte_8FFD732@PAGEOFF]
+0x3de4208: LDR             X0, [X20]; method
+0x3de420c: BL              ToolModule.ManagerBase_object_$$get_Instance
+0x3de4210: CBZ             X0, loc_3DE4230
+0x3de4214: ADRP            X8, #off_8AD3768@PAGE
+0x3de4218: LDR             X8, [X8,#off_8AD3768@PAGEOFF]; qword_8D57448
+0x3de421c: LDP             X20, X19, [SP,#0x20+var_10]
+0x3de4220: MOV             X2, XZR
+0x3de4224: LDR             X1, [X8]
+0x3de4228: LDR             X30, [SP+0x20+var_20],#0x20
+0x3de422c: B               UIFramework.UIManager$$HidePanel
+0x3de4230: BL              il2cpp_codegen_raise_null_reference_exception

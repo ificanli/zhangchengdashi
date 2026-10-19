@@ -1,0 +1,42 @@
+__int64 __fastcall GameModule_BattleGameManager__ApplyAnimationPauseToAllRoles(__int64 a1, char a2)
+{
+  void *Instance; // x21
+  __int64 result; // x0
+  _QWORD *v6; // x0
+  _QWORD *v7; // x0
+  __int64 v8; // x0
+
+  if ( (byte_8FFD73D & 1) == 0 )
+  {
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8CFCF38);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D12058);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&off_8CEB3E0);
+    byte_8FFD73D = 1;
+  }
+  Instance = ToolModule_ManagerBase_object___get_Instance((const MethodInfo *)qword_8D12058);
+  if ( *((_DWORD *)off_8CEB3E0 + 56) == 0 )
+    il2cpp_codegen_runtime_class_init(off_8CEB3E0);
+  result = UnityEngine_Object__op_Equality(Instance, 0, 0);
+  if ( (result & 1) == 0 )
+  {
+    v6 = ToolModule_ManagerBase_object___get_Instance((const MethodInfo *)qword_8D12058);
+    if ( v6 != nullptr )
+    {
+      GameModule_BattleGameManager__ApplyAnimationPauseToRoleList(a1, v6[22], a2 & 1);
+      v7 = ToolModule_ManagerBase_object___get_Instance((const MethodInfo *)qword_8D12058);
+      if ( v7 != nullptr )
+      {
+        result = GameModule_BattleGameManager__ApplyAnimationPauseToRoleList(a1, v7[23], a2 & 1);
+        if ( (a2 & 1) != 0 )
+          return result;
+        v8 = *(_QWORD *)(a1 + 32);
+        if ( v8 != 0 )
+          return System_Collections_Generic_Dictionary_int__BattleGameManager_AnimationPauseSnapshot___Clear(
+                   v8,
+                   qword_8CFCF38);
+      }
+    }
+    il2cpp_codegen_raise_null_reference_exception();
+  }
+  return result;
+}

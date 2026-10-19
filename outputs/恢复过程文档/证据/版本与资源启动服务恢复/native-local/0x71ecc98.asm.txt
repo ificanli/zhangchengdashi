@@ -1,0 +1,203 @@
+0x71ecc98: fe0f1df8 str      x30, [sp, #-0x30]!
+0x71ecc9c: f65701a9 stp      x22, x21, [sp, #0x10]
+0x71ecca0: f44f02a9 stp      x20, x19, [sp, #0x20]
+0x71ecca4: f4f000b0 adrp     x20, #0x9009000
+0x71ecca8: 88b65b39 ldrb     w8, [x20, #0x6ed]
+0x71eccac: f30300aa mov      x19, x0
+0x71eccb0: 28040037 tbnz     w8, #0, #0x71ecd34
+0x71eccb4: 00c700b0 adrp     x0, #0x8acd000
+0x71eccb8: 00e042f9 ldr      x0, [x0, #0x5c0] // GameFramework.AppSetting_TypeInfo
+0x71eccbc: 71412997 bl       #0x3c3d280
+0x71eccc0: 00c700b0 adrp     x0, #0x8acd000
+0x71eccc4: 003044f9 ldr      x0, [x0, #0x860] // GameFramework.CLog_TypeInfo
+0x71eccc8: 6e412997 bl       #0x3c3d280
+0x71ecccc: 00c70090 adrp     x0, #0x8acc000
+0x71eccd0: 006444f9 ldr      x0, [x0, #0x8c8] // UnityEngine.Debug_TypeInfo
+0x71eccd4: 6b412997 bl       #0x3c3d280
+0x71eccd8: a0c700d0 adrp     x0, #0x8ae2000
+0x71eccdc: 008040f9 ldr      x0, [x0, #0x100] // UnityEngine.Networking.DownloadHandlerBuffer_TypeInfo
+0x71ecce0: 68412997 bl       #0x3c3d280
+0x71ecce4: 00c700b0 adrp     x0, #0x8acd000
+0x71ecce8: 002c44f9 ldr      x0, [x0, #0x858] // object[]_TypeInfo
+0x71eccec: 65412997 bl       #0x3c3d280
+0x71eccf0: 60c90090 adrp     x0, #0x8b18000
+0x71eccf4: 00c846f9 ldr      x0, [x0, #0xd90] // ABFilePersistent正式：
+0x71eccf8: 62412997 bl       #0x3c3d280
+0x71eccfc: 40c800b0 adrp     x0, #0x8af5000
+0x71ecd00: 002c40f9 ldr      x0, [x0, #0x58] // file://
+0x71ecd04: 5f412997 bl       #0x3c3d280
+0x71ecd08: 40c900d0 adrp     x0, #0x8b16000
+0x71ecd0c: 00b845f9 ldr      x0, [x0, #0xb70] // /ABFiles.txt
+0x71ecd10: 5c412997 bl       #0x3c3d280
+0x71ecd14: 60c90090 adrp     x0, #0x8b18000
+0x71ecd18: 00cc46f9 ldr      x0, [x0, #0xd98] // ABFilePersistent测试：
+0x71ecd1c: 59412997 bl       #0x3c3d280
+0x71ecd20: 60c90090 adrp     x0, #0x8b18000
+0x71ecd24: 00d046f9 ldr      x0, [x0, #0xda0] // 测试WebRequest加载,abFiles=
+0x71ecd28: 56412997 bl       #0x3c3d280
+0x71ecd2c: 28008052 mov      w8, #1
+0x71ecd30: 88b61b39 strb     w8, [x20, #0x6ed]
+0x71ecd34: 681240b9 ldr      w8, [x19, #0x10]
+0x71ecd38: 1f050071 cmp      w8, #1
+0x71ecd3c: 20090054 b.eq     #0x71ece60
+0x71ecd40: e8120035 cbnz     w8, #0x71ecf9c
+0x71ecd44: 49c800b0 adrp     x9, #0x8af5000
+0x71ecd48: 4ac900d0 adrp     x10, #0x8b16000
+0x71ecd4c: 611240f9 ldr      x1, [x19, #0x20]
+0x71ecd50: 292d40f9 ldr      x9, [x9, #0x58] // file://
+0x71ecd54: 4ab945f9 ldr      x10, [x10, #0xb70] // /ABFiles.txt
+0x71ecd58: 08008012 mov      w8, #-1
+0x71ecd5c: 681200b9 str      w8, [x19, #0x10]
+0x71ecd60: 200140f9 ldr      x0, [x9]
+0x71ecd64: 420140f9 ldr      x2, [x10]
+0x71ecd68: e3031faa mov      x3, xzr
+0x71ecd6c: 71750c94 bl       #0x750a330 // System.String$$Concat
+0x71ecd70: 08c700b0 adrp     x8, #0x8acd000
+0x71ecd74: 082d44f9 ldr      x8, [x8, #0x858] // object[]_TypeInfo
+0x71ecd78: f40300aa mov      x20, x0
+0x71ecd7c: 21008052 mov      w1, #1
+0x71ecd80: 080140f9 ldr      x8, [x8]
+0x71ecd84: e00308aa mov      x0, x8
+0x71ecd88: 66412997 bl       #0x3c3d320
+0x71ecd8c: 68c90090 adrp     x8, #0x8b18000
+0x71ecd90: 08d146f9 ldr      x8, [x8, #0xda0] // 测试WebRequest加载,abFiles=
+0x71ecd94: f50300aa mov      x21, x0
+0x71ecd98: e10314aa mov      x1, x20
+0x71ecd9c: e2031faa mov      x2, xzr
+0x71ecda0: 080140f9 ldr      x8, [x8]
+0x71ecda4: e00308aa mov      x0, x8
+0x71ecda8: 7f460c94 bl       #0x74fe7a4 // System.String$$Concat
+0x71ecdac: 351000b4 cbz      x21, #0x71ecfb0
+0x71ecdb0: f60300aa mov      x22, x0
+0x71ecdb4: c00000b4 cbz      x0, #0x71ecdcc
+0x71ecdb8: a80240f9 ldr      x8, [x21]
+0x71ecdbc: e00316aa mov      x0, x22
+0x71ecdc0: 012140f9 ldr      x1, [x8, #0x40]
+0x71ecdc4: 7c412997 bl       #0x3c3d3b4
+0x71ecdc8: 800f00b4 cbz      x0, #0x71ecfb8
+0x71ecdcc: a81a40b9 ldr      w8, [x21, #0x18]
+0x71ecdd0: 280f0034 cbz      w8, #0x71ecfb4
+0x71ecdd4: b61200f9 str      x22, [x21, #0x20]
+0x71ecdd8: 08c700b0 adrp     x8, #0x8acd000
+0x71ecddc: 083144f9 ldr      x8, [x8, #0x860] // GameFramework.CLog_TypeInfo
+0x71ecde0: 000140f9 ldr      x0, [x8]
+0x71ecde4: 08e040b9 ldr      w8, [x0, #0xe0]
+0x71ecde8: 48000035 cbnz     w8, #0x71ecdf0
+0x71ecdec: 71412997 bl       #0x3c3d3b0
+0x71ecdf0: e00315aa mov      x0, x21
+0x71ecdf4: e1031faa mov      x1, xzr
+0x71ecdf8: 054d0094 bl       #0x720020c // GameFramework.CLog$$ReleaseLog
+0x71ecdfc: e00314aa mov      x0, x20
+0x71ece00: e1031faa mov      x1, xzr
+0x71ece04: 11654d94 bl       #0x8546248 // UnityEngine.Networking.UnityWebRequest$$Get
+0x71ece08: 601600f9 str      x0, [x19, #0x28]
+0x71ece0c: a8c700d0 adrp     x8, #0x8ae2000
+0x71ece10: 088140f9 ldr      x8, [x8, #0x100] // UnityEngine.Networking.DownloadHandlerBuffer_TypeInfo
+0x71ece14: f40300aa mov      x20, x0
+0x71ece18: 000140f9 ldr      x0, [x8]
+0x71ece1c: aa412997 bl       #0x3c3d4c4
+0x71ece20: e1031faa mov      x1, xzr
+0x71ece24: f50300aa mov      x21, x0
+0x71ece28: 865b4d94 bl       #0x8543c40 // UnityEngine.Networking.DownloadHandlerBuffer$$.ctor
+0x71ece2c: 340c00b4 cbz      x20, #0x71ecfb0
+0x71ece30: e00314aa mov      x0, x20
+0x71ece34: e10315aa mov      x1, x21
+0x71ece38: e2031faa mov      x2, xzr
+0x71ece3c: d55e4d94 bl       #0x8544990 // UnityEngine.Networking.UnityWebRequest$$set_downloadHandler
+0x71ece40: 601640f9 ldr      x0, [x19, #0x28]
+0x71ece44: 600b00b4 cbz      x0, #0x71ecfb0
+0x71ece48: e1031faa mov      x1, xzr
+0x71ece4c: 24604d94 bl       #0x8544edc // UnityEngine.Networking.UnityWebRequest$$SendWebRequest
+0x71ece50: 600e00f9 str      x0, [x19, #0x18]
+0x71ece54: 20008052 mov      w0, #1
+0x71ece58: 601200b9 str      w0, [x19, #0x10]
+0x71ece5c: 51000014 b        #0x71ecfa0
+0x71ece60: 601640f9 ldr      x0, [x19, #0x28]
+0x71ece64: 08008012 mov      w8, #-1
+0x71ece68: 681200b9 str      w8, [x19, #0x10]
+0x71ece6c: 200a00b4 cbz      x0, #0x71ecfb0
+0x71ece70: e1031faa mov      x1, xzr
+0x71ece74: 4c614d94 bl       #0x85453a4 // UnityEngine.Networking.UnityWebRequest$$get_error
+0x71ece78: e00100b4 cbz      x0, #0x71eceb4
+0x71ece7c: 601640f9 ldr      x0, [x19, #0x28]
+0x71ece80: 800900b4 cbz      x0, #0x71ecfb0
+0x71ece84: e1031faa mov      x1, xzr
+0x71ece88: 47614d94 bl       #0x85453a4 // UnityEngine.Networking.UnityWebRequest$$get_error
+0x71ece8c: 08c70090 adrp     x8, #0x8acc000
+0x71ece90: 086544f9 ldr      x8, [x8, #0x8c8] // UnityEngine.Debug_TypeInfo
+0x71ece94: f30300aa mov      x19, x0
+0x71ece98: 080140f9 ldr      x8, [x8]
+0x71ece9c: 09e140b9 ldr      w9, [x8, #0xe0]
+0x71ecea0: 69000035 cbnz     w9, #0x71eceac
+0x71ecea4: e00308aa mov      x0, x8
+0x71ecea8: 42412997 bl       #0x3c3d3b0
+0x71eceac: e00313aa mov      x0, x19
+0x71eceb0: 39000014 b        #0x71ecf94
+0x71eceb4: 14c700b0 adrp     x20, #0x8acd000
+0x71eceb8: 94e242f9 ldr      x20, [x20, #0x5c0] // GameFramework.AppSetting_TypeInfo
+0x71ecebc: 800240f9 ldr      x0, [x20]
+0x71ecec0: 08e040b9 ldr      w8, [x0, #0xe0]
+0x71ecec4: 48000035 cbnz     w8, #0x71ececc
+0x71ecec8: 3a412997 bl       #0x3c3d3b0
+0x71ececc: f5f00090 adrp     x21, #0x9008000
+0x71eced0: a85a6c39 ldrb     w8, [x21, #0xb16]
+0x71eced4: c8000035 cbnz     w8, #0x71eceec
+0x71eced8: 00c700b0 adrp     x0, #0x8acd000
+0x71ecedc: 00e042f9 ldr      x0, [x0, #0x5c0] // GameFramework.AppSetting_TypeInfo
+0x71ecee0: e8402997 bl       #0x3c3d280
+0x71ecee4: 28008052 mov      w8, #1
+0x71ecee8: a85a2c39 strb     w8, [x21, #0xb16]
+0x71eceec: 800240f9 ldr      x0, [x20]
+0x71ecef0: 08e040b9 ldr      w8, [x0, #0xe0]
+0x71ecef4: 68000035 cbnz     w8, #0x71ecf00
+0x71ecef8: 2e412997 bl       #0x3c3d3b0
+0x71ecefc: 800240f9 ldr      x0, [x20]
+0x71ecf00: 681640f9 ldr      x8, [x19, #0x28]
+0x71ecf04: 680500b4 cbz      x8, #0x71ecfb0
+0x71ecf08: 095c40f9 ldr      x9, [x0, #0xb8]
+0x71ecf0c: e00308aa mov      x0, x8
+0x71ecf10: e1031faa mov      x1, xzr
+0x71ecf14: 33614139 ldrb     w19, [x9, #0x58]
+0x71ecf18: dc5f4d94 bl       #0x8544e88 // UnityEngine.Networking.UnityWebRequest$$get_downloadHandler
+0x71ecf1c: a00400b4 cbz      x0, #0x71ecfb0
+0x71ecf20: e1031faa mov      x1, xzr
+0x71ecf24: 53020034 cbz      w19, #0x71ecf6c
+0x71ecf28: a5594d94 bl       #0x85435bc // UnityEngine.Networking.DownloadHandler$$get_data
+0x71ecf2c: f30300aa mov      x19, x0
+0x71ecf30: e0031faa mov      x0, xzr
+0x71ecf34: 30430194 bl       #0x723dbf4 // GameFramework.Tools.FileManager$$get_Instance
+0x71ecf38: c00300b4 cbz      x0, #0x71ecfb0
+0x71ecf3c: e10313aa mov      x1, x19
+0x71ecf40: e2031faa mov      x2, xzr
+0x71ecf44: 94530194 bl       #0x7241d94 // GameFramework.Tools.FileManager$$QnXgString
+0x71ecf48: 08c70090 adrp     x8, #0x8acc000
+0x71ecf4c: 086544f9 ldr      x8, [x8, #0x8c8] // UnityEngine.Debug_TypeInfo
+0x71ecf50: 000140f9 ldr      x0, [x8]
+0x71ecf54: 08e040b9 ldr      w8, [x0, #0xe0]
+0x71ecf58: 48000035 cbnz     w8, #0x71ecf60
+0x71ecf5c: 15412997 bl       #0x3c3d3b0
+0x71ecf60: 68c90090 adrp     x8, #0x8b18000
+0x71ecf64: 08c946f9 ldr      x8, [x8, #0xd90] // ABFilePersistent正式：
+0x71ecf68: 0a000014 b        #0x71ecf90
+0x71ecf6c: 97594d94 bl       #0x85435c8 // UnityEngine.Networking.DownloadHandler$$get_text
+0x71ecf70: 08c70090 adrp     x8, #0x8acc000
+0x71ecf74: 086544f9 ldr      x8, [x8, #0x8c8] // UnityEngine.Debug_TypeInfo
+0x71ecf78: 000140f9 ldr      x0, [x8]
+0x71ecf7c: 08e040b9 ldr      w8, [x0, #0xe0]
+0x71ecf80: 48000035 cbnz     w8, #0x71ecf88
+0x71ecf84: 0b412997 bl       #0x3c3d3b0
+0x71ecf88: 68c90090 adrp     x8, #0x8b18000
+0x71ecf8c: 08cd46f9 ldr      x8, [x8, #0xd98] // ABFilePersistent测试：
+0x71ecf90: 000140f9 ldr      x0, [x8]
+0x71ecf94: e1031faa mov      x1, xzr
+0x71ecf98: 0bdc4294 bl       #0x82a3fc4 // UnityEngine.Debug$$Log
+0x71ecf9c: e0031f2a mov      w0, wzr
+0x71ecfa0: f44f42a9 ldp      x20, x19, [sp, #0x20]
+0x71ecfa4: f65741a9 ldp      x22, x21, [sp, #0x10]
+0x71ecfa8: fe0743f8 ldr      x30, [sp], #0x30
+0x71ecfac: c0035fd6 ret      
+0x71ecfb0: 47412997 bl       #0x3c3d4cc
+0x71ecfb4: 48412997 bl       #0x3c3d4d4
+0x71ecfb8: 4e412997 bl       #0x3c3d4f0
+0x71ecfbc: e1031faa mov      x1, xzr
+0x71ecfc0: f8402997 bl       #0x3c3d3a0

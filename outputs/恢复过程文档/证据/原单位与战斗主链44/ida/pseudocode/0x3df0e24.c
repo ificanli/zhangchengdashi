@@ -1,0 +1,86 @@
+__int64 __fastcall GameModule_BattleGameSceneManager__TryGetCachedNearestRoleTarget(
+        __int64 a1,
+        const MethodInfo *a2,
+        _QWORD *a3,
+        long double a4,
+        long double a5,
+        long double a6,
+        long double a7,
+        float a8)
+{
+  char v11; // w21
+  __int64 v16; // x0
+  __int64 v17; // x22
+  __int64 v18; // x23
+  __int64 v19; // x21
+  __int64 transform; // x0
+  long double position; // q0
+  float v22; // s1
+  float v23; // s2
+  __int64 v25; // x0
+  __int64 v26; // [xsp+0h] [xbp-70h] BYREF
+  __int64 v27; // [xsp+8h] [xbp-68h]
+  __int64 v28; // [xsp+18h] [xbp-58h] BYREF
+
+  v11 = (char)a2;
+  if ( (byte_8FFD799 & 1) == 0 )
+  {
+    il2cpp_codegen_initialize_runtime_metadata((void **)&off_8CE4A38);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D00A30);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D00A38);
+    byte_8FFD799 = 1;
+  }
+  v26 = 0;
+  v27 = 0;
+  v28 = 0;
+  *a3 = 0;
+  GameModule_BattleGameSceneManager__PrepareRoleTargetFrameCache((GameModule_BattleGameSceneManager_o *)a1, a2);
+  if ( (GameModule_BattleGameSceneManager__TryGetRoleTargetFrameCacheKey(a1, v11 & 1, &v26, a4, a5, a6, a7) & 1) == 0 )
+    return 0;
+  v16 = *(_QWORD *)(a1 + 80);
+  if ( v16 == 0 )
+    goto LABEL_16;
+  v18 = v26;
+  v17 = v27;
+  if ( (System_Collections_Generic_Dictionary_BattleGameSceneManager_RoleTargetFrameCacheKey__BattleGameSceneManager_RoleTargetFrameCacheValue___TryGetValue(
+          v16,
+          v26,
+          v27,
+          &v28,
+          qword_8D00A38)
+      & 1) == 0 )
+    return 0;
+  v19 = v28;
+  if ( *((_DWORD *)off_8CE4A38 + 56) == 0 )
+    il2cpp_codegen_runtime_class_init(off_8CE4A38);
+  if ( (GameModule_BattleGameSceneManager__IsRoleTargetValid(v19) & 1) == 0 )
+  {
+    v25 = *(_QWORD *)(a1 + 80);
+    if ( v25 != 0 )
+    {
+      System_Collections_Generic_Dictionary_BattleGameSceneManager_RoleTargetFrameCacheKey__BattleGameSceneManager_RoleTargetFrameCacheValue___Remove(
+        v25,
+        v18,
+        v17,
+        qword_8D00A30);
+      return 0;
+    }
+LABEL_16:
+    il2cpp_codegen_raise_null_reference_exception();
+  }
+  if ( v19 == 0 )
+    goto LABEL_16;
+  transform = UnityEngine_Component__get_transform(v19, 0);
+  if ( transform == 0 )
+    goto LABEL_16;
+  position = UnityEngine_Transform__get_position(transform, 0);
+  if ( (float)((float)((float)(*(float *)&a6 - v23) * (float)(*(float *)&a6 - v23))
+             + (float)((float)((float)(*(float *)&a4 - *(float *)&position)
+                             * (float)(*(float *)&a4 - *(float *)&position))
+                     + (float)((float)(*(float *)&a5 - v22) * (float)(*(float *)&a5 - v22)))) <= a8 )
+  {
+    *a3 = v19;
+    return 1;
+  }
+  return 0;
+}

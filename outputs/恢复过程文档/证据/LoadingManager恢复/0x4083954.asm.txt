@@ -1,0 +1,527 @@
+0x4083954: e80f1bfc str      d8, [sp, #-0x50]!
+0x4083958: fe6701a9 stp      x30, x25, [sp, #0x10]
+0x408395c: f85f02a9 stp      x24, x23, [sp, #0x20]
+0x4083960: f65703a9 stp      x22, x21, [sp, #0x30]
+0x4083964: f44f04a9 stp      x20, x19, [sp, #0x40]
+0x4083968: d47b02f0 adrp     x20, #0x8ffe000
+0x408396c: 88367739 ldrb     w8, [x20, #0xdcd]
+0x4083970: f30300aa mov      x19, x0
+0x4083974: a8080037 tbnz     w8, #0, #0x4083a88
+0x4083978: 405202d0 adrp     x0, #0x8acd000
+0x408397c: 006042f9 ldr      x0, [x0, #0x4c0] // DailyTask_TypeInfo
+0x4083980: 40e6ee97 bl       #0x3c3d280
+0x4083984: 405202d0 adrp     x0, #0x8acd000
+0x4083988: 004047f9 ldr      x0, [x0, #0xe80] // LoadingModule.LoadingManager_TypeInfo
+0x408398c: 3de6ee97 bl       #0x3c3d280
+0x4083990: 405202d0 adrp     x0, #0x8acd000
+0x4083994: 003846f9 ldr      x0, [x0, #0xc70] // Method$ToolModule.ManagerBase<AssetsManager>.get_Instance()
+0x4083998: 3ae6ee97 bl       #0x3c3d280
+0x408399c: 405202d0 adrp     x0, #0x8acd000
+0x40839a0: 002047f9 ldr      x0, [x0, #0xe40] // Method$ToolModule.ManagerBase<EventManager>.get_Instance()
+0x40839a4: 37e6ee97 bl       #0x3c3d280
+0x40839a8: 405202f0 adrp     x0, #0x8ace000
+0x40839ac: 007c40f9 ldr      x0, [x0, #0xf8] // Method$ToolModule.ManagerBase<DataManager>.get_Instance()
+0x40839b0: 34e6ee97 bl       #0x3c3d280
+0x40839b4: 60520290 adrp     x0, #0x8acf000
+0x40839b8: 002040f9 ldr      x0, [x0, #0x40] // Method$ToolModule.ManagerBase<GameManager>.get_Instance()
+0x40839bc: 31e6ee97 bl       #0x3c3d280
+0x40839c0: 605202f0 adrp     x0, #0x8ad2000
+0x40839c4: 001844f9 ldr      x0, [x0, #0x830] // Method$ToolModule.ManagerBase<ReportEventsManager>.get_Instance()
+0x40839c8: 2ee6ee97 bl       #0x3c3d280
+0x40839cc: 405202f0 adrp     x0, #0x8ace000
+0x40839d0: 004c44f9 ldr      x0, [x0, #0x898] // Method$ToolModule.ManagerBase<UserResourcesManager>.get_Instance()
+0x40839d4: 2be6ee97 bl       #0x3c3d280
+0x40839d8: 405202f0 adrp     x0, #0x8ace000
+0x40839dc: 008c44f9 ldr      x0, [x0, #0x918] // Method$ToolModule.ManagerBase<HWIAPManager>.get_Instance()
+0x40839e0: 28e6ee97 bl       #0x3c3d280
+0x40839e4: 405202d0 adrp     x0, #0x8acd000
+0x40839e8: 002c44f9 ldr      x0, [x0, #0x858] // object[]_TypeInfo
+0x40839ec: 25e6ee97 bl       #0x3c3d280
+0x40839f0: 405202b0 adrp     x0, #0x8acc000
+0x40839f4: 006844f9 ldr      x0, [x0, #0x8d0] // UnityEngine.Object_TypeInfo
+0x40839f8: 22e6ee97 bl       #0x3c3d280
+0x40839fc: 405202d0 adrp     x0, #0x8acd000
+0x4083a00: 005442f9 ldr      x0, [x0, #0x4a8] // L_Tools.PlayerPrefs2Center_TypeInfo
+0x4083a04: 1fe6ee97 bl       #0x3c3d280
+0x4083a08: 405202f0 adrp     x0, #0x8ace000
+0x4083a0c: 007c45f9 ldr      x0, [x0, #0xaf8] // float_TypeInfo
+0x4083a10: 1ce6ee97 bl       #0x3c3d280
+0x4083a14: 405202d0 adrp     x0, #0x8acd000
+0x4083a18: 003047f9 ldr      x0, [x0, #0xe60] // Method$QuickTutor.Singleton<TutorialManager>.get_Instance()
+0x4083a1c: 19e6ee97 bl       #0x3c3d280
+0x4083a20: a05202b0 adrp     x0, #0x8ad8000
+0x4083a24: 00b847f9 ldr      x0, [x0, #0xf70] // Method$L_Tools.Singleton<CompareCheat>.get_Instance()
+0x4083a28: 16e6ee97 bl       #0x3c3d280
+0x4083a2c: 405202d0 adrp     x0, #0x8acd000
+0x4083a30: 002c47f9 ldr      x0, [x0, #0xe58] // QuickTutor.Singleton<TutorialManager>_TypeInfo
+0x4083a34: 13e6ee97 bl       #0x3c3d280
+0x4083a38: e05202f0 adrp     x0, #0x8ae2000
+0x4083a3c: 007c42f9 ldr      x0, [x0, #0x4f8] // LastGemCheck
+0x4083a40: 10e6ee97 bl       #0x3c3d280
+0x4083a44: e05202f0 adrp     x0, #0x8ae2000
+0x4083a48: 008042f9 ldr      x0, [x0, #0x500] // GemCheck
+0x4083a4c: 0de6ee97 bl       #0x3c3d280
+0x4083a50: 405202f0 adrp     x0, #0x8ace000
+0x4083a54: 006044f9 ldr      x0, [x0, #0x8c0] // 20006
+0x4083a58: 0ae6ee97 bl       #0x3c3d280
+0x4083a5c: e05202f0 adrp     x0, #0x8ae2000
+0x4083a60: 008442f9 ldr      x0, [x0, #0x508] // OnLoadingCompleted
+0x4083a64: 07e6ee97 bl       #0x3c3d280
+0x4083a68: 805202d0 adrp     x0, #0x8ad5000
+0x4083a6c: 002440f9 ldr      x0, [x0, #0x48] // CloseLoadPanel
+0x4083a70: 04e6ee97 bl       #0x3c3d280
+0x4083a74: 805202d0 adrp     x0, #0x8ad5000
+0x4083a78: 002840f9 ldr      x0, [x0, #0x50] // LoadEnd
+0x4083a7c: 01e6ee97 bl       #0x3c3d280
+0x4083a80: 28008052 mov      w8, #1
+0x4083a84: 88363739 strb     w8, [x20, #0xdcd]
+0x4083a88: 681240b9 ldr      w8, [x19, #0x10]
+0x4083a8c: 1f1d0071 cmp      w8, #7
+0x4083a90: 28350054 b.hi     #0x4084134
+0x4083a94: 771240f9 ldr      x23, [x19, #0x20]
+0x4083a98: 09c0fef0 adrp     x9, #0x1886000
+0x4083a9c: 29010191 add      x9, x9, #0x40
+0x4083aa0: 8a000010 adr      x10, #0x4083ab0
+0x4083aa4: 2b696838 ldrb     w11, [x9, x8]
+0x4083aa8: 4a090b8b add      x10, x10, x11, lsl #2
+0x4083aac: 40011fd6 br       x10
+0x4083ab0: 08008012 mov      w8, #-1
+0x4083ab4: 681200b9 str      w8, [x19, #0x10]
+0x4083ab8: 7f2a00b9 str      wzr, [x19, #0x28]
+0x4083abc: 173600b4 cbz      x23, #0x408417c
+0x4083ac0: 485202d0 adrp     x8, #0x8acd000
+0x4083ac4: f41240f9 ldr      x20, [x23, #0x20]
+0x4083ac8: 082d44f9 ldr      x8, [x8, #0x858] // object[]_TypeInfo
+0x4083acc: 21008052 mov      w1, #1
+0x4083ad0: 000140f9 ldr      x0, [x8]
+0x4083ad4: 13e6ee97 bl       #0x3c3d320
+0x4083ad8: 485202f0 adrp     x8, #0x8ace000
+0x4083adc: 602a40bd ldr      s0, [x19, #0x28]
+0x4083ae0: 087d45f9 ldr      x8, [x8, #0xaf8] // float_TypeInfo
+0x4083ae4: f50300aa mov      x21, x0
+0x4083ae8: e1330091 add      x1, sp, #0xc
+0x4083aec: e00f00bd str      s0, [sp, #0xc]
+0x4083af0: 000140f9 ldr      x0, [x8]
+0x4083af4: 31e6ee97 bl       #0x3c3d3b8
+0x4083af8: 353400b4 cbz      x21, #0x408417c
+0x4083afc: f60300aa mov      x22, x0
+0x4083b00: c00000b4 cbz      x0, #0x4083b18
+0x4083b04: a80240f9 ldr      x8, [x21]
+0x4083b08: e00316aa mov      x0, x22
+0x4083b0c: 012140f9 ldr      x1, [x8, #0x40]
+0x4083b10: 29e6ee97 bl       #0x3c3d3b4
+0x4083b14: 803300b4 cbz      x0, #0x4084184
+0x4083b18: a81a40b9 ldr      w8, [x21, #0x18]
+0x4083b1c: 28330034 cbz      w8, #0x4084180
+0x4083b20: b61200f9 str      x22, [x21, #0x20]
+0x4083b24: d43200b4 cbz      x20, #0x408417c
+0x4083b28: 880240f9 ldr      x8, [x20]
+0x4083b2c: e00314aa mov      x0, x20
+0x4083b30: e10315aa mov      x1, x21
+0x4083b34: 09895ca9 ldp      x9, x2, [x8, #0x1c8]
+0x4083b38: 20013fd6 blr      x9
+0x4083b3c: 04000014 b        #0x4083b4c
+0x4083b40: 08008012 mov      w8, #-1
+0x4083b44: 681200b9 str      w8, [x19, #0x10]
+0x4083b48: b73100b4 cbz      x23, #0x408417c
+0x4083b4c: 602a40bd ldr      s0, [x19, #0x28]
+0x4083b50: e13240bd ldr      s1, [x23, #0x30]
+0x4083b54: 0020211e fcmp     s0, s1
+0x4083b58: c50b0054 b.pl     #0x4083cd0
+0x4083b5c: a8bdfe90 adrp     x8, #0x1837000
+0x4083b60: 016544bd ldr      s1, [x8, #0x464]
+0x4083b64: 0128211e fadd     s1, s0, s1
+0x4083b68: 612a00bd str      s1, [x19, #0x28]
+0x4083b6c: e02e40bd ldr      s0, [x23, #0x2c]
+0x4083b70: 2020201e fcmp     s1, s0
+0x4083b74: 4b000054 b.lt     #0x4083b7c
+0x4083b78: 602a00bd str      s0, [x19, #0x28]
+0x4083b7c: 485202d0 adrp     x8, #0x8acd000
+0x4083b80: f41240f9 ldr      x20, [x23, #0x20]
+0x4083b84: 082d44f9 ldr      x8, [x8, #0x858] // object[]_TypeInfo
+0x4083b88: 21008052 mov      w1, #1
+0x4083b8c: 000140f9 ldr      x0, [x8]
+0x4083b90: e4e5ee97 bl       #0x3c3d320
+0x4083b94: 485202f0 adrp     x8, #0x8ace000
+0x4083b98: 602a40bd ldr      s0, [x19, #0x28]
+0x4083b9c: 087d45f9 ldr      x8, [x8, #0xaf8] // float_TypeInfo
+0x4083ba0: f50300aa mov      x21, x0
+0x4083ba4: e1330091 add      x1, sp, #0xc
+0x4083ba8: e00f00bd str      s0, [sp, #0xc]
+0x4083bac: 000140f9 ldr      x0, [x8]
+0x4083bb0: 02e6ee97 bl       #0x3c3d3b8
+0x4083bb4: 552e00b4 cbz      x21, #0x408417c
+0x4083bb8: f60300aa mov      x22, x0
+0x4083bbc: c00000b4 cbz      x0, #0x4083bd4
+0x4083bc0: a80240f9 ldr      x8, [x21]
+0x4083bc4: e00316aa mov      x0, x22
+0x4083bc8: 012140f9 ldr      x1, [x8, #0x40]
+0x4083bcc: fae5ee97 bl       #0x3c3d3b4
+0x4083bd0: a02d00b4 cbz      x0, #0x4084184
+0x4083bd4: a81a40b9 ldr      w8, [x21, #0x18]
+0x4083bd8: 482d0034 cbz      w8, #0x4084180
+0x4083bdc: b61200f9 str      x22, [x21, #0x20]
+0x4083be0: f42c00b4 cbz      x20, #0x408417c
+0x4083be4: 880240f9 ldr      x8, [x20]
+0x4083be8: e00314aa mov      x0, x20
+0x4083bec: e10315aa mov      x1, x21
+0x4083bf0: 09895ca9 ldp      x9, x2, [x8, #0x1c8]
+0x4083bf4: 20013fd6 blr      x9
+0x4083bf8: 20008052 mov      w0, #1
+0x4083bfc: 7f0e00f9 str      xzr, [x19, #0x18]
+0x4083c00: 601200b9 str      w0, [x19, #0x10]
+0x4083c04: 58010014 b        #0x4084164
+0x4083c08: 08008012 mov      w8, #-1
+0x4083c0c: 681200b9 str      w8, [x19, #0x10]
+0x4083c10: 31000014 b        #0x4083cd4
+0x4083c14: 08008012 mov      w8, #-1
+0x4083c18: 681200b9 str      w8, [x19, #0x10]
+0x4083c1c: 43000014 b        #0x4083d28
+0x4083c20: 08008012 mov      w8, #-1
+0x4083c24: 681200b9 str      w8, [x19, #0x10]
+0x4083c28: 47000014 b        #0x4083d44
+0x4083c2c: 08008012 mov      w8, #-1
+0x4083c30: 681200b9 str      w8, [x19, #0x10]
+0x4083c34: 5c000014 b        #0x4083da4
+0x4083c38: 08008012 mov      w8, #-1
+0x4083c3c: 681200b9 str      w8, [x19, #0x10]
+0x4083c40: f72900b4 cbz      x23, #0x408417c
+0x4083c44: 602a40bd ldr      s0, [x19, #0x28]
+0x4083c48: cb000014 b        #0x4083f74
+0x4083c4c: 683240b9 ldr      w8, [x19, #0x30]
+0x4083c50: 09008012 mov      w9, #-1
+0x4083c54: 691200b9 str      w9, [x19, #0x10]
+0x4083c58: 1f010071 cmp      w8, #0
+0x4083c5c: 0c260054 b.gt     #0x408411c
+0x4083c60: f72800b4 cbz      x23, #0x408417c
+0x4083c64: e01240f9 ldr      x0, [x23, #0x20]
+0x4083c68: a02800b4 cbz      x0, #0x408417c
+0x4083c6c: e1031faa mov      x1, xzr
+0x4083c70: b3940995 bl       #0x82e8f3c // UnityEngine.Component$$get_gameObject
+0x4083c74: 485202b0 adrp     x8, #0x8acc000
+0x4083c78: 086944f9 ldr      x8, [x8, #0x8d0] // UnityEngine.Object_TypeInfo
+0x4083c7c: f30300aa mov      x19, x0
+0x4083c80: 080140f9 ldr      x8, [x8]
+0x4083c84: 09e140b9 ldr      w9, [x8, #0xe0]
+0x4083c88: 69000035 cbnz     w9, #0x4083c94
+0x4083c8c: e00308aa mov      x0, x8
+0x4083c90: c8e5ee97 bl       #0x3c3d3b0
+0x4083c94: e00313aa mov      x0, x19
+0x4083c98: e1031faa mov      x1, xzr
+0x4083c9c: ecb40995 bl       #0x82f104c // UnityEngine.Object$$Destroy
+0x4083ca0: 485202d0 adrp     x8, #0x8acd000
+0x4083ca4: 082147f9 ldr      x8, [x8, #0xe40] // Method$ToolModule.ManagerBase<EventManager>.get_Instance()
+0x4083ca8: 000140f9 ldr      x0, [x8]
+0x4083cac: edd16394 bl       #0x5978460 // ToolModule.ManagerBase<object>$$get_Instance
+0x4083cb0: 602600b4 cbz      x0, #0x408417c
+0x4083cb4: 885202d0 adrp     x8, #0x8ad5000
+0x4083cb8: 082540f9 ldr      x8, [x8, #0x48] // CloseLoadPanel
+0x4083cbc: e2031faa mov      x2, xzr
+0x4083cc0: e3031faa mov      x3, xzr
+0x4083cc4: 010140f9 ldr      x1, [x8]
+0x4083cc8: a708fa97 bl       #0x3f05f64 // EventModule.EventManager$$TriggerEvent
+0x4083ccc: 1a010014 b        #0x4084134
+0x4083cd0: 7f2e00b9 str      wzr, [x19, #0x2c]
+0x4083cd4: 485202d0 adrp     x8, #0x8acd000
+0x4083cd8: 083946f9 ldr      x8, [x8, #0xc70] // Method$ToolModule.ManagerBase<AssetsManager>.get_Instance()
+0x4083cdc: 000140f9 ldr      x0, [x8]
+0x4083ce0: e0d16394 bl       #0x5978460 // ToolModule.ManagerBase<object>$$get_Instance
+0x4083ce4: c02400b4 cbz      x0, #0x408417c
+0x4083ce8: 004840bd ldr      s0, [x0, #0x48]
+0x4083cec: 01102e1e fmov     s1, #1.00000000
+0x4083cf0: 0020211e fcmp     s0, s1
+0x4083cf4: a5010054 b.pl     #0x4083d28
+0x4083cf8: 88bdfef0 adrp     x8, #0x1836000
+0x4083cfc: 682e40bd ldr      s8, [x19, #0x2c]
+0x4083d00: 009d4ebd ldr      s0, [x8, #0xe9c]
+0x4083d04: 0021201e fcmp     s8, s0
+0x4083d08: 05010054 b.pl     #0x4083d28
+0x4083d0c: e0031faa mov      x0, xzr
+0x4083d10: 10c80995 bl       #0x82f5d50 // UnityEngine.Time$$get_deltaTime
+0x4083d14: 0029201e fadd     s0, s8, s0
+0x4083d18: 7f0e00f9 str      xzr, [x19, #0x18]
+0x4083d1c: 48008052 mov      w8, #2
+0x4083d20: 602e00bd str      s0, [x19, #0x2c]
+0x4083d24: 0e010014 b        #0x408415c
+0x4083d28: 485202f0 adrp     x8, #0x8ace000
+0x4083d2c: 087d40f9 ldr      x8, [x8, #0xf8] // Method$ToolModule.ManagerBase<DataManager>.get_Instance()
+0x4083d30: 000140f9 ldr      x0, [x8]
+0x4083d34: cbd16394 bl       #0x5978460 // ToolModule.ManagerBase<object>$$get_Instance
+0x4083d38: 202200b4 cbz      x0, #0x408417c
+0x4083d3c: 08804039 ldrb     w8, [x0, #0x20]
+0x4083d40: a8200034 cbz      w8, #0x4084154
+0x4083d44: 485202d0 adrp     x8, #0x8acd000
+0x4083d48: 082d47f9 ldr      x8, [x8, #0xe58] // QuickTutor.Singleton<TutorialManager>_TypeInfo
+0x4083d4c: 000140f9 ldr      x0, [x8]
+0x4083d50: 08e040b9 ldr      w8, [x0, #0xe0]
+0x4083d54: 48000035 cbnz     w8, #0x4083d5c
+0x4083d58: 96e5ee97 bl       #0x3c3d3b0
+0x4083d5c: 485202d0 adrp     x8, #0x8acd000
+0x4083d60: 083147f9 ldr      x8, [x8, #0xe60] // Method$QuickTutor.Singleton<TutorialManager>.get_Instance()
+0x4083d64: 000140f9 ldr      x0, [x8]
+0x4083d68: 7feb7c94 bl       #0x5fbeb64 // QuickTutor.Singleton<object>$$get_Instance
+0x4083d6c: 802000b4 cbz      x0, #0x408417c
+0x4083d70: 08e04039 ldrb     w8, [x0, #0x38]
+0x4083d74: a81e0034 cbz      w8, #0x4084148
+0x4083d78: 485202d0 adrp     x8, #0x8acd000
+0x4083d7c: 082147f9 ldr      x8, [x8, #0xe40] // Method$ToolModule.ManagerBase<EventManager>.get_Instance()
+0x4083d80: 000140f9 ldr      x0, [x8]
+0x4083d84: b7d16394 bl       #0x5978460 // ToolModule.ManagerBase<object>$$get_Instance
+0x4083d88: a01f00b4 cbz      x0, #0x408417c
+0x4083d8c: e85202f0 adrp     x8, #0x8ae2000
+0x4083d90: 088542f9 ldr      x8, [x8, #0x508] // OnLoadingCompleted
+0x4083d94: e2031faa mov      x2, xzr
+0x4083d98: e3031faa mov      x3, xzr
+0x4083d9c: 010140f9 ldr      x1, [x8]
+0x4083da0: 7108fa97 bl       #0x3f05f64 // EventModule.EventManager$$TriggerEvent
+0x4083da4: 68520290 adrp     x8, #0x8acf000
+0x4083da8: 082140f9 ldr      x8, [x8, #0x40] // Method$ToolModule.ManagerBase<GameManager>.get_Instance()
+0x4083dac: 000140f9 ldr      x0, [x8]
+0x4083db0: acd16394 bl       #0x5978460 // ToolModule.ManagerBase<object>$$get_Instance
+0x4083db4: 401e00b4 cbz      x0, #0x408417c
+0x4083db8: 08804039 ldrb     w8, [x0, #0x20]
+0x4083dbc: 081c0034 cbz      w8, #0x408413c
+0x4083dc0: f71d00b4 cbz      x23, #0x408417c
+0x4083dc4: 34008052 mov      w20, #1
+0x4083dc8: f4a20039 strb     w20, [x23, #0x28]
+0x4083dcc: 555202d0 adrp     x21, #0x8acd000
+0x4083dd0: b54247f9 ldr      x21, [x21, #0xe80] // LoadingModule.LoadingManager_TypeInfo
+0x4083dd4: a00240f9 ldr      x0, [x21]
+0x4083dd8: 08e040b9 ldr      w8, [x0, #0xe0]
+0x4083ddc: 68000035 cbnz     w8, #0x4083de8
+0x4083de0: 74e5ee97 bl       #0x3c3d3b0
+0x4083de4: a00240f9 ldr      x0, [x21]
+0x4083de8: 085c40f9 ldr      x8, [x0, #0xb8]
+0x4083dec: 14010039 strb     w20, [x8]
+0x4083df0: 485202f0 adrp     x8, #0x8ace000
+0x4083df4: 088d44f9 ldr      x8, [x8, #0x918] // Method$ToolModule.ManagerBase<HWIAPManager>.get_Instance()
+0x4083df8: 000140f9 ldr      x0, [x8]
+0x4083dfc: 99d16394 bl       #0x5978460 // ToolModule.ManagerBase<object>$$get_Instance
+0x4083e00: e01b00b4 cbz      x0, #0x408417c
+0x4083e04: e1031faa mov      x1, xzr
+0x4083e08: 63c1fb97 bl       #0x3f74394 // SDKModule.HWIAPManager$$EnterHomeInit
+0x4083e0c: 485202d0 adrp     x8, #0x8acd000
+0x4083e10: 086142f9 ldr      x8, [x8, #0x4c0] // DailyTask_TypeInfo
+0x4083e14: 000140f9 ldr      x0, [x8]
+0x4083e18: abe5ee97 bl       #0x3c3d4c4
+0x4083e1c: e85202f0 adrp     x8, #0x8ae2000
+0x4083e20: 088142f9 ldr      x8, [x8, #0x500] // GemCheck
+0x4083e24: e2031faa mov      x2, xzr
+0x4083e28: f40300aa mov      x20, x0
+0x4083e2c: 010140f9 ldr      x1, [x8]
+0x4083e30: 69ecf197 bl       #0x3cfefd4 // DailyTask$$.ctor
+0x4083e34: 585202d0 adrp     x24, #0x8acd000
+0x4083e38: 185742f9 ldr      x24, [x24, #0x4a8] // L_Tools.PlayerPrefs2Center_TypeInfo
+0x4083e3c: 000340f9 ldr      x0, [x24]
+0x4083e40: 08e040b9 ldr      w8, [x0, #0xe0]
+0x4083e44: 48000035 cbnz     w8, #0x4083e4c
+0x4083e48: 5ae5ee97 bl       #0x3c3d3b0
+0x4083e4c: f95202f0 adrp     x25, #0x8ae2000
+0x4083e50: 397f42f9 ldr      x25, [x25, #0x4f8] // LastGemCheck
+0x4083e54: e1031f2a mov      w1, wzr
+0x4083e58: e2031faa mov      x2, xzr
+0x4083e5c: 200340f9 ldr      x0, [x25]
+0x4083e60: 97e60c94 bl       #0x43bd8bc // L_Tools.PlayerPrefs2Center$$GetInt
+0x4083e64: 485202f0 adrp     x8, #0x8ace000
+0x4083e68: 084d44f9 ldr      x8, [x8, #0x898] // Method$ToolModule.ManagerBase<UserResourcesManager>.get_Instance()
+0x4083e6c: f603002a mov      w22, w0
+0x4083e70: 080140f9 ldr      x8, [x8]
+0x4083e74: e00308aa mov      x0, x8
+0x4083e78: 7ad16394 bl       #0x5978460 // ToolModule.ManagerBase<object>$$get_Instance
+0x4083e7c: 001800b4 cbz      x0, #0x408417c
+0x4083e80: 485202f0 adrp     x8, #0x8ace000
+0x4083e84: 086144f9 ldr      x8, [x8, #0x8c0] // 20006
+0x4083e88: e2031faa mov      x2, xzr
+0x4083e8c: 010140f9 ldr      x1, [x8]
+0x4083e90: 0af1f997 bl       #0x3f002b8 // GameModule.UserResourcesManager$$GetResourceCount
+0x4083e94: f503002a mov      w21, w0
+0x4083e98: 96010035 cbnz     w22, #0x4083ec8
+0x4083e9c: 286a9852 mov      w8, #0xc351
+0x4083ea0: bf02086b cmp      w21, w8
+0x4083ea4: 2b010054 b.lt     #0x4083ec8
+0x4083ea8: 685202f0 adrp     x8, #0x8ad2000
+0x4083eac: 081944f9 ldr      x8, [x8, #0x830] // Method$ToolModule.ManagerBase<ReportEventsManager>.get_Instance()
+0x4083eb0: 000140f9 ldr      x0, [x8]
+0x4083eb4: 6bd16394 bl       #0x5978460 // ToolModule.ManagerBase<object>$$get_Instance
+0x4083eb8: 201600b4 cbz      x0, #0x408417c
+0x4083ebc: e103152a mov      w1, w21
+0x4083ec0: e2031faa mov      x2, xzr
+0x4083ec4: 4803f997 bl       #0x3ec4be4 // GameModule.ReportEventsManager$$ReportGemStartCheckNumTooBig
+0x4083ec8: a802164b sub      w8, w21, w22
+0x4083ecc: 296a9852 mov      w9, #0xc351
+0x4083ed0: 1f01096b cmp      w8, w9
+0x4083ed4: 4b010054 b.lt     #0x4083efc
+0x4083ed8: 685202f0 adrp     x8, #0x8ad2000
+0x4083edc: 081944f9 ldr      x8, [x8, #0x830] // Method$ToolModule.ManagerBase<ReportEventsManager>.get_Instance()
+0x4083ee0: 000140f9 ldr      x0, [x8]
+0x4083ee4: 5fd16394 bl       #0x5978460 // ToolModule.ManagerBase<object>$$get_Instance
+0x4083ee8: a01400b4 cbz      x0, #0x408417c
+0x4083eec: e103162a mov      w1, w22
+0x4083ef0: e203152a mov      w2, w21
+0x4083ef4: e3031faa mov      x3, xzr
+0x4083ef8: 7603f997 bl       #0x3ec4cd0 // GameModule.ReportEventsManager$$ReportGemChangeTooBig
+0x4083efc: 141400b4 cbz      x20, #0x408417c
+0x4083f00: e00314aa mov      x0, x20
+0x4083f04: e1031faa mov      x1, xzr
+0x4083f08: c9ecf197 bl       #0x3cff22c // DailyTask$$get_Status
+0x4083f0c: a0010035 cbnz     w0, #0x4083f40
+0x4083f10: 000340f9 ldr      x0, [x24]
+0x4083f14: 08e040b9 ldr      w8, [x0, #0xe0]
+0x4083f18: 48000035 cbnz     w8, #0x4083f20
+0x4083f1c: 25e5ee97 bl       #0x3c3d3b0
+0x4083f20: 200340f9 ldr      x0, [x25]
+0x4083f24: e103152a mov      w1, w21
+0x4083f28: e2031faa mov      x2, xzr
+0x4083f2c: 29e60c94 bl       #0x43bd7d0 // L_Tools.PlayerPrefs2Center$$SetInt
+0x4083f30: 21008052 mov      w1, #1
+0x4083f34: e00314aa mov      x0, x20
+0x4083f38: e2031faa mov      x2, xzr
+0x4083f3c: e0ecf197 bl       #0x3cff2bc // DailyTask$$set_Status
+0x4083f40: 485202d0 adrp     x8, #0x8acd000
+0x4083f44: 082147f9 ldr      x8, [x8, #0xe40] // Method$ToolModule.ManagerBase<EventManager>.get_Instance()
+0x4083f48: 000140f9 ldr      x0, [x8]
+0x4083f4c: 45d16394 bl       #0x5978460 // ToolModule.ManagerBase<object>$$get_Instance
+0x4083f50: 601100b4 cbz      x0, #0x408417c
+0x4083f54: 885202d0 adrp     x8, #0x8ad5000
+0x4083f58: 082940f9 ldr      x8, [x8, #0x50] // LoadEnd
+0x4083f5c: e2031faa mov      x2, xzr
+0x4083f60: e3031faa mov      x3, xzr
+0x4083f64: 010140f9 ldr      x1, [x8]
+0x4083f68: ff07fa97 bl       #0x3f05f64 // EventModule.EventManager$$TriggerEvent
+0x4083f6c: e03240bd ldr      s0, [x23, #0x30]
+0x4083f70: 602a00bd str      s0, [x19, #0x28]
+0x4083f74: e13640bd ldr      s1, [x23, #0x34]
+0x4083f78: 0020211e fcmp     s0, s1
+0x4083f7c: 45050054 b.pl     #0x4084024
+0x4083f80: a8bdfe90 adrp     x8, #0x1837000
+0x4083f84: 89bdfef0 adrp     x9, #0x1836000
+0x4083f88: 016544bd ldr      s1, [x8, #0x464]
+0x4083f8c: 22a14ebd ldr      s2, [x9, #0xea0]
+0x4083f90: 485202d0 adrp     x8, #0x8acd000
+0x4083f94: 082d44f9 ldr      x8, [x8, #0x858] // object[]_TypeInfo
+0x4083f98: 0028211e fadd     s0, s0, s1
+0x4083f9c: 0058221e fmin     s0, s0, s2
+0x4083fa0: 602a00bd str      s0, [x19, #0x28]
+0x4083fa4: 000140f9 ldr      x0, [x8]
+0x4083fa8: f41240f9 ldr      x20, [x23, #0x20]
+0x4083fac: 21008052 mov      w1, #1
+0x4083fb0: dce4ee97 bl       #0x3c3d320
+0x4083fb4: 485202f0 adrp     x8, #0x8ace000
+0x4083fb8: 602a40bd ldr      s0, [x19, #0x28]
+0x4083fbc: 087d45f9 ldr      x8, [x8, #0xaf8] // float_TypeInfo
+0x4083fc0: f50300aa mov      x21, x0
+0x4083fc4: e1330091 add      x1, sp, #0xc
+0x4083fc8: e00f00bd str      s0, [sp, #0xc]
+0x4083fcc: 000140f9 ldr      x0, [x8]
+0x4083fd0: fae4ee97 bl       #0x3c3d3b8
+0x4083fd4: 550d00b4 cbz      x21, #0x408417c
+0x4083fd8: f60300aa mov      x22, x0
+0x4083fdc: c00000b4 cbz      x0, #0x4083ff4
+0x4083fe0: a80240f9 ldr      x8, [x21]
+0x4083fe4: e00316aa mov      x0, x22
+0x4083fe8: 012140f9 ldr      x1, [x8, #0x40]
+0x4083fec: f2e4ee97 bl       #0x3c3d3b4
+0x4083ff0: a00c00b4 cbz      x0, #0x4084184
+0x4083ff4: a81a40b9 ldr      w8, [x21, #0x18]
+0x4083ff8: 480c0034 cbz      w8, #0x4084180
+0x4083ffc: b61200f9 str      x22, [x21, #0x20]
+0x4084000: f40b00b4 cbz      x20, #0x408417c
+0x4084004: 880240f9 ldr      x8, [x20]
+0x4084008: e00314aa mov      x0, x20
+0x408400c: e10315aa mov      x1, x21
+0x4084010: 09895ca9 ldp      x9, x2, [x8, #0x1c8]
+0x4084014: 20013fd6 blr      x9
+0x4084018: 7f0e00f9 str      xzr, [x19, #0x18]
+0x408401c: c8008052 mov      w8, #6
+0x4084020: 4f000014 b        #0x408415c
+0x4084024: a8520290 adrp     x8, #0x8ad8000
+0x4084028: 08b947f9 ldr      x8, [x8, #0xf70] // Method$L_Tools.Singleton<CompareCheat>.get_Instance()
+0x408402c: 140140f9 ldr      x20, [x8]
+0x4084030: 801240f9 ldr      x0, [x20, #0x20]
+0x4084034: 08d44439 ldrb     w8, [x0, #0x135]
+0x4084038: 48000037 tbnz     w8, #0, #0x4084040
+0x408403c: d930ef97 bl       #0x3c503a0
+0x4084040: 086040f9 ldr      x8, [x0, #0xc0]
+0x4084044: 000940f9 ldr      x0, [x8, #0x10]
+0x4084048: 08d44439 ldrb     w8, [x0, #0x135]
+0x408404c: 48000037 tbnz     w8, #0, #0x4084054
+0x4084050: d430ef97 bl       #0x3c503a0
+0x4084054: 08e040b9 ldr      w8, [x0, #0xe0]
+0x4084058: 48000035 cbnz     w8, #0x4084060
+0x408405c: d5e4ee97 bl       #0x3c3d3b0
+0x4084060: 801240f9 ldr      x0, [x20, #0x20]
+0x4084064: 08d44439 ldrb     w8, [x0, #0x135]
+0x4084068: 48000037 tbnz     w8, #0, #0x4084070
+0x408406c: cd30ef97 bl       #0x3c503a0
+0x4084070: 086040f9 ldr      x8, [x0, #0xc0]
+0x4084074: 000940f9 ldr      x0, [x8, #0x10]
+0x4084078: 08d44439 ldrb     w8, [x0, #0x135]
+0x408407c: 48000037 tbnz     w8, #0, #0x4084084
+0x4084080: c830ef97 bl       #0x3c503a0
+0x4084084: 085c40f9 ldr      x8, [x0, #0xb8]
+0x4084088: 000140f9 ldr      x0, [x8]
+0x408408c: 800700b4 cbz      x0, #0x408417c
+0x4084090: e1031faa mov      x1, xzr
+0x4084094: bffa0a94 bl       #0x4342b90 // DataModule.CompareCheat$$StartCheck
+0x4084098: e0040036 tbz      w0, #0, #0x4084134
+0x408409c: 485202b0 adrp     x8, #0x8acd000
+0x40840a0: f41240f9 ldr      x20, [x23, #0x20]
+0x40840a4: 082d44f9 ldr      x8, [x8, #0x858] // object[]_TypeInfo
+0x40840a8: 21008052 mov      w1, #1
+0x40840ac: 000140f9 ldr      x0, [x8]
+0x40840b0: 9ce4ee97 bl       #0x3c3d320
+0x40840b4: 485202d0 adrp     x8, #0x8ace000
+0x40840b8: 087d45f9 ldr      x8, [x8, #0xaf8] // float_TypeInfo
+0x40840bc: f50300aa mov      x21, x0
+0x40840c0: e1330091 add      x1, sp, #0xc
+0x40840c4: 000140f9 ldr      x0, [x8]
+0x40840c8: 08f0a752 mov      w8, #0x3f800000
+0x40840cc: e80f00b9 str      w8, [sp, #0xc]
+0x40840d0: bae4ee97 bl       #0x3c3d3b8
+0x40840d4: 550500b4 cbz      x21, #0x408417c
+0x40840d8: f60300aa mov      x22, x0
+0x40840dc: c00000b4 cbz      x0, #0x40840f4
+0x40840e0: a80240f9 ldr      x8, [x21]
+0x40840e4: e00316aa mov      x0, x22
+0x40840e8: 012140f9 ldr      x1, [x8, #0x40]
+0x40840ec: b2e4ee97 bl       #0x3c3d3b4
+0x40840f0: a00400b4 cbz      x0, #0x4084184
+0x40840f4: a81a40b9 ldr      w8, [x21, #0x18]
+0x40840f8: 48040034 cbz      w8, #0x4084180
+0x40840fc: b61200f9 str      x22, [x21, #0x20]
+0x4084100: f40300b4 cbz      x20, #0x408417c
+0x4084104: 880240f9 ldr      x8, [x20]
+0x4084108: e00314aa mov      x0, x20
+0x408410c: e10315aa mov      x1, x21
+0x4084110: 09895ca9 ldp      x9, x2, [x8, #0x1c8]
+0x4084114: 20013fd6 blr      x9
+0x4084118: 88028052 mov      w8, #0x14
+0x408411c: 08050051 sub      w8, w8, #1
+0x4084120: e9008052 mov      w9, #7
+0x4084124: 7f0e00f9 str      xzr, [x19, #0x18]
+0x4084128: 683200b9 str      w8, [x19, #0x30]
+0x408412c: 691200b9 str      w9, [x19, #0x10]
+0x4084130: 0c000014 b        #0x4084160
+0x4084134: e0031f2a mov      w0, wzr
+0x4084138: 0b000014 b        #0x4084164
+0x408413c: 7f0e00f9 str      xzr, [x19, #0x18]
+0x4084140: a8008052 mov      w8, #5
+0x4084144: 06000014 b        #0x408415c
+0x4084148: 7f0e00f9 str      xzr, [x19, #0x18]
+0x408414c: 88008052 mov      w8, #4
+0x4084150: 03000014 b        #0x408415c
+0x4084154: 68008052 mov      w8, #3
+0x4084158: 7f0e00f9 str      xzr, [x19, #0x18]
+0x408415c: 681200b9 str      w8, [x19, #0x10]
+0x4084160: 20008052 mov      w0, #1
+0x4084164: f44f44a9 ldp      x20, x19, [sp, #0x40]
+0x4084168: f65743a9 ldp      x22, x21, [sp, #0x30]
+0x408416c: f85f42a9 ldp      x24, x23, [sp, #0x20]
+0x4084170: fe6741a9 ldp      x30, x25, [sp, #0x10]
+0x4084174: e80745fc ldr      d8, [sp], #0x50
+0x4084178: c0035fd6 ret      
+0x408417c: d4e4ee97 bl       #0x3c3d4cc
+0x4084180: d5e4ee97 bl       #0x3c3d4d4
+0x4084184: dbe4ee97 bl       #0x3c3d4f0
+0x4084188: e1031faa mov      x1, xzr
+0x408418c: 85e4ee97 bl       #0x3c3d3a0

@@ -1,0 +1,129 @@
+__int64 __fastcall GameModule_BattleGameManager__GetDamageMaxPath(__int64 a1)
+{
+  __int64 v2; // x0
+  __int64 v3; // x19
+  int v4; // w29
+  __int64 v5; // x3
+  __int64 v6; // x21
+  int v7; // w23
+  __int64 v8; // x0
+  char v9; // w22
+  __int64 v10; // x3
+  _QWORD *v11; // x0
+  __int64 v12; // x8
+  __int64 v13; // x0
+  __int64 v14; // x0
+  __int64 v15; // x8
+  _QWORD *Instance; // x0
+  __int64 v17; // x8
+  __int64 v18; // x0
+  __int64 Item; // x0
+  __int128 v21; // [xsp+8h] [xbp-B8h] BYREF
+  __int128 v22; // [xsp+18h] [xbp-A8h]
+  __int64 v23; // [xsp+28h] [xbp-98h]
+  __int128 v24; // [xsp+30h] [xbp-90h] BYREF
+  __int128 v25; // [xsp+40h] [xbp-80h]
+  __int64 v26; // [xsp+50h] [xbp-70h]
+
+  if ( (byte_8FFD744 & 1) == 0 )
+  {
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8CFEA70);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8CFE808);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8CFE750);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D04C90);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D04C98);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&unk_8D04CA0);
+    il2cpp_codegen_initialize_runtime_metadata(&qword_8D07790);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&unk_8D07798);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D12118);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D537D8);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D4ECC0);
+    byte_8FFD744 = 1;
+  }
+  v26 = 0;
+  v24 = 0u;
+  v25 = 0u;
+  v2 = *(_QWORD *)(a1 + 112);
+  if ( v2 == 0 )
+    goto LABEL_31;
+  v3 = qword_8D4ECC0;
+  System_Collections_Generic_Dictionary_object__int___GetEnumerator(&v21, v2, qword_8CFEA70);
+  v4 = 0;
+  v24 = v21;
+  v25 = v22;
+  v26 = v23;
+  while ( (System_Collections_Generic_Dictionary_Enumerator_object__int___MoveNext(&v24, qword_8D04C98) & 1) != 0 )
+  {
+    v6 = v25;
+    v7 = DWORD2(v25);
+    if ( (System_String__op_Equality(v25, qword_8D4ECC0, 0, v5) & 1) == 0 && v4 < v7 )
+    {
+      v4 = v7;
+      v3 = v6;
+    }
+  }
+  System_Collections_Generic_Dictionary_Enumerator_object__int___Dispose(&v24, qword_8D04C90);
+  v8 = *(_QWORD *)(a1 + 120);
+  if ( v8 == 0 )
+    goto LABEL_31;
+  System_Collections_Generic_Dictionary_object__int___GetEnumerator(&v21, v8, qword_8CFEA70);
+  v9 = 0;
+  v24 = v21;
+  v25 = v22;
+  v26 = v23;
+  while ( (System_Collections_Generic_Dictionary_Enumerator_object__int___MoveNext(&v24, qword_8D04C98) & 1) != 0 )
+  {
+    if ( v4 < SDWORD2(v25) )
+    {
+      v3 = v25;
+      v9 = 1;
+      v4 = DWORD2(v25);
+    }
+  }
+  System_Collections_Generic_Dictionary_Enumerator_object__int___Dispose(&v24, qword_8D04C90);
+  if ( (System_String__op_Equality(v3, qword_8D4ECC0, 0, v10) & 1) != 0 )
+    v3 = qword_8D537D8;
+  if ( (v9 & 1) == 0 )
+  {
+LABEL_25:
+    Instance = ToolModule_ManagerBase_object___get_Instance((const MethodInfo *)qword_8D12118);
+    if ( Instance != nullptr )
+    {
+      v17 = Instance[5];
+      if ( v17 != 0 )
+      {
+        v18 = *(_QWORD *)(v17 + 136);
+        if ( v18 != 0 )
+        {
+          Item = System_Collections_Generic_Dictionary_object__object___get_Item(v18, v3, qword_8CFE808);
+          if ( Item != 0 )
+          {
+            v15 = Item + 96;
+            return *(_QWORD *)v15;
+          }
+        }
+      }
+    }
+LABEL_31:
+    il2cpp_codegen_raise_null_reference_exception();
+  }
+  if ( (System_String__op_Inequality(v3, qword_8D4ECC0, 0) & 1) == 0 )
+  {
+    v3 = qword_8D537D8;
+    goto LABEL_25;
+  }
+  v11 = ToolModule_ManagerBase_object___get_Instance((const MethodInfo *)qword_8D12118);
+  if ( v11 == nullptr )
+    goto LABEL_31;
+  v12 = v11[5];
+  if ( v12 == 0 )
+    goto LABEL_31;
+  v13 = *(_QWORD *)(v12 + 104);
+  if ( v13 == 0 )
+    goto LABEL_31;
+  v14 = System_Collections_Generic_Dictionary_object__object___get_Item(v13, v3, qword_8CFE750);
+  if ( v14 == 0 )
+    goto LABEL_31;
+  v15 = v14 + 176;
+  return *(_QWORD *)v15;
+}

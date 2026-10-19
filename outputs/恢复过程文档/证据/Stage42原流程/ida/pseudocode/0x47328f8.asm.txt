@@ -1,0 +1,35 @@
+0x47328f8: STP             X30, X21, [SP,#var_20]!
+0x47328fc: STP             X20, X19, [SP,#0x20+var_10]
+0x4732900: LDR             X8, [X2,#0x38]
+0x4732904: MOV             X19, X2
+0x4732908: MOV             X20, X1
+0x473290c: MOV             X21, X0
+0x4732910: CBNZ            X8, loc_473291C
+0x4732914: MOV             X0, X19
+0x4732918: BL              unk_3C503FC
+0x473291c: LDR             X8, [X19,#0x20]
+0x4732920: MOV             X0, X21; this
+0x4732924: MOV             X1, X20; name
+0x4732928: LDR             X8, [X8,#0xC0]
+0x473292c: LDR             X2, [X8,#0x110]; method
+0x4732930: BL              GameFramework.Fsm.Fsm_object_$$GetData
+0x4732934: LDR             X8, [X19,#0x38]
+0x4732938: MOV             X20, X0
+0x473293c: LDR             X19, [X8]
+0x4732940: LDRB            W8, [X19,#0x135]
+0x4732944: TBNZ            W8, #0, loc_4732954
+0x4732948: MOV             X0, X19
+0x473294c: BL              unk_3C503A0
+0x4732950: MOV             X19, X0
+0x4732954: CBZ             X20, loc_4732974
+0x4732958: MOV             X0, X20
+0x473295c: MOV             X1, X19
+0x4732960: BL              unk_3C3D3B4
+0x4732964: CBNZ            X0, loc_4732978
+0x4732968: MOV             X0, X20
+0x473296c: MOV             X1, X19
+0x4732970: BL              unk_3C3D868
+0x4732974: MOV             X0, XZR
+0x4732978: LDP             X20, X19, [SP,#0x20+var_10]
+0x473297c: LDP             X30, X21, [SP+0x20+var_20],#0x20
+0x4732980: RET

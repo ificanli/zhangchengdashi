@@ -1,0 +1,78 @@
+0x3e45984: STR             X30, [SP,#var_20]!
+0x3e45988: STP             X20, X19, [SP,#0x20+var_10]
+0x3e4598c: ADRP            X20, #byte_8FFD9F6@PAGE
+0x3e45990: LDRB            W8, [X20,#byte_8FFD9F6@PAGEOFF]
+0x3e45994: MOV             X19, X0
+0x3e45998: TBNZ            W8, #0, loc_3E459E0
+0x3e4599c: ADRP            X0, #off_8ACC8C8@PAGE
+0x3e459a0: LDR             X0, [X0,#off_8ACC8C8@PAGEOFF]; off_8CE64E8 ; slot
+0x3e459a4: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3e459a8: ADRP            X0, #off_8ACDE40@PAGE
+0x3e459ac: LDR             X0, [X0,#off_8ACDE40@PAGEOFF]; qword_8D12148 ; slot
+0x3e459b0: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3e459b4: ADRP            X0, #off_8AD5FC8@PAGE
+0x3e459b8: LDR             X0, [X0,#off_8AD5FC8@PAGEOFF]; qword_8D73740 ; slot
+0x3e459bc: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3e459c0: ADRP            X0, #off_8AD5290@PAGE
+0x3e459c4: LDR             X0, [X0,#off_8AD5290@PAGEOFF]; qword_8D73730 ; slot
+0x3e459c8: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3e459cc: ADRP            X0, #off_8AD5F70@PAGE
+0x3e459d0: LDR             X0, [X0,#off_8AD5F70@PAGEOFF]; qword_8D86A60 ; slot
+0x3e459d4: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3e459d8: MOV             W8, #1
+0x3e459dc: STRB            W8, [X20,#byte_8FFD9F6@PAGEOFF]
+0x3e459e0: LDR             X0, [X19,#0x68]; self
+0x3e459e4: CBZ             X0, loc_3E45AB8
+0x3e459e8: MOV             X1, XZR; method
+0x3e459ec: BL              TimeModuleO.TimeManager.Timer$$IsCompleted
+0x3e459f0: TBZ             W0, #0, loc_3E45AAC
+0x3e459f4: LDR             X20, [X19,#0x68]
+0x3e459f8: MOV             X0, X19; self
+0x3e459fc: BL              TimeModuleO.TimeManager$$GetTimeSpanToWeek
+0x3e45a00: CBZ             X20, loc_3E45AB8
+0x3e45a04: MOV             X1, X0; duration
+0x3e45a08: MOV             W2, #1; countdown
+0x3e45a0c: MOV             X0, X20; self
+0x3e45a10: MOV             X3, XZR; method
+0x3e45a14: BL              TimeModuleO.TimeManager.Timer$$Restart
+0x3e45a18: LDR             X8, [X19,#0x40]
+0x3e45a1c: CBZ             X8, loc_3E45A30
+0x3e45a20: LDR             X9, [X8,#0x18]
+0x3e45a24: LDR             X0, [X8,#0x40]
+0x3e45a28: LDR             X1, [X8,#0x28]
+0x3e45a2c: BLR             X9
+0x3e45a30: LDR             X8, [X19,#0x68]
+0x3e45a34: CBZ             X8, loc_3E45AB8
+0x3e45a38: LDR             X1, [X8,#0x20]
+0x3e45a3c: ADRP            X8, #off_8AD5FC8@PAGE
+0x3e45a40: LDR             X8, [X8,#off_8AD5FC8@PAGEOFF]; qword_8D73740
+0x3e45a44: LDR             X0, [X8]
+0x3e45a48: BL              TimeModuleO.TimeManager$$ChangeTimeInfoEndTime
+0x3e45a4c: ADRP            X8, #off_8ACC8C8@PAGE
+0x3e45a50: LDR             X8, [X8,#off_8ACC8C8@PAGEOFF]; off_8CE64E8
+0x3e45a54: LDR             X0, [X8]; klass
+0x3e45a58: LDR             W8, [X0,#0xE0]
+0x3e45a5c: CBNZ            W8, loc_3E45A64
+0x3e45a60: BL              il2cpp_codegen_runtime_class_init
+0x3e45a64: ADRP            X8, #off_8AD5F70@PAGE
+0x3e45a68: LDR             X8, [X8,#off_8AD5F70@PAGEOFF]; qword_8D86A60
+0x3e45a6c: MOV             X1, XZR
+0x3e45a70: LDR             X0, [X8]
+0x3e45a74: BL              UnityEngine.Debug$$Log
+0x3e45a78: ADRP            X8, #off_8ACDE40@PAGE
+0x3e45a7c: LDR             X8, [X8,#off_8ACDE40@PAGEOFF]; qword_8D12148
+0x3e45a80: LDR             X0, [X8]; method
+0x3e45a84: BL              ToolModule.ManagerBase_object_$$get_Instance
+0x3e45a88: CBZ             X0, loc_3E45AB8
+0x3e45a8c: ADRP            X8, #off_8AD5290@PAGE
+0x3e45a90: LDR             X8, [X8,#off_8AD5290@PAGEOFF]; qword_8D73730
+0x3e45a94: LDP             X20, X19, [SP,#0x20+var_10]
+0x3e45a98: MOV             X2, XZR
+0x3e45a9c: MOV             X3, XZR
+0x3e45aa0: LDR             X1, [X8]
+0x3e45aa4: LDR             X30, [SP+0x20+var_20],#0x20
+0x3e45aa8: B               EventModule.EventManager$$TriggerEvent
+0x3e45aac: LDP             X20, X19, [SP,#0x20+var_10]
+0x3e45ab0: LDR             X30, [SP+0x20+var_20],#0x20
+0x3e45ab4: RET
+0x3e45ab8: BL              il2cpp_codegen_raise_null_reference_exception

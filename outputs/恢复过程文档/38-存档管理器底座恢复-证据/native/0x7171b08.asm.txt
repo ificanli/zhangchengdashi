@@ -1,0 +1,68 @@
+0x7171b08: STR             X30, [SP,#var_20]!
+0x7171b0c: STP             X20, X19, [SP,#0x20+var_10]
+0x7171b10: LDR             X8, [X0]
+0x7171b14: MOV             X19, X0
+0x7171b18: LDP             X9, X1, [X8,#0x178]
+0x7171b1c: BLR             X9
+0x7171b20: BL              _Oke__$$j_g__O
+0x7171b24: AND             W8, W0, #1
+0x7171b28: STRB            W8, [X19,#0x20]
+0x7171b2c: MOV             W0, #1
+0x7171b30: LDP             X20, X19, [SP,#0x20+var_10]
+0x7171b34: LDR             X30, [SP+0x20+var_20],#0x20
+0x7171b38: RET
+0x7171b3c: B               loc_7171B40
+0x7171b40: MOV             X19, X0
+0x7171b44: CMP             W1, #1
+0x7171b48: B.NE            loc_7171C10
+0x7171b4c: MOV             X0, X19
+0x7171b50: BL              .__cxa_begin_catch
+0x7171b54: MOV             X19, X0
+0x7171b58: ADRP            X0, #off_8ACCF90@PAGE
+0x7171b5c: LDR             X0, [X0,#off_8ACCF90@PAGEOFF]; unk_8CE71D0
+0x7171b60: BL              unk_3C3D294
+0x7171b64: LDR             X8, [X19]
+0x7171b68: LDR             X1, [X8]
+0x7171b6c: BL              unk_3C3D8F8
+0x7171b70: TBZ             W0, #0, loc_7171BE8
+0x7171b74: LDR             X20, [X19]
+0x7171b78: BL              .__cxa_end_catch
+0x7171b7c: ADRP            X0, #off_8B172F0@PAGE
+0x7171b80: LDR             X0, [X0,#off_8B172F0@PAGEOFF]; unk_8D87948
+0x7171b84: BL              unk_3C3D294
+0x7171b88: MOV             X19, X0
+0x7171b8c: CBZ             X20, loc_7171BA8
+0x7171b90: LDR             X8, [X20]
+0x7171b94: MOV             X0, X20
+0x7171b98: LDP             X9, X1, [X8,#0x168]
+0x7171b9c: BLR             X9
+0x7171ba0: MOV             X1, X0
+0x7171ba4: B               loc_7171BAC
+0x7171ba8: MOV             X1, XZR
+0x7171bac: MOV             X0, X19
+0x7171bb0: MOV             X2, XZR
+0x7171bb4: BL              sub_74FE7A4
+0x7171bb8: MOV             X19, X0
+0x7171bbc: ADRP            X0, #off_8ACC8C8@PAGE
+0x7171bc0: LDR             X0, [X0,#off_8ACC8C8@PAGEOFF]; off_8CE64E8
+0x7171bc4: BL              unk_3C3D294
+0x7171bc8: LDR             W8, [X0,#0xE0]
+0x7171bcc: CBNZ            W8, loc_7171BD4
+0x7171bd0: BL              il2cpp_codegen_runtime_class_init
+0x7171bd4: MOV             X0, X19
+0x7171bd8: MOV             X1, XZR
+0x7171bdc: BL              UnityEngine.Debug$$LogError
+0x7171be0: MOV             W0, WZR
+0x7171be4: B               loc_7171B30
+0x7171be8: MOV             W0, #8
+0x7171bec: BL              .__cxa_allocate_exception
+0x7171bf0: LDR             X8, [X19]
+0x7171bf4: STR             X8, [X0]
+0x7171bf8: ADRL            X1, _ZTI22Il2CppExceptionWrapper; `typeinfo for'Il2CppExceptionWrapper
+0x7171c00: MOV             X2, XZR
+0x7171c04: BL              .__cxa_throw
+0x7171c08: MOV             X19, X0
+0x7171c0c: BL              .__cxa_end_catch
+0x7171c10: MOV             X0, X19
+0x7171c14: BL              sub_3CE73C4
+0x7171c18: BL              unk_35BC500

@@ -1,0 +1,32 @@
+0x3d8df54: LDR             X8, [X0,#0x40]
+0x3d8df58: CBZ             X8, locret_3D8DF80
+0x3d8df5c: FCMP            S0, #0.0
+0x3d8df60: B.PL            loc_3D8DF84
+0x3d8df64: LDR             W9, [X0,#0x2C0]
+0x3d8df68: LDR             W10, [X8,#0x18]
+0x3d8df6c: STR             W9, [X8,#0x1C]
+0x3d8df70: CMP             W10, W9
+0x3d8df74: B.LE            loc_3D8DFC4
+0x3d8df78: STR             W9, [X8,#0x18]
+0x3d8df7c: B               loc_3D8DFC4
+0x3d8df80: RET
+0x3d8df84: LDP             W12, W9, [X8,#0x18]
+0x3d8df88: MOV             W10, #0x7F800000
+0x3d8df8c: MOV             W11, #0x80000000
+0x3d8df90: SCVTF           S1, W9
+0x3d8df94: FMUL            S0, S1, S0
+0x3d8df98: FMOV            S1, W10
+0x3d8df9c: FCVTZS          W10, S0
+0x3d8dfa0: FCMP            S0, S1
+0x3d8dfa4: CSEL            W10, W11, W10, EQ
+0x3d8dfa8: ADD             W9, W10, W9
+0x3d8dfac: ADD             W10, W10, W12
+0x3d8dfb0: CMP             W10, W9
+0x3d8dfb4: CSEL            W11, W9, W10, GT
+0x3d8dfb8: CMP             W10, #0
+0x3d8dfbc: CSEL            W10, WZR, W11, LT
+0x3d8dfc0: STP             W10, W9, [X8,#0x18]
+0x3d8dfc4: LDR             X8, [X0]
+0x3d8dfc8: LDR             X2, [X8,#0x2A8]
+0x3d8dfcc: LDR             X1, [X8,#0x2B0]
+0x3d8dfd0: BR              X2

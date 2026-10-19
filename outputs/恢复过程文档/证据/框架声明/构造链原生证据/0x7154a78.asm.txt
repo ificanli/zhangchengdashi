@@ -1,0 +1,39 @@
+0x7154a78: STP             X30, X25, [SP,#var_40]!
+0x7154a7c: STP             X24, X23, [SP,#0x40+var_30]
+0x7154a80: STP             X22, X21, [SP,#0x40+var_20]
+0x7154a84: STP             X20, X19, [SP,#0x40+var_10]
+0x7154a88: ADRP            X25, #byte_900906F@PAGE
+0x7154a8c: ADRP            X24, #off_8B169E0@PAGE
+0x7154a90: ADRP            X23, #off_8B169E8@PAGE
+0x7154a94: LDRB            W8, [X25,#byte_900906F@PAGEOFF]
+0x7154a98: LDR             X24, [X24,#off_8B169E0@PAGEOFF]; qword_8CDF460
+0x7154a9c: LDR             X23, [X23,#off_8B169E8@PAGEOFF]; qword_8D168F0
+0x7154aa0: MOV             X20, X3
+0x7154aa4: MOV             W21, W2
+0x7154aa8: MOV             X22, X1
+0x7154aac: MOV             X19, X0
+0x7154ab0: TBNZ            W8, #0, loc_7154AD4
+0x7154ab4: ADRP            X0, #off_8B169E8@PAGE
+0x7154ab8: LDR             X0, [X0,#off_8B169E8@PAGEOFF]; qword_8D168F0 ; slot
+0x7154abc: BL              il2cpp_codegen_initialize_runtime_metadata
+0x7154ac0: ADRP            X0, #off_8B169E0@PAGE
+0x7154ac4: LDR             X0, [X0,#off_8B169E0@PAGEOFF]; qword_8CDF460 ; slot
+0x7154ac8: BL              il2cpp_codegen_initialize_runtime_metadata
+0x7154acc: MOV             W8, #1
+0x7154ad0: STRB            W8, [X25,#byte_900906F@PAGEOFF]
+0x7154ad4: MOV             X0, X19
+0x7154ad8: MOV             X1, X22
+0x7154adc: MOV             W2, W21
+0x7154ae0: MOV             X3, X20
+0x7154ae4: BL              GameFramework.AudioCompositeBase$$.ctor
+0x7154ae8: LDR             X0, [X24]
+0x7154aec: BL              unk_3C3D4C4
+0x7154af0: LDR             X1, [X23]
+0x7154af4: MOV             X20, X0
+0x7154af8: BL              System.Collections.Generic.Queue_object_$$.ctor
+0x7154afc: STR             X20, [X19,#0x20]
+0x7154b00: LDP             X20, X19, [SP,#0x40+var_10]
+0x7154b04: LDP             X22, X21, [SP,#0x40+var_20]
+0x7154b08: LDP             X24, X23, [SP,#0x40+var_30]
+0x7154b0c: LDP             X30, X25, [SP+0x40+var_40],#0x40
+0x7154b10: RET

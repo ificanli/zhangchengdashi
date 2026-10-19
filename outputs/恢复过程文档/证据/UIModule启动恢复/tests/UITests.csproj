@@ -1,0 +1,11 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup><OutputType>Exe</OutputType><TargetFramework>net10.0</TargetFramework><LangVersion>9.0</LangVersion><EnableDefaultCompileItems>false</EnableDefaultCompileItems><NoWarn>CS0169;CS0649;CS0414</NoWarn></PropertyGroup>
+  <ItemGroup>
+    <Compile Include="../source-before/UIModule.cs" Condition="'$(Baseline)'=='true'"/>
+    <Compile Include="../UIModule.candidate.cs" Condition="'$(Baseline)'!='true' and '$(Actual)'!='true'"/>
+    <Compile Include="../../../outputs/OccupyCityRecovered/Assets/Scripts/GFRunning/GameFramework/UIModule.cs" Condition="'$(Baseline)'!='true' and '$(Actual)'=='true'"/>
+    <Compile Include="../../../outputs/OccupyCityRecovered/Assets/Scripts/GFRunning/GameFramework/GameFrameModule.cs"/>
+    <Compile Include="Adapters.cs"/><Compile Include="Program.cs"/>
+    <Reference Include="Il2CppDummyDll"><HintPath>../../../outputs/OccupyCityRecovered/Library/ScriptAssemblies/Il2CppDummyDll.dll</HintPath></Reference>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,393 @@
+{
+  "stage": 42,
+  "reviewer": "game_launcher_restore_v2",
+  "status": "candidate-independent-review-pass-required-Utility-leaf-source-stable",
+  "candidateStateAtReview": "ready_for_integration",
+  "productionApplied": false,
+  "candidateBlockers": [],
+  "runtimeIntegrationBlockers": [],
+  "ownedFiles": [
+    {
+      "path": "Assets/Scripts/GFRunning/GameFramework/Fsm/Fsm.cs",
+      "sourceBeforeSha256": "1230eb58723a86613e7ad9ea1627cf5320bff2977f3531d6be66c4a8e8d77134",
+      "candidateSha256": "4d60f516bfef75de0011f16226c6dc6a36da604b3f7ac87d8fa064ee0cfc0a38",
+      "metaSha256": "20d6e3768469f220d6621135068e31a1529ec0bce44be7f0af9309f69f51533c",
+      "originalAttributesAndGuidProtected": true,
+      "onlyMappedBodiesAndThreeNativeCtorInitializations": true,
+      "methods": 26
+    },
+    {
+      "path": "Assets/Scripts/GFRunning/GameFramework/Fsm/FsmBase.cs",
+      "sourceBeforeSha256": "48c0516e30ffe434a3781757f34201986ad83486bd1ab6e5e2949e5ab8096eb9",
+      "candidateSha256": "ef3a82efb89f08879f2309139621284ed18def584b5beabdafc849c46be734ad",
+      "metaSha256": "d794ec4d4ce3f76bdee3fa653a9a68ba3aa3f5997bebe7dd976d5b0bd89ff922",
+      "originalAttributesAndGuidProtected": true,
+      "onlyMappedBodiesAndThreeNativeCtorInitializations": true,
+      "methods": 5
+    },
+    {
+      "path": "Assets/Scripts/GFRunning/GameFramework/Fsm/FsmManager.cs",
+      "sourceBeforeSha256": "b40f1406bb57592887d794b50fbaf5f59e97d69b12c6693dd5a8fbffda71cfec",
+      "candidateSha256": "d648fb2c55cc859b36eec9db17877405d822ac65a5abbda4d2496e3cfbb9b5af",
+      "metaSha256": "0c0f25d3dcce1754d10dd2b861753012a713f3bd74a3894deb2d73fce8d78f8e",
+      "originalAttributesAndGuidProtected": true,
+      "onlyMappedBodiesAndThreeNativeCtorInitializations": true,
+      "methods": 17
+    },
+    {
+      "path": "Assets/Scripts/GFRunning/GameFramework/Fsm/FsmState.cs",
+      "sourceBeforeSha256": "672a7e6d04c80225b338510dfe164138f3e53f7bb2f62258553588279c2dc102",
+      "candidateSha256": "fd60636ed75beffa1c85d594b97d73bb4ee09c03f29b687e14266c0d3f73d806",
+      "metaSha256": "a6a6dad8b068c9a334b38cac9192472959495c9c791ea6ebff4ada472291bea7",
+      "originalAttributesAndGuidProtected": true,
+      "onlyMappedBodiesAndThreeNativeCtorInitializations": true,
+      "methods": 12
+    },
+    {
+      "path": "Assets/Scripts/GFRunning/GameFramework/Procedure/ProcedureManager.cs",
+      "sourceBeforeSha256": "b833ff0cfa74c8254b7f463a9516c77c9a3655c8d58ea987d6403023ec05962e",
+      "candidateSha256": "9da25263f0e31fde86eed8f752c9a256ab6ea236f6e53106d8a612b37d30c925",
+      "metaSha256": "b451013c374d583840e7236e0553d7b57e1000fc61105ed0c9d5972a813049ea",
+      "originalAttributesAndGuidProtected": true,
+      "onlyMappedBodiesAndThreeNativeCtorInitializations": true,
+      "methods": 16
+    },
+    {
+      "path": "Assets/Scripts/GFRunning/GameFramework/Procedure/ProcedureBase.cs",
+      "sourceBeforeSha256": "2003ae2d7f3863dee1e947be1afe6a20c7ee3dbb1990af50f661549f91e22906",
+      "candidateSha256": "14213b47384fbed47826c44fe23fd855dc1cb109c2f79e14079da31efd5e0e31",
+      "metaSha256": "ad3c17ef202ca94f6ba1c06b762f22092544b0b528a0c685a9611ed1a6347a9c",
+      "originalAttributesAndGuidProtected": true,
+      "onlyMappedBodiesAndThreeNativeCtorInitializations": true,
+      "methods": 6
+    }
+  ],
+  "totalMappedMethods": 82,
+  "preservedNativeRetMethods": 8,
+  "ctorReview": [
+    "Fsm<T> base(name) before owner/state validation",
+    "FsmBase default delegates null; named ctor normalizes null only to string.Empty",
+    "FsmManager m_deleteFsm initializer precedes base ctor; dictionary and update list allocated after base"
+  ],
+  "nativeSamples": [
+    {
+      "token": "0x6006CAC",
+      "name": "GameFramework.Fsm.Fsm<object>$$.ctor",
+      "start": "0x52a8890",
+      "end": "0x52a8b00",
+      "codeSha256": "cd2e8f77712e5a84d87af9dce068ea6bc180ceb2f907e71db05f78fc47a924bb",
+      "asmSha256": "f6899976593d5d37b7e00ae1b4673569a087315a9a8405f1ca36ee14244fc149"
+    },
+    {
+      "token": "0x6006CB8",
+      "name": "GameFramework.Fsm.Fsm<object>$$Start",
+      "start": "0x52a8dbc",
+      "end": "0x52a8f20",
+      "codeSha256": "cad485c14a0d8215c05123462eeb47dd51389c4678d2bf9606131b1c3ee4c388",
+      "asmSha256": "50abf714cb23194b61615b11db042c4d727faf6f0bb14665519e4c9714f18c9d"
+    },
+    {
+      "token": "0x6006CC5",
+      "name": "GameFramework.Fsm.Fsm<object>$$ChangeState",
+      "start": "0x52a9308",
+      "end": "0x52a9480",
+      "codeSha256": "b9d01c073603da513d97e834dc2a7d8c88c281019d50d7c97e90a32599ecf28a",
+      "asmSha256": "1c2ed0aceafcc284e210b348d945f9373a80cbaf45181066c9d2606dba3b2cf8"
+    },
+    {
+      "token": "0x6006CB6",
+      "name": "GameFramework.Fsm.Fsm<object>$$Shutdown",
+      "start": "0x52a8c18",
+      "end": "0x52a8dbc",
+      "codeSha256": "f1ea950d2ca8cd32d8c4ff7c75638b99a0de17f13dbcd76e57f819553917730e",
+      "asmSha256": "42f1106bb1f70714c97549a0bce0135429f51d139410e44def94de6087e7e085"
+    },
+    {
+      "token": "0x6006CC4",
+      "name": "GameFramework.Fsm.Fsm<object>$$ChangeState<object>",
+      "start": "0x4732868",
+      "end": "0x47328f8",
+      "codeSha256": "7a6909b8d9d162cc03e6e3f96f5612203ba82a57f7ede3d09f18b182f359f9be",
+      "asmSha256": "61c96205dc6987bc4bf338b38148bc47667a1c916eaf22e1b9a73f652b96ca64"
+    },
+    {
+      "token": "0x6006CC6",
+      "name": "GameFramework.Fsm.FsmBase$$.ctor",
+      "start": "0x7296b44",
+      "end": "0x7296b4c",
+      "codeSha256": "ef121b03b5257bfa93e19359e50f3de0ce9adcc2d0261ba0af11196d0bea3a4c",
+      "asmSha256": "f77c585675c7a3226ec209c34041e806eb553c543ef9d96bcc179b6fb4a859fc"
+    },
+    {
+      "token": "0x6006CC7",
+      "name": "GameFramework.Fsm.FsmBase$$.ctor",
+      "start": "0x7296b4c",
+      "end": "0x7296bb8",
+      "codeSha256": "c462a2c2093aa2bfc186007593fae6d4622f3d80fd8f9d91742aef8f46cf7fea",
+      "asmSha256": "6c3d9bf5a4a5da855c0638a3063fd0bd8c242d095e67aca60977254cb1c9a302"
+    },
+    {
+      "token": "0x6006CD7",
+      "name": "GameFramework.Fsm.FsmManager$$.ctor",
+      "start": "0x7296bd0",
+      "end": "0x7296cb0",
+      "codeSha256": "1d4a9cefff8fdea1712525530fa9b68b5f26e639caafac7ff2a50be031db17f8",
+      "asmSha256": "53f3d6e7173c81cdabd3ca9d20fb8f7c96da1ff7283cbfc15ec498ac6a13c677"
+    },
+    {
+      "token": "0x6006CDA",
+      "name": "GameFramework.Fsm.FsmManager$$Update",
+      "start": "0x7296d08",
+      "end": "0x7296dd0",
+      "codeSha256": "f3779af7e3ffee294fd1a9eb1e5444d2133d5578f28c89f2c412c360a15c1405",
+      "asmSha256": "f060b06682f81ae70967a203cd69f46adc33f0020f1db7d9089b97b796ebf02a"
+    },
+    {
+      "token": "0x6006A29",
+      "name": "GameFramework.Procedure.ProcedureManager$$Initialize",
+      "start": "0x727aa18",
+      "end": "0x727aa3c",
+      "codeSha256": "0caa18d830d64bf617696624b9211bb03e010b7f08895c2e35d33dffeb07865b",
+      "asmSha256": "90e00f7e053fa69bf9fd2a12a34f33a079e4fc67da627f63cb30902885b62426"
+    },
+    {
+      "token": "0x6006A2A",
+      "name": "GameFramework.Procedure.ProcedureManager$$Register",
+      "start": "0x727aa3c",
+      "end": "0x727ab98",
+      "codeSha256": "0ade16369d0c9e2811f826a8932e8f9d176c858b6b9e1c9cf5e502d3255fd7c1",
+      "asmSha256": "a296aac9d68e427b87ae6efee01037290fa56ee06138620b1111ea922a2c1e47"
+    },
+    {
+      "token": "0x6006A30",
+      "name": "GameFramework.Procedure.ProcedureManager$$Shutdown",
+      "start": "0x727adc4",
+      "end": "0x727ae9c",
+      "codeSha256": "bfbbc1d26e9a5217f20002badf5b9ceb9dec4080ae9235148e7c42df53caca09",
+      "asmSha256": "fa7a8306ac13a8348b3bb93680a8a59e15bc8db16de0dbbafc7fa87c58794429"
+    }
+  ],
+  "nativeOriginalExecutions": {
+    "passed": 43,
+    "cases": 43,
+    "boundaries": [
+      "IL2CPP metadata resolution / object allocation / type reflection",
+      "System Dictionary operations and enumerator payload",
+      "System List index access (count reads and index increments execute natively)",
+      "State virtual callbacks record actual ABI arguments, field visibility and optional external mutation",
+      "FsmBase constructor stores name at native offset; its implementation is not counted as tested",
+      "CallbackAbort stops emulation at the callback boundary; C++/managed exception unwinding is not emulated"
+    ]
+  },
+  "independentTests": {
+    "baseline": {
+      "passed": 0,
+      "failed": 52,
+      "log": "work\\stage42-independent-review\\validation\\build\\baseline\\run.log",
+      "logSha256": "d5949c109994d6ac4be15a8874c573e152531a36ab65761c29fda4d40bea1850"
+    },
+    "candidate": {
+      "passed": 52,
+      "failed": 0,
+      "log": "work\\stage42-independent-review\\validation\\build\\candidate\\run.log",
+      "logSha256": "b342dc953bdb80f1fb6b2cdc7c97c5ba6a117dcc3f025ec62d3f5156a79436d6"
+    }
+  },
+  "fullCandidateGFCompile": {
+    "exitCode": 0,
+    "errors": 0,
+    "result": "work/stage42-independent-review/validation/unity-csc/result.json"
+  },
+  "actualDependencyProbe": {
+    "passed": true,
+    "fullProductionAssembly": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\validation\\unity-csc\\GFRunning.Stage42.dll",
+    "fullProductionAssemblySha256": "59D6986D84F4B6D4C5FDF4233080AD37E30D74334CA6D526856C37C232ACA1BE",
+    "utilitySource": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\outputs\\OccupyCityRecovered\\Assets\\Scripts\\GFRunning\\GameFramework\\Utility.cs",
+    "utilitySourceSha256": "136E8C6F72A38ED6281B046D8769B93A6B310289A7240F92CD4D5B40E606817F",
+    "actualCurrentUtilityResult": null,
+    "actualCreateFsmException": "System.ArgumentNullException",
+    "actualExceptionParamName": "key",
+    "noBoundaryAdapters": true,
+    "unityStarted": false,
+    "runtimeAcceptance": false,
+    "conclusion": "Current production Utility.Text.GetFullName remains empty. Actual full GFRunning candidate cannot create FSMs until this out-of-scope dependency is restored."
+  },
+  "reviewedSemantics": [
+    "Initialize writes only own ready before callback; Procedure Initialize does not register/start",
+    "Procedure Register stores acquired FsmManager then actual generic CreateFsm<IProcedureManager>(this,procedures)",
+    "Target lookup precedes Leave; Leave failure preserves current/time; Enter failure preserves new state/zero time",
+    "Reentrant enter and leave remain synchronous; original outer target commit preserved",
+    "FsmManager uses live list iteration; remove-current skips shifted next; appended item can update same frame",
+    "Shutdown preserves original partial state on callback exceptions; no rollback/exception swallowing"
+  ],
+  "productionSourceWrites": 0,
+  "UnityOperations": 0,
+  "runtimeAcceptance": false,
+  "reviewScript": "work/stage42-independent-review/review42.py",
+  "requiredUtilityLeaf": {
+    "stage": "42-required-Utility-leaf",
+    "status": "stable-two-original-helpers-applied-and-verified",
+    "stable": true,
+    "source": "Assets/Scripts/GFRunning/GameFramework/Utility.cs",
+    "sourceBeforeSha256": "136e8c6f72a38ed6281b046d8769b93a6b310289a7240f92cd4d5b40e606817f",
+    "sourceSha256": "c05441f64bafe988ce17fe718226f248f5bd6bbcae78991c39ae0f96753d2d61",
+    "metaSha256": "1ffe6ebe33ebdaa60c90352f3436234bf8252e550748da0bca8edeba83e78de3",
+    "tokens": [
+      "0x0600603C",
+      "0x0600603D"
+    ],
+    "nativeRanges": [
+      {
+        "start": "0x511D668",
+        "end": "0x511D6DC",
+        "bytes": 116
+      },
+      {
+        "start": "0x71E37C0",
+        "end": "0x71E3854",
+        "bytes": 148
+      }
+    ],
+    "sourceScope": {
+      "onlyTwoMethodBodies": true,
+      "allOtherRawBytesUnchanged": true,
+      "AssemblyUtilityBodiesProtected": true,
+      "originalAttributesPreserved": true,
+      "metaUnchanged": true
+    },
+    "tests": {
+      "scenarios": 9,
+      "checks": 43,
+      "failures": 0,
+      "baselineScenarios": 9,
+      "baselineFailures": 9
+    },
+    "native": {
+      "passed": 27,
+      "codeHashes": {
+        "0x511d668": "2b5716f4e85c23cc02a7e2c6bc616b444ed27f16c88f2ee877874806ad8becce",
+        "0x71e37c0": "671d05a445702feeed6b3e5338404086c0087db0fa9eaa5d139989f0e7bbece7"
+      },
+      "boundaries": [
+        "System.Type.FullName virtual accessor, Type.GetTypeFromHandle, string.IsNullOrEmpty and string.Format are runtime boundary adapters",
+        "The original helper machine branches, generic dispatch, exact returned reference and ordering execute in Unicorn",
+        "Getter error stops at the callback boundary; managed exception unwinding is verified by C# fixtures"
+      ]
+    },
+    "ILChecks": {
+      "generic_typeof_handle_before_typed_overload": true,
+      "typed_original_virtual_FullName_before_name_branch": true,
+      "exact_original_format_and_two_object_overload": true,
+      "empty_branch_returns_original_FullName_local": true,
+      "no_added_catch_guard_or_side_effect_store": true
+    },
+    "fullGFCompile": {
+      "mode": "actual",
+      "assembly": "GFRunning",
+      "exitCode": 0,
+      "errorCount": 0,
+      "warningCount": 5824,
+      "errors": [],
+      "sourceRspSha256": "397442f99fe97eee26f5b4d84e8e88d2bd23bbec7b1ca252c6e1b5cd1ca1fd51",
+      "rsp": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\utility\\compile\\actual\\GFRunning.Stage42.rsp",
+      "assemblyPath": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\utility\\compile\\actual\\GFRunning.Stage42.dll",
+      "assemblySha256": "0b13a7b962c1d1f740bfbb8ef0a9a1a3bdd293036e31b0f50445b9f6d043294a",
+      "sources": [
+        {
+          "path": "Assets/Scripts/GFRunning/GameFramework/Fsm/Fsm.cs",
+          "source": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-42-fsm\\candidate\\Assets\\Scripts\\GFRunning\\GameFramework\\Fsm\\Fsm.cs",
+          "sha256": "4d60f516bfef75de0011f16226c6dc6a36da604b3f7ac87d8fa064ee0cfc0a38"
+        },
+        {
+          "path": "Assets/Scripts/GFRunning/GameFramework/Fsm/FsmBase.cs",
+          "source": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-42-fsm\\candidate\\Assets\\Scripts\\GFRunning\\GameFramework\\Fsm\\FsmBase.cs",
+          "sha256": "ef3a82efb89f08879f2309139621284ed18def584b5beabdafc849c46be734ad"
+        },
+        {
+          "path": "Assets/Scripts/GFRunning/GameFramework/Fsm/FsmManager.cs",
+          "source": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-42-fsm\\candidate\\Assets\\Scripts\\GFRunning\\GameFramework\\Fsm\\FsmManager.cs",
+          "sha256": "d648fb2c55cc859b36eec9db17877405d822ac65a5abbda4d2496e3cfbb9b5af"
+        },
+        {
+          "path": "Assets/Scripts/GFRunning/GameFramework/Fsm/FsmState.cs",
+          "source": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-42-fsm\\candidate\\Assets\\Scripts\\GFRunning\\GameFramework\\Fsm\\FsmState.cs",
+          "sha256": "fd60636ed75beffa1c85d594b97d73bb4ee09c03f29b687e14266c0d3f73d806"
+        },
+        {
+          "path": "Assets/Scripts/GFRunning/GameFramework/Procedure/ProcedureBase.cs",
+          "source": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-42-fsm\\candidate\\Assets\\Scripts\\GFRunning\\GameFramework\\Procedure\\ProcedureBase.cs",
+          "sha256": "14213b47384fbed47826c44fe23fd855dc1cb109c2f79e14079da31efd5e0e31"
+        },
+        {
+          "path": "Assets/Scripts/GFRunning/GameFramework/Procedure/ProcedureManager.cs",
+          "source": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-42-fsm\\candidate\\Assets\\Scripts\\GFRunning\\GameFramework\\Procedure\\ProcedureManager.cs",
+          "sha256": "9da25263f0e31fde86eed8f752c9a256ab6ea236f6e53106d8a612b37d30c925"
+        },
+        {
+          "path": "Assets/Scripts/GFRunning/GameFramework/Utility.cs",
+          "source": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\outputs\\OccupyCityRecovered\\Assets\\Scripts\\GFRunning\\GameFramework\\Utility.cs",
+          "sha256": "c05441f64bafe988ce17fe718226f248f5bd6bbcae78991c39ae0f96753d2d61"
+        }
+      ],
+      "UnityStarted": false,
+      "experimentDllInstalled": false
+    },
+    "fullGFActualUtilityProbe": {
+      "mode": "actual",
+      "passed": true,
+      "checks": 16,
+      "fullProductionAssembly": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage42-independent-review\\utility\\compile\\actual\\GFRunning.Stage42.dll",
+      "assemblySha256": "0b13a7b962c1d1f740bfbb8ef0a9a1a3bdd293036e31b0f50445b9f6d043294a",
+      "noBoundaryAdapters": true,
+      "testStates": "Two dynamically defined subclasses inherit actual ProcedureBase/FsmState bodies; no FSM or Utility logic substituted",
+      "actualChain": "Real Utility -> actual GameFrameEntry.GetModule<FsmManager> -> ProcedureManager.Register -> CreateFsm<IProcedureManager> -> original constructors -> StartProcedure/Update/ChangeState/Shutdown",
+      "UnityStarted": false,
+      "visibleUIAccepted": false,
+      "coreGameplayAccepted": false
+    },
+    "compileScope": "Full GFRunning production sources with six stage42 candidates substituted and actual restored Utility.cs. Stage42 integration itself remains root-owned.",
+    "UnityOperations": 0,
+    "experimentDllInstalled": false,
+    "runtimeAcceptance": false,
+    "coreGameplayAccepted": false,
+    "report": "outputs/恢复过程文档/42A-原流程独立复核与命名依赖扩展.md",
+    "evidence": "outputs/恢复过程文档/证据/Stage42独立复核与Utility叶子"
+  },
+  "remainingLimits": [
+    "No Unity PlayMode/runtime gameplay acceptance",
+    "GameFrameworkException(string) diagnostic Message is still an external stub",
+    "CLog.LogProcedure output and private reflection ProcedureTypeAttribute ctor are external known gaps; actual Register/Start/Update/Change/Shutdown probe passes without their restoration"
+  ],
+  "stage42ProductionStateObservedAfterHelper": [
+    {
+      "path": "Assets/Scripts/GFRunning/GameFramework/Fsm/Fsm.cs",
+      "sha256": "4d60f516bfef75de0011f16226c6dc6a36da604b3f7ac87d8fa064ee0cfc0a38",
+      "state": "candidate-applied"
+    },
+    {
+      "path": "Assets/Scripts/GFRunning/GameFramework/Fsm/FsmBase.cs",
+      "sha256": "ef3a82efb89f08879f2309139621284ed18def584b5beabdafc849c46be734ad",
+      "state": "candidate-applied"
+    },
+    {
+      "path": "Assets/Scripts/GFRunning/GameFramework/Fsm/FsmManager.cs",
+      "sha256": "d648fb2c55cc859b36eec9db17877405d822ac65a5abbda4d2496e3cfbb9b5af",
+      "state": "candidate-applied"
+    },
+    {
+      "path": "Assets/Scripts/GFRunning/GameFramework/Fsm/FsmState.cs",
+      "sha256": "fd60636ed75beffa1c85d594b97d73bb4ee09c03f29b687e14266c0d3f73d806",
+      "state": "candidate-applied"
+    },
+    {
+      "path": "Assets/Scripts/GFRunning/GameFramework/Procedure/ProcedureManager.cs",
+      "sha256": "9da25263f0e31fde86eed8f752c9a256ab6ea236f6e53106d8a612b37d30c925",
+      "state": "candidate-applied"
+    },
+    {
+      "path": "Assets/Scripts/GFRunning/GameFramework/Procedure/ProcedureBase.cs",
+      "sha256": "14213b47384fbed47826c44fe23fd855dc1cb109c2f79e14079da31efd5e0e31",
+      "state": "candidate-applied"
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+0x6af4198: STP             X30, X21, [SP,#var_20]!
+0x6af419c: STP             X20, X19, [SP,#0x20+var_10]
+0x6af41a0: ADRP            X21, #byte_9007B6E@PAGE
+0x6af41a4: LDRB            W8, [X21,#byte_9007B6E@PAGEOFF]
+0x6af41a8: MOV             X20, X1
+0x6af41ac: MOV             X19, X0
+0x6af41b0: TBNZ            W8, #0, loc_6AF41D4
+0x6af41b4: ADRP            X0, #off_8AFC5A8@PAGE
+0x6af41b8: LDR             X0, [X0,#off_8AFC5A8@PAGEOFF]; off_8CE6138 ; slot
+0x6af41bc: BL              il2cpp_codegen_initialize_runtime_metadata
+0x6af41c0: ADRP            X0, #off_8AD8FC8@PAGE
+0x6af41c4: LDR             X0, [X0,#off_8AD8FC8@PAGEOFF]; off_8CE9998 ; slot
+0x6af41c8: BL              il2cpp_codegen_initialize_runtime_metadata
+0x6af41cc: MOV             W8, #1
+0x6af41d0: STRB            W8, [X21,#byte_9007B6E@PAGEOFF]
+0x6af41d4: LDR             X8, [X19,#0x30]
+0x6af41d8: CBZ             X8, loc_6AF41E8
+0x6af41dc: LDP             X20, X19, [SP,#0x20+var_10]
+0x6af41e0: LDP             X30, X21, [SP+0x20+var_20],#0x20
+0x6af41e4: RET
+0x6af41e8: LDR             X0, [X19,#0x38]
+0x6af41ec: MOV             X1, XZR
+0x6af41f0: BL              System.String$$IsNullOrEmpty
+0x6af41f4: TBZ             W0, #0, loc_6AF4210
+0x6af41f8: LDR             X8, [X19]
+0x6af41fc: MOV             X0, X19
+0x6af4200: LDP             X9, X1, [X8,#0x1C8]
+0x6af4204: BLR             X9
+0x6af4208: STR             X0, [X19,#0x38]
+0x6af420c: B               loc_6AF4214
+0x6af4210: LDR             X0, [X19,#0x38]
+0x6af4214: MOV             X1, XZR
+0x6af4218: BL              System.String$$IsNullOrEmpty
+0x6af421c: TBZ             W0, #0, loc_6AF424C
+0x6af4220: LDR             X8, [X20,#0x20]
+0x6af4224: LDR             X8, [X8,#0xC0]
+0x6af4228: LDR             X0, [X8,#0x40]
+0x6af422c: BL              System.Activator$$CreateInstance_object_
+0x6af4230: STR             X0, [X19,#0x30]
+0x6af4234: CBZ             X0, loc_6AF42C4
+0x6af4238: LDR             X8, [X0]
+0x6af423c: LDP             X9, X1, [X8,#0x188]
+0x6af4240: BLR             X9
+0x6af4244: LDR             X0, [X19,#0x30]
+0x6af4248: B               loc_6AF42AC
+0x6af424c: ADRP            X8, #off_8AFC5A8@PAGE
+0x6af4250: LDR             X8, [X8,#off_8AFC5A8@PAGEOFF]; off_8CE6138
+0x6af4254: LDR             X21, [X19,#0x38]
+0x6af4258: LDR             X0, [X8]; klass
+0x6af425c: LDR             W8, [X0,#0xE0]
+0x6af4260: CBNZ            W8, loc_6AF4268
+0x6af4264: BL              il2cpp_codegen_runtime_class_init
+0x6af4268: MOV             X0, X21
+0x6af426c: MOV             X1, XZR
+0x6af4270: BL              L_Tools.DataCompressTools$$GZipDecompressString
+0x6af4274: ADRP            X8, #off_8AD8FC8@PAGE
+0x6af4278: LDR             X8, [X8,#off_8AD8FC8@PAGEOFF]; off_8CE9998
+0x6af427c: MOV             X21, X0
+0x6af4280: LDR             X8, [X8]
+0x6af4284: LDR             W9, [X8,#0xE0]
+0x6af4288: CBNZ            W9, loc_6AF4294
+0x6af428c: MOV             X0, X8; klass
+0x6af4290: BL              il2cpp_codegen_runtime_class_init
+0x6af4294: LDR             X8, [X20,#0x20]
+0x6af4298: MOV             X0, X21
+0x6af429c: LDR             X8, [X8,#0xC0]
+0x6af42a0: LDR             X1, [X8,#0x50]
+0x6af42a4: BL              Newtonsoft.Json.JsonConvert$$DeserializeObject_object_
+0x6af42a8: STR             X0, [X19,#0x30]
+0x6af42ac: CBZ             X0, loc_6AF42C4
+0x6af42b0: LDR             X8, [X0]
+0x6af42b4: LDP             X20, X19, [SP,#0x20+var_10]
+0x6af42b8: LDP             X2, X1, [X8,#0x178]
+0x6af42bc: LDP             X30, X21, [SP+0x20+var_20],#0x20
+0x6af42c0: BR              X2
+0x6af42c4: BL              il2cpp_codegen_raise_null_reference_exception

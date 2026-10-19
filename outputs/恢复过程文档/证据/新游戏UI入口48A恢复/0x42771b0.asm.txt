@@ -1,0 +1,511 @@
+0x42771b0: ff8302d1 sub      sp, sp, #0xa0
+0x42771b4: fe3300f9 str      x30, [sp, #0x60]
+0x42771b8: f85f07a9 stp      x24, x23, [sp, #0x70]
+0x42771bc: f65708a9 stp      x22, x21, [sp, #0x80]
+0x42771c0: f44f09a9 stp      x20, x19, [sp, #0x90]
+0x42771c4: 546c0290 adrp     x20, #0x8fff000
+0x42771c8: 88867f39 ldrb     w8, [x20, #0xfe1]
+0x42771cc: f30300aa mov      x19, x0
+0x42771d0: 280a0037 tbnz     w8, #0, #0x4277314
+0x42771d4: a04202d0 adrp     x0, #0x8acd000
+0x42771d8: 002046f9 ldr      x0, [x0, #0xc40] // Method$AssetsModule.AssetsManager.LoadAssetAsync<GameObject>()
+0x42771dc: 2918e797 bl       #0x3c3d280
+0x42771e0: a0430290 adrp     x0, #0x8aeb000
+0x42771e4: 00b443f9 ldr      x0, [x0, #0x768] // Method$System.Runtime.CompilerServices.AsyncTaskMethodBuilder<UIPanel>.AwaitUnsafeOnCompleted<UniTask.Awaiter<GameObject>, UIManager.<LoadPanel>d__11>()
+0x42771e8: 2618e797 bl       #0x3c3d280
+0x42771ec: a0430290 adrp     x0, #0x8aeb000
+0x42771f0: 00b843f9 ldr      x0, [x0, #0x770] // Method$System.Runtime.CompilerServices.AsyncTaskMethodBuilder<UIPanel>.SetResult()
+0x42771f4: 2318e797 bl       #0x3c3d280
+0x42771f8: a0430290 adrp     x0, #0x8aeb000
+0x42771fc: 006843f9 ldr      x0, [x0, #0x6d0] // System.Runtime.CompilerServices.AsyncTaskMethodBuilder<UIPanel>_TypeInfo
+0x4277200: 2018e797 bl       #0x3c3d280
+0x4277204: a04202d0 adrp     x0, #0x8acd000
+0x4277208: 002846f9 ldr      x0, [x0, #0xc50] // Method$Cysharp.Threading.Tasks.UniTask.Awaiter<GameObject>.GetResult()
+0x427720c: 1d18e797 bl       #0x3c3d280
+0x4277210: a04202d0 adrp     x0, #0x8acd000
+0x4277214: 002c46f9 ldr      x0, [x0, #0xc58] // Method$Cysharp.Threading.Tasks.UniTask.Awaiter<GameObject>.get_IsCompleted()
+0x4277218: 1a18e797 bl       #0x3c3d280
+0x427721c: a0430290 adrp     x0, #0x8aeb000
+0x4277220: 006043f9 ldr      x0, [x0, #0x6c0] // Method$UnityEngine.Component.TryGetComponent<Canvas>()
+0x4277224: 1718e797 bl       #0x3c3d280
+0x4277228: a04202b0 adrp     x0, #0x8acc000
+0x427722c: 006444f9 ldr      x0, [x0, #0x8c8] // UnityEngine.Debug_TypeInfo
+0x4277230: 1418e797 bl       #0x3c3d280
+0x4277234: a0430290 adrp     x0, #0x8aeb000
+0x4277238: 006443f9 ldr      x0, [x0, #0x6c8] // Method$System.Collections.Generic.Dictionary<string, UIPanel>.Add()
+0x427723c: 1118e797 bl       #0x3c3d280
+0x4277240: a0430290 adrp     x0, #0x8aeb000
+0x4277244: 005843f9 ldr      x0, [x0, #0x6b0] // Method$System.Collections.Generic.Dictionary<string, UIPanel>.TryGetValue()
+0x4277248: 0e18e797 bl       #0x3c3d280
+0x427724c: 404302f0 adrp     x0, #0x8ae2000
+0x4277250: 004c42f9 ldr      x0, [x0, #0x498] // Method$UnityEngine.GameObject.GetComponent<UIPanel>()
+0x4277254: 0b18e797 bl       #0x3c3d280
+0x4277258: a0430290 adrp     x0, #0x8aeb000
+0x427725c: 00bc43f9 ldr      x0, [x0, #0x778] // Method$System.Collections.Generic.List<PanelConfig>.Find()
+0x4277260: 0818e797 bl       #0x3c3d280
+0x4277264: a04202d0 adrp     x0, #0x8acd000
+0x4277268: 003846f9 ldr      x0, [x0, #0xc70] // Method$ToolModule.ManagerBase<AssetsManager>.get_Instance()
+0x427726c: 0518e797 bl       #0x3c3d280
+0x4277270: a04202f0 adrp     x0, #0x8ace000
+0x4277274: 00f847f9 ldr      x0, [x0, #0xff0] // Method$ToolModule.ManagerBase<CameraManager>.get_Instance()
+0x4277278: 0218e797 bl       #0x3c3d280
+0x427727c: a04202f0 adrp     x0, #0x8ace000
+0x4277280: 007c40f9 ldr      x0, [x0, #0xf8] // Method$ToolModule.ManagerBase<DataManager>.get_Instance()
+0x4277284: ff17e797 bl       #0x3c3d280
+0x4277288: a04202b0 adrp     x0, #0x8acc000
+0x427728c: 005446f9 ldr      x0, [x0, #0xca8] // Method$UnityEngine.Object.Instantiate<GameObject>()
+0x4277290: fc17e797 bl       #0x3c3d280
+0x4277294: a04202b0 adrp     x0, #0x8acc000
+0x4277298: 006844f9 ldr      x0, [x0, #0x8d0] // UnityEngine.Object_TypeInfo
+0x427729c: f917e797 bl       #0x3c3d280
+0x42772a0: a0430290 adrp     x0, #0x8aeb000
+0x42772a4: 00c043f9 ldr      x0, [x0, #0x780] // System.Predicate<PanelConfig>_TypeInfo
+0x42772a8: f617e797 bl       #0x3c3d280
+0x42772ac: a04202d0 adrp     x0, #0x8acd000
+0x42772b0: 003c42f9 ldr      x0, [x0, #0x478] // string_TypeInfo
+0x42772b4: f317e797 bl       #0x3c3d280
+0x42772b8: a0430290 adrp     x0, #0x8aeb000
+0x42772bc: 00c443f9 ldr      x0, [x0, #0x788] // Method$UIFramework.UIManager.<>c__DisplayClass11_0.<LoadPanel>b__0()
+0x42772c0: f017e797 bl       #0x3c3d280
+0x42772c4: a0430290 adrp     x0, #0x8aeb000
+0x42772c8: 00c843f9 ldr      x0, [x0, #0x790] // UIFramework.UIManager.<>c__DisplayClass11_0_TypeInfo
+0x42772cc: ed17e797 bl       #0x3c3d280
+0x42772d0: a04202d0 adrp     x0, #0x8acd000
+0x42772d4: 003c46f9 ldr      x0, [x0, #0xc78] // Method$Cysharp.Threading.Tasks.UniTask<GameObject>.GetAwaiter()
+0x42772d8: ea17e797 bl       #0x3c3d280
+0x42772dc: a0430290 adrp     x0, #0x8aeb000
+0x42772e0: 00cc43f9 ldr      x0, [x0, #0x798] // UIManager.GetPanel()==> 
+0x42772e4: e717e797 bl       #0x3c3d280
+0x42772e8: a0430290 adrp     x0, #0x8aeb000
+0x42772ec: 00d043f9 ldr      x0, [x0, #0x7a0] // 预制体上,没有挂载对应的Panel脚本
+0x42772f0: e417e797 bl       #0x3c3d280
+0x42772f4: a0430290 adrp     x0, #0x8aeb000
+0x42772f8: 00d443f9 ldr      x0, [x0, #0x7a8] // 这个页面没有在PanelConfig表中配置，必须要配置=>
+0x42772fc: e117e797 bl       #0x3c3d280
+0x4277300: 20430290 adrp     x0, #0x8adb000
+0x4277304: 005441f9 ldr      x0, [x0, #0x2a8] // (Clone)
+0x4277308: de17e797 bl       #0x3c3d280
+0x427730c: 28008052 mov      w8, #1
+0x4277310: 88863f39 strb     w8, [x20, #0xfe1]
+0x4277314: ff3700f9 str      xzr, [sp, #0x68]
+0x4277318: ff7f04a9 stp      xzr, xzr, [sp, #0x40]
+0x427731c: ff2b00f9 str      xzr, [sp, #0x50]
+0x4277320: ff7f02a9 stp      xzr, xzr, [sp, #0x20]
+0x4277324: ff1b00f9 str      xzr, [sp, #0x30]
+0x4277328: ff0f00f9 str      xzr, [sp, #0x18]
+0x427732c: b7430290 adrp     x23, #0x8aeb000
+0x4277330: 680240b9 ldr      w8, [x19]
+0x4277334: 781640f9 ldr      x24, [x19, #0x28]
+0x4277338: f76a43f9 ldr      x23, [x23, #0x6d0] // System.Runtime.CompilerServices.AsyncTaskMethodBuilder<UIPanel>_TypeInfo
+0x427733c: 48060034 cbz      w8, #0x4277404
+0x4277340: a84202d0 adrp     x8, #0x8acd000
+0x4277344: 083946f9 ldr      x8, [x8, #0xc70] // Method$ToolModule.ManagerBase<AssetsManager>.get_Instance()
+0x4277348: 000140f9 ldr      x0, [x8]
+0x427734c: 45045c94 bl       #0x5978460 // ToolModule.ManagerBase<object>$$get_Instance
+0x4277350: 802600b4 cbz      x0, #0x4277820
+0x4277354: a84202d0 adrp     x8, #0x8acd000
+0x4277358: 082146f9 ldr      x8, [x8, #0xc40] // Method$AssetsModule.AssetsManager.LoadAssetAsync<GameObject>()
+0x427735c: 611240f9 ldr      x1, [x19, #0x20]
+0x4277360: 020140f9 ldr      x2, [x8]
+0x4277364: e8030091 mov      x8, sp
+0x4277368: cb611f94 bl       #0x4a4fa94 // AssetsModule.AssetsManager$$LoadAssetAsync<object>
+0x427736c: a84202d0 adrp     x8, #0x8acd000
+0x4277370: 083d46f9 ldr      x8, [x8, #0xc78] // Method$Cysharp.Threading.Tasks.UniTask<GameObject>.GetAwaiter()
+0x4277374: e003c03d ldr      q0, [sp]
+0x4277378: e90b40f9 ldr      x9, [sp, #0x10]
+0x427737c: 080140f9 ldr      x8, [x8]
+0x4277380: e00b803d str      q0, [sp, #0x20]
+0x4277384: e91b00f9 str      x9, [sp, #0x30]
+0x4277388: 001140f9 ldr      x0, [x8, #0x20]
+0x427738c: 08d44439 ldrb     w8, [x0, #0x135]
+0x4277390: 48000037 tbnz     w8, #0, #0x4277398
+0x4277394: 0364e797 bl       #0x3c503a0
+0x4277398: a84202d0 adrp     x8, #0x8acd000
+0x427739c: 082d46f9 ldr      x8, [x8, #0xc58] // Method$Cysharp.Threading.Tasks.UniTask.Awaiter<GameObject>.get_IsCompleted()
+0x42773a0: e00bc03d ldr      q0, [sp, #0x20]
+0x42773a4: e91b40f9 ldr      x9, [sp, #0x30]
+0x42773a8: 010140f9 ldr      x1, [x8]
+0x42773ac: e013803d str      q0, [sp, #0x40]
+0x42773b0: e92b00f9 str      x9, [sp, #0x50]
+0x42773b4: e0030191 add      x0, sp, #0x40
+0x42773b8: 37e8ea97 bl       #0x3d31494
+0x42773bc: 40030037 tbnz     w0, #0, #0x4277424
+0x42773c0: 7f0200b9 str      wzr, [x19]
+0x42773c4: e82b40f9 ldr      x8, [sp, #0x50]
+0x42773c8: e013c03d ldr      q0, [sp, #0x40]
+0x42773cc: 682200f9 str      x8, [x19, #0x40]
+0x42773d0: 600e803d str      q0, [x19, #0x30]
+0x42773d4: e00240f9 ldr      x0, [x23]
+0x42773d8: 08e040b9 ldr      w8, [x0, #0xe0]
+0x42773dc: 48000035 cbnz     w8, #0x42773e4
+0x42773e0: f417e797 bl       #0x3c3d3b0
+0x42773e4: a8430290 adrp     x8, #0x8aeb000
+0x42773e8: 08b543f9 ldr      x8, [x8, #0x768] // Method$System.Runtime.CompilerServices.AsyncTaskMethodBuilder<UIPanel>.AwaitUnsafeOnCompleted<UniTask.Awaiter<GameObject>, UIManager.<LoadPanel>d__11>()
+0x42773ec: 60220091 add      x0, x19, #8
+0x42773f0: 030140f9 ldr      x3, [x8]
+0x42773f4: e1030191 add      x1, sp, #0x40
+0x42773f8: e20313aa mov      x2, x19
+0x42773fc: a31d1294 bl       #0x46fea88 // System.Runtime.CompilerServices.AsyncTaskMethodBuilder<object>$$AwaitUnsafeOnCompleted<UniTask.Awaiter<object>, UIManager.<LoadPanel>d__11>
+0x4277400: 00010014 b        #0x4277800
+0x4277404: 682240f9 ldr      x8, [x19, #0x40]
+0x4277408: 600ec03d ldr      q0, [x19, #0x30]
+0x427740c: 09008012 mov      w9, #-1
+0x4277410: e82b00f9 str      x8, [sp, #0x50]
+0x4277414: e013803d str      q0, [sp, #0x40]
+0x4277418: 7ffe03a9 stp      xzr, xzr, [x19, #0x38]
+0x427741c: 7f1a00f9 str      xzr, [x19, #0x30]
+0x4277420: 690200b9 str      w9, [x19]
+0x4277424: f42340f9 ldr      x20, [sp, #0x40]
+0x4277428: f40300b4 cbz      x20, #0x42774a4
+0x427742c: a84202d0 adrp     x8, #0x8acd000
+0x4277430: 082946f9 ldr      x8, [x8, #0xc50] // Method$Cysharp.Threading.Tasks.UniTask.Awaiter<GameObject>.GetResult()
+0x4277434: f5a34079 ldrh     w21, [sp, #0x50]
+0x4277438: 080140f9 ldr      x8, [x8]
+0x427743c: 001140f9 ldr      x0, [x8, #0x20]
+0x4277440: 08d44439 ldrb     w8, [x0, #0x135]
+0x4277444: 48000037 tbnz     w8, #0, #0x427744c
+0x4277448: d663e797 bl       #0x3c503a0
+0x427744c: 086040f9 ldr      x8, [x0, #0xc0]
+0x4277450: 011540f9 ldr      x1, [x8, #0x28]
+0x4277454: 28d44439 ldrb     w8, [x1, #0x135]
+0x4277458: 88000037 tbnz     w8, #0, #0x4277468
+0x427745c: e00301aa mov      x0, x1
+0x4277460: d063e797 bl       #0x3c503a0
+0x4277464: e10300aa mov      x1, x0
+0x4277468: 880240f9 ldr      x8, [x20]
+0x427746c: 095d4279 ldrh     w9, [x8, #0x12e]
+0x4277470: 290100b4 cbz      x9, #0x4277494
+0x4277474: 0a5940f9 ldr      x10, [x8, #0xb0]
+0x4277478: 4a210091 add      x10, x10, #8
+0x427747c: 4b815ff8 ldur     x11, [x10, #-8]
+0x4277480: 7f0101eb cmp      x11, x1
+0x4277484: 40010054 b.eq     #0x42774ac
+0x4277488: 290500f1 subs     x9, x9, #1
+0x427748c: 4a410091 add      x10, x10, #0x10
+0x4277490: 61ffff54 b.ne     #0x427747c
+0x4277494: e00314aa mov      x0, x20
+0x4277498: e2031f2a mov      w2, wzr
+0x427749c: 0264e797 bl       #0x3c504a4
+0x42774a0: 06000014 b        #0x42774b8
+0x42774a4: f52740f9 ldr      x21, [sp, #0x48]
+0x42774a8: 09000014 b        #0x42774cc
+0x42774ac: 490180b9 ldrsw    x9, [x10]
+0x42774b0: 0811098b add      x8, x8, x9, lsl #4
+0x42774b4: 00e10491 add      x0, x8, #0x138
+0x42774b8: 080840a9 ldp      x8, x2, [x0]
+0x42774bc: e00314aa mov      x0, x20
+0x42774c0: e103152a mov      w1, w21
+0x42774c4: 00013fd6 blr      x8
+0x42774c8: f50300aa mov      x21, x0
+0x42774cc: 781a00b4 cbz      x24, #0x4277818
+0x42774d0: 001740f9 ldr      x0, [x24, #0x28]
+0x42774d4: 401a00b4 cbz      x0, #0x427781c
+0x42774d8: a8430290 adrp     x8, #0x8aeb000
+0x42774dc: 085943f9 ldr      x8, [x8, #0x6b0] // Method$System.Collections.Generic.Dictionary<string, UIPanel>.TryGetValue()
+0x42774e0: 611240f9 ldr      x1, [x19, #0x20]
+0x42774e4: 030140f9 ldr      x3, [x8]
+0x42774e8: e2a30191 add      x2, sp, #0x68
+0x42774ec: d143a694 bl       #0x6c08430 // System.Collections.Generic.Dictionary<object, object>$$TryGetValue
+0x42774f0: 60000036 tbz      w0, #0, #0x42774fc
+0x42774f4: f43740f9 ldr      x20, [sp, #0x68]
+0x42774f8: b6000014 b        #0x42777d0
+0x42774fc: b64202b0 adrp     x22, #0x8acc000
+0x4277500: d66a44f9 ldr      x22, [x22, #0x8d0] // UnityEngine.Object_TypeInfo
+0x4277504: c00240f9 ldr      x0, [x22]
+0x4277508: 08e040b9 ldr      w8, [x0, #0xe0]
+0x427750c: 48000035 cbnz     w8, #0x4277514
+0x4277510: a817e797 bl       #0x3c3d3b0
+0x4277514: e00315aa mov      x0, x21
+0x4277518: e1031faa mov      x1, xzr
+0x427751c: a1e30195 bl       #0x82f03a0 // UnityEngine.Object$$op_Implicit
+0x4277520: 40100036 tbz      w0, #0, #0x4277728
+0x4277524: a8430290 adrp     x8, #0x8aeb000
+0x4277528: 08c943f9 ldr      x8, [x8, #0x790] // UIFramework.UIManager.<>c__DisplayClass11_0_TypeInfo
+0x427752c: 000140f9 ldr      x0, [x8]
+0x4277530: e517e797 bl       #0x3c3d4c4
+0x4277534: f40300aa mov      x20, x0
+0x4277538: e1031faa mov      x1, xzr
+0x427753c: 7440d194 bl       #0x76c770c // System.Object$$.ctor
+0x4277540: c00240f9 ldr      x0, [x22]
+0x4277544: 161340f9 ldr      x22, [x24, #0x20]
+0x4277548: 08e040b9 ldr      w8, [x0, #0xe0]
+0x427754c: 48000035 cbnz     w8, #0x4277554
+0x4277550: 9817e797 bl       #0x3c3d3b0
+0x4277554: a84202b0 adrp     x8, #0x8acc000
+0x4277558: 085546f9 ldr      x8, [x8, #0xca8] // Method$UnityEngine.Object.Instantiate<GameObject>()
+0x427755c: 020140f9 ldr      x2, [x8]
+0x4277560: e00315aa mov      x0, x21
+0x4277564: e10316aa mov      x1, x22
+0x4277568: b7292f94 bl       #0x4e41c44 // UnityEngine.Object$$Instantiate<object>
+0x427756c: c01500b4 cbz      x0, #0x4277824
+0x4277570: 484302f0 adrp     x8, #0x8ae2000
+0x4277574: 084d42f9 ldr      x8, [x8, #0x498] // Method$UnityEngine.GameObject.GetComponent<UIPanel>()
+0x4277578: 010140f9 ldr      x1, [x8]
+0x427757c: 4a572894 bl       #0x4c8d2a4 // UnityEngine.GameObject$$GetComponent<object>
+0x4277580: 541500b4 cbz      x20, #0x4277828
+0x4277584: 800a00f9 str      x0, [x20, #0x10]
+0x4277588: e1031faa mov      x1, xzr
+0x427758c: 85e30195 bl       #0x82f03a0 // UnityEngine.Object$$op_Implicit
+0x4277590: 000d0036 tbz      w0, #0, #0x4277730
+0x4277594: 950a40f9 ldr      x21, [x20, #0x10]
+0x4277598: b51400b4 cbz      x21, #0x427782c
+0x427759c: e00315aa mov      x0, x21
+0x42775a0: e1031faa mov      x1, xzr
+0x42775a4: dbe30195 bl       #0x82f0510 // UnityEngine.Object$$get_name
+0x42775a8: 401400b4 cbz      x0, #0x4277830
+0x42775ac: a84202d0 adrp     x8, #0x8acd000
+0x42775b0: 083d42f9 ldr      x8, [x8, #0x478] // string_TypeInfo
+0x42775b4: 29430290 adrp     x9, #0x8adb000
+0x42775b8: 080140f9 ldr      x8, [x8]
+0x42775bc: 085d40f9 ldr      x8, [x8, #0xb8]
+0x42775c0: 295541f9 ldr      x9, [x9, #0x2a8] // (Clone)
+0x42775c4: 020140f9 ldr      x2, [x8]
+0x42775c8: 210140f9 ldr      x1, [x9]
+0x42775cc: e3031faa mov      x3, xzr
+0x42775d0: 4352ca94 bl       #0x750bedc // System.String$$Replace
+0x42775d4: e10300aa mov      x1, x0
+0x42775d8: e00315aa mov      x0, x21
+0x42775dc: e2031faa mov      x2, xzr
+0x42775e0: f8e30195 bl       #0x82f05c0 // UnityEngine.Object$$set_name
+0x42775e4: 800a40f9 ldr      x0, [x20, #0x10]
+0x42775e8: 601200b4 cbz      x0, #0x4277834
+0x42775ec: e1031faa mov      x1, xzr
+0x42775f0: 53c60195 bl       #0x82e8f3c // UnityEngine.Component$$get_gameObject
+0x42775f4: 201200b4 cbz      x0, #0x4277838
+0x42775f8: e1031f2a mov      w1, wzr
+0x42775fc: e2031faa mov      x2, xzr
+0x4277600: 59d30195 bl       #0x82ec364 // UnityEngine.GameObject$$SetActive
+0x4277604: 001740f9 ldr      x0, [x24, #0x28]
+0x4277608: a01100b4 cbz      x0, #0x427783c
+0x427760c: a8430290 adrp     x8, #0x8aeb000
+0x4277610: 820a40f9 ldr      x2, [x20, #0x10]
+0x4277614: 611240f9 ldr      x1, [x19, #0x20]
+0x4277618: 086543f9 ldr      x8, [x8, #0x6c8] // Method$System.Collections.Generic.Dictionary<string, UIPanel>.Add()
+0x427761c: 030140f9 ldr      x3, [x8]
+0x4277620: a83da694 bl       #0x6c06cc0 // System.Collections.Generic.Dictionary<object, object>$$Add
+0x4277624: 800a40f9 ldr      x0, [x20, #0x10]
+0x4277628: c01000b4 cbz      x0, #0x4277840
+0x427762c: e1031faa mov      x1, xzr
+0x4277630: 34c60195 bl       #0x82e8f00 // UnityEngine.Component$$get_transform
+0x4277634: 801000b4 cbz      x0, #0x4277844
+0x4277638: a8430290 adrp     x8, #0x8aeb000
+0x427763c: 086143f9 ldr      x8, [x8, #0x6c0] // Method$UnityEngine.Component.TryGetComponent<Canvas>()
+0x4277640: 020140f9 ldr      x2, [x8]
+0x4277644: e1630091 add      x1, sp, #0x18
+0x4277648: 95342494 bl       #0x4b8489c // UnityEngine.Component$$TryGetComponent<object>
+0x427764c: 000c0036 tbz      w0, #0, #0x42777cc
+0x4277650: e00f40f9 ldr      x0, [sp, #0x18]
+0x4277654: a00f00b4 cbz      x0, #0x4277848
+0x4277658: 21008052 mov      w1, #1
+0x427765c: e2031faa mov      x2, xzr
+0x4277660: 26460a95 bl       #0x8508ef8 // UnityEngine.Canvas$$set_renderMode
+0x4277664: a84202f0 adrp     x8, #0x8ace000
+0x4277668: f50f40f9 ldr      x21, [sp, #0x18]
+0x427766c: 08f947f9 ldr      x8, [x8, #0xff0] // Method$ToolModule.ManagerBase<CameraManager>.get_Instance()
+0x4277670: 000140f9 ldr      x0, [x8]
+0x4277674: 7b035c94 bl       #0x5978460 // ToolModule.ManagerBase<object>$$get_Instance
+0x4277678: a00e00b4 cbz      x0, #0x427784c
+0x427767c: e1031faa mov      x1, xzr
+0x4277680: 935cf297 bl       #0x3f0e8cc // CameraModule.CameraManager$$get_UICamera
+0x4277684: e10300aa mov      x1, x0
+0x4277688: 550e00b4 cbz      x21, #0x4277850
+0x427768c: e00315aa mov      x0, x21
+0x4277690: e2031faa mov      x2, xzr
+0x4277694: e4480a95 bl       #0x8509a24 // UnityEngine.Canvas$$set_worldCamera
+0x4277698: a84202f0 adrp     x8, #0x8ace000
+0x427769c: 087d40f9 ldr      x8, [x8, #0xf8] // Method$ToolModule.ManagerBase<DataManager>.get_Instance()
+0x42776a0: 000140f9 ldr      x0, [x8]
+0x42776a4: 6f035c94 bl       #0x5978460 // ToolModule.ManagerBase<object>$$get_Instance
+0x42776a8: 600d00b4 cbz      x0, #0x4277854
+0x42776ac: 081440f9 ldr      x8, [x0, #0x28]
+0x42776b0: 480d00b4 cbz      x8, #0x4277858
+0x42776b4: 155141f9 ldr      x21, [x8, #0x2a0]
+0x42776b8: a8430290 adrp     x8, #0x8aeb000
+0x42776bc: 08c143f9 ldr      x8, [x8, #0x780] // System.Predicate<PanelConfig>_TypeInfo
+0x42776c0: 000140f9 ldr      x0, [x8]
+0x42776c4: 8017e797 bl       #0x3c3d4c4
+0x42776c8: a8430290 adrp     x8, #0x8aeb000
+0x42776cc: 08c543f9 ldr      x8, [x8, #0x788] // Method$UIFramework.UIManager.<>c__DisplayClass11_0.<LoadPanel>b__0()
+0x42776d0: f60300aa mov      x22, x0
+0x42776d4: 020140f9 ldr      x2, [x8]
+0x42776d8: e10314aa mov      x1, x20
+0x42776dc: e3031faa mov      x3, xzr
+0x42776e0: ff8d6a94 bl       #0x5d1aedc // System.Predicate<object>$$.ctor
+0x42776e4: d50b00b4 cbz      x21, #0x427785c
+0x42776e8: a8430290 adrp     x8, #0x8aeb000
+0x42776ec: 08bd43f9 ldr      x8, [x8, #0x778] // Method$System.Collections.Generic.List<PanelConfig>.Find()
+0x42776f0: 020140f9 ldr      x2, [x8]
+0x42776f4: e00315aa mov      x0, x21
+0x42776f8: e10316aa mov      x1, x22
+0x42776fc: 25615394 bl       #0x574fb90 // System.Collections.Generic.List<object>$$Find
+0x4277700: f50300aa mov      x21, x0
+0x4277704: e00300b4 cbz      x0, #0x4277780
+0x4277708: e00f40f9 ldr      x0, [sp, #0x18]
+0x427770c: c00a00b4 cbz      x0, #0x4277864
+0x4277710: a9224429 ldp      w9, w8, [x21, #0x20]
+0x4277714: 0a7d8052 mov      w10, #0x3e8
+0x4277718: 21210a1b madd     w1, w9, w10, w8
+0x427771c: e2031faa mov      x2, xzr
+0x4277720: 41470a95 bl       #0x8509424 // UnityEngine.Canvas$$set_sortingOrder
+0x4277724: 27000014 b        #0x42777c0
+0x4277728: f4031faa mov      x20, xzr
+0x427772c: 29000014 b        #0x42777d0
+0x4277730: a8430290 adrp     x8, #0x8aeb000
+0x4277734: 611240f9 ldr      x1, [x19, #0x20]
+0x4277738: 08cd43f9 ldr      x8, [x8, #0x798] // UIManager.GetPanel()==> 
+0x427773c: a9430290 adrp     x9, #0x8aeb000
+0x4277740: 29d143f9 ldr      x9, [x9, #0x7a0] // 预制体上,没有挂载对应的Panel脚本
+0x4277744: 000140f9 ldr      x0, [x8]
+0x4277748: 220140f9 ldr      x2, [x9]
+0x427774c: e3031faa mov      x3, xzr
+0x4277750: f84aca94 bl       #0x750a330 // System.String$$Concat
+0x4277754: a84202b0 adrp     x8, #0x8acc000
+0x4277758: 086544f9 ldr      x8, [x8, #0x8c8] // UnityEngine.Debug_TypeInfo
+0x427775c: f50300aa mov      x21, x0
+0x4277760: 000140f9 ldr      x0, [x8]
+0x4277764: 08e040b9 ldr      w8, [x0, #0xe0]
+0x4277768: 48000035 cbnz     w8, #0x4277770
+0x427776c: 1117e797 bl       #0x3c3d3b0
+0x4277770: e00315aa mov      x0, x21
+0x4277774: e1031faa mov      x1, xzr
+0x4277778: 97b30095 bl       #0x82a45d4 // UnityEngine.Debug$$LogError
+0x427777c: 14000014 b        #0x42777cc
+0x4277780: a8430290 adrp     x8, #0x8aeb000
+0x4277784: 611240f9 ldr      x1, [x19, #0x20]
+0x4277788: 08d543f9 ldr      x8, [x8, #0x7a8] // 这个页面没有在PanelConfig表中配置，必须要配置=>
+0x427778c: 000140f9 ldr      x0, [x8]
+0x4277790: e2031faa mov      x2, xzr
+0x4277794: 041cca94 bl       #0x74fe7a4 // System.String$$Concat
+0x4277798: a84202b0 adrp     x8, #0x8acc000
+0x427779c: 086544f9 ldr      x8, [x8, #0x8c8] // UnityEngine.Debug_TypeInfo
+0x42777a0: f60300aa mov      x22, x0
+0x42777a4: 000140f9 ldr      x0, [x8]
+0x42777a8: 08e040b9 ldr      w8, [x0, #0xe0]
+0x42777ac: 48000035 cbnz     w8, #0x42777b4
+0x42777b0: 0017e797 bl       #0x3c3d3b0
+0x42777b4: e00316aa mov      x0, x22
+0x42777b8: e1031faa mov      x1, xzr
+0x42777bc: 86b30095 bl       #0x82a45d4 // UnityEngine.Debug$$LogError
+0x42777c0: 880a40f9 ldr      x8, [x20, #0x10]
+0x42777c4: e80400b4 cbz      x8, #0x4277860
+0x42777c8: 151d00f9 str      x21, [x8, #0x38]
+0x42777cc: 940a40f9 ldr      x20, [x20, #0x10]
+0x42777d0: 28008012 mov      w8, #-2
+0x42777d4: 688600b8 str      w8, [x19], #8
+0x42777d8: e00240f9 ldr      x0, [x23]
+0x42777dc: b5430290 adrp     x21, #0x8aeb000
+0x42777e0: 08e040b9 ldr      w8, [x0, #0xe0]
+0x42777e4: b5ba43f9 ldr      x21, [x21, #0x770] // Method$System.Runtime.CompilerServices.AsyncTaskMethodBuilder<UIPanel>.SetResult()
+0x42777e8: 48000035 cbnz     w8, #0x42777f0
+0x42777ec: f116e797 bl       #0x3c3d3b0
+0x42777f0: a20240f9 ldr      x2, [x21]
+0x42777f4: e00313aa mov      x0, x19
+0x42777f8: e10314aa mov      x1, x20
+0x42777fc: d1f27594 bl       #0x5ff4340 // System.Runtime.CompilerServices.AsyncTaskMethodBuilder<object>$$SetResult
+0x4277800: f44f49a9 ldp      x20, x19, [sp, #0x90]
+0x4277804: f65748a9 ldp      x22, x21, [sp, #0x80]
+0x4277808: f85f47a9 ldp      x24, x23, [sp, #0x70]
+0x427780c: fe3340f9 ldr      x30, [sp, #0x60]
+0x4277810: ff830291 add      sp, sp, #0xa0
+0x4277814: c0035fd6 ret      
+0x4277818: 2d17e797 bl       #0x3c3d4cc
+0x427781c: 2c17e797 bl       #0x3c3d4cc
+0x4277820: 2b17e797 bl       #0x3c3d4cc
+0x4277824: 2a17e797 bl       #0x3c3d4cc
+0x4277828: 2917e797 bl       #0x3c3d4cc
+0x427782c: 2817e797 bl       #0x3c3d4cc
+0x4277830: 2717e797 bl       #0x3c3d4cc
+0x4277834: 2617e797 bl       #0x3c3d4cc
+0x4277838: 2517e797 bl       #0x3c3d4cc
+0x427783c: 2417e797 bl       #0x3c3d4cc
+0x4277840: 2317e797 bl       #0x3c3d4cc
+0x4277844: 2217e797 bl       #0x3c3d4cc
+0x4277848: 2117e797 bl       #0x3c3d4cc
+0x427784c: 2017e797 bl       #0x3c3d4cc
+0x4277850: 1f17e797 bl       #0x3c3d4cc
+0x4277854: 1e17e797 bl       #0x3c3d4cc
+0x4277858: 1d17e797 bl       #0x3c3d4cc
+0x427785c: 1c17e797 bl       #0x3c3d4cc
+0x4277860: 1b17e797 bl       #0x3c3d4cc
+0x4277864: 1a17e797 bl       #0x3c3d4cc
+0x4277868: 25000014 b        #0x42778fc
+0x427786c: 24000014 b        #0x42778fc
+0x4277870: 23000014 b        #0x42778fc
+0x4277874: 22000014 b        #0x42778fc
+0x4277878: 21000014 b        #0x42778fc
+0x427787c: 20000014 b        #0x42778fc
+0x4277880: 1f000014 b        #0x42778fc
+0x4277884: 1e000014 b        #0x42778fc
+0x4277888: 1d000014 b        #0x42778fc
+0x427788c: 1c000014 b        #0x42778fc
+0x4277890: 1b000014 b        #0x42778fc
+0x4277894: 1a000014 b        #0x42778fc
+0x4277898: 19000014 b        #0x42778fc
+0x427789c: 18000014 b        #0x42778fc
+0x42778a0: 17000014 b        #0x42778fc
+0x42778a4: 16000014 b        #0x42778fc
+0x42778a8: 15000014 b        #0x42778fc
+0x42778ac: 14000014 b        #0x42778fc
+0x42778b0: 13000014 b        #0x42778fc
+0x42778b4: 12000014 b        #0x42778fc
+0x42778b8: 11000014 b        #0x42778fc
+0x42778bc: 10000014 b        #0x42778fc
+0x42778c0: 0f000014 b        #0x42778fc
+0x42778c4: 0e000014 b        #0x42778fc
+0x42778c8: 0d000014 b        #0x42778fc
+0x42778cc: 0c000014 b        #0x42778fc
+0x42778d0: 0b000014 b        #0x42778fc
+0x42778d4: 0a000014 b        #0x42778fc
+0x42778d8: 09000014 b        #0x42778fc
+0x42778dc: 08000014 b        #0x42778fc
+0x42778e0: 07000014 b        #0x42778fc
+0x42778e4: 06000014 b        #0x42778fc
+0x42778e8: 05000014 b        #0x42778fc
+0x42778ec: 04000014 b        #0x42778fc
+0x42778f0: 03000014 b        #0x42778fc
+0x42778f4: 02000014 b        #0x42778fc
+0x42778f8: 01000014 b        #0x42778fc
+0x42778fc: f40300aa mov      x20, x0
+0x4277900: 3f040071 cmp      w1, #1
+0x4277904: e1040054 b.ne     #0x42779a0
+0x4277908: e00314aa mov      x0, x20
+0x427790c: 25dd0b95 bl       #0x856eda0
+0x4277910: f40300aa mov      x20, x0
+0x4277914: a04202b0 adrp     x0, #0x8acc000
+0x4277918: 00c847f9 ldr      x0, [x0, #0xf90] // System.Exception_TypeInfo
+0x427791c: 5e16e797 bl       #0x3c3d294
+0x4277920: 880240f9 ldr      x8, [x20]
+0x4277924: 010140f9 ldr      x1, [x8]
+0x4277928: f417e797 bl       #0x3c3d8f8
+0x427792c: 60020036 tbz      w0, #0, #0x4277978
+0x4277930: 940240f9 ldr      x20, [x20]
+0x4277934: 1fdd0b95 bl       #0x856edb0
+0x4277938: 28008012 mov      w8, #-2
+0x427793c: 688600b8 str      w8, [x19], #8
+0x4277940: a0430290 adrp     x0, #0x8aeb000
+0x4277944: 006843f9 ldr      x0, [x0, #0x6d0] // System.Runtime.CompilerServices.AsyncTaskMethodBuilder<UIPanel>_TypeInfo
+0x4277948: 5316e797 bl       #0x3c3d294
+0x427794c: 08e040b9 ldr      w8, [x0, #0xe0]
+0x4277950: 48000035 cbnz     w8, #0x4277958
+0x4277954: 9716e797 bl       #0x3c3d3b0
+0x4277958: a0430290 adrp     x0, #0x8aeb000
+0x427795c: 00d843f9 ldr      x0, [x0, #0x7b0] // Method$System.Runtime.CompilerServices.AsyncTaskMethodBuilder<UIPanel>.SetException()
+0x4277960: 4d16e797 bl       #0x3c3d294
+0x4277964: e20300aa mov      x2, x0
+0x4277968: e00313aa mov      x0, x19
+0x427796c: e10314aa mov      x1, x20
+0x4277970: faf27594 bl       #0x5ff4558 // System.Runtime.CompilerServices.AsyncTaskMethodBuilder<object>$$SetException
+0x4277974: a3ffff17 b        #0x4277800
+0x4277978: 00018052 mov      w0, #8
+0x427797c: 11dd0b95 bl       #0x856edc0
+0x4277980: 880240f9 ldr      x8, [x20]
+0x4277984: 080000f9 str      x8, [x0]
+0x4277988: e11702d0 adrp     x1, #0x8575000
+0x427798c: 21a00891 add      x1, x1, #0x228
+0x4277990: e2031faa mov      x2, xzr
+0x4277994: 0fdd0b95 bl       #0x856edd0
+0x4277998: f40300aa mov      x20, x0
+0x427799c: 05dd0b95 bl       #0x856edb0
+0x42779a0: e00314aa mov      x0, x20
+0x42779a4: 88bee997 bl       #0x3ce73c4
+0x42779a8: d612cd97 bl       #0x35bc500

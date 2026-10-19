@@ -1,0 +1,18 @@
+import difflib,hashlib,json,re
+from pathlib import Path
+root=Path(__file__).resolve().parents[2];own=root/'work/stringtool-recovery';source=root/'outputs/OccupyCityRecovered/Assets/Scripts/Assembly-CSharp/ToolModule/StringTool.cs';before=root/'work/recovery-stubs/stringtool-before/StringTool.cs';sha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest()
+old=before.read_text(encoding='utf-8-sig');current=source.read_text(encoding='utf-8-sig');pattern=r'\[Token\(Token = "(0x[0-9A-Fa-f]+)"\)\]';assert re.findall(pattern,old)==re.findall(pattern,current)
+def blocks(text):
+    matches=list(re.finditer(pattern,text));return {int(m[1],16):text[m.start():matches[i+1].start() if i+1<len(matches) else len(text)] for i,m in enumerate(matches)}
+a=blocks(old);b=blocks(current);allowed={0x060006AF,0x060006B1,0x060006B7};assert all(a[t]==b[t] for t in a if t not in allowed and t!=0x020001A4)
+assert sha(source.with_suffix('.cs.meta'))==sha(before.with_suffix('.cs.meta'))
+il=(own/'compile/actual.il.txt').read_text(encoding='utf-8-sig');toint=il[il.index('int32 ToInt ('):il.index('// end of method StringTool::ToInt')];empty=il[il.index('bool IsNullOrEmpty ('):il.index('// end of method StringTool::IsNullOrEmpty')]
+checks=dict(style167='ldc.i4 167' in toint,invariantCulture='CultureInfo::get_InvariantCulture()' in toint,TryParseExactOverload='Int32::TryParse(string, valuetype [netstandard]System.Globalization.NumberStyles, class [netstandard]System.IFormatProvider, int32&)' in toint,discardSuccessAndReturnOut='pop' in toint and 'ldloc.0' in toint,noAddedExceptionHandlers=not any(x in toint+empty for x in ['catch ','finally','filter']),usesStringTrim='System.String::Trim()' in empty,usesStringLength='System.String::get_Length()' in empty,optionalTrue='.param [2] = bool(true)' in empty)
+assert all(checks.values()),checks
+metadata=json.loads((own/'metadata-identities.json').read_text(encoding='utf-8'));optional=next(m for m in metadata['methods'] if m['Name']=='IsNullOrEmpty')['parameters'][1];assert optional['defaultValue'] is True and 'Optional' in optional['attributes'] and 'HasDefault' in optional['attributes']
+native=json.loads((own/'ida/status-bounded.json').read_text(encoding='utf-8'));assert native['stage']=='complete' and len(native['methods'])==2;assert all(m['actual_function_start']==hex(m['address']) and m['actual_function_end']==hex(m['end']) for m in native['methods'])
+keys=json.loads((own/'key-oracle.json').read_text(encoding='utf-8'));readback=json.loads((own/'tests/key-readback.json').read_text(encoding='utf-8'));assert len(readback)==len(keys)==8 and sum(k['rows'] for k in readback)==350
+for k in keys:assert sha(Path(k['path']))==k['sourceSha256']
+assert 'RESULT scenarios=82 checks=474 failures=0 dictionaryFilesPassed=8' in (own/'tests/actual-run.log').read_text(encoding='utf-8-sig')
+result=dict(restoredMethods=2,diagnosticOnlyMethods=1,sourceBeforeSha256=sha(before),sourceAfterSha256=sha(source),metaSha256=sha(source.with_suffix('.cs.meta')),originalTokenSequenceRetained=True,otherMethodBodiesUnchanged=True,ILChecks=checks,nativeBoundaries=2,actualSourceScenarios=82,actualSourceChecks=474,actualResourceFiles=8,actualDictionaryKeys=350,uniqueAddressableVariantKeys=175,ToEnumDiagnostic='Token0x060006B1; generic RVAs0x4ED6794/0x4ED68A4; zero restored behavior',UnityOrEntireGlobalInfoValidation='not-run by this stage')
+(own/'final-audit.json').write_text(json.dumps(result,ensure_ascii=False,indent=2),encoding='utf-8');(own/'StringTool.patch').write_text('\n'.join(difflib.unified_diff(old.splitlines(),current.splitlines(),fromfile='before/StringTool.cs',tofile='after/StringTool.cs',lineterm='')),encoding='utf-8');print(json.dumps(result,ensure_ascii=False,indent=2))

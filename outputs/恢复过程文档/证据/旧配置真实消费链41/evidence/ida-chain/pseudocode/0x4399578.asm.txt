@@ -1,0 +1,56 @@
+0x4399578: STP             X30, X21, [SP,#var_20]!
+0x439957c: STP             X20, X19, [SP,#0x20+var_10]
+0x4399580: ADRP            X20, #byte_9000858@PAGE
+0x4399584: ADRP            X21, #off_8AF4278@PAGE
+0x4399588: LDRB            W8, [X20,#byte_9000858@PAGEOFF]
+0x439958c: LDR             X21, [X21,#off_8AF4278@PAGEOFF]; off_8CE5BB8
+0x4399590: MOV             X19, X0
+0x4399594: TBNZ            W8, #0, loc_43995B8
+0x4399598: ADRP            X0, #off_8ACD5C0@PAGE
+0x439959c: LDR             X0, [X0,#off_8ACD5C0@PAGEOFF]; off_8CE40C8 ; slot
+0x43995a0: BL              il2cpp_codegen_initialize_runtime_metadata
+0x43995a4: ADRP            X0, #off_8AF4278@PAGE
+0x43995a8: LDR             X0, [X0,#off_8AF4278@PAGEOFF]; off_8CE5BB8 ; slot
+0x43995ac: BL              il2cpp_codegen_initialize_runtime_metadata
+0x43995b0: MOV             W8, #1
+0x43995b4: STRB            W8, [X20,#byte_9000858@PAGEOFF]
+0x43995b8: LDR             X0, [X21]; klass
+0x43995bc: ADRP            X20, #off_8ACD5C0@PAGE
+0x43995c0: LDR             W8, [X0,#0xE0]
+0x43995c4: LDR             X20, [X20,#off_8ACD5C0@PAGEOFF]; off_8CE40C8
+0x43995c8: CBNZ            W8, loc_43995D4
+0x43995cc: BL              il2cpp_codegen_runtime_class_init
+0x43995d0: LDR             X0, [X21]
+0x43995d4: LDR             X8, [X0,#0xB8]
+0x43995d8: MOV             W9, #1
+0x43995dc: STRB            W9, [X8]
+0x43995e0: LDR             X0, [X20]; klass
+0x43995e4: LDR             W8, [X0,#0xE0]
+0x43995e8: CBNZ            W8, loc_43995F0
+0x43995ec: BL              il2cpp_codegen_runtime_class_init
+0x43995f0: ADRP            X21, #byte_90008FE@PAGE
+0x43995f4: LDRB            W8, [X21,#byte_90008FE@PAGEOFF]
+0x43995f8: CBNZ            W8, loc_4399610
+0x43995fc: ADRP            X0, #off_8ACD5C0@PAGE
+0x4399600: LDR             X0, [X0,#off_8ACD5C0@PAGEOFF]; off_8CE40C8 ; slot
+0x4399604: BL              il2cpp_codegen_initialize_runtime_metadata
+0x4399608: MOV             W8, #1
+0x439960c: STRB            W8, [X21,#byte_90008FE@PAGEOFF]
+0x4399610: LDR             X0, [X20]; klass
+0x4399614: LDR             W8, [X0,#0xE0]
+0x4399618: CBNZ            W8, loc_4399624
+0x439961c: BL              il2cpp_codegen_runtime_class_init
+0x4399620: LDR             X0, [X20]
+0x4399624: LDR             X8, [X0,#0xB8]
+0x4399628: STRB            WZR, [X8,#0x3C]
+0x439962c: LDRB            W8, [X19,#0x10]
+0x4399630: CBNZ            W8, loc_439964C
+0x4399634: MOV             X0, X19
+0x4399638: BL              ljzs_lt.ConfigMgr$$ReadConfig
+0x439963c: MOV             X0, X19
+0x4399640: BL              ljzs_lt.ConfigMgr$$customRead
+0x4399644: MOV             W8, #1
+0x4399648: STRB            W8, [X19,#0x10]
+0x439964c: LDP             X20, X19, [SP,#0x20+var_10]
+0x4399650: LDP             X30, X21, [SP+0x20+var_20],#0x20
+0x4399654: RET

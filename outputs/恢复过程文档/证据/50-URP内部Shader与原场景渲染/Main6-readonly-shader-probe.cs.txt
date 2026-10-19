@@ -1,0 +1,52 @@
+// Optional diagnostic body for the root's existing Unity GUI execution bridge.
+// This is a work-directory text snippet, not an Assets script or an apply candidate.
+// Run after the root has applied/reimported the four shaders. Do not invoke module
+// initialization or change pipeline state as part of this diagnostic.
+var paths = new[] {
+    "Assets/Shader/Hidden_Universal_CoreBlit.shader",
+    "Assets/Shader/Hidden_Universal_CoreBlit_0.shader",
+    "Assets/Shader/Hidden_Universal_CoreBlitColorAndDepth.shader",
+    "Assets/Shader/Hidden_Universal_CoreBlitColorAndDepth_0.shader"
+};
+foreach (var path in paths)
+{
+    var shader = UnityEditor.AssetDatabase.LoadAssetAtPath<UnityEngine.Shader>(path);
+    if (shader == null) throw new System.InvalidOperationException("Missing shader: " + path);
+    var isCore = !path.Contains("ColorAndDepth");
+    var keyword = shader.keywordSpace.FindKeyword("BLIT_DECODE_HDR");
+    UnityEngine.Debug.Log("Stage50 shader " + path + " guid=" + UnityEditor.AssetDatabase.AssetPathToGUID(path)
+        + " instanceID=" + shader.GetInstanceID() + " passes=" + shader.passCount
+        + " supported=" + shader.isSupported + " BLIT_DECODE_HDR=" + keyword.isValid
+        + " shaderHasError=" + UnityEditor.ShaderUtil.ShaderHasError(shader));
+    if (shader.passCount != (isCore ? 25 : 2) || !shader.isSupported
+        || UnityEditor.ShaderUtil.ShaderHasError(shader) || (isCore && !keyword.isValid))
+        throw new System.InvalidOperationException("Stage50 imported contract failed: " + path);
+    if (isCore)
+    {
+        var material = new UnityEngine.Material(shader);
+        try
+        {
+            if (material.FindPass("BilinearDebugDraw") != 23 || material.FindPass("NearestDebugDraw") != 24)
+                throw new System.InvalidOperationException("Stage50 final-blit named pass contract failed: " + path);
+        }
+        finally { UnityEngine.Object.DestroyImmediate(material); }
+    }
+    foreach (var message in UnityEditor.ShaderUtil.GetShaderMessages(shader))
+        UnityEngine.Debug.Log("Stage50 shader message: " + path + " " + message.severity + " " + message.message);
+}
+var current = UnityEngine.Rendering.GraphicsSettings.currentRenderPipeline;
+if (current == null) throw new System.InvalidOperationException("No current render pipeline");
+UnityEngine.Debug.Log("Stage50 current pipeline=" + UnityEditor.AssetDatabase.GetAssetPath(current));
+var pipelineObject = new UnityEditor.SerializedObject(current);
+var rendererList = pipelineObject.FindProperty("m_RendererDataList");
+var defaultIndex = pipelineObject.FindProperty("m_DefaultRendererIndex").intValue;
+var renderer = rendererList.GetArrayElementAtIndex(defaultIndex).objectReferenceValue;
+UnityEngine.Debug.Log("Stage50 current default renderer=" + UnityEditor.AssetDatabase.GetAssetPath(renderer));
+var rendererObject = new UnityEditor.SerializedObject(renderer);
+foreach (var property in new[] { "shaders.coreBlitPS", "shaders.coreBlitColorAndDepthPS" })
+{
+    var shader = rendererObject.FindProperty(property).objectReferenceValue;
+    var path = UnityEditor.AssetDatabase.GetAssetPath(shader);
+    UnityEngine.Debug.Log("Stage50 active binding " + property + " path=" + path
+        + " guid=" + UnityEditor.AssetDatabase.AssetPathToGUID(path) + " instanceID=" + shader.GetInstanceID());
+}

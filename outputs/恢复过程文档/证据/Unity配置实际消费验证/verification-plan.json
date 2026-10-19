@@ -1,0 +1,67 @@
+{
+  "stage": 28,
+  "scope": "Observe a fresh real DataModule.GlobalInfo instance in the actual Unity Editor domain",
+  "executionStatus": "not-run",
+  "sourceStatus": "frozen",
+  "sourceSha256": "944e028c24bb8cfd99d00a5c16d5eef0941b677ae69e608c6d8efa9ece577523",
+  "entryPoint": "OccupyCity.Recovery.Editor.ObserveConfigConsumption.Run",
+  "interactiveMenu": "Recovery/Observe Config Consumption/With Original InitGameSetting",
+  "defaultTimeoutSeconds": 120,
+  "batchRequiresNoQuitArgument": true,
+  "executionOwner": "root; this agent does not launch Unity",
+  "productionIdentity": [
+    "Require exactly one loaded Assembly-CSharp; record full name, file location, MVID and SHA256",
+    "Resolve DataModule.GlobalInfo only from that loaded assembly",
+    "Resolve actual loaded UniTask and LitJson; reject duplicate definitions rather than choose a fixture"
+  ],
+  "productionInvocations": [
+    "Optionally construct actual ljzs_lt.Procedure.ProcedurePreLoad and invoke actual private InitGameSetting (RVA 0x439FA28)",
+    "Read actual ABTestManager.Instance and the 11 selection getters; record getter IL and conservative constant-default stub shape, without explicitly calling ABTestManager.Init or writing groups",
+    "Construct actual DataModule.GlobalInfo exactly once; capture real collection counts before loading",
+    "Invoke actual GlobalInfo.InitInfo exactly once; current production return type is System.Threading.Tasks.Task",
+    "Call its real GetAwaiter, poll its real IsCompleted via EditorApplication.update, and call GetResult once after completion"
+  ],
+  "precisePreconditionEffects": [
+    "The actual InitGameSetting currently invokes I2 culture policy and StartupLanguageHelper, sets current/default thread culture and UI culture to en-US, then invokes actual ToolModule.LitJsonExtent.Init",
+    "Read access to ABTestManager.Instance may cause original lazy singleton construction",
+    "The probe is an executing diagnostic; it is not a pure read-only reflection scan"
+  ],
+  "nativeCounts": {
+    "uniqueStaticAddresses": 81,
+    "staticCallbacks": 72,
+    "selectedRequestsPerInvocation": 65,
+    "pendingAtSuccessfulCompletion": 0
+  },
+  "selectedPaths": "Only real production hadLoadInfo supplies selected paths; verification data never chooses the branch",
+  "typedValidation": [
+    "Load the 72-row native-derived path/type/callback/field mapping only after the production awaitable completes",
+    "For each actual selected path, check real list generic declaration, model runtime element types and original payload row count",
+    "For each selected dictionary callback, check real generic declaration, key field conversion, count and ReferenceEquals from dictionary values to actual list model objects",
+    "For callback 47, check actual List<GlobalMainCityMapInfo>, List<GlobalMapInfo> and Dictionary<string,GlobalMapInfo> declarations; nested row/unique tile-key counts and dictionary object identity",
+    "Read no more than one selected callback mapping per Editor update"
+  ],
+  "resourceReadback": [
+    "Use Resources.Load<TextAsset> only for secondary verification at the selected JsonData key",
+    "Record actual Unity TextAsset identity, original compressed bytes and independently decoded GZip bytes with SHA256",
+    "Require raw and decoded bytes to equal the stage-23 81-resource original audit",
+    "Count expected JSON rows through the actual loaded LitJson non-generic JsonMapper.ToObject(string); never place these JsonData objects into production fields",
+    "If Resources readback is unavailable, preserve the limitation; do not substitute Addressables behavior or report full pass"
+  ],
+  "passCriteria": [
+    "Actual production awaiter GetResult completes successfully",
+    "Actual pending list converges to zero and actual selected list has 65 entries",
+    "The native verification map and original resource audit are available",
+    "Exactly 65 selected typed checks pass, including original byte/readback validation",
+    "No captured Unity Error, Exception or Assert occurs during observation"
+  ],
+  "failureAndInterruption": [
+    "Record original exception, pending paths, last real counts, relevant Unity logs and elapsed time",
+    "Timeout, domain reload, compilation/import or Play Mode transition ends observation without clearing lists, cancelling the production task or writing completion flags",
+    "Record productionMayStillBeRunning when the observer stops before actual await completion"
+  ],
+  "neverAsserted": [
+    "AB grouping initialization is confirmed; abContextConfirmed stays false",
+    "DataManager.LoadConfig and its completion flag were exercised",
+    "Game startup, save/login, Addressables fallback, Play Mode, visual presentation or core gameplay passed"
+  ]
+}

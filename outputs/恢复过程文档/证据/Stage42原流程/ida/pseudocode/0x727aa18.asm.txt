@@ -1,0 +1,9 @@
+0x727aa18: LDR             X8, [X0,#0x18]
+0x727aa1c: MOV             W9, #1
+0x727aa20: STRB            W9, [X0,#0x10]
+0x727aa24: CBZ             X8, locret_727AA38
+0x727aa28: LDR             X2, [X8,#0x18]
+0x727aa2c: LDR             X0, [X8,#0x40]
+0x727aa30: LDR             X1, [X8,#0x28]
+0x727aa34: BR              X2
+0x727aa38: RET

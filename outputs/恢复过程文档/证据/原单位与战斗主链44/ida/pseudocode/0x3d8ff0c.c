@@ -1,0 +1,134 @@
+__int64 __fastcall GameModule_RoleBehaviour__BreakWallAsync_d__224__MoveNext(__int64 a1)
+{
+  __int64 v2; // x20
+  __int64 v3; // x21
+  __int64 v4; // x21
+  __int64 v5; // x1
+  __int64 v6; // x8
+  __int64 v7; // x9
+  int *v8; // x10
+  __int64 v9; // x0
+  __int64 v10; // x8
+  __int64 v11; // x9
+  _DWORD *v12; // x10
+  __int64 v13; // x0
+  int v14; // w8
+  __int128 v16; // [xsp+0h] [xbp-40h] BYREF
+
+  if ( (byte_8FFD4BD & 1) == 0 )
+  {
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D21550);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8CDAD28);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&off_8CEB3E0);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D37E30);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&off_8CEEDF8);
+    byte_8FFD4BD = 1;
+  }
+  v16 = 0u;
+  v2 = *(_QWORD *)(a1 + 16);
+  if ( *(_DWORD *)a1 == 0 )
+  {
+    v16 = *(_OWORD *)(a1 + 24);
+    *(_QWORD *)(a1 + 24) = 0;
+    *(_QWORD *)(a1 + 32) = 0;
+    *(_DWORD *)a1 = -1;
+    goto LABEL_26;
+  }
+  if ( v2 == 0 )
+    il2cpp_codegen_raise_null_reference_exception();
+  v3 = *(_QWORD *)(v2 + 584);
+  if ( *((_DWORD *)off_8CEB3E0 + 56) == 0 )
+    il2cpp_codegen_runtime_class_init(off_8CEB3E0);
+  if ( (UnityEngine_Object__op_Equality(v3, 0, 0) & 1) != 0 )
+  {
+    *(_BYTE *)(v2 + 578) = 0;
+LABEL_40:
+    *(_DWORD *)a1 = -2;
+    return ((__int64 (__fastcall *)(__int64, _QWORD))unk_3D313B0)(a1 + 8, 0);
+  }
+  v4 = ((__int64 (__fastcall *)(__int64))unk_3C3D4C4)(qword_8CDAD28);
+  System_Func_bool____ctor(v4, v2, qword_8D37E30, 0);
+  if ( *((_DWORD *)off_8CEEDF8 + 56) == 0 )
+    il2cpp_codegen_runtime_class_init(off_8CEEDF8);
+  *(_QWORD *)&v16 = Cysharp_Threading_Tasks_UniTask__WaitUntil(v4, 8, 0, 0, 0);
+  *((_QWORD *)&v16 + 1) = v5;
+  if ( byte_8FFD1AD == 0 )
+  {
+    il2cpp_codegen_initialize_runtime_metadata((void **)&off_8CEEDF8);
+    byte_8FFD1AD = 1;
+  }
+  if ( *((_DWORD *)off_8CEEDF8 + 56) == 0 )
+    il2cpp_codegen_runtime_class_init(off_8CEEDF8);
+  if ( byte_8FFD1AE == 0 )
+  {
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8CE91C8);
+    byte_8FFD1AE = 1;
+  }
+  if ( (_QWORD)v16 == 0 )
+    goto LABEL_26;
+  v6 = *(_QWORD *)v16;
+  v7 = *(unsigned __int16 *)(*(_QWORD *)v16 + 302LL);
+  if ( *(_WORD *)(*(_QWORD *)v16 + 302LL) != 0 )
+  {
+    v8 = (int *)(*(_QWORD *)(v6 + 176) + 8LL);
+    while ( *((_QWORD *)v8 - 1) != qword_8CE91C8 )
+    {
+      --v7;
+      v8 += 4;
+      if ( v7 == 0 )
+        goto LABEL_23;
+    }
+    v9 = v6 + 16LL * *v8 + 312;
+  }
+  else
+  {
+LABEL_23:
+    v9 = ((__int64 (__fastcall *)(_QWORD, __int64, _QWORD))unk_3C504A4)(v16, qword_8CE91C8, 0);
+  }
+  if ( (*(unsigned int (__fastcall **)(_QWORD, _QWORD, _QWORD))v9)(v16, WORD4(v16), *(_QWORD *)(v9 + 8)) != 0 )
+  {
+LABEL_26:
+    if ( byte_8FFD1AF == 0 )
+    {
+      il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8CE91C8);
+      byte_8FFD1AF = 1;
+    }
+    if ( (_QWORD)v16 != 0 )
+    {
+      v10 = *(_QWORD *)v16;
+      v11 = *(unsigned __int16 *)(*(_QWORD *)v16 + 302LL);
+      if ( *(_WORD *)(*(_QWORD *)v16 + 302LL) != 0 )
+      {
+        v12 = (_DWORD *)(*(_QWORD *)(v10 + 176) + 8LL);
+        while ( *((_QWORD *)v12 - 1) != qword_8CE91C8 )
+        {
+          --v11;
+          v12 += 4;
+          if ( v11 == 0 )
+            goto LABEL_33;
+        }
+        v13 = v10 + 16LL * (*v12 + 2) + 312;
+      }
+      else
+      {
+LABEL_33:
+        v13 = ((__int64 (__fastcall *)(_QWORD, __int64, __int64))unk_3C504A4)(v16, qword_8CE91C8, 2);
+      }
+      (*(void (__fastcall **)(_QWORD, _QWORD, _QWORD))v13)(v16, WORD4(v16), *(_QWORD *)(v13 + 8));
+    }
+    if ( v2 == 0 )
+      il2cpp_codegen_raise_null_reference_exception();
+    v14 = *(unsigned __int8 *)(v2 + 33);
+    *(_BYTE *)(v2 + 578) = 0;
+    *(_QWORD *)(v2 + 584) = 0;
+    if ( v14 == 0 && *(_BYTE *)(v2 + 440) == 0 )
+    {
+      GameModule_RoleBehaviour__SetAiCanMove(v2, 1, 0);
+      sub_3D7F628(v2, 1, 0, 0);
+    }
+    goto LABEL_40;
+  }
+  *(_DWORD *)a1 = 0;
+  *(_OWORD *)(a1 + 24) = v16;
+  return ((__int64 (__fastcall *)(__int64, __int128 *, __int64, __int64))unk_3DA3A80)(a1 + 8, &v16, a1, qword_8D21550);
+}

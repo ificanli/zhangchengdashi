@@ -1,0 +1,199 @@
+void GameFramework_UIModule__LoadUIRootOver_object_(void *self, void *resource, const MethodInfo *method)
+{
+  __int64 v5; // x8
+  __int64 v6; // x9
+  __int64 v7; // x21
+  _DWORD *v8; // x10
+  __int64 v9; // x0
+  __int64 v10; // x0
+  __int64 Component_object; // x0
+  __int64 transform; // x0
+  __int64 v13; // x20
+  __int64 v14; // x0
+  __int64 v15; // x20
+  __int64 v16; // x20
+  __int64 v17; // x20
+  __int64 v18; // x20
+  __int64 v19; // x20
+  _BYTE **v20; // x0
+  __int64 v21; // x0
+  __int64 v22; // x0
+  _QWORD *v23; // x0
+  __int64 v24; // x0
+  __int64 v25; // x0
+  float sizeDelta; // s0
+  __int64 v27; // x0
+  float v28; // s8
+  __int64 v29; // x0
+  __int64 v30; // x8
+
+  if ( (byte_9002320 & 1) == 0 )
+  {
+    il2cpp_codegen_initialize_runtime_metadata((void **)&off_8CE40C8 /* GameFramework.AppSetting_TypeInfo */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D2D868 /* Method$UnityEngine.GameObject.GetComponent<CanvasScaler>() */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D2DBA8 /* Method$UnityEngine.GameObject.GetComponent<RectTransform>() */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8CE8EF8 /* YooAsset.IResCallBackInfo_TypeInfo */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D75860 /* UIRoot */);
+    byte_9002320 = 1;
+  }
+  if ( resource == nullptr )
+    goto LABEL_47;
+  v5 = *(_QWORD *)resource;
+  v6 = *(unsigned __int16 *)(*(_QWORD *)resource + 302LL);
+  v7 = qword_8D75860 /* UIRoot */;
+  if ( *(_WORD *)(*(_QWORD *)resource + 302LL) != 0 )
+  {
+    v8 = (_DWORD *)(*(_QWORD *)(v5 + 176) + 8LL);
+    while ( *((_QWORD *)v8 - 1) != qword_8CE8EF8 /* YooAsset.IResCallBackInfo_TypeInfo */ )
+    {
+      --v6;
+      v8 += 4;
+      if ( v6 == 0 )
+        goto LABEL_8;
+    }
+    v9 = v5 + 16LL * (*v8 + 4) + 312;
+  }
+  else
+  {
+LABEL_8:
+    v9 = ((__int64 (__fastcall *)(void *, __int64, __int64))unk_3C504A4)(resource, qword_8CE8EF8 /* YooAsset.IResCallBackInfo_TypeInfo */, 4);
+  }
+  v10 = (*(__int64 (__fastcall **)(void *, __int64, __int64, _QWORD))v9)(resource, v7, 1, *(_QWORD *)(v9 + 8));
+  if ( v10 == 0 )
+    goto LABEL_47;
+  Component_object = UnityEngine_GameObject__GetComponent_object_(v10, qword_8D2DBA8 /* Method$UnityEngine.GameObject.GetComponent<RectTransform>() */);
+  *((_QWORD *)self + 5) = Component_object;
+  if ( Component_object == 0 )
+    goto LABEL_47;
+  transform = UnityEngine_Component__get_transform(Component_object, 0);
+  if ( *((_QWORD *)self + 4) == 0 )
+    goto LABEL_47;
+  v13 = transform;
+  v14 = UnityEngine_GameObject__get_transform(*((_QWORD *)self + 4), 0);
+  if ( v13 == 0 )
+    goto LABEL_47;
+  UnityEngine_Transform__SetParent(v13, v14, 0);
+  v15 = *((_QWORD *)self + 5);
+  if ( byte_8FFD01F == 0 )
+  {
+    il2cpp_codegen_initialize_runtime_metadata((void **)&off_8CEF3D8 /* UnityEngine.Vector3_TypeInfo */);
+    byte_8FFD01F = 1;
+  }
+  if ( v15 == 0 )
+    goto LABEL_47;
+  UnityEngine_Transform__set_localScale(
+    v15,
+    0,
+    *(float *)(*((_QWORD *)off_8CEF3D8 /* UnityEngine.Vector3_TypeInfo */ + 23) + 12LL),
+    *(float *)(*((_QWORD *)off_8CEF3D8 /* UnityEngine.Vector3_TypeInfo */ + 23) + 16LL),
+    *(float *)(*((_QWORD *)off_8CEF3D8 /* UnityEngine.Vector3_TypeInfo */ + 23) + 20LL));
+  v16 = *((_QWORD *)self + 5);
+  if ( byte_8FFCFFF == 0 )
+  {
+    il2cpp_codegen_initialize_runtime_metadata((void **)&off_8CEF390 /* UnityEngine.Vector2_TypeInfo */);
+    byte_8FFCFFF = 1;
+  }
+  if ( v16 == 0 )
+    goto LABEL_47;
+  UnityEngine_RectTransform__set_anchorMin(
+    v16,
+    0,
+    **((float **)off_8CEF390 /* UnityEngine.Vector2_TypeInfo */ + 23),
+    *(float *)(*((_QWORD *)off_8CEF390 /* UnityEngine.Vector2_TypeInfo */ + 23) + 4LL));
+  v17 = *((_QWORD *)self + 5);
+  if ( byte_8FFD000 == 0 )
+  {
+    il2cpp_codegen_initialize_runtime_metadata((void **)&off_8CEF390 /* UnityEngine.Vector2_TypeInfo */);
+    byte_8FFD000 = 1;
+  }
+  if ( v17 == 0 )
+    goto LABEL_47;
+  UnityEngine_RectTransform__set_anchorMax(
+    v17,
+    0,
+    *(float *)(*((_QWORD *)off_8CEF390 /* UnityEngine.Vector2_TypeInfo */ + 23) + 8LL),
+    *(float *)(*((_QWORD *)off_8CEF390 /* UnityEngine.Vector2_TypeInfo */ + 23) + 12LL));
+  v18 = *((_QWORD *)self + 5);
+  if ( byte_8FFCFFF == 0 )
+  {
+    il2cpp_codegen_initialize_runtime_metadata((void **)&off_8CEF390 /* UnityEngine.Vector2_TypeInfo */);
+    byte_8FFCFFF = 1;
+  }
+  if ( v18 == 0 )
+    goto LABEL_47;
+  UnityEngine_RectTransform__set_offsetMin(
+    v18,
+    0,
+    **((float **)off_8CEF390 /* UnityEngine.Vector2_TypeInfo */ + 23),
+    *(float *)(*((_QWORD *)off_8CEF390 /* UnityEngine.Vector2_TypeInfo */ + 23) + 4LL));
+  v19 = *((_QWORD *)self + 5);
+  if ( byte_8FFCFFF == 0 )
+  {
+    il2cpp_codegen_initialize_runtime_metadata((void **)&off_8CEF390 /* UnityEngine.Vector2_TypeInfo */);
+    byte_8FFCFFF = 1;
+  }
+  if ( v19 == 0 )
+    goto LABEL_47;
+  UnityEngine_RectTransform__set_offsetMax(
+    v19,
+    0,
+    **((float **)off_8CEF390 /* UnityEngine.Vector2_TypeInfo */ + 23),
+    *(float *)(*((_QWORD *)off_8CEF390 /* UnityEngine.Vector2_TypeInfo */ + 23) + 4LL));
+  v20 = (_BYTE **)off_8CE40C8 /* GameFramework.AppSetting_TypeInfo */;
+  if ( *((_DWORD *)off_8CE40C8 /* GameFramework.AppSetting_TypeInfo */ + 56) == 0 )
+  {
+    il2cpp_codegen_runtime_class_init(off_8CE40C8 /* GameFramework.AppSetting_TypeInfo */);
+    v20 = (_BYTE **)off_8CE40C8 /* GameFramework.AppSetting_TypeInfo */;
+  }
+  if ( *v20[23] != 0 )
+  {
+    v21 = *((_QWORD *)self + 4);
+    if ( v21 == 0 )
+      goto LABEL_47;
+    v22 = UnityEngine_GameObject__GetComponent_object_(v21, qword_8D2D868 /* Method$UnityEngine.GameObject.GetComponent<CanvasScaler>() */);
+    if ( v22 == 0 )
+      goto LABEL_47;
+    if ( *(float *)(v22 + 56) == 1.0 )
+    {
+      v23 = off_8CE40C8 /* GameFramework.AppSetting_TypeInfo */;
+      if ( *((_DWORD *)off_8CE40C8 /* GameFramework.AppSetting_TypeInfo */ + 56) == 0 )
+      {
+        il2cpp_codegen_runtime_class_init(off_8CE40C8 /* GameFramework.AppSetting_TypeInfo */);
+        v23 = off_8CE40C8 /* GameFramework.AppSetting_TypeInfo */;
+      }
+      if ( *(_BYTE *)(v23[23] + 8LL) != 0 )
+      {
+        v24 = *((_QWORD *)self + 4);
+        if ( v24 != 0 )
+        {
+          v25 = UnityEngine_GameObject__GetComponent_object_(v24, qword_8D2DBA8 /* Method$UnityEngine.GameObject.GetComponent<RectTransform>() */);
+          if ( v25 != 0 )
+          {
+            sizeDelta = UnityEngine_RectTransform__get_sizeDelta(v25, 0);
+            if ( sizeDelta <= 720.0 )
+              goto LABEL_44;
+            v27 = *((_QWORD *)self + 5);
+            if ( v27 != 0 )
+            {
+              v28 = (float)(sizeDelta + -720.0) * 0.5;
+              UnityEngine_RectTransform__set_offsetMax(v27, 0, -v28, 0.0);
+              v29 = *((_QWORD *)self + 5);
+              if ( v29 != 0 )
+              {
+                UnityEngine_RectTransform__set_offsetMin(v29, 0, v28, 0.0);
+                goto LABEL_44;
+              }
+            }
+          }
+        }
+LABEL_47:
+        il2cpp_codegen_raise_null_reference_exception();
+      }
+    }
+  }
+LABEL_44:
+  v30 = *((_QWORD *)self + 3);
+  *((_BYTE *)self + 16) = 1;
+  if ( v30 != 0 )
+    (*(void (__fastcall **)(_QWORD, _QWORD))(v30 + 24))(*(_QWORD *)(v30 + 64), *(_QWORD *)(v30 + 40));
+}

@@ -1,0 +1,68 @@
+void __fastcall GameModule_RoleBehaviour__SetAiSPeed(__int64 a1, float a2)
+{
+  float v4; // s9
+  float v5; // s8
+  float v6; // s0
+  __int64 v7; // x20
+  __int64 Component_object; // x20
+  float v9; // s9
+  float v10; // s8
+  __int64 v11; // x0
+
+  if ( (byte_8FFD474 & 1) == 0 )
+  {
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D25FB0 /* Method$UnityEngine.Component.GetComponent<FollowerEntity>() */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&off_8CEA738 /* System.Math_TypeInfo */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&off_8CEB3E0 /* UnityEngine.Object_TypeInfo */);
+    byte_8FFD474 = 1;
+  }
+  if ( *((_DWORD *)off_8CEB3E0 /* UnityEngine.Object_TypeInfo */ + 56) == 0 )
+    il2cpp_codegen_runtime_class_init(off_8CEB3E0 /* UnityEngine.Object_TypeInfo */);
+  if ( (UnityEngine_Object__op_Equality(a1, 0, 0) & 1) == 0 )
+  {
+    if ( Pathfinding_AstarWebGLRuntimeConfig__get_UseWebGLNavigation(0) )
+    {
+      v4 = *(float *)(a1 + 444);
+      v5 = a2 * 0.8;
+      if ( *((_DWORD *)off_8CEA738 /* System.Math_TypeInfo */ + 56) == 0 )
+        il2cpp_codegen_runtime_class_init(off_8CEA738 /* System.Math_TypeInfo */);
+      if ( vabds_f32(v5, v4) > 0.01 )
+        *(float *)(a1 + 444) = v5;
+    }
+    else
+    {
+      v6 = *(float *)(a1 + 184);
+      v7 = *(_QWORD *)(a1 + 128);
+      if ( v6 > 0.001 )
+        a2 = a2 / v6;
+      if ( *((_DWORD *)off_8CEB3E0 /* UnityEngine.Object_TypeInfo */ + 56) == 0 )
+        il2cpp_codegen_runtime_class_init(off_8CEB3E0 /* UnityEngine.Object_TypeInfo */);
+      if ( (UnityEngine_Object__op_Equality(v7, 0, 0) & 1) != 0 )
+      {
+        Component_object = UnityEngine_Component__GetComponent_object_(a1, qword_8D25FB0 /* Method$UnityEngine.Component.GetComponent<FollowerEntity>() */);
+        *(_QWORD *)(a1 + 128) = Component_object;
+      }
+      else
+      {
+        Component_object = *(_QWORD *)(a1 + 128);
+      }
+      if ( *((_DWORD *)off_8CEB3E0 /* UnityEngine.Object_TypeInfo */ + 56) == 0 )
+        il2cpp_codegen_runtime_class_init(off_8CEB3E0 /* UnityEngine.Object_TypeInfo */);
+      if ( (UnityEngine_Object__op_Inequality(Component_object, 0, 0) & 1) != 0 )
+      {
+        v9 = *(float *)(a1 + 444);
+        v10 = a2 * 0.8;
+        if ( *((_DWORD *)off_8CEA738 /* System.Math_TypeInfo */ + 56) == 0 )
+          il2cpp_codegen_runtime_class_init(off_8CEA738 /* System.Math_TypeInfo */);
+        if ( vabds_f32(v10, v9) > 0.01 )
+        {
+          v11 = *(_QWORD *)(a1 + 128);
+          *(float *)(a1 + 444) = v10;
+          if ( v11 == 0 )
+            il2cpp_codegen_raise_null_reference_exception();
+          Pathfinding_FollowerEntity__set_maxSpeed(v11, 0, v10);
+        }
+      }
+    }
+  }
+}

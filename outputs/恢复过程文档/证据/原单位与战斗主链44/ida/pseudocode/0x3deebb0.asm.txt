@@ -1,0 +1,60 @@
+0x3deebb0: STR             D8, [SP,#var_30]!
+0x3deebb4: STP             X30, X21, [SP,#0x30+var_20]
+0x3deebb8: STP             X20, X19, [SP,#0x30+var_10]
+0x3deebbc: ADRP            X21, #byte_8FFD780@PAGE
+0x3deebc0: ADRP            X20, #off_8ACDA30@PAGE
+0x3deebc4: LDRB            W8, [X21,#byte_8FFD780@PAGEOFF]
+0x3deebc8: LDR             X20, [X20,#off_8ACDA30@PAGEOFF]; off_8CE5E20
+0x3deebcc: MOV             X19, X0
+0x3deebd0: TBNZ            W8, #0, loc_3DEEBE8
+0x3deebd4: ADRP            X0, #off_8ACDA30@PAGE
+0x3deebd8: LDR             X0, [X0,#off_8ACDA30@PAGEOFF]; off_8CE5E20 ; slot
+0x3deebdc: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3deebe0: MOV             W8, #1
+0x3deebe4: STRB            W8, [X21,#byte_8FFD780@PAGEOFF]
+0x3deebe8: LDR             X0, [X20]; klass
+0x3deebec: LDR             W8, [X0,#0xE0]
+0x3deebf0: CBNZ            W8, loc_3DEEBF8
+0x3deebf4: BL              il2cpp_codegen_runtime_class_init
+0x3deebf8: ADRP            X21, #byte_8FFD1AB@PAGE
+0x3deebfc: LDRB            W8, [X21,#byte_8FFD1AB@PAGEOFF]
+0x3deec00: CBNZ            W8, loc_3DEEC18
+0x3deec04: ADRP            X0, #off_8ACDA30@PAGE
+0x3deec08: LDR             X0, [X0,#off_8ACDA30@PAGEOFF]; off_8CE5E20 ; slot
+0x3deec0c: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3deec10: MOV             W8, #1
+0x3deec14: STRB            W8, [X21,#byte_8FFD1AB@PAGEOFF]
+0x3deec18: LDR             X0, [X20]; klass
+0x3deec1c: LDR             W8, [X0,#0xE0]
+0x3deec20: CBNZ            W8, loc_3DEEC2C
+0x3deec24: BL              il2cpp_codegen_runtime_class_init
+0x3deec28: LDR             X0, [X20]
+0x3deec2c: LDR             X8, [X0,#0xB8]
+0x3deec30: LDRB            W8, [X8]
+0x3deec34: CBZ             W8, loc_3DEEC74
+0x3deec38: MOV             X0, XZR
+0x3deec3c: BL              UnityEngine.Time$$get_deltaTime
+0x3deec40: MOV             X0, X19; this
+0x3deec44: BL              GameModule.BattleGameSceneManager$$TickWebGLNavigation
+0x3deec48: LDR             S8, [X19,#0x240]
+0x3deec4c: MOV             X0, XZR
+0x3deec50: BL              UnityEngine.Time$$get_deltaTime
+0x3deec54: LDR             S1, [X19,#0x244]
+0x3deec58: FADD            S0, S8, S0
+0x3deec5c: STR             S0, [X19,#0x240]
+0x3deec60: FCMP            S0, S1
+0x3deec64: B.LE            loc_3DEEC74
+0x3deec68: LDRB            W8, [X19,#0x248]
+0x3deec6c: STR             WZR, [X19,#0x240]
+0x3deec70: CBZ             W8, loc_3DEEC84
+0x3deec74: LDP             X20, X19, [SP,#0x30+var_10]
+0x3deec78: LDP             X30, X21, [SP,#0x30+var_20]
+0x3deec7c: LDR             D8, [SP+0x30+var_30],#0x30
+0x3deec80: RET
+0x3deec84: MOV             X0, X19
+0x3deec88: BL              GameModule.BattleGameSceneManager$$UpdateAllList
+0x3deec8c: LDP             X20, X19, [SP,#0x30+var_10]
+0x3deec90: LDP             X30, X21, [SP,#0x30+var_20]
+0x3deec94: MOV             X2, XZR
+0x3deec98: LDR             D8, [SP+0x30+var_30],#0x30
+0x3deec9c: B               Cysharp.Threading.Tasks.UniTaskExtensions$$Forget

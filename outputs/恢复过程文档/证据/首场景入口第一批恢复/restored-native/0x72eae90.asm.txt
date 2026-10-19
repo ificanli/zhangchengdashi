@@ -1,0 +1,8 @@
+0x72eae90: STR             X30, [SP,#var_10]!
+0x72eae94: LDR             X0, [X0,#0x20]
+0x72eae98: CBZ             X0, loc_72EAEAC
+0x72eae9c: MOV             W8, #1
+0x72eaea0: STRB            W8, [X0,#0x48]
+0x72eaea4: LDR             X30, [SP+0x10+var_10],#0x10
+0x72eaea8: B               GameFramework.Base.GameStartEntry$$____V_
+0x72eaeac: BL              il2cpp_codegen_raise_null_reference_exception

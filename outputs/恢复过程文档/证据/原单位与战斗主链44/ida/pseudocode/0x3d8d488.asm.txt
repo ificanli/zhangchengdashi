@@ -1,0 +1,72 @@
+0x3d8d488: STP             X30, X21, [SP,#var_20]!
+0x3d8d48c: STP             X20, X19, [SP,#0x20+var_10]
+0x3d8d490: ADRP            X21, #byte_8FFD4A5@PAGE
+0x3d8d494: ADRP            X20, #off_8ACDF78@PAGE
+0x3d8d498: LDRB            W8, [X21,#byte_8FFD4A5@PAGEOFF]
+0x3d8d49c: LDR             X20, [X20,#off_8ACDF78@PAGEOFF]; off_8CE1928
+0x3d8d4a0: MOV             X19, X0
+0x3d8d4a4: TBNZ            W8, #0, loc_3D8D4D4
+0x3d8d4a8: ADRP            X0, #off_8ACC8D0@PAGE
+0x3d8d4ac: LDR             X0, [X0,#off_8ACC8D0@PAGEOFF]; off_8CEB3E0 ; slot
+0x3d8d4b0: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3d8d4b4: ADRP            X0, #off_8ACDF88@PAGE
+0x3d8d4b8: LDR             X0, [X0,#off_8ACDF88@PAGEOFF]; qword_8D17890 ; slot
+0x3d8d4bc: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3d8d4c0: ADRP            X0, #off_8ACDF78@PAGE
+0x3d8d4c4: LDR             X0, [X0,#off_8ACDF78@PAGEOFF]; off_8CE1928 ; slot
+0x3d8d4c8: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3d8d4cc: MOV             W8, #1
+0x3d8d4d0: STRB            W8, [X21,#byte_8FFD4A5@PAGEOFF]
+0x3d8d4d4: LDR             X0, [X20]; klass
+0x3d8d4d8: ADRP            X20, #off_8ACDF88@PAGE
+0x3d8d4dc: LDR             W8, [X0,#0xE0]
+0x3d8d4e0: LDR             X20, [X20,#off_8ACDF88@PAGEOFF]; qword_8D17890
+0x3d8d4e4: CBNZ            W8, loc_3D8D4EC
+0x3d8d4e8: BL              il2cpp_codegen_runtime_class_init
+0x3d8d4ec: LDR             X0, [X20]
+0x3d8d4f0: BL              QuickTutor.Singleton_object_$$get_Instance
+0x3d8d4f4: CBZ             X0, loc_3D8D5A4
+0x3d8d4f8: MOV             X1, XZR
+0x3d8d4fc: BL              SDKModule.ABTestManager$$get_UnitCollisionEnableIsBTest
+0x3d8d500: TBZ             W0, #0, loc_3D8D510
+0x3d8d504: MOV             X0, X19
+0x3d8d508: MOV             W1, WZR
+0x3d8d50c: BL              GameModule.RoleBehaviour$$ApplyOccupancyPenalty
+0x3d8d510: ADRP            X21, #off_8ACC8D0@PAGE
+0x3d8d514: LDR             X21, [X21,#off_8ACC8D0@PAGEOFF]; off_8CEB3E0
+0x3d8d518: MOV             X0, X19
+0x3d8d51c: MOV             W1, WZR
+0x3d8d520: BL              GameModule.RoleBehaviour$$SetPathfindingEnabled
+0x3d8d524: LDRB            W8, [X19,#0x27C]
+0x3d8d528: MOV             W9, #1
+0x3d8d52c: STRB            W9, [X19,#0x27D]
+0x3d8d530: CBNZ            W8, loc_3D8D548
+0x3d8d534: LDR             X8, [X19]
+0x3d8d538: MOV             X0, X19
+0x3d8d53c: LDR             X9, [X8,#0x3A8]
+0x3d8d540: LDR             X1, [X8,#0x3B0]
+0x3d8d544: BLR             X9
+0x3d8d548: LDR             X0, [X21]; klass
+0x3d8d54c: LDR             X20, [X19,#0x88]
+0x3d8d550: LDR             W8, [X0,#0xE0]
+0x3d8d554: CBNZ            W8, loc_3D8D55C
+0x3d8d558: BL              il2cpp_codegen_runtime_class_init
+0x3d8d55c: MOV             X0, X20
+0x3d8d560: MOV             X1, XZR
+0x3d8d564: MOV             X2, XZR
+0x3d8d568: BL              UnityEngine.Object$$op_Inequality
+0x3d8d56c: TBZ             W0, #0, loc_3D8D594
+0x3d8d570: LDR             X0, [X21]; klass
+0x3d8d574: LDR             X20, [X19,#0x88]
+0x3d8d578: LDR             W8, [X0,#0xE0]
+0x3d8d57c: CBNZ            W8, loc_3D8D584
+0x3d8d580: BL              il2cpp_codegen_runtime_class_init
+0x3d8d584: MOV             X0, X20
+0x3d8d588: MOV             X1, XZR
+0x3d8d58c: BL              UnityEngine.Object$$Destroy
+0x3d8d590: STR             XZR, [X19,#0x88]
+0x3d8d594: MOV             X0, X19
+0x3d8d598: LDP             X20, X19, [SP,#0x20+var_10]
+0x3d8d59c: LDP             X30, X21, [SP+0x20+var_20],#0x20
+0x3d8d5a0: B               GameModule.RoleBehaviour$$RemoveHPUI
+0x3d8d5a4: BL              il2cpp_codegen_raise_null_reference_exception

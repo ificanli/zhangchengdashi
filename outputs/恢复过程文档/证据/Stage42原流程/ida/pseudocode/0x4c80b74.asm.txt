@@ -1,0 +1,52 @@
+0x4c80b74: SUB             SP, SP, #0x30
+0x4c80b78: STP             X30, X21, [SP,#0x30+var_20]
+0x4c80b7c: STP             X20, X19, [SP,#0x30+var_10]
+0x4c80b80: LDR             X8, [X2,#0x38]
+0x4c80b84: MOV             X19, X2
+0x4c80b88: MOV             X20, X1
+0x4c80b8c: MOV             X21, X0
+0x4c80b90: CBNZ            X8, loc_4C80BB4
+0x4c80b94: ADRP            X0, #off_8B0DCF8@PAGE
+0x4c80b98: LDR             X0, [X0,#off_8B0DCF8@PAGEOFF]; qword_8CFE4F0 ; slot
+0x4c80b9c: BL              il2cpp_codegen_initialize_runtime_metadata
+0x4c80ba0: LDR             X8, [X19,#0x38]
+0x4c80ba4: CBNZ            X8, loc_4C80BB4
+0x4c80ba8: MOV             X0, X19
+0x4c80bac: BL              unk_3C503FC
+0x4c80bb0: LDR             X8, [X19,#0x38]
+0x4c80bb4: STR             XZR, [SP,#0x30+var_28]
+0x4c80bb8: LDR             X1, [X8]
+0x4c80bbc: LDR             X21, [X21,#0x20]
+0x4c80bc0: MOV             X0, X20
+0x4c80bc4: BL              GameFramework.Utility.Text$$GetFullName_object_
+0x4c80bc8: CBZ             X21, loc_4C80C40
+0x4c80bcc: ADRP            X8, #off_8B0DCF8@PAGE
+0x4c80bd0: LDR             X8, [X8,#off_8B0DCF8@PAGEOFF]; qword_8CFE4F0
+0x4c80bd4: MOV             X1, X0
+0x4c80bd8: ADD             X2, SP, #0x30+var_28
+0x4c80bdc: MOV             X0, X21
+0x4c80be0: LDR             X3, [X8]
+0x4c80be4: BL              System.Collections.Generic.Dictionary_object__object_$$TryGetValue
+0x4c80be8: TBZ             W0, #0, loc_4C80C2C
+0x4c80bec: LDR             X8, [X19,#0x38]
+0x4c80bf0: LDR             X20, [SP,#0x30+var_28]
+0x4c80bf4: LDR             X19, [X8,#8]
+0x4c80bf8: LDRB            W8, [X19,#0x135]
+0x4c80bfc: TBNZ            W8, #0, loc_4C80C0C
+0x4c80c00: MOV             X0, X19
+0x4c80c04: BL              unk_3C503A0
+0x4c80c08: MOV             X19, X0
+0x4c80c0c: CBZ             X20, loc_4C80C2C
+0x4c80c10: MOV             X0, X20
+0x4c80c14: MOV             X1, X19
+0x4c80c18: BL              unk_3C3D3B4
+0x4c80c1c: CBNZ            X0, loc_4C80C30
+0x4c80c20: MOV             X0, X20
+0x4c80c24: MOV             X1, X19
+0x4c80c28: BL              unk_3C3D868
+0x4c80c2c: MOV             X0, XZR
+0x4c80c30: LDP             X20, X19, [SP,#0x30+var_10]
+0x4c80c34: LDP             X30, X21, [SP,#0x30+var_20]
+0x4c80c38: ADD             SP, SP, #0x30 ; '0'
+0x4c80c3c: RET
+0x4c80c40: BL              il2cpp_codegen_raise_null_reference_exception

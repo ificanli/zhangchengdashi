@@ -1,0 +1,66 @@
+0x3e1c178: STR             X30, [SP,#var_20]!
+0x3e1c17c: STP             X20, X19, [SP,#0x20+var_10]
+0x3e1c180: ADRP            X20, #byte_8FFD8A2@PAGE
+0x3e1c184: ADRP            X19, #off_8AD4EA0@PAGE
+0x3e1c188: LDRB            W8, [X20,#byte_8FFD8A2@PAGEOFF]
+0x3e1c18c: LDR             X19, [X19,#off_8AD4EA0@PAGEOFF]; off_8CD91F0
+0x3e1c190: TBNZ            W8, #0, loc_3E1C1E4
+0x3e1c194: ADRP            X0, #off_8AD4EA8@PAGE
+0x3e1c198: LDR             X0, [X0,#off_8AD4EA8@PAGEOFF]; qword_8CFB168 ; slot
+0x3e1c19c: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3e1c1a0: ADRP            X0, #off_8AD4EB0@PAGE
+0x3e1c1a4: LDR             X0, [X0,#off_8AD4EB0@PAGEOFF]; unk_8CFB170 ; slot
+0x3e1c1a8: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3e1c1ac: ADRP            X0, #off_8AD4EA0@PAGE
+0x3e1c1b0: LDR             X0, [X0,#off_8AD4EA0@PAGEOFF]; off_8CD91F0 ; slot
+0x3e1c1b4: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3e1c1b8: ADRP            X0, #off_8ACDE40@PAGE
+0x3e1c1bc: LDR             X0, [X0,#off_8ACDE40@PAGEOFF]; qword_8D12148 ; slot
+0x3e1c1c0: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3e1c1c4: ADRP            X0, #off_8AD4D80@PAGE
+0x3e1c1c8: LDR             X0, [X0,#off_8AD4D80@PAGEOFF]; qword_8D12420 ; slot
+0x3e1c1cc: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3e1c1d0: ADRP            X0, #off_8AD4EB8@PAGE
+0x3e1c1d4: LDR             X0, [X0,#off_8AD4EB8@PAGEOFF]; qword_8D73760 ; slot
+0x3e1c1d8: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3e1c1dc: MOV             W8, #1
+0x3e1c1e0: STRB            W8, [X20,#byte_8FFD8A2@PAGEOFF]
+0x3e1c1e4: LDR             X8, [X19]
+0x3e1c1e8: LDR             X8, [X8,#0xB8]
+0x3e1c1ec: LDR             X8, [X8]
+0x3e1c1f0: CBZ             X8, loc_3E1C27C
+0x3e1c1f4: LDR             X0, [X8,#0x30]
+0x3e1c1f8: CBZ             X0, loc_3E1C27C
+0x3e1c1fc: MOV             X1, XZR
+0x3e1c200: BL              DataModule.PlayerAdData$$InitializeVideosNumber
+0x3e1c204: LDR             X8, [X19]
+0x3e1c208: LDR             X8, [X8,#0xB8]
+0x3e1c20c: LDR             X0, [X8]
+0x3e1c210: CBZ             X0, loc_3E1C27C
+0x3e1c214: ADRP            X8, #off_8AD4EA8@PAGE
+0x3e1c218: LDR             X8, [X8,#off_8AD4EA8@PAGEOFF]; qword_8CFB168
+0x3e1c21c: ADRP            X19, #off_8AD4D80@PAGE
+0x3e1c220: LDR             X1, [X8]
+0x3e1c224: LDR             X19, [X19,#off_8AD4D80@PAGEOFF]; qword_8D12420
+0x3e1c228: BL              DbtSaveDataManagerBase_object__object_$$Save
+0x3e1c22c: LDR             X0, [X19]
+0x3e1c230: BL              ToolModule.ManagerBase_object_$$get_Instance
+0x3e1c234: CBZ             X0, loc_3E1C27C
+0x3e1c238: ADRP            X19, #off_8ACDE40@PAGE
+0x3e1c23c: LDR             X0, [X0,#0x20]
+0x3e1c240: LDR             X19, [X19,#off_8ACDE40@PAGEOFF]; qword_8D12148
+0x3e1c244: CBZ             X0, loc_3E1C250
+0x3e1c248: MOV             X1, XZR
+0x3e1c24c: BL              BadgeGraph.ThrottleTrigger$$RegisterOneTrigger
+0x3e1c250: LDR             X0, [X19]
+0x3e1c254: BL              ToolModule.ManagerBase_object_$$get_Instance
+0x3e1c258: CBZ             X0, loc_3E1C27C
+0x3e1c25c: ADRP            X8, #off_8AD4EB8@PAGE
+0x3e1c260: LDR             X8, [X8,#off_8AD4EB8@PAGEOFF]; qword_8D73760
+0x3e1c264: LDP             X20, X19, [SP,#0x20+var_10]
+0x3e1c268: MOV             X2, XZR
+0x3e1c26c: MOV             X3, XZR
+0x3e1c270: LDR             X1, [X8]
+0x3e1c274: LDR             X30, [SP+0x20+var_20],#0x20
+0x3e1c278: B               EventModule.EventManager$$TriggerEvent
+0x3e1c27c: BL              il2cpp_codegen_raise_null_reference_exception

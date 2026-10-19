@@ -1,0 +1,30 @@
+{
+  "address": "0x3D313B0",
+  "end": "0x3D31494",
+  "identified_as": "AsyncUniTaskVoidMethodBuilder.SetResult",
+  "metadata_refs": [
+    {
+      "pointer_slot": "0x8acf8a8",
+      "Address": 147755056,
+      "Name": "Cysharp.Threading.Tasks.CompilerServices.IStateMachineRunner_TypeInfo",
+      "Signature": "Cysharp_Threading_Tasks_CompilerServices_IStateMachineRunner_c*"
+    },
+    {
+      "pointer_slot": "0x8acf8b0",
+      "Address": 147765984,
+      "Name": "Cysharp.Threading.Tasks.PlayerLoopHelper_TypeInfo",
+      "Signature": "Cysharp_Threading_Tasks_PlayerLoopHelper_c*"
+    }
+  ],
+  "direct_call": [
+    {
+      "Address": 131537144,
+      "Name": "Cysharp.Threading.Tasks.PlayerLoopHelper$$AddContinuation",
+      "Signature": "void Cysharp_Threading_Tasks_PlayerLoopHelper__AddContinuation (int32_t timing, System_Action_o* continuation, const MethodInfo* method);",
+      "TypeSignature": "viii"
+    }
+  ],
+  "reason": "runner null returns; non-null invokes IStateMachineRunner.ReturnAction then AddContinuation(PlayerLoopTiming.LastPostLateUpdate=13, action), clears runner; matches exact bundled UniTask builder source.",
+  "code_sha256": "9b3864b17be68f26c07efc21423cdeb12030ef4d943c4898abb99c6657fe7851",
+  "ret_rva": "0x3D31490"
+}

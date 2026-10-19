@@ -1,0 +1,18 @@
+0x3df9664: LDRB            W8, [X0]
+0x3df9668: AND             W9, W1, #1
+0x3df966c: CMP             W9, W8
+0x3df9670: B.NE            loc_3DF96A4
+0x3df9674: LDR             W8, [X0,#4]
+0x3df9678: LSR             X9, X1, #0x20 ; ' '
+0x3df967c: CMP             W8, W9
+0x3df9680: B.NE            loc_3DF96A4
+0x3df9684: LDR             W8, [X0,#8]
+0x3df9688: CMP             W8, W2
+0x3df968c: B.NE            loc_3DF96A4
+0x3df9690: LDR             W8, [X0,#0xC]
+0x3df9694: LSR             X9, X2, #0x20 ; ' '
+0x3df9698: CMP             W8, W9
+0x3df969c: CSET            W0, EQ
+0x3df96a0: RET
+0x3df96a4: MOV             W0, WZR
+0x3df96a8: RET

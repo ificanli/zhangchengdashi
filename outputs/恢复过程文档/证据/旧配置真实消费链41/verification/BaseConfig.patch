@@ -1,0 +1,13 @@
+--- before/Assets/Scripts/GFRunning/GameFramework/BaseConfig.cs
++++ candidate/Assets/Scripts/GFRunning/GameFramework/BaseConfig.cs
+@@ -152,8 +152,8 @@
+ 			[Address(RVA = "0x71656C0", Offset = "0x71616C0", VA = "0x71656C0", Slot = "4")]
+ 			get
+ 			{
+-				return null;
+-			}
++			throw new NotImplementedException();
++		}
+ 		}
+ 
+ 		[Token(Token = "0x600571E")]

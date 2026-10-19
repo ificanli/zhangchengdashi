@@ -1,0 +1,198 @@
+0x6857330: SUB             SP, SP, #0x40
+0x6857334: STP             X30, X23, [SP,#0x40+var_30]
+0x6857338: STP             X22, X21, [SP,#0x40+var_20]
+0x685733c: STP             X20, X19, [SP,#0x40+var_10]
+0x6857340: ADRP            X21, #byte_9006FDF@PAGE
+0x6857344: LDRB            W8, [X21,#byte_9006FDF@PAGEOFF]
+0x6857348: MOV             X20, X1
+0x685734c: MOV             X19, X0
+0x6857350: TBNZ            W8, #0, loc_6857374
+0x6857354: ADRP            X0, #off_8AD5AD0@PAGE
+0x6857358: LDR             X0, [X0,#off_8AD5AD0@PAGEOFF]; off_8CE4558 ; slot
+0x685735c: BL              il2cpp_codegen_initialize_runtime_metadata
+0x6857360: ADRP            X0, #off_8AF4278@PAGE
+0x6857364: LDR             X0, [X0,#off_8AF4278@PAGEOFF]; off_8CE5BB8 ; slot
+0x6857368: BL              il2cpp_codegen_initialize_runtime_metadata
+0x685736c: MOV             W8, #1
+0x6857370: STRB            W8, [X21,#byte_9006FDF@PAGEOFF]
+0x6857374: STR             XZR, [SP,#0x40+var_38]
+0x6857378: ADRP            X23, #off_8AD5AD0@PAGE
+0x685737c: LDR             W8, [X19]
+0x6857380: LDR             X23, [X23,#off_8AD5AD0@PAGEOFF]; off_8CE4558
+0x6857384: CBZ             W8, loc_68573B4
+0x6857388: CMP             W8, #1
+0x685738c: B.NE            loc_68573D8
+0x6857390: LDR             X8, [X19,#0x38]
+0x6857394: MOV             W9, #0xFFFFFFFF
+0x6857398: STR             X8, [SP,#0x40+var_38]
+0x685739c: STR             XZR, [X19,#0x38]
+0x68573a0: STR             W9, [X19]
+0x68573a4: ADD             X0, SP, #0x40+var_38
+0x68573a8: MOV             X1, XZR
+0x68573ac: BL              System.Runtime.CompilerServices.TaskAwaiter$$GetResult
+0x68573b0: B               loc_6857494
+0x68573b4: LDR             X8, [X19,#0x38]
+0x68573b8: MOV             W9, #0xFFFFFFFF
+0x68573bc: STR             X8, [SP,#0x40+var_38]
+0x68573c0: STR             XZR, [X19,#0x38]
+0x68573c4: STR             W9, [X19]
+0x68573c8: ADD             X0, SP, #0x40+var_38
+0x68573cc: MOV             X1, XZR
+0x68573d0: BL              System.Runtime.CompilerServices.TaskAwaiter$$GetResult
+0x68573d4: B               loc_6857494
+0x68573d8: LDR             W8, [X19,#0x20]
+0x68573dc: CMP             W8, #2
+0x68573e0: B.EQ            loc_68574CC
+0x68573e4: CMP             W8, #1
+0x68573e8: B.NE            loc_6857494
+0x68573ec: ADRP            X8, #off_8AF4278@PAGE
+0x68573f0: LDR             X8, [X8,#off_8AF4278@PAGEOFF]; off_8CE5BB8
+0x68573f4: LDP             X22, X21, [X19,#0x28]
+0x68573f8: LDR             X0, [X8]; klass
+0x68573fc: LDR             W8, [X0,#0xE0]
+0x6857400: CBNZ            W8, loc_6857408
+0x6857404: BL              il2cpp_codegen_runtime_class_init
+0x6857408: LDR             X0, [X20,#0x20]
+0x685740c: LDRB            W8, [X0,#0x135]
+0x6857410: TBNZ            W8, #0, loc_6857418
+0x6857414: BL              unk_3C503A0
+0x6857418: LDR             X8, [X0,#0xC0]
+0x685741c: LDR             X2, [X8,#0x10]; a2
+0x6857420: MOV             X0, X22; a0
+0x6857424: MOV             X1, X21; a1
+0x6857428: BL              GameFramework.ConfigRead$$readCustomConfigByUnityJsonAsync_object_
+0x685742c: CBZ             X0, loc_6857578
+0x6857430: MOV             X1, XZR
+0x6857434: BL              System.Threading.Tasks.Task$$GetAwaiter
+0x6857438: STR             X0, [SP,#0x40+var_38]
+0x685743c: ADD             X0, SP, #0x40+var_38
+0x6857440: MOV             X1, XZR
+0x6857444: BL              System.Runtime.CompilerServices.TaskAwaiter$$get_IsCompleted
+0x6857448: TBNZ            W0, #0, loc_68573C8
+0x685744c: STR             WZR, [X19]
+0x6857450: LDR             X8, [SP,#0x40+var_38]
+0x6857454: STR             X8, [X19,#0x38]
+0x6857458: LDR             X0, [X23]; klass
+0x685745c: LDR             W8, [X0,#0xE0]
+0x6857460: CBNZ            W8, loc_6857468
+0x6857464: BL              il2cpp_codegen_runtime_class_init
+0x6857468: LDR             X0, [X20,#0x20]
+0x685746c: LDRB            W8, [X0,#0x135]
+0x6857470: TBNZ            W8, #0, loc_6857478
+0x6857474: BL              unk_3C503A0
+0x6857478: LDR             X8, [X0,#0xC0]
+0x685747c: ADD             X0, X19, #8
+0x6857480: LDR             X3, [X8,#0x18]
+0x6857484: ADD             X1, SP, #0x40+var_38
+0x6857488: MOV             X2, X19
+0x685748c: BL              System.Runtime.CompilerServices.AsyncTaskMethodBuilder$$AwaitUnsafeOnCompleted_TaskAwaiter__ConfigRead.__slS__object__
+0x6857490: B               loc_68574B8
+0x6857494: MOV             W8, #0xFFFFFFFE
+0x6857498: STR             W8, [X19],#8
+0x685749c: LDR             X0, [X23]; klass
+0x68574a0: LDR             W8, [X0,#0xE0]
+0x68574a4: CBNZ            W8, loc_68574AC
+0x68574a8: BL              il2cpp_codegen_runtime_class_init
+0x68574ac: MOV             X0, X19
+0x68574b0: MOV             X1, XZR
+0x68574b4: BL              System.Runtime.CompilerServices.AsyncTaskMethodBuilder$$SetResult
+0x68574b8: LDP             X20, X19, [SP,#0x40+var_10]
+0x68574bc: LDP             X22, X21, [SP,#0x40+var_20]
+0x68574c0: LDP             X30, X23, [SP,#0x40+var_30]
+0x68574c4: ADD             SP, SP, #0x40 ; '@'
+0x68574c8: RET
+0x68574cc: ADRP            X8, #off_8AF4278@PAGE
+0x68574d0: LDR             X8, [X8,#off_8AF4278@PAGEOFF]; off_8CE5BB8
+0x68574d4: LDP             X22, X21, [X19,#0x28]
+0x68574d8: LDR             X0, [X8]; klass
+0x68574dc: LDR             W8, [X0,#0xE0]
+0x68574e0: CBNZ            W8, loc_68574E8
+0x68574e4: BL              il2cpp_codegen_runtime_class_init
+0x68574e8: LDR             X0, [X20,#0x20]
+0x68574ec: LDRB            W8, [X0,#0x135]
+0x68574f0: TBNZ            W8, #0, loc_68574F8
+0x68574f4: BL              unk_3C503A0
+0x68574f8: LDR             X8, [X0,#0xC0]
+0x68574fc: LDR             X2, [X8,#0x28]
+0x6857500: MOV             X0, X22
+0x6857504: MOV             X1, X21
+0x6857508: BL              GameFramework.ConfigRead$$readCustomConfigByMemoryPackAsync_object_
+0x685750c: CBZ             X0, loc_685757C
+0x6857510: MOV             X1, XZR
+0x6857514: BL              System.Threading.Tasks.Task$$GetAwaiter
+0x6857518: STR             X0, [SP,#0x40+var_38]
+0x685751c: ADD             X0, SP, #0x40+var_38
+0x6857520: MOV             X1, XZR
+0x6857524: BL              System.Runtime.CompilerServices.TaskAwaiter$$get_IsCompleted
+0x6857528: TBNZ            W0, #0, loc_68573A4
+0x685752c: MOV             W8, #1
+0x6857530: STR             W8, [X19]
+0x6857534: LDR             X8, [SP,#0x40+var_38]
+0x6857538: STR             X8, [X19,#0x38]
+0x685753c: LDR             X0, [X23]; klass
+0x6857540: LDR             W8, [X0,#0xE0]
+0x6857544: CBNZ            W8, loc_685754C
+0x6857548: BL              il2cpp_codegen_runtime_class_init
+0x685754c: LDR             X0, [X20,#0x20]
+0x6857550: LDRB            W8, [X0,#0x135]
+0x6857554: TBNZ            W8, #0, loc_685755C
+0x6857558: BL              unk_3C503A0
+0x685755c: LDR             X8, [X0,#0xC0]
+0x6857560: ADD             X0, X19, #8
+0x6857564: LDR             X3, [X8,#0x18]
+0x6857568: ADD             X1, SP, #0x40+var_38
+0x685756c: MOV             X2, X19
+0x6857570: BL              System.Runtime.CompilerServices.AsyncTaskMethodBuilder$$AwaitUnsafeOnCompleted_TaskAwaiter__ConfigRead.__slS__object__
+0x6857574: B               loc_68574B8
+0x6857578: BL              il2cpp_codegen_raise_null_reference_exception
+0x685757c: BL              il2cpp_codegen_raise_null_reference_exception
+0x6857580: B               loc_68575A8
+0x6857584: B               loc_68575A8
+0x6857588: B               loc_68575A8
+0x685758c: B               loc_68575A8
+0x6857590: B               loc_68575A8
+0x6857594: B               loc_68575A8
+0x6857598: B               loc_68575A8
+0x685759c: B               loc_68575A8
+0x68575a0: B               loc_68575A8
+0x68575a4: B               loc_68575A8
+0x68575a8: MOV             X20, X0
+0x68575ac: CMP             W1, #1
+0x68575b0: B.NE            loc_6857640
+0x68575b4: MOV             X0, X20
+0x68575b8: BL              .__cxa_begin_catch
+0x68575bc: MOV             X20, X0
+0x68575c0: ADRP            X0, #off_8ACCF90@PAGE
+0x68575c4: LDR             X0, [X0,#off_8ACCF90@PAGEOFF]; unk_8CE71D0
+0x68575c8: BL              unk_3C3D294
+0x68575cc: LDR             X8, [X20]
+0x68575d0: LDR             X1, [X8]
+0x68575d4: BL              unk_3C3D8F8
+0x68575d8: TBZ             W0, #0, loc_6857618
+0x68575dc: LDR             X20, [X20]
+0x68575e0: BL              .__cxa_end_catch
+0x68575e4: MOV             W8, #0xFFFFFFFE
+0x68575e8: STR             W8, [X19],#8
+0x68575ec: ADRP            X0, #off_8AD5AD0@PAGE
+0x68575f0: LDR             X0, [X0,#off_8AD5AD0@PAGEOFF]; off_8CE4558
+0x68575f4: BL              unk_3C3D294
+0x68575f8: LDR             W8, [X0,#0xE0]
+0x68575fc: CBNZ            W8, loc_6857604
+0x6857600: BL              il2cpp_codegen_runtime_class_init
+0x6857604: MOV             X0, X19
+0x6857608: MOV             X1, X20
+0x685760c: MOV             X2, XZR
+0x6857610: BL              System.Runtime.CompilerServices.AsyncTaskMethodBuilder$$SetException
+0x6857614: B               loc_68574B8
+0x6857618: MOV             W0, #8
+0x685761c: BL              .__cxa_allocate_exception
+0x6857620: LDR             X8, [X20]
+0x6857624: STR             X8, [X0]
+0x6857628: ADRL            X1, _ZTI22Il2CppExceptionWrapper; `typeinfo for'Il2CppExceptionWrapper
+0x6857630: MOV             X2, XZR
+0x6857634: BL              .__cxa_throw
+0x6857638: MOV             X20, X0
+0x685763c: BL              .__cxa_end_catch
+0x6857640: MOV             X0, X20
+0x6857644: BL              sub_3CE73C4
+0x6857648: BL              unk_35BC500

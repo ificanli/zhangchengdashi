@@ -1,0 +1,35 @@
+0x3f12988: ff4301d1 sub      sp, sp, #0x50
+0x3f1298c: fe5703a9 stp      x30, x21, [sp, #0x30]
+0x3f12990: f44f04a9 stp      x20, x19, [sp, #0x40]
+0x3f12994: 75870290 adrp     x21, #0x8ffe000
+0x3f12998: 545e0290 adrp     x20, #0x8ada000
+0x3f1299c: a8ba4139 ldrb     w8, [x21, #0x6e]
+0x3f129a0: 94de46f9 ldr      x20, [x20, #0xdb8] // Method$Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder.Start<AssetsManager.<Init>d__15>()
+0x3f129a4: f30300aa mov      x19, x0
+0x3f129a8: c8000037 tbnz     w8, #0, #0x3f129c0
+0x3f129ac: 405e0290 adrp     x0, #0x8ada000
+0x3f129b0: 00dc46f9 ldr      x0, [x0, #0xdb8] // Method$Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder.Start<AssetsManager.<Init>d__15>()
+0x3f129b4: 33aaf497 bl       #0x3c3d280
+0x3f129b8: 28008052 mov      w8, #1
+0x3f129bc: a8ba0139 strb     w8, [x21, #0x6e]
+0x3f129c0: 800240f9 ldr      x0, [x20]
+0x3f129c4: 00e4006f movi     v0.2d, #0000000000000000
+0x3f129c8: 08008012 mov      w8, #-1
+0x3f129cc: e00300ad stp      q0, q0, [sp]
+0x3f129d0: e00b803d str      q0, [sp, #0x20]
+0x3f129d4: f30f00f9 str      x19, [sp, #0x18]
+0x3f129d8: e80300b9 str      w8, [sp]
+0x3f129dc: 081c40f9 ldr      x8, [x0, #0x38]
+0x3f129e0: 480000b5 cbnz     x8, #0x3f129e8
+0x3f129e4: 86f6f497 bl       #0x3c503fc
+0x3f129e8: e8030091 mov      x8, sp
+0x3f129ec: e0030091 mov      x0, sp
+0x3f129f0: 13017db2 orr      x19, x8, #8
+0x3f129f4: 7c040094 bl       #0x3f13be4 // AssetsModule.AssetsManager.<Init>d__15$$MoveNext
+0x3f129f8: e00313aa mov      x0, x19
+0x3f129fc: e1031faa mov      x1, xzr
+0x3f12a00: 6013f897 bl       #0x3d17780
+0x3f12a04: f44f44a9 ldp      x20, x19, [sp, #0x40]
+0x3f12a08: fe5743a9 ldp      x30, x21, [sp, #0x30]
+0x3f12a0c: ff430191 add      sp, sp, #0x50
+0x3f12a10: c0035fd6 ret      

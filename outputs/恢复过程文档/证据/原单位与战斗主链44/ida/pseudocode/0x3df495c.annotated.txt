@@ -1,0 +1,240 @@
+__int64 __fastcall GameModule_BattleGameSceneManager__GetHexTargetPosNoThisFoot(
+        __int64 a1,
+        int a2,
+        float a3,
+        float a4,
+        float a5)
+{
+  __int64 v10; // x20
+  __int64 v11; // x22
+  __int64 v12; // x20
+  unsigned int v13; // w23
+  __int64 Item; // x0
+  __int64 v15; // x0
+  __int64 transform; // x0
+  float v17; // s11
+  float v18; // s1
+  float v19; // s12
+  float v20; // s2
+  float v21; // s13
+  __int64 v22; // x0
+  __int64 v23; // x8
+  _QWORD *v24; // x9
+  __int64 v25; // x10
+  __int64 v26; // x22
+  unsigned int v27; // w23
+  int v28; // w26
+  __int64 v29; // x0
+  __int64 v30; // x0
+  float v31; // s11
+  float v32; // s1
+  float v33; // s12
+  float v34; // s2
+  float v35; // s13
+  __int64 v36; // x2
+  float v37; // s14
+  int v38; // w24
+  __int64 v39; // x0
+  __int64 v40; // x0
+  float v41; // s11
+  float v42; // s1
+  float v43; // s12
+  float v44; // s2
+  float v45; // s13
+  float v46; // s0
+  __int64 v47; // x0
+  __int64 v48; // x0
+  long double position; // q0
+  int v50; // s2
+  __int64 v51; // x8
+  _QWORD *v52; // x9
+  __int64 v53; // x10
+  _DWORD *v54; // x8
+  __int64 v55; // x0
+
+  if ( (byte_8FFD7AA & 1) == 0 )
+  {
+    il2cpp_codegen_initialize_runtime_metadata((void **)&off_8D0B4E8 /* Method$System.Collections.Generic.List<HexBehaviour>.Add() */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&off_8D0F7C8 /* Method$System.Collections.Generic.List<Vector3>.Add() */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D0B510 /* Method$System.Collections.Generic.List<HexBehaviour>.Remove() */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D0B4D8 /* Method$System.Collections.Generic.List<HexBehaviour>..ctor() */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D0F7B0 /* Method$System.Collections.Generic.List<Vector3>..ctor() */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D0B4D0 /* Method$System.Collections.Generic.List<HexBehaviour>..ctor() */);
+    il2cpp_codegen_initialize_runtime_metadata(&qword_8D0B528 /* Method$System.Collections.Generic.List<HexBehaviour>.get_Count() */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D0B530 /* Method$System.Collections.Generic.List<HexBehaviour>.get_Item() */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8CDD888 /* System.Collections.Generic.List<HexBehaviour>_TypeInfo */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8CDE470 /* System.Collections.Generic.List<Vector3>_TypeInfo */);
+    byte_8FFD7AA = 1;
+  }
+  v10 = *(_QWORD *)(a1 + 128);
+  if ( v10 == 0 )
+    goto LABEL_56;
+  if ( *(_DWORD *)(v10 + 24) == 0 )
+    return 0;
+  v11 = ((__int64 (__fastcall *)(__int64))unk_3C3D4C4)(qword_8CDD888 /* System.Collections.Generic.List<HexBehaviour>_TypeInfo */);
+  sub_574EE80(v11, v10, qword_8D0B4D8 /* Method$System.Collections.Generic.List<HexBehaviour>..ctor() */);
+  v12 = ((__int64 (__fastcall *)(__int64))unk_3C3D4C4)(qword_8CDD888 /* System.Collections.Generic.List<HexBehaviour>_TypeInfo */);
+  System_Collections_Generic_List_object____ctor(v12, qword_8D0B4D0 /* Method$System.Collections.Generic.List<HexBehaviour>..ctor() */);
+  if ( v11 == 0 )
+    goto LABEL_56;
+  if ( *(int *)(v11 + 24) >= 1 )
+  {
+    v13 = 0;
+    while ( 1 )
+    {
+      Item = System_Collections_Generic_List_object___get_Item(v11, v13, qword_8D0B530 /* Method$System.Collections.Generic.List<HexBehaviour>.get_Item() */);
+      if ( Item == 0 )
+        break;
+      if ( *(_BYTE *)(Item + 161) == 0 )
+      {
+        v15 = System_Collections_Generic_List_object___get_Item(v11, v13, qword_8D0B530 /* Method$System.Collections.Generic.List<HexBehaviour>.get_Item() */);
+        if ( v15 == 0 )
+          break;
+        transform = UnityEngine_Component__get_transform(v15, 0);
+        if ( transform == 0 )
+          break;
+        LODWORD(v17) = COERCE_UNSIGNED_INT128(UnityEngine_Transform__get_position(transform, 0));
+        v19 = v18;
+        v21 = v20;
+        if ( byte_8FFD020 == 0 )
+        {
+          il2cpp_codegen_initialize_runtime_metadata((void **)&off_8CEA738 /* System.Math_TypeInfo */);
+          byte_8FFD020 = 1;
+        }
+        if ( *((_DWORD *)off_8CEA738 /* System.Math_TypeInfo */ + 56) == 0 )
+          il2cpp_codegen_runtime_class_init(off_8CEA738 /* System.Math_TypeInfo */);
+        if ( sqrtf(
+               (float)((float)(a5 - v21) * (float)(a5 - v21))
+             + (float)((float)((float)(a3 - v17) * (float)(a3 - v17)) + (float)((float)(a4 - v19) * (float)(a4 - v19)))) > 1.0 )
+        {
+          v22 = System_Collections_Generic_List_object___get_Item(v11, v13, qword_8D0B530 /* Method$System.Collections.Generic.List<HexBehaviour>.get_Item() */);
+          if ( v12 == 0 )
+            break;
+          v23 = *(_QWORD *)(v12 + 16);
+          v24 = off_8D0B4E8 /* Method$System.Collections.Generic.List<HexBehaviour>.Add() */;
+          ++*(_DWORD *)(v12 + 28);
+          if ( v23 == 0 )
+            break;
+          v25 = *(int *)(v12 + 24);
+          if ( (unsigned int)v25 >= *(_DWORD *)(v23 + 24) )
+          {
+            System_Collections_Generic_List_object___AddWithResize(
+              v12,
+              v22,
+              *(_QWORD *)(*(_QWORD *)(v24[4] + 192LL) + 112LL));
+          }
+          else
+          {
+            *(_DWORD *)(v12 + 24) = v25 + 1;
+            *(_QWORD *)(v23 + 8 * v25 + 32) = v22;
+          }
+        }
+      }
+      if ( (signed int)++v13 >= *(_DWORD *)(v11 + 24) )
+        goto LABEL_23;
+    }
+LABEL_56:
+    il2cpp_codegen_raise_null_reference_exception();
+  }
+LABEL_23:
+  v26 = ((__int64 (__fastcall *)(__int64))unk_3C3D4C4)(qword_8CDE470 /* System.Collections.Generic.List<Vector3>_TypeInfo */);
+  System_Collections_Generic_List_Vector3____ctor(v26, qword_8D0F7B0 /* Method$System.Collections.Generic.List<Vector3>..ctor() */);
+  if ( a2 >= 1 )
+  {
+    if ( v12 != 0 )
+    {
+      v27 = 0;
+      v28 = 0;
+      while ( 1 )
+      {
+        v29 = System_Collections_Generic_List_object___get_Item(v12, 0, qword_8D0B530 /* Method$System.Collections.Generic.List<HexBehaviour>.get_Item() */);
+        if ( v29 == 0 )
+          goto LABEL_56;
+        v30 = UnityEngine_Component__get_transform(v29, 0);
+        if ( v30 == 0 )
+          goto LABEL_56;
+        LODWORD(v31) = COERCE_UNSIGNED_INT128(UnityEngine_Transform__get_position(v30, 0));
+        v33 = v32;
+        v35 = v34;
+        if ( byte_8FFD020 == 0 )
+        {
+          il2cpp_codegen_initialize_runtime_metadata((void **)&off_8CEA738 /* System.Math_TypeInfo */);
+          byte_8FFD020 = 1;
+        }
+        if ( *((_DWORD *)off_8CEA738 /* System.Math_TypeInfo */ + 56) == 0 )
+          il2cpp_codegen_runtime_class_init(off_8CEA738 /* System.Math_TypeInfo */);
+        v36 = qword_8D0B530 /* Method$System.Collections.Generic.List<HexBehaviour>.get_Item() */;
+        if ( *(int *)(v12 + 24) >= 2 )
+          break;
+LABEL_45:
+        v47 = System_Collections_Generic_List_object___get_Item(v12, v27, v36);
+        if ( v47 == 0 )
+          goto LABEL_56;
+        v48 = UnityEngine_Component__get_transform(v47, 0);
+        if ( v48 == 0 )
+          goto LABEL_56;
+        position = UnityEngine_Transform__get_position(v48, 0);
+        if ( v26 == 0 )
+          goto LABEL_56;
+        v51 = *(_QWORD *)(v26 + 16);
+        v52 = off_8D0F7C8 /* Method$System.Collections.Generic.List<Vector3>.Add() */;
+        ++*(_DWORD *)(v26 + 28);
+        if ( v51 == 0 )
+          goto LABEL_56;
+        v53 = *(int *)(v26 + 24);
+        if ( (unsigned int)v53 >= *(_DWORD *)(v51 + 24) )
+        {
+          System_Collections_Generic_List_Vector3___AddWithResize(v26, *(_QWORD *)(*(_QWORD *)(v52[4] + 192LL) + 112LL));
+        }
+        else
+        {
+          v54 = (_DWORD *)(v51 + 12 * v53);
+          *(_DWORD *)(v26 + 24) = v53 + 1;
+          v54[8] = LODWORD(position);
+          v54[9] = 0;
+          v54[10] = v50;
+        }
+        v55 = System_Collections_Generic_List_object___get_Item(v12, v27, qword_8D0B530 /* Method$System.Collections.Generic.List<HexBehaviour>.get_Item() */);
+        System_Collections_Generic_List_object___Remove(v12, v55, qword_8D0B510 /* Method$System.Collections.Generic.List<HexBehaviour>.Remove() */);
+        if ( ++v28 == a2 )
+          return v26;
+      }
+      v37 = sqrtf(
+              (float)((float)(a5 - v35) * (float)(a5 - v35))
+            + (float)((float)((float)(a3 - v31) * (float)(a3 - v31)) + (float)((float)(a4 - v33) * (float)(a4 - v33))));
+      v38 = 1;
+      while ( 1 )
+      {
+        v39 = System_Collections_Generic_List_object___get_Item(v12, (unsigned int)v38, v36);
+        if ( v39 == 0 )
+          break;
+        v40 = UnityEngine_Component__get_transform(v39, 0);
+        if ( v40 == 0 )
+          break;
+        LODWORD(v41) = COERCE_UNSIGNED_INT128(UnityEngine_Transform__get_position(v40, 0));
+        v43 = v42;
+        v45 = v44;
+        if ( byte_8FFD020 == 0 )
+        {
+          il2cpp_codegen_initialize_runtime_metadata((void **)&off_8CEA738 /* System.Math_TypeInfo */);
+          byte_8FFD020 = 1;
+        }
+        if ( *((_DWORD *)off_8CEA738 /* System.Math_TypeInfo */ + 56) == 0 )
+          il2cpp_codegen_runtime_class_init(off_8CEA738 /* System.Math_TypeInfo */);
+        v36 = qword_8D0B530 /* Method$System.Collections.Generic.List<HexBehaviour>.get_Item() */;
+        v46 = sqrtf(
+                (float)((float)(a5 - v45) * (float)(a5 - v45))
+              + (float)((float)((float)(a3 - v41) * (float)(a3 - v41)) + (float)((float)(a4 - v43) * (float)(a4 - v43))));
+        if ( v37 > v46 )
+          v27 = v38;
+        ++v38;
+        if ( v37 > v46 )
+          v37 = v46;
+        if ( v38 >= *(_DWORD *)(v12 + 24) )
+          goto LABEL_45;
+      }
+    }
+    goto LABEL_56;
+  }
+  return v26;
+}

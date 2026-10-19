@@ -1,0 +1,28 @@
+0x72e7ff4: fe0f1df8 str      x30, [sp, #-0x30]!
+0x72e7ff8: f65701a9 stp      x22, x21, [sp, #0x10]
+0x72e7ffc: f44f02a9 stp      x20, x19, [sp, #0x20]
+0x72e8000: 15e900d0 adrp     x21, #0x900a000
+0x72e8004: 76c100d0 adrp     x22, #0x8b16000
+0x72e8008: a82a4139 ldrb     w8, [x21, #0x4a]
+0x72e800c: d6e246f9 ldr      x22, [x22, #0xdc0] // ConfigLoadOver
+0x72e8010: f30301aa mov      x19, x1
+0x72e8014: f40300aa mov      x20, x0
+0x72e8018: c8000037 tbnz     w8, #0, #0x72e8030
+0x72e801c: 60c100d0 adrp     x0, #0x8b16000
+0x72e8020: 00e046f9 ldr      x0, [x0, #0xdc0] // ConfigLoadOver
+0x72e8024: 97542597 bl       #0x3c3d280
+0x72e8028: 28008052 mov      w8, #1
+0x72e802c: a82a0139 strb     w8, [x21, #0x4a]
+0x72e8030: c10240f9 ldr      x1, [x22]
+0x72e8034: e00314aa mov      x0, x20
+0x72e8038: 2ff6ff97 bl       #0x72e58f4 // GameFramework.Base.GameStartEntry$$M¬a
+0x72e803c: 802a40f9 ldr      x0, [x20, #0x50]
+0x72e8040: 000100b4 cbz      x0, #0x72e8060
+0x72e8044: 080040f9 ldr      x8, [x0]
+0x72e8048: e10313aa mov      x1, x19
+0x72e804c: f44f42a9 ldp      x20, x19, [sp, #0x20]
+0x72e8050: f65741a9 ldp      x22, x21, [sp, #0x10]
+0x72e8054: 038959a9 ldp      x3, x2, [x8, #0x198]
+0x72e8058: fe0743f8 ldr      x30, [sp], #0x30
+0x72e805c: 60001fd6 br       x3
+0x72e8060: 1b552597 bl       #0x3c3d4cc

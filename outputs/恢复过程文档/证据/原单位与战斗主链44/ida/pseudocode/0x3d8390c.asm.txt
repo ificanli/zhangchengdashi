@@ -1,0 +1,13 @@
+0x3d8390c: STRB            WZR, [X0,#0x18C]
+0x3d83910: LDR             S0, [X1]
+0x3d83914: LDR             S1, [X0,#0x190]
+0x3d83918: MOV             W8, #0x7F800000
+0x3d8391c: FMOV            S2, W8
+0x3d83920: SCVTF           S0, S0
+0x3d83924: FMUL            S0, S1, S0
+0x3d83928: FCVTZS          W8, S0
+0x3d8392c: FCMP            S0, S2
+0x3d83930: MOV             W9, #0x80000000
+0x3d83934: CSEL            W8, W9, W8, EQ
+0x3d83938: STR             W8, [X1]
+0x3d8393c: RET

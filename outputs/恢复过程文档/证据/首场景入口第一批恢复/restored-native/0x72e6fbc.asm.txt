@@ -1,0 +1,156 @@
+0x72e6fbc: STP             X30, X23, [SP,#var_30]!
+0x72e6fc0: STP             X22, X21, [SP,#0x30+var_20]
+0x72e6fc4: STP             X20, X19, [SP,#0x30+var_10]
+0x72e6fc8: ADRP            X20, #byte_900A040@PAGE
+0x72e6fcc: ADRP            X21, #off_8AF46A0@PAGE
+0x72e6fd0: LDRB            W8, [X20,#byte_900A040@PAGEOFF]
+0x72e6fd4: LDR             X21, [X21,#off_8AF46A0@PAGEOFF]; off_8CE7B30
+0x72e6fd8: MOV             X19, X0
+0x72e6fdc: TBNZ            W8, #0, loc_72E7060
+0x72e6fe0: ADRP            X0, #off_8ACD860@PAGE
+0x72e6fe4: LDR             X0, [X0,#off_8ACD860@PAGEOFF]; off_8CE5250 ; slot
+0x72e6fe8: BL              il2cpp_codegen_initialize_runtime_metadata
+0x72e6fec: ADRP            X0, #off_8AFC610@PAGE
+0x72e6ff0: LDR             X0, [X0,#off_8AFC610@PAGEOFF]; qword_8D2D158 ; slot
+0x72e6ff4: BL              il2cpp_codegen_initialize_runtime_metadata
+0x72e6ff8: ADRP            X0, #off_8AF46A0@PAGE
+0x72e6ffc: LDR             X0, [X0,#off_8AF46A0@PAGEOFF]; off_8CE7B30 ; slot
+0x72e7000: BL              il2cpp_codegen_initialize_runtime_metadata
+0x72e7004: ADRP            X0, #off_8AF2250@PAGE
+0x72e7008: LDR             X0, [X0,#off_8AF2250@PAGEOFF]; off_8CE7D40 ; slot
+0x72e700c: BL              il2cpp_codegen_initialize_runtime_metadata
+0x72e7010: ADRP            X0, #off_8ACD420@PAGE
+0x72e7014: LDR             X0, [X0,#off_8ACD420@PAGEOFF]; off_8CEC810 ; slot
+0x72e7018: BL              il2cpp_codegen_initialize_runtime_metadata
+0x72e701c: ADRP            X0, #off_8ACD428@PAGE
+0x72e7020: LDR             X0, [X0,#off_8ACD428@PAGEOFF]; off_8CECCD8 ; slot
+0x72e7024: BL              il2cpp_codegen_initialize_runtime_metadata
+0x72e7028: ADRP            X0, #off_8B19E78@PAGE
+0x72e702c: LDR             X0, [X0,#off_8B19E78@PAGEOFF]; qword_8D884D8 ; slot
+0x72e7030: BL              il2cpp_codegen_initialize_runtime_metadata
+0x72e7034: ADRP            X0, #off_8B15EA0@PAGE
+0x72e7038: LDR             X0, [X0,#off_8B15EA0@PAGEOFF]; qword_8D60ED0 ; slot
+0x72e703c: BL              il2cpp_codegen_initialize_runtime_metadata
+0x72e7040: ADRP            X0, #off_8B0F760@PAGE
+0x72e7044: LDR             X0, [X0,#off_8B0F760@PAGEOFF]; qword_8D87980 ; slot
+0x72e7048: BL              il2cpp_codegen_initialize_runtime_metadata
+0x72e704c: ADRP            X0, #off_8B19CC8@PAGE
+0x72e7050: LDR             X0, [X0,#off_8B19CC8@PAGEOFF]; qword_8D884C8 ; slot
+0x72e7054: BL              il2cpp_codegen_initialize_runtime_metadata
+0x72e7058: MOV             W8, #1
+0x72e705c: STRB            W8, [X20,#byte_900A040@PAGEOFF]
+0x72e7060: LDR             X0, [X21]; klass
+0x72e7064: ADRP            X20, #off_8B0F760@PAGE
+0x72e7068: ADRP            X23, #off_8AF2250@PAGE
+0x72e706c: LDR             W8, [X0,#0xE0]
+0x72e7070: LDR             X20, [X20,#off_8B0F760@PAGEOFF]; qword_8D87980
+0x72e7074: LDR             X23, [X23,#off_8AF2250@PAGEOFF]; off_8CE7D40
+0x72e7078: CBNZ            W8, loc_72E7080
+0x72e707c: BL              il2cpp_codegen_runtime_class_init
+0x72e7080: MOV             X0, XZR
+0x72e7084: BL              GameFramework.GameFrameEntry$$Start
+0x72e7088: LDR             X1, [X20]
+0x72e708c: MOV             X0, X19
+0x72e7090: BL              GameFramework.Base.GameStartEntry$$__M_a_
+0x72e7094: LDR             X0, [X23]; klass
+0x72e7098: LDR             W8, [X0,#0xE0]
+0x72e709c: CBNZ            W8, loc_72E70A4
+0x72e70a0: BL              il2cpp_codegen_runtime_class_init
+0x72e70a4: ADRP            X22, #off_8ACD428@PAGE
+0x72e70a8: LDR             X22, [X22,#off_8ACD428@PAGEOFF]; off_8CECCD8
+0x72e70ac: MOV             X0, XZR
+0x72e70b0: BL              GameFramework.GlobalData$$get_IsReleaseVersion
+0x72e70b4: TBZ             W0, #0, loc_72E70D8
+0x72e70b8: LDR             X8, [X22]
+0x72e70bc: LDR             X8, [X8,#0xB8]
+0x72e70c0: LDR             X0, [X8]
+0x72e70c4: CBZ             X0, loc_72E7228
+0x72e70c8: MOV             X1, XZR
+0x72e70cc: BL              DBTSDK.SDKToolManager$$IsSupportLogStatic
+0x72e70d0: MOV             W20, W0
+0x72e70d4: B               loc_72E70DC
+0x72e70d8: MOV             W20, #1
+0x72e70dc: ADRP            X8, #off_8ACD860@PAGE
+0x72e70e0: LDR             X8, [X8,#off_8ACD860@PAGEOFF]; off_8CE5250
+0x72e70e4: LDR             X0, [X8]; klass
+0x72e70e8: LDR             W8, [X0,#0xE0]
+0x72e70ec: CBNZ            W8, loc_72E70F4
+0x72e70f0: BL              il2cpp_codegen_runtime_class_init
+0x72e70f4: AND             W0, W20, #1
+0x72e70f8: MOV             X1, XZR
+0x72e70fc: BL              GameFramework.CLog$$SetIsShowLog
+0x72e7100: LDR             X0, [X23]; klass
+0x72e7104: LDR             W8, [X0,#0xE0]
+0x72e7108: CBNZ            W8, loc_72E7110
+0x72e710c: BL              il2cpp_codegen_runtime_class_init
+0x72e7110: MOV             X0, XZR
+0x72e7114: BL              GameFramework.GlobalData$$get_IsReleaseVersion
+0x72e7118: TBZ             W0, #0, loc_72E7178
+0x72e711c: TBZ             W20, #0, loc_72E71A8
+0x72e7120: LDR             X8, [X22]
+0x72e7124: LDR             X8, [X8,#0xB8]
+0x72e7128: LDR             X0, [X8]
+0x72e712c: CBZ             X0, loc_72E7228
+0x72e7130: ADRP            X8, #off_8B19E78@PAGE
+0x72e7134: LDR             X8, [X8,#off_8B19E78@PAGEOFF]; qword_8D884D8
+0x72e7138: MOV             X2, XZR
+0x72e713c: LDR             X1, [X8]
+0x72e7140: BL              DBTSDK.SDKToolManager$$ShowToast
+0x72e7144: ADRP            X20, #off_8ACD420@PAGE
+0x72e7148: LDR             X20, [X20,#off_8ACD420@PAGEOFF]; off_8CEC810
+0x72e714c: LDR             X0, [X20]; klass
+0x72e7150: LDR             W8, [X0,#0xE0]
+0x72e7154: CBNZ            W8, loc_72E7160
+0x72e7158: BL              il2cpp_codegen_runtime_class_init
+0x72e715c: LDR             X0, [X20]
+0x72e7160: LDR             X8, [X0,#0xB8]
+0x72e7164: LDR             X0, [X8,#8]
+0x72e7168: CBZ             X0, loc_72E7228
+0x72e716c: MOV             X1, XZR
+0x72e7170: BL              DBTSDK.ReportManager$$ReportGMLogOpen
+0x72e7174: B               loc_72E71A8
+0x72e7178: MOV             X0, XZR
+0x72e717c: BL              GameFramework.NewResLoadHelper$$GetIsDeepObf
+0x72e7180: TBZ             W0, #0, loc_72E71A8
+0x72e7184: LDR             X8, [X22]
+0x72e7188: LDR             X8, [X8,#0xB8]
+0x72e718c: LDR             X0, [X8]
+0x72e7190: CBZ             X0, loc_72E7228
+0x72e7194: ADRP            X8, #off_8B19CC8@PAGE
+0x72e7198: LDR             X8, [X8,#off_8B19CC8@PAGEOFF]; qword_8D884C8
+0x72e719c: MOV             X2, XZR
+0x72e71a0: LDR             X1, [X8]
+0x72e71a4: BL              DBTSDK.SDKToolManager$$ShowToast
+0x72e71a8: MOV             X0, XZR
+0x72e71ac: BL              GamePath$$get_Instance
+0x72e71b0: CBZ             X0, loc_72E7228
+0x72e71b4: ADRP            X20, #off_8AFC610@PAGE
+0x72e71b8: LDR             X20, [X20,#off_8AFC610@PAGEOFF]; qword_8D2D158
+0x72e71bc: MOV             X1, XZR
+0x72e71c0: BL              GamePath$$FindMineGamePath
+0x72e71c4: MOV             W8, #1
+0x72e71c8: STRB            W8, [X19,#0x4A]
+0x72e71cc: LDR             X0, [X21]; klass
+0x72e71d0: LDR             W8, [X0,#0xE0]
+0x72e71d4: CBNZ            W8, loc_72E71DC
+0x72e71d8: BL              il2cpp_codegen_runtime_class_init
+0x72e71dc: LDR             X0, [X20]
+0x72e71e0: BL              GameFramework.GameFrameEntry$$GetModule_object_
+0x72e71e4: CBZ             X0, loc_72E7228
+0x72e71e8: LDP             W1, W2, [X19,#0x40]
+0x72e71ec: ADRP            X20, #off_8B15EA0@PAGE
+0x72e71f0: LDR             X20, [X20,#off_8B15EA0@PAGEOFF]; qword_8D60ED0
+0x72e71f4: MOV             X3, XZR
+0x72e71f8: BL              GameFramework.LangModule$$SetLocalLangLibrary
+0x72e71fc: LDR             X0, [X20]
+0x72e7200: MOV             X1, XZR
+0x72e7204: BL              sub_7185594
+0x72e7208: LDR             X0, [X19,#0x50]
+0x72e720c: CBZ             X0, loc_72E7228
+0x72e7210: LDR             X8, [X0]
+0x72e7214: LDP             X20, X19, [SP,#0x30+var_10]
+0x72e7218: LDP             X22, X21, [SP,#0x30+var_20]
+0x72e721c: LDP             X2, X1, [X8,#0x178]
+0x72e7220: LDP             X30, X23, [SP+0x30+var_30],#0x30
+0x72e7224: BR              X2
+0x72e7228: BL              il2cpp_codegen_raise_null_reference_exception

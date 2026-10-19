@@ -1,0 +1,38 @@
+0x5fbeb64: STR             X30, [SP,#var_20]!
+0x5fbeb68: STP             X20, X19, [SP,#0x20+var_10]
+0x5fbeb6c: MOV             X19, X0
+0x5fbeb70: LDR             X0, [X0,#0x20]
+0x5fbeb74: LDRB            W8, [X0,#0x135]
+0x5fbeb78: TBNZ            W8, #0, loc_5FBEB80
+0x5fbeb7c: BL              unk_3C503A0
+0x5fbeb80: LDR             X8, [X0,#0xC0]
+0x5fbeb84: LDR             X0, [X8,#0x10]
+0x5fbeb88: LDRB            W8, [X0,#0x135]
+0x5fbeb8c: TBNZ            W8, #0, loc_5FBEB94
+0x5fbeb90: BL              unk_3C503A0
+0x5fbeb94: LDR             W8, [X0,#0xE0]
+0x5fbeb98: CBNZ            W8, loc_5FBEBA0
+0x5fbeb9c: BL              il2cpp_codegen_runtime_class_init
+0x5fbeba0: LDR             X0, [X19,#0x20]
+0x5fbeba4: LDRB            W8, [X0,#0x135]
+0x5fbeba8: TBNZ            W8, #0, loc_5FBEBB0
+0x5fbebac: BL              unk_3C503A0
+0x5fbebb0: LDR             X8, [X0,#0xC0]
+0x5fbebb4: LDR             X0, [X8,#0x10]
+0x5fbebb8: LDRB            W8, [X0,#0x135]
+0x5fbebbc: TBNZ            W8, #0, loc_5FBEBC4
+0x5fbebc0: BL              unk_3C503A0
+0x5fbebc4: LDR             X8, [X0,#0xB8]
+0x5fbebc8: LDR             X20, [X8]
+0x5fbebcc: CBZ             X20, loc_5FBEBF8
+0x5fbebd0: LDR             X0, [X19,#0x20]
+0x5fbebd4: LDRB            W8, [X0,#0x135]
+0x5fbebd8: TBNZ            W8, #0, loc_5FBEBE0
+0x5fbebdc: BL              unk_3C503A0
+0x5fbebe0: LDR             X8, [X0,#0xC0]
+0x5fbebe4: MOV             X0, X20
+0x5fbebe8: LDP             X20, X19, [SP,#0x20+var_10]
+0x5fbebec: LDR             X1, [X8,#0x18]
+0x5fbebf0: LDR             X30, [SP+0x20+var_20],#0x20
+0x5fbebf4: B               System.Lazy_object_$$get_Value
+0x5fbebf8: BL              il2cpp_codegen_raise_null_reference_exception

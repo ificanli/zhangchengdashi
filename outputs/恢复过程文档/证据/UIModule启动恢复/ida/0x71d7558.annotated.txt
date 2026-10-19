@@ -1,0 +1,183 @@
+void GameFramework_UIModule__Initialize(void *self, void *args, const MethodInfo *method)
+{
+  __int64 v4; // x8
+  __int64 v5; // x0
+  __int64 v6; // x20
+  __int64 v7; // x0
+  __int64 GameObjectWithTag; // x0
+  __int64 v9; // x20
+  __int64 v10; // x20
+  char v11; // w0
+  __int64 gameObject; // x20
+  __int64 v13; // x0
+  __int64 transform; // x0
+  __int64 v15; // x0
+  __int64 Component_object; // x0
+  __int64 v17; // x20
+  _QWORD *v18; // x0
+  __int64 v19; // x20
+  _QWORD *v20; // x19
+  __int64 v21; // x8
+  __int64 v22; // x0
+  __int64 v23; // x0
+  void *Module_object; // x20
+  __int64 v25; // x21
+  void *v26; // x0
+  __int64 v27; // x0
+
+  if ( (byte_90095D5 & 1) == 0 )
+  {
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8CD8338 /* System.Action<AssetOperationHandle>_TypeInfo */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&off_8CE40C8 /* GameFramework.AppSetting_TypeInfo */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&off_8D1D5E8 /* Method$System.Array.Empty<object>() */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&off_8CE5250 /* GameFramework.CLog_TypeInfo */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&off_8CE64E8 /* UnityEngine.Debug_TypeInfo */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D2D180 /* Method$GameFramework.GameFrameEntry.GetModule<ResourcesModule>() */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&off_8CE7B30 /* GameFramework.GameFrameEntry_TypeInfo */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D2D838 /* Method$UnityEngine.GameObject.GetComponent<Camera>() */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8CF5080 /* GameFramework.Resources.ResourcesModule.LoadAssetCompleteHandler_TypeInfo */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8CE3258 /* object[]_TypeInfo */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&off_8CEB3E0 /* UnityEngine.Object_TypeInfo */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D3C490 /* Method$GameFramework.UIModule.LoadUIRootOver<AssetOperationHandle>() */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D3C498 /* Method$GameFramework.UIModule.LoadUIRootOver<ResourcesInfo>() */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D87030 /* 开始加载UIModule */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D758A8 /* UI相机未找到 */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D60E60 /* GFUICanvas */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D75880 /* UIcanvas未找到 */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D747D8 /* UICamera */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D747C8 /* UI/UIRoot */);
+    byte_90095D5 = 1;
+  }
+  if ( *((_BYTE *)self + 16) != 0 )
+  {
+    v4 = *((_QWORD *)self + 3);
+    if ( v4 != 0 )
+      (*(void (__fastcall **)(_QWORD, _QWORD))(v4 + 24))(*(_QWORD *)(v4 + 64), *(_QWORD *)(v4 + 40));
+    return;
+  }
+  v5 = ((__int64 (__fastcall *)(__int64, __int64, const MethodInfo *))unk_3C3D320)(qword_8CE3258 /* object[]_TypeInfo */, 1, method);
+  if ( v5 == 0 )
+LABEL_58:
+    il2cpp_codegen_raise_null_reference_exception();
+  v6 = v5;
+  if ( qword_8D87030 /* 开始加载UIModule */ != 0 )
+  {
+    v7 = ((__int64 (__fastcall *)(__int64, _QWORD))unk_3C3D3B4)(qword_8D87030 /* 开始加载UIModule */, *(_QWORD *)(*(_QWORD *)v5 + 64LL));
+    if ( v7 == 0 )
+    {
+LABEL_60:
+      v27 = ((__int64 (__fastcall *)(__int64))unk_3C3D4F0)(v7);
+      ((void (__fastcall *)(__int64, _QWORD))unk_3C3D3A0)(v27, 0);
+      JUMPOUT(0x71D7A38);
+    }
+  }
+  if ( *(_DWORD *)(v6 + 24) == 0 )
+  {
+    v7 = ((__int64 (*)(void))unk_3C3D4D4)();
+    goto LABEL_60;
+  }
+  *(_QWORD *)(v6 + 32) = qword_8D87030 /* 开始加载UIModule */;
+  if ( *((_DWORD *)off_8CE5250 /* GameFramework.CLog_TypeInfo */ + 56) == 0 )
+    il2cpp_codegen_runtime_class_init(off_8CE5250 /* GameFramework.CLog_TypeInfo */);
+  GameFramework_CLog__ReleaseLog(v6, 0);
+  GameObjectWithTag = UnityEngine_GameObject__FindGameObjectWithTag(qword_8D60E60 /* GFUICanvas */, 0);
+  *((_QWORD *)self + 4) = GameObjectWithTag;
+  v9 = GameObjectWithTag;
+  if ( *((_DWORD *)off_8CEB3E0 /* UnityEngine.Object_TypeInfo */ + 56) == 0 )
+    il2cpp_codegen_runtime_class_init(off_8CEB3E0 /* UnityEngine.Object_TypeInfo */);
+  if ( (UnityEngine_Object__op_Equality(v9, 0, 0) & 1) != 0 )
+  {
+    if ( *((_DWORD *)off_8CE64E8 /* UnityEngine.Debug_TypeInfo */ + 56) == 0 )
+      il2cpp_codegen_runtime_class_init(off_8CE64E8 /* UnityEngine.Debug_TypeInfo */);
+    UnityEngine_Debug__LogError(qword_8D75880 /* UIcanvas未找到 */, 0);
+  }
+  v10 = *((_QWORD *)self + 4);
+  if ( *((_DWORD *)off_8CEB3E0 /* UnityEngine.Object_TypeInfo */ + 56) == 0 )
+    il2cpp_codegen_runtime_class_init(off_8CEB3E0 /* UnityEngine.Object_TypeInfo */);
+  v11 = UnityEngine_Object__op_Inequality(v10, 0, 0);
+  gameObject = 0;
+  if ( (v11 & 1) != 0 )
+  {
+    v13 = *((_QWORD *)self + 4);
+    if ( v13 == 0 )
+      goto LABEL_58;
+    transform = UnityEngine_GameObject__get_transform(v13, 0);
+    if ( transform == 0 )
+      goto LABEL_58;
+    v15 = UnityEngine_Transform__Find(transform, qword_8D747D8 /* UICamera */, 0);
+    if ( v15 == 0 )
+      goto LABEL_58;
+    gameObject = UnityEngine_Component__get_gameObject(v15, 0);
+  }
+  if ( *((_DWORD *)off_8CEB3E0 /* UnityEngine.Object_TypeInfo */ + 56) == 0 )
+    il2cpp_codegen_runtime_class_init(off_8CEB3E0 /* UnityEngine.Object_TypeInfo */);
+  if ( (UnityEngine_Object__op_Equality(gameObject, 0, 0) & 1) != 0 )
+  {
+    if ( *((_DWORD *)off_8CE64E8 /* UnityEngine.Debug_TypeInfo */ + 56) == 0 )
+      il2cpp_codegen_runtime_class_init(off_8CE64E8 /* UnityEngine.Debug_TypeInfo */);
+    UnityEngine_Debug__LogError(qword_8D758A8 /* UI相机未找到 */, 0);
+  }
+  if ( gameObject != 0 )
+    Component_object = UnityEngine_GameObject__GetComponent_object_(gameObject, qword_8D2D838 /* Method$UnityEngine.GameObject.GetComponent<Camera>() */);
+  else
+    Component_object = 0;
+  *((_QWORD *)self + 6) = Component_object;
+  v17 = *((_QWORD *)self + 4);
+  if ( *((_DWORD *)off_8CEB3E0 /* UnityEngine.Object_TypeInfo */ + 56) == 0 )
+    il2cpp_codegen_runtime_class_init(off_8CEB3E0 /* UnityEngine.Object_TypeInfo */);
+  UnityEngine_Object__DontDestroyOnLoad(v17, 0);
+  if ( *((_DWORD *)off_8CE40C8 /* GameFramework.AppSetting_TypeInfo */ + 56) == 0 )
+    il2cpp_codegen_runtime_class_init(off_8CE40C8 /* GameFramework.AppSetting_TypeInfo */);
+  if ( byte_900876D == 0 )
+  {
+    il2cpp_codegen_initialize_runtime_metadata((void **)&off_8CE40C8 /* GameFramework.AppSetting_TypeInfo */);
+    byte_900876D = 1;
+  }
+  v18 = off_8CE40C8 /* GameFramework.AppSetting_TypeInfo */;
+  if ( *((_DWORD *)off_8CE40C8 /* GameFramework.AppSetting_TypeInfo */ + 56) == 0 )
+  {
+    il2cpp_codegen_runtime_class_init(off_8CE40C8 /* GameFramework.AppSetting_TypeInfo */);
+    v18 = off_8CE40C8 /* GameFramework.AppSetting_TypeInfo */;
+  }
+  if ( *(_BYTE *)(v18[23] + 56LL) == 0 )
+  {
+    if ( *((_DWORD *)off_8CE7B30 /* GameFramework.GameFrameEntry_TypeInfo */ + 56) == 0 )
+      il2cpp_codegen_runtime_class_init(off_8CE7B30 /* GameFramework.GameFrameEntry_TypeInfo */);
+    Module_object = GameFramework_GameFrameEntry__GetModule_object_((const MethodInfo *)qword_8D2D180 /* Method$GameFramework.GameFrameEntry.GetModule<ResourcesModule>() */);
+    v25 = ((__int64 (__fastcall *)(__int64))unk_3C3D4C4)(qword_8CF5080 /* GameFramework.Resources.ResourcesModule.LoadAssetCompleteHandler_TypeInfo */);
+    GameFramework_Resources_ResourcesModule_LoadAssetCompleteHandler___ctor(v25, self, qword_8D3C498 /* Method$GameFramework.UIModule.LoadUIRootOver<ResourcesInfo>() */, 0);
+    if ( Module_object != nullptr )
+    {
+      GameFramework_Resources_ResourcesModule__LoadPrefab(Module_object, qword_8D747C8 /* UI/UIRoot */, v25, 0, 0);
+      v26 = GameFramework_GameFrameEntry__GetModule_object_((const MethodInfo *)qword_8D2D180 /* Method$GameFramework.GameFrameEntry.GetModule<ResourcesModule>() */);
+      if ( v26 != nullptr )
+      {
+        (*(void (__fastcall **)(void *, _QWORD, float, float))(*(_QWORD *)v26 + 424LL))(
+          v26,
+          *(_QWORD *)(*(_QWORD *)v26 + 432LL),
+          0.0,
+          0.0);
+        return;
+      }
+    }
+    goto LABEL_58;
+  }
+  v19 = ((__int64 (__fastcall *)(__int64))unk_3C3D4C4)(qword_8CD8338 /* System.Action<AssetOperationHandle>_TypeInfo */);
+  System_Action_object____ctor(v19, self, qword_8D3C490 /* Method$GameFramework.UIModule.LoadUIRootOver<AssetOperationHandle>() */, 0);
+  v20 = off_8D1D5E8 /* Method$System.Array.Empty<object>() */;
+  v21 = *((_QWORD *)off_8D1D5E8 /* Method$System.Array.Empty<object>() */ + 7);
+  if ( v21 == 0 )
+  {
+    ((void (__fastcall *)(void *))unk_3C503FC)(off_8D1D5E8 /* Method$System.Array.Empty<object>() */);
+    v21 = v20[7];
+  }
+  v22 = *(_QWORD *)(v21 + 16);
+  if ( (*(_BYTE *)(v22 + 309) & 1) == 0 )
+    v22 = ((__int64 (*)(void))unk_3C503A0)();
+  if ( *(_DWORD *)(v22 + 224) == 0 )
+    il2cpp_codegen_runtime_class_init((void *)v22);
+  v23 = *(_QWORD *)(v20[7] + 16LL);
+  if ( (*(_BYTE *)(v23 + 309) & 1) == 0 )
+    v23 = ((__int64 (*)(void))unk_3C503A0)();
+  GameFramework_NewResLoadHelper__LoadPrefabOri(qword_8D747C8 /* UI/UIRoot */, v19, **(_QWORD **)(v23 + 184), 0);
+}

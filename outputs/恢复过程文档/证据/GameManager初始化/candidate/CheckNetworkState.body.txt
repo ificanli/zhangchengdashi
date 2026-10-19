@@ -1,0 +1,27 @@
+{
+    while (this != null)
+    {
+        if (InitComplete && TimeManager.Instance.initComplete && DataManager.Instance.LoadDataCompleted)
+        {
+            yield return new WaitForSeconds(0.02f);
+            if (!TutorialManager.Instance.IsStepComplete("1008"))
+                continue;
+            if (!TimeManager.Instance.IsNetworkConnected && !showNoInternetPanel)
+            {
+                if (UIManager.Instance.IsPanelShowing("Assets/_Res/Addressable/Prefabs/UI/Panels/MaskPanel.prefab", out UIPanel panel))
+                    yield break;
+                yield return UIManager.Instance.ShowPanel("Assets/_Res/Addressable/01FirstBundle/Prefabs/UI/Panels/NoInternetPanel.prefab", Array.Empty<object>());
+                showNoInternetPanel = true;
+                if (CoreGameManager.Gaming)
+                    PauseGame();
+            }
+            else if (TimeManager.Instance.IsNetworkConnected && showNoInternetPanel)
+            {
+                yield return UIManager.Instance.HidePanel("Assets/_Res/Addressable/01FirstBundle/Prefabs/UI/Panels/NoInternetPanel.prefab");
+                showNoInternetPanel = false;
+                if (CoreGameManager.Gaming)
+                    ResumeGame();
+            }
+        }
+    }
+}

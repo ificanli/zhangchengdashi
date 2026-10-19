@@ -1,0 +1,32 @@
+void GameFramework_Base_GameStartEntry__Update(void *self, const MethodInfo *method)
+{
+  float v3; // s8
+  float v4; // s9
+  float v5; // s8
+  float v6; // s9
+
+  if ( (byte_900A044 & 1) == 0 )
+  {
+    il2cpp_codegen_initialize_runtime_metadata((void **)&off_8CE7B30);
+    byte_900A044 = 1;
+  }
+  if ( *((_BYTE *)self + 73) == 0 )
+  {
+    if ( *((_BYTE *)self + 74) != 0 )
+    {
+      LODWORD(v3) = COERCE_UNSIGNED_INT128(UnityEngine_Time__get_deltaTime(0, method));
+      LODWORD(v4) = COERCE_UNSIGNED_INT128(UnityEngine_Time__get_unscaledDeltaTime(0));
+      if ( *((_DWORD *)off_8CE7B30 + 56) == 0 )
+        il2cpp_codegen_runtime_class_init(off_8CE7B30);
+      GameFramework_GameFrameEntry__ResourcesModuleUpdate(v3, v4, nullptr);
+    }
+    if ( *((_BYTE *)self + 60) != 0 )
+    {
+      LODWORD(v5) = COERCE_UNSIGNED_INT128(UnityEngine_Time__get_deltaTime(0, method));
+      LODWORD(v6) = COERCE_UNSIGNED_INT128(UnityEngine_Time__get_unscaledDeltaTime(0));
+      if ( *((_DWORD *)off_8CE7B30 + 56) == 0 )
+        il2cpp_codegen_runtime_class_init(off_8CE7B30);
+      GameFramework_GameFrameEntry__Update(v5, v6, nullptr);
+    }
+  }
+}

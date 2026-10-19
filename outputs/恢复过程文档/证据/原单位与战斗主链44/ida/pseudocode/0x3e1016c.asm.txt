@@ -1,0 +1,40 @@
+0x3e1016c: STP             X30, X21, [SP,#var_20]!
+0x3e10170: STP             X20, X19, [SP,#0x20+var_10]
+0x3e10174: ADRP            X21, #byte_8FFD858@PAGE
+0x3e10178: ADRP            X20, #off_8ACDF78@PAGE
+0x3e1017c: LDRB            W8, [X21,#byte_8FFD858@PAGEOFF]
+0x3e10180: LDR             X20, [X20,#off_8ACDF78@PAGEOFF]; off_8CE1928
+0x3e10184: MOV             X19, X0
+0x3e10188: TBNZ            W8, #0, loc_3E101B8
+0x3e1018c: ADRP            X0, #off_8AD4A20@PAGE
+0x3e10190: LDR             X0, [X0,#off_8AD4A20@PAGEOFF]; qword_8D12458 ; slot
+0x3e10194: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3e10198: ADRP            X0, #off_8ACDF88@PAGE
+0x3e1019c: LDR             X0, [X0,#off_8ACDF88@PAGEOFF]; qword_8D17890 ; slot
+0x3e101a0: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3e101a4: ADRP            X0, #off_8ACDF78@PAGE
+0x3e101a8: LDR             X0, [X0,#off_8ACDF78@PAGEOFF]; off_8CE1928 ; slot
+0x3e101ac: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3e101b0: MOV             W8, #1
+0x3e101b4: STRB            W8, [X21,#byte_8FFD858@PAGEOFF]
+0x3e101b8: LDR             X0, [X20]; klass
+0x3e101bc: ADRP            X20, #off_8ACDF88@PAGE
+0x3e101c0: LDR             W8, [X0,#0xE0]
+0x3e101c4: LDR             X20, [X20,#off_8ACDF88@PAGEOFF]; qword_8D17890
+0x3e101c8: CBNZ            W8, loc_3E101D0
+0x3e101cc: BL              il2cpp_codegen_runtime_class_init
+0x3e101d0: LDR             X0, [X20]
+0x3e101d4: BL              QuickTutor.Singleton_object_$$get_Instance
+0x3e101d8: CBZ             X0, loc_3E10208
+0x3e101dc: ADRP            X20, #off_8AD4A20@PAGE
+0x3e101e0: LDR             X20, [X20,#off_8AD4A20@PAGEOFF]; qword_8D12458
+0x3e101e4: MOV             X1, XZR
+0x3e101e8: BL              SDKModule.ABTestManager$$get_GamePlayImprove01IsBTest
+0x3e101ec: AND             W8, W0, #1
+0x3e101f0: STRB            W8, [X19,#0x20]
+0x3e101f4: LDR             X1, [X20]
+0x3e101f8: MOV             X0, X19
+0x3e101fc: LDP             X20, X19, [SP,#0x20+var_10]
+0x3e10200: LDP             X30, X21, [SP+0x20+var_20],#0x20
+0x3e10204: B               ToolModule.ManagerBase_object_$$.ctor
+0x3e10208: BL              il2cpp_codegen_raise_null_reference_exception

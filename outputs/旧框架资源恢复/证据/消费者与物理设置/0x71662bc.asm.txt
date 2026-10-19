@@ -1,0 +1,224 @@
+0x71662bc: fe0f1df8 str      x30, [sp, #-0x30]!
+0x71662c0: f65701a9 stp      x22, x21, [sp, #0x10]
+0x71662c4: f44f02a9 stp      x20, x19, [sp, #0x20]
+0x71662c8: 14f500f0 adrp     x20, #0x9009000
+0x71662cc: 75cc00d0 adrp     x21, #0x8af4000
+0x71662d0: 887a4539 ldrb     w8, [x20, #0x15e]
+0x71662d4: b53e41f9 ldr      x21, [x21, #0x278] // GameFramework.ConfigRead_TypeInfo
+0x71662d8: f30300aa mov      x19, x0
+0x71662dc: c8030037 tbnz     w8, #0, #0x7166354
+0x71662e0: 20cb00f0 adrp     x0, #0x8acd000
+0x71662e4: 00e042f9 ldr      x0, [x0, #0x5c0] // GameFramework.AppSetting_TypeInfo
+0x71662e8: e65b2b97 bl       #0x3c3d280
+0x71662ec: 20cb00f0 adrp     x0, #0x8acd000
+0x71662f0: 003044f9 ldr      x0, [x0, #0x860] // GameFramework.CLog_TypeInfo
+0x71662f4: e35b2b97 bl       #0x3c3d280
+0x71662f8: 60cc00d0 adrp     x0, #0x8af4000
+0x71662fc: 003c41f9 ldr      x0, [x0, #0x278] // GameFramework.ConfigRead_TypeInfo
+0x7166300: e05b2b97 bl       #0x3c3d280
+0x7166304: 80cd0090 adrp     x0, #0x8b16000
+0x7166308: 007847f9 ldr      x0, [x0, #0xef0] // Method$GameFramework.NewResLoadHelper.LoadAssetSync<TextAsset>()
+0x716630c: dd5b2b97 bl       #0x3c3d280
+0x7166310: 20cb00f0 adrp     x0, #0x8acd000
+0x7166314: 002c44f9 ldr      x0, [x0, #0x858] // object[]_TypeInfo
+0x7166318: da5b2b97 bl       #0x3c3d280
+0x716631c: 80cd0090 adrp     x0, #0x8b16000
+0x7166320: 007c47f9 ldr      x0, [x0, #0xef8] // Method$GameFramework.Resources.ResourcesInfo.LoadAsset<TextAsset>()
+0x7166324: d75b2b97 bl       #0x3c3d280
+0x7166328: 60cc00f0 adrp     x0, #0x8af5000
+0x716632c: 005c40f9 ldr      x0, [x0, #0xb8] // UnityEngine.TextAsset_TypeInfo
+0x7166330: d45b2b97 bl       #0x3c3d280
+0x7166334: 60cd00f0 adrp     x0, #0x8b15000
+0x7166338: 003840f9 ldr      x0, [x0, #0x70] // GlobalCacheData.txt
+0x716633c: d15b2b97 bl       #0x3c3d280
+0x7166340: 80cd0090 adrp     x0, #0x8b16000
+0x7166344: 008047f9 ldr      x0, [x0, #0xf00] // 116
+0x7166348: ce5b2b97 bl       #0x3c3d280
+0x716634c: 28008052 mov      w8, #1
+0x7166350: 887a0539 strb     w8, [x20, #0x15e]
+0x7166354: a00240f9 ldr      x0, [x21]
+0x7166358: 08e040b9 ldr      w8, [x0, #0xe0]
+0x716635c: 68000035 cbnz     w8, #0x7166368
+0x7166360: 145c2b97 bl       #0x3c3d3b0
+0x7166364: a00240f9 ldr      x0, [x21]
+0x7166368: 085c40f9 ldr      x8, [x0, #0xb8]
+0x716636c: 080940f9 ldr      x8, [x8, #0x10]
+0x7166370: 680600b5 cbnz     x8, #0x716643c
+0x7166374: 34cb00f0 adrp     x20, #0x8acd000
+0x7166378: 94e242f9 ldr      x20, [x20, #0x5c0] // GameFramework.AppSetting_TypeInfo
+0x716637c: 800240f9 ldr      x0, [x20]
+0x7166380: 08e040b9 ldr      w8, [x0, #0xe0]
+0x7166384: 48000035 cbnz     w8, #0x716638c
+0x7166388: 0a5c2b97 bl       #0x3c3d3b0
+0x716638c: 16f500d0 adrp     x22, #0x9008000
+0x7166390: c8566639 ldrb     w8, [x22, #0x995]
+0x7166394: c8000035 cbnz     w8, #0x71663ac
+0x7166398: 20cb00f0 adrp     x0, #0x8acd000
+0x716639c: 00e042f9 ldr      x0, [x0, #0x5c0] // GameFramework.AppSetting_TypeInfo
+0x71663a0: b85b2b97 bl       #0x3c3d280
+0x71663a4: 28008052 mov      w8, #1
+0x71663a8: c8562639 strb     w8, [x22, #0x995]
+0x71663ac: 800240f9 ldr      x0, [x20]
+0x71663b0: 08e040b9 ldr      w8, [x0, #0xe0]
+0x71663b4: 68000035 cbnz     w8, #0x71663c0
+0x71663b8: fe5b2b97 bl       #0x3c3d3b0
+0x71663bc: 800240f9 ldr      x0, [x20]
+0x71663c0: 085c40f9 ldr      x8, [x0, #0xb8]
+0x71663c4: 08e14039 ldrb     w8, [x8, #0x38]
+0x71663c8: a8030035 cbnz     w8, #0x716643c
+0x71663cc: 28cb00f0 adrp     x8, #0x8acd000
+0x71663d0: 082d44f9 ldr      x8, [x8, #0x858] // object[]_TypeInfo
+0x71663d4: e1031f2a mov      w1, wzr
+0x71663d8: 000140f9 ldr      x0, [x8]
+0x71663dc: d15b2b97 bl       #0x3c3d320
+0x71663e0: 001200b4 cbz      x0, #0x7166620
+0x71663e4: 76cd00f0 adrp     x22, #0x8b15000
+0x71663e8: d63a40f9 ldr      x22, [x22, #0x70] // GlobalCacheData.txt
+0x71663ec: f40300aa mov      x20, x0
+0x71663f0: c00240f9 ldr      x0, [x22]
+0x71663f4: a00000b4 cbz      x0, #0x7166408
+0x71663f8: 880240f9 ldr      x8, [x20]
+0x71663fc: 012140f9 ldr      x1, [x8, #0x40]
+0x7166400: ed5b2b97 bl       #0x3c3d3b4
+0x7166404: 601100b4 cbz      x0, #0x7166630
+0x7166408: 881a40b9 ldr      w8, [x20, #0x18]
+0x716640c: 08110034 cbz      w8, #0x716662c
+0x7166410: c80240f9 ldr      x8, [x22]
+0x7166414: 881200f9 str      x8, [x20, #0x20]
+0x7166418: 28cb00f0 adrp     x8, #0x8acd000
+0x716641c: 083144f9 ldr      x8, [x8, #0x860] // GameFramework.CLog_TypeInfo
+0x7166420: 000140f9 ldr      x0, [x8]
+0x7166424: 08e040b9 ldr      w8, [x0, #0xe0]
+0x7166428: 48000035 cbnz     w8, #0x7166430
+0x716642c: e15b2b97 bl       #0x3c3d3b0
+0x7166430: e00314aa mov      x0, x20
+0x7166434: e1031faa mov      x1, xzr
+0x7166438: 46340294 bl       #0x71f3550 // GameFramework.CLog$$Error
+0x716643c: a00240f9 ldr      x0, [x21]
+0x7166440: 08e040b9 ldr      w8, [x0, #0xe0]
+0x7166444: 48070034 cbz      w8, #0x716652c
+0x7166448: 085c40f9 ldr      x8, [x0, #0xb8]
+0x716644c: 09814039 ldrb     w9, [x8, #0x20]
+0x7166450: c9070034 cbz      w9, #0x7166548
+0x7166454: 09e14039 ldrb     w9, [x8, #0x38]
+0x7166458: e9080034 cbz      w9, #0x7166574
+0x716645c: 09e040b9 ldr      w9, [x0, #0xe0]
+0x7166460: 89000035 cbnz     w9, #0x7166470
+0x7166464: d35b2b97 bl       #0x3c3d3b0
+0x7166468: a00240f9 ldr      x0, [x21]
+0x716646c: 085c40f9 ldr      x8, [x0, #0xb8]
+0x7166470: 080d40f9 ldr      x8, [x8, #0x18]
+0x7166474: c80300b5 cbnz     x8, #0x71664ec
+0x7166478: 28cb00f0 adrp     x8, #0x8acd000
+0x716647c: 082d44f9 ldr      x8, [x8, #0x858] // object[]_TypeInfo
+0x7166480: e1031f2a mov      w1, wzr
+0x7166484: 000140f9 ldr      x0, [x8]
+0x7166488: a65b2b97 bl       #0x3c3d320
+0x716648c: a00c00b4 cbz      x0, #0x7166620
+0x7166490: 96cd0090 adrp     x22, #0x8b16000
+0x7166494: d68247f9 ldr      x22, [x22, #0xf00] // 116
+0x7166498: f40300aa mov      x20, x0
+0x716649c: c00240f9 ldr      x0, [x22]
+0x71664a0: a00000b4 cbz      x0, #0x71664b4
+0x71664a4: 880240f9 ldr      x8, [x20]
+0x71664a8: 012140f9 ldr      x1, [x8, #0x40]
+0x71664ac: c25b2b97 bl       #0x3c3d3b4
+0x71664b0: 000c00b4 cbz      x0, #0x7166630
+0x71664b4: 881a40b9 ldr      w8, [x20, #0x18]
+0x71664b8: a80b0034 cbz      w8, #0x716662c
+0x71664bc: c80240f9 ldr      x8, [x22]
+0x71664c0: 881200f9 str      x8, [x20, #0x20]
+0x71664c4: 28cb00f0 adrp     x8, #0x8acd000
+0x71664c8: 083144f9 ldr      x8, [x8, #0x860] // GameFramework.CLog_TypeInfo
+0x71664cc: 000140f9 ldr      x0, [x8]
+0x71664d0: 08e040b9 ldr      w8, [x0, #0xe0]
+0x71664d4: 48000035 cbnz     w8, #0x71664dc
+0x71664d8: b65b2b97 bl       #0x3c3d3b0
+0x71664dc: e00314aa mov      x0, x20
+0x71664e0: e1031faa mov      x1, xzr
+0x71664e4: 1b340294 bl       #0x71f3550 // GameFramework.CLog$$Error
+0x71664e8: a00240f9 ldr      x0, [x21]
+0x71664ec: 08e040b9 ldr      w8, [x0, #0xe0]
+0x71664f0: 48000035 cbnz     w8, #0x71664f8
+0x71664f4: af5b2b97 bl       #0x3c3d3b0
+0x71664f8: e00313aa mov      x0, x19
+0x71664fc: 50000094 bl       #0x716663c // GameFramework.ConfigRead$$M¬ ½£
+0x7166500: 200100b4 cbz      x0, #0x7166524
+0x7166504: 68cc00f0 adrp     x8, #0x8af5000
+0x7166508: 085d40f9 ldr      x8, [x8, #0xb8] // UnityEngine.TextAsset_TypeInfo
+0x716650c: 090040f9 ldr      x9, [x0]
+0x7166510: 080140f9 ldr      x8, [x8]
+0x7166514: 2bc14439 ldrb     w11, [x9, #0x130]
+0x7166518: 0ac14439 ldrb     w10, [x8, #0x130]
+0x716651c: 7f010a6b cmp      w11, w10
+0x7166520: c2060054 b.hs     #0x71665f8
+0x7166524: f3031faa mov      x19, xzr
+0x7166528: 39000014 b        #0x716660c
+0x716652c: a15b2b97 bl       #0x3c3d3b0
+0x7166530: a00240f9 ldr      x0, [x21]
+0x7166534: 085c40f9 ldr      x8, [x0, #0xb8]
+0x7166538: 09e040b9 ldr      w9, [x0, #0xe0]
+0x716653c: 14814039 ldrb     w20, [x8, #0x20]
+0x7166540: 29050034 cbz      w9, #0x71665e4
+0x7166544: 94f8ff35 cbnz     w20, #0x7166454
+0x7166548: 000940f9 ldr      x0, [x8, #0x10]
+0x716654c: a00600b4 cbz      x0, #0x7166620
+0x7166550: 88cd0090 adrp     x8, #0x8b16000
+0x7166554: 087d47f9 ldr      x8, [x8, #0xef8] // Method$GameFramework.Resources.ResourcesInfo.LoadAsset<TextAsset>()
+0x7166558: e20313aa mov      x2, x19
+0x716655c: f44f42a9 ldp      x20, x19, [sp, #0x20]
+0x7166560: f65741a9 ldp      x22, x21, [sp, #0x10]
+0x7166564: 030140f9 ldr      x3, [x8]
+0x7166568: e1031faa mov      x1, xzr
+0x716656c: fe0743f8 ldr      x30, [sp], #0x30
+0x7166570: 16e77417 b        #0x4ea01c8 // GameFramework.Resources.ResourcesInfo$$LoadAsset<object>
+0x7166574: 88cd0090 adrp     x8, #0x8b16000
+0x7166578: 087947f9 ldr      x8, [x8, #0xef0] // Method$GameFramework.NewResLoadHelper.LoadAssetSync<TextAsset>()
+0x716657c: e00313aa mov      x0, x19
+0x7166580: 010140f9 ldr      x1, [x8]
+0x7166584: 26637397 bl       #0x4e3f21c // GameFramework.NewResLoadHelper$$LoadAssetSync<object>
+0x7166588: c00400b4 cbz      x0, #0x7166620
+0x716658c: e1031faa mov      x1, xzr
+0x7166590: f40300aa mov      x20, x0
+0x7166594: fd990094 bl       #0x718cd88 // YooAsset.AssetOperationHandle$$ºsA
+0x7166598: f30300aa mov      x19, x0
+0x716659c: c00100b4 cbz      x0, #0x71665d4
+0x71665a0: 69cc00f0 adrp     x9, #0x8af5000
+0x71665a4: 295d40f9 ldr      x9, [x9, #0xb8] // UnityEngine.TextAsset_TypeInfo
+0x71665a8: 680240f9 ldr      x8, [x19]
+0x71665ac: 210140f9 ldr      x1, [x9]
+0x71665b0: 0ac14439 ldrb     w10, [x8, #0x130]
+0x71665b4: 29c04439 ldrb     w9, [x1, #0x130]
+0x71665b8: 5f01096b cmp      w10, w9
+0x71665bc: 43030054 b.lo     #0x7166624
+0x71665c0: 086540f9 ldr      x8, [x8, #0xc8]
+0x71665c4: 080d098b add      x8, x8, x9, lsl #3
+0x71665c8: 08815ff8 ldur     x8, [x8, #-8]
+0x71665cc: 1f0101eb cmp      x8, x1
+0x71665d0: a1020054 b.ne     #0x7166624
+0x71665d4: e00314aa mov      x0, x20
+0x71665d8: e1031faa mov      x1, xzr
+0x71665dc: 84990094 bl       #0x718cbec // YooAsset.AssetOperationHandle$$Release
+0x71665e0: 0b000014 b        #0x716660c
+0x71665e4: 735b2b97 bl       #0x3c3d3b0
+0x71665e8: a00240f9 ldr      x0, [x21]
+0x71665ec: 085c40f9 ldr      x8, [x0, #0xb8]
+0x71665f0: 34f3ff35 cbnz     w20, #0x7166454
+0x71665f4: d5ffff17 b        #0x7166548
+0x71665f8: 296540f9 ldr      x9, [x9, #0xc8]
+0x71665fc: 290d0a8b add      x9, x9, x10, lsl #3
+0x7166600: 29815ff8 ldur     x9, [x9, #-8]
+0x7166604: 3f0108eb cmp      x9, x8
+0x7166608: 13009f9a csel     x19, x0, xzr, eq
+0x716660c: e00313aa mov      x0, x19
+0x7166610: f44f42a9 ldp      x20, x19, [sp, #0x20]
+0x7166614: f65741a9 ldp      x22, x21, [sp, #0x10]
+0x7166618: fe0743f8 ldr      x30, [sp], #0x30
+0x716661c: c0035fd6 ret      
+0x7166620: ab5b2b97 bl       #0x3c3d4cc
+0x7166624: e00313aa mov      x0, x19
+0x7166628: 905c2b97 bl       #0x3c3d868
+0x716662c: aa5b2b97 bl       #0x3c3d4d4
+0x7166630: b05b2b97 bl       #0x3c3d4f0
+0x7166634: e1031faa mov      x1, xzr
+0x7166638: 5a5b2b97 bl       #0x3c3d3a0

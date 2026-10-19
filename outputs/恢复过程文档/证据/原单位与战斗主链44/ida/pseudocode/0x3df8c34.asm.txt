@@ -1,0 +1,35 @@
+0x3df8c34: STP             X30, X21, [SP,#var_20]!
+0x3df8c38: STP             X20, X19, [SP,#0x20+var_10]
+0x3df8c3c: ADRP            X21, #byte_8FFD7D3@PAGE
+0x3df8c40: LDRB            W8, [X21,#byte_8FFD7D3@PAGEOFF]
+0x3df8c44: MOV             X19, X1
+0x3df8c48: MOV             X20, X0
+0x3df8c4c: TBNZ            W8, #0, loc_3DF8C64
+0x3df8c50: ADRP            X0, #off_8AD3E80@PAGE
+0x3df8c54: LDR             X0, [X0,#off_8AD3E80@PAGEOFF]; qword_8D08FD8 ; slot
+0x3df8c58: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3df8c5c: MOV             W8, #1
+0x3df8c60: STRB            W8, [X21,#byte_8FFD7D3@PAGEOFF]
+0x3df8c64: LDR             X0, [X20,#0xD8]
+0x3df8c68: CBZ             X0, loc_3DF8CBC
+0x3df8c6c: ADRP            X21, #off_8AD3E80@PAGE
+0x3df8c70: LDR             X21, [X21,#off_8AD3E80@PAGEOFF]; qword_8D08FD8
+0x3df8c74: MOV             X1, X19
+0x3df8c78: LDR             X2, [X21]
+0x3df8c7c: BL              System.Collections.Generic.List_object_$$Remove
+0x3df8c80: CBZ             X19, loc_3DF8CBC
+0x3df8c84: LDRB            W8, [X19,#0x20]
+0x3df8c88: CBZ             W8, loc_3DF8CB4
+0x3df8c8c: LDR             X0, [X20,#0xE8]
+0x3df8c90: CBZ             X0, loc_3DF8CBC
+0x3df8c94: LDR             X2, [X21]
+0x3df8c98: MOV             X1, X19
+0x3df8c9c: BL              System.Collections.Generic.List_object_$$Remove
+0x3df8ca0: LDRB            W1, [X19,#0x20]
+0x3df8ca4: MOV             X0, X20
+0x3df8ca8: LDP             X20, X19, [SP,#0x20+var_10]
+0x3df8cac: LDP             X30, X21, [SP+0x20+var_20],#0x20
+0x3df8cb0: B               GameModule.BattleGameSceneManager$$MarkWebGLNavigationTargetFieldDirty
+0x3df8cb4: LDR             X0, [X20,#0xE0]
+0x3df8cb8: CBNZ            X0, loc_3DF8C94
+0x3df8cbc: BL              il2cpp_codegen_raise_null_reference_exception

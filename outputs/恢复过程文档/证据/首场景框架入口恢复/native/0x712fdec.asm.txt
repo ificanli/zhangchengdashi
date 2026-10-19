@@ -1,0 +1,33 @@
+0x712fdec: fe57bea9 stp      x30, x21, [sp, #-0x20]!
+0x712fdf0: f44f01a9 stp      x20, x19, [sp, #0x10]
+0x712fdf4: d5f600b0 adrp     x21, #0x9008000
+0x712fdf8: 34ce00b0 adrp     x20, #0x8af4000
+0x712fdfc: a8ae7a39 ldrb     w8, [x21, #0xeab]
+0x712fe00: 945243f9 ldr      x20, [x20, #0x6a0] // GameFramework.GameFrameEntry_TypeInfo
+0x712fe04: f303002a mov      w19, w0
+0x712fe08: 88010037 tbnz     w8, #0, #0x712fe38
+0x712fe0c: 00cf00f0 adrp     x0, #0x8b12000
+0x712fe10: 002c42f9 ldr      x0, [x0, #0x458] // Method$GameFramework.GameFrameEntry.GetModule<KeWanResLoadModule>()
+0x712fe14: 1b352c97 bl       #0x3c3d280
+0x712fe18: 00cf00f0 adrp     x0, #0x8b12000
+0x712fe1c: 003842f9 ldr      x0, [x0, #0x470] // Method$GameFramework.GameFrameEntry.GetModule<YOResourcesModule>()
+0x712fe20: 18352c97 bl       #0x3c3d280
+0x712fe24: 20ce00b0 adrp     x0, #0x8af4000
+0x712fe28: 005043f9 ldr      x0, [x0, #0x6a0] // GameFramework.GameFrameEntry_TypeInfo
+0x712fe2c: 15352c97 bl       #0x3c3d280
+0x712fe30: 28008052 mov      w8, #1
+0x712fe34: a8ae3a39 strb     w8, [x21, #0xeab]
+0x712fe38: 800240f9 ldr      x0, [x20]
+0x712fe3c: 14cf00f0 adrp     x20, #0x8b12000
+0x712fe40: 15cf00f0 adrp     x21, #0x8b12000
+0x712fe44: 08e040b9 ldr      w8, [x0, #0xe0]
+0x712fe48: 942e42f9 ldr      x20, [x20, #0x458] // Method$GameFramework.GameFrameEntry.GetModule<KeWanResLoadModule>()
+0x712fe4c: b53a42f9 ldr      x21, [x21, #0x470] // Method$GameFramework.GameFrameEntry.GetModule<YOResourcesModule>()
+0x712fe50: 48000035 cbnz     w8, #0x712fe58
+0x712fe54: 57352c97 bl       #0x3c3d3b0
+0x712fe58: 7f020072 tst      w19, #1
+0x712fe5c: 8812959a csel     x8, x20, x21, ne
+0x712fe60: 000140f9 ldr      x0, [x8]
+0x712fe64: f44f41a9 ldp      x20, x19, [sp, #0x10]
+0x712fe68: fe57c2a8 ldp      x30, x21, [sp], #0x20
+0x712fe6c: d5716d17 b        #0x4c8c5c0 // GameFramework.GameFrameEntry$$GetModule<object>

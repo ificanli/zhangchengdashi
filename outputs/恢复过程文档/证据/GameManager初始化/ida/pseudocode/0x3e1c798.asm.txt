@@ -1,0 +1,36 @@
+0x3e1c798: STR             X30, [SP,#var_20]!
+0x3e1c79c: STP             X20, X19, [SP,#0x20+var_10]
+0x3e1c7a0: ADRP            X19, #byte_8FFD8A8@PAGE
+0x3e1c7a4: ADRP            X20, #off_8AD0CD8@PAGE
+0x3e1c7a8: LDRB            W8, [X19,#byte_8FFD8A8@PAGEOFF]
+0x3e1c7ac: LDR             X20, [X20,#off_8AD0CD8@PAGEOFF]; off_8CD9218
+0x3e1c7b0: TBNZ            W8, #0, loc_3E1C7E0
+0x3e1c7b4: ADRP            X0, #off_8AD4E48@PAGE
+0x3e1c7b8: LDR             X0, [X0,#off_8AD4E48@PAGEOFF]; qword_8CFB260 ; slot
+0x3e1c7bc: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3e1c7c0: ADRP            X0, #off_8AD0CD0@PAGE
+0x3e1c7c4: LDR             X0, [X0,#off_8AD0CD0@PAGEOFF]; unk_8CFB268 ; slot
+0x3e1c7c8: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3e1c7cc: ADRP            X0, #off_8AD0CD8@PAGE
+0x3e1c7d0: LDR             X0, [X0,#off_8AD0CD8@PAGEOFF]; off_8CD9218 ; slot
+0x3e1c7d4: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3e1c7d8: MOV             W8, #1
+0x3e1c7dc: STRB            W8, [X19,#byte_8FFD8A8@PAGEOFF]
+0x3e1c7e0: LDR             X8, [X20]
+0x3e1c7e4: LDR             X8, [X8,#0xB8]
+0x3e1c7e8: LDR             X0, [X8]
+0x3e1c7ec: CBZ             X0, loc_3E1C824
+0x3e1c7f0: LDR             X8, [X0,#0x30]
+0x3e1c7f4: CBZ             X8, loc_3E1C824
+0x3e1c7f8: LDR             X9, [X8,#0x90]
+0x3e1c7fc: STR             XZR, [X8,#0x38]
+0x3e1c800: CBZ             X9, loc_3E1C824
+0x3e1c804: ADRP            X10, #off_8AD4E48@PAGE
+0x3e1c808: LDR             X10, [X10,#off_8AD4E48@PAGEOFF]; qword_8CFB260
+0x3e1c80c: STR             XZR, [X9,#0x10]
+0x3e1c810: STR             WZR, [X8,#0x40]
+0x3e1c814: LDP             X20, X19, [SP,#0x20+var_10]
+0x3e1c818: LDR             X1, [X10]
+0x3e1c81c: LDR             X30, [SP+0x20+var_20],#0x20
+0x3e1c820: B               DbtSaveDataManagerBase_object__object_$$Save
+0x3e1c824: BL              il2cpp_codegen_raise_null_reference_exception

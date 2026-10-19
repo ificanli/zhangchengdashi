@@ -1,0 +1,145 @@
+0x4c8cf78: STP             X29, X30, [SP,#-0x40+var_20]!
+0x4c8cf7c: STR             X27, [SP,#0x20+var_10]
+0x4c8cf80: STP             X26, X25, [SP,#0x20+var_s0]
+0x4c8cf84: STP             X24, X23, [SP,#0x20+var_s10]
+0x4c8cf88: STP             X22, X21, [SP,#0x20+var_s20]
+0x4c8cf8c: STP             X20, X19, [SP,#0x20+var_s30]
+0x4c8cf90: MOV             X29, SP
+0x4c8cf94: SUB             SP, SP, #0x10
+0x4c8cf98: MRS             X27, TPIDR_EL0
+0x4c8cf9c: LDR             X8, [X27,#0x28]
+0x4c8cfa0: MOV             X21, X5
+0x4c8cfa4: MOV             X20, X4
+0x4c8cfa8: MOV             X24, X3
+0x4c8cfac: STUR            X8, [X29,#0x20+var_28]
+0x4c8cfb0: STUR            X4, [X29,#0x20+var_30]
+0x4c8cfb4: LDR             X8, [X5,#0x38]
+0x4c8cfb8: MOV             X25, X2
+0x4c8cfbc: MOV             X19, X1
+0x4c8cfc0: CBNZ            X8, loc_4C8CFE4
+0x4c8cfc4: ADRP            X0, #off_8ACD858@PAGE
+0x4c8cfc8: LDR             X0, [X0,#off_8ACD858@PAGEOFF]; qword_8CE3258 ; slot
+0x4c8cfcc: BL              il2cpp_codegen_initialize_runtime_metadata
+0x4c8cfd0: LDR             X8, [X21,#0x38]
+0x4c8cfd4: CBNZ            X8, loc_4C8CFE4
+0x4c8cfd8: MOV             X0, X21
+0x4c8cfdc: BL              unk_3C503FC
+0x4c8cfe0: LDR             X8, [X21,#0x38]
+0x4c8cfe4: LDR             X8, [X8]
+0x4c8cfe8: LDR             W23, [X8,#0xFC]
+0x4c8cfec: MOV             X8, SP
+0x4c8cff0: ADD             X9, X23, #0xF
+0x4c8cff4: AND             X9, X9, #0x1FFFFFFF0
+0x4c8cff8: SUB             X22, X8, X9
+0x4c8cffc: MOV             SP, X22
+0x4c8d000: CBZ             X19, loc_4C8D120
+0x4c8d004: MOV             X0, X19
+0x4c8d008: MOV             X1, XZR
+0x4c8d00c: BL              System.Object$$GetType
+0x4c8d010: CBZ             X0, loc_4C8D1A4
+0x4c8d014: MOV             W2, #0x34 ; '4'
+0x4c8d018: MOV             X1, X25
+0x4c8d01c: MOV             X3, XZR
+0x4c8d020: MOV             X26, X0
+0x4c8d024: BL              System.Type$$GetProperty
+0x4c8d028: CBZ             X0, loc_4C8D048
+0x4c8d02c: LDR             X8, [X0]
+0x4c8d030: MOV             W1, #1
+0x4c8d034: LDR             X9, [X8,#0x2D8]
+0x4c8d038: LDR             X2, [X8,#0x2E0]
+0x4c8d03c: BLR             X9
+0x4c8d040: MOV             X25, X0
+0x4c8d044: B               loc_4C8D04C
+0x4c8d048: MOV             X25, XZR
+0x4c8d04c: MOV             X0, X25
+0x4c8d050: MOV             X1, XZR
+0x4c8d054: MOV             X2, XZR
+0x4c8d058: BL              System.Reflection.MethodInfo$$op_Inequality
+0x4c8d05c: TBZ             W0, #0, loc_4C8D0F0
+0x4c8d060: ADRP            X8, #off_8ACD858@PAGE
+0x4c8d064: LDR             X8, [X8,#off_8ACD858@PAGEOFF]; qword_8CE3258
+0x4c8d068: MOV             W1, #1
+0x4c8d06c: LDR             X0, [X8]
+0x4c8d070: BL              unk_3C3D320
+0x4c8d074: LDR             X21, [X21,#0x38]
+0x4c8d078: MOV             X24, X0
+0x4c8d07c: MOV             X0, X22
+0x4c8d080: MOV             X2, X23
+0x4c8d084: LDR             X8, [X21]
+0x4c8d088: LDR             W8, [X8,#0x28]
+0x4c8d08c: CMP             W8, #0
+0x4c8d090: SUB             X8, X29, #-(0x20+var_30)
+0x4c8d094: CSEL            X1, X20, X8, LT
+0x4c8d098: BL              .memcpy
+0x4c8d09c: LDR             X0, [X21]
+0x4c8d0a0: MOV             X1, X22
+0x4c8d0a4: BL              unk_3C3D3B8
+0x4c8d0a8: CBZ             X24, loc_4C8D1A4
+0x4c8d0ac: MOV             X20, X0
+0x4c8d0b0: CBZ             X0, loc_4C8D0C8
+0x4c8d0b4: LDR             X8, [X24]
+0x4c8d0b8: MOV             X0, X20
+0x4c8d0bc: LDR             X1, [X8,#0x40]
+0x4c8d0c0: BL              unk_3C3D3B4
+0x4c8d0c4: CBZ             X0, loc_4C8D1AC
+0x4c8d0c8: LDR             W8, [X24,#0x18]
+0x4c8d0cc: CBZ             W8, loc_4C8D1A8
+0x4c8d0d0: STR             X20, [X24,#0x20]
+0x4c8d0d4: CBZ             X25, loc_4C8D1A4
+0x4c8d0d8: MOV             X0, X25
+0x4c8d0dc: MOV             X1, X19
+0x4c8d0e0: MOV             X2, X24
+0x4c8d0e4: MOV             X3, XZR
+0x4c8d0e8: BL              System.Reflection.MethodBase$$Invoke
+0x4c8d0ec: B               loc_4C8D170
+0x4c8d0f0: LDR             X8, [X26]
+0x4c8d0f4: MOV             W2, #0x24 ; '$'
+0x4c8d0f8: MOV             X0, X26
+0x4c8d0fc: MOV             X1, X24
+0x4c8d100: LDR             X9, [X8,#0x6D8]
+0x4c8d104: LDR             X3, [X8,#0x6E0]
+0x4c8d108: BLR             X9
+0x4c8d10c: MOV             X1, XZR
+0x4c8d110: MOV             X2, XZR
+0x4c8d114: MOV             X24, X0
+0x4c8d118: BL              System.Reflection.FieldInfo$$op_Equality
+0x4c8d11c: TBZ             W0, #0, loc_4C8D128
+0x4c8d120: MOV             W0, WZR
+0x4c8d124: B               loc_4C8D174
+0x4c8d128: LDR             X21, [X21,#0x38]
+0x4c8d12c: MOV             X0, X22
+0x4c8d130: MOV             X2, X23
+0x4c8d134: LDR             X8, [X21]
+0x4c8d138: LDR             W8, [X8,#0x28]
+0x4c8d13c: CMP             W8, #0
+0x4c8d140: SUB             X8, X29, #-(0x20+var_30)
+0x4c8d144: CSEL            X1, X20, X8, LT
+0x4c8d148: BL              .memcpy
+0x4c8d14c: LDR             X0, [X21]
+0x4c8d150: MOV             X1, X22
+0x4c8d154: BL              unk_3C3D3B8
+0x4c8d158: CBZ             X24, loc_4C8D1A4
+0x4c8d15c: MOV             X2, X0
+0x4c8d160: MOV             X0, X24
+0x4c8d164: MOV             X1, X19
+0x4c8d168: MOV             X3, XZR
+0x4c8d16c: BL              System.Reflection.FieldInfo$$SetValue
+0x4c8d170: MOV             W0, #1
+0x4c8d174: LDR             X8, [X27,#0x28]
+0x4c8d178: LDUR            X9, [X29,#0x20+var_28]
+0x4c8d17c: CMP             X8, X9
+0x4c8d180: B.NE            loc_4C8D1B8
+0x4c8d184: MOV             SP, X29
+0x4c8d188: LDP             X20, X19, [SP,#0x20+var_s30]
+0x4c8d18c: LDP             X22, X21, [SP,#0x20+var_s20]
+0x4c8d190: LDP             X24, X23, [SP,#0x20+var_s10]
+0x4c8d194: LDP             X26, X25, [SP,#0x20+var_s0]
+0x4c8d198: LDR             X27, [SP,#0x20+var_10]
+0x4c8d19c: LDP             X29, X30, [SP+0x20+var_20],#0x60
+0x4c8d1a0: RET
+0x4c8d1a4: BL              il2cpp_codegen_raise_null_reference_exception
+0x4c8d1a8: BL              unk_3C3D4D4
+0x4c8d1ac: BL              unk_3C3D4F0
+0x4c8d1b0: MOV             X1, XZR
+0x4c8d1b4: BL              unk_3C3D3A0
+0x4c8d1b8: BL              .__stack_chk_fail

@@ -1,0 +1,148 @@
+0x715a5d8: e80f1dfc str      d8, [sp, #-0x30]!
+0x715a5dc: fe0700f9 str      x30, [sp, #8]
+0x715a5e0: f65701a9 stp      x22, x21, [sp, #0x10]
+0x715a5e4: f44f02a9 stp      x20, x19, [sp, #0x20]
+0x715a5e8: 73f500f0 adrp     x19, #0x9009000
+0x715a5ec: d4cc00f0 adrp     x20, #0x8af5000
+0x715a5f0: 68324339 ldrb     w8, [x19, #0xcc]
+0x715a5f4: 94be41f9 ldr      x20, [x20, #0x378] // DBTSDK.DBTSDKManager_TypeInfo
+0x715a5f8: 08030037 tbnz     w8, #0, #0x715a658
+0x715a5fc: 80cb00f0 adrp     x0, #0x8acd000
+0x715a600: 000842f9 ldr      x0, [x0, #0x410] // DBTSDK.AdsManager_TypeInfo
+0x715a604: 1f8b2b97 bl       #0x3c3d280
+0x715a608: 80cb00f0 adrp     x0, #0x8acd000
+0x715a60c: 00e042f9 ldr      x0, [x0, #0x5c0] // GameFramework.AppSetting_TypeInfo
+0x715a610: 1c8b2b97 bl       #0x3c3d280
+0x715a614: 80cb00f0 adrp     x0, #0x8acd000
+0x715a618: 00c440f9 ldr      x0, [x0, #0x188] // UnityEngine.Application_TypeInfo
+0x715a61c: 198b2b97 bl       #0x3c3d280
+0x715a620: c0cc00f0 adrp     x0, #0x8af5000
+0x715a624: 00bc41f9 ldr      x0, [x0, #0x378] // DBTSDK.DBTSDKManager_TypeInfo
+0x715a628: 168b2b97 bl       #0x3c3d280
+0x715a62c: 00cd00d0 adrp     x0, #0x8afc000
+0x715a630: 001045f9 ldr      x0, [x0, #0xa20] // Method$UnityEngine.Resources.Load<ResourceCollection>()
+0x715a634: 138b2b97 bl       #0x3c3d280
+0x715a638: 00cd00d0 adrp     x0, #0x8afc000
+0x715a63c: 002045f9 ldr      x0, [x0, #0xa40] // ResourceCollection
+0x715a640: 108b2b97 bl       #0x3c3d280
+0x715a644: c0cb00f0 adrp     x0, #0x8ad5000
+0x715a648: 009441f9 ldr      x0, [x0, #0x328] // ,
+0x715a64c: 0d8b2b97 bl       #0x3c3d280
+0x715a650: 28008052 mov      w8, #1
+0x715a654: 68320339 strb     w8, [x19, #0xcc]
+0x715a658: 800240f9 ldr      x0, [x20]
+0x715a65c: 08e040b9 ldr      w8, [x0, #0xe0]
+0x715a660: 48000035 cbnz     w8, #0x715a668
+0x715a664: 538b2b97 bl       #0x3c3d3b0
+0x715a668: e0031faa mov      x0, xzr
+0x715a66c: 709d0894 bl       #0x7381c2c // DBTSDK.DBTSDKManager$$InitSDK
+0x715a670: e0031faa mov      x0, xzr
+0x715a674: 7e454594 bl       #0x82abc6c // UnityEngine.Screen$$get_dpi
+0x715a678: 74f500f0 adrp     x20, #0x9009000
+0x715a67c: 88224639 ldrb     w8, [x20, #0x188]
+0x715a680: 081ca04e mov      v8.16b, v0.16b
+0x715a684: c8000035 cbnz     w8, #0x715a69c
+0x715a688: e0cd0090 adrp     x0, #0x8b16000
+0x715a68c: 00a845f9 ldr      x0, [x0, #0xb50] // GameFramework.Utility.Converter_TypeInfo
+0x715a690: fc8a2b97 bl       #0x3c3d280
+0x715a694: 28008052 mov      w8, #1
+0x715a698: 88220639 strb     w8, [x20, #0x188]
+0x715a69c: f3cd0090 adrp     x19, #0x8b16000
+0x715a6a0: 73aa45f9 ldr      x19, [x19, #0xb50] // GameFramework.Utility.Converter_TypeInfo
+0x715a6a4: 75f500f0 adrp     x21, #0x9009000
+0x715a6a8: 680240f9 ldr      x8, [x19]
+0x715a6ac: 085d40f9 ldr      x8, [x8, #0xb8]
+0x715a6b0: 080100bd str      s8, [x8]
+0x715a6b4: a9264639 ldrb     w9, [x21, #0x189]
+0x715a6b8: 09010035 cbnz     w9, #0x715a6d8
+0x715a6bc: e00313aa mov      x0, x19
+0x715a6c0: f08a2b97 bl       #0x3c3d280
+0x715a6c4: 680240f9 ldr      x8, [x19]
+0x715a6c8: 29008052 mov      w9, #1
+0x715a6cc: a9260639 strb     w9, [x21, #0x189]
+0x715a6d0: 085d40f9 ldr      x8, [x8, #0xb8]
+0x715a6d4: 080140bd ldr      s8, [x8]
+0x715a6d8: 95cb00f0 adrp     x21, #0x8acd000
+0x715a6dc: b5c640f9 ldr      x21, [x21, #0x188] // UnityEngine.Application_TypeInfo
+0x715a6e0: 0821201e fcmp     s8, #0.0
+0x715a6e4: 68010054 b.hi     #0x715a710
+0x715a6e8: 89224639 ldrb     w9, [x20, #0x188]
+0x715a6ec: e9000035 cbnz     w9, #0x715a708
+0x715a6f0: e00313aa mov      x0, x19
+0x715a6f4: e38a2b97 bl       #0x3c3d280
+0x715a6f8: 680240f9 ldr      x8, [x19]
+0x715a6fc: 29008052 mov      w9, #1
+0x715a700: 89220639 strb     w9, [x20, #0x188]
+0x715a704: 085d40f9 ldr      x8, [x8, #0xb8]
+0x715a708: 0958a852 mov      w9, #0x42c00000
+0x715a70c: 090100b9 str      w9, [x8]
+0x715a710: a00240f9 ldr      x0, [x21]
+0x715a714: 94cb00f0 adrp     x20, #0x8acd000
+0x715a718: 08e040b9 ldr      w8, [x0, #0xe0]
+0x715a71c: 94e242f9 ldr      x20, [x20, #0x5c0] // GameFramework.AppSetting_TypeInfo
+0x715a720: 48000035 cbnz     w8, #0x715a728
+0x715a724: 238b2b97 bl       #0x3c3d3b0
+0x715a728: 93cb00f0 adrp     x19, #0x8acd000
+0x715a72c: 730a42f9 ldr      x19, [x19, #0x410] // DBTSDK.AdsManager_TypeInfo
+0x715a730: 80078052 mov      w0, #0x3c
+0x715a734: e1031faa mov      x1, xzr
+0x715a738: 59044594 bl       #0x829b89c // UnityEngine.Application$$set_targetFrameRate
+0x715a73c: 00008012 mov      w0, #-1
+0x715a740: e1031faa mov      x1, xzr
+0x715a744: 72454594 bl       #0x82abd0c // UnityEngine.Screen$$set_sleepTimeout
+0x715a748: 800240f9 ldr      x0, [x20]
+0x715a74c: 08e040b9 ldr      w8, [x0, #0xe0]
+0x715a750: 48000035 cbnz     w8, #0x715a758
+0x715a754: 178b2b97 bl       #0x3c3d3b0
+0x715a758: e0031faa mov      x0, xzr
+0x715a75c: 3214ff97 bl       #0x711f824 // GameFramework.AppSetting$$SetCultureBasedOnSetting
+0x715a760: 680240f9 ldr      x8, [x19]
+0x715a764: e0031faa mov      x0, xzr
+0x715a768: 085d40f9 ldr      x8, [x8, #0xb8]
+0x715a76c: 150140f9 ldr      x21, [x8]
+0x715a770: 0e16ff97 bl       #0x711ffa8 // GameFramework.AppSetting$$get_MineGameName
+0x715a774: 76f500f0 adrp     x22, #0x9009000
+0x715a778: c82a4639 ldrb     w8, [x22, #0x18a]
+0x715a77c: f30300aa mov      x19, x0
+0x715a780: c8000035 cbnz     w8, #0x715a798
+0x715a784: 80cb00f0 adrp     x0, #0x8acd000
+0x715a788: 00e042f9 ldr      x0, [x0, #0x5c0] // GameFramework.AppSetting_TypeInfo
+0x715a78c: bd8a2b97 bl       #0x3c3d280
+0x715a790: 28008052 mov      w8, #1
+0x715a794: c82a0639 strb     w8, [x22, #0x18a]
+0x715a798: 800240f9 ldr      x0, [x20]
+0x715a79c: d6cb00f0 adrp     x22, #0x8ad5000
+0x715a7a0: 08e040b9 ldr      w8, [x0, #0xe0]
+0x715a7a4: d69641f9 ldr      x22, [x22, #0x328] // ,
+0x715a7a8: 68000035 cbnz     w8, #0x715a7b4
+0x715a7ac: 018b2b97 bl       #0x3c3d3b0
+0x715a7b0: 800240f9 ldr      x0, [x20]
+0x715a7b4: 085c40f9 ldr      x8, [x0, #0xb8]
+0x715a7b8: c10240f9 ldr      x1, [x22]
+0x715a7bc: e00313aa mov      x0, x19
+0x715a7c0: e3031faa mov      x3, xzr
+0x715a7c4: 022540f9 ldr      x2, [x8, #0x48]
+0x715a7c8: dabe0e94 bl       #0x750a330 // System.String$$Concat
+0x715a7cc: d50200b4 cbz      x21, #0x715a824
+0x715a7d0: a01200f9 str      x0, [x21, #0x20]
+0x715a7d4: e0031faa mov      x0, xzr
+0x715a7d8: 87f2fe97 bl       #0x71171f4 // GameFramework.AppSetting$$get_IsXYXEnvironment
+0x715a7dc: 60010037 tbnz     w0, #0, #0x715a808
+0x715a7e0: 08cd00d0 adrp     x8, #0x8afc000
+0x715a7e4: 09cd00d0 adrp     x9, #0x8afc000
+0x715a7e8: 082145f9 ldr      x8, [x8, #0xa40] // ResourceCollection
+0x715a7ec: 291145f9 ldr      x9, [x9, #0xa20] // Method$UnityEngine.Resources.Load<ResourceCollection>()
+0x715a7f0: 000140f9 ldr      x0, [x8]
+0x715a7f4: 210140f9 ldr      x1, [x9]
+0x715a7f8: 4e157597 bl       #0x4e9fd30 // UnityEngine.Resources$$Load<object>
+0x715a7fc: 600000b4 cbz      x0, #0x715a808
+0x715a800: e1031faa mov      x1, xzr
+0x715a804: 912bff97 bl       #0x7125648 // GameFramework.ResourceCollection$$nªJ¦ y
+0x715a808: d8feff97 bl       #0x715a368 // GameFramework.GameFrameWorkMono$$wN¦So
+0x715a80c: c00000b4 cbz      x0, #0x715a824
+0x715a810: f44f42a9 ldp      x20, x19, [sp, #0x20]
+0x715a814: f65741a9 ldp      x22, x21, [sp, #0x10]
+0x715a818: fe0740f9 ldr      x30, [sp, #8]
+0x715a81c: e80743fc ldr      d8, [sp], #0x30
+0x715a820: 83060014 b        #0x715c22c // GameFramework.GameFrameWorkMono$$´L|lI
+0x715a824: 2a8b2b97 bl       #0x3c3d4cc

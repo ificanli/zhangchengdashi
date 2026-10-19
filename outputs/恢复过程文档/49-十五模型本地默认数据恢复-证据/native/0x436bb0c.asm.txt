@@ -1,0 +1,40 @@
+0x436bb0c: STP             X30, X21, [SP,#var_20]!
+0x436bb10: STP             X20, X19, [SP,#0x20+var_10]
+0x436bb14: ADRP            X21, #byte_900070A@PAGE
+0x436bb18: ADRP            X20, #off_8ACDF78@PAGE
+0x436bb1c: LDRB            W8, [X21,#byte_900070A@PAGEOFF]
+0x436bb20: LDR             X20, [X20,#off_8ACDF78@PAGEOFF]; off_8CE1928
+0x436bb24: MOV             X19, X0
+0x436bb28: TBNZ            W8, #0, loc_436BB4C
+0x436bb2c: ADRP            X0, #off_8ACDF88@PAGE
+0x436bb30: LDR             X0, [X0,#off_8ACDF88@PAGEOFF]; qword_8D17890 ; slot
+0x436bb34: BL              il2cpp_codegen_initialize_runtime_metadata
+0x436bb38: ADRP            X0, #off_8ACDF78@PAGE
+0x436bb3c: LDR             X0, [X0,#off_8ACDF78@PAGEOFF]; off_8CE1928 ; slot
+0x436bb40: BL              il2cpp_codegen_initialize_runtime_metadata
+0x436bb44: MOV             W8, #1
+0x436bb48: STRB            W8, [X21,#byte_900070A@PAGEOFF]
+0x436bb4c: ADRP            X21, #off_8ACDF88@PAGE
+0x436bb50: LDR             X21, [X21,#off_8ACDF88@PAGEOFF]; qword_8D17890
+0x436bb54: MOV             X0, X19
+0x436bb58: MOV             X1, XZR
+0x436bb5c: BL              ServerBaseData$$Init
+0x436bb60: LDR             X0, [X20]; klass
+0x436bb64: LDR             W8, [X0,#0xE0]
+0x436bb68: CBNZ            W8, loc_436BB70
+0x436bb6c: BL              il2cpp_codegen_runtime_class_init
+0x436bb70: LDR             X0, [X21]
+0x436bb74: BL              QuickTutor.Singleton_object_$$get_Instance
+0x436bb78: CBZ             X0, loc_436BBA8
+0x436bb7c: MOV             X1, XZR
+0x436bb80: BL              SDKModule.ABTestManager$$get_AdsLimitTo8On
+0x436bb84: CBZ             X19, loc_436BBA8
+0x436bb88: TST             W0, #1
+0x436bb8c: MOV             W8, #5
+0x436bb90: MOV             W9, #8
+0x436bb94: CSEL            W8, W9, W8, NE
+0x436bb98: STR             W8, [X19,#0x14]
+0x436bb9c: LDP             X20, X19, [SP,#0x20+var_10]
+0x436bba0: LDP             X30, X21, [SP+0x20+var_20],#0x20
+0x436bba4: RET
+0x436bba8: BL              il2cpp_codegen_raise_null_reference_exception

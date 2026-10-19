@@ -1,0 +1,60 @@
+{
+  "stage": 39,
+  "status": "implemented-source-stable-independent-compiles-passed-awaiting-root-GUI-runtime",
+  "mainSources": [
+    "Assets/Scripts/GFRunning/GameFramework/VersionMondule.cs",
+    "Assets/Scripts/GFRunning/UpdateManager.cs"
+  ],
+  "narrowNecessaryExtensions": [
+    "Assets/Scripts/GFRunning/GameFramework/AppSetting.cs: exact MineGameName getter/setter only; do not broaden unrelated properties",
+    "Assets/Scripts/GFRunning/GameFramework/AssetbundleModule.cs: original initialization/coroutine completion ordering with explicit Editor I/O boundary",
+    "Assets/Scripts/GFRunning/GameFramework/Resources/ResourcesModule.cs: original constructor/initialization/completion branch, real bundle-services binding",
+    "Assets/Scripts/GFRunning/GameFramework/Resources/BundleAssetInfo.cs: original two constructors and core field-backed getters required by actual IBundleServices",
+    "Assets/Scripts/GFRunning/GameFramework/Resources/PatchManifest.cs: original header/record parser and necessary lookup/accessors if used by real typed services",
+    "Assets/Scripts/GFRunning/GameFramework/Resources/ResourcesInfo.cs: exact typed LoadAsset<T> and Instantiate I/O adapter boundary",
+    "ResourcesModule actual Editor loader queue used by original UIModule LoadPrefab then Update callback contract"
+  ],
+  "newRecoveryOwnedSources": [
+    "GFRunning/GameFramework/Recovery: editor resource-provider contract/registration only, without direct UnityEditor or Addressables reference",
+    "RecoveryTools/Editor/LocalResources: explicit LocalEditorResourcesProvider, dedicated Editor asmdef referencing GFRunning and official Addressables/ResourceManager"
+  ],
+  "assets": "Import the original 50 TextAssets according to outputs/旧框架资源恢复/Editor导入与资源映射计划.json into the declared recovery-owned paths, preserving original byte hashes and recording source bundle/container/PathID; create a precise registry",
+  "neverTouch": [
+    "The four stage-37 files: GameStartEntry, GameFrameEntry, GameStart and IGameStart",
+    "DataManager/GlobalInfo or AB test group values",
+    "User/login/save completion state",
+    "Unrelated resource importer settings or pending60 mappings"
+  ],
+  "providerIdentity": "Explicit LocalEditorResourcesProvider; actual APK-derived manifest and exported Editor asset data. It is not the original SDK/download/Android AssetBundle runtime.",
+  "providerRequiredActualWorkBeforeCompletion": [
+    "Verify actual original APK and original ABFiles bytes; parse the real 34-record manifest with original parser semantics",
+    "Read all 34 real APK payloads and check declared length and MD5",
+    "Actually load all 50 imported Unity TextAssets and compare their bytes with original bundle/container/PathID registry, including the two original 5-byte empty TextAssets",
+    "Resolve required startup resource closure through the actual official settings locator and actually load required concrete assets; record original address/requested type/actual object identity",
+    "Bind a real IBundleServices implementation backed by the original parsed manifest and accurate local capabilities",
+    "Write an auditable receipt with hashes, actual load identities, explicit capability/remaining limits; only then call the original module completion path"
+  ],
+  "pendingPolicy": "The 60 pending identities remain incomplete. They may be outside an explicitly recorded required startup closure; if a required asset is pending or cannot actually load, fail and do not invoke completion.",
+  "errorPolicy": "Editor never invokes real SDK/remote update/download services. Any unimplemented original non-Editor/platform branch must throw a precise unsupported diagnostic; no empty success return.",
+  "completionFacts": [
+    "Original GameFrameEntry.Initialize saves the callback and invokes the module; it does not set ready",
+    "Original VersionMondule.SetAssetBundleURL binds CurrBundleServices to ResourcesModule when appropriate, then writes its own completion bool, logs and invokes the stored callback",
+    "GameFrameModule has no additional completion notifier; do not invent or modify a base helper",
+    "Any Editor platform adaptation is labeled separately from native body restoration and must be backed by actual resource operations"
+  ],
+  "native": {
+    "targets": "work/version-resource-startup-plan/necessary-targets.json",
+    "rootIdaStatus": "work/ida-framework-assets/status-stage39-startup.json",
+    "localEvidence": "work/version-resource-startup-plan/native-evidence.json",
+    "localInspectedMethods": 47,
+    "localInspectedNativeBytes": 15104,
+    "typedSupplementTargets": "work/version-resource-startup-plan/typed-resource-supplement-targets.json",
+    "typedSupplementIdaStatus": "work/ida-framework-assets/status-stage39-typed-resource.json"
+  },
+  "implementationNotYetWritten": false,
+  "unityRunByThisAgent": false,
+  "coreGameplayAccepted": false,
+  "peerOwnership": {
+    "BundleAssetInfo.cs": "/root/game_launcher_restore_v2; stable handoff consumed; this owner did not edit it"
+  }
+}

@@ -1,0 +1,189 @@
+0x3e1a2c4: fe5fbda9 stp      x30, x23, [sp, #-0x30]!
+0x3e1a2c8: f65701a9 stp      x22, x21, [sp, #0x10]
+0x3e1a2cc: f44f02a9 stp      x20, x19, [sp, #0x20]
+0x3e1a2d0: 138f02f0 adrp     x19, #0x8ffd000
+0x3e1a2d4: b76502b0 adrp     x23, #0x8acf000
+0x3e1a2d8: d66502d0 adrp     x22, #0x8ad4000
+0x3e1a2dc: 68626239 ldrb     w8, [x19, #0x898]
+0x3e1a2e0: f79e40f9 ldr      x23, [x23, #0x138] // Method$ToolModule.ManagerBase<TimeManager>.get_Instance()
+0x3e1a2e4: d6b646f9 ldr      x22, [x22, #0xd68] // GameModule.GameManager.<>c_TypeInfo
+0x3e1a2e8: 08030037 tbnz     w8, #0, #0x3e1a348
+0x3e1a2ec: 806502f0 adrp     x0, #0x8acd000
+0x3e1a2f0: 008844f9 ldr      x0, [x0, #0x910] // System.Action_TypeInfo
+0x3e1a2f4: e38bf897 bl       #0x3c3d280
+0x3e1a2f8: a06502b0 adrp     x0, #0x8acf000
+0x3e1a2fc: 009c40f9 ldr      x0, [x0, #0x138] // Method$ToolModule.ManagerBase<TimeManager>.get_Instance()
+0x3e1a300: e08bf897 bl       #0x3c3d280
+0x3e1a304: c06502d0 adrp     x0, #0x8ad4000
+0x3e1a308: 00e446f9 ldr      x0, [x0, #0xdc8] // Method$GameModule.GameManager.<>c.<RegisterOnTimeToMonDayZero>b__22_0()
+0x3e1a30c: dd8bf897 bl       #0x3c3d280
+0x3e1a310: c06502d0 adrp     x0, #0x8ad4000
+0x3e1a314: 00e846f9 ldr      x0, [x0, #0xdd0] // Method$GameModule.GameManager.<>c.<RegisterOnTimeToMonDayZero>b__22_1()
+0x3e1a318: da8bf897 bl       #0x3c3d280
+0x3e1a31c: c06502d0 adrp     x0, #0x8ad4000
+0x3e1a320: 00ec46f9 ldr      x0, [x0, #0xdd8] // Method$GameModule.GameManager.<>c.<RegisterOnTimeToMonDayZero>b__22_2()
+0x3e1a324: d78bf897 bl       #0x3c3d280
+0x3e1a328: c06502d0 adrp     x0, #0x8ad4000
+0x3e1a32c: 00f046f9 ldr      x0, [x0, #0xde0] // Method$GameModule.GameManager.<>c.<RegisterOnTimeToMonDayZero>b__22_3()
+0x3e1a330: d48bf897 bl       #0x3c3d280
+0x3e1a334: c06502d0 adrp     x0, #0x8ad4000
+0x3e1a338: 00b446f9 ldr      x0, [x0, #0xd68] // GameModule.GameManager.<>c_TypeInfo
+0x3e1a33c: d18bf897 bl       #0x3c3d280
+0x3e1a340: 28008052 mov      w8, #1
+0x3e1a344: 68622239 strb     w8, [x19, #0x898]
+0x3e1a348: e00240f9 ldr      x0, [x23]
+0x3e1a34c: 45786d94 bl       #0x5978460 // ToolModule.ManagerBase<object>$$get_Instance
+0x3e1a350: c80240f9 ldr      x8, [x22]
+0x3e1a354: f30300aa mov      x19, x0
+0x3e1a358: 09e140b9 ldr      w9, [x8, #0xe0]
+0x3e1a35c: 89000035 cbnz     w9, #0x3e1a36c
+0x3e1a360: e00308aa mov      x0, x8
+0x3e1a364: 138cf897 bl       #0x3c3d3b0
+0x3e1a368: c80240f9 ldr      x8, [x22]
+0x3e1a36c: 095d40f9 ldr      x9, [x8, #0xb8]
+0x3e1a370: 341d40f9 ldr      x20, [x9, #0x38]
+0x3e1a374: d40200b5 cbnz     x20, #0x3e1a3cc
+0x3e1a378: 09e140b9 ldr      w9, [x8, #0xe0]
+0x3e1a37c: 89000035 cbnz     w9, #0x3e1a38c
+0x3e1a380: e00308aa mov      x0, x8
+0x3e1a384: 0b8cf897 bl       #0x3c3d3b0
+0x3e1a388: c80240f9 ldr      x8, [x22]
+0x3e1a38c: 896502f0 adrp     x9, #0x8acd000
+0x3e1a390: 085d40f9 ldr      x8, [x8, #0xb8]
+0x3e1a394: 298944f9 ldr      x9, [x9, #0x910] // System.Action_TypeInfo
+0x3e1a398: 150140f9 ldr      x21, [x8]
+0x3e1a39c: 200140f9 ldr      x0, [x9]
+0x3e1a3a0: 498cf897 bl       #0x3c3d4c4
+0x3e1a3a4: c86502d0 adrp     x8, #0x8ad4000
+0x3e1a3a8: 08e546f9 ldr      x8, [x8, #0xdc8] // Method$GameModule.GameManager.<>c.<RegisterOnTimeToMonDayZero>b__22_0()
+0x3e1a3ac: e10315aa mov      x1, x21
+0x3e1a3b0: e3031faa mov      x3, xzr
+0x3e1a3b4: f40300aa mov      x20, x0
+0x3e1a3b8: 020140f9 ldr      x2, [x8]
+0x3e1a3bc: fa7edf94 bl       #0x75f9fa4 // System.Action$$.ctor
+0x3e1a3c0: c80240f9 ldr      x8, [x22]
+0x3e1a3c4: 085d40f9 ldr      x8, [x8, #0xb8]
+0x3e1a3c8: 141d00f9 str      x20, [x8, #0x38]
+0x3e1a3cc: 530f00b4 cbz      x19, #0x3e1a5b4
+0x3e1a3d0: e00313aa mov      x0, x19
+0x3e1a3d4: e10314aa mov      x1, x20
+0x3e1a3d8: e2031faa mov      x2, xzr
+0x3e1a3dc: 38ac0094 bl       #0x3e454bc // TimeModuleO.TimeManager$$RegisterOnWeekPassed
+0x3e1a3e0: e00240f9 ldr      x0, [x23]
+0x3e1a3e4: 1f786d94 bl       #0x5978460 // ToolModule.ManagerBase<object>$$get_Instance
+0x3e1a3e8: c80240f9 ldr      x8, [x22]
+0x3e1a3ec: f30300aa mov      x19, x0
+0x3e1a3f0: 09e140b9 ldr      w9, [x8, #0xe0]
+0x3e1a3f4: 89000035 cbnz     w9, #0x3e1a404
+0x3e1a3f8: e00308aa mov      x0, x8
+0x3e1a3fc: ed8bf897 bl       #0x3c3d3b0
+0x3e1a400: c80240f9 ldr      x8, [x22]
+0x3e1a404: 095d40f9 ldr      x9, [x8, #0xb8]
+0x3e1a408: 342140f9 ldr      x20, [x9, #0x40]
+0x3e1a40c: d40200b5 cbnz     x20, #0x3e1a464
+0x3e1a410: 09e140b9 ldr      w9, [x8, #0xe0]
+0x3e1a414: 89000035 cbnz     w9, #0x3e1a424
+0x3e1a418: e00308aa mov      x0, x8
+0x3e1a41c: e58bf897 bl       #0x3c3d3b0
+0x3e1a420: c80240f9 ldr      x8, [x22]
+0x3e1a424: 896502f0 adrp     x9, #0x8acd000
+0x3e1a428: 085d40f9 ldr      x8, [x8, #0xb8]
+0x3e1a42c: 298944f9 ldr      x9, [x9, #0x910] // System.Action_TypeInfo
+0x3e1a430: 150140f9 ldr      x21, [x8]
+0x3e1a434: 200140f9 ldr      x0, [x9]
+0x3e1a438: 238cf897 bl       #0x3c3d4c4
+0x3e1a43c: c86502d0 adrp     x8, #0x8ad4000
+0x3e1a440: 08e946f9 ldr      x8, [x8, #0xdd0] // Method$GameModule.GameManager.<>c.<RegisterOnTimeToMonDayZero>b__22_1()
+0x3e1a444: e10315aa mov      x1, x21
+0x3e1a448: e3031faa mov      x3, xzr
+0x3e1a44c: f40300aa mov      x20, x0
+0x3e1a450: 020140f9 ldr      x2, [x8]
+0x3e1a454: d47edf94 bl       #0x75f9fa4 // System.Action$$.ctor
+0x3e1a458: c80240f9 ldr      x8, [x22]
+0x3e1a45c: 085d40f9 ldr      x8, [x8, #0xb8]
+0x3e1a460: 142100f9 str      x20, [x8, #0x40]
+0x3e1a464: 930a00b4 cbz      x19, #0x3e1a5b4
+0x3e1a468: e00313aa mov      x0, x19
+0x3e1a46c: e10314aa mov      x1, x20
+0x3e1a470: e2031faa mov      x2, xzr
+0x3e1a474: 24b10094 bl       #0x3e46904 // TimeModuleO.TimeManager$$RegisterOnTimeToZero
+0x3e1a478: e00240f9 ldr      x0, [x23]
+0x3e1a47c: f9776d94 bl       #0x5978460 // ToolModule.ManagerBase<object>$$get_Instance
+0x3e1a480: c80240f9 ldr      x8, [x22]
+0x3e1a484: f30300aa mov      x19, x0
+0x3e1a488: 09e140b9 ldr      w9, [x8, #0xe0]
+0x3e1a48c: 89000035 cbnz     w9, #0x3e1a49c
+0x3e1a490: e00308aa mov      x0, x8
+0x3e1a494: c78bf897 bl       #0x3c3d3b0
+0x3e1a498: c80240f9 ldr      x8, [x22]
+0x3e1a49c: 095d40f9 ldr      x9, [x8, #0xb8]
+0x3e1a4a0: 342540f9 ldr      x20, [x9, #0x48]
+0x3e1a4a4: d40200b5 cbnz     x20, #0x3e1a4fc
+0x3e1a4a8: 09e140b9 ldr      w9, [x8, #0xe0]
+0x3e1a4ac: 89000035 cbnz     w9, #0x3e1a4bc
+0x3e1a4b0: e00308aa mov      x0, x8
+0x3e1a4b4: bf8bf897 bl       #0x3c3d3b0
+0x3e1a4b8: c80240f9 ldr      x8, [x22]
+0x3e1a4bc: 896502f0 adrp     x9, #0x8acd000
+0x3e1a4c0: 085d40f9 ldr      x8, [x8, #0xb8]
+0x3e1a4c4: 298944f9 ldr      x9, [x9, #0x910] // System.Action_TypeInfo
+0x3e1a4c8: 150140f9 ldr      x21, [x8]
+0x3e1a4cc: 200140f9 ldr      x0, [x9]
+0x3e1a4d0: fd8bf897 bl       #0x3c3d4c4
+0x3e1a4d4: c86502d0 adrp     x8, #0x8ad4000
+0x3e1a4d8: 08ed46f9 ldr      x8, [x8, #0xdd8] // Method$GameModule.GameManager.<>c.<RegisterOnTimeToMonDayZero>b__22_2()
+0x3e1a4dc: e10315aa mov      x1, x21
+0x3e1a4e0: e3031faa mov      x3, xzr
+0x3e1a4e4: f40300aa mov      x20, x0
+0x3e1a4e8: 020140f9 ldr      x2, [x8]
+0x3e1a4ec: ae7edf94 bl       #0x75f9fa4 // System.Action$$.ctor
+0x3e1a4f0: c80240f9 ldr      x8, [x22]
+0x3e1a4f4: 085d40f9 ldr      x8, [x8, #0xb8]
+0x3e1a4f8: 142500f9 str      x20, [x8, #0x48]
+0x3e1a4fc: d30500b4 cbz      x19, #0x3e1a5b4
+0x3e1a500: e00313aa mov      x0, x19
+0x3e1a504: e10314aa mov      x1, x20
+0x3e1a508: e2031faa mov      x2, xzr
+0x3e1a50c: ecab0094 bl       #0x3e454bc // TimeModuleO.TimeManager$$RegisterOnWeekPassed
+0x3e1a510: e00240f9 ldr      x0, [x23]
+0x3e1a514: d3776d94 bl       #0x5978460 // ToolModule.ManagerBase<object>$$get_Instance
+0x3e1a518: c80240f9 ldr      x8, [x22]
+0x3e1a51c: f30300aa mov      x19, x0
+0x3e1a520: 09e140b9 ldr      w9, [x8, #0xe0]
+0x3e1a524: 89000035 cbnz     w9, #0x3e1a534
+0x3e1a528: e00308aa mov      x0, x8
+0x3e1a52c: a18bf897 bl       #0x3c3d3b0
+0x3e1a530: c80240f9 ldr      x8, [x22]
+0x3e1a534: 095d40f9 ldr      x9, [x8, #0xb8]
+0x3e1a538: 342940f9 ldr      x20, [x9, #0x50]
+0x3e1a53c: d40200b5 cbnz     x20, #0x3e1a594
+0x3e1a540: 09e140b9 ldr      w9, [x8, #0xe0]
+0x3e1a544: 89000035 cbnz     w9, #0x3e1a554
+0x3e1a548: e00308aa mov      x0, x8
+0x3e1a54c: 998bf897 bl       #0x3c3d3b0
+0x3e1a550: c80240f9 ldr      x8, [x22]
+0x3e1a554: 896502f0 adrp     x9, #0x8acd000
+0x3e1a558: 085d40f9 ldr      x8, [x8, #0xb8]
+0x3e1a55c: 298944f9 ldr      x9, [x9, #0x910] // System.Action_TypeInfo
+0x3e1a560: 150140f9 ldr      x21, [x8]
+0x3e1a564: 200140f9 ldr      x0, [x9]
+0x3e1a568: d78bf897 bl       #0x3c3d4c4
+0x3e1a56c: c86502d0 adrp     x8, #0x8ad4000
+0x3e1a570: 08f146f9 ldr      x8, [x8, #0xde0] // Method$GameModule.GameManager.<>c.<RegisterOnTimeToMonDayZero>b__22_3()
+0x3e1a574: e10315aa mov      x1, x21
+0x3e1a578: e3031faa mov      x3, xzr
+0x3e1a57c: f40300aa mov      x20, x0
+0x3e1a580: 020140f9 ldr      x2, [x8]
+0x3e1a584: 887edf94 bl       #0x75f9fa4 // System.Action$$.ctor
+0x3e1a588: c80240f9 ldr      x8, [x22]
+0x3e1a58c: 085d40f9 ldr      x8, [x8, #0xb8]
+0x3e1a590: 142900f9 str      x20, [x8, #0x50]
+0x3e1a594: 130100b4 cbz      x19, #0x3e1a5b4
+0x3e1a598: e00313aa mov      x0, x19
+0x3e1a59c: e10314aa mov      x1, x20
+0x3e1a5a0: f44f42a9 ldp      x20, x19, [sp, #0x20]
+0x3e1a5a4: f65741a9 ldp      x22, x21, [sp, #0x10]
+0x3e1a5a8: e2031faa mov      x2, xzr
+0x3e1a5ac: fe5fc3a8 ldp      x30, x23, [sp], #0x30
+0x3e1a5b0: c3ab0014 b        #0x3e454bc // TimeModuleO.TimeManager$$RegisterOnWeekPassed
+0x3e1a5b4: c68bf897 bl       #0x3c3d4cc

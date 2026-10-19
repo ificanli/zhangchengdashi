@@ -1,0 +1,39 @@
+_QWORD *__fastcall GameModule_BattleGameManager__GameEndCheck(__int64 a1)
+{
+  _QWORD *Instance; // x0
+  __int64 v3; // x8
+  int v4; // w21
+  _QWORD *result; // x0
+  __int64 v6; // x8
+
+  if ( (byte_8FFD72F & 1) == 0 )
+  {
+    il2cpp_codegen_initialize_runtime_metadata(&qword_8D0ACF0);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D12058);
+    byte_8FFD72F = 1;
+  }
+  Instance = ToolModule_ManagerBase_object___get_Instance((const MethodInfo *)qword_8D12058);
+  if ( Instance == nullptr )
+    goto LABEL_10;
+  v3 = Instance[20];
+  if ( v3 == 0 )
+    goto LABEL_10;
+  v4 = *(_DWORD *)(v3 + 24);
+  if ( v4 != 0 )
+  {
+    result = ToolModule_ManagerBase_object___get_Instance((const MethodInfo *)qword_8D12058);
+    if ( result != nullptr )
+    {
+      v6 = result[21];
+      if ( v6 != 0 )
+      {
+        if ( *(_DWORD *)(v6 + 24) != 0 )
+          return result;
+        return (_QWORD *)GameModule_BattleGameManager__GameEnd(a1, v4 != 0, 0);
+      }
+    }
+LABEL_10:
+    il2cpp_codegen_raise_null_reference_exception();
+  }
+  return (_QWORD *)GameModule_BattleGameManager__GameEnd(a1, v4 != 0, 0);
+}

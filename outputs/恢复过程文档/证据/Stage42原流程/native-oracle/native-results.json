@@ -1,0 +1,1182 @@
+{
+  "method": "Actual ARM64 ELF bytes under Unicorn 2.1.4",
+  "elfSha256": "72770d00b2b404acf44cc75cc8bf7a3e06850e9ace1237c9cbb2bc72894220ed",
+  "passed": 43,
+  "cases": [
+    {
+      "trace": [
+        {
+          "event": "enter",
+          "state": "B",
+          "current": "B",
+          "time": 0.0,
+          "destroyed": false
+        }
+      ],
+      "error": null,
+      "current": "B",
+      "time": 0.0,
+      "destroyed": false,
+      "instructionCount": 62,
+      "nativeEntries": {
+        "0x52a8dbc": 1,
+        "0x52a8f74": 1
+      },
+      "case": "start_null"
+    },
+    {
+      "trace": [
+        {
+          "event": "enter",
+          "state": "B",
+          "current": "B",
+          "time": 0.0,
+          "destroyed": false
+        }
+      ],
+      "error": null,
+      "current": "B",
+      "time": 0.0,
+      "destroyed": false,
+      "instructionCount": 64,
+      "nativeEntries": {
+        "0x52a8dbc": 1,
+        "0x52a8f74": 1
+      },
+      "case": "start_empty"
+    },
+    {
+      "trace": [
+        {
+          "event": "enter_args",
+          "state": "B",
+          "current": "B",
+          "time": 0.0,
+          "destroyed": false,
+          "args": "0x21000d00"
+        }
+      ],
+      "error": null,
+      "current": "B",
+      "time": 0.0,
+      "destroyed": false,
+      "instructionCount": 65,
+      "nativeEntries": {
+        "0x52a8dbc": 1,
+        "0x52a8f74": 1
+      },
+      "case": "start_nonempty"
+    },
+    {
+      "trace": [],
+      "error": "GameFrameworkException: FSM is running, can not start again.",
+      "current": "A",
+      "time": 7.25,
+      "destroyed": false,
+      "instructionCount": 37,
+      "nativeEntries": {
+        "0x52a8dbc": 1
+      },
+      "case": "start_already_running"
+    },
+    {
+      "trace": [],
+      "error": "GameFrameworkException: FSM '0x0' can not start state 'Missing' which is not exist.",
+      "current": null,
+      "time": 7.25,
+      "destroyed": false,
+      "instructionCount": 96,
+      "nativeEntries": {
+        "0x52a8dbc": 1,
+        "0x52a8f74": 1
+      },
+      "case": "start_missing_state"
+    },
+    {
+      "trace": [
+        {
+          "event": "enter",
+          "state": "B",
+          "current": "B",
+          "time": 0.0,
+          "destroyed": true
+        }
+      ],
+      "error": null,
+      "current": "B",
+      "time": 0.0,
+      "destroyed": true,
+      "instructionCount": 62,
+      "nativeEntries": {
+        "0x52a8dbc": 1,
+        "0x52a8f74": 1
+      },
+      "case": "start_destroyed_is_not_guarded"
+    },
+    {
+      "trace": [
+        {
+          "event": "enter",
+          "state": "B",
+          "current": "B",
+          "time": 0.0,
+          "destroyed": false
+        }
+      ],
+      "error": "CallbackAbort: enter:B",
+      "current": "B",
+      "time": 0.0,
+      "destroyed": false,
+      "instructionCount": 62,
+      "nativeEntries": {
+        "0x52a8dbc": 1,
+        "0x52a8f74": 1
+      },
+      "case": "start_enter_abort_commits_state"
+    },
+    {
+      "trace": [],
+      "error": "NullReferenceException",
+      "current": null,
+      "time": 7.25,
+      "destroyed": false,
+      "instructionCount": 28,
+      "nativeEntries": {
+        "0x52a8dbc": 1,
+        "0x52a8f74": 1
+      },
+      "case": "start_null_type"
+    },
+    {
+      "trace": [],
+      "error": "NullReferenceException",
+      "current": "A",
+      "time": 7.25,
+      "destroyed": false,
+      "instructionCount": 19,
+      "nativeEntries": {
+        "0x52a9308": 1,
+        "0x52a8f74": 1
+      },
+      "case": "change_null_type"
+    },
+    {
+      "trace": [
+        {
+          "event": "leave",
+          "state": "A",
+          "current": "A",
+          "time": 7.25,
+          "destroyed": false,
+          "isShutdown": false
+        },
+        {
+          "event": "enter",
+          "state": "B",
+          "current": "B",
+          "time": 0.0,
+          "destroyed": false
+        }
+      ],
+      "error": null,
+      "current": "B",
+      "time": 0.0,
+      "destroyed": false,
+      "instructionCount": 63,
+      "nativeEntries": {
+        "0x52a9308": 1,
+        "0x52a8f74": 1
+      },
+      "case": "change_null"
+    },
+    {
+      "trace": [
+        {
+          "event": "leave",
+          "state": "A",
+          "current": "A",
+          "time": 7.25,
+          "destroyed": false,
+          "isShutdown": false
+        },
+        {
+          "event": "enter",
+          "state": "B",
+          "current": "B",
+          "time": 0.0,
+          "destroyed": false
+        }
+      ],
+      "error": null,
+      "current": "B",
+      "time": 0.0,
+      "destroyed": false,
+      "instructionCount": 65,
+      "nativeEntries": {
+        "0x52a9308": 1,
+        "0x52a8f74": 1
+      },
+      "case": "change_empty"
+    },
+    {
+      "trace": [
+        {
+          "event": "leave",
+          "state": "A",
+          "current": "A",
+          "time": 7.25,
+          "destroyed": false,
+          "isShutdown": false
+        },
+        {
+          "event": "enter_args",
+          "state": "B",
+          "current": "B",
+          "time": 0.0,
+          "destroyed": false,
+          "args": "0x21000d00"
+        }
+      ],
+      "error": null,
+      "current": "B",
+      "time": 0.0,
+      "destroyed": false,
+      "instructionCount": 66,
+      "nativeEntries": {
+        "0x52a9308": 1,
+        "0x52a8f74": 1
+      },
+      "case": "change_nonempty"
+    },
+    {
+      "trace": [
+        {
+          "event": "leave",
+          "state": "A",
+          "current": "A",
+          "time": 7.25,
+          "destroyed": false,
+          "isShutdown": false
+        },
+        {
+          "event": "enter",
+          "state": "A",
+          "current": "A",
+          "time": 0.0,
+          "destroyed": false
+        }
+      ],
+      "error": null,
+      "current": "A",
+      "time": 0.0,
+      "destroyed": false,
+      "instructionCount": 63,
+      "nativeEntries": {
+        "0x52a9308": 1,
+        "0x52a8f74": 1
+      },
+      "case": "change_same_state"
+    },
+    {
+      "trace": [],
+      "error": "GameFrameworkException: Current state is invalid.",
+      "current": null,
+      "time": 7.25,
+      "destroyed": false,
+      "instructionCount": 27,
+      "nativeEntries": {
+        "0x52a9308": 1
+      },
+      "case": "change_not_running"
+    },
+    {
+      "trace": [],
+      "error": "GameFrameworkException: FSM '0x0' can not change state to 'Missing' which is not exist.",
+      "current": "A",
+      "time": 7.25,
+      "destroyed": false,
+      "instructionCount": 87,
+      "nativeEntries": {
+        "0x52a9308": 1,
+        "0x52a8f74": 1
+      },
+      "case": "change_missing_state"
+    },
+    {
+      "trace": [
+        {
+          "event": "leave",
+          "state": "A",
+          "current": "A",
+          "time": 7.25,
+          "destroyed": false,
+          "isShutdown": false
+        }
+      ],
+      "error": "CallbackAbort: leave:A",
+      "current": "A",
+      "time": 7.25,
+      "destroyed": false,
+      "instructionCount": 51,
+      "nativeEntries": {
+        "0x52a9308": 1,
+        "0x52a8f74": 1
+      },
+      "case": "change_leave_abort_preserves_old"
+    },
+    {
+      "trace": [
+        {
+          "event": "leave",
+          "state": "A",
+          "current": "A",
+          "time": 7.25,
+          "destroyed": false,
+          "isShutdown": false
+        },
+        {
+          "event": "enter",
+          "state": "B",
+          "current": "B",
+          "time": 0.0,
+          "destroyed": false
+        }
+      ],
+      "error": "CallbackAbort: enter:B",
+      "current": "B",
+      "time": 0.0,
+      "destroyed": false,
+      "instructionCount": 63,
+      "nativeEntries": {
+        "0x52a9308": 1,
+        "0x52a8f74": 1
+      },
+      "case": "change_enter_abort_commits_new"
+    },
+    {
+      "trace": [
+        {
+          "event": "leave",
+          "state": "A",
+          "current": "A",
+          "time": 7.25,
+          "destroyed": false,
+          "isShutdown": false
+        },
+        {
+          "event": "enter",
+          "state": "B",
+          "current": "B",
+          "time": 0.0,
+          "destroyed": false
+        },
+        {
+          "event": "leave",
+          "state": "B",
+          "current": "B",
+          "time": 0.0,
+          "destroyed": false,
+          "isShutdown": false
+        },
+        {
+          "event": "enter",
+          "state": "C",
+          "current": "C",
+          "time": 0.0,
+          "destroyed": false
+        }
+      ],
+      "error": null,
+      "current": "C",
+      "time": 0.0,
+      "destroyed": false,
+      "instructionCount": 127,
+      "nativeEntries": {
+        "0x52a9308": 2,
+        "0x52a8f74": 2
+      },
+      "case": "native_reentry_enter"
+    },
+    {
+      "trace": [
+        {
+          "event": "leave",
+          "state": "A",
+          "current": "A",
+          "time": 7.25,
+          "destroyed": false,
+          "isShutdown": false
+        },
+        {
+          "event": "leave",
+          "state": "A",
+          "current": "A",
+          "time": 7.25,
+          "destroyed": false,
+          "isShutdown": false
+        },
+        {
+          "event": "enter",
+          "state": "C",
+          "current": "C",
+          "time": 0.0,
+          "destroyed": false
+        },
+        {
+          "event": "enter",
+          "state": "B",
+          "current": "B",
+          "time": 0.0,
+          "destroyed": false
+        }
+      ],
+      "error": null,
+      "current": "B",
+      "time": 0.0,
+      "destroyed": false,
+      "instructionCount": 127,
+      "nativeEntries": {
+        "0x52a9308": 2,
+        "0x52a8f74": 2
+      },
+      "case": "native_reentry_leave"
+    },
+    {
+      "trace": [
+        {
+          "event": "update",
+          "state": "A",
+          "current": "A",
+          "time": 7.375,
+          "destroyed": false,
+          "elapse": 0.125,
+          "realElapse": 0.5
+        },
+        {
+          "event": "leave",
+          "state": "A",
+          "current": "A",
+          "time": 7.375,
+          "destroyed": false,
+          "isShutdown": false
+        },
+        {
+          "event": "enter",
+          "state": "B",
+          "current": "B",
+          "time": 0.0,
+          "destroyed": false
+        }
+      ],
+      "error": null,
+      "current": "B",
+      "time": 0.0,
+      "destroyed": false,
+      "instructionCount": 74,
+      "nativeEntries": {
+        "0x52a8bf0": 1,
+        "0x52a9308": 1,
+        "0x52a8f74": 1
+      },
+      "case": "native_reentry_update"
+    },
+    {
+      "trace": [
+        {
+          "event": "leave",
+          "state": "A",
+          "current": "A",
+          "time": 7.25,
+          "destroyed": false,
+          "isShutdown": true
+        },
+        {
+          "event": "leave",
+          "state": "A",
+          "current": "A",
+          "time": 7.25,
+          "destroyed": false,
+          "isShutdown": false
+        },
+        {
+          "event": "enter",
+          "state": "B",
+          "current": "B",
+          "time": 0.0,
+          "destroyed": false
+        },
+        {
+          "event": "destroy",
+          "state": "A",
+          "current": null,
+          "time": 0.0,
+          "destroyed": false
+        },
+        {
+          "event": "destroy",
+          "state": "B",
+          "current": null,
+          "time": 0.0,
+          "destroyed": false
+        },
+        {
+          "event": "destroy",
+          "state": "C",
+          "current": null,
+          "time": 0.0,
+          "destroyed": false
+        },
+        {
+          "event": "dispose_enumerator"
+        },
+        {
+          "event": "clear_states",
+          "current": null,
+          "time": 0.0,
+          "destroyed": false
+        },
+        {
+          "event": "clear_data",
+          "current": null,
+          "time": 0.0,
+          "destroyed": false
+        }
+      ],
+      "error": null,
+      "current": null,
+      "time": 0.0,
+      "destroyed": true,
+      "instructionCount": 178,
+      "nativeEntries": {
+        "0x52a8c18": 1,
+        "0x52a9308": 1,
+        "0x52a8f74": 1
+      },
+      "case": "native_reentry_shutdown_leave"
+    },
+    {
+      "trace": [
+        {
+          "event": "update",
+          "state": "A",
+          "current": "A",
+          "time": 16777216.0,
+          "destroyed": false,
+          "elapse": 1.0,
+          "realElapse": 13.5
+        }
+      ],
+      "error": null,
+      "current": "A",
+      "time": 16777216.0,
+      "destroyed": false,
+      "instructionCount": 10,
+      "nativeEntries": {
+        "0x52a8bf0": 1
+      },
+      "case": "update_running_float32"
+    },
+    {
+      "trace": [],
+      "error": null,
+      "current": null,
+      "time": 7.25,
+      "destroyed": false,
+      "instructionCount": 4,
+      "nativeEntries": {
+        "0x52a8bf0": 1
+      },
+      "case": "update_no_current_no_increment"
+    },
+    {
+      "trace": [
+        {
+          "event": "update",
+          "state": "A",
+          "current": "A",
+          "time": 7.375,
+          "destroyed": true,
+          "elapse": 0.125,
+          "realElapse": 0.25
+        }
+      ],
+      "error": null,
+      "current": "A",
+      "time": 7.375,
+      "destroyed": true,
+      "instructionCount": 10,
+      "nativeEntries": {
+        "0x52a8bf0": 1
+      },
+      "case": "update_destroyed_flag_does_not_guard_direct_call"
+    },
+    {
+      "trace": [
+        {
+          "event": "update",
+          "state": "A",
+          "current": "A",
+          "time": 6.75,
+          "destroyed": false,
+          "elapse": -0.5,
+          "realElapse": -1.5
+        }
+      ],
+      "error": null,
+      "current": "A",
+      "time": 6.75,
+      "destroyed": false,
+      "instructionCount": 10,
+      "nativeEntries": {
+        "0x52a8bf0": 1
+      },
+      "case": "update_negative_delta"
+    },
+    {
+      "trace": [
+        {
+          "event": "leave",
+          "state": "A",
+          "current": "A",
+          "time": 7.25,
+          "destroyed": false,
+          "isShutdown": true
+        },
+        {
+          "event": "destroy",
+          "state": "A",
+          "current": null,
+          "time": 0.0,
+          "destroyed": false
+        },
+        {
+          "event": "destroy",
+          "state": "B",
+          "current": null,
+          "time": 0.0,
+          "destroyed": false
+        },
+        {
+          "event": "destroy",
+          "state": "C",
+          "current": null,
+          "time": 0.0,
+          "destroyed": false
+        },
+        {
+          "event": "dispose_enumerator"
+        },
+        {
+          "event": "clear_states",
+          "current": null,
+          "time": 0.0,
+          "destroyed": false
+        },
+        {
+          "event": "clear_data",
+          "current": null,
+          "time": 0.0,
+          "destroyed": false
+        }
+      ],
+      "error": null,
+      "current": null,
+      "time": 0.0,
+      "destroyed": true,
+      "instructionCount": 114,
+      "nativeEntries": {
+        "0x52a8c18": 1
+      },
+      "case": "shutdown_running"
+    },
+    {
+      "trace": [
+        {
+          "event": "destroy",
+          "state": "A",
+          "current": null,
+          "time": 7.25,
+          "destroyed": false
+        },
+        {
+          "event": "destroy",
+          "state": "B",
+          "current": null,
+          "time": 7.25,
+          "destroyed": false
+        },
+        {
+          "event": "destroy",
+          "state": "C",
+          "current": null,
+          "time": 7.25,
+          "destroyed": false
+        },
+        {
+          "event": "dispose_enumerator"
+        },
+        {
+          "event": "clear_states",
+          "current": null,
+          "time": 7.25,
+          "destroyed": false
+        },
+        {
+          "event": "clear_data",
+          "current": null,
+          "time": 7.25,
+          "destroyed": false
+        }
+      ],
+      "error": null,
+      "current": null,
+      "time": 7.25,
+      "destroyed": true,
+      "instructionCount": 106,
+      "nativeEntries": {
+        "0x52a8c18": 1
+      },
+      "case": "shutdown_no_current_preserves_time"
+    },
+    {
+      "trace": [
+        {
+          "event": "leave",
+          "state": "A",
+          "current": "A",
+          "time": 7.25,
+          "destroyed": false,
+          "isShutdown": true
+        }
+      ],
+      "error": "CallbackAbort: leave:A",
+      "current": "A",
+      "time": 7.25,
+      "destroyed": false,
+      "instructionCount": 20,
+      "nativeEntries": {
+        "0x52a8c18": 1
+      },
+      "case": "shutdown_leave_abort_preserves_old"
+    },
+    {
+      "trace": [
+        {
+          "event": "leave",
+          "state": "A",
+          "current": "A",
+          "time": 7.25,
+          "destroyed": false,
+          "isShutdown": true
+        },
+        {
+          "event": "destroy",
+          "state": "A",
+          "current": null,
+          "time": 0.0,
+          "destroyed": false
+        }
+      ],
+      "error": "CallbackAbort: destroy:A",
+      "current": null,
+      "time": 0.0,
+      "destroyed": false,
+      "instructionCount": 46,
+      "nativeEntries": {
+        "0x52a8c18": 1
+      },
+      "case": "shutdown_destroy_abort_after_clear_current"
+    },
+    {
+      "trace": [
+        {
+          "event": "init",
+          "state": "A",
+          "current": null,
+          "time": 0.0,
+          "destroyed": false
+        },
+        {
+          "event": "init",
+          "state": "B",
+          "current": null,
+          "time": 0.0,
+          "destroyed": false
+        },
+        {
+          "event": "init",
+          "state": "C",
+          "current": null,
+          "time": 0.0,
+          "destroyed": false
+        }
+      ],
+      "error": null,
+      "current": null,
+      "time": 0.0,
+      "destroyed": false,
+      "instructionCount": 196,
+      "nativeEntries": {
+        "0x52a8890": 1
+      },
+      "case": "ctor_normal"
+    },
+    {
+      "trace": [],
+      "error": "GameFrameworkException: FSM owner is invalid.",
+      "current": null,
+      "time": 0.0,
+      "destroyed": false,
+      "instructionCount": 41,
+      "nativeEntries": {
+        "0x52a8890": 1
+      },
+      "case": "ctor_null_owner"
+    },
+    {
+      "trace": [],
+      "error": "GameFrameworkException: FSM states is invalid.",
+      "current": null,
+      "time": 0.0,
+      "destroyed": false,
+      "instructionCount": 41,
+      "nativeEntries": {
+        "0x52a8890": 1
+      },
+      "case": "ctor_null_states"
+    },
+    {
+      "trace": [],
+      "error": "GameFrameworkException: FSM states is invalid.",
+      "current": null,
+      "time": 0.0,
+      "destroyed": false,
+      "instructionCount": 44,
+      "nativeEntries": {
+        "0x52a8890": 1
+      },
+      "case": "ctor_empty_states"
+    },
+    {
+      "trace": [
+        {
+          "event": "init",
+          "state": "A",
+          "current": null,
+          "time": 0.0,
+          "destroyed": false
+        }
+      ],
+      "error": "GameFrameworkException: FSM states is invalid.",
+      "current": null,
+      "time": 0.0,
+      "destroyed": false,
+      "instructionCount": 124,
+      "nativeEntries": {
+        "0x52a8890": 1
+      },
+      "case": "ctor_null_element"
+    },
+    {
+      "trace": [
+        {
+          "event": "init",
+          "state": "A",
+          "current": null,
+          "time": 0.0,
+          "destroyed": false
+        }
+      ],
+      "error": "GameFrameworkException: FSM '0x0' state 'A' is already exist.",
+      "current": null,
+      "time": 0.0,
+      "destroyed": false,
+      "instructionCount": 156,
+      "nativeEntries": {
+        "0x52a8890": 1
+      },
+      "case": "ctor_duplicate"
+    },
+    {
+      "trace": [
+        {
+          "event": "init",
+          "state": "A",
+          "current": null,
+          "time": 0.0,
+          "destroyed": false
+        }
+      ],
+      "error": "CallbackAbort: init:A",
+      "current": null,
+      "time": 0.0,
+      "destroyed": false,
+      "instructionCount": 95,
+      "nativeEntries": {
+        "0x52a8890": 1
+      },
+      "case": "ctor_init_abort"
+    },
+    {
+      "trace": [
+        {
+          "event": "init",
+          "state": "A",
+          "current": null,
+          "time": 0.0,
+          "destroyed": false
+        },
+        {
+          "event": "enter",
+          "state": "A",
+          "current": "A",
+          "time": 0.0,
+          "destroyed": false
+        },
+        {
+          "event": "init",
+          "state": "B",
+          "current": "A",
+          "time": 0.0,
+          "destroyed": false
+        },
+        {
+          "event": "init",
+          "state": "C",
+          "current": "A",
+          "time": 0.0,
+          "destroyed": false
+        }
+      ],
+      "error": null,
+      "current": null,
+      "time": 0.0,
+      "destroyed": false,
+      "instructionCount": 259,
+      "nativeEntries": {
+        "0x52a8890": 1,
+        "0x52a8dbc": 1,
+        "0x52a8f74": 1
+      },
+      "case": "ctor_init_reenter_start"
+    },
+    {
+      "trace": [
+        {
+          "event": "update",
+          "state": "A",
+          "current": "A",
+          "time": 1.125,
+          "destroyed": false,
+          "elapse": 0.125,
+          "realElapse": 0.5
+        },
+        {
+          "event": "update",
+          "state": "B",
+          "current": "B",
+          "time": 1.125,
+          "destroyed": false,
+          "elapse": 0.125,
+          "realElapse": 0.5
+        },
+        {
+          "event": "update",
+          "state": "C",
+          "current": "C",
+          "time": 1.125,
+          "destroyed": false,
+          "elapse": 0.125,
+          "realElapse": 0.5
+        }
+      ],
+      "error": null,
+      "current": null,
+      "time": 0.0,
+      "destroyed": false,
+      "instructionCount": 125,
+      "nativeEntries": {
+        "0x7296d08": 1,
+        "0x52a8bf0": 3
+      },
+      "case": "manager_normal"
+    },
+    {
+      "trace": [
+        {
+          "event": "update",
+          "state": "A",
+          "current": "A",
+          "time": 1.125,
+          "destroyed": false,
+          "elapse": 0.125,
+          "realElapse": 0.5
+        },
+        {
+          "event": "update",
+          "state": "C",
+          "current": "C",
+          "time": 1.125,
+          "destroyed": false,
+          "elapse": 0.125,
+          "realElapse": 0.5
+        }
+      ],
+      "error": null,
+      "current": null,
+      "time": 0.0,
+      "destroyed": false,
+      "instructionCount": 109,
+      "nativeEntries": {
+        "0x7296d08": 1,
+        "0x52a8bf0": 2
+      },
+      "case": "manager_skip_destroyed"
+    },
+    {
+      "trace": [
+        {
+          "event": "update",
+          "state": "A",
+          "current": "A",
+          "time": 1.125,
+          "destroyed": false,
+          "elapse": 0.125,
+          "realElapse": 0.5
+        },
+        {
+          "event": "update",
+          "state": "B",
+          "current": "B",
+          "time": 1.125,
+          "destroyed": false,
+          "elapse": 0.125,
+          "realElapse": 0.5
+        },
+        {
+          "event": "update",
+          "state": "C",
+          "current": "C",
+          "time": 1.125,
+          "destroyed": false,
+          "elapse": 0.125,
+          "realElapse": 0.5
+        },
+        {
+          "event": "update",
+          "state": "D",
+          "current": "D",
+          "time": 0.125,
+          "destroyed": false,
+          "elapse": 0.125,
+          "realElapse": 0.5
+        }
+      ],
+      "error": null,
+      "current": null,
+      "time": 0.0,
+      "destroyed": false,
+      "instructionCount": 159,
+      "nativeEntries": {
+        "0x7296d08": 1,
+        "0x52a8bf0": 4
+      },
+      "case": "manager_append_during_update"
+    },
+    {
+      "trace": [
+        {
+          "event": "update",
+          "state": "A",
+          "current": "A",
+          "time": 1.125,
+          "destroyed": false,
+          "elapse": 0.125,
+          "realElapse": 0.5
+        },
+        {
+          "event": "update",
+          "state": "C",
+          "current": "C",
+          "time": 1.125,
+          "destroyed": false,
+          "elapse": 0.125,
+          "realElapse": 0.5
+        }
+      ],
+      "error": null,
+      "current": null,
+      "time": 0.0,
+      "destroyed": false,
+      "instructionCount": 91,
+      "nativeEntries": {
+        "0x7296d08": 1,
+        "0x52a8bf0": 2
+      },
+      "case": "manager_remove_current_during_update"
+    },
+    {
+      "trace": [
+        {
+          "event": "update",
+          "state": "A",
+          "current": "A",
+          "time": 1.125,
+          "destroyed": false,
+          "elapse": 0.125,
+          "realElapse": 0.5
+        }
+      ],
+      "error": null,
+      "current": null,
+      "time": 0.0,
+      "destroyed": false,
+      "instructionCount": 57,
+      "nativeEntries": {
+        "0x7296d08": 1,
+        "0x52a8bf0": 1
+      },
+      "case": "manager_clear_during_update"
+    },
+    {
+      "trace": [
+        {
+          "event": "update",
+          "state": "A",
+          "current": "A",
+          "time": 1.125,
+          "destroyed": false,
+          "elapse": 0.125,
+          "realElapse": 0.5
+        }
+      ],
+      "error": "NullReferenceException",
+      "current": null,
+      "time": 0.0,
+      "destroyed": false,
+      "instructionCount": 59,
+      "nativeEntries": {
+        "0x7296d08": 1,
+        "0x52a8bf0": 1
+      },
+      "case": "manager_null_element"
+    }
+  ],
+  "boundaries": [
+    "IL2CPP metadata resolution / object allocation / type reflection",
+    "System Dictionary operations and enumerator payload",
+    "System List index access (count reads and index increments execute natively)",
+    "State virtual callbacks record actual ABI arguments, field visibility and optional external mutation",
+    "FsmBase constructor stores name at native offset; its implementation is not counted as tested",
+    "CallbackAbort stops emulation at the callback boundary; C++/managed exception unwinding is not emulated"
+  ],
+  "codeHashes": {
+    "0x52a8890": "cd2e8f77712e5a84d87af9dce068ea6bc180ceb2f907e71db05f78fc47a924bb",
+    "0x52a8bf0": "703ebca284fdba2ecc10f9443ca8a903433716d6b6c4fc220e224d912d2b9ed4",
+    "0x52a8c18": "f1ea950d2ca8cd32d8c4ff7c75638b99a0de17f13dbcd76e57f819553917730e",
+    "0x52a8dbc": "cad485c14a0d8215c05123462eeb47dd51389c4678d2bf9606131b1c3ee4c388",
+    "0x52a8f74": "413ea8861cb893a0e75a8b1bd8d891f6e5421339a65b9f96cb8538871fd6541d",
+    "0x52a9308": "b9d01c073603da513d97e834dc2a7d8c88c281019d50d7c97e90a32599ecf28a",
+    "0x7296d08": "f3779af7e3ffee294fd1a9eb1e5444d2133d5578f28c89f2c412c360a15c1405"
+  }
+}

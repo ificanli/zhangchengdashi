@@ -1,0 +1,24 @@
+using System.Collections;
+using System.Text.Json;
+using GameFramework.Resources;
+namespace GameFramework.Resources { public interface IBundleServices {} public class ResourcesInfo{} }
+namespace UnityEngine {
+public class Object{} public class GameObject:Object{}
+public static class Application { public static string dataPath; }
+public static class Debug {public static List<string> Errors=new();public static void LogError(object message){Errors.Add(message.ToString());}}
+public static class JsonUtility {private static JsonSerializerOptions Options=new(){IncludeFields=true};public static string ToJson(object value,bool pretty=false){return JsonSerializer.Serialize(value,new JsonSerializerOptions{IncludeFields=true,WriteIndented=pretty});}public static T FromJson<T>(string value){return JsonSerializer.Deserialize<T>(value,Options);}}
+}
+namespace UnityEditor {
+[AttributeUsage(AttributeTargets.Class)] public sealed class InitializeOnLoadAttribute:Attribute{}
+public enum PlayModeStateChange {EnteredEditMode,ExitingEditMode,EnteredPlayMode,ExitingPlayMode}
+[Flags]public enum EnterPlayModeOptions{None=0,DisableDomainReload=1,DisableSceneReload=2}
+public static class EditorSettings {public static bool enterPlayModeOptionsEnabled;public static EnterPlayModeOptions enterPlayModeOptions;}
+public static class EditorApplication {public static bool isPlaying;public static event Action<PlayModeStateChange> playModeStateChanged;public static void Raise(PlayModeStateChange state){playModeStateChanged?.Invoke(state);}}
+public static class AssemblyReloadEvents {public static event Action beforeAssemblyReload;public static void Raise(){beforeAssemblyReload?.Invoke();}}
+}
+public sealed class TestServices:IBundleServices{}
+public static class Env {
+public static bool HashReady,ResourceFailure,CoreDisposeThrows;
+public static string Root,Canonical,RunRoot;
+public static void Reset(string name){Root=Path.Combine(AppContext.BaseDirectory,"runs",name+"-"+Guid.NewGuid().ToString("N"));Directory.CreateDirectory(Root);Canonical=Path.Combine(Root,"provider.json");RunRoot=Path.Combine(Root,"sessions");UnityEngine.Application.dataPath=Path.Combine(Root,"project","Assets");Directory.CreateDirectory(UnityEngine.Application.dataPath);HashReady=false;ResourceFailure=false;CoreDisposeThrows=false;UnityEngine.Debug.Errors.Clear();UnityEditor.EditorApplication.isPlaying=false;UnityEditor.EditorSettings.enterPlayModeOptionsEnabled=false;UnityEditor.EditorSettings.enterPlayModeOptions=0;}
+}

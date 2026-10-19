@@ -1,0 +1,102 @@
+{
+  "state": "verified_candidate_readback",
+  "methods": [
+    {
+      "name": "Init",
+      "rva": "0x3de3b50",
+      "token": "0x600136B",
+      "bodySha256": "0170b02dee6125f3600d0b01b2e0295898354f2b338e552088791ec1d112a65b"
+    },
+    {
+      "name": "GameEnd",
+      "rva": "0x3de3fd8",
+      "token": "0x6001374",
+      "bodySha256": "6d4d0454fa80d2039b2a794f9ab081dcd662ecf68148b6763350f802deab3194"
+    },
+    {
+      "name": "StartGame",
+      "rva": "0x3de6814",
+      "token": "0x6001393",
+      "bodySha256": "44899aaff9da4fc34cf38f5aeacea7b09a636d4fe14459cb2359a7cd9d4c0eb3"
+    }
+  ],
+  "candidate": {
+    "scenarios": 102,
+    "checks": 1195,
+    "failures": 0,
+    "exitCode": 0,
+    "source": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\candidate\\Assets\\Scripts\\Assembly-CSharp\\GameModule\\BattleGameManager.cs",
+    "sourceSha256": "13228c84736658776651f1bbd6cb3093e4e9f8be4f670320b32a398c8a38bba8",
+    "log": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\manager-lifecycle-validation\\candidate-tests.log",
+    "traceFile": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\manager-lifecycle-validation\\candidate-result.json"
+  },
+  "baseline": {
+    "scenarios": 102,
+    "checks": 1195,
+    "failures": 935,
+    "exitCode": 1,
+    "source": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\source-before\\Assets\\Scripts\\Assembly-CSharp\\GameModule\\BattleGameManager.cs",
+    "sourceSha256": "6f6856106346c1792bd042138ce08b10c2570310a9a359fba13b8f93ad897829",
+    "log": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\manager-lifecycle-validation\\baseline-tests.log",
+    "traceFile": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\manager-lifecycle-validation\\baseline-result.json"
+  },
+  "cwd": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20",
+  "cli": [
+    {
+      "stage": "baseline-extract",
+      "command": "& 'C:/Users/luxinyu/AppData/Local/Programs/idapromcp/source/.venv/Scripts/python.exe' -X utf8 work/parallel-44-battle/extract_manager_lifecycle.py --baseline",
+      "expectedExitCode": 0
+    },
+    {
+      "stage": "baseline-test",
+      "command": "dotnet run --project work/parallel-44-battle/manager-lifecycle-validation/LifecycleTests.csproj -c Release -- work/parallel-44-battle/manager-lifecycle-validation/baseline-result.json",
+      "expectedExitCode": 1
+    },
+    {
+      "stage": "candidate-extract",
+      "command": "& 'C:/Users/luxinyu/AppData/Local/Programs/idapromcp/source/.venv/Scripts/python.exe' -X utf8 work/parallel-44-battle/extract_manager_lifecycle.py",
+      "expectedExitCode": 0
+    },
+    {
+      "stage": "candidate-test",
+      "command": "dotnet run --project work/parallel-44-battle/manager-lifecycle-validation/LifecycleTests.csproj -c Release -- work/parallel-44-battle/manager-lifecycle-validation/candidate-result.json",
+      "expectedExitCode": 0
+    }
+  ],
+  "scenarioCounts": {
+    "Init": 3,
+    "GameEnd": 33,
+    "StartGame": 66
+  },
+  "adaptations": [
+    "Init return signature async UniTask -> async Task",
+    "GameEnd async void -> async Task solely to observe await/failure boundary",
+    "UniTask.WaitForSeconds external adapter returns controlled Task",
+    "Baseline default UniTask -> Task.CompletedTask",
+    "Dependency-only stubs for singleton/UI/config/format/buff/callback/coroutine APIs",
+    "Dictionary field stores observed through adapter property setters; candidate method bodies unchanged"
+  ],
+  "sourceCandidateUnchanged": true,
+  "businessImplementationCopiedIntoTests": false,
+  "scopeLimitations": [
+    "Not actual Unity lifetime, player loop, SDK, UI resource, store loader or GPU acceptance",
+    "StartGame config uses adapter-provided marker values to verify actual arenaInfoDic/countDownTime access; not original production configuration loading validation",
+    "GameEnd async exception observation adapted to Task, not validation of Unity async-void exception routing",
+    "HidePanel returns an intentionally never-completed Task; tested as unawaited original external call"
+  ],
+  "artifacts": {
+    "Adapters.cs": "c92dd85d54e8bf1ef89b9ecfd20f95112be7e70923b2e57c27cd3da46e3a0e1f",
+    "baseline-body.txt": "25183a36b9237364a8fc2ec765a7ccbb115aecc44968525b54c5c0a253e5847b",
+    "baseline-provenance.json": "83b10e54137225e1433c57e63bb62b38d0a7922cdf71a58af7bad353bf6de7ff",
+    "baseline-result.json": "a630d6503d0cc163c9423d2d0b0eb1cb75d86cd2af6fd072e35447d8eedc3a72",
+    "baseline-tests.log": "fcd8999ca5f9a034a865652878fe65c485935b185becf13d279d3c637973ce46",
+    "candidate-body.txt": "6905b7f6bbb3b36aee0bf4649c96f28a53f4698b48c0cce2893c2e512b9484f4",
+    "candidate-provenance.json": "e24c51b732447c65a3faae17b06d5e210203a683a249454d7161d8f58559e07b",
+    "candidate-result.json": "c4c70b3290d93bacf954915ece38502595c366a0a7780cb2538d4e481e7a2a7e",
+    "candidate-tests.log": "5867a40c01baa749f029fb9b7685bdb0d62be95042fdc51ce884b9911dff7aa8",
+    "ExtractedLifecycle.cs": "6905b7f6bbb3b36aee0bf4649c96f28a53f4698b48c0cce2893c2e512b9484f4",
+    "fixture-provenance.json": "e24c51b732447c65a3faae17b06d5e210203a683a249454d7161d8f58559e07b",
+    "LifecycleTests.csproj": "389d8ea5f4a307a67675a463b8639fa452c6ee0b898db0f4b771677e94840244",
+    "Program.cs": "2ef7e65ed56cb708192ab2ed00c4a39ef6625778246930e617d96988aafb1bdf"
+  }
+}

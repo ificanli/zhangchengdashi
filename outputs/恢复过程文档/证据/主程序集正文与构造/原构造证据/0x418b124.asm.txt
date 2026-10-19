@@ -1,0 +1,75 @@
+0x418b124: STR             X30, [SP,#var_30]!
+0x418b128: STP             X22, X21, [SP,#0x30+var_20]
+0x418b12c: STP             X20, X19, [SP,#0x30+var_10]
+0x418b130: ADRP            X22, #byte_8FFF687@PAGE
+0x418b134: LDRB            W8, [X22,#byte_8FFF687@PAGEOFF]
+0x418b138: MOV             W21, W2
+0x418b13c: MOV             X20, X1
+0x418b140: MOV             X19, X0
+0x418b144: TBNZ            W8, #0, loc_418B15C
+0x418b148: ADRP            X0, #off_8AD3208@PAGE
+0x418b14c: LDR             X0, [X0,#off_8AD3208@PAGEOFF]; qword_8D2B5A0 ; slot
+0x418b150: BL              il2cpp_codegen_initialize_runtime_metadata
+0x418b154: MOV             W8, #1
+0x418b158: STRB            W8, [X22,#byte_8FFF687@PAGEOFF]
+0x418b15c: MOV             X0, X19
+0x418b160: MOV             X1, XZR
+0x418b164: BL              System.Object$$.ctor
+0x418b168: AND             W8, W21, #1
+0x418b16c: STR             X20, [X19,#0x18]
+0x418b170: STRB            W8, [X19,#0x10]
+0x418b174: CBZ             X20, loc_418B24C
+0x418b178: LDR             X0, [X20,#0x28]
+0x418b17c: CBZ             X0, loc_418B24C
+0x418b180: MOV             W1, #0x3B ; ';'
+0x418b184: MOV             W2, WZR
+0x418b188: MOV             X3, XZR
+0x418b18c: BL              System.String$$Split
+0x418b190: CBZ             X0, loc_418B24C
+0x418b194: LDR             W8, [X0,#0x18]
+0x418b198: MOV             X20, X0
+0x418b19c: CBZ             W8, loc_418B248
+0x418b1a0: LDR             X0, [X20,#0x20]
+0x418b1a4: MOV             X1, XZR
+0x418b1a8: BL              ToolModule.StringTool$$ToInt
+0x418b1ac: STR             W0, [X19,#0x20]
+0x418b1b0: LDR             W8, [X20,#0x18]
+0x418b1b4: CMP             W8, #1
+0x418b1b8: B.LS            loc_418B248
+0x418b1bc: LDR             X0, [X20,#0x28]
+0x418b1c0: MOV             X1, XZR
+0x418b1c4: BL              ToolModule.StringTool$$ToInt
+0x418b1c8: STR             W0, [X19,#0x24]
+0x418b1cc: LDR             W8, [X20,#0x18]
+0x418b1d0: CMP             W8, #2
+0x418b1d4: B.LS            loc_418B248
+0x418b1d8: LDR             X0, [X20,#0x30]
+0x418b1dc: MOV             X1, XZR
+0x418b1e0: BL              ToolModule.StringTool$$ToInt
+0x418b1e4: STR             W0, [X19,#0x28]
+0x418b1e8: LDR             W8, [X20,#0x18]
+0x418b1ec: CMP             W8, #3
+0x418b1f0: B.LS            loc_418B248
+0x418b1f4: LDR             X0, [X20,#0x38]
+0x418b1f8: CBZ             X0, loc_418B24C
+0x418b1fc: ADRP            X20, #off_8AD3208@PAGE
+0x418b200: LDR             X20, [X20,#off_8AD3208@PAGEOFF]; qword_8D2B5A0
+0x418b204: MOV             W1, #0x2C ; ','
+0x418b208: MOV             W2, WZR
+0x418b20c: MOV             X3, XZR
+0x418b210: BL              System.String$$Split
+0x418b214: LDR             X1, [X20]
+0x418b218: BL              System.Linq.Enumerable$$ToList_object_
+0x418b21c: STR             X0, [X19,#0x30]
+0x418b220: MOV             X0, X19
+0x418b224: BL              TutorModule.FeatureCycleTypeUnlock$$LoadFromSaveData
+0x418b228: MOV             X0, X19
+0x418b22c: BL              TutorModule.FeatureCycleTypeUnlock$$GetIsUnlock
+0x418b230: AND             W8, W0, #1
+0x418b234: STRB            W8, [X19,#0x10]
+0x418b238: LDP             X20, X19, [SP,#0x30+var_10]
+0x418b23c: LDP             X22, X21, [SP,#0x30+var_20]
+0x418b240: LDR             X30, [SP+0x30+var_30],#0x30
+0x418b244: RET
+0x418b248: BL              unk_3C3D4D4
+0x418b24c: BL              il2cpp_codegen_raise_null_reference_exception

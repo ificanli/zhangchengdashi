@@ -1,0 +1,654 @@
+0x71ed010: ff0303d1 sub      sp, sp, #0xc0
+0x71ed014: fd7b06a9 stp      x29, x30, [sp, #0x60]
+0x71ed018: fc6f07a9 stp      x28, x27, [sp, #0x70]
+0x71ed01c: fa6708a9 stp      x26, x25, [sp, #0x80]
+0x71ed020: f85f09a9 stp      x24, x23, [sp, #0x90]
+0x71ed024: f6570aa9 stp      x22, x21, [sp, #0xa0]
+0x71ed028: f44f0ba9 stp      x20, x19, [sp, #0xb0]
+0x71ed02c: f4f00090 adrp     x20, #0x9009000
+0x71ed030: 88ba5b39 ldrb     w8, [x20, #0x6ee]
+0x71ed034: f30300aa mov      x19, x0
+0x71ed038: 880a0037 tbnz     w8, #0, #0x71ed188
+0x71ed03c: 00c70090 adrp     x0, #0x8acd000
+0x71ed040: 00e042f9 ldr      x0, [x0, #0x5c0] // GameFramework.AppSetting_TypeInfo
+0x71ed044: 8f402997 bl       #0x3c3d280
+0x71ed048: 00c70090 adrp     x0, #0x8acd000
+0x71ed04c: 003044f9 ldr      x0, [x0, #0x860] // GameFramework.CLog_TypeInfo
+0x71ed050: 8c402997 bl       #0x3c3d280
+0x71ed054: 40c900f0 adrp     x0, #0x8b18000
+0x71ed058: 00d846f9 ldr      x0, [x0, #0xdb0] // Method$System.Collections.Generic.Dictionary<string, IBundleServices>.Add()
+0x71ed05c: 89402997 bl       #0x3c3d280
+0x71ed060: 40c900f0 adrp     x0, #0x8b18000
+0x71ed064: 007046f9 ldr      x0, [x0, #0xce0] // Method$System.Collections.Generic.Dictionary<string, IBundleServices>.ContainsKey()
+0x71ed068: 86402997 bl       #0x3c3d280
+0x71ed06c: e0c700f0 adrp     x0, #0x8aec000
+0x71ed070: 007c46f9 ldr      x0, [x0, #0xcf8] // Method$System.Collections.Generic.Dictionary<string, string>.GetEnumerator()
+0x71ed074: 83402997 bl       #0x3c3d280
+0x71ed078: 80c70090 adrp     x0, #0x8add000
+0x71ed07c: 002440f9 ldr      x0, [x0, #0x48] // Method$System.Collections.Generic.Dictionary<string, string>.TryGetValue()
+0x71ed080: 80402997 bl       #0x3c3d280
+0x71ed084: a0c700b0 adrp     x0, #0x8ae2000
+0x71ed088: 008040f9 ldr      x0, [x0, #0x100] // UnityEngine.Networking.DownloadHandlerBuffer_TypeInfo
+0x71ed08c: 7d402997 bl       #0x3c3d280
+0x71ed090: e0c700f0 adrp     x0, #0x8aec000
+0x71ed094: 008046f9 ldr      x0, [x0, #0xd00] // Method$System.Collections.Generic.Dictionary.Enumerator<string, string>.Dispose()
+0x71ed098: 7a402997 bl       #0x3c3d280
+0x71ed09c: e0c700f0 adrp     x0, #0x8aec000
+0x71ed0a0: 008446f9 ldr      x0, [x0, #0xd08] // Method$System.Collections.Generic.Dictionary.Enumerator<string, string>.MoveNext()
+0x71ed0a4: 77402997 bl       #0x3c3d280
+0x71ed0a8: e0c700f0 adrp     x0, #0x8aec000
+0x71ed0ac: 008846f9 ldr      x0, [x0, #0xd10] // Method$System.Collections.Generic.Dictionary.Enumerator<string, string>.get_Current()
+0x71ed0b0: 74402997 bl       #0x3c3d280
+0x71ed0b4: e0c700f0 adrp     x0, #0x8aec000
+0x71ed0b8: 008c46f9 ldr      x0, [x0, #0xd18] // Method$System.Collections.Generic.KeyValuePair<string, string>.get_Key()
+0x71ed0bc: 71402997 bl       #0x3c3d280
+0x71ed0c0: e0c700f0 adrp     x0, #0x8aec000
+0x71ed0c4: 009046f9 ldr      x0, [x0, #0xd20] // Method$System.Collections.Generic.KeyValuePair<string, string>.get_Value()
+0x71ed0c8: 6e402997 bl       #0x3c3d280
+0x71ed0cc: 00c70090 adrp     x0, #0x8acd000
+0x71ed0d0: 002c44f9 ldr      x0, [x0, #0x858] // object[]_TypeInfo
+0x71ed0d4: 6b402997 bl       #0x3c3d280
+0x71ed0d8: 00c70090 adrp     x0, #0x8acd000
+0x71ed0dc: 005041f9 ldr      x0, [x0, #0x2a0] // string[]_TypeInfo
+0x71ed0e0: 68402997 bl       #0x3c3d280
+0x71ed0e4: 40c900f0 adrp     x0, #0x8b18000
+0x71ed0e8: 006c46f9 ldr      x0, [x0, #0xcd8] // GameFramework.VersionMondule_TypeInfo
+0x71ed0ec: 65402997 bl       #0x3c3d280
+0x71ed0f0: 40c900f0 adrp     x0, #0x8b18000
+0x71ed0f4: 00dc46f9 ldr      x0, [x0, #0xdb8] // ABFileStreaming正式：
+0x71ed0f8: 62402997 bl       #0x3c3d280
+0x71ed0fc: 40c900f0 adrp     x0, #0x8b18000
+0x71ed100: 00e046f9 ldr      x0, [x0, #0xdc0] // ABFileStreaming测试：
+0x71ed104: 5f402997 bl       #0x3c3d280
+0x71ed108: 40c900f0 adrp     x0, #0x8b18000
+0x71ed10c: 00e446f9 ldr      x0, [x0, #0xdc8] // DynamicABFileList=
+0x71ed110: 5c402997 bl       #0x3c3d280
+0x71ed114: 40c900f0 adrp     x0, #0x8b18000
+0x71ed118: 00e846f9 ldr      x0, [x0, #0xdd0] // ] abfile[
+0x71ed11c: 59402997 bl       #0x3c3d280
+0x71ed120: 40c900f0 adrp     x0, #0x8b18000
+0x71ed124: 00ec46f9 ldr      x0, [x0, #0xdd8] // 已经缓存了ABFile文件，又重新加载了一遍
+0x71ed128: 56402997 bl       #0x3c3d280
+0x71ed12c: 40c900f0 adrp     x0, #0x8b18000
+0x71ed130: 00f046f9 ldr      x0, [x0, #0xde0] // StreamingABFiles
+0x71ed134: 53402997 bl       #0x3c3d280
+0x71ed138: 40c900f0 adrp     x0, #0x8b18000
+0x71ed13c: 00f446f9 ldr      x0, [x0, #0xde8] // DynamicABFile=
+0x71ed140: 50402997 bl       #0x3c3d280
+0x71ed144: 40c900f0 adrp     x0, #0x8b18000
+0x71ed148: 00f846f9 ldr      x0, [x0, #0xdf0] // 加载ABFileStreaming错误：
+0x71ed14c: 4d402997 bl       #0x3c3d280
+0x71ed150: 40c900f0 adrp     x0, #0x8b18000
+0x71ed154: 00fc46f9 ldr      x0, [x0, #0xdf8] // ABFiles.txt
+0x71ed158: 4a402997 bl       #0x3c3d280
+0x71ed15c: 00c700d0 adrp     x0, #0x8acf000
+0x71ed160: 002443f9 ldr      x0, [x0, #0x648] // ]
+0x71ed164: 47402997 bl       #0x3c3d280
+0x71ed168: 40c900f0 adrp     x0, #0x8b18000
+0x71ed16c: 000047f9 ldr      x0, [x0, #0xe00] // gameName[
+0x71ed170: 44402997 bl       #0x3c3d280
+0x71ed174: 40c900f0 adrp     x0, #0x8b18000
+0x71ed178: 000447f9 ldr      x0, [x0, #0xe08] // tfw¤k_TypeInfo
+0x71ed17c: 41402997 bl       #0x3c3d280
+0x71ed180: 28008052 mov      w8, #1
+0x71ed184: 88ba1b39 strb     w8, [x20, #0x6ee]
+0x71ed188: 00e4006f movi     v0.2d, #0000000000000000
+0x71ed18c: ff2b00f9 str      xzr, [sp, #0x50]
+0x71ed190: e08301ad stp      q0, q0, [sp, #0x30]
+0x71ed194: ff1700f9 str      xzr, [sp, #0x28]
+0x71ed198: 681240b9 ldr      w8, [x19, #0x10]
+0x71ed19c: 1f050071 cmp      w8, #1
+0x71ed1a0: 200b0054 b.eq     #0x71ed304
+0x71ed1a4: 083d0035 cbnz     w8, #0x71ed944
+0x71ed1a8: 08008012 mov      w8, #-1
+0x71ed1ac: 681200b9 str      w8, [x19, #0x10]
+0x71ed1b0: 14c70090 adrp     x20, #0x8acd000
+0x71ed1b4: 94e242f9 ldr      x20, [x20, #0x5c0] // GameFramework.AppSetting_TypeInfo
+0x71ed1b8: 800240f9 ldr      x0, [x20]
+0x71ed1bc: 08e040b9 ldr      w8, [x0, #0xe0]
+0x71ed1c0: 68000035 cbnz     w8, #0x71ed1cc
+0x71ed1c4: 7b402997 bl       #0x3c3d3b0
+0x71ed1c8: 800240f9 ldr      x0, [x20]
+0x71ed1cc: 085c40f9 ldr      x8, [x0, #0xb8]
+0x71ed1d0: 001140f9 ldr      x0, [x8, #0x20]
+0x71ed1d4: 003e00b4 cbz      x0, #0x71ed994
+0x71ed1d8: e8c700f0 adrp     x8, #0x8aec000
+0x71ed1dc: 087d46f9 ldr      x8, [x8, #0xcf8] // Method$System.Collections.Generic.Dictionary<string, string>.GetEnumerator()
+0x71ed1e0: 010140f9 ldr      x1, [x8]
+0x71ed1e4: e8030091 mov      x8, sp
+0x71ed1e8: bf67e897 bl       #0x6c070e4 // System.Collections.Generic.Dictionary<object, object>$$GetEnumerator
+0x71ed1ec: e00740ad ldp      q0, q1, [sp]
+0x71ed1f0: e81340f9 ldr      x8, [sp, #0x20]
+0x71ed1f4: f9c700f0 adrp     x25, #0x8aec000
+0x71ed1f8: 16c70090 adrp     x22, #0x8acd000
+0x71ed1fc: 1ac70090 adrp     x26, #0x8acd000
+0x71ed200: 5bc900f0 adrp     x27, #0x8b18000
+0x71ed204: 5cc900f0 adrp     x28, #0x8b18000
+0x71ed208: 1dc700d0 adrp     x29, #0x8acf000
+0x71ed20c: 398746f9 ldr      x25, [x25, #0xd08] // Method$System.Collections.Generic.Dictionary.Enumerator<string, string>.MoveNext()
+0x71ed210: d62e44f9 ldr      x22, [x22, #0x858] // object[]_TypeInfo
+0x71ed214: 5a5341f9 ldr      x26, [x26, #0x2a0] // string[]_TypeInfo
+0x71ed218: 7b0347f9 ldr      x27, [x27, #0xe00] // gameName[
+0x71ed21c: 9ceb46f9 ldr      x28, [x28, #0xdd0] // ] abfile[
+0x71ed220: bd2743f9 ldr      x29, [x29, #0x648] // ]
+0x71ed224: e08701ad stp      q0, q1, [sp, #0x30]
+0x71ed228: e82b00f9 str      x8, [sp, #0x50]
+0x71ed22c: 17c70090 adrp     x23, #0x8acd000
+0x71ed230: f73244f9 ldr      x23, [x23, #0x860] // GameFramework.CLog_TypeInfo
+0x71ed234: 210340f9 ldr      x1, [x25]
+0x71ed238: e0c30091 add      x0, sp, #0x30
+0x71ed23c: 93dff297 bl       #0x6ea5088 // System.Collections.Generic.Dictionary.Enumerator<object, object>$$MoveNext
+0x71ed240: e00b0036 tbz      w0, #0, #0x71ed3bc
+0x71ed244: f85744a9 ldp      x24, x21, [sp, #0x40]
+0x71ed248: c00240f9 ldr      x0, [x22]
+0x71ed24c: 21008052 mov      w1, #1
+0x71ed250: 34402997 bl       #0x3c3d320
+0x71ed254: f40300aa mov      x20, x0
+0x71ed258: 400340f9 ldr      x0, [x26]
+0x71ed25c: a1008052 mov      w1, #5
+0x71ed260: 30402997 bl       #0x3c3d320
+0x71ed264: a03800b4 cbz      x0, #0x71ed978
+0x71ed268: 081840b9 ldr      w8, [x0, #0x18]
+0x71ed26c: 88380034 cbz      w8, #0x71ed97c
+0x71ed270: 690340f9 ldr      x9, [x27]
+0x71ed274: 1f050071 cmp      w8, #1
+0x71ed278: 091000f9 str      x9, [x0, #0x20]
+0x71ed27c: a0370054 b.eq     #0x71ed970
+0x71ed280: 1f090071 cmp      w8, #2
+0x71ed284: 181400f9 str      x24, [x0, #0x28]
+0x71ed288: 09370054 b.ls     #0x71ed968
+0x71ed28c: 890340f9 ldr      x9, [x28]
+0x71ed290: 1f0d0071 cmp      w8, #3
+0x71ed294: 091800f9 str      x9, [x0, #0x30]
+0x71ed298: e0360054 b.eq     #0x71ed974
+0x71ed29c: 1f110071 cmp      w8, #4
+0x71ed2a0: 151c00f9 str      x21, [x0, #0x38]
+0x71ed2a4: 09370054 b.ls     #0x71ed984
+0x71ed2a8: a80340f9 ldr      x8, [x29]
+0x71ed2ac: 082000f9 str      x8, [x0, #0x40]
+0x71ed2b0: e1031faa mov      x1, xzr
+0x71ed2b4: 24750c94 bl       #0x750a744 // System.String$$Concat
+0x71ed2b8: b43500b4 cbz      x20, #0x71ed96c
+0x71ed2bc: f50300aa mov      x21, x0
+0x71ed2c0: c00000b4 cbz      x0, #0x71ed2d8
+0x71ed2c4: 880240f9 ldr      x8, [x20]
+0x71ed2c8: 012140f9 ldr      x1, [x8, #0x40]
+0x71ed2cc: e00315aa mov      x0, x21
+0x71ed2d0: 39402997 bl       #0x3c3d3b4
+0x71ed2d4: a03500b4 cbz      x0, #0x71ed988
+0x71ed2d8: 881a40b9 ldr      w8, [x20, #0x18]
+0x71ed2dc: 28350034 cbz      w8, #0x71ed980
+0x71ed2e0: 951200f9 str      x21, [x20, #0x20]
+0x71ed2e4: e00240f9 ldr      x0, [x23]
+0x71ed2e8: 08e040b9 ldr      w8, [x0, #0xe0]
+0x71ed2ec: 48000035 cbnz     w8, #0x71ed2f4
+0x71ed2f0: 30402997 bl       #0x3c3d3b0
+0x71ed2f4: e00314aa mov      x0, x20
+0x71ed2f8: e1031faa mov      x1, xzr
+0x71ed2fc: 834a0094 bl       #0x71ffd08 // GameFramework.CLog$$Log
+0x71ed300: cdffff17 b        #0x71ed234
+0x71ed304: 740242a9 ldp      x20, x0, [x19, #0x20]
+0x71ed308: 08008012 mov      w8, #-1
+0x71ed30c: 681200b9 str      w8, [x19, #0x10]
+0x71ed310: 203400b4 cbz      x0, #0x71ed994
+0x71ed314: e1031faa mov      x1, xzr
+0x71ed318: 23604d94 bl       #0x85453a4 // UnityEngine.Networking.UnityWebRequest$$get_error
+0x71ed31c: a00e00b4 cbz      x0, #0x71ed4f0
+0x71ed320: 08c70090 adrp     x8, #0x8acd000
+0x71ed324: 082d44f9 ldr      x8, [x8, #0x858] // object[]_TypeInfo
+0x71ed328: 21008052 mov      w1, #1
+0x71ed32c: 000140f9 ldr      x0, [x8]
+0x71ed330: fc3f2997 bl       #0x3c3d320
+0x71ed334: 681640f9 ldr      x8, [x19, #0x28]
+0x71ed338: e83200b4 cbz      x8, #0x71ed994
+0x71ed33c: f30300aa mov      x19, x0
+0x71ed340: e00308aa mov      x0, x8
+0x71ed344: e1031faa mov      x1, xzr
+0x71ed348: 17604d94 bl       #0x85453a4 // UnityEngine.Networking.UnityWebRequest$$get_error
+0x71ed34c: 48c900f0 adrp     x8, #0x8b18000
+0x71ed350: 08f946f9 ldr      x8, [x8, #0xdf0] // 加载ABFileStreaming错误：
+0x71ed354: e10300aa mov      x1, x0
+0x71ed358: e2031faa mov      x2, xzr
+0x71ed35c: 080140f9 ldr      x8, [x8]
+0x71ed360: e00308aa mov      x0, x8
+0x71ed364: 10450c94 bl       #0x74fe7a4 // System.String$$Concat
+0x71ed368: 733100b4 cbz      x19, #0x71ed994
+0x71ed36c: f40300aa mov      x20, x0
+0x71ed370: c00000b4 cbz      x0, #0x71ed388
+0x71ed374: 680240f9 ldr      x8, [x19]
+0x71ed378: e00314aa mov      x0, x20
+0x71ed37c: 012140f9 ldr      x1, [x8, #0x40]
+0x71ed380: 0d402997 bl       #0x3c3d3b4
+0x71ed384: c03000b4 cbz      x0, #0x71ed99c
+0x71ed388: 681a40b9 ldr      w8, [x19, #0x18]
+0x71ed38c: 68300034 cbz      w8, #0x71ed998
+0x71ed390: 741200f9 str      x20, [x19, #0x20]
+0x71ed394: 08c70090 adrp     x8, #0x8acd000
+0x71ed398: 083144f9 ldr      x8, [x8, #0x860] // GameFramework.CLog_TypeInfo
+0x71ed39c: 000140f9 ldr      x0, [x8]
+0x71ed3a0: 08e040b9 ldr      w8, [x0, #0xe0]
+0x71ed3a4: 48000035 cbnz     w8, #0x71ed3ac
+0x71ed3a8: 02402997 bl       #0x3c3d3b0
+0x71ed3ac: e00313aa mov      x0, x19
+0x71ed3b0: e1031faa mov      x1, xzr
+0x71ed3b4: 67180094 bl       #0x71f3550 // GameFramework.CLog$$Error
+0x71ed3b8: 63010014 b        #0x71ed944
+0x71ed3bc: e8c700f0 adrp     x8, #0x8aec000
+0x71ed3c0: 088146f9 ldr      x8, [x8, #0xd00] // Method$System.Collections.Generic.Dictionary.Enumerator<string, string>.Dispose()
+0x71ed3c4: e0c30091 add      x0, sp, #0x30
+0x71ed3c8: 010140f9 ldr      x1, [x8]
+0x71ed3cc: 74dff297 bl       #0x6ea519c // System.Collections.Generic.Dictionary.Enumerator<object, object>$$Dispose
+0x71ed3d0: 18c70090 adrp     x24, #0x8acd000
+0x71ed3d4: 18e342f9 ldr      x24, [x24, #0x5c0] // GameFramework.AppSetting_TypeInfo
+0x71ed3d8: 000340f9 ldr      x0, [x24]
+0x71ed3dc: 08e040b9 ldr      w8, [x0, #0xe0]
+0x71ed3e0: 48000035 cbnz     w8, #0x71ed3e8
+0x71ed3e4: f33f2997 bl       #0x3c3d3b0
+0x71ed3e8: e0031faa mov      x0, xzr
+0x71ed3ec: e7d0fc97 bl       #0x7121788 // GameFramework.AppSetting$$get_StreamingAssetsURL
+0x71ed3f0: 48c900f0 adrp     x8, #0x8b18000
+0x71ed3f4: 08fd46f9 ldr      x8, [x8, #0xdf8] // ABFiles.txt
+0x71ed3f8: e2031faa mov      x2, xzr
+0x71ed3fc: 010140f9 ldr      x1, [x8]
+0x71ed400: e9440c94 bl       #0x74fe7a4 // System.String$$Concat
+0x71ed404: f40300aa mov      x20, x0
+0x71ed408: e0031faa mov      x0, xzr
+0x71ed40c: 51cafc97 bl       #0x711fd50 // GameFramework.AppSetting$$get_IsDYResMode_Web
+0x71ed410: a0130036 tbz      w0, #0, #0x71ed684
+0x71ed414: 000340f9 ldr      x0, [x24]
+0x71ed418: 08e040b9 ldr      w8, [x0, #0xe0]
+0x71ed41c: 68000035 cbnz     w8, #0x71ed428
+0x71ed420: e43f2997 bl       #0x3c3d3b0
+0x71ed424: 000340f9 ldr      x0, [x24]
+0x71ed428: 085c40f9 ldr      x8, [x0, #0xb8]
+0x71ed42c: e0031faa mov      x0, xzr
+0x71ed430: 151140f9 ldr      x21, [x8, #0x20]
+0x71ed434: ddcafc97 bl       #0x711ffa8 // GameFramework.AppSetting$$get_MineGameName
+0x71ed438: f52a00b4 cbz      x21, #0x71ed994
+0x71ed43c: 88c70090 adrp     x8, #0x8add000
+0x71ed440: 082540f9 ldr      x8, [x8, #0x48] // Method$System.Collections.Generic.Dictionary<string, string>.TryGetValue()
+0x71ed444: e10300aa mov      x1, x0
+0x71ed448: e2a30091 add      x2, sp, #0x28
+0x71ed44c: e00315aa mov      x0, x21
+0x71ed450: 030140f9 ldr      x3, [x8]
+0x71ed454: f76be897 bl       #0x6c08430 // System.Collections.Generic.Dictionary<object, object>$$TryGetValue
+0x71ed458: c00a0036 tbz      w0, #0, #0x71ed5b0
+0x71ed45c: c00240f9 ldr      x0, [x22]
+0x71ed460: 21008052 mov      w1, #1
+0x71ed464: af3f2997 bl       #0x3c3d320
+0x71ed468: 48c900f0 adrp     x8, #0x8b18000
+0x71ed46c: e11740f9 ldr      x1, [sp, #0x28]
+0x71ed470: 08e546f9 ldr      x8, [x8, #0xdc8] // DynamicABFileList=
+0x71ed474: f40300aa mov      x20, x0
+0x71ed478: e2031faa mov      x2, xzr
+0x71ed47c: 080140f9 ldr      x8, [x8]
+0x71ed480: e00308aa mov      x0, x8
+0x71ed484: c8440c94 bl       #0x74fe7a4 // System.String$$Concat
+0x71ed488: 742800b4 cbz      x20, #0x71ed994
+0x71ed48c: f50300aa mov      x21, x0
+0x71ed490: c00000b4 cbz      x0, #0x71ed4a8
+0x71ed494: 880240f9 ldr      x8, [x20]
+0x71ed498: e00315aa mov      x0, x21
+0x71ed49c: 012140f9 ldr      x1, [x8, #0x40]
+0x71ed4a0: c53f2997 bl       #0x3c3d3b4
+0x71ed4a4: c02700b4 cbz      x0, #0x71ed99c
+0x71ed4a8: 881a40b9 ldr      w8, [x20, #0x18]
+0x71ed4ac: 68270034 cbz      w8, #0x71ed998
+0x71ed4b0: 951200f9 str      x21, [x20, #0x20]
+0x71ed4b4: e00240f9 ldr      x0, [x23]
+0x71ed4b8: 08e040b9 ldr      w8, [x0, #0xe0]
+0x71ed4bc: 48000035 cbnz     w8, #0x71ed4c4
+0x71ed4c0: bc3f2997 bl       #0x3c3d3b0
+0x71ed4c4: e00314aa mov      x0, x20
+0x71ed4c8: e1031faa mov      x1, xzr
+0x71ed4cc: 0f4a0094 bl       #0x71ffd08 // GameFramework.CLog$$Log
+0x71ed4d0: 000340f9 ldr      x0, [x24]
+0x71ed4d4: 08e040b9 ldr      w8, [x0, #0xe0]
+0x71ed4d8: 48000035 cbnz     w8, #0x71ed4e0
+0x71ed4dc: b53f2997 bl       #0x3c3d3b0
+0x71ed4e0: e0031faa mov      x0, xzr
+0x71ed4e4: a9d0fc97 bl       #0x7121788 // GameFramework.AppSetting$$get_StreamingAssetsURL
+0x71ed4e8: e11740f9 ldr      x1, [sp, #0x28]
+0x71ed4ec: 63000014 b        #0x71ed678
+0x71ed4f0: 16c70090 adrp     x22, #0x8acd000
+0x71ed4f4: d6e242f9 ldr      x22, [x22, #0x5c0] // GameFramework.AppSetting_TypeInfo
+0x71ed4f8: c00240f9 ldr      x0, [x22]
+0x71ed4fc: 08e040b9 ldr      w8, [x0, #0xe0]
+0x71ed500: 48000035 cbnz     w8, #0x71ed508
+0x71ed504: ab3f2997 bl       #0x3c3d3b0
+0x71ed508: d5f000f0 adrp     x21, #0x9008000
+0x71ed50c: a85a6c39 ldrb     w8, [x21, #0xb16]
+0x71ed510: c8000035 cbnz     w8, #0x71ed528
+0x71ed514: 00c70090 adrp     x0, #0x8acd000
+0x71ed518: 00e042f9 ldr      x0, [x0, #0x5c0] // GameFramework.AppSetting_TypeInfo
+0x71ed51c: 593f2997 bl       #0x3c3d280
+0x71ed520: 28008052 mov      w8, #1
+0x71ed524: a85a2c39 strb     w8, [x21, #0xb16]
+0x71ed528: c00240f9 ldr      x0, [x22]
+0x71ed52c: 08e040b9 ldr      w8, [x0, #0xe0]
+0x71ed530: 68000035 cbnz     w8, #0x71ed53c
+0x71ed534: 9f3f2997 bl       #0x3c3d3b0
+0x71ed538: c00240f9 ldr      x0, [x22]
+0x71ed53c: 681640f9 ldr      x8, [x19, #0x28]
+0x71ed540: a82200b4 cbz      x8, #0x71ed994
+0x71ed544: 095c40f9 ldr      x9, [x0, #0xb8]
+0x71ed548: e00308aa mov      x0, x8
+0x71ed54c: e1031faa mov      x1, xzr
+0x71ed550: 33614139 ldrb     w19, [x9, #0x58]
+0x71ed554: 4d5e4d94 bl       #0x8544e88 // UnityEngine.Networking.UnityWebRequest$$get_downloadHandler
+0x71ed558: e02100b4 cbz      x0, #0x71ed994
+0x71ed55c: e1031faa mov      x1, xzr
+0x71ed560: f30f0034 cbz      w19, #0x71ed75c
+0x71ed564: 16584d94 bl       #0x85435bc // UnityEngine.Networking.DownloadHandler$$get_data
+0x71ed568: f30300aa mov      x19, x0
+0x71ed56c: e0031faa mov      x0, xzr
+0x71ed570: a1410194 bl       #0x723dbf4 // GameFramework.Tools.FileManager$$get_Instance
+0x71ed574: 002100b4 cbz      x0, #0x71ed994
+0x71ed578: e10313aa mov      x1, x19
+0x71ed57c: e2031faa mov      x2, xzr
+0x71ed580: 05520194 bl       #0x7241d94 // GameFramework.Tools.FileManager$$QnXgString
+0x71ed584: 08c70090 adrp     x8, #0x8acd000
+0x71ed588: 082d44f9 ldr      x8, [x8, #0x858] // object[]_TypeInfo
+0x71ed58c: f30300aa mov      x19, x0
+0x71ed590: 21008052 mov      w1, #1
+0x71ed594: 080140f9 ldr      x8, [x8]
+0x71ed598: e00308aa mov      x0, x8
+0x71ed59c: 613f2997 bl       #0x3c3d320
+0x71ed5a0: a01f00b4 cbz      x0, #0x71ed994
+0x71ed5a4: 57c900f0 adrp     x23, #0x8b18000
+0x71ed5a8: f7de46f9 ldr      x23, [x23, #0xdb8] // ABFileStreaming正式：
+0x71ed5ac: 77000014 b        #0x71ed788
+0x71ed5b0: 000340f9 ldr      x0, [x24]
+0x71ed5b4: 08e040b9 ldr      w8, [x0, #0xe0]
+0x71ed5b8: 68000035 cbnz     w8, #0x71ed5c4
+0x71ed5bc: 7d3f2997 bl       #0x3c3d3b0
+0x71ed5c0: 000340f9 ldr      x0, [x24]
+0x71ed5c4: 085c40f9 ldr      x8, [x0, #0xb8]
+0x71ed5c8: e1031faa mov      x1, xzr
+0x71ed5cc: 000d40f9 ldr      x0, [x8, #0x18]
+0x71ed5d0: 14740c94 bl       #0x750a620 // System.String$$IsNullOrEmpty
+0x71ed5d4: 80050037 tbnz     w0, #0, #0x71ed684
+0x71ed5d8: c00240f9 ldr      x0, [x22]
+0x71ed5dc: 21008052 mov      w1, #1
+0x71ed5e0: 503f2997 bl       #0x3c3d320
+0x71ed5e4: 080340f9 ldr      x8, [x24]
+0x71ed5e8: f40300aa mov      x20, x0
+0x71ed5ec: 09e140b9 ldr      w9, [x8, #0xe0]
+0x71ed5f0: 89000035 cbnz     w9, #0x71ed600
+0x71ed5f4: e00308aa mov      x0, x8
+0x71ed5f8: 6e3f2997 bl       #0x3c3d3b0
+0x71ed5fc: 080340f9 ldr      x8, [x24]
+0x71ed600: 49c900f0 adrp     x9, #0x8b18000
+0x71ed604: 085d40f9 ldr      x8, [x8, #0xb8]
+0x71ed608: 29f546f9 ldr      x9, [x9, #0xde8] // DynamicABFile=
+0x71ed60c: e2031faa mov      x2, xzr
+0x71ed610: 010d40f9 ldr      x1, [x8, #0x18]
+0x71ed614: 200140f9 ldr      x0, [x9]
+0x71ed618: 63440c94 bl       #0x74fe7a4 // System.String$$Concat
+0x71ed61c: d41b00b4 cbz      x20, #0x71ed994
+0x71ed620: f50300aa mov      x21, x0
+0x71ed624: c00000b4 cbz      x0, #0x71ed63c
+0x71ed628: 880240f9 ldr      x8, [x20]
+0x71ed62c: e00315aa mov      x0, x21
+0x71ed630: 012140f9 ldr      x1, [x8, #0x40]
+0x71ed634: 603f2997 bl       #0x3c3d3b4
+0x71ed638: 201b00b4 cbz      x0, #0x71ed99c
+0x71ed63c: 881a40b9 ldr      w8, [x20, #0x18]
+0x71ed640: c81a0034 cbz      w8, #0x71ed998
+0x71ed644: 951200f9 str      x21, [x20, #0x20]
+0x71ed648: e00240f9 ldr      x0, [x23]
+0x71ed64c: 08e040b9 ldr      w8, [x0, #0xe0]
+0x71ed650: 48000035 cbnz     w8, #0x71ed658
+0x71ed654: 573f2997 bl       #0x3c3d3b0
+0x71ed658: e00314aa mov      x0, x20
+0x71ed65c: e1031faa mov      x1, xzr
+0x71ed660: aa490094 bl       #0x71ffd08 // GameFramework.CLog$$Log
+0x71ed664: e0031faa mov      x0, xzr
+0x71ed668: 48d0fc97 bl       #0x7121788 // GameFramework.AppSetting$$get_StreamingAssetsURL
+0x71ed66c: 080340f9 ldr      x8, [x24]
+0x71ed670: 085d40f9 ldr      x8, [x8, #0xb8]
+0x71ed674: 010d40f9 ldr      x1, [x8, #0x18]
+0x71ed678: e2031faa mov      x2, xzr
+0x71ed67c: 4a440c94 bl       #0x74fe7a4 // System.String$$Concat
+0x71ed680: f40300aa mov      x20, x0
+0x71ed684: c00240f9 ldr      x0, [x22]
+0x71ed688: 21008052 mov      w1, #1
+0x71ed68c: 253f2997 bl       #0x3c3d320
+0x71ed690: 48c900f0 adrp     x8, #0x8b18000
+0x71ed694: 08f146f9 ldr      x8, [x8, #0xde0] // StreamingABFiles
+0x71ed698: f50300aa mov      x21, x0
+0x71ed69c: e10314aa mov      x1, x20
+0x71ed6a0: e2031faa mov      x2, xzr
+0x71ed6a4: 080140f9 ldr      x8, [x8]
+0x71ed6a8: e00308aa mov      x0, x8
+0x71ed6ac: 3e440c94 bl       #0x74fe7a4 // System.String$$Concat
+0x71ed6b0: 351700b4 cbz      x21, #0x71ed994
+0x71ed6b4: f60300aa mov      x22, x0
+0x71ed6b8: c00000b4 cbz      x0, #0x71ed6d0
+0x71ed6bc: a80240f9 ldr      x8, [x21]
+0x71ed6c0: e00316aa mov      x0, x22
+0x71ed6c4: 012140f9 ldr      x1, [x8, #0x40]
+0x71ed6c8: 3b3f2997 bl       #0x3c3d3b4
+0x71ed6cc: 801600b4 cbz      x0, #0x71ed99c
+0x71ed6d0: a81a40b9 ldr      w8, [x21, #0x18]
+0x71ed6d4: 28160034 cbz      w8, #0x71ed998
+0x71ed6d8: b61200f9 str      x22, [x21, #0x20]
+0x71ed6dc: e00240f9 ldr      x0, [x23]
+0x71ed6e0: 08e040b9 ldr      w8, [x0, #0xe0]
+0x71ed6e4: 48000035 cbnz     w8, #0x71ed6ec
+0x71ed6e8: 323f2997 bl       #0x3c3d3b0
+0x71ed6ec: e00315aa mov      x0, x21
+0x71ed6f0: e1031faa mov      x1, xzr
+0x71ed6f4: c64a0094 bl       #0x720020c // GameFramework.CLog$$ReleaseLog
+0x71ed6f8: e00314aa mov      x0, x20
+0x71ed6fc: e1031faa mov      x1, xzr
+0x71ed700: d2624d94 bl       #0x8546248 // UnityEngine.Networking.UnityWebRequest$$Get
+0x71ed704: 601600f9 str      x0, [x19, #0x28]
+0x71ed708: a8c700b0 adrp     x8, #0x8ae2000
+0x71ed70c: 088140f9 ldr      x8, [x8, #0x100] // UnityEngine.Networking.DownloadHandlerBuffer_TypeInfo
+0x71ed710: f40300aa mov      x20, x0
+0x71ed714: 000140f9 ldr      x0, [x8]
+0x71ed718: 6b3f2997 bl       #0x3c3d4c4
+0x71ed71c: e1031faa mov      x1, xzr
+0x71ed720: f50300aa mov      x21, x0
+0x71ed724: 47594d94 bl       #0x8543c40 // UnityEngine.Networking.DownloadHandlerBuffer$$.ctor
+0x71ed728: 741300b4 cbz      x20, #0x71ed994
+0x71ed72c: e00314aa mov      x0, x20
+0x71ed730: e10315aa mov      x1, x21
+0x71ed734: e2031faa mov      x2, xzr
+0x71ed738: 965c4d94 bl       #0x8544990 // UnityEngine.Networking.UnityWebRequest$$set_downloadHandler
+0x71ed73c: 601640f9 ldr      x0, [x19, #0x28]
+0x71ed740: a01200b4 cbz      x0, #0x71ed994
+0x71ed744: e1031faa mov      x1, xzr
+0x71ed748: e55d4d94 bl       #0x8544edc // UnityEngine.Networking.UnityWebRequest$$SendWebRequest
+0x71ed74c: 600e00f9 str      x0, [x19, #0x18]
+0x71ed750: 20008052 mov      w0, #1
+0x71ed754: 601200b9 str      w0, [x19, #0x10]
+0x71ed758: 7c000014 b        #0x71ed948
+0x71ed75c: 9b574d94 bl       #0x85435c8 // UnityEngine.Networking.DownloadHandler$$get_text
+0x71ed760: 08c70090 adrp     x8, #0x8acd000
+0x71ed764: 082d44f9 ldr      x8, [x8, #0x858] // object[]_TypeInfo
+0x71ed768: f30300aa mov      x19, x0
+0x71ed76c: 21008052 mov      w1, #1
+0x71ed770: 080140f9 ldr      x8, [x8]
+0x71ed774: e00308aa mov      x0, x8
+0x71ed778: ea3e2997 bl       #0x3c3d320
+0x71ed77c: c01000b4 cbz      x0, #0x71ed994
+0x71ed780: 57c900f0 adrp     x23, #0x8b18000
+0x71ed784: f7e246f9 ldr      x23, [x23, #0xdc0] // ABFileStreaming测试：
+0x71ed788: f50300aa mov      x21, x0
+0x71ed78c: e00240f9 ldr      x0, [x23]
+0x71ed790: a00000b4 cbz      x0, #0x71ed7a4
+0x71ed794: a80240f9 ldr      x8, [x21]
+0x71ed798: 012140f9 ldr      x1, [x8, #0x40]
+0x71ed79c: 063f2997 bl       #0x3c3d3b4
+0x71ed7a0: e00f00b4 cbz      x0, #0x71ed99c
+0x71ed7a4: a81a40b9 ldr      w8, [x21, #0x18]
+0x71ed7a8: 880f0034 cbz      w8, #0x71ed998
+0x71ed7ac: e80240f9 ldr      x8, [x23]
+0x71ed7b0: a81200f9 str      x8, [x21, #0x20]
+0x71ed7b4: 08c70090 adrp     x8, #0x8acd000
+0x71ed7b8: 083144f9 ldr      x8, [x8, #0x860] // GameFramework.CLog_TypeInfo
+0x71ed7bc: 000140f9 ldr      x0, [x8]
+0x71ed7c0: 08e040b9 ldr      w8, [x0, #0xe0]
+0x71ed7c4: 48000035 cbnz     w8, #0x71ed7cc
+0x71ed7c8: fa3e2997 bl       #0x3c3d3b0
+0x71ed7cc: e00315aa mov      x0, x21
+0x71ed7d0: e1031faa mov      x1, xzr
+0x71ed7d4: 8e4a0094 bl       #0x720020c // GameFramework.CLog$$ReleaseLog
+0x71ed7d8: 48c900f0 adrp     x8, #0x8b18000
+0x71ed7dc: 080547f9 ldr      x8, [x8, #0xe08] // tfw¤k_TypeInfo
+0x71ed7e0: 000140f9 ldr      x0, [x8]
+0x71ed7e4: 383f2997 bl       #0x3c3d4c4
+0x71ed7e8: e1031faa mov      x1, xzr
+0x71ed7ec: f50300aa mov      x21, x0
+0x71ed7f0: 86090494 bl       #0x72efe08 // tfw¤k$$.ctor
+0x71ed7f4: 150d00b4 cbz      x21, #0x71ed994
+0x71ed7f8: e00315aa mov      x0, x21
+0x71ed7fc: e10313aa mov      x1, x19
+0x71ed800: e2031faa mov      x2, xzr
+0x71ed804: 6a040494 bl       #0x72ee9ac // tfw¤k$$ReadStreamingPatchManifest
+0x71ed808: 740c00b4 cbz      x20, #0x71ed994
+0x71ed80c: 951a00f9 str      x21, [x20, #0x30]
+0x71ed810: 57c900f0 adrp     x23, #0x8b18000
+0x71ed814: f76e46f9 ldr      x23, [x23, #0xcd8] // GameFramework.VersionMondule_TypeInfo
+0x71ed818: e00240f9 ldr      x0, [x23]
+0x71ed81c: 08e040b9 ldr      w8, [x0, #0xe0]
+0x71ed820: 68000035 cbnz     w8, #0x71ed82c
+0x71ed824: e33e2997 bl       #0x3c3d3b0
+0x71ed828: e00240f9 ldr      x0, [x23]
+0x71ed82c: c80240f9 ldr      x8, [x22]
+0x71ed830: 095c40f9 ldr      x9, [x0, #0xb8]
+0x71ed834: 0ae140b9 ldr      w10, [x8, #0xe0]
+0x71ed838: 330140f9 ldr      x19, [x9]
+0x71ed83c: 6a000035 cbnz     w10, #0x71ed848
+0x71ed840: e00308aa mov      x0, x8
+0x71ed844: db3e2997 bl       #0x3c3d3b0
+0x71ed848: e0031faa mov      x0, xzr
+0x71ed84c: d7c9fc97 bl       #0x711ffa8 // GameFramework.AppSetting$$get_MineGameName
+0x71ed850: 330a00b4 cbz      x19, #0x71ed994
+0x71ed854: 48c900f0 adrp     x8, #0x8b18000
+0x71ed858: 087146f9 ldr      x8, [x8, #0xce0] // Method$System.Collections.Generic.Dictionary<string, IBundleServices>.ContainsKey()
+0x71ed85c: e10300aa mov      x1, x0
+0x71ed860: e00313aa mov      x0, x19
+0x71ed864: 020140f9 ldr      x2, [x8]
+0x71ed868: 9365e897 bl       #0x6c06eb4 // System.Collections.Generic.Dictionary<object, object>$$ContainsKey
+0x71ed86c: c0030036 tbz      w0, #0, #0x71ed8e4
+0x71ed870: 08c70090 adrp     x8, #0x8acd000
+0x71ed874: 082d44f9 ldr      x8, [x8, #0x858] // object[]_TypeInfo
+0x71ed878: 21008052 mov      w1, #1
+0x71ed87c: 000140f9 ldr      x0, [x8]
+0x71ed880: a83e2997 bl       #0x3c3d320
+0x71ed884: 800800b4 cbz      x0, #0x71ed994
+0x71ed888: 55c900f0 adrp     x21, #0x8b18000
+0x71ed88c: b5ee46f9 ldr      x21, [x21, #0xdd8] // 已经缓存了ABFile文件，又重新加载了一遍
+0x71ed890: f30300aa mov      x19, x0
+0x71ed894: a00240f9 ldr      x0, [x21]
+0x71ed898: a00000b4 cbz      x0, #0x71ed8ac
+0x71ed89c: 680240f9 ldr      x8, [x19]
+0x71ed8a0: 012140f9 ldr      x1, [x8, #0x40]
+0x71ed8a4: c43e2997 bl       #0x3c3d3b4
+0x71ed8a8: a00700b4 cbz      x0, #0x71ed99c
+0x71ed8ac: 681a40b9 ldr      w8, [x19, #0x18]
+0x71ed8b0: 48070034 cbz      w8, #0x71ed998
+0x71ed8b4: a80240f9 ldr      x8, [x21]
+0x71ed8b8: 681200f9 str      x8, [x19, #0x20]
+0x71ed8bc: 08c70090 adrp     x8, #0x8acd000
+0x71ed8c0: 083144f9 ldr      x8, [x8, #0x860] // GameFramework.CLog_TypeInfo
+0x71ed8c4: 000140f9 ldr      x0, [x8]
+0x71ed8c8: 08e040b9 ldr      w8, [x0, #0xe0]
+0x71ed8cc: 48000035 cbnz     w8, #0x71ed8d4
+0x71ed8d0: b83e2997 bl       #0x3c3d3b0
+0x71ed8d4: e00313aa mov      x0, x19
+0x71ed8d8: e1031faa mov      x1, xzr
+0x71ed8dc: 7e280094 bl       #0x71f7ad4 // GameFramework.CLog$$Warning
+0x71ed8e0: 17000014 b        #0x71ed93c
+0x71ed8e4: e00240f9 ldr      x0, [x23]
+0x71ed8e8: 08e040b9 ldr      w8, [x0, #0xe0]
+0x71ed8ec: 68000035 cbnz     w8, #0x71ed8f8
+0x71ed8f0: b03e2997 bl       #0x3c3d3b0
+0x71ed8f4: e00240f9 ldr      x0, [x23]
+0x71ed8f8: c80240f9 ldr      x8, [x22]
+0x71ed8fc: 095c40f9 ldr      x9, [x0, #0xb8]
+0x71ed900: 0ae140b9 ldr      w10, [x8, #0xe0]
+0x71ed904: 330140f9 ldr      x19, [x9]
+0x71ed908: 6a000035 cbnz     w10, #0x71ed914
+0x71ed90c: e00308aa mov      x0, x8
+0x71ed910: a83e2997 bl       #0x3c3d3b0
+0x71ed914: e0031faa mov      x0, xzr
+0x71ed918: a4c9fc97 bl       #0x711ffa8 // GameFramework.AppSetting$$get_MineGameName
+0x71ed91c: d30300b4 cbz      x19, #0x71ed994
+0x71ed920: 48c900f0 adrp     x8, #0x8b18000
+0x71ed924: 08d946f9 ldr      x8, [x8, #0xdb0] // Method$System.Collections.Generic.Dictionary<string, IBundleServices>.Add()
+0x71ed928: e10300aa mov      x1, x0
+0x71ed92c: e00313aa mov      x0, x19
+0x71ed930: e20315aa mov      x2, x21
+0x71ed934: 030140f9 ldr      x3, [x8]
+0x71ed938: e264e897 bl       #0x6c06cc0 // System.Collections.Generic.Dictionary<object, object>$$Add
+0x71ed93c: e00314aa mov      x0, x20
+0x71ed940: d2f7ff97 bl       #0x71eb888 // GameFramework.VersionMondule$$SetAssetBundleURL
+0x71ed944: e0031f2a mov      w0, wzr
+0x71ed948: f44f4ba9 ldp      x20, x19, [sp, #0xb0]
+0x71ed94c: f6574aa9 ldp      x22, x21, [sp, #0xa0]
+0x71ed950: f85f49a9 ldp      x24, x23, [sp, #0x90]
+0x71ed954: fa6748a9 ldp      x26, x25, [sp, #0x80]
+0x71ed958: fc6f47a9 ldp      x28, x27, [sp, #0x70]
+0x71ed95c: fd7b46a9 ldp      x29, x30, [sp, #0x60]
+0x71ed960: ff030391 add      sp, sp, #0xc0
+0x71ed964: c0035fd6 ret      
+0x71ed968: db3e2997 bl       #0x3c3d4d4
+0x71ed96c: d83e2997 bl       #0x3c3d4cc
+0x71ed970: d93e2997 bl       #0x3c3d4d4
+0x71ed974: d83e2997 bl       #0x3c3d4d4
+0x71ed978: d53e2997 bl       #0x3c3d4cc
+0x71ed97c: d63e2997 bl       #0x3c3d4d4
+0x71ed980: d53e2997 bl       #0x3c3d4d4
+0x71ed984: d43e2997 bl       #0x3c3d4d4
+0x71ed988: da3e2997 bl       #0x3c3d4f0
+0x71ed98c: e1031faa mov      x1, xzr
+0x71ed990: 843e2997 bl       #0x3c3d3a0
+0x71ed994: ce3e2997 bl       #0x3c3d4cc
+0x71ed998: cf3e2997 bl       #0x3c3d4d4
+0x71ed99c: d53e2997 bl       #0x3c3d4f0
+0x71ed9a0: e1031faa mov      x1, xzr
+0x71ed9a4: 7f3e2997 bl       #0x3c3d3a0
+0x71ed9a8: 09000014 b        #0x71ed9cc
+0x71ed9ac: 08000014 b        #0x71ed9cc
+0x71ed9b0: 07000014 b        #0x71ed9cc
+0x71ed9b4: 06000014 b        #0x71ed9cc
+0x71ed9b8: 05000014 b        #0x71ed9cc
+0x71ed9bc: 04000014 b        #0x71ed9cc
+0x71ed9c0: 03000014 b        #0x71ed9cc
+0x71ed9c4: 02000014 b        #0x71ed9cc
+0x71ed9c8: 01000014 b        #0x71ed9cc
+0x71ed9cc: 18c70090 adrp     x24, #0x8acd000
+0x71ed9d0: 18e342f9 ldr      x24, [x24, #0x5c0] // GameFramework.AppSetting_TypeInfo
+0x71ed9d4: f40300aa mov      x20, x0
+0x71ed9d8: 3f040071 cmp      w1, #1
+0x71ed9dc: a1010054 b.ne     #0x71eda10
+0x71ed9e0: e00314aa mov      x0, x20
+0x71ed9e4: ef044e94 bl       #0x856eda0
+0x71ed9e8: 150040f9 ldr      x21, [x0]
+0x71ed9ec: f1044e94 bl       #0x856edb0
+0x71ed9f0: e8c700f0 adrp     x8, #0x8aec000
+0x71ed9f4: 088146f9 ldr      x8, [x8, #0xd00] // Method$System.Collections.Generic.Dictionary.Enumerator<string, string>.Dispose()
+0x71ed9f8: e0c30091 add      x0, sp, #0x30
+0x71ed9fc: 010140f9 ldr      x1, [x8]
+0x71eda00: e7ddf297 bl       #0x6ea519c // System.Collections.Generic.Dictionary.Enumerator<object, object>$$Dispose
+0x71eda04: b5ceffb4 cbz      x21, #0x71ed3d8
+0x71eda08: e00315aa mov      x0, x21
+0x71eda0c: bb2c2997 bl       #0x3c38cf8
+0x71eda10: f5031faa mov      x21, xzr
+0x71eda14: 02000014 b        #0x71eda1c
+0x71eda18: f40300aa mov      x20, x0
+0x71eda1c: e8c700f0 adrp     x8, #0x8aec000
+0x71eda20: 088146f9 ldr      x8, [x8, #0xd00] // Method$System.Collections.Generic.Dictionary.Enumerator<string, string>.Dispose()
+0x71eda24: 010140f9 ldr      x1, [x8]
+0x71eda28: e0c30091 add      x0, sp, #0x30
+0x71eda2c: dcddf297 bl       #0x6ea519c // System.Collections.Generic.Dictionary.Enumerator<object, object>$$Dispose
+0x71eda30: 750000b5 cbnz     x21, #0x71eda3c
+0x71eda34: e00314aa mov      x0, x20
+0x71eda38: 63e62b97 bl       #0x3ce73c4
+0x71eda3c: e00315aa mov      x0, x21
+0x71eda40: ae2c2997 bl       #0x3c38cf8
+0x71eda44: af3a0f97 bl       #0x35bc500

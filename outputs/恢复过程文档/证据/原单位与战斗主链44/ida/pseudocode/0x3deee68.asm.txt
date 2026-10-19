@@ -1,0 +1,38 @@
+0x3deee68: SUB             SP, SP, #0x50
+0x3deee6c: STP             X30, X21, [SP,#0x50+var_20]
+0x3deee70: STP             X20, X19, [SP,#0x50+var_10]
+0x3deee74: ADRP            X21, #byte_8FFD784@PAGE
+0x3deee78: ADRP            X20, #off_8AD3C10@PAGE
+0x3deee7c: LDRB            W8, [X21,#byte_8FFD784@PAGEOFF]
+0x3deee80: LDR             X20, [X20,#off_8AD3C10@PAGEOFF]; off_8D1FE98
+0x3deee84: MOV             X19, X0
+0x3deee88: TBNZ            W8, #0, loc_3DEEEA0
+0x3deee8c: ADRP            X0, #off_8AD3C10@PAGE
+0x3deee90: LDR             X0, [X0,#off_8AD3C10@PAGEOFF]; off_8D1FE98 ; slot
+0x3deee94: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3deee98: MOV             W8, #1
+0x3deee9c: STRB            W8, [X21,#byte_8FFD784@PAGEOFF]
+0x3deeea0: LDR             X20, [X20]
+0x3deeea4: MOVI            V0.2D, #0
+0x3deeea8: MOV             W8, #0xFFFFFFFF
+0x3deeeac: STP             Q0, Q0, [SP,#0x50+var_50]
+0x3deeeb0: STR             Q0, [SP,#0x50+var_30]
+0x3deeeb4: STR             X19, [SP,#0x50+var_38]
+0x3deeeb8: STR             W8, [SP,#0x50+var_50]
+0x3deeebc: LDR             X8, [X20,#0x38]
+0x3deeec0: CBNZ            X8, loc_3DEEED0
+0x3deeec4: MOV             X0, X20
+0x3deeec8: BL              unk_3C503FC
+0x3deeecc: LDR             X8, [X20,#0x38]
+0x3deeed0: LDR             X1, [X8,#0x10]
+0x3deeed4: MOV             X8, SP
+0x3deeed8: MOV             X0, SP
+0x3deeedc: ORR             X19, X8, #8
+0x3deeee0: BL              GameModule.BattleGameSceneManager._UpdateHexObj_d__158$$MoveNext
+0x3deeee4: MOV             X0, X19
+0x3deeee8: MOV             X1, XZR
+0x3deeeec: BL              unk_3D17780
+0x3deeef0: LDP             X20, X19, [SP,#0x50+var_10]
+0x3deeef4: LDP             X30, X21, [SP,#0x50+var_20]
+0x3deeef8: ADD             SP, SP, #0x50 ; 'P'
+0x3deeefc: RET

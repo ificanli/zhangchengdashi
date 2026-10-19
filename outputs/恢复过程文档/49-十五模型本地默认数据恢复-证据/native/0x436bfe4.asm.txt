@@ -1,0 +1,31 @@
+0x436bfe4: STR             X30, [SP,#var_30]!
+0x436bfe8: STP             X22, X21, [SP,#0x30+var_20]
+0x436bfec: STP             X20, X19, [SP,#0x30+var_10]
+0x436bff0: ADRP            X21, #byte_900070D@PAGE
+0x436bff4: ADRP            X22, #off_8AD6E30@PAGE
+0x436bff8: ADRP            X20, #0x8AD6000
+0x436bffc: LDRB            W8, [X21,#byte_900070D@PAGEOFF]
+0x436c000: LDR             X22, [X22,#off_8AD6E30@PAGEOFF]; qword_8CDE3E8
+0x436c004: B               unk_856E7E0
+0x436c008: MOV             X19, X0
+0x436c00c: TBNZ            W8, #0, loc_436C030
+0x436c010: ADRP            X0, #off_8AD6E28@PAGE
+0x436c014: LDR             X0, [X0,#off_8AD6E28@PAGEOFF]; qword_8D0F480 ; slot
+0x436c018: BL              il2cpp_codegen_initialize_runtime_metadata
+0x436c01c: ADRP            X0, #off_8AD6E30@PAGE
+0x436c020: LDR             X0, [X0,#off_8AD6E30@PAGEOFF]; qword_8CDE3E8 ; slot
+0x436c024: BL              il2cpp_codegen_initialize_runtime_metadata
+0x436c028: MOV             W8, #1
+0x436c02c: STRB            W8, [X21,#0x70D]
+0x436c030: LDR             X0, [X22]
+0x436c034: BL              unk_3C3D4C4
+0x436c038: LDR             X1, [X20]
+0x436c03c: MOV             X20, X0
+0x436c040: BL              System.Collections.Generic.List_object_$$.ctor
+0x436c044: STR             X20, [X19,#0x10]
+0x436c048: MOV             X0, X19
+0x436c04c: LDP             X20, X19, [SP,#0x30+var_10]
+0x436c050: LDP             X22, X21, [SP,#0x30+var_20]
+0x436c054: MOV             X1, XZR
+0x436c058: LDR             X30, [SP+0x30+var_30],#0x30
+0x436c05c: B               ServerBaseData$$.ctor

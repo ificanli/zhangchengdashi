@@ -1,0 +1,288 @@
+0x3e010f0: ff4303d1 sub      sp, sp, #0xd0
+0x3e010f4: eb2b096d stp      d11, d10, [sp, #0x90]
+0x3e010f8: e9230a6d stp      d9, d8, [sp, #0xa0]
+0x3e010fc: fe570ba9 stp      x30, x21, [sp, #0xb0]
+0x3e01100: f44f0ca9 stp      x20, x19, [sp, #0xc0]
+0x3e01104: f58f0290 adrp     x21, #0x8ffd000
+0x3e01108: 74660290 adrp     x20, #0x8acd000
+0x3e0110c: a8026039 ldrb     w8, [x21, #0x800]
+0x3e01110: 941a45f9 ldr      x20, [x20, #0xa30] // GameModule.CoreGameManager_TypeInfo
+0x3e01114: f30300aa mov      x19, x0
+0x3e01118: 88040037 tbnz     w8, #0, #0x3e011a8
+0x3e0111c: 60660290 adrp     x0, #0x8acd000
+0x3e01120: 001845f9 ldr      x0, [x0, #0xa30] // GameModule.CoreGameManager_TypeInfo
+0x3e01124: 57f0f897 bl       #0x3c3d280
+0x3e01128: 806602d0 adrp     x0, #0x8ad3000
+0x3e0112c: 001446f9 ldr      x0, [x0, #0xc28] // Method$UnityEngine.GameObject.GetComponent<HexBehaviour>()
+0x3e01130: 54f0f897 bl       #0x3c3d280
+0x3e01134: 606602b0 adrp     x0, #0x8ace000
+0x3e01138: 00f847f9 ldr      x0, [x0, #0xff0] // Method$ToolModule.ManagerBase<CameraManager>.get_Instance()
+0x3e0113c: 51f0f897 bl       #0x3c3d280
+0x3e01140: 606602b0 adrp     x0, #0x8ace000
+0x3e01144: 004442f9 ldr      x0, [x0, #0x488] // Method$ToolModule.ManagerBase<BattleGameManager>.get_Instance()
+0x3e01148: 4ef0f897 bl       #0x3c3d280
+0x3e0114c: 406602f0 adrp     x0, #0x8acc000
+0x3e01150: 006844f9 ldr      x0, [x0, #0x8d0] // UnityEngine.Object_TypeInfo
+0x3e01154: 4bf0f897 bl       #0x3c3d280
+0x3e01158: 60660290 adrp     x0, #0x8acd000
+0x3e0115c: 008441f9 ldr      x0, [x0, #0x308] // UnityEngine.Physics_TypeInfo
+0x3e01160: 48f0f897 bl       #0x3c3d280
+0x3e01164: 806602f0 adrp     x0, #0x8ad4000
+0x3e01168: 00c040f9 ldr      x0, [x0, #0x180] // UtilsModule.Util.RaycastUtil_TypeInfo
+0x3e0116c: 45f0f897 bl       #0x3c3d280
+0x3e01170: 60660290 adrp     x0, #0x8acd000
+0x3e01174: 003047f9 ldr      x0, [x0, #0xe60] // Method$QuickTutor.Singleton<TutorialManager>.get_Instance()
+0x3e01178: 42f0f897 bl       #0x3c3d280
+0x3e0117c: 60660290 adrp     x0, #0x8acd000
+0x3e01180: 002c47f9 ldr      x0, [x0, #0xe58] // QuickTutor.Singleton<TutorialManager>_TypeInfo
+0x3e01184: 3ff0f897 bl       #0x3c3d280
+0x3e01188: 806602f0 adrp     x0, #0x8ad4000
+0x3e0118c: 00c440f9 ldr      x0, [x0, #0x188] // Hex
+0x3e01190: 3cf0f897 bl       #0x3c3d280
+0x3e01194: 80660290 adrp     x0, #0x8ad1000
+0x3e01198: 00cc41f9 ldr      x0, [x0, #0x398] // 1008
+0x3e0119c: 39f0f897 bl       #0x3c3d280
+0x3e011a0: 28008052 mov      w8, #1
+0x3e011a4: a8022039 strb     w8, [x21, #0x800]
+0x3e011a8: 800240f9 ldr      x0, [x20]
+0x3e011ac: 00e4006f movi     v0.2d, #0000000000000000
+0x3e011b0: ff4700f9 str      xzr, [sp, #0x88]
+0x3e011b4: e0c3863c stur     q0, [sp, #0x6c]
+0x3e011b8: e08302ad stp      q0, q0, [sp, #0x50]
+0x3e011bc: 08e040b9 ldr      w8, [x0, #0xe0]
+0x3e011c0: 48000035 cbnz     w8, #0x3e011c8
+0x3e011c4: 7bf0f897 bl       #0x3c3d3b0
+0x3e011c8: f58f0290 adrp     x21, #0x8ffd000
+0x3e011cc: a8ae4639 ldrb     w8, [x21, #0x1ab]
+0x3e011d0: c8000035 cbnz     w8, #0x3e011e8
+0x3e011d4: 60660290 adrp     x0, #0x8acd000
+0x3e011d8: 001845f9 ldr      x0, [x0, #0xa30] // GameModule.CoreGameManager_TypeInfo
+0x3e011dc: 29f0f897 bl       #0x3c3d280
+0x3e011e0: 28008052 mov      w8, #1
+0x3e011e4: a8ae0639 strb     w8, [x21, #0x1ab]
+0x3e011e8: 800240f9 ldr      x0, [x20]
+0x3e011ec: 08e040b9 ldr      w8, [x0, #0xe0]
+0x3e011f0: 68000035 cbnz     w8, #0x3e011fc
+0x3e011f4: 6ff0f897 bl       #0x3c3d3b0
+0x3e011f8: 800240f9 ldr      x0, [x20]
+0x3e011fc: 085c40f9 ldr      x8, [x0, #0xb8]
+0x3e01200: 08014039 ldrb     w8, [x8]
+0x3e01204: 08160034 cbz      w8, #0x3e014c4
+0x3e01208: e0031f2a mov      w0, wzr
+0x3e0120c: e1031faa mov      x1, xzr
+0x3e01210: 5b1f1595 bl       #0x8348f7c // UnityEngine.Input$$GetMouseButtonDown
+0x3e01214: f503002a mov      w21, w0
+0x3e01218: e0031f2a mov      w0, wzr
+0x3e0121c: e1031faa mov      x1, xzr
+0x3e01220: 661f1595 bl       #0x8348fb8 // UnityEngine.Input$$GetMouseButtonUp
+0x3e01224: f403002a mov      w20, w0
+0x3e01228: 55000037 tbnz     w21, #0, #0x3e01230
+0x3e0122c: d4140036 tbz      w20, #0, #0x3e014c4
+0x3e01230: e0031faa mov      x0, xzr
+0x3e01234: 4b201595 bl       #0x8349360 // UnityEngine.Input$$get_mousePosition
+0x3e01238: 886602f0 adrp     x8, #0x8ad4000
+0x3e0123c: 08c140f9 ldr      x8, [x8, #0x180] // UtilsModule.Util.RaycastUtil_TypeInfo
+0x3e01240: 081ca04e mov      v8.16b, v0.16b
+0x3e01244: 291ca14e mov      v9.16b, v1.16b
+0x3e01248: 000140f9 ldr      x0, [x8]
+0x3e0124c: 08e040b9 ldr      w8, [x0, #0xe0]
+0x3e01250: 48000035 cbnz     w8, #0x3e01258
+0x3e01254: 57f0f897 bl       #0x3c3d3b0
+0x3e01258: 001da84e mov      v0.16b, v8.16b
+0x3e0125c: 211da94e mov      v1.16b, v9.16b
+0x3e01260: e0031faa mov      x0, xzr
+0x3e01264: 6f3e0e94 bl       #0x4190c20 // UtilsModule.Util.RaycastUtil$$UIRaycastEmoji
+0x3e01268: e0120037 tbnz     w0, #0, #0x3e014c4
+0x3e0126c: b5000036 tbz      w21, #0, #0x3e01280
+0x3e01270: e0031faa mov      x0, xzr
+0x3e01274: 3b201595 bl       #0x8349360 // UnityEngine.Input$$get_mousePosition
+0x3e01278: 6086042d stp      s0, s1, [x19, #0x24]
+0x3e0127c: 622e00bd str      s2, [x19, #0x2c]
+0x3e01280: 34120036 tbz      w20, #0, #0x3e014c4
+0x3e01284: e0031faa mov      x0, xzr
+0x3e01288: 36201595 bl       #0x8349360 // UnityEngine.Input$$get_mousePosition
+0x3e0128c: 68824039 ldrb     w8, [x19, #0x20]
+0x3e01290: 6006062d stp      s0, s1, [x19, #0x30]
+0x3e01294: 623a00bd str      s2, [x19, #0x38]
+0x3e01298: 68110035 cbnz     w8, #0x3e014c4
+0x3e0129c: e0031faa mov      x0, xzr
+0x3e012a0: 30201595 bl       #0x8349360 // UnityEngine.Input$$get_mousePosition
+0x3e012a4: e0230291 add      x0, sp, #0x88
+0x3e012a8: e1031faa mov      x1, xzr
+0x3e012ac: a8850494 bl       #0x3f2294c // YYBTool.YYBKit$$IsPointerOverUIObject
+0x3e012b0: a0100037 tbnz     w0, #0, #0x3e014c4
+0x3e012b4: 68660290 adrp     x8, #0x8acd000
+0x3e012b8: 082d47f9 ldr      x8, [x8, #0xe58] // QuickTutor.Singleton<TutorialManager>_TypeInfo
+0x3e012bc: 000140f9 ldr      x0, [x8]
+0x3e012c0: 08e040b9 ldr      w8, [x0, #0xe0]
+0x3e012c4: 48000035 cbnz     w8, #0x3e012cc
+0x3e012c8: 3af0f897 bl       #0x3c3d3b0
+0x3e012cc: 68660290 adrp     x8, #0x8acd000
+0x3e012d0: 083147f9 ldr      x8, [x8, #0xe60] // Method$QuickTutor.Singleton<TutorialManager>.get_Instance()
+0x3e012d4: 000140f9 ldr      x0, [x8]
+0x3e012d8: 23f68694 bl       #0x5fbeb64 // QuickTutor.Singleton<object>$$get_Instance
+0x3e012dc: 801400b4 cbz      x0, #0x3e0156c
+0x3e012e0: 88660290 adrp     x8, #0x8ad1000
+0x3e012e4: 08cd41f9 ldr      x8, [x8, #0x398] // 1008
+0x3e012e8: e2031faa mov      x2, xzr
+0x3e012ec: 010140f9 ldr      x1, [x8]
+0x3e012f0: 35991294 bl       #0x42a77c4 // QuickTutor.TutorialManager$$IsStepComplete
+0x3e012f4: e0030036 tbz      w0, #0, #0x3e01370
+0x3e012f8: f48f0290 adrp     x20, #0x8ffd000
+0x3e012fc: 682640bd ldr      s8, [x19, #0x24]
+0x3e01300: 691640fd ldr      d9, [x19, #0x28]
+0x3e01304: 6a3240bd ldr      s10, [x19, #0x30]
+0x3e01308: 88824039 ldrb     w8, [x20, #0x20]
+0x3e0130c: 6b4243fc ldur     d11, [x19, #0x34]
+0x3e01310: c8000035 cbnz     w8, #0x3e01328
+0x3e01314: 406602f0 adrp     x0, #0x8acc000
+0x3e01318: 007844f9 ldr      x0, [x0, #0x8f0] // System.Math_TypeInfo
+0x3e0131c: d9eff897 bl       #0x3c3d280
+0x3e01320: 28008052 mov      w8, #1
+0x3e01324: 88820039 strb     w8, [x20, #0x20]
+0x3e01328: 486602f0 adrp     x8, #0x8acc000
+0x3e0132c: 087944f9 ldr      x8, [x8, #0x8f0] // System.Math_TypeInfo
+0x3e01330: 0a392a1e fsub     s10, s8, s10
+0x3e01334: 28d5ab0e fsub     v8.2s, v9.2s, v11.2s
+0x3e01338: 000140f9 ldr      x0, [x8]
+0x3e0133c: 08e040b9 ldr      w8, [x0, #0xe0]
+0x3e01340: 48000035 cbnz     w8, #0x3e01348
+0x3e01344: 1bf0f897 bl       #0x3c3d3b0
+0x3e01348: 40092a1e fmul     s0, s10, s10
+0x3e0134c: 01dd282e fmul     v1.2s, v8.2s, v8.2s
+0x3e01350: 0028211e fadd     s0, s0, s1
+0x3e01354: 21040c5e mov      s1, v1.s[1]
+0x3e01358: 2028201e fadd     s0, s1, s0
+0x3e0135c: 0849a852 mov      w8, #0x42480000
+0x3e01360: 00c0211e fsqrt    s0, s0
+0x3e01364: 0101271e fmov     s1, w8
+0x3e01368: 0020211e fcmp     s0, s1
+0x3e0136c: c80a0054 b.hi     #0x3e014c4
+0x3e01370: 686602b0 adrp     x8, #0x8ace000
+0x3e01374: 08f947f9 ldr      x8, [x8, #0xff0] // Method$ToolModule.ManagerBase<CameraManager>.get_Instance()
+0x3e01378: 000140f9 ldr      x0, [x8]
+0x3e0137c: 39dc6d94 bl       #0x5978460 // ToolModule.ManagerBase<object>$$get_Instance
+0x3e01380: 600f00b4 cbz      x0, #0x3e0156c
+0x3e01384: e1031faa mov      x1, xzr
+0x3e01388: 9a420494 bl       #0x3f11df0 // CameraModule.CameraManager$$get_MainCamera
+0x3e0138c: f30300aa mov      x19, x0
+0x3e01390: e0031faa mov      x0, xzr
+0x3e01394: f31f1595 bl       #0x8349360 // UnityEngine.Input$$get_mousePosition
+0x3e01398: b30e00b4 cbz      x19, #0x3e0156c
+0x3e0139c: e8630091 add      x8, sp, #0x18
+0x3e013a0: e00313aa mov      x0, x19
+0x3e013a4: e1031faa mov      x1, xzr
+0x3e013a8: 157f1295 bl       #0x82a0ffc // UnityEngine.Camera$$ScreenPointToRay
+0x3e013ac: 896602f0 adrp     x9, #0x8ad4000
+0x3e013b0: e083c13c ldur     q0, [sp, #0x18]
+0x3e013b4: e81740f9 ldr      x8, [sp, #0x28]
+0x3e013b8: 29c540f9 ldr      x9, [x9, #0x188] // Hex
+0x3e013bc: e1031faa mov      x1, xzr
+0x3e013c0: e00f803d str      q0, [sp, #0x30]
+0x3e013c4: e82300f9 str      x8, [sp, #0x40]
+0x3e013c8: 200140f9 ldr      x0, [x9]
+0x3e013cc: 5daf1395 bl       #0x82ed140 // UnityEngine.LayerMask$$NameToLayer
+0x3e013d0: 68660290 adrp     x8, #0x8acd000
+0x3e013d4: 088541f9 ldr      x8, [x8, #0x308] // UnityEngine.Physics_TypeInfo
+0x3e013d8: f303002a mov      w19, w0
+0x3e013dc: 080140f9 ldr      x8, [x8]
+0x3e013e0: 09e140b9 ldr      w9, [x8, #0xe0]
+0x3e013e4: 69000035 cbnz     w9, #0x3e013f0
+0x3e013e8: e00308aa mov      x0, x8
+0x3e013ec: f1eff897 bl       #0x3c3d3b0
+0x3e013f0: e82340f9 ldr      x8, [sp, #0x40]
+0x3e013f4: e00fc03d ldr      q0, [sp, #0x30]
+0x3e013f8: 29008052 mov      w9, #1
+0x3e013fc: 2221d31a lsl      w2, w9, w19
+0x3e01400: e80b00f9 str      x8, [sp, #0x10]
+0x3e01404: 0859a852 mov      w8, #0x42c80000
+0x3e01408: e003803d str      q0, [sp]
+0x3e0140c: e0030091 mov      x0, sp
+0x3e01410: e1430191 add      x1, sp, #0x50
+0x3e01414: 0001271e fmov     s0, w8
+0x3e01418: e3031faa mov      x3, xzr
+0x3e0141c: ad571595 bl       #0x83572d0 // UnityEngine.Physics$$Raycast
+0x3e01420: e0430191 add      x0, sp, #0x50
+0x3e01424: e1031faa mov      x1, xzr
+0x3e01428: fc641595 bl       #0x835a818 // UnityEngine.RaycastHit$$get_collider
+0x3e0142c: 546602f0 adrp     x20, #0x8acc000
+0x3e01430: 946a44f9 ldr      x20, [x20, #0x8d0] // UnityEngine.Object_TypeInfo
+0x3e01434: f30300aa mov      x19, x0
+0x3e01438: 880240f9 ldr      x8, [x20]
+0x3e0143c: 09e140b9 ldr      w9, [x8, #0xe0]
+0x3e01440: 69000035 cbnz     w9, #0x3e0144c
+0x3e01444: e00308aa mov      x0, x8
+0x3e01448: daeff897 bl       #0x3c3d3b0
+0x3e0144c: e00313aa mov      x0, x19
+0x3e01450: e1031faa mov      x1, xzr
+0x3e01454: e2031faa mov      x2, xzr
+0x3e01458: 05aa1395 bl       #0x82ebc6c // UnityEngine.Object$$op_Inequality
+0x3e0145c: 40030036 tbz      w0, #0, #0x3e014c4
+0x3e01460: e0430191 add      x0, sp, #0x50
+0x3e01464: e1031faa mov      x1, xzr
+0x3e01468: ec641595 bl       #0x835a818 // UnityEngine.RaycastHit$$get_collider
+0x3e0146c: 000800b4 cbz      x0, #0x3e0156c
+0x3e01470: e1031faa mov      x1, xzr
+0x3e01474: b29e1395 bl       #0x82e8f3c // UnityEngine.Component$$get_gameObject
+0x3e01478: a00700b4 cbz      x0, #0x3e0156c
+0x3e0147c: 886602d0 adrp     x8, #0x8ad3000
+0x3e01480: 081546f9 ldr      x8, [x8, #0xc28] // Method$UnityEngine.GameObject.GetComponent<HexBehaviour>()
+0x3e01484: 010140f9 ldr      x1, [x8]
+0x3e01488: 872f3a94 bl       #0x4c8d2a4 // UnityEngine.GameObject$$GetComponent<object>
+0x3e0148c: 880240f9 ldr      x8, [x20]
+0x3e01490: f30300aa mov      x19, x0
+0x3e01494: 09e140b9 ldr      w9, [x8, #0xe0]
+0x3e01498: 69000035 cbnz     w9, #0x3e014a4
+0x3e0149c: e00308aa mov      x0, x8
+0x3e014a0: c4eff897 bl       #0x3c3d3b0
+0x3e014a4: e00313aa mov      x0, x19
+0x3e014a8: e1031faa mov      x1, xzr
+0x3e014ac: e2031faa mov      x2, xzr
+0x3e014b0: efa91395 bl       #0x82ebc6c // UnityEngine.Object$$op_Inequality
+0x3e014b4: 80000036 tbz      w0, #0, #0x3e014c4
+0x3e014b8: b30500b4 cbz      x19, #0x3e0156c
+0x3e014bc: 68824239 ldrb     w8, [x19, #0xa0]
+0x3e014c0: e8000034 cbz      w8, #0x3e014dc
+0x3e014c4: f44f4ca9 ldp      x20, x19, [sp, #0xc0]
+0x3e014c8: fe574ba9 ldp      x30, x21, [sp, #0xb0]
+0x3e014cc: e9234a6d ldp      d9, d8, [sp, #0xa0]
+0x3e014d0: eb2b496d ldp      d11, d10, [sp, #0x90]
+0x3e014d4: ff430391 add      sp, sp, #0xd0
+0x3e014d8: c0035fd6 ret      
+0x3e014dc: 68424139 ldrb     w8, [x19, #0x50]
+0x3e014e0: 28ffff34 cbz      w8, #0x3e014c4
+0x3e014e4: 68864239 ldrb     w8, [x19, #0xa1]
+0x3e014e8: e8feff35 cbnz     w8, #0x3e014c4
+0x3e014ec: 746602b0 adrp     x20, #0x8ace000
+0x3e014f0: 944642f9 ldr      x20, [x20, #0x488] // Method$ToolModule.ManagerBase<BattleGameManager>.get_Instance()
+0x3e014f4: 800240f9 ldr      x0, [x20]
+0x3e014f8: dadb6d94 bl       #0x5978460 // ToolModule.ManagerBase<object>$$get_Instance
+0x3e014fc: 800300b4 cbz      x0, #0x3e0156c
+0x3e01500: 082840b9 ldr      w8, [x0, #0x28]
+0x3e01504: 699e40b9 ldr      w9, [x19, #0x9c]
+0x3e01508: 1f01096b cmp      w8, w9
+0x3e0150c: aa000054 b.ge     #0x3e01520
+0x3e01510: e00313aa mov      x0, x19
+0x3e01514: e1031faa mov      x1, xzr
+0x3e01518: bd8d1894 bl       #0x4424c0c // GameModule.HexBehaviour$$TextDoAni
+0x3e0151c: eaffff17 b        #0x3e014c4
+0x3e01520: e00313aa mov      x0, x19
+0x3e01524: e1031f2a mov      w1, wzr
+0x3e01528: e2031f2a mov      w2, wzr
+0x3e0152c: e3031faa mov      x3, xzr
+0x3e01530: 0b8e1894 bl       #0x4424d5c // GameModule.HexBehaviour$$OpenHex
+0x3e01534: 800240f9 ldr      x0, [x20]
+0x3e01538: cadb6d94 bl       #0x5978460 // ToolModule.ManagerBase<object>$$get_Instance
+0x3e0153c: 800100b4 cbz      x0, #0x3e0156c
+0x3e01540: 619e40b9 ldr      w1, [x19, #0x9c]
+0x3e01544: e2031faa mov      x2, xzr
+0x3e01548: 728aff97 bl       #0x3de3f10 // GameModule.BattleGameManager$$RecordCoinCount
+0x3e0154c: 800240f9 ldr      x0, [x20]
+0x3e01550: c4db6d94 bl       #0x5978460 // ToolModule.ManagerBase<object>$$get_Instance
+0x3e01554: c00000b4 cbz      x0, #0x3e0156c
+0x3e01558: 689e40b9 ldr      w8, [x19, #0x9c]
+0x3e0155c: e2031faa mov      x2, xzr
+0x3e01560: e103084b neg      w1, w8
+0x3e01564: e489ff97 bl       #0x3de3cf4 // GameModule.BattleGameManager$$ChangeCoin
+0x3e01568: d7ffff17 b        #0x3e014c4
+0x3e0156c: d8eff897 bl       #0x3c3d4cc

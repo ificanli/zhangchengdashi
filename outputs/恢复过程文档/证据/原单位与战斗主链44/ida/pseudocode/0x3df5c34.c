@@ -1,0 +1,18 @@
+__int64 __fastcall GameModule_BattleGameSceneManager__RemoveSpecialHex(
+        __int64 a1,
+        long double a2,
+        long double a3,
+        long double a4)
+{
+  __int64 v8; // x0
+
+  if ( (byte_8FFD7B5 & 1) == 0 )
+  {
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D0F800);
+    byte_8FFD7B5 = 1;
+  }
+  v8 = *(_QWORD *)(a1 + 376);
+  if ( v8 == 0 )
+    il2cpp_codegen_raise_null_reference_exception();
+  return System_Collections_Generic_List_Vector3___Remove(v8, qword_8D0F800, a2, a3, a4);
+}

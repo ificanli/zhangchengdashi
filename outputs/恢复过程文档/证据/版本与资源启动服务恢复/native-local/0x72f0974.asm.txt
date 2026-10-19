@@ -1,0 +1,94 @@
+0x72f0974: fe5fbda9 stp      x30, x23, [sp, #-0x30]!
+0x72f0978: f65701a9 stp      x22, x21, [sp, #0x10]
+0x72f097c: f44f02a9 stp      x20, x19, [sp, #0x20]
+0x72f0980: d5e800d0 adrp     x21, #0x900a000
+0x72f0984: a8be4239 ldrb     w8, [x21, #0xaf]
+0x72f0988: f40301aa mov      x20, x1
+0x72f098c: f30300aa mov      x19, x0
+0x72f0990: 88010037 tbnz     w8, #0, #0x72f09c0
+0x72f0994: 60bf00b0 adrp     x0, #0x8add000
+0x72f0998: 007043f9 ldr      x0, [x0, #0x6e0] // System.Convert_TypeInfo
+0x72f099c: 39322597 bl       #0x3c3d280
+0x72f09a0: 40c100d0 adrp     x0, #0x8b1a000
+0x72f09a4: 007046f9 ldr      x0, [x0, #0xce0] // Method$System.Collections.Generic.Dictionary<string, PatchElement>.Add()
+0x72f09a8: 36322597 bl       #0x3c3d280
+0x72f09ac: 40c100d0 adrp     x0, #0x8b1a000
+0x72f09b0: 007446f9 ldr      x0, [x0, #0xce8] // GameFramework.Resources.PatchElement_TypeInfo
+0x72f09b4: 33322597 bl       #0x3c3d280
+0x72f09b8: 28008052 mov      w8, #1
+0x72f09bc: a8be0239 strb     w8, [x21, #0xaf]
+0x72f09c0: 340900b4 cbz      x20, #0x72f0ae4
+0x72f09c4: 810f8052 mov      w1, #0x7c
+0x72f09c8: e00314aa mov      x0, x20
+0x72f09cc: e2031f2a mov      w2, wzr
+0x72f09d0: e3031faa mov      x3, xzr
+0x72f09d4: d76e0894 bl       #0x750c530 // System.String$$Split
+0x72f09d8: 600800b4 cbz      x0, #0x72f0ae4
+0x72f09dc: 081840b9 ldr      w8, [x0, #0x18]
+0x72f09e0: f50300aa mov      x21, x0
+0x72f09e4: 1f110071 cmp      w8, #4
+0x72f09e8: cb050054 b.lt     #0x72f0aa0
+0x72f09ec: 48c100d0 adrp     x8, #0x8b1a000
+0x72f09f0: 087546f9 ldr      x8, [x8, #0xce8] // GameFramework.Resources.PatchElement_TypeInfo
+0x72f09f4: 000140f9 ldr      x0, [x8]
+0x72f09f8: b3322597 bl       #0x3c3d4c4
+0x72f09fc: e1031faa mov      x1, xzr
+0x72f0a00: f40300aa mov      x20, x0
+0x72f0a04: 425b0f94 bl       #0x76c770c // System.Object$$.ctor
+0x72f0a08: a81a40b9 ldr      w8, [x21, #0x18]
+0x72f0a0c: e8060034 cbz      w8, #0x72f0ae8
+0x72f0a10: b40600b4 cbz      x20, #0x72f0ae4
+0x72f0a14: a91240f9 ldr      x9, [x21, #0x20]
+0x72f0a18: 1f050071 cmp      w8, #1
+0x72f0a1c: 890a00f9 str      x9, [x20, #0x10]
+0x72f0a20: 49060054 b.ls     #0x72f0ae8
+0x72f0a24: a91640f9 ldr      x9, [x21, #0x28]
+0x72f0a28: 1f090071 cmp      w8, #2
+0x72f0a2c: 890e00f9 str      x9, [x20, #0x18]
+0x72f0a30: c0050054 b.eq     #0x72f0ae8
+0x72f0a34: a91a40f9 ldr      x9, [x21, #0x30]
+0x72f0a38: 1f0d0071 cmp      w8, #3
+0x72f0a3c: 891200f9 str      x9, [x20, #0x20]
+0x72f0a40: 49050054 b.ls     #0x72f0ae8
+0x72f0a44: 77bf00b0 adrp     x23, #0x8add000
+0x72f0a48: f77243f9 ldr      x23, [x23, #0x6e0] // System.Convert_TypeInfo
+0x72f0a4c: b61e40f9 ldr      x22, [x21, #0x38]
+0x72f0a50: e00240f9 ldr      x0, [x23]
+0x72f0a54: 08e040b9 ldr      w8, [x0, #0xe0]
+0x72f0a58: 48000035 cbnz     w8, #0x72f0a60
+0x72f0a5c: 55322597 bl       #0x3c3d3b0
+0x72f0a60: e00316aa mov      x0, x22
+0x72f0a64: e1031faa mov      x1, xzr
+0x72f0a68: 2f5b0c94 bl       #0x7607724 // System.Convert$$ToUInt64
+0x72f0a6c: 801600f9 str      x0, [x20, #0x28]
+0x72f0a70: a81a40b9 ldr      w8, [x21, #0x18]
+0x72f0a74: 1f150071 cmp      w8, #5
+0x72f0a78: c1010054 b.ne     #0x72f0ab0
+0x72f0a7c: e00240f9 ldr      x0, [x23]
+0x72f0a80: b52240f9 ldr      x21, [x21, #0x40]
+0x72f0a84: 08e040b9 ldr      w8, [x0, #0xe0]
+0x72f0a88: 48000035 cbnz     w8, #0x72f0a90
+0x72f0a8c: 49322597 bl       #0x3c3d3b0
+0x72f0a90: e00315aa mov      x0, x21
+0x72f0a94: e1031faa mov      x1, xzr
+0x72f0a98: 2e570c94 bl       #0x7606750 // System.Convert$$ToInt32
+0x72f0a9c: 06000014 b        #0x72f0ab4
+0x72f0aa0: f44f42a9 ldp      x20, x19, [sp, #0x20]
+0x72f0aa4: f65741a9 ldp      x22, x21, [sp, #0x10]
+0x72f0aa8: fe5fc3a8 ldp      x30, x23, [sp], #0x30
+0x72f0aac: c0035fd6 ret      
+0x72f0ab0: 602240b9 ldr      w0, [x19, #0x20]
+0x72f0ab4: 803200b9 str      w0, [x20, #0x30]
+0x72f0ab8: 601a40f9 ldr      x0, [x19, #0x30]
+0x72f0abc: 400100b4 cbz      x0, #0x72f0ae4
+0x72f0ac0: 48c100d0 adrp     x8, #0x8b1a000
+0x72f0ac4: 810a40f9 ldr      x1, [x20, #0x10]
+0x72f0ac8: 087146f9 ldr      x8, [x8, #0xce0] // Method$System.Collections.Generic.Dictionary<string, PatchElement>.Add()
+0x72f0acc: e20314aa mov      x2, x20
+0x72f0ad0: f44f42a9 ldp      x20, x19, [sp, #0x20]
+0x72f0ad4: f65741a9 ldp      x22, x21, [sp, #0x10]
+0x72f0ad8: 030140f9 ldr      x3, [x8]
+0x72f0adc: fe5fc3a8 ldp      x30, x23, [sp], #0x30
+0x72f0ae0: 7858e417 b        #0x6c06cc0 // System.Collections.Generic.Dictionary<object, object>$$Add
+0x72f0ae4: 7a322597 bl       #0x3c3d4cc
+0x72f0ae8: 7b322597 bl       #0x3c3d4d4

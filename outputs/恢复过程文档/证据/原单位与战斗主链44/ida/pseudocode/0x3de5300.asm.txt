@@ -1,0 +1,7 @@
+0x3de5300: LDRB            W8, [X0,#0xDA]
+0x3de5304: AND             W1, W1, #1
+0x3de5308: CMP             W8, W1
+0x3de530c: B.NE            loc_3DE5314
+0x3de5310: RET
+0x3de5314: STRB            W1, [X0,#0xDA]
+0x3de5318: B               GameModule.BattleGameManager$$ApplyAnimationPauseToAllRoles

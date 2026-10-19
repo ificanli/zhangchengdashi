@@ -1,0 +1,96 @@
+0x3df45f8: STP             D9, D8, [SP,#var_30]!
+0x3df45fc: STR             X30, [SP,#0x30+var_20]
+0x3df4600: STP             X20, X19, [SP,#0x30+var_10]
+0x3df4604: ADRP            X20, #byte_8FFD090@PAGE
+0x3df4608: LDRB            W8, [X20,#byte_8FFD090@PAGEOFF]
+0x3df460c: LDR             S9, [X0,#0x40]
+0x3df4610: MOV             X19, X0
+0x3df4614: MOV             V8.16B, V0.16B
+0x3df4618: CBNZ            W8, loc_3DF4630
+0x3df461c: ADRP            X0, #off_8ACD200@PAGE
+0x3df4620: LDR             X0, [X0,#off_8ACD200@PAGEOFF]; off_8CEA750 ; slot
+0x3df4624: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3df4628: MOV             W8, #1
+0x3df462c: STRB            W8, [X20,#byte_8FFD090@PAGEOFF]
+0x3df4630: ADRP            X8, #off_8ACD200@PAGE
+0x3df4634: LDR             X8, [X8,#off_8ACD200@PAGEOFF]; off_8CEA750
+0x3df4638: ADRP            X9, #dword_18371F8@PAGE
+0x3df463c: LDR             S0, [X9,#dword_18371F8@PAGEOFF]
+0x3df4640: FABS            S1, S9
+0x3df4644: LDR             X8, [X8]
+0x3df4648: FABS            S2, S8
+0x3df464c: FCMP            S1, S2
+0x3df4650: FCSEL           S1, S1, S2, GT
+0x3df4654: LDR             X8, [X8,#0xB8]
+0x3df4658: FMUL            S0, S1, S0
+0x3df465c: FMOV            S1, #8.0
+0x3df4660: LDR             S3, [X8]
+0x3df4664: FMUL            S1, S3, S1
+0x3df4668: FCMP            S0, S1
+0x3df466c: FCSEL           S0, S0, S1, GT
+0x3df4670: FABD            S1, S8, S9
+0x3df4674: FCMP            S1, S0
+0x3df4678: B.MI            loc_3DF4760
+0x3df467c: LDR             X8, [X19,#0x38]
+0x3df4680: STR             S8, [X19,#0x40]
+0x3df4684: CBZ             X8, loc_3DF4770
+0x3df4688: LDR             W9, [X8,#0x18]
+0x3df468c: CBZ             W9, loc_3DF4774
+0x3df4690: STR             XZR, [X8,#0x20]
+0x3df4694: STR             S8, [X8,#0x28]
+0x3df4698: LDR             X8, [X19,#0x38]
+0x3df469c: CBZ             X8, loc_3DF4770
+0x3df46a0: LDR             W9, [X8,#0x18]
+0x3df46a4: CMP             W9, #1
+0x3df46a8: B.LS            loc_3DF4774
+0x3df46ac: ADRP            X9, #dword_1837244@PAGE
+0x3df46b0: LDR             S2, [X9,#dword_1837244@PAGEOFF]
+0x3df46b4: FMOV            S1, #3.0
+0x3df46b8: FMOV            S3, #0.5
+0x3df46bc: FMUL            S0, S8, S3
+0x3df46c0: FDIV            S2, S8, S2
+0x3df46c4: FMUL            S1, S2, S1
+0x3df46c8: FMUL            S1, S1, S3
+0x3df46cc: STR             WZR, [X8,#0x30]
+0x3df46d0: STR             S1, [X8,#0x2C]
+0x3df46d4: STR             S0, [X8,#0x34]
+0x3df46d8: LDR             X8, [X19,#0x38]
+0x3df46dc: CBZ             X8, loc_3DF4770
+0x3df46e0: LDR             W9, [X8,#0x18]
+0x3df46e4: CMP             W9, #2
+0x3df46e8: B.LS            loc_3DF4774
+0x3df46ec: FNEG            S2, S0
+0x3df46f0: STR             S1, [X8,#0x38]
+0x3df46f4: STR             WZR, [X8,#0x3C]
+0x3df46f8: STR             S2, [X8,#0x40]
+0x3df46fc: LDR             X8, [X19,#0x38]
+0x3df4700: CBZ             X8, loc_3DF4770
+0x3df4704: LDR             W9, [X8,#0x18]
+0x3df4708: CMP             W9, #3
+0x3df470c: B.LS            loc_3DF4774
+0x3df4710: FNEG            S3, S8
+0x3df4714: STP             WZR, WZR, [X8,#0x44]
+0x3df4718: STR             S3, [X8,#0x4C]
+0x3df471c: LDR             X8, [X19,#0x38]
+0x3df4720: CBZ             X8, loc_3DF4770
+0x3df4724: LDR             W9, [X8,#0x18]
+0x3df4728: CMP             W9, #4
+0x3df472c: B.LS            loc_3DF4774
+0x3df4730: FNEG            S1, S1
+0x3df4734: STR             WZR, [X8,#0x54]
+0x3df4738: STR             S1, [X8,#0x50]
+0x3df473c: STR             S2, [X8,#0x58]
+0x3df4740: LDR             X8, [X19,#0x38]
+0x3df4744: CBZ             X8, loc_3DF4770
+0x3df4748: LDR             W9, [X8,#0x18]
+0x3df474c: CMP             W9, #5
+0x3df4750: B.LS            loc_3DF4774
+0x3df4754: STR             S1, [X8,#0x5C]
+0x3df4758: STR             WZR, [X8,#0x60]
+0x3df475c: STR             S0, [X8,#0x64]
+0x3df4760: LDP             X20, X19, [SP,#0x30+var_10]
+0x3df4764: LDR             X30, [SP,#0x30+var_20]
+0x3df4768: LDP             D9, D8, [SP+0x30+var_30],#0x30
+0x3df476c: RET
+0x3df4770: BL              il2cpp_codegen_raise_null_reference_exception
+0x3df4774: BL              unk_3C3D4D4

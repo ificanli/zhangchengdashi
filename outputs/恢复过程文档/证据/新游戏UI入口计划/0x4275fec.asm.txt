@@ -1,0 +1,59 @@
+0x4275fec: ff0302d1 sub      sp, sp, #0x80
+0x4275ff0: fe5f05a9 stp      x30, x23, [sp, #0x50]
+0x4275ff4: f65706a9 stp      x22, x21, [sp, #0x60]
+0x4275ff8: f44f07a9 stp      x20, x19, [sp, #0x70]
+0x4275ffc: 566c02d0 adrp     x22, #0x8fff000
+0x4276000: b54302b0 adrp     x21, #0x8aeb000
+0x4276004: c85a7f39 ldrb     w8, [x22, #0xfd6]
+0x4276008: b56a43f9 ldr      x21, [x21, #0x6d0] // System.Runtime.CompilerServices.AsyncTaskMethodBuilder<UIPanel>_TypeInfo
+0x427600c: f30301aa mov      x19, x1
+0x4276010: f40300aa mov      x20, x0
+0x4276014: e8010037 tbnz     w8, #0, #0x4276050
+0x4276018: a04302b0 adrp     x0, #0x8aeb000
+0x427601c: 006c43f9 ldr      x0, [x0, #0x6d8] // Method$System.Runtime.CompilerServices.AsyncTaskMethodBuilder<UIPanel>.Create()
+0x4276020: 981ce797 bl       #0x3c3d280
+0x4276024: a04302b0 adrp     x0, #0x8aeb000
+0x4276028: 007043f9 ldr      x0, [x0, #0x6e0] // Method$System.Runtime.CompilerServices.AsyncTaskMethodBuilder<UIPanel>.Start<UIManager.<LoadPanel>d__11>()
+0x427602c: 951ce797 bl       #0x3c3d280
+0x4276030: a04302b0 adrp     x0, #0x8aeb000
+0x4276034: 007443f9 ldr      x0, [x0, #0x6e8] // Method$System.Runtime.CompilerServices.AsyncTaskMethodBuilder<UIPanel>.get_Task()
+0x4276038: 921ce797 bl       #0x3c3d280
+0x427603c: a04302b0 adrp     x0, #0x8aeb000
+0x4276040: 006843f9 ldr      x0, [x0, #0x6d0] // System.Runtime.CompilerServices.AsyncTaskMethodBuilder<UIPanel>_TypeInfo
+0x4276044: 8f1ce797 bl       #0x3c3d280
+0x4276048: 28008052 mov      w8, #1
+0x427604c: c85a3f39 strb     w8, [x22, #0xfd6]
+0x4276050: a00240f9 ldr      x0, [x21]
+0x4276054: 00e4006f movi     v0.2d, #0000000000000000
+0x4276058: ff2300f9 str      xzr, [sp, #0x40]
+0x427605c: e00301ad stp      q0, q0, [sp, #0x20]
+0x4276060: e00300ad stp      q0, q0, [sp]
+0x4276064: b54302b0 adrp     x21, #0x8aeb000
+0x4276068: b74302b0 adrp     x23, #0x8aeb000
+0x427606c: b64302b0 adrp     x22, #0x8aeb000
+0x4276070: 08e040b9 ldr      w8, [x0, #0xe0]
+0x4276074: b56e43f9 ldr      x21, [x21, #0x6d8] // Method$System.Runtime.CompilerServices.AsyncTaskMethodBuilder<UIPanel>.Create()
+0x4276078: f77243f9 ldr      x23, [x23, #0x6e0] // Method$System.Runtime.CompilerServices.AsyncTaskMethodBuilder<UIPanel>.Start<UIManager.<LoadPanel>d__11>()
+0x427607c: d67643f9 ldr      x22, [x22, #0x6e8] // Method$System.Runtime.CompilerServices.AsyncTaskMethodBuilder<UIPanel>.get_Task()
+0x4276080: 48000035 cbnz     w8, #0x4276088
+0x4276084: cb1ce797 bl       #0x3c3d3b0
+0x4276088: a00240f9 ldr      x0, [x21]
+0x427608c: e8030091 mov      x8, sp
+0x4276090: 15017db2 orr      x21, x8, #8
+0x4276094: e80315aa mov      x8, x21
+0x4276098: 85f87594 bl       #0x5ff42ac // System.Runtime.CompilerServices.AsyncTaskMethodBuilder<object>$$Create
+0x427609c: e20240f9 ldr      x2, [x23]
+0x42760a0: 08008012 mov      w8, #-1
+0x42760a4: e1030091 mov      x1, sp
+0x42760a8: e00315aa mov      x0, x21
+0x42760ac: f35302a9 stp      x19, x20, [sp, #0x20]
+0x42760b0: e80300b9 str      w8, [sp]
+0x42760b4: f5691294 bl       #0x4710888 // System.Runtime.CompilerServices.AsyncTaskMethodBuilder<object>$$Start<UIManager.<LoadPanel>d__11>
+0x42760b8: c10240f9 ldr      x1, [x22]
+0x42760bc: e00315aa mov      x0, x21
+0x42760c0: 80f87594 bl       #0x5ff42c0 // System.Runtime.CompilerServices.AsyncTaskMethodBuilder<object>$$get_Task
+0x42760c4: f44f47a9 ldp      x20, x19, [sp, #0x70]
+0x42760c8: f65746a9 ldp      x22, x21, [sp, #0x60]
+0x42760cc: fe5f45a9 ldp      x30, x23, [sp, #0x50]
+0x42760d0: ff030291 add      sp, sp, #0x80
+0x42760d4: c0035fd6 ret      

@@ -1,0 +1,78 @@
+0x3de4094: SUB             SP, SP, #0x40
+0x3de4098: STR             X30, [SP,#0x40+var_30]
+0x3de409c: STP             X22, X21, [SP,#0x40+var_20]
+0x3de40a0: STP             X20, X19, [SP,#0x40+var_10]
+0x3de40a4: ADRP            X21, #byte_8FFD731@PAGE
+0x3de40a8: ADRP            X20, #off_8ACDEF8@PAGE
+0x3de40ac: LDRB            W8, [X21,#byte_8FFD731@PAGEOFF]
+0x3de40b0: LDR             X20, [X20,#off_8ACDEF8@PAGEOFF]; qword_8D124C8
+0x3de40b4: MOV             W19, W1
+0x3de40b8: TBNZ            W8, #0, loc_3DE40F4
+0x3de40bc: ADRP            X0, #off_8AD03C8@PAGE
+0x3de40c0: LDR             X0, [X0,#off_8AD03C8@PAGEOFF]; qword_8CE7C00 ; slot
+0x3de40c4: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3de40c8: ADRP            X0, #off_8ACDEF8@PAGE
+0x3de40cc: LDR             X0, [X0,#off_8ACDEF8@PAGEOFF]; qword_8D124C8 ; slot
+0x3de40d0: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3de40d4: ADRP            X0, #off_8ACD858@PAGE
+0x3de40d8: LDR             X0, [X0,#off_8ACD858@PAGEOFF]; qword_8CE3258 ; slot
+0x3de40dc: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3de40e0: ADRP            X0, #off_8AD3768@PAGE
+0x3de40e4: LDR             X0, [X0,#off_8AD3768@PAGEOFF]; qword_8D57448 ; slot
+0x3de40e8: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3de40ec: MOV             W8, #1
+0x3de40f0: STRB            W8, [X21,#byte_8FFD731@PAGEOFF]
+0x3de40f4: LDR             X0, [X20]; method
+0x3de40f8: STR             XZR, [SP,#0x40+var_28]
+0x3de40fc: BL              ToolModule.ManagerBase_object_$$get_Instance
+0x3de4100: CBZ             X0, loc_3DE41B8
+0x3de4104: ADRP            X22, #off_8AD3768@PAGE
+0x3de4108: LDR             X22, [X22,#off_8AD3768@PAGEOFF]; qword_8D57448
+0x3de410c: ADD             X2, SP, #0x40+var_28
+0x3de4110: MOV             X3, XZR
+0x3de4114: LDR             X1, [X22]
+0x3de4118: BL              UIFramework.UIManager$$IsPanelShowing
+0x3de411c: TBNZ            W0, #0, loc_3DE41A4
+0x3de4120: LDR             X0, [X20]; method
+0x3de4124: BL              ToolModule.ManagerBase_object_$$get_Instance
+0x3de4128: ADRP            X8, #off_8ACD858@PAGE
+0x3de412c: LDR             X8, [X8,#off_8ACD858@PAGEOFF]; qword_8CE3258
+0x3de4130: MOV             X20, X0
+0x3de4134: MOV             W1, #1
+0x3de4138: LDR             X8, [X8]
+0x3de413c: MOV             X0, X8
+0x3de4140: BL              unk_3C3D320
+0x3de4144: ADRP            X8, #off_8AD03C8@PAGE
+0x3de4148: LDR             X8, [X8,#off_8AD03C8@PAGEOFF]; qword_8CE7C00
+0x3de414c: MOV             X21, X0
+0x3de4150: ADD             X1, SP, #0x40+var_34
+0x3de4154: STR             W19, [SP,#0x40+var_34]
+0x3de4158: LDR             X0, [X8]
+0x3de415c: BL              unk_3C3D3B8
+0x3de4160: CBZ             X21, loc_3DE41B8
+0x3de4164: MOV             X19, X0
+0x3de4168: CBZ             X0, loc_3DE4180
+0x3de416c: LDR             X8, [X21]
+0x3de4170: MOV             X0, X19
+0x3de4174: LDR             X1, [X8,#0x40]
+0x3de4178: BL              unk_3C3D3B4
+0x3de417c: CBZ             X0, loc_3DE41C0
+0x3de4180: LDR             W8, [X21,#0x18]
+0x3de4184: CBZ             W8, loc_3DE41BC
+0x3de4188: STR             X19, [X21,#0x20]
+0x3de418c: CBZ             X20, loc_3DE41B8
+0x3de4190: LDR             X1, [X22]
+0x3de4194: MOV             X0, X20
+0x3de4198: MOV             X2, X21
+0x3de419c: MOV             X3, XZR
+0x3de41a0: BL              UIFramework.UIManager$$ShowPanel
+0x3de41a4: LDP             X20, X19, [SP,#0x40+var_10]
+0x3de41a8: LDP             X22, X21, [SP,#0x40+var_20]
+0x3de41ac: LDR             X30, [SP,#0x40+var_30]
+0x3de41b0: ADD             SP, SP, #0x40 ; '@'
+0x3de41b4: RET
+0x3de41b8: BL              il2cpp_codegen_raise_null_reference_exception
+0x3de41bc: BL              unk_3C3D4D4
+0x3de41c0: BL              unk_3C3D4F0
+0x3de41c4: MOV             X1, XZR
+0x3de41c8: BL              unk_3C3D3A0

@@ -1,0 +1,38 @@
+{
+  "baseline": false,
+  "source": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\candidate\\Assets\\Scripts\\Assembly-CSharp\\GameModule\\BattleGameManager.cs",
+  "sourceSha256": "13228c84736658776651f1bbd6cb3093e4e9f8be4f670320b32a398c8a38bba8",
+  "methods": [
+    {
+      "name": "Init",
+      "rva": "0x3de3b50",
+      "token": "0x600136B",
+      "sourceSignature": "[AsyncStateMachine(typeof(_003CInit_003Ed__43))]\n\t\tpublic override async UniTask Init()",
+      "bodyOriginal": "\n\t\t\tawait FloatingTextManager.Instance.Init();\n\t\t\tEventModule.EventManager.Instance.StartListening(\"CoinChangeUpdateGamePanel\", CoinChangeUpdateGamePanel);\n\t\t\tEventModule.EventManager.Instance.StartListening(\"HasHexDestroy\", GameEndCheck);\n\t\t\tEventModule.EventManager.Instance.StartListening(\"PlayerBeginOpenHex\", PlayerOpenHexCountAdd);\n\t\t\tEventModule.EventManager.Instance.StartListening(\"PlayerHornEmitIng\", PlayerHornEmitIng);\n\t\t\tEventModule.EventManager.Instance.StartListening(\"OnGameOver\", ShowInterstitial);\n\t\t\tEventModule.EventManager.Instance.StartListening(\"PlayerHornEmitEnd\", PlayerHornEmitEnd);\n\t\t\tEventModule.EventManager.Instance.StartListening(\"SettlementAnimationEnd\", SettlementAnimationEnd);\n\t\t\tEventModule.EventManager.Instance.StartListening(\"BetStartGame\", BetRecordRewardNum);\n\t\t\tEventModule.EventManager.Instance.StartListening(\"GameSteerEndShowCardProbabilityPanel\", BeginStartCountDown);\n\t\t\tEventModule.EventManager.Instance.StartListening(\"GameSteerEndShowCardProbabilityPanel\", GuidOneEndAddCoin);\n\t\t\tEventModule.EventManager.Instance.StartListening(\"CloseMatchPanel\", CloseMatchPanel);\n\t\t\tEventModule.EventManager.Instance.StartListening(\"PauseGame\", OnPauseGame);\n\t\t\tEventModule.EventManager.Instance.StartListening(\"ResumeGame\", OnResumeGame);\n\t\t\troleAllDamageDic = new Dictionary<string, int>();\n\t\t\ttowerAllDamageDic = new Dictionary<string, int>();\n\t\t\tcardOpenCount = new Dictionary<string, int>();\n\t\t\tGameDeadUnitInfoDic = new Dictionary<int, DeadUnitInfo>();\n\t\t",
+      "bodySha256": "0170b02dee6125f3600d0b01b2e0295898354f2b338e552088791ec1d112a65b",
+      "adaptations": [
+        "async UniTask -> async Task"
+      ]
+    },
+    {
+      "name": "GameEnd",
+      "rva": "0x3de3fd8",
+      "token": "0x6001374",
+      "sourceSignature": "[AsyncStateMachine(typeof(_003CGameEnd_003Ed__52))]\n\t\tpublic async void GameEnd(bool isVictory, bool doTxtAni)",
+      "bodyOriginal": "\n\t\t\tif (isVictory && WeeklyCardActivityManager.Instance.IsBTest())\n\t\t\t    EventModule.EventManager.Instance.TriggerEvent(\"WeeklyCardActivityTaskTrigger\", new object[] { WeeklyCardActivityManager.WeekLyTaskType.GameWin, 1 });\n\t\t\tthis.isVictory = isVictory;\n\t\t\tif (doTxtAni) GamePanelManager.Instance.DoAni();\n\t\t\tCoreGameManager.Gaming = false;\n\t\t\tEventModule.EventManager.Instance.TriggerEvent(\"GameEnd\");\n\t\t\tisCountDowning = false;\n\t\t\tif (_myCoroutine != null) StopCoroutine(_myCoroutine);\n\t\t\tQuickTutor.TutorialManager.Instance.ForceCloseTutorial();\n\t\t\tconst string panel = \"Assets/_Res/Addressable/02CoreGameBundle/Prefabs/UI/Panels/HexDescribesPanel.prefab\";\n\t\t\tif (UIFramework.UIManager.Instance.IsPanelShowing(panel, out _)) UIFramework.UIManager.Instance.HidePanel(panel);\n\t\t\tif (doTxtAni) await UniTask.WaitForSeconds(2.3f);\n\t\t\tBattleGameSceneManager.Instance.SettlementAnimation(isVictory);\n\t\t",
+      "bodySha256": "6d4d0454fa80d2039b2a794f9ab081dcd662ecf68148b6763350f802deab3194",
+      "adaptations": [
+        "async void -> async Task; await exception observation only"
+      ]
+    },
+    {
+      "name": "StartGame",
+      "rva": "0x3de6814",
+      "token": "0x6001393",
+      "sourceSignature": "public void StartGame(BattleContext battleContext)",
+      "bodyOriginal": "\n\t\t\tstring arenaID = StringTool.IsNullOrEmpty(CoreGameManager.NowPlayEdArenaID) ? \"1001\" : CoreGameManager.NowPlayEdArenaID;\n\t\t\tcountDownTime = StringTool.ToInt(DataModule.DataManager.Instance.GlobalInfo.arenaInfoDic[arenaID].countDownTime);\n\t\t\tSubGameBuffManager.Instance.ModifyCountDownTime(ref countDownTime);\n\t\t\t_timeLeft = countDownTime;\n\t\t\t_timeString = GetTimeCutDownString();\n\t\t\tGamePanelManager.Instance.UpdateInfo(new object[] { hasCoin, _timeString });\n\t\t\tif (TrainingGroundManager.IsInGuidedGame) hasCoin = TrainingGroundManager.Instance.GetPlayerInitialCoin();\n\t\t\telse hasCoin = global::DbtSaveDataManager_PlayerGuideData.I.Data.isFirstThroghGame ? 150 : 50;\n\t\t\tbattleInitCoin = hasCoin;\n\t\t\tbattleTotalEarned = hasCoin;\n\t\t\tbattleTotalCost = 0;\n\t\t\t_isAddCoining = true;\n\t\t\tif (!global::DbtSaveDataManager_PlayerGuideData.I.Data.isFirstThroghGame) BeginStartCountDown(null);\n\t\t\tGameType = battleContext.GameType;\n\t\t\t_battleContext = battleContext;\n\t\t\tIsGamePaused = false;\n\t\t\tgameEndCallBack = battleContext.gameEndCallBack;\n\t\t\tapplyRewardCallBack = battleContext.gameEndApplyRewardCallBack;\n\t\t\t_pausedRoleAnimationSnapshots.Clear();\n\t\t\tCheatControl.ResetPerfStates();\n\t\t\tif (BattleFPSController.Instance != null) BattleFPSController.Instance.StartMonitoring();\n\t\t\tList<int> ids = global::DbtSaveDataManager_PlayerCardData.I.Data.GetBattleCardIDList();\n\t\t\tif (cardOpenCount == null) cardOpenCount = new Dictionary<string, int>();\n\t\t\tfor (int i = 0; i < ids.Count; ++i) cardOpenCount.TryAdd(ids[i].ToString(), 0);\n\t\t",
+      "bodySha256": "44899aaff9da4fc34cf38f5aeacea7b09a636d4fe14459cb2359a7cd9d4c0eb3",
+      "adaptations": []
+    }
+  ]
+}

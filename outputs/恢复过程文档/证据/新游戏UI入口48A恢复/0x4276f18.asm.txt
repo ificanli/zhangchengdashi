@@ -1,0 +1,163 @@
+0x4276f18: fe57bea9 stp      x30, x21, [sp, #-0x20]!
+0x4276f1c: f44f01a9 stp      x20, x19, [sp, #0x10]
+0x4276f20: 556c02b0 adrp     x21, #0x8fff000
+0x4276f24: b44302b0 adrp     x20, #0x8aeb000
+0x4276f28: a8827f39 ldrb     w8, [x21, #0xfe0]
+0x4276f2c: 94ae43f9 ldr      x20, [x20, #0x758] // System.Collections.Generic.Dictionary<string, UIPanel>_TypeInfo
+0x4276f30: f30300aa mov      x19, x0
+0x4276f34: e8010037 tbnz     w8, #0, #0x4276f70
+0x4276f38: a04302b0 adrp     x0, #0x8aeb000
+0x4276f3c: 00b043f9 ldr      x0, [x0, #0x760] // Method$System.Collections.Generic.Dictionary<string, UIPanel>..ctor()
+0x4276f40: d018e797 bl       #0x3c3d280
+0x4276f44: a04302b0 adrp     x0, #0x8aeb000
+0x4276f48: 00ac43f9 ldr      x0, [x0, #0x758] // System.Collections.Generic.Dictionary<string, UIPanel>_TypeInfo
+0x4276f4c: cd18e797 bl       #0x3c3d280
+0x4276f50: c0420290 adrp     x0, #0x8ace000
+0x4276f54: 006045f9 ldr      x0, [x0, #0xac0] // UnityEngine.GameObject_TypeInfo
+0x4276f58: ca18e797 bl       #0x3c3d280
+0x4276f5c: 804302b0 adrp     x0, #0x8ae7000
+0x4276f60: 008841f9 ldr      x0, [x0, #0x310] // UIPanelsRoot
+0x4276f64: c718e797 bl       #0x3c3d280
+0x4276f68: 28008052 mov      w8, #1
+0x4276f6c: a8823f39 strb     w8, [x21, #0xfe0]
+0x4276f70: 750e40f9 ldr      x21, [x19, #0x18]
+0x4276f74: 800240f9 ldr      x0, [x20]
+0x4276f78: 5319e797 bl       #0x3c3d4c4
+0x4276f7c: a84302b0 adrp     x8, #0x8aeb000
+0x4276f80: 08b143f9 ldr      x8, [x8, #0x760] // Method$System.Collections.Generic.Dictionary<string, UIPanel>..ctor()
+0x4276f84: f40300aa mov      x20, x0
+0x4276f88: 010140f9 ldr      x1, [x8]
+0x4276f8c: f53ba694 bl       #0x6c05f60 // System.Collections.Generic.Dictionary<object, object>$$.ctor
+0x4276f90: 350700b4 cbz      x21, #0x4277074
+0x4276f94: c8420290 adrp     x8, #0x8ace000
+0x4276f98: 086145f9 ldr      x8, [x8, #0xac0] // UnityEngine.GameObject_TypeInfo
+0x4276f9c: b41600f9 str      x20, [x21, #0x28]
+0x4276fa0: 000140f9 ldr      x0, [x8]
+0x4276fa4: 4819e797 bl       #0x3c3d4c4
+0x4276fa8: 884302b0 adrp     x8, #0x8ae7000
+0x4276fac: 088941f9 ldr      x8, [x8, #0x310] // UIPanelsRoot
+0x4276fb0: f40300aa mov      x20, x0
+0x4276fb4: 010140f9 ldr      x1, [x8]
+0x4276fb8: e2031faa mov      x2, xzr
+0x4276fbc: 14d60195 bl       #0x82ec80c // UnityEngine.GameObject$$.ctor
+0x4276fc0: d40500b4 cbz      x20, #0x4277078
+0x4276fc4: e00314aa mov      x0, x20
+0x4276fc8: e1031faa mov      x1, xzr
+0x4276fcc: 97d40195 bl       #0x82ec228 // UnityEngine.GameObject$$get_transform
+0x4276fd0: 34008052 mov      w20, #1
+0x4276fd4: 28008012 mov      w8, #-2
+0x4276fd8: a01200f9 str      x0, [x21, #0x20]
+0x4276fdc: b4e20039 strb     w20, [x21, #0x38]
+0x4276fe0: 680200b9 str      w8, [x19]
+0x4276fe4: 356c02f0 adrp     x21, #0x8ffd000
+0x4276fe8: a8c64639 ldrb     w8, [x21, #0x1b1]
+0x4276fec: a8000035 cbnz     w8, #0x4277000
+0x4276ff0: a04202f0 adrp     x0, #0x8acd000
+0x4276ff4: 007047f9 ldr      x0, [x0, #0xee0] // Cysharp.Threading.Tasks.CompilerServices.IStateMachineRunnerPromise_TypeInfo
+0x4276ff8: a218e797 bl       #0x3c3d280
+0x4276ffc: b4c60639 strb     w20, [x21, #0x1b1]
+0x4277000: 730640f9 ldr      x19, [x19, #8]
+0x4277004: d30900b4 cbz      x19, #0x427713c
+0x4277008: aa4202d0 adrp     x10, #0x8acd000
+0x427700c: 680240f9 ldr      x8, [x19]
+0x4277010: 24dc0b15 b        #0x856e0a0
+0x4277014: 095d4279 ldrh     w9, [x8, #0x12e]
+0x4277018: 410140f9 ldr      x1, [x10] // UnityEngine.Rigidbody_TypeInfo
+0x427701c: 290100b4 cbz      x9, #0x4277040
+0x4277020: 0a5940f9 ldr      x10, [x8, #0xb0]
+0x4277024: 4a210091 add      x10, x10, #8
+0x4277028: 4b815ff8 ldur     x11, [x10, #-8]
+0x427702c: 7f0101eb cmp      x11, x1
+0x4277030: 00010054 b.eq     #0x4277050
+0x4277034: 290500f1 subs     x9, x9, #1
+0x4277038: 4a410091 add      x10, x10, #0x10
+0x427703c: 61ffff54 b.ne     #0x4277028
+0x4277040: 42008052 mov      w2, #2
+0x4277044: e00313aa mov      x0, x19
+0x4277048: 1765e797 bl       #0x3c504a4
+0x427704c: 05000014 b        #0x4277060
+0x4277050: 490140b9 ldr      w9, [x10]
+0x4277054: 29090011 add      w9, w9, #2
+0x4277058: 08d1298b add      x8, x8, w9, sxtw #4
+0x427705c: 00e10491 add      x0, x8, #0x138
+0x4277060: 020440a9 ldp      x2, x1, [x0]
+0x4277064: e00313aa mov      x0, x19
+0x4277068: f44f41a9 ldp      x20, x19, [sp, #0x10]
+0x427706c: fe57c2a8 ldp      x30, x21, [sp], #0x20
+0x4277070: 40001fd6 br       x2
+0x4277074: 1619e797 bl       #0x3c3d4cc
+0x4277078: 1519e797 bl       #0x3c3d4cc
+0x427707c: 02000014 b        #0x4277084
+0x4277080: 01000014 b        #0x4277084
+0x4277084: f40300aa mov      x20, x0
+0x4277088: 3f040071 cmp      w1, #1
+0x427708c: 61080054 b.ne     #0x4277198
+0x4277090: e00314aa mov      x0, x20
+0x4277094: 43df0b95 bl       #0x856eda0
+0x4277098: f40300aa mov      x20, x0
+0x427709c: a04202b0 adrp     x0, #0x8acc000
+0x42770a0: 00c847f9 ldr      x0, [x0, #0xf90] // System.Exception_TypeInfo
+0x42770a4: 7c18e797 bl       #0x3c3d294
+0x42770a8: 880240f9 ldr      x8, [x20]
+0x42770ac: 010140f9 ldr      x1, [x8]
+0x42770b0: 121ae797 bl       #0x3c3d8f8
+0x42770b4: e0050036 tbz      w0, #0, #0x4277170
+0x42770b8: 940240f9 ldr      x20, [x20]
+0x42770bc: 3ddf0b95 bl       #0x856edb0
+0x42770c0: 28008012 mov      w8, #-2
+0x42770c4: 680200b9 str      w8, [x19]
+0x42770c8: 356c02d0 adrp     x21, #0x8ffd000
+0x42770cc: a8c24639 ldrb     w8, [x21, #0x1b0]
+0x42770d0: c8000035 cbnz     w8, #0x42770e8
+0x42770d4: a04202d0 adrp     x0, #0x8acd000
+0x42770d8: 007047f9 ldr      x0, [x0, #0xee0] // Cysharp.Threading.Tasks.CompilerServices.IStateMachineRunnerPromise_TypeInfo
+0x42770dc: 6918e797 bl       #0x3c3d280
+0x42770e0: 28008052 mov      w8, #1
+0x42770e4: a8c20639 strb     w8, [x21, #0x1b0]
+0x42770e8: 750640f9 ldr      x21, [x19, #8]
+0x42770ec: 750200b4 cbz      x21, #0x4277138
+0x42770f0: aa4202d0 adrp     x10, #0x8acd000
+0x42770f4: a80240f9 ldr      x8, [x21]
+0x42770f8: 4a7147f9 ldr      x10, [x10, #0xee0] // Cysharp.Threading.Tasks.CompilerServices.IStateMachineRunnerPromise_TypeInfo
+0x42770fc: 095d4279 ldrh     w9, [x8, #0x12e]
+0x4277100: 410140f9 ldr      x1, [x10]
+0x4277104: 290100b4 cbz      x9, #0x4277128
+0x4277108: 0a5940f9 ldr      x10, [x8, #0xb0]
+0x427710c: 4a210091 add      x10, x10, #8
+0x4277110: 4b815ff8 ldur     x11, [x10, #-8]
+0x4277114: 7f0101eb cmp      x11, x1
+0x4277118: 80010054 b.eq     #0x4277148
+0x427711c: 290500f1 subs     x9, x9, #1
+0x4277120: 4a410091 add      x10, x10, #0x10
+0x4277124: 61ffff54 b.ne     #0x4277110
+0x4277128: 62008052 mov      w2, #3
+0x427712c: e00315aa mov      x0, x21
+0x4277130: dd64e797 bl       #0x3c504a4
+0x4277134: 09000014 b        #0x4277158
+0x4277138: 740a00f9 str      x20, [x19, #0x10]
+0x427713c: f44f41a9 ldp      x20, x19, [sp, #0x10]
+0x4277140: fe57c2a8 ldp      x30, x21, [sp], #0x20
+0x4277144: c0035fd6 ret      
+0x4277148: 490140b9 ldr      w9, [x10]
+0x427714c: 290d0011 add      w9, w9, #3
+0x4277150: 08d1298b add      x8, x8, w9, sxtw #4
+0x4277154: 00e10491 add      x0, x8, #0x138
+0x4277158: 030840a9 ldp      x3, x2, [x0]
+0x427715c: e10314aa mov      x1, x20
+0x4277160: f44f41a9 ldp      x20, x19, [sp, #0x10]
+0x4277164: e00315aa mov      x0, x21
+0x4277168: fe57c2a8 ldp      x30, x21, [sp], #0x20
+0x427716c: 60001fd6 br       x3
+0x4277170: 00018052 mov      w0, #8
+0x4277174: 13df0b95 bl       #0x856edc0
+0x4277178: 880240f9 ldr      x8, [x20]
+0x427717c: 080000f9 str      x8, [x0]
+0x4277180: e11702d0 adrp     x1, #0x8575000
+0x4277184: 21a00891 add      x1, x1, #0x228
+0x4277188: e2031faa mov      x2, xzr
+0x427718c: 11df0b95 bl       #0x856edd0
+0x4277190: f40300aa mov      x20, x0
+0x4277194: 07df0b95 bl       #0x856edb0
+0x4277198: e00314aa mov      x0, x20
+0x427719c: 8ac0e997 bl       #0x3ce73c4
+0x42771a0: d814cd97 bl       #0x35bc500

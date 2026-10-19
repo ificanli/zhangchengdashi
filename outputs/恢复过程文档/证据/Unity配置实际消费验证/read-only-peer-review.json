@@ -1,0 +1,14 @@
+{
+  "reviewerTask": "/root/gf_constructor_restore_v2",
+  "method": "Read-only source review; no file modifications",
+  "observations": [
+    "Uses actual returned awaitable and awaiter; polls IsCompleted and calls GetResult once; unwraps production exception",
+    "Typed checks read real production fields without filling them",
+    "65 selected requests, 72 callback mappings and 81 static addresses remain distinct",
+    "AB context is always unconfirmed",
+    "Actual InitGameSetting, GlobalInfo constructor and InitInfo execute; actual Instance getter can trigger lazy construction"
+  ],
+  "resolvedClarification": "Final abContextNote states that ABTestManager.Init is not explicitly called and groups are not written; real Instance can cause lazy singleton construction",
+  "finalSourceSha256": "944e028c24bb8cfd99d00a5c16d5eef0941b677ae69e608c6d8efa9ece577523",
+  "reviewIsNotRuntimeAcceptance": true
+}

@@ -1,0 +1,17 @@
+void GameModule_GameManager__EnterMeta(void *self, void *obj, const MethodInfo *method)
+{
+  _QWORD v4[4]; // [xsp+0h] [xbp-70h] BYREF
+  _QWORD v5[6]; // [xsp+20h] [xbp-50h] BYREF
+
+  if ( (byte_8FFD896 & 1) == 0 )
+  {
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D22CB0);
+    byte_8FFD896 = 1;
+  }
+  memset(v5, 0, sizeof(v5));
+  System_Runtime_CompilerServices_AsyncVoidMethodBuilder__Create(v4, 0, obj, method);
+  v5[5] = obj;
+  qmemcpy(&v5[1], v4, 32);
+  LODWORD(v5[0]) = -1;
+  System_Runtime_CompilerServices_AsyncVoidMethodBuilder__Start_GameManager__EnterMeta_d__20_(&v5[1], v5, qword_8D22CB0);
+}

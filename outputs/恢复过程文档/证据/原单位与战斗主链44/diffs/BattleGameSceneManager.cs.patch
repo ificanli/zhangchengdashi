@@ -1,0 +1,1132 @@
+--- source-before/Assets/Scripts/Assembly-CSharp/GameModule/BattleGameSceneManager.cs
++++ candidate/Assets/Scripts/Assembly-CSharp/GameModule/BattleGameSceneManager.cs
+@@ -38,29 +38,32 @@
+ 			[Address(RVA = "0x3DF9650", Offset = "0x3DF5650", VA = "0x3DF9650")]
+ 			public RoleTargetFrameCacheKey(bool sourceIsEnemy, int q, int r, int rangeBucket)
+ 			{
+-    throw new global::System.NotImplementedException("RECOVERY_UNIMPLEMENTED BattleGameSceneManager.RoleTargetFrameCacheKey..ctor RVA=0x3DF9650 Token=0x6001459");
+-}
++			this.sourceIsEnemy = sourceIsEnemy;
++			this.q = q;
++			this.r = r;
++			this.rangeBucket = rangeBucket;
++		}
+ 
+ 			[Token(Token = "0x600145A")]
+ 			[Address(RVA = "0x3DF9664", Offset = "0x3DF5664", VA = "0x3DF9664", Slot = "4")]
+ 			public bool Equals(RoleTargetFrameCacheKey other)
+ 			{
+-				return default;
+-			}
++			return sourceIsEnemy == other.sourceIsEnemy && q == other.q && r == other.r && rangeBucket == other.rangeBucket;
++		}
+ 
+ 			[Token(Token = "0x600145B")]
+ 			[Address(RVA = "0x3DF96AC", Offset = "0x3DF56AC", VA = "0x3DF96AC", Slot = "0")]
+ 			public override bool Equals(object obj)
+ 			{
+-				return default;
+-			}
++			return obj is RoleTargetFrameCacheKey && Equals((RoleTargetFrameCacheKey)obj);
++		}
+ 
+ 			[Token(Token = "0x600145C")]
+ 			[Address(RVA = "0x3DF9758", Offset = "0x3DF5758", VA = "0x3DF9758", Slot = "2")]
+ 			public override int GetHashCode()
+ 			{
+-				return default;
+-			}
++			return unchecked((397 * ((397 * ((sourceIsEnemy ? 157609 : 0) ^ q)) ^ r)) ^ rangeBucket);
++		}
+ 		}
+ 
+ 		[Token(Token = "0x2000426")]
+@@ -623,11 +626,11 @@
+ 
+ 		[Token(Token = "0x400292C")]
+ 		[Il2CppDummyDll.FieldOffset(Offset = "0x38")]
+-		private readonly Vector3[] _spawnHexVertices;
++		private readonly Vector3[] _spawnHexVertices = new Vector3[6];
+ 
+ 		[Token(Token = "0x400292D")]
+ 		[Il2CppDummyDll.FieldOffset(Offset = "0x40")]
+-		private float _spawnHexVertexSize;
++		private float _spawnHexVertexSize = -1f;
+ 
+ 		[Token(Token = "0x400292E")]
+ 		private const int RoleTargetHexSearchPadding = 2;
+@@ -653,11 +656,11 @@
+ 
+ 		[Token(Token = "0x4002935")]
+ 		[Il2CppDummyDll.FieldOffset(Offset = "0x50")]
+-		private readonly Dictionary<RoleTargetFrameCacheKey, RoleTargetFrameCacheValue> _roleTargetFrameCache;
++		private readonly Dictionary<RoleTargetFrameCacheKey, RoleTargetFrameCacheValue> _roleTargetFrameCache = new Dictionary<RoleTargetFrameCacheKey, RoleTargetFrameCacheValue>(128);
+ 
+ 		[Token(Token = "0x4002936")]
+ 		[Il2CppDummyDll.FieldOffset(Offset = "0x58")]
+-		private int _roleTargetFrameCacheFrame;
++		private int _roleTargetFrameCacheFrame = -1;
+ 
+ 		[Token(Token = "0x4002937")]
+ 		[Il2CppDummyDll.FieldOffset(Offset = "0x60")]
+@@ -733,7 +736,7 @@
+ 
+ 		[Token(Token = "0x4002949")]
+ 		[Il2CppDummyDll.FieldOffset(Offset = "0xF0")]
+-		private List<HellfireBehaviour> allHellfireBehaviours;
++		private List<HellfireBehaviour> allHellfireBehaviours = new List<HellfireBehaviour>();
+ 
+ 		[Token(Token = "0x400294A")]
+ 		[Il2CppDummyDll.FieldOffset(Offset = "0xF8")]
+@@ -753,7 +756,7 @@
+ 
+ 		[Token(Token = "0x400294E")]
+ 		[Il2CppDummyDll.FieldOffset(Offset = "0x110")]
+-		private List<GameObject> needDestroyPoolPrefabOnEndGame;
++		private List<GameObject> needDestroyPoolPrefabOnEndGame = new List<GameObject>();
+ 
+ 		[Token(Token = "0x400294F")]
+ 		[Il2CppDummyDll.FieldOffset(Offset = "0x118")]
+@@ -809,11 +812,11 @@
+ 
+ 		[Token(Token = "0x400295C")]
+ 		[Il2CppDummyDll.FieldOffset(Offset = "0x180")]
+-		private readonly Dictionary<Tuple<int, int>, HexMirrorInfo> _mirrorMap;
++		private readonly Dictionary<Tuple<int, int>, HexMirrorInfo> _mirrorMap = new Dictionary<Tuple<int, int>, HexMirrorInfo>();
+ 
+ 		[Token(Token = "0x400295D")]
+ 		[Il2CppDummyDll.FieldOffset(Offset = "0x188")]
+-		private readonly int ScaleFactor;
++		private readonly int ScaleFactor = 1000;
+ 
+ 		[Token(Token = "0x400295E")]
+ 		private const string EnableLegendaryTileOnlineParamKey = "EnableLegendaryTile";
+@@ -938,27 +941,27 @@
+ 
+ 		[Token(Token = "0x400297E")]
+ 		[Il2CppDummyDll.FieldOffset(Offset = "0x210")]
+-		private List<BarracksArchitectureBehaviour> _playerWaitingBarracks;
++		private List<BarracksArchitectureBehaviour> _playerWaitingBarracks = new List<BarracksArchitectureBehaviour>();
+ 
+ 		[Token(Token = "0x400297F")]
+ 		[Il2CppDummyDll.FieldOffset(Offset = "0x218")]
+-		private List<BarracksArchitectureBehaviour> _enemyWaitingBarracks;
++		private List<BarracksArchitectureBehaviour> _enemyWaitingBarracks = new List<BarracksArchitectureBehaviour>();
+ 
+ 		[Token(Token = "0x4002980")]
+ 		[Il2CppDummyDll.FieldOffset(Offset = "0x220")]
+-		private Dictionary<string, int> _playerLegendaryUnitCount;
++		private Dictionary<string, int> _playerLegendaryUnitCount = new Dictionary<string, int>();
+ 
+ 		[Token(Token = "0x4002981")]
+ 		[Il2CppDummyDll.FieldOffset(Offset = "0x228")]
+-		private Dictionary<string, int> _enemyLegendaryUnitCount;
++		private Dictionary<string, int> _enemyLegendaryUnitCount = new Dictionary<string, int>();
+ 
+ 		[Token(Token = "0x4002982")]
+ 		[Il2CppDummyDll.FieldOffset(Offset = "0x230")]
+-		private Dictionary<string, int> _playerLegendaryBarracksCount;
++		private Dictionary<string, int> _playerLegendaryBarracksCount = new Dictionary<string, int>();
+ 
+ 		[Token(Token = "0x4002983")]
+ 		[Il2CppDummyDll.FieldOffset(Offset = "0x238")]
+-		private Dictionary<string, int> _enemyLegendaryBarracksCount;
++		private Dictionary<string, int> _enemyLegendaryBarracksCount = new Dictionary<string, int>();
+ 
+ 		[Token(Token = "0x4002984")]
+ 		[Il2CppDummyDll.FieldOffset(Offset = "0x240")]
+@@ -966,7 +969,7 @@
+ 
+ 		[Token(Token = "0x4002985")]
+ 		[Il2CppDummyDll.FieldOffset(Offset = "0x244")]
+-		private float updateInterTime;
++		private float updateInterTime = 0.02f;
+ 
+ 		[Token(Token = "0x4002986")]
+ 		[Il2CppDummyDll.FieldOffset(Offset = "0x248")]
+@@ -978,7 +981,7 @@
+ 
+ 		[Token(Token = "0x4002988")]
+ 		[Il2CppDummyDll.FieldOffset(Offset = "0x250")]
+-		private float updateInterTime_FindAllRoleNearesdEnemy;
++		private float updateInterTime_FindAllRoleNearesdEnemy = 1f;
+ 
+ 		[Token(Token = "0x4002989")]
+ 		private const int BATCH_SIZE = 50;
+@@ -1041,8 +1044,8 @@
+ 			[Address(RVA = "0x3DEA55C", Offset = "0x3DE655C", VA = "0x3DEA55C")]
+ 			get
+ 			{
+-				return default;
+-			}
++			return unchecked(allPlayerStayOpenHexObj.Count + allPlayerHasOpenHexObj.Count);
++		}
+ 		}
+ 
+ 		[Token(Token = "0x17000133")]
+@@ -1052,8 +1055,8 @@
+ 			[Address(RVA = "0x3DEA5B4", Offset = "0x3DE65B4", VA = "0x3DEA5B4")]
+ 			get
+ 			{
+-				return default;
+-			}
++			return unchecked(allEnemyStayOpenHexObj.Count + allEnemyHasOpenHexObj.Count);
++		}
+ 		}
+ 
+ 		[Token(Token = "0x17000134")]
+@@ -1085,8 +1088,8 @@
+ 			[Address(RVA = "0x3DED8EC", Offset = "0x3DE98EC", VA = "0x3DED8EC")]
+ 			get
+ 			{
+-				return default;
+-			}
++			return MAX_ROLE_COUNT;
++		}
+ 		}
+ 
+ 		[Token(Token = "0x17000137")]
+@@ -1166,38 +1169,51 @@
+ 		[Address(RVA = "0x3DED8F4", Offset = "0x3DE98F4", VA = "0x3DED8F4")]
+ 		public bool CanSpawnRole(bool isEnemy)
+ 		{
+-			return default;
++			if (!global::SDKModule.ABTestManager.Instance.GamePlayImprove01IsBTest) return true;
++			return isEnemy ? unchecked(_enemyRoleCount + _enemyReservedCount) < MAX_ROLE_COUNT
++			               : unchecked(_playerRoleCount + _playerReservedCount) < MAX_ROLE_COUNT;
+ 		}
+ 
+ 		[Token(Token = "0x60013CC")]
+ 		[Address(RVA = "0x3DED9AC", Offset = "0x3DE99AC", VA = "0x3DED9AC")]
+ 		public int GetAvailableSlots(bool isEnemy)
+ 		{
+-			return default;
++			if (!global::SDKModule.ABTestManager.Instance.GamePlayImprove01IsBTest) return int.MaxValue;
++			int used = isEnemy ? unchecked(_enemyRoleCount + _enemyReservedCount)
++			                   : unchecked(_playerRoleCount + _playerReservedCount);
++			return Mathf.Max(0, unchecked(MAX_ROLE_COUNT - used));
+ 		}
+ 
+ 		[Token(Token = "0x60013CD")]
+ 		[Address(RVA = "0x3DEDA74", Offset = "0x3DE9A74", VA = "0x3DEDA74")]
+ 		public void ReserveRoleSlot(bool isEnemy)
+ 		{
++			ReserveRoleSlot(isEnemy, 1);
+ 		}
+ 
+ 		[Token(Token = "0x60013CE")]
+ 		[Address(RVA = "0x3DEDA80", Offset = "0x3DE9A80", VA = "0x3DEDA80")]
+ 		public void ReserveRoleSlot(bool isEnemy, int count)
+ 		{
++			if (!global::SDKModule.ABTestManager.Instance.GamePlayImprove01IsBTest) return;
++			if (isEnemy) _enemyReservedCount = unchecked(_enemyReservedCount + count);
++			else _playerReservedCount = unchecked(_playerReservedCount + count);
+ 		}
+ 
+ 		[Token(Token = "0x60013CF")]
+ 		[Address(RVA = "0x3DEDB30", Offset = "0x3DE9B30", VA = "0x3DEDB30")]
+ 		public void ReleaseReservedSlot(bool isEnemy)
+ 		{
++			ReleaseReservedSlot(isEnemy, 1);
+ 		}
+ 
+ 		[Token(Token = "0x60013D0")]
+ 		[Address(RVA = "0x3DEDB3C", Offset = "0x3DE9B3C", VA = "0x3DEDB3C")]
+ 		public void ReleaseReservedSlot(bool isEnemy, int count)
+ 		{
++			if (!global::SDKModule.ABTestManager.Instance.GamePlayImprove01IsBTest) return;
++			if (isEnemy) _enemyReservedCount = Mathf.Max(0, unchecked(_enemyReservedCount - count));
++			else _playerReservedCount = Mathf.Max(0, unchecked(_playerReservedCount - count));
+ 		}
+ 
+ 		[Token(Token = "0x60013D1")]
+@@ -1209,47 +1225,105 @@
+ 
+ 		[Token(Token = "0x60013D3")]
+ 		[Address(RVA = "0x3DEDC54", Offset = "0x3DE9C54", VA = "0x3DEDC54", Slot = "4")]
+-		[AsyncStateMachine(typeof(_003CInit_003Ed__129))]
+-		public override UniTask Init()
+-		{
+-			return default;
++		public override async UniTask Init()
++		{
++			allPlayerStayOpenHexObj = new List<GameObject>();
++			allEnemyStayOpenHexObj = new List<GameObject>();
++			allHexObj = new List<GameObject>();
++			allPlayerHasOpenHexObj = new List<GameObject>();
++			allEnemyHasOpenHexObj = new List<GameObject>();
++			allPlayerArchitectureObj = new List<GameObject>();
++			allEnemyArchitectureObj = new List<GameObject>();
++			allPlayerRoleObj = new List<GameObject>();
++			allEnemyRoleObj = new List<GameObject>();
++			allHexObjBehaviour = new List<HexBehaviour>();
++			allHexObjMat = new List<MeshRenderer>();
++			allEnemyRoleBehaviour = new List<RoleBehaviour>();
++			allPlayerRoleBehaviour = new List<RoleBehaviour>();
++			allRoleBehaviour = new List<RoleBehaviour>();
++			allEnemyStayOpenHexObjBehaviours = new List<HexBehaviour>();
++			allArchitectureBehaviours = new List<ArchitectureBehaviour>();
++			allPlayerArchitectureBehaviours = new List<ArchitectureBehaviour>();
++			allEnemyArchitectureBehaviours = new List<ArchitectureBehaviour>();
++			specialHexPos = new List<Vector3>();
++			_playerArchitectureRoot = new GameObject("PlayerArchitectureRoot");
++			_enemyArchitectureRoot = new GameObject("EnemyArchitectureRoot");
++			_playerRoleRoot = new GameObject("PlayerRoleRoot");
++			_enemyRoleRoot = new GameObject("EnemyRoleRoot");
++			_destroyObjRoot = new GameObject("DestroyObjRoot");
++			_specialHexRoot = new GameObject("SpecialHexRoot");
++			EnsureWebGLNavigationManager();
++			if (_generateHexObjRoot == null)
++			{
++			    _generateHexObjRoot = new GameObject("GenerateHex");
++			    _generateHexObjRoot.AddComponent<GenerateHexBehaviour>();
++			}
++			global::EventModule.EventManager.Instance.StartListening("CraetHexEnd", CreatBothMainTower);
++			if (global::SDKModule.ABTestManager.Instance.NewArtifactsPlayIsBTest)
++			{
++			    GameObject prefab = await global::AssetsModule.AssetsManager.Instance.LoadAssetAsync<GameObject>("Assets/_Res/Addressable/02CoreGameBundle/Prefabs/CoreGame/SpriteUI/SkillIndicator.prefab");
++			    if (_skillIndicator == null)
++			    {
++			        _skillIndicator = UnityEngine.Object.Instantiate(prefab);
++			        _skillIndicatorRenderer = _skillIndicator.GetComponent<SpriteRenderer>();
++			    }
++			    else if (_skillIndicatorRenderer == null)
++			        _skillIndicatorRenderer = _skillIndicator.GetComponent<SpriteRenderer>();
++			    _skillIndicator.SetActive(false);
++			}
+ 		}
+ 
+ 		[Token(Token = "0x60013D4")]
+ 		[Address(RVA = "0x3DEDCF0", Offset = "0x3DE9CF0", VA = "0x3DEDCF0")]
+ 		private static bool ShouldUseWebGLNavigation()
+ 		{
+-			return default;
++			return global::Pathfinding.AstarWebGLRuntimeConfig.UseWebGLNavigation;
+ 		}
+ 
+ 		[Token(Token = "0x60013D5")]
+ 		[Address(RVA = "0x3DEDCF8", Offset = "0x3DE9CF8", VA = "0x3DEDCF8")]
+ 		private void EnsureWebGLNavigationManager()
+ 		{
++			if (!ShouldUseWebGLNavigation()) return;
++			if (_webGLNavigationManager == null)
++			{
++			    GameObject obj = new GameObject("WebGLNavigationManager");
++			    obj.transform.SetParent(transform, false);
++			    _webGLNavigationManager = obj.AddComponent<WebGLNavigationManager>();
++			}
++			_webGLNavigationManager.Initialize(this);
+ 		}
+ 
+ 		[Token(Token = "0x60013D6")]
+ 		[Address(RVA = "0x3DEDE50", Offset = "0x3DE9E50", VA = "0x3DEDE50")]
+ 		private void ShutdownWebGLNavigationManager()
+ 		{
++			if (_webGLNavigationManager != null) _webGLNavigationManager.Shutdown();
+ 		}
+ 
+ 		[Token(Token = "0x60013D7")]
+ 		[Address(RVA = "0x3DEDED4", Offset = "0x3DE9ED4", VA = "0x3DEDED4")]
+ 		private void TickWebGLNavigation(float deltaTime)
+ 		{
++			if (!ShouldUseWebGLNavigation()) return;
++			EnsureWebGLNavigationManager();
++			_webGLNavigationManager?.Tick(deltaTime);
+ 		}
+ 
+ 		[Token(Token = "0x60013D8")]
+ 		[Address(RVA = "0x3DEDF64", Offset = "0x3DE9F64", VA = "0x3DEDF64")]
+ 		private void MarkWebGLNavigationDirty()
+ 		{
++			MarkWebGLNavigationGraphDirty();
+ 		}
+ 
+ 		[Token(Token = "0x60013D9")]
+ 		[Address(RVA = "0x3DEDF68", Offset = "0x3DE9F68", VA = "0x3DEDF68")]
+ 		private void MarkWebGLNavigationGraphDirty()
+ 		{
++			if (!ShouldUseWebGLNavigation()) return;
++			EnsureWebGLNavigationManager();
++			_webGLNavigationManager?.MarkPathGraphDirty();
+ 		}
+ 
+ 		[Token(Token = "0x60013DA")]
+@@ -1290,17 +1364,38 @@
+ 
+ 		[Token(Token = "0x60013E0")]
+ 		[Address(RVA = "0x3DEE5D0", Offset = "0x3DEA5D0", VA = "0x3DEE5D0")]
+-		[AsyncStateMachine(typeof(_003CStartGame_003Ed__142))]
+-		public void StartGame(GameType gameType)
+-		{
++		public async void StartGame(GameType gameType)
++		{
++			_currentRoleInstanceID = 0;
++			playerCanGetWoodNum = 0;
++			enemyCanGetWoodNum = 0;
++			_playerRoleCount = 0;
++			_enemyRoleCount = 0;
++			playerMainTowerIsDestroy = false;
++			enemyMainTowerIsDestroy = false;
++			EnsureWebGLNavigationManager();
++			MarkWebGLNavigationDirty();
++			PrewarmBattleRuntimePools().Forget();
++			Dictionary<string, global::DataModule.GlobalArenaInfo> arenaInfo = global::DataModule.DataManager.Instance.GlobalInfo.arenaInfoDic;
++			string arenaId = ToolModule.StringTool.IsNullOrEmpty(CoreGameManager.NowPlayEdArenaID, true) ? "1001" : CoreGameManager.NowPlayEdArenaID;
++			sceneGoldMineCanCreatCount = ToolModule.StringTool.ToInt(arenaInfo[arenaId].minesCountLimit);
++			if (global::SDKModule.ABTestManager.Instance.BalanceAdjustment01IsBTest)
++			    sceneGoldMineCanCreatCount &= ~1;
++			sceneGoldMineMirrorSideCount = sceneGoldMineCanCreatCount / 2;
++			if (_generateHexObjRoot == null)
++			{
++			    _generateHexObjRoot = new GameObject("GenerateHex");
++			    _generateHexObjRoot.AddComponent<GenerateHexBehaviour>();
++			}
++			_generateHexObjRoot.GetComponent<GenerateHexBehaviour>().Generate(gameType);
+ 		}
+ 
+ 		[Token(Token = "0x60013E1")]
+ 		[Address(RVA = "0x3DEE670", Offset = "0x3DEA670", VA = "0x3DEE670")]
+-		[AsyncStateMachine(typeof(_003CPrewarmBattleRuntimePools_003Ed__143))]
+-		private UniTaskVoid PrewarmBattleRuntimePools()
+-		{
+-			return default;
++		private async UniTaskVoid PrewarmBattleRuntimePools()
++		{
++			// Original ARM64 MoveNext 0x3DFD310 only completes its async builder.
++			return;
+ 		}
+ 
+ 		[Token(Token = "0x60013E2")]
+@@ -1325,56 +1420,93 @@
+ 
+ 		[Token(Token = "0x60013E5")]
+ 		[Address(RVA = "0x3DEEB04", Offset = "0x3DEAB04", VA = "0x3DEEB04")]
+-		[AsyncStateMachine(typeof(_003CLoadMapGround_003Ed__147))]
+-		public UniTask LoadMapGround(GameType gameType)
+-		{
+-			return default;
++		public async UniTask LoadMapGround(GameType gameType)
++		{
++			if (_generateHexObjRoot == null)
++			{
++			    _generateHexObjRoot = new GameObject("GenerateHex");
++			    _generateHexObjRoot.AddComponent<GenerateHexBehaviour>();
++			}
++			await _generateHexObjRoot.GetComponent<GenerateHexBehaviour>().LoadGround(gameType);
+ 		}
+ 
+ 		[Token(Token = "0x60013E6")]
+ 		[Address(RVA = "0x3DEEBB0", Offset = "0x3DEABB0", VA = "0x3DEEBB0")]
+ 		private void Update()
+ 		{
++			if (!CoreGameManager.Gaming) return;
++			TickWebGLNavigation(Time.deltaTime);
++			currentUpdateInterTime += Time.deltaTime;
++			if (currentUpdateInterTime > updateInterTime)
++			{
++			    currentUpdateInterTime = 0f;
++			    if (!upgradeing) UpdateAllList().Forget();
++			}
+ 		}
+ 
+ 		[Token(Token = "0x60013E7")]
+ 		[Address(RVA = "0x3DEECA0", Offset = "0x3DEACA0", VA = "0x3DEECA0")]
+-		[AsyncStateMachine(typeof(_003CUpdateAllList_003Ed__155))]
+-		private UniTask UpdateAllList()
+-		{
+-			return default;
++		private async UniTask UpdateAllList()
++		{
++			upgradeing = true;
++			await UniTask.WhenAll(UpdateEnemyRole(), UpdatePlayerRole(), UpdateHexObj(), UpdateArchitecture());
++			upgradeing = false;
+ 		}
+ 
+ 		[Token(Token = "0x60013E8")]
+ 		[Address(RVA = "0x3DEED38", Offset = "0x3DEAD38", VA = "0x3DEED38")]
+-		[AsyncStateMachine(typeof(_003CUpdateEnemyRole_003Ed__156))]
+-		private UniTask UpdateEnemyRole()
+-		{
+-			return default;
++		private async UniTask UpdateEnemyRole()
++		{
++			int processedCount = 0;
++			for (int i = allEnemyRoleBehaviour.Count - 1; i >= 0 && i < allEnemyRoleBehaviour.Count; i--)
++			{
++			    RoleBehaviour obj = allEnemyRoleBehaviour[i];
++			    if (obj != null) obj.MyUpdate();
++			    processedCount++;
++			    if (i > 0 && processedCount % BATCH_SIZE == 0) await UniTask.Yield();
++			}
+ 		}
+ 
+ 		[Token(Token = "0x60013E9")]
+ 		[Address(RVA = "0x3DEEDD0", Offset = "0x3DEADD0", VA = "0x3DEEDD0")]
+-		[AsyncStateMachine(typeof(_003CUpdatePlayerRole_003Ed__157))]
+-		private UniTask UpdatePlayerRole()
+-		{
+-			return default;
++		private async UniTask UpdatePlayerRole()
++		{
++			int processedCount = 0;
++			for (int i = allPlayerRoleBehaviour.Count - 1; i >= 0 && i < allPlayerRoleBehaviour.Count; i--)
++			{
++			    RoleBehaviour obj = allPlayerRoleBehaviour[i];
++			    if (obj != null) obj.MyUpdate();
++			    processedCount++;
++			    if (i > 0 && processedCount % BATCH_SIZE == 0) await UniTask.Yield();
++			}
+ 		}
+ 
+ 		[Token(Token = "0x60013EA")]
+ 		[Address(RVA = "0x3DEEE68", Offset = "0x3DEAE68", VA = "0x3DEEE68")]
+-		[AsyncStateMachine(typeof(_003CUpdateHexObj_003Ed__158))]
+-		private UniTask UpdateHexObj()
+-		{
+-			return default;
++		private async UniTask UpdateHexObj()
++		{
++			int processedCount = 0;
++			for (int i = allHexObjBehaviour.Count - 1; i >= 0 && i < allHexObjBehaviour.Count; i--)
++			{
++			    HexBehaviour obj = allHexObjBehaviour[i];
++			    if (obj != null) obj.MyUpdate();
++			    processedCount++;
++			    if (i > 0 && processedCount % BATCH_SIZE == 0) await UniTask.Yield();
++			}
+ 		}
+ 
+ 		[Token(Token = "0x60013EB")]
+ 		[Address(RVA = "0x3DEEF00", Offset = "0x3DEAF00", VA = "0x3DEEF00")]
+-		[AsyncStateMachine(typeof(_003CUpdateArchitecture_003Ed__159))]
+-		private UniTask UpdateArchitecture()
+-		{
+-			return default;
++		private async UniTask UpdateArchitecture()
++		{
++			int processedCount = 0;
++			for (int i = allArchitectureBehaviours.Count - 1; i >= 0 && i < allArchitectureBehaviours.Count; i--)
++			{
++			    ArchitectureBehaviour obj = allArchitectureBehaviours[i];
++			    if (obj != null) obj.MyUpdate();
++			    processedCount++;
++			    if (i > 0 && processedCount % BATCH_SIZE == 0) await UniTask.Yield();
++			}
+ 		}
+ 
+ 		[Token(Token = "0x60013EC")]
+@@ -1424,12 +1556,24 @@
+ 		[Address(RVA = "0x3DEF3A4", Offset = "0x3DEB3A4", VA = "0x3DEF3A4")]
+ 		private void CreatBothMainTower(object o)
+ 		{
++			global::EventModule.EventManager.Instance.StartListening("HasHexOpen", CheckComboWallCount);
++			global::EventModule.EventManager.Instance.StartListening("HasHexDestroy", CheckComboWallCount);
+ 		}
+ 
+ 		[Token(Token = "0x60013F4")]
+ 		[Address(RVA = "0x3DEF4CC", Offset = "0x3DEB4CC", VA = "0x3DEF4CC")]
+ 		private void CheckComboWallCount(object o)
+ 		{
++			int playerCount = 0;
++			for (int i = 0; i < allPlayerHasOpenHexObj.Count; i++)
++			    if (allPlayerHasOpenHexObj[i].GetComponent<HexBehaviour>().IsCombo()) playerCount++;
++			_playerComboWallCount = playerCount;
++			global::EventModule.EventManager.Instance.TriggerEvent("PlayerComboWallCountChange", _playerComboWallCount);
++			int enemyCount = 0;
++			for (int i = 0; i < allEnemyHasOpenHexObj.Count; i++)
++			    if (allEnemyHasOpenHexObj[i].GetComponent<HexBehaviour>().IsCombo()) enemyCount++;
++			_enemyComboWallCount = enemyCount;
++			global::EventModule.EventManager.Instance.TriggerEvent("EnemyComboWallCountChange", _enemyComboWallCount);
+ 		}
+ 
+ 		[Token(Token = "0x60013F5")]
+@@ -1484,49 +1628,87 @@
+ 		[Address(RVA = "0x3DF0470", Offset = "0x3DEC470", VA = "0x3DF0470")]
+ 		public List<RoleBehaviour> GetRoleTargetsSync(Transform transform, bool isEnemy, float range, int roleNum = 1)
+ 		{
+-			return null;
++			List<RoleBehaviour> result = new List<RoleBehaviour>();
++			if (transform == null) return result;
++			Vector3 pos = transform.position;
++			if (roleNum <= 1)
++			{
++			    RoleBehaviour target;
++			    if (TryGetNearestRoleTarget(pos, isEnemy, range, out target)) result.Add(target);
++			}
++			else
++			{
++			    CollectRoleTargetsInRange(pos, isEnemy, range, result);
++			    SortNearestRoleTargetsInPlace(pos, result, roleNum);
++			}
++			return result;
+ 		}
+ 
+ 		[Token(Token = "0x60013FD")]
+ 		[Address(RVA = "0x3DF0C7C", Offset = "0x3DECC7C", VA = "0x3DF0C7C")]
+ 		public RoleBehaviour GetRoleTargetSync(Transform transform, bool isEnemy, float range)
+ 		{
+-			return null;
++			RoleBehaviour target;
++			return transform != null && TryGetNearestRoleTarget(transform.position, isEnemy, range, out target) ? target : null;
+ 		}
+ 
+ 		[Token(Token = "0x60013FE")]
+ 		[Address(RVA = "0x3DF0D3C", Offset = "0x3DECD3C", VA = "0x3DF0D3C")]
+ 		public bool TryGetNearestRoleTarget(Transform sourceTransform, bool sourceIsEnemy, float range, out RoleBehaviour target)
+ 		{
+-    throw new global::System.NotImplementedException("RECOVERY_UNIMPLEMENTED BattleGameSceneManager.TryGetNearestRoleTarget RVA=0x3DF0D3C Token=0x60013FE");
+-}
++			if (sourceTransform == null) { target = null; return false; }
++			return TryGetNearestRoleTarget(sourceTransform.position, sourceIsEnemy, range, out target);
++		}
+ 
+ 		[Token(Token = "0x60013FF")]
+ 		[Address(RVA = "0x3DF06BC", Offset = "0x3DEC6BC", VA = "0x3DF06BC")]
+ 		public bool TryGetNearestRoleTarget(Vector3 sourcePos, bool sourceIsEnemy, float range, out RoleBehaviour target)
+ 		{
+-    throw new global::System.NotImplementedException("RECOVERY_UNIMPLEMENTED BattleGameSceneManager.TryGetNearestRoleTarget RVA=0x3DF06BC Token=0x60013FF");
+-}
++			target = null;
++			List<RoleBehaviour> targetList = GetRoleTargetList(sourceIsEnemy);
++			if (targetList == null || range < 0f || targetList.Count == 0) return false;
++			float sqrRange = range * range;
++			if (!TryGetCachedNearestRoleTarget(sourcePos, sourceIsEnemy, range, sqrRange, out target))
++			{
++			    bool searchedHexRing;
++			    if (!TryGetNearestRoleTargetFromHexRing(sourcePos, !sourceIsEnemy, range, sqrRange, out target, out searchedHexRing))
++			    {
++			        if (searchedHexRing) return false;
++			        if (!TryGetNearestRoleTargetFromList(sourcePos, targetList, sqrRange, out target)) return false;
++			    }
++			    CacheNearestRoleTarget(sourcePos, sourceIsEnemy, range, target);
++			}
++			return true;
++		}
+ 
+ 		[Token(Token = "0x6001400")]
+ 		[Address(RVA = "0x3DF1584", Offset = "0x3DED584", VA = "0x3DF1584")]
+ 		public int CollectRoleTargetsInRange(Transform sourceTransform, bool sourceIsEnemy, float range, List<RoleBehaviour> result)
+ 		{
+-			return default;
++			if (sourceTransform == null) { if (result != null) result.Clear(); return 0; }
++			return CollectRoleTargetsInRange(sourceTransform.position, sourceIsEnemy, range, result);
+ 		}
+ 
+ 		[Token(Token = "0x6001401")]
+ 		[Address(RVA = "0x3DF08A8", Offset = "0x3DEC8A8", VA = "0x3DF08A8")]
+ 		public int CollectRoleTargetsInRange(Vector3 sourcePos, bool sourceIsEnemy, float range, List<RoleBehaviour> result)
+ 		{
+-			return default;
++			if (result == null) return 0;
++			result.Clear();
++			List<RoleBehaviour> targetList = GetRoleTargetList(sourceIsEnemy);
++			if (targetList == null || range < 0f || targetList.Count == 0) return 0;
++			float sqrRange = range * range;
++			bool searchedHexRing;
++			if (TryCollectRoleTargetsInRangeFromHexRing(sourcePos, !sourceIsEnemy, range, sqrRange, result, out searchedHexRing) || searchedHexRing)
++			    return result.Count;
++			return CollectRoleTargetsInRangeFromList(sourcePos, targetList, sqrRange, result);
+ 		}
+ 
+ 		[Token(Token = "0x6001402")]
+ 		[Address(RVA = "0x3DF0E0C", Offset = "0x3DECE0C", VA = "0x3DF0E0C")]
+ 		private List<RoleBehaviour> GetRoleTargetList(bool sourceIsEnemy)
+ 		{
+-			return null;
++			return sourceIsEnemy ? allPlayerRoleBehaviour : allEnemyRoleBehaviour;
+ 		}
+ 
+ 		[Token(Token = "0x6001403")]
+@@ -1547,74 +1729,207 @@
+ 		[Address(RVA = "0x3DF2608", Offset = "0x3DEE608", VA = "0x3DF2608")]
+ 		private void PrepareRoleTargetFrameCache()
+ 		{
++			int frame = Time.frameCount;
++			if (_roleTargetFrameCacheFrame == frame) return;
++			_roleTargetFrameCacheFrame = frame;
++			_roleTargetFrameCache.Clear();
+ 		}
+ 
+ 		[Token(Token = "0x6001406")]
+ 		[Address(RVA = "0x3DF2680", Offset = "0x3DEE680", VA = "0x3DF2680")]
+ 		private bool TryGetRoleTargetFrameCacheKey(Vector3 sourcePos, bool sourceIsEnemy, float range, out RoleTargetFrameCacheKey key)
+ 		{
+-    throw new global::System.NotImplementedException("RECOVERY_UNIMPLEMENTED BattleGameSceneManager.TryGetRoleTargetFrameCacheKey RVA=0x3DF2680 Token=0x6001406");
+-}
++			key = default;
++			int searchRing;
++			if (!TryGetRoleTargetHexSearchRing(range, out searchRing)) return false;
++			HexBehaviour hex;
++			if (!HexManager.TryGetHexAt(sourcePos, out hex) || hex == null) return false;
++			key = new RoleTargetFrameCacheKey(sourceIsEnemy, hex.HexCoord.q, hex.HexCoord.r,
++			                                 Mathf.CeilToInt(range * RoleTargetRangeCachePrecision));
++			return true;
++		}
+ 
+ 		[Token(Token = "0x6001407")]
+ 		[Address(RVA = "0x3DF0E24", Offset = "0x3DECE24", VA = "0x3DF0E24")]
+ 		private bool TryGetCachedNearestRoleTarget(Vector3 sourcePos, bool sourceIsEnemy, float range, float sqrRange, out RoleBehaviour target)
+ 		{
+-    throw new global::System.NotImplementedException("RECOVERY_UNIMPLEMENTED BattleGameSceneManager.TryGetCachedNearestRoleTarget RVA=0x3DF0E24 Token=0x6001407");
+-}
++			target = null;
++			PrepareRoleTargetFrameCache();
++			RoleTargetFrameCacheKey key;
++			if (!TryGetRoleTargetFrameCacheKey(sourcePos, sourceIsEnemy, range, out key)) return false;
++			RoleTargetFrameCacheValue cached;
++			if (!_roleTargetFrameCache.TryGetValue(key, out cached)) return false;
++			RoleBehaviour role = cached.target;
++			if (!IsRoleTargetValid(role))
++			{
++			    _roleTargetFrameCache.Remove(key);
++			    return false;
++			}
++			if (!((sourcePos - role.transform.position).sqrMagnitude > sqrRange))
++			{
++			    target = role;
++			    return true;
++			}
++			return false;
++		}
+ 
+ 		[Token(Token = "0x6001408")]
+ 		[Address(RVA = "0x3DF12FC", Offset = "0x3DED2FC", VA = "0x3DF12FC")]
+ 		private void CacheNearestRoleTarget(Vector3 sourcePos, bool sourceIsEnemy, float range, RoleBehaviour target)
+ 		{
++			if (target == null) return;
++			PrepareRoleTargetFrameCache();
++			RoleTargetFrameCacheKey key;
++			if (!TryGetRoleTargetFrameCacheKey(sourcePos, sourceIsEnemy, range, out key)) return;
++			_roleTargetFrameCache[key] = new RoleTargetFrameCacheValue { target = target };
+ 		}
+ 
+ 		[Token(Token = "0x6001409")]
+ 		[Address(RVA = "0x3DF28DC", Offset = "0x3DEE8DC", VA = "0x3DF28DC")]
+ 		private static bool IsRoleTargetValid(RoleBehaviour role)
+ 		{
+-			return default;
++			return role != null && !role.isDead && !role.StealthIng;
+ 		}
+ 
+ 		[Token(Token = "0x600140A")]
+ 		[Address(RVA = "0x3DF2828", Offset = "0x3DEE828", VA = "0x3DF2828")]
+ 		private bool TryGetRoleTargetHexSearchRing(float range, out int searchRing)
+ 		{
+-    throw new global::System.NotImplementedException("RECOVERY_UNIMPLEMENTED BattleGameSceneManager.TryGetRoleTargetHexSearchRing RVA=0x3DF2828 Token=0x600140A");
+-}
++			searchRing = unchecked(Mathf.CeilToInt(range / Mathf.Max(GetSpawnHexSize() * 1.73205078f, 0.5f)) + 2);
++			return searchRing <= RoleTargetMaxHexSearchRing;
++		}
+ 
+ 		[Token(Token = "0x600140B")]
+ 		[Address(RVA = "0x3DF0FBC", Offset = "0x3DECFBC", VA = "0x3DF0FBC")]
+ 		private bool TryGetNearestRoleTargetFromHexRing(Vector3 sourcePos, bool targetIsEnemy, float range, float sqrRange, out RoleBehaviour nearestRole, out bool searchedHexRing)
+ 		{
+-    throw new global::System.NotImplementedException("RECOVERY_UNIMPLEMENTED BattleGameSceneManager.TryGetNearestRoleTargetFromHexRing RVA=0x3DF0FBC Token=0x600140B");
+-}
++			nearestRole = null;
++			searchedHexRing = false;
++			int searchRing;
++			if (!TryGetRoleTargetHexSearchRing(range, out searchRing)) return false;
++			HexBehaviour sourceHex;
++			if (!HexManager.TryGetHexAt(sourcePos, out sourceHex) || sourceHex == null) return false;
++			searchedHexRing = true;
++			float nearestDistance = float.MaxValue;
++			int q = sourceHex.HexCoord.q;
++			int r = sourceHex.HexCoord.r;
++			for (int dq = -searchRing; dq <= searchRing; dq++)
++			{
++			    int rMin = Mathf.Max(-searchRing, -dq - searchRing);
++			    int rMax = Mathf.Min(searchRing, searchRing - dq);
++			    for (int dr = rMin; dr <= rMax; dr++)
++			    {
++			        HexBehaviour hex = HexManager.GetHexBehaviour(new HexManager.HexCoord(unchecked(q + dq), unchecked(r + dr)));
++			        if (hex == null) continue;
++			        int count = hex.GetRoleCountByCamp(targetIsEnemy);
++			        for (int i = 0; i < count; i++)
++			        {
++			            RoleBehaviour role = hex.GetRoleByCamp(targetIsEnemy, i);
++			            if (!IsRoleTargetValid(role)) continue;
++			            float distance = (sourcePos - role.transform.position).sqrMagnitude;
++			            if (!(distance > sqrRange) && !(distance >= nearestDistance))
++			            {
++			                nearestDistance = distance;
++			                nearestRole = role;
++			            }
++			        }
++			    }
++			}
++			return nearestRole != null;
++		}
+ 
+ 		[Token(Token = "0x600140C")]
+ 		[Address(RVA = "0x3DF1684", Offset = "0x3DED684", VA = "0x3DF1684")]
+ 		private bool TryCollectRoleTargetsInRangeFromHexRing(Vector3 sourcePos, bool targetIsEnemy, float range, float sqrRange, List<RoleBehaviour> result, out bool searchedHexRing)
+ 		{
+-    throw new global::System.NotImplementedException("RECOVERY_UNIMPLEMENTED BattleGameSceneManager.TryCollectRoleTargetsInRangeFromHexRing RVA=0x3DF1684 Token=0x600140C");
+-}
++			searchedHexRing = false;
++			int searchRing;
++			if (!TryGetRoleTargetHexSearchRing(range, out searchRing)) return false;
++			HexBehaviour sourceHex;
++			if (!HexManager.TryGetHexAt(sourcePos, out sourceHex) || sourceHex == null) return false;
++			searchedHexRing = true;
++			int q = sourceHex.HexCoord.q;
++			int r = sourceHex.HexCoord.r;
++			for (int dq = -searchRing; dq <= searchRing; dq++)
++			{
++			    int rMin = Mathf.Max(-searchRing, -dq - searchRing);
++			    int rMax = Mathf.Min(searchRing, searchRing - dq);
++			    for (int dr = rMin; dr <= rMax; dr++)
++			    {
++			        HexBehaviour hex = HexManager.GetHexBehaviour(new HexManager.HexCoord(unchecked(q + dq), unchecked(r + dr)));
++			        if (hex == null) continue;
++			        int count = hex.GetRoleCountByCamp(targetIsEnemy);
++			        for (int i = 0; i < count; i++)
++			        {
++			            RoleBehaviour role = hex.GetRoleByCamp(targetIsEnemy, i);
++			            if (IsRoleTargetValid(role) && (sourcePos - role.transform.position).sqrMagnitude <= sqrRange)
++			                result.Add(role);
++			        }
++			    }
++			}
++			return result.Count > 0;
++		}
+ 
+ 		[Token(Token = "0x600140D")]
+ 		[Address(RVA = "0x3DF13F8", Offset = "0x3DED3F8", VA = "0x3DF13F8")]
+ 		private static bool TryGetNearestRoleTargetFromList(Vector3 sourcePos, List<RoleBehaviour> targetList, float sqrRange, out RoleBehaviour nearestRole)
+ 		{
+-    throw new global::System.NotImplementedException("RECOVERY_UNIMPLEMENTED BattleGameSceneManager.TryGetNearestRoleTargetFromList RVA=0x3DF13F8 Token=0x600140D");
+-}
++			nearestRole = null;
++			float nearestDistance = float.MaxValue;
++			for (int i = 0; i < targetList.Count; i++)
++			{
++			    RoleBehaviour role = targetList[i];
++			    if (!IsRoleTargetValid(role)) continue;
++			    float distance = (sourcePos - role.transform.position).sqrMagnitude;
++			    if (!(distance > sqrRange) && !(distance >= nearestDistance))
++			    {
++			        nearestDistance = distance;
++			        nearestRole = role;
++			    }
++			}
++			return nearestRole != null;
++		}
+ 
+ 		[Token(Token = "0x600140E")]
+ 		[Address(RVA = "0x3DF1A0C", Offset = "0x3DEDA0C", VA = "0x3DF1A0C")]
+ 		private static int CollectRoleTargetsInRangeFromList(Vector3 sourcePos, List<RoleBehaviour> targetList, float sqrRange, List<RoleBehaviour> result)
+ 		{
+-			return default;
++			for (int i = 0; i < targetList.Count; i++)
++			{
++			    RoleBehaviour role = targetList[i];
++			    if (IsRoleTargetValid(role) && (sourcePos - role.transform.position).sqrMagnitude <= sqrRange)
++			        result.Add(role);
++			}
++			return result.Count;
+ 		}
+ 
+ 		[Token(Token = "0x600140F")]
+ 		[Address(RVA = "0x3DF0A50", Offset = "0x3DECA50", VA = "0x3DF0A50")]
+ 		private static void SortNearestRoleTargetsInPlace(Vector3 sourcePos, List<RoleBehaviour> result, int roleNum)
+ 		{
++			int count = Mathf.Min(roleNum, result.Count);
++			for (int i = 0; i < count; i++)
++			{
++			    int nearest = i;
++			    float distance = (sourcePos - result[i].transform.position).sqrMagnitude;
++			    for (int j = i + 1; j < result.Count; j++)
++			    {
++			        float candidateDistance = (sourcePos - result[j].transform.position).sqrMagnitude;
++			        if (candidateDistance < distance)
++			        {
++			            nearest = j;
++			            distance = candidateDistance;
++			        }
++			    }
++			    if (nearest != i)
++			    {
++			        RoleBehaviour first = result[nearest];
++			        RoleBehaviour second = result[i];
++			        result[i] = first;
++			        result[nearest] = second;
++			    }
++			}
++			if (result.Count > count) result.RemoveRange(count, result.Count - count);
+ 		}
+ 
+ 		[Token(Token = "0x6001410")]
+@@ -1670,7 +1985,9 @@
+ 		[Address(RVA = "0x3DF2964", Offset = "0x3DEE964", VA = "0x3DF2964")]
+ 		private float GetSpawnHexSize()
+ 		{
+-			return default;
++			if (_generateHexBehaviour == null && _generateHexObjRoot != null)
++			    _generateHexBehaviour = _generateHexObjRoot.GetComponent<GenerateHexBehaviour>();
++			return _generateHexBehaviour != null ? _generateHexBehaviour.hexSize : 1f;
+ 		}
+ 
+ 		[Token(Token = "0x6001418")]
+@@ -1882,93 +2199,256 @@
+ 		[Address(RVA = "0x3DF64B8", Offset = "0x3DF24B8", VA = "0x3DF64B8")]
+ 		public void AddPlayerRole(GameObject obj, bool isFake = false, bool shouldCountInLimit = false)
+ 		{
++			if (global::SDKModule.ABTestManager.Instance.GamePlayImprove01IsBTest && shouldCountInLimit && _playerRoleCount >= MAX_ROLE_COUNT)
++			{
++			    UnityEngine.Debug.LogWarning(string.Format("尝试创建超过上限的单位！当前计数: {0}, 上限: {1}", _playerRoleCount, MAX_ROLE_COUNT));
++			    return;
++			}
++			allPlayerRoleObj.Add(obj);
++			RoleBehaviour role = obj.GetComponent<RoleBehaviour>();
++			allPlayerRoleBehaviour.Add(role);
++			allRoleBehaviour.Add(role);
++			WebGLNavigationManager.TryRegisterRole(role);
++			if (isFake) return;
++			_currentRoleInstanceID = unchecked(_currentRoleInstanceID + 1);
++			role._instanceID = _currentRoleInstanceID;
++			if (RoleShadowManager.Instance != null) RoleShadowManager.Instance.Bind(role);
++			if (global::SDKModule.ABTestManager.Instance.GamePlayImprove01IsBTest && shouldCountInLimit)
++			{
++			    if (_playerReservedCount > 0) _playerReservedCount = unchecked(_playerReservedCount - 1);
++			    _playerRoleCount = Mathf.Min(unchecked(_playerRoleCount + 1), MAX_ROLE_COUNT);
++			    global::EventModule.EventManager.Instance.TriggerEvent("PlayerRoleCountChange", _playerRoleCount);
++			    role._isCountedInRoleLimit = true;
++			}
++			global::EventModule.EventManager.Instance.TriggerEvent("HasPlayerRoleCreat", role);
++			obj.transform.SetParent(_playerRoleRoot.transform, false);
++			if (BattleGameManager.Instance != null) BattleGameManager.Instance.TryApplyPauseToNewRole(obj);
+ 		}
+ 
+ 		[Token(Token = "0x6001439")]
+ 		[Address(RVA = "0x3DF69A0", Offset = "0x3DF29A0", VA = "0x3DF69A0")]
+ 		public void AddEnemyRole(GameObject obj, bool isFake = false, bool shouldCountInLimit = false)
+ 		{
++			if (global::SDKModule.ABTestManager.Instance.GamePlayImprove01IsBTest && shouldCountInLimit && _enemyRoleCount >= MAX_ROLE_COUNT)
++			{
++			    UnityEngine.Debug.LogWarning(string.Format("尝试创建超过上限的单位！当前计数: {0}, 上限: {1}", _enemyRoleCount, MAX_ROLE_COUNT));
++			    return;
++			}
++			allEnemyRoleObj.Add(obj);
++			RoleBehaviour role = obj.GetComponent<RoleBehaviour>();
++			allEnemyRoleBehaviour.Add(role);
++			allRoleBehaviour.Add(role);
++			WebGLNavigationManager.TryRegisterRole(role);
++			if (isFake) return;
++			_currentRoleInstanceID = unchecked(_currentRoleInstanceID + 1);
++			role._instanceID = _currentRoleInstanceID;
++			if (RoleShadowManager.Instance != null) RoleShadowManager.Instance.Bind(role);
++			if (global::SDKModule.ABTestManager.Instance.GamePlayImprove01IsBTest && shouldCountInLimit)
++			{
++			    if (_enemyReservedCount > 0) _enemyReservedCount = unchecked(_enemyReservedCount - 1);
++			    _enemyRoleCount = Mathf.Min(unchecked(_enemyRoleCount + 1), MAX_ROLE_COUNT);
++			    global::EventModule.EventManager.Instance.TriggerEvent("EnemyRoleCountChange", _enemyRoleCount);
++			    role._isCountedInRoleLimit = true;
++			}
++			global::EventModule.EventManager.Instance.TriggerEvent("HasEnemyRoleCreat", role);
++			obj.transform.SetParent(_enemyRoleRoot.transform, false);
++			if (BattleGameManager.Instance != null) BattleGameManager.Instance.TryApplyPauseToNewRole(obj);
+ 		}
+ 
+ 		[Token(Token = "0x600143A")]
+ 		[Address(RVA = "0x3DF6E88", Offset = "0x3DF2E88", VA = "0x3DF6E88")]
+ 		public void RemovePlayerRole(GameObject obj, bool triggerTrySpawn = true)
+ 		{
++			if (!allPlayerRoleObj.Contains(obj)) return;
++			RoleBehaviour role = obj.GetComponent<RoleBehaviour>();
++			allPlayerRoleObj.Remove(obj);
++			allPlayerRoleBehaviour.Remove(role);
++			allRoleBehaviour.Remove(role);
++			WebGLNavigationManager.TryUnregisterRole(role);
++			if (global::SDKModule.ABTestManager.Instance.GamePlayImprove01IsBTest && role != null && role._isCountedInRoleLimit && triggerTrySpawn)
++			{
++			    _playerRoleCount = Mathf.Max(0, unchecked(_playerRoleCount - 1));
++			    global::EventModule.EventManager.Instance.TriggerEvent("PlayerRoleCountChange", _playerRoleCount);
++			    TrySpawnFromWaitingBarracks(false);
++			}
+ 		}
+ 
+ 		[Token(Token = "0x600143B")]
+ 		[Address(RVA = "0x3DF7B40", Offset = "0x3DF3B40", VA = "0x3DF7B40")]
+ 		public void RemoveEnemyRole(GameObject obj, bool triggerTrySpawn = true)
+ 		{
++			if (!allEnemyRoleObj.Contains(obj)) return;
++			RoleBehaviour role = obj.GetComponent<RoleBehaviour>();
++			allEnemyRoleObj.Remove(obj);
++			allEnemyRoleBehaviour.Remove(role);
++			allRoleBehaviour.Remove(role);
++			WebGLNavigationManager.TryUnregisterRole(role);
++			if (global::SDKModule.ABTestManager.Instance.GamePlayImprove01IsBTest && role != null && role._isCountedInRoleLimit && triggerTrySpawn)
++			{
++			    _enemyRoleCount = Mathf.Max(0, unchecked(_enemyRoleCount - 1));
++			    global::EventModule.EventManager.Instance.TriggerEvent("EnemyRoleCountChange", _enemyRoleCount);
++			    TrySpawnFromWaitingBarracks(true);
++			}
+ 		}
+ 
+ 		[Token(Token = "0x600143C")]
+ 		[Address(RVA = "0x3DF7D78", Offset = "0x3DF3D78", VA = "0x3DF7D78")]
+ 		public void RegisterWaitingBarracks(BarracksArchitectureBehaviour barracks, bool isEnemy)
+ 		{
++			if (!global::SDKModule.ABTestManager.Instance.GamePlayImprove01IsBTest) return;
++			List<BarracksArchitectureBehaviour> waiting = isEnemy ? _enemyWaitingBarracks : _playerWaitingBarracks;
++			if (!waiting.Contains(barracks)) waiting.Add(barracks);
+ 		}
+ 
+ 		[Token(Token = "0x600143D")]
+ 		[Address(RVA = "0x3DF7EB8", Offset = "0x3DF3EB8", VA = "0x3DF7EB8")]
+ 		public void UnregisterWaitingBarracks(BarracksArchitectureBehaviour barracks, bool isEnemy)
+ 		{
++			if (!global::SDKModule.ABTestManager.Instance.GamePlayImprove01IsBTest) return;
++			(isEnemy ? _enemyWaitingBarracks : _playerWaitingBarracks).Remove(barracks);
+ 		}
+ 
+ 		[Token(Token = "0x600143E")]
+ 		[Address(RVA = "0x3DF70C0", Offset = "0x3DF30C0", VA = "0x3DF70C0")]
+ 		private void TrySpawnFromWaitingBarracks(bool isEnemy)
+ 		{
++			if (!global::SDKModule.ABTestManager.Instance.GamePlayImprove01IsBTest) return;
++			List<BarracksArchitectureBehaviour> waiting = isEnemy ? _enemyWaitingBarracks : _playerWaitingBarracks;
++			if (waiting.Count == 0 || !CanSpawnRole(isEnemy)) return;
++			for (int i = waiting.Count - 1; i >= 0; i--)
++			    if (waiting[i] == null || waiting[i].isDead) waiting.RemoveAt(i);
++			if (waiting.Count == 0) return;
++			List<BarracksArchitectureBehaviour> legendary = new List<BarracksArchitectureBehaviour>();
++			List<BarracksArchitectureBehaviour> ordinary = new List<BarracksArchitectureBehaviour>();
++			foreach (BarracksArchitectureBehaviour barracks in waiting)
++			    if (barracks.IsLegendaryBarracks()) legendary.Add(barracks); else ordinary.Add(barracks);
++			if (legendary.Count > 0)
++			{
++			    Dictionary<string, List<BarracksArchitectureBehaviour>> groups = new Dictionary<string, List<BarracksArchitectureBehaviour>>();
++			    foreach (BarracksArchitectureBehaviour barracks in legendary)
++			    {
++			        string id = barracks.GetCreatRoleID();
++			        if (string.IsNullOrEmpty(id)) continue;
++			        if (!groups.ContainsKey(id)) groups[id] = new List<BarracksArchitectureBehaviour>();
++			        groups[id].Add(barracks);
++			    }
++			    foreach (KeyValuePair<string, List<BarracksArchitectureBehaviour>> group in groups)
++			    {
++			        if (!CanSpawnLegendaryUnit(group.Key, isEnemy)) continue;
++			        BarracksArchitectureBehaviour best = null;
++			        int bestRareLevel = -1;
++			        foreach (BarracksArchitectureBehaviour barracks in group.Value)
++			        {
++			            int rareLevel = barracks.GetRareLevelValue();
++			            if (rareLevel > bestRareLevel) { bestRareLevel = rareLevel; best = barracks; }
++			        }
++			        if (best != null)
++			        {
++			            waiting.Remove(best);
++			            best.OnCanSpawnRole();
++			            return;
++			        }
++			    }
++			}
++			if (ordinary.Count > 0)
++			{
++			    BarracksArchitectureBehaviour best = null;
++			    int bestRareLevel = -1;
++			    foreach (BarracksArchitectureBehaviour barracks in ordinary)
++			    {
++			        int rareLevel = barracks.GetRareLevelValue();
++			        if (rareLevel > bestRareLevel) { bestRareLevel = rareLevel; best = barracks; }
++			    }
++			    if (best != null) { waiting.Remove(best); best.OnCanSpawnRole(); }
++			}
+ 		}
+ 
+ 		[Token(Token = "0x600143F")]
+ 		[Address(RVA = "0x3DF8054", Offset = "0x3DF4054", VA = "0x3DF8054")]
+ 		private void TrySpawnLegendaryFromWaitingBarracks(string roleID, bool isEnemy)
+ 		{
++			if (!global::SDKModule.ABTestManager.Instance.GamePlayImprove01IsBTest) return;
++			List<BarracksArchitectureBehaviour> waiting = isEnemy ? _enemyWaitingBarracks : _playerWaitingBarracks;
++			if (waiting.Count == 0 || !CanSpawnLegendaryUnit(roleID, isEnemy) || !CanSpawnRole(isEnemy)) return;
++			for (int i = waiting.Count - 1; i >= 0; i--)
++			    if (waiting[i] == null || waiting[i].isDead) waiting.RemoveAt(i);
++			if (waiting.Count == 0) return;
++			BarracksArchitectureBehaviour best = null;
++			int bestRareLevel = -1;
++			foreach (BarracksArchitectureBehaviour barracks in waiting)
++			{
++			    if (!barracks.IsLegendaryBarracks() || barracks.GetCreatRoleID() != roleID) continue;
++			    int rareLevel = barracks.GetRareLevelValue();
++			    if (rareLevel > bestRareLevel) { bestRareLevel = rareLevel; best = barracks; }
++			}
++			if (best != null) { waiting.Remove(best); best.OnCanSpawnRole(); }
+ 		}
+ 
+ 		[Token(Token = "0x6001440")]
+ 		[Address(RVA = "0x3DF83D8", Offset = "0x3DF43D8", VA = "0x3DF83D8")]
+ 		public void AddLegendaryBarracks(string roleID, bool isEnemy)
+ 		{
++			if (!global::SDKModule.ABTestManager.Instance.GamePlayImprove01IsBTest) return;
++			Dictionary<string, int> counts = isEnemy ? _enemyLegendaryBarracksCount : _playerLegendaryBarracksCount;
++			counts[roleID] = counts.ContainsKey(roleID) ? unchecked(counts[roleID] + 1) : 1;
+ 		}
+ 
+ 		[Token(Token = "0x6001441")]
+ 		[Address(RVA = "0x3DF8508", Offset = "0x3DF4508", VA = "0x3DF8508")]
+ 		public void RemoveLegendaryBarracks(string roleID, bool isEnemy)
+ 		{
++			if (!global::SDKModule.ABTestManager.Instance.GamePlayImprove01IsBTest) return;
++			Dictionary<string, int> counts = isEnemy ? _enemyLegendaryBarracksCount : _playerLegendaryBarracksCount;
++			if (!counts.ContainsKey(roleID)) return;
++			counts[roleID] = Mathf.Max(0, unchecked(counts[roleID] - 1));
++			if (counts[roleID] == 0) counts.Remove(roleID);
+ 		}
+ 
+ 		[Token(Token = "0x6001442")]
+ 		[Address(RVA = "0x3DF866C", Offset = "0x3DF466C", VA = "0x3DF866C")]
+ 		public void AddLegendaryUnit(string roleID, bool isEnemy)
+ 		{
++			if (!global::SDKModule.ABTestManager.Instance.GamePlayImprove01IsBTest) return;
++			Dictionary<string, int> counts = isEnemy ? _enemyLegendaryUnitCount : _playerLegendaryUnitCount;
++			counts[roleID] = counts.ContainsKey(roleID) ? unchecked(counts[roleID] + 1) : 1;
+ 		}
+ 
+ 		[Token(Token = "0x6001443")]
+ 		[Address(RVA = "0x3DF879C", Offset = "0x3DF479C", VA = "0x3DF879C")]
+ 		public void RemoveLegendaryUnit(string roleID, bool isEnemy)
+ 		{
++			if (!global::SDKModule.ABTestManager.Instance.GamePlayImprove01IsBTest) return;
++			Dictionary<string, int> counts = isEnemy ? _enemyLegendaryUnitCount : _playerLegendaryUnitCount;
++			if (!counts.ContainsKey(roleID)) return;
++			counts[roleID] = Mathf.Max(0, unchecked(counts[roleID] - 1));
++			if (counts[roleID] == 0) counts.Remove(roleID);
++			TrySpawnLegendaryFromWaitingBarracks(roleID, isEnemy);
+ 		}
+ 
+ 		[Token(Token = "0x6001444")]
+ 		[Address(RVA = "0x3DF8910", Offset = "0x3DF4910", VA = "0x3DF8910")]
+ 		public int GetLegendaryUnitCount(string roleID, bool isEnemy)
+ 		{
+-			return default;
++			if (!global::SDKModule.ABTestManager.Instance.GamePlayImprove01IsBTest) return 0;
++			Dictionary<string, int> counts = isEnemy ? _enemyLegendaryUnitCount : _playerLegendaryUnitCount;
++			return counts.ContainsKey(roleID) ? counts[roleID] : 0;
+ 		}
+ 
+ 		[Token(Token = "0x6001445")]
+ 		[Address(RVA = "0x3DF8A14", Offset = "0x3DF4A14", VA = "0x3DF8A14")]
+ 		public int GetLegendaryBarracksCount(string roleID, bool isEnemy)
+ 		{
+-			return default;
++			if (!global::SDKModule.ABTestManager.Instance.GamePlayImprove01IsBTest) return 0;
++			Dictionary<string, int> counts = isEnemy ? _enemyLegendaryBarracksCount : _playerLegendaryBarracksCount;
++			return counts.ContainsKey(roleID) ? counts[roleID] : 0;
+ 		}
+ 
+ 		[Token(Token = "0x6001446")]
+ 		[Address(RVA = "0x3DF7F8C", Offset = "0x3DF3F8C", VA = "0x3DF7F8C")]
+ 		public bool CanSpawnLegendaryUnit(string roleID, bool isEnemy)
+ 		{
+-			return default;
++			if (!global::SDKModule.ABTestManager.Instance.GamePlayImprove01IsBTest) return true;
++			return GetLegendaryUnitCount(roleID, isEnemy) < GetLegendaryBarracksCount(roleID, isEnemy);
+ 		}
+ 
+ 		[Token(Token = "0x6001447")]

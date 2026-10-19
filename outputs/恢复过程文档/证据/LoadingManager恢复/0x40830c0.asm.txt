@@ -1,0 +1,24 @@
+0x40830c0: fe57bea9 stp      x30, x21, [sp, #-0x20]!
+0x40830c4: f44f01a9 stp      x20, x19, [sp, #0x10]
+0x40830c8: d57b02f0 adrp     x21, #0x8ffe000
+0x40830cc: f45202f0 adrp     x20, #0x8ae2000
+0x40830d0: a82a7739 ldrb     w8, [x21, #0xdca]
+0x40830d4: 946642f9 ldr      x20, [x20, #0x4c8] // Method$ToolModule.ManagerBase<LoadingManager>..ctor()
+0x40830d8: f30300aa mov      x19, x0
+0x40830dc: c8000037 tbnz     w8, #0, #0x40830f4
+0x40830e0: e05202f0 adrp     x0, #0x8ae2000
+0x40830e4: 006442f9 ldr      x0, [x0, #0x4c8] // Method$ToolModule.ManagerBase<LoadingManager>..ctor()
+0x40830e8: 66e8ee97 bl       #0x3c3d280
+0x40830ec: 28008052 mov      w8, #1
+0x40830f0: a82a3739 strb     w8, [x21, #0xdca]
+0x40830f4: a8bdfeb0 adrp     x8, #0x1838000
+0x40830f8: 00b942fd ldr      d0, [x8, #0x570]
+0x40830fc: c8cc8c52 mov      w8, #0x6666
+0x4083100: c8eca772 movk     w8, #0x3f66, lsl #16
+0x4083104: 683600b9 str      w8, [x19, #0x34]
+0x4083108: 60c202fc stur     d0, [x19, #0x2c]
+0x408310c: 810240f9 ldr      x1, [x20]
+0x4083110: e00313aa mov      x0, x19
+0x4083114: f44f41a9 ldp      x20, x19, [sp, #0x10]
+0x4083118: fe57c2a8 ldp      x30, x21, [sp], #0x20
+0x408311c: cbd56314 b        #0x5978848 // ToolModule.ManagerBase<object>$$.ctor

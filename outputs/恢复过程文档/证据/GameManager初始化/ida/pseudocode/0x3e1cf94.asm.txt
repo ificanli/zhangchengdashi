@@ -1,0 +1,210 @@
+0x3e1cf94: STP             X30, X21, [SP,#var_20]!
+0x3e1cf98: STP             X20, X19, [SP,#0x20+var_10]
+0x3e1cf9c: ADRP            X20, #byte_8FFD8AC@PAGE
+0x3e1cfa0: LDRB            W8, [X20,#byte_8FFD8AC@PAGEOFF]
+0x3e1cfa4: MOV             X19, X0
+0x3e1cfa8: TBNZ            W8, #0, loc_3E1CFFC
+0x3e1cfac: ADRP            X0, #off_8AD37B0@PAGE
+0x3e1cfb0: LDR             X0, [X0,#off_8AD37B0@PAGEOFF]; off_8CE4A58 ; slot
+0x3e1cfb4: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3e1cfb8: ADRP            X0, #off_8ACE488@PAGE
+0x3e1cfbc: LDR             X0, [X0,#off_8ACE488@PAGEOFF]; qword_8D12048 ; slot
+0x3e1cfc0: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3e1cfc4: ADRP            X0, #off_8AD3B30@PAGE
+0x3e1cfc8: LDR             X0, [X0,#off_8AD3B30@PAGEOFF]; qword_8D12450 ; slot
+0x3e1cfcc: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3e1cfd0: ADRP            X0, #off_8AD3B38@PAGE
+0x3e1cfd4: LDR             X0, [X0,#off_8AD3B38@PAGEOFF]; qword_8D12358 ; slot
+0x3e1cfd8: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3e1cfdc: ADRP            X0, #off_8AD4198@PAGE
+0x3e1cfe0: LDR             X0, [X0,#off_8AD4198@PAGEOFF]; qword_8D122E8 ; slot
+0x3e1cfe4: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3e1cfe8: ADRP            X0, #off_8ACC8D0@PAGE
+0x3e1cfec: LDR             X0, [X0,#off_8ACC8D0@PAGEOFF]; off_8CEB3E0 ; slot
+0x3e1cff0: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3e1cff4: MOV             W8, #1
+0x3e1cff8: STRB            W8, [X20,#byte_8FFD8AC@PAGEOFF]
+0x3e1cffc: MOV             X0, XZR
+0x3e1d000: BL              GameModule.TrainingGroundManager$$get_IsInTrainingGround
+0x3e1d004: TBZ             W0, #0, loc_3E1D060
+0x3e1d008: ADRP            X8, #off_8AD4198@PAGE
+0x3e1d00c: LDR             X8, [X8,#off_8AD4198@PAGEOFF]; qword_8D122E8
+0x3e1d010: LDR             X0, [X8]
+0x3e1d014: BL              ToolModule.ManagerBase_object_$$get_Instance
+0x3e1d018: CBZ             X0, loc_3E1D1F8
+0x3e1d01c: MOV             W1, #2
+0x3e1d020: MOV             X2, XZR
+0x3e1d024: BL              GameModule.MetaGameManager$$ShowMetaSwitchPanel
+0x3e1d028: ADRP            X8, #off_8AD3B38@PAGE
+0x3e1d02c: LDR             X8, [X8,#off_8AD3B38@PAGEOFF]; qword_8D12358
+0x3e1d030: LDR             X0, [X8]
+0x3e1d034: BL              ToolModule.ManagerBase_object_$$get_Instance
+0x3e1d038: CBZ             X0, loc_3E1D200
+0x3e1d03c: MOV             X1, XZR
+0x3e1d040: BL              GameModule.PanelPopHandleManager$$PanelPopPlay
+0x3e1d044: MOV             W8, #0xFFFFFFFE; jumptable 0000000003E1D094 default case
+0x3e1d048: STR             W8, [X19],#8
+0x3e1d04c: MOV             X0, X19
+0x3e1d050: LDP             X20, X19, [SP,#0x20+var_10]
+0x3e1d054: MOV             X1, XZR
+0x3e1d058: LDP             X30, X21, [SP+0x20+var_20],#0x20
+0x3e1d05c: B               System.Runtime.CompilerServices.AsyncVoidMethodBuilder$$SetResult
+0x3e1d060: ADRP            X8, #off_8ACE488@PAGE
+0x3e1d064: LDR             X8, [X8,#off_8ACE488@PAGEOFF]; qword_8D12048
+0x3e1d068: LDR             X0, [X8]
+0x3e1d06c: BL              ToolModule.ManagerBase_object_$$get_Instance
+0x3e1d070: CBZ             X0, loc_3E1D1FC
+0x3e1d074: LDR             W8, [X0,#0xF0]
+0x3e1d078: CMP             W8, #3; switch 4 cases
+0x3e1d07c: B.HI            def_3E1D094; jumptable 0000000003E1D094 default case
+0x3e1d080: ADRL            X9, jpt_3E1D094
+0x3e1d088: ADR             X10, loc_3E1D098; jumptable 0000000003E1D094 case 0
+0x3e1d08c: LDRB            W11, [X9,X8]
+0x3e1d090: ADD             X10, X10, X11,LSL#2
+0x3e1d094: BR              X10; switch jump
+0x3e1d098: ADRP            X8, #off_8AD4198@PAGE; jumptable 0000000003E1D094 case 0
+0x3e1d09c: LDR             X8, [X8,#off_8AD4198@PAGEOFF]; qword_8D122E8
+0x3e1d0a0: LDR             X0, [X8]
+0x3e1d0a4: BL              ToolModule.ManagerBase_object_$$get_Instance
+0x3e1d0a8: CBZ             X0, loc_3E1D20C
+0x3e1d0ac: MOV             W1, #2
+0x3e1d0b0: MOV             X2, XZR
+0x3e1d0b4: BL              GameModule.MetaGameManager$$ShowMetaSwitchPanel
+0x3e1d0b8: ADRP            X8, #off_8AD3B38@PAGE
+0x3e1d0bc: LDR             X8, [X8,#off_8AD3B38@PAGEOFF]; qword_8D12358
+0x3e1d0c0: LDR             X0, [X8]
+0x3e1d0c4: BL              ToolModule.ManagerBase_object_$$get_Instance
+0x3e1d0c8: CBZ             X0, loc_3E1D218
+0x3e1d0cc: MOV             X1, XZR
+0x3e1d0d0: BL              GameModule.PanelPopHandleManager$$PanelPopPlay
+0x3e1d0d4: B               def_3E1D094; jumptable 0000000003E1D094 default case
+0x3e1d0d8: ADRP            X8, #off_8AD4198@PAGE; jumptable 0000000003E1D094 case 2
+0x3e1d0dc: LDR             X8, [X8,#off_8AD4198@PAGEOFF]; qword_8D122E8
+0x3e1d0e0: LDR             X0, [X8]
+0x3e1d0e4: BL              ToolModule.ManagerBase_object_$$get_Instance
+0x3e1d0e8: CBZ             X0, loc_3E1D204
+0x3e1d0ec: MOV             W1, #2
+0x3e1d0f0: MOV             X2, XZR
+0x3e1d0f4: BL              GameModule.MetaGameManager$$ShowMetaSwitchPanel
+0x3e1d0f8: B               def_3E1D094; jumptable 0000000003E1D094 default case
+0x3e1d0fc: ADRP            X8, #off_8AD4198@PAGE; jumptable 0000000003E1D094 case 3
+0x3e1d100: LDR             X8, [X8,#off_8AD4198@PAGEOFF]; qword_8D122E8
+0x3e1d104: LDR             X0, [X8]
+0x3e1d108: BL              ToolModule.ManagerBase_object_$$get_Instance
+0x3e1d10c: CBZ             X0, loc_3E1D208
+0x3e1d110: MOV             W1, #2
+0x3e1d114: MOV             X2, XZR
+0x3e1d118: BL              GameModule.MetaGameManager$$ShowMetaSwitchPanel
+0x3e1d11c: ADRP            X8, #off_8AD3B38@PAGE
+0x3e1d120: LDR             X8, [X8,#off_8AD3B38@PAGEOFF]; qword_8D12358
+0x3e1d124: LDR             X0, [X8]
+0x3e1d128: BL              ToolModule.ManagerBase_object_$$get_Instance
+0x3e1d12c: CBZ             X0, loc_3E1D214
+0x3e1d130: MOV             X1, XZR
+0x3e1d134: BL              GameModule.PanelPopHandleManager$$PanelPopPlay
+0x3e1d138: ADRP            X21, #off_8AD3B30@PAGE
+0x3e1d13c: LDR             X21, [X21,#off_8AD3B30@PAGEOFF]; qword_8D12450
+0x3e1d140: LDR             X0, [X21]
+0x3e1d144: BL              ToolModule.ManagerBase_object_$$get_Instance
+0x3e1d148: ADRP            X8, #off_8ACC8D0@PAGE
+0x3e1d14c: LDR             X8, [X8,#off_8ACC8D0@PAGEOFF]; off_8CEB3E0
+0x3e1d150: MOV             X20, X0
+0x3e1d154: LDR             X0, [X8]; klass
+0x3e1d158: LDR             W8, [X0,#0xE0]
+0x3e1d15c: CBNZ            W8, loc_3E1D164
+0x3e1d160: BL              il2cpp_codegen_runtime_class_init
+0x3e1d164: MOV             X0, X20
+0x3e1d168: MOV             X1, XZR
+0x3e1d16c: MOV             X2, XZR
+0x3e1d170: BL              UnityEngine.Object$$op_Inequality
+0x3e1d174: TBZ             W0, #0, def_3E1D094; jumptable 0000000003E1D094 default case
+0x3e1d178: LDR             X0, [X21]
+0x3e1d17c: BL              ToolModule.ManagerBase_object_$$get_Instance
+0x3e1d180: CBZ             X0, loc_3E1D21C
+0x3e1d184: LDR             X8, [X19,#0x28]
+0x3e1d188: CBZ             X8, loc_3E1D1AC
+0x3e1d18c: ADRP            X9, #off_8AD37B0@PAGE
+0x3e1d190: LDR             X9, [X9,#off_8AD37B0@PAGEOFF]; off_8CE4A58
+0x3e1d194: LDR             X10, [X8]
+0x3e1d198: LDR             X9, [X9]
+0x3e1d19c: LDRB            W12, [X10,#0x130]
+0x3e1d1a0: LDRB            W11, [X9,#0x130]
+0x3e1d1a4: CMP             W12, W11
+0x3e1d1a8: B.CS            loc_3E1D1D8
+0x3e1d1ac: MOV             X1, XZR
+0x3e1d1b0: B               loc_3E1D1EC
+0x3e1d1b4: ADRP            X8, #off_8AD4198@PAGE; jumptable 0000000003E1D094 case 1
+0x3e1d1b8: LDR             X8, [X8,#off_8AD4198@PAGEOFF]; qword_8D122E8
+0x3e1d1bc: LDR             X0, [X8]
+0x3e1d1c0: BL              ToolModule.ManagerBase_object_$$get_Instance
+0x3e1d1c4: CBZ             X0, loc_3E1D210
+0x3e1d1c8: MOV             W1, #3
+0x3e1d1cc: MOV             X2, XZR
+0x3e1d1d0: BL              GameModule.MetaGameManager$$ShowMetaSwitchPanel
+0x3e1d1d4: B               def_3E1D094; jumptable 0000000003E1D094 default case
+0x3e1d1d8: LDR             X10, [X10,#0xC8]
+0x3e1d1dc: ADD             X10, X10, X11,LSL#3
+0x3e1d1e0: LDUR            X10, [X10,#-8]
+0x3e1d1e4: CMP             X10, X9
+0x3e1d1e8: CSEL            X1, X8, XZR, EQ
+0x3e1d1ec: MOV             X2, XZR
+0x3e1d1f0: BL              GameModule.SubGameChaosTrailsManager$$TryReturnToPanelAfterEnterMeta
+0x3e1d1f4: B               def_3E1D094; jumptable 0000000003E1D094 default case
+0x3e1d1f8: BL              il2cpp_codegen_raise_null_reference_exception
+0x3e1d1fc: BL              il2cpp_codegen_raise_null_reference_exception
+0x3e1d200: BL              il2cpp_codegen_raise_null_reference_exception
+0x3e1d204: BL              il2cpp_codegen_raise_null_reference_exception
+0x3e1d208: BL              il2cpp_codegen_raise_null_reference_exception
+0x3e1d20c: BL              il2cpp_codegen_raise_null_reference_exception
+0x3e1d210: BL              il2cpp_codegen_raise_null_reference_exception
+0x3e1d214: BL              il2cpp_codegen_raise_null_reference_exception
+0x3e1d218: BL              il2cpp_codegen_raise_null_reference_exception
+0x3e1d21c: BL              il2cpp_codegen_raise_null_reference_exception
+0x3e1d220: B               loc_3E1D254
+0x3e1d224: B               loc_3E1D254
+0x3e1d228: B               loc_3E1D254
+0x3e1d22c: B               loc_3E1D254
+0x3e1d230: B               loc_3E1D254
+0x3e1d234: B               loc_3E1D254
+0x3e1d238: B               loc_3E1D254
+0x3e1d23c: B               loc_3E1D254
+0x3e1d240: B               loc_3E1D254
+0x3e1d244: B               loc_3E1D254
+0x3e1d248: B               loc_3E1D254
+0x3e1d24c: B               loc_3E1D254
+0x3e1d250: B               loc_3E1D254
+0x3e1d254: MOV             X20, X0
+0x3e1d258: CMP             W1, #1
+0x3e1d25c: B.NE            loc_3E1D2D8
+0x3e1d260: MOV             X0, X20
+0x3e1d264: BL              .__cxa_begin_catch
+0x3e1d268: MOV             X20, X0
+0x3e1d26c: ADRP            X0, #off_8ACCF90@PAGE
+0x3e1d270: LDR             X0, [X0,#off_8ACCF90@PAGEOFF]; unk_8CE71D0
+0x3e1d274: BL              unk_3C3D294
+0x3e1d278: LDR             X8, [X20]
+0x3e1d27c: LDR             X1, [X8]
+0x3e1d280: BL              unk_3C3D8F8
+0x3e1d284: TBZ             W0, #0, loc_3E1D2B0
+0x3e1d288: LDR             X20, [X20]
+0x3e1d28c: BL              .__cxa_end_catch
+0x3e1d290: MOV             W8, #0xFFFFFFFE
+0x3e1d294: STR             W8, [X19],#8
+0x3e1d298: MOV             X0, X19
+0x3e1d29c: MOV             X1, X20
+0x3e1d2a0: LDP             X20, X19, [SP,#0x20+var_10]
+0x3e1d2a4: MOV             X2, XZR
+0x3e1d2a8: LDP             X30, X21, [SP+0x20+var_20],#0x20
+0x3e1d2ac: B               System.Runtime.CompilerServices.AsyncVoidMethodBuilder$$SetException
+0x3e1d2b0: MOV             W0, #8
+0x3e1d2b4: BL              .__cxa_allocate_exception
+0x3e1d2b8: LDR             X8, [X20]
+0x3e1d2bc: STR             X8, [X0]
+0x3e1d2c0: ADRL            X1, _ZTI22Il2CppExceptionWrapper; `typeinfo for'Il2CppExceptionWrapper
+0x3e1d2c8: MOV             X2, XZR
+0x3e1d2cc: BL              .__cxa_throw
+0x3e1d2d0: MOV             X20, X0
+0x3e1d2d4: BL              .__cxa_end_catch
+0x3e1d2d8: MOV             X0, X20
+0x3e1d2dc: BL              unk_3CE73C4
+0x3e1d2e0: BL              unk_35BC500

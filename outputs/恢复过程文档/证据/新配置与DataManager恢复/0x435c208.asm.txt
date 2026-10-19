@@ -1,0 +1,74 @@
+0x435c208: fe0f1cf8 str      x30, [sp, #-0x40]!
+0x435c20c: f85f01a9 stp      x24, x23, [sp, #0x10]
+0x435c210: f65702a9 stp      x22, x21, [sp, #0x20]
+0x435c214: f44f03a9 stp      x20, x19, [sp, #0x30]
+0x435c218: 37650290 adrp     x23, #0x9000000
+0x435c21c: b63c02d0 adrp     x22, #0x8af2000
+0x435c220: b53c02d0 adrp     x21, #0x8af2000
+0x435c224: e80a5a39 ldrb     w8, [x23, #0x682]
+0x435c228: d63a44f9 ldr      x22, [x22, #0x870] // System.Collections.Generic.Dictionary<string, GlobalUpgradeTalentPriceInfo>_TypeInfo
+0x435c22c: b53e44f9 ldr      x21, [x21, #0x878] // Method$System.Collections.Generic.Dictionary<string, GlobalUpgradeTalentPriceInfo>..ctor()
+0x435c230: f40301aa mov      x20, x1
+0x435c234: f30300aa mov      x19, x0
+0x435c238: 48020037 tbnz     w8, #0, #0x435c280
+0x435c23c: a03c02d0 adrp     x0, #0x8af2000
+0x435c240: 004044f9 ldr      x0, [x0, #0x880] // Method$System.Collections.Generic.Dictionary<string, GlobalUpgradeTalentPriceInfo>.Add()
+0x435c244: 0f84e397 bl       #0x3c3d280
+0x435c248: a03c02d0 adrp     x0, #0x8af2000
+0x435c24c: 003c44f9 ldr      x0, [x0, #0x878] // Method$System.Collections.Generic.Dictionary<string, GlobalUpgradeTalentPriceInfo>..ctor()
+0x435c250: 0c84e397 bl       #0x3c3d280
+0x435c254: a03c02d0 adrp     x0, #0x8af2000
+0x435c258: 003844f9 ldr      x0, [x0, #0x870] // System.Collections.Generic.Dictionary<string, GlobalUpgradeTalentPriceInfo>_TypeInfo
+0x435c25c: 0984e397 bl       #0x3c3d280
+0x435c260: a03c02d0 adrp     x0, #0x8af2000
+0x435c264: 004444f9 ldr      x0, [x0, #0x888] // Method$System.Collections.Generic.List<GlobalUpgradeTalentPriceInfo>.get_Count()
+0x435c268: 0684e397 bl       #0x3c3d280
+0x435c26c: a03c02d0 adrp     x0, #0x8af2000
+0x435c270: 004844f9 ldr      x0, [x0, #0x890] // Method$System.Collections.Generic.List<GlobalUpgradeTalentPriceInfo>.get_Item()
+0x435c274: 0384e397 bl       #0x3c3d280
+0x435c278: 28008052 mov      w8, #1
+0x435c27c: e80a1a39 strb     w8, [x23, #0x682]
+0x435c280: 744a01f9 str      x20, [x19, #0x290]
+0x435c284: c00240f9 ldr      x0, [x22]
+0x435c288: 8f84e397 bl       #0x3c3d4c4
+0x435c28c: a10240f9 ldr      x1, [x21]
+0x435c290: f40300aa mov      x20, x0
+0x435c294: 33a7a294 bl       #0x6c05f60 // System.Collections.Generic.Dictionary<object, object>$$.ctor
+0x435c298: 604a41f9 ldr      x0, [x19, #0x290]
+0x435c29c: 744e01f9 str      x20, [x19, #0x298]
+0x435c2a0: c00300b4 cbz      x0, #0x435c318
+0x435c2a4: b73c02d0 adrp     x23, #0x8af2000
+0x435c2a8: b83c02d0 adrp     x24, #0x8af2000
+0x435c2ac: f74a44f9 ldr      x23, [x23, #0x890] // Method$System.Collections.Generic.List<GlobalUpgradeTalentPriceInfo>.get_Item()
+0x435c2b0: 184344f9 ldr      x24, [x24, #0x880] // Method$System.Collections.Generic.Dictionary<string, GlobalUpgradeTalentPriceInfo>.Add()
+0x435c2b4: f4031f2a mov      w20, wzr
+0x435c2b8: 081840b9 ldr      w8, [x0, #0x18]
+0x435c2bc: 9f02086b cmp      w20, w8
+0x435c2c0: ea020054 b.ge     #0x435c31c
+0x435c2c4: e20240f9 ldr      x2, [x23]
+0x435c2c8: 754e41f9 ldr      x21, [x19, #0x298]
+0x435c2cc: e103142a mov      w1, w20
+0x435c2d0: e7cb4f94 bl       #0x574f26c // System.Collections.Generic.List<object>$$get_Item
+0x435c2d4: 200200b4 cbz      x0, #0x435c318
+0x435c2d8: 684a41f9 ldr      x8, [x19, #0x290]
+0x435c2dc: e80100b4 cbz      x8, #0x435c318
+0x435c2e0: e20240f9 ldr      x2, [x23]
+0x435c2e4: 160c40f9 ldr      x22, [x0, #0x18]
+0x435c2e8: e00308aa mov      x0, x8
+0x435c2ec: e103142a mov      w1, w20
+0x435c2f0: dfcb4f94 bl       #0x574f26c // System.Collections.Generic.List<object>$$get_Item
+0x435c2f4: 350100b4 cbz      x21, #0x435c318
+0x435c2f8: 030340f9 ldr      x3, [x24]
+0x435c2fc: e20300aa mov      x2, x0
+0x435c300: e00315aa mov      x0, x21
+0x435c304: e10316aa mov      x1, x22
+0x435c308: 6eaaa294 bl       #0x6c06cc0 // System.Collections.Generic.Dictionary<object, object>$$Add
+0x435c30c: 604a41f9 ldr      x0, [x19, #0x290]
+0x435c310: 94060011 add      w20, w20, #1
+0x435c314: 20fdffb5 cbnz     x0, #0x435c2b8
+0x435c318: 6d84e397 bl       #0x3c3d4cc
+0x435c31c: f44f43a9 ldp      x20, x19, [sp, #0x30]
+0x435c320: f65742a9 ldp      x22, x21, [sp, #0x20]
+0x435c324: f85f41a9 ldp      x24, x23, [sp, #0x10]
+0x435c328: fe0744f8 ldr      x30, [sp], #0x40
+0x435c32c: c0035fd6 ret      

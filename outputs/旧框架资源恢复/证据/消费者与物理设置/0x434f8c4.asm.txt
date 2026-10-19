@@ -1,0 +1,180 @@
+0x434f8c4: ffc300d1 sub      sp, sp, #0x30
+0x434f8c8: fe5701a9 stp      x30, x21, [sp, #0x10]
+0x434f8cc: f44f02a9 stp      x20, x19, [sp, #0x20]
+0x434f8d0: 946502b0 adrp     x20, #0x9000000
+0x434f8d4: 88265839 ldrb     w8, [x20, #0x609]
+0x434f8d8: f30300aa mov      x19, x0
+0x434f8dc: 28010037 tbnz     w8, #0, #0x434f900
+0x434f8e0: 003d02f0 adrp     x0, #0x8af2000
+0x434f8e4: 00e042f9 ldr      x0, [x0, #0x5c0] // Method$Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder.AwaitUnsafeOnCompleted<TaskAwaiter, DataManager.<LoadConfig>d__15>()
+0x434f8e8: 66b6e397 bl       #0x3c3d280
+0x434f8ec: 003d02f0 adrp     x0, #0x8af2000
+0x434f8f0: 00e442f9 ldr      x0, [x0, #0x5c8] // DataModule.GlobalInfo_TypeInfo
+0x434f8f4: 63b6e397 bl       #0x3c3d280
+0x434f8f8: 28008052 mov      w8, #1
+0x434f8fc: 88261839 strb     w8, [x20, #0x609]
+0x434f900: ff0700f9 str      xzr, [sp, #8]
+0x434f904: 680240b9 ldr      w8, [x19]
+0x434f908: 750e40f9 ldr      x21, [x19, #0x18]
+0x434f90c: e8030034 cbz      w8, #0x434f988
+0x434f910: 083d02f0 adrp     x8, #0x8af2000
+0x434f914: 08e542f9 ldr      x8, [x8, #0x5c8] // DataModule.GlobalInfo_TypeInfo
+0x434f918: 000140f9 ldr      x0, [x8]
+0x434f91c: eab6e397 bl       #0x3c3d4c4
+0x434f920: f40300aa mov      x20, x0
+0x434f924: 9c000094 bl       #0x434fb94 // DataModule.GlobalInfo$$.ctor
+0x434f928: 950900b4 cbz      x21, #0x434fa58
+0x434f92c: b41600f9 str      x20, [x21, #0x28]
+0x434f930: 740900b4 cbz      x20, #0x434fa5c
+0x434f934: e00314aa mov      x0, x20
+0x434f938: 10030094 bl       #0x4350578 // DataModule.GlobalInfo$$InitInfo
+0x434f93c: 200900b4 cbz      x0, #0x434fa60
+0x434f940: e1031faa mov      x1, xzr
+0x434f944: 94aace94 bl       #0x76fa394 // System.Threading.Tasks.Task$$GetAwaiter
+0x434f948: e00700f9 str      x0, [sp, #8]
+0x434f94c: e0230091 add      x0, sp, #8
+0x434f950: e1031faa mov      x1, xzr
+0x434f954: 1a80c994 bl       #0x75af9bc // System.Runtime.CompilerServices.TaskAwaiter$$get_IsCompleted
+0x434f958: 20020037 tbnz     w0, #0, #0x434f99c
+0x434f95c: 7f0200b9 str      wzr, [x19]
+0x434f960: e80740f9 ldr      x8, [sp, #8]
+0x434f964: 60220091 add      x0, x19, #8
+0x434f968: 681200f9 str      x8, [x19, #0x20]
+0x434f96c: 083d02f0 adrp     x8, #0x8af2000
+0x434f970: 08e142f9 ldr      x8, [x8, #0x5c0] // Method$Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder.AwaitUnsafeOnCompleted<TaskAwaiter, DataManager.<LoadConfig>d__15>()
+0x434f974: 030140f9 ldr      x3, [x8]
+0x434f978: e1230091 add      x1, sp, #8
+0x434f97c: e20313aa mov      x2, x19
+0x434f980: 97490094 bl       #0x4361fdc
+0x434f984: 30000014 b        #0x434fa44
+0x434f988: 681240f9 ldr      x8, [x19, #0x20]
+0x434f98c: 09008012 mov      w9, #-1
+0x434f990: e80700f9 str      x8, [sp, #8]
+0x434f994: 7f1200f9 str      xzr, [x19, #0x20]
+0x434f998: 690200b9 str      w9, [x19]
+0x434f99c: e0230091 add      x0, sp, #8
+0x434f9a0: e1031faa mov      x1, xzr
+0x434f9a4: 3980c994 bl       #0x75afa88 // System.Runtime.CompilerServices.TaskAwaiter$$GetResult
+0x434f9a8: 750500b4 cbz      x21, #0x434fa54
+0x434f9ac: 34008052 mov      w20, #1
+0x434f9b0: 28008012 mov      w8, #-2
+0x434f9b4: b4c60039 strb     w20, [x21, #0x31]
+0x434f9b8: 680200b9 str      w8, [x19]
+0x434f9bc: 756502d0 adrp     x21, #0x8ffd000
+0x434f9c0: a8c64639 ldrb     w8, [x21, #0x1b1]
+0x434f9c4: a8000035 cbnz     w8, #0x434f9d8
+0x434f9c8: e03b02d0 adrp     x0, #0x8acd000
+0x434f9cc: 007047f9 ldr      x0, [x0, #0xee0] // Cysharp.Threading.Tasks.CompilerServices.IStateMachineRunnerPromise_TypeInfo
+0x434f9d0: 2cb6e397 bl       #0x3c3d280
+0x434f9d4: b4c60639 strb     w20, [x21, #0x1b1]
+0x434f9d8: 730640f9 ldr      x19, [x19, #8]
+0x434f9dc: 530300b4 cbz      x19, #0x434fa44
+0x434f9e0: ea3b02d0 adrp     x10, #0x8acd000
+0x434f9e4: 680240f9 ldr      x8, [x19]
+0x434f9e8: 4a7147f9 ldr      x10, [x10, #0xee0] // Cysharp.Threading.Tasks.CompilerServices.IStateMachineRunnerPromise_TypeInfo
+0x434f9ec: 095d4279 ldrh     w9, [x8, #0x12e]
+0x434f9f0: 410140f9 ldr      x1, [x10]
+0x434f9f4: 290100b4 cbz      x9, #0x434fa18
+0x434f9f8: 0a5940f9 ldr      x10, [x8, #0xb0]
+0x434f9fc: 4a210091 add      x10, x10, #8
+0x434fa00: 4b815ff8 ldur     x11, [x10, #-8]
+0x434fa04: 7f0101eb cmp      x11, x1
+0x434fa08: 00010054 b.eq     #0x434fa28
+0x434fa0c: 290500f1 subs     x9, x9, #1
+0x434fa10: 4a410091 add      x10, x10, #0x10
+0x434fa14: 61ffff54 b.ne     #0x434fa00
+0x434fa18: 42008052 mov      w2, #2
+0x434fa1c: e00313aa mov      x0, x19
+0x434fa20: a102e497 bl       #0x3c504a4
+0x434fa24: 05000014 b        #0x434fa38
+0x434fa28: 490140b9 ldr      w9, [x10]
+0x434fa2c: 29090011 add      w9, w9, #2
+0x434fa30: 08d1298b add      x8, x8, w9, sxtw #4
+0x434fa34: 00e10491 add      x0, x8, #0x138
+0x434fa38: 080440a9 ldp      x8, x1, [x0]
+0x434fa3c: e00313aa mov      x0, x19
+0x434fa40: 00013fd6 blr      x8
+0x434fa44: f44f42a9 ldp      x20, x19, [sp, #0x20]
+0x434fa48: fe5741a9 ldp      x30, x21, [sp, #0x10]
+0x434fa4c: ffc30091 add      sp, sp, #0x30
+0x434fa50: c0035fd6 ret      
+0x434fa54: 9eb6e397 bl       #0x3c3d4cc
+0x434fa58: 9db6e397 bl       #0x3c3d4cc
+0x434fa5c: 9cb6e397 bl       #0x3c3d4cc
+0x434fa60: 9bb6e397 bl       #0x3c3d4cc
+0x434fa64: 07000014 b        #0x434fa80
+0x434fa68: 06000014 b        #0x434fa80
+0x434fa6c: 05000014 b        #0x434fa80
+0x434fa70: 04000014 b        #0x434fa80
+0x434fa74: 03000014 b        #0x434fa80
+0x434fa78: 02000014 b        #0x434fa80
+0x434fa7c: 01000014 b        #0x434fa80
+0x434fa80: f40300aa mov      x20, x0
+0x434fa84: 3f040071 cmp      w1, #1
+0x434fa88: 01080054 b.ne     #0x434fb88
+0x434fa8c: e00314aa mov      x0, x20
+0x434fa90: c47c0895 bl       #0x856eda0
+0x434fa94: f40300aa mov      x20, x0
+0x434fa98: e03b02b0 adrp     x0, #0x8acc000
+0x434fa9c: 00c847f9 ldr      x0, [x0, #0xf90] // System.Exception_TypeInfo
+0x434faa0: fdb5e397 bl       #0x3c3d294
+0x434faa4: 880240f9 ldr      x8, [x20]
+0x434faa8: 010140f9 ldr      x1, [x8]
+0x434faac: 93b7e397 bl       #0x3c3d8f8
+0x434fab0: 80050036 tbz      w0, #0, #0x434fb60
+0x434fab4: 940240f9 ldr      x20, [x20]
+0x434fab8: be7c0895 bl       #0x856edb0
+0x434fabc: 28008012 mov      w8, #-2
+0x434fac0: 680200b9 str      w8, [x19]
+0x434fac4: 756502d0 adrp     x21, #0x8ffd000
+0x434fac8: a8c24639 ldrb     w8, [x21, #0x1b0]
+0x434facc: c8000035 cbnz     w8, #0x434fae4
+0x434fad0: e03b02d0 adrp     x0, #0x8acd000
+0x434fad4: 007047f9 ldr      x0, [x0, #0xee0] // Cysharp.Threading.Tasks.CompilerServices.IStateMachineRunnerPromise_TypeInfo
+0x434fad8: eab5e397 bl       #0x3c3d280
+0x434fadc: 28008052 mov      w8, #1
+0x434fae0: a8c20639 strb     w8, [x21, #0x1b0]
+0x434fae4: 750640f9 ldr      x21, [x19, #8]
+0x434fae8: 750200b4 cbz      x21, #0x434fb34
+0x434faec: ea3b02d0 adrp     x10, #0x8acd000
+0x434faf0: a80240f9 ldr      x8, [x21]
+0x434faf4: 4a7147f9 ldr      x10, [x10, #0xee0] // Cysharp.Threading.Tasks.CompilerServices.IStateMachineRunnerPromise_TypeInfo
+0x434faf8: 095d4279 ldrh     w9, [x8, #0x12e]
+0x434fafc: 410140f9 ldr      x1, [x10]
+0x434fb00: 290100b4 cbz      x9, #0x434fb24
+0x434fb04: 0a5940f9 ldr      x10, [x8, #0xb0]
+0x434fb08: 4a210091 add      x10, x10, #8
+0x434fb0c: 4b815ff8 ldur     x11, [x10, #-8]
+0x434fb10: 7f0101eb cmp      x11, x1
+0x434fb14: 40010054 b.eq     #0x434fb3c
+0x434fb18: 290500f1 subs     x9, x9, #1
+0x434fb1c: 4a410091 add      x10, x10, #0x10
+0x434fb20: 61ffff54 b.ne     #0x434fb0c
+0x434fb24: 62008052 mov      w2, #3
+0x434fb28: e00315aa mov      x0, x21
+0x434fb2c: 5e02e497 bl       #0x3c504a4
+0x434fb30: 07000014 b        #0x434fb4c
+0x434fb34: 740a00f9 str      x20, [x19, #0x10]
+0x434fb38: c3ffff17 b        #0x434fa44
+0x434fb3c: 490140b9 ldr      w9, [x10]
+0x434fb40: 290d0011 add      w9, w9, #3
+0x434fb44: 08d1298b add      x8, x8, w9, sxtw #4
+0x434fb48: 00e10491 add      x0, x8, #0x138
+0x434fb4c: 080840a9 ldp      x8, x2, [x0]
+0x434fb50: e00315aa mov      x0, x21
+0x434fb54: e10314aa mov      x1, x20
+0x434fb58: 00013fd6 blr      x8
+0x434fb5c: baffff17 b        #0x434fa44
+0x434fb60: 00018052 mov      w0, #8
+0x434fb64: 977c0895 bl       #0x856edc0
+0x434fb68: 880240f9 ldr      x8, [x20]
+0x434fb6c: 080000f9 str      x8, [x0]
+0x434fb70: 211102d0 adrp     x1, #0x8575000
+0x434fb74: 21a00891 add      x1, x1, #0x228
+0x434fb78: e2031faa mov      x2, xzr
+0x434fb7c: 957c0895 bl       #0x856edd0
+0x434fb80: f40300aa mov      x20, x0
+0x434fb84: 8b7c0895 bl       #0x856edb0
+0x434fb88: e00314aa mov      x0, x20
+0x434fb8c: 0e5ee697 bl       #0x3ce73c4
+0x434fb90: 5cb2c997 bl       #0x35bc500

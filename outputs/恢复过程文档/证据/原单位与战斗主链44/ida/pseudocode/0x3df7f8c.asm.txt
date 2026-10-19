@@ -1,0 +1,50 @@
+0x3df7f8c: STP             X30, X23, [SP,#var_30]!
+0x3df7f90: STP             X22, X21, [SP,#0x30+var_20]
+0x3df7f94: STP             X20, X19, [SP,#0x30+var_10]
+0x3df7f98: ADRP            X23, #byte_8FFD7D1@PAGE
+0x3df7f9c: ADRP            X22, #off_8ACDF78@PAGE
+0x3df7fa0: LDRB            W8, [X23,#byte_8FFD7D1@PAGEOFF]
+0x3df7fa4: LDR             X22, [X22,#off_8ACDF78@PAGEOFF]; off_8CE1928
+0x3df7fa8: MOV             W21, W2
+0x3df7fac: MOV             X19, X1
+0x3df7fb0: MOV             X20, X0
+0x3df7fb4: TBNZ            W8, #0, loc_3DF7FD8
+0x3df7fb8: ADRP            X0, #off_8ACDF88@PAGE
+0x3df7fbc: LDR             X0, [X0,#off_8ACDF88@PAGEOFF]; qword_8D17890 ; slot
+0x3df7fc0: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3df7fc4: ADRP            X0, #off_8ACDF78@PAGE
+0x3df7fc8: LDR             X0, [X0,#off_8ACDF78@PAGEOFF]; off_8CE1928 ; slot
+0x3df7fcc: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3df7fd0: MOV             W8, #1
+0x3df7fd4: STRB            W8, [X23,#byte_8FFD7D1@PAGEOFF]
+0x3df7fd8: LDR             X0, [X22]; klass
+0x3df7fdc: ADRP            X22, #off_8ACDF88@PAGE
+0x3df7fe0: LDR             W8, [X0,#0xE0]
+0x3df7fe4: LDR             X22, [X22,#off_8ACDF88@PAGEOFF]; qword_8D17890
+0x3df7fe8: CBNZ            W8, loc_3DF7FF0
+0x3df7fec: BL              il2cpp_codegen_runtime_class_init
+0x3df7ff0: LDR             X0, [X22]
+0x3df7ff4: BL              QuickTutor.Singleton_object_$$get_Instance
+0x3df7ff8: CBZ             X0, loc_3DF8050
+0x3df7ffc: MOV             X1, XZR
+0x3df8000: BL              SDKModule.ABTestManager$$get_GamePlayImprove01IsBTest
+0x3df8004: TBZ             W0, #0, loc_3DF803C
+0x3df8008: AND             W21, W21, #1
+0x3df800c: MOV             X0, X20
+0x3df8010: MOV             X1, X19
+0x3df8014: MOV             W2, W21
+0x3df8018: BL              GameModule.BattleGameSceneManager$$GetLegendaryUnitCount
+0x3df801c: MOV             W22, W0
+0x3df8020: MOV             X0, X20
+0x3df8024: MOV             X1, X19
+0x3df8028: MOV             W2, W21
+0x3df802c: BL              GameModule.BattleGameSceneManager$$GetLegendaryBarracksCount
+0x3df8030: CMP             W22, W0
+0x3df8034: CSET            W0, LT
+0x3df8038: B               loc_3DF8040
+0x3df803c: MOV             W0, #1
+0x3df8040: LDP             X20, X19, [SP,#0x30+var_10]
+0x3df8044: LDP             X22, X21, [SP,#0x30+var_20]
+0x3df8048: LDP             X30, X23, [SP+0x30+var_30],#0x30
+0x3df804c: RET
+0x3df8050: BL              il2cpp_codegen_raise_null_reference_exception

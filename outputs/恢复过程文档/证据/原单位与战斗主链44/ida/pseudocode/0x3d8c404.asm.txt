@@ -1,0 +1,44 @@
+0x3d8c404: STP             X30, X21, [SP,#var_20]!
+0x3d8c408: STP             X20, X19, [SP,#0x20+var_10]
+0x3d8c40c: ADRP            X21, #byte_8FFD49F@PAGE
+0x3d8c410: ADRP            X20, #off_8AD0F98@PAGE
+0x3d8c414: LDRB            W8, [X21,#byte_8FFD49F@PAGEOFF]
+0x3d8c418: LDR             X20, [X20,#off_8AD0F98@PAGEOFF]; qword_8D12460
+0x3d8c41c: MOV             X19, X0
+0x3d8c420: TBNZ            W8, #0, loc_3D8C438
+0x3d8c424: ADRP            X0, #off_8AD0F98@PAGE
+0x3d8c428: LDR             X0, [X0,#off_8AD0F98@PAGEOFF]; qword_8D12460 ; slot
+0x3d8c42c: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3d8c430: MOV             W8, #1
+0x3d8c434: STRB            W8, [X21,#byte_8FFD49F@PAGEOFF]
+0x3d8c438: LDR             X0, [X20]; method
+0x3d8c43c: LDR             X21, [X19,#0x40]
+0x3d8c440: BL              ToolModule.ManagerBase_object_$$get_Instance
+0x3d8c444: LDR             X8, [X19,#0x40]
+0x3d8c448: CBZ             X8, loc_3D8C4B0
+0x3d8c44c: CBZ             X0, loc_3D8C4B0
+0x3d8c450: LDRB            W2, [X19,#0x20]
+0x3d8c454: LDR             W1, [X8,#0x20]
+0x3d8c458: MOV             X3, XZR
+0x3d8c45c: BL              GameModule.SynergyEffectManager$$MeleeFetter5
+0x3d8c460: CBZ             X21, loc_3D8C4B0
+0x3d8c464: STR             W0, [X21,#0x20]
+0x3d8c468: LDR             X0, [X20]; method
+0x3d8c46c: BL              ToolModule.ManagerBase_object_$$get_Instance
+0x3d8c470: LDR             X8, [X19,#0x40]
+0x3d8c474: CBZ             X8, loc_3D8C4B0
+0x3d8c478: CBZ             X0, loc_3D8C4B0
+0x3d8c47c: LDRB            W2, [X19,#0x20]
+0x3d8c480: LDR             W1, [X8,#0x18]
+0x3d8c484: MOV             X3, XZR
+0x3d8c488: BL              GameModule.SynergyEffectManager$$MeleeFetter7
+0x3d8c48c: LDR             X8, [X19,#0x40]
+0x3d8c490: CBZ             X8, loc_3D8C4B0
+0x3d8c494: LDR             W9, [X8,#0x18]
+0x3d8c498: CMP             W0, W9
+0x3d8c49c: B.EQ            loc_3D8C4A4
+0x3d8c4a0: STP             W0, W0, [X8,#0x18]
+0x3d8c4a4: LDP             X20, X19, [SP,#0x20+var_10]
+0x3d8c4a8: LDP             X30, X21, [SP+0x20+var_20],#0x20
+0x3d8c4ac: RET
+0x3d8c4b0: BL              il2cpp_codegen_raise_null_reference_exception

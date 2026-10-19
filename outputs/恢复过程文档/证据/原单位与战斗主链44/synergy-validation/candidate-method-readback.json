@@ -1,0 +1,182 @@
+[
+  {
+    "method": "Init",
+    "text": "Init()\r\n\t\t{\r\n\t\t\tvar stateMachine = new _003CInit_003Ed__1();\r\n\t\t\tstateMachine._003C_003Et__builder = AsyncUniTaskMethodBuilder.Create();\r\n\t\t\tstateMachine._003C_003E1__state = -1;\r\n\t\t\tstateMachine._003C_003Et__builder.Start(ref stateMachine);\r\n\t\t\treturn stateMachine._003C_003Et__builder.Task;\r\n\t\t}",
+    "sha256": "d476e6c104f5dcae5f7ca412226f5748c1a051283f77cd5f8d79d7c48983ad91"
+  },
+  {
+    "method": "GetFetterCount",
+    "text": "GetFetterCount(CardFettersType fetterType, bool isEnemy)\r\n\t\t{\r\n\t\t\tif (isEnemy)\r\n\t\t\t{\r\n\t\t\t    switch (fetterType)\r\n\t\t\t    {\r\n\t\t\t        case CardFettersType.Orcs: return AIBehaviourManager.Instance.OrcsCount;\r\n\t\t\t        case CardFettersType.Undead: return AIBehaviourManager.Instance.UnDeadCount;\r\n\t\t\t        case CardFettersType.Terran: return AIBehaviourManager.Instance.TerranCount;\r\n\t\t\t        case CardFettersType.Machine: return AIBehaviourManager.Instance.MachineCount;\r\n\t\t\t        default: return 0;\r\n\t\t\t    }\r\n\t\t\t}\r\n\t\t\tswitch (fetterType)\r\n\t\t\t{\r\n\t\t\t    case CardFettersType.Orcs: return EquipCardInfoManager.Instance.OrcsCount;\r\n\t\t\t    case CardFettersType.Undead: return EquipCardInfoManager.Instance.UnDeadCount;\r\n\t\t\t    case CardFettersType.Terran: return EquipCardInfoManager.Instance.TerranCount;\r\n\t\t\t    case CardFettersType.Machine: return EquipCardInfoManager.Instance.MachineCount;\r\n\t\t\t    default: return 0;\r\n\t\t\t}\r\n\t\t}",
+    "sha256": "3f2ca86b8bc68e85f14ee98db7a83b24d8cc0d6095b89ad300e26016040f0a7c"
+  },
+  {
+    "method": "GetAtkWayTypeCount",
+    "text": "GetAtkWayTypeCount(AtkWayType atkWayType, bool isEnemy)\r\n\t\t{\r\n\t\t\tif (isEnemy)\r\n\t\t\t{\r\n\t\t\t    switch (atkWayType)\r\n\t\t\t    {\r\n\t\t\t        case AtkWayType.Melee: return AIBehaviourManager.Instance.MeleeCount;\r\n\t\t\t        case AtkWayType.Remote: return AIBehaviourManager.Instance.RemoteCount;\r\n\t\t\t        default: return 0;\r\n\t\t\t    }\r\n\t\t\t}\r\n\t\t\tswitch (atkWayType)\r\n\t\t\t{\r\n\t\t\t    case AtkWayType.Melee: return EquipCardInfoManager.Instance.MeleeCount;\r\n\t\t\t    case AtkWayType.Remote: return EquipCardInfoManager.Instance.RemoteCount;\r\n\t\t\t    default: return 0;\r\n\t\t\t}\r\n\t\t}",
+    "sha256": "5b8fa89d4d6f211541610cd7b7bfc936ac62086aeb0fda625cff0ecff76d71d8"
+  },
+  {
+    "method": "InternalCalculateProductionSpeed",
+    "text": "InternalCalculateProductionSpeed(float originalSpawnTime, bool isEnemy, int fetterCount, int requiredCount)\r\n\t\t{\r\n\t\t\tif (fetterCount < requiredCount)\r\n\t\t\t    return originalSpawnTime;\r\n\t\t\tfloat change = originalSpawnTime * -0.1f;\r\n\t\t\treturn originalSpawnTime + change;\r\n\t\t}",
+    "sha256": "d578481679750a75565a5e9a114adf88c6db34c8341dbc2f67f4246cffa44e9f"
+  },
+  {
+    "method": "HumanFetter2",
+    "text": "HumanFetter2(float originalSpawnTime, bool isEnemy)\r\n\t\t{\r\n\t\t\tif (IsUseNewFetter)\r\n\t\t\t    return originalSpawnTime;\r\n\t\t\treturn InternalCalculateProductionSpeed(originalSpawnTime, isEnemy, GetFetterCount(CardFettersType.Terran, isEnemy), 2);\r\n\t\t}",
+    "sha256": "64f8452cfc1d57e36d239eb83149e3de94847038cfd9f59cc2e1ff44a7ff1d7a"
+  },
+  {
+    "method": "HumanFetter4",
+    "text": "HumanFetter4(int originalAttack, bool isEnemy)\r\n\t\t{\r\n\t\t\tif (IsUseNewFetter)\r\n\t\t\t    return originalAttack;\r\n\t\t\treturn InternalCalculateDamage(originalAttack, isEnemy, GetFetterCount(CardFettersType.Terran, isEnemy), 4);\r\n\t\t}",
+    "sha256": "5bf0692db6d16a148aed44a52fa261f35e3f9af6ba9a86d0e6e9ce2c12f2c1b0"
+  },
+  {
+    "method": "HumanFetter6",
+    "text": "HumanFetter6(int originalOutput, bool isEnemy)\r\n\t\t{\r\n\t\t\tif (!IsUseNewFetter && GetFetterCount(CardFettersType.Terran, isEnemy) >= 6)\r\n\t\t\t{\r\n\t\t\t    float bonus = (float)originalOutput * 0.2f;\r\n\t\t\t    return unchecked(originalOutput + (int)bonus);\r\n\t\t\t}\r\n\t\t\treturn originalOutput;\r\n\t\t}",
+    "sha256": "ecf8654f5477459b8720944a31958a8a8610968e04c30bec1bce5151544ded48"
+  },
+  {
+    "method": "HumanFetter6_GoldPerSecond",
+    "text": "HumanFetter6_GoldPerSecond(bool isEnemy)\r\n\t\t{\r\n\t\t\treturn IsUseNewFetter && GetFetterCount(CardFettersType.Terran, isEnemy) >= 6;\r\n\t\t}",
+    "sha256": "607281eef7a4b97f8952d40ec417988c277229b06add5bfa2ac41814479b4d0c"
+  },
+  {
+    "method": "HumanFetter2_BuildingHp",
+    "text": "HumanFetter2_BuildingHp(int originalHp, bool isEnemy)\r\n\t\t{\r\n\t\t\tif (!IsUseNewFetter)\r\n\t\t\t    return originalHp;\r\n\t\t\treturn InternalCalculateDamage(originalHp, isEnemy, GetFetterCount(CardFettersType.Terran, isEnemy), 2);\r\n\t\t}",
+    "sha256": "29a85d7d2911572606a62f4263db6b343f501c03972f12669256e6783af66efb"
+  },
+  {
+    "method": "HumanFetter4_DamageReduction",
+    "text": "HumanFetter4_DamageReduction(int damage, EntityBase target, bool isEnemy, float checkRange = 1f)\r\n\t\t{\r\n\t\t\tif (IsUseNewFetter && target is RoleBehaviour role && role.CardFettersType == CardFettersType.Terran && GetFetterCount(CardFettersType.Terran, isEnemy) >= 4)\r\n\t\t\t{\r\n\t\t\t    var nearbyRoles = BattleGameSceneManager.Instance.GetNearRole(isEnemy, target, checkRange, -1);\r\n\t\t\t    if (nearbyRoles != null && nearbyRoles.Count > 0)\r\n\t\t\t    {\r\n\t\t\t        float reduction = (float)damage * 0.2f;\r\n\t\t\t        return unchecked(damage - (int)reduction);\r\n\t\t\t    }\r\n\t\t\t}\r\n\t\t\treturn damage;\r\n\t\t}",
+    "sha256": "96ceea94d93fceed1ebe6b3b853552fb6eb054734304f7a1c671bf6e9c771387"
+  },
+  {
+    "method": "UndeadFetter2",
+    "text": "UndeadFetter2(float originalSpawnTime, bool isEnemy)\r\n\t\t{\r\n\t\t\tif (GetFetterCount(CardFettersType.Undead, isEnemy) < 2)\r\n\t\t\t    return originalSpawnTime;\r\n\t\t\tfloat change = originalSpawnTime * (IsUseNewFetter ? -0.2f : -0.1f);\r\n\t\t\treturn originalSpawnTime + change;\r\n\t\t}",
+    "sha256": "b2b644419623c8f4a60628aa69c2d9b7015114a9c5209ebc5d39ac4862ebea94"
+  },
+  {
+    "method": "UndeadFetter4",
+    "text": "UndeadFetter4(int originalAttack, bool isEnemy)\r\n\t\t{\r\n\t\t\tif (IsUseNewFetter)\r\n\t\t\t    return originalAttack;\r\n\t\t\treturn InternalCalculateDamage(originalAttack, isEnemy, GetFetterCount(CardFettersType.Undead, isEnemy), 4);\r\n\t\t}",
+    "sha256": "5789ca3e005e840ac657bef8c4756bf1f635fbe4c9b4834e1327500019cfe919"
+  },
+  {
+    "method": "UndeadFetter6",
+    "text": "UndeadFetter6(bool isEnemy)\r\n\t\t{\r\n\t\t\tif (GetFetterCount(CardFettersType.Undead, isEnemy) < 6)\r\n\t\t\t    return false;\r\n\t\t\treturn IsUseNewFetter || UnityEngine.Random.Range(0, 100) < 10;\r\n\t\t}",
+    "sha256": "c17446e68d90db97abd47dcfaa5ee2c52dcd85cbfa848efc241c9b79a55fd5cf"
+  },
+  {
+    "method": "UndeadFetter4_Revive",
+    "text": "UndeadFetter4_Revive(bool isEnemy)\r\n\t\t{\r\n\t\t\treturn IsUseNewFetter && GetFetterCount(CardFettersType.Undead, isEnemy) >= 4 && UnityEngine.Random.Range(0, 100) < 10;\r\n\t\t}",
+    "sha256": "8efa00902465d97d92eb80d4b09dbe822e41949177d17a8c35a5d7c11af3e194"
+  },
+  {
+    "method": "UndeadFetter6_ExtraSpawn",
+    "text": "UndeadFetter6_ExtraSpawn(bool isEnemy)\r\n\t\t{\r\n\t\t\treturn IsUseNewFetter && GetFetterCount(CardFettersType.Undead, isEnemy) >= 6;\r\n\t\t}",
+    "sha256": "00111f53cb491cf72ccc62f8f86ee635c662a316a271ef7e2aa89817dfa2b21d"
+  },
+  {
+    "method": "OrcsFetter2",
+    "text": "OrcsFetter2(float originalSpawnTime, bool isEnemy)\r\n\t\t{\r\n\t\t\tif (IsUseNewFetter)\r\n\t\t\t    return originalSpawnTime;\r\n\t\t\treturn InternalCalculateProductionSpeed(originalSpawnTime, isEnemy, GetFetterCount(CardFettersType.Orcs, isEnemy), 2);\r\n\t\t}",
+    "sha256": "4d4f566400fcaaefb189d79fd559cdff3dccf38f861b0d4a914f86d816a51897"
+  },
+  {
+    "method": "OrcsFetter4",
+    "text": "OrcsFetter4(int originalAttack, bool isEnemy)\r\n\t\t{\r\n\t\t\tif (IsUseNewFetter)\r\n\t\t\t    return originalAttack;\r\n\t\t\treturn InternalCalculateDamage(originalAttack, isEnemy, GetFetterCount(CardFettersType.Orcs, isEnemy), 4);\r\n\t\t}",
+    "sha256": "461821a940ed71fe5c4452a395d72bf955a7a344ed2304db2d54810ce06e91cb"
+  },
+  {
+    "method": "OrcsFetter6",
+    "text": "OrcsFetter6(float originalVampireObb, bool isEnemy)\r\n\t\t{\r\n\t\t\tif (!IsUseNewFetter && GetFetterCount(CardFettersType.Orcs, isEnemy) >= 6)\r\n\t\t\t    return originalVampireObb + 0.2f;\r\n\t\t\treturn originalVampireObb;\r\n\t\t}",
+    "sha256": "5f679f176e0eb760aa3dd9b3fa964af6e3eac22c7075a3c0ecf303f362039954"
+  },
+  {
+    "method": "OrcsFetter2_MoveSpeed",
+    "text": "OrcsFetter2_MoveSpeed(float originalMoveSpeed, bool isEnemy)\r\n\t\t{\r\n\t\t\tif (IsUseNewFetter && GetFetterCount(CardFettersType.Orcs, isEnemy) >= 2)\r\n\t\t\t{\r\n\t\t\t    float bonus = originalMoveSpeed * 0.2f;\r\n\t\t\t    return bonus + originalMoveSpeed;\r\n\t\t\t}\r\n\t\t\treturn originalMoveSpeed;\r\n\t\t}",
+    "sha256": "b9f5727d5446fff42ae6bf4a8f464f8e46787fb1cfcad3d2905b361c0a64593c"
+  },
+  {
+    "method": "OrcsFetter4_AttackSpeed",
+    "text": "OrcsFetter4_AttackSpeed(int currentHp, int maxHp, bool isEnemy)\r\n\t\t{\r\n\t\t\tif (!IsUseNewFetter)\r\n\t\t\t    return false;\r\n\t\t\tint fetterCount = GetFetterCount(CardFettersType.Orcs, isEnemy);\r\n\t\t\treturn maxHp > 0 && fetterCount >= 4 && (float)currentHp / (float)maxHp < 0.5f;\r\n\t\t}",
+    "sha256": "fd929a726040bb9b5fda03de450b5f83096a5b9fde5077fbdde51e9d30795f45"
+  },
+  {
+    "method": "OrcsFetter6_BuildingDamage",
+    "text": "OrcsFetter6_BuildingDamage(int originalDamage, bool isEnemy, bool isBuilding)\r\n\t\t{\r\n\t\t\tif (IsUseNewFetter && isBuilding && GetFetterCount(CardFettersType.Orcs, isEnemy) >= 6)\r\n\t\t\t{\r\n\t\t\t    float bonus = (float)originalDamage * 0.75f;\r\n\t\t\t    return unchecked(originalDamage + (int)bonus);\r\n\t\t\t}\r\n\t\t\treturn originalDamage;\r\n\t\t}",
+    "sha256": "ba5fa1f5c53640374b9545b40f95829805a9470719161fcc024c9899ea1a5011"
+  },
+  {
+    "method": "MachineFetter2",
+    "text": "MachineFetter2(float originalSpawnTime, bool isEnemy)\r\n\t\t{\r\n\t\t\tif (IsUseNewFetter)\r\n\t\t\t    return originalSpawnTime;\r\n\t\t\treturn InternalCalculateProductionSpeed(originalSpawnTime, isEnemy, GetFetterCount(CardFettersType.Machine, isEnemy), 2);\r\n\t\t}",
+    "sha256": "37b3325f35589858056e9e6b1902714fb33ae83573c8eb88803d73d58108efef"
+  },
+  {
+    "method": "MachineFetter4",
+    "text": "MachineFetter4(int originalAttack, bool isEnemy)\r\n\t\t{\r\n\t\t\treturn InternalCalculateDamage(originalAttack, isEnemy, GetFetterCount(CardFettersType.Machine, isEnemy), 4);\r\n\t\t}",
+    "sha256": "f245146c70686a645d1e9849c947768b31c96cfa342f5e4a3328d9d91f493957"
+  },
+  {
+    "method": "MachineFetter6",
+    "text": "MachineFetter6(int originalDamage, bool isEnemy, bool isBuilding)\r\n\t\t{\r\n\t\t\tif (!IsUseNewFetter && isBuilding)\r\n\t\t\t    return InternalCalculateDamage(originalDamage, isEnemy, GetFetterCount(CardFettersType.Machine, isEnemy), 6);\r\n\t\t\treturn originalDamage;\r\n\t\t}",
+    "sha256": "0956b7b243233b9696e8aef3aa30d9cc6d7411c09925f385fdba21f8a692ecec"
+  },
+  {
+    "method": "MeleeFetter3",
+    "text": "MeleeFetter3(float originalSpawnTime, bool isEnemy)\r\n\t\t{\r\n\t\t\treturn InternalCalculateProductionSpeed(originalSpawnTime, isEnemy, GetAtkWayTypeCount(AtkWayType.Melee, isEnemy), 3);\r\n\t\t}",
+    "sha256": "0949c436f88f5809e60be547884bba1c27d221be64d51a9243ceabbd6ce5b2be"
+  },
+  {
+    "method": "MeleeFetter5",
+    "text": "MeleeFetter5(int originalAttack, bool isEnemy)\r\n\t\t{\r\n\t\t\treturn InternalCalculateDamage(originalAttack, isEnemy, GetAtkWayTypeCount(AtkWayType.Melee, isEnemy), 5);\r\n\t\t}",
+    "sha256": "cee6f94bcbdefc871560f2d1ff758f6b3b66d8abbc259366d9c8feef04b79d37"
+  },
+  {
+    "method": "MeleeFetter7",
+    "text": "MeleeFetter7(int originalHp, bool isEnemy)\r\n\t\t{\r\n\t\t\tif (GetAtkWayTypeCount(AtkWayType.Melee, isEnemy) >= 7)\r\n\t\t\t{\r\n\t\t\t    float bonus = (float)originalHp * 0.2f;\r\n\t\t\t    return unchecked(originalHp + (int)bonus);\r\n\t\t\t}\r\n\t\t\treturn originalHp;\r\n\t\t}",
+    "sha256": "476e1b36655822d2f0eb389fb0e055f963dc44b62a6a3d107bca737bcaea94cd"
+  },
+  {
+    "method": "RemoteFetter3",
+    "text": "RemoteFetter3(float originalSpawnTime, bool isEnemy)\r\n\t\t{\r\n\t\t\treturn InternalCalculateProductionSpeed(originalSpawnTime, isEnemy, GetAtkWayTypeCount(AtkWayType.Remote, isEnemy), 3);\r\n\t\t}",
+    "sha256": "cc14b7ade6b63f735adc5fd8b7d9d04e1f2610f2045106ccc2b68171957ec098"
+  },
+  {
+    "method": "RemoteFetter5",
+    "text": "RemoteFetter5(int originalAttack, bool isEnemy)\r\n\t\t{\r\n\t\t\treturn InternalCalculateDamage(originalAttack, isEnemy, GetAtkWayTypeCount(AtkWayType.Remote, isEnemy), 5);\r\n\t\t}",
+    "sha256": "58504d009cfa779b1bea178a5fa6667b2b7c75013cea9266cf0f6df31bedebea"
+  },
+  {
+    "method": "RemoteFetter7",
+    "text": "RemoteFetter7(float originalRange, bool isEnemy)\r\n\t\t{\r\n\t\t\tif (GetAtkWayTypeCount(AtkWayType.Remote, isEnemy) >= 7)\r\n\t\t\t{\r\n\t\t\t    float bonus = originalRange * 0.1f;\r\n\t\t\t    return bonus + originalRange;\r\n\t\t\t}\r\n\t\t\treturn originalRange;\r\n\t\t}",
+    "sha256": "5df4b26719536072a280208a82183613eee520643e51cea2ee59dde3f5d9cf86"
+  },
+  {
+    "method": "MachineFetter2_Range",
+    "text": "MachineFetter2_Range(float originalRange, bool isEnemy)\r\n\t\t{\r\n\t\t\tif (IsUseNewFetter && GetFetterCount(CardFettersType.Machine, isEnemy) >= 2)\r\n\t\t\t{\r\n\t\t\t    float bonus = originalRange * 0.2f;\r\n\t\t\t    return bonus + originalRange;\r\n\t\t\t}\r\n\t\t\treturn originalRange;\r\n\t\t}",
+    "sha256": "ffc0803afd6de9ceb825a5b9d01457ea7f1bdb5a2e2467ecbf51b705b76d1912"
+  },
+  {
+    "method": "MachineFetter6_RemoteDamageReduction",
+    "text": "MachineFetter6_RemoteDamageReduction(int damage, EntityBase target, bool isEnemy, AtkWayType atkWayType)\r\n\t\t{\r\n\t\t\tif (atkWayType != AtkWayType.Remote || !IsUseNewFetter)\r\n\t\t\t    return damage;\r\n\t\t\tbool isMachine = (target is RoleBehaviour role && role.CardFettersType == CardFettersType.Machine)\r\n\t\t\t    || (target is ArchitectureBehaviour architecture && architecture.CardFettersType == CardFettersType.Machine);\r\n\t\t\tif (isMachine && GetFetterCount(CardFettersType.Machine, isEnemy) >= 6)\r\n\t\t\t{\r\n\t\t\t    float reduction = (float)damage * 0.5f;\r\n\t\t\t    return unchecked(damage - (int)reduction);\r\n\t\t\t}\r\n\t\t\treturn damage;\r\n\t\t}",
+    "sha256": "0eead21a90579f609ba08099e7f9b992d56f5cfd87cb9fd4b5285c847d1d47a9"
+  },
+  {
+    "method": "IAsyncStateMachine.MoveNext",
+    "text": "MoveNext()\r\n\t\t\t{\r\n\t\t\t\t_003C_003E1__state = -2;\r\n\t\t\t\t_003C_003Et__builder.SetResult();\r\n\t\t\t}",
+    "sha256": "ef1ddabc498012343caca0b4d4ce36ec651edede95a107b0982a5d6ed4ebb36e"
+  },
+  {
+    "method": "IAsyncStateMachine.SetStateMachine",
+    "text": "SetStateMachine(IAsyncStateMachine stateMachine)\r\n\t\t\t{\r\n\t\t\t\t_003C_003Et__builder.SetStateMachine(stateMachine);\r\n\t\t\t}",
+    "sha256": "797995df19a894df286436ae7941fe6c747f5c27a66acaf19b04a47eb828e318"
+  },
+  {
+    "method": "InternalCalculateDamage",
+    "text": "InternalCalculateDamage(int originalAttack, bool isEnemy, int fetterCount, int requiredCount)\r\n\t\t{\r\n\t\t\t// Recovered from ARM64 RVA 0x3E0F6F0; the native method does not read isEnemy.\r\n\t\t\tif (fetterCount < requiredCount)\r\n\t\t\t\treturn originalAttack;\r\n\t\t\tfloat bonus = (float)originalAttack * 0.5f;\r\n\t\t\treturn unchecked(originalAttack + (int)bonus);\r\n\t\t}",
+    "sha256": "4ae492b9a8eac9b697556636523cfdc3915f083d6971eb24b56cbbb606dc04a8"
+  },
+  {
+    "method": "SynergyEffectManager",
+    "text": "SynergyEffectManager()\r\n\t\t{\r\n\t\t}",
+    "sha256": "52493a30253d533961e4569d09f766413f6d613baa944a16c38a98daa9ff931d"
+  }
+]

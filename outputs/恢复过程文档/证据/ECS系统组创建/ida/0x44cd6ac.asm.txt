@@ -1,0 +1,24 @@
+0x44cd6ac: STP             X30, X21, [SP,#var_20]!
+0x44cd6b0: STP             X20, X19, [SP,#0x20+var_10]
+0x44cd6b4: ADRP            X21, #byte_90010B9@PAGE
+0x44cd6b8: ADRP            X20, #off_8B00D50@PAGE
+0x44cd6bc: LDRB            W8, [X21,#byte_90010B9@PAGEOFF]
+0x44cd6c0: LDR             X20, [X20,#off_8B00D50@PAGEOFF]; qword_8CF0CC0
+0x44cd6c4: MOV             X19, X0
+0x44cd6c8: TBNZ            W8, #0, loc_44CD6E0
+0x44cd6cc: ADRP            X0, #off_8B00D50@PAGE
+0x44cd6d0: LDR             X0, [X0,#off_8B00D50@PAGEOFF]; qword_8CF0CC0 ; slot
+0x44cd6d4: BL              il2cpp_codegen_initialize_runtime_metadata
+0x44cd6d8: MOV             W8, #1
+0x44cd6dc: STRB            W8, [X21,#byte_90010B9@PAGEOFF]
+0x44cd6e0: MOV             X0, X19
+0x44cd6e4: MOV             X1, XZR
+0x44cd6e8: BL              Unity.Entities.ComponentSystemGroup$$OnCreate
+0x44cd6ec: LDR             X0, [X20]
+0x44cd6f0: BL              unk_3C3D4C4
+0x44cd6f4: MOV             X20, X0
+0x44cd6f8: BL              Pathfinding.ECS.AIMovementSystemGroup.TimeScaledRateManager$$.ctor
+0x44cd6fc: STR             X20, [X19,#0x88]
+0x44cd700: LDP             X20, X19, [SP,#0x20+var_10]
+0x44cd704: LDP             X30, X21, [SP+0x20+var_20],#0x20
+0x44cd708: RET

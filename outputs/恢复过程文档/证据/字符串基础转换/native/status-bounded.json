@@ -1,0 +1,58 @@
+{
+  "stage": "complete",
+  "methods": [
+    {
+      "name": "ToolModule.StringTool$$ToInt",
+      "address": 66534000,
+      "end": 66534128,
+      "signature": "int32_t ToolModule_StringTool__ToInt (System_String_o* str, const MethodInfo* method);",
+      "prototype": "int StringTool_3f73a70(void* value, const MethodInfo* method);",
+      "range_analysis": 1,
+      "direct_callees": [
+        {
+          "callsite": "0x3f73ac0",
+          "address": "0x7646054",
+          "name": "System.Globalization.CultureInfo$$get_InvariantCulture",
+          "signature": "System_Globalization_CultureInfo_o* System_Globalization_CultureInfo__get_InvariantCulture (const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x3f73ad8",
+          "address": "0x7682928",
+          "name": "System.Int32$$TryParse",
+          "signature": "bool System_Int32__TryParse (System_String_o* s, int32_t style, System_IFormatProvider_o* provider, int32_t* result, const MethodInfo* method);"
+        }
+      ],
+      "prototype_applied": true,
+      "actual_function_start": "0x3f73a70",
+      "actual_function_end": "0x3f73af0",
+      "pseudocode_chars": 554,
+      "unresolved_jumpout": false
+    },
+    {
+      "name": "ToolModule.StringTool$$IsNullOrEmpty",
+      "address": 66540568,
+      "end": 66540624,
+      "signature": "bool ToolModule_StringTool__IsNullOrEmpty (System_String_o* s, bool trimSpaces, const MethodInfo* method);",
+      "prototype": "unsigned char StringTool_3f75418(void* value, unsigned char trimSpaces, const MethodInfo* method);",
+      "range_analysis": 1,
+      "direct_callees": [
+        {
+          "callsite": "0x3f75428",
+          "address": "0x750e2a0",
+          "name": "System.String$$Trim",
+          "signature": "System_String_o* System_String__Trim (System_String_o* __this, const MethodInfo* method);"
+        }
+      ],
+      "prototype_applied": true,
+      "actual_function_start": "0x3f75418",
+      "actual_function_end": "0x3f75450",
+      "pseudocode_chars": 367,
+      "unresolved_jumpout": false
+    }
+  ],
+  "image_base": "0x0",
+  "type_errors": 0,
+  "hexrays_available": true,
+  "hexrays_version": "9.4.0.260713",
+  "database_saved": true
+}

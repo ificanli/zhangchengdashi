@@ -1,0 +1,54 @@
+__int64 __fastcall GameModule_RoleBehaviour__UpdateArchitectureTarget(__int64 a1)
+{
+  void *Instance; // x20
+  __int64 transform; // x0
+  long double position; // q0
+  long double v5; // q1
+  long double v6; // q2
+  __int64 result; // x0
+  int v8; // w8
+  __int64 v9; // x20
+  __int64 v10; // x0
+  __int64 v11; // x1
+
+  if ( (byte_8FFD484 & 1) == 0 )
+  {
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D12058);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&off_8CEB3E0);
+    byte_8FFD484 = 1;
+  }
+  Instance = ToolModule_ManagerBase_object___get_Instance((const MethodInfo *)qword_8D12058);
+  transform = UnityEngine_Component__get_transform(a1, 0);
+  if ( transform == 0 )
+    goto LABEL_12;
+  position = UnityEngine_Transform__get_position(transform, 0);
+  if ( Instance == nullptr )
+    goto LABEL_12;
+  result = GameModule_BattleGameSceneManager__GetArchitectureTarget(
+             (__int64)Instance,
+             *(_BYTE *)(a1 + 32),
+             position,
+             v5,
+             v6);
+  v8 = *(_DWORD *)(a1 + 72);
+  *(_QWORD *)(a1 + 80) = result;
+  if ( v8 == 0 )
+  {
+    v9 = result;
+    if ( *((_DWORD *)off_8CEB3E0 + 56) == 0 )
+      il2cpp_codegen_runtime_class_init(off_8CEB3E0);
+    result = UnityEngine_Object__op_Inequality(v9, 0, 0);
+    if ( (result & 1) != 0 )
+    {
+      v10 = *(_QWORD *)(a1 + 80);
+      if ( v10 != 0 )
+      {
+        v11 = UnityEngine_Component__get_transform(v10, 0);
+        return GameModule_RoleBehaviour__SetAiTarget(a1, v11);
+      }
+LABEL_12:
+      il2cpp_codegen_raise_null_reference_exception();
+    }
+  }
+  return result;
+}

@@ -1,0 +1,31 @@
+0x3e1aa70: fe0f1df8 str      x30, [sp, #-0x30]!
+0x3e1aa74: f65701a9 stp      x22, x21, [sp, #0x10]
+0x3e1aa78: f44f02a9 stp      x20, x19, [sp, #0x20]
+0x3e1aa7c: 148f02f0 adrp     x20, #0x8ffd000
+0x3e1aa80: d66502d0 adrp     x22, #0x8ad4000
+0x3e1aa84: d56502d0 adrp     x21, #0x8ad4000
+0x3e1aa88: 887e6239 ldrb     w8, [x20, #0x89f]
+0x3e1aa8c: d60a47f9 ldr      x22, [x22, #0xe10] // GameModule.UpdateController_TypeInfo
+0x3e1aa90: b50e47f9 ldr      x21, [x21, #0xe18] // Method$ToolModule.ManagerBase<GameManager>..ctor()
+0x3e1aa94: f30300aa mov      x19, x0
+0x3e1aa98: 28010037 tbnz     w8, #0, #0x3e1aabc
+0x3e1aa9c: c06502d0 adrp     x0, #0x8ad4000
+0x3e1aaa0: 000c47f9 ldr      x0, [x0, #0xe18] // Method$ToolModule.ManagerBase<GameManager>..ctor()
+0x3e1aaa4: f789f897 bl       #0x3c3d280
+0x3e1aaa8: c06502d0 adrp     x0, #0x8ad4000
+0x3e1aaac: 000847f9 ldr      x0, [x0, #0xe10] // GameModule.UpdateController_TypeInfo
+0x3e1aab0: f489f897 bl       #0x3c3d280
+0x3e1aab4: 28008052 mov      w8, #1
+0x3e1aab8: 887e2239 strb     w8, [x20, #0x89f]
+0x3e1aabc: c00240f9 ldr      x0, [x22]
+0x3e1aac0: 818af897 bl       #0x3c3d4c4
+0x3e1aac4: e1031faa mov      x1, xzr
+0x3e1aac8: f40300aa mov      x20, x0
+0x3e1aacc: b6ddfe97 bl       #0x3dd21a4 // GameModule.UpdateController$$.ctor
+0x3e1aad0: 741600f9 str      x20, [x19, #0x28]
+0x3e1aad4: a10240f9 ldr      x1, [x21]
+0x3e1aad8: e00313aa mov      x0, x19
+0x3e1aadc: f44f42a9 ldp      x20, x19, [sp, #0x20]
+0x3e1aae0: f65741a9 ldp      x22, x21, [sp, #0x10]
+0x3e1aae4: fe0743f8 ldr      x30, [sp], #0x30
+0x3e1aae8: 58776d14 b        #0x5978848 // ToolModule.ManagerBase<object>$$.ctor

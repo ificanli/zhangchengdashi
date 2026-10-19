@@ -1,0 +1,35 @@
+void __fastcall GameModule_BattleGameSceneManager__RemoveArchitectureBehaviour(__int64 a1, __int64 a2)
+{
+  __int64 v4; // x0
+  __int64 v5; // x0
+  const MethodInfo *v6; // x2
+
+  if ( (byte_8FFD7D3 & 1) == 0 )
+  {
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D08FD8 /* Method$System.Collections.Generic.List<ArchitectureBehaviour>.Remove() */);
+    byte_8FFD7D3 = 1;
+  }
+  v4 = *(_QWORD *)(a1 + 216);
+  if ( v4 == 0 )
+    goto LABEL_9;
+  System_Collections_Generic_List_object___Remove(v4, a2, qword_8D08FD8 /* Method$System.Collections.Generic.List<ArchitectureBehaviour>.Remove() */);
+  if ( a2 == 0 )
+    goto LABEL_9;
+  if ( *(_BYTE *)(a2 + 32) == 0 )
+  {
+    v5 = *(_QWORD *)(a1 + 224);
+    if ( v5 != 0 )
+      goto LABEL_7;
+LABEL_9:
+    il2cpp_codegen_raise_null_reference_exception();
+  }
+  v5 = *(_QWORD *)(a1 + 232);
+  if ( v5 == 0 )
+    goto LABEL_9;
+LABEL_7:
+  System_Collections_Generic_List_object___Remove(v5, a2, qword_8D08FD8 /* Method$System.Collections.Generic.List<ArchitectureBehaviour>.Remove() */);
+  GameModule_BattleGameSceneManager__MarkWebGLNavigationTargetFieldDirty(
+    (GameModule_BattleGameSceneManager_o *)a1,
+    *(_BYTE *)(a2 + 32),
+    v6);
+}

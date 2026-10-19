@@ -1,0 +1,60 @@
+0x727affc: STP             X30, X21, [SP,#var_20]!
+0x727b000: STP             X20, X19, [SP,#0x20+var_10]
+0x727b004: ADRP            X21, #byte_9009C37@PAGE
+0x727b008: LDRB            W8, [X21,#byte_9009C37@PAGEOFF]
+0x727b00c: MOV             X19, X1
+0x727b010: MOV             X20, X0
+0x727b014: TBNZ            W8, #0, loc_727B02C
+0x727b018: ADRP            X0, #off_8B19988@PAGE
+0x727b01c: LDR             X0, [X0,#off_8B19988@PAGEOFF]; qword_8CDC610 ; slot
+0x727b020: BL              il2cpp_codegen_initialize_runtime_metadata
+0x727b024: MOV             W8, #1
+0x727b028: STRB            W8, [X21,#byte_9009C37@PAGEOFF]
+0x727b02c: LDR             X20, [X20,#0x28]
+0x727b030: CBZ             X20, loc_727B0A4
+0x727b034: ADRP            X10, #off_8B19988@PAGE
+0x727b038: LDR             X8, [X20]
+0x727b03c: LDR             X10, [X10,#off_8B19988@PAGEOFF]; qword_8CDC610
+0x727b040: LDRH            W9, [X8,#0x12E]
+0x727b044: LDR             X1, [X10]
+0x727b048: CBZ             X9, loc_727B06C
+0x727b04c: LDR             X10, [X8,#0xB0]
+0x727b050: ADD             X10, X10, #8
+0x727b054: LDUR            X11, [X10,#-8]
+0x727b058: CMP             X11, X1
+0x727b05c: B.EQ            loc_727B07C
+0x727b060: SUBS            X9, X9, #1
+0x727b064: ADD             X10, X10, #0x10
+0x727b068: B.NE            loc_727B054
+0x727b06c: MOV             W2, #0xB
+0x727b070: MOV             X0, X20
+0x727b074: BL              unk_3C504A4
+0x727b078: B               loc_727B08C
+0x727b07c: LDR             W9, [X10]
+0x727b080: ADD             W9, W9, #0xB
+0x727b084: ADD             X8, X8, W9,SXTW#4
+0x727b088: ADD             X0, X8, #0x138
+0x727b08c: LDP             X3, X2, [X0]
+0x727b090: MOV             X0, X20
+0x727b094: MOV             X1, X19
+0x727b098: LDP             X20, X19, [SP,#0x20+var_10]
+0x727b09c: LDP             X30, X21, [SP+0x20+var_20],#0x20
+0x727b0a0: BR              X3
+0x727b0a4: ADRP            X0, #off_8B0CF78@PAGE
+0x727b0a8: LDR             X0, [X0,#off_8B0CF78@PAGEOFF]; unk_8CE7B50
+0x727b0ac: BL              unk_3C3D294
+0x727b0b0: BL              unk_3C3D4C4
+0x727b0b4: MOV             X19, X0
+0x727b0b8: ADRP            X0, #off_8B0E7C8@PAGE
+0x727b0bc: LDR             X0, [X0,#off_8B0E7C8@PAGEOFF]; unk_8D78218
+0x727b0c0: BL              unk_3C3D294
+0x727b0c4: MOV             X1, X0
+0x727b0c8: MOV             X0, X19
+0x727b0cc: MOV             X2, XZR
+0x727b0d0: BL              GameFramework.GameFrameworkException$$.ctor
+0x727b0d4: ADRP            X0, #off_8B199B8@PAGE
+0x727b0d8: LDR             X0, [X0,#off_8B199B8@PAGEOFF]; unk_8D36018
+0x727b0dc: BL              unk_3C3D294
+0x727b0e0: MOV             X1, X0
+0x727b0e4: MOV             X0, X19
+0x727b0e8: BL              unk_3C3D3A0

@@ -1,0 +1,31 @@
+0x52a8814: SUB             SP, SP, #0x30
+0x52a8818: STP             X30, X21, [SP,#0x30+var_20]
+0x52a881c: STP             X20, X19, [SP,#0x30+var_10]
+0x52a8820: STR             XZR, [SP,#0x30+var_28]
+0x52a8824: LDR             X0, [X0,#0x10]
+0x52a8828: CBZ             X0, loc_52A888C
+0x52a882c: LDR             X8, [X5,#0x20]
+0x52a8830: MOV             X20, X2
+0x52a8834: MOV             X21, X1
+0x52a8838: ADD             X2, SP, #0x30+var_28
+0x52a883c: LDR             X8, [X8,#0xC0]
+0x52a8840: MOV             W1, W3
+0x52a8844: MOV             X19, X4
+0x52a8848: LDR             X8, [X8,#0x58]
+0x52a884c: MOV             X3, X8
+0x52a8850: BL              System.Collections.Generic.Dictionary_int__object_$$TryGetValue
+0x52a8854: TBZ             W0, #0, loc_52A887C
+0x52a8858: LDR             X8, [SP,#0x30+var_28]
+0x52a885c: CBZ             X8, loc_52A887C
+0x52a8860: LDR             X9, [X8,#0x18]
+0x52a8864: LDR             X0, [X8,#0x40]
+0x52a8868: LDR             X4, [X8,#0x28]
+0x52a886c: MOV             X1, X21
+0x52a8870: MOV             X2, X20
+0x52a8874: MOV             X3, X19
+0x52a8878: BLR             X9
+0x52a887c: LDP             X20, X19, [SP,#0x30+var_10]
+0x52a8880: LDP             X30, X21, [SP,#0x30+var_20]
+0x52a8884: ADD             SP, SP, #0x30 ; '0'
+0x52a8888: RET
+0x52a888c: BL              il2cpp_codegen_raise_null_reference_exception

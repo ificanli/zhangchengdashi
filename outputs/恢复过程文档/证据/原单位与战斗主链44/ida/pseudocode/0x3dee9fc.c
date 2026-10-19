@@ -1,0 +1,41 @@
+__int64 __fastcall GameModule_BattleGameSceneManager__AddToRecord(__int64 a1, __int64 a2, int a3, int a4, int a5)
+{
+  __int64 v10; // x23
+  char v11; // w1
+  __int64 v12; // x0
+  __int64 result; // x0
+  __int64 v14; // x24
+  __int64 v15; // x25
+
+  if ( (byte_8FFD77E & 1) == 0 )
+  {
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8CFB630);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8CFB640);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8CE81F0);
+    byte_8FFD77E = 1;
+  }
+  v10 = GameModule_BattleGameSceneManager__ParseKey(a1, a2);
+  if ( (v11 & 1) == 0 )
+  {
+    v12 = *(_QWORD *)(a1 + 384);
+    if ( v12 == 0 )
+      goto LABEL_9;
+    result = System_Collections_Generic_Dictionary_object__object___ContainsKey(v12, v10, qword_8CFB630);
+    if ( (result & 1) != 0 )
+      return result;
+  }
+  v14 = *(_QWORD *)(a1 + 384);
+  v15 = ((__int64 (__fastcall *)(__int64))unk_3C3D4C4)(qword_8CE81F0);
+  GameModule_HexMirrorInfo___ctor(v15, 0);
+  if ( v15 == 0
+    || (*(_QWORD *)(v15 + 16) = a2,
+        *(_DWORD *)(v15 + 24) = a3,
+        *(_DWORD *)(v15 + 28) = a4,
+        *(_DWORD *)(v15 + 32) = a5,
+        v14 == 0) )
+  {
+LABEL_9:
+    il2cpp_codegen_raise_null_reference_exception();
+  }
+  return System_Collections_Generic_Dictionary_object__object___set_Item(v14, v10, v15, qword_8CFB640);
+}

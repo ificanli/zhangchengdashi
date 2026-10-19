@@ -1,0 +1,17 @@
+0x4299314: fe4fbfa9 stp      x30, x19, [sp, #-0x10]!
+0x4299318: 10000094 bl       #0x4299358 // GameModule.BarracksArchitectureBehaviour$$CreatRole
+0x429931c: fe4fc1a8 ldp      x30, x19, [sp], #0x10
+0x4299320: c0035fd6 ret      
+0x4299324: 3f040071 cmp      w1, #1
+0x4299328: 01010054 b.ne     #0x4299348
+0x429932c: 9d560b95 bl       #0x856eda0
+0x4299330: 130040f9 ldr      x19, [x0]
+0x4299334: 9f560b95 bl       #0x856edb0
+0x4299338: 33ffffb4 cbz      x19, #0x429931c
+0x429933c: e00313aa mov      x0, x19
+0x4299340: 6e7ee697 bl       #0x3c38cf8
+0x4299344: 530000b5 cbnz     x19, #0x429934c
+0x4299348: 1f38e997 bl       #0x3ce73c4
+0x429934c: e00313aa mov      x0, x19
+0x4299350: 6a7ee697 bl       #0x3c38cf8
+0x4299354: 6b8ccc97 bl       #0x35bc500

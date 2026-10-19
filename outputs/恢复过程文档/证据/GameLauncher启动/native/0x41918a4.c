@@ -1,0 +1,25 @@
+void CoreModule_GameLauncher__StopLoadingCompletedListening(void *self, const MethodInfo *method)
+{
+  __int64 v2; // x2
+  __int64 Instance; // x20
+  __int64 v5; // x21
+
+  if ( (byte_8FFF6AE & 1) == 0 )
+  {
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8CD84E8);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D2D1E0);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D12148);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D69BA8);
+    byte_8FFF6AE = 1;
+  }
+  if ( *((_BYTE *)self + 48) != 0 )
+  {
+    Instance = ToolModule_ManagerBase_object___get_Instance(qword_8D12148, method, v2);
+    v5 = ((__int64 (__fastcall *)(__int64))unk_3C3D4C4)(qword_8CD84E8);
+    System_Action_object____ctor(v5, self, qword_8D2D1E0, 0);
+    if ( Instance == 0 )
+      il2cpp_codegen_raise_null_reference_exception();
+    EventModule_EventManager__StopListening(Instance, qword_8D69BA8, v5, 0);
+    *((_BYTE *)self + 48) = 0;
+  }
+}

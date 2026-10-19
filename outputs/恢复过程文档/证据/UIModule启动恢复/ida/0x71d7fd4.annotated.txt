@@ -1,0 +1,15 @@
+void *GameFramework_UIModule__wait2Fram(void *self, void *action, const MethodInfo *method)
+{
+  __int64 v4; // x20
+
+  if ( (byte_90095DA & 1) == 0 )
+  {
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8CF6388 /* GameFramework.UIModule.<wait2Fram>d__19_TypeInfo */);
+    byte_90095DA = 1;
+  }
+  v4 = ((__int64 (__fastcall *)(__int64, void *, const MethodInfo *))unk_3C3D4C4)(qword_8CF6388 /* GameFramework.UIModule.<wait2Fram>d__19_TypeInfo */, action, method);
+  System_Object___ctor(v4, 0);
+  *(_DWORD *)(v4 + 16) = 0;
+  *(_QWORD *)(v4 + 32) = action;
+  return (void *)v4;
+}

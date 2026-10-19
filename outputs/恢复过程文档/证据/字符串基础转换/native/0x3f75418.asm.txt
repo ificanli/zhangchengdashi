@@ -1,0 +1,14 @@
+0x3f75418: STR             X30, [SP,#var_10]!
+0x3f7541c: CBZ             X0, loc_3F75440
+0x3f75420: TBZ             W1, #0, loc_3F75430
+0x3f75424: MOV             X1, XZR
+0x3f75428: BL              System.String$$Trim
+0x3f7542c: CBZ             X0, loc_3F7544C
+0x3f75430: LDR             W8, [X0,#0x10]
+0x3f75434: CMP             W8, #0
+0x3f75438: CSET            W0, EQ
+0x3f7543c: B               loc_3F75444
+0x3f75440: MOV             W0, #1
+0x3f75444: LDR             X30, [SP+0x10+var_10],#0x10
+0x3f75448: RET
+0x3f7544c: BL              il2cpp_codegen_raise_null_reference_exception

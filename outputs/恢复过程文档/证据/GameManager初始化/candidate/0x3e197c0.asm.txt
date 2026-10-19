@@ -1,0 +1,35 @@
+0x3e197c0: ff4301d1 sub      sp, sp, #0x50
+0x3e197c4: fe5703a9 stp      x30, x21, [sp, #0x30]
+0x3e197c8: f44f04a9 stp      x20, x19, [sp, #0x40]
+0x3e197cc: 358f0290 adrp     x21, #0x8ffd000
+0x3e197d0: d46502f0 adrp     x20, #0x8ad4000
+0x3e197d4: a8426239 ldrb     w8, [x21, #0x890]
+0x3e197d8: 94ae46f9 ldr      x20, [x20, #0xd58] // Method$Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder.Start<GameManager.<Init>d__9>()
+0x3e197dc: f30300aa mov      x19, x0
+0x3e197e0: c8000037 tbnz     w8, #0, #0x3e197f8
+0x3e197e4: c06502f0 adrp     x0, #0x8ad4000
+0x3e197e8: 00ac46f9 ldr      x0, [x0, #0xd58] // Method$Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder.Start<GameManager.<Init>d__9>()
+0x3e197ec: a58ef897 bl       #0x3c3d280
+0x3e197f0: 28008052 mov      w8, #1
+0x3e197f4: a8422239 strb     w8, [x21, #0x890]
+0x3e197f8: 800240f9 ldr      x0, [x20]
+0x3e197fc: 00e4006f movi     v0.2d, #0000000000000000
+0x3e19800: 08008012 mov      w8, #-1
+0x3e19804: e00300ad stp      q0, q0, [sp]
+0x3e19808: e00b803d str      q0, [sp, #0x20]
+0x3e1980c: f30f00f9 str      x19, [sp, #0x18]
+0x3e19810: e80300b9 str      w8, [sp]
+0x3e19814: 081c40f9 ldr      x8, [x0, #0x38]
+0x3e19818: 480000b5 cbnz     x8, #0x3e19820
+0x3e1981c: f8daf897 bl       #0x3c503fc
+0x3e19820: e8030091 mov      x8, sp
+0x3e19824: e0030091 mov      x0, sp
+0x3e19828: 13017db2 orr      x19, x8, #8
+0x3e1982c: b10e0094 bl       #0x3e1d2f0 // GameModule.GameManager.<Init>d__9$$MoveNext
+0x3e19830: e00313aa mov      x0, x19
+0x3e19834: e1031faa mov      x1, xzr
+0x3e19838: d2f7fb97 bl       #0x3d17780
+0x3e1983c: f44f44a9 ldp      x20, x19, [sp, #0x40]
+0x3e19840: fe5743a9 ldp      x30, x21, [sp, #0x30]
+0x3e19844: ff430191 add      sp, sp, #0x50
+0x3e19848: c0035fd6 ret      

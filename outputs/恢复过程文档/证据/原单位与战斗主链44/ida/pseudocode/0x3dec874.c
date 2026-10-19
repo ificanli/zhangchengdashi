@@ -1,0 +1,92 @@
+bool GameModule_BattleGameSceneManager__TryParseLegendaryTileV1OnlineParam(
+        bool *isEnabled,
+        int32_t *onlinePrice,
+        const MethodInfo *method)
+{
+  _QWORD *v5; // x21
+  __int64 v6; // x0
+  __int64 v7; // x0
+  __int64 v8; // x0
+  __int64 v9; // x0
+  __int64 v10; // x0
+  __int64 OnlineParam; // x21
+  __int64 v12; // x0
+  __int64 v13; // x0
+  __int64 v14; // x3
+  __int64 v15; // x8
+  __int64 v16; // x21
+  __int64 v17; // x20
+  __int64 InvariantCulture; // x0
+  const MethodInfo *v20; // x0
+  int32_t v21; // [xsp+Ch] [xbp-24h] BYREF
+
+  if ( (byte_8FFD762 & 1) == 0 )
+  {
+    il2cpp_codegen_initialize_runtime_metadata((void **)&off_8CE5F18);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&off_8D17878);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D53228);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D53268);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D5F008);
+    byte_8FFD762 = 1;
+  }
+  v21 = 0;
+  *isEnabled = false;
+  *onlinePrice = -1;
+  v5 = off_8D17878;
+  v6 = *((_QWORD *)off_8D17878 + 4);
+  if ( (*(_BYTE *)(v6 + 309) & 1) == 0 )
+    v6 = ((__int64 (*)(void))unk_3C503A0)();
+  v7 = *(_QWORD *)(*(_QWORD *)(v6 + 192) + 16LL);
+  if ( (*(_BYTE *)(v7 + 309) & 1) == 0 )
+    v7 = ((__int64 (*)(void))unk_3C503A0)();
+  if ( *(_DWORD *)(v7 + 224) == 0 )
+    il2cpp_codegen_runtime_class_init((void *)v7);
+  v8 = v5[4];
+  if ( (*(_BYTE *)(v8 + 309) & 1) == 0 )
+    v8 = ((__int64 (*)(void))unk_3C503A0)();
+  v9 = *(_QWORD *)(*(_QWORD *)(v8 + 192) + 16LL);
+  if ( (*(_BYTE *)(v9 + 309) & 1) == 0 )
+    v9 = ((__int64 (*)(void))unk_3C503A0)();
+  v10 = **(_QWORD **)(v9 + 184);
+  if ( v10 != 0 )
+  {
+    OnlineParam = L_Tools_OnlineParamControl__GetOnlineParam(v10, qword_8D5F008, qword_8D53228, 0);
+    if ( (System_String__IsNullOrWhiteSpace(OnlineParam, 0) & 1) != 0 )
+      return false;
+    if ( OnlineParam != 0 )
+    {
+      v12 = System_String__Trim(OnlineParam, 0);
+      if ( v12 != 0 )
+      {
+        v13 = System_String__Split(v12, 95, 0, 0);
+        if ( v13 != 0 )
+        {
+          v15 = *(_QWORD *)(v13 + 24);
+          v16 = v13;
+          if ( v15 == 0 )
+            return false;
+          if ( (_DWORD)v15 != 0 )
+          {
+            *isEnabled = System_String__op_Equality(*(_QWORD *)(v13 + 32), qword_8D53268, 0, v14) & 1;
+            if ( *(int *)(v16 + 24) >= 2 )
+            {
+              v17 = *(_QWORD *)(v16 + 40);
+              if ( *((_DWORD *)off_8CE5F18 + 56) == 0 )
+                il2cpp_codegen_runtime_class_init(off_8CE5F18);
+              InvariantCulture = System_Globalization_CultureInfo__get_InvariantCulture(0);
+              if ( (System_Int32__TryParse(v17, 7, InvariantCulture, &v21, 0) & 1) != 0 && v21 >= 1 )
+                *onlinePrice = v21;
+            }
+            return true;
+          }
+          else
+          {
+            v20 = (const MethodInfo *)((__int64 (*)(void))unk_3C3D4D4)();
+            return GameModule_BattleGameSceneManager__GetLegendaryTileV1Price(v20);
+          }
+        }
+      }
+    }
+  }
+  il2cpp_codegen_raise_null_reference_exception();
+}

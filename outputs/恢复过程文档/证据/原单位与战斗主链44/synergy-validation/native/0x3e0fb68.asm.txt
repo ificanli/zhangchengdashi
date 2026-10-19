@@ -1,0 +1,18 @@
+0x3e0fb68: e80f1ffc str      d8, [sp, #-0x10]!
+0x3e0fb6c: fe0700f9 str      x30, [sp, #8]
+0x3e0fb70: 08804039 ldrb     w8, [x0, #0x20]
+0x3e0fb74: 081ca04e mov      v8.16b, v0.16b
+0x3e0fb78: 48010035 cbnz     w8, #0x3e0fba0
+0x3e0fb7c: 22000012 and      w2, w1, #1
+0x3e0fb80: e1031f2a mov      w1, wzr
+0x3e0fb84: 3ffeff97 bl       #0x3e0f480 // GameModule.SynergyEffectManager$$GetFetterCount
+0x3e0fb88: 48d1fe90 adrp     x8, #0x1837000
+0x3e0fb8c: 00b944bd ldr      s0, [x8, #0x4b8]
+0x3e0fb90: 1f080071 cmp      w0, #2
+0x3e0fb94: 0009201e fmul     s0, s8, s0
+0x3e0fb98: 0029201e fadd     s0, s8, s0
+0x3e0fb9c: 08bd201e fcsel    s8, s8, s0, lt
+0x3e0fba0: fe0740f9 ldr      x30, [sp, #8]
+0x3e0fba4: 001da84e mov      v0.16b, v8.16b
+0x3e0fba8: e80741fc ldr      d8, [sp], #0x10
+0x3e0fbac: c0035fd6 ret      

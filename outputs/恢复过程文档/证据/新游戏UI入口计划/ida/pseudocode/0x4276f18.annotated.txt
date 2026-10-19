@@ -1,0 +1,35 @@
+void UIFramework_UIManager__Init_d__6__MoveNext(void *self, const MethodInfo *method)
+{
+  __int64 v3; // x21
+  __int64 v4; // x20
+  __int64 v5; // x20
+
+  if ( (byte_8FFFFE0 & 1) == 0 )
+  {
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8CFF530 /* Method$System.Collections.Generic.Dictionary<string, UIPanel>..ctor() */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8CDA040 /* System.Collections.Generic.Dictionary<string, UIPanel>_TypeInfo */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8CE7B80 /* UnityEngine.GameObject_TypeInfo */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D75758 /* UIPanelsRoot */);
+    byte_8FFFFE0 = 1;
+  }
+  v3 = *((_QWORD *)self + 3);
+  v4 = ((__int64 (__fastcall *)(__int64, const MethodInfo *))unk_3C3D4C4)(qword_8CDA040 /* System.Collections.Generic.Dictionary<string, UIPanel>_TypeInfo */, method);
+  System_Collections_Generic_Dictionary_object__object____ctor(v4, qword_8CFF530 /* Method$System.Collections.Generic.Dictionary<string, UIPanel>..ctor() */);
+  if ( v3 == 0 )
+    il2cpp_codegen_raise_null_reference_exception();
+  *(_QWORD *)(v3 + 40) = v4;
+  v5 = ((__int64 (__fastcall *)(__int64))unk_3C3D4C4)(qword_8CE7B80 /* UnityEngine.GameObject_TypeInfo */);
+  UnityEngine_GameObject___ctor(v5, qword_8D75758 /* UIPanelsRoot */, 0);
+  if ( v5 == 0 )
+    il2cpp_codegen_raise_null_reference_exception();
+  *(_QWORD *)(v3 + 32) = UnityEngine_GameObject__get_transform(v5, 0);
+  *(_BYTE *)(v3 + 56) = 1;
+  *(_DWORD *)self = -2;
+  if ( byte_8FFD1B1 == 0 )
+  {
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8CE9038 /* Cysharp.Threading.Tasks.CompilerServices.IStateMachineRunnerPromise_TypeInfo */);
+    byte_8FFD1B1 = 1;
+  }
+  if ( *((_QWORD *)self + 1) != 0 )
+    JUMPOUT(0x856E0A0);
+}

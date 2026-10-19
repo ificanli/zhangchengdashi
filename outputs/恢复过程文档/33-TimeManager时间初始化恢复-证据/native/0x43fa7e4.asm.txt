@@ -1,0 +1,47 @@
+0x43fa7e4: SUB             SP, SP, #0x30
+0x43fa7e8: STR             X30, [SP,#0x30+var_20]
+0x43fa7ec: STP             X20, X19, [SP,#0x30+var_10]
+0x43fa7f0: ADRP            X20, #byte_9000A48@PAGE
+0x43fa7f4: ADRP            X19, #off_8ACD4B0@PAGE
+0x43fa7f8: LDRB            W8, [X20,#byte_9000A48@PAGEOFF]
+0x43fa7fc: LDR             X19, [X19,#off_8ACD4B0@PAGEOFF]; off_8CE64C0
+0x43fa800: TBNZ            W8, #0, loc_43FA818
+0x43fa804: ADRP            X0, #off_8ACD4B0@PAGE
+0x43fa808: LDR             X0, [X0,#off_8ACD4B0@PAGEOFF]; off_8CE64C0 ; slot
+0x43fa80c: BL              il2cpp_codegen_initialize_runtime_metadata
+0x43fa810: MOV             W8, #1
+0x43fa814: STRB            W8, [X20,#byte_9000A48@PAGEOFF]
+0x43fa818: ADD             X0, SP, #0x30+var_18
+0x43fa81c: MOV             W1, #0x7B2
+0x43fa820: MOV             W2, #1
+0x43fa824: MOV             W3, #1
+0x43fa828: MOV             W4, #8
+0x43fa82c: MOV             W7, #1
+0x43fa830: MOV             W5, WZR
+0x43fa834: MOV             W6, WZR
+0x43fa838: STR             XZR, [SP,#0x30+var_18]
+0x43fa83c: STR             XZR, [SP,#0x30+var_30]
+0x43fa840: MOV             W20, #1
+0x43fa844: BL              System.DateTime$$.ctor
+0x43fa848: LDR             X8, [X19]
+0x43fa84c: LDR             X9, [SP,#0x30+var_18]
+0x43fa850: ADD             X0, SP, #0x30+var_28
+0x43fa854: MOV             W1, #0x7B2
+0x43fa858: LDR             X8, [X8,#0xB8]
+0x43fa85c: MOV             W2, #1
+0x43fa860: MOV             W3, #1
+0x43fa864: MOV             W7, #1
+0x43fa868: MOV             W4, WZR
+0x43fa86c: MOV             W5, WZR
+0x43fa870: MOV             W6, WZR
+0x43fa874: STR             X9, [X8]
+0x43fa878: STP             XZR, XZR, [SP,#0x30+var_30]
+0x43fa87c: BL              System.DateTime$$.ctor
+0x43fa880: LDR             X8, [X19]
+0x43fa884: LDP             X9, X30, [SP,#0x30+var_28]
+0x43fa888: LDR             X8, [X8,#0xB8]
+0x43fa88c: STRB            W20, [X8,#0x10]
+0x43fa890: LDP             X20, X19, [SP,#0x30+var_10]
+0x43fa894: STR             X9, [X8,#8]
+0x43fa898: ADD             SP, SP, #0x30 ; '0'
+0x43fa89c: RET

@@ -1,0 +1,133 @@
+--- before/Assets/Scripts/GFRunning/GameFramework/GameFrameEntry.cs
++++ after/Assets/Scripts/GFRunning/GameFramework/GameFrameEntry.cs
+@@ -137,30 +137,57 @@
+ 		[Address(RVA = "0x715AF54", Offset = "0x7156F54", VA = "0x715AF54")]
+ 		public static void Initialize(GameFrameModule _009D_007FOz_00AFs, Action _00B7_0060_0084VQI, params object[] h_00A6_00BB_00B2_0089w)
+ 		{
++			_009D_007FOz_00AFs.Àª_00A6_00A3_00BDE = _00B7_0060_0084VQI;
++			_009D_007FOz_00AFs.Initialize(h_00A6_00BB_00B2_0089w);
+ 		}
+ 
+ 		[Token(Token = "0x60055D3")]
+ 		[Address(RVA = "0x715AF7C", Offset = "0x7156F7C", VA = "0x715AF7C")]
+ 		public static void Start()
+ 		{
++			AppSetting.SetCultureBasedOnSetting();
++			foreach (GameFrameModule module in y_0086A_0094F_0083)
++			    module.Start();
++			O_00B8_005D_00A1_008B_005E = true;
+ 		}
+ 
+ 		[Token(Token = "0x60055D4")]
+ 		[Address(RVA = "0x715B144", Offset = "0x7157144", VA = "0x715B144")]
+ 		public static void ResourcesModuleUpdate(float _008EJ_0092_009BUc, float rfjÀ_0098L)
+ 		{
++			if (AppSetting.UseNewRes || !O_00B8_005D_00A1_008B_005E)
++			    return;
++			GameFrameModule module = GetModule<GameFramework.Resources.ResourcesModule>();
++			if (module != null)
++			    module.Update(_008EJ_0092_009BUc, rfjÀ_0098L);
+ 		}
+ 
+ 		[Token(Token = "0x60055D5")]
+ 		[Address(RVA = "0x715B260", Offset = "0x7157260", VA = "0x715B260")]
+ 		public static void Update(float _008EJ_0092_009BUc, float rfjÀ_0098L)
+ 		{
++			if (!O_00B8_005D_00A1_008B_005E)
++			    return;
++			LinkedListNode<GameFrameModule> node = y_0086A_0094F_0083.First;
++			while (node != null)
++			{
++			    node.Value.Update(_008EJ_0092_009BUc, rfjÀ_0098L);
++			    node = node.Next;
++			}
+ 		}
+ 
+ 		[Token(Token = "0x60055D6")]
+ 		[Address(RVA = "0x715B350", Offset = "0x7157350", VA = "0x715B350")]
+ 		public static void LateUpdate()
+ 		{
++			if (!O_00B8_005D_00A1_008B_005E)
++			    return;
++			LinkedListNode<GameFrameModule> node = y_0086A_0094F_0083.First;
++			while (node != null)
++			{
++			    node.Value.U_0095_008Bd_008A_00AC();
++			    node = node.Next;
++			}
+ 		}
+ 
+ 		[Token(Token = "0x60055D7")]
+@@ -177,7 +204,7 @@
+ 		[Token(Token = "0x60055D9")]
+ 		public static T GetModule<T>() where T : class
+ 		{
+-			return null;
++			return K_007E_005E_0098_00ABb(K_0086_009C_0083_0084_0089<T>()) as T;
+ 		}
+ 
+ 		[Token(Token = "0x60055DA")]
+@@ -189,21 +216,59 @@
+ 		[Token(Token = "0x60055DB")]
+ 		private static Type K_0086_009C_0083_0084_0089<T>() where T : class
+ 		{
+-			return null;
++			Type type = typeof(T);
++			if (!type.FullName.StartsWith("GameFramework."))
++			    throw new Exception(string.Format("You must get a Game Framework module, but '{0}' is not.", type.FullName));
++			string typeName = string.Format("{0}.{1}", type.Namespace, type.Name);
++			Type moduleType = Type.GetType(typeName);
++			if (moduleType == null)
++			    throw new Exception(string.Format("Can not find Game Framework module type '{0}'.", typeName));
++			return moduleType;
+ 		}
+ 
+ 		[Token(Token = "0x60055DC")]
+ 		[Address(RVA = "0x715B680", Offset = "0x7157680", VA = "0x715B680")]
+ 		private static GameFrameModule K_007E_005E_0098_00ABb(Type kF_00A8_008F_007C_00A5)
+ 		{
+-			return null;
++			LinkedListNode<GameFrameModule> node = y_0086A_0094F_0083.Last;
++			while (node != null)
++			{
++			    if (node.Value.GetType() == kF_00A8_008F_007C_00A5)
++			        return node.Value;
++			    node = node.Previous;
++			}
++			return _00B9X_0081_0093_0095_009B(kF_00A8_008F_007C_00A5);
+ 		}
+ 
+ 		[Token(Token = "0x60055DD")]
+ 		[Address(RVA = "0x715B7C8", Offset = "0x71577C8", VA = "0x715B7C8")]
+ 		private static GameFrameModule _00B9X_0081_0093_0095_009B(Type kF_00A8_008F_007C_00A5)
+ 		{
+-			return null;
+-		}
++			GameFrameModule module = (GameFrameModule)Activator.CreateInstance(kF_00A8_008F_007C_00A5);
++			if (module == null)
++			    throw new Exception(string.Format("Can not create module '{0}'.", module.GetType().FullName));
++			CLog.d_00B0e_00A1_00B2_005B("创建模块===" + kF_00A8_008F_007C_00A5.Name);
++			LinkedListNode<GameFrameModule> node = y_0086A_0094F_0083.First;
++			while (node != null)
++			{
++			    if (module.Priority > node.Value.Priority)
++			        break;
++			    node = node.Next;
++			}
++			if (node == null)
++			    y_0086A_0094F_0083.AddLast(module);
++			else
++			    y_0086A_0094F_0083.AddBefore(node, module);
++			return module;
++		}
++        [Token(Token = "0x60055DE")]
++        [Address(RVA = "0x715BAE8", Offset = "0x7157AE8", VA = "0x715BAE8")]
++        static GameFrameEntry()
++        {
++            y_0086A_0094F_0083 = new LinkedList<GameFrameModule>();
++            GameMenuSceneName = string.Empty;
++            IsGoGameMenu = false;
++        }
++
+ 	}
+ }

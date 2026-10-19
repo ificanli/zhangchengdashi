@@ -1,0 +1,45 @@
+0x3d8cdd8: STR             X30, [SP,#var_20]!
+0x3d8cddc: STP             X20, X19, [SP,#0x20+var_10]
+0x3d8cde0: ADRP            X20, #byte_8FFD4A3@PAGE
+0x3d8cde4: LDRB            W8, [X20,#byte_8FFD4A3@PAGEOFF]
+0x3d8cde8: MOV             X19, X0
+0x3d8cdec: TBNZ            W8, #0, loc_3D8CE04
+0x3d8cdf0: ADRP            X0, #off_8ACFC58@PAGE
+0x3d8cdf4: LDR             X0, [X0,#off_8ACFC58@PAGEOFF]; qword_8D12338 ; slot
+0x3d8cdf8: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3d8cdfc: MOV             W8, #1
+0x3d8ce00: STRB            W8, [X20,#byte_8FFD4A3@PAGEOFF]
+0x3d8ce04: LDRB            W8, [X19,#0x27C]
+0x3d8ce08: CBNZ            W8, loc_3D8CE20
+0x3d8ce0c: LDR             X8, [X19]
+0x3d8ce10: MOV             X0, X19
+0x3d8ce14: LDR             X9, [X8,#0x3A8]
+0x3d8ce18: LDR             X1, [X8,#0x3B0]
+0x3d8ce1c: BLR             X9
+0x3d8ce20: MOV             X0, X19
+0x3d8ce24: MOV             W1, WZR
+0x3d8ce28: STRB            WZR, [X19,#0x148]
+0x3d8ce2c: BL              GameModule.RoleBehaviour$$SetAiCanMove
+0x3d8ce30: MOV             X0, X19
+0x3d8ce34: MOV             X1, XZR
+0x3d8ce38: BL              UnityEngine.Component$$get_gameObject
+0x3d8ce3c: CBZ             X0, loc_3D8CE88
+0x3d8ce40: ADRP            X20, #off_8ACFC58@PAGE
+0x3d8ce44: LDR             X20, [X20,#off_8ACFC58@PAGEOFF]; qword_8D12338
+0x3d8ce48: MOV             W1, WZR
+0x3d8ce4c: MOV             X2, XZR
+0x3d8ce50: BL              UnityEngine.GameObject$$SetActive
+0x3d8ce54: LDR             X0, [X20]; method
+0x3d8ce58: BL              ToolModule.ManagerBase_object_$$get_Instance
+0x3d8ce5c: MOV             X20, X0
+0x3d8ce60: MOV             X0, X19
+0x3d8ce64: MOV             X1, XZR
+0x3d8ce68: BL              UnityEngine.Component$$get_gameObject
+0x3d8ce6c: CBZ             X20, loc_3D8CE88
+0x3d8ce70: MOV             X1, X0
+0x3d8ce74: MOV             X0, X20
+0x3d8ce78: LDP             X20, X19, [SP,#0x20+var_10]
+0x3d8ce7c: MOV             X2, XZR
+0x3d8ce80: LDR             X30, [SP+0x20+var_20],#0x20
+0x3d8ce84: B               AssetsModule.ObjPoolManager$$Recycle
+0x3d8ce88: BL              il2cpp_codegen_raise_null_reference_exception

@@ -1,0 +1,41 @@
+0x3e1984c: fe57bea9 stp      x30, x21, [sp, #-0x20]!
+0x3e19850: f44f01a9 stp      x20, x19, [sp, #0x10]
+0x3e19854: 358f0290 adrp     x21, #0x8ffd000
+0x3e19858: a8466239 ldrb     w8, [x21, #0x891]
+0x3e1985c: f40301aa mov      x20, x1
+0x3e19860: f30300aa mov      x19, x0
+0x3e19864: c8000037 tbnz     w8, #0, #0x3e1987c
+0x3e19868: a0650290 adrp     x0, #0x8acd000
+0x3e1986c: 008844f9 ldr      x0, [x0, #0x910] // System.Action_TypeInfo
+0x3e19870: 848ef897 bl       #0x3c3d280
+0x3e19874: 28008052 mov      w8, #1
+0x3e19878: a8462239 strb     w8, [x21, #0x891]
+0x3e1987c: 68824039 ldrb     w8, [x19, #0x20]
+0x3e19880: 08010034 cbz      w8, #0x3e198a0
+0x3e19884: 140300b4 cbz      x20, #0x3e198e4
+0x3e19888: 820e40f9 ldr      x2, [x20, #0x18]
+0x3e1988c: 802240f9 ldr      x0, [x20, #0x40]
+0x3e19890: 811640f9 ldr      x1, [x20, #0x28]
+0x3e19894: f44f41a9 ldp      x20, x19, [sp, #0x10]
+0x3e19898: fe57c2a8 ldp      x30, x21, [sp], #0x20
+0x3e1989c: 40001fd6 br       x2
+0x3e198a0: 602e40f9 ldr      x0, [x19, #0x58]
+0x3e198a4: e10314aa mov      x1, x20
+0x3e198a8: e2031faa mov      x2, xzr
+0x3e198ac: dbc3e294 bl       #0x76ca818 // System.Delegate$$Combine
+0x3e198b0: 800100b4 cbz      x0, #0x3e198e0
+0x3e198b4: a8650290 adrp     x8, #0x8acd000
+0x3e198b8: 088944f9 ldr      x8, [x8, #0x910] // System.Action_TypeInfo
+0x3e198bc: 010140f9 ldr      x1, [x8]
+0x3e198c0: 080040f9 ldr      x8, [x0]
+0x3e198c4: 1f0101eb cmp      x8, x1
+0x3e198c8: a1000054 b.ne     #0x3e198dc
+0x3e198cc: 602e00f9 str      x0, [x19, #0x58]
+0x3e198d0: 080040f9 ldr      x8, [x0]
+0x3e198d4: 1f0101eb cmp      x8, x1
+0x3e198d8: 60000054 b.eq     #0x3e198e4
+0x3e198dc: e38ff897 bl       #0x3c3d868
+0x3e198e0: 602e00f9 str      x0, [x19, #0x58]
+0x3e198e4: f44f41a9 ldp      x20, x19, [sp, #0x10]
+0x3e198e8: fe57c2a8 ldp      x30, x21, [sp], #0x20
+0x3e198ec: c0035fd6 ret      

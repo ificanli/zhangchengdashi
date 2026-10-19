@@ -1,0 +1,54 @@
+0x3d875f4: STR             X30, [SP,#var_20]!
+0x3d875f8: STP             X20, X19, [SP,#0x20+var_10]
+0x3d875fc: ADRP            X20, #byte_8FFD47D@PAGE
+0x3d87600: LDRB            W8, [X20,#byte_8FFD47D@PAGEOFF]
+0x3d87604: MOV             X19, X0
+0x3d87608: TBNZ            W8, #0, loc_3D87620
+0x3d8760c: ADRP            X0, #off_8ACC8D0@PAGE
+0x3d87610: LDR             X0, [X0,#off_8ACC8D0@PAGEOFF]; off_8CEB3E0 ; slot
+0x3d87614: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3d87618: MOV             W8, #1
+0x3d8761c: STRB            W8, [X20,#byte_8FFD47D@PAGEOFF]
+0x3d87620: MOV             W8, #1
+0x3d87624: MOV             X0, XZR
+0x3d87628: STRB            W8, [X19,#0xE0]
+0x3d8762c: BL              UnityEngine.Time$$get_time
+0x3d87630: LDR             X0, [X19,#0xD8]
+0x3d87634: FMOV            S1, #5.0
+0x3d87638: FADD            S0, S0, S1
+0x3d8763c: STR             S0, [X19,#0xE4]
+0x3d87640: CBZ             X0, loc_3D876C8
+0x3d87644: MOV             W1, #1
+0x3d87648: MOV             X2, XZR
+0x3d8764c: BL              UnityEngine.GameObject$$SetActive
+0x3d87650: MOV             X0, XZR
+0x3d87654: STRB            WZR, [X19,#0x240]
+0x3d87658: BL              Pathfinding.AstarWebGLRuntimeConfig$$get_UseWebGLNavigation
+0x3d8765c: TBNZ            W0, #0, loc_3D876A4
+0x3d87660: ADRP            X8, #off_8ACC8D0@PAGE
+0x3d87664: LDR             X8, [X8,#off_8ACC8D0@PAGEOFF]; off_8CEB3E0
+0x3d87668: LDR             X20, [X19,#0x80]
+0x3d8766c: LDR             X0, [X8]; klass
+0x3d87670: LDR             W8, [X0,#0xE0]
+0x3d87674: CBNZ            W8, loc_3D8767C
+0x3d87678: BL              il2cpp_codegen_runtime_class_init
+0x3d8767c: MOV             X0, X20
+0x3d87680: MOV             X1, XZR
+0x3d87684: MOV             X2, XZR
+0x3d87688: BL              UnityEngine.Object$$op_Inequality
+0x3d8768c: TBZ             W0, #0, loc_3D876A4
+0x3d87690: LDR             X0, [X19,#0x80]
+0x3d87694: CBZ             X0, loc_3D876C8
+0x3d87698: MOV             W1, WZR
+0x3d8769c: MOV             X2, XZR
+0x3d876a0: BL              UnityEngine.Behaviour$$set_enabled
+0x3d876a4: MOV             X0, X19
+0x3d876a8: MOV             W1, WZR
+0x3d876ac: MOV             W2, WZR
+0x3d876b0: BL              sub_3D7F628
+0x3d876b4: MOV             X0, X19
+0x3d876b8: LDP             X20, X19, [SP,#0x20+var_10]
+0x3d876bc: MOV             W1, WZR
+0x3d876c0: LDR             X30, [SP+0x20+var_20],#0x20
+0x3d876c4: B               GameModule.RoleBehaviour$$SetAiCanMove
+0x3d876c8: BL              il2cpp_codegen_raise_null_reference_exception

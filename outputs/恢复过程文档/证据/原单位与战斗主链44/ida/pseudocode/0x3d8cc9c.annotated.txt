@@ -1,0 +1,45 @@
+__int64 __fastcall GameModule_RoleBehaviour__ApplyBuildingDamageMultiplierIfNeeded(__int64 a1, int a2, __int64 *a3)
+{
+  __int64 v6; // x8
+  unsigned int v7; // w9
+  __int64 v8; // x11
+  __int64 v9; // x11
+  float v10; // s0
+  int v11; // w8
+  int v12; // w8
+
+  if ( (byte_8FFD4B0 & 1) == 0 )
+  {
+    il2cpp_codegen_initialize_runtime_metadata((void **)&off_8CE4180 /* GameModule.ArchitectureBehaviour_TypeInfo */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&off_8CEB3E0 /* UnityEngine.Object_TypeInfo */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&off_8CEDA60 /* GameModule.StoneWallBehaviour_TypeInfo */);
+    byte_8FFD4B0 = 1;
+  }
+  if ( *(float *)(a1 + 160) > 0.0 )
+  {
+    if ( *((_DWORD *)off_8CEB3E0 /* UnityEngine.Object_TypeInfo */ + 56) == 0 )
+      il2cpp_codegen_runtime_class_init(off_8CEB3E0 /* UnityEngine.Object_TypeInfo */);
+    if ( (UnityEngine_Object__op_Equality(a3, 0, 0) & 1) == 0 && a3 != nullptr )
+    {
+      if ( (v6 = *a3,
+            v7 = *(unsigned __int8 *)(*a3 + 304),
+            v8 = *((unsigned __int8 *)off_8CE4180 /* GameModule.ArchitectureBehaviour_TypeInfo */ + 304),
+            v7 >= (unsigned int)v8)
+        && *(_UNKNOWN **)(*(_QWORD *)(v6 + 200) + 8 * v8 - 8) == off_8CE4180 /* GameModule.ArchitectureBehaviour_TypeInfo */
+        || (v9 = *((unsigned __int8 *)off_8CEDA60 /* GameModule.StoneWallBehaviour_TypeInfo */ + 304), v7 >= (unsigned int)v9)
+        && *(_UNKNOWN **)(*(_QWORD *)(v6 + 200) + 8 * v9 - 8) == off_8CEDA60 /* GameModule.StoneWallBehaviour_TypeInfo */ )
+      {
+        v10 = *(float *)(a1 + 160) * (float)a2;
+        v11 = (int)v10;
+        if ( v10 == INFINITY )
+          v11 = 0x80000000;
+        v12 = v11 + a2;
+        if ( v12 <= 1 )
+          return 1;
+        else
+          return (unsigned int)v12;
+      }
+    }
+  }
+  return (unsigned int)a2;
+}

@@ -1,0 +1,25 @@
+0x52a8b08: STP             X30, X21, [SP,#var_20]!
+0x52a8b0c: STP             X20, X19, [SP,#0x20+var_10]
+0x52a8b10: ADRP            X21, #byte_9002565@PAGE
+0x52a8b14: ADRP            X20, #off_8ACC830@PAGE
+0x52a8b18: LDRB            W8, [X21,#byte_9002565@PAGEOFF]
+0x52a8b1c: LDR             X20, [X20,#off_8ACC830@PAGEOFF]; off_8CEEA50
+0x52a8b20: MOV             X19, X1
+0x52a8b24: TBNZ            W8, #0, loc_52A8B3C
+0x52a8b28: ADRP            X0, #off_8ACC830@PAGE
+0x52a8b2c: LDR             X0, [X0,#off_8ACC830@PAGEOFF]; off_8CEEA50 ; slot
+0x52a8b30: BL              il2cpp_codegen_initialize_runtime_metadata
+0x52a8b34: MOV             W8, #1
+0x52a8b38: STRB            W8, [X21,#byte_9002565@PAGEOFF]
+0x52a8b3c: LDR             X8, [X19,#0x20]
+0x52a8b40: LDR             X0, [X20]; klass
+0x52a8b44: LDR             X8, [X8,#0xC0]
+0x52a8b48: LDR             W9, [X0,#0xE0]
+0x52a8b4c: LDR             X19, [X8,#0x58]
+0x52a8b50: CBNZ            W9, loc_52A8B58
+0x52a8b54: BL              il2cpp_codegen_runtime_class_init
+0x52a8b58: MOV             X0, X19
+0x52a8b5c: LDP             X20, X19, [SP,#0x20+var_10]
+0x52a8b60: MOV             X1, XZR
+0x52a8b64: LDP             X30, X21, [SP+0x20+var_20],#0x20
+0x52a8b68: B               System.Type$$GetTypeFromHandle

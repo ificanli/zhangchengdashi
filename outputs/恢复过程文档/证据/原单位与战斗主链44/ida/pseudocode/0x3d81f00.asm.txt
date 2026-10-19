@@ -1,0 +1,70 @@
+0x3d81f00: STR             D8, [SP,#var_30]!
+0x3d81f04: STP             X30, X21, [SP,#0x30+var_20]
+0x3d81f08: STP             X20, X19, [SP,#0x30+var_10]
+0x3d81f0c: ADRP            X21, #byte_8FFD459@PAGE
+0x3d81f10: ADRP            X20, #off_8ACC8D0@PAGE
+0x3d81f14: LDRB            W8, [X21,#byte_8FFD459@PAGEOFF]
+0x3d81f18: LDR             X20, [X20,#off_8ACC8D0@PAGEOFF]; off_8CEB3E0
+0x3d81f1c: MOV             V8.16B, V0.16B
+0x3d81f20: MOV             X19, X0
+0x3d81f24: TBNZ            W8, #0, loc_3D81F3C
+0x3d81f28: ADRP            X0, #off_8ACC8D0@PAGE
+0x3d81f2c: LDR             X0, [X0,#off_8ACC8D0@PAGEOFF]; off_8CEB3E0 ; slot
+0x3d81f30: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3d81f34: MOV             W8, #1
+0x3d81f38: STRB            W8, [X21,#byte_8FFD459@PAGEOFF]
+0x3d81f3c: LDR             X0, [X20]; klass
+0x3d81f40: LDR             X20, [X19,#0x58]
+0x3d81f44: LDR             W8, [X0,#0xE0]
+0x3d81f48: CBNZ            W8, loc_3D81F50
+0x3d81f4c: BL              il2cpp_codegen_runtime_class_init
+0x3d81f50: MOV             X0, X20
+0x3d81f54: MOV             X1, XZR
+0x3d81f58: MOV             X2, XZR
+0x3d81f5c: BL              UnityEngine.Object$$op_Inequality
+0x3d81f60: TBZ             W0, #0, loc_3D81F8C
+0x3d81f64: LDR             X1, [X19,#0x58]
+0x3d81f68: MOV             X0, X19
+0x3d81f6c: MOV             V0.16B, V8.16B
+0x3d81f70: BL              GameModule.RoleBehaviour$$IsRoleTargetValidInRange
+0x3d81f74: TBNZ            W0, #0, loc_3D82004
+0x3d81f78: MOV             W8, #0xFFFFFFFF
+0x3d81f7c: STR             XZR, [X19,#0x58]
+0x3d81f80: STR             WZR, [X19,#0x110]
+0x3d81f84: STR             XZR, [X19,#0x118]
+0x3d81f88: STR             W8, [X19,#0x120]
+0x3d81f8c: MOV             X0, XZR
+0x3d81f90: BL              UnityEngine.Time$$get_time
+0x3d81f94: LDR             S1, [X19,#0x110]
+0x3d81f98: FCMP            S0, S1
+0x3d81f9c: B.PL            loc_3D81FB8
+0x3d81fa0: LDR             S1, [X19,#0x114]
+0x3d81fa4: ADRP            X8, #dword_1837464@PAGE
+0x3d81fa8: LDR             S2, [X8,#dword_1837464@PAGEOFF]
+0x3d81fac: FABD            S1, S1, S8
+0x3d81fb0: FCMP            S1, S2
+0x3d81fb4: B.LS            loc_3D82004
+0x3d81fb8: LDR             W8, [X19,#0xCC]
+0x3d81fbc: ADRP            X9, #dword_1836B04@PAGE
+0x3d81fc0: LDR             S1, [X9,#dword_1836B04@PAGEOFF]
+0x3d81fc4: STR             S8, [X19,#0x114]
+0x3d81fc8: CMP             W8, #1
+0x3d81fcc: B.EQ            loc_3D81FF4
+0x3d81fd0: LDR             S2, [X19,#0x124]
+0x3d81fd4: FCMP            S2, #0.0
+0x3d81fd8: B.GT            loc_3D81FF4
+0x3d81fdc: LDR             X8, [X19,#0x40]
+0x3d81fe0: CBZ             X8, loc_3D81FF0
+0x3d81fe4: LDR             W8, [X8,#0x50]
+0x3d81fe8: CMP             W8, #3
+0x3d81fec: B.EQ            loc_3D81FF4
+0x3d81ff0: FMOV            S1, #0.25
+0x3d81ff4: MOV             W0, WZR
+0x3d81ff8: FADD            S0, S0, S1
+0x3d81ffc: STR             S0, [X19,#0x110]
+0x3d82000: B               loc_3D82008
+0x3d82004: MOV             W0, #1
+0x3d82008: LDP             X20, X19, [SP,#0x30+var_10]
+0x3d8200c: LDP             X30, X21, [SP,#0x30+var_20]
+0x3d82010: LDR             D8, [SP+0x30+var_30],#0x30
+0x3d82014: RET

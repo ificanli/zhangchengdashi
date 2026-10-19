@@ -1,0 +1,31 @@
+0x44cd06c: fe0f1ef8 str      x30, [sp, #-0x20]!
+0x44cd070: f44f01a9 stp      x20, x19, [sp, #0x10]
+0x44cd074: b4590290 adrp     x20, #0x9001000
+0x44cd078: 88d64239 ldrb     w8, [x20, #0xb5]
+0x44cd07c: f30300aa mov      x19, x0
+0x44cd080: c8000037 tbnz     w8, #0, #0x44cd098
+0x44cd084: 803102f0 adrp     x0, #0x8b00000
+0x44cd088: 00a846f9 ldr      x0, [x0, #0xd50] // Pathfinding.ECS.AIMovementSystemGroup.TimeScaledRateManager_TypeInfo
+0x44cd08c: 7dc0dd97 bl       #0x3c3d280
+0x44cd090: 28008052 mov      w8, #1
+0x44cd094: 88d60239 strb     w8, [x20, #0xb5]
+0x44cd098: 684640f9 ldr      x8, [x19, #0x88]
+0x44cd09c: 480200b4 cbz      x8, #0x44cd0e4
+0x44cd0a0: 893102f0 adrp     x9, #0x8b00000
+0x44cd0a4: 29a946f9 ldr      x9, [x9, #0xd50] // Pathfinding.ECS.AIMovementSystemGroup.TimeScaledRateManager_TypeInfo
+0x44cd0a8: 0a0140f9 ldr      x10, [x8]
+0x44cd0ac: 290140f9 ldr      x9, [x9]
+0x44cd0b0: 4cc14439 ldrb     w12, [x10, #0x130]
+0x44cd0b4: 2bc14439 ldrb     w11, [x9, #0x130]
+0x44cd0b8: 9f010b6b cmp      w12, w11
+0x44cd0bc: 43010054 b.lo     #0x44cd0e4
+0x44cd0c0: 4a6540f9 ldr      x10, [x10, #0xc8]
+0x44cd0c4: 4a0d0b8b add      x10, x10, x11, lsl #3
+0x44cd0c8: 4a815ff8 ldur     x10, [x10, #-8]
+0x44cd0cc: 5f0109eb cmp      x10, x9
+0x44cd0d0: a1000054 b.ne     #0x44cd0e4
+0x44cd0d4: 002540fd ldr      d0, [x8, #0x48]
+0x44cd0d8: f44f41a9 ldp      x20, x19, [sp, #0x10]
+0x44cd0dc: fe0742f8 ldr      x30, [sp], #0x20
+0x44cd0e0: c0035fd6 ret      
+0x44cd0e4: fac0dd97 bl       #0x3c3d4cc

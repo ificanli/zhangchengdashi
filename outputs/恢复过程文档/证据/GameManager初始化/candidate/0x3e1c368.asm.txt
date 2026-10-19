@@ -1,0 +1,32 @@
+0x3e1c368: fe0f1ef8 str      x30, [sp, #-0x20]!
+0x3e1c36c: f44f01a9 stp      x20, x19, [sp, #0x10]
+0x3e1c370: 138f02b0 adrp     x19, #0x8ffd000
+0x3e1c374: d4650290 adrp     x20, #0x8ad4000
+0x3e1c378: 68926239 ldrb     w8, [x19, #0x8a4]
+0x3e1c37c: 945247f9 ldr      x20, [x20, #0xea0] // DbtSaveDataManagerBase<DbtSaveDataManager_PlayerAdData, PlayerAdData>_TypeInfo
+0x3e1c380: 88010037 tbnz     w8, #0, #0x3e1c3b0
+0x3e1c384: c0650290 adrp     x0, #0x8ad4000
+0x3e1c388: 005447f9 ldr      x0, [x0, #0xea8] // Method$DbtSaveDataManagerBase<DbtSaveDataManager_PlayerAdData, PlayerAdData>.Save()
+0x3e1c38c: bd83f897 bl       #0x3c3d280
+0x3e1c390: c0650290 adrp     x0, #0x8ad4000
+0x3e1c394: 005847f9 ldr      x0, [x0, #0xeb0] // Method$DbtSaveDataManagerBase<DbtSaveDataManager_PlayerAdData, PlayerAdData>.get_Data()
+0x3e1c398: ba83f897 bl       #0x3c3d280
+0x3e1c39c: c0650290 adrp     x0, #0x8ad4000
+0x3e1c3a0: 005047f9 ldr      x0, [x0, #0xea0] // DbtSaveDataManagerBase<DbtSaveDataManager_PlayerAdData, PlayerAdData>_TypeInfo
+0x3e1c3a4: b783f897 bl       #0x3c3d280
+0x3e1c3a8: 28008052 mov      w8, #1
+0x3e1c3ac: 68922239 strb     w8, [x19, #0x8a4]
+0x3e1c3b0: 880240f9 ldr      x8, [x20]
+0x3e1c3b4: 085d40f9 ldr      x8, [x8, #0xb8]
+0x3e1c3b8: 000140f9 ldr      x0, [x8]
+0x3e1c3bc: 400100b4 cbz      x0, #0x3e1c3e4
+0x3e1c3c0: 081840f9 ldr      x8, [x0, #0x30]
+0x3e1c3c4: 080100b4 cbz      x8, #0x3e1c3e4
+0x3e1c3c8: c9650290 adrp     x9, #0x8ad4000
+0x3e1c3cc: 295547f9 ldr      x9, [x9, #0xea8] // Method$DbtSaveDataManagerBase<DbtSaveDataManager_PlayerAdData, PlayerAdData>.Save()
+0x3e1c3d0: 1fb10039 strb     wzr, [x8, #0x2c]
+0x3e1c3d4: f44f41a9 ldp      x20, x19, [sp, #0x10]
+0x3e1c3d8: 210140f9 ldr      x1, [x9]
+0x3e1c3dc: fe0742f8 ldr      x30, [sp], #0x20
+0x3e1c3e0: fd5fb314 b        #0x6af43d4 // DbtSaveDataManagerBase<object, object>$$Save
+0x3e1c3e4: 3a84f897 bl       #0x3c3d4cc

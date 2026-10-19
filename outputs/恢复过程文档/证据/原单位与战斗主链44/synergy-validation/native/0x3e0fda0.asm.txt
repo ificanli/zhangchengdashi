@@ -1,0 +1,20 @@
+0x3e0fda0: fe4fbfa9 stp      x30, x19, [sp, #-0x10]!
+0x3e0fda4: f303012a mov      w19, w1
+0x3e0fda8: 42000012 and      w2, w2, #1
+0x3e0fdac: 61008052 mov      w1, #3
+0x3e0fdb0: b4fdff97 bl       #0x3e0f480 // GameModule.SynergyEffectManager$$GetFetterCount
+0x3e0fdb4: 1f100071 cmp      w0, #4
+0x3e0fdb8: 6b010054 b.lt     #0x3e0fde4
+0x3e0fdbc: 6002221e scvtf    s0, w19
+0x3e0fdc0: 01102c1e fmov     s1, #0.50000000
+0x3e0fdc4: 08f0af52 mov      w8, #0x7f800000
+0x3e0fdc8: 0008211e fmul     s0, s0, s1
+0x3e0fdcc: 0101271e fmov     s1, w8
+0x3e0fdd0: 0800381e fcvtzs   w8, s0
+0x3e0fdd4: 0020211e fcmp     s0, s1
+0x3e0fdd8: 0900b052 mov      w9, #-0xffffffff80000000
+0x3e0fddc: 2801881a csel     w8, w9, w8, eq
+0x3e0fde0: 1301130b add      w19, w8, w19
+0x3e0fde4: e003132a mov      w0, w19
+0x3e0fde8: fe4fc1a8 ldp      x30, x19, [sp], #0x10
+0x3e0fdec: c0035fd6 ret      

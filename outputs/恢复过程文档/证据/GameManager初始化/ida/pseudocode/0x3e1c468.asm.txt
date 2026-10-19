@@ -1,0 +1,77 @@
+0x3e1c468: SUB             SP, SP, #0x30
+0x3e1c46c: STR             X30, [SP,#0x30+var_20]
+0x3e1c470: STP             X20, X19, [SP,#0x30+var_10]
+0x3e1c474: ADRP            X20, #byte_8FFD8A6@PAGE
+0x3e1c478: ADRP            X19, #off_8AD1268@PAGE
+0x3e1c47c: LDRB            W8, [X20,#byte_8FFD8A6@PAGEOFF]
+0x3e1c480: LDR             X19, [X19,#off_8AD1268@PAGEOFF]; qword_8D12108
+0x3e1c484: TBNZ            W8, #0, loc_3E1C4D8
+0x3e1c488: ADRP            X0, #off_8ACD698@PAGE
+0x3e1c48c: LDR             X0, [X0,#off_8ACD698@PAGEOFF]; off_8CE4D90 ; slot
+0x3e1c490: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3e1c494: ADRP            X0, #off_8ACDE40@PAGE
+0x3e1c498: LDR             X0, [X0,#off_8ACDE40@PAGEOFF]; qword_8D12148 ; slot
+0x3e1c49c: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3e1c4a0: ADRP            X0, #off_8ACDEF8@PAGE
+0x3e1c4a4: LDR             X0, [X0,#off_8ACDEF8@PAGEOFF]; qword_8D124C8 ; slot
+0x3e1c4a8: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3e1c4ac: ADRP            X0, #off_8AD1268@PAGE
+0x3e1c4b0: LDR             X0, [X0,#off_8AD1268@PAGEOFF]; qword_8D12108 ; slot
+0x3e1c4b4: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3e1c4b8: ADRP            X0, #off_8AD4ED0@PAGE
+0x3e1c4bc: LDR             X0, [X0,#off_8AD4ED0@PAGEOFF]; qword_8D576E0 ; slot
+0x3e1c4c0: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3e1c4c4: ADRP            X0, #off_8AD4ED8@PAGE
+0x3e1c4c8: LDR             X0, [X0,#off_8AD4ED8@PAGEOFF]; qword_8D5D9F0 ; slot
+0x3e1c4cc: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3e1c4d0: MOV             W8, #1
+0x3e1c4d4: STRB            W8, [X20,#byte_8FFD8A6@PAGEOFF]
+0x3e1c4d8: LDR             X0, [X19]
+0x3e1c4dc: STR             XZR, [SP,#0x30+var_18]
+0x3e1c4e0: BL              ToolModule.ManagerBase_object_$$get_Instance
+0x3e1c4e4: CBZ             X0, loc_3E1C598
+0x3e1c4e8: ADRP            X19, #off_8ACDE40@PAGE
+0x3e1c4ec: ADRP            X20, #off_8ACD698@PAGE
+0x3e1c4f0: LDR             X19, [X19,#off_8ACDE40@PAGEOFF]; qword_8D12148
+0x3e1c4f4: LDR             X20, [X20,#off_8ACD698@PAGEOFF]; off_8CE4D90
+0x3e1c4f8: MOV             X1, XZR
+0x3e1c4fc: BL              GameModule.DailyBlessManager$$RefreshDailyBless
+0x3e1c500: LDR             X0, [X19]
+0x3e1c504: BL              ToolModule.ManagerBase_object_$$get_Instance
+0x3e1c508: MOV             X19, X0
+0x3e1c50c: LDR             X0, [X20]
+0x3e1c510: MOV             W8, #1
+0x3e1c514: ADD             X1, SP, #0x30+var_24
+0x3e1c518: STRB            W8, [SP,#0x30+var_24]
+0x3e1c51c: BL              unk_3C3D3B8
+0x3e1c520: CBZ             X19, loc_3E1C598
+0x3e1c524: ADRP            X8, #off_8AD4ED8@PAGE
+0x3e1c528: LDR             X8, [X8,#off_8AD4ED8@PAGEOFF]; qword_8D5D9F0
+0x3e1c52c: ADRP            X20, #off_8ACDEF8@PAGE
+0x3e1c530: MOV             X2, X0
+0x3e1c534: MOV             X0, X19
+0x3e1c538: LDR             X1, [X8]
+0x3e1c53c: LDR             X20, [X20,#off_8ACDEF8@PAGEOFF]; qword_8D124C8
+0x3e1c540: MOV             X3, XZR
+0x3e1c544: BL              EventModule.EventManager$$TriggerEvent
+0x3e1c548: LDR             X0, [X20]
+0x3e1c54c: BL              ToolModule.ManagerBase_object_$$get_Instance
+0x3e1c550: CBZ             X0, loc_3E1C598
+0x3e1c554: ADRP            X19, #off_8AD4ED0@PAGE
+0x3e1c558: LDR             X19, [X19,#off_8AD4ED0@PAGEOFF]; qword_8D576E0
+0x3e1c55c: ADD             X2, SP, #0x30+var_18
+0x3e1c560: MOV             X3, XZR
+0x3e1c564: LDR             X1, [X19]
+0x3e1c568: BL              UIFramework.UIManager$$IsPanelShowing
+0x3e1c56c: TBZ             W0, #0, loc_3E1C588
+0x3e1c570: LDR             X0, [X20]
+0x3e1c574: BL              ToolModule.ManagerBase_object_$$get_Instance
+0x3e1c578: CBZ             X0, loc_3E1C598
+0x3e1c57c: LDR             X1, [X19]
+0x3e1c580: MOV             X2, XZR
+0x3e1c584: BL              UIFramework.UIManager$$HidePanel
+0x3e1c588: LDP             X20, X19, [SP,#0x30+var_10]
+0x3e1c58c: LDR             X30, [SP,#0x30+var_20]
+0x3e1c590: ADD             SP, SP, #0x30 ; '0'
+0x3e1c594: RET
+0x3e1c598: BL              il2cpp_codegen_raise_null_reference_exception

@@ -1,0 +1,36 @@
+void UIFramework_UIManager__GetPanel(void *self, void *path, const MethodInfo *method)
+{
+  __int64 v3; // x8
+  __int64 v4; // x19
+  __int128 v7; // q0
+  __int128 v8; // [xsp+8h] [xbp-88h] BYREF
+  __int64 v9; // [xsp+18h] [xbp-78h]
+  __int128 selfa; // [xsp+20h] [xbp-70h] BYREF
+  __int64 v11; // [xsp+30h] [xbp-60h]
+  __int64 v12; // [xsp+38h] [xbp-58h]
+  void *v13; // [xsp+40h] [xbp-50h]
+  void *v14; // [xsp+48h] [xbp-48h]
+  __int64 v15; // [xsp+50h] [xbp-40h]
+
+  v4 = v3;
+  if ( (byte_8FFFFD2 & 1) == 0 )
+  {
+    il2cpp_codegen_initialize_runtime_metadata(&qword_8CF9680);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&off_8CF9678);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8CF96A0);
+    byte_8FFFFD2 = 1;
+  }
+  v11 = 0;
+  v12 = 0;
+  v13 = self;
+  v14 = path;
+  v15 = 0;
+  selfa = 0xFFFFFFFF;
+  if ( *((_QWORD *)off_8CF9678 + 7) == 0 )
+    ((void (*)(void))unk_3C503FC)();
+  UIFramework_UIManager__GetPanel_d__7__MoveNext(&selfa, (const MethodInfo *)path);
+  ((void (__fastcall *)(__int128 *__return_ptr, char *, __int64))unk_3D31BC0)(&v8, (char *)&selfa + 8, qword_8CF96A0);
+  v7 = v8;
+  *(_QWORD *)(v4 + 16) = v9;
+  *(_OWORD *)v4 = v7;
+}

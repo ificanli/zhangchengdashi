@@ -1,0 +1,24 @@
+0x4c80b14: STR             X30, [SP,#var_20]!
+0x4c80b18: STP             X20, X19, [SP,#0x20+var_10]
+0x4c80b1c: LDR             X8, [X1,#0x38]
+0x4c80b20: MOV             X19, X0
+0x4c80b24: CBNZ            X8, loc_4C80B4C
+0x4c80b28: ADRP            X0, #off_8ACD478@PAGE
+0x4c80b2c: LDR             X0, [X0,#off_8ACD478@PAGEOFF]; off_8CEDAE8 ; slot
+0x4c80b30: MOV             X20, X1
+0x4c80b34: BL              il2cpp_codegen_initialize_runtime_metadata
+0x4c80b38: LDR             X8, [X20,#0x38]
+0x4c80b3c: CBNZ            X8, loc_4C80B4C
+0x4c80b40: MOV             X0, X20
+0x4c80b44: BL              unk_3C503FC
+0x4c80b48: LDR             X8, [X20,#0x38]
+0x4c80b4c: ADRP            X9, #off_8ACD478@PAGE
+0x4c80b50: LDR             X9, [X9,#off_8ACD478@PAGEOFF]; off_8CEDAE8
+0x4c80b54: LDR             X2, [X8]
+0x4c80b58: MOV             X0, X19
+0x4c80b5c: LDP             X20, X19, [SP,#0x20+var_10]
+0x4c80b60: LDR             X9, [X9]
+0x4c80b64: LDR             X9, [X9,#0xB8]
+0x4c80b68: LDR             X1, [X9]
+0x4c80b6c: LDR             X30, [SP+0x20+var_20],#0x20
+0x4c80b70: B               GameFramework.Fsm.FsmManager$$GetFsm_object_

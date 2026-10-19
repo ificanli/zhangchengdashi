@@ -1,0 +1,58 @@
+0x3e1c280: fe0f1ef8 str      x30, [sp, #-0x20]!
+0x3e1c284: f44f01a9 stp      x20, x19, [sp, #0x10]
+0x3e1c288: 138f02b0 adrp     x19, #0x8ffd000
+0x3e1c28c: b4650290 adrp     x20, #0x8ad0000
+0x3e1c290: 688e6239 ldrb     w8, [x19, #0x8a3]
+0x3e1c294: 946e46f9 ldr      x20, [x20, #0xcd8] // DbtSaveDataManagerBase<DbtSaveDataManager_PlayerCoreData, PlayerCoreData>_TypeInfo
+0x3e1c298: a8020037 tbnz     w8, #0, #0x3e1c2ec
+0x3e1c29c: c0650290 adrp     x0, #0x8ad4000
+0x3e1c2a0: 005447f9 ldr      x0, [x0, #0xea8] // Method$DbtSaveDataManagerBase<DbtSaveDataManager_PlayerAdData, PlayerAdData>.Save()
+0x3e1c2a4: f783f897 bl       #0x3c3d280
+0x3e1c2a8: a0650290 adrp     x0, #0x8ad0000
+0x3e1c2ac: 006846f9 ldr      x0, [x0, #0xcd0] // Method$DbtSaveDataManagerBase<DbtSaveDataManager_PlayerCoreData, PlayerCoreData>.get_Data()
+0x3e1c2b0: f483f897 bl       #0x3c3d280
+0x3e1c2b4: a0650290 adrp     x0, #0x8ad0000
+0x3e1c2b8: 006c46f9 ldr      x0, [x0, #0xcd8] // DbtSaveDataManagerBase<DbtSaveDataManager_PlayerCoreData, PlayerCoreData>_TypeInfo
+0x3e1c2bc: f183f897 bl       #0x3c3d280
+0x3e1c2c0: c0650290 adrp     x0, #0x8ad4000
+0x3e1c2c4: 005047f9 ldr      x0, [x0, #0xea0] // DbtSaveDataManagerBase<DbtSaveDataManager_PlayerAdData, PlayerAdData>_TypeInfo
+0x3e1c2c8: ee83f897 bl       #0x3c3d280
+0x3e1c2cc: 806502b0 adrp     x0, #0x8acd000
+0x3e1c2d0: 002047f9 ldr      x0, [x0, #0xe40] // Method$ToolModule.ManagerBase<EventManager>.get_Instance()
+0x3e1c2d4: eb83f897 bl       #0x3c3d280
+0x3e1c2d8: c0650290 adrp     x0, #0x8ad4000
+0x3e1c2dc: 006047f9 ldr      x0, [x0, #0xec0] // TimeToZeroRefreshSubscription
+0x3e1c2e0: e883f897 bl       #0x3c3d280
+0x3e1c2e4: 28008052 mov      w8, #1
+0x3e1c2e8: 688e2239 strb     w8, [x19, #0x8a3]
+0x3e1c2ec: 880240f9 ldr      x8, [x20]
+0x3e1c2f0: 085d40f9 ldr      x8, [x8, #0xb8]
+0x3e1c2f4: 080140f9 ldr      x8, [x8]
+0x3e1c2f8: 680300b4 cbz      x8, #0x3e1c364
+0x3e1c2fc: 081940f9 ldr      x8, [x8, #0x30]
+0x3e1c300: 280300b4 cbz      x8, #0x3e1c364
+0x3e1c304: c9650290 adrp     x9, #0x8ad4000
+0x3e1c308: 295147f9 ldr      x9, [x9, #0xea0] // DbtSaveDataManagerBase<DbtSaveDataManager_PlayerAdData, PlayerAdData>_TypeInfo
+0x3e1c30c: 1f410039 strb     wzr, [x8, #0x10]
+0x3e1c310: 280140f9 ldr      x8, [x9]
+0x3e1c314: 085d40f9 ldr      x8, [x8, #0xb8]
+0x3e1c318: 000140f9 ldr      x0, [x8]
+0x3e1c31c: 400200b4 cbz      x0, #0x3e1c364
+0x3e1c320: c8650290 adrp     x8, #0x8ad4000
+0x3e1c324: 085547f9 ldr      x8, [x8, #0xea8] // Method$DbtSaveDataManagerBase<DbtSaveDataManager_PlayerAdData, PlayerAdData>.Save()
+0x3e1c328: 936502b0 adrp     x19, #0x8acd000
+0x3e1c32c: 010140f9 ldr      x1, [x8]
+0x3e1c330: 732247f9 ldr      x19, [x19, #0xe40] // Method$ToolModule.ManagerBase<EventManager>.get_Instance()
+0x3e1c334: 2860b394 bl       #0x6af43d4 // DbtSaveDataManagerBase<object, object>$$Save
+0x3e1c338: 600240f9 ldr      x0, [x19]
+0x3e1c33c: 49706d94 bl       #0x5978460 // ToolModule.ManagerBase<object>$$get_Instance
+0x3e1c340: 200100b4 cbz      x0, #0x3e1c364
+0x3e1c344: c8650290 adrp     x8, #0x8ad4000
+0x3e1c348: 086147f9 ldr      x8, [x8, #0xec0] // TimeToZeroRefreshSubscription
+0x3e1c34c: f44f41a9 ldp      x20, x19, [sp, #0x10]
+0x3e1c350: e2031faa mov      x2, xzr
+0x3e1c354: e3031faa mov      x3, xzr
+0x3e1c358: 010140f9 ldr      x1, [x8]
+0x3e1c35c: fe0742f8 ldr      x30, [sp], #0x20
+0x3e1c360: 01a70314 b        #0x3f05f64 // EventModule.EventManager$$TriggerEvent
+0x3e1c364: 5a84f897 bl       #0x3c3d4cc

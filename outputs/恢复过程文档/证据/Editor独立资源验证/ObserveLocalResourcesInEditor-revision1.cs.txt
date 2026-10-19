@@ -1,0 +1,237 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Security.Cryptography;
+using System.Text;
+using GameFramework.Recovery;
+using UnityEditor;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
+namespace OccupyCity.Recovery.LocalResources.Editor
+{
+    // Independent Editor resource observation. This never invokes original startup
+    // modules, opens/saves a scene, enters Play Mode, or instantiates a scene object.
+    public static class ObserveLocalResourcesInEditor
+    {
+        private const string RegistryPath = "Assets/RecoveredLegacy/LocalEditorResourceRegistry.json";
+        private static Probe _probe;
+        private static string _reportPath;
+        private static ILocalEditorResourcesProvider _provider;
+        private static Stack<IEnumerator> _operations;
+        private static double _started;
+
+        [Serializable] private sealed class RegistryIdentity
+        {
+            public string providerId, applicationName;
+            public int schemaVersion;
+        }
+
+        [Serializable] public sealed class SceneState
+        {
+            public int activeSceneHandle;
+            public string activeScenePath, activeSceneName;
+            public bool playing, playingOrWillChangePlaymode, compiling, updating;
+            public SceneIdentity[] scenes;
+        }
+
+        [Serializable] public sealed class SceneIdentity
+        {
+            public int handle, rootGameObjectCount;
+            public string path, name;
+            public bool loaded, dirty;
+            public int[] hierarchyGameObjectInstanceIds;
+        }
+
+        [Serializable] public sealed class Probe
+        {
+            public string runId, startedUtc, finishedUtc, status, failure;
+            public string reportPath, registryPath, registrySha256, applicationName, providerId, providerType;
+            public string actualProviderReceiptPath, receiptBeforeSha256, receiptAfterSha256;
+            public bool receiptExistedBefore, receiptExistsAfter, providerWasReadyBefore, providerReadyAfter, providerHasServicesAfter;
+            public bool resourceInitializationCompleted, reusedExistingInitializedProvider, sceneStateUnchanged;
+            public bool originalStartupChainExecuted, originalVersionModuleCalled, sceneOpenedOrSavedByProbe, enteredPlayModeByProbe, sceneObjectsInstantiatedByProbe, coreGameplayAccepted;
+            public string acceptanceScope;
+            public double durationSeconds;
+            public int editorUpdateTicks, enumeratorSteps;
+            public SceneState before, after;
+        }
+
+        public static void Begin(string reportPath)
+        {
+            if (_probe != null) throw new InvalidOperationException("An independent local-resource observation is already running.");
+            if (string.IsNullOrWhiteSpace(reportPath)) throw new ArgumentException("An explicit probe JSON report path is required.", nameof(reportPath));
+            if (EditorApplication.isPlayingOrWillChangePlaymode || EditorApplication.isCompiling || EditorApplication.isUpdating)
+                throw new InvalidOperationException("The independent resource observation requires a stable Editor in Edit Mode.");
+
+            string project = Directory.GetParent(Application.dataPath).FullName;
+            string workspace = Directory.GetParent(project).Parent.FullName;
+            string ledgerRoot = Path.GetFullPath(Path.Combine(workspace, "work", "recovery-ledger")) + Path.DirectorySeparatorChar;
+            string resolvedReport = Path.GetFullPath(reportPath);
+            if (!resolvedReport.StartsWith(ledgerRoot, StringComparison.OrdinalIgnoreCase) || !string.Equals(Path.GetExtension(resolvedReport), ".json", StringComparison.OrdinalIgnoreCase))
+                throw new ArgumentException("The independent resource probe report must be a JSON file inside this workspace's work/recovery-ledger directory.", nameof(reportPath));
+            _reportPath = resolvedReport;
+            _started = EditorApplication.timeSinceStartup;
+            _probe = new Probe
+            {
+                runId = DateTime.UtcNow.ToString("yyyyMMdd-HHmmss-fff") + "-" + Guid.NewGuid().ToString("N").Substring(0, 8),
+                startedUtc = DateTime.UtcNow.ToString("o"), status = "running_independent_editor_resource_observation",
+                reportPath = _reportPath, registryPath = RegistryPath,
+                actualProviderReceiptPath = Path.Combine(project, "RecoveryReports", "local-editor-resources-receipt.json"),
+                before = CaptureSceneState(),
+                acceptanceScope = "Independent actual Editor resource-provider initialization only. This does not execute or accept the original module startup chain, scene flow, UI instantiation, or core gameplay."
+            };
+            try
+            {
+                _probe.receiptExistedBefore = File.Exists(_probe.actualProviderReceiptPath);
+                if (_probe.receiptExistedBefore) _probe.receiptBeforeSha256 = ShaFile(_probe.actualProviderReceiptPath);
+                Save();
+                TextAsset registryAsset = AssetDatabase.LoadAssetAtPath<TextAsset>(RegistryPath);
+                if (registryAsset == null) throw new InvalidDataException("The real imported local-resource registry cannot load as a TextAsset.");
+                _probe.registrySha256 = Sha(registryAsset.bytes);
+                RegistryIdentity identity = JsonUtility.FromJson<RegistryIdentity>(registryAsset.text);
+                if (identity == null || identity.schemaVersion != 1 || identity.providerId != "LocalEditorResourcesProvider" || string.IsNullOrEmpty(identity.applicationName))
+                    throw new InvalidDataException("The actual local-resource registry has no valid application/provider identity.");
+                _probe.applicationName = identity.applicationName;
+                _provider = LocalEditorResourceBridge.Provider;
+                if (_provider == null || _provider.ProviderId != identity.providerId)
+                    throw new InvalidOperationException("The actual LocalEditorResourcesProvider has not registered in the current Editor domain.");
+                _probe.providerId = _provider.ProviderId;
+                _probe.providerType = _provider.GetType().AssemblyQualifiedName;
+                _probe.providerWasReadyBefore = _provider.IsReady;
+                _probe.reusedExistingInitializedProvider = _provider.IsReady;
+                if (_provider.Failure != null) throw new InvalidOperationException("The registered resource provider already has an actual failure.", _provider.Failure);
+                _operations = new Stack<IEnumerator>();
+                _operations.Push(_provider.Initialize(identity.applicationName));
+                Save();
+                EditorApplication.update += Tick;
+                AssemblyReloadEvents.beforeAssemblyReload += InterruptedByReload;
+            }
+            catch (Exception exception)
+            {
+                Finish(exception);
+                throw;
+            }
+        }
+
+        private static void Tick()
+        {
+            try
+            {
+                ++_probe.editorUpdateTicks;
+                if (EditorApplication.isPlayingOrWillChangePlaymode)
+                    throw new InvalidOperationException("Play Mode began externally during the independent resource observation; the probe did not request it.");
+                if (EditorApplication.timeSinceStartup - _started > 180d)
+                    throw new TimeoutException("Independent actual Editor resource initialization exceeded 180 seconds.");
+                while (_operations.Count != 0)
+                {
+                    IEnumerator current = _operations.Peek();
+                    ++_probe.enumeratorSteps;
+                    if (!current.MoveNext()) { _operations.Pop(); continue; }
+                    object yielded = current.Current;
+                    if (yielded is IEnumerator nested) { _operations.Push(nested); continue; }
+                    if (yielded != null)
+                        throw new NotSupportedException("The Editor observation cannot silently skip a coroutine wait of type " + yielded.GetType().AssemblyQualifiedName);
+                    return;
+                }
+                if (_provider.Failure != null) throw new InvalidOperationException("The actual resource provider reported a failure.", _provider.Failure);
+                if (!_provider.IsReady || _provider.BundleServices == null)
+                    throw new InvalidOperationException("The actual provider iterator ended without successful resource initialization and real bundle services.");
+                if (!File.Exists(_probe.actualProviderReceiptPath))
+                    throw new FileNotFoundException("The actual resource provider produced no auditable receipt.", _probe.actualProviderReceiptPath);
+                _probe.resourceInitializationCompleted = true;
+                Finish(null);
+            }
+            catch (Exception exception) { Finish(exception); }
+        }
+
+        private static void InterruptedByReload()
+        {
+            Finish(new InvalidOperationException("An external assembly reload interrupted the independent Editor resource observation."));
+        }
+
+        private static void Finish(Exception exception)
+        {
+            EditorApplication.update -= Tick;
+            AssemblyReloadEvents.beforeAssemblyReload -= InterruptedByReload;
+            if (_probe == null) return;
+            try
+            {
+                _probe.after = CaptureSceneState();
+                _probe.sceneStateUnchanged = SameScenes(_probe.before, _probe.after);
+                _probe.durationSeconds = EditorApplication.timeSinceStartup - _started;
+                _probe.finishedUtc = DateTime.UtcNow.ToString("o");
+                _probe.providerReadyAfter = _provider != null && _provider.IsReady;
+                _probe.providerHasServicesAfter = _provider != null && _provider.BundleServices != null;
+                _probe.receiptExistsAfter = File.Exists(_probe.actualProviderReceiptPath);
+                if (_probe.receiptExistsAfter) _probe.receiptAfterSha256 = ShaFile(_probe.actualProviderReceiptPath);
+                _probe.failure = exception == null ? string.Empty : exception.ToString();
+                _probe.status = exception != null ? "failed_independent_editor_resource_observation"
+                    : _probe.sceneStateUnchanged ? "completed_independent_editor_resource_observation"
+                    : "resources_completed_but_scene_state_changed_externally";
+                Save();
+                if (exception == null) Debug.Log("Independent Editor resource observation finished; original startup chain not executed. " + _reportPath);
+                else Debug.LogError("Independent Editor resource observation failed: " + exception + " | " + _reportPath);
+            }
+            finally
+            {
+                _probe = null;
+                _provider = null;
+                _operations = null;
+                _reportPath = null;
+            }
+        }
+
+        private static SceneState CaptureSceneState()
+        {
+            Scene active = SceneManager.GetActiveScene();
+            var scenes = new List<SceneIdentity>();
+            for (int index = 0; index < SceneManager.sceneCount; ++index)
+            {
+                Scene scene = SceneManager.GetSceneAt(index);
+                GameObject[] roots = scene.isLoaded ? scene.GetRootGameObjects() : Array.Empty<GameObject>();
+                scenes.Add(new SceneIdentity
+                {
+                    handle = scene.handle, path = scene.path, name = scene.name, loaded = scene.isLoaded, dirty = scene.isDirty,
+                    rootGameObjectCount = roots.Length,
+                    hierarchyGameObjectInstanceIds = roots.SelectMany(root => root.GetComponentsInChildren<Transform>(true)).Select(value => value.gameObject.GetInstanceID()).OrderBy(value => value).ToArray()
+                });
+            }
+            return new SceneState
+            {
+                activeSceneHandle = active.handle, activeScenePath = active.path, activeSceneName = active.name,
+                playing = EditorApplication.isPlaying, playingOrWillChangePlaymode = EditorApplication.isPlayingOrWillChangePlaymode,
+                compiling = EditorApplication.isCompiling, updating = EditorApplication.isUpdating,
+                scenes = scenes.ToArray()
+            };
+        }
+
+        private static bool SameScenes(SceneState before, SceneState after)
+        {
+            return before.activeSceneHandle == after.activeSceneHandle && before.activeScenePath == after.activeScenePath
+                && before.playing == after.playing && before.playingOrWillChangePlaymode == after.playingOrWillChangePlaymode
+                && before.scenes.Length == after.scenes.Length
+                && before.scenes.Zip(after.scenes, (left, right) => left.handle == right.handle && left.path == right.path
+                    && left.loaded == right.loaded && left.dirty == right.dirty && left.rootGameObjectCount == right.rootGameObjectCount
+                    && left.hierarchyGameObjectInstanceIds.SequenceEqual(right.hierarchyGameObjectInstanceIds)).All(value => value);
+        }
+
+        private static void Save()
+        {
+            Directory.CreateDirectory(Path.GetDirectoryName(_reportPath));
+            string temporary = _reportPath + ".tmp";
+            File.WriteAllText(temporary, JsonUtility.ToJson(_probe, true), new UTF8Encoding(false));
+            File.Copy(temporary, _reportPath, true);
+            File.Delete(temporary);
+        }
+
+        private static string Sha(byte[] data)
+        {
+            using (SHA256 hash = SHA256.Create()) return BitConverter.ToString(hash.ComputeHash(data)).Replace("-", string.Empty).ToLowerInvariant();
+        }
+
+        private static string ShaFile(string path) { return Sha(File.ReadAllBytes(path)); }
+    }
+}

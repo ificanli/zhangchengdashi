@@ -1,0 +1,45 @@
+0x3e1a864: STR             X30, [SP,#var_20]!
+0x3e1a868: STP             X20, X19, [SP,#0x20+var_10]
+0x3e1a86c: ADRP            X20, #byte_8FFD89C@PAGE
+0x3e1a870: ADRP            X19, #off_8ACDF78@PAGE
+0x3e1a874: LDRB            W8, [X20,#byte_8FFD89C@PAGEOFF]
+0x3e1a878: LDR             X19, [X19,#off_8ACDF78@PAGEOFF]; off_8CE1928
+0x3e1a87c: TBNZ            W8, #0, loc_3E1A8AC
+0x3e1a880: ADRP            X0, #off_8AD4DF8@PAGE
+0x3e1a884: LDR             X0, [X0,#off_8AD4DF8@PAGEOFF]; qword_8D12190 ; slot
+0x3e1a888: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3e1a88c: ADRP            X0, #off_8ACDF88@PAGE
+0x3e1a890: LDR             X0, [X0,#off_8ACDF88@PAGEOFF]; qword_8D17890 ; slot
+0x3e1a894: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3e1a898: ADRP            X0, #off_8ACDF78@PAGE
+0x3e1a89c: LDR             X0, [X0,#off_8ACDF78@PAGEOFF]; off_8CE1928 ; slot
+0x3e1a8a0: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3e1a8a4: MOV             W8, #1
+0x3e1a8a8: STRB            W8, [X20,#byte_8FFD89C@PAGEOFF]
+0x3e1a8ac: LDR             X0, [X19]; klass
+0x3e1a8b0: ADRP            X19, #off_8ACDF88@PAGE
+0x3e1a8b4: LDR             W8, [X0,#0xE0]
+0x3e1a8b8: LDR             X19, [X19,#off_8ACDF88@PAGEOFF]; qword_8D17890
+0x3e1a8bc: CBNZ            W8, loc_3E1A8C4
+0x3e1a8c0: BL              il2cpp_codegen_runtime_class_init
+0x3e1a8c4: LDR             X0, [X19]; method
+0x3e1a8c8: BL              QuickTutor.Singleton_object_$$get_Instance
+0x3e1a8cc: CBZ             X0, loc_3E1A914
+0x3e1a8d0: MOV             X1, XZR
+0x3e1a8d4: BL              SDKModule.ABTestManager$$get_GameCenterIsBTest
+0x3e1a8d8: TBZ             W0, #0, loc_3E1A908
+0x3e1a8dc: ADRP            X8, #off_8AD4DF8@PAGE
+0x3e1a8e0: LDR             X8, [X8,#off_8AD4DF8@PAGEOFF]; qword_8D12190
+0x3e1a8e4: LDR             X0, [X8]
+0x3e1a8e8: BL              ToolModule.ManagerBase_object_$$get_Instance
+0x3e1a8ec: CBZ             X0, loc_3E1A914
+0x3e1a8f0: MOV             X1, XZR
+0x3e1a8f4: BL              SDKModule.GameCenterManager$$AllowGameCenter
+0x3e1a8f8: STRB            W0, [SP,#0x20+var_18]
+0x3e1a8fc: ADD             X0, SP, #0x20+var_18
+0x3e1a900: MOV             X1, XZR
+0x3e1a904: BL              Cysharp.Threading.Tasks.UniTaskVoid$$Forget
+0x3e1a908: LDP             X20, X19, [SP,#0x20+var_10]
+0x3e1a90c: LDR             X30, [SP+0x20+var_20],#0x20
+0x3e1a910: RET
+0x3e1a914: BL              il2cpp_codegen_raise_null_reference_exception

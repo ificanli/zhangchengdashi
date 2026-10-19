@@ -1,0 +1,43 @@
+0x3df55fc: STR             X30, [SP,#var_20]!
+0x3df5600: STP             X20, X19, [SP,#0x20+var_10]
+0x3df5604: ADRP            X20, #byte_8FFD7B0@PAGE
+0x3df5608: LDRB            W8, [X20,#byte_8FFD7B0@PAGEOFF]
+0x3df560c: MOV             X19, X0
+0x3df5610: TBNZ            W8, #0, loc_3DF5628
+0x3df5614: ADRP            X0, #off_8ACFAC0@PAGE
+0x3df5618: LDR             X0, [X0,#off_8ACFAC0@PAGEOFF]; unk_8D0DD90 ; slot
+0x3df561c: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3df5620: MOV             W8, #1
+0x3df5624: STRB            W8, [X20,#byte_8FFD7B0@PAGEOFF]
+0x3df5628: LDR             X1, [X19,#0xC8]
+0x3df562c: BL              GameModule.BattleGameSceneManager$$DestroyRoleList
+0x3df5630: LDR             X1, [X19,#0xC0]
+0x3df5634: BL              GameModule.BattleGameSceneManager$$DestroyRoleList
+0x3df5638: LDR             X8, [X19,#0xC8]
+0x3df563c: CBZ             X8, loc_3DF56A4
+0x3df5640: LDP             W2, W9, [X8,#0x18]
+0x3df5644: ADD             W9, W9, #1
+0x3df5648: CMP             W2, #1
+0x3df564c: STP             WZR, W9, [X8,#0x18]
+0x3df5650: B.LT            loc_3DF5664
+0x3df5654: LDR             X0, [X8,#0x10]
+0x3df5658: MOV             W1, WZR
+0x3df565c: MOV             X3, XZR
+0x3df5660: BL              System.Array$$Clear
+0x3df5664: LDR             X8, [X19,#0xC0]
+0x3df5668: CBZ             X8, loc_3DF56A4
+0x3df566c: LDP             W2, W9, [X8,#0x18]
+0x3df5670: ADD             W9, W9, #1
+0x3df5674: CMP             W2, #1
+0x3df5678: STP             WZR, W9, [X8,#0x18]
+0x3df567c: B.LT            loc_3DF5698
+0x3df5680: LDR             X0, [X8,#0x10]
+0x3df5684: LDP             X20, X19, [SP,#0x20+var_10]
+0x3df5688: MOV             W1, WZR
+0x3df568c: MOV             X3, XZR
+0x3df5690: LDR             X30, [SP+0x20+var_20],#0x20
+0x3df5694: B               System.Array$$Clear
+0x3df5698: LDP             X20, X19, [SP,#0x20+var_10]
+0x3df569c: LDR             X30, [SP+0x20+var_20],#0x20
+0x3df56a0: RET
+0x3df56a4: BL              il2cpp_codegen_raise_null_reference_exception

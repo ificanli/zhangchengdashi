@@ -1,0 +1,113 @@
+0x71d7a40: ff8301d1 sub      sp, sp, #0x60
+0x71d7a44: fe5f03a9 stp      x30, x23, [sp, #0x30]
+0x71d7a48: f65704a9 stp      x22, x21, [sp, #0x40]
+0x71d7a4c: f44f05a9 stp      x20, x19, [sp, #0x50]
+0x71d7a50: 94f100d0 adrp     x20, #0x9009000
+0x71d7a54: 885a5739 ldrb     w8, [x20, #0x5d6]
+0x71d7a58: f30300aa mov      x19, x0
+0x71d7a5c: 08030037 tbnz     w8, #0, #0x71d7abc
+0x71d7a60: 00ca00b0 adrp     x0, #0x8b18000
+0x71d7a64: 002444f9 ldr      x0, [x0, #0x848] // Method$System.Collections.Generic.Dictionary<string, BaseUI>.Clear()
+0x71d7a68: 06962997 bl       #0x3c3d280
+0x71d7a6c: 00ca00b0 adrp     x0, #0x8b18000
+0x71d7a70: 002844f9 ldr      x0, [x0, #0x850] // Method$System.Collections.Generic.Dictionary<string, BaseUI>.GetEnumerator()
+0x71d7a74: 03962997 bl       #0x3c3d280
+0x71d7a78: 00ca00b0 adrp     x0, #0x8b18000
+0x71d7a7c: 002c44f9 ldr      x0, [x0, #0x858] // Method$System.Collections.Generic.Dictionary.Enumerator<string, BaseUI>.Dispose()
+0x71d7a80: 00962997 bl       #0x3c3d280
+0x71d7a84: 00ca00b0 adrp     x0, #0x8b18000
+0x71d7a88: 003044f9 ldr      x0, [x0, #0x860] // Method$System.Collections.Generic.Dictionary.Enumerator<string, BaseUI>.MoveNext()
+0x71d7a8c: fd952997 bl       #0x3c3d280
+0x71d7a90: 00ca00b0 adrp     x0, #0x8b18000
+0x71d7a94: 003444f9 ldr      x0, [x0, #0x868] // Method$System.Collections.Generic.Dictionary.Enumerator<string, BaseUI>.get_Current()
+0x71d7a98: fa952997 bl       #0x3c3d280
+0x71d7a9c: 00ca00b0 adrp     x0, #0x8b18000
+0x71d7aa0: 003844f9 ldr      x0, [x0, #0x870] // Method$System.Collections.Generic.KeyValuePair<string, BaseUI>.get_Value()
+0x71d7aa4: f7952997 bl       #0x3c3d280
+0x71d7aa8: a0c700b0 adrp     x0, #0x8acc000
+0x71d7aac: 006844f9 ldr      x0, [x0, #0x8d0] // UnityEngine.Object_TypeInfo
+0x71d7ab0: f4952997 bl       #0x3c3d280
+0x71d7ab4: 28008052 mov      w8, #1
+0x71d7ab8: 885a1739 strb     w8, [x20, #0x5d6]
+0x71d7abc: 00e4006f movi     v0.2d, #0000000000000000
+0x71d7ac0: ff1300f9 str      xzr, [sp, #0x20]
+0x71d7ac4: e00300ad stp      q0, q0, [sp]
+0x71d7ac8: 603240f9 ldr      x0, [x19, #0x60]
+0x71d7acc: c00500b4 cbz      x0, #0x71d7b84
+0x71d7ad0: 08ca00b0 adrp     x8, #0x8b18000
+0x71d7ad4: 082944f9 ldr      x8, [x8, #0x850] // Method$System.Collections.Generic.Dictionary<string, BaseUI>.GetEnumerator()
+0x71d7ad8: 14ca00b0 adrp     x20, #0x8b18000
+0x71d7adc: 943244f9 ldr      x20, [x20, #0x860] // Method$System.Collections.Generic.Dictionary.Enumerator<string, BaseUI>.MoveNext()
+0x71d7ae0: 17ca00b0 adrp     x23, #0x8b18000
+0x71d7ae4: 010140f9 ldr      x1, [x8]
+0x71d7ae8: b6c700b0 adrp     x22, #0x8acc000
+0x71d7aec: 15ca00b0 adrp     x21, #0x8b18000
+0x71d7af0: f72644f9 ldr      x23, [x23, #0x848] // Method$System.Collections.Generic.Dictionary<string, BaseUI>.Clear()
+0x71d7af4: d66a44f9 ldr      x22, [x22, #0x8d0] // UnityEngine.Object_TypeInfo
+0x71d7af8: b52e44f9 ldr      x21, [x21, #0x858] // Method$System.Collections.Generic.Dictionary.Enumerator<string, BaseUI>.Dispose()
+0x71d7afc: e8030091 mov      x8, sp
+0x71d7b00: 79bde897 bl       #0x6c070e4 // System.Collections.Generic.Dictionary<object, object>$$GetEnumerator
+0x71d7b04: 810240f9 ldr      x1, [x20]
+0x71d7b08: e0030091 mov      x0, sp
+0x71d7b0c: 5f35f397 bl       #0x6ea5088 // System.Collections.Generic.Dictionary.Enumerator<object, object>$$MoveNext
+0x71d7b10: e0000036 tbz      w0, #0, #0x71d7b2c
+0x71d7b14: e00f40f9 ldr      x0, [sp, #0x18]
+0x71d7b18: 400300b4 cbz      x0, #0x71d7b80
+0x71d7b1c: 080040f9 ldr      x8, [x0]
+0x71d7b20: 09855fa9 ldp      x9, x1, [x8, #0x1f8]
+0x71d7b24: 20013fd6 blr      x9
+0x71d7b28: f7ffff17 b        #0x71d7b04
+0x71d7b2c: a10240f9 ldr      x1, [x21]
+0x71d7b30: e0030091 mov      x0, sp
+0x71d7b34: 9a35f397 bl       #0x6ea519c // System.Collections.Generic.Dictionary.Enumerator<object, object>$$Dispose
+0x71d7b38: 603240f9 ldr      x0, [x19, #0x60]
+0x71d7b3c: 400200b4 cbz      x0, #0x71d7b84
+0x71d7b40: e10240f9 ldr      x1, [x23]
+0x71d7b44: c1bce897 bl       #0x6c06e48 // System.Collections.Generic.Dictionary<object, object>$$Clear
+0x71d7b48: 7f420039 strb     wzr, [x19, #0x10]
+0x71d7b4c: c00240f9 ldr      x0, [x22]
+0x71d7b50: 731240f9 ldr      x19, [x19, #0x20]
+0x71d7b54: 08e040b9 ldr      w8, [x0, #0xe0]
+0x71d7b58: 48000035 cbnz     w8, #0x71d7b60
+0x71d7b5c: 15962997 bl       #0x3c3d3b0
+0x71d7b60: e00313aa mov      x0, x19
+0x71d7b64: e1031faa mov      x1, xzr
+0x71d7b68: 39654494 bl       #0x82f104c // UnityEngine.Object$$Destroy
+0x71d7b6c: f44f45a9 ldp      x20, x19, [sp, #0x50]
+0x71d7b70: f65744a9 ldp      x22, x21, [sp, #0x40]
+0x71d7b74: fe5f43a9 ldp      x30, x23, [sp, #0x30]
+0x71d7b78: ff830191 add      sp, sp, #0x60
+0x71d7b7c: c0035fd6 ret      
+0x71d7b80: 53962997 bl       #0x3c3d4cc
+0x71d7b84: 52962997 bl       #0x3c3d4cc
+0x71d7b88: 02000014 b        #0x71d7b90
+0x71d7b8c: 01000014 b        #0x71d7b90
+0x71d7b90: f40300aa mov      x20, x0
+0x71d7b94: 3f040071 cmp      w1, #1
+0x71d7b98: a1010054 b.ne     #0x71d7bcc
+0x71d7b9c: e00314aa mov      x0, x20
+0x71d7ba0: 805c4e94 bl       #0x856eda0
+0x71d7ba4: 150040f9 ldr      x21, [x0]
+0x71d7ba8: 825c4e94 bl       #0x856edb0
+0x71d7bac: 08ca00b0 adrp     x8, #0x8b18000
+0x71d7bb0: 082d44f9 ldr      x8, [x8, #0x858] // Method$System.Collections.Generic.Dictionary.Enumerator<string, BaseUI>.Dispose()
+0x71d7bb4: e0030091 mov      x0, sp
+0x71d7bb8: 010140f9 ldr      x1, [x8]
+0x71d7bbc: 7835f397 bl       #0x6ea519c // System.Collections.Generic.Dictionary.Enumerator<object, object>$$Dispose
+0x71d7bc0: d5fbffb4 cbz      x21, #0x71d7b38
+0x71d7bc4: e00315aa mov      x0, x21
+0x71d7bc8: 4c842997 bl       #0x3c38cf8
+0x71d7bcc: f5031faa mov      x21, xzr
+0x71d7bd0: 02000014 b        #0x71d7bd8
+0x71d7bd4: f40300aa mov      x20, x0
+0x71d7bd8: 08ca00b0 adrp     x8, #0x8b18000
+0x71d7bdc: 082d44f9 ldr      x8, [x8, #0x858] // Method$System.Collections.Generic.Dictionary.Enumerator<string, BaseUI>.Dispose()
+0x71d7be0: 010140f9 ldr      x1, [x8]
+0x71d7be4: e0030091 mov      x0, sp
+0x71d7be8: 6d35f397 bl       #0x6ea519c // System.Collections.Generic.Dictionary.Enumerator<object, object>$$Dispose
+0x71d7bec: 750000b5 cbnz     x21, #0x71d7bf8
+0x71d7bf0: e00314aa mov      x0, x20
+0x71d7bf4: f43d2c97 bl       #0x3ce73c4
+0x71d7bf8: e00315aa mov      x0, x21
+0x71d7bfc: 3f842997 bl       #0x3c38cf8
+0x71d7c00: 40920f97 bl       #0x35bc500

@@ -1,0 +1,20 @@
+0x3f6c8e4: STP             X30, X23, [SP,#var_30]!
+0x3f6c8e8: STP             X22, X21, [SP,#0x30+var_20]
+0x3f6c8ec: STP             X20, X19, [SP,#0x30+var_10]
+0x3f6c8f0: MOV             X22, X1
+0x3f6c8f4: MOV             X1, XZR
+0x3f6c8f8: MOV             W19, W4
+0x3f6c8fc: MOV             W20, W3
+0x3f6c900: MOV             X21, X2
+0x3f6c904: MOV             X23, X0
+0x3f6c908: BL              System.Object$$.ctor
+0x3f6c90c: STR             X22, [X23,#0x10]
+0x3f6c910: AND             W8, W19, #1
+0x3f6c914: AND             W2, W20, #1
+0x3f6c918: MOV             X1, X21
+0x3f6c91c: LDP             X20, X19, [SP,#0x30+var_10]
+0x3f6c920: LDP             X22, X21, [SP,#0x30+var_20]
+0x3f6c924: STRB            W8, [X23,#0x28]
+0x3f6c928: MOV             X0, X23
+0x3f6c92c: LDP             X30, X23, [SP+0x30+var_30],#0x30
+0x3f6c930: B               TimeModuleO.TimeManager.Timer$$Restart

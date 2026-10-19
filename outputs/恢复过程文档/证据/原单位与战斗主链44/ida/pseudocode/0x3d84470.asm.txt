@@ -1,0 +1,19 @@
+0x3d84470: STR             X30, [SP,#var_10]!
+0x3d84474: LDRB            W8, [X0,#0x148]
+0x3d84478: CBZ             W8, loc_3D84494
+0x3d8447c: LDRB            W8, [X0,#0x27C]
+0x3d84480: CBNZ            W8, loc_3D84494
+0x3d84484: LDRB            W8, [X0,#0x27D]
+0x3d84488: CBNZ            W8, loc_3D84494
+0x3d8448c: LDRB            W8, [X0,#0x21]
+0x3d84490: CBZ             W8, loc_3D844A0
+0x3d84494: MOV             W0, WZR
+0x3d84498: LDR             X30, [SP+0x10+var_10],#0x10
+0x3d8449c: RET
+0x3d844a0: MOV             X1, XZR
+0x3d844a4: BL              UnityEngine.Component$$get_gameObject
+0x3d844a8: CBZ             X0, loc_3D844B8
+0x3d844ac: MOV             X1, XZR
+0x3d844b0: LDR             X30, [SP+0x10+var_10],#0x10
+0x3d844b4: B               UnityEngine.GameObject$$get_activeInHierarchy
+0x3d844b8: BL              il2cpp_codegen_raise_null_reference_exception

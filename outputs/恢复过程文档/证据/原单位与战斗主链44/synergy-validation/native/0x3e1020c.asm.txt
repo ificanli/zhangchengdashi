@@ -1,0 +1,45 @@
+0x3e1020c: fe0f1ef8 str      x30, [sp, #-0x20]!
+0x3e10210: f44f01a9 stp      x20, x19, [sp, #0x10]
+0x3e10214: 28008012 mov      w8, #-2
+0x3e10218: 080000b9 str      w8, [x0]
+0x3e1021c: 748f02b0 adrp     x20, #0x8ffd000
+0x3e10220: 88c64639 ldrb     w8, [x20, #0x1b1]
+0x3e10224: f30300aa mov      x19, x0
+0x3e10228: c8000035 cbnz     w8, #0x3e10240
+0x3e1022c: e06502b0 adrp     x0, #0x8acd000
+0x3e10230: 007047f9 ldr      x0, [x0, #0xee0] // Cysharp.Threading.Tasks.CompilerServices.IStateMachineRunnerPromise_TypeInfo
+0x3e10234: 13b4f897 bl       #0x3c3d280
+0x3e10238: 28008052 mov      w8, #1
+0x3e1023c: 88c60639 strb     w8, [x20, #0x1b1]
+0x3e10240: 730640f9 ldr      x19, [x19, #8]
+0x3e10244: 730200b4 cbz      x19, #0x3e10290
+0x3e10248: ea6502b0 adrp     x10, #0x8acd000
+0x3e1024c: 680240f9 ldr      x8, [x19]
+0x3e10250: 4a7147f9 ldr      x10, [x10, #0xee0] // Cysharp.Threading.Tasks.CompilerServices.IStateMachineRunnerPromise_TypeInfo
+0x3e10254: 095d4279 ldrh     w9, [x8, #0x12e]
+0x3e10258: 410140f9 ldr      x1, [x10]
+0x3e1025c: 290100b4 cbz      x9, #0x3e10280
+0x3e10260: 0a5940f9 ldr      x10, [x8, #0xb0]
+0x3e10264: 4a210091 add      x10, x10, #8
+0x3e10268: 4b815ff8 ldur     x11, [x10, #-8]
+0x3e1026c: 7f0101eb cmp      x11, x1
+0x3e10270: 60010054 b.eq     #0x3e1029c
+0x3e10274: 290500f1 subs     x9, x9, #1
+0x3e10278: 4a410091 add      x10, x10, #0x10
+0x3e1027c: 61ffff54 b.ne     #0x3e10268
+0x3e10280: 42008052 mov      w2, #2
+0x3e10284: e00313aa mov      x0, x19
+0x3e10288: 8700f997 bl       #0x3c504a4
+0x3e1028c: 08000014 b        #0x3e102ac
+0x3e10290: f44f41a9 ldp      x20, x19, [sp, #0x10]
+0x3e10294: fe0742f8 ldr      x30, [sp], #0x20
+0x3e10298: c0035fd6 ret      
+0x3e1029c: 490140b9 ldr      w9, [x10]
+0x3e102a0: 29090011 add      w9, w9, #2
+0x3e102a4: 08d1298b add      x8, x8, w9, sxtw #4
+0x3e102a8: 00e10491 add      x0, x8, #0x138
+0x3e102ac: 020440a9 ldp      x2, x1, [x0]
+0x3e102b0: e00313aa mov      x0, x19
+0x3e102b4: f44f41a9 ldp      x20, x19, [sp, #0x10]
+0x3e102b8: fe0742f8 ldr      x30, [sp], #0x20
+0x3e102bc: 40001fd6 br       x2

@@ -1,0 +1,32 @@
+0x4299b74: fe0f1df8 str      x30, [sp, #-0x30]!
+0x4299b78: f65701a9 stp      x22, x21, [sp, #0x10]
+0x4299b7c: f44f02a9 stp      x20, x19, [sp, #0x20]
+0x4299b80: 356b02f0 adrp     x21, #0x9000000
+0x4299b84: d6410290 adrp     x22, #0x8ad1000
+0x4299b88: d4410290 adrp     x20, #0x8ad1000
+0x4299b8c: a86a4339 ldrb     w8, [x21, #0xda]
+0x4299b90: d66247f9 ldr      x22, [x22, #0xec0] // System.Collections.Generic.List<GameObject>_TypeInfo
+0x4299b94: 946647f9 ldr      x20, [x20, #0xec8] // Method$System.Collections.Generic.List<GameObject>..ctor()
+0x4299b98: f30300aa mov      x19, x0
+0x4299b9c: 28010037 tbnz     w8, #0, #0x4299bc0
+0x4299ba0: c0410290 adrp     x0, #0x8ad1000
+0x4299ba4: 006447f9 ldr      x0, [x0, #0xec8] // Method$System.Collections.Generic.List<GameObject>..ctor()
+0x4299ba8: b68de697 bl       #0x3c3d280
+0x4299bac: c0410290 adrp     x0, #0x8ad1000
+0x4299bb0: 006047f9 ldr      x0, [x0, #0xec0] // System.Collections.Generic.List<GameObject>_TypeInfo
+0x4299bb4: b38de697 bl       #0x3c3d280
+0x4299bb8: 28008052 mov      w8, #1
+0x4299bbc: a86a0339 strb     w8, [x21, #0xda]
+0x4299bc0: c00240f9 ldr      x0, [x22]
+0x4299bc4: 408ee697 bl       #0x3c3d4c4
+0x4299bc8: 810240f9 ldr      x1, [x20]
+0x4299bcc: f40300aa mov      x20, x0
+0x4299bd0: 65d45294 bl       #0x574ed64 // System.Collections.Generic.List<object>$$.ctor
+0x4299bd4: 28008052 mov      w8, #1
+0x4299bd8: 74a600f9 str      x20, [x19, #0x148]
+0x4299bdc: 685601b9 str      w8, [x19, #0x154]
+0x4299be0: e00313aa mov      x0, x19
+0x4299be4: f44f42a9 ldp      x20, x19, [sp, #0x20]
+0x4299be8: f65741a9 ldp      x22, x21, [sp, #0x10]
+0x4299bec: fe0743f8 ldr      x30, [sp], #0x30
+0x4299bf0: 53fcff17 b        #0x4298d3c // GameModule.ArchitectureBehaviour$$.ctor

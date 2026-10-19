@@ -1,0 +1,70 @@
+bool __fastcall GameModule_RoleBehaviour__GetIsHellFireAtk(__int64 a1, __int64 a2)
+{
+  __int64 v4; // x21
+  __int64 v5; // x23
+  __int64 v6; // x10
+  __int64 v7; // x0
+  _BYTE *v8; // x8
+  __int64 v9; // x11
+  __int64 v10; // x10
+  __int64 v11; // x0
+
+  if ( (byte_8FFD482 & 1) == 0 )
+  {
+    il2cpp_codegen_initialize_runtime_metadata((void **)&off_8CE68C0);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&off_8CE8180);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&off_8CEB3E0);
+    byte_8FFD482 = 1;
+  }
+  v4 = *(_QWORD *)(a1 + 368);
+  if ( *((_DWORD *)off_8CEB3E0 + 56) == 0 )
+    il2cpp_codegen_runtime_class_init(off_8CEB3E0);
+  if ( (UnityEngine_Object__op_Equality(v4, 0, 0) & 1) != 0 )
+    return false;
+  v5 = *(_QWORD *)(a1 + 368);
+  if ( *((_DWORD *)off_8CEB3E0 + 56) == 0 )
+    il2cpp_codegen_runtime_class_init(off_8CEB3E0);
+  if ( v5 != 0
+    && (v6 = *((unsigned __int8 *)off_8CE68C0 + 304), *(unsigned __int8 *)(*(_QWORD *)v5 + 304LL) >= (unsigned int)v6) )
+  {
+    v7 = *(_UNKNOWN **)(*(_QWORD *)(*(_QWORD *)v5 + 200LL) + 8 * v6 - 8) == off_8CE68C0 ? v5 : 0LL;
+  }
+  else
+  {
+    v7 = 0;
+  }
+  if ( (UnityEngine_Object__op_Inequality(v7, 0, 0) & 1) == 0 )
+    return false;
+  v8 = *(_BYTE **)(a1 + 368);
+  if ( v8 == nullptr
+    || (v9 = *((unsigned __int8 *)off_8CE68C0 + 304), *(unsigned __int8 *)(*(_QWORD *)v8 + 304LL) < (unsigned int)v9)
+    || *(_UNKNOWN **)(*(_QWORD *)(*(_QWORD *)v8 + 200LL) + 8 * v9 - 8) != off_8CE68C0 )
+  {
+    il2cpp_codegen_raise_null_reference_exception();
+  }
+  if ( v8[721] == 0 )
+    return false;
+  if ( *((_DWORD *)off_8CEB3E0 + 56) != 0 )
+  {
+    if ( a2 == 0 )
+      goto LABEL_24;
+  }
+  else
+  {
+    il2cpp_codegen_runtime_class_init(off_8CEB3E0);
+    if ( a2 == 0 )
+    {
+LABEL_24:
+      v11 = 0;
+      return (UnityEngine_Object__op_Inequality(v11, 0, 0) & 1) != 0;
+    }
+  }
+  v10 = *((unsigned __int8 *)off_8CE8180 + 304);
+  if ( *(unsigned __int8 *)(*(_QWORD *)a2 + 304LL) < (unsigned int)v10 )
+    goto LABEL_24;
+  if ( *(_UNKNOWN **)(*(_QWORD *)(*(_QWORD *)a2 + 200LL) + 8 * v10 - 8) == off_8CE8180 )
+    v11 = a2;
+  else
+    v11 = 0;
+  return (UnityEngine_Object__op_Inequality(v11, 0, 0) & 1) != 0;
+}

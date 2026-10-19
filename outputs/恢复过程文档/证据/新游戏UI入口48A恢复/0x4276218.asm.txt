@@ -1,0 +1,63 @@
+0x4276218: fe57bea9 stp      x30, x21, [sp, #-0x20]!
+0x427621c: f44f01a9 stp      x20, x19, [sp, #0x10]
+0x4276220: 556c02b0 adrp     x21, #0x8fff000
+0x4276224: a8667f39 ldrb     w8, [x21, #0xfd9]
+0x4276228: f30301aa mov      x19, x1
+0x427622c: f40300aa mov      x20, x0
+0x4276230: e8010037 tbnz     w8, #0, #0x427626c
+0x4276234: a04302b0 adrp     x0, #0x8aeb000
+0x4276238: 005c43f9 ldr      x0, [x0, #0x6b8] // Method$System.Collections.Generic.Dictionary<string, UIPanel>.ContainsKey()
+0x427623c: 111ce797 bl       #0x3c3d280
+0x4276240: a04302b0 adrp     x0, #0x8aeb000
+0x4276244: 008043f9 ldr      x0, [x0, #0x700] // Method$System.Collections.Generic.Dictionary<string, UIPanel>.Remove()
+0x4276248: 0e1ce797 bl       #0x3c3d280
+0x427624c: a04302b0 adrp     x0, #0x8aeb000
+0x4276250: 008443f9 ldr      x0, [x0, #0x708] // Method$System.Collections.Generic.Dictionary<string, UIPanel>.get_Item()
+0x4276254: 0b1ce797 bl       #0x3c3d280
+0x4276258: a04202d0 adrp     x0, #0x8acc000
+0x427625c: 006844f9 ldr      x0, [x0, #0x8d0] // UnityEngine.Object_TypeInfo
+0x4276260: 081ce797 bl       #0x3c3d280
+0x4276264: 28008052 mov      w8, #1
+0x4276268: a8663f39 strb     w8, [x21, #0xfd9]
+0x427626c: 801640f9 ldr      x0, [x20, #0x28]
+0x4276270: 000500b4 cbz      x0, #0x4276310
+0x4276274: a84302b0 adrp     x8, #0x8aeb000
+0x4276278: 085d43f9 ldr      x8, [x8, #0x6b8] // Method$System.Collections.Generic.Dictionary<string, UIPanel>.ContainsKey()
+0x427627c: e10313aa mov      x1, x19
+0x4276280: 020140f9 ldr      x2, [x8]
+0x4276284: 0c43a694 bl       #0x6c06eb4 // System.Collections.Generic.Dictionary<object, object>$$ContainsKey
+0x4276288: e0030036 tbz      w0, #0, #0x4276304
+0x427628c: 801640f9 ldr      x0, [x20, #0x28]
+0x4276290: 000400b4 cbz      x0, #0x4276310
+0x4276294: a84302b0 adrp     x8, #0x8aeb000
+0x4276298: 088543f9 ldr      x8, [x8, #0x708] // Method$System.Collections.Generic.Dictionary<string, UIPanel>.get_Item()
+0x427629c: e10313aa mov      x1, x19
+0x42762a0: 020140f9 ldr      x2, [x8]
+0x42762a4: 6742a694 bl       #0x6c06c40 // System.Collections.Generic.Dictionary<object, object>$$get_Item
+0x42762a8: 400300b4 cbz      x0, #0x4276310
+0x42762ac: e1031faa mov      x1, xzr
+0x42762b0: 23cb0195 bl       #0x82e8f3c // UnityEngine.Component$$get_gameObject
+0x42762b4: a84202d0 adrp     x8, #0x8acc000
+0x42762b8: 086944f9 ldr      x8, [x8, #0x8d0] // UnityEngine.Object_TypeInfo
+0x42762bc: f50300aa mov      x21, x0
+0x42762c0: 080140f9 ldr      x8, [x8]
+0x42762c4: 09e140b9 ldr      w9, [x8, #0xe0]
+0x42762c8: 69000035 cbnz     w9, #0x42762d4
+0x42762cc: e00308aa mov      x0, x8
+0x42762d0: 381ce797 bl       #0x3c3d3b0
+0x42762d4: e00315aa mov      x0, x21
+0x42762d8: e1031faa mov      x1, xzr
+0x42762dc: 5ceb0195 bl       #0x82f104c // UnityEngine.Object$$Destroy
+0x42762e0: 801640f9 ldr      x0, [x20, #0x28]
+0x42762e4: 600100b4 cbz      x0, #0x4276310
+0x42762e8: a84302b0 adrp     x8, #0x8aeb000
+0x42762ec: 088143f9 ldr      x8, [x8, #0x700] // Method$System.Collections.Generic.Dictionary<string, UIPanel>.Remove()
+0x42762f0: e10313aa mov      x1, x19
+0x42762f4: f44f41a9 ldp      x20, x19, [sp, #0x10]
+0x42762f8: 020140f9 ldr      x2, [x8]
+0x42762fc: fe57c2a8 ldp      x30, x21, [sp], #0x20
+0x4276300: 8847a614 b        #0x6c08120 // System.Collections.Generic.Dictionary<object, object>$$Remove
+0x4276304: f44f41a9 ldp      x20, x19, [sp, #0x10]
+0x4276308: fe57c2a8 ldp      x30, x21, [sp], #0x20
+0x427630c: c0035fd6 ret      
+0x4276310: 6f1ce797 bl       #0x3c3d4cc

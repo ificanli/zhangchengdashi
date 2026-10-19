@@ -1,0 +1,62 @@
+0x3d8bc2c: STR             X30, [SP,#var_20]!
+0x3d8bc30: STP             X20, X19, [SP,#0x20+var_10]
+0x3d8bc34: ADRP            X20, #byte_8FFD49D@PAGE
+0x3d8bc38: LDRB            W8, [X20,#byte_8FFD49D@PAGEOFF]
+0x3d8bc3c: MOV             X19, X0
+0x3d8bc40: TBNZ            W8, #0, loc_3D8BC70
+0x3d8bc44: ADRP            X0, #off_8AD1340@PAGE
+0x3d8bc48: LDR             X0, [X0,#off_8AD1340@PAGEOFF]; qword_8D12168 ; slot
+0x3d8bc4c: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3d8bc50: ADRP            X0, #off_8AD1550@PAGE
+0x3d8bc54: LDR             X0, [X0,#off_8AD1550@PAGEOFF]; qword_8D124B8 ; slot
+0x3d8bc58: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3d8bc5c: ADRP            X0, #off_8ACC8D0@PAGE
+0x3d8bc60: LDR             X0, [X0,#off_8ACC8D0@PAGEOFF]; off_8CEB3E0 ; slot
+0x3d8bc64: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3d8bc68: MOV             W8, #1
+0x3d8bc6c: STRB            W8, [X20,#byte_8FFD49D@PAGEOFF]
+0x3d8bc70: MOV             X0, XZR
+0x3d8bc74: BL              GameConfigModule.GameConfigManager$$get_GameGlobalConfig
+0x3d8bc78: CBZ             X0, loc_3D8BD20
+0x3d8bc7c: LDRB            W8, [X0,#0x12]
+0x3d8bc80: CBZ             W8, loc_3D8BCC0
+0x3d8bc84: ADRP            X8, #off_8AD1340@PAGE
+0x3d8bc88: LDR             X8, [X8,#off_8AD1340@PAGEOFF]; qword_8D12168
+0x3d8bc8c: LDR             X0, [X8]; method
+0x3d8bc90: BL              ToolModule.ManagerBase_object_$$get_Instance
+0x3d8bc94: MOV             X20, X0
+0x3d8bc98: MOV             X0, X19
+0x3d8bc9c: MOV             X1, XZR
+0x3d8bca0: BL              UnityEngine.Component$$get_transform
+0x3d8bca4: CBZ             X20, loc_3D8BD20
+0x3d8bca8: MOV             X1, X0
+0x3d8bcac: MOV             X0, X20
+0x3d8bcb0: LDP             X20, X19, [SP,#0x20+var_10]
+0x3d8bcb4: MOV             X2, XZR
+0x3d8bcb8: LDR             X30, [SP+0x20+var_20],#0x20
+0x3d8bcbc: B               GameModule.FloatingTextManager$$RemoveTextByTarget
+0x3d8bcc0: ADRP            X8, #off_8ACC8D0@PAGE
+0x3d8bcc4: LDR             X8, [X8,#off_8ACC8D0@PAGEOFF]; off_8CEB3E0
+0x3d8bcc8: LDR             X20, [X19,#0x28]
+0x3d8bccc: LDR             X0, [X8]; klass
+0x3d8bcd0: LDR             W8, [X0,#0xE0]
+0x3d8bcd4: CBNZ            W8, loc_3D8BCDC
+0x3d8bcd8: BL              il2cpp_codegen_runtime_class_init
+0x3d8bcdc: MOV             X0, X20
+0x3d8bce0: MOV             X1, XZR
+0x3d8bce4: MOV             X2, XZR
+0x3d8bce8: BL              UnityEngine.Object$$op_Inequality
+0x3d8bcec: TBZ             W0, #0, loc_3D8BD10
+0x3d8bcf0: ADRP            X8, #off_8AD1550@PAGE
+0x3d8bcf4: LDR             X8, [X8,#off_8AD1550@PAGEOFF]; qword_8D124B8
+0x3d8bcf8: LDR             X0, [X8]; method
+0x3d8bcfc: BL              ToolModule.ManagerBase_object_$$get_Instance
+0x3d8bd00: CBZ             X0, loc_3D8BD20
+0x3d8bd04: LDR             X1, [X19,#0x28]
+0x3d8bd08: MOV             X2, XZR
+0x3d8bd0c: BL              UIModuleO.UIHUDManager$$RecycleHealthBatHUD
+0x3d8bd10: STR             XZR, [X19,#0x28]
+0x3d8bd14: LDP             X20, X19, [SP,#0x20+var_10]
+0x3d8bd18: LDR             X30, [SP+0x20+var_20],#0x20
+0x3d8bd1c: RET
+0x3d8bd20: BL              il2cpp_codegen_raise_null_reference_exception

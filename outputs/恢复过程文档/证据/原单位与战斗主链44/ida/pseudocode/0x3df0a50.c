@@ -1,0 +1,96 @@
+void __fastcall GameModule_BattleGameSceneManager__SortNearestRoleTargetsInPlace(
+        __int64 a1,
+        int a2,
+        float a3,
+        float a4,
+        float a5)
+{
+  int v10; // w8
+  unsigned int v11; // w27
+  unsigned int v12; // w21
+  __int64 Item; // x0
+  __int64 transform; // x0
+  long double position; // q0
+  float v16; // s1
+  float v17; // s2
+  float v18; // s11
+  unsigned int v19; // w22
+  unsigned int v20; // w23
+  __int64 v21; // x0
+  __int64 v22; // x0
+  long double v23; // q0
+  float v24; // s1
+  float v25; // s2
+  float v26; // s0
+  __int64 v27; // x23
+  __int64 v28; // x24
+
+  if ( (byte_8FFD7A0 & 1) == 0 )
+  {
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D0DDB8);
+    il2cpp_codegen_initialize_runtime_metadata(&qword_8D0DDC0);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D0DDC8);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D0DDD0);
+    byte_8FFD7A0 = 1;
+  }
+  if ( a1 == 0 )
+LABEL_26:
+    il2cpp_codegen_raise_null_reference_exception();
+  v10 = *(_DWORD *)(a1 + 24);
+  if ( v10 <= a2 )
+    a2 = *(_DWORD *)(a1 + 24);
+  if ( a2 >= 1 )
+  {
+    v11 = 0;
+    do
+    {
+      v12 = v11;
+      Item = System_Collections_Generic_List_object___get_Item(a1, v11, qword_8D0DDC8);
+      if ( Item == 0 )
+        goto LABEL_26;
+      transform = UnityEngine_Component__get_transform(Item, 0);
+      if ( transform == 0 )
+        goto LABEL_26;
+      position = UnityEngine_Transform__get_position(transform, 0);
+      ++v11;
+      if ( (signed int)(v12 + 1) < *(_DWORD *)(a1 + 24) )
+      {
+        v18 = (float)((float)(a5 - v17) * (float)(a5 - v17))
+            + (float)((float)((float)(a3 - *(float *)&position) * (float)(a3 - *(float *)&position))
+                    + (float)((float)(a4 - v16) * (float)(a4 - v16)));
+        v19 = v12;
+        v20 = v12 + 1;
+        do
+        {
+          v21 = System_Collections_Generic_List_object___get_Item(a1, v20, qword_8D0DDC8);
+          if ( v21 == 0 )
+            goto LABEL_26;
+          v22 = UnityEngine_Component__get_transform(v21, 0);
+          if ( v22 == 0 )
+            goto LABEL_26;
+          v23 = UnityEngine_Transform__get_position(v22, 0);
+          v26 = (float)((float)(a5 - v25) * (float)(a5 - v25))
+              + (float)((float)((float)(a3 - *(float *)&v23) * (float)(a3 - *(float *)&v23))
+                      + (float)((float)(a4 - v24) * (float)(a4 - v24)));
+          if ( v26 < v18 )
+            v19 = v20;
+          ++v20;
+          if ( v26 < v18 )
+            v18 = v26;
+        }
+        while ( (signed int)v20 < *(_DWORD *)(a1 + 24) );
+        if ( v19 != v12 )
+        {
+          v27 = System_Collections_Generic_List_object___get_Item(a1, v19, qword_8D0DDC8);
+          v28 = System_Collections_Generic_List_object___get_Item(a1, v12, qword_8D0DDC8);
+          System_Collections_Generic_List_object___set_Item(a1, v12, v27, qword_8D0DDD0);
+          System_Collections_Generic_List_object___set_Item(a1, v19, v28, qword_8D0DDD0);
+        }
+      }
+    }
+    while ( v11 != a2 );
+    v10 = *(_DWORD *)(a1 + 24);
+  }
+  if ( v10 > a2 )
+    System_Collections_Generic_List_object___RemoveRange(a1, (unsigned int)a2, (unsigned int)(v10 - a2), qword_8D0DDB8);
+}

@@ -1,0 +1,53 @@
+0x3e1a918: fe57bea9 stp      x30, x21, [sp, #-0x20]!
+0x3e1a91c: f44f01a9 stp      x20, x19, [sp, #0x10]
+0x3e1a920: 158f02f0 adrp     x21, #0x8ffd000
+0x3e1a924: 946502f0 adrp     x20, #0x8acd000
+0x3e1a928: a8766239 ldrb     w8, [x21, #0x89d]
+0x3e1a92c: 941642f9 ldr      x20, [x20, #0x428] // DBTSDK.SDKToolManager_TypeInfo
+0x3e1a930: f30300aa mov      x19, x0
+0x3e1a934: e8010037 tbnz     w8, #0, #0x3e1a970
+0x3e1a938: c06502d0 adrp     x0, #0x8ad4000
+0x3e1a93c: 000047f9 ldr      x0, [x0, #0xe00] // Method$ToolModule.ManagerBase<PacksTipManager>.get_Instance()
+0x3e1a940: 508af897 bl       #0x3c3d280
+0x3e1a944: 806502f0 adrp     x0, #0x8acd000
+0x3e1a948: 001442f9 ldr      x0, [x0, #0x428] // DBTSDK.SDKToolManager_TypeInfo
+0x3e1a94c: 4d8af897 bl       #0x3c3d280
+0x3e1a950: c06502d0 adrp     x0, #0x8ad4000
+0x3e1a954: 000447f9 ldr      x0, [x0, #0xe08] // DBT.StartupGift.StartupGiftSystem_TypeInfo
+0x3e1a958: 4a8af897 bl       #0x3c3d280
+0x3e1a95c: 806502d0 adrp     x0, #0x8acc000
+0x3e1a960: 008444f9 ldr      x0, [x0, #0x908] // 
+0x3e1a964: 478af897 bl       #0x3c3d280
+0x3e1a968: 28008052 mov      w8, #1
+0x3e1a96c: a8762239 strb     w8, [x21, #0x89d]
+0x3e1a970: 28008052 mov      w8, #1
+0x3e1a974: 68c20139 strb     w8, [x19, #0x70]
+0x3e1a978: 880240f9 ldr      x8, [x20]
+0x3e1a97c: 085d40f9 ldr      x8, [x8, #0xb8]
+0x3e1a980: 000140f9 ldr      x0, [x8]
+0x3e1a984: 200300b4 cbz      x0, #0x3e1a9e8
+0x3e1a988: 886502d0 adrp     x8, #0x8acc000
+0x3e1a98c: 088544f9 ldr      x8, [x8, #0x908] // 
+0x3e1a990: e2031faa mov      x2, xzr
+0x3e1a994: 010140f9 ldr      x1, [x8]
+0x3e1a998: 434fca94 bl       #0x70ae6a4 // DBTSDK.SDKToolManager$$ReportGameInteractive
+0x3e1a99c: 68864039 ldrb     w8, [x19, #0x21]
+0x3e1a9a0: 08010035 cbnz     w8, #0x3e1a9c0
+0x3e1a9a4: c86502d0 adrp     x8, #0x8ad4000
+0x3e1a9a8: 080147f9 ldr      x8, [x8, #0xe00] // Method$ToolModule.ManagerBase<PacksTipManager>.get_Instance()
+0x3e1a9ac: 000140f9 ldr      x0, [x8]
+0x3e1a9b0: ac766d94 bl       #0x5978460 // ToolModule.ManagerBase<object>$$get_Instance
+0x3e1a9b4: a00100b4 cbz      x0, #0x3e1a9e8
+0x3e1a9b8: e1031faa mov      x1, xzr
+0x3e1a9bc: 7e670294 bl       #0x3eb47b4 // GameModule.PacksTipManager$$FirstPopPacks
+0x3e1a9c0: c86502d0 adrp     x8, #0x8ad4000
+0x3e1a9c4: 080547f9 ldr      x8, [x8, #0xe08] // DBT.StartupGift.StartupGiftSystem_TypeInfo
+0x3e1a9c8: 000140f9 ldr      x0, [x8]
+0x3e1a9cc: 08e040b9 ldr      w8, [x0, #0xe0]
+0x3e1a9d0: 48000035 cbnz     w8, #0x3e1a9d8
+0x3e1a9d4: 778af897 bl       #0x3c3d3b0
+0x3e1a9d8: f44f41a9 ldp      x20, x19, [sp, #0x10]
+0x3e1a9dc: e0031faa mov      x0, xzr
+0x3e1a9e0: fe57c2a8 ldp      x30, x21, [sp], #0x20
+0x3e1a9e4: 92611614 b        #0x43b302c // DBT.StartupGift.StartupGiftSystem$$CheckAndGrantGift
+0x3e1a9e8: b98af897 bl       #0x3c3d4cc

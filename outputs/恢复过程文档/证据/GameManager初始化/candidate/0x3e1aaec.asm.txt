@@ -1,0 +1,23 @@
+0x3e1aaec: fe0f1ef8 str      x30, [sp, #-0x20]!
+0x3e1aaf0: f44f01a9 stp      x20, x19, [sp, #0x10]
+0x3e1aaf4: 138f02f0 adrp     x19, #0x8ffd000
+0x3e1aaf8: d46502d0 adrp     x20, #0x8ad4000
+0x3e1aafc: 68826239 ldrb     w8, [x19, #0x8a0]
+0x3e1ab00: 94b646f9 ldr      x20, [x20, #0xd68] // GameModule.GameManager.<>c_TypeInfo
+0x3e1ab04: c8000037 tbnz     w8, #0, #0x3e1ab1c
+0x3e1ab08: c06502d0 adrp     x0, #0x8ad4000
+0x3e1ab0c: 00b446f9 ldr      x0, [x0, #0xd68] // GameModule.GameManager.<>c_TypeInfo
+0x3e1ab10: dc89f897 bl       #0x3c3d280
+0x3e1ab14: 28008052 mov      w8, #1
+0x3e1ab18: 68822239 strb     w8, [x19, #0x8a0]
+0x3e1ab1c: 800240f9 ldr      x0, [x20]
+0x3e1ab20: 698af897 bl       #0x3c3d4c4
+0x3e1ab24: e1031faa mov      x1, xzr
+0x3e1ab28: f30300aa mov      x19, x0
+0x3e1ab2c: f8b2e294 bl       #0x76c770c // System.Object$$.ctor
+0x3e1ab30: 880240f9 ldr      x8, [x20]
+0x3e1ab34: 085d40f9 ldr      x8, [x8, #0xb8]
+0x3e1ab38: 130100f9 str      x19, [x8]
+0x3e1ab3c: f44f41a9 ldp      x20, x19, [sp, #0x10]
+0x3e1ab40: fe0742f8 ldr      x30, [sp], #0x20
+0x3e1ab44: c0035fd6 ret      

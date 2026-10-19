@@ -1,0 +1,10 @@
+0x6af3f6c: STP             X30, X19, [SP,#var_10]!
+0x6af3f70: CBZ             X0, loc_6AF3F90
+0x6af3f74: LDR             X8, [X0]
+0x6af3f78: MOV             X19, X0
+0x6af3f7c: LDP             X9, X1, [X8,#0x1C8]
+0x6af3f80: BLR             X9
+0x6af3f84: STR             X0, [X19,#0x38]
+0x6af3f88: LDP             X30, X19, [SP+0x10+var_10],#0x10
+0x6af3f8c: RET
+0x6af3f90: BL              il2cpp_codegen_raise_null_reference_exception

@@ -1,0 +1,74 @@
+0x435ca98: fe0f1cf8 str      x30, [sp, #-0x40]!
+0x435ca9c: f85f01a9 stp      x24, x23, [sp, #0x10]
+0x435caa0: f65702a9 stp      x22, x21, [sp, #0x20]
+0x435caa4: f44f03a9 stp      x20, x19, [sp, #0x30]
+0x435caa8: 37650290 adrp     x23, #0x9000000
+0x435caac: b63c02d0 adrp     x22, #0x8af2000
+0x435cab0: b53c02d0 adrp     x21, #0x8af2000
+0x435cab4: e8265a39 ldrb     w8, [x23, #0x689]
+0x435cab8: d64e44f9 ldr      x22, [x22, #0x898] // System.Collections.Generic.Dictionary<string, GlobalCardTalentInfo>_TypeInfo
+0x435cabc: b55244f9 ldr      x21, [x21, #0x8a0] // Method$System.Collections.Generic.Dictionary<string, GlobalCardTalentInfo>..ctor()
+0x435cac0: f40301aa mov      x20, x1
+0x435cac4: f30300aa mov      x19, x0
+0x435cac8: 48020037 tbnz     w8, #0, #0x435cb10
+0x435cacc: a03c02d0 adrp     x0, #0x8af2000
+0x435cad0: 005444f9 ldr      x0, [x0, #0x8a8] // Method$System.Collections.Generic.Dictionary<string, GlobalCardTalentInfo>.Add()
+0x435cad4: eb81e397 bl       #0x3c3d280
+0x435cad8: a03c02d0 adrp     x0, #0x8af2000
+0x435cadc: 005044f9 ldr      x0, [x0, #0x8a0] // Method$System.Collections.Generic.Dictionary<string, GlobalCardTalentInfo>..ctor()
+0x435cae0: e881e397 bl       #0x3c3d280
+0x435cae4: a03c02d0 adrp     x0, #0x8af2000
+0x435cae8: 004c44f9 ldr      x0, [x0, #0x898] // System.Collections.Generic.Dictionary<string, GlobalCardTalentInfo>_TypeInfo
+0x435caec: e581e397 bl       #0x3c3d280
+0x435caf0: a03c02d0 adrp     x0, #0x8af2000
+0x435caf4: 005844f9 ldr      x0, [x0, #0x8b0] // Method$System.Collections.Generic.List<GlobalCardTalentInfo>.get_Count()
+0x435caf8: e281e397 bl       #0x3c3d280
+0x435cafc: a03c02d0 adrp     x0, #0x8af2000
+0x435cb00: 005c44f9 ldr      x0, [x0, #0x8b8] // Method$System.Collections.Generic.List<GlobalCardTalentInfo>.get_Item()
+0x435cb04: df81e397 bl       #0x3c3d280
+0x435cb08: 28008052 mov      w8, #1
+0x435cb0c: e8261a39 strb     w8, [x23, #0x689]
+0x435cb10: 74e200f9 str      x20, [x19, #0x1c0]
+0x435cb14: c00240f9 ldr      x0, [x22]
+0x435cb18: 6b82e397 bl       #0x3c3d4c4
+0x435cb1c: a10240f9 ldr      x1, [x21]
+0x435cb20: f40300aa mov      x20, x0
+0x435cb24: 0fa5a294 bl       #0x6c05f60 // System.Collections.Generic.Dictionary<object, object>$$.ctor
+0x435cb28: 60e240f9 ldr      x0, [x19, #0x1c0]
+0x435cb2c: 74e600f9 str      x20, [x19, #0x1c8]
+0x435cb30: c00300b4 cbz      x0, #0x435cba8
+0x435cb34: b73c02d0 adrp     x23, #0x8af2000
+0x435cb38: b83c02d0 adrp     x24, #0x8af2000
+0x435cb3c: f75e44f9 ldr      x23, [x23, #0x8b8] // Method$System.Collections.Generic.List<GlobalCardTalentInfo>.get_Item()
+0x435cb40: 185744f9 ldr      x24, [x24, #0x8a8] // Method$System.Collections.Generic.Dictionary<string, GlobalCardTalentInfo>.Add()
+0x435cb44: f4031f2a mov      w20, wzr
+0x435cb48: 081840b9 ldr      w8, [x0, #0x18]
+0x435cb4c: 9f02086b cmp      w20, w8
+0x435cb50: ea020054 b.ge     #0x435cbac
+0x435cb54: e20240f9 ldr      x2, [x23]
+0x435cb58: 75e640f9 ldr      x21, [x19, #0x1c8]
+0x435cb5c: e103142a mov      w1, w20
+0x435cb60: c3c94f94 bl       #0x574f26c // System.Collections.Generic.List<object>$$get_Item
+0x435cb64: 200200b4 cbz      x0, #0x435cba8
+0x435cb68: 68e240f9 ldr      x8, [x19, #0x1c0]
+0x435cb6c: e80100b4 cbz      x8, #0x435cba8
+0x435cb70: e20240f9 ldr      x2, [x23]
+0x435cb74: 160840f9 ldr      x22, [x0, #0x10]
+0x435cb78: e00308aa mov      x0, x8
+0x435cb7c: e103142a mov      w1, w20
+0x435cb80: bbc94f94 bl       #0x574f26c // System.Collections.Generic.List<object>$$get_Item
+0x435cb84: 350100b4 cbz      x21, #0x435cba8
+0x435cb88: 030340f9 ldr      x3, [x24]
+0x435cb8c: e20300aa mov      x2, x0
+0x435cb90: e00315aa mov      x0, x21
+0x435cb94: e10316aa mov      x1, x22
+0x435cb98: 4aa8a294 bl       #0x6c06cc0 // System.Collections.Generic.Dictionary<object, object>$$Add
+0x435cb9c: 60e240f9 ldr      x0, [x19, #0x1c0]
+0x435cba0: 94060011 add      w20, w20, #1
+0x435cba4: 20fdffb5 cbnz     x0, #0x435cb48
+0x435cba8: 4982e397 bl       #0x3c3d4cc
+0x435cbac: f44f43a9 ldp      x20, x19, [sp, #0x30]
+0x435cbb0: f65742a9 ldp      x22, x21, [sp, #0x20]
+0x435cbb4: f85f41a9 ldp      x24, x23, [sp, #0x10]
+0x435cbb8: fe0744f8 ldr      x30, [sp], #0x40
+0x435cbbc: c0035fd6 ret      

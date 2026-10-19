@@ -1,0 +1,66 @@
+0x3e19ab8: STP             X30, X21, [SP,#var_20]!
+0x3e19abc: STP             X20, X19, [SP,#0x20+var_10]
+0x3e19ac0: ADRP            X19, #byte_8FFD894@PAGE
+0x3e19ac4: ADRP            X21, #off_8ACE488@PAGE
+0x3e19ac8: ADRP            X20, #off_8ACC8D0@PAGE
+0x3e19acc: LDRB            W8, [X19,#byte_8FFD894@PAGEOFF]
+0x3e19ad0: LDR             X21, [X21,#off_8ACE488@PAGEOFF]; qword_8D12048
+0x3e19ad4: LDR             X20, [X20,#off_8ACC8D0@PAGEOFF]; off_8CEB3E0
+0x3e19ad8: TBNZ            W8, #0, loc_3E19B08
+0x3e19adc: ADRP            X0, #off_8ACE488@PAGE
+0x3e19ae0: LDR             X0, [X0,#off_8ACE488@PAGEOFF]; qword_8D12048 ; slot
+0x3e19ae4: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3e19ae8: ADRP            X0, #off_8ACFF28@PAGE
+0x3e19aec: LDR             X0, [X0,#off_8ACFF28@PAGEOFF]; qword_8D11FA8 ; slot
+0x3e19af0: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3e19af4: ADRP            X0, #off_8ACC8D0@PAGE
+0x3e19af8: LDR             X0, [X0,#off_8ACC8D0@PAGEOFF]; off_8CEB3E0 ; slot
+0x3e19afc: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3e19b00: MOV             W8, #1
+0x3e19b04: STRB            W8, [X19,#byte_8FFD894@PAGEOFF]
+0x3e19b08: LDR             X0, [X21]
+0x3e19b0c: BL              ToolModule.ManagerBase_object_$$get_Instance
+0x3e19b10: LDR             X8, [X20]
+0x3e19b14: MOV             X19, X0
+0x3e19b18: LDR             W9, [X8,#0xE0]
+0x3e19b1c: CBNZ            W9, loc_3E19B28
+0x3e19b20: MOV             X0, X8; klass
+0x3e19b24: BL              il2cpp_codegen_runtime_class_init
+0x3e19b28: MOV             X0, X19
+0x3e19b2c: MOV             X1, XZR
+0x3e19b30: MOV             X2, XZR
+0x3e19b34: BL              UnityEngine.Object$$op_Inequality
+0x3e19b38: TBZ             W0, #0, loc_3E19B54
+0x3e19b3c: LDR             X0, [X21]
+0x3e19b40: BL              ToolModule.ManagerBase_object_$$get_Instance
+0x3e19b44: CBZ             X0, loc_3E19BBC
+0x3e19b48: MOV             W1, WZR
+0x3e19b4c: MOV             X2, XZR
+0x3e19b50: BL              GameModule.BattleGameManager$$SetGamePaused
+0x3e19b54: ADRP            X21, #off_8ACFF28@PAGE
+0x3e19b58: LDR             X21, [X21,#off_8ACFF28@PAGEOFF]; qword_8D11FA8
+0x3e19b5c: LDR             X0, [X21]
+0x3e19b60: BL              ToolModule.ManagerBase_object_$$get_Instance
+0x3e19b64: LDR             X8, [X20]
+0x3e19b68: MOV             X19, X0
+0x3e19b6c: LDR             W9, [X8,#0xE0]
+0x3e19b70: CBNZ            W9, loc_3E19B7C
+0x3e19b74: MOV             X0, X8; klass
+0x3e19b78: BL              il2cpp_codegen_runtime_class_init
+0x3e19b7c: MOV             X0, X19
+0x3e19b80: MOV             X1, XZR
+0x3e19b84: MOV             X2, XZR
+0x3e19b88: BL              UnityEngine.Object$$op_Inequality
+0x3e19b8c: TBZ             W0, #0, loc_3E19BB0
+0x3e19b90: LDR             X0, [X21]
+0x3e19b94: BL              ToolModule.ManagerBase_object_$$get_Instance
+0x3e19b98: CBZ             X0, loc_3E19BBC
+0x3e19b9c: LDP             X20, X19, [SP,#0x20+var_10]
+0x3e19ba0: MOV             W1, WZR
+0x3e19ba4: MOV             X2, XZR
+0x3e19ba8: LDP             X30, X21, [SP+0x20+var_20],#0x20
+0x3e19bac: B               GameModule.AIBehaviourManager$$SetGamePaused
+0x3e19bb0: LDP             X20, X19, [SP,#0x20+var_10]
+0x3e19bb4: LDP             X30, X21, [SP+0x20+var_20],#0x20
+0x3e19bb8: RET
+0x3e19bbc: BL              il2cpp_codegen_raise_null_reference_exception

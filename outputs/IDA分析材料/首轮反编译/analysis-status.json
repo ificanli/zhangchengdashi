@@ -1,0 +1,428 @@
+{
+  "stage": "complete",
+  "methods": [
+    {
+      "name": "HexManager$$HexDistance",
+      "address": 64136704,
+      "end": 64136864,
+      "signature": "int32_t HexManager__HexDistance (HexManager_HexCoord_o a, HexManager_HexCoord_o b, const MethodInfo* method);",
+      "range_analysis": 1,
+      "direct_callees": [],
+      "prototype_applied": true,
+      "pseudocode_chars": 745,
+      "unresolved_jumpout": false
+    },
+    {
+      "name": "GameModule.BattleGameSceneManager$$GetAvailableSlots",
+      "address": 64936364,
+      "end": 64936564,
+      "signature": "int32_t GameModule_BattleGameSceneManager__GetAvailableSlots (GameModule_BattleGameSceneManager_o* __this, bool isEnemy, const MethodInfo* method);",
+      "range_analysis": 1,
+      "direct_callees": [
+        {
+          "callsite": "0x3deda10",
+          "address": "0x5fbeb64",
+          "name": "QuickTutor.Singleton<object>$$get_Instance",
+          "signature": "Il2CppObject* QuickTutor_Singleton_object___get_Instance (const MethodInfo_5FBEB64* method);"
+        },
+        {
+          "callsite": "0x3deda1c",
+          "address": "0x3f7257c",
+          "name": "SDKModule.ABTestManager$$get_GamePlayImprove01IsBTest",
+          "signature": "bool SDKModule_ABTestManager__get_GamePlayImprove01IsBTest (SDKModule_ABTestManager_o* __this, const MethodInfo* method);"
+        }
+      ],
+      "prototype_applied": true,
+      "pseudocode_chars": 1183,
+      "unresolved_jumpout": true
+    },
+    {
+      "name": "GameModule.SynergyEffectManager$$InternalCalculateDamage",
+      "address": 65074928,
+      "end": 65074984,
+      "signature": "int32_t GameModule_SynergyEffectManager__InternalCalculateDamage (GameModule_SynergyEffectManager_o* __this, int32_t originalAttack, bool isEnemy, int32_t fetterCount, int32_t requiredCount, const MethodInfo* method);",
+      "range_analysis": 1,
+      "direct_callees": [],
+      "prototype_applied": true,
+      "pseudocode_chars": 515,
+      "unresolved_jumpout": false
+    },
+    {
+      "name": "GameModule.BattleGameManager$$ChangeCoin",
+      "address": 64896244,
+      "end": 64896784,
+      "signature": "void GameModule_BattleGameManager__ChangeCoin (GameModule_BattleGameManager_o* __this, int32_t coinNum, const MethodInfo* method);",
+      "range_analysis": 1,
+      "direct_callees": [
+        {
+          "callsite": "0x3de3d8c",
+          "address": "0x5978460",
+          "name": "ToolModule.ManagerBase<object>$$get_Instance",
+          "signature": "Il2CppObject* ToolModule_ManagerBase_object___get_Instance (const MethodInfo_5978460* method);"
+        },
+        {
+          "callsite": "0x3de3e00",
+          "address": "0x3f05f64",
+          "name": "EventModule.EventManager$$TriggerEvent",
+          "signature": "void EventModule_EventManager__TriggerEvent (EventModule_EventManager_o* __this, System_String_o* eventName, Il2CppObject* parameter, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x3de3e78",
+          "address": "0x5978460",
+          "name": "ToolModule.ManagerBase<object>$$get_Instance",
+          "signature": "Il2CppObject* ToolModule_ManagerBase_object___get_Instance (const MethodInfo_5978460* method);"
+        },
+        {
+          "callsite": "0x3de3e94",
+          "address": "0x3f05f64",
+          "name": "EventModule.EventManager$$TriggerEvent",
+          "signature": "void EventModule_EventManager__TriggerEvent (EventModule_EventManager_o* __this, System_String_o* eventName, Il2CppObject* parameter, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x3de3e9c",
+          "address": "0x5978460",
+          "name": "ToolModule.ManagerBase<object>$$get_Instance",
+          "signature": "Il2CppObject* ToolModule_ManagerBase_object___get_Instance (const MethodInfo_5978460* method);"
+        },
+        {
+          "callsite": "0x3de3ed4",
+          "address": "0x3f05f64",
+          "name": "EventModule.EventManager$$TriggerEvent",
+          "signature": "void EventModule_EventManager__TriggerEvent (EventModule_EventManager_o* __this, System_String_o* eventName, Il2CppObject* parameter, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x3de3edc",
+          "address": "0x3d912e8",
+          "name": "GameModule.SubGameBuffManager$$get_Instance",
+          "signature": "GameModule_SubGameBuffManager_o* GameModule_SubGameBuffManager__get_Instance (const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x3de3ef0",
+          "address": "0x3d9f3f0",
+          "name": "GameModule.SubGameBuffManager$$OnCoinChanged",
+          "signature": "void GameModule_SubGameBuffManager__OnCoinChanged (GameModule_SubGameBuffManager_o* __this, bool isEnemy, int32_t coinAmount, const MethodInfo* method);"
+        }
+      ],
+      "prototype_applied": true,
+      "pseudocode_chars": 2916,
+      "unresolved_jumpout": true
+    },
+    {
+      "name": "GameModule.HexBehaviour$$DetermineHexCamp",
+      "address": 71473388,
+      "end": 71473584,
+      "signature": "void GameModule_HexBehaviour__DetermineHexCamp (GameModule_HexBehaviour_o* __this, const MethodInfo* method);",
+      "range_analysis": 1,
+      "direct_callees": [
+        {
+          "callsite": "0x4429968",
+          "address": "0x4428468",
+          "name": "GameModule.HexBehaviour$$EncroachmentEnemy",
+          "signature": "void GameModule_HexBehaviour__EncroachmentEnemy (GameModule_HexBehaviour_o* __this, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x44299a8",
+          "address": "0x4428cd0",
+          "name": "GameModule.HexBehaviour$$EncroachmentPlayer",
+          "signature": "void GameModule_HexBehaviour__EncroachmentPlayer (GameModule_HexBehaviour_o* __this, const MethodInfo* method);"
+        }
+      ],
+      "prototype_applied": true,
+      "pseudocode_chars": 1845,
+      "unresolved_jumpout": true
+    },
+    {
+      "name": "GameModule.HexBehaviour$$OpenHex",
+      "address": 71454044,
+      "end": 71455248,
+      "signature": "void GameModule_HexBehaviour__OpenHex (GameModule_HexBehaviour_o* __this, bool isEnemy, bool isHard, const MethodInfo* method);",
+      "range_analysis": 1,
+      "direct_callees": [
+        {
+          "callsite": "0x4424ea8",
+          "address": "0x74fe874",
+          "name": "System.String$$op_Equality",
+          "signature": "bool System_String__op_Equality (System_String_o* a, System_String_o* b, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x4424ec0",
+          "address": "0x5978460",
+          "name": "ToolModule.ManagerBase<object>$$get_Instance",
+          "signature": "Il2CppObject* ToolModule_ManagerBase_object___get_Instance (const MethodInfo_5978460* method);"
+        },
+        {
+          "callsite": "0x4424ed0",
+          "address": "0x3deefc8",
+          "name": "GameModule.BattleGameSceneManager$$RecordEnemyUseGoldMine",
+          "signature": "void GameModule_BattleGameSceneManager__RecordEnemyUseGoldMine (GameModule_BattleGameSceneManager_o* __this, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x4424ed8",
+          "address": "0x3deefb8",
+          "name": "GameModule.BattleGameSceneManager$$RecordPlayerUseGoldMine",
+          "signature": "void GameModule_BattleGameSceneManager__RecordPlayerUseGoldMine (GameModule_BattleGameSceneManager_o* __this, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x4424f00",
+          "address": "0x5fbeb64",
+          "name": "QuickTutor.Singleton<object>$$get_Instance",
+          "signature": "Il2CppObject* QuickTutor_Singleton_object___get_Instance (const MethodInfo_5FBEB64* method);"
+        },
+        {
+          "callsite": "0x4424f0c",
+          "address": "0x3f72594",
+          "name": "SDKModule.ABTestManager$$get_GoldMinePriceV2IsBTest",
+          "signature": "bool SDKModule_ABTestManager__get_GoldMinePriceV2IsBTest (SDKModule_ABTestManager_o* __this, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x4424f18",
+          "address": "0x5978460",
+          "name": "ToolModule.ManagerBase<object>$$get_Instance",
+          "signature": "Il2CppObject* ToolModule_ManagerBase_object___get_Instance (const MethodInfo_5978460* method);"
+        },
+        {
+          "callsite": "0x4424f24",
+          "address": "0x3def0ec",
+          "name": "GameModule.BattleGameSceneManager$$UpdateAllGoldMinePrices",
+          "signature": "void GameModule_BattleGameSceneManager__UpdateAllGoldMinePrices (GameModule_BattleGameSceneManager_o* __this, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x4424f44",
+          "address": "0x3d912e8",
+          "name": "GameModule.SubGameBuffManager$$get_Instance",
+          "signature": "GameModule_SubGameBuffManager_o* GameModule_SubGameBuffManager__get_Instance (const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x4424f54",
+          "address": "0x3d9f034",
+          "name": "GameModule.SubGameBuffManager$$OnActiveHexOpened",
+          "signature": "void GameModule_SubGameBuffManager__OnActiveHexOpened (GameModule_SubGameBuffManager_o* __this, bool openerIsEnemy, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x4424f64",
+          "address": "0x854c83c",
+          "name": "VibratorManager$$Trigger",
+          "signature": "void VibratorManager__Trigger (int32_t level, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x4424f88",
+          "address": "0x5978460",
+          "name": "ToolModule.ManagerBase<object>$$get_Instance",
+          "signature": "Il2CppObject* ToolModule_ManagerBase_object___get_Instance (const MethodInfo_5978460* method);"
+        },
+        {
+          "callsite": "0x4424fb4",
+          "address": "0x3f05f64",
+          "name": "EventModule.EventManager$$TriggerEvent",
+          "signature": "void EventModule_EventManager__TriggerEvent (EventModule_EventManager_o* __this, System_String_o* eventName, Il2CppObject* parameter, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x4424fc0",
+          "address": "0x82e8f00",
+          "name": "UnityEngine.Component$$get_transform",
+          "signature": "UnityEngine_Transform_o* UnityEngine_Component__get_transform (UnityEngine_Component_o* __this, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x4424ff0",
+          "address": "0x82ebc6c",
+          "name": "UnityEngine.Object$$op_Inequality",
+          "signature": "bool UnityEngine_Object__op_Inequality (UnityEngine_Object_o* x, UnityEngine_Object_o* y, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x4425000",
+          "address": "0x82e8f00",
+          "name": "UnityEngine.Component$$get_transform",
+          "signature": "UnityEngine_Transform_o* UnityEngine_Component__get_transform (UnityEngine_Component_o* __this, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x4425018",
+          "address": "0x46a1fcc",
+          "name": "DG.Tweening.ShortcutExtensions$$DOMoveY",
+          "signature": "DG_Tweening_Core_TweenerCore_Vector3__Vector3__VectorOptions__o* DG_Tweening_ShortcutExtensions__DOMoveY (UnityEngine_Transform_o* target, float endValue, float duration, bool snapping, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x4425024",
+          "address": "0x82e8f00",
+          "name": "UnityEngine.Component$$get_transform",
+          "signature": "UnityEngine_Transform_o* UnityEngine_Component__get_transform (UnityEngine_Component_o* __this, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x4425048",
+          "address": "0x46a2ce4",
+          "name": "DG.Tweening.ShortcutExtensions$$DOLocalRotate",
+          "signature": "DG_Tweening_Core_TweenerCore_Quaternion__Vector3__QuaternionOptions__o* DG_Tweening_ShortcutExtensions__DOLocalRotate (UnityEngine_Transform_o* target, UnityEngine_Vector3_o endValue, float duration, int32_t mode, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x4425080",
+          "address": "0x469436c",
+          "name": "DG.Tweening.TweenCallback$$.ctor",
+          "signature": "void DG_Tweening_TweenCallback___ctor (DG_Tweening_TweenCallback_o* __this, Il2CppObject* object, intptr_t method, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x4425090",
+          "address": "0x76ca818",
+          "name": "System.Delegate$$Combine",
+          "signature": "System_Delegate_o* System_Delegate__Combine (System_Delegate_o* a, System_Delegate_o* b, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x44250d0",
+          "address": "0x82ec364",
+          "name": "UnityEngine.GameObject$$SetActive",
+          "signature": "void UnityEngine_GameObject__SetActive (UnityEngine_GameObject_o* __this, bool value, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x44250f4",
+          "address": "0x82ebc6c",
+          "name": "UnityEngine.Object$$op_Inequality",
+          "signature": "bool UnityEngine_Object__op_Inequality (UnityEngine_Object_o* x, UnityEngine_Object_o* y, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x442510c",
+          "address": "0x82ec364",
+          "name": "UnityEngine.GameObject$$SetActive",
+          "signature": "void UnityEngine_GameObject__SetActive (UnityEngine_GameObject_o* __this, bool value, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x4425130",
+          "address": "0x82ebc6c",
+          "name": "UnityEngine.Object$$op_Inequality",
+          "signature": "bool UnityEngine_Object__op_Inequality (UnityEngine_Object_o* x, UnityEngine_Object_o* y, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x4425148",
+          "address": "0x82ec364",
+          "name": "UnityEngine.GameObject$$SetActive",
+          "signature": "void UnityEngine_GameObject__SetActive (UnityEngine_GameObject_o* __this, bool value, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x4425150",
+          "address": "0x44219b8",
+          "name": "GameModule.HexBehaviour$$SyncLegendaryGridEffectWithPriceUi",
+          "signature": "void GameModule_HexBehaviour__SyncLegendaryGridEffectWithPriceUi (GameModule_HexBehaviour_o* __this, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x4425164",
+          "address": "0x5978460",
+          "name": "ToolModule.ManagerBase<object>$$get_Instance",
+          "signature": "Il2CppObject* ToolModule_ManagerBase_object___get_Instance (const MethodInfo_5978460* method);"
+        },
+        {
+          "callsite": "0x4425174",
+          "address": "0x82e8f3c",
+          "name": "UnityEngine.Component$$get_gameObject",
+          "signature": "UnityEngine_GameObject_o* UnityEngine_Component__get_gameObject (UnityEngine_Component_o* __this, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x442518c",
+          "address": "0x3df5f80",
+          "name": "GameModule.BattleGameSceneManager$$RemoveEnemyStayHex",
+          "signature": "void GameModule_BattleGameSceneManager__RemoveEnemyStayHex (GameModule_BattleGameSceneManager_o* __this, UnityEngine_GameObject_o* obj, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x4425194",
+          "address": "0x5978460",
+          "name": "ToolModule.ManagerBase<object>$$get_Instance",
+          "signature": "Il2CppObject* ToolModule_ManagerBase_object___get_Instance (const MethodInfo_5978460* method);"
+        },
+        {
+          "callsite": "0x44251a4",
+          "address": "0x82e8f3c",
+          "name": "UnityEngine.Component$$get_gameObject",
+          "signature": "UnityEngine_GameObject_o* UnityEngine_Component__get_gameObject (UnityEngine_Component_o* __this, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x44251c8",
+          "address": "0x3df60cc",
+          "name": "GameModule.BattleGameSceneManager$$AddEnemyHasHex",
+          "signature": "void GameModule_BattleGameSceneManager__AddEnemyHasHex (GameModule_BattleGameSceneManager_o* __this, UnityEngine_GameObject_o* obj, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x44251cc",
+          "address": "0x3df5f28",
+          "name": "GameModule.BattleGameSceneManager$$RemovePlayerStayHex",
+          "signature": "void GameModule_BattleGameSceneManager__RemovePlayerStayHex (GameModule_BattleGameSceneManager_o* __this, UnityEngine_GameObject_o* obj, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x44251d4",
+          "address": "0x5978460",
+          "name": "ToolModule.ManagerBase<object>$$get_Instance",
+          "signature": "Il2CppObject* ToolModule_ManagerBase_object___get_Instance (const MethodInfo_5978460* method);"
+        },
+        {
+          "callsite": "0x44251e4",
+          "address": "0x82e8f3c",
+          "name": "UnityEngine.Component$$get_gameObject",
+          "signature": "UnityEngine_GameObject_o* UnityEngine_Component__get_gameObject (UnityEngine_Component_o* __this, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x4425208",
+          "address": "0x3df6028",
+          "name": "GameModule.BattleGameSceneManager$$AddPlayerHasHex",
+          "signature": "void GameModule_BattleGameSceneManager__AddPlayerHasHex (GameModule_BattleGameSceneManager_o* __this, UnityEngine_GameObject_o* obj, const MethodInfo* method);"
+        }
+      ],
+      "prototype_applied": true,
+      "pseudocode_chars": 7698,
+      "unresolved_jumpout": true
+    },
+    {
+      "name": "CoreModule.GameLauncher.<Start>d__5$$MoveNext",
+      "address": 68770672,
+      "end": 68771480,
+      "signature": "void CoreModule_GameLauncher__Start_d__5__MoveNext (CoreModule_GameLauncher__Start_d__5_o __this, const MethodInfo* method);",
+      "range_analysis": 1,
+      "direct_callees": [
+        {
+          "callsite": "0x4195d68",
+          "address": "0x41919fc",
+          "name": "CoreModule.GameLauncher$$StartLoadingCompletedListening",
+          "signature": "void CoreModule_GameLauncher__StartLoadingCompletedListening (CoreModule_GameLauncher_o* __this, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x4195d78",
+          "address": "0x5978460",
+          "name": "ToolModule.ManagerBase<object>$$get_Instance",
+          "signature": "Il2CppObject* ToolModule_ManagerBase_object___get_Instance (const MethodInfo_5978460* method);"
+        },
+        {
+          "callsite": "0x4195d84",
+          "address": "0x4082bf0",
+          "name": "LoadingModule.LoadingManager$$StartLoading",
+          "signature": "void LoadingModule_LoadingManager__StartLoading (LoadingModule_LoadingManager_o* __this, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x4195d8c",
+          "address": "0x41912d0",
+          "name": "CoreModule.GameLauncher$$Login",
+          "signature": "void CoreModule_GameLauncher__Login (CoreModule_GameLauncher_o* __this, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x4195da0",
+          "address": "0x75b0140",
+          "name": "System.Runtime.CompilerServices.AsyncVoidMethodBuilder$$SetResult",
+          "signature": "void System_Runtime_CompilerServices_AsyncVoidMethodBuilder__SetResult (System_Runtime_CompilerServices_AsyncVoidMethodBuilder_o __this, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x4195ddc",
+          "address": "0x4ac3ad4",
+          "name": "System.Runtime.CompilerServices.AsyncVoidMethodBuilder$$AwaitUnsafeOnCompleted<UniTask.Awaiter, GameLauncher.<Start>d__5>",
+          "signature": "void System_Runtime_CompilerServices_AsyncVoidMethodBuilder__AwaitUnsafeOnCompleted_UniTask_Awaiter__GameLauncher__Start_d__5_ (System_Runtime_CompilerServices_AsyncVoidMethodBuilder_o __this, Cysharp_Threading_Tasks_UniTask_Awaiter_o* awaiter, CoreModule_GameLauncher__Start_d__5_o* stateMachine, const MethodInfo_4AC3AD4* method);"
+        },
+        {
+          "callsite": "0x4195e5c",
+          "address": "0x75b02a4",
+          "name": "System.Runtime.CompilerServices.AsyncVoidMethodBuilder$$SetException",
+          "signature": "void System_Runtime_CompilerServices_AsyncVoidMethodBuilder__SetException (System_Runtime_CompilerServices_AsyncVoidMethodBuilder_o __this, System_Exception_o* exception, const MethodInfo* method);"
+        }
+      ],
+      "prototype_applied": true,
+      "pseudocode_chars": 4939,
+      "unresolved_jumpout": true
+    }
+  ],
+  "image_base": "0x0",
+  "type_errors": 0,
+  "hexrays_available": true,
+  "hexrays_version": "9.4.0.260713",
+  "database_saved": true
+}

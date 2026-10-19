@@ -1,0 +1,52 @@
+0x72e58f4: fe57bea9 stp      x30, x21, [sp, #-0x20]!
+0x72e58f8: f44f01a9 stp      x20, x19, [sp, #0x10]
+0x72e58fc: 35e900b0 adrp     x21, #0x900a000
+0x72e5900: a8ce4039 ldrb     w8, [x21, #0x33]
+0x72e5904: f30301aa mov      x19, x1
+0x72e5908: f40300aa mov      x20, x0
+0x72e590c: 28010037 tbnz     w8, #0, #0x72e5930
+0x72e5910: 40bf0090 adrp     x0, #0x8acd000
+0x72e5914: 003044f9 ldr      x0, [x0, #0x860] // GameFramework.CLog_TypeInfo
+0x72e5918: 5a5e2597 bl       #0x3c3d280
+0x72e591c: 40bf0090 adrp     x0, #0x8acd000
+0x72e5920: 002c44f9 ldr      x0, [x0, #0x858] // object[]_TypeInfo
+0x72e5924: 575e2597 bl       #0x3c3d280
+0x72e5928: 28008052 mov      w8, #1
+0x72e592c: a8ce0039 strb     w8, [x21, #0x33]
+0x72e5930: 88824039 ldrb     w8, [x20, #0x20]
+0x72e5934: 88030034 cbz      w8, #0x72e59a4
+0x72e5938: 48bf0090 adrp     x8, #0x8acd000
+0x72e593c: 082d44f9 ldr      x8, [x8, #0x858] // object[]_TypeInfo
+0x72e5940: 21008052 mov      w1, #1
+0x72e5944: 000140f9 ldr      x0, [x8]
+0x72e5948: 765e2597 bl       #0x3c3d320
+0x72e594c: 200300b4 cbz      x0, #0x72e59b0
+0x72e5950: f40300aa mov      x20, x0
+0x72e5954: d30000b4 cbz      x19, #0x72e596c
+0x72e5958: 880240f9 ldr      x8, [x20]
+0x72e595c: e00313aa mov      x0, x19
+0x72e5960: 012140f9 ldr      x1, [x8, #0x40]
+0x72e5964: 945e2597 bl       #0x3c3d3b4
+0x72e5968: 800200b4 cbz      x0, #0x72e59b8
+0x72e596c: 881a40b9 ldr      w8, [x20, #0x18]
+0x72e5970: 28020034 cbz      w8, #0x72e59b4
+0x72e5974: 48bf0090 adrp     x8, #0x8acd000
+0x72e5978: 083144f9 ldr      x8, [x8, #0x860] // GameFramework.CLog_TypeInfo
+0x72e597c: 931200f9 str      x19, [x20, #0x20]
+0x72e5980: 000140f9 ldr      x0, [x8]
+0x72e5984: 08e040b9 ldr      w8, [x0, #0xe0]
+0x72e5988: 48000035 cbnz     w8, #0x72e5990
+0x72e598c: 895e2597 bl       #0x3c3d3b0
+0x72e5990: e00314aa mov      x0, x20
+0x72e5994: f44f41a9 ldp      x20, x19, [sp, #0x10]
+0x72e5998: e1031faa mov      x1, xzr
+0x72e599c: fe57c2a8 ldp      x30, x21, [sp], #0x20
+0x72e59a0: da68fc17 b        #0x71ffd08 // GameFramework.CLog$$Log
+0x72e59a4: f44f41a9 ldp      x20, x19, [sp, #0x10]
+0x72e59a8: fe57c2a8 ldp      x30, x21, [sp], #0x20
+0x72e59ac: c0035fd6 ret      
+0x72e59b0: c75e2597 bl       #0x3c3d4cc
+0x72e59b4: c85e2597 bl       #0x3c3d4d4
+0x72e59b8: ce5e2597 bl       #0x3c3d4f0
+0x72e59bc: e1031faa mov      x1, xzr
+0x72e59c0: 785e2597 bl       #0x3c3d3a0

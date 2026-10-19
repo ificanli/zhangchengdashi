@@ -1,0 +1,261 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
+using Cysharp.Threading.Tasks;
+using Cysharp.Threading.Tasks.CompilerServices;
+using Il2CppDummyDll;
+using ToolModule;
+using UIFramework;
+
+namespace LoadingModule
+{
+	[Token(Token = "0x20001CF")]
+	public class LoadingManager : ManagerBase<LoadingManager>
+	{
+		[StructLayout((LayoutKind)3)]
+		[Token(Token = "0x20001D0")]
+		[CompilerGenerated]
+		private struct _003CInit_003Ed__19 : IAsyncStateMachine
+		{
+			[Token(Token = "0x4001B86")]
+			[Il2CppDummyDll.FieldOffset(Offset = "0x0")]
+			public int _003C_003E1__state;
+
+			[Token(Token = "0x4001B87")]
+			[Il2CppDummyDll.FieldOffset(Offset = "0x8")]
+			public AsyncUniTaskMethodBuilder _003C_003Et__builder;
+
+			[Token(Token = "0x4001B88")]
+			[Il2CppDummyDll.FieldOffset(Offset = "0x18")]
+			public LoadingManager _003C_003E4__this;
+
+			[Token(Token = "0x4001B89")]
+			[Il2CppDummyDll.FieldOffset(Offset = "0x20")]
+			private UniTask.Awaiter _003C_003Eu__1;
+
+			[Token(Token = "0x600076B")]
+			[Address(RVA = "0x40831A4", Offset = "0x407F1A4", VA = "0x40831A4", Slot = "4")]
+void System.Runtime.CompilerServices.IAsyncStateMachine.MoveNext()
+			{
+			}
+
+			[Token(Token = "0x600076C")]
+			[Address(RVA = "0x4083944", Offset = "0x407F944", VA = "0x4083944", Slot = "5")]
+			[DebuggerHidden]
+void System.Runtime.CompilerServices.IAsyncStateMachine.SetStateMachine(IAsyncStateMachine stateMachine)
+			{
+			}
+		}
+
+		[Token(Token = "0x20001D1")]
+		[CompilerGenerated]
+		private sealed class _003CLoadingScene_003Ed__12 : IEnumerator<object>, IEnumerator, IDisposable
+		{
+			[Token(Token = "0x4001B8A")]
+			[Il2CppDummyDll.FieldOffset(Offset = "0x10")]
+			private int _003C_003E1__state;
+
+			[Token(Token = "0x4001B8B")]
+			[Il2CppDummyDll.FieldOffset(Offset = "0x18")]
+			private object _003C_003E2__current;
+
+			[Token(Token = "0x4001B8C")]
+			[Il2CppDummyDll.FieldOffset(Offset = "0x20")]
+			public LoadingManager _003C_003E4__this;
+
+			[Token(Token = "0x4001B8D")]
+			[Il2CppDummyDll.FieldOffset(Offset = "0x28")]
+			private float _003Cp_003E5__2;
+
+			[Token(Token = "0x4001B8E")]
+			[Il2CppDummyDll.FieldOffset(Offset = "0x2C")]
+			private float _003CloadingTimer_003E5__3;
+
+			[Token(Token = "0x4001B8F")]
+			[Il2CppDummyDll.FieldOffset(Offset = "0x30")]
+			private int _003Cindex_003E5__4;
+
+			[Token(Token = "0x1700009F")]
+object System.Collections.Generic.IEnumerator<System.Object>.Current
+			{
+				[Token(Token = "0x6000770")]
+				[Address(RVA = "0x4084190", Offset = "0x4080190", VA = "0x4084190", Slot = "4")]
+				[DebuggerHidden]
+				get
+				{
+					return System_002ECollections_002EGeneric_002EIEnumerator_003CSystem_002EObject_003E_002Eget_Current();
+				}
+			}
+
+			[Token(Token = "0x170000A0")]
+object System.Collections.IEnumerator.Current
+			{
+				[Token(Token = "0x6000772")]
+				[Address(RVA = "0x40841D0", Offset = "0x40801D0", VA = "0x40841D0", Slot = "7")]
+				[DebuggerHidden]
+				get
+				{
+					return System_002ECollections_002EIEnumerator_002Eget_Current();
+				}
+			}
+
+			[Token(Token = "0x600076D")]
+			[Address(RVA = "0x4082E04", Offset = "0x407EE04", VA = "0x4082E04")]
+			[DebuggerHidden]
+			public _003CLoadingScene_003Ed__12(int _003C_003E1__state)
+			{
+			}
+
+			[Token(Token = "0x600076E")]
+			[Address(RVA = "0x4083950", Offset = "0x407F950", VA = "0x4083950", Slot = "5")]
+			[DebuggerHidden]
+void System.IDisposable.Dispose()
+			{
+			}
+
+			[Token(Token = "0x600076F")]
+			[Address(RVA = "0x4083954", Offset = "0x407F954", VA = "0x4083954", Slot = "6")]
+bool System.Collections.IEnumerator.MoveNext()
+			{
+				return default;
+			}
+
+			[Token(Token = "0x6000770")]
+			[Address(RVA = "0x4084190", Offset = "0x4080190", VA = "0x4084190", Slot = "4")]
+			[DebuggerHidden]
+			private object System_002ECollections_002EGeneric_002EIEnumerator_003CSystem_002EObject_003E_002Eget_Current()
+			{
+				return null;
+			}
+
+			[Token(Token = "0x6000771")]
+			[Address(RVA = "0x4084198", Offset = "0x4080198", VA = "0x4084198", Slot = "8")]
+			[DebuggerHidden]
+void System.Collections.IEnumerator.Reset()
+			{
+			}
+
+			[Token(Token = "0x6000772")]
+			[Address(RVA = "0x40841D0", Offset = "0x40801D0", VA = "0x40841D0", Slot = "7")]
+			[DebuggerHidden]
+			private object System_002ECollections_002EIEnumerator_002Eget_Current()
+			{
+				return null;
+			}
+		}
+
+		[Token(Token = "0x4001B7B")]
+		[Il2CppDummyDll.FieldOffset(Offset = "0x20")]
+		private UIPanel _loadingPanel;
+
+		[Token(Token = "0x4001B7C")]
+		private const float MaxLoadingTime = 0.1f;
+
+		[Token(Token = "0x4001B7E")]
+		[Il2CppDummyDll.FieldOffset(Offset = "0x2C")]
+		public float currentMaxProgress;
+
+		[Token(Token = "0x4001B7F")]
+		[Il2CppDummyDll.FieldOffset(Offset = "0x30")]
+		private float progress1;
+
+		[Token(Token = "0x4001B80")]
+		[Il2CppDummyDll.FieldOffset(Offset = "0x34")]
+		private float progress2;
+
+		[Token(Token = "0x4001B81")]
+		[Il2CppDummyDll.FieldOffset(Offset = "0x0")]
+		public static bool EnterHome;
+
+		[Token(Token = "0x4001B82")]
+		[Il2CppDummyDll.FieldOffset(Offset = "0x8")]
+		public static string SaveDirectory;
+
+		[Token(Token = "0x4001B83")]
+		[Il2CppDummyDll.FieldOffset(Offset = "0x10")]
+		public static string SaveInfo;
+
+		[Token(Token = "0x4001B84")]
+		[Il2CppDummyDll.FieldOffset(Offset = "0x18")]
+		public static string SaveDataStr;
+
+		[Token(Token = "0x4001B85")]
+		[Il2CppDummyDll.FieldOffset(Offset = "0x38")]
+		public bool BeginStartGame;
+
+		[Token(Token = "0x1700009E")]
+		public bool IsLoadingCompleted
+		{
+			[Token(Token = "0x6000760")]
+			[Address(RVA = "0x4082BDC", Offset = "0x407EBDC", VA = "0x4082BDC")]
+			[CompilerGenerated]
+			get
+			{
+				return default;
+			}
+			[Token(Token = "0x6000761")]
+			[Address(RVA = "0x4082BE4", Offset = "0x407EBE4", VA = "0x4082BE4")]
+			[CompilerGenerated]
+			set
+			{
+			}
+		}
+
+		[Token(Token = "0x6000762")]
+		[Address(RVA = "0x4082BF0", Offset = "0x407EBF0", VA = "0x4082BF0")]
+		public void StartLoading()
+		{
+		}
+
+		[Token(Token = "0x6000763")]
+		[Address(RVA = "0x4082DEC", Offset = "0x407EDEC", VA = "0x4082DEC")]
+		public void AddCurrentMaxProgress(float p)
+		{
+		}
+
+		[Token(Token = "0x6000764")]
+		[Address(RVA = "0x4082D8C", Offset = "0x407ED8C", VA = "0x4082D8C")]
+		[IteratorStateMachine(typeof(_003CLoadingScene_003Ed__12))]
+		private IEnumerator LoadingScene()
+		{
+			return null;
+		}
+
+		[Token(Token = "0x6000765")]
+		[Address(RVA = "0x4082E2C", Offset = "0x407EE2C", VA = "0x4082E2C", Slot = "5")]
+		public virtual string GetData(string key)
+		{
+			return null;
+		}
+
+		[Token(Token = "0x6000766")]
+		[Address(RVA = "0x4082EB4", Offset = "0x407EEB4", VA = "0x4082EB4")]
+		private string GetFilePath(string key)
+		{
+			return null;
+		}
+
+		[Token(Token = "0x6000767")]
+		[Address(RVA = "0x4083028", Offset = "0x407F028", VA = "0x4083028", Slot = "4")]
+		[AsyncStateMachine(typeof(_003CInit_003Ed__19))]
+		public override UniTask Init()
+		{
+			return default;
+		}
+
+		[Token(Token = "0x6000768")]
+		[Address(RVA = "0x40830B4", Offset = "0x407F0B4", VA = "0x40830B4")]
+		private void OnLoadingPanelBtnUploadTestStartGameClicked(object o)
+		{
+		}
+
+		[Token(Token = "0x6000769")]
+		[Address(RVA = "0x40830C0", Offset = "0x407F0C0", VA = "0x40830C0")]
+		public LoadingManager()
+		{
+		}
+	}
+}

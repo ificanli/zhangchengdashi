@@ -1,0 +1,377 @@
+0x3e02c9c: ff8302d1 sub      sp, sp, #0xa0
+0x3e02ca0: fe3b00f9 str      x30, [sp, #0x70]
+0x3e02ca4: f65708a9 stp      x22, x21, [sp, #0x80]
+0x3e02ca8: f44f09a9 stp      x20, x19, [sp, #0x90]
+0x3e02cac: d48f02f0 adrp     x20, #0x8ffd000
+0x3e02cb0: 88266039 ldrb     w8, [x20, #0x809]
+0x3e02cb4: f30300aa mov      x19, x0
+0x3e02cb8: 88040037 tbnz     w8, #0, #0x3e02d48
+0x3e02cbc: 406602f0 adrp     x0, #0x8acd000
+0x3e02cc0: 002046f9 ldr      x0, [x0, #0xc40] // Method$AssetsModule.AssetsManager.LoadAssetAsync<GameObject>()
+0x3e02cc4: 6fe9f897 bl       #0x3c3d280
+0x3e02cc8: 806602d0 adrp     x0, #0x8ad4000
+0x3e02ccc: 000c41f9 ldr      x0, [x0, #0x218] // Method$Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<GameObject>.AwaitUnsafeOnCompleted<UniTask.Awaiter<GameObject>, CoreGameManager.<LoadRoleAssets>d__21>()
+0x3e02cd0: 6ce9f897 bl       #0x3c3d280
+0x3e02cd4: 806602d0 adrp     x0, #0x8ad4000
+0x3e02cd8: 001041f9 ldr      x0, [x0, #0x220] // Method$Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<GameObject>.SetResult()
+0x3e02cdc: 69e9f897 bl       #0x3c3d280
+0x3e02ce0: 406602f0 adrp     x0, #0x8acd000
+0x3e02ce4: 002846f9 ldr      x0, [x0, #0xc50] // Method$Cysharp.Threading.Tasks.UniTask.Awaiter<GameObject>.GetResult()
+0x3e02ce8: 66e9f897 bl       #0x3c3d280
+0x3e02cec: 406602f0 adrp     x0, #0x8acd000
+0x3e02cf0: 002c46f9 ldr      x0, [x0, #0xc58] // Method$Cysharp.Threading.Tasks.UniTask.Awaiter<GameObject>.get_IsCompleted()
+0x3e02cf4: 63e9f897 bl       #0x3c3d280
+0x3e02cf8: 606602b0 adrp     x0, #0x8acf000
+0x3e02cfc: 007045f9 ldr      x0, [x0, #0xae0] // Method$UnityEngine.GameObject.GetComponent<RoleBehaviour>()
+0x3e02d00: 60e9f897 bl       #0x3c3d280
+0x3e02d04: 806602d0 adrp     x0, #0x8ad4000
+0x3e02d08: 001441f9 ldr      x0, [x0, #0x228] // Method$System.Collections.Generic.HashSet<GameObject>.Add()
+0x3e02d0c: 5de9f897 bl       #0x3c3d280
+0x3e02d10: 406602f0 adrp     x0, #0x8acd000
+0x3e02d14: 003846f9 ldr      x0, [x0, #0xc70] // Method$ToolModule.ManagerBase<AssetsManager>.get_Instance()
+0x3e02d18: 5ae9f897 bl       #0x3c3d280
+0x3e02d1c: 606602b0 adrp     x0, #0x8acf000
+0x3e02d20: 005c47f9 ldr      x0, [x0, #0xeb8] // Method$ToolModule.ManagerBase<HWGPUInstancerManager>.get_Instance()
+0x3e02d24: 57e9f897 bl       #0x3c3d280
+0x3e02d28: 406602d0 adrp     x0, #0x8acc000
+0x3e02d2c: 006844f9 ldr      x0, [x0, #0x8d0] // UnityEngine.Object_TypeInfo
+0x3e02d30: 54e9f897 bl       #0x3c3d280
+0x3e02d34: 406602f0 adrp     x0, #0x8acd000
+0x3e02d38: 003c46f9 ldr      x0, [x0, #0xc78] // Method$Cysharp.Threading.Tasks.UniTask<GameObject>.GetAwaiter()
+0x3e02d3c: 51e9f897 bl       #0x3c3d280
+0x3e02d40: 28008052 mov      w8, #1
+0x3e02d44: 88262039 strb     w8, [x20, #0x809]
+0x3e02d48: ff7f05a9 stp      xzr, xzr, [sp, #0x50]
+0x3e02d4c: ff3300f9 str      xzr, [sp, #0x60]
+0x3e02d50: ff7f03a9 stp      xzr, xzr, [sp, #0x30]
+0x3e02d54: ff2300f9 str      xzr, [sp, #0x40]
+0x3e02d58: ff2b00b9 str      wzr, [sp, #0x28]
+0x3e02d5c: 680240b9 ldr      w8, [x19]
+0x3e02d60: 761a40f9 ldr      x22, [x19, #0x30]
+0x3e02d64: a8060034 cbz      w8, #0x3e02e38
+0x3e02d68: 486602f0 adrp     x8, #0x8acd000
+0x3e02d6c: 083946f9 ldr      x8, [x8, #0xc70] // Method$ToolModule.ManagerBase<AssetsManager>.get_Instance()
+0x3e02d70: 000140f9 ldr      x0, [x8]
+0x3e02d74: bbd56d94 bl       #0x5978460 // ToolModule.ManagerBase<object>$$get_Instance
+0x3e02d78: f40300aa mov      x20, x0
+0x3e02d7c: 601240f9 ldr      x0, [x19, #0x20]
+0x3e02d80: 801800b4 cbz      x0, #0x3e03090
+0x3e02d84: 612a40b9 ldr      w1, [x19, #0x28]
+0x3e02d88: e2031faa mov      x2, xzr
+0x3e02d8c: 8f531594 bl       #0x4357bc8 // DataModule.GlobalRoleInfo$$GetPrefabPath
+0x3e02d90: e10300aa mov      x1, x0
+0x3e02d94: 141800b4 cbz      x20, #0x3e03094
+0x3e02d98: 486602f0 adrp     x8, #0x8acd000
+0x3e02d9c: 082146f9 ldr      x8, [x8, #0xc40] // Method$AssetsModule.AssetsManager.LoadAssetAsync<GameObject>()
+0x3e02da0: 020140f9 ldr      x2, [x8]
+0x3e02da4: e8230091 add      x8, sp, #8
+0x3e02da8: e00314aa mov      x0, x20
+0x3e02dac: 3a333194 bl       #0x4a4fa94 // AssetsModule.AssetsManager$$LoadAssetAsync<object>
+0x3e02db0: e083c03c ldur     q0, [sp, #8]
+0x3e02db4: e80f40f9 ldr      x8, [sp, #0x18]
+0x3e02db8: e017803d str      q0, [sp, #0x50]
+0x3e02dbc: e83300f9 str      x8, [sp, #0x60]
+0x3e02dc0: 486602f0 adrp     x8, #0x8acd000
+0x3e02dc4: 083d46f9 ldr      x8, [x8, #0xc78] // Method$Cysharp.Threading.Tasks.UniTask<GameObject>.GetAwaiter()
+0x3e02dc8: 080140f9 ldr      x8, [x8]
+0x3e02dcc: 001140f9 ldr      x0, [x8, #0x20]
+0x3e02dd0: 08d44439 ldrb     w8, [x0, #0x135]
+0x3e02dd4: 48000037 tbnz     w8, #0, #0x3e02ddc
+0x3e02dd8: 7235f997 bl       #0x3c503a0
+0x3e02ddc: 486602f0 adrp     x8, #0x8acd000
+0x3e02de0: 082d46f9 ldr      x8, [x8, #0xc58] // Method$Cysharp.Threading.Tasks.UniTask.Awaiter<GameObject>.get_IsCompleted()
+0x3e02de4: e017c03d ldr      q0, [sp, #0x50]
+0x3e02de8: e93340f9 ldr      x9, [sp, #0x60]
+0x3e02dec: 010140f9 ldr      x1, [x8]
+0x3e02df0: e00f803d str      q0, [sp, #0x30]
+0x3e02df4: e92300f9 str      x9, [sp, #0x40]
+0x3e02df8: e0c30091 add      x0, sp, #0x30
+0x3e02dfc: a6b9fc97 bl       #0x3d31494
+0x3e02e00: c0020037 tbnz     w0, #0, #0x3e02e58
+0x3e02e04: 7f0200b9 str      wzr, [x19]
+0x3e02e08: e82340f9 ldr      x8, [sp, #0x40]
+0x3e02e0c: e00fc03d ldr      q0, [sp, #0x30]
+0x3e02e10: 60220091 add      x0, x19, #8
+0x3e02e14: 682600f9 str      x8, [x19, #0x48]
+0x3e02e18: 6082833c stur     q0, [x19, #0x38]
+0x3e02e1c: 886602d0 adrp     x8, #0x8ad4000
+0x3e02e20: 080d41f9 ldr      x8, [x8, #0x218] // Method$Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<GameObject>.AwaitUnsafeOnCompleted<UniTask.Awaiter<GameObject>, CoreGameManager.<LoadRoleAssets>d__21>()
+0x3e02e24: 030140f9 ldr      x3, [x8]
+0x3e02e28: e1c30091 add      x1, sp, #0x30
+0x3e02e2c: e20313aa mov      x2, x19
+0x3e02e30: 28450094 bl       #0x3e142d0
+0x3e02e34: 90000014 b        #0x3e03074
+0x3e02e38: 682640f9 ldr      x8, [x19, #0x48]
+0x3e02e3c: 6082c33c ldur     q0, [x19, #0x38]
+0x3e02e40: 09008012 mov      w9, #-1
+0x3e02e44: e82300f9 str      x8, [sp, #0x40]
+0x3e02e48: e00f803d str      q0, [sp, #0x30]
+0x3e02e4c: 7f7e04a9 stp      xzr, xzr, [x19, #0x40]
+0x3e02e50: 7f1e00f9 str      xzr, [x19, #0x38]
+0x3e02e54: 690200b9 str      w9, [x19]
+0x3e02e58: f41b40f9 ldr      x20, [sp, #0x30]
+0x3e02e5c: f40300b4 cbz      x20, #0x3e02ed8
+0x3e02e60: 486602f0 adrp     x8, #0x8acd000
+0x3e02e64: 082946f9 ldr      x8, [x8, #0xc50] // Method$Cysharp.Threading.Tasks.UniTask.Awaiter<GameObject>.GetResult()
+0x3e02e68: f5834079 ldrh     w21, [sp, #0x40]
+0x3e02e6c: 080140f9 ldr      x8, [x8]
+0x3e02e70: 001140f9 ldr      x0, [x8, #0x20]
+0x3e02e74: 08d44439 ldrb     w8, [x0, #0x135]
+0x3e02e78: 48000037 tbnz     w8, #0, #0x3e02e80
+0x3e02e7c: 4935f997 bl       #0x3c503a0
+0x3e02e80: 086040f9 ldr      x8, [x0, #0xc0]
+0x3e02e84: 011540f9 ldr      x1, [x8, #0x28]
+0x3e02e88: 28d44439 ldrb     w8, [x1, #0x135]
+0x3e02e8c: 88000037 tbnz     w8, #0, #0x3e02e9c
+0x3e02e90: e00301aa mov      x0, x1
+0x3e02e94: 4335f997 bl       #0x3c503a0
+0x3e02e98: e10300aa mov      x1, x0
+0x3e02e9c: 880240f9 ldr      x8, [x20]
+0x3e02ea0: 095d4279 ldrh     w9, [x8, #0x12e]
+0x3e02ea4: 290100b4 cbz      x9, #0x3e02ec8
+0x3e02ea8: 0a5940f9 ldr      x10, [x8, #0xb0]
+0x3e02eac: 4a210091 add      x10, x10, #8
+0x3e02eb0: 4b815ff8 ldur     x11, [x10, #-8]
+0x3e02eb4: 7f0101eb cmp      x11, x1
+0x3e02eb8: 40010054 b.eq     #0x3e02ee0
+0x3e02ebc: 290500f1 subs     x9, x9, #1
+0x3e02ec0: 4a410091 add      x10, x10, #0x10
+0x3e02ec4: 61ffff54 b.ne     #0x3e02eb0
+0x3e02ec8: e00314aa mov      x0, x20
+0x3e02ecc: e2031f2a mov      w2, wzr
+0x3e02ed0: 7535f997 bl       #0x3c504a4
+0x3e02ed4: 06000014 b        #0x3e02eec
+0x3e02ed8: f41f40f9 ldr      x20, [sp, #0x38]
+0x3e02edc: 09000014 b        #0x3e02f00
+0x3e02ee0: 490180b9 ldrsw    x9, [x10]
+0x3e02ee4: 0811098b add      x8, x8, x9, lsl #4
+0x3e02ee8: 00e10491 add      x0, x8, #0x138
+0x3e02eec: 080840a9 ldp      x8, x2, [x0]
+0x3e02ef0: e00314aa mov      x0, x20
+0x3e02ef4: e103152a mov      w1, w21
+0x3e02ef8: 00013fd6 blr      x8
+0x3e02efc: f40300aa mov      x20, x0
+0x3e02f00: 560c00b4 cbz      x22, #0x3e03088
+0x3e02f04: c02240f9 ldr      x0, [x22, #0x40]
+0x3e02f08: 200c00b4 cbz      x0, #0x3e0308c
+0x3e02f0c: 886602d0 adrp     x8, #0x8ad4000
+0x3e02f10: 081541f9 ldr      x8, [x8, #0x228] // Method$System.Collections.Generic.HashSet<GameObject>.Add()
+0x3e02f14: 020140f9 ldr      x2, [x8]
+0x3e02f18: e10314aa mov      x1, x20
+0x3e02f1c: c38b5594 bl       #0x5365e28 // System.Collections.Generic.HashSet<object>$$Add
+0x3e02f20: 40050036 tbz      w0, #0, #0x3e02fc8
+0x3e02f24: 566602d0 adrp     x22, #0x8acc000
+0x3e02f28: d66a44f9 ldr      x22, [x22, #0x8d0] // UnityEngine.Object_TypeInfo
+0x3e02f2c: c00240f9 ldr      x0, [x22]
+0x3e02f30: 08e040b9 ldr      w8, [x0, #0xe0]
+0x3e02f34: 48000035 cbnz     w8, #0x3e02f3c
+0x3e02f38: 1ee9f897 bl       #0x3c3d3b0
+0x3e02f3c: e00314aa mov      x0, x20
+0x3e02f40: e1031faa mov      x1, xzr
+0x3e02f44: e2031faa mov      x2, xzr
+0x3e02f48: 49a31395 bl       #0x82ebc6c // UnityEngine.Object$$op_Inequality
+0x3e02f4c: 20010036 tbz      w0, #0, #0x3e02f70
+0x3e02f50: 740a00b4 cbz      x20, #0x3e0309c
+0x3e02f54: 686602b0 adrp     x8, #0x8acf000
+0x3e02f58: 087145f9 ldr      x8, [x8, #0xae0] // Method$UnityEngine.GameObject.GetComponent<RoleBehaviour>()
+0x3e02f5c: 010140f9 ldr      x1, [x8]
+0x3e02f60: e00314aa mov      x0, x20
+0x3e02f64: d0283a94 bl       #0x4c8d2a4 // UnityEngine.GameObject$$GetComponent<object>
+0x3e02f68: f50300aa mov      x21, x0
+0x3e02f6c: 02000014 b        #0x3e02f74
+0x3e02f70: f5031faa mov      x21, xzr
+0x3e02f74: c00240f9 ldr      x0, [x22]
+0x3e02f78: 08e040b9 ldr      w8, [x0, #0xe0]
+0x3e02f7c: 48000035 cbnz     w8, #0x3e02f84
+0x3e02f80: 0ce9f897 bl       #0x3c3d3b0
+0x3e02f84: e00315aa mov      x0, x21
+0x3e02f88: e1031faa mov      x1, xzr
+0x3e02f8c: e2031faa mov      x2, xzr
+0x3e02f90: e1a91395 bl       #0x82ed714 // UnityEngine.Object$$op_Equality
+0x3e02f94: c0000037 tbnz     w0, #0, #0x3e02fac
+0x3e02f98: 550800b4 cbz      x21, #0x3e030a0
+0x3e02f9c: e00315aa mov      x0, x21
+0x3e02fa0: e1031faa mov      x1, xzr
+0x3e02fa4: cdf3fd97 bl       #0x3d7fed8 // GameModule.RoleBehaviour$$IsGPUInstancerAnimationDriver
+0x3e02fa8: 00010036 tbz      w0, #0, #0x3e02fc8
+0x3e02fac: 686602b0 adrp     x8, #0x8acf000
+0x3e02fb0: 085d47f9 ldr      x8, [x8, #0xeb8] // Method$ToolModule.ManagerBase<HWGPUInstancerManager>.get_Instance()
+0x3e02fb4: 000140f9 ldr      x0, [x8]
+0x3e02fb8: 2ad56d94 bl       #0x5978460 // ToolModule.ManagerBase<object>$$get_Instance
+0x3e02fbc: e00600b4 cbz      x0, #0x3e03098
+0x3e02fc0: e10314aa mov      x1, x20
+0x3e02fc4: af000094 bl       #0x3e03280 // GameModule.HWGPUInstancerManager$$AddInstance
+0x3e02fc8: 750640f9 ldr      x21, [x19, #8]
+0x3e02fcc: 28008012 mov      w8, #-2
+0x3e02fd0: 680200b9 str      w8, [x19]
+0x3e02fd4: d50300b4 cbz      x21, #0x3e0304c
+0x3e02fd8: 886602d0 adrp     x8, #0x8ad4000
+0x3e02fdc: 081141f9 ldr      x8, [x8, #0x220] // Method$Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<GameObject>.SetResult()
+0x3e02fe0: 080140f9 ldr      x8, [x8]
+0x3e02fe4: 001140f9 ldr      x0, [x8, #0x20]
+0x3e02fe8: 08d44439 ldrb     w8, [x0, #0x135]
+0x3e02fec: 48000037 tbnz     w8, #0, #0x3e02ff4
+0x3e02ff0: ec34f997 bl       #0x3c503a0
+0x3e02ff4: 086040f9 ldr      x8, [x0, #0xc0]
+0x3e02ff8: 010540f9 ldr      x1, [x8, #8]
+0x3e02ffc: 28d44439 ldrb     w8, [x1, #0x135]
+0x3e03000: 88000037 tbnz     w8, #0, #0x3e03010
+0x3e03004: e00301aa mov      x0, x1
+0x3e03008: e634f997 bl       #0x3c503a0
+0x3e0300c: e10300aa mov      x1, x0
+0x3e03010: a80240f9 ldr      x8, [x21]
+0x3e03014: 095d4279 ldrh     w9, [x8, #0x12e]
+0x3e03018: 290100b4 cbz      x9, #0x3e0303c
+0x3e0301c: 0a5940f9 ldr      x10, [x8, #0xb0]
+0x3e03020: 4a210091 add      x10, x10, #8
+0x3e03024: 4b815ff8 ldur     x11, [x10, #-8]
+0x3e03028: 7f0101eb cmp      x11, x1
+0x3e0302c: 40010054 b.eq     #0x3e03054
+0x3e03030: 290500f1 subs     x9, x9, #1
+0x3e03034: 4a410091 add      x10, x10, #0x10
+0x3e03038: 61ffff54 b.ne     #0x3e03024
+0x3e0303c: 42008052 mov      w2, #2
+0x3e03040: e00315aa mov      x0, x21
+0x3e03044: 1835f997 bl       #0x3c504a4
+0x3e03048: 07000014 b        #0x3e03064
+0x3e0304c: 740e00f9 str      x20, [x19, #0x18]
+0x3e03050: 09000014 b        #0x3e03074
+0x3e03054: 490140b9 ldr      w9, [x10]
+0x3e03058: 29090011 add      w9, w9, #2
+0x3e0305c: 08d1298b add      x8, x8, w9, sxtw #4
+0x3e03060: 00e10491 add      x0, x8, #0x138
+0x3e03064: 080840a9 ldp      x8, x2, [x0]
+0x3e03068: e00315aa mov      x0, x21
+0x3e0306c: e10314aa mov      x1, x20
+0x3e03070: 00013fd6 blr      x8
+0x3e03074: f44f49a9 ldp      x20, x19, [sp, #0x90]
+0x3e03078: f65748a9 ldp      x22, x21, [sp, #0x80]
+0x3e0307c: fe3b40f9 ldr      x30, [sp, #0x70]
+0x3e03080: ff830291 add      sp, sp, #0xa0
+0x3e03084: c0035fd6 ret      
+0x3e03088: 11e9f897 bl       #0x3c3d4cc
+0x3e0308c: 10e9f897 bl       #0x3c3d4cc
+0x3e03090: 0fe9f897 bl       #0x3c3d4cc
+0x3e03094: 0ee9f897 bl       #0x3c3d4cc
+0x3e03098: 0de9f897 bl       #0x3c3d4cc
+0x3e0309c: 0ce9f897 bl       #0x3c3d4cc
+0x3e030a0: 0be9f897 bl       #0x3c3d4cc
+0x3e030a4: 12000014 b        #0x3e030ec
+0x3e030a8: 11000014 b        #0x3e030ec
+0x3e030ac: 10000014 b        #0x3e030ec
+0x3e030b0: 0f000014 b        #0x3e030ec
+0x3e030b4: 0e000014 b        #0x3e030ec
+0x3e030b8: 0d000014 b        #0x3e030ec
+0x3e030bc: 0c000014 b        #0x3e030ec
+0x3e030c0: 1b000014 b        #0x3e0312c
+0x3e030c4: 1a000014 b        #0x3e0312c
+0x3e030c8: 09000014 b        #0x3e030ec
+0x3e030cc: 08000014 b        #0x3e030ec
+0x3e030d0: 07000014 b        #0x3e030ec
+0x3e030d4: 18000014 b        #0x3e03134
+0x3e030d8: 15000014 b        #0x3e0312c
+0x3e030dc: 16000014 b        #0x3e03134
+0x3e030e0: 15000014 b        #0x3e03134
+0x3e030e4: 02000014 b        #0x3e030ec
+0x3e030e8: 01000014 b        #0x3e030ec
+0x3e030ec: f40300aa mov      x20, x0
+0x3e030f0: 3f040071 cmp      w1, #1
+0x3e030f4: 41030054 b.ne     #0x3e0315c
+0x3e030f8: e00314aa mov      x0, x20
+0x3e030fc: 29af1d95 bl       #0x856eda0
+0x3e03100: 150040f9 ldr      x21, [x0]
+0x3e03104: 2baf1d95 bl       #0x856edb0
+0x3e03108: 750000b5 cbnz     x21, #0x3e03114
+0x3e0310c: 08008092 mov      x8, #-1
+0x3e03110: 25000014 b        #0x3e031a4
+0x3e03114: e00315aa mov      x0, x21
+0x3e03118: f8d6f897 bl       #0x3c38cf8
+0x3e0311c: 04000014 b        #0x3e0312c
+0x3e03120: 750000b4 cbz      x21, #0x3e0312c
+0x3e03124: e00315aa mov      x0, x21
+0x3e03128: f4d6f897 bl       #0x3c38cf8
+0x3e0312c: f40300aa mov      x20, x0
+0x3e03130: 0b000014 b        #0x3e0315c
+0x3e03134: f40300aa mov      x20, x0
+0x3e03138: 3f040071 cmp      w1, #1
+0x3e0313c: 01010054 b.ne     #0x3e0315c
+0x3e03140: e00314aa mov      x0, x20
+0x3e03144: 17af1d95 bl       #0x856eda0
+0x3e03148: 150040f9 ldr      x21, [x0]
+0x3e0314c: 19af1d95 bl       #0x856edb0
+0x3e03150: 95e3ffb4 cbz      x21, #0x3e02dc0
+0x3e03154: e00315aa mov      x0, x21
+0x3e03158: e8d6f897 bl       #0x3c38cf8
+0x3e0315c: 3f040071 cmp      w1, #1
+0x3e03160: a1080054 b.ne     #0x3e03274
+0x3e03164: e00314aa mov      x0, x20
+0x3e03168: 0eaf1d95 bl       #0x856eda0
+0x3e0316c: f40300aa mov      x20, x0
+0x3e03170: 406602b0 adrp     x0, #0x8acc000
+0x3e03174: 00c847f9 ldr      x0, [x0, #0xf90] // System.Exception_TypeInfo
+0x3e03178: 47e8f897 bl       #0x3c3d294
+0x3e0317c: 880240f9 ldr      x8, [x20]
+0x3e03180: 010140f9 ldr      x1, [x8]
+0x3e03184: dde9f897 bl       #0x3c3d8f8
+0x3e03188: a0050036 tbz      w0, #0, #0x3e0323c
+0x3e0318c: 880240f9 ldr      x8, [x20]
+0x3e03190: 29008052 mov      w9, #1
+0x3e03194: e92b00b9 str      w9, [sp, #0x28]
+0x3e03198: e81300f9 str      x8, [sp, #0x20]
+0x3e0319c: 05af1d95 bl       #0x856edb0
+0x3e031a0: e8031faa mov      x8, xzr
+0x3e031a4: e9830091 add      x9, sp, #0x20
+0x3e031a8: 347968f8 ldr      x20, [x9, x8, lsl #3]
+0x3e031ac: 28008012 mov      w8, #-2
+0x3e031b0: 680200b9 str      w8, [x19]
+0x3e031b4: 806602b0 adrp     x0, #0x8ad4000
+0x3e031b8: 001841f9 ldr      x0, [x0, #0x230] // Method$Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<GameObject>.SetException()
+0x3e031bc: 36e8f897 bl       #0x3c3d294
+0x3e031c0: 750640f9 ldr      x21, [x19, #8]
+0x3e031c4: 350300b4 cbz      x21, #0x3e03228
+0x3e031c8: 001040f9 ldr      x0, [x0, #0x20]
+0x3e031cc: 08d44439 ldrb     w8, [x0, #0x135]
+0x3e031d0: 48000037 tbnz     w8, #0, #0x3e031d8
+0x3e031d4: 7334f997 bl       #0x3c503a0
+0x3e031d8: 086040f9 ldr      x8, [x0, #0xc0]
+0x3e031dc: 010540f9 ldr      x1, [x8, #8]
+0x3e031e0: 28d44439 ldrb     w8, [x1, #0x135]
+0x3e031e4: 88000037 tbnz     w8, #0, #0x3e031f4
+0x3e031e8: e00301aa mov      x0, x1
+0x3e031ec: 6d34f997 bl       #0x3c503a0
+0x3e031f0: e10300aa mov      x1, x0
+0x3e031f4: a80240f9 ldr      x8, [x21]
+0x3e031f8: 095d4279 ldrh     w9, [x8, #0x12e]
+0x3e031fc: 290100b4 cbz      x9, #0x3e03220
+0x3e03200: 0a5940f9 ldr      x10, [x8, #0xb0]
+0x3e03204: 4a210091 add      x10, x10, #8
+0x3e03208: 4b815ff8 ldur     x11, [x10, #-8]
+0x3e0320c: 7f0101eb cmp      x11, x1
+0x3e03210: 00010054 b.eq     #0x3e03230
+0x3e03214: 290500f1 subs     x9, x9, #1
+0x3e03218: 4a410091 add      x10, x10, #0x10
+0x3e0321c: 61ffff54 b.ne     #0x3e03208
+0x3e03220: 62008052 mov      w2, #3
+0x3e03224: 87ffff17 b        #0x3e03040
+0x3e03228: 740a00f9 str      x20, [x19, #0x10]
+0x3e0322c: 92ffff17 b        #0x3e03074
+0x3e03230: 490140b9 ldr      w9, [x10]
+0x3e03234: 290d0011 add      w9, w9, #3
+0x3e03238: 89ffff17 b        #0x3e0305c
+0x3e0323c: 00018052 mov      w0, #8
+0x3e03240: e0ae1d95 bl       #0x856edc0
+0x3e03244: 880240f9 ldr      x8, [x20]
+0x3e03248: 080000f9 str      x8, [x0]
+0x3e0324c: 813b02d0 adrp     x1, #0x8575000
+0x3e03250: 21a00891 add      x1, x1, #0x228
+0x3e03254: e2031faa mov      x2, xzr
+0x3e03258: deae1d95 bl       #0x856edd0
+0x3e0325c: b4ffff17 b        #0x3e0312c
+0x3e03260: 75f6ffb4 cbz      x21, #0x3e0312c
+0x3e03264: e00315aa mov      x0, x21
+0x3e03268: a4d6f897 bl       #0x3c38cf8
+0x3e0326c: f40300aa mov      x20, x0
+0x3e03270: d0ae1d95 bl       #0x856edb0
+0x3e03274: e00314aa mov      x0, x20
+0x3e03278: 5390fb97 bl       #0x3ce73c4
+0x3e0327c: a1e4de97 bl       #0x35bc500

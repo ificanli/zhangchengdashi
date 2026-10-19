@@ -1,0 +1,21 @@
+0x52a8f20: STR             X30, [SP,#var_20]!
+0x52a8f24: STP             X20, X19, [SP,#0x20+var_10]
+0x52a8f28: CBZ             X1, loc_52A8F70
+0x52a8f2c: LDR             X8, [X1]
+0x52a8f30: LDR             X20, [X0,#0x28]
+0x52a8f34: MOV             X0, X1
+0x52a8f38: MOV             X19, X2
+0x52a8f3c: LDR             X9, [X8,#0x308]
+0x52a8f40: LDR             X8, [X8,#0x310]
+0x52a8f44: MOV             X1, X8
+0x52a8f48: BLR             X9
+0x52a8f4c: CBZ             X20, loc_52A8F70
+0x52a8f50: LDR             X8, [X19,#0x20]
+0x52a8f54: MOV             X1, X0
+0x52a8f58: MOV             X0, X20
+0x52a8f5c: LDP             X20, X19, [SP,#0x20+var_10]
+0x52a8f60: LDR             X8, [X8,#0xC0]
+0x52a8f64: LDR             X2, [X8,#0x28]
+0x52a8f68: LDR             X30, [SP+0x20+var_20],#0x20
+0x52a8f6c: B               System.Collections.Generic.Dictionary_object__object_$$ContainsKey
+0x52a8f70: BL              il2cpp_codegen_raise_null_reference_exception

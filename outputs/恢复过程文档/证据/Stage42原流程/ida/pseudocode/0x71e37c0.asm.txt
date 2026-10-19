@@ -1,0 +1,37 @@
+0x71e37c0: STP             X30, X21, [SP,#var_20]!
+0x71e37c4: STP             X20, X19, [SP,#0x20+var_10]
+0x71e37c8: ADRP            X21, #byte_9009678@PAGE
+0x71e37cc: LDRB            W8, [X21,#byte_9009678@PAGEOFF]
+0x71e37d0: MOV             X19, X1
+0x71e37d4: MOV             X20, X0
+0x71e37d8: TBNZ            W8, #0, loc_71E37F0
+0x71e37dc: ADRP            X0, #off_8B0DE68@PAGE
+0x71e37e0: LDR             X0, [X0,#off_8B0DE68@PAGEOFF]; qword_8D857D0 ; slot
+0x71e37e4: BL              il2cpp_codegen_initialize_runtime_metadata
+0x71e37e8: MOV             W8, #1
+0x71e37ec: STRB            W8, [X21,#byte_9009678@PAGEOFF]
+0x71e37f0: CBZ             X20, loc_71E3850
+0x71e37f4: LDR             X8, [X20]
+0x71e37f8: MOV             X0, X20
+0x71e37fc: LDR             X9, [X8,#0x308]
+0x71e3800: LDR             X1, [X8,#0x310]
+0x71e3804: BLR             X9
+0x71e3808: MOV             X20, X0
+0x71e380c: MOV             X0, X19
+0x71e3810: MOV             X1, XZR
+0x71e3814: BL              System.String$$IsNullOrEmpty
+0x71e3818: TBZ             W0, #0, loc_71E382C
+0x71e381c: MOV             X0, X20
+0x71e3820: LDP             X20, X19, [SP,#0x20+var_10]
+0x71e3824: LDP             X30, X21, [SP+0x20+var_20],#0x20
+0x71e3828: RET
+0x71e382c: ADRP            X8, #off_8B0DE68@PAGE
+0x71e3830: LDR             X8, [X8,#off_8B0DE68@PAGEOFF]; qword_8D857D0
+0x71e3834: MOV             X1, X20
+0x71e3838: MOV             X2, X19
+0x71e383c: LDP             X20, X19, [SP,#0x20+var_10]
+0x71e3840: LDR             X0, [X8]
+0x71e3844: MOV             X3, XZR
+0x71e3848: LDP             X30, X21, [SP+0x20+var_20],#0x20
+0x71e384c: B               sub_750AA4C
+0x71e3850: BL              il2cpp_codegen_raise_null_reference_exception

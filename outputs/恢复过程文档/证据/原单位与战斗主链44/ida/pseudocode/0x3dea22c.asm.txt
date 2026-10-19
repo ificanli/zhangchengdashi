@@ -1,0 +1,203 @@
+0x3dea22c: STR             X30, [SP,#var_30]!
+0x3dea230: STP             X22, X21, [SP,#0x30+var_20]
+0x3dea234: STP             X20, X19, [SP,#0x30+var_10]
+0x3dea238: ADRP            X20, #byte_8FFD75A@PAGE
+0x3dea23c: LDRB            W8, [X20,#byte_8FFD75A@PAGEOFF]
+0x3dea240: MOV             X19, X0
+0x3dea244: TBNZ            W8, #0, loc_3DEA268
+0x3dea248: ADRP            X0, #off_8AD0D68@PAGE
+0x3dea24c: LDR             X0, [X0,#off_8AD0D68@PAGEOFF]; qword_8D0ACF0 ; slot
+0x3dea250: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3dea254: ADRP            X0, #off_8ACE700@PAGE
+0x3dea258: LDR             X0, [X0,#off_8ACE700@PAGEOFF]; qword_8D12058 ; slot
+0x3dea25c: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3dea260: MOV             W8, #1
+0x3dea264: STRB            W8, [X20,#byte_8FFD75A@PAGEOFF]
+0x3dea268: LDR             X20, [X19,#0x28]
+0x3dea26c: CBZ             X20, loc_3DEA42C
+0x3dea270: LDR             X1, [X20,#0x58]
+0x3dea274: CBZ             X1, loc_3DEA284
+0x3dea278: MOV             X0, X20
+0x3dea27c: MOV             X2, XZR
+0x3dea280: BL              UnityEngine.MonoBehaviour$$StopCoroutine
+0x3dea284: MOV             X0, XZR
+0x3dea288: BL              UnityEngine.Time$$get_timeScale
+0x3dea28c: FCMP            S0, #0.0
+0x3dea290: B.EQ            loc_3DEA40C
+0x3dea294: ADRP            X22, #off_8ACE700@PAGE
+0x3dea298: LDR             X22, [X22,#off_8ACE700@PAGEOFF]; qword_8D12058
+0x3dea29c: LDR             X0, [X22]; method
+0x3dea2a0: BL              ToolModule.ManagerBase_object_$$get_Instance
+0x3dea2a4: CBZ             X0, loc_3DEA430
+0x3dea2a8: BL              GameModule.BattleGameSceneManager$$get_PlayerHasHex
+0x3dea2ac: MOV             W21, W0
+0x3dea2b0: LDR             X0, [X22]; method
+0x3dea2b4: BL              ToolModule.ManagerBase_object_$$get_Instance
+0x3dea2b8: CBZ             X0, loc_3DEA434
+0x3dea2bc: BL              GameModule.BattleGameSceneManager$$get_EnemyHasHex
+0x3dea2c0: CMP             W21, W0
+0x3dea2c4: B.LE            loc_3DEA2DC
+0x3dea2c8: MOV             W1, #1
+0x3dea2cc: MOV             W2, #1
+0x3dea2d0: MOV             X0, X20
+0x3dea2d4: BL              GameModule.BattleGameManager$$GameEnd
+0x3dea2d8: B               loc_3DEA40C
+0x3dea2dc: LDR             X0, [X22]; method
+0x3dea2e0: BL              ToolModule.ManagerBase_object_$$get_Instance
+0x3dea2e4: CBZ             X0, loc_3DEA438
+0x3dea2e8: BL              GameModule.BattleGameSceneManager$$get_PlayerHasHex
+0x3dea2ec: MOV             W21, W0
+0x3dea2f0: LDR             X0, [X22]; method
+0x3dea2f4: BL              ToolModule.ManagerBase_object_$$get_Instance
+0x3dea2f8: CBZ             X0, loc_3DEA43C
+0x3dea2fc: BL              GameModule.BattleGameSceneManager$$get_EnemyHasHex
+0x3dea300: CMP             W21, W0
+0x3dea304: B.GE            loc_3DEA31C
+0x3dea308: MOV             W2, #1
+0x3dea30c: MOV             X0, X20
+0x3dea310: MOV             W1, WZR
+0x3dea314: BL              GameModule.BattleGameManager$$GameEnd
+0x3dea318: B               loc_3DEA40C
+0x3dea31c: LDR             X0, [X22]; method
+0x3dea320: BL              ToolModule.ManagerBase_object_$$get_Instance
+0x3dea324: CBZ             X0, loc_3DEA440
+0x3dea328: LDR             X8, [X0,#0xB0]
+0x3dea32c: CBZ             X8, loc_3DEA444
+0x3dea330: LDR             W21, [X8,#0x18]
+0x3dea334: LDR             X0, [X22]; method
+0x3dea338: BL              ToolModule.ManagerBase_object_$$get_Instance
+0x3dea33c: CBZ             X0, loc_3DEA448
+0x3dea340: LDR             X8, [X0,#0xB8]
+0x3dea344: CBZ             X8, loc_3DEA44C
+0x3dea348: LDR             W8, [X8,#0x18]
+0x3dea34c: CMP             W21, W8
+0x3dea350: B.LE            loc_3DEA368
+0x3dea354: MOV             W1, #1
+0x3dea358: MOV             W2, #1
+0x3dea35c: MOV             X0, X20
+0x3dea360: BL              GameModule.BattleGameManager$$GameEnd
+0x3dea364: B               loc_3DEA40C
+0x3dea368: LDR             X0, [X22]; method
+0x3dea36c: BL              ToolModule.ManagerBase_object_$$get_Instance
+0x3dea370: CBZ             X0, loc_3DEA450
+0x3dea374: LDR             X8, [X0,#0xB0]
+0x3dea378: CBZ             X8, loc_3DEA454
+0x3dea37c: LDR             W21, [X8,#0x18]
+0x3dea380: LDR             X0, [X22]; method
+0x3dea384: BL              ToolModule.ManagerBase_object_$$get_Instance
+0x3dea388: CBZ             X0, loc_3DEA458
+0x3dea38c: LDR             X8, [X0,#0xB8]
+0x3dea390: CBZ             X8, loc_3DEA45C
+0x3dea394: LDR             W8, [X8,#0x18]
+0x3dea398: CMP             W21, W8
+0x3dea39c: B.GE            loc_3DEA3B4
+0x3dea3a0: MOV             W2, #1
+0x3dea3a4: MOV             X0, X20
+0x3dea3a8: MOV             W1, WZR
+0x3dea3ac: BL              GameModule.BattleGameManager$$GameEnd
+0x3dea3b0: B               loc_3DEA40C
+0x3dea3b4: MOV             X0, XZR
+0x3dea3b8: BL              UnityEngine.Time$$get_timeScale
+0x3dea3bc: FCMP            S0, #0.0
+0x3dea3c0: B.EQ            loc_3DEA40C
+0x3dea3c4: LDR             S0, [X20,#0x3C]
+0x3dea3c8: LDR             X1, [X20,#0x58]
+0x3dea3cc: FMOV            S1, #10.0
+0x3dea3d0: MOV             W8, #1
+0x3dea3d4: FADD            S0, S0, S1
+0x3dea3d8: STR             S0, [X20,#0x3C]
+0x3dea3dc: STRB            W8, [X20,#0x50]
+0x3dea3e0: CBZ             X1, loc_3DEA3F0
+0x3dea3e4: MOV             X0, X20
+0x3dea3e8: MOV             X2, XZR
+0x3dea3ec: BL              UnityEngine.MonoBehaviour$$StopCoroutine
+0x3dea3f0: MOV             X0, X20
+0x3dea3f4: BL              GameModule.BattleGameManager$$Countdown
+0x3dea3f8: MOV             X1, X0
+0x3dea3fc: MOV             X0, X20
+0x3dea400: MOV             X2, XZR
+0x3dea404: BL              UnityEngine.MonoBehaviour$$StartCoroutine
+0x3dea408: STR             X0, [X20,#0x58]
+0x3dea40c: MOV             W8, #0xFFFFFFFE
+0x3dea410: STR             W8, [X19],#8
+0x3dea414: MOV             X0, X19
+0x3dea418: LDP             X20, X19, [SP,#0x30+var_10]
+0x3dea41c: LDP             X22, X21, [SP,#0x30+var_20]
+0x3dea420: MOV             X1, XZR
+0x3dea424: LDR             X30, [SP+0x30+var_30],#0x30
+0x3dea428: B               System.Runtime.CompilerServices.AsyncVoidMethodBuilder$$SetResult
+0x3dea42c: BL              il2cpp_codegen_raise_null_reference_exception
+0x3dea430: BL              il2cpp_codegen_raise_null_reference_exception
+0x3dea434: BL              il2cpp_codegen_raise_null_reference_exception
+0x3dea438: BL              il2cpp_codegen_raise_null_reference_exception
+0x3dea43c: BL              il2cpp_codegen_raise_null_reference_exception
+0x3dea440: BL              il2cpp_codegen_raise_null_reference_exception
+0x3dea444: BL              il2cpp_codegen_raise_null_reference_exception
+0x3dea448: BL              il2cpp_codegen_raise_null_reference_exception
+0x3dea44c: BL              il2cpp_codegen_raise_null_reference_exception
+0x3dea450: BL              il2cpp_codegen_raise_null_reference_exception
+0x3dea454: BL              il2cpp_codegen_raise_null_reference_exception
+0x3dea458: BL              il2cpp_codegen_raise_null_reference_exception
+0x3dea45c: BL              il2cpp_codegen_raise_null_reference_exception
+0x3dea460: B               loc_3DEA4C8
+0x3dea464: B               loc_3DEA4C8
+0x3dea468: B               loc_3DEA4C8
+0x3dea46c: B               loc_3DEA4C8
+0x3dea470: B               loc_3DEA4C8
+0x3dea474: B               loc_3DEA4C8
+0x3dea478: B               loc_3DEA4C8
+0x3dea47c: B               loc_3DEA4C8
+0x3dea480: B               loc_3DEA4C8
+0x3dea484: B               loc_3DEA4C8
+0x3dea488: B               loc_3DEA4C8
+0x3dea48c: B               loc_3DEA4C8
+0x3dea490: B               loc_3DEA4C8
+0x3dea494: B               loc_3DEA4C8
+0x3dea498: B               loc_3DEA4C8
+0x3dea49c: B               loc_3DEA4C8
+0x3dea4a0: B               loc_3DEA4C8
+0x3dea4a4: B               loc_3DEA4C8
+0x3dea4a8: B               loc_3DEA4C8
+0x3dea4ac: B               loc_3DEA4C8
+0x3dea4b0: B               loc_3DEA4C8
+0x3dea4b4: B               loc_3DEA4C8
+0x3dea4b8: B               loc_3DEA4C8
+0x3dea4bc: B               loc_3DEA4C8
+0x3dea4c0: B               loc_3DEA4C8
+0x3dea4c4: B               loc_3DEA4C8
+0x3dea4c8: MOV             X20, X0
+0x3dea4cc: CMP             W1, #1
+0x3dea4d0: B.NE            loc_3DEA550
+0x3dea4d4: MOV             X0, X20
+0x3dea4d8: BL              .__cxa_begin_catch
+0x3dea4dc: MOV             X20, X0
+0x3dea4e0: ADRP            X0, #off_8ACCF90@PAGE
+0x3dea4e4: LDR             X0, [X0,#off_8ACCF90@PAGEOFF]; unk_8CE71D0
+0x3dea4e8: BL              unk_3C3D294
+0x3dea4ec: LDR             X8, [X20]
+0x3dea4f0: LDR             X1, [X8]
+0x3dea4f4: BL              unk_3C3D8F8
+0x3dea4f8: TBZ             W0, #0, loc_3DEA528
+0x3dea4fc: LDR             X20, [X20]
+0x3dea500: BL              .__cxa_end_catch
+0x3dea504: MOV             W8, #0xFFFFFFFE
+0x3dea508: STR             W8, [X19],#8
+0x3dea50c: MOV             X0, X19
+0x3dea510: MOV             X1, X20
+0x3dea514: LDP             X20, X19, [SP,#0x30+var_10]
+0x3dea518: LDP             X22, X21, [SP,#0x30+var_20]
+0x3dea51c: MOV             X2, XZR
+0x3dea520: LDR             X30, [SP+0x30+var_30],#0x30
+0x3dea524: B               System.Runtime.CompilerServices.AsyncVoidMethodBuilder$$SetException
+0x3dea528: MOV             W0, #8
+0x3dea52c: BL              .__cxa_allocate_exception
+0x3dea530: LDR             X8, [X20]
+0x3dea534: STR             X8, [X0]
+0x3dea538: ADRL            X1, _ZTI22Il2CppExceptionWrapper; `typeinfo for'Il2CppExceptionWrapper
+0x3dea540: MOV             X2, XZR
+0x3dea544: BL              .__cxa_throw
+0x3dea548: MOV             X20, X0
+0x3dea54c: BL              .__cxa_end_catch
+0x3dea550: MOV             X0, X20
+0x3dea554: BL              sub_3CE73C4
+0x3dea558: BL              unk_35BC500

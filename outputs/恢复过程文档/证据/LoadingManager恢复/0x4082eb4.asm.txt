@@ -1,0 +1,93 @@
+0x4082eb4: fe5fbda9 stp      x30, x23, [sp, #-0x30]!
+0x4082eb8: f65701a9 stp      x22, x21, [sp, #0x10]
+0x4082ebc: f44f02a9 stp      x20, x19, [sp, #0x20]
+0x4082ec0: f67b0290 adrp     x22, #0x8ffe000
+0x4082ec4: 555202f0 adrp     x21, #0x8acd000
+0x4082ec8: c8227739 ldrb     w8, [x22, #0xdc8]
+0x4082ecc: b54247f9 ldr      x21, [x21, #0xe80] // LoadingModule.LoadingManager_TypeInfo
+0x4082ed0: f30301aa mov      x19, x1
+0x4082ed4: f40300aa mov      x20, x0
+0x4082ed8: a8020037 tbnz     w8, #0, #0x4082f2c
+0x4082edc: 405202f0 adrp     x0, #0x8acd000
+0x4082ee0: 004047f9 ldr      x0, [x0, #0xe80] // LoadingModule.LoadingManager_TypeInfo
+0x4082ee4: e7e8ee97 bl       #0x3c3d280
+0x4082ee8: c05202f0 adrp     x0, #0x8add000
+0x4082eec: 00ac43f9 ldr      x0, [x0, #0x758] // System.IO.Path_TypeInfo
+0x4082ef0: e4e8ee97 bl       #0x3c3d280
+0x4082ef4: 00530290 adrp     x0, #0x8ae2000
+0x4082ef8: 005842f9 ldr      x0, [x0, #0x4b0] // \
+0x4082efc: e1e8ee97 bl       #0x3c3d280
+0x4082f00: 405202d0 adrp     x0, #0x8acc000
+0x4082f04: 009845f9 ldr      x0, [x0, #0xb30] // _
+0x4082f08: dee8ee97 bl       #0x3c3d280
+0x4082f0c: 00530290 adrp     x0, #0x8ae2000
+0x4082f10: 005c42f9 ldr      x0, [x0, #0x4b8] // .txt
+0x4082f14: dbe8ee97 bl       #0x3c3d280
+0x4082f18: 405202d0 adrp     x0, #0x8acc000
+0x4082f1c: 008046f9 ldr      x0, [x0, #0xd00] // /
+0x4082f20: d8e8ee97 bl       #0x3c3d280
+0x4082f24: 28008052 mov      w8, #1
+0x4082f28: c8223739 strb     w8, [x22, #0xdc8]
+0x4082f2c: a00240f9 ldr      x0, [x21]
+0x4082f30: 08e040b9 ldr      w8, [x0, #0xe0]
+0x4082f34: 68000035 cbnz     w8, #0x4082f40
+0x4082f38: 1ee9ee97 bl       #0x3c3d3b0
+0x4082f3c: a00240f9 ldr      x0, [x21]
+0x4082f40: 085c40f9 ldr      x8, [x0, #0xb8]
+0x4082f44: 21008052 mov      w1, #1
+0x4082f48: e2031faa mov      x2, xzr
+0x4082f4c: 000540f9 ldr      x0, [x8, #8]
+0x4082f50: 32c9fb97 bl       #0x3f75418 // ToolModule.StringTool$$IsNullOrEmpty
+0x4082f54: a0000036 tbz      w0, #0, #0x4082f68
+0x4082f58: 880240f9 ldr      x8, [x20]
+0x4082f5c: e00314aa mov      x0, x20
+0x4082f60: 098557a9 ldp      x9, x1, [x8, #0x178]
+0x4082f64: 20013fd6 blr      x9
+0x4082f68: f30500b4 cbz      x19, #0x4083024
+0x4082f6c: 485202d0 adrp     x8, #0x8acc000
+0x4082f70: 545202d0 adrp     x20, #0x8acc000
+0x4082f74: 088146f9 ldr      x8, [x8, #0xd00] // /
+0x4082f78: 949a45f9 ldr      x20, [x20, #0xb30] // _
+0x4082f7c: e00313aa mov      x0, x19
+0x4082f80: e3031faa mov      x3, xzr
+0x4082f84: 010140f9 ldr      x1, [x8]
+0x4082f88: 820240f9 ldr      x2, [x20]
+0x4082f8c: d423d294 bl       #0x750bedc // System.String$$Replace
+0x4082f90: a00400b4 cbz      x0, #0x4083024
+0x4082f94: 08530290 adrp     x8, #0x8ae2000
+0x4082f98: 085942f9 ldr      x8, [x8, #0x4b0] // \
+0x4082f9c: 820240f9 ldr      x2, [x20]
+0x4082fa0: 17530290 adrp     x23, #0x8ae2000
+0x4082fa4: d65202f0 adrp     x22, #0x8add000
+0x4082fa8: 010140f9 ldr      x1, [x8]
+0x4082fac: f75e42f9 ldr      x23, [x23, #0x4b8] // .txt
+0x4082fb0: d6ae43f9 ldr      x22, [x22, #0x758] // System.IO.Path_TypeInfo
+0x4082fb4: e3031faa mov      x3, xzr
+0x4082fb8: c923d294 bl       #0x750bedc // System.String$$Replace
+0x4082fbc: a80240f9 ldr      x8, [x21]
+0x4082fc0: f40300aa mov      x20, x0
+0x4082fc4: 09e140b9 ldr      w9, [x8, #0xe0]
+0x4082fc8: 89000035 cbnz     w9, #0x4082fd8
+0x4082fcc: e00308aa mov      x0, x8
+0x4082fd0: f8e8ee97 bl       #0x3c3d3b0
+0x4082fd4: a80240f9 ldr      x8, [x21]
+0x4082fd8: 085d40f9 ldr      x8, [x8, #0xb8]
+0x4082fdc: e10240f9 ldr      x1, [x23]
+0x4082fe0: e00314aa mov      x0, x20
+0x4082fe4: e2031faa mov      x2, xzr
+0x4082fe8: 130540f9 ldr      x19, [x8, #8]
+0x4082fec: eeedd194 bl       #0x74fe7a4 // System.String$$Concat
+0x4082ff0: c80240f9 ldr      x8, [x22]
+0x4082ff4: f40300aa mov      x20, x0
+0x4082ff8: 09e140b9 ldr      w9, [x8, #0xe0]
+0x4082ffc: 69000035 cbnz     w9, #0x4083008
+0x4083000: e00308aa mov      x0, x8
+0x4083004: ebe8ee97 bl       #0x3c3d3b0
+0x4083008: e00313aa mov      x0, x19
+0x408300c: e10314aa mov      x1, x20
+0x4083010: f44f42a9 ldp      x20, x19, [sp, #0x20]
+0x4083014: f65741a9 ldp      x22, x21, [sp, #0x10]
+0x4083018: e2031faa mov      x2, xzr
+0x408301c: fe5fc3a8 ldp      x30, x23, [sp], #0x30
+0x4083020: b64fd614 b        #0x7616ef8 // System.IO.Path$$Combine
+0x4083024: 2ae9ee97 bl       #0x3c3d4cc

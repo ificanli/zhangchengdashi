@@ -1,0 +1,437 @@
+0x3f80b3c: SUB             SP, SP, #0x60
+0x3f80b40: STP             X30, X25, [SP,#0x60+var_40]
+0x3f80b44: STP             X24, X23, [SP,#0x60+var_30]
+0x3f80b48: STP             X22, X21, [SP,#0x60+var_20]
+0x3f80b4c: STP             X20, X19, [SP,#0x60+var_10]
+0x3f80b50: ADRP            X21, #byte_8FFE416@PAGE
+0x3f80b54: ADRP            X20, #off_8ADD6F0@PAGE
+0x3f80b58: LDRB            W8, [X21,#byte_8FFE416@PAGEOFF]
+0x3f80b5c: LDR             X20, [X20,#off_8ADD6F0@PAGEOFF]; qword_8D32258
+0x3f80b60: MOV             X19, X0
+0x3f80b64: TBNZ            W8, #0, loc_3F80BB8
+0x3f80b68: ADRP            X0, #off_8ADD718@PAGE
+0x3f80b6c: LDR             X0, [X0,#off_8ADD718@PAGEOFF]; off_8CF7848 ; slot
+0x3f80b70: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3f80b74: ADRP            X0, #off_8ADD720@PAGE
+0x3f80b78: LDR             X0, [X0,#off_8ADD720@PAGEOFF]; off_8CD8980 ; slot
+0x3f80b7c: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3f80b80: ADRP            X0, #off_8ADD6F8@PAGE
+0x3f80b84: LDR             X0, [X0,#off_8ADD6F8@PAGEOFF]; qword_8CE7AE0 ; slot
+0x3f80b88: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3f80b8c: ADRP            X0, #off_8ACCCB0@PAGE
+0x3f80b90: LDR             X0, [X0,#off_8ACCCB0@PAGEOFF]; qword_8CE8998 ; slot
+0x3f80b94: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3f80b98: ADRP            X0, #off_8ADD6F0@PAGE
+0x3f80b9c: LDR             X0, [X0,#off_8ADD6F0@PAGEOFF]; qword_8D32258 ; slot
+0x3f80ba0: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3f80ba4: ADRP            X0, #off_8ADD700@PAGE
+0x3f80ba8: LDR             X0, [X0,#off_8ADD700@PAGEOFF]; qword_8CEA878 ; slot
+0x3f80bac: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3f80bb0: MOV             W8, #1
+0x3f80bb4: STRB            W8, [X21,#byte_8FFE416@PAGEOFF]
+0x3f80bb8: LDR             X1, [X20]; method
+0x3f80bbc: MOV             X0, X19; input
+0x3f80bc0: STR             XZR, [SP,#0x60+var_48]
+0x3f80bc4: BL              ToolModule.ListExtend$$IsNullOrEmpty_byte_
+0x3f80bc8: TBNZ            W0, #0, loc_3F810B8
+0x3f80bcc: ADRP            X22, #off_8ADD700@PAGE
+0x3f80bd0: LDR             X22, [X22,#off_8ADD700@PAGEOFF]; qword_8CEA878
+0x3f80bd4: LDR             X0, [X22]
+0x3f80bd8: BL              unk_3C3D4C4
+0x3f80bdc: MOV             X20, X0
+0x3f80be0: MOV             X1, X19
+0x3f80be4: MOV             X2, XZR
+0x3f80be8: BL              sub_75CF1DC
+0x3f80bec: ADRP            X8, #off_8ADD6F8@PAGE
+0x3f80bf0: LDR             X8, [X8,#off_8ADD6F8@PAGEOFF]; qword_8CE7AE0
+0x3f80bf4: LDR             X0, [X8]
+0x3f80bf8: BL              unk_3C3D4C4
+0x3f80bfc: MOV             X21, X0
+0x3f80c00: MOV             X1, X20
+0x3f80c04: MOV             W2, WZR
+0x3f80c08: MOV             X3, XZR
+0x3f80c0c: BL              sub_7D18440
+0x3f80c10: LDR             X0, [X22]
+0x3f80c14: BL              unk_3C3D4C4
+0x3f80c18: MOV             X22, X0
+0x3f80c1c: MOV             X1, XZR
+0x3f80c20: BL              System.IO.MemoryStream$$.ctor
+0x3f80c24: ADRP            X8, #off_8ADD720@PAGE
+0x3f80c28: LDR             X8, [X8,#off_8ADD720@PAGEOFF]; off_8CD8980
+0x3f80c2c: LDR             X0, [X8]; klass
+0x3f80c30: LDR             W8, [X0,#0xE0]
+0x3f80c34: CBNZ            W8, loc_3F80C3C
+0x3f80c38: BL              il2cpp_codegen_runtime_class_init
+0x3f80c3c: ADRP            X8, #off_8ADD718@PAGE
+0x3f80c40: LDR             X8, [X8,#off_8ADD718@PAGEOFF]; off_8CF7848
+0x3f80c44: LDR             X23, [X8]
+0x3f80c48: LDR             X0, [X23,#0x20]
+0x3f80c4c: LDRB            W8, [X0,#0x135]
+0x3f80c50: TBNZ            W8, #0, loc_3F80C58
+0x3f80c54: BL              unk_3C503A0
+0x3f80c58: LDR             X8, [X0,#0xC0]
+0x3f80c5c: LDR             X0, [X8,#8]
+0x3f80c60: LDRB            W8, [X0,#0x135]
+0x3f80c64: TBNZ            W8, #0, loc_3F80C6C
+0x3f80c68: BL              unk_3C503A0
+0x3f80c6c: LDR             W8, [X0,#0xE0]
+0x3f80c70: CBNZ            W8, loc_3F80C78
+0x3f80c74: BL              il2cpp_codegen_runtime_class_init
+0x3f80c78: LDR             X0, [X23,#0x20]
+0x3f80c7c: LDRB            W8, [X0,#0x135]
+0x3f80c80: TBNZ            W8, #0, loc_3F80C88
+0x3f80c84: BL              unk_3C503A0
+0x3f80c88: LDR             X8, [X0,#0xC0]
+0x3f80c8c: LDR             X0, [X8,#8]
+0x3f80c90: LDRB            W8, [X0,#0x135]
+0x3f80c94: TBNZ            W8, #0, loc_3F80C9C
+0x3f80c98: BL              unk_3C503A0
+0x3f80c9c: LDR             X8, [X0,#0xB8]
+0x3f80ca0: LDR             X0, [X8]
+0x3f80ca4: CBZ             X0, loc_3F80DE8
+0x3f80ca8: LDR             X8, [X0]
+0x3f80cac: LDP             X9, X2, [X8,#0x178]
+0x3f80cb0: MOV             W1, #0x14000
+0x3f80cb8: BLR             X9
+0x3f80cbc: MOV             X1, X0
+0x3f80cc0: ADD             X8, SP, #0x60+var_48
+0x3f80cc4: STR             XZR, [SP,#0x60+var_58]
+0x3f80cc8: STP             X8, X1, [SP,#0x60+var_50]
+0x3f80ccc: CBZ             X21, loc_3F80DEC
+0x3f80cd0: LDR             X8, [X21]
+0x3f80cd4: LDR             X9, [X8,#0x358]
+0x3f80cd8: LDR             X4, [X8,#0x360]
+0x3f80cdc: MOV             W3, #0x14000
+0x3f80ce4: MOV             X0, X21
+0x3f80ce8: MOV             W2, WZR
+0x3f80cec: BLR             X9
+0x3f80cf0: MOV             W3, W0
+0x3f80cf4: CMP             W0, #0
+0x3f80cf8: B.LE            loc_3F80D24
+0x3f80cfc: CBZ             X22, loc_3F80DE4
+0x3f80d00: LDR             X8, [X22]
+0x3f80d04: LDR             X1, [SP,#0x60+var_48]
+0x3f80d08: LDR             X9, [X8,#0x388]
+0x3f80d0c: LDR             X4, [X8,#0x390]
+0x3f80d10: MOV             X0, X22
+0x3f80d14: MOV             W2, WZR
+0x3f80d18: BLR             X9
+0x3f80d1c: LDR             X1, [SP,#0x60+var_48]
+0x3f80d20: B               loc_3F80CD0
+0x3f80d24: MOV             W25, #5
+0x3f80d28: ADD             X0, SP, #0x60+var_58
+0x3f80d2c: BL              unk_35C1130
+0x3f80d30: CMP             W25, #5
+0x3f80d34: B.EQ            loc_3F80D3C
+0x3f80d38: CBNZ            W25, loc_3F80D64
+0x3f80d3c: CBZ             X22, loc_3F80DF8
+0x3f80d40: LDR             X8, [X22]
+0x3f80d44: LDR             X1, [X8,#0x400]
+0x3f80d48: LDR             X9, [X8,#0x3F8]
+0x3f80d4c: MOV             X0, X22
+0x3f80d50: BLR             X9
+0x3f80d54: MOV             X23, X0
+0x3f80d58: MOV             X24, XZR
+0x3f80d5c: MOV             W25, #6
+0x3f80d60: B               loc_3F80D70
+0x3f80d64: MOV             X24, XZR
+0x3f80d68: MOV             X23, XZR
+0x3f80d6c: CBZ             X22, loc_3F80DD0
+0x3f80d70: ADRP            X10, #off_8ACCCB0@PAGE
+0x3f80d74: LDR             X8, [X22]
+0x3f80d78: LDR             X10, [X10,#off_8ACCCB0@PAGEOFF]; qword_8CE8998
+0x3f80d7c: LDRH            W9, [X8,#0x12E]
+0x3f80d80: LDR             X1, [X10]
+0x3f80d84: CBZ             X9, loc_3F80DA8
+0x3f80d88: LDR             X10, [X8,#0xB0]
+0x3f80d8c: ADD             X10, X10, #8
+0x3f80d90: LDUR            X11, [X10,#-8]
+0x3f80d94: CMP             X11, X1
+0x3f80d98: B.EQ            loc_3F80DB8
+0x3f80d9c: SUBS            X9, X9, #1
+0x3f80da0: ADD             X10, X10, #0x10
+0x3f80da4: B.NE            loc_3F80D90
+0x3f80da8: MOV             X0, X22
+0x3f80dac: MOV             W2, WZR
+0x3f80db0: BL              unk_3C504A4
+0x3f80db4: B               loc_3F80DC4
+0x3f80db8: LDRSW           X9, [X10]
+0x3f80dbc: ADD             X8, X8, X9,LSL#4
+0x3f80dc0: ADD             X0, X8, #0x138
+0x3f80dc4: LDP             X8, X1, [X0]
+0x3f80dc8: MOV             X0, X22
+0x3f80dcc: BLR             X8
+0x3f80dd0: CBNZ            X24, loc_3F80DF0
+0x3f80dd4: MOV             X22, XZR
+0x3f80dd8: CBZ             W25, loc_3F80F3C
+0x3f80ddc: CBNZ            X21, loc_3F80F48
+0x3f80de0: B               loc_3F80FA8
+0x3f80de4: BL              il2cpp_codegen_raise_null_reference_exception
+0x3f80de8: BL              il2cpp_codegen_raise_null_reference_exception
+0x3f80dec: BL              il2cpp_codegen_raise_null_reference_exception
+0x3f80df0: MOV             X0, X24
+0x3f80df4: BL              unk_3C38CF8
+0x3f80df8: BL              il2cpp_codegen_raise_null_reference_exception
+0x3f80dfc: B               loc_3F80E44
+0x3f80e00: B               loc_3F80E44
+0x3f80e04: B               loc_3F80E44
+0x3f80e08: B               loc_3F80E44
+0x3f80e0c: B               loc_3F80E58
+0x3f80e10: B               loc_3F80E44
+0x3f80e14: MOV             X25, X1
+0x3f80e18: MOV             X24, X0
+0x3f80e1c: MOV             X23, XZR
+0x3f80e20: B               loc_3F80F24
+0x3f80e24: MOV             X25, X1
+0x3f80e28: MOV             X24, X0
+0x3f80e2c: MOV             X23, XZR
+0x3f80e30: B               loc_3F8102C
+0x3f80e34: B               loc_3F811A8
+0x3f80e38: MOV             X25, X1
+0x3f80e3c: MOV             X24, X0
+0x3f80e40: B               loc_3F80F24
+0x3f80e44: MOV             X25, X1
+0x3f80e48: MOV             X24, X0
+0x3f80e4c: B               loc_3F80E94
+0x3f80e50: B               loc_3F80E58
+0x3f80e54: B               loc_3F80E58
+0x3f80e58: MOV             X25, X1
+0x3f80e5c: MOV             X24, X0
+0x3f80e60: CMP             W25, #1
+0x3f80e64: B.NE            loc_3F80E8C
+0x3f80e68: MOV             X0, X24
+0x3f80e6c: BL              .__cxa_begin_catch
+0x3f80e70: LDR             X8, [X0]
+0x3f80e74: STR             X8, [SP,#0x60+var_58]
+0x3f80e78: BL              .__cxa_end_catch
+0x3f80e7c: MOV             W25, WZR
+0x3f80e80: B               loc_3F80D28
+0x3f80e84: MOV             X25, X1
+0x3f80e88: MOV             X24, X0
+0x3f80e8c: ADD             X0, SP, #0x60+var_58
+0x3f80e90: BL              unk_35C1130
+0x3f80e94: CMP             W25, #1
+0x3f80e98: B.NE            loc_3F80EB8
+0x3f80e9c: MOV             X0, X24
+0x3f80ea0: BL              .__cxa_begin_catch
+0x3f80ea4: LDR             X23, [X0]
+0x3f80ea8: BL              .__cxa_end_catch
+0x3f80eac: MOV             W25, WZR
+0x3f80eb0: MOV             X24, X23
+0x3f80eb4: B               loc_3F80D68
+0x3f80eb8: MOV             X23, XZR
+0x3f80ebc: CBZ             X22, loc_3F80F20
+0x3f80ec0: ADRP            X10, #off_8ACCCB0@PAGE
+0x3f80ec4: LDR             X8, [X22]
+0x3f80ec8: LDR             X10, [X10,#off_8ACCCB0@PAGEOFF]; qword_8CE8998
+0x3f80ecc: LDRH            W9, [X8,#0x12E]
+0x3f80ed0: LDR             X1, [X10]
+0x3f80ed4: CBZ             X9, loc_3F80EF8
+0x3f80ed8: LDR             X10, [X8,#0xB0]
+0x3f80edc: ADD             X10, X10, #8
+0x3f80ee0: LDUR            X11, [X10,#-8]
+0x3f80ee4: CMP             X11, X1
+0x3f80ee8: B.EQ            loc_3F80F08
+0x3f80eec: SUBS            X9, X9, #1
+0x3f80ef0: ADD             X10, X10, #0x10
+0x3f80ef4: B.NE            loc_3F80EE0
+0x3f80ef8: MOV             X0, X22
+0x3f80efc: MOV             W2, WZR
+0x3f80f00: BL              unk_3C504A4
+0x3f80f04: B               loc_3F80F14
+0x3f80f08: LDRSW           X9, [X10]
+0x3f80f0c: ADD             X8, X8, X9,LSL#4
+0x3f80f10: ADD             X0, X8, #0x138
+0x3f80f14: LDP             X8, X1, [X0]
+0x3f80f18: MOV             X0, X22
+0x3f80f1c: BLR             X8
+0x3f80f20: CBNZ            X23, loc_3F8115C
+0x3f80f24: CMP             W25, #1
+0x3f80f28: B.NE            loc_3F80FC0
+0x3f80f2c: MOV             X0, X24
+0x3f80f30: BL              .__cxa_begin_catch
+0x3f80f34: LDR             X22, [X0]
+0x3f80f38: BL              .__cxa_end_catch
+0x3f80f3c: MOV             W25, WZR
+0x3f80f40: MOV             X24, X22
+0x3f80f44: CBZ             X21, loc_3F80FA8
+0x3f80f48: ADRP            X10, #off_8ACCCB0@PAGE
+0x3f80f4c: LDR             X8, [X21]
+0x3f80f50: LDR             X10, [X10,#off_8ACCCB0@PAGEOFF]; qword_8CE8998
+0x3f80f54: LDRH            W9, [X8,#0x12E]
+0x3f80f58: LDR             X1, [X10]
+0x3f80f5c: CBZ             X9, loc_3F80F80
+0x3f80f60: LDR             X10, [X8,#0xB0]
+0x3f80f64: ADD             X10, X10, #8
+0x3f80f68: LDUR            X11, [X10,#-8]
+0x3f80f6c: CMP             X11, X1
+0x3f80f70: B.EQ            loc_3F80F90
+0x3f80f74: SUBS            X9, X9, #1
+0x3f80f78: ADD             X10, X10, #0x10
+0x3f80f7c: B.NE            loc_3F80F68
+0x3f80f80: MOV             X0, X21
+0x3f80f84: MOV             W2, WZR
+0x3f80f88: BL              unk_3C504A4
+0x3f80f8c: B               loc_3F80F9C
+0x3f80f90: LDRSW           X9, [X10]
+0x3f80f94: ADD             X8, X8, X9,LSL#4
+0x3f80f98: ADD             X0, X8, #0x138
+0x3f80f9c: LDP             X8, X1, [X0]
+0x3f80fa0: MOV             X0, X21
+0x3f80fa4: BLR             X8
+0x3f80fa8: CBNZ            X24, loc_3F81154
+0x3f80fac: MOV             X21, XZR
+0x3f80fb0: MOV             X22, XZR
+0x3f80fb4: CBZ             W25, loc_3F81044
+0x3f80fb8: CBNZ            X20, loc_3F81050
+0x3f80fbc: B               loc_3F810B0
+0x3f80fc0: MOV             X22, XZR
+0x3f80fc4: CBZ             X21, loc_3F81028
+0x3f80fc8: ADRP            X10, #off_8ACCCB0@PAGE
+0x3f80fcc: LDR             X8, [X21]
+0x3f80fd0: LDR             X10, [X10,#off_8ACCCB0@PAGEOFF]; qword_8CE8998
+0x3f80fd4: LDRH            W9, [X8,#0x12E]
+0x3f80fd8: LDR             X1, [X10]
+0x3f80fdc: CBZ             X9, loc_3F81000
+0x3f80fe0: LDR             X10, [X8,#0xB0]
+0x3f80fe4: ADD             X10, X10, #8
+0x3f80fe8: LDUR            X11, [X10,#-8]
+0x3f80fec: CMP             X11, X1
+0x3f80ff0: B.EQ            loc_3F81010
+0x3f80ff4: SUBS            X9, X9, #1
+0x3f80ff8: ADD             X10, X10, #0x10
+0x3f80ffc: B.NE            loc_3F80FE8
+0x3f81000: MOV             X0, X21
+0x3f81004: MOV             W2, WZR
+0x3f81008: BL              unk_3C504A4
+0x3f8100c: B               loc_3F8101C
+0x3f81010: LDRSW           X9, [X10]
+0x3f81014: ADD             X8, X8, X9,LSL#4
+0x3f81018: ADD             X0, X8, #0x138
+0x3f8101c: LDP             X8, X1, [X0]
+0x3f81020: MOV             X0, X21
+0x3f81024: BLR             X8
+0x3f81028: CBNZ            X22, loc_3F81164
+0x3f8102c: CMP             W25, #1
+0x3f81030: B.NE            loc_3F810D8
+0x3f81034: MOV             X0, X24
+0x3f81038: BL              .__cxa_begin_catch
+0x3f8103c: LDR             X21, [X0]
+0x3f81040: BL              .__cxa_end_catch
+0x3f81044: MOV             W25, WZR
+0x3f81048: MOV             X22, X21
+0x3f8104c: CBZ             X20, loc_3F810B0
+0x3f81050: ADRP            X10, #off_8ACCCB0@PAGE
+0x3f81054: LDR             X8, [X20]
+0x3f81058: LDR             X10, [X10,#off_8ACCCB0@PAGEOFF]; qword_8CE8998
+0x3f8105c: LDRH            W9, [X8,#0x12E]
+0x3f81060: LDR             X1, [X10]
+0x3f81064: CBZ             X9, loc_3F81088
+0x3f81068: LDR             X10, [X8,#0xB0]
+0x3f8106c: ADD             X10, X10, #8
+0x3f81070: LDUR            X11, [X10,#-8]
+0x3f81074: CMP             X11, X1
+0x3f81078: B.EQ            loc_3F81098
+0x3f8107c: SUBS            X9, X9, #1
+0x3f81080: ADD             X10, X10, #0x10
+0x3f81084: B.NE            loc_3F81070
+0x3f81088: MOV             X0, X20
+0x3f8108c: MOV             W2, WZR
+0x3f81090: BL              unk_3C504A4
+0x3f81094: B               loc_3F810A4
+0x3f81098: LDRSW           X9, [X10]
+0x3f8109c: ADD             X8, X8, X9,LSL#4
+0x3f810a0: ADD             X0, X8, #0x138
+0x3f810a4: LDP             X8, X1, [X0]
+0x3f810a8: MOV             X0, X20
+0x3f810ac: BLR             X8
+0x3f810b0: CBNZ            X22, loc_3F8114C
+0x3f810b4: CBNZ            W25, loc_3F810BC
+0x3f810b8: MOV             X23, X19
+0x3f810bc: MOV             X0, X23
+0x3f810c0: LDP             X20, X19, [SP,#0x60+var_10]
+0x3f810c4: LDP             X22, X21, [SP,#0x60+var_20]
+0x3f810c8: LDP             X24, X23, [SP,#0x60+var_30]
+0x3f810cc: LDP             X30, X25, [SP,#0x60+var_40]
+0x3f810d0: ADD             SP, SP, #0x60 ; '`'
+0x3f810d4: RET
+0x3f810d8: MOV             X21, XZR
+0x3f810dc: CBZ             X20, loc_3F81140
+0x3f810e0: ADRP            X10, #off_8ACCCB0@PAGE
+0x3f810e4: LDR             X8, [X20]
+0x3f810e8: LDR             X10, [X10,#off_8ACCCB0@PAGEOFF]; qword_8CE8998
+0x3f810ec: LDRH            W9, [X8,#0x12E]
+0x3f810f0: LDR             X1, [X10]
+0x3f810f4: CBZ             X9, loc_3F81118
+0x3f810f8: LDR             X10, [X8,#0xB0]
+0x3f810fc: ADD             X10, X10, #8
+0x3f81100: LDUR            X11, [X10,#-8]
+0x3f81104: CMP             X11, X1
+0x3f81108: B.EQ            loc_3F81128
+0x3f8110c: SUBS            X9, X9, #1
+0x3f81110: ADD             X10, X10, #0x10
+0x3f81114: B.NE            loc_3F81100
+0x3f81118: MOV             X0, X20
+0x3f8111c: MOV             W2, WZR
+0x3f81120: BL              unk_3C504A4
+0x3f81124: B               loc_3F81134
+0x3f81128: LDRSW           X9, [X10]
+0x3f8112c: ADD             X8, X8, X9,LSL#4
+0x3f81130: ADD             X0, X8, #0x138
+0x3f81134: LDP             X8, X1, [X0]
+0x3f81138: MOV             X0, X20
+0x3f8113c: BLR             X8
+0x3f81140: CBZ             X21, loc_3F811B0
+0x3f81144: MOV             X0, X21
+0x3f81148: BL              unk_3C38CF8
+0x3f8114c: MOV             X0, X22
+0x3f81150: BL              unk_3C38CF8
+0x3f81154: MOV             X0, X24
+0x3f81158: BL              unk_3C38CF8
+0x3f8115c: MOV             X0, X23
+0x3f81160: BL              unk_3C38CF8
+0x3f81164: MOV             X0, X22
+0x3f81168: BL              unk_3C38CF8
+0x3f8116c: MOV             X25, X1
+0x3f81170: MOV             X24, X0
+0x3f81174: CBNZ            X20, loc_3F810E0
+0x3f81178: B               loc_3F81140
+0x3f8117c: MOV             X25, X1
+0x3f81180: MOV             X24, X0
+0x3f81184: CBNZ            X21, loc_3F80FC8
+0x3f81188: B               loc_3F81028
+0x3f8118c: MOV             X25, X1
+0x3f81190: MOV             X24, X0
+0x3f81194: CBNZ            X22, loc_3F80EC0
+0x3f81198: B               loc_3F80F20
+0x3f8119c: MOV             X25, X1
+0x3f811a0: MOV             X24, X0
+0x3f811a4: B               loc_3F8102C
+0x3f811a8: MOV             X25, X1
+0x3f811ac: MOV             X24, X0
+0x3f811b0: CMP             W25, #1
+0x3f811b4: B.NE            loc_3F81210
+0x3f811b8: MOV             X0, X24
+0x3f811bc: BL              .__cxa_begin_catch
+0x3f811c0: MOV             X20, X0
+0x3f811c4: ADRP            X0, #off_8ACCF90@PAGE
+0x3f811c8: LDR             X0, [X0,#off_8ACCF90@PAGEOFF]; unk_8CE71D0
+0x3f811cc: BL              unk_3C3D294
+0x3f811d0: LDR             X8, [X20]
+0x3f811d4: LDR             X1, [X8]
+0x3f811d8: BL              unk_3C3D8F8
+0x3f811dc: TBZ             W0, #0, loc_3F811E8
+0x3f811e0: BL              .__cxa_end_catch
+0x3f811e4: B               loc_3F810B8
+0x3f811e8: MOV             W0, #8
+0x3f811ec: BL              .__cxa_allocate_exception
+0x3f811f0: LDR             X8, [X20]
+0x3f811f4: STR             X8, [X0]
+0x3f811f8: ADRL            X1, _ZTI22Il2CppExceptionWrapper; `typeinfo for'Il2CppExceptionWrapper
+0x3f81200: MOV             X2, XZR
+0x3f81204: BL              .__cxa_throw
+0x3f81208: MOV             X24, X0
+0x3f8120c: BL              .__cxa_end_catch
+0x3f81210: MOV             X0, X24
+0x3f81214: BL              unk_3CE73C4
+0x3f81218: BL              unk_35BC500

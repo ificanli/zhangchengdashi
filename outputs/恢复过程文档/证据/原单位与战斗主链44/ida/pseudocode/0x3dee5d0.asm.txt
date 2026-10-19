@@ -1,0 +1,40 @@
+0x3dee5d0: SUB             SP, SP, #0x90
+0x3dee5d4: STR             X30, [SP,#0x90+var_30]
+0x3dee5d8: STP             X22, X21, [SP,#0x90+var_20]
+0x3dee5dc: STP             X20, X19, [SP,#0x90+var_10]
+0x3dee5e0: ADRP            X22, #byte_8FFD77A@PAGE
+0x3dee5e4: ADRP            X21, #off_8AD3BA0@PAGE
+0x3dee5e8: LDRB            W8, [X22,#byte_8FFD77A@PAGEOFF]
+0x3dee5ec: LDR             X21, [X21,#off_8AD3BA0@PAGEOFF]; qword_8D228D0
+0x3dee5f0: MOV             W19, W1
+0x3dee5f4: MOV             X20, X0
+0x3dee5f8: TBNZ            W8, #0, loc_3DEE610
+0x3dee5fc: ADRP            X0, #off_8AD3BA0@PAGE
+0x3dee600: LDR             X0, [X0,#off_8AD3BA0@PAGEOFF]; qword_8D228D0 ; slot
+0x3dee604: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3dee608: MOV             W8, #1
+0x3dee60c: STRB            W8, [X22,#byte_8FFD77A@PAGEOFF]
+0x3dee610: MOVI            V0.2D, #0
+0x3dee614: MOV             X8, SP
+0x3dee618: MOV             X0, XZR
+0x3dee61c: STR             XZR, [SP,#0x90+var_40]
+0x3dee620: STP             Q0, Q0, [SP,#0x90+var_60]
+0x3dee624: STR             Q0, [SP,#0x90+var_70]
+0x3dee628: BL              System.Runtime.CompilerServices.AsyncVoidMethodBuilder$$Create
+0x3dee62c: LDP             Q0, Q1, [SP,#0x90+var_90]
+0x3dee630: LDR             X2, [X21]
+0x3dee634: ADD             X8, SP, #0x90+var_70
+0x3dee638: MOV             W9, #0xFFFFFFFF
+0x3dee63c: ORR             X0, X8, #8
+0x3dee640: ADD             X1, SP, #0x90+var_70
+0x3dee644: STR             X20, [SP,#0x90+var_48]
+0x3dee648: STR             W19, [SP,#0x90+var_40]
+0x3dee64c: STUR            Q0, [SP,#0x90+var_70+8]
+0x3dee650: STUR            Q1, [SP,#0x90+var_60+8]
+0x3dee654: STR             W9, [SP,#0x90+var_70]
+0x3dee658: BL              System.Runtime.CompilerServices.AsyncVoidMethodBuilder$$Start_BattleGameSceneManager._StartGame_d__142_
+0x3dee65c: LDP             X20, X19, [SP,#0x90+var_10]
+0x3dee660: LDP             X22, X21, [SP,#0x90+var_20]
+0x3dee664: LDR             X30, [SP,#0x90+var_30]
+0x3dee668: ADD             SP, SP, #0x90
+0x3dee66c: RET

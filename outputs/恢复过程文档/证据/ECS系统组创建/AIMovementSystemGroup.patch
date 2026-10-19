@@ -1,0 +1,55 @@
+--- before/AIMovementSystemGroup.cs
++++ after/AIMovementSystemGroup.cs
+@@ -29,7 +29,7 @@
+ 
+ 			[Token(Token = "0x4000EC4")]
+ 			[FieldOffset(Offset = "0x1C")]
+-			private float maximumDt;
++			private float maximumDt = 1f / 30f;
+ 
+ 			[Token(Token = "0x4000EC5")]
+ 			[FieldOffset(Offset = "0x20")]
+@@ -73,7 +73,7 @@
+ 
+ 			[Token(Token = "0x4000ECF")]
+ 			[FieldOffset(Offset = "0x48")]
+-			public double CustomTimeScale;
++			public double CustomTimeScale = 1d;
+ 
+ 			[Token(Token = "0x1700031F")]
+ 			public static bool CheapSimulationOnly
+@@ -150,12 +150,16 @@
+ 			[Address(RVA = "0x44CD70C", Offset = "0x44C970C", VA = "0x44CD70C")]
+ 			public TimeScaledRateManager()
+ 			{
++				cheapTimeDataQueue = new NativeList<TimeData>(Allocator.Persistent);
++				timeDataQueue = new NativeList<TimeData>(Allocator.Persistent);
+ 			}
+ 
+ 			[Token(Token = "0x600154F")]
+ 			[Address(RVA = "0x44CD658", Offset = "0x44C9658", VA = "0x44CD658", Slot = "7")]
+ 			public void Dispose()
+ 			{
++				cheapTimeDataQueue.Dispose();
++				timeDataQueue.Dispose();
+ 			}
+ 
+ 			[Token(Token = "0x6001550")]
+@@ -200,6 +204,8 @@
+ 		[Preserve]
+ 		protected override void OnDestroy()
+ 		{
++			base.OnDestroy();
++			(RateManager as TimeScaledRateManager).Dispose();
+ 		}
+ 
+ 		[Token(Token = "0x6001547")]
+@@ -207,6 +213,8 @@
+ 		[Preserve]
+ 		protected override void OnCreate()
+ 		{
++			base.OnCreate();
++			RateManager = new TimeScaledRateManager();
+ 		}
+ 
+ 		[Token(Token = "0x6001548")]

@@ -1,0 +1,52 @@
+0x4298ed4: fe5fbda9 stp      x30, x23, [sp, #-0x30]!
+0x4298ed8: f65701a9 stp      x22, x21, [sp, #0x10]
+0x4298edc: f44f02a9 stp      x20, x19, [sp, #0x20]
+0x4298ee0: 576b0290 adrp     x23, #0x9000000
+0x4298ee4: b64102b0 adrp     x22, #0x8acd000
+0x4298ee8: b44102b0 adrp     x20, #0x8acd000
+0x4298eec: b5420290 adrp     x21, #0x8aec000
+0x4298ef0: e83e4339 ldrb     w8, [x23, #0xcf]
+0x4298ef4: d62247f9 ldr      x22, [x22, #0xe40] // Method$ToolModule.ManagerBase<EventManager>.get_Instance()
+0x4298ef8: 941a47f9 ldr      x20, [x20, #0xe30] // System.Action<object>_TypeInfo
+0x4298efc: b57e40f9 ldr      x21, [x21, #0xf8] // Method$GameModule.BarracksArchitectureBehaviour.HasRoleDead()
+0x4298f00: f30300aa mov      x19, x0
+0x4298f04: e8010037 tbnz     w8, #0, #0x4298f40
+0x4298f08: a04102b0 adrp     x0, #0x8acd000
+0x4298f0c: 001847f9 ldr      x0, [x0, #0xe30] // System.Action<object>_TypeInfo
+0x4298f10: dc90e697 bl       #0x3c3d280
+0x4298f14: a0420290 adrp     x0, #0x8aec000
+0x4298f18: 007c40f9 ldr      x0, [x0, #0xf8] // Method$GameModule.BarracksArchitectureBehaviour.HasRoleDead()
+0x4298f1c: d990e697 bl       #0x3c3d280
+0x4298f20: a04102b0 adrp     x0, #0x8acd000
+0x4298f24: 002047f9 ldr      x0, [x0, #0xe40] // Method$ToolModule.ManagerBase<EventManager>.get_Instance()
+0x4298f28: d690e697 bl       #0x3c3d280
+0x4298f2c: a04102f0 adrp     x0, #0x8acf000
+0x4298f30: 006445f9 ldr      x0, [x0, #0xac8] // HasRoleDead
+0x4298f34: d390e697 bl       #0x3c3d280
+0x4298f38: 28008052 mov      w8, #1
+0x4298f3c: e83e0339 strb     w8, [x23, #0xcf]
+0x4298f40: e00313aa mov      x0, x19
+0x4298f44: 5df2ff97 bl       #0x42958b8 // GameModule.ArchitectureBehaviour$$Awake
+0x4298f48: c00240f9 ldr      x0, [x22]
+0x4298f4c: 457d5b94 bl       #0x5978460 // ToolModule.ManagerBase<object>$$get_Instance
+0x4298f50: 880240f9 ldr      x8, [x20]
+0x4298f54: f40300aa mov      x20, x0
+0x4298f58: e00308aa mov      x0, x8
+0x4298f5c: 5a91e697 bl       #0x3c3d4c4
+0x4298f60: a20240f9 ldr      x2, [x21]
+0x4298f64: e10313aa mov      x1, x19
+0x4298f68: e3031faa mov      x3, xzr
+0x4298f6c: f50300aa mov      x21, x0
+0x4298f70: 4aa6a294 bl       #0x6b42898 // System.Action<object>$$.ctor
+0x4298f74: 740100b4 cbz      x20, #0x4298fa0
+0x4298f78: a84102f0 adrp     x8, #0x8acf000
+0x4298f7c: 086545f9 ldr      x8, [x8, #0xac8] // HasRoleDead
+0x4298f80: e00314aa mov      x0, x20
+0x4298f84: e20315aa mov      x2, x21
+0x4298f88: f44f42a9 ldp      x20, x19, [sp, #0x20]
+0x4298f8c: 010140f9 ldr      x1, [x8]
+0x4298f90: f65741a9 ldp      x22, x21, [sp, #0x10]
+0x4298f94: e3031faa mov      x3, xzr
+0x4298f98: fe5fc3a8 ldp      x30, x23, [sp], #0x30
+0x4298f9c: e8bbf117 b        #0x3f07f3c // EventModule.EventManager$$StartListening
+0x4298fa0: 4b91e697 bl       #0x3c3d4cc

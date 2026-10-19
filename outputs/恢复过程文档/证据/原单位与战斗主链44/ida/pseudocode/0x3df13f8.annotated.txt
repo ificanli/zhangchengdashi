@@ -1,0 +1,65 @@
+__int64 __fastcall GameModule_BattleGameSceneManager__TryGetNearestRoleTargetFromList(
+        __int64 a1,
+        __int64 *a2,
+        float a3,
+        float a4,
+        float a5,
+        float a6)
+{
+  unsigned int v12; // w21
+  float v13; // s12
+  __int64 Item; // x22
+  __int64 transform; // x0
+  long double position; // q0
+  float v17; // s1
+  float v18; // s2
+  float v19; // s0
+  __int64 v20; // x19
+
+  if ( (byte_8FFD79E & 1) == 0 )
+  {
+    il2cpp_codegen_initialize_runtime_metadata((void **)&off_8CE4A38 /* GameModule.BattleGameSceneManager_TypeInfo */);
+    il2cpp_codegen_initialize_runtime_metadata(&qword_8D0DDC0 /* Method$System.Collections.Generic.List<RoleBehaviour>.get_Count() */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D0DDC8 /* Method$System.Collections.Generic.List<RoleBehaviour>.get_Item() */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&off_8CEB3E0 /* UnityEngine.Object_TypeInfo */);
+    byte_8FFD79E = 1;
+  }
+  *a2 = 0;
+  if ( a1 == 0 )
+LABEL_18:
+    il2cpp_codegen_raise_null_reference_exception();
+  if ( *(int *)(a1 + 24) >= 1 )
+  {
+    v12 = 0;
+    v13 = 3.4028e38;
+    do
+    {
+      Item = System_Collections_Generic_List_object___get_Item(a1, v12, qword_8D0DDC8 /* Method$System.Collections.Generic.List<RoleBehaviour>.get_Item() */);
+      if ( *((_DWORD *)off_8CE4A38 /* GameModule.BattleGameSceneManager_TypeInfo */ + 56) == 0 )
+        il2cpp_codegen_runtime_class_init(off_8CE4A38 /* GameModule.BattleGameSceneManager_TypeInfo */);
+      if ( GameModule_BattleGameSceneManager__IsRoleTargetValid(Item) )
+      {
+        if ( Item == 0 )
+          goto LABEL_18;
+        transform = UnityEngine_Component__get_transform(Item, 0);
+        if ( transform == 0 )
+          goto LABEL_18;
+        position = UnityEngine_Transform__get_position(transform, 0);
+        v19 = (float)((float)(a5 - v18) * (float)(a5 - v18))
+            + (float)((float)((float)(a3 - *(float *)&position) * (float)(a3 - *(float *)&position))
+                    + (float)((float)(a4 - v17) * (float)(a4 - v17)));
+        if ( v19 <= a6 && v19 < v13 )
+        {
+          v13 = v19;
+          *a2 = Item;
+        }
+      }
+      ++v12;
+    }
+    while ( (signed int)v12 < *(_DWORD *)(a1 + 24) );
+  }
+  v20 = *a2;
+  if ( *((_DWORD *)off_8CEB3E0 /* UnityEngine.Object_TypeInfo */ + 56) == 0 )
+    il2cpp_codegen_runtime_class_init(off_8CEB3E0 /* UnityEngine.Object_TypeInfo */);
+  return UnityEngine_Object__op_Inequality(v20, 0, 0);
+}

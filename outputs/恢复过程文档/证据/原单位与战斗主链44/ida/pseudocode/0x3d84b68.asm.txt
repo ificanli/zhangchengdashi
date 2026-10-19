@@ -1,0 +1,219 @@
+0x3d84b68: SUB             SP, SP, #0x80
+0x3d84b6c: STP             D9, D8, [SP,#0x80+var_40]
+0x3d84b70: STP             X30, X23, [SP,#0x80+var_30]
+0x3d84b74: STP             X22, X21, [SP,#0x80+var_20]
+0x3d84b78: STP             X20, X19, [SP,#0x80+var_10]
+0x3d84b7c: ADRP            X21, #byte_8FFD477@PAGE
+0x3d84b80: LDRB            W8, [X21,#byte_8FFD477@PAGEOFF]
+0x3d84b84: MOV             W20, W1
+0x3d84b88: MOV             X19, X0
+0x3d84b8c: TBNZ            W8, #0, loc_3D84BBC
+0x3d84b90: ADRP            X0, #off_8AD1370@PAGE
+0x3d84b94: LDR             X0, [X0,#off_8AD1370@PAGEOFF]; off_8CE44B0 ; slot
+0x3d84b98: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3d84b9c: ADRP            X0, #off_8AD1378@PAGE
+0x3d84ba0: LDR             X0, [X0,#off_8AD1378@PAGEOFF]; qword_8CE7ED0 ; slot
+0x3d84ba4: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3d84ba8: ADRP            X0, #off_8ACC8D0@PAGE
+0x3d84bac: LDR             X0, [X0,#off_8ACC8D0@PAGEOFF]; off_8CEB3E0 ; slot
+0x3d84bb0: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3d84bb4: MOV             W8, #1
+0x3d84bb8: STRB            W8, [X21,#byte_8FFD477@PAGEOFF]
+0x3d84bbc: MOV             X0, XZR
+0x3d84bc0: BL              Pathfinding.AstarWebGLRuntimeConfig$$get_UseWebGLNavigation
+0x3d84bc4: TBZ             W0, #0, loc_3D84BE0
+0x3d84bc8: ADD             X8, X19, #0x1E4
+0x3d84bcc: STR             XZR, [X19,#0x1D8]
+0x3d84bd0: STRB            WZR, [X19,#0x1E0]
+0x3d84bd4: STP             XZR, XZR, [X8,#8]
+0x3d84bd8: STR             XZR, [X8]
+0x3d84bdc: B               loc_3D84EC0
+0x3d84be0: LDRB            W8, [X19,#0x1E0]
+0x3d84be4: TBZ             W20, #0, loc_3D84C30
+0x3d84be8: CBNZ            W8, loc_3D84EC0
+0x3d84bec: ADRP            X21, #off_8ACC8D0@PAGE
+0x3d84bf0: LDR             X21, [X21,#off_8ACC8D0@PAGEOFF]; off_8CEB3E0
+0x3d84bf4: LDR             X20, [X19,#0x80]
+0x3d84bf8: LDR             X0, [X21]; klass
+0x3d84bfc: LDR             W8, [X0,#0xE0]
+0x3d84c00: CBNZ            W8, loc_3D84C08
+0x3d84c04: BL              il2cpp_codegen_runtime_class_init
+0x3d84c08: MOV             X0, X20
+0x3d84c0c: MOV             X1, XZR
+0x3d84c10: MOV             X2, XZR
+0x3d84c14: BL              UnityEngine.Object$$op_Inequality
+0x3d84c18: TBZ             W0, #0, loc_3D84DA0
+0x3d84c1c: LDR             X0, [X19,#0x80]
+0x3d84c20: CBZ             X0, loc_3D84ED8
+0x3d84c24: MOV             X1, XZR
+0x3d84c28: BL              Pathfinding.FollowerEntity$$get_radius
+0x3d84c2c: B               loc_3D84DB0
+0x3d84c30: CBZ             W8, loc_3D84EC0
+0x3d84c34: ADD             X8, X19, #0x1F4
+0x3d84c38: LDR             S0, [X19,#0x1F0]
+0x3d84c3c: ADRP            X20, #byte_8FFCFFD@PAGE
+0x3d84c40: LDR             D1, [X8]
+0x3d84c44: LDRB            W8, [X20,#byte_8FFCFFD@PAGEOFF]
+0x3d84c48: FADD            S9, S0, S0
+0x3d84c4c: FADD            V8.2S, V1.2S, V1.2S
+0x3d84c50: CBNZ            W8, loc_3D84C68
+0x3d84c54: ADRP            X0, #off_8ACC8F8@PAGE
+0x3d84c58: LDR             X0, [X0,#off_8ACC8F8@PAGEOFF]; off_8CEF3D8 ; slot
+0x3d84c5c: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3d84c60: MOV             W8, #1
+0x3d84c64: STRB            W8, [X20,#byte_8FFCFFD@PAGEOFF]
+0x3d84c68: ADRP            X8, #off_8ACC8F8@PAGE
+0x3d84c6c: LDR             X8, [X8,#off_8ACC8F8@PAGEOFF]; off_8CEF3D8
+0x3d84c70: LDR             X8, [X8]
+0x3d84c74: LDR             X8, [X8,#0xB8]
+0x3d84c78: LDR             S0, [X8]
+0x3d84c7c: LDUR            D1, [X8,#4]
+0x3d84c80: ADRP            X8, #dword_1836B00@PAGE
+0x3d84c84: LDR             S2, [X8,#dword_1836B00@PAGEOFF]
+0x3d84c88: FSUB            S0, S9, S0
+0x3d84c8c: FSUB            V1.2S, V8.2S, V1.2S
+0x3d84c90: FMUL            S0, S0, S0
+0x3d84c94: FMUL            V1.2S, V1.2S, V1.2S
+0x3d84c98: FADD            S0, S0, S1
+0x3d84c9c: DUP             S1, V1.S[1]
+0x3d84ca0: FADD            S0, S1, S0
+0x3d84ca4: FCMP            S0, S2
+0x3d84ca8: B.PL            loc_3D84CB8
+0x3d84cac: STR             XZR, [X19,#0x1D8]
+0x3d84cb0: STRB            WZR, [X19,#0x1E0]
+0x3d84cb4: B               loc_3D84EC0
+0x3d84cb8: ADRP            X8, #off_8AD1378@PAGE
+0x3d84cbc: LDR             X8, [X8,#off_8AD1378@PAGEOFF]; qword_8CE7ED0
+0x3d84cc0: ADD             X22, X19, #0x1E4
+0x3d84cc4: LDR             X9, [X22,#0x10]
+0x3d84cc8: LDR             Q0, [X22]
+0x3d84ccc: LDR             X0, [X8]
+0x3d84cd0: STR             X9, [SP,#0x80+var_70]
+0x3d84cd4: STR             Q0, [SP,#0x80+var_80]
+0x3d84cd8: BL              unk_3C3D4C4
+0x3d84cdc: MOV             X1, SP
+0x3d84ce0: MOV             X2, XZR
+0x3d84ce4: MOV             X20, X0
+0x3d84ce8: BL              Pathfinding.GraphUpdateObject$$.ctor
+0x3d84cec: CBZ             X20, loc_3D84ED8
+0x3d84cf0: MOV             W8, #0xC4653601
+0x3d84cf8: MOV             X0, XZR
+0x3d84cfc: STR             W8, [X20,#0x30]
+0x3d84d00: STRB            WZR, [X20,#0x28]
+0x3d84d04: BL              Pathfinding.AstarWebGLRuntimeConfig$$get_DisableAstarRuntime
+0x3d84d08: TBNZ            W0, #0, loc_3D84D8C
+0x3d84d0c: ADRP            X23, #off_8AD1370@PAGE
+0x3d84d10: LDR             X23, [X23,#off_8AD1370@PAGEOFF]; off_8CE44B0
+0x3d84d14: LDR             X0, [X23]; klass
+0x3d84d18: LDR             W8, [X0,#0xE0]
+0x3d84d1c: CBNZ            W8, loc_3D84D28
+0x3d84d20: BL              il2cpp_codegen_runtime_class_init
+0x3d84d24: LDR             X0, [X23]
+0x3d84d28: ADRP            X8, #off_8ACC8D0@PAGE
+0x3d84d2c: LDR             X8, [X8,#off_8ACC8D0@PAGEOFF]; off_8CEB3E0
+0x3d84d30: LDR             X9, [X0,#0xB8]
+0x3d84d34: LDR             X8, [X8]
+0x3d84d38: LDR             X21, [X9,#0x18]
+0x3d84d3c: LDR             W10, [X8,#0xE0]
+0x3d84d40: CBNZ            W10, loc_3D84D4C
+0x3d84d44: MOV             X0, X8; klass
+0x3d84d48: BL              il2cpp_codegen_runtime_class_init
+0x3d84d4c: MOV             X0, X21
+0x3d84d50: MOV             X1, XZR
+0x3d84d54: MOV             X2, XZR
+0x3d84d58: BL              UnityEngine.Object$$op_Inequality
+0x3d84d5c: TBZ             W0, #0, loc_3D84D8C
+0x3d84d60: LDR             X0, [X23]; klass
+0x3d84d64: LDR             W8, [X0,#0xE0]
+0x3d84d68: CBNZ            W8, loc_3D84D74
+0x3d84d6c: BL              il2cpp_codegen_runtime_class_init
+0x3d84d70: LDR             X0, [X23]
+0x3d84d74: LDR             X8, [X0,#0xB8]
+0x3d84d78: LDR             X0, [X8,#0x18]
+0x3d84d7c: CBZ             X0, loc_3D84ED8
+0x3d84d80: MOV             X1, X20
+0x3d84d84: MOV             X2, XZR
+0x3d84d88: BL              AstarPath$$UpdateGraphs
+0x3d84d8c: STR             XZR, [X19,#0x1D8]
+0x3d84d90: STRB            WZR, [X19,#0x1E0]
+0x3d84d94: STP             XZR, XZR, [X22]
+0x3d84d98: STR             XZR, [X22,#0x10]
+0x3d84d9c: B               loc_3D84EC0
+0x3d84da0: LDR             S0, [X19,#0x1C0]
+0x3d84da4: FMOV            S8, #0.5
+0x3d84da8: FCMP            S0, #0.0
+0x3d84dac: B.LE            loc_3D84DB4
+0x3d84db0: MOV             V8.16B, V0.16B
+0x3d84db4: MOV             X0, X19
+0x3d84db8: MOV             X1, XZR
+0x3d84dbc: BL              UnityEngine.Component$$get_transform
+0x3d84dc0: CBZ             X0, loc_3D84ED8
+0x3d84dc4: MOV             X1, XZR
+0x3d84dc8: FADD            S8, S8, S8
+0x3d84dcc: BL              UnityEngine.Transform$$get_position
+0x3d84dd0: STR             S0, [X19,#0x1E4]
+0x3d84dd4: ADRP            X9, #off_8AD1378@PAGE
+0x3d84dd8: LDR             X9, [X9,#off_8AD1378@PAGEOFF]; qword_8CE7ED0
+0x3d84ddc: FMOV            S3, #0.5
+0x3d84de0: ADD             X8, X19, #0x1E4
+0x3d84de4: FMUL            S0, S8, S3
+0x3d84de8: STP             S1, S2, [X8,#4]
+0x3d84dec: STR             S0, [X19,#0x1F0]
+0x3d84df0: STP             S0, S0, [X8,#0x10]
+0x3d84df4: LDR             Q0, [X8]
+0x3d84df8: LDR             X8, [X8,#0x10]
+0x3d84dfc: LDR             X0, [X9]
+0x3d84e00: STR             Q0, [SP,#0x80+var_60]
+0x3d84e04: STR             X8, [SP,#0x80+var_50]
+0x3d84e08: BL              unk_3C3D4C4
+0x3d84e0c: ADD             X1, SP, #0x80+var_60
+0x3d84e10: MOV             X2, XZR
+0x3d84e14: MOV             X20, X0
+0x3d84e18: BL              Pathfinding.GraphUpdateObject$$.ctor
+0x3d84e1c: CBZ             X20, loc_3D84ED8
+0x3d84e20: MOV             W8, #0x3B9AC9FF
+0x3d84e28: MOV             X0, XZR
+0x3d84e2c: STR             W8, [X20,#0x30]
+0x3d84e30: STRB            WZR, [X20,#0x28]
+0x3d84e34: BL              Pathfinding.AstarWebGLRuntimeConfig$$get_DisableAstarRuntime
+0x3d84e38: TBNZ            W0, #0, loc_3D84EC0
+0x3d84e3c: ADRP            X22, #off_8AD1370@PAGE
+0x3d84e40: LDR             X22, [X22,#off_8AD1370@PAGEOFF]; off_8CE44B0
+0x3d84e44: LDR             X0, [X22]; klass
+0x3d84e48: LDR             W8, [X0,#0xE0]
+0x3d84e4c: CBNZ            W8, loc_3D84E58
+0x3d84e50: BL              il2cpp_codegen_runtime_class_init
+0x3d84e54: LDR             X0, [X22]
+0x3d84e58: LDR             X8, [X21]
+0x3d84e5c: LDR             X9, [X0,#0xB8]
+0x3d84e60: LDR             W10, [X8,#0xE0]
+0x3d84e64: LDR             X21, [X9,#0x18]
+0x3d84e68: CBNZ            W10, loc_3D84E74
+0x3d84e6c: MOV             X0, X8; klass
+0x3d84e70: BL              il2cpp_codegen_runtime_class_init
+0x3d84e74: MOV             X0, X21
+0x3d84e78: MOV             X1, XZR
+0x3d84e7c: MOV             X2, XZR
+0x3d84e80: BL              UnityEngine.Object$$op_Inequality
+0x3d84e84: TBZ             W0, #0, loc_3D84EC0
+0x3d84e88: LDR             X0, [X22]; klass
+0x3d84e8c: LDR             W8, [X0,#0xE0]
+0x3d84e90: CBNZ            W8, loc_3D84E9C
+0x3d84e94: BL              il2cpp_codegen_runtime_class_init
+0x3d84e98: LDR             X0, [X22]
+0x3d84e9c: LDR             X8, [X0,#0xB8]
+0x3d84ea0: LDR             X0, [X8,#0x18]
+0x3d84ea4: CBZ             X0, loc_3D84ED8
+0x3d84ea8: MOV             X1, X20
+0x3d84eac: MOV             X2, XZR
+0x3d84eb0: BL              AstarPath$$UpdateGraphs
+0x3d84eb4: MOV             W8, #1
+0x3d84eb8: STR             X20, [X19,#0x1D8]
+0x3d84ebc: STRB            W8, [X19,#0x1E0]
+0x3d84ec0: LDP             X20, X19, [SP,#0x80+var_10]
+0x3d84ec4: LDP             X22, X21, [SP,#0x80+var_20]
+0x3d84ec8: LDP             X30, X23, [SP,#0x80+var_30]
+0x3d84ecc: LDP             D9, D8, [SP,#0x80+var_40]
+0x3d84ed0: ADD             SP, SP, #0x80
+0x3d84ed4: RET
+0x3d84ed8: BL              il2cpp_codegen_raise_null_reference_exception

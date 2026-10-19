@@ -1,0 +1,132 @@
+0x3d831f4: SUB             SP, SP, #0x50
+0x3d831f8: STP             X30, X25, [SP,#0x50+var_40]
+0x3d831fc: STP             X24, X23, [SP,#0x50+var_30]
+0x3d83200: STP             X22, X21, [SP,#0x50+var_20]
+0x3d83204: STP             X20, X19, [SP,#0x50+var_10]
+0x3d83208: ADRP            X21, #byte_8FFD460@PAGE
+0x3d8320c: LDRB            W8, [X21,#byte_8FFD460@PAGEOFF]
+0x3d83210: MOV             W20, W1
+0x3d83214: MOV             X19, X0
+0x3d83218: TBNZ            W8, #0, loc_3D83254
+0x3d8321c: ADRP            X0, #off_8AD1298@PAGE
+0x3d83220: LDR             X0, [X0,#off_8AD1298@PAGEOFF]; qword_8CE7B28 ; slot
+0x3d83224: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3d83228: ADRP            X0, #off_8AD12A0@PAGE
+0x3d8322c: LDR             X0, [X0,#off_8AD12A0@PAGEOFF]; qword_8D0EBD8 ; slot
+0x3d83230: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3d83234: ADRP            X0, #off_8AD12A8@PAGE
+0x3d83238: LDR             X0, [X0,#off_8AD12A8@PAGEOFF]; qword_8D0EBE0 ; slot
+0x3d8323c: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3d83240: ADRP            X0, #off_8AD1338@PAGE
+0x3d83244: LDR             X0, [X0,#off_8AD1338@PAGEOFF]; qword_8D1C460 ; slot
+0x3d83248: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3d8324c: MOV             W8, #1
+0x3d83250: STRB            W8, [X21,#byte_8FFD460@PAGEOFF]
+0x3d83254: ADRP            X21, #off_8AD1298@PAGE
+0x3d83258: ADRP            X25, #off_8AD12A8@PAGE
+0x3d8325c: ADRP            X24, #off_8AD1338@PAGE
+0x3d83260: LDR             X8, [X19,#0x168]
+0x3d83264: LDR             X21, [X21,#off_8AD1298@PAGEOFF]; qword_8CE7B28
+0x3d83268: LDR             X25, [X25,#off_8AD12A8@PAGEOFF]; qword_8D0EBE0
+0x3d8326c: LDR             X24, [X24,#off_8AD1338@PAGEOFF]; qword_8D1C460
+0x3d83270: CBZ             X8, loc_3D83304
+0x3d83274: LDR             X22, [X19,#0x170]
+0x3d83278: MOV             X0, X19
+0x3d8327c: BL              GameModule.RoleBehaviour$$GetNearOneMTeamMate
+0x3d83280: LDR             X8, [X21]
+0x3d83284: MOV             X23, X0
+0x3d83288: MOV             X0, X8
+0x3d8328c: BL              unk_3C3D4C4
+0x3d83290: SCVTF           S0, W20
+0x3d83294: FMOV            S1, WZR
+0x3d83298: MOV             X1, X19
+0x3d8329c: MOV             X2, X22
+0x3d832a0: MOV             X3, X23
+0x3d832a4: MOV             W4, WZR
+0x3d832a8: MOV             X5, XZR
+0x3d832ac: MOV             X6, XZR
+0x3d832b0: MOV             X21, X0
+0x3d832b4: BL              GameModule.GameEventArgs$$.ctor
+0x3d832b8: LDR             X0, [X19,#0x168]
+0x3d832bc: CBZ             X0, loc_3D83400
+0x3d832c0: MOV             W20, WZR
+0x3d832c4: LDR             W8, [X0,#0x18]
+0x3d832c8: CMP             W20, W8
+0x3d832cc: B.GE            loc_3D8339C
+0x3d832d0: LDR             X2, [X25]
+0x3d832d4: MOV             W1, W20
+0x3d832d8: BL              System.Collections.Generic.List_object_$$get_Item
+0x3d832dc: CBZ             X0, loc_3D83400
+0x3d832e0: LDR             X8, [X0]
+0x3d832e4: MOV             W1, #1
+0x3d832e8: MOV             X2, X21
+0x3d832ec: LDP             X9, X3, [X8,#0x188]
+0x3d832f0: BLR             X9
+0x3d832f4: LDR             X0, [X19,#0x168]
+0x3d832f8: ADD             W20, W20, #1
+0x3d832fc: CBNZ            X0, loc_3D832C4
+0x3d83300: B               loc_3D83400
+0x3d83304: LDR             X8, [X19,#0x160]
+0x3d83308: CBZ             X8, loc_3D833E8
+0x3d8330c: LDR             X22, [X19,#0x170]
+0x3d83310: MOV             X0, X19
+0x3d83314: BL              GameModule.RoleBehaviour$$GetNearOneMTeamMate
+0x3d83318: LDR             X8, [X21]
+0x3d8331c: MOV             X23, X0
+0x3d83320: MOV             X0, X8
+0x3d83324: BL              unk_3C3D4C4
+0x3d83328: SCVTF           S0, W20
+0x3d8332c: FMOV            S1, WZR
+0x3d83330: MOV             X1, X19
+0x3d83334: MOV             X2, X22
+0x3d83338: MOV             X3, X23
+0x3d8333c: MOV             W4, WZR
+0x3d83340: MOV             X5, XZR
+0x3d83344: MOV             X6, XZR
+0x3d83348: MOV             X21, X0
+0x3d8334c: BL              GameModule.GameEventArgs$$.ctor
+0x3d83350: LDR             X0, [X19,#0x160]
+0x3d83354: CBZ             X0, loc_3D83400
+0x3d83358: MOV             W20, WZR
+0x3d8335c: LDR             W8, [X0,#0x18]
+0x3d83360: CMP             W20, W8
+0x3d83364: B.GE            loc_3D8339C
+0x3d83368: LDR             X2, [X25]
+0x3d8336c: MOV             W1, W20
+0x3d83370: BL              System.Collections.Generic.List_object_$$get_Item
+0x3d83374: CBZ             X0, loc_3D83400
+0x3d83378: LDR             X8, [X0]
+0x3d8337c: MOV             W1, #1
+0x3d83380: MOV             X2, X21
+0x3d83384: LDP             X9, X3, [X8,#0x188]
+0x3d83388: BLR             X9
+0x3d8338c: LDR             X0, [X19,#0x160]
+0x3d83390: ADD             W20, W20, #1
+0x3d83394: CBNZ            X0, loc_3D8335C
+0x3d83398: B               loc_3D83400
+0x3d8339c: CBZ             X21, loc_3D83400
+0x3d833a0: LDP             S1, S0, [X21,#0x30]
+0x3d833a4: MOV             W8, #0x7F800000
+0x3d833a8: LDR             X2, [X24]
+0x3d833ac: FMOV            S2, W8
+0x3d833b0: FCVTZS          W8, S1
+0x3d833b4: FCMP            S1, S2
+0x3d833b8: MOV             W9, #0x80000000
+0x3d833bc: STR             XZR, [SP,#0x50+var_48]
+0x3d833c0: CSEL            W1, W9, W8, EQ
+0x3d833c4: ADD             X0, SP, #0x50+var_48
+0x3d833c8: BL              System.ValueTuple_int__float_$$.ctor
+0x3d833cc: LDR             X0, [SP,#0x50+var_48]
+0x3d833d0: LDP             X20, X19, [SP,#0x50+var_10]
+0x3d833d4: LDP             X22, X21, [SP,#0x50+var_20]
+0x3d833d8: LDP             X24, X23, [SP,#0x50+var_30]
+0x3d833dc: LDP             X30, X25, [SP,#0x50+var_40]
+0x3d833e0: ADD             SP, SP, #0x50 ; 'P'
+0x3d833e4: RET
+0x3d833e8: LDR             X2, [X24]
+0x3d833ec: ADD             X0, SP, #0x50+var_48
+0x3d833f0: FMOV            S0, WZR
+0x3d833f4: MOV             W1, W20
+0x3d833f8: STR             XZR, [SP,#0x50+var_48]
+0x3d833fc: B               loc_3D833C8
+0x3d83400: BL              il2cpp_codegen_raise_null_reference_exception

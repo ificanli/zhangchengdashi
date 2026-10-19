@@ -1,0 +1,49 @@
+0x3d7fc94: STP             X30, X21, [SP,#var_20]!
+0x3d7fc98: STP             X20, X19, [SP,#0x20+var_10]
+0x3d7fc9c: ADRP            X21, #byte_8FFD470@PAGE
+0x3d7fca0: LDRB            W8, [X21,#byte_8FFD470@PAGEOFF]
+0x3d7fca4: MOV             W20, W1
+0x3d7fca8: MOV             X19, X0
+0x3d7fcac: TBNZ            W8, #0, loc_3D7FCD0
+0x3d7fcb0: ADRP            X0, #off_8ACDF88@PAGE
+0x3d7fcb4: LDR             X0, [X0,#off_8ACDF88@PAGEOFF]; qword_8D17890 ; slot
+0x3d7fcb8: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3d7fcbc: ADRP            X0, #off_8ACDF78@PAGE
+0x3d7fcc0: LDR             X0, [X0,#off_8ACDF78@PAGEOFF]; off_8CE1928 ; slot
+0x3d7fcc4: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3d7fcc8: MOV             W8, #1
+0x3d7fccc: STRB            W8, [X21,#byte_8FFD470@PAGEOFF]
+0x3d7fcd0: MOV             X0, XZR
+0x3d7fcd4: BL              Pathfinding.AstarWebGLRuntimeConfig$$get_UseWebGLNavigation
+0x3d7fcd8: TBNZ            W0, #0, loc_3D7FD14
+0x3d7fcdc: ADRP            X8, #off_8ACDF78@PAGE
+0x3d7fce0: LDR             X8, [X8,#off_8ACDF78@PAGEOFF]; off_8CE1928
+0x3d7fce4: LDR             X0, [X8]; klass
+0x3d7fce8: LDR             W8, [X0,#0xE0]
+0x3d7fcec: CBNZ            W8, loc_3D7FCF4
+0x3d7fcf0: BL              il2cpp_codegen_runtime_class_init
+0x3d7fcf4: ADRP            X8, #off_8ACDF88@PAGE
+0x3d7fcf8: LDR             X8, [X8,#off_8ACDF88@PAGEOFF]; qword_8D17890
+0x3d7fcfc: LDR             X0, [X8]
+0x3d7fd00: BL              QuickTutor.Singleton_object_$$get_Instance
+0x3d7fd04: CBZ             X0, loc_3D7FD54
+0x3d7fd08: MOV             X1, XZR
+0x3d7fd0c: BL              SDKModule.ABTestManager$$get_UnitCollisionEnableIsBTest
+0x3d7fd10: TBZ             W0, #0, loc_3D7FD28
+0x3d7fd14: MOV             W8, #1
+0x3d7fd18: STRB            W8, [X19,#0x150]
+0x3d7fd1c: LDP             X20, X19, [SP,#0x20+var_10]
+0x3d7fd20: LDP             X30, X21, [SP+0x20+var_20],#0x20
+0x3d7fd24: RET
+0x3d7fd28: CMP             W20, #0x5DD
+0x3d7fd2c: B.GE            loc_3D7FD3C
+0x3d7fd30: CMP             W20, #0x15
+0x3d7fd34: B.LT            loc_3D7FD14
+0x3d7fd38: TBNZ            W20, #0, loc_3D7FD14
+0x3d7fd3c: STRB            WZR, [X19,#0x150]
+0x3d7fd40: MOV             X0, X19
+0x3d7fd44: LDP             X20, X19, [SP,#0x20+var_10]
+0x3d7fd48: MOV             W1, WZR
+0x3d7fd4c: LDP             X30, X21, [SP+0x20+var_20],#0x20
+0x3d7fd50: B               GameModule.RoleBehaviour$$SetAiEnableLocalAvoidance
+0x3d7fd54: BL              il2cpp_codegen_raise_null_reference_exception

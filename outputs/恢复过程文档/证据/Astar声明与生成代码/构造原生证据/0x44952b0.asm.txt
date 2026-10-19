@@ -1,0 +1,39 @@
+0x44952b0: SUB             SP, SP, #0xB0
+0x44952b4: STR             X30, [SP,#0xB0+var_30]
+0x44952b8: STP             X22, X21, [SP,#0xB0+var_20]
+0x44952bc: STP             X20, X19, [SP,#0xB0+var_10]
+0x44952c0: ADRP            X22, #byte_9000E98@PAGE
+0x44952c4: ADRP            X21, #off_8AFDD80@PAGE
+0x44952c8: LDRB            W8, [X22,#byte_9000E98@PAGEOFF]
+0x44952cc: LDR             X21, [X21,#off_8AFDD80@PAGEOFF]; off_8CE7EC8
+0x44952d0: MOV             X20, X1
+0x44952d4: MOV             X19, X0
+0x44952d8: TBNZ            W8, #0, loc_44952F0
+0x44952dc: ADRP            X0, #off_8AFDD80@PAGE
+0x44952e0: LDR             X0, [X0,#off_8AFDD80@PAGEOFF]; off_8CE7EC8 ; slot
+0x44952e4: BL              il2cpp_codegen_initialize_runtime_metadata
+0x44952e8: MOV             W8, #1
+0x44952ec: STRB            W8, [X22,#byte_9000E98@PAGEOFF]
+0x44952f0: LDP             Q0, Q1, [X20,#0x20]
+0x44952f4: LDP             Q2, Q3, [X20]
+0x44952f8: LDR             X0, [X21]; klass
+0x44952fc: STP             Q0, Q1, [SP,#0xB0+var_90]
+0x4495300: STP             Q2, Q3, [SP,#0xB0+var_B0]
+0x4495304: LDR             W8, [X0,#0xE0]
+0x4495308: CBNZ            W8, loc_4495310
+0x449530c: BL              il2cpp_codegen_runtime_class_init
+0x4495310: MOV             X0, X19
+0x4495314: MOV             X1, XZR
+0x4495318: BL              System.Object$$.ctor
+0x449531c: LDP             Q0, Q1, [SP,#0xB0+var_B0]
+0x4495320: LDP             Q2, Q3, [SP,#0xB0+var_90]
+0x4495324: ADD             X1, SP, #0xB0+var_70
+0x4495328: MOV             X0, X19
+0x449532c: STP             Q0, Q1, [SP,#0xB0+var_70]
+0x4495330: STP             Q2, Q3, [SP,#0xB0+var_50]
+0x4495334: BL              Pathfinding.Util.GraphTransform$$Set
+0x4495338: LDP             X20, X19, [SP,#0xB0+var_10]
+0x449533c: LDP             X22, X21, [SP,#0xB0+var_20]
+0x4495340: LDR             X30, [SP,#0xB0+var_30]
+0x4495344: ADD             SP, SP, #0xB0
+0x4495348: RET

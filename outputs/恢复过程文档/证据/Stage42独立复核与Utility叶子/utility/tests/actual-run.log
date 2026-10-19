@@ -1,0 +1,10 @@
+PASS typed null name returns original FullName reference
+PASS typed empty name returns original FullName reference
+PASS typed named keys retain exact punctuation whitespace unicode and format braces
+PASS generic uses typeof T for value reference nested and constructed generic types
+PASS generic parameter FullName null is returned for unnamed key
+PASS FullName getter executes once before name branch
+PASS null type throws original NullReferenceException even for unnamed key
+PASS FullName getter exception propagates before name branch
+PASS nonempty type with empty FullName preserves original period behavior
+RESULT scenarios=9 checks=43 failures=0

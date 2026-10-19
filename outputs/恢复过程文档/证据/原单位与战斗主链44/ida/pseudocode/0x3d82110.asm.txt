@@ -1,0 +1,36 @@
+0x3d82110: STR             X30, [SP,#var_20]!
+0x3d82114: STP             X20, X19, [SP,#0x20+var_10]
+0x3d82118: ADRP            X20, #byte_8FFD45C@PAGE
+0x3d8211c: LDRB            W8, [X20,#byte_8FFD45C@PAGEOFF]
+0x3d82120: MOV             X19, X0
+0x3d82124: TBNZ            W8, #0, loc_3D8213C
+0x3d82128: ADRP            X0, #off_8ACFAA0@PAGE
+0x3d8212c: LDR             X0, [X0,#off_8ACFAA0@PAGEOFF]; off_8CECB08 ; slot
+0x3d82130: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3d82134: MOV             W8, #1
+0x3d82138: STRB            W8, [X20,#byte_8FFD45C@PAGEOFF]
+0x3d8213c: LDR             X1, [X19,#0x58]
+0x3d82140: CBZ             X1, loc_3D82178
+0x3d82144: ADRP            X8, #off_8ACFAA0@PAGE
+0x3d82148: LDR             X8, [X8,#off_8ACFAA0@PAGEOFF]; off_8CECB08
+0x3d8214c: LDR             X9, [X1]
+0x3d82150: LDR             X8, [X8]
+0x3d82154: LDRB            W11, [X9,#0x130]
+0x3d82158: LDRB            W10, [X8,#0x130]
+0x3d8215c: CMP             W11, W10
+0x3d82160: B.CC            loc_3D82178
+0x3d82164: LDR             X9, [X9,#0xC8]
+0x3d82168: ADD             X9, X9, X10,LSL#3
+0x3d8216c: LDUR            X9, [X9,#-8]
+0x3d82170: CMP             X9, X8
+0x3d82174: B.EQ            loc_3D82190
+0x3d82178: MOV             W8, #0xFFFFFFFF
+0x3d8217c: STR             XZR, [X19,#0x118]
+0x3d82180: STR             W8, [X19,#0x120]
+0x3d82184: LDP             X20, X19, [SP,#0x20+var_10]
+0x3d82188: LDR             X30, [SP+0x20+var_20],#0x20
+0x3d8218c: RET
+0x3d82190: MOV             X0, X19
+0x3d82194: LDP             X20, X19, [SP,#0x20+var_10]
+0x3d82198: LDR             X30, [SP+0x20+var_20],#0x20
+0x3d8219c: B               GameModule.RoleBehaviour$$UpdateRoleTargetHexDistance

@@ -1,0 +1,19 @@
+0x3d7b190: STR             X30, [SP,#var_10]!
+0x3d7b194: LDR             X8, [X0,#0x40]
+0x3d7b198: CBZ             X8, loc_3D7B1D8
+0x3d7b19c: LDP             W9, W8, [X8,#0x18]
+0x3d7b1a0: CMP             W9, W8
+0x3d7b1a4: B.NE            loc_3D7B1B0
+0x3d7b1a8: LDR             X30, [SP+0x10+var_10],#0x10
+0x3d7b1ac: RET
+0x3d7b1b0: SCVTF           S1, W8
+0x3d7b1b4: MOV             W8, #0x7F800000
+0x3d7b1b8: FMUL            S0, S1, S0
+0x3d7b1bc: FMOV            S1, W8
+0x3d7b1c0: FCVTZS          W8, S0
+0x3d7b1c4: FCMP            S0, S1
+0x3d7b1c8: MOV             W9, #0x80000000
+0x3d7b1cc: CSEL            W1, W9, W8, EQ
+0x3d7b1d0: LDR             X30, [SP+0x10+var_10],#0x10
+0x3d7b1d4: B               GameModule.RoleBehaviour$$AddHp
+0x3d7b1d8: BL              il2cpp_codegen_raise_null_reference_exception

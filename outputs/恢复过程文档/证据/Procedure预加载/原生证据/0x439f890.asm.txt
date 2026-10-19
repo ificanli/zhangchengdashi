@@ -1,0 +1,66 @@
+0x439f890: STR             X30, [SP,#var_30]!
+0x439f894: STP             X22, X21, [SP,#0x30+var_20]
+0x439f898: STP             X20, X19, [SP,#0x30+var_10]
+0x439f89c: ADRP            X21, #byte_90008C6@PAGE
+0x439f8a0: ADRP            X20, #off_8ACC8C8@PAGE
+0x439f8a4: LDRB            W8, [X21,#byte_90008C6@PAGEOFF]
+0x439f8a8: LDR             X20, [X20,#off_8ACC8C8@PAGEOFF]; off_8CE64E8
+0x439f8ac: MOV             X19, X0
+0x439f8b0: TBNZ            W8, #0, loc_439F8EC
+0x439f8b4: ADRP            X0, #off_8ACD660@PAGE
+0x439f8b8: LDR             X0, [X0,#off_8ACD660@PAGEOFF]; off_8D1D5E8 ; slot
+0x439f8bc: BL              il2cpp_codegen_initialize_runtime_metadata
+0x439f8c0: ADRP            X0, #off_8ACC8C8@PAGE
+0x439f8c4: LDR             X0, [X0,#off_8ACC8C8@PAGEOFF]; off_8CE64E8 ; slot
+0x439f8c8: BL              il2cpp_codegen_initialize_runtime_metadata
+0x439f8cc: ADRP            X0, #off_8AF49C8@PAGE
+0x439f8d0: LDR             X0, [X0,#off_8AF49C8@PAGEOFF]; qword_8D061A8 ; slot
+0x439f8d4: BL              il2cpp_codegen_initialize_runtime_metadata
+0x439f8d8: ADRP            X0, #off_8AF49D0@PAGE
+0x439f8dc: LDR             X0, [X0,#off_8AF49D0@PAGEOFF]; qword_8D89430 ; slot
+0x439f8e0: BL              il2cpp_codegen_initialize_runtime_metadata
+0x439f8e4: MOV             W8, #1
+0x439f8e8: STRB            W8, [X21,#byte_90008C6@PAGEOFF]
+0x439f8ec: ADRP            X22, #off_8AF49D0@PAGE
+0x439f8f0: ADRP            X21, #off_8ACD660@PAGE
+0x439f8f4: LDR             X22, [X22,#off_8AF49D0@PAGEOFF]; qword_8D89430
+0x439f8f8: LDR             X21, [X21,#off_8ACD660@PAGEOFF]; off_8D1D5E8
+0x439f8fc: MOV             X0, X19
+0x439f900: BL              ljzs_lt.Procedure.ProcedurePreLoad$$PreLoadAsync
+0x439f904: LDR             X0, [X20]; klass
+0x439f908: LDR             W8, [X0,#0xE0]
+0x439f90c: CBNZ            W8, loc_439F914
+0x439f910: BL              il2cpp_codegen_runtime_class_init
+0x439f914: LDR             X0, [X22]
+0x439f918: MOV             X1, XZR
+0x439f91c: BL              UnityEngine.Debug$$Log
+0x439f920: LDR             X21, [X21]
+0x439f924: LDR             X20, [X19,#0x18]
+0x439f928: LDR             X8, [X21,#0x38]
+0x439f92c: CBNZ            X8, loc_439F93C
+0x439f930: MOV             X0, X21
+0x439f934: BL              unk_3C503FC
+0x439f938: LDR             X8, [X21,#0x38]
+0x439f93c: LDR             X0, [X8,#0x10]
+0x439f940: LDRB            W8, [X0,#0x135]
+0x439f944: TBNZ            W8, #0, loc_439F94C
+0x439f948: BL              unk_3C503A0
+0x439f94c: LDR             W8, [X0,#0xE0]
+0x439f950: CBNZ            W8, loc_439F958
+0x439f954: BL              il2cpp_codegen_runtime_class_init
+0x439f958: LDR             X8, [X21,#0x38]
+0x439f95c: ADRP            X21, #off_8AF49C8@PAGE
+0x439f960: LDR             X0, [X8,#0x10]
+0x439f964: LDRB            W8, [X0,#0x135]
+0x439f968: LDR             X21, [X21,#off_8AF49C8@PAGEOFF]; qword_8D061A8
+0x439f96c: TBNZ            W8, #0, loc_439F974
+0x439f970: BL              unk_3C503A0
+0x439f974: LDR             X8, [X0,#0xB8]
+0x439f978: LDR             X3, [X21]
+0x439f97c: MOV             X0, X19
+0x439f980: MOV             X1, X20
+0x439f984: LDR             X2, [X8]
+0x439f988: LDP             X20, X19, [SP,#0x30+var_10]
+0x439f98c: LDP             X22, X21, [SP,#0x30+var_20]
+0x439f990: LDR             X30, [SP+0x30+var_30],#0x30
+0x439f994: B               GameFramework.Fsm.FsmState_object_$$ChangeState_object_

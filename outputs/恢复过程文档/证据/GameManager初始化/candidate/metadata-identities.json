@@ -1,0 +1,1789 @@
+[
+  {
+    "type": "GameModule.GameManager",
+    "token": "0x02000464",
+    "baseType": "ToolModule.ManagerBase\u00601\u003CGameModule.GameManager\u003E",
+    "attributes": "Public, BeforeFieldInit",
+    "fields": [
+      {
+        "Name": "InitComplete",
+        "type": "System.Boolean",
+        "IsStatic": false,
+        "Offset": 32,
+        "token": "0x04002AC4"
+      },
+      {
+        "Name": "_isFirstThroghGame",
+        "type": "System.Boolean",
+        "IsStatic": false,
+        "Offset": 33,
+        "token": "0x04002AC5"
+      },
+      {
+        "Name": "updateController",
+        "type": "GameModule.UpdateController",
+        "IsStatic": false,
+        "Offset": 40,
+        "token": "0x04002AC6"
+      },
+      {
+        "Name": "APostProcess",
+        "type": "UnityEngine.GameObject",
+        "IsStatic": false,
+        "Offset": 48,
+        "token": "0x04002AC7"
+      },
+      {
+        "Name": "BPostProcess",
+        "type": "UnityEngine.GameObject",
+        "IsStatic": false,
+        "Offset": 56,
+        "token": "0x04002AC8"
+      },
+      {
+        "Name": "canPushGiftPackTimer",
+        "type": "TimeModuleO.TimeManager\u002BTimer",
+        "IsStatic": false,
+        "Offset": 64,
+        "token": "0x04002AC9"
+      },
+      {
+        "Name": "pushGiftPackCutDownTimer",
+        "type": "TimeModuleO.TimeManager\u002BTimer",
+        "IsStatic": false,
+        "Offset": 72,
+        "token": "0x04002ACA"
+      },
+      {
+        "Name": "pushGiftPackCdTimer",
+        "type": "TimeModuleO.TimeManager\u002BTimer",
+        "IsStatic": false,
+        "Offset": 80,
+        "token": "0x04002ACB"
+      },
+      {
+        "Name": "onGameManagerInitComplete",
+        "type": "System.Action",
+        "IsStatic": false,
+        "Offset": 88,
+        "token": "0x04002ACC"
+      },
+      {
+        "Name": "showNoInternetPanel",
+        "type": "System.Boolean",
+        "IsStatic": false,
+        "Offset": 96,
+        "token": "0x04002ACD"
+      },
+      {
+        "Name": "_cheatGamePaused",
+        "type": "System.Boolean",
+        "IsStatic": false,
+        "Offset": 97,
+        "token": "0x04002ACE"
+      },
+      {
+        "Name": "monthPass",
+        "type": "TimeModuleO.TimeManager\u002BTimer",
+        "IsStatic": false,
+        "Offset": 104,
+        "token": "0x04002ACF"
+      },
+      {
+        "Name": "closeLoadPanel",
+        "type": "System.Boolean",
+        "IsStatic": false,
+        "Offset": 112,
+        "token": "0x04002AD0"
+      }
+    ],
+    "methods": [
+      {
+        "Name": "Init",
+        "signature": "Cysharp.Threading.Tasks.UniTask GameModule.GameManager::Init()",
+        "IsStatic": false,
+        "token": "0x0600157A",
+        "address": "0x3E197C0"
+      },
+      {
+        "Name": "RegisterOnGameManagerInitComplete",
+        "signature": "System.Void GameModule.GameManager::RegisterOnGameManagerInitComplete(System.Action action)",
+        "IsStatic": false,
+        "token": "0x0600157B",
+        "address": "0x3E1984C"
+      },
+      {
+        "Name": "Update",
+        "signature": "System.Void GameModule.GameManager::Update()",
+        "IsStatic": false,
+        "token": "0x0600157C",
+        "address": "0x3E198F0"
+      },
+      {
+        "Name": "CheckNetworkState",
+        "signature": "System.Collections.IEnumerator GameModule.GameManager::CheckNetworkState()",
+        "IsStatic": false,
+        "token": "0x0600157D",
+        "address": "0x3E19928"
+      },
+      {
+        "Name": "PauseGame",
+        "signature": "System.Void GameModule.GameManager::PauseGame()",
+        "IsStatic": false,
+        "token": "0x0600157E",
+        "address": "0x3E199B0"
+      },
+      {
+        "Name": "ResumeGame",
+        "signature": "System.Void GameModule.GameManager::ResumeGame()",
+        "IsStatic": false,
+        "token": "0x0600157F",
+        "address": "0x3E19AB8"
+      },
+      {
+        "Name": "CheckMonthPass",
+        "signature": "System.Void GameModule.GameManager::CheckMonthPass()",
+        "IsStatic": false,
+        "token": "0x06001580",
+        "address": "0x3E19924"
+      },
+      {
+        "Name": "StartCoreGame",
+        "signature": "System.Void GameModule.GameManager::StartCoreGame(System.Object obj)",
+        "IsStatic": false,
+        "token": "0x06001581",
+        "address": "0x3E19BC0"
+      },
+      {
+        "Name": "EnterMeta",
+        "signature": "System.Void GameModule.GameManager::EnterMeta(System.Object obj)",
+        "IsStatic": false,
+        "token": "0x06001582",
+        "address": "0x3E19D38"
+      },
+      {
+        "Name": "RegisterOnTimeToZero",
+        "signature": "System.Void GameModule.GameManager::RegisterOnTimeToZero()",
+        "IsStatic": false,
+        "token": "0x06001583",
+        "address": "0x3E19DC4"
+      },
+      {
+        "Name": "RegisterOnTimeToMonDayZero",
+        "signature": "System.Void GameModule.GameManager::RegisterOnTimeToMonDayZero()",
+        "IsStatic": false,
+        "token": "0x06001584",
+        "address": "0x3E1A2C4"
+      },
+      {
+        "Name": "DanChangeUpdateInfo",
+        "signature": "System.Void GameModule.GameManager::DanChangeUpdateInfo(System.Object o)",
+        "IsStatic": false,
+        "token": "0x06001585",
+        "address": "0x3E1A5B8"
+      },
+      {
+        "Name": "ShowCardProbabilityPanel",
+        "signature": "System.Void GameModule.GameManager::ShowCardProbabilityPanel(System.Object o)",
+        "IsStatic": false,
+        "token": "0x06001586",
+        "address": "0x3E1A608"
+      },
+      {
+        "Name": "CardSteerEnd",
+        "signature": "System.Void GameModule.GameManager::CardSteerEnd(System.Object o)",
+        "IsStatic": false,
+        "token": "0x06001587",
+        "address": "0x3E1A690"
+      },
+      {
+        "Name": "ShowConfirmPanel",
+        "signature": "System.Void GameModule.GameManager::ShowConfirmPanel(System.String titleStr, System.String contentStr, System.String buttonTextStr, System.Boolean canCancelPanel, System.Action\u00601\u003CSystem.Boolean\u003E onClick)",
+        "IsStatic": false,
+        "token": "0x06001588",
+        "address": "0x3E1A694"
+      },
+      {
+        "Name": "FetterSteerEnd",
+        "signature": "System.Void GameModule.GameManager::FetterSteerEnd(System.Object o)",
+        "IsStatic": false,
+        "token": "0x06001589",
+        "address": "0x3E1A864"
+      },
+      {
+        "Name": "CloseLoadPanel",
+        "signature": "System.Void GameModule.GameManager::CloseLoadPanel(System.Object o)",
+        "IsStatic": false,
+        "token": "0x0600158A",
+        "address": "0x3E1A918"
+      },
+      {
+        "Name": "LoadEnd",
+        "signature": "System.Void GameModule.GameManager::LoadEnd(System.Object o)",
+        "IsStatic": false,
+        "token": "0x0600158B",
+        "address": "0x3E1A9EC"
+      },
+      {
+        "Name": ".ctor",
+        "signature": "System.Void GameModule.GameManager::.ctor()",
+        "IsStatic": false,
+        "token": "0x0600158C",
+        "address": "0x3E1AA70"
+      }
+    ]
+  },
+  {
+    "type": "GameModule.BattleContext",
+    "token": "0x02000442",
+    "baseType": "System.Object",
+    "attributes": "Public, BeforeFieldInit",
+    "fields": [
+      {
+        "Name": "showFoundEnemyPageOne",
+        "type": "System.Boolean",
+        "IsStatic": false,
+        "Offset": 16,
+        "token": "0x04002A0D"
+      },
+      {
+        "Name": "enemyDataCofig",
+        "type": "GameModule.EnemyBattleDataCofig",
+        "IsStatic": false,
+        "Offset": 24,
+        "token": "0x04002A0E"
+      },
+      {
+        "Name": "rewardConfigCallBack",
+        "type": "System.Func\u00602\u003CSystem.Boolean, GameModule.RewardConfig\u003E",
+        "IsStatic": false,
+        "Offset": 32,
+        "token": "0x04002A0F"
+      },
+      {
+        "Name": "rewardConfig",
+        "type": "GameModule.RewardConfig",
+        "IsStatic": false,
+        "Offset": 40,
+        "token": "0x04002A10"
+      },
+      {
+        "Name": "gameEndCallBack",
+        "type": "UnityEngine.Events.UnityAction\u00601\u003CSystem.Boolean\u003E",
+        "IsStatic": false,
+        "Offset": 48,
+        "token": "0x04002A11"
+      },
+      {
+        "Name": "gameEndApplyRewardCallBack",
+        "type": "UnityEngine.Events.UnityAction\u00601\u003CSystem.Boolean\u003E",
+        "IsStatic": false,
+        "Offset": 56,
+        "token": "0x04002A12"
+      },
+      {
+        "Name": "GameType",
+        "type": "GameModule.GameType",
+        "IsStatic": false,
+        "Offset": 64,
+        "token": "0x04002A13"
+      },
+      {
+        "Name": "selectedSubGameBuffIds",
+        "type": "System.Collections.Generic.List\u00601\u003CSystem.Int32\u003E",
+        "IsStatic": false,
+        "Offset": 72,
+        "token": "0x04002A14"
+      },
+      {
+        "Name": "returnToSubGameChaosTrailsPanel",
+        "type": "System.Boolean",
+        "IsStatic": false,
+        "Offset": 80,
+        "token": "0x04002A15"
+      },
+      {
+        "Name": "isHadCalc",
+        "type": "System.Boolean",
+        "IsStatic": false,
+        "Offset": 81,
+        "token": "0x04002A16"
+      }
+    ],
+    "methods": null
+  },
+  {
+    "type": "GameModule.BattleGameManager",
+    "token": "0x0200041B",
+    "baseType": "ToolModule.ManagerBase\u00601\u003CGameModule.BattleGameManager\u003E",
+    "attributes": "Public, BeforeFieldInit",
+    "fields": [
+      {
+        "Name": "_pausedRoleAnimationSnapshots",
+        "type": "System.Collections.Generic.Dictionary\u00602\u003CSystem.Int32, GameModule.BattleGameManager\u002BAnimationPauseSnapshot\u003E",
+        "IsStatic": false,
+        "Offset": 32,
+        "token": "0x040028D0"
+      },
+      {
+        "Name": "hasCoin",
+        "type": "System.Int32",
+        "IsStatic": false,
+        "Offset": 40,
+        "token": "0x040028D1"
+      },
+      {
+        "Name": "battleInitCoin",
+        "type": "System.Int32",
+        "IsStatic": false,
+        "Offset": 44,
+        "token": "0x040028D2"
+      },
+      {
+        "Name": "battleTotalEarned",
+        "type": "System.Int32",
+        "IsStatic": false,
+        "Offset": 48,
+        "token": "0x040028D3"
+      },
+      {
+        "Name": "battleTotalCost",
+        "type": "System.Int32",
+        "IsStatic": false,
+        "Offset": 52,
+        "token": "0x040028D4"
+      },
+      {
+        "Name": "_isAddCoining",
+        "type": "System.Boolean",
+        "IsStatic": false,
+        "Offset": 56,
+        "token": "0x040028D5"
+      },
+      {
+        "Name": "_timeLeft",
+        "type": "System.Single",
+        "IsStatic": false,
+        "Offset": 60,
+        "token": "0x040028D6"
+      },
+      {
+        "Name": "countDownTime",
+        "type": "System.Int32",
+        "IsStatic": false,
+        "Offset": 64,
+        "token": "0x040028D7"
+      },
+      {
+        "Name": "_timeString",
+        "type": "System.String",
+        "IsStatic": false,
+        "Offset": 72,
+        "token": "0x040028D8"
+      },
+      {
+        "Name": "isCountDowning",
+        "type": "System.Boolean",
+        "IsStatic": false,
+        "Offset": 80,
+        "token": "0x040028D9"
+      },
+      {
+        "Name": "_myCoroutine",
+        "type": "UnityEngine.Coroutine",
+        "IsStatic": false,
+        "Offset": 88,
+        "token": "0x040028DA"
+      },
+      {
+        "Name": "openHexCount",
+        "type": "System.Int32",
+        "IsStatic": false,
+        "Offset": 96,
+        "token": "0x040028DB"
+      },
+      {
+        "Name": "hornIng",
+        "type": "System.Boolean",
+        "IsStatic": false,
+        "Offset": 100,
+        "token": "0x040028DC"
+      },
+      {
+        "Name": "hornTime",
+        "type": "System.Single",
+        "IsStatic": false,
+        "Offset": 104,
+        "token": "0x040028DD"
+      },
+      {
+        "Name": "roleAllDamageDic",
+        "type": "System.Collections.Generic.Dictionary\u00602\u003CSystem.String, System.Int32\u003E",
+        "IsStatic": false,
+        "Offset": 112,
+        "token": "0x040028DE"
+      },
+      {
+        "Name": "towerAllDamageDic",
+        "type": "System.Collections.Generic.Dictionary\u00602\u003CSystem.String, System.Int32\u003E",
+        "IsStatic": false,
+        "Offset": 120,
+        "token": "0x040028DF"
+      },
+      {
+        "Name": "isVictory",
+        "type": "System.Boolean",
+        "IsStatic": false,
+        "Offset": 128,
+        "token": "0x040028E0"
+      },
+      {
+        "Name": "GetBoxId",
+        "type": "System.String",
+        "IsStatic": false,
+        "Offset": 136,
+        "token": "0x040028E1"
+      },
+      {
+        "Name": "nowWinStreakCount",
+        "type": "System.Int32",
+        "IsStatic": false,
+        "Offset": 144,
+        "token": "0x040028E2"
+      },
+      {
+        "Name": "nowLoseStreakCount",
+        "type": "System.Int32",
+        "IsStatic": false,
+        "Offset": 148,
+        "token": "0x040028E3"
+      },
+      {
+        "Name": "cardOpenCount",
+        "type": "System.Collections.Generic.Dictionary\u00602\u003CSystem.String, System.Int32\u003E",
+        "IsStatic": false,
+        "Offset": 152,
+        "token": "0x040028E4"
+      },
+      {
+        "Name": "gameUseCoinNums",
+        "type": "System.Int32",
+        "IsStatic": false,
+        "Offset": 160,
+        "token": "0x040028E5"
+      },
+      {
+        "Name": "GameDeadUnitInfoDic",
+        "type": "System.Collections.Generic.Dictionary\u00602\u003CSystem.Int32, GameModule.DeadUnitInfo\u003E",
+        "IsStatic": false,
+        "Offset": 168,
+        "token": "0x040028E6"
+      },
+      {
+        "Name": "gameEndCallBack",
+        "type": "UnityEngine.Events.UnityAction\u00601\u003CSystem.Boolean\u003E",
+        "IsStatic": false,
+        "Offset": 176,
+        "token": "0x040028E7"
+      },
+      {
+        "Name": "applyRewardCallBack",
+        "type": "UnityEngine.Events.UnityAction\u00601\u003CSystem.Boolean\u003E",
+        "IsStatic": false,
+        "Offset": 184,
+        "token": "0x040028E8"
+      },
+      {
+        "Name": "rewardConfig",
+        "type": "GameModule.RewardConfig",
+        "IsStatic": false,
+        "Offset": 192,
+        "token": "0x040028E9"
+      },
+      {
+        "Name": "tempConfig",
+        "type": "GameModule.RewardConfig",
+        "IsStatic": false,
+        "Offset": 200,
+        "token": "0x040028EA"
+      },
+      {
+        "Name": "_battleContext",
+        "type": "GameModule.BattleContext",
+        "IsStatic": false,
+        "Offset": 208,
+        "token": "0x040028EB"
+      },
+      {
+        "Name": "playerNowGameOpenGoldCardEd",
+        "type": "System.Boolean",
+        "IsStatic": false,
+        "Offset": 216,
+        "token": "0x040028EC"
+      },
+      {
+        "Name": "canCutDown",
+        "type": "System.Boolean",
+        "IsStatic": false,
+        "Offset": 217,
+        "token": "0x040028ED"
+      },
+      {
+        "Name": "_isGamePaused",
+        "type": "System.Boolean",
+        "IsStatic": false,
+        "Offset": 218,
+        "token": "0x040028EE"
+      },
+      {
+        "Name": "PropBTestChargeTime",
+        "type": "System.Int32[]",
+        "IsStatic": false,
+        "Offset": 224,
+        "token": "0x040028EF"
+      },
+      {
+        "Name": "betRewardNum",
+        "type": "System.String",
+        "IsStatic": false,
+        "Offset": 232,
+        "token": "0x040028F0"
+      },
+      {
+        "Name": "GameType",
+        "type": "GameModule.GameType",
+        "IsStatic": false,
+        "Offset": 240,
+        "token": "0x040028F1"
+      },
+      {
+        "Name": "battleResult",
+        "type": "GameModule.BattleResult",
+        "IsStatic": false,
+        "Offset": 248,
+        "token": "0x040028F2"
+      },
+      {
+        "Name": "_cachedBoxStyle",
+        "type": "UnityEngine.GUIStyle",
+        "IsStatic": false,
+        "Offset": 256,
+        "token": "0x040028F3"
+      },
+      {
+        "Name": "_cachedToggleStyle",
+        "type": "UnityEngine.GUIStyle",
+        "IsStatic": false,
+        "Offset": 264,
+        "token": "0x040028F4"
+      },
+      {
+        "Name": "_cachedButtonStyle",
+        "type": "UnityEngine.GUIStyle",
+        "IsStatic": false,
+        "Offset": 272,
+        "token": "0x040028F5"
+      },
+      {
+        "Name": "_cachedLabelStyle",
+        "type": "UnityEngine.GUIStyle",
+        "IsStatic": false,
+        "Offset": 280,
+        "token": "0x040028F6"
+      },
+      {
+        "Name": "_cachedGuiScale",
+        "type": "System.Single",
+        "IsStatic": false,
+        "Offset": 288,
+        "token": "0x040028F7"
+      },
+      {
+        "Name": "_cachedGuiFont",
+        "type": "UnityEngine.Font",
+        "IsStatic": false,
+        "Offset": 296,
+        "token": "0x040028F8"
+      },
+      {
+        "Name": "_showFpsAdaptPanel",
+        "type": "System.Boolean",
+        "IsStatic": false,
+        "Offset": 304,
+        "token": "0x040028F9"
+      },
+      {
+        "Name": "_perfPanelScale",
+        "type": "System.Single",
+        "IsStatic": false,
+        "Offset": 308,
+        "token": "0x040028FA"
+      },
+      {
+        "Name": "_fpsTimer",
+        "type": "System.Single",
+        "IsStatic": false,
+        "Offset": 312,
+        "token": "0x040028FB"
+      },
+      {
+        "Name": "_fpsFrameCount",
+        "type": "System.Int32",
+        "IsStatic": false,
+        "Offset": 316,
+        "token": "0x040028FC"
+      },
+      {
+        "Name": "_fpsCurrent",
+        "type": "System.Int32",
+        "IsStatic": false,
+        "Offset": 320,
+        "token": "0x040028FD"
+      }
+    ],
+    "methods": null
+  },
+  {
+    "type": "DataModule.PlayerShopData",
+    "token": "0x02000ED1",
+    "baseType": "ServerBaseData",
+    "attributes": "Public, BeforeFieldInit",
+    "fields": [
+      {
+        "Name": "daliyShopCardDataList",
+        "type": "System.Collections.Generic.List\u00601\u003CDataModule.UserDailyShopCardData\u003E",
+        "IsStatic": false,
+        "Offset": 16,
+        "token": "0x040066C6"
+      },
+      {
+        "Name": "userHumanPackCofig",
+        "type": "System.Collections.Generic.Dictionary\u00602\u003CSystem.String, System.Int32\u003E",
+        "IsStatic": false,
+        "Offset": 24,
+        "token": "0x040066C7"
+      },
+      {
+        "Name": "userOrcPackCofig",
+        "type": "System.Collections.Generic.Dictionary\u00602\u003CSystem.String, System.Int32\u003E",
+        "IsStatic": false,
+        "Offset": 32,
+        "token": "0x040066C8"
+      },
+      {
+        "Name": "userMachinePackCofig",
+        "type": "System.Collections.Generic.Dictionary\u00602\u003CSystem.String, System.Int32\u003E",
+        "IsStatic": false,
+        "Offset": 40,
+        "token": "0x040066C9"
+      },
+      {
+        "Name": "userUndeadPackCofig",
+        "type": "System.Collections.Generic.Dictionary\u00602\u003CSystem.String, System.Int32\u003E",
+        "IsStatic": false,
+        "Offset": 48,
+        "token": "0x040066CA"
+      },
+      {
+        "Name": "userArtifactPackCofig",
+        "type": "System.Collections.Generic.Dictionary\u00602\u003CSystem.String, System.Int32\u003E",
+        "IsStatic": false,
+        "Offset": 56,
+        "token": "0x040066CB"
+      },
+      {
+        "Name": "userArtifactPackPropId",
+        "type": "System.String",
+        "IsStatic": false,
+        "Offset": 64,
+        "token": "0x040066CC"
+      },
+      {
+        "Name": "userArtifactPackPropCount",
+        "type": "System.Int32",
+        "IsStatic": false,
+        "Offset": 72,
+        "token": "0x040066CD"
+      },
+      {
+        "Name": "userArtifactPackResetToNewConfigDone",
+        "type": "System.Boolean",
+        "IsStatic": false,
+        "Offset": 76,
+        "token": "0x040066CE"
+      },
+      {
+        "Name": "userArtifactPackDrawnPropIds",
+        "type": "System.Collections.Generic.List\u00601\u003CSystem.String\u003E",
+        "IsStatic": false,
+        "Offset": 80,
+        "token": "0x040066CF"
+      },
+      {
+        "Name": "userCommonCardPackCofig",
+        "type": "System.Collections.Generic.Dictionary\u00602\u003CSystem.String, System.Int32\u003E",
+        "IsStatic": false,
+        "Offset": 88,
+        "token": "0x040066D0"
+      },
+      {
+        "Name": "userAllFetterPackCofig",
+        "type": "System.Collections.Generic.Dictionary\u00602\u003CSystem.String, System.Int32\u003E",
+        "IsStatic": false,
+        "Offset": 96,
+        "token": "0x040066D1"
+      },
+      {
+        "Name": "monthPassPurchaseTime",
+        "type": "System.DateTime",
+        "IsStatic": false,
+        "Offset": 104,
+        "token": "0x040066D2"
+      },
+      {
+        "Name": "monthPassExpiryTime",
+        "type": "System.DateTime",
+        "IsStatic": false,
+        "Offset": 112,
+        "token": "0x040066D3"
+      },
+      {
+        "Name": "monthPass",
+        "type": "System.Collections.Generic.List\u00601\u003CSystem.String\u003E",
+        "IsStatic": false,
+        "Offset": 120,
+        "token": "0x040066D4"
+      },
+      {
+        "Name": "isShowNewBieGiftPack",
+        "type": "System.Boolean",
+        "IsStatic": false,
+        "Offset": 128,
+        "token": "0x040066D5"
+      },
+      {
+        "Name": "fistUnLockPropShowPropPack",
+        "type": "System.Boolean",
+        "IsStatic": false,
+        "Offset": 129,
+        "token": "0x040066D6"
+      },
+      {
+        "Name": "canTimingPushGiftPackage",
+        "type": "System.Boolean",
+        "IsStatic": false,
+        "Offset": 130,
+        "token": "0x040066D7"
+      },
+      {
+        "Name": "timingPushGiftPackageCdIng",
+        "type": "System.Boolean",
+        "IsStatic": false,
+        "Offset": 131,
+        "token": "0x040066D8"
+      },
+      {
+        "Name": "timingPushGiftPlayerBuyCdIng",
+        "type": "System.Boolean",
+        "IsStatic": false,
+        "Offset": 132,
+        "token": "0x040066D9"
+      },
+      {
+        "Name": "timingPushGiftPackType",
+        "type": "GameModule.ShopManager\u002BTimingPushGiftPackType",
+        "IsStatic": false,
+        "Offset": 136,
+        "token": "0x040066DA"
+      },
+      {
+        "Name": "rewardPartsCustom",
+        "type": "System.String",
+        "IsStatic": false,
+        "Offset": 144,
+        "token": "0x040066DB"
+      },
+      {
+        "Name": "hadHandleTwoSixOneBug",
+        "type": "System.Boolean",
+        "IsStatic": false,
+        "Offset": 152,
+        "token": "0x040066DC"
+      },
+      {
+        "Name": "allIAPRecords",
+        "type": "System.Collections.Generic.List\u00601\u003CDataModule.IAPRecord\u003E",
+        "IsStatic": false,
+        "Offset": 160,
+        "token": "0x040066DD"
+      },
+      {
+        "Name": "allUserWatchAdRecords",
+        "type": "System.Collections.Generic.Dictionary\u00602\u003CSystem.Int32, System.Int32\u003E",
+        "IsStatic": false,
+        "Offset": 168,
+        "token": "0x040066DE"
+      },
+      {
+        "Name": "fundData",
+        "type": "System.Collections.Generic.Dictionary\u00602\u003CGameModule.FundManager\u002BFundType, DataModule.FundData\u003E",
+        "IsStatic": false,
+        "Offset": 176,
+        "token": "0x040066DF"
+      },
+      {
+        "Name": "cardPackBuyCountNowWeek",
+        "type": "System.Collections.Generic.Dictionary\u00602\u003CSystem.String, System.Int32\u003E",
+        "IsStatic": false,
+        "Offset": 184,
+        "token": "0x040066E0"
+      },
+      {
+        "Name": "giftChainData",
+        "type": "DataModule.GiftChainData",
+        "IsStatic": false,
+        "Offset": 192,
+        "token": "0x040066E1"
+      },
+      {
+        "Name": "giftChain2Data",
+        "type": "DataModule.GiftChain2Data",
+        "IsStatic": false,
+        "Offset": 200,
+        "token": "0x040066E2"
+      },
+      {
+        "Name": "multistageNewcomerPackageData",
+        "type": "System.Collections.Generic.List\u00601\u003CDataModule.MultistageNewcomerPackageData\u003E",
+        "IsStatic": false,
+        "Offset": 208,
+        "token": "0x040066E3"
+      },
+      {
+        "Name": "universalCardPurchaseRestriction",
+        "type": "System.Collections.Generic.Dictionary\u00602\u003CSystem.String, System.Int32\u003E",
+        "IsStatic": false,
+        "Offset": 216,
+        "token": "0x040066E4"
+      },
+      {
+        "Name": "arenaPackageDatas",
+        "type": "System.Collections.Generic.List\u00601\u003CArenaPackageData\u003E",
+        "IsStatic": false,
+        "Offset": 224,
+        "token": "0x040066E5"
+      },
+      {
+        "Name": "doubleGemsData",
+        "type": "System.Collections.Generic.Dictionary\u00602\u003CSystem.String, System.Boolean\u003E",
+        "IsStatic": false,
+        "Offset": 232,
+        "token": "0x040066E6"
+      },
+      {
+        "Name": "mysteriousStoreData",
+        "type": "System.Collections.Generic.List\u00601\u003CMysteriousStoreData\u003E",
+        "IsStatic": false,
+        "Offset": 240,
+        "token": "0x040066E7"
+      },
+      {
+        "Name": "goldCardWeeklyGiftPackData",
+        "type": "System.Collections.Generic.List\u00601\u003CDataModule.GoldCardWeeklyGiftPackData\u003E",
+        "IsStatic": false,
+        "Offset": 248,
+        "token": "0x040066E8"
+      },
+      {
+        "Name": "hasSpecialOffer",
+        "type": "System.Boolean",
+        "IsStatic": false,
+        "Offset": 256,
+        "token": "0x040066E9"
+      },
+      {
+        "Name": "hasElitePack",
+        "type": "System.Boolean",
+        "IsStatic": false,
+        "Offset": 257,
+        "token": "0x040066EA"
+      },
+      {
+        "Name": "payCount",
+        "type": "System.Int32",
+        "IsStatic": false,
+        "Offset": 260,
+        "token": "0x040066EB"
+      },
+      {
+        "Name": "canPushRuneStonePack",
+        "type": "System.Boolean",
+        "IsStatic": false,
+        "Offset": 264,
+        "token": "0x040066EC"
+      },
+      {
+        "Name": "playerRuneStoneBuyState",
+        "type": "System.Collections.Generic.Dictionary\u00602\u003CSystem.String, System.Boolean\u003E",
+        "IsStatic": false,
+        "Offset": 272,
+        "token": "0x040066ED"
+      },
+      {
+        "Name": "limitedPropPackRemainCount",
+        "type": "System.Collections.Generic.Dictionary\u00602\u003CSystem.Int32, System.Int32\u003E",
+        "IsStatic": false,
+        "Offset": 280,
+        "token": "0x040066EE"
+      },
+      {
+        "Name": "limitedPropPackWeeklyPeriodIndex",
+        "type": "System.Int32",
+        "IsStatic": false,
+        "Offset": 288,
+        "token": "0x040066EF"
+      },
+      {
+        "Name": "crystalPackRemainCount",
+        "type": "System.Collections.Generic.Dictionary\u00602\u003CSystem.Int32, System.Int32\u003E",
+        "IsStatic": false,
+        "Offset": 296,
+        "token": "0x040066F0"
+      },
+      {
+        "Name": "crystalPackLastDisplayPackId",
+        "type": "System.Int32",
+        "IsStatic": false,
+        "Offset": 304,
+        "token": "0x040066F1"
+      }
+    ],
+    "methods": null
+  },
+  {
+    "type": "DataModule.PlayerCoreData",
+    "token": "0x02000EC7",
+    "baseType": "ServerBaseData",
+    "attributes": "Public, BeforeFieldInit",
+    "fields": [
+      {
+        "Name": "nowLingquReward",
+        "type": "System.Boolean",
+        "IsStatic": false,
+        "Offset": 16,
+        "token": "0x04006677"
+      },
+      {
+        "Name": "firstEnterGameTime",
+        "type": "System.DateTime",
+        "IsStatic": false,
+        "Offset": 24,
+        "token": "0x04006678"
+      },
+      {
+        "Name": "moraleNum",
+        "type": "System.Int32",
+        "IsStatic": false,
+        "Offset": 32,
+        "token": "0x04006679"
+      },
+      {
+        "Name": "moraleNewSystemIsHandle",
+        "type": "System.Boolean",
+        "IsStatic": false,
+        "Offset": 36,
+        "token": "0x0400667A"
+      },
+      {
+        "Name": "handledDanGetData",
+        "type": "System.Boolean",
+        "IsStatic": false,
+        "Offset": 37,
+        "token": "0x0400667B"
+      },
+      {
+        "Name": "PlayerGameCount",
+        "type": "System.Int32",
+        "IsStatic": false,
+        "Offset": 40,
+        "token": "0x0400667C"
+      },
+      {
+        "Name": "WonGameCount",
+        "type": "System.Int32",
+        "IsStatic": false,
+        "Offset": 44,
+        "token": "0x0400667D"
+      },
+      {
+        "Name": "PlayerWeeklyPlayGameCount",
+        "type": "System.Int32",
+        "IsStatic": false,
+        "Offset": 48,
+        "token": "0x0400667E"
+      },
+      {
+        "Name": "PlayerWeeklyWonGameCount",
+        "type": "System.Int32",
+        "IsStatic": false,
+        "Offset": 52,
+        "token": "0x0400667F"
+      },
+      {
+        "Name": "PlayerDailyPlayGameCount",
+        "type": "System.Int32",
+        "IsStatic": false,
+        "Offset": 56,
+        "token": "0x04006680"
+      },
+      {
+        "Name": "PlayerDailyWonGameCount",
+        "type": "System.Int32",
+        "IsStatic": false,
+        "Offset": 60,
+        "token": "0x04006681"
+      },
+      {
+        "Name": "DailyNoBetGoldEarned",
+        "type": "System.Int32",
+        "IsStatic": false,
+        "Offset": 64,
+        "token": "0x04006682"
+      },
+      {
+        "Name": "getSliverDan",
+        "type": "System.Boolean",
+        "IsStatic": false,
+        "Offset": 68,
+        "token": "0x04006683"
+      },
+      {
+        "Name": "getWoodDan",
+        "type": "System.Boolean",
+        "IsStatic": false,
+        "Offset": 69,
+        "token": "0x04006684"
+      },
+      {
+        "Name": "getBronzeDan",
+        "type": "System.Boolean",
+        "IsStatic": false,
+        "Offset": 70,
+        "token": "0x04006685"
+      },
+      {
+        "Name": "getGoldenDan",
+        "type": "System.Boolean",
+        "IsStatic": false,
+        "Offset": 71,
+        "token": "0x04006686"
+      },
+      {
+        "Name": "getPlatinumDan",
+        "type": "System.Boolean",
+        "IsStatic": false,
+        "Offset": 72,
+        "token": "0x04006687"
+      },
+      {
+        "Name": "getDiamondDan",
+        "type": "System.Boolean",
+        "IsStatic": false,
+        "Offset": 73,
+        "token": "0x04006688"
+      },
+      {
+        "Name": "getMasterDan",
+        "type": "System.Boolean",
+        "IsStatic": false,
+        "Offset": 74,
+        "token": "0x04006689"
+      },
+      {
+        "Name": "getGrandMasterDan",
+        "type": "System.Boolean",
+        "IsStatic": false,
+        "Offset": 75,
+        "token": "0x0400668A"
+      },
+      {
+        "Name": "getChallengerDan",
+        "type": "System.Boolean",
+        "IsStatic": false,
+        "Offset": 76,
+        "token": "0x0400668B"
+      },
+      {
+        "Name": "getDiamondTwoStarDan",
+        "type": "System.Boolean",
+        "IsStatic": false,
+        "Offset": 77,
+        "token": "0x0400668C"
+      },
+      {
+        "Name": "getDiamondThereStarDan",
+        "type": "System.Boolean",
+        "IsStatic": false,
+        "Offset": 78,
+        "token": "0x0400668D"
+      },
+      {
+        "Name": "getMasterTwoStarDan",
+        "type": "System.Boolean",
+        "IsStatic": false,
+        "Offset": 79,
+        "token": "0x0400668E"
+      },
+      {
+        "Name": "getMasterThereStarDan",
+        "type": "System.Boolean",
+        "IsStatic": false,
+        "Offset": 80,
+        "token": "0x0400668F"
+      },
+      {
+        "Name": "getGrandMasterTwoStarDan",
+        "type": "System.Boolean",
+        "IsStatic": false,
+        "Offset": 81,
+        "token": "0x04006690"
+      },
+      {
+        "Name": "getGrandMasterThereStarDan",
+        "type": "System.Boolean",
+        "IsStatic": false,
+        "Offset": 82,
+        "token": "0x04006691"
+      },
+      {
+        "Name": "playerTimeInfoConverted",
+        "type": "System.Boolean",
+        "IsStatic": false,
+        "Offset": 83,
+        "token": "0x04006692"
+      },
+      {
+        "Name": "userWinStreak",
+        "type": "System.Int32",
+        "IsStatic": false,
+        "Offset": 84,
+        "token": "0x04006693"
+      },
+      {
+        "Name": "userLoseStreak",
+        "type": "System.Int32",
+        "IsStatic": false,
+        "Offset": 88,
+        "token": "0x04006694"
+      },
+      {
+        "Name": "isPopPacks",
+        "type": "System.Boolean",
+        "IsStatic": false,
+        "Offset": 92,
+        "token": "0x04006695"
+      },
+      {
+        "Name": "nowExpProgressRewardConfig",
+        "type": "System.Collections.Generic.List\u00601\u003CSystem.Int32\u003E",
+        "IsStatic": false,
+        "Offset": 96,
+        "token": "0x04006696"
+      },
+      {
+        "Name": "hadFixedHexData",
+        "type": "System.Boolean",
+        "IsStatic": false,
+        "Offset": 104,
+        "token": "0x04006697"
+      },
+      {
+        "Name": "LoginSuccessfully",
+        "type": "System.Boolean",
+        "IsStatic": false,
+        "Offset": 105,
+        "token": "0x04006698"
+      },
+      {
+        "Name": "lastHideLoginRedDotTime",
+        "type": "System.DateTime",
+        "IsStatic": false,
+        "Offset": 112,
+        "token": "0x04006699"
+      },
+      {
+        "Name": "UpgradeReward",
+        "type": "System.Collections.Generic.Dictionary\u00602\u003CSystem.String, System.Boolean\u003E",
+        "IsStatic": false,
+        "Offset": 120,
+        "token": "0x0400669A"
+      },
+      {
+        "Name": "TheHighestTrophy",
+        "type": "System.Numerics.BigInteger",
+        "IsStatic": false,
+        "Offset": 128,
+        "token": "0x0400669B"
+      },
+      {
+        "Name": "seasonData",
+        "type": "DataModule.SeasonData",
+        "IsStatic": false,
+        "Offset": 144,
+        "token": "0x0400669C"
+      },
+      {
+        "Name": "playerDayBless",
+        "type": "System.Collections.Generic.List\u00601\u003CSystem.String\u003E",
+        "IsStatic": false,
+        "Offset": 152,
+        "token": "0x0400669D"
+      },
+      {
+        "Name": "userWeeklyActivityData",
+        "type": "DataModule.UserWeeklyActivityData",
+        "IsStatic": false,
+        "Offset": 160,
+        "token": "0x0400669E"
+      },
+      {
+        "Name": "WeeklyCardLastPopupDate",
+        "type": "System.DateTime",
+        "IsStatic": false,
+        "Offset": 168,
+        "token": "0x0400669F"
+      },
+      {
+        "Name": "WeeklyCardDailyPopupCount",
+        "type": "System.Int32",
+        "IsStatic": false,
+        "Offset": 176,
+        "token": "0x040066A0"
+      },
+      {
+        "Name": "cardBattleStatisticsDic",
+        "type": "System.Collections.Generic.Dictionary\u00602\u003CSystem.String, DataModule.CardBattleStatisticsData\u003E",
+        "IsStatic": false,
+        "Offset": 184,
+        "token": "0x040066A1"
+      }
+    ],
+    "methods": null
+  },
+  {
+    "type": "DataModule.SeasonData",
+    "token": "0x02000EB6",
+    "baseType": "System.Object",
+    "attributes": "Public, Serializable, BeforeFieldInit",
+    "fields": [
+      {
+        "Name": "PlayerDailyGetSeasonPassCount",
+        "type": "System.Int32",
+        "IsStatic": false,
+        "Offset": 16,
+        "token": "0x0400662D"
+      },
+      {
+        "Name": "PlayerDailyGetSeasonPassScore",
+        "type": "System.Int32",
+        "IsStatic": false,
+        "Offset": 20,
+        "token": "0x0400662E"
+      },
+      {
+        "Name": "battlesNumber",
+        "type": "System.Int32",
+        "IsStatic": false,
+        "Offset": 24,
+        "token": "0x0400662F"
+      },
+      {
+        "Name": "winBattleNumber",
+        "type": "System.Int32",
+        "IsStatic": false,
+        "Offset": 28,
+        "token": "0x04006630"
+      },
+      {
+        "Name": "currentSeasonId",
+        "type": "System.String",
+        "IsStatic": false,
+        "Offset": 32,
+        "token": "0x04006631"
+      },
+      {
+        "Name": "allSeasonData",
+        "type": "System.Collections.Generic.Dictionary\u00602\u003CSystem.String, DataModule.SingleSeasonData\u003E",
+        "IsStatic": false,
+        "Offset": 40,
+        "token": "0x04006632"
+      },
+      {
+        "Name": "currentWeeklyClashId",
+        "type": "System.String",
+        "IsStatic": false,
+        "Offset": 48,
+        "token": "0x04006633"
+      },
+      {
+        "Name": "allWeeklyClashData",
+        "type": "System.Collections.Generic.Dictionary\u00602\u003CSystem.String, DataModule.SingleWeeklyClashData\u003E",
+        "IsStatic": false,
+        "Offset": 56,
+        "token": "0x04006634"
+      }
+    ],
+    "methods": null
+  },
+  {
+    "type": "DataModule.PlayerGuideData",
+    "token": "0x02000ECA",
+    "baseType": "ServerBaseData",
+    "attributes": "Public, BeforeFieldInit",
+    "fields": [
+      {
+        "Name": "isFirstThroghGame",
+        "type": "System.Boolean",
+        "IsStatic": false,
+        "Offset": 16,
+        "token": "0x040066AE"
+      },
+      {
+        "Name": "PLayerWonED",
+        "type": "System.Boolean",
+        "IsStatic": false,
+        "Offset": 17,
+        "token": "0x040066AF"
+      },
+      {
+        "Name": "tutorialDataDic",
+        "type": "System.Collections.Generic.Dictionary\u00602\u003CSystem.String, System.Int32\u003E",
+        "IsStatic": false,
+        "Offset": 24,
+        "token": "0x040066B0"
+      },
+      {
+        "Name": "UserTutorialDataList",
+        "type": "System.Collections.Generic.List\u00601\u003CDataModule.UserTutorialData\u003E",
+        "IsStatic": false,
+        "Offset": 32,
+        "token": "0x040066B1"
+      },
+      {
+        "Name": "UserUnlockFeatureList",
+        "type": "System.Collections.Generic.Dictionary\u00602\u003CSystem.String, DataModule.UserFeatureUnlockData\u003E",
+        "IsStatic": false,
+        "Offset": 40,
+        "token": "0x040066B2"
+      },
+      {
+        "Name": "isTrainingComplete",
+        "type": "System.Boolean",
+        "IsStatic": false,
+        "Offset": 48,
+        "token": "0x040066B3"
+      },
+      {
+        "Name": "trainingGameIndex",
+        "type": "System.Int32",
+        "IsStatic": false,
+        "Offset": 52,
+        "token": "0x040066B4"
+      },
+      {
+        "Name": "trainingGroupVariant",
+        "type": "System.Int32",
+        "IsStatic": false,
+        "Offset": 56,
+        "token": "0x040066B5"
+      },
+      {
+        "Name": "hadClaimTrainingCompleteReward",
+        "type": "System.Boolean",
+        "IsStatic": false,
+        "Offset": 60,
+        "token": "0x040066B6"
+      }
+    ],
+    "methods": null
+  },
+  {
+    "type": "DataModule.PlayerAdData",
+    "token": "0x02000EBA",
+    "baseType": "ServerBaseData",
+    "attributes": "Public, BeforeFieldInit",
+    "fields": [
+      {
+        "Name": "WatchDailyGiftPackAdCount",
+        "type": "System.Int32",
+        "IsStatic": false,
+        "Offset": 16,
+        "token": "0x04006638"
+      },
+      {
+        "Name": "MaxWatchDailyGiftPackAdCount",
+        "type": "System.Int32",
+        "IsStatic": false,
+        "Offset": 20,
+        "token": "0x04006639"
+      },
+      {
+        "Name": "WatchCoinAdCount",
+        "type": "System.Int32",
+        "IsStatic": false,
+        "Offset": 24,
+        "token": "0x0400663A"
+      },
+      {
+        "Name": "WatchWoodAdCount",
+        "type": "System.Int32",
+        "IsStatic": false,
+        "Offset": 28,
+        "token": "0x0400663B"
+      },
+      {
+        "Name": "WatchStoneAdCount",
+        "type": "System.Int32",
+        "IsStatic": false,
+        "Offset": 32,
+        "token": "0x0400663C"
+      },
+      {
+        "Name": "WatchCrystalAdCount",
+        "type": "System.Int32",
+        "IsStatic": false,
+        "Offset": 36,
+        "token": "0x0400663D"
+      },
+      {
+        "Name": "showRemoveAdPassPanelCount",
+        "type": "System.Int32",
+        "IsStatic": false,
+        "Offset": 40,
+        "token": "0x0400663E"
+      },
+      {
+        "Name": "ShowInterstitialEd",
+        "type": "System.Boolean",
+        "IsStatic": false,
+        "Offset": 44,
+        "token": "0x0400663F"
+      },
+      {
+        "Name": "LastDayFirstRvMonthPassPop",
+        "type": "System.String",
+        "IsStatic": false,
+        "Offset": 48,
+        "token": "0x04006640"
+      }
+    ],
+    "methods": null
+  },
+  {
+    "type": "DataModule.PlayerChestData",
+    "token": "0x02000EC5",
+    "baseType": "ServerBaseData",
+    "attributes": "Public, BeforeFieldInit",
+    "fields": [
+      {
+        "Name": "userBoxData",
+        "type": "System.Collections.Generic.List\u00601\u003CDataModule.UserBoxData\u003E",
+        "IsStatic": false,
+        "Offset": 16,
+        "token": "0x0400666E"
+      },
+      {
+        "Name": "userStayOpenBoxData",
+        "type": "System.Collections.Generic.List\u00601\u003CDataModule.UserBoxData\u003E",
+        "IsStatic": false,
+        "Offset": 24,
+        "token": "0x0400666F"
+      },
+      {
+        "Name": "chestSlotUnlockData",
+        "type": "DataModule.ChestSlotUnlockData",
+        "IsStatic": false,
+        "Offset": 32,
+        "token": "0x04006670"
+      },
+      {
+        "Name": "userHasAllBoxdata",
+        "type": "System.Collections.Generic.List\u00601\u003CDataModule.UserBoxData\u003E",
+        "IsStatic": false,
+        "Offset": 40,
+        "token": "0x04006671"
+      },
+      {
+        "Name": "handleAToBBoxSlot",
+        "type": "System.Boolean",
+        "IsStatic": false,
+        "Offset": 48,
+        "token": "0x04006672"
+      },
+      {
+        "Name": "handleBToABoxSlot",
+        "type": "System.Boolean",
+        "IsStatic": false,
+        "Offset": 49,
+        "token": "0x04006673"
+      },
+      {
+        "Name": "userGetBoxCount",
+        "type": "System.Int32",
+        "IsStatic": false,
+        "Offset": 52,
+        "token": "0x04006674"
+      },
+      {
+        "Name": "handleBoxRewardCrystal",
+        "type": "System.Boolean",
+        "IsStatic": false,
+        "Offset": 56,
+        "token": "0x04006675"
+      }
+    ],
+    "methods": null
+  },
+  {
+    "type": "DataModule.GlobalArenaInfo",
+    "token": "0x02000E4F",
+    "baseType": "DataModule.GlobalInfoBase",
+    "attributes": "Public, BeforeFieldInit",
+    "fields": [
+      {
+        "Name": "trophyReward",
+        "type": "System.String",
+        "IsStatic": false,
+        "Offset": 24,
+        "token": "0x04006399"
+      },
+      {
+        "Name": "trophyPunish",
+        "type": "System.String",
+        "IsStatic": false,
+        "Offset": 32,
+        "token": "0x0400639A"
+      },
+      {
+        "Name": "diamondReward",
+        "type": "System.String",
+        "IsStatic": false,
+        "Offset": 40,
+        "token": "0x0400639B"
+      },
+      {
+        "Name": "BetlimitA",
+        "type": "System.String",
+        "IsStatic": false,
+        "Offset": 48,
+        "token": "0x0400639C"
+      },
+      {
+        "Name": "BetlimitB",
+        "type": "System.String",
+        "IsStatic": false,
+        "Offset": 56,
+        "token": "0x0400639D"
+      },
+      {
+        "Name": "completeTrophyRequire",
+        "type": "System.String",
+        "IsStatic": false,
+        "Offset": 64,
+        "token": "0x0400639E"
+      },
+      {
+        "Name": "completeDiamondReward",
+        "type": "System.String",
+        "IsStatic": false,
+        "Offset": 72,
+        "token": "0x0400639F"
+      },
+      {
+        "Name": "winCountUnLock",
+        "type": "System.String",
+        "IsStatic": false,
+        "Offset": 80,
+        "token": "0x040063A0"
+      },
+      {
+        "Name": "keyReward",
+        "type": "System.String",
+        "IsStatic": false,
+        "Offset": 88,
+        "token": "0x040063A1"
+      },
+      {
+        "Name": "completeKeyReward",
+        "type": "System.String",
+        "IsStatic": false,
+        "Offset": 96,
+        "token": "0x040063A2"
+      },
+      {
+        "Name": "completeBoxRewardType",
+        "type": "System.String",
+        "IsStatic": false,
+        "Offset": 104,
+        "token": "0x040063A3"
+      },
+      {
+        "Name": "boxRewardFold",
+        "type": "System.String",
+        "IsStatic": false,
+        "Offset": 112,
+        "token": "0x040063A4"
+      },
+      {
+        "Name": "countDownTime",
+        "type": "System.String",
+        "IsStatic": false,
+        "Offset": 120,
+        "token": "0x040063A5"
+      },
+      {
+        "Name": "iconPath",
+        "type": "System.String",
+        "IsStatic": false,
+        "Offset": 128,
+        "token": "0x040063A6"
+      },
+      {
+        "Name": "arenaPlanePrefabPath",
+        "type": "System.String",
+        "IsStatic": false,
+        "Offset": 136,
+        "token": "0x040063A7"
+      },
+      {
+        "Name": "arenaHexPrefabPath",
+        "type": "System.String",
+        "IsStatic": false,
+        "Offset": 144,
+        "token": "0x040063A8"
+      },
+      {
+        "Name": "arenaSkyBoxMaterialPath",
+        "type": "System.String",
+        "IsStatic": false,
+        "Offset": 152,
+        "token": "0x040063A9"
+      },
+      {
+        "Name": "arenaDecorationPrefabPath",
+        "type": "System.String",
+        "IsStatic": false,
+        "Offset": 160,
+        "token": "0x040063AA"
+      },
+      {
+        "Name": "arenaMapSize",
+        "type": "System.String",
+        "IsStatic": false,
+        "Offset": 168,
+        "token": "0x040063AB"
+      },
+      {
+        "Name": "mapExcludingHexPos",
+        "type": "System.String",
+        "IsStatic": false,
+        "Offset": 176,
+        "token": "0x040063AC"
+      },
+      {
+        "Name": "arenaGroundPrefabPath",
+        "type": "System.String",
+        "IsStatic": false,
+        "Offset": 184,
+        "token": "0x040063AD"
+      },
+      {
+        "Name": "cameraLimitSize",
+        "type": "System.String",
+        "IsStatic": false,
+        "Offset": 192,
+        "token": "0x040063AE"
+      },
+      {
+        "Name": "cameraAnimationNum",
+        "type": "System.String",
+        "IsStatic": false,
+        "Offset": 200,
+        "token": "0x040063AF"
+      },
+      {
+        "Name": "mainTowerPosKey",
+        "type": "System.String",
+        "IsStatic": false,
+        "Offset": 208,
+        "token": "0x040063B0"
+      },
+      {
+        "Name": "chestRange",
+        "type": "System.String",
+        "IsStatic": false,
+        "Offset": 216,
+        "token": "0x040063B1"
+      },
+      {
+        "Name": "arenaPath",
+        "type": "System.String",
+        "IsStatic": false,
+        "Offset": 224,
+        "token": "0x040063B2"
+      },
+      {
+        "Name": "minesCountLimit",
+        "type": "System.String",
+        "IsStatic": false,
+        "Offset": 232,
+        "token": "0x040063B3"
+      },
+      {
+        "Name": "arenaProgressReward",
+        "type": "System.String",
+        "IsStatic": false,
+        "Offset": 240,
+        "token": "0x040063B4"
+      },
+      {
+        "Name": "victoryGoldNoBet",
+        "type": "System.String",
+        "IsStatic": false,
+        "Offset": 248,
+        "token": "0x040063B5"
+      },
+      {
+        "Name": "dailyGoldLimitNoBet",
+        "type": "System.String",
+        "IsStatic": false,
+        "Offset": 256,
+        "token": "0x040063B6"
+      }
+    ],
+    "methods": null
+  },
+  {
+    "type": "GameModule.UpdateController",
+    "token": "0x020003FA",
+    "baseType": "System.Object",
+    "attributes": "Public, BeforeFieldInit",
+    "fields": [
+      {
+        "Name": "showLog",
+        "type": "System.Boolean",
+        "IsStatic": false,
+        "Offset": 16,
+        "token": "0x04002835"
+      },
+      {
+        "Name": "updateInfoDic",
+        "type": "System.Collections.Generic.Dictionary\u00602\u003CSystem.Int32, GameModule.UpdateInfo\u003E",
+        "IsStatic": false,
+        "Offset": 24,
+        "token": "0x04002836"
+      }
+    ],
+    "methods": null
+  }
+]

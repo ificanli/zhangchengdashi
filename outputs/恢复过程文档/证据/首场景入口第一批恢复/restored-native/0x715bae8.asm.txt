@@ -1,0 +1,45 @@
+0x715bae8: STP             X30, X23, [SP,#var_30]!
+0x715baec: STP             X22, X21, [SP,#0x30+var_20]
+0x715baf0: STP             X20, X19, [SP,#0x30+var_10]
+0x715baf4: ADRP            X22, #byte_90090DA@PAGE
+0x715baf8: ADRP            X23, #off_8B16BE8@PAGE
+0x715bafc: ADRP            X19, #off_8B16BF0@PAGE
+0x715bb00: ADRP            X21, #off_8AF46A0@PAGE
+0x715bb04: ADRP            X20, #off_8ACC908@PAGE
+0x715bb08: LDRB            W8, [X22,#byte_90090DA@PAGEOFF]
+0x715bb0c: LDR             X23, [X23,#off_8B16BE8@PAGEOFF]; qword_8CDCE10
+0x715bb10: LDR             X19, [X19,#off_8B16BF0@PAGEOFF]; qword_8D07D60
+0x715bb14: LDR             X21, [X21,#off_8AF46A0@PAGEOFF]; off_8CE7B30
+0x715bb18: LDR             X20, [X20,#off_8ACC908@PAGEOFF]; qword_8D4ECC0
+0x715bb1c: TBNZ            W8, #0, loc_715BB58
+0x715bb20: ADRP            X0, #off_8AF46A0@PAGE
+0x715bb24: LDR             X0, [X0,#off_8AF46A0@PAGEOFF]; off_8CE7B30 ; slot
+0x715bb28: BL              il2cpp_codegen_initialize_runtime_metadata
+0x715bb2c: ADRP            X0, #off_8B16BF0@PAGE
+0x715bb30: LDR             X0, [X0,#off_8B16BF0@PAGEOFF]; qword_8D07D60 ; slot
+0x715bb34: BL              il2cpp_codegen_initialize_runtime_metadata
+0x715bb38: ADRP            X0, #off_8B16BE8@PAGE
+0x715bb3c: LDR             X0, [X0,#off_8B16BE8@PAGEOFF]; qword_8CDCE10 ; slot
+0x715bb40: BL              il2cpp_codegen_initialize_runtime_metadata
+0x715bb44: ADRP            X0, #off_8ACC908@PAGE
+0x715bb48: LDR             X0, [X0,#off_8ACC908@PAGEOFF]; qword_8D4ECC0 ; slot
+0x715bb4c: BL              il2cpp_codegen_initialize_runtime_metadata
+0x715bb50: MOV             W8, #1
+0x715bb54: STRB            W8, [X22,#byte_90090DA@PAGEOFF]
+0x715bb58: LDR             X0, [X23]
+0x715bb5c: BL              unk_3C3D4C4
+0x715bb60: LDR             X1, [X19]
+0x715bb64: MOV             X19, X0
+0x715bb68: BL              System.Collections.Generic.LinkedList_object_$$.ctor
+0x715bb6c: LDR             X8, [X21]
+0x715bb70: LDR             X8, [X8,#0xB8]
+0x715bb74: STR             X19, [X8]
+0x715bb78: LDR             X8, [X21]
+0x715bb7c: LDR             X9, [X20]
+0x715bb80: LDP             X20, X19, [SP,#0x30+var_10]
+0x715bb84: LDP             X22, X21, [SP,#0x30+var_20]
+0x715bb88: LDR             X8, [X8,#0xB8]
+0x715bb8c: STR             X9, [X8,#0x18]
+0x715bb90: STRB            WZR, [X8,#0x20]
+0x715bb94: LDP             X30, X23, [SP+0x30+var_30],#0x30
+0x715bb98: RET

@@ -1,0 +1,94 @@
+void __fastcall GameModule_BattleGameSceneManager__CheckComboWallCount(__int64 a1)
+{
+  __int64 v2; // x0
+  int v3; // w27
+  unsigned int v4; // w20
+  __int64 Item; // x0
+  __int64 Component_object; // x0
+  char IsCombo; // w8
+  void *Instance; // x20
+  void *v9; // x0
+  __int64 v10; // x0
+  int v11; // w26
+  unsigned int v12; // w20
+  __int64 v13; // x0
+  __int64 v14; // x0
+  char v15; // w8
+  void *v16; // x20
+  void *v17; // x0
+  int v18; // [xsp+8h] [xbp-58h] BYREF
+  int v19; // [xsp+Ch] [xbp-54h] BYREF
+
+  if ( (byte_8FFD789 & 1) == 0 )
+  {
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D2D9E8);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8CE95C0);
+    il2cpp_codegen_initialize_runtime_metadata(&qword_8D0ACF0);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D0ACF8);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D12148);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D5F1A0);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D6C130);
+    byte_8FFD789 = 1;
+  }
+  v2 = *(_QWORD *)(a1 + 144);
+  if ( v2 == 0 )
+    goto LABEL_20;
+  v3 = 0;
+  v4 = 0;
+  while ( (signed int)v4 < *(_DWORD *)(v2 + 24) )
+  {
+    Item = System_Collections_Generic_List_object___get_Item(v2, v4, qword_8D0ACF8);
+    if ( Item != 0 )
+    {
+      Component_object = UnityEngine_GameObject__GetComponent_object_(Item, qword_8D2D9E8);
+      if ( Component_object != 0 )
+      {
+        IsCombo = GameModule_HexBehaviour__IsCombo(Component_object, 0);
+        v2 = *(_QWORD *)(a1 + 144);
+        v3 += IsCombo & 1;
+        ++v4;
+        if ( v2 != 0 )
+          continue;
+      }
+    }
+    goto LABEL_20;
+  }
+  *(_DWORD *)(a1 + 248) = v3;
+  Instance = ToolModule_ManagerBase_object___get_Instance((const MethodInfo *)qword_8D12148);
+  v19 = *(_DWORD *)(a1 + 248);
+  v9 = (void *)((__int64 (__fastcall *)(__int64, int *))unk_3C3D3B8)(qword_8CE95C0, &v19);
+  if ( Instance == nullptr )
+    goto LABEL_20;
+  EventModule_EventManager__TriggerEvent(Instance, (void *)qword_8D6C130, v9, nullptr);
+  v10 = *(_QWORD *)(a1 + 152);
+  if ( v10 == 0 )
+    goto LABEL_20;
+  v11 = 0;
+  v12 = 0;
+  while ( (signed int)v12 < *(_DWORD *)(v10 + 24) )
+  {
+    v13 = System_Collections_Generic_List_object___get_Item(v10, v12, qword_8D0ACF8);
+    if ( v13 != 0 )
+    {
+      v14 = UnityEngine_GameObject__GetComponent_object_(v13, qword_8D2D9E8);
+      if ( v14 != 0 )
+      {
+        v15 = GameModule_HexBehaviour__IsCombo(v14, 0);
+        v10 = *(_QWORD *)(a1 + 152);
+        v11 += v15 & 1;
+        ++v12;
+        if ( v10 != 0 )
+          continue;
+      }
+    }
+    goto LABEL_20;
+  }
+  *(_DWORD *)(a1 + 252) = v11;
+  v16 = ToolModule_ManagerBase_object___get_Instance((const MethodInfo *)qword_8D12148);
+  v18 = *(_DWORD *)(a1 + 252);
+  v17 = (void *)((__int64 (__fastcall *)(__int64, int *))unk_3C3D3B8)(qword_8CE95C0, &v18);
+  if ( v16 == nullptr )
+LABEL_20:
+    il2cpp_codegen_raise_null_reference_exception();
+  EventModule_EventManager__TriggerEvent(v16, (void *)qword_8D5F1A0, v17, nullptr);
+}

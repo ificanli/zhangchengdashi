@@ -1,0 +1,44 @@
+0x52a90e0: STR             X30, [SP,#var_30]!
+0x52a90e4: STP             X22, X21, [SP,#0x30+var_20]
+0x52a90e8: STP             X20, X19, [SP,#0x30+var_10]
+0x52a90ec: ADRP            X22, #byte_9002567@PAGE
+0x52a90f0: LDRB            W8, [X22,#byte_9002567@PAGEOFF]
+0x52a90f4: MOV             X19, X2
+0x52a90f8: MOV             X20, X1
+0x52a90fc: MOV             X21, X0
+0x52a9100: TBNZ            W8, #0, loc_52A9118
+0x52a9104: ADRP            X0, #off_8B0F5D8@PAGE
+0x52a9108: LDR             X0, [X0,#off_8B0F5D8@PAGEOFF]; qword_8CFF760 ; slot
+0x52a910c: BL              il2cpp_codegen_initialize_runtime_metadata
+0x52a9110: MOV             W8, #1
+0x52a9114: STRB            W8, [X22,#byte_9002567@PAGEOFF]
+0x52a9118: MOV             X0, X20
+0x52a911c: MOV             X1, XZR
+0x52a9120: BL              System.String$$IsNullOrEmpty
+0x52a9124: TBNZ            W0, #0, loc_52A9150
+0x52a9128: LDR             X0, [X21,#0x30]
+0x52a912c: CBZ             X0, loc_52A918C
+0x52a9130: ADRP            X8, #off_8B0F5D8@PAGE
+0x52a9134: LDR             X8, [X8,#off_8B0F5D8@PAGEOFF]; qword_8CFF760
+0x52a9138: MOV             X1, X20
+0x52a913c: LDP             X20, X19, [SP,#0x30+var_10]
+0x52a9140: LDP             X22, X21, [SP,#0x30+var_20]
+0x52a9144: LDR             X2, [X8]
+0x52a9148: LDR             X30, [SP+0x30+var_30],#0x30
+0x52a914c: B               System.Collections.Generic.Dictionary_object__object_$$ContainsKey
+0x52a9150: ADRP            X0, #off_8B0CF78@PAGE
+0x52a9154: LDR             X0, [X0,#off_8B0CF78@PAGEOFF]; unk_8CE7B50
+0x52a9158: BL              unk_3C3D294
+0x52a915c: BL              unk_3C3D4C4
+0x52a9160: MOV             X20, X0
+0x52a9164: ADRP            X0, #off_8B0CF90@PAGE
+0x52a9168: LDR             X0, [X0,#off_8B0CF90@PAGEOFF]; unk_8D5DB58
+0x52a916c: BL              unk_3C3D294
+0x52a9170: MOV             X1, X0
+0x52a9174: MOV             X0, X20
+0x52a9178: MOV             X2, XZR
+0x52a917c: BL              GameFramework.GameFrameworkException$$.ctor
+0x52a9180: MOV             X0, X20
+0x52a9184: MOV             X1, X19
+0x52a9188: BL              unk_3C3D3A0
+0x52a918c: BL              il2cpp_codegen_raise_null_reference_exception

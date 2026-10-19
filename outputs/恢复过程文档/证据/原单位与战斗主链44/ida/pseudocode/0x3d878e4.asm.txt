@@ -1,0 +1,341 @@
+0x3d878e4: SUB             SP, SP, #0x70
+0x3d878e8: STR             X30, [SP,#0x70+var_60]
+0x3d878ec: STP             X28, X27, [SP,#0x70+var_50]
+0x3d878f0: STP             X26, X25, [SP,#0x70+var_40]
+0x3d878f4: STP             X24, X23, [SP,#0x70+var_30]
+0x3d878f8: STP             X22, X21, [SP,#0x70+var_20]
+0x3d878fc: STP             X20, X19, [SP,#0x70+var_10]
+0x3d87900: ADRP            X21, #byte_8FFD481@PAGE
+0x3d87904: ADRP            X22, #off_8ACD188@PAGE
+0x3d87908: LDRB            W8, [X21,#byte_8FFD481@PAGEOFF]
+0x3d8790c: LDR             X22, [X22,#off_8ACD188@PAGEOFF]; off_8CE40D8
+0x3d87910: MOV             W20, W1
+0x3d87914: MOV             X19, X0
+0x3d87918: TBNZ            W8, #0, loc_3D879CC
+0x3d8791c: ADRP            X0, #off_8ACD188@PAGE
+0x3d87920: LDR             X0, [X0,#off_8ACD188@PAGEOFF]; off_8CE40D8 ; slot
+0x3d87924: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3d87928: ADRP            X0, #off_8ACE1C0@PAGE
+0x3d8792c: LDR             X0, [X0,#off_8ACE1C0@PAGEOFF]; off_8CE5558 ; slot
+0x3d87930: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3d87934: ADRP            X0, #off_8AD1438@PAGE
+0x3d87938: LDR             X0, [X0,#off_8AD1438@PAGEOFF]; qword_8D26800 ; slot
+0x3d8793c: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3d87940: ADRP            X0, #off_8AD1440@PAGE
+0x3d87944: LDR             X0, [X0,#off_8AD1440@PAGEOFF]; qword_8CE64D0 ; slot
+0x3d87948: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3d8794c: ADRP            X0, #off_8ACFB40@PAGE
+0x3d87950: LDR             X0, [X0,#off_8ACFB40@PAGEOFF]; qword_8D12128 ; slot
+0x3d87954: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3d87958: ADRP            X0, #off_8ACE700@PAGE
+0x3d8795c: LDR             X0, [X0,#off_8ACE700@PAGEOFF]; qword_8D12058 ; slot
+0x3d87960: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3d87964: ADRP            X0, #off_8ACE488@PAGE
+0x3d87968: LDR             X0, [X0,#off_8ACE488@PAGEOFF]; qword_8D12048 ; slot
+0x3d8796c: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3d87970: ADRP            X0, #off_8ACFEB8@PAGE
+0x3d87974: LDR             X0, [X0,#off_8ACFEB8@PAGEOFF]; qword_8D12230 ; slot
+0x3d87978: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3d8797c: ADRP            X0, #off_8ACFF28@PAGE
+0x3d87980: LDR             X0, [X0,#off_8ACFF28@PAGEOFF]; qword_8D11FA8 ; slot
+0x3d87984: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3d87988: ADRP            X0, #off_8ACFC58@PAGE
+0x3d8798c: LDR             X0, [X0,#off_8ACFC58@PAGEOFF]; qword_8D12338 ; slot
+0x3d87990: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3d87994: ADRP            X0, #off_8ACC8D0@PAGE
+0x3d87998: LDR             X0, [X0,#off_8ACC8D0@PAGEOFF]; off_8CEB3E0 ; slot
+0x3d8799c: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3d879a0: ADRP            X0, #off_8ACDF88@PAGE
+0x3d879a4: LDR             X0, [X0,#off_8ACDF88@PAGEOFF]; qword_8D17890 ; slot
+0x3d879a8: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3d879ac: ADRP            X0, #off_8ACDF78@PAGE
+0x3d879b0: LDR             X0, [X0,#off_8ACDF78@PAGEOFF]; off_8CE1928 ; slot
+0x3d879b4: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3d879b8: ADRP            X0, #off_8AD1448@PAGE
+0x3d879bc: LDR             X0, [X0,#off_8AD1448@PAGEOFF]; qword_8D57D18 ; slot
+0x3d879c0: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3d879c4: MOV             W8, #1
+0x3d879c8: STRB            W8, [X21,#byte_8FFD481@PAGEOFF]
+0x3d879cc: LDR             X0, [X22]; klass
+0x3d879d0: LDR             W8, [X0,#0xE0]
+0x3d879d4: CBNZ            W8, loc_3D879DC
+0x3d879d8: BL              il2cpp_codegen_runtime_class_init
+0x3d879dc: MOV             X0, XZR
+0x3d879e0: BL              UnityEngine.Application$$get_isPlaying
+0x3d879e4: TBZ             W0, #0, loc_3D87D30
+0x3d879e8: ADRP            X8, #off_8ACDF78@PAGE
+0x3d879ec: LDR             X8, [X8,#off_8ACDF78@PAGEOFF]; off_8CE1928
+0x3d879f0: LDR             X0, [X8]; klass
+0x3d879f4: LDR             W8, [X0,#0xE0]
+0x3d879f8: CBNZ            W8, loc_3D87A00
+0x3d879fc: BL              il2cpp_codegen_runtime_class_init
+0x3d87a00: ADRP            X8, #off_8ACDF88@PAGE
+0x3d87a04: LDR             X8, [X8,#off_8ACDF88@PAGEOFF]; qword_8D17890
+0x3d87a08: LDR             X0, [X8]
+0x3d87a0c: BL              QuickTutor.Singleton_object_$$get_Instance
+0x3d87a10: CBZ             X0, loc_3D87D58
+0x3d87a14: MOV             X1, XZR
+0x3d87a18: BL              SDKModule.ABTestManager$$get_GamePlayImprove01IsBTest
+0x3d87a1c: TBZ             W0, #0, loc_3D87A60
+0x3d87a20: LDR             X8, [X19,#0x40]
+0x3d87a24: CBZ             X8, loc_3D87A60
+0x3d87a28: LDR             W8, [X8,#0x50]
+0x3d87a2c: CMP             W8, #3
+0x3d87a30: B.NE            loc_3D87A60
+0x3d87a34: ADRP            X8, #off_8ACE700@PAGE
+0x3d87a38: LDR             X8, [X8,#off_8ACE700@PAGEOFF]; qword_8D12058
+0x3d87a3c: LDR             X0, [X8]; method
+0x3d87a40: BL              ToolModule.ManagerBase_object_$$get_Instance
+0x3d87a44: LDR             X8, [X19,#0x40]
+0x3d87a48: CBZ             X8, loc_3D87D84
+0x3d87a4c: CBZ             X0, loc_3D87D88
+0x3d87a50: LDR             X1, [X8,#0x10]
+0x3d87a54: LDRB            W2, [X19,#0x20]
+0x3d87a58: MOV             X3, XZR
+0x3d87a5c: BL              GameModule.BattleGameSceneManager$$RemoveLegendaryUnit
+0x3d87a60: LDR             W8, [X19,#0x13C]
+0x3d87a64: CMP             W8, #6
+0x3d87a68: B.EQ            loc_3D87A88
+0x3d87a6c: LDRB            W8, [X19,#0x178]
+0x3d87a70: CBNZ            W8, loc_3D87A88
+0x3d87a74: LDR             X8, [X19]
+0x3d87a78: LDR             X1, [X8,#0x390]
+0x3d87a7c: LDR             X9, [X8,#0x388]
+0x3d87a80: MOV             X0, X19
+0x3d87a84: BLR             X9
+0x3d87a88: LDR             X8, [X19,#0x40]
+0x3d87a8c: CBZ             X8, loc_3D87D5C
+0x3d87a90: LDR             W24, [X8,#0x50]
+0x3d87a94: ADRP            X8, #off_8AD1440@PAGE
+0x3d87a98: LDR             X22, [X19,#0x60]
+0x3d87a9c: LDRB            W28, [X19,#0x20]
+0x3d87aa0: LDR             W23, [X19,#0xA4]
+0x3d87aa4: LDR             X25, [X19,#0xB0]
+0x3d87aa8: LDP             W26, W27, [X19,#0xC8]
+0x3d87aac: LDR             X8, [X8,#off_8AD1440@PAGEOFF]; qword_8CE64D0
+0x3d87ab0: LDR             X0, [X8]
+0x3d87ab4: BL              unk_3C3D4C4
+0x3d87ab8: MOV             X21, X0
+0x3d87abc: CMP             W28, #0
+0x3d87ac0: CSET            W2, NE
+0x3d87ac4: MOV             X1, X22
+0x3d87ac8: MOV             W3, W23
+0x3d87acc: MOV             W4, W24
+0x3d87ad0: MOV             X5, X25
+0x3d87ad4: MOV             W6, W26
+0x3d87ad8: MOV             W7, W27
+0x3d87adc: STR             XZR, [SP,#0x70+var_70]
+0x3d87ae0: BL              GameModule.DeadUnitInfo$$.ctor
+0x3d87ae4: LDRB            W8, [X19,#0x20]
+0x3d87ae8: CBZ             W8, loc_3D87B14
+0x3d87aec: ADRP            X8, #off_8ACFF28@PAGE
+0x3d87af0: LDR             X8, [X8,#off_8ACFF28@PAGEOFF]; qword_8D11FA8
+0x3d87af4: LDR             X0, [X8]; method
+0x3d87af8: BL              ToolModule.ManagerBase_object_$$get_Instance
+0x3d87afc: CBZ             X0, loc_3D87D68
+0x3d87b00: LDR             W1, [X19,#0x38]
+0x3d87b04: MOV             X2, X21
+0x3d87b08: MOV             X3, XZR
+0x3d87b0c: BL              GameModule.AIBehaviourManager$$AddDeadUnit
+0x3d87b10: B               loc_3D87B38
+0x3d87b14: ADRP            X8, #off_8ACE488@PAGE
+0x3d87b18: LDR             X8, [X8,#off_8ACE488@PAGEOFF]; qword_8D12048
+0x3d87b1c: LDR             X0, [X8]; method
+0x3d87b20: BL              ToolModule.ManagerBase_object_$$get_Instance
+0x3d87b24: CBZ             X0, loc_3D87D74
+0x3d87b28: LDR             W1, [X19,#0x38]
+0x3d87b2c: MOV             X2, X21
+0x3d87b30: MOV             X3, XZR
+0x3d87b34: BL              GameModule.BattleGameManager$$AddDeadUnit
+0x3d87b38: ADRP            X21, #off_8ACE1C0@PAGE
+0x3d87b3c: LDR             X21, [X21,#off_8ACE1C0@PAGEOFF]; off_8CE5558
+0x3d87b40: LDR             X0, [X21]; klass
+0x3d87b44: LDR             W8, [X0,#0xE0]
+0x3d87b48: CBNZ            W8, loc_3D87B54
+0x3d87b4c: BL              il2cpp_codegen_runtime_class_init
+0x3d87b50: LDR             X0, [X21]
+0x3d87b54: LDR             X8, [X0,#0xB8]
+0x3d87b58: LDRB            W8, [X8,#2]
+0x3d87b5c: CBNZ            W8, loc_3D87BB8
+0x3d87b60: ADRP            X8, #off_8ACFB40@PAGE
+0x3d87b64: LDR             X8, [X8,#off_8ACFB40@PAGEOFF]; qword_8D12128
+0x3d87b68: LDR             X0, [X8]; method
+0x3d87b6c: BL              ToolModule.ManagerBase_object_$$get_Instance
+0x3d87b70: MOV             X21, X0
+0x3d87b74: MOV             X0, X19
+0x3d87b78: MOV             X1, XZR
+0x3d87b7c: BL              UnityEngine.Component$$get_transform
+0x3d87b80: CBZ             X0, loc_3D87D78
+0x3d87b84: MOV             X1, XZR
+0x3d87b88: BL              UnityEngine.Transform$$get_position
+0x3d87b8c: CBZ             X21, loc_3D87D7C
+0x3d87b90: ADRP            X8, #off_8AD1448@PAGE
+0x3d87b94: LDR             X8, [X8,#off_8AD1448@PAGEOFF]; qword_8D57D18
+0x3d87b98: LDR             X1, [X8]
+0x3d87b9c: FMOV            S3, WZR
+0x3d87ba0: FMOV            S4, WZR
+0x3d87ba4: FMOV            S5, WZR
+0x3d87ba8: FMOV            S6, #1.0
+0x3d87bac: MOV             X0, X21
+0x3d87bb0: MOV             X2, XZR
+0x3d87bb4: BL              AssetsModule.EffectManager$$ShowEffect
+0x3d87bb8: ADRP            X22, #off_8ACFEB8@PAGE
+0x3d87bbc: LDR             X22, [X22,#off_8ACFEB8@PAGEOFF]; qword_8D12230
+0x3d87bc0: LDR             X0, [X22]; method
+0x3d87bc4: BL              ToolModule.ManagerBase_object_$$get_Instance
+0x3d87bc8: ADRP            X23, #off_8ACC8D0@PAGE
+0x3d87bcc: LDR             X23, [X23,#off_8ACC8D0@PAGEOFF]; off_8CEB3E0
+0x3d87bd0: MOV             X21, X0
+0x3d87bd4: LDR             X0, [X23]; klass
+0x3d87bd8: LDR             W8, [X0,#0xE0]
+0x3d87bdc: CBNZ            W8, loc_3D87BE4
+0x3d87be0: BL              il2cpp_codegen_runtime_class_init
+0x3d87be4: MOV             X0, X21
+0x3d87be8: MOV             X1, XZR
+0x3d87bec: MOV             X2, XZR
+0x3d87bf0: BL              UnityEngine.Object$$op_Inequality
+0x3d87bf4: TBZ             W0, #0, loc_3D87CAC
+0x3d87bf8: LDR             X0, [X22]; method
+0x3d87bfc: BL              ToolModule.ManagerBase_object_$$get_Instance
+0x3d87c00: CBZ             X0, loc_3D87D6C
+0x3d87c04: LDRB            W8, [X0,#0x48]
+0x3d87c08: CBNZ            W8, loc_3D87C24
+0x3d87c0c: LDR             X0, [X22]; method
+0x3d87c10: BL              ToolModule.ManagerBase_object_$$get_Instance
+0x3d87c14: CBZ             X0, loc_3D87D80
+0x3d87c18: MOV             X1, XZR
+0x3d87c1c: BL              GameModule.HWGPUInstancerManager$$get_IsCrowdManagerAlive
+0x3d87c20: TBNZ            W0, #0, loc_3D87CAC
+0x3d87c24: ADRP            X8, #off_8AD1438@PAGE
+0x3d87c28: LDR             X8, [X8,#off_8AD1438@PAGEOFF]; qword_8D26800
+0x3d87c2c: LDR             X2, [X8]
+0x3d87c30: MOV             W1, #1
+0x3d87c34: MOV             X0, X19
+0x3d87c38: BL              sub_4B844C4
+0x3d87c3c: MOV             X21, X0
+0x3d87c40: CBZ             X0, loc_3D87D70
+0x3d87c44: LDR             X8, [X21,#0x18]
+0x3d87c48: CMP             W8, #1
+0x3d87c4c: B.LT            loc_3D87CAC
+0x3d87c50: MOV             X24, XZR
+0x3d87c54: AND             X8, X8, #0xFFFFFFFF
+0x3d87c58: ADD             X25, X21, #0x20 ; ' '
+0x3d87c5c: CMP             X24, W8,UXTW
+0x3d87c60: B.CS            loc_3D87D50
+0x3d87c64: LDR             X0, [X23]; klass
+0x3d87c68: LDR             X22, [X25,X24,LSL#3]
+0x3d87c6c: LDR             W8, [X0,#0xE0]
+0x3d87c70: CBNZ            W8, loc_3D87C78
+0x3d87c74: BL              il2cpp_codegen_runtime_class_init
+0x3d87c78: MOV             X0, X22
+0x3d87c7c: MOV             X1, XZR
+0x3d87c80: MOV             X2, XZR
+0x3d87c84: BL              UnityEngine.Object$$op_Inequality
+0x3d87c88: TBZ             W0, #0, loc_3D87C9C
+0x3d87c8c: CBZ             X22, loc_3D87D54
+0x3d87c90: LDR             W8, [X22,#0x2C]
+0x3d87c94: CBZ             W8, loc_3D87C9C
+0x3d87c98: STR             WZR, [X22,#0x2C]
+0x3d87c9c: LDR             W8, [X21,#0x18]
+0x3d87ca0: ADD             X24, X24, #1
+0x3d87ca4: CMP             X24, W8,SXTW
+0x3d87ca8: B.LT            loc_3D87C5C
+0x3d87cac: MOV             X0, X19
+0x3d87cb0: MOV             X1, XZR
+0x3d87cb4: BL              UnityEngine.Component$$get_gameObject
+0x3d87cb8: CBZ             X0, loc_3D87D60
+0x3d87cbc: MOV             W1, WZR
+0x3d87cc0: MOV             X2, XZR
+0x3d87cc4: BL              UnityEngine.GameObject$$SetActive
+0x3d87cc8: ADRP            X8, #off_8ACFC58@PAGE
+0x3d87ccc: LDR             X8, [X8,#off_8ACFC58@PAGEOFF]; qword_8D12338
+0x3d87cd0: LDR             X0, [X8]; method
+0x3d87cd4: BL              ToolModule.ManagerBase_object_$$get_Instance
+0x3d87cd8: MOV             X21, X0
+0x3d87cdc: MOV             X0, X19
+0x3d87ce0: MOV             X1, XZR
+0x3d87ce4: BL              UnityEngine.Component$$get_gameObject
+0x3d87ce8: MOV             X1, X0
+0x3d87cec: CBZ             X21, loc_3D87D64
+0x3d87cf0: MOV             X0, X21
+0x3d87cf4: MOV             X2, XZR
+0x3d87cf8: BL              AssetsModule.ObjPoolManager$$Recycle
+0x3d87cfc: CMP             W20, #1
+0x3d87d00: B.NE            loc_3D87D0C
+0x3d87d04: MOV             X0, X19
+0x3d87d08: BL              GameModule.RoleBehaviour$$HellFireDeadCallBack
+0x3d87d0c: LDR             X8, [X19]
+0x3d87d10: LDR             X1, [X8,#0x3B0]
+0x3d87d14: LDR             X9, [X8,#0x3A8]
+0x3d87d18: MOV             X0, X19
+0x3d87d1c: BLR             X9
+0x3d87d20: STRB            WZR, [X19,#0x148]
+0x3d87d24: MOV             X0, X19
+0x3d87d28: MOV             W1, WZR
+0x3d87d2c: BL              GameModule.RoleBehaviour$$SetAiCanMove
+0x3d87d30: LDP             X20, X19, [SP,#0x70+var_10]
+0x3d87d34: LDP             X22, X21, [SP,#0x70+var_20]
+0x3d87d38: LDP             X24, X23, [SP,#0x70+var_30]
+0x3d87d3c: LDP             X26, X25, [SP,#0x70+var_40]
+0x3d87d40: LDP             X28, X27, [SP,#0x70+var_50]
+0x3d87d44: LDR             X30, [SP,#0x70+var_60]
+0x3d87d48: ADD             SP, SP, #0x70 ; 'p'
+0x3d87d4c: RET
+0x3d87d50: BL              unk_3C3D4D4
+0x3d87d54: BL              il2cpp_codegen_raise_null_reference_exception
+0x3d87d58: BL              il2cpp_codegen_raise_null_reference_exception
+0x3d87d5c: BL              il2cpp_codegen_raise_null_reference_exception
+0x3d87d60: BL              il2cpp_codegen_raise_null_reference_exception
+0x3d87d64: BL              il2cpp_codegen_raise_null_reference_exception
+0x3d87d68: BL              il2cpp_codegen_raise_null_reference_exception
+0x3d87d6c: BL              il2cpp_codegen_raise_null_reference_exception
+0x3d87d70: BL              il2cpp_codegen_raise_null_reference_exception
+0x3d87d74: BL              il2cpp_codegen_raise_null_reference_exception
+0x3d87d78: BL              il2cpp_codegen_raise_null_reference_exception
+0x3d87d7c: BL              il2cpp_codegen_raise_null_reference_exception
+0x3d87d80: BL              il2cpp_codegen_raise_null_reference_exception
+0x3d87d84: BL              il2cpp_codegen_raise_null_reference_exception
+0x3d87d88: BL              il2cpp_codegen_raise_null_reference_exception
+0x3d87d8c: B               loc_3D87E04
+0x3d87d90: B               loc_3D87E04
+0x3d87d94: B               loc_3D87E04
+0x3d87d98: B               loc_3D87E04
+0x3d87d9c: B               loc_3D87E04
+0x3d87da0: B               loc_3D87E04
+0x3d87da4: B               loc_3D87E04
+0x3d87da8: B               loc_3D87E04
+0x3d87dac: B               loc_3D87E04
+0x3d87db0: B               loc_3D87E04
+0x3d87db4: B               loc_3D87E04
+0x3d87db8: B               loc_3D87E04
+0x3d87dbc: B               loc_3D87E04
+0x3d87dc0: B               loc_3D87E04
+0x3d87dc4: B               loc_3D87E04
+0x3d87dc8: B               loc_3D87E04
+0x3d87dcc: B               loc_3D87E04
+0x3d87dd0: B               loc_3D87E04
+0x3d87dd4: B               loc_3D87E04
+0x3d87dd8: B               loc_3D87E04
+0x3d87ddc: B               loc_3D87E04
+0x3d87de0: B               loc_3D87E04
+0x3d87de4: B               loc_3D87E04
+0x3d87de8: B               loc_3D87E04
+0x3d87dec: B               loc_3D87E04
+0x3d87df0: B               loc_3D87E04
+0x3d87df4: B               loc_3D87E04
+0x3d87df8: B               loc_3D87E04
+0x3d87dfc: B               loc_3D87E04
+0x3d87e00: B               loc_3D87E04
+0x3d87e04: CMP             W1, #1
+0x3d87e08: B.NE            loc_3D87E28
+0x3d87e0c: BL              .__cxa_begin_catch
+0x3d87e10: LDR             X19, [X0]
+0x3d87e14: BL              .__cxa_end_catch
+0x3d87e18: CBZ             X19, loc_3D87D30
+0x3d87e1c: MOV             X0, X19
+0x3d87e20: BL              sub_3C38CF8
+0x3d87e24: CBNZ            X19, loc_3D87E2C
+0x3d87e28: BL              sub_3CE73C4
+0x3d87e2c: MOV             X0, X19
+0x3d87e30: BL              sub_3C38CF8
+0x3d87e34: BL              unk_35BC500

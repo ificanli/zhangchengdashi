@@ -1,0 +1,32 @@
+0x3e46904: STP             X30, X21, [SP,#var_20]!
+0x3e46908: STP             X20, X19, [SP,#0x20+var_10]
+0x3e4690c: ADRP            X21, #byte_8FFDA05@PAGE
+0x3e46910: LDRB            W8, [X21,#byte_8FFDA05@PAGEOFF]
+0x3e46914: MOV             X20, X1
+0x3e46918: MOV             X19, X0
+0x3e4691c: TBNZ            W8, #0, loc_3E46934
+0x3e46920: ADRP            X0, #off_8ACD910@PAGE
+0x3e46924: LDR             X0, [X0,#off_8ACD910@PAGEOFF]; qword_8CE3CE0 ; slot
+0x3e46928: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3e4692c: MOV             W8, #1
+0x3e46930: STRB            W8, [X21,#byte_8FFDA05@PAGEOFF]
+0x3e46934: LDR             X0, [X19,#0x30]
+0x3e46938: MOV             X1, X20
+0x3e4693c: MOV             X2, XZR
+0x3e46940: BL              System.Delegate$$Combine
+0x3e46944: CBZ             X0, loc_3E46974
+0x3e46948: ADRP            X8, #off_8ACD910@PAGE
+0x3e4694c: LDR             X8, [X8,#off_8ACD910@PAGEOFF]; qword_8CE3CE0
+0x3e46950: LDR             X1, [X8]
+0x3e46954: LDR             X8, [X0]
+0x3e46958: CMP             X8, X1
+0x3e4695c: B.NE            loc_3E46970
+0x3e46960: STR             X0, [X19,#0x30]
+0x3e46964: LDR             X8, [X0]
+0x3e46968: CMP             X8, X1
+0x3e4696c: B.EQ            loc_3E46978
+0x3e46970: BL              unk_3C3D868
+0x3e46974: STR             X0, [X19,#0x30]
+0x3e46978: LDP             X20, X19, [SP,#0x20+var_10]
+0x3e4697c: LDP             X30, X21, [SP+0x20+var_20],#0x20
+0x3e46980: RET

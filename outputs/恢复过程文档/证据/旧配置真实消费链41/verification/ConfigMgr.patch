@@ -1,0 +1,149 @@
+--- before/Assets/Scripts/Assembly-CSharp/ljzs_lt/ConfigMgr.cs
++++ candidate/Assets/Scripts/Assembly-CSharp/ljzs_lt/ConfigMgr.cs
+@@ -190,32 +190,98 @@
+ 			[Address(RVA = "0x4399F1C", Offset = "0x4395F1C", VA = "0x4399F1C")]
+ 			get
+ 			{
+-				return null;
+-			}
++			if (_instance == null)
++			    _instance = new ConfigMgr();
++			return _instance;
++		}
+ 		}
+ 
+ 		[Token(Token = "0x6005AE7")]
+ 		[Address(RVA = "0x4399578", Offset = "0x4395578", VA = "0x4399578")]
+ 		public void Initialize()
+ 		{
++			GameFramework.ConfigRead.IsUserJsonUtility = true;
++			GameFramework.AppSetting.IsUseMemoryPack = false;
++			if (!IsInitialize)
++			{
++			    ReadConfig();
++			    customRead();
++			    IsInitialize = true;
++			}
+ 		}
+ 
+ 		[Token(Token = "0x6005AE8")]
+ 		[Address(RVA = "0x4399658", Offset = "0x4395658", VA = "0x4399658")]
+ 		private void ReadConfig()
+ 		{
++			GameFramework.ConfigRead.readConfigByUnityJson<GoalRewardConfig>(dicGoalReward);
++			GameFramework.ConfigRead.readConfigByUnityJson<WorldCupdailyTaskConfig>(dicWorldCupdailyTask);
++			GameFramework.ConfigRead.readConfigByUnityJson<WorldCupdailyPriceConfig>(dicWorldCupdailyPrice);
++			GameFramework.ConfigRead.readConfigByUnityJson<PointShopConfig>(dicPointShop);
++			GameFramework.ConfigRead.readConfigByUnityJson<WorldCuphow2PlayConfig>(dicWorldCuphow2Play);
++			GameFramework.ConfigRead.readConfigByUnityJson<DiceConfigConfig>(dicDiceConfig);
++			GameFramework.ConfigRead.readConfigByUnityJson<BuildConfigConfig>(dicBuildConfig);
++			GameFramework.ConfigRead.readConfigByUnityJson<ChessboardConfig>(dicChessboard);
++			GameFramework.ConfigRead.readConfigByUnityJson<PoolConfigConfig>(dicPoolConfig);
++			GameFramework.ConfigRead.readConfigByUnityJson<RuinsConfigConfig>(dicRuinsConfig);
++			GameFramework.ConfigRead.readConfigByUnityJson<DailyTaskConfig>(dicDailyTask);
++			GameFramework.ConfigRead.readConfigByUnityJson<DailyPriceConfig>(dicDailyPrice);
++			GameFramework.ConfigRead.readConfigByUnityJson<TotalDiceConfig>(dicTotalDice);
++			GameFramework.ConfigRead.readConfigByUnityJson<LapsConfigConfig>(dicLapsConfig);
++			GameFramework.ConfigRead.readConfigByUnityJson<SaleShopConfig>(dicSaleShop);
++			GameFramework.ConfigRead.readConfigByUnityJson<How2PlayConfig>(dicHow2Play);
++			GameFramework.ConfigRead.readConfigByUnityJson<PurchaseConfig>(dicPurchase);
++			GameFramework.ConfigRead.readConfigByUnityJson<CdkConfig>(dicCdk);
++			GameFramework.ConfigRead.readConfigByUnityJson<CompareCardInfoConfig>(dicCompareCardInfo);
++			GameFramework.ConfigRead.readConfigByUnityJson<WordEmojiConfig>(dicWordEmoji);
++			GameFramework.ConfigRead.readConfigByUnityJson<SubGameBuffConfig>(dicSubGameBuff);
++			GameFramework.ConfigRead.readConfigByUnityJson<CompareShenqiInfoConfig>(dicCompareShenqiInfo);
++			GameFramework.ConfigRead.readConfigByUnityJson<PropAttrBuffInfoConfig>(dicPropAttrBuffInfo);
++			GameFramework.ConfigRead.readConfigByUnityJson<PropUpgradeInfoConfig>(dicPropUpgradeInfo);
++			GameFramework.ConfigRead.readConfigByUnityJson<PropRankUpInfoConfig>(dicPropRankUpInfo);
++			GameFramework.ConfigRead.readConfigByUnityJson<PropAttrEnumInfoConfig>(dicPropAttrEnumInfo);
++			GameFramework.ConfigRead.readConfigByUnityJson<PropAttrTypeConfig>(dicPropAttrType);
++			GameFramework.ConfigRead.readConfigByUnityJson<PropForgePowerConfig>(dicPropForgePower);
++			GameFramework.ConfigRead.readConfigByUnityJson<AIPropInfoConfig>(dicAIPropInfo);
++			GameFramework.ConfigRead.readConfigByUnityJson<AIPropInfoBConfig>(dicAIPropInfoB);
++			GameFramework.ConfigRead.readConfigByUnityJson<AIPropInfoCConfig>(dicAIPropInfoC);
++			GameFramework.ConfigRead.readConfigByUnityJson<LimitedPropInfoConfig>(dicLimitedPropInfo);
++			GameFramework.ConfigRead.readConfigByUnityJson<LimitedPropPackConfig>(dicLimitedPropPack);
++			GameFramework.ConfigRead.readConfigByUnityJson<CrystalPackConfig>(dicCrystalPack);
++			GameFramework.ConfigRead.readConfigByUnityJson<LimitedPropOrderConfig>(dicLimitedPropOrder);
++			GameFramework.ConfigRead.readConfigByUnityJson<CheckInRewardsIndexConfig>(dicCheckInRewardsIndex);
++			GameFramework.ConfigRead.readConfigByUnityJson<CheckInRewardsConfig>(dicCheckInRewards);
++			GameFramework.ConfigRead.readConfigByUnityJson<CumulativeRewardConfig>(dicCumulativeReward);
++			settingConfig = GameFramework.ConfigRead.readConfigVByUnityJson<SettingConfig>();
++			worldCupbaseConfigConfig = GameFramework.ConfigRead.readConfigVByUnityJson<WorldCupbaseConfigConfig>();
++			baseConfigConfig = GameFramework.ConfigRead.readConfigVByUnityJson<BaseConfigConfig>();
+ 		}
+ 
+ 		[Token(Token = "0x6005AE9")]
+ 		[Address(RVA = "0x4399EBC", Offset = "0x4395EBC", VA = "0x4399EBC")]
+ 		public void SetConfigABRes(ResourcesInfo resourcesInfo)
+ 		{
++			GameFramework.ConfigRead.configRes = resourcesInfo;
+ 		}
+ 
+ 		[Token(Token = "0x6005AEB")]
+ 		[Address(RVA = "0x4399BEC", Offset = "0x4395BEC", VA = "0x4399BEC")]
+ 		private void customRead()
+ 		{
++			dicPoolConfigByPoolId.Clear();
++			foreach (KeyValuePair<object, PoolConfigConfig> pair in dicPoolConfig)
++			{
++			    PoolConfigConfig value = pair.Value;
++			    if (value == null || value.pool_id < 1)
++			        continue;
++			    List<PoolConfigConfig> list;
++			    if (!dicPoolConfigByPoolId.TryGetValue(value.pool_id, out list))
++			    {
++			        list = new List<PoolConfigConfig>();
++			        dicPoolConfigByPoolId.Add(value.pool_id, list);
++			    }
++			    list.Add(value);
++			}
+ 		}
+ 
+ 		[Token(Token = "0x6005AEC")]
+@@ -228,6 +294,45 @@
+ 		[Address(RVA = "0x4399F90", Offset = "0x4395F90", VA = "0x4399F90")]
+ 		public ConfigMgr()
+ 		{
++			dicGoalReward = new Dictionary<object, GoalRewardConfig>();
++			dicWorldCupdailyTask = new Dictionary<object, WorldCupdailyTaskConfig>();
++			dicWorldCupdailyPrice = new Dictionary<object, WorldCupdailyPriceConfig>();
++			dicPointShop = new Dictionary<object, PointShopConfig>();
++			dicWorldCuphow2Play = new Dictionary<object, WorldCuphow2PlayConfig>();
++			dicDiceConfig = new Dictionary<object, DiceConfigConfig>();
++			dicBuildConfig = new Dictionary<object, BuildConfigConfig>();
++			dicChessboard = new Dictionary<object, ChessboardConfig>();
++			dicPoolConfig = new Dictionary<object, PoolConfigConfig>();
++			dicRuinsConfig = new Dictionary<object, RuinsConfigConfig>();
++			dicDailyTask = new Dictionary<object, DailyTaskConfig>();
++			dicDailyPrice = new Dictionary<object, DailyPriceConfig>();
++			dicTotalDice = new Dictionary<object, TotalDiceConfig>();
++			dicLapsConfig = new Dictionary<object, LapsConfigConfig>();
++			dicSaleShop = new Dictionary<object, SaleShopConfig>();
++			dicHow2Play = new Dictionary<object, How2PlayConfig>();
++			dicPurchase = new Dictionary<object, PurchaseConfig>();
++			dicCdk = new Dictionary<object, CdkConfig>();
++			dicCompareCardInfo = new Dictionary<object, CompareCardInfoConfig>();
++			dicWordEmoji = new Dictionary<object, WordEmojiConfig>();
++			dicSubGameBuff = new Dictionary<object, SubGameBuffConfig>();
++			dicCompareShenqiInfo = new Dictionary<object, CompareShenqiInfoConfig>();
++			dicPropAttrBuffInfo = new Dictionary<object, PropAttrBuffInfoConfig>();
++			dicPropUpgradeInfo = new Dictionary<object, PropUpgradeInfoConfig>();
++			dicPropRankUpInfo = new Dictionary<object, PropRankUpInfoConfig>();
++			dicPropAttrEnumInfo = new Dictionary<object, PropAttrEnumInfoConfig>();
++			dicPropAttrType = new Dictionary<object, PropAttrTypeConfig>();
++			dicPropForgePower = new Dictionary<object, PropForgePowerConfig>();
++			dicAIPropInfo = new Dictionary<object, AIPropInfoConfig>();
++			dicAIPropInfoB = new Dictionary<object, AIPropInfoBConfig>();
++			dicAIPropInfoC = new Dictionary<object, AIPropInfoCConfig>();
++			dicLimitedPropInfo = new Dictionary<object, LimitedPropInfoConfig>();
++			dicLimitedPropPack = new Dictionary<object, LimitedPropPackConfig>();
++			dicCrystalPack = new Dictionary<object, CrystalPackConfig>();
++			dicLimitedPropOrder = new Dictionary<object, LimitedPropOrderConfig>();
++			dicCheckInRewardsIndex = new Dictionary<object, CheckInRewardsIndexConfig>();
++			dicCheckInRewards = new Dictionary<object, CheckInRewardsConfig>();
++			dicCumulativeReward = new Dictionary<object, CumulativeRewardConfig>();
++			dicPoolConfigByPoolId = new Dictionary<int, List<PoolConfigConfig>>();
+ 		}
+ 	}
+ }

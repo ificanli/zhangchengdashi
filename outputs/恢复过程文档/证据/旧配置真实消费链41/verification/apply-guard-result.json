@@ -1,0 +1,38 @@
+{
+  "cases": [
+    {
+      "name": "complete preflight",
+      "passed": true,
+      "status": "preflight_passed"
+    },
+    {
+      "name": "stale third source rejects before first write",
+      "passed": true,
+      "rejection": "SOURCE_BEFORE_SHA_MISMATCH: C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-41-config\\verification\\apply-fixture\\project\\Assets\\Scripts\\GFRunning\\GameFramework\\BaseConfig.cs"
+    },
+    {
+      "name": "tampered candidate rejects",
+      "passed": true,
+      "rejection": "CANDIDATE_SHA_MISMATCH: C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-41-config\\verification\\apply-fixture\\handoff\\candidate\\Assets\\Scripts\\Assembly-CSharp\\ljzs_lt\\ConfigMgr.cs"
+    },
+    {
+      "name": "modified meta rejects",
+      "passed": true,
+      "rejection": "META_SHA_MISMATCH: C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-41-config\\verification\\apply-fixture\\project\\Assets\\Scripts\\GFRunning\\GameFramework\\BaseConfig.cs.meta"
+    },
+    {
+      "name": "valid fixture apply with readback",
+      "passed": true,
+      "status": "applied"
+    },
+    {
+      "name": "repeat apply refuses changed source",
+      "passed": true,
+      "rejection": "SOURCE_BEFORE_SHA_MISMATCH: C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-41-config\\verification\\apply-fixture\\project\\Assets\\Scripts\\Assembly-CSharp\\ljzs_lt\\ConfigMgr.cs"
+    }
+  ],
+  "caseCount": 6,
+  "allPassed": true,
+  "sharedProjectWritten": false,
+  "fixtureRoot": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-41-config\\verification\\apply-fixture"
+}

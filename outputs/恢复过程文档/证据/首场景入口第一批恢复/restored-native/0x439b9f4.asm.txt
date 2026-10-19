@@ -1,0 +1,160 @@
+0x439b9f4: STP             X30, X23, [SP,#var_30]!
+0x439b9f8: STP             X22, X21, [SP,#0x30+var_20]
+0x439b9fc: STP             X20, X19, [SP,#0x30+var_10]
+0x439ba00: ADRP            X23, #byte_9000887@PAGE
+0x439ba04: ADRP            X22, #off_8AF4680@PAGE
+0x439ba08: ADRP            X21, #off_8AF4688@PAGE
+0x439ba0c: ADRP            X20, #off_8AF4690@PAGE
+0x439ba10: LDRB            W8, [X23,#byte_9000887@PAGEOFF]
+0x439ba14: LDR             X22, [X22,#off_8AF4680@PAGEOFF]; qword_8CDDE70
+0x439ba18: LDR             X21, [X21,#off_8AF4688@PAGEOFF]; qword_8D0D540
+0x439ba1c: LDR             X20, [X20,#off_8AF4690@PAGEOFF]; qword_8CEBE80
+0x439ba20: MOV             X19, X0
+0x439ba24: TBNZ            W8, #0, loc_439BA9C
+0x439ba28: ADRP            X0, #off_8AF4698@PAGE
+0x439ba2c: LDR             X0, [X0,#off_8AF4698@PAGEOFF]; qword_8D2D170 ; slot
+0x439ba30: BL              il2cpp_codegen_initialize_runtime_metadata
+0x439ba34: ADRP            X0, #off_8AF46A0@PAGE
+0x439ba38: LDR             X0, [X0,#off_8AF46A0@PAGEOFF]; off_8CE7B30 ; slot
+0x439ba3c: BL              il2cpp_codegen_initialize_runtime_metadata
+0x439ba40: ADRP            X0, #off_8AF46A8@PAGE
+0x439ba44: LDR             X0, [X0,#off_8AF46A8@PAGEOFF]; off_8D0D548 ; slot
+0x439ba48: BL              il2cpp_codegen_initialize_runtime_metadata
+0x439ba4c: ADRP            X0, #off_8AF46B0@PAGE
+0x439ba50: LDR             X0, [X0,#off_8AF46B0@PAGEOFF]; qword_8D0D550 ; slot
+0x439ba54: BL              il2cpp_codegen_initialize_runtime_metadata
+0x439ba58: ADRP            X0, #off_8AF4688@PAGE
+0x439ba5c: LDR             X0, [X0,#off_8AF4688@PAGEOFF]; qword_8D0D540 ; slot
+0x439ba60: BL              il2cpp_codegen_initialize_runtime_metadata
+0x439ba64: ADRP            X0, #off_8AF4680@PAGE
+0x439ba68: LDR             X0, [X0,#off_8AF4680@PAGEOFF]; qword_8CDDE70 ; slot
+0x439ba6c: BL              il2cpp_codegen_initialize_runtime_metadata
+0x439ba70: ADRP            X0, #off_8AF46B8@PAGE
+0x439ba74: LDR             X0, [X0,#off_8AF46B8@PAGEOFF]; qword_8CEBE78 ; slot
+0x439ba78: BL              il2cpp_codegen_initialize_runtime_metadata
+0x439ba7c: ADRP            X0, #off_8AF4690@PAGE
+0x439ba80: LDR             X0, [X0,#off_8AF4690@PAGEOFF]; qword_8CEBE80 ; slot
+0x439ba84: BL              il2cpp_codegen_initialize_runtime_metadata
+0x439ba88: ADRP            X0, #off_8AF46C0@PAGE
+0x439ba8c: LDR             X0, [X0,#off_8AF46C0@PAGEOFF]; qword_8CEBE88 ; slot
+0x439ba90: BL              il2cpp_codegen_initialize_runtime_metadata
+0x439ba94: MOV             W8, #1
+0x439ba98: STRB            W8, [X23,#byte_9000887@PAGEOFF]
+0x439ba9c: MOV             X0, X19
+0x439baa0: MOV             X1, XZR
+0x439baa4: BL              GameFramework.Base.IGameStart$$RegisterProcedure
+0x439baa8: LDR             X0, [X22]
+0x439baac: BL              unk_3C3D4C4
+0x439bab0: LDR             X1, [X21]
+0x439bab4: MOV             X19, X0
+0x439bab8: BL              System.Collections.Generic.List_object_$$.ctor
+0x439babc: LDR             X0, [X20]
+0x439bac0: BL              unk_3C3D4C4
+0x439bac4: MOV             X1, XZR
+0x439bac8: MOV             X20, X0
+0x439bacc: BL              GameFramework.Procedure.ProcedureBase$$.ctor
+0x439bad0: CBZ             X19, loc_439BC70
+0x439bad4: ADRP            X21, #off_8AF46A8@PAGE
+0x439bad8: LDR             X21, [X21,#off_8AF46A8@PAGEOFF]; off_8D0D548
+0x439badc: LDR             W10, [X19,#0x1C]
+0x439bae0: LDR             X8, [X19,#0x10]
+0x439bae4: LDR             X9, [X21]
+0x439bae8: ADD             W10, W10, #1
+0x439baec: STR             W10, [X19,#0x1C]
+0x439baf0: CBZ             X8, loc_439BC70
+0x439baf4: LDRSW           X10, [X19,#0x18]
+0x439baf8: LDR             W11, [X8,#0x18]
+0x439bafc: ADRP            X22, #off_8AF46C0@PAGE
+0x439bb00: LDR             X22, [X22,#off_8AF46C0@PAGEOFF]; qword_8CEBE88
+0x439bb04: CMP             W10, W11
+0x439bb08: B.CS            loc_439BB20
+0x439bb0c: ADD             W9, W10, #1
+0x439bb10: ADD             X8, X8, X10,LSL#3
+0x439bb14: STR             W9, [X19,#0x18]
+0x439bb18: STR             X20, [X8,#0x20]
+0x439bb1c: B               loc_439BB38
+0x439bb20: LDR             X8, [X9,#0x20]
+0x439bb24: MOV             X0, X19
+0x439bb28: MOV             X1, X20
+0x439bb2c: LDR             X8, [X8,#0xC0]
+0x439bb30: LDR             X2, [X8,#0x70]
+0x439bb34: BL              System.Collections.Generic.List_object_$$AddWithResize
+0x439bb38: LDR             X0, [X22]
+0x439bb3c: BL              unk_3C3D4C4
+0x439bb40: MOV             X1, XZR
+0x439bb44: MOV             X20, X0
+0x439bb48: BL              GameFramework.Procedure.ProcedureBase$$.ctor
+0x439bb4c: LDR             W10, [X19,#0x1C]
+0x439bb50: LDR             X8, [X19,#0x10]
+0x439bb54: LDR             X9, [X21]
+0x439bb58: ADD             W10, W10, #1
+0x439bb5c: STR             W10, [X19,#0x1C]
+0x439bb60: CBZ             X8, loc_439BC70
+0x439bb64: LDRSW           X10, [X19,#0x18]
+0x439bb68: LDR             W11, [X8,#0x18]
+0x439bb6c: ADRP            X22, #off_8AF46B8@PAGE
+0x439bb70: LDR             X22, [X22,#off_8AF46B8@PAGEOFF]; qword_8CEBE78
+0x439bb74: CMP             W10, W11
+0x439bb78: B.CS            loc_439BB90
+0x439bb7c: ADD             W9, W10, #1
+0x439bb80: ADD             X8, X8, X10,LSL#3
+0x439bb84: STR             W9, [X19,#0x18]
+0x439bb88: STR             X20, [X8,#0x20]
+0x439bb8c: B               loc_439BBA8
+0x439bb90: LDR             X8, [X9,#0x20]
+0x439bb94: MOV             X0, X19
+0x439bb98: MOV             X1, X20
+0x439bb9c: LDR             X8, [X8,#0xC0]
+0x439bba0: LDR             X2, [X8,#0x70]
+0x439bba4: BL              System.Collections.Generic.List_object_$$AddWithResize
+0x439bba8: LDR             X0, [X22]
+0x439bbac: BL              unk_3C3D4C4
+0x439bbb0: MOV             X1, XZR
+0x439bbb4: MOV             X20, X0
+0x439bbb8: BL              GameFramework.Procedure.ProcedureBase$$.ctor
+0x439bbbc: LDR             W10, [X19,#0x1C]
+0x439bbc0: LDR             X8, [X19,#0x10]
+0x439bbc4: LDR             X9, [X21]
+0x439bbc8: ADD             W10, W10, #1
+0x439bbcc: STR             W10, [X19,#0x1C]
+0x439bbd0: CBZ             X8, loc_439BC70
+0x439bbd4: LDRSW           X10, [X19,#0x18]
+0x439bbd8: LDR             W11, [X8,#0x18]
+0x439bbdc: ADRP            X21, #off_8AF46A0@PAGE
+0x439bbe0: LDR             X21, [X21,#off_8AF46A0@PAGEOFF]; off_8CE7B30
+0x439bbe4: CMP             W10, W11
+0x439bbe8: B.CS            loc_439BC00
+0x439bbec: ADD             W9, W10, #1
+0x439bbf0: ADD             X8, X8, X10,LSL#3
+0x439bbf4: STR             W9, [X19,#0x18]
+0x439bbf8: STR             X20, [X8,#0x20]
+0x439bbfc: B               loc_439BC18
+0x439bc00: LDR             X8, [X9,#0x20]
+0x439bc04: MOV             X0, X19
+0x439bc08: MOV             X1, X20
+0x439bc0c: LDR             X8, [X8,#0xC0]
+0x439bc10: LDR             X2, [X8,#0x70]
+0x439bc14: BL              System.Collections.Generic.List_object_$$AddWithResize
+0x439bc18: LDR             X0, [X21]; klass
+0x439bc1c: ADRP            X21, #off_8AF4698@PAGE
+0x439bc20: ADRP            X20, #off_8AF46B0@PAGE
+0x439bc24: LDR             W8, [X0,#0xE0]
+0x439bc28: LDR             X21, [X21,#off_8AF4698@PAGEOFF]; qword_8D2D170
+0x439bc2c: LDR             X20, [X20,#off_8AF46B0@PAGEOFF]; qword_8D0D550
+0x439bc30: CBNZ            W8, loc_439BC38
+0x439bc34: BL              il2cpp_codegen_runtime_class_init
+0x439bc38: LDR             X0, [X21]
+0x439bc3c: BL              GameFramework.GameFrameEntry$$GetModule_object_
+0x439bc40: LDR             X1, [X20]
+0x439bc44: MOV             X20, X0
+0x439bc48: MOV             X0, X19
+0x439bc4c: BL              System.Collections.Generic.List_object_$$ToArray
+0x439bc50: CBZ             X20, loc_439BC70
+0x439bc54: MOV             X1, X0
+0x439bc58: MOV             X0, X20
+0x439bc5c: LDP             X20, X19, [SP,#0x30+var_10]
+0x439bc60: LDP             X22, X21, [SP,#0x30+var_20]
+0x439bc64: MOV             X2, XZR
+0x439bc68: LDP             X30, X23, [SP+0x30+var_30],#0x30
+0x439bc6c: B               GameFramework.Procedure.ProcedureManager$$Register
+0x439bc70: BL              il2cpp_codegen_raise_null_reference_exception

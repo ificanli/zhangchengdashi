@@ -1,0 +1,822 @@
+[
+  {
+    "file": "Assets/Scripts/GFRunning/GameFramework/Fsm/Fsm.cs",
+    "token": "0x6006CAC",
+    "name": "GameFramework.Fsm.Fsm<object>$$.ctor",
+    "rva": "0x52a8890",
+    "end": "0x52a8b00",
+    "native_signature": "void GameFramework_Fsm_Fsm_object____ctor (GameFramework_Fsm_Fsm_T__o* __this, System_String_o* name, Il2CppObject* owner, GameFramework_Fsm_FsmState_T__array* states, const MethodInfo_52A8890* method);",
+    "candidate_body": "if (owner == null)\n\t\t\t    throw new GameFrameworkException(\"FSM owner is invalid.\");\n\t\t\tif (states == null || states.Length == 0)\n\t\t\t    throw new GameFrameworkException(\"FSM states is invalid.\");\n\t\t\tm_Owner = owner;\n\t\t\tm_States = new Dictionary<string, FsmState<T>>();\n\t\t\tm_Datas = new Dictionary<string, Variable>();\n\t\t\tforeach (FsmState<T> state in states)\n\t\t\t{\n\t\t\t    if (state == null)\n\t\t\t        throw new GameFrameworkException(\"FSM states is invalid.\");\n\t\t\t    string stateName = state.GetType().FullName;\n\t\t\t    if (m_States.ContainsKey(stateName))\n\t\t\t        throw new GameFrameworkException(string.Format(\"FSM '{0}' state '{1}' is already exist.\", Utility.Text.GetFullName<T>(name), stateName));\n\t\t\t    m_States.Add(stateName, state);\n\t\t\t    state.OnInit(this);\n\t\t\t}\n\t\t\tm_CurrentStateTime = 0f;\n\t\t\tm_CurrentState = null;\n\t\t\tm_IsDestroyed = false;",
+    "candidate_body_sha256": "f393e30894fe36b03bf24e7a1b5d408d5c8367adfd07febbbe79e71f7f222cff"
+  },
+  {
+    "file": "Assets/Scripts/GFRunning/GameFramework/Fsm/Fsm.cs",
+    "token": "0x6006CAD",
+    "name": "GameFramework.Fsm.Fsm<object>$$get_Owner",
+    "rva": "0x52a8b00",
+    "end": "0x52a8b08",
+    "native_signature": "Il2CppObject* GameFramework_Fsm_Fsm_object___get_Owner (GameFramework_Fsm_Fsm_T__o* __this, const MethodInfo_52A8B00* method);",
+    "candidate_body": "return m_Owner;",
+    "candidate_body_sha256": "be4a001590bb8b0aeebdfe58d5589599d1e1bf1ef5cf594f60342c3a0e9e5f19"
+  },
+  {
+    "file": "Assets/Scripts/GFRunning/GameFramework/Fsm/Fsm.cs",
+    "token": "0x6006CAE",
+    "name": "GameFramework.Fsm.Fsm<object>$$get_OwnerType",
+    "rva": "0x52a8b08",
+    "end": "0x52a8b6c",
+    "native_signature": "System_Type_o* GameFramework_Fsm_Fsm_object___get_OwnerType (GameFramework_Fsm_Fsm_T__o* __this, const MethodInfo_52A8B08* method);",
+    "candidate_body": "return typeof(T);",
+    "candidate_body_sha256": "c338b26757c8e4805bb1c283b217dbaaa88990fcb22b8ad7b60d42a9c717c041"
+  },
+  {
+    "file": "Assets/Scripts/GFRunning/GameFramework/Fsm/Fsm.cs",
+    "token": "0x6006CAF",
+    "name": "GameFramework.Fsm.Fsm<object>$$get_FsmStateCount",
+    "rva": "0x52a8b6c",
+    "end": "0x52a8b90",
+    "native_signature": "int32_t GameFramework_Fsm_Fsm_object___get_FsmStateCount (GameFramework_Fsm_Fsm_T__o* __this, const MethodInfo_52A8B6C* method);",
+    "candidate_body": "return m_States.Count;",
+    "candidate_body_sha256": "c6f52b70d16c6fda83e50ac125d096f79f781a2c7fac2358c98c1717c45dba20"
+  },
+  {
+    "file": "Assets/Scripts/GFRunning/GameFramework/Fsm/Fsm.cs",
+    "token": "0x6006CB0",
+    "name": "GameFramework.Fsm.Fsm<object>$$get_IsRunning",
+    "rva": "0x52a8b90",
+    "end": "0x52a8ba0",
+    "native_signature": "bool GameFramework_Fsm_Fsm_object___get_IsRunning (GameFramework_Fsm_Fsm_T__o* __this, const MethodInfo_52A8B90* method);",
+    "candidate_body": "return m_CurrentState != null;",
+    "candidate_body_sha256": "f61061f8bc20d33c1c99ec88ae89c498db488836c6b5a18dd438233682232188"
+  },
+  {
+    "file": "Assets/Scripts/GFRunning/GameFramework/Fsm/Fsm.cs",
+    "token": "0x6006CB1",
+    "name": "GameFramework.Fsm.Fsm<object>$$get_IsDestroyed",
+    "rva": "0x52a8ba0",
+    "end": "0x52a8ba8",
+    "native_signature": "bool GameFramework_Fsm_Fsm_object___get_IsDestroyed (GameFramework_Fsm_Fsm_T__o* __this, const MethodInfo_52A8BA0* method);",
+    "candidate_body": "return m_IsDestroyed;",
+    "candidate_body_sha256": "aee7ea3ed043e86826c4799b81b27b50bac36752d3ca4d5b26512abcd5673cce"
+  },
+  {
+    "file": "Assets/Scripts/GFRunning/GameFramework/Fsm/Fsm.cs",
+    "token": "0x6006CB2",
+    "name": "GameFramework.Fsm.Fsm<object>$$get_CurrentState",
+    "rva": "0x52a8ba8",
+    "end": "0x52a8bb0",
+    "native_signature": "GameFramework_Fsm_FsmState_T__o* GameFramework_Fsm_Fsm_object___get_CurrentState (GameFramework_Fsm_Fsm_T__o* __this, const MethodInfo_52A8BA8* method);",
+    "candidate_body": "return m_CurrentState;",
+    "candidate_body_sha256": "cce3076f7605fd0dde976b39b0a3a34ef763eba8017534ca3ad60cecbe93d312"
+  },
+  {
+    "file": "Assets/Scripts/GFRunning/GameFramework/Fsm/Fsm.cs",
+    "token": "0x6006CB3",
+    "name": "GameFramework.Fsm.Fsm<object>$$get_CurrentStateName",
+    "rva": "0x52a8bb0",
+    "end": "0x52a8be8",
+    "native_signature": "System_String_o* GameFramework_Fsm_Fsm_object___get_CurrentStateName (GameFramework_Fsm_Fsm_T__o* __this, const MethodInfo_52A8BB0* method);",
+    "candidate_body": "return m_CurrentState == null ? null : m_CurrentState.GetType().FullName;",
+    "candidate_body_sha256": "0ea1c779453380f5879c2c83f7f8f33bd6564ef0cb43e01b091aeed3fb12d0d3"
+  },
+  {
+    "file": "Assets/Scripts/GFRunning/GameFramework/Fsm/Fsm.cs",
+    "token": "0x6006CB4",
+    "name": "GameFramework.Fsm.Fsm<object>$$get_CurrentStateTime",
+    "rva": "0x52a8be8",
+    "end": "0x52a8bf0",
+    "native_signature": "float GameFramework_Fsm_Fsm_object___get_CurrentStateTime (GameFramework_Fsm_Fsm_T__o* __this, const MethodInfo_52A8BE8* method);",
+    "candidate_body": "return m_CurrentStateTime;",
+    "candidate_body_sha256": "aef1a5a5593341ea1f1ae28787de2cf9c2ebfe01c4e453cd5b7c9f55ce10580e"
+  },
+  {
+    "file": "Assets/Scripts/GFRunning/GameFramework/Fsm/Fsm.cs",
+    "token": "0x6006CB5",
+    "name": "GameFramework.Fsm.Fsm<object>$$Update",
+    "rva": "0x52a8bf0",
+    "end": "0x52a8c18",
+    "native_signature": "void GameFramework_Fsm_Fsm_object___Update (GameFramework_Fsm_Fsm_T__o* __this, float elapseSeconds, float realElapseSeconds, const MethodInfo_52A8BF0* method);",
+    "candidate_body": "if (m_CurrentState != null)\n\t\t\t{\n\t\t\t    m_CurrentStateTime += elapseSeconds;\n\t\t\t    m_CurrentState.OnUpdate(this, elapseSeconds, realElapseSeconds);\n\t\t\t}",
+    "candidate_body_sha256": "209ea8dc9f72107fb02474fec89185cef9a74fb77e68950da95341ef0b6813aa"
+  },
+  {
+    "file": "Assets/Scripts/GFRunning/GameFramework/Fsm/Fsm.cs",
+    "token": "0x6006CB6",
+    "name": "GameFramework.Fsm.Fsm<object>$$Shutdown",
+    "rva": "0x52a8c18",
+    "end": "0x52a8dbc",
+    "native_signature": "void GameFramework_Fsm_Fsm_object___Shutdown (GameFramework_Fsm_Fsm_T__o* __this, const MethodInfo_52A8C18* method);",
+    "candidate_body": "if (m_CurrentState != null)\n\t\t\t{\n\t\t\t    m_CurrentState.OnLeave(this, true);\n\t\t\t    m_CurrentState = null;\n\t\t\t    m_CurrentStateTime = 0f;\n\t\t\t}\n\t\t\tforeach (KeyValuePair<string, FsmState<T>> state in m_States)\n\t\t\t    state.Value.OnDestroy(this);\n\t\t\tm_States.Clear();\n\t\t\tm_Datas.Clear();\n\t\t\tm_IsDestroyed = true;",
+    "candidate_body_sha256": "8cc1a0ecc0ce12bdbd15ef97a6aa36a5584397a9559239e1ef070f4e02b98a14"
+  },
+  {
+    "file": "Assets/Scripts/GFRunning/GameFramework/Fsm/Fsm.cs",
+    "token": "0x6006CB7",
+    "name": "GameFramework.Fsm.Fsm<object>$$Start<object>",
+    "rva": "0x4732b84",
+    "end": "0x4732c14",
+    "native_signature": "void GameFramework_Fsm_Fsm_object___Start_object_ (GameFramework_Fsm_Fsm_T__o* __this, System_Object_array* args, const MethodInfo_4732B84* method);",
+    "candidate_body": "Start(typeof(TState), args);",
+    "candidate_body_sha256": "a21dd8b7d5544713a59b11baf25afa861a5075ed3633f09b4e0fb0c5bfe0dd71"
+  },
+  {
+    "file": "Assets/Scripts/GFRunning/GameFramework/Fsm/Fsm.cs",
+    "token": "0x6006CB8",
+    "name": "GameFramework.Fsm.Fsm<object>$$Start",
+    "rva": "0x52a8dbc",
+    "end": "0x52a8f20",
+    "native_signature": "void GameFramework_Fsm_Fsm_object___Start (GameFramework_Fsm_Fsm_T__o* __this, System_Type_o* stateType, System_Object_array* args, const MethodInfo_52A8DBC* method);",
+    "candidate_body": "if (IsRunning)\n\t\t\t    throw new GameFrameworkException(\"FSM is running, can not start again.\");\n\t\t\tFsmState<T> state = GetState(stateType);\n\t\t\tif (state == null)\n\t\t\t    throw new GameFrameworkException(string.Format(\"FSM '{0}' can not start state '{1}' which is not exist.\", Utility.Text.GetFullName<T>(Name), stateType.FullName));\n\t\t\tm_CurrentStateTime = 0f;\n\t\t\tm_CurrentState = state;\n\t\t\tif (args != null && args.Length > 0)\n\t\t\t    state.OnEnter(this, args);\n\t\t\telse\n\t\t\t    state.OnEnter(this);",
+    "candidate_body_sha256": "4b2e4d19d79096b920426082e7059ae56b1ed082053883c049fd2bbe28c40ca6"
+  },
+  {
+    "file": "Assets/Scripts/GFRunning/GameFramework/Fsm/Fsm.cs",
+    "token": "0x6006CB9",
+    "name": "GameFramework.Fsm.Fsm<object>$$HasState<object>",
+    "rva": "0x4732a4c",
+    "end": "0x4732acc",
+    "native_signature": "bool GameFramework_Fsm_Fsm_object___HasState_object_ (GameFramework_Fsm_Fsm_T__o* __this, const MethodInfo_4732A4C* method);",
+    "candidate_body": "return HasState(typeof(TState));",
+    "candidate_body_sha256": "9a2b736fd4bd76a03d5bcbd5c6e8ce21fb50872fd219e79019fab9e0e6b2518f"
+  },
+  {
+    "file": "Assets/Scripts/GFRunning/GameFramework/Fsm/Fsm.cs",
+    "token": "0x6006CBA",
+    "name": "GameFramework.Fsm.Fsm<object>$$HasState",
+    "rva": "0x52a8f20",
+    "end": "0x52a8f74",
+    "native_signature": "bool GameFramework_Fsm_Fsm_object___HasState (GameFramework_Fsm_Fsm_T__o* __this, System_Type_o* stateType, const MethodInfo_52A8F20* method);",
+    "candidate_body": "return m_States.ContainsKey(stateType.FullName);",
+    "candidate_body_sha256": "bb6c28d398ca8b55406916b36f5b60dc08a6990a69f4277b3e6447835ad6b72d"
+  },
+  {
+    "file": "Assets/Scripts/GFRunning/GameFramework/Fsm/Fsm.cs",
+    "token": "0x6006CBB",
+    "name": "GameFramework.Fsm.Fsm<object>$$GetState<object>",
+    "rva": "0x4732984",
+    "end": "0x4732a4c",
+    "native_signature": "Il2CppObject* GameFramework_Fsm_Fsm_object___GetState_object_ (GameFramework_Fsm_Fsm_T__o* __this, const MethodInfo_4732984* method);",
+    "candidate_body": "return (TState)GetState(typeof(TState));",
+    "candidate_body_sha256": "0ea98a3e06b0f8f5cedb4497d8b1c8d5dc98924fca994f77fa102eae315d0b4c"
+  },
+  {
+    "file": "Assets/Scripts/GFRunning/GameFramework/Fsm/Fsm.cs",
+    "token": "0x6006CBC",
+    "name": "GameFramework.Fsm.Fsm<object>$$GetState",
+    "rva": "0x52a8f74",
+    "end": "0x52a8fe0",
+    "native_signature": "GameFramework_Fsm_FsmState_T__o* GameFramework_Fsm_Fsm_object___GetState (GameFramework_Fsm_Fsm_T__o* __this, System_Type_o* stateType, const MethodInfo_52A8F74* method);",
+    "candidate_body": "FsmState<T> state;\n\t\t\treturn m_States.TryGetValue(stateType.FullName, out state) ? state : null;",
+    "candidate_body_sha256": "ea9937de90ba1d629f66a3ec71617eb2f3a22940a431aba0d0ee0585c221ef40"
+  },
+  {
+    "file": "Assets/Scripts/GFRunning/GameFramework/Fsm/Fsm.cs",
+    "token": "0x6006CBD",
+    "name": "GameFramework.Fsm.Fsm<object>$$FireEvent",
+    "rva": "0x52a8fe0",
+    "end": "0x52a9060",
+    "native_signature": "void GameFramework_Fsm_Fsm_object___FireEvent (GameFramework_Fsm_Fsm_T__o* __this, Il2CppObject* sender, int32_t eventId, const MethodInfo_52A8FE0* method);",
+    "candidate_body": "if (m_CurrentState == null)\n\t\t\t    throw new GameFrameworkException(\"Current state is invalid.\");\n\t\t\tm_CurrentState.OnEvent(this, sender, eventId, null);",
+    "candidate_body_sha256": "c67929864ba95667b94a86fde6fd26a59bdfff1fea735a4030e884a4e6ac7e8c"
+  },
+  {
+    "file": "Assets/Scripts/GFRunning/GameFramework/Fsm/Fsm.cs",
+    "token": "0x6006CBE",
+    "name": "GameFramework.Fsm.Fsm<object>$$FireEvent",
+    "rva": "0x52a9060",
+    "end": "0x52a90e0",
+    "native_signature": "void GameFramework_Fsm_Fsm_object___FireEvent (GameFramework_Fsm_Fsm_T__o* __this, Il2CppObject* sender, int32_t eventId, Il2CppObject* userData, const MethodInfo_52A9060* method);",
+    "candidate_body": "if (m_CurrentState == null)\n\t\t\t    throw new GameFrameworkException(\"Current state is invalid.\");\n\t\t\tm_CurrentState.OnEvent(this, sender, eventId, userData);",
+    "candidate_body_sha256": "dacb1a410aa885a59caa96fa17b759edf05dd95de5b6b73bda979636be74cba8"
+  },
+  {
+    "file": "Assets/Scripts/GFRunning/GameFramework/Fsm/Fsm.cs",
+    "token": "0x6006CBF",
+    "name": "GameFramework.Fsm.Fsm<object>$$HasData",
+    "rva": "0x52a90e0",
+    "end": "0x52a9190",
+    "native_signature": "bool GameFramework_Fsm_Fsm_object___HasData (GameFramework_Fsm_Fsm_T__o* __this, System_String_o* name, const MethodInfo_52A90E0* method);",
+    "candidate_body": "if (string.IsNullOrEmpty(name))\n\t\t\t    throw new GameFrameworkException(\"Data name is invalid.\");\n\t\t\treturn m_Datas.ContainsKey(name);",
+    "candidate_body_sha256": "a0f080065a3bc979130550e988b7cf8db073fad0f146217bc15352f4dc0733cd"
+  },
+  {
+    "file": "Assets/Scripts/GFRunning/GameFramework/Fsm/Fsm.cs",
+    "token": "0x6006CC0",
+    "name": "GameFramework.Fsm.Fsm<object>$$GetData",
+    "rva": "0x52a9190",
+    "end": "0x52a9258",
+    "native_signature": "GameFramework_Variable_o* GameFramework_Fsm_Fsm_object___GetData (GameFramework_Fsm_Fsm_T__o* __this, System_String_o* name, const MethodInfo_52A9190* method);",
+    "candidate_body": "if (string.IsNullOrEmpty(name))\n\t\t\t    throw new GameFrameworkException(\"Data name is invalid.\");\n\t\t\tVariable data;\n\t\t\treturn m_Datas.TryGetValue(name, out data) ? data : null;",
+    "candidate_body_sha256": "541bb4e594800c47f75b314d98fd3f20aca01499efe4e2ab8607d8bf7a1efde8"
+  },
+  {
+    "file": "Assets/Scripts/GFRunning/GameFramework/Fsm/Fsm.cs",
+    "token": "0x6006CC1",
+    "name": "GameFramework.Fsm.Fsm<object>$$GetData<object>",
+    "rva": "0x47328f8",
+    "end": "0x4732984",
+    "native_signature": "Il2CppObject* GameFramework_Fsm_Fsm_object___GetData_object_ (GameFramework_Fsm_Fsm_T__o* __this, System_String_o* name, const MethodInfo_47328F8* method);",
+    "candidate_body": "return (TData)GetData(name);",
+    "candidate_body_sha256": "be3b1298d4782bd37a3d6de417376d3453e684ae0b4c6fe038743a4782cc04db"
+  },
+  {
+    "file": "Assets/Scripts/GFRunning/GameFramework/Fsm/Fsm.cs",
+    "token": "0x6006CC2",
+    "name": "GameFramework.Fsm.Fsm<object>$$SetData<object>",
+    "rva": "0x4732acc",
+    "end": "0x4732b84",
+    "native_signature": "void GameFramework_Fsm_Fsm_object___SetData_object_ (GameFramework_Fsm_Fsm_T__o* __this, System_String_o* name, Il2CppObject* data, const MethodInfo_4732ACC* method);",
+    "candidate_body": "if (string.IsNullOrEmpty(name))\n\t\t\t    throw new GameFrameworkException(\"Data name is invalid.\");\n\t\t\tm_Datas[name] = data;",
+    "candidate_body_sha256": "e6a47b7b209e18bedaed737077aded9d554550c8cf57266d658e4bda2d5b656a"
+  },
+  {
+    "file": "Assets/Scripts/GFRunning/GameFramework/Fsm/Fsm.cs",
+    "token": "0x6006CC3",
+    "name": "GameFramework.Fsm.Fsm<object>$$RemoveData",
+    "rva": "0x52a9258",
+    "end": "0x52a9308",
+    "native_signature": "bool GameFramework_Fsm_Fsm_object___RemoveData (GameFramework_Fsm_Fsm_T__o* __this, System_String_o* name, const MethodInfo_52A9258* method);",
+    "candidate_body": "if (string.IsNullOrEmpty(name))\n\t\t\t    throw new GameFrameworkException(\"Data name is invalid.\");\n\t\t\treturn m_Datas.Remove(name);",
+    "candidate_body_sha256": "d7946f39a8e90b41472bd8d4e346908c62ec8acf5199635914f4f2e9d7e2788b"
+  },
+  {
+    "file": "Assets/Scripts/GFRunning/GameFramework/Fsm/Fsm.cs",
+    "token": "0x6006CC4",
+    "name": "GameFramework.Fsm.Fsm<object>$$ChangeState<object>",
+    "rva": "0x4732868",
+    "end": "0x47328f8",
+    "native_signature": "void GameFramework_Fsm_Fsm_object___ChangeState_object_ (GameFramework_Fsm_Fsm_T__o* __this, System_Object_array* args, const MethodInfo_4732868* method);",
+    "candidate_body": "ChangeState(typeof(TState), args);",
+    "candidate_body_sha256": "e1936bc6c8d953c3601f04bf5235ea2c228ed24bd9b8b0f6d498da37544ebfc7"
+  },
+  {
+    "file": "Assets/Scripts/GFRunning/GameFramework/Fsm/Fsm.cs",
+    "token": "0x6006CC5",
+    "name": "GameFramework.Fsm.Fsm<object>$$ChangeState",
+    "rva": "0x52a9308",
+    "end": "0x52a9480",
+    "native_signature": "void GameFramework_Fsm_Fsm_object___ChangeState (GameFramework_Fsm_Fsm_T__o* __this, System_Type_o* stateType, System_Object_array* args, const MethodInfo_52A9308* method);",
+    "candidate_body": "if (m_CurrentState == null)\n\t\t\t    throw new GameFrameworkException(\"Current state is invalid.\");\n\t\t\tFsmState<T> state = GetState(stateType);\n\t\t\tif (state == null)\n\t\t\t    throw new GameFrameworkException(string.Format(\"FSM '{0}' can not change state to '{1}' which is not exist.\", Utility.Text.GetFullName<T>(Name), stateType.FullName));\n\t\t\tm_CurrentState.OnLeave(this, false);\n\t\t\tm_CurrentStateTime = 0f;\n\t\t\tm_CurrentState = state;\n\t\t\tif (args != null && args.Length > 0)\n\t\t\t    state.OnEnter(this, args);\n\t\t\telse\n\t\t\t    state.OnEnter(this);",
+    "candidate_body_sha256": "bdcfb34900f9568fed82397affb29407d16969649b34155180f910ed42f81723"
+  },
+  {
+    "file": "Assets/Scripts/GFRunning/GameFramework/Fsm/FsmBase.cs",
+    "token": "0x6006CC6",
+    "name": "GameFramework.Fsm.FsmBase$$.ctor",
+    "rva": "0x7296b44",
+    "end": "0x7296b4c",
+    "native_signature": "void GameFramework_Fsm_FsmBase___ctor (GameFramework_Fsm_FsmBase_o* __this, const MethodInfo* method);",
+    "candidate_body": "// Native 0x7296B44 delegates to the named constructor with null.",
+    "candidate_body_sha256": "82e3e0050d2b949599afbb6423c95c41bf09e8c452027b3b65f14436ab86a7f2"
+  },
+  {
+    "file": "Assets/Scripts/GFRunning/GameFramework/Fsm/FsmBase.cs",
+    "token": "0x6006CC7",
+    "name": "GameFramework.Fsm.FsmBase$$.ctor",
+    "rva": "0x7296b4c",
+    "end": "0x7296bb8",
+    "native_signature": "void GameFramework_Fsm_FsmBase___ctor (GameFramework_Fsm_FsmBase_o* __this, System_String_o* name, const MethodInfo* method);",
+    "candidate_body": "m_Name = name ?? string.Empty;",
+    "candidate_body_sha256": "c73b1a05c9b87521ca8ec86ee75508eb89272b46a46fdccd8eb551629b60bd14"
+  },
+  {
+    "file": "Assets/Scripts/GFRunning/GameFramework/Fsm/FsmBase.cs",
+    "token": "0x6006CC8",
+    "name": "GameFramework.Fsm.FsmBase$$get_Name",
+    "rva": "0x7296bb8",
+    "end": "0x7296bc0",
+    "native_signature": "System_String_o* GameFramework_Fsm_FsmBase__get_Name (GameFramework_Fsm_FsmBase_o* __this, const MethodInfo* method);",
+    "candidate_body": "return m_Name;",
+    "candidate_body_sha256": "70be5a6b38e5bf94e71d84642755c90239a5658e63b670bb1dfafa1be8e3ef96"
+  },
+  {
+    "file": "Assets/Scripts/GFRunning/GameFramework/Fsm/FsmBase.cs",
+    "token": "0x6006CC9",
+    "name": "GameFramework.Fsm.FsmBase$$get_FullName",
+    "rva": "0x7296bc0",
+    "end": "0x7296bc8",
+    "native_signature": "System_String_o* GameFramework_Fsm_FsmBase__get_FullName (GameFramework_Fsm_FsmBase_o* __this, const MethodInfo* method);",
+    "candidate_body": "return m_FullName;",
+    "candidate_body_sha256": "ee23558c4052d097e8f85d4fad6f93640027241e2b69e8f5f90d94651c692658"
+  },
+  {
+    "file": "Assets/Scripts/GFRunning/GameFramework/Fsm/FsmBase.cs",
+    "token": "0x6006CCA",
+    "name": "GameFramework.Fsm.FsmBase$$set_FullName",
+    "rva": "0x7296bc8",
+    "end": "0x7296bd0",
+    "native_signature": "void GameFramework_Fsm_FsmBase__set_FullName (GameFramework_Fsm_FsmBase_o* __this, System_String_o* value, const MethodInfo* method);",
+    "candidate_body": "m_FullName = value;",
+    "candidate_body_sha256": "9976b7032d08be6b3a39213ad7fe8b4e6c1c55091572839f9b42eae258127195"
+  },
+  {
+    "file": "Assets/Scripts/GFRunning/GameFramework/Fsm/FsmManager.cs",
+    "token": "0x6006CD7",
+    "name": "GameFramework.Fsm.FsmManager$$.ctor",
+    "rva": "0x7296bd0",
+    "end": "0x7296cb0",
+    "native_signature": "void GameFramework_Fsm_FsmManager___ctor (GameFramework_Fsm_FsmManager_o* __this, const MethodInfo* method);",
+    "candidate_body": "m_Fsms = new Dictionary<string, FsmBase>();\n\t\t\tm_TempFsms = new List<FsmBase>();",
+    "candidate_body_sha256": "4112472b86d8542e2b08185dfd06dc3b7f93dc8610b396e3ee7ff9ea85671168"
+  },
+  {
+    "file": "Assets/Scripts/GFRunning/GameFramework/Fsm/FsmManager.cs",
+    "token": "0x6006CD8",
+    "name": "GameFramework.Fsm.FsmManager$$get_Priority",
+    "rva": "0x7296cb0",
+    "end": "0x7296cb8",
+    "native_signature": "int32_t GameFramework_Fsm_FsmManager__get_Priority (GameFramework_Fsm_FsmManager_o* __this, const MethodInfo* method);",
+    "candidate_body": "return 80;",
+    "candidate_body_sha256": "10a29cb2688080af8737ef173bd25d2c446c360aee148710807d4e4a0af35e16"
+  },
+  {
+    "file": "Assets/Scripts/GFRunning/GameFramework/Fsm/FsmManager.cs",
+    "token": "0x6006CD9",
+    "name": "GameFramework.Fsm.FsmManager$$get_Count",
+    "rva": "0x7296cb8",
+    "end": "0x7296d08",
+    "native_signature": "int32_t GameFramework_Fsm_FsmManager__get_Count (GameFramework_Fsm_FsmManager_o* __this, const MethodInfo* method);",
+    "candidate_body": "return m_Fsms.Count;",
+    "candidate_body_sha256": "1eb6a806b115d4ecec36e1954182c55dc4234dead32a21978a1194ca97f483d4"
+  },
+  {
+    "file": "Assets/Scripts/GFRunning/GameFramework/Fsm/FsmManager.cs",
+    "token": "0x6006CDA",
+    "name": "GameFramework.Fsm.FsmManager$$Update",
+    "rva": "0x7296d08",
+    "end": "0x7296dd0",
+    "native_signature": "void GameFramework_Fsm_FsmManager__Update (GameFramework_Fsm_FsmManager_o* __this, float elapseSeconds, float realElapseSeconds, const MethodInfo* method);",
+    "candidate_body": "for (int i = 0; i < m_TempFsms.Count; i++)\n\t\t\t{\n\t\t\t    FsmBase fsm = m_TempFsms[i];\n\t\t\t    if (!fsm.IsDestroyed)\n\t\t\t        fsm.Update(elapseSeconds, realElapseSeconds);\n\t\t\t}",
+    "candidate_body_sha256": "a5169e5c12d8e709a52152d91a6d12fb86e354ad8e1943e9adda6d251396c764"
+  },
+  {
+    "file": "Assets/Scripts/GFRunning/GameFramework/Fsm/FsmManager.cs",
+    "token": "0x6006CDB",
+    "name": "GameFramework.Fsm.FsmManager$$Shutdown",
+    "rva": "0x7296dd0",
+    "end": "0x7296f9c",
+    "native_signature": "void GameFramework_Fsm_FsmManager__Shutdown (GameFramework_Fsm_FsmManager_o* __this, const MethodInfo* method);",
+    "candidate_body": "foreach (KeyValuePair<string, FsmBase> fsm in m_Fsms)\n\t\t\t    fsm.Value.Shutdown();\n\t\t\tm_Fsms.Clear();\n\t\t\tm_TempFsms.Clear();\n\t\t\tx_0080_008D_00B1f_0086 = false;",
+    "candidate_body_sha256": "b9d47fec9d5ef1fbd0988426fe2eb0eefe8676f1272a894dbd6cfc26ae3cfc01"
+  },
+  {
+    "file": "Assets/Scripts/GFRunning/GameFramework/Fsm/FsmManager.cs",
+    "token": "0x6006CDC",
+    "name": "GameFramework.Fsm.FsmManager$$HasFsm<object>",
+    "rva": "0x4c80c44",
+    "end": "0x4c80ca4",
+    "native_signature": "bool GameFramework_Fsm_FsmManager__HasFsm_object_ (GameFramework_Fsm_FsmManager_o* __this, const MethodInfo_4C80C44* method);",
+    "candidate_body": "return HasFsm<T>(string.Empty);",
+    "candidate_body_sha256": "36afcbbed54cfb0efe59f7f6a94a51448b058a456a40ccb3daf70e453bba5625"
+  },
+  {
+    "file": "Assets/Scripts/GFRunning/GameFramework/Fsm/FsmManager.cs",
+    "token": "0x6006CDD",
+    "name": "GameFramework.Fsm.FsmManager$$HasFsm<object>",
+    "rva": "0x4c80ca4",
+    "end": "0x4c80d18",
+    "native_signature": "bool GameFramework_Fsm_FsmManager__HasFsm_object_ (GameFramework_Fsm_FsmManager_o* __this, System_String_o* name, const MethodInfo_4C80CA4* method);",
+    "candidate_body": "return m_Fsms.ContainsKey(Utility.Text.GetFullName<T>(name));",
+    "candidate_body_sha256": "410c89043ee9bac37bb41e785bf68fe1518f067fdb8757effb8fed121c20fec5"
+  },
+  {
+    "file": "Assets/Scripts/GFRunning/GameFramework/Fsm/FsmManager.cs",
+    "token": "0x6006CDE",
+    "name": "GameFramework.Fsm.FsmManager$$GetFsm<object>",
+    "rva": "0x4c80b14",
+    "end": "0x4c80b74",
+    "native_signature": "GameFramework_Fsm_IFsm_T__o* GameFramework_Fsm_FsmManager__GetFsm_object_ (GameFramework_Fsm_FsmManager_o* __this, const MethodInfo_4C80B14* method);",
+    "candidate_body": "return GetFsm<T>(string.Empty);",
+    "candidate_body_sha256": "e34b41f151628a2151a441127e8f4c08d4aa058d7888f6f4358c1870fa7f9c5c"
+  },
+  {
+    "file": "Assets/Scripts/GFRunning/GameFramework/Fsm/FsmManager.cs",
+    "token": "0x6006CDF",
+    "name": "GameFramework.Fsm.FsmManager$$GetFsm<object>",
+    "rva": "0x4c80b74",
+    "end": "0x4c80c44",
+    "native_signature": "GameFramework_Fsm_IFsm_T__o* GameFramework_Fsm_FsmManager__GetFsm_object_ (GameFramework_Fsm_FsmManager_o* __this, System_String_o* name, const MethodInfo_4C80B74* method);",
+    "candidate_body": "FsmBase fsm;\n\t\t\treturn m_Fsms.TryGetValue(Utility.Text.GetFullName<T>(name), out fsm) ? (Fsm<T>)fsm : null;",
+    "candidate_body_sha256": "40b1feb82ba11bffdf82e6f384913373fe7fc6cb7b258b72fb16f35adf1ab29d"
+  },
+  {
+    "file": "Assets/Scripts/GFRunning/GameFramework/Fsm/FsmManager.cs",
+    "token": "0x6006CE0",
+    "name": "GameFramework.Fsm.FsmManager$$GetAllFsms",
+    "rva": "0x7296f9c",
+    "end": "0x7297184",
+    "native_signature": "GameFramework_Fsm_FsmBase_array* GameFramework_Fsm_FsmManager__GetAllFsms (GameFramework_Fsm_FsmManager_o* __this, const MethodInfo* method);",
+    "candidate_body": "FsmBase[] fsms = new FsmBase[m_Fsms.Count];\n\t\t\tint index = 0;\n\t\t\tforeach (KeyValuePair<string, FsmBase> fsm in m_Fsms)\n\t\t\t    fsms[index++] = fsm.Value;\n\t\t\treturn fsms;",
+    "candidate_body_sha256": "95a5a7e01f69f808dfb82c31d90d9744aeaf05195e53eed90327aeb2eea06021"
+  },
+  {
+    "file": "Assets/Scripts/GFRunning/GameFramework/Fsm/FsmManager.cs",
+    "token": "0x6006CE1",
+    "name": "GameFramework.Fsm.FsmManager$$CreateFsm<object>",
+    "rva": "0x4c8069c",
+    "end": "0x4c80714",
+    "native_signature": "GameFramework_Fsm_IFsm_T__o* GameFramework_Fsm_FsmManager__CreateFsm_object_ (GameFramework_Fsm_FsmManager_o* __this, Il2CppObject* owner, GameFramework_Fsm_FsmState_T__array* states, const MethodInfo_4C8069C* method);",
+    "candidate_body": "return CreateFsm(string.Empty, owner, states);",
+    "candidate_body_sha256": "08b4c1f3aa79e7f7920a83f2c14356eabbb262a0bbb0911eefc084fe1d019ec9"
+  },
+  {
+    "file": "Assets/Scripts/GFRunning/GameFramework/Fsm/FsmManager.cs",
+    "token": "0x6006CE2",
+    "name": "GameFramework.Fsm.FsmManager$$CreateFsm<object>",
+    "rva": "0x4c80714",
+    "end": "0x4c808c0",
+    "native_signature": "GameFramework_Fsm_IFsm_T__o* GameFramework_Fsm_FsmManager__CreateFsm_object_ (GameFramework_Fsm_FsmManager_o* __this, System_String_o* name, Il2CppObject* owner, GameFramework_Fsm_FsmState_T__array* states, const MethodInfo_4C80714* method);",
+    "candidate_body": "if (HasFsm<T>(name))\n\t\t\t    throw new GameFrameworkException(string.Format(\"Already exist FSM '{0}'.\", Utility.Text.GetFullName<T>(name)));\n\t\t\tFsm<T> fsm = new Fsm<T>(name, owner, states);\n\t\t\tfsm.FullName = Utility.Text.GetFullName<T>(name);\n\t\t\tm_Fsms.Add(fsm.FullName, fsm);\n\t\t\tm_TempFsms.Add(fsm);\n\t\t\treturn fsm;",
+    "candidate_body_sha256": "948444a9edefa5715ac6f6a48363fe8b0f396dcad7f9fe04f740dd302f05277b"
+  },
+  {
+    "file": "Assets/Scripts/GFRunning/GameFramework/Fsm/FsmManager.cs",
+    "token": "0x6006CE3",
+    "name": "GameFramework.Fsm.FsmManager$$DestroyFsm<object>",
+    "rva": "0x4c808c0",
+    "end": "0x4c80920",
+    "native_signature": "bool GameFramework_Fsm_FsmManager__DestroyFsm_object_ (GameFramework_Fsm_FsmManager_o* __this, const MethodInfo_4C808C0* method);",
+    "candidate_body": "return DestroyFsm<T>(string.Empty);",
+    "candidate_body_sha256": "351e6bd69b958c2ecbb995b76d9d182ebbacf776cc177f31a88021668d88da37"
+  },
+  {
+    "file": "Assets/Scripts/GFRunning/GameFramework/Fsm/FsmManager.cs",
+    "token": "0x6006CE4",
+    "name": "GameFramework.Fsm.FsmManager$$DestroyFsm<object>",
+    "rva": "0x4c80a10",
+    "end": "0x4c80b14",
+    "native_signature": "bool GameFramework_Fsm_FsmManager__DestroyFsm_object_ (GameFramework_Fsm_FsmManager_o* __this, System_String_o* name, const MethodInfo_4C80A10* method);",
+    "candidate_body": "string fullName = Utility.Text.GetFullName<T>(name);\n\t\t\tFsmBase fsm;\n\t\t\tif (!m_Fsms.TryGetValue(fullName, out fsm))\n\t\t\t    return false;\n\t\t\tfsm.Shutdown();\n\t\t\tm_Fsms.Remove(fullName);\n\t\t\tm_TempFsms.Remove(fsm);\n\t\t\treturn true;",
+    "candidate_body_sha256": "89fc8c0176759e6f051dc7f64e8447c16e852182b05ef5b8fe7815179a18ce4e"
+  },
+  {
+    "file": "Assets/Scripts/GFRunning/GameFramework/Fsm/FsmManager.cs",
+    "token": "0x6006CE5",
+    "name": "GameFramework.Fsm.FsmManager$$DestroyFsm<object>",
+    "rva": "0x4c80920",
+    "end": "0x4c80a10",
+    "native_signature": "bool GameFramework_Fsm_FsmManager__DestroyFsm_object_ (GameFramework_Fsm_FsmManager_o* __this, GameFramework_Fsm_IFsm_T__o* fsm, const MethodInfo_4C80920* method);",
+    "candidate_body": "if (fsm == null)\n\t\t\t    throw new GameFrameworkException(\"FSM is invalid.\");\n\t\t\treturn DestroyFsm<T>(fsm.Name);",
+    "candidate_body_sha256": "62f05517fec60cffd91400ee60049b3c05b9af41f626e675433fb4fb75cbd4dd"
+  },
+  {
+    "file": "Assets/Scripts/GFRunning/GameFramework/Fsm/FsmManager.cs",
+    "token": "0x6006CE6",
+    "name": "GameFramework.Fsm.FsmManager$$Initialize",
+    "rva": "0x7297184",
+    "end": "0x72971a8",
+    "native_signature": "void GameFramework_Fsm_FsmManager__Initialize (GameFramework_Fsm_FsmManager_o* __this, System_Object_array* arg, const MethodInfo* method);",
+    "candidate_body": "x_0080_008D_00B1f_0086 = true;\n\t\t\tÀª_00A6_00A3_00BDE?.Invoke();",
+    "candidate_body_sha256": "529304923063dc357a5d539793bbbca811a5ea02d47212346073065e50bf8acc"
+  },
+  {
+    "file": "Assets/Scripts/GFRunning/GameFramework/Fsm/FsmManager.cs",
+    "token": "0x6006CE7",
+    "name": "GameFramework.Fsm.FsmManager$$Start",
+    "rva": "0x72971a8",
+    "end": "0x72971ac",
+    "native_signature": "void GameFramework_Fsm_FsmManager__Start (GameFramework_Fsm_FsmManager_o* __this, const MethodInfo* method);",
+    "candidate_body": "// Original ARM64 method is RET.",
+    "candidate_body_sha256": "9383f0ff8c48313dbe22fefe418e63a7a276a2d9acd7f004ad3e4faaa780acf5"
+  },
+  {
+    "file": "Assets/Scripts/GFRunning/GameFramework/Fsm/FsmState.cs",
+    "token": "0x6006CE8",
+    "name": "GameFramework.Fsm.FsmState<object>$$.ctor",
+    "rva": "0x52a8474",
+    "end": "0x52a84cc",
+    "native_signature": "void GameFramework_Fsm_FsmState_object____ctor (GameFramework_Fsm_FsmState_T__o* __this, const MethodInfo_52A8474* method);",
+    "candidate_body": "m_EventHandlers = new Dictionary<int, FsmEventHandler<T>>();",
+    "candidate_body_sha256": "c8d1d96cdbf69f1e8af6889b77e09fc841b5ee38e288dc9ac78710e035e89ad8"
+  },
+  {
+    "file": "Assets/Scripts/GFRunning/GameFramework/Fsm/FsmState.cs",
+    "token": "0x6006CE9",
+    "name": "GameFramework.Fsm.FsmState<object>$$OnInit",
+    "rva": "0x52a84cc",
+    "end": "0x52a84d0",
+    "native_signature": "void GameFramework_Fsm_FsmState_object___OnInit (GameFramework_Fsm_FsmState_T__o* __this, GameFramework_Fsm_IFsm_T__o* fsm, const MethodInfo_52A84CC* method);",
+    "candidate_body": "// Original default lifecycle method is RET.",
+    "candidate_body_sha256": "bd405f5811d9a48bf97cccfdeb8c965fd62021a6ad34f30fa43b0d1bd6936f18"
+  },
+  {
+    "file": "Assets/Scripts/GFRunning/GameFramework/Fsm/FsmState.cs",
+    "token": "0x6006CEA",
+    "name": "GameFramework.Fsm.FsmState<object>$$OnEnter",
+    "rva": "0x52a84d0",
+    "end": "0x52a84d4",
+    "native_signature": "void GameFramework_Fsm_FsmState_object___OnEnter (GameFramework_Fsm_FsmState_T__o* __this, GameFramework_Fsm_IFsm_T__o* fsm, const MethodInfo_52A84D0* method);",
+    "candidate_body": "// Original no-argument lifecycle method is RET.",
+    "candidate_body_sha256": "fb24c6cc73e9429900c7127f79306f2e8d75f77f46b1d6e527ed4b7780c41696"
+  },
+  {
+    "file": "Assets/Scripts/GFRunning/GameFramework/Fsm/FsmState.cs",
+    "token": "0x6006CEB",
+    "name": "GameFramework.Fsm.FsmState<object>$$OnEnter",
+    "rva": "0x52a84d4",
+    "end": "0x52a84d8",
+    "native_signature": "void GameFramework_Fsm_FsmState_object___OnEnter (GameFramework_Fsm_FsmState_T__o* __this, GameFramework_Fsm_IFsm_T__o* fsm, System_Object_array* args, const MethodInfo_52A84D4* method);",
+    "candidate_body": "// Original argument lifecycle method is independently RET.",
+    "candidate_body_sha256": "55caffd9b68e3fae3c3c527a49dfb70c010497f1e2f8344c165ff891c284c992"
+  },
+  {
+    "file": "Assets/Scripts/GFRunning/GameFramework/Fsm/FsmState.cs",
+    "token": "0x6006CEC",
+    "name": "GameFramework.Fsm.FsmState<object>$$OnUpdate",
+    "rva": "0x52a84d8",
+    "end": "0x52a84dc",
+    "native_signature": "void GameFramework_Fsm_FsmState_object___OnUpdate (GameFramework_Fsm_FsmState_T__o* __this, GameFramework_Fsm_IFsm_T__o* fsm, float elapseSeconds, float realElapseSeconds, const MethodInfo_52A84D8* method);",
+    "candidate_body": "// Original default lifecycle method is RET.",
+    "candidate_body_sha256": "bd405f5811d9a48bf97cccfdeb8c965fd62021a6ad34f30fa43b0d1bd6936f18"
+  },
+  {
+    "file": "Assets/Scripts/GFRunning/GameFramework/Fsm/FsmState.cs",
+    "token": "0x6006CED",
+    "name": "GameFramework.Fsm.FsmState<object>$$OnLeave",
+    "rva": "0x52a84dc",
+    "end": "0x52a84e0",
+    "native_signature": "void GameFramework_Fsm_FsmState_object___OnLeave (GameFramework_Fsm_FsmState_T__o* __this, GameFramework_Fsm_IFsm_T__o* fsm, bool isShutdown, const MethodInfo_52A84DC* method);",
+    "candidate_body": "// Original default lifecycle method is RET.",
+    "candidate_body_sha256": "bd405f5811d9a48bf97cccfdeb8c965fd62021a6ad34f30fa43b0d1bd6936f18"
+  },
+  {
+    "file": "Assets/Scripts/GFRunning/GameFramework/Fsm/FsmState.cs",
+    "token": "0x6006CEE",
+    "name": "GameFramework.Fsm.FsmState<object>$$OnDestroy",
+    "rva": "0x52a84e0",
+    "end": "0x52a8504",
+    "native_signature": "void GameFramework_Fsm_FsmState_object___OnDestroy (GameFramework_Fsm_FsmState_T__o* __this, GameFramework_Fsm_IFsm_T__o* fsm, const MethodInfo_52A84E0* method);",
+    "candidate_body": "m_EventHandlers.Clear();",
+    "candidate_body_sha256": "045a3103867f03becf178f5a289430c2028f27a2280d88000335cec81a346c19"
+  },
+  {
+    "file": "Assets/Scripts/GFRunning/GameFramework/Fsm/FsmState.cs",
+    "token": "0x6006CEF",
+    "name": "GameFramework.Fsm.FsmState<object>$$SubscribeEvent",
+    "rva": "0x52a8504",
+    "end": "0x52a8630",
+    "native_signature": "void GameFramework_Fsm_FsmState_object___SubscribeEvent (GameFramework_Fsm_FsmState_T__o* __this, int32_t eventId, GameFramework_Fsm_FsmEventHandler_T__o* eventHandler, const MethodInfo_52A8504* method);",
+    "candidate_body": "if (eventHandler == null)\n\t\t\t    throw new GameFrameworkException(\"Event handler is invalid.\");\n\t\t\tif (m_EventHandlers.ContainsKey(eventId))\n\t\t\t    m_EventHandlers[eventId] += eventHandler;\n\t\t\telse\n\t\t\t    m_EventHandlers[eventId] = eventHandler;",
+    "candidate_body_sha256": "e400f3da0f95a6c364b916439627ba5b1ccad263411df79fab50c2ccf182ba2a"
+  },
+  {
+    "file": "Assets/Scripts/GFRunning/GameFramework/Fsm/FsmState.cs",
+    "token": "0x6006CF0",
+    "name": "GameFramework.Fsm.FsmState<object>$$UnsubscribeEvent",
+    "rva": "0x52a8630",
+    "end": "0x52a8758",
+    "native_signature": "void GameFramework_Fsm_FsmState_object___UnsubscribeEvent (GameFramework_Fsm_FsmState_T__o* __this, int32_t eventId, GameFramework_Fsm_FsmEventHandler_T__o* eventHandler, const MethodInfo_52A8630* method);",
+    "candidate_body": "if (eventHandler == null)\n\t\t\t    throw new GameFrameworkException(\"Event handler is invalid.\");\n\t\t\tif (m_EventHandlers.ContainsKey(eventId))\n\t\t\t    m_EventHandlers[eventId] -= eventHandler;",
+    "candidate_body_sha256": "b411d543c0f6095c68996ae3eac13cc02d971a7ed8b207adeb545bf46c1ae70f"
+  },
+  {
+    "file": "Assets/Scripts/GFRunning/GameFramework/Fsm/FsmState.cs",
+    "token": "0x6006CF1",
+    "name": "GameFramework.Fsm.FsmState<object>$$ChangeState<object>",
+    "rva": "0x47327b4",
+    "end": "0x4732868",
+    "native_signature": "void GameFramework_Fsm_FsmState_object___ChangeState_object_ (GameFramework_Fsm_FsmState_T__o* __this, GameFramework_Fsm_IFsm_T__o* fsm, System_Object_array* args, const MethodInfo_47327B4* method);",
+    "candidate_body": "if (fsm == null)\n\t\t\t    throw new GameFrameworkException(\"FSM is invalid.\");\n\t\t\t((Fsm<T>)fsm).ChangeState<TState>(args);",
+    "candidate_body_sha256": "1efab38521d4a13816b504bda24489a5439c1b7b43b15ab4e447692bb5e206c4"
+  },
+  {
+    "file": "Assets/Scripts/GFRunning/GameFramework/Fsm/FsmState.cs",
+    "token": "0x6006CF2",
+    "name": "GameFramework.Fsm.FsmState<object>$$ChangeState",
+    "rva": "0x52a8758",
+    "end": "0x52a8814",
+    "native_signature": "void GameFramework_Fsm_FsmState_object___ChangeState (GameFramework_Fsm_FsmState_T__o* __this, GameFramework_Fsm_IFsm_T__o* fsm, System_Type_o* stateType, System_Object_array* args, const MethodInfo_52A8758* method);",
+    "candidate_body": "if (fsm == null)\n\t\t\t    throw new GameFrameworkException(\"FSM is invalid.\");\n\t\t\t((Fsm<T>)fsm).ChangeState(stateType, args);",
+    "candidate_body_sha256": "4755628b3d751eee560a7c94edd7fd9a50586dcb2cde538603c057d22f03d422"
+  },
+  {
+    "file": "Assets/Scripts/GFRunning/GameFramework/Fsm/FsmState.cs",
+    "token": "0x6006CF3",
+    "name": "GameFramework.Fsm.FsmState<object>$$OnEvent",
+    "rva": "0x52a8814",
+    "end": "0x52a8890",
+    "native_signature": "void GameFramework_Fsm_FsmState_object___OnEvent (GameFramework_Fsm_FsmState_T__o* __this, GameFramework_Fsm_IFsm_T__o* fsm, Il2CppObject* sender, int32_t eventId, Il2CppObject* userData, const MethodInfo_52A8814* method);",
+    "candidate_body": "FsmEventHandler<T> handler;\n\t\t\tif (m_EventHandlers.TryGetValue(eventId, out handler) && handler != null)\n\t\t\t    handler(fsm, sender, userData);",
+    "candidate_body_sha256": "b6a8feddb58d6297429163f7265df159598c06c111f33cde8f5e2ffc6f653b85"
+  },
+  {
+    "file": "Assets/Scripts/GFRunning/GameFramework/Procedure/ProcedureBase.cs",
+    "token": "0x6006A22",
+    "name": "GameFramework.Procedure.ProcedureBase$$OnInit",
+    "rva": "0x727a5ec",
+    "end": "0x727a644",
+    "native_signature": "void GameFramework_Procedure_ProcedureBase__OnInit (GameFramework_Procedure_ProcedureBase_o* __this, GameFramework_Fsm_IFsm_IProcedureManager__o* procedureOwner, const MethodInfo* method);",
+    "candidate_body": "base.OnInit(procedureOwner);",
+    "candidate_body_sha256": "cc087ac652bd16e1fa4851ba3bb2a0b51f23dc100179f5399331ae1a256b31bc"
+  },
+  {
+    "file": "Assets/Scripts/GFRunning/GameFramework/Procedure/ProcedureBase.cs",
+    "token": "0x6006A23",
+    "name": "GameFramework.Procedure.ProcedureBase$$OnEnter",
+    "rva": "0x727a644",
+    "end": "0x727a790",
+    "native_signature": "void GameFramework_Procedure_ProcedureBase__OnEnter (GameFramework_Procedure_ProcedureBase_o* __this, GameFramework_Fsm_IFsm_IProcedureManager__o* procedureOwner, const MethodInfo* method);",
+    "candidate_body": "base.OnEnter(procedureOwner);\n\t\t\tCLog.LogProcedure(\"Enter '\" + GetType().FullName + \"' procedure.\");",
+    "candidate_body_sha256": "95ba82b6771041cf9aac248072814a1b2227843963e01b75640acd2a6f20a4ea"
+  },
+  {
+    "file": "Assets/Scripts/GFRunning/GameFramework/Procedure/ProcedureBase.cs",
+    "token": "0x6006A24",
+    "name": "GameFramework.Procedure.ProcedureBase$$OnUpdate",
+    "rva": "0x727a790",
+    "end": "0x727a800",
+    "native_signature": "void GameFramework_Procedure_ProcedureBase__OnUpdate (GameFramework_Procedure_ProcedureBase_o* __this, GameFramework_Fsm_IFsm_IProcedureManager__o* procedureOwner, float elapseSeconds, float realElapseSeconds, const MethodInfo* method);",
+    "candidate_body": "base.OnUpdate(procedureOwner, elapseSeconds, realElapseSeconds);",
+    "candidate_body_sha256": "9f2935820f4d24dcc27e96406918d84297ee89f735fa9475e9cd8b18cece65de"
+  },
+  {
+    "file": "Assets/Scripts/GFRunning/GameFramework/Procedure/ProcedureBase.cs",
+    "token": "0x6006A25",
+    "name": "GameFramework.Procedure.ProcedureBase$$OnLeave",
+    "rva": "0x727a800",
+    "end": "0x727a95c",
+    "native_signature": "void GameFramework_Procedure_ProcedureBase__OnLeave (GameFramework_Procedure_ProcedureBase_o* __this, GameFramework_Fsm_IFsm_IProcedureManager__o* procedureOwner, bool isShutdown, const MethodInfo* method);",
+    "candidate_body": "base.OnLeave(procedureOwner, isShutdown);\n\t\t\tCLog.LogProcedure(\"Leave '\" + GetType().FullName + \"' procedure.\");",
+    "candidate_body_sha256": "a8d2a509ef7f29f2eaae5aa548a9dfdde4d2193d189ab27b0f8a95c85d733217"
+  },
+  {
+    "file": "Assets/Scripts/GFRunning/GameFramework/Procedure/ProcedureBase.cs",
+    "token": "0x6006A26",
+    "name": "GameFramework.Procedure.ProcedureBase$$OnDestroy",
+    "rva": "0x727a95c",
+    "end": "0x727a9b4",
+    "native_signature": "void GameFramework_Procedure_ProcedureBase__OnDestroy (GameFramework_Procedure_ProcedureBase_o* __this, GameFramework_Fsm_IFsm_IProcedureManager__o* procedureOwner, const MethodInfo* method);",
+    "candidate_body": "base.OnDestroy(procedureOwner);",
+    "candidate_body_sha256": "b0c289c4703e4933b0762b419913805c52bd8fba307e0d8bbd637504b29bfc49"
+  },
+  {
+    "file": "Assets/Scripts/GFRunning/GameFramework/Procedure/ProcedureBase.cs",
+    "token": "0x6006A27",
+    "name": "GameFramework.Procedure.ProcedureBase$$.ctor",
+    "rva": "0x727a9b4",
+    "end": "0x727a9fc",
+    "native_signature": "void GameFramework_Procedure_ProcedureBase___ctor (GameFramework_Procedure_ProcedureBase_o* __this, const MethodInfo* method);",
+    "candidate_body": "// The implicit base constructor matches the original FsmState<IProcedureManager> call.",
+    "candidate_body_sha256": "578bbc05c8f6e0fa904389ff90e11fc25f6f3dc9fc018adf027c16de7f401ef4"
+  },
+  {
+    "file": "Assets/Scripts/GFRunning/GameFramework/Procedure/ProcedureManager.cs",
+    "token": "0x6006A28",
+    "name": "GameFramework.Procedure.ProcedureManager$$.ctor",
+    "rva": "0x727a9fc",
+    "end": "0x727aa18",
+    "native_signature": "void GameFramework_Procedure_ProcedureManager___ctor (GameFramework_Procedure_ProcedureManager_o* __this, const MethodInfo* method);",
+    "candidate_body": "m_FsmManager = null;\n\t\t\tm_ProcedureFsm = null;",
+    "candidate_body_sha256": "7a814aee71670878b3b4ea61a1056b3d453e5ccf05698619e815527c1f050a0e"
+  },
+  {
+    "file": "Assets/Scripts/GFRunning/GameFramework/Procedure/ProcedureManager.cs",
+    "token": "0x6006A29",
+    "name": "GameFramework.Procedure.ProcedureManager$$Initialize",
+    "rva": "0x727aa18",
+    "end": "0x727aa3c",
+    "native_signature": "void GameFramework_Procedure_ProcedureManager__Initialize (GameFramework_Procedure_ProcedureManager_o* __this, System_Object_array* arg, const MethodInfo* method);",
+    "candidate_body": "x_0080_008D_00B1f_0086 = true;\n\t\t\tÀª_00A6_00A3_00BDE?.Invoke();",
+    "candidate_body_sha256": "529304923063dc357a5d539793bbbca811a5ea02d47212346073065e50bf8acc"
+  },
+  {
+    "file": "Assets/Scripts/GFRunning/GameFramework/Procedure/ProcedureManager.cs",
+    "token": "0x6006A2A",
+    "name": "GameFramework.Procedure.ProcedureManager$$Register",
+    "rva": "0x727aa3c",
+    "end": "0x727ab98",
+    "native_signature": "void GameFramework_Procedure_ProcedureManager__Register (GameFramework_Procedure_ProcedureManager_o* __this, GameFramework_Procedure_ProcedureBase_array* procedures, const MethodInfo* method);",
+    "candidate_body": "m_FsmManager = GameFrameEntry.GetModule<FsmManager>();\n\t\t\tif (m_FsmManager == null)\n\t\t\t\tthrow new GameFrameworkException(\"FSM manager is invalid.\");\n\t\t\tm_ProcedureFsm = m_FsmManager.CreateFsm<IProcedureManager>(this, procedures);",
+    "candidate_body_sha256": "94050b3d024a035c7def392807796682e7eac96a7bbfeeab14419ccb09430ffd"
+  },
+  {
+    "file": "Assets/Scripts/GFRunning/GameFramework/Procedure/ProcedureManager.cs",
+    "token": "0x6006A2B",
+    "name": "GameFramework.Procedure.ProcedureManager$$Start",
+    "rva": "0x727ab98",
+    "end": "0x727ab9c",
+    "native_signature": "void GameFramework_Procedure_ProcedureManager__Start (GameFramework_Procedure_ProcedureManager_o* __this, const MethodInfo* method);",
+    "candidate_body": "// Original ARM64 0x727AB98 is a single RET.",
+    "candidate_body_sha256": "3bd418ea2afc40e83feb2e4ca5bf06802330774bd1265bdd81a9afb90cac3689"
+  },
+  {
+    "file": "Assets/Scripts/GFRunning/GameFramework/Procedure/ProcedureManager.cs",
+    "token": "0x6006A2C",
+    "name": "GameFramework.Procedure.ProcedureManager$$get_Priority",
+    "rva": "0x727ab9c",
+    "end": "0x727aba4",
+    "native_signature": "int32_t GameFramework_Procedure_ProcedureManager__get_Priority (GameFramework_Procedure_ProcedureManager_o* __this, const MethodInfo* method);",
+    "candidate_body": "return 90;",
+    "candidate_body_sha256": "fcc6b564e9ead6addd8070df76b76a7ae517fb6b26f60a6d0610d559e3a1bcbf"
+  },
+  {
+    "file": "Assets/Scripts/GFRunning/GameFramework/Procedure/ProcedureManager.cs",
+    "token": "0x6006A2D",
+    "name": "GameFramework.Procedure.ProcedureManager$$get_CurrentProcedure",
+    "rva": "0x727aba4",
+    "end": "0x727acd8",
+    "native_signature": "GameFramework_Procedure_ProcedureBase_o* GameFramework_Procedure_ProcedureManager__get_CurrentProcedure (GameFramework_Procedure_ProcedureManager_o* __this, const MethodInfo* method);",
+    "candidate_body": "if (m_ProcedureFsm == null)\n\t\t\t\t\tthrow new GameFrameworkException(\"You must initialize procedure first.\");\n\t\t\t\treturn (ProcedureBase)m_ProcedureFsm.CurrentState;",
+    "candidate_body_sha256": "e9f27ef58293ac78b7e6026fd180d0f9f5333d41d51b9959444a6c9ecb8049af"
+  },
+  {
+    "file": "Assets/Scripts/GFRunning/GameFramework/Procedure/ProcedureManager.cs",
+    "token": "0x6006A2E",
+    "name": "GameFramework.Procedure.ProcedureManager$$get_CurrentProcedureTime",
+    "rva": "0x727acd8",
+    "end": "0x727adc0",
+    "native_signature": "float GameFramework_Procedure_ProcedureManager__get_CurrentProcedureTime (GameFramework_Procedure_ProcedureManager_o* __this, const MethodInfo* method);",
+    "candidate_body": "if (m_ProcedureFsm == null)\n\t\t\t\t\tthrow new GameFrameworkException(\"You must initialize procedure first.\");\n\t\t\t\treturn m_ProcedureFsm.CurrentStateTime;",
+    "candidate_body_sha256": "4497c4fb9cacfbdcaff0c9b2e58b9e2d66be26c3dae7c11afe0b168d314f39a5"
+  },
+  {
+    "file": "Assets/Scripts/GFRunning/GameFramework/Procedure/ProcedureManager.cs",
+    "token": "0x6006A2F",
+    "name": "GameFramework.Procedure.ProcedureManager$$Update",
+    "rva": "0x727adc0",
+    "end": "0x727adc4",
+    "native_signature": "void GameFramework_Procedure_ProcedureManager__Update (GameFramework_Procedure_ProcedureManager_o* __this, float elapseSeconds, float realElapseSeconds, const MethodInfo* method);",
+    "candidate_body": "// Original ARM64 0x727ADC0 is a single RET; FsmManager owns state updates.",
+    "candidate_body_sha256": "0e9c53800d5836ef66c4f71699e45afac3f247a627779429b3a7f64847e3f565"
+  },
+  {
+    "file": "Assets/Scripts/GFRunning/GameFramework/Procedure/ProcedureManager.cs",
+    "token": "0x6006A30",
+    "name": "GameFramework.Procedure.ProcedureManager$$Shutdown",
+    "rva": "0x727adc4",
+    "end": "0x727ae9c",
+    "native_signature": "void GameFramework_Procedure_ProcedureManager__Shutdown (GameFramework_Procedure_ProcedureManager_o* __this, const MethodInfo* method);",
+    "candidate_body": "if (m_FsmManager != null)\n\t\t\t{\n\t\t\t\tif (m_ProcedureFsm != null)\n\t\t\t\t{\n\t\t\t\t\tm_FsmManager.DestroyFsm(m_ProcedureFsm);\n\t\t\t\t\tm_ProcedureFsm = null;\n\t\t\t\t}\n\t\t\t\tm_FsmManager = null;\n\t\t\t}\n\t\t\tx_0080_008D_00B1f_0086 = false;",
+    "candidate_body_sha256": "a82619cd803c541fb042ba744aa052a5446f3689b66d87e2e25c6810be2d8984"
+  },
+  {
+    "file": "Assets/Scripts/GFRunning/GameFramework/Procedure/ProcedureManager.cs",
+    "token": "0x6006A31",
+    "name": "GameFramework.Procedure.ProcedureManager$$StartProcedure<object>",
+    "rva": "0x4e5d578",
+    "end": "0x4e5d6c8",
+    "native_signature": "void GameFramework_Procedure_ProcedureManager__StartProcedure_object_ (GameFramework_Procedure_ProcedureManager_o* __this, const MethodInfo_4E5D578* method);",
+    "candidate_body": "if (m_ProcedureFsm == null)\n\t\t\t\tthrow new GameFrameworkException(\"You must initialize procedure first.\");\n\t\t\tm_ProcedureFsm.Start<T>(Array.Empty<object>());",
+    "candidate_body_sha256": "6e7227964771687f53836c2ae637df339b6351ec412733901b26c642eddc79d5"
+  },
+  {
+    "file": "Assets/Scripts/GFRunning/GameFramework/Procedure/ProcedureManager.cs",
+    "token": "0x6006A32",
+    "name": "GameFramework.Procedure.ProcedureManager$$StartProcedure",
+    "rva": "0x727ae9c",
+    "end": "0x727affc",
+    "native_signature": "void GameFramework_Procedure_ProcedureManager__StartProcedure (GameFramework_Procedure_ProcedureManager_o* __this, System_Type_o* procedureType, const MethodInfo* method);",
+    "candidate_body": "if (m_ProcedureFsm == null)\n\t\t\t\tthrow new GameFrameworkException(\"You must initialize procedure first.\");\n\t\t\tm_ProcedureFsm.Start(procedureType, Array.Empty<object>());",
+    "candidate_body_sha256": "68b73eeb69951237f813ec23369f6659fd2b66087fd8021d4b6d56e7b43ebfbe"
+  },
+  {
+    "file": "Assets/Scripts/GFRunning/GameFramework/Procedure/ProcedureManager.cs",
+    "token": "0x6006A33",
+    "name": "GameFramework.Procedure.ProcedureManager$$HasProcedure<object>",
+    "rva": "0x4e5d498",
+    "end": "0x4e5d578",
+    "native_signature": "bool GameFramework_Procedure_ProcedureManager__HasProcedure_object_ (GameFramework_Procedure_ProcedureManager_o* __this, const MethodInfo_4E5D498* method);",
+    "candidate_body": "if (m_ProcedureFsm == null)\n\t\t\t\tthrow new GameFrameworkException(\"You must initialize procedure first.\");\n\t\t\treturn m_ProcedureFsm.HasState<T>();",
+    "candidate_body_sha256": "746838cf71f35e15a07d2100fd36979fd40722f935509f12ff7ceeb5d56ea17c"
+  },
+  {
+    "file": "Assets/Scripts/GFRunning/GameFramework/Procedure/ProcedureManager.cs",
+    "token": "0x6006A34",
+    "name": "GameFramework.Procedure.ProcedureManager$$HasProcedure",
+    "rva": "0x727affc",
+    "end": "0x727b0ec",
+    "native_signature": "bool GameFramework_Procedure_ProcedureManager__HasProcedure (GameFramework_Procedure_ProcedureManager_o* __this, System_Type_o* procedureType, const MethodInfo* method);",
+    "candidate_body": "if (m_ProcedureFsm == null)\n\t\t\t\tthrow new GameFrameworkException(\"You must initialize procedure first.\");\n\t\t\treturn m_ProcedureFsm.HasState(procedureType);",
+    "candidate_body_sha256": "ab6049242a6dcd0ebbc3c1af82bb76c5803dd619262f41e3103e31b6992a06a1"
+  },
+  {
+    "file": "Assets/Scripts/GFRunning/GameFramework/Procedure/ProcedureManager.cs",
+    "token": "0x6006A35",
+    "name": "GameFramework.Procedure.ProcedureManager$$GetProcedure<object>",
+    "rva": "0x4e5d3b8",
+    "end": "0x4e5d498",
+    "native_signature": "GameFramework_Procedure_ProcedureBase_o* GameFramework_Procedure_ProcedureManager__GetProcedure_object_ (GameFramework_Procedure_ProcedureManager_o* __this, const MethodInfo_4E5D3B8* method);",
+    "candidate_body": "if (m_ProcedureFsm == null)\n\t\t\t\tthrow new GameFrameworkException(\"You must initialize procedure first.\");\n\t\t\treturn m_ProcedureFsm.GetState<T>();",
+    "candidate_body_sha256": "dd3a1d5492044360c2f156ce78f95929059945962d59496c7603ca5c7fec84c3"
+  },
+  {
+    "file": "Assets/Scripts/GFRunning/GameFramework/Procedure/ProcedureManager.cs",
+    "token": "0x6006A36",
+    "name": "GameFramework.Procedure.ProcedureManager$$GetProcedure",
+    "rva": "0x727b0ec",
+    "end": "0x727b228",
+    "native_signature": "GameFramework_Procedure_ProcedureBase_o* GameFramework_Procedure_ProcedureManager__GetProcedure (GameFramework_Procedure_ProcedureManager_o* __this, System_Type_o* procedureType, const MethodInfo* method);",
+    "candidate_body": "if (m_ProcedureFsm == null)\n\t\t\t\tthrow new GameFrameworkException(\"You must initialize procedure first.\");\n\t\t\treturn (ProcedureBase)m_ProcedureFsm.GetState(procedureType);",
+    "candidate_body_sha256": "e8b7bc6e0c71711035edf090d20ee5109dcda7e98c67380cc9af3d8bc658ace5"
+  },
+  {
+    "file": "Assets/Scripts/GFRunning/GameFramework/Procedure/ProcedureManager.cs",
+    "token": "0x6006A37",
+    "name": "GameFramework.Procedure.ProcedureManager$$GetProceduresType",
+    "rva": "0x727b228",
+    "end": "0x727b43c",
+    "native_signature": "System_Collections_Generic_List_Type__o* GameFramework_Procedure_ProcedureManager__GetProceduresType (GameFramework_Procedure_ProcedureManager_o* __this, const MethodInfo* method);",
+    "candidate_body": "List<Type> procedureTypes = new List<Type>();\n\t\t\tType[] types = System.Reflection.Assembly.Load(\"Assembly-CSharp\").GetTypes();\n\t\t\tforeach (Type type in types)\n\t\t\t{\n\t\t\t\tProcedureTypeAttribute[] attributes = (ProcedureTypeAttribute[])type.GetCustomAttributes(typeof(ProcedureTypeAttribute), false);\n\t\t\t\tif (attributes.Length != 0)\n\t\t\t\t\tprocedureTypes.Add(attributes[0].ProcedureType);\n\t\t\t}\n\t\t\treturn procedureTypes;",
+    "candidate_body_sha256": "83ece5064abbb68a3a20c2989cb458c5b6dff41a755c4b293960219b5f6d8e5b"
+  }
+]

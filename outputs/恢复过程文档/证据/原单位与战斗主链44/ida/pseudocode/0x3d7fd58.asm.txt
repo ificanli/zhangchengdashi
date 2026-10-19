@@ -1,0 +1,59 @@
+0x3d7fd58: STR             X30, [SP,#var_30]!
+0x3d7fd5c: STP             X22, X21, [SP,#0x30+var_20]
+0x3d7fd60: STP             X20, X19, [SP,#0x30+var_10]
+0x3d7fd64: ADRP            X20, #byte_8FFD454@PAGE
+0x3d7fd68: ADRP            X22, #off_8ACD8D0@PAGE
+0x3d7fd6c: ADRP            X21, #off_8ACC8D0@PAGE
+0x3d7fd70: LDRB            W8, [X20,#byte_8FFD454@PAGEOFF]
+0x3d7fd74: LDR             X22, [X22,#off_8ACD8D0@PAGEOFF]; qword_8D25E18
+0x3d7fd78: LDR             X21, [X21,#off_8ACC8D0@PAGEOFF]; off_8CEB3E0
+0x3d7fd7c: MOV             X19, X0
+0x3d7fd80: TBNZ            W8, #0, loc_3D7FDB0
+0x3d7fd84: ADRP            X0, #off_8ACD8D0@PAGE
+0x3d7fd88: LDR             X0, [X0,#off_8ACD8D0@PAGEOFF]; qword_8D25E18 ; slot
+0x3d7fd8c: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3d7fd90: ADRP            X0, #off_8AD1250@PAGE
+0x3d7fd94: LDR             X0, [X0,#off_8AD1250@PAGEOFF]; qword_8D25FE8 ; slot
+0x3d7fd98: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3d7fd9c: ADRP            X0, #off_8ACC8D0@PAGE
+0x3d7fda0: LDR             X0, [X0,#off_8ACC8D0@PAGEOFF]; off_8CEB3E0 ; slot
+0x3d7fda4: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3d7fda8: MOV             W8, #1
+0x3d7fdac: STRB            W8, [X20,#byte_8FFD454@PAGEOFF]
+0x3d7fdb0: LDR             X1, [X22]
+0x3d7fdb4: MOV             X0, X19
+0x3d7fdb8: BL              UnityEngine.Component$$GetComponent_object_
+0x3d7fdbc: LDR             X8, [X21]
+0x3d7fdc0: MOV             X20, X0
+0x3d7fdc4: LDR             W9, [X8,#0xE0]
+0x3d7fdc8: CBNZ            W9, loc_3D7FDD4
+0x3d7fdcc: MOV             X0, X8; klass
+0x3d7fdd0: BL              il2cpp_codegen_runtime_class_init
+0x3d7fdd4: MOV             X0, X20
+0x3d7fdd8: MOV             X1, XZR
+0x3d7fddc: MOV             X2, XZR
+0x3d7fde0: BL              UnityEngine.Object$$op_Inequality
+0x3d7fde4: TBZ             W0, #0, loc_3D7FDF0
+0x3d7fde8: MOV             X0, X20
+0x3d7fdec: B               loc_3D7FE34
+0x3d7fdf0: ADRP            X8, #off_8AD1250@PAGE
+0x3d7fdf4: LDR             X8, [X8,#off_8AD1250@PAGEOFF]; qword_8D25FE8
+0x3d7fdf8: MOV             X0, X19
+0x3d7fdfc: LDR             X1, [X8]
+0x3d7fe00: BL              UnityEngine.Component$$GetComponent_object_
+0x3d7fe04: LDR             X8, [X21]
+0x3d7fe08: MOV             X19, X0
+0x3d7fe0c: LDR             W9, [X8,#0xE0]
+0x3d7fe10: CBNZ            W9, loc_3D7FE1C
+0x3d7fe14: MOV             X0, X8; klass
+0x3d7fe18: BL              il2cpp_codegen_runtime_class_init
+0x3d7fe1c: MOV             X0, X19
+0x3d7fe20: MOV             X1, XZR
+0x3d7fe24: MOV             X2, XZR
+0x3d7fe28: BL              UnityEngine.Object$$op_Inequality
+0x3d7fe2c: TST             W0, #1
+0x3d7fe30: CSEL            X0, X19, XZR, NE
+0x3d7fe34: LDP             X20, X19, [SP,#0x30+var_10]
+0x3d7fe38: LDP             X22, X21, [SP,#0x30+var_20]
+0x3d7fe3c: LDR             X30, [SP+0x30+var_30],#0x30
+0x3d7fe40: RET

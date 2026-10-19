@@ -1,0 +1,25 @@
+0x72ee9ac: fe0f1df8 str      x30, [sp, #-0x30]!
+0x72ee9b0: f65701a9 stp      x22, x21, [sp, #0x10]
+0x72ee9b4: f44f02a9 stp      x20, x19, [sp, #0x20]
+0x72ee9b8: f5e80090 adrp     x21, #0x900a000
+0x72ee9bc: 76c10090 adrp     x22, #0x8b1a000
+0x72ee9c0: a82e4239 ldrb     w8, [x21, #0x8b]
+0x72ee9c4: d65a46f9 ldr      x22, [x22, #0xcb0] // GameFramework.Resources.PatchManifest_TypeInfo
+0x72ee9c8: f40301aa mov      x20, x1
+0x72ee9cc: f30300aa mov      x19, x0
+0x72ee9d0: c8000037 tbnz     w8, #0, #0x72ee9e8
+0x72ee9d4: 60c10090 adrp     x0, #0x8b1a000
+0x72ee9d8: 005846f9 ldr      x0, [x0, #0xcb0] // GameFramework.Resources.PatchManifest_TypeInfo
+0x72ee9dc: 293a2597 bl       #0x3c3d280
+0x72ee9e0: 28008052 mov      w8, #1
+0x72ee9e4: a82e0239 strb     w8, [x21, #0x8b]
+0x72ee9e8: c00240f9 ldr      x0, [x22]
+0x72ee9ec: b63a2597 bl       #0x3c3d4c4
+0x72ee9f0: e10314aa mov      x1, x20
+0x72ee9f4: f50300aa mov      x21, x0
+0x72ee9f8: 78f9ff97 bl       #0x72ecfd8 // GameFramework.Resources.PatchManifest$$.ctor
+0x72ee9fc: 750a00f9 str      x21, [x19, #0x10]
+0x72eea00: f44f42a9 ldp      x20, x19, [sp, #0x20]
+0x72eea04: f65741a9 ldp      x22, x21, [sp, #0x10]
+0x72eea08: fe0743f8 ldr      x30, [sp], #0x30
+0x72eea0c: c0035fd6 ret      

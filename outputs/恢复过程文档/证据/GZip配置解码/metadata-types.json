@@ -1,0 +1,83 @@
+{
+  "type": "ToolModule.GZipTool",
+  "token": "0x0200019D",
+  "attributes": "Public, Abstract, Sealed, BeforeFieldInit",
+  "fields": [
+    {
+      "Name": "BufferSize",
+      "type": "System.Int32",
+      "IsStatic": true,
+      "Offset": 0,
+      "token": "0x04001ABF"
+    },
+    {
+      "Name": "Level",
+      "type": "System.IO.Compression.CompressionLevel",
+      "IsStatic": true,
+      "Offset": 0,
+      "token": "0x04001AC0"
+    },
+    {
+      "Name": "DefaultEncoding",
+      "type": "System.Text.Encoding",
+      "IsStatic": true,
+      "Offset": 0,
+      "token": "0x04001AC1"
+    }
+  ],
+  "methods": [
+    {
+      "Name": "CompressToBase64",
+      "signature": "System.String ToolModule.GZipTool::CompressToBase64(System.String json)",
+      "IsStatic": true,
+      "token": "0x06000698",
+      "address": "0x3F8045C"
+    },
+    {
+      "Name": "Compress",
+      "signature": "System.Byte[] ToolModule.GZipTool::Compress(System.Byte[] input)",
+      "IsStatic": true,
+      "token": "0x06000699",
+      "address": "0x3F80924"
+    },
+    {
+      "Name": "CompressCore",
+      "signature": "System.Byte[] ToolModule.GZipTool::CompressCore(System.Byte[] input)",
+      "IsStatic": true,
+      "token": "0x0600069A",
+      "address": "0x3F80514"
+    },
+    {
+      "Name": "DecompressFromBase64",
+      "signature": "System.String ToolModule.GZipTool::DecompressFromBase64(System.String base64Data)",
+      "IsStatic": true,
+      "token": "0x0600069B",
+      "address": "0x3F80978"
+    },
+    {
+      "Name": "Decompress",
+      "signature": "System.Byte[] ToolModule.GZipTool::Decompress(System.Byte[] compressedData)",
+      "IsStatic": true,
+      "token": "0x0600069C",
+      "address": "0x3F8121C"
+    },
+    {
+      "Name": "DecompressCore",
+      "signature": "System.Byte[] ToolModule.GZipTool::DecompressCore(System.Byte[] compressedData)",
+      "IsStatic": true,
+      "token": "0x0600069D",
+      "address": "0x3F80B3C"
+    },
+    {
+      "Name": ".cctor",
+      "signature": "System.Void ToolModule.GZipTool::.cctor()",
+      "IsStatic": true,
+      "token": "0x0600069E",
+      "address": "0x3F81270"
+    }
+  ],
+  "listHelper": [
+    "System.Boolean ToolModule.ListExtend::IsNullOrEmpty(System.Collections.Generic.IList\u00601\u003CT\u003E list)",
+    "System.Boolean ToolModule.ListExtend::IsNullOrEmpty(System.Collections.Generic.IList\u00601\u003CSystem.Byte\u003E list)"
+  ]
+}

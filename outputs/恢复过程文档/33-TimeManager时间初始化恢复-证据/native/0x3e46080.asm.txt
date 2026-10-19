@@ -1,0 +1,18 @@
+0x3e46080: STP             X30, X19, [SP,#var_10]!
+0x3e46084: LDRB            W8, [X0,#0x24]
+0x3e46088: CBNZ            W8, loc_3E460C0
+0x3e4608c: LDR             X1, [X0,#0x90]
+0x3e46090: MOV             X19, X0
+0x3e46094: CBZ             X1, loc_3E460A4
+0x3e46098: MOV             X0, X19
+0x3e4609c: MOV             X2, XZR
+0x3e460a0: BL              UnityEngine.MonoBehaviour$$StopCoroutine
+0x3e460a4: MOV             X0, X19
+0x3e460a8: BL              TimeModuleO.TimeManager$$SyncServerTimeCoroutine
+0x3e460ac: MOV             X1, X0
+0x3e460b0: MOV             X0, X19
+0x3e460b4: MOV             X2, XZR
+0x3e460b8: BL              UnityEngine.MonoBehaviour$$StartCoroutine
+0x3e460bc: STR             X0, [X19,#0x90]
+0x3e460c0: LDP             X30, X19, [SP+0x10+var_10],#0x10
+0x3e460c4: RET

@@ -1,0 +1,29 @@
+__int64 __fastcall GameModule_BattleGameSceneManager__GetRoleTargetSync(__int64 a1, __int64 a2, char a3)
+{
+  char v6; // w8
+  __int64 result; // x0
+  long double position; // q0
+  __int64 v9; // [xsp+8h] [xbp-38h] BYREF
+
+  if ( (byte_8FFD790 & 1) == 0 )
+  {
+    il2cpp_codegen_initialize_runtime_metadata((void **)&off_8CEB3E0);
+    byte_8FFD790 = 1;
+  }
+  v9 = 0;
+  if ( *((_DWORD *)off_8CEB3E0 + 56) == 0 )
+    il2cpp_codegen_runtime_class_init(off_8CEB3E0);
+  v6 = UnityEngine_Object__op_Inequality(a2, 0, 0);
+  result = 0;
+  if ( (v6 & 1) != 0 )
+  {
+    if ( a2 == 0 )
+      il2cpp_codegen_raise_null_reference_exception();
+    position = UnityEngine_Transform__get_position(a2, 0);
+    if ( (sub_3DF06BC(a1, a3 & 1, &v9, position) & 1) != 0 )
+      return v9;
+    else
+      return 0;
+  }
+  return result;
+}

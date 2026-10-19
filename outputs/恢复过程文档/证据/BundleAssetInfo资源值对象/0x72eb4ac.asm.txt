@@ -1,0 +1,32 @@
+0x72eb4ac: fe5fbda9 stp      x30, x23, [sp, #-0x30]!
+0x72eb4b0: f65701a9 stp      x22, x21, [sp, #0x10]
+0x72eb4b4: f44f02a9 stp      x20, x19, [sp, #0x20]
+0x72eb4b8: f7e800f0 adrp     x23, #0x900a000
+0x72eb4bc: 16bf00d0 adrp     x22, #0x8acd000
+0x72eb4c0: e8864139 ldrb     w8, [x23, #0x61]
+0x72eb4c4: d63e42f9 ldr      x22, [x22, #0x478] // string_TypeInfo
+0x72eb4c8: f40302aa mov      x20, x2
+0x72eb4cc: f50301aa mov      x21, x1
+0x72eb4d0: f30300aa mov      x19, x0
+0x72eb4d4: c8000037 tbnz     w8, #0, #0x72eb4ec
+0x72eb4d8: 00bf00d0 adrp     x0, #0x8acd000
+0x72eb4dc: 003c42f9 ldr      x0, [x0, #0x478] // string_TypeInfo
+0x72eb4e0: 68472597 bl       #0x3c3d280
+0x72eb4e4: 28008052 mov      w8, #1
+0x72eb4e8: e8860139 strb     w8, [x23, #0x61]
+0x72eb4ec: 28008052 mov      w8, #1
+0x72eb4f0: e00313aa mov      x0, x19
+0x72eb4f4: e1031faa mov      x1, xzr
+0x72eb4f8: 68020139 strb     w8, [x19, #0x40]
+0x72eb4fc: 84700f94 bl       #0x76c770c // System.Object$$.ctor
+0x72eb500: 750a00f9 str      x21, [x19, #0x10]
+0x72eb504: 741200f9 str      x20, [x19, #0x20]
+0x72eb508: c80240f9 ldr      x8, [x22]
+0x72eb50c: f65741a9 ldp      x22, x21, [sp, #0x10]
+0x72eb510: 085d40f9 ldr      x8, [x8, #0xb8]
+0x72eb514: 080140f9 ldr      x8, [x8]
+0x72eb518: 7f3200b9 str      wzr, [x19, #0x30]
+0x72eb51c: 681600f9 str      x8, [x19, #0x28]
+0x72eb520: f44f42a9 ldp      x20, x19, [sp, #0x20]
+0x72eb524: fe5fc3a8 ldp      x30, x23, [sp], #0x30
+0x72eb528: c0035fd6 ret      

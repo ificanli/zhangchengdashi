@@ -1,0 +1,26 @@
+[INFO] [Library] Initializing Metadata...
+[INFO] [Library] 	Using actual IL2CPP Metadata version 31.1
+[INFO] [Library] Initialized Metadata in 1103ms
+[INFO] [Library] Using binary type ELF (from LibCpp2IL)
+[INFO] [Library] Searching Binary for Required Data...
+[INFO] [Library] Got Binary codereg: 0x8575538, metareg: 0x891B5E8 in 918ms.
+[INFO] [Library] Initializing Binary...
+[INFO] [Library] Initialized Binary in 874ms
+[INFO] [Library] Mapping pointers to Il2CppMethodDefinitions...[INFO] [Library] Processed 178359 OK (622ms)
+[INFO] [Program] Creating application model...
+[INFO] [Program] Application model created in 11460.5725ms
+PROBE START HexManager::HexDistance 0x3D2A600
+PROBE START GameModule.SynergyEffectManager::InternalCalculateDamage 0x3E0F6F0
+[WARN] [IlGenerator] GameModule.SynergyEffectManager::InternalCalculateDamage: 'this' local not found (operand: X0)
+PROBE IL EMITTED HexManager::HexDistance 118 instructions
+PROBE IL EMITTED GameModule.SynergyEffectManager::InternalCalculateDamage 66 instructions
+[WARN] [IlGenerator] System.Object::F32I32: scalar regression diagnostic
+[WARN] [IlGenerator] System.Object::F32I64: scalar regression diagnostic
+[WARN] [IlGenerator] System.Object::F64I32: scalar regression diagnostic
+[WARN] [IlGenerator] System.Object::F64I64: scalar regression diagnostic
+[WARN] [IlGenerator] System.Object::I32F32: scalar regression diagnostic
+[WARN] [IlGenerator] System.Object::I64F64: scalar regression diagnostic
+[WARN] [IlGenerator] System.Object::Bits32F32: scalar regression diagnostic
+[WARN] [IlGenerator] System.Object::Bits64F64: scalar regression diagnostic
+SCALAR_REGRESSION tested=52 passed=52 failed=0
+PROBE COMPLETE: only selected methods analyzed; every other method in emitted Assembly-CSharp is an explicit throw and is NOT recovered.

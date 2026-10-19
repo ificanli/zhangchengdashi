@@ -1,0 +1,1201 @@
+{
+  "elfSha256": "72770d00b2b404acf44cc75cc8bf7a3e06850e9ace1237c9cbb2bc72894220ed",
+  "decoder": "capstone 5.0.6",
+  "scope": "Read-only original ARM64 bytes; method boundaries from recovered script.json; declarations are not treated as recovered bodies.",
+  "methods": [
+    {
+      "name": "Unity.Entities.ComponentSystemGroup$$get_RateManager",
+      "address": "0x7e47174",
+      "end": "0x7e4717c",
+      "bytes": 8,
+      "codeSha256": "e22509159eb9c3b897155eb8b2b6f0173dadac1f476c0f92d8d8f930abbe4347",
+      "assembly": "work/ecs-group-recovery/0x7e47174.asm.txt",
+      "directCalls": [],
+      "metadataReferences": []
+    },
+    {
+      "name": "Unity.Entities.ComponentSystemGroup$$set_RateManager",
+      "address": "0x7e4717c",
+      "end": "0x7e47184",
+      "bytes": 8,
+      "codeSha256": "efeeca6622fe25b3cd7bcc4ea2c21f6f0e2f5122294b1503034d9391125d4e22",
+      "assembly": "work/ecs-group-recovery/0x7e4717c.asm.txt",
+      "directCalls": [],
+      "metadataReferences": []
+    },
+    {
+      "name": "Pathfinding.ECS.AIMovementSystemGroup.TimeScaledRateManager$$get_CheapSimulationOnly",
+      "address": "0x44cd7cc",
+      "end": "0x44cd864",
+      "bytes": 152,
+      "codeSha256": "dbddcfc3016e6b767c8f6bcb364cdbab7b1d7b6a15d8738a76999cee1327b12c",
+      "assembly": "work/ecs-group-recovery/0x44cd7cc.asm.txt",
+      "directCalls": [
+        {
+          "instruction": "0x44cd848",
+          "destination": "0x768485c",
+          "Address": 124274780,
+          "Name": "System.InvalidOperationException$$.ctor",
+          "Signature": "void System_InvalidOperationException___ctor (System_InvalidOperationException_o* __this, System_String_o* message, const MethodInfo* method);",
+          "TypeSignature": "viii"
+        }
+      ],
+      "metadataReferences": [
+        {
+          "instruction": "0x44cd7e0",
+          "loadedFrom": "0x8b00d50",
+          "slot": "0x8cf0cc0",
+          "category": "ScriptMetadata",
+          "Address": 147786944,
+          "Name": "Pathfinding.ECS.AIMovementSystemGroup.TimeScaledRateManager_TypeInfo",
+          "Signature": "Pathfinding_ECS_AIMovementSystemGroup_TimeScaledRateManager_c*"
+        },
+        {
+          "instruction": "0x44cd7ec",
+          "loadedFrom": "0x8b00d50",
+          "slot": "0x8cf0cc0",
+          "category": "ScriptMetadata",
+          "Address": 147786944,
+          "Name": "Pathfinding.ECS.AIMovementSystemGroup.TimeScaledRateManager_TypeInfo",
+          "Signature": "Pathfinding_ECS_AIMovementSystemGroup_TimeScaledRateManager_c*"
+        },
+        {
+          "instruction": "0x44cd820",
+          "loadedFrom": "0x8adc9a0",
+          "slot": "0x8ce9720",
+          "category": "ScriptMetadata",
+          "Address": 147756832,
+          "Name": "System.InvalidOperationException_TypeInfo",
+          "Signature": "System_InvalidOperationException_c*"
+        },
+        {
+          "instruction": "0x44cd834",
+          "loadedFrom": "0x8b00d88",
+          "slot": "0x8d5a868",
+          "category": "ScriptString",
+          "Address": 148220008,
+          "Value": "Cannot call this method outside of a simulation group using TimeScaledRateManager"
+        },
+        {
+          "instruction": "0x44cd850",
+          "loadedFrom": "0x8b00d90",
+          "slot": "0x8d40af0",
+          "category": "ScriptMetadataMethod",
+          "Address": 148114160,
+          "Name": "Method$Pathfinding.ECS.AIMovementSystemGroup.TimeScaledRateManager.get_CheapSimulationOnly()",
+          "MethodAddress": 72144844
+        }
+      ]
+    },
+    {
+      "name": "Pathfinding.ECS.AIMovementSystemGroup.TimeScaledRateManager$$get_CheapStepDeltaTime",
+      "address": "0x44cd864",
+      "end": "0x44cd8fc",
+      "bytes": 152,
+      "codeSha256": "f4e031dc7538bf8932f1c0d2f0a32b767914c6f85545977540464cb6fa0fdb4e",
+      "assembly": "work/ecs-group-recovery/0x44cd864.asm.txt",
+      "directCalls": [
+        {
+          "instruction": "0x44cd8e0",
+          "destination": "0x768485c",
+          "Address": 124274780,
+          "Name": "System.InvalidOperationException$$.ctor",
+          "Signature": "void System_InvalidOperationException___ctor (System_InvalidOperationException_o* __this, System_String_o* message, const MethodInfo* method);",
+          "TypeSignature": "viii"
+        }
+      ],
+      "metadataReferences": [
+        {
+          "instruction": "0x44cd878",
+          "loadedFrom": "0x8b00d50",
+          "slot": "0x8cf0cc0",
+          "category": "ScriptMetadata",
+          "Address": 147786944,
+          "Name": "Pathfinding.ECS.AIMovementSystemGroup.TimeScaledRateManager_TypeInfo",
+          "Signature": "Pathfinding_ECS_AIMovementSystemGroup_TimeScaledRateManager_c*"
+        },
+        {
+          "instruction": "0x44cd884",
+          "loadedFrom": "0x8b00d50",
+          "slot": "0x8cf0cc0",
+          "category": "ScriptMetadata",
+          "Address": 147786944,
+          "Name": "Pathfinding.ECS.AIMovementSystemGroup.TimeScaledRateManager_TypeInfo",
+          "Signature": "Pathfinding_ECS_AIMovementSystemGroup_TimeScaledRateManager_c*"
+        },
+        {
+          "instruction": "0x44cd8b8",
+          "loadedFrom": "0x8adc9a0",
+          "slot": "0x8ce9720",
+          "category": "ScriptMetadata",
+          "Address": 147756832,
+          "Name": "System.InvalidOperationException_TypeInfo",
+          "Signature": "System_InvalidOperationException_c*"
+        },
+        {
+          "instruction": "0x44cd8cc",
+          "loadedFrom": "0x8b00d88",
+          "slot": "0x8d5a868",
+          "category": "ScriptString",
+          "Address": 148220008,
+          "Value": "Cannot call this method outside of a simulation group using TimeScaledRateManager"
+        },
+        {
+          "instruction": "0x44cd8e8",
+          "loadedFrom": "0x8b00d98",
+          "slot": "0x8d40af8",
+          "category": "ScriptMetadataMethod",
+          "Address": 148114168,
+          "Name": "Method$Pathfinding.ECS.AIMovementSystemGroup.TimeScaledRateManager.get_CheapStepDeltaTime()",
+          "MethodAddress": 72144996
+        }
+      ]
+    },
+    {
+      "name": "Pathfinding.ECS.AIMovementSystemGroup.TimeScaledRateManager$$get_IsLastSubstep",
+      "address": "0x44cd8fc",
+      "end": "0x44cd994",
+      "bytes": 152,
+      "codeSha256": "91183816aed09afeda376bd48660f63fce64a948dbb1329f807981755d0c66bb",
+      "assembly": "work/ecs-group-recovery/0x44cd8fc.asm.txt",
+      "directCalls": [
+        {
+          "instruction": "0x44cd978",
+          "destination": "0x768485c",
+          "Address": 124274780,
+          "Name": "System.InvalidOperationException$$.ctor",
+          "Signature": "void System_InvalidOperationException___ctor (System_InvalidOperationException_o* __this, System_String_o* message, const MethodInfo* method);",
+          "TypeSignature": "viii"
+        }
+      ],
+      "metadataReferences": [
+        {
+          "instruction": "0x44cd910",
+          "loadedFrom": "0x8b00d50",
+          "slot": "0x8cf0cc0",
+          "category": "ScriptMetadata",
+          "Address": 147786944,
+          "Name": "Pathfinding.ECS.AIMovementSystemGroup.TimeScaledRateManager_TypeInfo",
+          "Signature": "Pathfinding_ECS_AIMovementSystemGroup_TimeScaledRateManager_c*"
+        },
+        {
+          "instruction": "0x44cd91c",
+          "loadedFrom": "0x8b00d50",
+          "slot": "0x8cf0cc0",
+          "category": "ScriptMetadata",
+          "Address": 147786944,
+          "Name": "Pathfinding.ECS.AIMovementSystemGroup.TimeScaledRateManager_TypeInfo",
+          "Signature": "Pathfinding_ECS_AIMovementSystemGroup_TimeScaledRateManager_c*"
+        },
+        {
+          "instruction": "0x44cd950",
+          "loadedFrom": "0x8adc9a0",
+          "slot": "0x8ce9720",
+          "category": "ScriptMetadata",
+          "Address": 147756832,
+          "Name": "System.InvalidOperationException_TypeInfo",
+          "Signature": "System_InvalidOperationException_c*"
+        },
+        {
+          "instruction": "0x44cd964",
+          "loadedFrom": "0x8b00d88",
+          "slot": "0x8d5a868",
+          "category": "ScriptString",
+          "Address": 148220008,
+          "Value": "Cannot call this method outside of a simulation group using TimeScaledRateManager"
+        },
+        {
+          "instruction": "0x44cd980",
+          "loadedFrom": "0x8b00da0",
+          "slot": "0x8d40b08",
+          "category": "ScriptMetadataMethod",
+          "Address": 148114184,
+          "Name": "Method$Pathfinding.ECS.AIMovementSystemGroup.TimeScaledRateManager.get_IsLastSubstep()",
+          "MethodAddress": 72145148
+        }
+      ]
+    },
+    {
+      "name": "Pathfinding.ECS.AIMovementSystemGroup.TimeScaledRateManager$$get_IsFirstSubstep",
+      "address": "0x44cd994",
+      "end": "0x44cda2c",
+      "bytes": 152,
+      "codeSha256": "32e3500372acda37a021c5bff793194c43533233607a83cb68d96ab8ae43bade",
+      "assembly": "work/ecs-group-recovery/0x44cd994.asm.txt",
+      "directCalls": [
+        {
+          "instruction": "0x44cda10",
+          "destination": "0x768485c",
+          "Address": 124274780,
+          "Name": "System.InvalidOperationException$$.ctor",
+          "Signature": "void System_InvalidOperationException___ctor (System_InvalidOperationException_o* __this, System_String_o* message, const MethodInfo* method);",
+          "TypeSignature": "viii"
+        }
+      ],
+      "metadataReferences": [
+        {
+          "instruction": "0x44cd9a8",
+          "loadedFrom": "0x8b00d50",
+          "slot": "0x8cf0cc0",
+          "category": "ScriptMetadata",
+          "Address": 147786944,
+          "Name": "Pathfinding.ECS.AIMovementSystemGroup.TimeScaledRateManager_TypeInfo",
+          "Signature": "Pathfinding_ECS_AIMovementSystemGroup_TimeScaledRateManager_c*"
+        },
+        {
+          "instruction": "0x44cd9b4",
+          "loadedFrom": "0x8b00d50",
+          "slot": "0x8cf0cc0",
+          "category": "ScriptMetadata",
+          "Address": 147786944,
+          "Name": "Pathfinding.ECS.AIMovementSystemGroup.TimeScaledRateManager_TypeInfo",
+          "Signature": "Pathfinding_ECS_AIMovementSystemGroup_TimeScaledRateManager_c*"
+        },
+        {
+          "instruction": "0x44cd9e8",
+          "loadedFrom": "0x8adc9a0",
+          "slot": "0x8ce9720",
+          "category": "ScriptMetadata",
+          "Address": 147756832,
+          "Name": "System.InvalidOperationException_TypeInfo",
+          "Signature": "System_InvalidOperationException_c*"
+        },
+        {
+          "instruction": "0x44cd9fc",
+          "loadedFrom": "0x8b00d88",
+          "slot": "0x8d5a868",
+          "category": "ScriptString",
+          "Address": 148220008,
+          "Value": "Cannot call this method outside of a simulation group using TimeScaledRateManager"
+        },
+        {
+          "instruction": "0x44cda18",
+          "loadedFrom": "0x8b00da8",
+          "slot": "0x8d40b00",
+          "category": "ScriptMetadataMethod",
+          "Address": 148114176,
+          "Name": "Method$Pathfinding.ECS.AIMovementSystemGroup.TimeScaledRateManager.get_IsFirstSubstep()",
+          "MethodAddress": 72145300
+        }
+      ]
+    },
+    {
+      "name": "Pathfinding.ECS.AIMovementSystemGroup.TimeScaledRateManager$$get_NumUpdatesThisFrame",
+      "address": "0x44cda2c",
+      "end": "0x44cda34",
+      "bytes": 8,
+      "codeSha256": "6f1929ee2376e6ada94db6d2aafe012dfc8382613e73b99aea0c7dea270fac13",
+      "assembly": "work/ecs-group-recovery/0x44cda2c.asm.txt",
+      "directCalls": [],
+      "metadataReferences": []
+    },
+    {
+      "name": "Pathfinding.ECS.AIMovementSystemGroup.TimeScaledRateManager$$.ctor",
+      "address": "0x44cd70c",
+      "end": "0x44cd7c4",
+      "bytes": 184,
+      "codeSha256": "f4537938f7397014fde79bbad924e14fca762b99bcc14b9bb097992b7a59f09c",
+      "assembly": "work/ecs-group-recovery/0x44cd70c.asm.txt",
+      "directCalls": [
+        {
+          "instruction": "0x44cd760",
+          "destination": "0x76c770c",
+          "Address": 124548876,
+          "Name": "System.Object$$.ctor",
+          "Signature": "void System_Object___ctor (Il2CppObject* __this, const MethodInfo* method);",
+          "TypeSignature": "vii"
+        },
+        {
+          "instruction": "0x44cd76c",
+          "destination": "0x7e0e9a4",
+          "Address": 132180388,
+          "Name": "Unity.Collections.AllocatorManager.AllocatorHandle$$op_Implicit",
+          "Signature": "Unity_Collections_AllocatorManager_AllocatorHandle_o Unity_Collections_AllocatorManager_AllocatorHandle__op_Implicit (int32_t a, const MethodInfo* method);",
+          "TypeSignature": "iii"
+        },
+        {
+          "instruction": "0x44cd780",
+          "destination": "0x5b94074",
+          "Address": 96026740,
+          "Name": "Unity.Collections.NativeList<TimeData>$$.ctor",
+          "Signature": "void Unity_Collections_NativeList_TimeData____ctor (Unity_Collections_NativeList_TimeData__o __this, Unity_Collections_AllocatorManager_AllocatorHandle_o allocator, const MethodInfo_5B94074* method);",
+          "TypeSignature": "viii"
+        },
+        {
+          "instruction": "0x44cd794",
+          "destination": "0x7e0e9a4",
+          "Address": 132180388,
+          "Name": "Unity.Collections.AllocatorManager.AllocatorHandle$$op_Implicit",
+          "Signature": "Unity_Collections_AllocatorManager_AllocatorHandle_o Unity_Collections_AllocatorManager_AllocatorHandle__op_Implicit (int32_t a, const MethodInfo* method);",
+          "TypeSignature": "iii"
+        },
+        {
+          "instruction": "0x44cd7a8",
+          "destination": "0x5b94074",
+          "Address": 96026740,
+          "Name": "Unity.Collections.NativeList<TimeData>$$.ctor",
+          "Signature": "void Unity_Collections_NativeList_TimeData____ctor (Unity_Collections_NativeList_TimeData__o __this, Unity_Collections_AllocatorManager_AllocatorHandle_o allocator, const MethodInfo_5B94074* method);",
+          "TypeSignature": "viii"
+        }
+      ],
+      "metadataReferences": [
+        {
+          "instruction": "0x44cd724",
+          "loadedFrom": "0x8b00d80",
+          "slot": "0x8d13ed0",
+          "category": "ScriptMetadataMethod",
+          "Address": 147930832,
+          "Name": "Method$Unity.Collections.NativeList<TimeData>..ctor()",
+          "MethodAddress": 96026740
+        },
+        {
+          "instruction": "0x44cd734",
+          "loadedFrom": "0x8b00d80",
+          "slot": "0x8d13ed0",
+          "category": "ScriptMetadataMethod",
+          "Address": 147930832,
+          "Name": "Method$Unity.Collections.NativeList<TimeData>..ctor()",
+          "MethodAddress": 96026740
+        }
+      ]
+    },
+    {
+      "name": "Pathfinding.ECS.AIMovementSystemGroup.TimeScaledRateManager$$Dispose",
+      "address": "0x44cd658",
+      "end": "0x44cd6ac",
+      "bytes": 84,
+      "codeSha256": "10088ef3fe92cfddf9e83230d04d942af025f807c2cded2a808cd9c9bc310355",
+      "assembly": "work/ecs-group-recovery/0x44cd658.asm.txt",
+      "directCalls": [
+        {
+          "instruction": "0x44cd694",
+          "destination": "0x5b94760",
+          "Address": 96028512,
+          "Name": "Unity.Collections.NativeList<TimeData>$$Dispose",
+          "Signature": "void Unity_Collections_NativeList_TimeData___Dispose (Unity_Collections_NativeList_TimeData__o __this, const MethodInfo_5B94760* method);",
+          "TypeSignature": "vii"
+        },
+        {
+          "instruction": "0x44cd6a8",
+          "destination": "0x5b94760",
+          "Address": 96028512,
+          "Name": "Unity.Collections.NativeList<TimeData>$$Dispose",
+          "Signature": "void Unity_Collections_NativeList_TimeData___Dispose (Unity_Collections_NativeList_TimeData__o __this, const MethodInfo_5B94760* method);",
+          "TypeSignature": "vii"
+        }
+      ],
+      "metadataReferences": [
+        {
+          "instruction": "0x44cd66c",
+          "loadedFrom": "0x8b00d78",
+          "slot": "0x8d13ee8",
+          "category": "ScriptMetadataMethod",
+          "Address": 147930856,
+          "Name": "Method$Unity.Collections.NativeList<TimeData>.Dispose()",
+          "MethodAddress": 96028512
+        },
+        {
+          "instruction": "0x44cd67c",
+          "loadedFrom": "0x8b00d78",
+          "slot": "0x8d13ee8",
+          "category": "ScriptMetadataMethod",
+          "Address": 147930856,
+          "Name": "Method$Unity.Collections.NativeList<TimeData>.Dispose()",
+          "MethodAddress": 96028512
+        }
+      ]
+    },
+    {
+      "name": "Pathfinding.ECS.AIMovementSystemGroup.TimeScaledRateManager$$OnSimulationStepsFinished",
+      "address": "0x44cd568",
+      "end": "0x44cd5d4",
+      "bytes": 108,
+      "codeSha256": "d59f05322623c0816fbe360a42cef3938d5b46f1dd1262ecd6d02850d71d2feb",
+      "assembly": "work/ecs-group-recovery/0x44cd568.asm.txt",
+      "directCalls": [],
+      "metadataReferences": [
+        {
+          "instruction": "0x44cd580",
+          "loadedFrom": "0x8b00d50",
+          "slot": "0x8cf0cc0",
+          "category": "ScriptMetadata",
+          "Address": 147786944,
+          "Name": "Pathfinding.ECS.AIMovementSystemGroup.TimeScaledRateManager_TypeInfo",
+          "Signature": "Pathfinding_ECS_AIMovementSystemGroup_TimeScaledRateManager_c*"
+        },
+        {
+          "instruction": "0x44cd594",
+          "loadedFrom": "0x8b00d50",
+          "slot": "0x8cf0cc0",
+          "category": "ScriptMetadata",
+          "Address": 147786944,
+          "Name": "Pathfinding.ECS.AIMovementSystemGroup.TimeScaledRateManager_TypeInfo",
+          "Signature": "Pathfinding_ECS_AIMovementSystemGroup_TimeScaledRateManager_c*"
+        }
+      ]
+    },
+    {
+      "name": "Pathfinding.ECS.AIMovementSystemGroup.TimeScaledRateManager$$ShouldGroupUpdate",
+      "address": "0x44cda34",
+      "end": "0x44cde6c",
+      "bytes": 1080,
+      "codeSha256": "18096f1f4b9cda8a41b607427133e33af3bda8388ee2ec1c9cc6ba1c72aeaae9",
+      "assembly": "work/ecs-group-recovery/0x44cda34.asm.txt",
+      "directCalls": [
+        {
+          "instruction": "0x44cdac4",
+          "destination": "0x7e42910",
+          "Address": 132393232,
+          "Name": "Unity.Entities.ComponentSystemBase$$get_World",
+          "Signature": "Unity_Entities_World_o* Unity_Entities_ComponentSystemBase__get_World (Unity_Entities_ComponentSystemBase_o* __this, const MethodInfo* method);",
+          "TypeSignature": "iii"
+        },
+        {
+          "instruction": "0x44cdad0",
+          "destination": "0x7f83e00",
+          "Address": 133709312,
+          "Name": "Unity.Entities.World$$PopTime",
+          "Signature": "void Unity_Entities_World__PopTime (Unity_Entities_World_o* __this, const MethodInfo* method);",
+          "TypeSignature": "vii"
+        },
+        {
+          "instruction": "0x44cdb10",
+          "destination": "0x5b94848",
+          "Address": 96028744,
+          "Name": "Unity.Collections.NativeList<TimeData>$$Clear",
+          "Signature": "void Unity_Collections_NativeList_TimeData___Clear (Unity_Collections_NativeList_TimeData__o __this, const MethodInfo_5B94848* method);",
+          "TypeSignature": "vii"
+        },
+        {
+          "instruction": "0x44cdb20",
+          "destination": "0x5b94848",
+          "Address": 96028744,
+          "Name": "Unity.Collections.NativeList<TimeData>$$Clear",
+          "Signature": "void Unity_Collections_NativeList_TimeData___Clear (Unity_Collections_NativeList_TimeData__o __this, const MethodInfo_5B94848* method);",
+          "TypeSignature": "vii"
+        },
+        {
+          "instruction": "0x44cdb40",
+          "destination": "0x7e42910",
+          "Address": 132393232,
+          "Name": "Unity.Entities.ComponentSystemBase$$get_World",
+          "Signature": "Unity_Entities_World_o* Unity_Entities_ComponentSystemBase__get_World (Unity_Entities_ComponentSystemBase_o* __this, const MethodInfo* method);",
+          "TypeSignature": "iii"
+        },
+        {
+          "instruction": "0x44cdb4c",
+          "destination": "0x7f8291c",
+          "Address": 133703964,
+          "Name": "Unity.Entities.World$$get_Time",
+          "Signature": "Unity_Core_TimeData_o* Unity_Entities_World__get_Time (Unity_Entities_World_o* __this, const MethodInfo* method);",
+          "TypeSignature": "iii"
+        },
+        {
+          "instruction": "0x44cdc40",
+          "destination": "0x7ecdaf0",
+          "Address": 132963056,
+          "Name": "Unity.Core.TimeData$$.ctor",
+          "Signature": "void Unity_Core_TimeData___ctor (Unity_Core_TimeData_o __this, double elapsedTime, float deltaTime, const MethodInfo* method);",
+          "TypeSignature": "vidfi"
+        },
+        {
+          "instruction": "0x44cdc58",
+          "destination": "0x5b943b8",
+          "Address": 96027576,
+          "Name": "Unity.Collections.NativeList<TimeData>$$Add",
+          "Signature": "void Unity_Collections_NativeList_TimeData___Add (Unity_Collections_NativeList_TimeData__o __this, Unity_Core_TimeData_o* value, const MethodInfo_5B943B8* method);",
+          "TypeSignature": "viii"
+        },
+        {
+          "instruction": "0x44cdc78",
+          "destination": "0x7ecdaf0",
+          "Address": 132963056,
+          "Name": "Unity.Core.TimeData$$.ctor",
+          "Signature": "void Unity_Core_TimeData___ctor (Unity_Core_TimeData_o __this, double elapsedTime, float deltaTime, const MethodInfo* method);",
+          "TypeSignature": "vidfi"
+        },
+        {
+          "instruction": "0x44cdc90",
+          "destination": "0x5b943b8",
+          "Address": 96027576,
+          "Name": "Unity.Collections.NativeList<TimeData>$$Add",
+          "Signature": "void Unity_Collections_NativeList_TimeData___Add (Unity_Collections_NativeList_TimeData__o __this, Unity_Core_TimeData_o* value, const MethodInfo_5B943B8* method);",
+          "TypeSignature": "viii"
+        },
+        {
+          "instruction": "0x44cdccc",
+          "destination": "0x7ecdaf0",
+          "Address": 132963056,
+          "Name": "Unity.Core.TimeData$$.ctor",
+          "Signature": "void Unity_Core_TimeData___ctor (Unity_Core_TimeData_o __this, double elapsedTime, float deltaTime, const MethodInfo* method);",
+          "TypeSignature": "vidfi"
+        },
+        {
+          "instruction": "0x44cdcec",
+          "destination": "0x5b943b8",
+          "Address": 96027576,
+          "Name": "Unity.Collections.NativeList<TimeData>$$Add",
+          "Signature": "void Unity_Collections_NativeList_TimeData___Add (Unity_Collections_NativeList_TimeData__o __this, Unity_Core_TimeData_o* value, const MethodInfo_5B943B8* method);",
+          "TypeSignature": "viii"
+        },
+        {
+          "instruction": "0x44cdd0c",
+          "destination": "0x7ecdaf0",
+          "Address": 132963056,
+          "Name": "Unity.Core.TimeData$$.ctor",
+          "Signature": "void Unity_Core_TimeData___ctor (Unity_Core_TimeData_o __this, double elapsedTime, float deltaTime, const MethodInfo* method);",
+          "TypeSignature": "vidfi"
+        },
+        {
+          "instruction": "0x44cdd24",
+          "destination": "0x5b943b8",
+          "Address": 96027576,
+          "Name": "Unity.Collections.NativeList<TimeData>$$Add",
+          "Signature": "void Unity_Collections_NativeList_TimeData___Add (Unity_Collections_NativeList_TimeData__o __this, Unity_Core_TimeData_o* value, const MethodInfo_5B943B8* method);",
+          "TypeSignature": "viii"
+        },
+        {
+          "instruction": "0x44cdd60",
+          "destination": "0x7e42910",
+          "Address": 132393232,
+          "Name": "Unity.Entities.ComponentSystemBase$$get_World",
+          "Signature": "Unity_Entities_World_o* Unity_Entities_ComponentSystemBase__get_World (Unity_Entities_ComponentSystemBase_o* __this, const MethodInfo* method);",
+          "TypeSignature": "iii"
+        },
+        {
+          "instruction": "0x44cdda0",
+          "destination": "0x7f83d08",
+          "Address": 133709064,
+          "Name": "Unity.Entities.World$$PushTime",
+          "Signature": "void Unity_Entities_World__PushTime (Unity_Entities_World_o* __this, Unity_Core_TimeData_o newTimeData, const MethodInfo* method);",
+          "TypeSignature": "viii"
+        },
+        {
+          "instruction": "0x44cde50",
+          "destination": "0x768485c",
+          "Address": 124274780,
+          "Name": "System.InvalidOperationException$$.ctor",
+          "Signature": "void System_InvalidOperationException___ctor (System_InvalidOperationException_o* __this, System_String_o* message, const MethodInfo* method);",
+          "TypeSignature": "viii"
+        }
+      ],
+      "metadataReferences": [
+        {
+          "instruction": "0x44cda5c",
+          "loadedFrom": "0x8b00d50",
+          "slot": "0x8cf0cc0",
+          "category": "ScriptMetadata",
+          "Address": 147786944,
+          "Name": "Pathfinding.ECS.AIMovementSystemGroup.TimeScaledRateManager_TypeInfo",
+          "Signature": "Pathfinding_ECS_AIMovementSystemGroup_TimeScaledRateManager_c*"
+        },
+        {
+          "instruction": "0x44cda70",
+          "loadedFrom": "0x8b00db0",
+          "slot": "0x8d13ed8",
+          "category": "ScriptMetadataMethod",
+          "Address": 147930840,
+          "Name": "Method$Unity.Collections.NativeList<TimeData>.Add()",
+          "MethodAddress": 96027576
+        },
+        {
+          "instruction": "0x44cda7c",
+          "loadedFrom": "0x8b00db8",
+          "slot": "0x8d13ee0",
+          "category": "ScriptMetadataMethod",
+          "Address": 147930848,
+          "Name": "Method$Unity.Collections.NativeList<TimeData>.Clear()",
+          "MethodAddress": 96028744
+        },
+        {
+          "instruction": "0x44cda88",
+          "loadedFrom": "0x8b00dc0",
+          "slot": "0x8d13ef0",
+          "category": "ScriptMetadataMethod",
+          "Address": 147930864,
+          "Name": "Method$Unity.Collections.NativeList<TimeData>.get_Item()",
+          "MethodAddress": 96026888
+        },
+        {
+          "instruction": "0x44cda94",
+          "loadedFrom": "0x8b00d50",
+          "slot": "0x8cf0cc0",
+          "category": "ScriptMetadata",
+          "Address": 147786944,
+          "Name": "Pathfinding.ECS.AIMovementSystemGroup.TimeScaledRateManager_TypeInfo",
+          "Signature": "Pathfinding_ECS_AIMovementSystemGroup_TimeScaledRateManager_c*"
+        },
+        {
+          "instruction": "0x44cdb00",
+          "loadedFrom": "0x8b00db8",
+          "slot": "0x8d13ee0",
+          "category": "ScriptMetadataMethod",
+          "Address": 147930848,
+          "Name": "Method$Unity.Collections.NativeList<TimeData>.Clear()",
+          "MethodAddress": 96028744
+        },
+        {
+          "instruction": "0x44cdb9c",
+          "loadedFrom": "0x8acc8f0",
+          "slot": "0x8cea738",
+          "category": "ScriptMetadata",
+          "Address": 147760952,
+          "Name": "System.Math_TypeInfo",
+          "Signature": "System_Math_c*"
+        },
+        {
+          "instruction": "0x44cdbb0",
+          "loadedFrom": "0x8acc8f0",
+          "slot": "0x8cea738",
+          "category": "ScriptMetadata",
+          "Address": 147760952,
+          "Name": "System.Math_TypeInfo",
+          "Signature": "System_Math_c*"
+        },
+        {
+          "instruction": "0x44cdc14",
+          "loadedFrom": "0x8b00db0",
+          "slot": "0x8d13ed8",
+          "category": "ScriptMetadataMethod",
+          "Address": 147930840,
+          "Name": "Method$Unity.Collections.NativeList<TimeData>.Add()",
+          "MethodAddress": 96027576
+        },
+        {
+          "instruction": "0x44cdcd8",
+          "loadedFrom": "0x8b00db0",
+          "slot": "0x8d13ed8",
+          "category": "ScriptMetadataMethod",
+          "Address": 147930840,
+          "Name": "Method$Unity.Collections.NativeList<TimeData>.Add()",
+          "MethodAddress": 96027576
+        },
+        {
+          "instruction": "0x44cdd54",
+          "loadedFrom": "0x8b00dc0",
+          "slot": "0x8d13ef0",
+          "category": "ScriptMetadataMethod",
+          "Address": 147930864,
+          "Name": "Method$Unity.Collections.NativeList<TimeData>.get_Item()",
+          "MethodAddress": 96026888
+        },
+        {
+          "instruction": "0x44cde28",
+          "loadedFrom": "0x8adc9a0",
+          "slot": "0x8ce9720",
+          "category": "ScriptMetadata",
+          "Address": 147756832,
+          "Name": "System.InvalidOperationException_TypeInfo",
+          "Signature": "System_InvalidOperationException_c*"
+        },
+        {
+          "instruction": "0x44cde3c",
+          "loadedFrom": "0x8b00dc8",
+          "slot": "0x8d5adb8",
+          "category": "ScriptString",
+          "Address": 148221368,
+          "Value": "Cannot nest simulation groups using TimeScaledRateManager"
+        },
+        {
+          "instruction": "0x44cde58",
+          "loadedFrom": "0x8b00dd0",
+          "slot": "0x8d40ae8",
+          "category": "ScriptMetadataMethod",
+          "Address": 148114152,
+          "Name": "Method$Pathfinding.ECS.AIMovementSystemGroup.TimeScaledRateManager.ShouldGroupUpdate()",
+          "MethodAddress": 72145460
+        }
+      ]
+    },
+    {
+      "name": "Pathfinding.ECS.AIMovementSystemGroup.TimeScaledRateManager$$get_Timestep",
+      "address": "0x44cde6c",
+      "end": "0x44cde74",
+      "bytes": 8,
+      "codeSha256": "e506b0bca2a5826af13852debb9f75b332002ec0cfab486b1ef018b245f484f4",
+      "assembly": "work/ecs-group-recovery/0x44cde6c.asm.txt",
+      "directCalls": [],
+      "metadataReferences": []
+    },
+    {
+      "name": "Pathfinding.ECS.AIMovementSystemGroup.TimeScaledRateManager$$set_Timestep",
+      "address": "0x44cde74",
+      "end": "0x44cde7c",
+      "bytes": 8,
+      "codeSha256": "0e7d6896adc47cf1b6cf69345698abcd462544086684a596d8f6a85ea9374adb",
+      "assembly": "work/ecs-group-recovery/0x44cde74.asm.txt",
+      "directCalls": [],
+      "metadataReferences": []
+    },
+    {
+      "name": "Pathfinding.ECS.AIMovementSystemGroup$$get_CustomTimeScale",
+      "address": "0x44cd06c",
+      "end": "0x44cd0e8",
+      "bytes": 124,
+      "codeSha256": "999b9a481bf08df95fdf5168967218f9fd8d39bdf70e9fd0a756578bc30568cc",
+      "assembly": "work/ecs-group-recovery/0x44cd06c.asm.txt",
+      "directCalls": [],
+      "metadataReferences": [
+        {
+          "instruction": "0x44cd088",
+          "loadedFrom": "0x8b00d50",
+          "slot": "0x8cf0cc0",
+          "category": "ScriptMetadata",
+          "Address": 147786944,
+          "Name": "Pathfinding.ECS.AIMovementSystemGroup.TimeScaledRateManager_TypeInfo",
+          "Signature": "Pathfinding_ECS_AIMovementSystemGroup_TimeScaledRateManager_c*"
+        },
+        {
+          "instruction": "0x44cd0a4",
+          "loadedFrom": "0x8b00d50",
+          "slot": "0x8cf0cc0",
+          "category": "ScriptMetadata",
+          "Address": 147786944,
+          "Name": "Pathfinding.ECS.AIMovementSystemGroup.TimeScaledRateManager_TypeInfo",
+          "Signature": "Pathfinding_ECS_AIMovementSystemGroup_TimeScaledRateManager_c*"
+        }
+      ]
+    },
+    {
+      "name": "Pathfinding.ECS.AIMovementSystemGroup$$set_CustomTimeScale",
+      "address": "0x44cd0e8",
+      "end": "0x44cd170",
+      "bytes": 136,
+      "codeSha256": "30472fc276f60d651b09a01f885a5994e4ba78278cfc9a6946ae3509e754b5a4",
+      "assembly": "work/ecs-group-recovery/0x44cd0e8.asm.txt",
+      "directCalls": [],
+      "metadataReferences": [
+        {
+          "instruction": "0x44cd10c",
+          "loadedFrom": "0x8b00d50",
+          "slot": "0x8cf0cc0",
+          "category": "ScriptMetadata",
+          "Address": 147786944,
+          "Name": "Pathfinding.ECS.AIMovementSystemGroup.TimeScaledRateManager_TypeInfo",
+          "Signature": "Pathfinding_ECS_AIMovementSystemGroup_TimeScaledRateManager_c*"
+        },
+        {
+          "instruction": "0x44cd128",
+          "loadedFrom": "0x8b00d50",
+          "slot": "0x8cf0cc0",
+          "category": "ScriptMetadata",
+          "Address": 147786944,
+          "Name": "Pathfinding.ECS.AIMovementSystemGroup.TimeScaledRateManager_TypeInfo",
+          "Signature": "Pathfinding_ECS_AIMovementSystemGroup_TimeScaledRateManager_c*"
+        }
+      ]
+    },
+    {
+      "name": "Pathfinding.ECS.AIMovementSystemGroup$$OnUpdate",
+      "address": "0x44cd170",
+      "end": "0x44cd568",
+      "bytes": 1016,
+      "codeSha256": "540a3f8b8e753c60d6955a5d66cdd8aeff640a5780ee094291ddae4a6f71c03a",
+      "assembly": "work/ecs-group-recovery/0x44cd170.asm.txt",
+      "directCalls": [
+        {
+          "instruction": "0x44cd25c",
+          "destination": "0x82ebc6c",
+          "Address": 137280620,
+          "Name": "UnityEngine.Object$$op_Inequality",
+          "Signature": "bool UnityEngine_Object__op_Inequality (UnityEngine_Object_o* x, UnityEngine_Object_o* y, const MethodInfo* method);",
+          "TypeSignature": "iiii"
+        },
+        {
+          "instruction": "0x44cd28c",
+          "destination": "0x44455d4",
+          "Address": 71587284,
+          "Name": "AstarPath$$LockGraphDataForReading",
+          "Signature": "Pathfinding_Sync_RWLock_ReadLockAsync_o AstarPath__LockGraphDataForReading (AstarPath_o* __this, const MethodInfo* method);",
+          "TypeSignature": "iii"
+        },
+        {
+          "instruction": "0x44cd2f8",
+          "destination": "0x7e43620",
+          "Address": 132396576,
+          "Name": "Unity.Entities.ComponentSystemGroup$$GetUnmanagedSystems",
+          "Signature": "Unity_Collections_NativeList_SystemHandle__o Unity_Entities_ComponentSystemGroup__GetUnmanagedSystems (Unity_Entities_ComponentSystemGroup_o* __this, int32_t allocator, const MethodInfo* method);",
+          "TypeSignature": "iiii"
+        },
+        {
+          "instruction": "0x44cd334",
+          "destination": "0x7e42910",
+          "Address": 132393232,
+          "Name": "Unity.Entities.ComponentSystemBase$$get_World",
+          "Signature": "Unity_Entities_World_o* Unity_Entities_ComponentSystemBase__get_World (Unity_Entities_ComponentSystemBase_o* __this, const MethodInfo* method);",
+          "TypeSignature": "iii"
+        },
+        {
+          "instruction": "0x44cd388",
+          "destination": "0x7e998b0",
+          "Address": 132749488,
+          "Name": "Unity.Entities.WorldUnmanaged$$ResolveSystemStateRef",
+          "Signature": "Unity_Entities_SystemState_o* Unity_Entities_WorldUnmanaged__ResolveSystemStateRef (Unity_Entities_WorldUnmanaged_o __this, Unity_Entities_SystemHandle_o id, const MethodInfo* method);",
+          "TypeSignature": "iiii"
+        },
+        {
+          "instruction": "0x44cd394",
+          "destination": "0x7f603ec",
+          "Address": 133563372,
+          "Name": "Unity.Entities.SystemState$$get_Dependency",
+          "Signature": "Unity_Jobs_JobHandle_o Unity_Entities_SystemState__get_Dependency (Unity_Entities_SystemState_o __this, const MethodInfo* method);",
+          "TypeSignature": "iii"
+        },
+        {
+          "instruction": "0x44cd3a0",
+          "destination": "0x8296410",
+          "Address": 136930320,
+          "Name": "Unity.Jobs.JobHandle$$CombineDependencies",
+          "Signature": "Unity_Jobs_JobHandle_o Unity_Jobs_JobHandle__CombineDependencies (Unity_Jobs_JobHandle_o job0, Unity_Jobs_JobHandle_o job1, const MethodInfo* method);",
+          "TypeSignature": "iiii"
+        },
+        {
+          "instruction": "0x44cd3bc",
+          "destination": "0x7f60494",
+          "Address": 133563540,
+          "Name": "Unity.Entities.SystemState$$set_Dependency",
+          "Signature": "void Unity_Entities_SystemState__set_Dependency (Unity_Entities_SystemState_o __this, Unity_Jobs_JobHandle_o value, const MethodInfo* method);",
+          "TypeSignature": "viii"
+        },
+        {
+          "instruction": "0x44cd3e4",
+          "destination": "0x7cbdd08",
+          "Address": 130800904,
+          "Name": "System.Diagnostics.Stopwatch$$GetTimestamp",
+          "Signature": "int64_t System_Diagnostics_Stopwatch__GetTimestamp (const MethodInfo* method);",
+          "TypeSignature": "ji"
+        },
+        {
+          "instruction": "0x44cd3f4",
+          "destination": "0x7e47250",
+          "Address": 132411984,
+          "Name": "Unity.Entities.ComponentSystemGroup$$OnUpdate",
+          "Signature": "void Unity_Entities_ComponentSystemGroup__OnUpdate (Unity_Entities_ComponentSystemGroup_o* __this, const MethodInfo* method);",
+          "TypeSignature": "vii"
+        },
+        {
+          "instruction": "0x44cd3fc",
+          "destination": "0x7cbdd08",
+          "Address": 130800904,
+          "Name": "System.Diagnostics.Stopwatch$$GetTimestamp",
+          "Signature": "int64_t System_Diagnostics_Stopwatch__GetTimestamp (const MethodInfo* method);",
+          "TypeSignature": "ji"
+        },
+        {
+          "instruction": "0x44cd458",
+          "destination": "0x44cd568",
+          "Address": 72144232,
+          "Name": "Pathfinding.ECS.AIMovementSystemGroup.TimeScaledRateManager$$OnSimulationStepsFinished",
+          "Signature": "void Pathfinding_ECS_AIMovementSystemGroup_TimeScaledRateManager__OnSimulationStepsFinished (Pathfinding_ECS_AIMovementSystemGroup_TimeScaledRateManager_o* __this, float totalSimulationProcessingTime, const MethodInfo* method);",
+          "TypeSignature": "vifi"
+        },
+        {
+          "instruction": "0x44cd498",
+          "destination": "0x7e42910",
+          "Address": 132393232,
+          "Name": "Unity.Entities.ComponentSystemBase$$get_World",
+          "Signature": "Unity_Entities_World_o* Unity_Entities_ComponentSystemBase__get_World (Unity_Entities_ComponentSystemBase_o* __this, const MethodInfo* method);",
+          "TypeSignature": "iii"
+        },
+        {
+          "instruction": "0x44cd4ec",
+          "destination": "0x7e998b0",
+          "Address": 132749488,
+          "Name": "Unity.Entities.WorldUnmanaged$$ResolveSystemStateRef",
+          "Signature": "Unity_Entities_SystemState_o* Unity_Entities_WorldUnmanaged__ResolveSystemStateRef (Unity_Entities_WorldUnmanaged_o __this, Unity_Entities_SystemHandle_o id, const MethodInfo* method);",
+          "TypeSignature": "iiii"
+        },
+        {
+          "instruction": "0x44cd4f4",
+          "destination": "0x7f603ec",
+          "Address": 133563372,
+          "Name": "Unity.Entities.SystemState$$get_Dependency",
+          "Signature": "Unity_Jobs_JobHandle_o Unity_Entities_SystemState__get_Dependency (Unity_Entities_SystemState_o __this, const MethodInfo* method);",
+          "TypeSignature": "iii"
+        },
+        {
+          "instruction": "0x44cd50c",
+          "destination": "0x8296410",
+          "Address": 136930320,
+          "Name": "Unity.Jobs.JobHandle$$CombineDependencies",
+          "Signature": "Unity_Jobs_JobHandle_o Unity_Jobs_JobHandle__CombineDependencies (Unity_Jobs_JobHandle_o job0, Unity_Jobs_JobHandle_o job1, const MethodInfo* method);",
+          "TypeSignature": "iiii"
+        },
+        {
+          "instruction": "0x44cd52c",
+          "destination": "0x5b92380",
+          "Address": 96019328,
+          "Name": "Unity.Collections.NativeList<SystemHandle>$$Dispose",
+          "Signature": "void Unity_Collections_NativeList_SystemHandle___Dispose (Unity_Collections_NativeList_SystemHandle__o __this, const MethodInfo_5B92380* method);",
+          "TypeSignature": "vii"
+        },
+        {
+          "instruction": "0x44cd540",
+          "destination": "0x447da5c",
+          "Address": 71817820,
+          "Name": "Pathfinding.Sync.RWLock.ReadLockAsync$$UnlockAfter",
+          "Signature": "void Pathfinding_Sync_RWLock_ReadLockAsync__UnlockAfter (Pathfinding_Sync_RWLock_ReadLockAsync_o __this, Unity_Jobs_JobHandle_o handle, const MethodInfo* method);",
+          "TypeSignature": "viii"
+        }
+      ],
+      "metadataReferences": [
+        {
+          "instruction": "0x44cd198",
+          "loadedFrom": "0x8ad1370",
+          "slot": "0x8ce44b0",
+          "category": "ScriptMetadata",
+          "Address": 147735728,
+          "Name": "AstarPath_TypeInfo",
+          "Signature": "AstarPath_c*"
+        },
+        {
+          "instruction": "0x44cd1a8",
+          "loadedFrom": "0x8ad1370",
+          "slot": "0x8ce44b0",
+          "category": "ScriptMetadata",
+          "Address": 147735728,
+          "Name": "AstarPath_TypeInfo",
+          "Signature": "AstarPath_c*"
+        },
+        {
+          "instruction": "0x44cd1b4",
+          "loadedFrom": "0x8b00d58",
+          "slot": "0x8d13e68",
+          "category": "ScriptMetadataMethod",
+          "Address": 147930728,
+          "Name": "Method$Unity.Collections.NativeList<SystemHandle>.Dispose()",
+          "MethodAddress": 96019328
+        },
+        {
+          "instruction": "0x44cd1c0",
+          "loadedFrom": "0x8b00d60",
+          "slot": "0x8d13e70",
+          "category": "ScriptMetadataMethod",
+          "Address": 147930736,
+          "Name": "Method$Unity.Collections.NativeList<SystemHandle>.get_Item()",
+          "MethodAddress": 96017704
+        },
+        {
+          "instruction": "0x44cd1cc",
+          "loadedFrom": "0x8b00d68",
+          "slot": "0x8d13e78",
+          "category": "ScriptMetadataMethod",
+          "Address": 147930744,
+          "Name": "Method$Unity.Collections.NativeList<SystemHandle>.get_Length()",
+          "MethodAddress": 96017896
+        },
+        {
+          "instruction": "0x44cd1d8",
+          "loadedFrom": "0x8acc8d0",
+          "slot": "0x8ceb3e0",
+          "category": "ScriptMetadata",
+          "Address": 147764192,
+          "Name": "UnityEngine.Object_TypeInfo",
+          "Signature": "UnityEngine_Object_c*"
+        },
+        {
+          "instruction": "0x44cd1e4",
+          "loadedFrom": "0x8adaf10",
+          "slot": "0x8ceda68",
+          "category": "ScriptMetadata",
+          "Address": 147774056,
+          "Name": "System.Diagnostics.Stopwatch_TypeInfo",
+          "Signature": "System_Diagnostics_Stopwatch_c*"
+        },
+        {
+          "instruction": "0x44cd1f0",
+          "loadedFrom": "0x8b00d50",
+          "slot": "0x8cf0cc0",
+          "category": "ScriptMetadata",
+          "Address": 147786944,
+          "Name": "Pathfinding.ECS.AIMovementSystemGroup.TimeScaledRateManager_TypeInfo",
+          "Signature": "Pathfinding_ECS_AIMovementSystemGroup_TimeScaledRateManager_c*"
+        },
+        {
+          "instruction": "0x44cd1fc",
+          "loadedFrom": "0x8b00d70",
+          "slot": "0x8cefa90",
+          "category": "ScriptMetadata",
+          "Address": 147782288,
+          "Name": "Unity.Entities.WorldUnmanaged_TypeInfo",
+          "Signature": "Unity_Entities_WorldUnmanaged_c*"
+        },
+        {
+          "instruction": "0x44cd224",
+          "loadedFrom": "0x8acc8d0",
+          "slot": "0x8ceb3e0",
+          "category": "ScriptMetadata",
+          "Address": 147764192,
+          "Name": "UnityEngine.Object_TypeInfo",
+          "Signature": "UnityEngine_Object_c*"
+        },
+        {
+          "instruction": "0x44cd2bc",
+          "loadedFrom": "0x8b00d68",
+          "slot": "0x8d13e78",
+          "category": "ScriptMetadataMethod",
+          "Address": 147930744,
+          "Name": "Method$Unity.Collections.NativeList<SystemHandle>.get_Length()",
+          "MethodAddress": 96017896
+        },
+        {
+          "instruction": "0x44cd2c0",
+          "loadedFrom": "0x8b00d60",
+          "slot": "0x8d13e70",
+          "category": "ScriptMetadataMethod",
+          "Address": 147930736,
+          "Name": "Method$Unity.Collections.NativeList<SystemHandle>.get_Item()",
+          "MethodAddress": 96017704
+        },
+        {
+          "instruction": "0x44cd2c4",
+          "loadedFrom": "0x8b00d70",
+          "slot": "0x8cefa90",
+          "category": "ScriptMetadata",
+          "Address": 147782288,
+          "Name": "Unity.Entities.WorldUnmanaged_TypeInfo",
+          "Signature": "Unity_Entities_WorldUnmanaged_c*"
+        },
+        {
+          "instruction": "0x44cd2c8",
+          "loadedFrom": "0x8adaf10",
+          "slot": "0x8ceda68",
+          "category": "ScriptMetadata",
+          "Address": 147774056,
+          "Name": "System.Diagnostics.Stopwatch_TypeInfo",
+          "Signature": "System_Diagnostics_Stopwatch_c*"
+        },
+        {
+          "instruction": "0x44cd2dc",
+          "loadedFrom": "0x8b00d50",
+          "slot": "0x8cf0cc0",
+          "category": "ScriptMetadata",
+          "Address": 147786944,
+          "Name": "Pathfinding.ECS.AIMovementSystemGroup.TimeScaledRateManager_TypeInfo",
+          "Signature": "Pathfinding_ECS_AIMovementSystemGroup_TimeScaledRateManager_c*"
+        },
+        {
+          "instruction": "0x44cd2e0",
+          "loadedFrom": "0x8b00d58",
+          "slot": "0x8d13e68",
+          "category": "ScriptMetadataMethod",
+          "Address": 147930728,
+          "Name": "Method$Unity.Collections.NativeList<SystemHandle>.Dispose()",
+          "MethodAddress": 96019328
+        }
+      ]
+    },
+    {
+      "name": "Pathfinding.ECS.AIMovementSystemGroup$$OnDestroy",
+      "address": "0x44cd5d4",
+      "end": "0x44cd658",
+      "bytes": 132,
+      "codeSha256": "3f21d26cdb6236c6a4902f9c5df72000fa9cc7ab380242ce6ee9df560cd60bcd",
+      "assembly": "work/ecs-group-recovery/0x44cd5d4.asm.txt",
+      "directCalls": [
+        {
+          "instruction": "0x44cd608",
+          "destination": "0x7e4395c",
+          "Address": 132397404,
+          "Name": "Unity.Entities.ComponentSystemGroup$$OnDestroy",
+          "Signature": "void Unity_Entities_ComponentSystemGroup__OnDestroy (Unity_Entities_ComponentSystemGroup_o* __this, const MethodInfo* method);",
+          "TypeSignature": "vii"
+        },
+        {
+          "instruction": "0x44cd650",
+          "destination": "0x44cd658",
+          "Address": 72144472,
+          "Name": "Pathfinding.ECS.AIMovementSystemGroup.TimeScaledRateManager$$Dispose",
+          "Signature": "void Pathfinding_ECS_AIMovementSystemGroup_TimeScaledRateManager__Dispose (Pathfinding_ECS_AIMovementSystemGroup_TimeScaledRateManager_o* __this, const MethodInfo* method);",
+          "TypeSignature": "vii"
+        }
+      ],
+      "metadataReferences": [
+        {
+          "instruction": "0x44cd5f0",
+          "loadedFrom": "0x8b00d50",
+          "slot": "0x8cf0cc0",
+          "category": "ScriptMetadata",
+          "Address": 147786944,
+          "Name": "Pathfinding.ECS.AIMovementSystemGroup.TimeScaledRateManager_TypeInfo",
+          "Signature": "Pathfinding_ECS_AIMovementSystemGroup_TimeScaledRateManager_c*"
+        },
+        {
+          "instruction": "0x44cd618",
+          "loadedFrom": "0x8b00d50",
+          "slot": "0x8cf0cc0",
+          "category": "ScriptMetadata",
+          "Address": 147786944,
+          "Name": "Pathfinding.ECS.AIMovementSystemGroup.TimeScaledRateManager_TypeInfo",
+          "Signature": "Pathfinding_ECS_AIMovementSystemGroup_TimeScaledRateManager_c*"
+        }
+      ]
+    },
+    {
+      "name": "Pathfinding.ECS.AIMovementSystemGroup$$OnCreate",
+      "address": "0x44cd6ac",
+      "end": "0x44cd70c",
+      "bytes": 96,
+      "codeSha256": "9884ece05ab64187091726b8dd1ef93a00662676838c5b747b66d5e712279266",
+      "assembly": "work/ecs-group-recovery/0x44cd6ac.asm.txt",
+      "directCalls": [
+        {
+          "instruction": "0x44cd6e8",
+          "destination": "0x7e4383c",
+          "Address": 132397116,
+          "Name": "Unity.Entities.ComponentSystemGroup$$OnCreate",
+          "Signature": "void Unity_Entities_ComponentSystemGroup__OnCreate (Unity_Entities_ComponentSystemGroup_o* __this, const MethodInfo* method);",
+          "TypeSignature": "vii"
+        },
+        {
+          "instruction": "0x44cd6f8",
+          "destination": "0x44cd70c",
+          "Address": 72144652,
+          "Name": "Pathfinding.ECS.AIMovementSystemGroup.TimeScaledRateManager$$.ctor",
+          "Signature": "void Pathfinding_ECS_AIMovementSystemGroup_TimeScaledRateManager___ctor (Pathfinding_ECS_AIMovementSystemGroup_TimeScaledRateManager_o* __this, const MethodInfo* method);",
+          "TypeSignature": "vii"
+        }
+      ],
+      "metadataReferences": [
+        {
+          "instruction": "0x44cd6c0",
+          "loadedFrom": "0x8b00d50",
+          "slot": "0x8cf0cc0",
+          "category": "ScriptMetadata",
+          "Address": 147786944,
+          "Name": "Pathfinding.ECS.AIMovementSystemGroup.TimeScaledRateManager_TypeInfo",
+          "Signature": "Pathfinding_ECS_AIMovementSystemGroup_TimeScaledRateManager_c*"
+        },
+        {
+          "instruction": "0x44cd6d0",
+          "loadedFrom": "0x8b00d50",
+          "slot": "0x8cf0cc0",
+          "category": "ScriptMetadata",
+          "Address": 147786944,
+          "Name": "Pathfinding.ECS.AIMovementSystemGroup.TimeScaledRateManager_TypeInfo",
+          "Signature": "Pathfinding_ECS_AIMovementSystemGroup_TimeScaledRateManager_c*"
+        }
+      ]
+    },
+    {
+      "name": "Pathfinding.ECS.AIMovementSystemGroup$$.ctor",
+      "address": "0x44cd7c4",
+      "end": "0x44cd7cc",
+      "bytes": 8,
+      "codeSha256": "ba4382bf1f77de382d1eb0e711e8bf49e0bd72b968d9440ef7edcbaa73270f92",
+      "assembly": "work/ecs-group-recovery/0x44cd7c4.asm.txt",
+      "directCalls": [
+        {
+          "instruction": "0x44cd7c8",
+          "destination": "0x7e4752c",
+          "Address": 132412716,
+          "Name": "Unity.Entities.ComponentSystemGroup$$.ctor",
+          "Signature": "void Unity_Entities_ComponentSystemGroup___ctor (Unity_Entities_ComponentSystemGroup_o* __this, const MethodInfo* method);",
+          "TypeSignature": "vii"
+        }
+      ],
+      "metadataReferences": []
+    }
+  ],
+  "notFound": []
+}

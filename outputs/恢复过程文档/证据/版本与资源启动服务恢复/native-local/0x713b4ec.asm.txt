@@ -1,0 +1,93 @@
+0x713b4ec: fe57bea9 stp      x30, x21, [sp, #-0x20]!
+0x713b4f0: f44f01a9 stp      x20, x19, [sp, #0x10]
+0x713b4f4: 74f600b0 adrp     x20, #0x9008000
+0x713b4f8: 88f27c39 ldrb     w8, [x20, #0xf3c]
+0x713b4fc: f30300aa mov      x19, x0
+0x713b500: 48020037 tbnz     w8, #0, #0x713b548
+0x713b504: a0ce00d0 adrp     x0, #0x8b11000
+0x713b508: 00f844f9 ldr      x0, [x0, #0x9f0] // AssetBundles.AssetBundleManager_TypeInfo
+0x713b50c: 5d072c97 bl       #0x3c3d280
+0x713b510: c0ce00f0 adrp     x0, #0x8b16000
+0x713b514: 004041f9 ldr      x0, [x0, #0x280] // Method$System.Collections.Generic.Dictionary<string, Texture2D>..ctor()
+0x713b518: 5a072c97 bl       #0x3c3d280
+0x713b51c: 40cd00f0 adrp     x0, #0x8ae6000
+0x713b520: 003041f9 ldr      x0, [x0, #0x260] // Method$System.Collections.Generic.Dictionary<string, Sprite>..ctor()
+0x713b524: 57072c97 bl       #0x3c3d280
+0x713b528: c0ce00f0 adrp     x0, #0x8b16000
+0x713b52c: 004441f9 ldr      x0, [x0, #0x288] // System.Collections.Generic.Dictionary<string, Texture2D>_TypeInfo
+0x713b530: 54072c97 bl       #0x3c3d280
+0x713b534: 40cd00f0 adrp     x0, #0x8ae6000
+0x713b538: 002c41f9 ldr      x0, [x0, #0x258] // System.Collections.Generic.Dictionary<string, Sprite>_TypeInfo
+0x713b53c: 51072c97 bl       #0x3c3d280
+0x713b540: 28008052 mov      w8, #1
+0x713b544: 88f23c39 strb     w8, [x20, #0xf3c]
+0x713b548: 68424039 ldrb     w8, [x19, #0x10]
+0x713b54c: 28010034 cbz      w8, #0x713b570
+0x713b550: 680e40f9 ldr      x8, [x19, #0x18]
+0x713b554: e80700b4 cbz      x8, #0x713b650
+0x713b558: 020d40f9 ldr      x2, [x8, #0x18]
+0x713b55c: 002140f9 ldr      x0, [x8, #0x40]
+0x713b560: 011540f9 ldr      x1, [x8, #0x28]
+0x713b564: f44f41a9 ldp      x20, x19, [sp, #0x10]
+0x713b568: fe57c2a8 ldp      x30, x21, [sp], #0x20
+0x713b56c: 40001fd6 br       x2
+0x713b570: b4ce00d0 adrp     x20, #0x8b11000
+0x713b574: 94fa44f9 ldr      x20, [x20, #0x9f0] // AssetBundles.AssetBundleManager_TypeInfo
+0x713b578: 800240f9 ldr      x0, [x20]
+0x713b57c: 08e040b9 ldr      w8, [x0, #0xe0]
+0x713b580: 48000035 cbnz     w8, #0x713b588
+0x713b584: 8b072c97 bl       #0x3c3d3b0
+0x713b588: 75f600d0 adrp     x21, #0x9009000
+0x713b58c: a83e4039 ldrb     w8, [x21, #0xf]
+0x713b590: c8000035 cbnz     w8, #0x713b5a8
+0x713b594: a0ce00d0 adrp     x0, #0x8b11000
+0x713b598: 00f844f9 ldr      x0, [x0, #0x9f0] // AssetBundles.AssetBundleManager_TypeInfo
+0x713b59c: 39072c97 bl       #0x3c3d280
+0x713b5a0: 28008052 mov      w8, #1
+0x713b5a4: a83e0039 strb     w8, [x21, #0xf]
+0x713b5a8: 800240f9 ldr      x0, [x20]
+0x713b5ac: 08e040b9 ldr      w8, [x0, #0xe0]
+0x713b5b0: 68000035 cbnz     w8, #0x713b5bc
+0x713b5b4: 7f072c97 bl       #0x3c3d3b0
+0x713b5b8: 800240f9 ldr      x0, [x20]
+0x713b5bc: 085c40f9 ldr      x8, [x0, #0xb8]
+0x713b5c0: 29008052 mov      w9, #1
+0x713b5c4: e0031faa mov      x0, xzr
+0x713b5c8: 090100b9 str      w9, [x8]
+0x713b5cc: 07b50894 bl       #0x73689e8 // AssetBundles.AssetBundleManager$$Initialize
+0x713b5d0: 48cd00f0 adrp     x8, #0x8ae6000
+0x713b5d4: 082d41f9 ldr      x8, [x8, #0x258] // System.Collections.Generic.Dictionary<string, Sprite>_TypeInfo
+0x713b5d8: 000140f9 ldr      x0, [x8]
+0x713b5dc: ba072c97 bl       #0x3c3d4c4
+0x713b5e0: 48cd00f0 adrp     x8, #0x8ae6000
+0x713b5e4: 083141f9 ldr      x8, [x8, #0x260] // Method$System.Collections.Generic.Dictionary<string, Sprite>..ctor()
+0x713b5e8: f40300aa mov      x20, x0
+0x713b5ec: 010140f9 ldr      x1, [x8]
+0x713b5f0: 5c2aeb97 bl       #0x6c05f60 // System.Collections.Generic.Dictionary<object, object>$$.ctor
+0x713b5f4: 741200f9 str      x20, [x19, #0x20]
+0x713b5f8: c8ce00f0 adrp     x8, #0x8b16000
+0x713b5fc: 084541f9 ldr      x8, [x8, #0x288] // System.Collections.Generic.Dictionary<string, Texture2D>_TypeInfo
+0x713b600: 000140f9 ldr      x0, [x8]
+0x713b604: b0072c97 bl       #0x3c3d4c4
+0x713b608: c8ce00f0 adrp     x8, #0x8b16000
+0x713b60c: 084141f9 ldr      x8, [x8, #0x280] // Method$System.Collections.Generic.Dictionary<string, Texture2D>..ctor()
+0x713b610: f40300aa mov      x20, x0
+0x713b614: 010140f9 ldr      x1, [x8]
+0x713b618: 522aeb97 bl       #0x6c05f60 // System.Collections.Generic.Dictionary<object, object>$$.ctor
+0x713b61c: e0031faa mov      x0, xzr
+0x713b620: 741600f9 str      x20, [x19, #0x28]
+0x713b624: 3431fd97 bl       #0x7087af4 // UpdateManager$$get_Instance
+0x713b628: f40300aa mov      x20, x0
+0x713b62c: e00313aa mov      x0, x19
+0x713b630: 0c000094 bl       #0x713b660 // GameFramework.AssetbundleModule$$LoadManifest
+0x713b634: 540100b4 cbz      x20, #0x713b65c
+0x713b638: e10300aa mov      x1, x0
+0x713b63c: e00314aa mov      x0, x20
+0x713b640: f44f41a9 ldp      x20, x19, [sp, #0x10]
+0x713b644: e2031faa mov      x2, xzr
+0x713b648: fe57c2a8 ldp      x30, x21, [sp], #0x20
+0x713b64c: dfc94614 b        #0x82eddc8 // UnityEngine.MonoBehaviour$$StartCoroutine
+0x713b650: f44f41a9 ldp      x20, x19, [sp, #0x10]
+0x713b654: fe57c2a8 ldp      x30, x21, [sp], #0x20
+0x713b658: c0035fd6 ret      
+0x713b65c: 9c072c97 bl       #0x3c3d4cc

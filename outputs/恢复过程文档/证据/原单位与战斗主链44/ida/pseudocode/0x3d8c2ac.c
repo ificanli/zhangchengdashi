@@ -1,0 +1,80 @@
+void __fastcall GameModule_RoleBehaviour__Vampire(__int64 a1)
+{
+  __int64 v2; // x8
+  int v3; // w9
+  int v4; // w10
+  float v5; // s0
+  unsigned int v6; // w20
+  int v7; // w9
+  __int64 v8; // x0
+  __int64 v9; // x0
+  __int64 v10; // x0
+  __int64 v11; // x0
+  __int64 v12; // x20
+  void *Instance; // x0
+  long double v14; // q0
+  long double v15; // q1
+  long double v16; // q2
+  long double v17; // q3
+
+  if ( (byte_8FFD49E & 1) == 0 )
+  {
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D12168);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D52388);
+    byte_8FFD49E = 1;
+  }
+  if ( *(_BYTE *)(a1 + 33) == 0 )
+  {
+    v2 = *(_QWORD *)(a1 + 64);
+    if ( v2 != 0 )
+    {
+      v3 = *(_DWORD *)(v2 + 24);
+      v4 = *(_DWORD *)(v2 + 28);
+      if ( v3 == v4 )
+        return;
+      v5 = *(float *)(v2 + 72) * (float)*(int *)(v2 + 32);
+      if ( v5 == INFINITY )
+        v6 = 0x80000000;
+      else
+        v6 = (int)v5;
+      v7 = v6 + v3;
+      if ( v7 > v4 )
+        v7 = *(_DWORD *)(v2 + 28);
+      *(_DWORD *)(v2 + 24) = v7;
+      (*(void (__fastcall **)(__int64, _QWORD))(*(_QWORD *)a1 + 680LL))(a1, *(_QWORD *)(*(_QWORD *)a1 + 688LL));
+      v8 = *(_QWORD *)(a1 + 544);
+      if ( v8 != 0 )
+      {
+        System_Text_StringBuilder__Clear(v8, 0);
+        v9 = *(_QWORD *)(a1 + 544);
+        if ( v9 != 0 )
+        {
+          System_Text_StringBuilder__Append(v9, qword_8D52388, 0);
+          v10 = *(_QWORD *)(a1 + 544);
+          if ( v10 != 0 )
+          {
+            sub_751B730(v10, v6, 0);
+            v11 = *(_QWORD *)(a1 + 544);
+            if ( v11 != 0 )
+            {
+              v12 = (*(__int64 (__fastcall **)(__int64, _QWORD))(*(_QWORD *)v11 + 360LL))(
+                      v11,
+                      *(_QWORD *)(*(_QWORD *)v11 + 368LL));
+              Instance = ToolModule_ManagerBase_object___get_Instance((const MethodInfo *)qword_8D12168);
+              if ( Instance != nullptr )
+              {
+                GameModule_FloatingTextManager__GetDamageTextColor(Instance, *(unsigned __int8 *)(a1 + 32), 1, 0);
+                GameModule_RoleBehaviour__ShowDamageText(a1, v12, v14, v15, v16, v17);
+                (*(void (__fastcall **)(__int64, _QWORD))(*(_QWORD *)a1 + 840LL))(
+                  a1,
+                  *(_QWORD *)(*(_QWORD *)a1 + 848LL));
+                return;
+              }
+            }
+          }
+        }
+      }
+    }
+    il2cpp_codegen_raise_null_reference_exception();
+  }
+}

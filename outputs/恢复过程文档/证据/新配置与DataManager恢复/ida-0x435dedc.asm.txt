@@ -1,0 +1,20 @@
+0x435dedc: STR             X30, [SP,#var_20]!
+0x435dee0: STP             X20, X19, [SP,#0x20+var_10]
+0x435dee4: ADRP            X20, #byte_9000697@PAGE
+0x435dee8: LDRB            W8, [X20,#byte_9000697@PAGEOFF]
+0x435deec: MOV             X19, X0
+0x435def0: TBNZ            W8, #0, loc_435DF08
+0x435def4: ADRP            X0, #off_8ACDD28@PAGE
+0x435def8: LDR             X0, [X0,#off_8ACDD28@PAGEOFF]; unk_8D0E698 ; slot
+0x435defc: BL              il2cpp_codegen_initialize_runtime_metadata
+0x435df00: MOV             W8, #1
+0x435df04: STRB            W8, [X20,#byte_9000697@PAGEOFF]
+0x435df08: LDR             X8, [X19,#0x10]
+0x435df0c: CBZ             X8, loc_435DF28
+0x435df10: LDR             W8, [X8,#0x18]
+0x435df14: LDP             X20, X19, [SP,#0x20+var_10]
+0x435df18: CMP             W8, #1
+0x435df1c: CSET            W0, LT
+0x435df20: LDR             X30, [SP+0x20+var_20],#0x20
+0x435df24: RET
+0x435df28: BL              il2cpp_codegen_raise_null_reference_exception

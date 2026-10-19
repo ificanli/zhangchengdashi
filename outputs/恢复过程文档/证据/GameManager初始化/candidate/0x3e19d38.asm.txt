@@ -1,0 +1,35 @@
+0x3e19d38: ffc301d1 sub      sp, sp, #0x70
+0x3e19d3c: fe5705a9 stp      x30, x21, [sp, #0x50]
+0x3e19d40: f44f06a9 stp      x20, x19, [sp, #0x60]
+0x3e19d44: 358f0290 adrp     x21, #0x8ffd000
+0x3e19d48: d46502f0 adrp     x20, #0x8ad4000
+0x3e19d4c: a85a6239 ldrb     w8, [x21, #0x896]
+0x3e19d50: 94be46f9 ldr      x20, [x20, #0xd78] // Method$System.Runtime.CompilerServices.AsyncVoidMethodBuilder.Start<GameManager.<EnterMeta>d__20>()
+0x3e19d54: f30301aa mov      x19, x1
+0x3e19d58: c8000037 tbnz     w8, #0, #0x3e19d70
+0x3e19d5c: c06502f0 adrp     x0, #0x8ad4000
+0x3e19d60: 00bc46f9 ldr      x0, [x0, #0xd78] // Method$System.Runtime.CompilerServices.AsyncVoidMethodBuilder.Start<GameManager.<EnterMeta>d__20>()
+0x3e19d64: 478df897 bl       #0x3c3d280
+0x3e19d68: 28008052 mov      w8, #1
+0x3e19d6c: a85a2239 strb     w8, [x21, #0x896]
+0x3e19d70: 00e4006f movi     v0.2d, #0000000000000000
+0x3e19d74: e8030091 mov      x8, sp
+0x3e19d78: e0031faa mov      x0, xzr
+0x3e19d7c: e08301ad stp      q0, q0, [sp, #0x30]
+0x3e19d80: e00b803d str      q0, [sp, #0x20]
+0x3e19d84: ae58de94 bl       #0x75b003c // System.Runtime.CompilerServices.AsyncVoidMethodBuilder$$Create
+0x3e19d88: e00740ad ldp      q0, q1, [sp]
+0x3e19d8c: 820240f9 ldr      x2, [x20]
+0x3e19d90: e8830091 add      x8, sp, #0x20
+0x3e19d94: 09008012 mov      w9, #-1
+0x3e19d98: 00017db2 orr      x0, x8, #8
+0x3e19d9c: e1830091 add      x1, sp, #0x20
+0x3e19da0: f32700f9 str      x19, [sp, #0x48]
+0x3e19da4: e083823c stur     q0, [sp, #0x28]
+0x3e19da8: e183833c stur     q1, [sp, #0x38]
+0x3e19dac: e92300b9 str      w9, [sp, #0x20]
+0x3e19db0: 638b3394 bl       #0x4afcb3c // System.Runtime.CompilerServices.AsyncVoidMethodBuilder$$Start<GameManager.<EnterMeta>d__20>
+0x3e19db4: f44f46a9 ldp      x20, x19, [sp, #0x60]
+0x3e19db8: fe5745a9 ldp      x30, x21, [sp, #0x50]
+0x3e19dbc: ffc30191 add      sp, sp, #0x70
+0x3e19dc0: c0035fd6 ret      

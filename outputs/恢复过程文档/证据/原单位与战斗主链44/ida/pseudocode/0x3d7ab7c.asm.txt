@@ -1,0 +1,53 @@
+0x3d7ab7c: STR             X30, [SP,#var_30]!
+0x3d7ab80: STP             X22, X21, [SP,#0x30+var_20]
+0x3d7ab84: STP             X20, X19, [SP,#0x30+var_10]
+0x3d7ab88: ADRP            X22, #byte_8FFD472@PAGE
+0x3d7ab8c: LDRB            W8, [X22,#byte_8FFD472@PAGEOFF]
+0x3d7ab90: MOV             W19, W1
+0x3d7ab94: MOV             X20, X0
+0x3d7ab98: AND             W21, W1, #1
+0x3d7ab9c: TBNZ            W8, #0, loc_3D7ABB4
+0x3d7aba0: ADRP            X0, #off_8ACC8D0@PAGE
+0x3d7aba4: LDR             X0, [X0,#off_8ACC8D0@PAGEOFF]; off_8CEB3E0 ; slot
+0x3d7aba8: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3d7abac: MOV             W8, #1
+0x3d7abb0: STRB            W8, [X22,#byte_8FFD472@PAGEOFF]
+0x3d7abb4: LDRB            W8, [X20,#0x1B8]
+0x3d7abb8: CMP             W8, W21
+0x3d7abbc: B.NE            loc_3D7ABD0
+0x3d7abc0: LDP             X20, X19, [SP,#0x30+var_10]
+0x3d7abc4: LDP             X22, X21, [SP,#0x30+var_20]
+0x3d7abc8: LDR             X30, [SP+0x30+var_30],#0x30
+0x3d7abcc: RET
+0x3d7abd0: MOV             X0, XZR
+0x3d7abd4: STRB            W21, [X20,#0x1B8]
+0x3d7abd8: BL              Pathfinding.AstarWebGLRuntimeConfig$$get_UseWebGLNavigation
+0x3d7abdc: TBZ             W0, #0, loc_3D7ABFC
+0x3d7abe0: TBZ             W19, #0, loc_3D7ABC0
+0x3d7abe4: MOV             X0, X20
+0x3d7abe8: LDP             X20, X19, [SP,#0x30+var_10]
+0x3d7abec: LDP             X22, X21, [SP,#0x30+var_20]
+0x3d7abf0: MOV             X1, XZR
+0x3d7abf4: LDR             X30, [SP+0x30+var_30],#0x30
+0x3d7abf8: B               GameModule.WebGLNavigationManager$$TryRegisterRole
+0x3d7abfc: ADRP            X8, #off_8ACC8D0@PAGE
+0x3d7ac00: LDR             X8, [X8,#off_8ACC8D0@PAGEOFF]; off_8CEB3E0
+0x3d7ac04: LDR             X21, [X20,#0x80]
+0x3d7ac08: LDR             X0, [X8]; klass
+0x3d7ac0c: LDR             W8, [X0,#0xE0]
+0x3d7ac10: CBNZ            W8, loc_3D7AC18
+0x3d7ac14: BL              il2cpp_codegen_runtime_class_init
+0x3d7ac18: MOV             X0, X21
+0x3d7ac1c: MOV             X1, XZR
+0x3d7ac20: MOV             X2, XZR
+0x3d7ac24: BL              UnityEngine.Object$$op_Inequality
+0x3d7ac28: TBZ             W0, #0, loc_3D7ABC0
+0x3d7ac2c: LDR             X0, [X20,#0x80]
+0x3d7ac30: CBZ             X0, loc_3D7AC4C
+0x3d7ac34: AND             W1, W19, #1
+0x3d7ac38: LDP             X20, X19, [SP,#0x30+var_10]
+0x3d7ac3c: LDP             X22, X21, [SP,#0x30+var_20]
+0x3d7ac40: MOV             X2, XZR
+0x3d7ac44: LDR             X30, [SP+0x30+var_30],#0x30
+0x3d7ac48: B               Pathfinding.FollowerEntity$$set_canMove
+0x3d7ac4c: BL              il2cpp_codegen_raise_null_reference_exception

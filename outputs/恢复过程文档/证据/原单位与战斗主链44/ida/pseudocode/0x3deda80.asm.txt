@@ -1,0 +1,44 @@
+0x3deda80: STP             X30, X23, [SP,#var_30]!
+0x3deda84: STP             X22, X21, [SP,#0x30+var_20]
+0x3deda88: STP             X20, X19, [SP,#0x30+var_10]
+0x3deda8c: ADRP            X23, #byte_8FFD76C@PAGE
+0x3deda90: ADRP            X22, #off_8ACDF78@PAGE
+0x3deda94: LDRB            W8, [X23,#byte_8FFD76C@PAGEOFF]
+0x3deda98: LDR             X22, [X22,#off_8ACDF78@PAGEOFF]; off_8CE1928
+0x3deda9c: MOV             W20, W2
+0x3dedaa0: MOV             W21, W1
+0x3dedaa4: MOV             X19, X0
+0x3dedaa8: TBNZ            W8, #0, loc_3DEDACC
+0x3dedaac: ADRP            X0, #off_8ACDF88@PAGE
+0x3dedab0: LDR             X0, [X0,#off_8ACDF88@PAGEOFF]; qword_8D17890 ; slot
+0x3dedab4: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3dedab8: ADRP            X0, #off_8ACDF78@PAGE
+0x3dedabc: LDR             X0, [X0,#off_8ACDF78@PAGEOFF]; off_8CE1928 ; slot
+0x3dedac0: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3dedac4: MOV             W8, #1
+0x3dedac8: STRB            W8, [X23,#byte_8FFD76C@PAGEOFF]
+0x3dedacc: LDR             X0, [X22]; klass
+0x3dedad0: ADRP            X22, #off_8ACDF88@PAGE
+0x3dedad4: LDR             W8, [X0,#0xE0]
+0x3dedad8: LDR             X22, [X22,#off_8ACDF88@PAGEOFF]; qword_8D17890
+0x3dedadc: CBNZ            W8, loc_3DEDAE4
+0x3dedae0: BL              il2cpp_codegen_runtime_class_init
+0x3dedae4: LDR             X0, [X22]
+0x3dedae8: BL              QuickTutor.Singleton_object_$$get_Instance
+0x3dedaec: CBZ             X0, loc_3DEDB2C
+0x3dedaf0: MOV             X1, XZR
+0x3dedaf4: BL              SDKModule.ABTestManager$$get_GamePlayImprove01IsBTest
+0x3dedaf8: TBZ             W0, #0, loc_3DEDB1C
+0x3dedafc: TBZ             W21, #0, loc_3DEDB10
+0x3dedb00: LDR             W8, [X19,#0x20C]
+0x3dedb04: ADD             W8, W8, W20
+0x3dedb08: STR             W8, [X19,#0x20C]
+0x3dedb0c: B               loc_3DEDB1C
+0x3dedb10: LDR             W8, [X19,#0x208]
+0x3dedb14: ADD             W8, W8, W20
+0x3dedb18: STR             W8, [X19,#0x208]
+0x3dedb1c: LDP             X20, X19, [SP,#0x30+var_10]
+0x3dedb20: LDP             X22, X21, [SP,#0x30+var_20]
+0x3dedb24: LDP             X30, X23, [SP+0x30+var_30],#0x30
+0x3dedb28: RET
+0x3dedb2c: BL              il2cpp_codegen_raise_null_reference_exception

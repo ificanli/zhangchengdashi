@@ -1,0 +1,66 @@
+0x3e1c178: fe0f1ef8 str      x30, [sp, #-0x20]!
+0x3e1c17c: f44f01a9 stp      x20, x19, [sp, #0x10]
+0x3e1c180: 148f02b0 adrp     x20, #0x8ffd000
+0x3e1c184: d3650290 adrp     x19, #0x8ad4000
+0x3e1c188: 888a6239 ldrb     w8, [x20, #0x8a2]
+0x3e1c18c: 735247f9 ldr      x19, [x19, #0xea0] // DbtSaveDataManagerBase<DbtSaveDataManager_PlayerAdData, PlayerAdData>_TypeInfo
+0x3e1c190: a8020037 tbnz     w8, #0, #0x3e1c1e4
+0x3e1c194: c0650290 adrp     x0, #0x8ad4000
+0x3e1c198: 005447f9 ldr      x0, [x0, #0xea8] // Method$DbtSaveDataManagerBase<DbtSaveDataManager_PlayerAdData, PlayerAdData>.Save()
+0x3e1c19c: 3984f897 bl       #0x3c3d280
+0x3e1c1a0: c0650290 adrp     x0, #0x8ad4000
+0x3e1c1a4: 005847f9 ldr      x0, [x0, #0xeb0] // Method$DbtSaveDataManagerBase<DbtSaveDataManager_PlayerAdData, PlayerAdData>.get_Data()
+0x3e1c1a8: 3684f897 bl       #0x3c3d280
+0x3e1c1ac: c0650290 adrp     x0, #0x8ad4000
+0x3e1c1b0: 005047f9 ldr      x0, [x0, #0xea0] // DbtSaveDataManagerBase<DbtSaveDataManager_PlayerAdData, PlayerAdData>_TypeInfo
+0x3e1c1b4: 3384f897 bl       #0x3c3d280
+0x3e1c1b8: 806502b0 adrp     x0, #0x8acd000
+0x3e1c1bc: 002047f9 ldr      x0, [x0, #0xe40] // Method$ToolModule.ManagerBase<EventManager>.get_Instance()
+0x3e1c1c0: 3084f897 bl       #0x3c3d280
+0x3e1c1c4: c0650290 adrp     x0, #0x8ad4000
+0x3e1c1c8: 00c046f9 ldr      x0, [x0, #0xd80] // Method$ToolModule.ManagerBase<ShopManager>.get_Instance()
+0x3e1c1cc: 2d84f897 bl       #0x3c3d280
+0x3e1c1d0: c0650290 adrp     x0, #0x8ad4000
+0x3e1c1d4: 005c47f9 ldr      x0, [x0, #0xeb8] // TimeToZeroRefreshFreeResUI
+0x3e1c1d8: 2a84f897 bl       #0x3c3d280
+0x3e1c1dc: 28008052 mov      w8, #1
+0x3e1c1e0: 888a2239 strb     w8, [x20, #0x8a2]
+0x3e1c1e4: 680240f9 ldr      x8, [x19]
+0x3e1c1e8: 085d40f9 ldr      x8, [x8, #0xb8]
+0x3e1c1ec: 080140f9 ldr      x8, [x8]
+0x3e1c1f0: 680400b4 cbz      x8, #0x3e1c27c
+0x3e1c1f4: 001940f9 ldr      x0, [x8, #0x30]
+0x3e1c1f8: 200400b4 cbz      x0, #0x3e1c27c
+0x3e1c1fc: e1031faa mov      x1, xzr
+0x3e1c200: 753e1594 bl       #0x436bbd4 // DataModule.PlayerAdData$$InitializeVideosNumber
+0x3e1c204: 680240f9 ldr      x8, [x19]
+0x3e1c208: 085d40f9 ldr      x8, [x8, #0xb8]
+0x3e1c20c: 000140f9 ldr      x0, [x8]
+0x3e1c210: 600300b4 cbz      x0, #0x3e1c27c
+0x3e1c214: c8650290 adrp     x8, #0x8ad4000
+0x3e1c218: 085547f9 ldr      x8, [x8, #0xea8] // Method$DbtSaveDataManagerBase<DbtSaveDataManager_PlayerAdData, PlayerAdData>.Save()
+0x3e1c21c: d3650290 adrp     x19, #0x8ad4000
+0x3e1c220: 010140f9 ldr      x1, [x8]
+0x3e1c224: 73c246f9 ldr      x19, [x19, #0xd80] // Method$ToolModule.ManagerBase<ShopManager>.get_Instance()
+0x3e1c228: 6b60b394 bl       #0x6af43d4 // DbtSaveDataManagerBase<object, object>$$Save
+0x3e1c22c: 600240f9 ldr      x0, [x19]
+0x3e1c230: 8c706d94 bl       #0x5978460 // ToolModule.ManagerBase<object>$$get_Instance
+0x3e1c234: 400200b4 cbz      x0, #0x3e1c27c
+0x3e1c238: 936502b0 adrp     x19, #0x8acd000
+0x3e1c23c: 001040f9 ldr      x0, [x0, #0x20]
+0x3e1c240: 732247f9 ldr      x19, [x19, #0xe40] // Method$ToolModule.ManagerBase<EventManager>.get_Instance()
+0x3e1c244: 600000b4 cbz      x0, #0x3e1c250
+0x3e1c248: e1031faa mov      x1, xzr
+0x3e1c24c: 52901494 bl       #0x4340394 // BadgeGraph.ThrottleTrigger$$RegisterOneTrigger
+0x3e1c250: 600240f9 ldr      x0, [x19]
+0x3e1c254: 83706d94 bl       #0x5978460 // ToolModule.ManagerBase<object>$$get_Instance
+0x3e1c258: 200100b4 cbz      x0, #0x3e1c27c
+0x3e1c25c: c8650290 adrp     x8, #0x8ad4000
+0x3e1c260: 085d47f9 ldr      x8, [x8, #0xeb8] // TimeToZeroRefreshFreeResUI
+0x3e1c264: f44f41a9 ldp      x20, x19, [sp, #0x10]
+0x3e1c268: e2031faa mov      x2, xzr
+0x3e1c26c: e3031faa mov      x3, xzr
+0x3e1c270: 010140f9 ldr      x1, [x8]
+0x3e1c274: fe0742f8 ldr      x30, [sp], #0x20
+0x3e1c278: 3ba70314 b        #0x3f05f64 // EventModule.EventManager$$TriggerEvent
+0x3e1c27c: 9484f897 bl       #0x3c3d4cc

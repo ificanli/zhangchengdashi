@@ -1,0 +1,230 @@
+void GameModule_GameManager__RegisterOnTimeToZero(void *self, const MethodInfo *method)
+{
+  __int64 v2; // x2
+  __int64 Instance; // x19
+  __int64 v4; // x1
+  __int64 v5; // x2
+  __int64 v6; // x21
+  __int64 v7; // x20
+  __int64 v8; // x1
+  __int64 v9; // x2
+  __int64 v10; // x19
+  __int64 v11; // x1
+  __int64 v12; // x2
+  __int64 v13; // x21
+  __int64 v14; // x20
+  __int64 v15; // x1
+  __int64 v16; // x2
+  __int64 v17; // x19
+  __int64 v18; // x1
+  __int64 v19; // x2
+  __int64 v20; // x21
+  __int64 v21; // x20
+  __int64 v22; // x1
+  __int64 v23; // x2
+  __int64 v24; // x0
+  _QWORD *v25; // x8
+  __int64 v26; // x19
+  __int64 v27; // x20
+  __int64 v28; // x21
+  __int64 v29; // x1
+  __int64 v30; // x2
+  __int64 v31; // x0
+  _QWORD *v32; // x8
+  __int64 v33; // x19
+  __int64 v34; // x20
+  __int64 v35; // x21
+  __int64 v36; // x1
+  __int64 v37; // x2
+  __int64 v38; // x0
+  _QWORD *v39; // x8
+  __int64 v40; // x19
+  __int64 v41; // x20
+  __int64 v42; // x21
+  __int64 v43; // x1
+  __int64 v44; // x2
+  __int64 v45; // x0
+  _QWORD *v46; // x8
+  __int64 v47; // x19
+  __int64 v48; // x20
+  __int64 v49; // x21
+  __int64 v50; // x1
+  __int64 v51; // x2
+  __int64 v52; // x0
+  __int64 v53; // x1
+  __int64 v54; // x2
+  __int64 v55; // x0
+  _QWORD *v56; // x8
+  __int64 v57; // x19
+  __int64 v58; // x20
+  __int64 v59; // x21
+
+  if ( (byte_8FFD897 & 1) == 0 )
+  {
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8CE3CE0 /* System.Action_TypeInfo */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D12108 /* Method$ToolModule.ManagerBase<DailyBlessManager>.get_Instance() */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D12478 /* Method$ToolModule.ManagerBase<TimeManager>.get_Instance() */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D12420 /* Method$ToolModule.ManagerBase<ShopManager>.get_Instance() */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D38E88 /* Method$GameModule.ShopManager.RefreshUserUniversalCardData() */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D38E90 /* Method$GameModule.ShopManager.ResetPopPacks() */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D38E98 /* Method$GameModule.ShopManager.ResetWatchAdCount() */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D474F8 /* Method$GameModule.GameManager.<>c.<RegisterOnTimeToZero>b__21_0() */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D47500 /* Method$GameModule.GameManager.<>c.<RegisterOnTimeToZero>b__21_1() */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D47508 /* Method$GameModule.GameManager.<>c.<RegisterOnTimeToZero>b__21_2() */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D47510 /* Method$GameModule.GameManager.<>c.<RegisterOnTimeToZero>b__21_3() */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D47518 /* Method$GameModule.GameManager.<>c.<RegisterOnTimeToZero>b__21_4() */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&off_8CF2EC8 /* GameModule.GameManager.<>c_TypeInfo */);
+    byte_8FFD897 = 1;
+  }
+  Instance = ToolModule_ManagerBase_object___get_Instance(qword_8D12478 /* Method$ToolModule.ManagerBase<TimeManager>.get_Instance() */, method, v2);
+  v6 = ToolModule_ManagerBase_object___get_Instance(qword_8D12420 /* Method$ToolModule.ManagerBase<ShopManager>.get_Instance() */, v4, v5);
+  v7 = ((__int64 (__fastcall *)(__int64))unk_3C3D4C4)(qword_8CE3CE0 /* System.Action_TypeInfo */);
+  System_Action___ctor(v7, v6, qword_8D38E88 /* Method$GameModule.ShopManager.RefreshUserUniversalCardData() */, 0);
+  if ( Instance == 0 )
+    goto LABEL_45;
+  TimeModuleO_TimeManager__RegisterOnTimeToZero(Instance, v7, 0);
+  v10 = ToolModule_ManagerBase_object___get_Instance(qword_8D12478 /* Method$ToolModule.ManagerBase<TimeManager>.get_Instance() */, v8, v9);
+  v13 = ToolModule_ManagerBase_object___get_Instance(qword_8D12420 /* Method$ToolModule.ManagerBase<ShopManager>.get_Instance() */, v11, v12);
+  v14 = ((__int64 (__fastcall *)(__int64))unk_3C3D4C4)(qword_8CE3CE0 /* System.Action_TypeInfo */);
+  System_Action___ctor(v14, v13, qword_8D38E98 /* Method$GameModule.ShopManager.ResetWatchAdCount() */, 0);
+  if ( v10 == 0 )
+    goto LABEL_45;
+  TimeModuleO_TimeManager__RegisterOnTimeToZero(v10, v14, 0);
+  v17 = ToolModule_ManagerBase_object___get_Instance(qword_8D12478 /* Method$ToolModule.ManagerBase<TimeManager>.get_Instance() */, v15, v16);
+  v20 = ToolModule_ManagerBase_object___get_Instance(qword_8D12420 /* Method$ToolModule.ManagerBase<ShopManager>.get_Instance() */, v18, v19);
+  v21 = ((__int64 (__fastcall *)(__int64))unk_3C3D4C4)(qword_8CE3CE0 /* System.Action_TypeInfo */);
+  System_Action___ctor(v21, v20, qword_8D38E90 /* Method$GameModule.ShopManager.ResetPopPacks() */, 0);
+  if ( v17 == 0 )
+    goto LABEL_45;
+  TimeModuleO_TimeManager__RegisterOnTimeToZero(v17, v21, 0);
+  v24 = ToolModule_ManagerBase_object___get_Instance(qword_8D12478 /* Method$ToolModule.ManagerBase<TimeManager>.get_Instance() */, v22, v23);
+  v25 = off_8CF2EC8 /* GameModule.GameManager.<>c_TypeInfo */;
+  v26 = v24;
+  if ( *((_DWORD *)off_8CF2EC8 /* GameModule.GameManager.<>c_TypeInfo */ + 56) == 0 )
+  {
+    il2cpp_codegen_runtime_class_init(off_8CF2EC8 /* GameModule.GameManager.<>c_TypeInfo */);
+    v25 = off_8CF2EC8 /* GameModule.GameManager.<>c_TypeInfo */;
+  }
+  v27 = *(_QWORD *)(v25[23] + 16LL);
+  if ( v27 == 0 )
+  {
+    if ( *((_DWORD *)v25 + 56) == 0 )
+    {
+      il2cpp_codegen_runtime_class_init(v25);
+      v25 = off_8CF2EC8 /* GameModule.GameManager.<>c_TypeInfo */;
+    }
+    v28 = *(_QWORD *)v25[23];
+    v27 = ((__int64 (__fastcall *)(__int64))unk_3C3D4C4)(qword_8CE3CE0 /* System.Action_TypeInfo */);
+    System_Action___ctor(v27, v28, qword_8D474F8 /* Method$GameModule.GameManager.<>c.<RegisterOnTimeToZero>b__21_0() */, 0);
+    *(_QWORD *)(*((_QWORD *)off_8CF2EC8 /* GameModule.GameManager.<>c_TypeInfo */ + 23) + 16LL) = v27;
+  }
+  if ( v26 == 0 )
+    goto LABEL_45;
+  TimeModuleO_TimeManager__RegisterOnTimeToZero(v26, v27, 0);
+  v31 = ToolModule_ManagerBase_object___get_Instance(qword_8D12478 /* Method$ToolModule.ManagerBase<TimeManager>.get_Instance() */, v29, v30);
+  v32 = off_8CF2EC8 /* GameModule.GameManager.<>c_TypeInfo */;
+  v33 = v31;
+  if ( *((_DWORD *)off_8CF2EC8 /* GameModule.GameManager.<>c_TypeInfo */ + 56) == 0 )
+  {
+    il2cpp_codegen_runtime_class_init(off_8CF2EC8 /* GameModule.GameManager.<>c_TypeInfo */);
+    v32 = off_8CF2EC8 /* GameModule.GameManager.<>c_TypeInfo */;
+  }
+  v34 = *(_QWORD *)(v32[23] + 24LL);
+  if ( v34 == 0 )
+  {
+    if ( *((_DWORD *)v32 + 56) == 0 )
+    {
+      il2cpp_codegen_runtime_class_init(v32);
+      v32 = off_8CF2EC8 /* GameModule.GameManager.<>c_TypeInfo */;
+    }
+    v35 = *(_QWORD *)v32[23];
+    v34 = ((__int64 (__fastcall *)(__int64))unk_3C3D4C4)(qword_8CE3CE0 /* System.Action_TypeInfo */);
+    System_Action___ctor(v34, v35, qword_8D47500 /* Method$GameModule.GameManager.<>c.<RegisterOnTimeToZero>b__21_1() */, 0);
+    *(_QWORD *)(*((_QWORD *)off_8CF2EC8 /* GameModule.GameManager.<>c_TypeInfo */ + 23) + 24LL) = v34;
+  }
+  if ( v33 == 0 )
+    goto LABEL_45;
+  TimeModuleO_TimeManager__RegisterOnTimeToZero(v33, v34, 0);
+  v38 = ToolModule_ManagerBase_object___get_Instance(qword_8D12478 /* Method$ToolModule.ManagerBase<TimeManager>.get_Instance() */, v36, v37);
+  v39 = off_8CF2EC8 /* GameModule.GameManager.<>c_TypeInfo */;
+  v40 = v38;
+  if ( *((_DWORD *)off_8CF2EC8 /* GameModule.GameManager.<>c_TypeInfo */ + 56) == 0 )
+  {
+    il2cpp_codegen_runtime_class_init(off_8CF2EC8 /* GameModule.GameManager.<>c_TypeInfo */);
+    v39 = off_8CF2EC8 /* GameModule.GameManager.<>c_TypeInfo */;
+  }
+  v41 = *(_QWORD *)(v39[23] + 32LL);
+  if ( v41 == 0 )
+  {
+    if ( *((_DWORD *)v39 + 56) == 0 )
+    {
+      il2cpp_codegen_runtime_class_init(v39);
+      v39 = off_8CF2EC8 /* GameModule.GameManager.<>c_TypeInfo */;
+    }
+    v42 = *(_QWORD *)v39[23];
+    v41 = ((__int64 (__fastcall *)(__int64))unk_3C3D4C4)(qword_8CE3CE0 /* System.Action_TypeInfo */);
+    System_Action___ctor(v41, v42, qword_8D47508 /* Method$GameModule.GameManager.<>c.<RegisterOnTimeToZero>b__21_2() */, 0);
+    *(_QWORD *)(*((_QWORD *)off_8CF2EC8 /* GameModule.GameManager.<>c_TypeInfo */ + 23) + 32LL) = v41;
+  }
+  if ( v40 == 0 )
+    goto LABEL_45;
+  TimeModuleO_TimeManager__RegisterOnTimeToZero(v40, v41, 0);
+  v45 = ToolModule_ManagerBase_object___get_Instance(qword_8D12478 /* Method$ToolModule.ManagerBase<TimeManager>.get_Instance() */, v43, v44);
+  v46 = off_8CF2EC8 /* GameModule.GameManager.<>c_TypeInfo */;
+  v47 = v45;
+  if ( *((_DWORD *)off_8CF2EC8 /* GameModule.GameManager.<>c_TypeInfo */ + 56) == 0 )
+  {
+    il2cpp_codegen_runtime_class_init(off_8CF2EC8 /* GameModule.GameManager.<>c_TypeInfo */);
+    v46 = off_8CF2EC8 /* GameModule.GameManager.<>c_TypeInfo */;
+  }
+  v48 = *(_QWORD *)(v46[23] + 40LL);
+  if ( v48 == 0 )
+  {
+    if ( *((_DWORD *)v46 + 56) == 0 )
+    {
+      il2cpp_codegen_runtime_class_init(v46);
+      v46 = off_8CF2EC8 /* GameModule.GameManager.<>c_TypeInfo */;
+    }
+    v49 = *(_QWORD *)v46[23];
+    v48 = ((__int64 (__fastcall *)(__int64))unk_3C3D4C4)(qword_8CE3CE0 /* System.Action_TypeInfo */);
+    System_Action___ctor(v48, v49, qword_8D47510 /* Method$GameModule.GameManager.<>c.<RegisterOnTimeToZero>b__21_3() */, 0);
+    *(_QWORD *)(*((_QWORD *)off_8CF2EC8 /* GameModule.GameManager.<>c_TypeInfo */ + 23) + 40LL) = v48;
+  }
+  if ( v47 == 0 )
+    goto LABEL_45;
+  TimeModuleO_TimeManager__RegisterOnTimeToZero(v47, v48, 0);
+  v52 = ToolModule_ManagerBase_object___get_Instance(qword_8D12108 /* Method$ToolModule.ManagerBase<DailyBlessManager>.get_Instance() */, v50, v51);
+  if ( v52 == 0 )
+    goto LABEL_45;
+  if ( (GameModule_DailyBlessManager__IsBTest(v52, 0) & 1) != 0 )
+  {
+    v55 = ToolModule_ManagerBase_object___get_Instance(qword_8D12478 /* Method$ToolModule.ManagerBase<TimeManager>.get_Instance() */, v53, v54);
+    v56 = off_8CF2EC8 /* GameModule.GameManager.<>c_TypeInfo */;
+    v57 = v55;
+    if ( *((_DWORD *)off_8CF2EC8 /* GameModule.GameManager.<>c_TypeInfo */ + 56) == 0 )
+    {
+      il2cpp_codegen_runtime_class_init(off_8CF2EC8 /* GameModule.GameManager.<>c_TypeInfo */);
+      v56 = off_8CF2EC8 /* GameModule.GameManager.<>c_TypeInfo */;
+    }
+    v58 = *(_QWORD *)(v56[23] + 48LL);
+    if ( v58 == 0 )
+    {
+      if ( *((_DWORD *)v56 + 56) == 0 )
+      {
+        il2cpp_codegen_runtime_class_init(v56);
+        v56 = off_8CF2EC8 /* GameModule.GameManager.<>c_TypeInfo */;
+      }
+      v59 = *(_QWORD *)v56[23];
+      v58 = ((__int64 (__fastcall *)(__int64))unk_3C3D4C4)(qword_8CE3CE0 /* System.Action_TypeInfo */);
+      System_Action___ctor(v58, v59, qword_8D47518 /* Method$GameModule.GameManager.<>c.<RegisterOnTimeToZero>b__21_4() */, 0);
+      *(_QWORD *)(*((_QWORD *)off_8CF2EC8 /* GameModule.GameManager.<>c_TypeInfo */ + 23) + 48LL) = v58;
+    }
+    if ( v57 != 0 )
+    {
+      TimeModuleO_TimeManager__RegisterOnTimeToZero(v57, v58, 0);
+      return;
+    }
+LABEL_45:
+    il2cpp_codegen_raise_null_reference_exception();
+  }
+}

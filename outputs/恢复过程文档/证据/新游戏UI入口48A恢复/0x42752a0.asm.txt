@@ -1,0 +1,37 @@
+0x42752a0: fe57bea9 stp      x30, x21, [sp, #-0x20]!
+0x42752a4: f44f01a9 stp      x20, x19, [sp, #0x10]
+0x42752a8: 556c02d0 adrp     x21, #0x8fff000
+0x42752ac: b44202f0 adrp     x20, #0x8acc000
+0x42752b0: a82a7f39 ldrb     w8, [x21, #0xfca]
+0x42752b4: 946a44f9 ldr      x20, [x20, #0x8d0] // UnityEngine.Object_TypeInfo
+0x42752b8: f30300aa mov      x19, x0
+0x42752bc: 28010037 tbnz     w8, #0, #0x42752e0
+0x42752c0: 404302f0 adrp     x0, #0x8ae0000
+0x42752c4: 000846f9 ldr      x0, [x0, #0xc10] // Method$UnityEngine.Component.GetComponent<Canvas>()
+0x42752c8: ee1fe797 bl       #0x3c3d280
+0x42752cc: a04202f0 adrp     x0, #0x8acc000
+0x42752d0: 006844f9 ldr      x0, [x0, #0x8d0] // UnityEngine.Object_TypeInfo
+0x42752d4: eb1fe797 bl       #0x3c3d280
+0x42752d8: 28008052 mov      w8, #1
+0x42752dc: a82a3f39 strb     w8, [x21, #0xfca]
+0x42752e0: 800240f9 ldr      x0, [x20]
+0x42752e4: 741a40f9 ldr      x20, [x19, #0x30]
+0x42752e8: 08e040b9 ldr      w8, [x0, #0xe0]
+0x42752ec: 48000035 cbnz     w8, #0x42752f4
+0x42752f0: 3020e797 bl       #0x3c3d3b0
+0x42752f4: e00314aa mov      x0, x20
+0x42752f8: e1031faa mov      x1, xzr
+0x42752fc: e2031faa mov      x2, xzr
+0x4275300: 05e10195 bl       #0x82ed714 // UnityEngine.Object$$op_Equality
+0x4275304: 00010036 tbz      w0, #0, #0x4275324
+0x4275308: 484302f0 adrp     x8, #0x8ae0000
+0x427530c: 080946f9 ldr      x8, [x8, #0xc10] // Method$UnityEngine.Component.GetComponent<Canvas>()
+0x4275310: e00313aa mov      x0, x19
+0x4275314: 010140f9 ldr      x1, [x8]
+0x4275318: b0392494 bl       #0x4b839d8 // UnityEngine.Component$$GetComponent<object>
+0x427531c: 601a00f9 str      x0, [x19, #0x30]
+0x4275320: 02000014 b        #0x4275328
+0x4275324: 601a40f9 ldr      x0, [x19, #0x30]
+0x4275328: f44f41a9 ldp      x20, x19, [sp, #0x10]
+0x427532c: fe57c2a8 ldp      x30, x21, [sp], #0x20
+0x4275330: c0035fd6 ret      

@@ -1,0 +1,210 @@
+0x429cb34: 00200091 add      x0, x0, #8
+0x429cb38: e2031faa mov      x2, xzr
+0x429cb3c: 504dcc14 b        #0x75b007c // System.Runtime.CompilerServices.AsyncVoidMethodBuilder$$SetStateMachine
+0x429cb40: fe5fbda9 stp      x30, x23, [sp, #-0x30]!
+0x429cb44: f65701a9 stp      x22, x21, [sp, #0x10]
+0x429cb48: f44f02a9 stp      x20, x19, [sp, #0x20]
+0x429cb4c: 681c40f9 ldr      x8, [x3, #0x38]
+0x429cb50: f40303aa mov      x20, x3
+0x429cb54: f70302aa mov      x23, x2
+0x429cb58: f30301aa mov      x19, x1
+0x429cb5c: f60300aa mov      x22, x0
+0x429cb60: 680000b5 cbnz     x8, #0x429cb6c
+0x429cb64: e00314aa mov      x0, x20
+0x429cb68: 25cee697 bl       #0x3c503fc
+0x429cb6c: d50240f9 ldr      x21, [x22]
+0x429cb70: 150200b5 cbnz     x21, #0x429cbb0
+0x429cb74: 881e40f9 ldr      x8, [x20, #0x38]
+0x429cb78: 000940f9 ldr      x0, [x8, #0x10]
+0x429cb7c: 08d44439 ldrb     w8, [x0, #0x135]
+0x429cb80: 48000037 tbnz     w8, #0, #0x429cb88
+0x429cb84: 07cee697 bl       #0x3c503a0
+0x429cb88: 08e040b9 ldr      w8, [x0, #0xe0]
+0x429cb8c: 48000035 cbnz     w8, #0x429cb94
+0x429cb90: 0882e697 bl       #0x3c3d3b0
+0x429cb94: 881e40f9 ldr      x8, [x20, #0x38]
+0x429cb98: e00317aa mov      x0, x23
+0x429cb9c: e10316aa mov      x1, x22
+0x429cba0: 020540f9 ldr      x2, [x8, #8]
+0x429cba4: 13419794 bl       #0x686cff0 // Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask<FootballGameController.<ResolveRoundAsync>d__30, bool>$$SetStateMachine
+0x429cba8: d50240f9 ldr      x21, [x22]
+0x429cbac: 350500b4 cbz      x21, #0x429cc50
+0x429cbb0: 801240f9 ldr      x0, [x20, #0x20]
+0x429cbb4: 08d44439 ldrb     w8, [x0, #0x135]
+0x429cbb8: 48000037 tbnz     w8, #0, #0x429cbc0
+0x429cbbc: f9cde697 bl       #0x3c503a0
+0x429cbc0: 086040f9 ldr      x8, [x0, #0xc0]
+0x429cbc4: 010540f9 ldr      x1, [x8, #8]
+0x429cbc8: 28d44439 ldrb     w8, [x1, #0x135]
+0x429cbcc: 88000037 tbnz     w8, #0, #0x429cbdc
+0x429cbd0: e00301aa mov      x0, x1
+0x429cbd4: f3cde697 bl       #0x3c503a0
+0x429cbd8: e10300aa mov      x1, x0
+0x429cbdc: a80240f9 ldr      x8, [x21]
+0x429cbe0: 095d4279 ldrh     w9, [x8, #0x12e]
+0x429cbe4: 290100b4 cbz      x9, #0x429cc08
+0x429cbe8: 0a5940f9 ldr      x10, [x8, #0xb0]
+0x429cbec: 4a210091 add      x10, x10, #8
+0x429cbf0: 4b815ff8 ldur     x11, [x10, #-8]
+0x429cbf4: 7f0101eb cmp      x11, x1
+0x429cbf8: 00010054 b.eq     #0x429cc18
+0x429cbfc: 290500f1 subs     x9, x9, #1
+0x429cc00: 4a410091 add      x10, x10, #0x10
+0x429cc04: 61ffff54 b.ne     #0x429cbf0
+0x429cc08: e00315aa mov      x0, x21
+0x429cc0c: e2031f2a mov      w2, wzr
+0x429cc10: 25cee697 bl       #0x3c504a4
+0x429cc14: 04000014 b        #0x429cc24
+0x429cc18: 490180b9 ldrsw    x9, [x10]
+0x429cc1c: 0811098b add      x8, x8, x9, lsl #4
+0x429cc20: 00e10491 add      x0, x8, #0x138
+0x429cc24: 080440a9 ldp      x8, x1, [x0]
+0x429cc28: e00315aa mov      x0, x21
+0x429cc2c: 00013fd6 blr      x8
+0x429cc30: 881e40f9 ldr      x8, [x20, #0x38]
+0x429cc34: e10300aa mov      x1, x0
+0x429cc38: e00313aa mov      x0, x19
+0x429cc3c: f44f42a9 ldp      x20, x19, [sp, #0x20]
+0x429cc40: 021540f9 ldr      x2, [x8, #0x28]
+0x429cc44: f65741a9 ldp      x22, x21, [sp, #0x10]
+0x429cc48: fe5fc3a8 ldp      x30, x23, [sp], #0x30
+0x429cc4c: 4debe917 b        #0x3d17980
+0x429cc50: 1f82e697 bl       #0x3c3d4cc
+0x429cc54: fe5fbda9 stp      x30, x23, [sp, #-0x30]!
+0x429cc58: f65701a9 stp      x22, x21, [sp, #0x10]
+0x429cc5c: f44f02a9 stp      x20, x19, [sp, #0x20]
+0x429cc60: 681c40f9 ldr      x8, [x3, #0x38]
+0x429cc64: f40303aa mov      x20, x3
+0x429cc68: f70302aa mov      x23, x2
+0x429cc6c: f30301aa mov      x19, x1
+0x429cc70: f60300aa mov      x22, x0
+0x429cc74: 680000b5 cbnz     x8, #0x429cc80
+0x429cc78: e00314aa mov      x0, x20
+0x429cc7c: e0cde697 bl       #0x3c503fc
+0x429cc80: d50240f9 ldr      x21, [x22]
+0x429cc84: 150200b5 cbnz     x21, #0x429ccc4
+0x429cc88: 881e40f9 ldr      x8, [x20, #0x38]
+0x429cc8c: 000940f9 ldr      x0, [x8, #0x10]
+0x429cc90: 08d44439 ldrb     w8, [x0, #0x135]
+0x429cc94: 48000037 tbnz     w8, #0, #0x429cc9c
+0x429cc98: c2cde697 bl       #0x3c503a0
+0x429cc9c: 08e040b9 ldr      w8, [x0, #0xe0]
+0x429cca0: 48000035 cbnz     w8, #0x429cca8
+0x429cca4: c381e697 bl       #0x3c3d3b0
+0x429cca8: 881e40f9 ldr      x8, [x20, #0x38]
+0x429ccac: e00317aa mov      x0, x23
+0x429ccb0: e10316aa mov      x1, x22
+0x429ccb4: 020540f9 ldr      x2, [x8, #8]
+0x429ccb8: 7e429794 bl       #0x686d6b0 // Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask<FootballGameController.<ShootOnceAsync>d__27, FootballShootResult>$$SetStateMachine
+0x429ccbc: d50240f9 ldr      x21, [x22]
+0x429ccc0: 350500b4 cbz      x21, #0x429cd64
+0x429ccc4: 801240f9 ldr      x0, [x20, #0x20]
+0x429ccc8: 08d44439 ldrb     w8, [x0, #0x135]
+0x429cccc: 48000037 tbnz     w8, #0, #0x429ccd4
+0x429ccd0: b4cde697 bl       #0x3c503a0
+0x429ccd4: 086040f9 ldr      x8, [x0, #0xc0]
+0x429ccd8: 010540f9 ldr      x1, [x8, #8]
+0x429ccdc: 28d44439 ldrb     w8, [x1, #0x135]
+0x429cce0: 88000037 tbnz     w8, #0, #0x429ccf0
+0x429cce4: e00301aa mov      x0, x1
+0x429cce8: aecde697 bl       #0x3c503a0
+0x429ccec: e10300aa mov      x1, x0
+0x429ccf0: a80240f9 ldr      x8, [x21]
+0x429ccf4: 095d4279 ldrh     w9, [x8, #0x12e]
+0x429ccf8: 290100b4 cbz      x9, #0x429cd1c
+0x429ccfc: 0a5940f9 ldr      x10, [x8, #0xb0]
+0x429cd00: 4a210091 add      x10, x10, #8
+0x429cd04: 4b815ff8 ldur     x11, [x10, #-8]
+0x429cd08: 7f0101eb cmp      x11, x1
+0x429cd0c: 00010054 b.eq     #0x429cd2c
+0x429cd10: 290500f1 subs     x9, x9, #1
+0x429cd14: 4a410091 add      x10, x10, #0x10
+0x429cd18: 61ffff54 b.ne     #0x429cd04
+0x429cd1c: e00315aa mov      x0, x21
+0x429cd20: e2031f2a mov      w2, wzr
+0x429cd24: e0cde697 bl       #0x3c504a4
+0x429cd28: 04000014 b        #0x429cd38
+0x429cd2c: 490180b9 ldrsw    x9, [x10]
+0x429cd30: 0811098b add      x8, x8, x9, lsl #4
+0x429cd34: 00e10491 add      x0, x8, #0x138
+0x429cd38: 080440a9 ldp      x8, x1, [x0]
+0x429cd3c: e00315aa mov      x0, x21
+0x429cd40: 00013fd6 blr      x8
+0x429cd44: 881e40f9 ldr      x8, [x20, #0x38]
+0x429cd48: e10300aa mov      x1, x0
+0x429cd4c: e00313aa mov      x0, x19
+0x429cd50: f44f42a9 ldp      x20, x19, [sp, #0x20]
+0x429cd54: 021540f9 ldr      x2, [x8, #0x28]
+0x429cd58: f65741a9 ldp      x22, x21, [sp, #0x10]
+0x429cd5c: fe5fc3a8 ldp      x30, x23, [sp], #0x30
+0x429cd60: 9fa8ee17 b        #0x3e46fdc
+0x429cd64: da81e697 bl       #0x3c3d4cc
+0x429cd68: fe5fbda9 stp      x30, x23, [sp, #-0x30]!
+0x429cd6c: f65701a9 stp      x22, x21, [sp, #0x10]
+0x429cd70: f44f02a9 stp      x20, x19, [sp, #0x20]
+0x429cd74: 681c40f9 ldr      x8, [x3, #0x38]
+0x429cd78: f40303aa mov      x20, x3
+0x429cd7c: f70302aa mov      x23, x2
+0x429cd80: f30301aa mov      x19, x1
+0x429cd84: f60300aa mov      x22, x0
+0x429cd88: 680000b5 cbnz     x8, #0x429cd94
+0x429cd8c: e00314aa mov      x0, x20
+0x429cd90: 9bcde697 bl       #0x3c503fc
+0x429cd94: d50240f9 ldr      x21, [x22]
+0x429cd98: 150200b5 cbnz     x21, #0x429cdd8
+0x429cd9c: 881e40f9 ldr      x8, [x20, #0x38]
+0x429cda0: 000940f9 ldr      x0, [x8, #0x10]
+0x429cda4: 08d44439 ldrb     w8, [x0, #0x135]
+0x429cda8: 48000037 tbnz     w8, #0, #0x429cdb0
+0x429cdac: 7dcde697 bl       #0x3c503a0
+0x429cdb0: 08e040b9 ldr      w8, [x0, #0xe0]
+0x429cdb4: 48000035 cbnz     w8, #0x429cdbc
+0x429cdb8: 7e81e697 bl       #0x3c3d3b0
+0x429cdbc: 881e40f9 ldr      x8, [x20, #0x38]
+0x429cdc0: e00317aa mov      x0, x23
+0x429cdc4: e10316aa mov      x1, x22
+0x429cdc8: 020540f9 ldr      x2, [x8, #8]
+0x429cdcc: 39429794 bl       #0x686d6b0 // Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask<FootballGameController.<ShootOnceAsync>d__27, FootballShootResult>$$SetStateMachine
+0x429cdd0: d50240f9 ldr      x21, [x22]
+0x429cdd4: 350500b4 cbz      x21, #0x429ce78
+0x429cdd8: 801240f9 ldr      x0, [x20, #0x20]
+0x429cddc: 08d44439 ldrb     w8, [x0, #0x135]
+0x429cde0: 48000037 tbnz     w8, #0, #0x429cde8
+0x429cde4: 6fcde697 bl       #0x3c503a0
+0x429cde8: 086040f9 ldr      x8, [x0, #0xc0]
+0x429cdec: 010540f9 ldr      x1, [x8, #8]
+0x429cdf0: 28d44439 ldrb     w8, [x1, #0x135]
+0x429cdf4: 88000037 tbnz     w8, #0, #0x429ce04
+0x429cdf8: e00301aa mov      x0, x1
+0x429cdfc: 69cde697 bl       #0x3c503a0
+0x429ce00: e10300aa mov      x1, x0
+0x429ce04: a80240f9 ldr      x8, [x21]
+0x429ce08: 095d4279 ldrh     w9, [x8, #0x12e]
+0x429ce0c: 290100b4 cbz      x9, #0x429ce30
+0x429ce10: 0a5940f9 ldr      x10, [x8, #0xb0]
+0x429ce14: 4a210091 add      x10, x10, #8
+0x429ce18: 4b815ff8 ldur     x11, [x10, #-8]
+0x429ce1c: 7f0101eb cmp      x11, x1
+0x429ce20: 00010054 b.eq     #0x429ce40
+0x429ce24: 290500f1 subs     x9, x9, #1
+0x429ce28: 4a410091 add      x10, x10, #0x10
+0x429ce2c: 61ffff54 b.ne     #0x429ce18
+0x429ce30: e00315aa mov      x0, x21
+0x429ce34: e2031f2a mov      w2, wzr
+0x429ce38: 9bcde697 bl       #0x3c504a4
+0x429ce3c: 04000014 b        #0x429ce4c
+0x429ce40: 490180b9 ldrsw    x9, [x10]
+0x429ce44: 0811098b add      x8, x8, x9, lsl #4
+0x429ce48: 00e10491 add      x0, x8, #0x138
+0x429ce4c: 080440a9 ldp      x8, x1, [x0]
+0x429ce50: e00315aa mov      x0, x21
+0x429ce54: 00013fd6 blr      x8
+0x429ce58: 881e40f9 ldr      x8, [x20, #0x38]
+0x429ce5c: e10300aa mov      x1, x0
+0x429ce60: e00313aa mov      x0, x19
+0x429ce64: f44f42a9 ldp      x20, x19, [sp, #0x20]
+0x429ce68: 021540f9 ldr      x2, [x8, #0x28]
+0x429ce6c: f65741a9 ldp      x22, x21, [sp, #0x10]
+0x429ce70: fe5fc3a8 ldp      x30, x23, [sp], #0x30
+0x429ce74: c3eae917 b        #0x3d17980
+0x429ce78: 9581e697 bl       #0x3c3d4cc

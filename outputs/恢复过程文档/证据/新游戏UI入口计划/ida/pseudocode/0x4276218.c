@@ -1,0 +1,43 @@
+void UIFramework_UIManager__UnloadPanel(void *self, void *path, const MethodInfo *method)
+{
+  __int64 v5; // x0
+  __int64 v6; // x0
+  __int64 Item; // x0
+  __int64 gameObject; // x21
+  __int64 v9; // x0
+
+  if ( (byte_8FFFFD9 & 1) == 0 )
+  {
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8CFF540);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8CFF548);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8CFF558);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&off_8CEB3E0);
+    byte_8FFFFD9 = 1;
+  }
+  v5 = *((_QWORD *)self + 5);
+  if ( v5 == 0 )
+    goto LABEL_12;
+  if ( (System_Collections_Generic_Dictionary_object__object___ContainsKey(v5, path, qword_8CFF540) & 1) != 0 )
+  {
+    v6 = *((_QWORD *)self + 5);
+    if ( v6 != 0 )
+    {
+      Item = System_Collections_Generic_Dictionary_object__object___get_Item(v6, path, qword_8CFF558);
+      if ( Item != 0 )
+      {
+        gameObject = UnityEngine_Component__get_gameObject(Item, 0);
+        if ( *((_DWORD *)off_8CEB3E0 + 56) == 0 )
+          il2cpp_codegen_runtime_class_init(off_8CEB3E0);
+        UnityEngine_Object__Destroy(gameObject, 0);
+        v9 = *((_QWORD *)self + 5);
+        if ( v9 != 0 )
+        {
+          System_Collections_Generic_Dictionary_object__object___Remove(v9, path, qword_8CFF548);
+          return;
+        }
+      }
+    }
+LABEL_12:
+    il2cpp_codegen_raise_null_reference_exception();
+  }
+}

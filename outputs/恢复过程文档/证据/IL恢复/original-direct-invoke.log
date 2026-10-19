@@ -1,0 +1,189 @@
+[
+  {
+    "attack": 0,
+    "count": 3,
+    "required": 4,
+    "native": 0,
+    "decompiled": 0,
+    "equal": true
+  },
+  {
+    "attack": 0,
+    "count": 4,
+    "required": 4,
+    "native": 0,
+    "decompiled": 0,
+    "equal": true
+  },
+  {
+    "attack": 1,
+    "count": 3,
+    "required": 4,
+    "native": 1,
+    "decompiled": 1,
+    "equal": true
+  },
+  {
+    "attack": 1,
+    "count": 4,
+    "required": 4,
+    "native": 1,
+    "decompiled": 1,
+    "equal": true
+  },
+  {
+    "attack": 2,
+    "count": 3,
+    "required": 4,
+    "native": 2,
+    "decompiled": 2,
+    "equal": true
+  },
+  {
+    "attack": 2,
+    "count": 4,
+    "required": 4,
+    "native": 3,
+    "decompiled": 3,
+    "equal": true
+  },
+  {
+    "attack": 3,
+    "count": 3,
+    "required": 4,
+    "native": 3,
+    "decompiled": 3,
+    "equal": true
+  },
+  {
+    "attack": 3,
+    "count": 4,
+    "required": 4,
+    "native": 4,
+    "decompiled": 4,
+    "equal": true
+  },
+  {
+    "attack": -1,
+    "count": 3,
+    "required": 4,
+    "native": -1,
+    "decompiled": -1,
+    "equal": true
+  },
+  {
+    "attack": -1,
+    "count": 4,
+    "required": 4,
+    "native": -1,
+    "decompiled": -1,
+    "equal": true
+  },
+  {
+    "attack": -3,
+    "count": 3,
+    "required": 4,
+    "native": -3,
+    "decompiled": -3,
+    "equal": true
+  },
+  {
+    "attack": -3,
+    "count": 4,
+    "required": 4,
+    "native": -4,
+    "decompiled": -4,
+    "equal": true
+  },
+  {
+    "attack": 100,
+    "count": 3,
+    "required": 4,
+    "native": 100,
+    "decompiled": 100,
+    "equal": true
+  },
+  {
+    "attack": 100,
+    "count": 4,
+    "required": 4,
+    "native": 150,
+    "decompiled": 150,
+    "equal": true
+  },
+  {
+    "attack": 16777217,
+    "count": 3,
+    "required": 4,
+    "native": 16777217,
+    "decompiled": 16777217,
+    "equal": true
+  },
+  {
+    "attack": 16777217,
+    "count": 4,
+    "required": 4,
+    "native": 25165825,
+    "decompiled": 25165825,
+    "equal": true
+  },
+  {
+    "attack": 16777219,
+    "count": 3,
+    "required": 4,
+    "native": 16777219,
+    "decompiled": 16777219,
+    "equal": true
+  },
+  {
+    "attack": 16777219,
+    "count": 4,
+    "required": 4,
+    "native": 25165829,
+    "decompiled": 25165828,
+    "equal": false
+  },
+  {
+    "attack": 2147483647,
+    "count": 3,
+    "required": 4,
+    "native": 2147483647,
+    "decompiled": 2147483647,
+    "equal": true
+  },
+  {
+    "attack": 2147483647,
+    "count": 4,
+    "required": 4,
+    "native": -1073741825,
+    "decompiled": 2147483647,
+    "equal": false
+  },
+  {
+    "attack": -2147483648,
+    "count": 3,
+    "required": 4,
+    "native": -2147483648,
+    "decompiled": -2147483648,
+    "equal": true
+  },
+  {
+    "attack": -2147483648,
+    "count": 4,
+    "required": 4,
+    "native": 1073741824,
+    "decompiled": -2147483648,
+    "equal": false
+  }
+]
+DIRECT_IL_FAILURE=System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation.
+ ---> System.InvalidProgramException: Common Language Runtime detected an invalid program.
+   at GameModule.SynergyEffectManager.InternalCalculateDamage(Int32 originalAttack, Boolean isEnemy, Int32 fetterCount, Int32 requiredCount)
+   at System.Reflection.MethodBaseInvoker.InterpretedInvoke_Method(Object obj, IntPtr* args)
+   at System.Reflection.MethodBaseInvoker.InvokeDirectByRefWithFewArgs(Object obj, Span`1 copyOfArgs, BindingFlags invokeAttr)
+   --- End of inner exception stack trace ---
+   at System.Reflection.MethodBaseInvoker.InvokeDirectByRefWithFewArgs(Object obj, Span`1 copyOfArgs, BindingFlags invokeAttr)
+   at System.Reflection.MethodBaseInvoker.InvokeWithFewArgs(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.MethodBase.Invoke(Object obj, Object[] parameters)
+   at Program.<Main>$(String[] args) in C:\Users\luxinyu\Documents\Codex\2026-10-19\x20\work\il-recovery\compile-probe\damage\Program.cs:line 31

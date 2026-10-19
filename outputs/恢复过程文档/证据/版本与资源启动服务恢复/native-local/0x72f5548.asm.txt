@@ -1,0 +1,269 @@
+0x72f5548: fe57bea9 stp      x30, x21, [sp, #-0x20]!
+0x72f554c: f44f01a9 stp      x20, x19, [sp, #0x10]
+0x72f5550: b4e800b0 adrp     x20, #0x900a000
+0x72f5554: 88f24339 ldrb     w8, [x20, #0xfc]
+0x72f5558: f30300aa mov      x19, x0
+0x72f555c: 88070037 tbnz     w8, #0, #0x72f564c
+0x72f5560: e0c00090 adrp     x0, #0x8b11000
+0x72f5564: 00f844f9 ldr      x0, [x0, #0x9f0] // AssetBundles.AssetBundleManager_TypeInfo
+0x72f5568: 461f2597 bl       #0x3c3d280
+0x72f556c: c0be0090 adrp     x0, #0x8acd000
+0x72f5570: 003044f9 ldr      x0, [x0, #0x860] // GameFramework.CLog_TypeInfo
+0x72f5574: 431f2597 bl       #0x3c3d280
+0x72f5578: 20c100b0 adrp     x0, #0x8b1a000
+0x72f557c: 00b046f9 ldr      x0, [x0, #0xd60] // Method$UnityEngine.GameObject.GetComponent<AssetBundleManager>()
+0x72f5580: 401f2597 bl       #0x3c3d280
+0x72f5584: 20c100b0 adrp     x0, #0x8b1a000
+0x72f5588: 00b446f9 ldr      x0, [x0, #0xd68] // Method$UnityEngine.GameObject.GetComponent<ResourcesMono>()
+0x72f558c: 3d1f2597 bl       #0x3c3d280
+0x72f5590: c0be00b0 adrp     x0, #0x8ace000
+0x72f5594: 006045f9 ldr      x0, [x0, #0xac0] // UnityEngine.GameObject_TypeInfo
+0x72f5598: 3a1f2597 bl       #0x3c3d280
+0x72f559c: 00c100b0 adrp     x0, #0x8b16000
+0x72f55a0: 005043f9 ldr      x0, [x0, #0x6a0] // GameFramework.Resources.IBundleServices_TypeInfo
+0x72f55a4: 371f2597 bl       #0x3c3d280
+0x72f55a8: 20c100b0 adrp     x0, #0x8b1a000
+0x72f55ac: 00b846f9 ldr      x0, [x0, #0xd70] // Method$LitJson.JsonMapper.ToObject<List<string>>()
+0x72f55b0: 341f2597 bl       #0x3c3d280
+0x72f55b4: 40bf0090 adrp     x0, #0x8add000
+0x72f55b8: 00ec43f9 ldr      x0, [x0, #0x7d8] // LitJson.JsonMapper_TypeInfo
+0x72f55bc: 311f2597 bl       #0x3c3d280
+0x72f55c0: c0be0090 adrp     x0, #0x8acd000
+0x72f55c4: 002c44f9 ldr      x0, [x0, #0x858] // object[]_TypeInfo
+0x72f55c8: 2e1f2597 bl       #0x3c3d280
+0x72f55cc: a0be00f0 adrp     x0, #0x8acc000
+0x72f55d0: 006844f9 ldr      x0, [x0, #0x8d0] // UnityEngine.Object_TypeInfo
+0x72f55d4: 2b1f2597 bl       #0x3c3d280
+0x72f55d8: e0bf00f0 adrp     x0, #0x8af4000
+0x72f55dc: 003c45f9 ldr      x0, [x0, #0xa78] // GameFramework.ResLoadHelper_TypeInfo
+0x72f55e0: 281f2597 bl       #0x3c3d280
+0x72f55e4: 20c100b0 adrp     x0, #0x8b1a000
+0x72f55e8: 00bc46f9 ldr      x0, [x0, #0xd78] // GameFramework.Resources.ResourcesMono_var
+0x72f55ec: 251f2597 bl       #0x3c3d280
+0x72f55f0: 20bf00b0 adrp     x0, #0x8ada000
+0x72f55f4: 004447f9 ldr      x0, [x0, #0xe88] // Method$UnityEngine.Resources.Load<TextAsset>()
+0x72f55f8: 221f2597 bl       #0x3c3d280
+0x72f55fc: c0be0090 adrp     x0, #0x8acd000
+0x72f5600: 005441f9 ldr      x0, [x0, #0x2a8] // System.Type[]_TypeInfo
+0x72f5604: 1f1f2597 bl       #0x3c3d280
+0x72f5608: a0be00f0 adrp     x0, #0x8acc000
+0x72f560c: 001844f9 ldr      x0, [x0, #0x830] // System.Type_TypeInfo
+0x72f5610: 1c1f2597 bl       #0x3c3d280
+0x72f5614: 20c100b0 adrp     x0, #0x8b1a000
+0x72f5618: 00c046f9 ldr      x0, [x0, #0xd80] // firstpack.unity3d
+0x72f561c: 191f2597 bl       #0x3c3d280
+0x72f5620: 20c100b0 adrp     x0, #0x8b1a000
+0x72f5624: 00c446f9 ldr      x0, [x0, #0xd88] // firstpack
+0x72f5628: 161f2597 bl       #0x3c3d280
+0x72f562c: 20c100b0 adrp     x0, #0x8b1a000
+0x72f5630: 00c846f9 ldr      x0, [x0, #0xd90] // ResourcesModule初始化完成
+0x72f5634: 131f2597 bl       #0x3c3d280
+0x72f5638: 20c100b0 adrp     x0, #0x8b1a000
+0x72f563c: 00cc46f9 ldr      x0, [x0, #0xd98] // ResourcesMono
+0x72f5640: 101f2597 bl       #0x3c3d280
+0x72f5644: 28008052 mov      w8, #1
+0x72f5648: 88f20339 strb     w8, [x20, #0xfc]
+0x72f564c: 68424039 ldrb     w8, [x19, #0x10]
+0x72f5650: c8120035 cbnz     w8, #0x72f58a8
+0x72f5654: e8bf00f0 adrp     x8, #0x8af4000
+0x72f5658: 083d45f9 ldr      x8, [x8, #0xa78] // GameFramework.ResLoadHelper_TypeInfo
+0x72f565c: 000140f9 ldr      x0, [x8]
+0x72f5660: 08e040b9 ldr      w8, [x0, #0xe0]
+0x72f5664: 48000035 cbnz     w8, #0x72f566c
+0x72f5668: 521f2597 bl       #0x3c3d3b0
+0x72f566c: e0031faa mov      x0, xzr
+0x72f5670: 3509f997 bl       #0x7137b44 // GameFramework.ResLoadHelper$$CheckUseRightResLoad
+0x72f5674: f4c00090 adrp     x20, #0x8b11000
+0x72f5678: 94fa44f9 ldr      x20, [x20, #0x9f0] // AssetBundles.AssetBundleManager_TypeInfo
+0x72f567c: 800240f9 ldr      x0, [x20]
+0x72f5680: 08e040b9 ldr      w8, [x0, #0xe0]
+0x72f5684: 68000035 cbnz     w8, #0x72f5690
+0x72f5688: 4a1f2597 bl       #0x3c3d3b0
+0x72f568c: 800240f9 ldr      x0, [x20]
+0x72f5690: 085c40f9 ldr      x8, [x0, #0xb8]
+0x72f5694: 002540f9 ldr      x0, [x8, #0x48]
+0x72f5698: 801600b4 cbz      x0, #0x72f5968
+0x72f569c: 28c100b0 adrp     x8, #0x8b1a000
+0x72f56a0: 08b146f9 ldr      x8, [x8, #0xd60] // Method$UnityEngine.GameObject.GetComponent<AssetBundleManager>()
+0x72f56a4: 010140f9 ldr      x1, [x8]
+0x72f56a8: ff5e6697 bl       #0x4c8d2a4 // UnityEngine.GameObject$$GetComponent<object>
+0x72f56ac: 601200f9 str      x0, [x19, #0x20]
+0x72f56b0: c8be0090 adrp     x8, #0x8acd000
+0x72f56b4: 085541f9 ldr      x8, [x8, #0x2a8] // System.Type[]_TypeInfo
+0x72f56b8: 21008052 mov      w1, #1
+0x72f56bc: 000140f9 ldr      x0, [x8]
+0x72f56c0: 181f2597 bl       #0x3c3d320
+0x72f56c4: a8be00f0 adrp     x8, #0x8acc000
+0x72f56c8: 081944f9 ldr      x8, [x8, #0x830] // System.Type_TypeInfo
+0x72f56cc: 29c100b0 adrp     x9, #0x8b1a000
+0x72f56d0: f40300aa mov      x20, x0
+0x72f56d4: 080140f9 ldr      x8, [x8]
+0x72f56d8: 29bd46f9 ldr      x9, [x9, #0xd78] // GameFramework.Resources.ResourcesMono_var
+0x72f56dc: 0ae140b9 ldr      w10, [x8, #0xe0]
+0x72f56e0: 350140f9 ldr      x21, [x9]
+0x72f56e4: 6a000035 cbnz     w10, #0x72f56f0
+0x72f56e8: e00308aa mov      x0, x8
+0x72f56ec: 311f2597 bl       #0x3c3d3b0
+0x72f56f0: e00315aa mov      x0, x21
+0x72f56f4: e1031faa mov      x1, xzr
+0x72f56f8: ab770e94 bl       #0x76935a4 // System.Type$$GetTypeFromHandle
+0x72f56fc: 741300b4 cbz      x20, #0x72f5968
+0x72f5700: f50300aa mov      x21, x0
+0x72f5704: c00000b4 cbz      x0, #0x72f571c
+0x72f5708: 880240f9 ldr      x8, [x20]
+0x72f570c: e00315aa mov      x0, x21
+0x72f5710: 012140f9 ldr      x1, [x8, #0x40]
+0x72f5714: 281f2597 bl       #0x3c3d3b4
+0x72f5718: c01200b4 cbz      x0, #0x72f5970
+0x72f571c: 881a40b9 ldr      w8, [x20, #0x18]
+0x72f5720: 68120034 cbz      w8, #0x72f596c
+0x72f5724: 951200f9 str      x21, [x20, #0x20]
+0x72f5728: c8be00b0 adrp     x8, #0x8ace000
+0x72f572c: 086145f9 ldr      x8, [x8, #0xac0] // UnityEngine.GameObject_TypeInfo
+0x72f5730: 000140f9 ldr      x0, [x8]
+0x72f5734: 641f2597 bl       #0x3c3d4c4
+0x72f5738: 28c100b0 adrp     x8, #0x8b1a000
+0x72f573c: 08cd46f9 ldr      x8, [x8, #0xd98] // ResourcesMono
+0x72f5740: e20314aa mov      x2, x20
+0x72f5744: e3031faa mov      x3, xzr
+0x72f5748: f50300aa mov      x21, x0
+0x72f574c: 010140f9 ldr      x1, [x8]
+0x72f5750: 87dc3f94 bl       #0x82ec96c // UnityEngine.GameObject$$.ctor
+0x72f5754: 751a00f9 str      x21, [x19, #0x30]
+0x72f5758: a8be00f0 adrp     x8, #0x8acc000
+0x72f575c: 086944f9 ldr      x8, [x8, #0x8d0] // UnityEngine.Object_TypeInfo
+0x72f5760: 000140f9 ldr      x0, [x8]
+0x72f5764: 08e040b9 ldr      w8, [x0, #0xe0]
+0x72f5768: 48000035 cbnz     w8, #0x72f5770
+0x72f576c: 111f2597 bl       #0x3c3d3b0
+0x72f5770: e0031faa mov      x0, xzr
+0x72f5774: e10315aa mov      x1, x21
+0x72f5778: e2031faa mov      x2, xzr
+0x72f577c: 3cd93f94 bl       #0x82ebc6c // UnityEngine.Object$$op_Inequality
+0x72f5780: 00010036 tbz      w0, #0, #0x72f57a0
+0x72f5784: 601a40f9 ldr      x0, [x19, #0x30]
+0x72f5788: 000f00b4 cbz      x0, #0x72f5968
+0x72f578c: 28c100b0 adrp     x8, #0x8b1a000
+0x72f5790: 08b546f9 ldr      x8, [x8, #0xd68] // Method$UnityEngine.GameObject.GetComponent<ResourcesMono>()
+0x72f5794: 010140f9 ldr      x1, [x8]
+0x72f5798: c35e6697 bl       #0x4c8d2a4 // UnityEngine.GameObject$$GetComponent<object>
+0x72f579c: 601600f9 str      x0, [x19, #0x28]
+0x72f57a0: 743a40f9 ldr      x20, [x19, #0x70]
+0x72f57a4: 28008052 mov      w8, #1
+0x72f57a8: 68420039 strb     w8, [x19, #0x10]
+0x72f57ac: f40d00b4 cbz      x20, #0x72f5968
+0x72f57b0: 09c100b0 adrp     x9, #0x8b16000
+0x72f57b4: 880240f9 ldr      x8, [x20]
+0x72f57b8: 295143f9 ldr      x9, [x9, #0x6a0] // GameFramework.Resources.IBundleServices_TypeInfo
+0x72f57bc: 2ac100b0 adrp     x10, #0x8b1a000
+0x72f57c0: 210140f9 ldr      x1, [x9]
+0x72f57c4: 4ac146f9 ldr      x10, [x10, #0xd80] // firstpack.unity3d
+0x72f57c8: 095d4279 ldrh     w9, [x8, #0x12e]
+0x72f57cc: 550140f9 ldr      x21, [x10]
+0x72f57d0: 290100b4 cbz      x9, #0x72f57f4
+0x72f57d4: 0a5940f9 ldr      x10, [x8, #0xb0]
+0x72f57d8: 4a210091 add      x10, x10, #8
+0x72f57dc: 4b815ff8 ldur     x11, [x10, #-8]
+0x72f57e0: 7f0101eb cmp      x11, x1
+0x72f57e4: 00010054 b.eq     #0x72f5804
+0x72f57e8: 290500f1 subs     x9, x9, #1
+0x72f57ec: 4a410091 add      x10, x10, #0x10
+0x72f57f0: 61ffff54 b.ne     #0x72f57dc
+0x72f57f4: 22008052 mov      w2, #1
+0x72f57f8: e00314aa mov      x0, x20
+0x72f57fc: 2a6b2597 bl       #0x3c504a4
+0x72f5800: 05000014 b        #0x72f5814
+0x72f5804: 490140b9 ldr      w9, [x10]
+0x72f5808: 29050011 add      w9, w9, #1
+0x72f580c: 08d1298b add      x8, x8, w9, sxtw #4
+0x72f5810: 00e10491 add      x0, x8, #0x138
+0x72f5814: 080840a9 ldp      x8, x2, [x0]
+0x72f5818: e00314aa mov      x0, x20
+0x72f581c: e10315aa mov      x1, x21
+0x72f5820: 00013fd6 blr      x8
+0x72f5824: 200a00b4 cbz      x0, #0x72f5968
+0x72f5828: 001040f9 ldr      x0, [x0, #0x20]
+0x72f582c: e1031faa mov      x1, xzr
+0x72f5830: 7c530894 bl       #0x750a620 // System.String$$IsNullOrEmpty
+0x72f5834: 00050036 tbz      w0, #0, #0x72f58d4
+0x72f5838: c8be0090 adrp     x8, #0x8acd000
+0x72f583c: 082d44f9 ldr      x8, [x8, #0x858] // object[]_TypeInfo
+0x72f5840: 21008052 mov      w1, #1
+0x72f5844: 000140f9 ldr      x0, [x8]
+0x72f5848: b61e2597 bl       #0x3c3d320
+0x72f584c: e00800b4 cbz      x0, #0x72f5968
+0x72f5850: 35c100b0 adrp     x21, #0x8b1a000
+0x72f5854: b5ca46f9 ldr      x21, [x21, #0xd90] // ResourcesModule初始化完成
+0x72f5858: f40300aa mov      x20, x0
+0x72f585c: a00240f9 ldr      x0, [x21]
+0x72f5860: a00000b4 cbz      x0, #0x72f5874
+0x72f5864: 880240f9 ldr      x8, [x20]
+0x72f5868: 012140f9 ldr      x1, [x8, #0x40]
+0x72f586c: d21e2597 bl       #0x3c3d3b4
+0x72f5870: 000800b4 cbz      x0, #0x72f5970
+0x72f5874: 881a40b9 ldr      w8, [x20, #0x18]
+0x72f5878: a8070034 cbz      w8, #0x72f596c
+0x72f587c: a80240f9 ldr      x8, [x21]
+0x72f5880: 881200f9 str      x8, [x20, #0x20]
+0x72f5884: c8be0090 adrp     x8, #0x8acd000
+0x72f5888: 083144f9 ldr      x8, [x8, #0x860] // GameFramework.CLog_TypeInfo
+0x72f588c: 000140f9 ldr      x0, [x8]
+0x72f5890: 08e040b9 ldr      w8, [x0, #0xe0]
+0x72f5894: 48000035 cbnz     w8, #0x72f589c
+0x72f5898: c61e2597 bl       #0x3c3d3b0
+0x72f589c: e00314aa mov      x0, x20
+0x72f58a0: e1031faa mov      x1, xzr
+0x72f58a4: 7328fc97 bl       #0x71ffa70 // GameFramework.CLog$$R½¯ue
+0x72f58a8: 680e40f9 ldr      x8, [x19, #0x18]
+0x72f58ac: e80000b4 cbz      x8, #0x72f58c8
+0x72f58b0: 020d40f9 ldr      x2, [x8, #0x18]
+0x72f58b4: 002140f9 ldr      x0, [x8, #0x40]
+0x72f58b8: 011540f9 ldr      x1, [x8, #0x28]
+0x72f58bc: f44f41a9 ldp      x20, x19, [sp, #0x10]
+0x72f58c0: fe57c2a8 ldp      x30, x21, [sp], #0x20
+0x72f58c4: 40001fd6 br       x2
+0x72f58c8: f44f41a9 ldp      x20, x19, [sp, #0x10]
+0x72f58cc: fe57c2a8 ldp      x30, x21, [sp], #0x20
+0x72f58d0: c0035fd6 ret      
+0x72f58d4: 28c100b0 adrp     x8, #0x8b1a000
+0x72f58d8: 29bf00b0 adrp     x9, #0x8ada000
+0x72f58dc: 08c546f9 ldr      x8, [x8, #0xd88] // firstpack
+0x72f58e0: 294547f9 ldr      x9, [x9, #0xe88] // Method$UnityEngine.Resources.Load<TextAsset>()
+0x72f58e4: 000140f9 ldr      x0, [x8]
+0x72f58e8: 210140f9 ldr      x1, [x9]
+0x72f58ec: 11a96e97 bl       #0x4e9fd30 // UnityEngine.Resources$$Load<object>
+0x72f58f0: c00300b4 cbz      x0, #0x72f5968
+0x72f58f4: e1031faa mov      x1, xzr
+0x72f58f8: 2ee73f94 bl       #0x82ef5b0 // UnityEngine.TextAsset$$get_text
+0x72f58fc: 48bf0090 adrp     x8, #0x8add000
+0x72f5900: 08ed43f9 ldr      x8, [x8, #0x7d8] // LitJson.JsonMapper_TypeInfo
+0x72f5904: f40300aa mov      x20, x0
+0x72f5908: 080140f9 ldr      x8, [x8]
+0x72f590c: 09e140b9 ldr      w9, [x8, #0xe0]
+0x72f5910: 69000035 cbnz     w9, #0x72f591c
+0x72f5914: e00308aa mov      x0, x8
+0x72f5918: a61e2597 bl       #0x3c3d3b0
+0x72f591c: 28c100b0 adrp     x8, #0x8b1a000
+0x72f5920: 08b946f9 ldr      x8, [x8, #0xd70] // Method$LitJson.JsonMapper.ToObject<List<string>>()
+0x72f5924: e00314aa mov      x0, x20
+0x72f5928: 010140f9 ldr      x1, [x8]
+0x72f592c: 4acf6797 bl       #0x4ce9654 // LitJson.JsonMapper$$ToObject<object>
+0x72f5930: f50300aa mov      x21, x0
+0x72f5934: e0031faa mov      x0, xzr
+0x72f5938: 6f48f697 bl       #0x7087af4 // UpdateManager$$get_Instance
+0x72f593c: f40300aa mov      x20, x0
+0x72f5940: e00313aa mov      x0, x19
+0x72f5944: e10315aa mov      x1, x21
+0x72f5948: 0d000094 bl       #0x72f597c // GameFramework.Resources.ResourcesModule$$LoadFirstPack
+0x72f594c: f40000b4 cbz      x20, #0x72f5968
+0x72f5950: e10300aa mov      x1, x0
+0x72f5954: e00314aa mov      x0, x20
+0x72f5958: f44f41a9 ldp      x20, x19, [sp, #0x10]
+0x72f595c: e2031faa mov      x2, xzr
+0x72f5960: fe57c2a8 ldp      x30, x21, [sp], #0x20
+0x72f5964: 19e13f14 b        #0x82eddc8 // UnityEngine.MonoBehaviour$$StartCoroutine
+0x72f5968: d91e2597 bl       #0x3c3d4cc
+0x72f596c: da1e2597 bl       #0x3c3d4d4
+0x72f5970: e01e2597 bl       #0x3c3d4f0
+0x72f5974: e1031faa mov      x1, xzr
+0x72f5978: 8a1e2597 bl       #0x3c3d3a0

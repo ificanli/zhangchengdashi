@@ -1,0 +1,58 @@
+0x43b9574: STR             D8, [SP,#var_20]!
+0x43b9578: STR             X30, [SP,#0x20+var_18]
+0x43b957c: STP             X20, X19, [SP,#0x20+var_10]
+0x43b9580: ADRP            X20, #byte_90009BB@PAGE
+0x43b9584: LDRB            W8, [X20,#byte_90009BB@PAGEOFF]
+0x43b9588: MOV             X19, X0
+0x43b958c: TBNZ            W8, #0, loc_43B95B0
+0x43b9590: ADRP            X0, #off_8ACD4B0@PAGE
+0x43b9594: LDR             X0, [X0,#off_8ACD4B0@PAGEOFF]; off_8CE64C0 ; slot
+0x43b9598: BL              il2cpp_codegen_initialize_runtime_metadata
+0x43b959c: ADRP            X0, #off_8ACDB38@PAGE
+0x43b95a0: LDR             X0, [X0,#off_8ACDB38@PAGEOFF]; off_8CED280 ; slot
+0x43b95a4: BL              il2cpp_codegen_initialize_runtime_metadata
+0x43b95a8: MOV             W8, #1
+0x43b95ac: STRB            W8, [X20,#byte_90009BB@PAGEOFF]
+0x43b95b0: LDR             S8, [X19,#0x48]
+0x43b95b4: MOV             X0, XZR
+0x43b95b8: BL              UnityEngine.Time$$get_unscaledDeltaTime
+0x43b95bc: LDR             S1, [X19,#0x44]
+0x43b95c0: FADD            S0, S8, S0
+0x43b95c4: STR             S0, [X19,#0x48]
+0x43b95c8: FCMP            S0, S1
+0x43b95cc: B.LT            loc_43B9624
+0x43b95d0: ADRP            X8, #off_8ACDB38@PAGE
+0x43b95d4: LDR             X8, [X8,#off_8ACDB38@PAGEOFF]; off_8CED280
+0x43b95d8: FMOV            S1, #-1.0
+0x43b95dc: FADD            S0, S0, S1
+0x43b95e0: STR             S0, [X19,#0x48]
+0x43b95e4: LDR             X0, [X8]; klass
+0x43b95e8: ADRP            X20, #off_8ACD4B0@PAGE
+0x43b95ec: LDR             W8, [X0,#0xE0]
+0x43b95f0: LDR             X20, [X20,#off_8ACD4B0@PAGEOFF]; off_8CE64C0
+0x43b95f4: CBNZ            W8, loc_43B95FC
+0x43b95f8: BL              il2cpp_codegen_runtime_class_init
+0x43b95fc: BL              L_Tools.ServerTimeMgr$$GetServerTime
+0x43b9600: LDR             X8, [X20]
+0x43b9604: MOV             X20, X0
+0x43b9608: LDR             W9, [X8,#0xE0]
+0x43b960c: CBNZ            W9, loc_43B9618
+0x43b9610: MOV             X0, X8; klass
+0x43b9614: BL              il2cpp_codegen_runtime_class_init
+0x43b9618: MOV             X0, X20; stamp
+0x43b961c: MOV             X1, XZR; method
+0x43b9620: BL              L_Tools.DateTools$$UpdateTime
+0x43b9624: LDR             S8, [X19,#0x3C]
+0x43b9628: MOV             X0, XZR
+0x43b962c: BL              UnityEngine.Time$$get_unscaledDeltaTime
+0x43b9630: LDR             S1, [X19,#0x38]
+0x43b9634: FADD            S0, S8, S0
+0x43b9638: STR             S0, [X19,#0x3C]
+0x43b963c: FCMP            S0, S1
+0x43b9640: B.LT            loc_43B964C
+0x43b9644: BL              L_Tools.ServerTimeMgr$$GetCurrentServerTime
+0x43b9648: STR             WZR, [X19,#0x3C]
+0x43b964c: LDP             X20, X19, [SP,#0x20+var_10]
+0x43b9650: LDR             X30, [SP,#0x20+var_18]
+0x43b9654: LDR             D8, [SP+0x20+var_20],#0x20
+0x43b9658: RET

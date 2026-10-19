@@ -1,0 +1,8 @@
+0x4372360: STP             X30, X19, [SP,#var_10]!
+0x4372364: MOV             X1, XZR
+0x4372368: MOV             X19, X0
+0x437236c: BL              ServerBaseData$$InitFromDefaults
+0x4372370: MOV             W8, #1
+0x4372374: STRB            W8, [X19,#0x10]
+0x4372378: LDP             X30, X19, [SP+0x10+var_10],#0x10
+0x437237c: RET

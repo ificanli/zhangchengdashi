@@ -1,0 +1,23 @@
+0x3d8e018: LDR             X8, [X0,#0x40]
+0x3d8e01c: CBZ             X8, locret_3D8E070
+0x3d8e020: FCMP            S0, #0.0
+0x3d8e024: B.PL            loc_3D8E030
+0x3d8e028: STR             WZR, [X0,#0x9C]
+0x3d8e02c: RET
+0x3d8e030: LDR             W9, [X0,#0x48]
+0x3d8e034: STR             S0, [X0,#0x9C]
+0x3d8e038: CMP             W9, #1
+0x3d8e03c: B.EQ            loc_3D8E05C
+0x3d8e040: CBNZ            W9, locret_3D8E070
+0x3d8e044: LDR             S1, [X0,#0x98]
+0x3d8e048: FMOV            S2, #1.5
+0x3d8e04c: FMOV            S3, #1.0
+0x3d8e050: FADD            S0, S0, S3
+0x3d8e054: FMAX            S1, S1, S2
+0x3d8e058: B               loc_3D8E068
+0x3d8e05c: LDR             S1, [X0,#0x98]
+0x3d8e060: FMOV            S2, #1.0
+0x3d8e064: FADD            S0, S0, S2
+0x3d8e068: FMUL            S0, S0, S1
+0x3d8e06c: STR             S0, [X8,#0x24]
+0x3d8e070: RET

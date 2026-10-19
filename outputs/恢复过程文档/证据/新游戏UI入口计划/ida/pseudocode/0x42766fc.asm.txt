@@ -1,0 +1,18 @@
+0x42766fc: STP             X30, X21, [SP,#var_20]!
+0x4276700: STP             X20, X19, [SP,#0x20+var_10]
+0x4276704: ADRP            X20, #byte_8FFFFDC@PAGE
+0x4276708: ADRP            X21, #off_8AEB710@PAGE
+0x427670c: LDRB            W8, [X20,#byte_8FFFFDC@PAGEOFF]
+0x4276710: LDR             X21, [X21,#off_8AEB710@PAGEOFF]; qword_8D124C0
+0x4276714: MOV             X19, X0
+0x4276718: TBNZ            W8, #0, loc_4276730
+0x427671c: ADRP            X0, #off_8AEB710@PAGE
+0x4276720: LDR             X0, [X0,#off_8AEB710@PAGEOFF]; qword_8D124C0 ; slot
+0x4276724: BL              il2cpp_codegen_initialize_runtime_metadata
+0x4276728: MOV             W8, #1
+0x427672c: STRB            W8, [X20,#byte_8FFFFDC@PAGEOFF]
+0x4276730: LDR             X1, [X21]
+0x4276734: MOV             X0, X19
+0x4276738: LDP             X20, X19, [SP,#0x20+var_10]
+0x427673c: LDP             X30, X21, [SP+0x20+var_20],#0x20
+0x4276740: B               ToolModule.ManagerBase_object_$$.ctor

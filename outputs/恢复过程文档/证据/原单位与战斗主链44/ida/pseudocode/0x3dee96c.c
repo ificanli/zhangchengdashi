@@ -1,0 +1,28 @@
+__int64 __fastcall GameModule_BattleGameSceneManager__GetMirror(__int64 a1, __int64 a2)
+{
+  __int64 v4; // x4
+  __int64 result; // x0
+  char v6; // w1
+  __int64 v7; // x0
+  __int64 v8; // [xsp+8h] [xbp-28h] BYREF
+
+  if ( (byte_8FFD77D & 1) == 0 )
+  {
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8CFB638);
+    byte_8FFD77D = 1;
+  }
+  v8 = 0;
+  v4 = GameModule_BattleGameSceneManager__ParseKey(a1, a2);
+  result = 0;
+  if ( (v6 & 1) == 0 )
+  {
+    v7 = *(_QWORD *)(a1 + 384);
+    if ( v7 == 0 )
+      il2cpp_codegen_raise_null_reference_exception();
+    if ( (System_Collections_Generic_Dictionary_object__object___TryGetValue(v7, v4, &v8, qword_8CFB638) & 1) != 0 )
+      return v8;
+    else
+      return 0;
+  }
+  return result;
+}

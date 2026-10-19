@@ -1,0 +1,31 @@
+0x3e1aa70: STR             X30, [SP,#var_30]!
+0x3e1aa74: STP             X22, X21, [SP,#0x30+var_20]
+0x3e1aa78: STP             X20, X19, [SP,#0x30+var_10]
+0x3e1aa7c: ADRP            X20, #byte_8FFD89F@PAGE
+0x3e1aa80: ADRP            X22, #off_8AD4E10@PAGE
+0x3e1aa84: ADRP            X21, #off_8AD4E18@PAGE
+0x3e1aa88: LDRB            W8, [X20,#byte_8FFD89F@PAGEOFF]
+0x3e1aa8c: LDR             X22, [X22,#off_8AD4E10@PAGEOFF]; qword_8CEF020
+0x3e1aa90: LDR             X21, [X21,#off_8AD4E18@PAGEOFF]; qword_8D121A8
+0x3e1aa94: MOV             X19, X0
+0x3e1aa98: TBNZ            W8, #0, loc_3E1AABC
+0x3e1aa9c: ADRP            X0, #off_8AD4E18@PAGE
+0x3e1aaa0: LDR             X0, [X0,#off_8AD4E18@PAGEOFF]; qword_8D121A8 ; slot
+0x3e1aaa4: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3e1aaa8: ADRP            X0, #off_8AD4E10@PAGE
+0x3e1aaac: LDR             X0, [X0,#off_8AD4E10@PAGEOFF]; qword_8CEF020 ; slot
+0x3e1aab0: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3e1aab4: MOV             W8, #1
+0x3e1aab8: STRB            W8, [X20,#byte_8FFD89F@PAGEOFF]
+0x3e1aabc: LDR             X0, [X22]
+0x3e1aac0: BL              unk_3C3D4C4
+0x3e1aac4: MOV             X1, XZR
+0x3e1aac8: MOV             X20, X0
+0x3e1aacc: BL              GameModule.UpdateController$$.ctor
+0x3e1aad0: STR             X20, [X19,#0x28]
+0x3e1aad4: LDR             X1, [X21]
+0x3e1aad8: MOV             X0, X19
+0x3e1aadc: LDP             X20, X19, [SP,#0x30+var_10]
+0x3e1aae0: LDP             X22, X21, [SP,#0x30+var_20]
+0x3e1aae4: LDR             X30, [SP+0x30+var_30],#0x30
+0x3e1aae8: B               ToolModule.ManagerBase_object_$$.ctor

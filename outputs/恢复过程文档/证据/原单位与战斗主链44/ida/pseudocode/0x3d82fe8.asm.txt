@@ -1,0 +1,106 @@
+0x3d82fe8: STP             X30, X23, [SP,#var_30]!
+0x3d82fec: STP             X22, X21, [SP,#0x30+var_20]
+0x3d82ff0: STP             X20, X19, [SP,#0x30+var_10]
+0x3d82ff4: ADRP            X20, #byte_8FFD45F@PAGE
+0x3d82ff8: LDRB            W8, [X20,#byte_8FFD45F@PAGEOFF]
+0x3d82ffc: MOV             X19, X0
+0x3d83000: TBNZ            W8, #0, loc_3D83030
+0x3d83004: ADRP            X0, #off_8AD1298@PAGE
+0x3d83008: LDR             X0, [X0,#off_8AD1298@PAGEOFF]; qword_8CE7B28 ; slot
+0x3d8300c: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3d83010: ADRP            X0, #off_8AD12A0@PAGE
+0x3d83014: LDR             X0, [X0,#off_8AD12A0@PAGEOFF]; unk_8D0EBD8 ; slot
+0x3d83018: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3d8301c: ADRP            X0, #off_8AD12A8@PAGE
+0x3d83020: LDR             X0, [X0,#off_8AD12A8@PAGEOFF]; qword_8D0EBE0 ; slot
+0x3d83024: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3d83028: MOV             W8, #1
+0x3d8302c: STRB            W8, [X20,#byte_8FFD45F@PAGEOFF]
+0x3d83030: ADRP            X20, #off_8AD1298@PAGE
+0x3d83034: ADRP            X23, #off_8AD12A8@PAGE
+0x3d83038: LDR             X8, [X19,#0x168]
+0x3d8303c: LDR             X20, [X20,#off_8AD1298@PAGEOFF]; qword_8CE7B28
+0x3d83040: LDR             X23, [X23,#off_8AD12A8@PAGEOFF]; qword_8D0EBE0
+0x3d83044: CBZ             X8, loc_3D830D8
+0x3d83048: LDR             X21, [X19,#0x170]
+0x3d8304c: MOV             X0, X19
+0x3d83050: BL              GameModule.RoleBehaviour$$GetNearOneMTeamMate
+0x3d83054: LDR             X8, [X20]
+0x3d83058: MOV             X22, X0
+0x3d8305c: MOV             X0, X8
+0x3d83060: BL              unk_3C3D4C4
+0x3d83064: FMOV            S0, WZR
+0x3d83068: FMOV            S1, WZR
+0x3d8306c: MOV             W4, #1
+0x3d83070: MOV             X1, X19
+0x3d83074: MOV             X2, X21
+0x3d83078: MOV             X3, X22
+0x3d8307c: MOV             X5, XZR
+0x3d83080: MOV             X6, XZR
+0x3d83084: MOV             X20, X0
+0x3d83088: BL              GameModule.GameEventArgs$$.ctor
+0x3d8308c: LDR             X0, [X19,#0x168]
+0x3d83090: CBZ             X0, loc_3D8316C
+0x3d83094: MOV             W21, WZR
+0x3d83098: LDR             W8, [X0,#0x18]
+0x3d8309c: CMP             W21, W8
+0x3d830a0: B.GE            loc_3D83170
+0x3d830a4: LDR             X2, [X23]
+0x3d830a8: MOV             W1, W21
+0x3d830ac: BL              System.Collections.Generic.List_object_$$get_Item
+0x3d830b0: CBZ             X0, loc_3D8316C
+0x3d830b4: LDR             X8, [X0]
+0x3d830b8: MOV             W1, #4
+0x3d830bc: MOV             X2, X20
+0x3d830c0: LDP             X9, X3, [X8,#0x188]
+0x3d830c4: BLR             X9
+0x3d830c8: LDR             X0, [X19,#0x168]
+0x3d830cc: ADD             W21, W21, #1
+0x3d830d0: CBNZ            X0, loc_3D83098
+0x3d830d4: B               loc_3D8316C
+0x3d830d8: LDR             X8, [X19,#0x160]
+0x3d830dc: CBZ             X8, loc_3D83170
+0x3d830e0: LDR             X21, [X19,#0x170]
+0x3d830e4: MOV             X0, X19
+0x3d830e8: BL              GameModule.RoleBehaviour$$GetNearOneMTeamMate
+0x3d830ec: LDR             X8, [X20]
+0x3d830f0: MOV             X22, X0
+0x3d830f4: MOV             X0, X8
+0x3d830f8: BL              unk_3C3D4C4
+0x3d830fc: FMOV            S0, WZR
+0x3d83100: FMOV            S1, WZR
+0x3d83104: MOV             W4, #1
+0x3d83108: MOV             X1, X19
+0x3d8310c: MOV             X2, X21
+0x3d83110: MOV             X3, X22
+0x3d83114: MOV             X5, XZR
+0x3d83118: MOV             X6, XZR
+0x3d8311c: MOV             X20, X0
+0x3d83120: BL              GameModule.GameEventArgs$$.ctor
+0x3d83124: LDR             X0, [X19,#0x160]
+0x3d83128: CBZ             X0, loc_3D8316C
+0x3d8312c: MOV             W21, WZR
+0x3d83130: LDR             W8, [X0,#0x18]
+0x3d83134: CMP             W21, W8
+0x3d83138: B.GE            loc_3D83170
+0x3d8313c: LDR             X2, [X23]
+0x3d83140: MOV             W1, W21
+0x3d83144: BL              System.Collections.Generic.List_object_$$get_Item
+0x3d83148: CBZ             X0, loc_3D8316C
+0x3d8314c: LDR             X8, [X0]
+0x3d83150: MOV             W1, #4
+0x3d83154: MOV             X2, X20
+0x3d83158: LDP             X9, X3, [X8,#0x188]
+0x3d8315c: BLR             X9
+0x3d83160: LDR             X0, [X19,#0x160]
+0x3d83164: ADD             W21, W21, #1
+0x3d83168: CBNZ            X0, loc_3D83130
+0x3d8316c: BL              il2cpp_codegen_raise_null_reference_exception
+0x3d83170: LDR             X8, [X19]
+0x3d83174: MOV             X0, X19
+0x3d83178: LDP             X20, X19, [SP,#0x30+var_10]
+0x3d8317c: LDP             X22, X21, [SP,#0x30+var_20]
+0x3d83180: LDR             X2, [X8,#0x348]
+0x3d83184: LDR             X1, [X8,#0x350]
+0x3d83188: LDP             X30, X23, [SP+0x30+var_30],#0x30
+0x3d8318c: BR              X2

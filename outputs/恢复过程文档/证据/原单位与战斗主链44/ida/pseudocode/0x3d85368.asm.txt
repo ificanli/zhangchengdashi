@@ -1,0 +1,14 @@
+0x3d85368: STR             D8, [SP,#var_20]!
+0x3d8536c: STP             X30, X19, [SP,#0x20+var_10]
+0x3d85370: ANDS            W1, W1, #1
+0x3d85374: FMOV            S0, #0.5
+0x3d85378: FMOV            S1, #0.25
+0x3d8537c: MOV             X19, X0
+0x3d85380: STRB            W1, [X0,#0x22A]
+0x3d85384: FCSEL           S8, S1, S0, NE
+0x3d85388: BL              GameModule.RoleBehaviour$$SetAiEnableLocalAvoidance
+0x3d8538c: MOV             X0, X19
+0x3d85390: LDP             X30, X19, [SP,#0x20+var_10]
+0x3d85394: MOV             V0.16B, V8.16B
+0x3d85398: LDR             D8, [SP+0x20+var_20],#0x20
+0x3d8539c: B               GameModule.RoleBehaviour$$SetAiRadius

@@ -1,0 +1,302 @@
+{
+  "scope": "Actual two Procedure source files with instrumented CLR boundaries; no Unity/SDK/network execution; not original gameplay acceptance",
+  "tests": [
+    {
+      "name": "pending_init_still_changes_state_immediately",
+      "nativeBasis": "0x439F890 \u002B 0x43A01BC",
+      "passed": true,
+      "trace": [
+        "base.OnInit",
+        "base.OnEnter",
+        "EnableCulture:False",
+        "EnsureStartupLanguage",
+        "LitJson.Init",
+        "DontDestroyOnLoad",
+        "Assets.Init",
+        "Log:\u9884\u52A0\u8F7D\u5B8C\u6210",
+        "ChangeState:ProcedureStarGame",
+        "localization.Preload",
+        "localization.Forget",
+        "GameObject:DataCompareMgr",
+        "AddComponent:DataCompareMgr",
+        "LoginControl.ctor",
+        "GetAppChannelGroup",
+        "Log:ordinary",
+        "Login:False"
+      ]
+    },
+    {
+      "name": "completed_init_runs_synchronous_prefix_before_state_change",
+      "nativeBasis": "0x439F890 \u002B 0x43A01BC",
+      "passed": true,
+      "trace": [
+        "base.OnInit",
+        "base.OnEnter",
+        "EnableCulture:False",
+        "EnsureStartupLanguage",
+        "LitJson.Init",
+        "DontDestroyOnLoad",
+        "Assets.Init",
+        "localization.Preload",
+        "localization.Forget",
+        "GameObject:DataCompareMgr",
+        "AddComponent:DataCompareMgr",
+        "LoginControl.ctor",
+        "GetAppChannelGroup",
+        "Log:ordinary",
+        "Login:False",
+        "Log:\u9884\u52A0\u8F7D\u5B8C\u6210",
+        "ChangeState:ProcedureStarGame"
+      ]
+    },
+    {
+      "name": "faulted_init_posts_asyncvoid_error_without_skipping_caller_transition",
+      "nativeBasis": "Native async-void builder shape; source CLR failure semantics only",
+      "passed": true,
+      "trace": [
+        "base.OnInit",
+        "base.OnEnter",
+        "EnableCulture:False",
+        "EnsureStartupLanguage",
+        "LitJson.Init",
+        "DontDestroyOnLoad",
+        "Assets.Init",
+        "Log:\u9884\u52A0\u8F7D\u5B8C\u6210",
+        "ChangeState:ProcedureStarGame"
+      ]
+    },
+    {
+      "name": "channel_flags_null",
+      "nativeBasis": "0x43A01BC native bool writes at 0x28 and 0x51",
+      "passed": true,
+      "trace": [
+        "base.OnInit",
+        "base.OnEnter",
+        "EnableCulture:False",
+        "EnsureStartupLanguage",
+        "LitJson.Init",
+        "DontDestroyOnLoad",
+        "Assets.Init",
+        "localization.Preload",
+        "localization.Forget",
+        "GameObject:DataCompareMgr",
+        "AddComponent:DataCompareMgr",
+        "LoginControl.ctor",
+        "GetAppChannelGroup",
+        "Login:False",
+        "Log:\u9884\u52A0\u8F7D\u5B8C\u6210",
+        "ChangeState:ProcedureStarGame"
+      ]
+    },
+    {
+      "name": "channel_flags_",
+      "nativeBasis": "0x43A01BC native bool writes at 0x28 and 0x51",
+      "passed": true,
+      "trace": [
+        "base.OnInit",
+        "base.OnEnter",
+        "EnableCulture:False",
+        "EnsureStartupLanguage",
+        "LitJson.Init",
+        "DontDestroyOnLoad",
+        "Assets.Init",
+        "localization.Preload",
+        "localization.Forget",
+        "GameObject:DataCompareMgr",
+        "AddComponent:DataCompareMgr",
+        "LoginControl.ctor",
+        "GetAppChannelGroup",
+        "Login:False",
+        "Log:\u9884\u52A0\u8F7D\u5B8C\u6210",
+        "ChangeState:ProcedureStarGame"
+      ]
+    },
+    {
+      "name": "channel_flags_ordinary-channel",
+      "nativeBasis": "0x43A01BC native bool writes at 0x28 and 0x51",
+      "passed": true,
+      "trace": [
+        "base.OnInit",
+        "base.OnEnter",
+        "EnableCulture:False",
+        "EnsureStartupLanguage",
+        "LitJson.Init",
+        "DontDestroyOnLoad",
+        "Assets.Init",
+        "localization.Preload",
+        "localization.Forget",
+        "GameObject:DataCompareMgr",
+        "AddComponent:DataCompareMgr",
+        "LoginControl.ctor",
+        "GetAppChannelGroup",
+        "Log:ordinary-channel",
+        "Login:False",
+        "Log:\u9884\u52A0\u8F7D\u5B8C\u6210",
+        "ChangeState:ProcedureStarGame"
+      ]
+    },
+    {
+      "name": "channel_flags_HUAWEI-distribution",
+      "nativeBasis": "0x43A01BC native bool writes at 0x28 and 0x51",
+      "passed": true,
+      "trace": [
+        "base.OnInit",
+        "base.OnEnter",
+        "EnableCulture:False",
+        "EnsureStartupLanguage",
+        "LitJson.Init",
+        "DontDestroyOnLoad",
+        "Assets.Init",
+        "localization.Preload",
+        "localization.Forget",
+        "GameObject:DataCompareMgr",
+        "AddComponent:DataCompareMgr",
+        "LoginControl.ctor",
+        "GetAppChannelGroup",
+        "Log:HUAWEI-distribution",
+        "Login:False",
+        "Log:\u9884\u52A0\u8F7D\u5B8C\u6210",
+        "ChangeState:ProcedureStarGame"
+      ]
+    },
+    {
+      "name": "validation_error_1019",
+      "nativeBasis": "0x439FB50",
+      "passed": true,
+      "trace": [
+        "Panel:Login_Vaild",
+        "ExitGame"
+      ]
+    },
+    {
+      "name": "validation_error_3302",
+      "nativeBasis": "0x439FB50",
+      "passed": true,
+      "trace": [
+        "Panel:Login_Vaild",
+        "ExitGame"
+      ]
+    },
+    {
+      "name": "validation_error_9876",
+      "nativeBasis": "0x439FB50",
+      "passed": true,
+      "trace": [
+        "Panel:Login_Failed",
+        "ExitGame"
+      ]
+    },
+    {
+      "name": "failed_login_retry_reuses_original_closure_and_false_force_flag",
+      "nativeBasis": "0x439FF74 \u002B 0x439FEE0",
+      "passed": true,
+      "trace": [
+        "base.OnInit",
+        "base.OnEnter",
+        "EnableCulture:False",
+        "EnsureStartupLanguage",
+        "LitJson.Init",
+        "DontDestroyOnLoad",
+        "Assets.Init",
+        "localization.Preload",
+        "localization.Forget",
+        "GameObject:DataCompareMgr",
+        "AddComponent:DataCompareMgr",
+        "LoginControl.ctor",
+        "GetAppChannelGroup",
+        "Log:ordinary",
+        "Login:False",
+        "Log:\u9884\u52A0\u8F7D\u5B8C\u6210",
+        "ChangeState:ProcedureStarGame",
+        "Panel:Login_Failed",
+        "Login:False",
+        "CLog:Login \u767B\u5F55\u6210\u529F"
+      ]
+    },
+    {
+      "name": "optional_after_login_action_called_after_success_log",
+      "nativeBasis": "0x439FF74 conditional delegate invoke",
+      "passed": true,
+      "trace": [
+        "base.OnInit",
+        "base.OnEnter",
+        "EnableCulture:False",
+        "EnsureStartupLanguage",
+        "LitJson.Init",
+        "DontDestroyOnLoad",
+        "Assets.Init",
+        "localization.Preload",
+        "localization.Forget",
+        "GameObject:DataCompareMgr",
+        "AddComponent:DataCompareMgr",
+        "LoginControl.ctor",
+        "GetAppChannelGroup",
+        "Log:ordinary",
+        "Login:False",
+        "Log:\u9884\u52A0\u8F7D\u5B8C\u6210",
+        "ChangeState:ProcedureStarGame",
+        "CLog:Login \u767B\u5F55\u6210\u529F",
+        "afterLoginAction"
+      ]
+    },
+    {
+      "name": "star_enter_original_scene_and_setup_order",
+      "nativeBasis": "0x43A07CC \u002B 0x43A09D4",
+      "passed": true,
+      "trace": [
+        "base.OnEnter",
+        "AddEvent:ReadyExitGame",
+        "AddLoopTimer:30,true,true,false",
+        "StartGameModel:None",
+        "EnterGame:True",
+        "CheckNewDay",
+        "Log:\u663E\u793A\u4E3BUI",
+        "LoadScene:Assets/_Scene/Game.unity",
+        "ReportGamePlayTime:30"
+      ]
+    },
+    {
+      "name": "ready_exit_dispatches_before_original_exit_state",
+      "nativeBasis": "0x43A0B7C",
+      "passed": true,
+      "trace": [
+        "SendMessage:MineGameExitLogic",
+        "ChangeState:ProcedureExitGame"
+      ]
+    },
+    {
+      "name": "leave_removes_saved_timer_and_installs_original_reporting_lambda",
+      "nativeBasis": "0x43A0C60 \u002B 0x43A0DD0",
+      "passed": true,
+      "trace": [
+        "base.OnLeave:True",
+        "RemoveLoopTimer:77",
+        "RemoveEvent:ReadyExitGame",
+        "ReportGamePlayTime:53"
+      ]
+    },
+    {
+      "name": "unused_test_scene_path_kept_separate",
+      "nativeBasis": "0x43A0B08",
+      "passed": true,
+      "trace": [
+        "TestScene:MineGameTest"
+      ]
+    },
+    {
+      "name": "base_lifecycle_forwarders_are_retained",
+      "nativeBasis": "0x439FEBC/0x439FEC4/0x439FED0/0x43A0C58/0x43A0DC8",
+      "passed": true,
+      "trace": [
+        "base.OnUpdate",
+        "base.OnLeave:False",
+        "base.OnDestroy",
+        "base.OnUpdate",
+        "base.OnDestroy"
+      ]
+    }
+  ],
+  "passed": 17,
+  "failed": 0,
+  "unityRuntimeAccepted": false
+}

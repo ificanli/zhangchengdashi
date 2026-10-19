@@ -1,0 +1,23 @@
+void __fastcall GameModule_RoleBehaviour__StartListeningEvent(__int64 a1)
+{
+  void *Instance; // x20
+  __int64 v3; // x0
+  void *v4; // x21
+
+  if ( (byte_8FFD47F & 1) == 0 )
+  {
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8CD84E8 /* System.Action<object>_TypeInfo */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D12148 /* Method$ToolModule.ManagerBase<EventManager>.get_Instance() */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D624D8 /* HasHexOpen */);
+    byte_8FFD47F = 1;
+  }
+  Instance = ToolModule_ManagerBase_object___get_Instance((const MethodInfo *)qword_8D12148 /* Method$ToolModule.ManagerBase<EventManager>.get_Instance() */);
+  v3 = ((__int64 (__fastcall *)(__int64))unk_3C3D4C4)(qword_8CD84E8 /* System.Action<object>_TypeInfo */);
+  if ( a1 == 0
+    || (v4 = (void *)v3, System_Action_object____ctor(v3, a1, *(_QWORD *)(*(_QWORD *)a1 + 768LL), 0),
+                         Instance == nullptr) )
+  {
+    il2cpp_codegen_raise_null_reference_exception();
+  }
+  EventModule_EventManager__StartListening(Instance, (void *)qword_8D624D8 /* HasHexOpen */, v4, nullptr);
+}

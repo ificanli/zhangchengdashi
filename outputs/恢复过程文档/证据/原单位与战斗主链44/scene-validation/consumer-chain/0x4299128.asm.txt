@@ -1,0 +1,35 @@
+0x4299128: ff0302d1 sub      sp, sp, #0x80
+0x429912c: fe5706a9 stp      x30, x21, [sp, #0x60]
+0x4299130: f44f07a9 stp      x20, x19, [sp, #0x70]
+0x4299134: 356b02f0 adrp     x21, #0x9000000
+0x4299138: 944202f0 adrp     x20, #0x8aec000
+0x429913c: a84a4339 ldrb     w8, [x21, #0xd2]
+0x4299140: 948a40f9 ldr      x20, [x20, #0x110] // Method$System.Runtime.CompilerServices.AsyncVoidMethodBuilder.Start<BarracksArchitectureBehaviour.<RefreshCreatRoleConfigForCheat>d__30>()
+0x4299144: f30300aa mov      x19, x0
+0x4299148: c8000037 tbnz     w8, #0, #0x4299160
+0x429914c: 804202f0 adrp     x0, #0x8aec000
+0x4299150: 008840f9 ldr      x0, [x0, #0x110] // Method$System.Runtime.CompilerServices.AsyncVoidMethodBuilder.Start<BarracksArchitectureBehaviour.<RefreshCreatRoleConfigForCheat>d__30>()
+0x4299154: 4b90e697 bl       #0x3c3d280
+0x4299158: 28008052 mov      w8, #1
+0x429915c: a84a0339 strb     w8, [x21, #0xd2]
+0x4299160: 00e4006f movi     v0.2d, #0000000000000000
+0x4299164: e8030091 mov      x8, sp
+0x4299168: e0031faa mov      x0, xzr
+0x429916c: e00302ad stp      q0, q0, [sp, #0x40]
+0x4299170: e00301ad stp      q0, q0, [sp, #0x20]
+0x4299174: b25bcc94 bl       #0x75b003c // System.Runtime.CompilerServices.AsyncVoidMethodBuilder$$Create
+0x4299178: e00740ad ldp      q0, q1, [sp]
+0x429917c: 820240f9 ldr      x2, [x20]
+0x4299180: e8830091 add      x8, sp, #0x20
+0x4299184: 09008012 mov      w9, #-1
+0x4299188: 00017db2 orr      x0, x8, #8
+0x429918c: e1830091 add      x1, sp, #0x20
+0x4299190: f32700f9 str      x19, [sp, #0x48]
+0x4299194: e083823c stur     q0, [sp, #0x28]
+0x4299198: e183833c stur     q1, [sp, #0x38]
+0x429919c: e92300b9 str      w9, [sp, #0x20]
+0x42991a0: 276c2194 bl       #0x4af423c // System.Runtime.CompilerServices.AsyncVoidMethodBuilder$$Start<BarracksArchitectureBehaviour.<RefreshCreatRoleConfigForCheat>d__30>
+0x42991a4: f44f47a9 ldp      x20, x19, [sp, #0x70]
+0x42991a8: fe5746a9 ldp      x30, x21, [sp, #0x60]
+0x42991ac: ff030291 add      sp, sp, #0x80
+0x42991b0: c0035fd6 ret      

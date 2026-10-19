@@ -1,0 +1,111 @@
+int32x2_t __fastcall GameModule_RoleBehaviour__SetPathfindingEnabled(int32x2_t *a1, char a2)
+{
+  int32x2_t result; // d0
+  unsigned __int64 v5; // x21
+  unsigned __int64 v6; // x21
+  bool UseWebGLNavigation; // w0
+  unsigned __int64 v8; // x22
+  bool v9; // w21
+  char v10; // w0
+  unsigned __int64 v11; // x0
+  unsigned __int64 v12; // x21
+  unsigned __int64 v13; // x0
+  unsigned __int64 v14; // x0
+  unsigned __int64 v15; // x21
+  unsigned __int64 v16; // x0
+
+  if ( (byte_8FFD46E & 1) == 0 )
+  {
+    il2cpp_codegen_initialize_runtime_metadata((void **)&off_8CE40D8 /* UnityEngine.Application_TypeInfo */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D25DD0 /* Method$UnityEngine.Component.GetComponent<AIDestinationSetter>() */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D25FB0 /* Method$UnityEngine.Component.GetComponent<FollowerEntity>() */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&off_8CEB3E0 /* UnityEngine.Object_TypeInfo */);
+    byte_8FFD46E = 1;
+  }
+  if ( *((_DWORD *)off_8CE40D8 /* UnityEngine.Application_TypeInfo */ + 56) == 0 )
+    il2cpp_codegen_runtime_class_init(off_8CE40D8 /* UnityEngine.Application_TypeInfo */);
+  if ( (UnityEngine_Application__get_isPlaying(0) & 1) != 0 )
+  {
+    v5 = a1[16].n64_u64[0];
+    if ( *((_DWORD *)off_8CEB3E0 /* UnityEngine.Object_TypeInfo */ + 56) == 0 )
+      il2cpp_codegen_runtime_class_init(off_8CEB3E0 /* UnityEngine.Object_TypeInfo */);
+    if ( (UnityEngine_Object__op_Equality(v5, 0, 0) & 1) != 0 )
+      a1[16].n64_u64[0] = UnityEngine_Component__GetComponent_object_(a1, qword_8D25FB0 /* Method$UnityEngine.Component.GetComponent<FollowerEntity>() */);
+    v6 = a1[15].n64_u64[0];
+    if ( *((_DWORD *)off_8CEB3E0 /* UnityEngine.Object_TypeInfo */ + 56) == 0 )
+      il2cpp_codegen_runtime_class_init(off_8CEB3E0 /* UnityEngine.Object_TypeInfo */);
+    if ( (UnityEngine_Object__op_Equality(v6, 0, 0) & 1) != 0 )
+      a1[15].n64_u64[0] = UnityEngine_Component__GetComponent_object_(a1, qword_8D25DD0 /* Method$UnityEngine.Component.GetComponent<AIDestinationSetter>() */);
+    UseWebGLNavigation = Pathfinding_AstarWebGLRuntimeConfig__get_UseWebGLNavigation(0);
+    v8 = a1[16].n64_u64[0];
+    v9 = UseWebGLNavigation;
+    if ( *((_DWORD *)off_8CEB3E0 /* UnityEngine.Object_TypeInfo */ + 56) == 0 )
+      il2cpp_codegen_runtime_class_init(off_8CEB3E0 /* UnityEngine.Object_TypeInfo */);
+    v10 = UnityEngine_Object__op_Inequality(v8, 0, 0);
+    if ( v9 )
+    {
+      if ( (v10 & 1) != 0 )
+      {
+        v11 = a1[16].n64_u64[0];
+        if ( v11 == 0 )
+          goto LABEL_39;
+        UnityEngine_Behaviour__set_enabled(v11, 0, 0);
+      }
+      v12 = a1[15].n64_u64[0];
+      if ( *((_DWORD *)off_8CEB3E0 /* UnityEngine.Object_TypeInfo */ + 56) == 0 )
+        il2cpp_codegen_runtime_class_init(off_8CEB3E0 /* UnityEngine.Object_TypeInfo */);
+      if ( (UnityEngine_Object__op_Inequality(v12, 0, 0) & 1) == 0 )
+        goto LABEL_25;
+      v13 = a1[15].n64_u64[0];
+      if ( v13 != 0 )
+      {
+        *(_QWORD *)(v13 + 40) = 0;
+        UnityEngine_Behaviour__set_enabled(v13, 0, 0);
+LABEL_25:
+        if ( (a2 & 1) != 0 )
+        {
+          GameModule_WebGLNavigationManager__TryRegisterRole(a1, 0);
+        }
+        else
+        {
+          GameModule_WebGLNavigationManager__TryUnregisterRole(a1, 0);
+          result.n64_u64[0] = vdup_n_s32(0xC479C000).n64_u64[0];
+          a1[56].n64_u8[4] = 0;
+          a1[57].n64_u64[0] = result.n64_u64[0];
+          a1[53].n64_u64[0] = 0;
+          a1[54].n64_u64[0] = 0;
+        }
+        return result;
+      }
+LABEL_39:
+      il2cpp_codegen_raise_null_reference_exception();
+    }
+    if ( (v10 & 1) != 0 )
+    {
+      v14 = a1[16].n64_u64[0];
+      if ( v14 == 0 )
+        goto LABEL_39;
+      UnityEngine_Behaviour__set_enabled(v14, a2 & 1, 0);
+    }
+    if ( (a2 & 1) == 0 )
+    {
+      a1[56].n64_u8[4] = 0;
+      a1[57].n64_u64[0] = vdup_n_s32(0xC479C000).n64_u64[0];
+      a1[54].n64_u64[0] = 0;
+    }
+    v15 = a1[15].n64_u64[0];
+    if ( *((_DWORD *)off_8CEB3E0 /* UnityEngine.Object_TypeInfo */ + 56) == 0 )
+      il2cpp_codegen_runtime_class_init(off_8CEB3E0 /* UnityEngine.Object_TypeInfo */);
+    if ( (UnityEngine_Object__op_Inequality(v15, 0, 0) & 1) != 0 )
+    {
+      v16 = a1[15].n64_u64[0];
+      if ( v16 != 0 )
+      {
+        UnityEngine_Behaviour__set_enabled(v16, a2 & 1, 0);
+        return result;
+      }
+      goto LABEL_39;
+    }
+  }
+  return result;
+}

@@ -1,0 +1,436 @@
+diff --git a/Cpp2IL.Core/Analysis/DeadCodeEliminator.cs b/Cpp2IL.Core/Analysis/DeadCodeEliminator.cs
+index a1ba8e3..7b8b333 100644
+--- a/Cpp2IL.Core/Analysis/DeadCodeEliminator.cs
++++ b/Cpp2IL.Core/Analysis/DeadCodeEliminator.cs
+@@ -127,7 +127,7 @@ public static class DeadCodeEliminator
+     private static bool IsRemovable(OpCode opCode) =>
+         opCode switch
+         {
+-            OpCode.Move or OpCode.Phi
++            OpCode.Move or OpCode.Phi or OpCode.Convert or OpCode.Bitcast
+                 or OpCode.Add or OpCode.Subtract or OpCode.Multiply or OpCode.Divide or OpCode.Modulo
+                 or OpCode.ShiftLeft or OpCode.ShiftRight
+                 or OpCode.And or OpCode.Or or OpCode.Xor
+diff --git a/Cpp2IL.Core/Analysis/FlagConditionRecovery.cs b/Cpp2IL.Core/Analysis/FlagConditionRecovery.cs
+index 8527bd9..18e8c7a 100644
+--- a/Cpp2IL.Core/Analysis/FlagConditionRecovery.cs
++++ b/Cpp2IL.Core/Analysis/FlagConditionRecovery.cs
+@@ -71,8 +71,8 @@ public static class FlagConditionRecovery
+ 
+         // ZF on its own  =>  a == b   (je)
+         if (IsZeroFlag(condition, defOf, out op0, out op1)) { relop = OpCode.CheckEqual; return true; }
+-        // SF on its own  =>  a < b    (js; exact for the common test-against-self case)
+-        if (IsSignFlag(condition, defOf, out op0, out op1)) { relop = OpCode.CheckLess; return true; }
++        // SF/N alone tests the sign of the wrapped subtraction result. It is NOT a < b
++        // when signed subtraction overflows; preserve the existing CheckLess(result, 0).
+ 
+         var definition = Def(condition, defOf);
+         if (definition == null)
+@@ -83,7 +83,13 @@ public static class FlagConditionRecovery
+             case OpCode.Not:
+                 var inner = AsLocal(definition.Operands[1]);
+                 if (IsZeroFlag(inner, defOf, out op0, out op1)) { relop = OpCode.CheckNotEqual; return true; }          // !ZF        => !=  (jne)
+-                if (IsSignFlag(inner, defOf, out op0, out op1)) { relop = OpCode.CheckGreaterOrEqual; return true; }    // !SF        => >=  (jns)
++                if (IsSignFlag(inner, defOf, out op0, out op1))
++                {
++                    relop = OpCode.CheckGreaterOrEqual;
++                    op0 = Def(inner, defOf)!.Operands[1];
++                    op1 = new Immediate(0);
++                    return true;
++                } // !SF means the wrapped result is nonnegative, not a >= b.
+                 if (IsSignEqualsOverflow(inner, defOf, out op0, out op1)) { relop = OpCode.CheckLess; return true; }    // !(SF==OF)  => <   (jl/jb)
+                 return false;
+ 
+diff --git a/Cpp2IL.Core/Analysis/LocalVariables.cs b/Cpp2IL.Core/Analysis/LocalVariables.cs
+index 0c148d2..13abec5 100644
+--- a/Cpp2IL.Core/Analysis/LocalVariables.cs
++++ b/Cpp2IL.Core/Analysis/LocalVariables.cs
+@@ -236,6 +236,7 @@ public static class LocalVariables
+         SeedMethodInfoTypes(method);
+         SeedComparisonResults(method);
+         SeedFloatLiterals(method);
++        SeedScalarConversions(method);
+ 
+         // Everywhere there's a CallVoid after a Newobj, we can resolve the constructor call.
+         MetadataResolver.ResolveConstructorCalls(method);
+@@ -425,12 +426,19 @@ public static class LocalVariables
+                     changed |= PropagatePhi(instruction);
+                     break;
+                 case OpCode.Add or OpCode.Subtract or OpCode.Multiply:
+-                    changed |= PropagateArithmetic(instruction, method);
++                    changed |= PropagateArithmetic(instruction, method) || PropagateIntegerResult(instruction, method);
+                     break;
+                 case OpCode.Divide or OpCode.Modulo:
+                     changed |= PropagateArithmetic(instruction, method) || PropagateIntegerResult(instruction, method);
+                     break;
+-                case OpCode.And or OpCode.Or or OpCode.Xor or OpCode.Not or OpCode.Negate
++                case OpCode.Not:
++                    if (instruction.Operands[0] is LocalVariable booleanDestination
++                        && instruction.Operands[1] is LocalVariable { Type.FullName: "System.Boolean" })
++                        changed |= SetTypeIfUnknown(booleanDestination, method.AppContext.SystemTypes.SystemBooleanType);
++                    else
++                        changed |= PropagateIntegerResult(instruction, method);
++                    break;
++                case OpCode.And or OpCode.Or or OpCode.Xor or OpCode.Negate
+                     or OpCode.ShiftLeft or OpCode.ShiftRight:
+                     changed |= PropagateIntegerResult(instruction, method);
+                     break;
+@@ -441,6 +449,19 @@ public static class LocalVariables
+     }
+ 
+     // A local assigned a float/double literal (a lifted rodata constant load) is that float type
++    private static void SeedScalarConversions(MethodAnalysisContext method)
++    {
++        foreach (var instruction in method.ControlFlowGraph!.Instructions)
++        {
++            if (instruction.OpCode is not (OpCode.Convert or OpCode.Bitcast))
++                continue;
++            if (instruction.Operands[0] is LocalVariable destination)
++                destination.Type = (TypeAnalysisContext)instruction.Operands[3];
++            // The source may still be a packed struct alias. Do not overwrite its signature/field
++            // type with the native scalar view; only the conversion result has that scalar type.
++        }
++    }
++
+     private static void SeedFloatLiterals(MethodAnalysisContext method)
+     {
+         foreach (var instruction in method.ControlFlowGraph!.Instructions)
+diff --git a/Cpp2IL.Core/ISIL/Instruction.cs b/Cpp2IL.Core/ISIL/Instruction.cs
+index 7f9bdce..bb5df5a 100644
+--- a/Cpp2IL.Core/ISIL/Instruction.cs
++++ b/Cpp2IL.Core/ISIL/Instruction.cs
+@@ -92,6 +92,8 @@ public class Instruction : IOperand
+         switch (OpCode)
+         {
+             case OpCode.Move:
++            case OpCode.Convert:
++            case OpCode.Bitcast:
+             case OpCode.Phi:
+             case OpCode.Add:
+             case OpCode.Subtract:
+@@ -149,7 +151,7 @@ public class Instruction : IOperand
+     {
+         var sources = OpCode switch
+         {
+-            OpCode.Move or OpCode.ConditionalJump
++            OpCode.Move or OpCode.Convert or OpCode.Bitcast or OpCode.ConditionalJump
+                 or OpCode.ShiftStack or OpCode.Not or OpCode.Negate
+                 or OpCode.Newobj
+                 => [_operands[1]],
+diff --git a/Cpp2IL.Core/ISIL/OpCode.cs b/Cpp2IL.Core/ISIL/OpCode.cs
+index b2cb5e9..17cdef3 100644
+--- a/Cpp2IL.Core/ISIL/OpCode.cs
++++ b/Cpp2IL.Core/ISIL/OpCode.cs
+@@ -26,6 +26,12 @@ public enum OpCode
+     /// <summary>Moves op 2 into op 1</summary>
+     Move,
+ 
++    /// <summary>Numerically converts op 2 from the scalar type in op 3 to op 4, storing into op 1.</summary>
++    Convert,
++
++    /// <summary>Reinterprets op 2's bits from scalar type op 3 as op 4, storing into op 1.</summary>
++    Bitcast,
++
+     /// <summary>Moves the result of phi function into op 1, other operands are inputs</summary>
+     Phi,
+ 
+diff --git a/Cpp2IL.Core/IlGenerator.cs b/Cpp2IL.Core/IlGenerator.cs
+index 8562038..9016392 100644
+--- a/Cpp2IL.Core/IlGenerator.cs
++++ b/Cpp2IL.Core/IlGenerator.cs
+@@ -61,7 +61,7 @@ public static class IlGenerator
+         var body = new CilMethodBody()
+         {
+             InitializeLocals = true, // Without this ILSpy does: CompilerServices.Unsafe.SkipInit(out object obj);
+-            ComputeMaxStackOnBuild = false // There's stack imbalance somewhere, but this works for now
++            ComputeMaxStackOnBuild = true
+         };
+ 
+         definition.CilMethodBody = body;
+@@ -214,12 +214,11 @@ public static class IlGenerator
+             branchInstruction.Operand = new CilInstructionLabel(target);
+         }
+ 
+-        // Add analysis warnings
+-        var instructions = body.Instructions;
++        // Diagnostics belong in the recovery log. Appending calls after the terminal block
++        // creates an unterminated CIL block and makes otherwise valid methods fail JIT verification.
+         foreach (var warning in context.AnalysisWarnings)
+         {
+-            instructions.Add(CilOpCodes.Ldstr, Diagnostic("Warning: " + warning));
+-            instructions.Add(CilOpCodes.Call, writeLine);
++            Logging.Logger.WarnNewline($"{context.FullName}: {warning}", "IlGenerator");
+         }
+     }
+ 
+@@ -272,6 +271,42 @@ public static class IlGenerator
+ 
+         switch (instruction.OpCode)
+         {
++            case OpCode.Convert:
++            case OpCode.Bitcast:
++            {
++                var sourceType = (TypeAnalysisContext)instruction.Operands[2];
++                var targetType = (TypeAnalysisContext)instruction.Operands[3];
++                LoadOperand(instruction.Operands[1], method, locals, writeLine, sourceType);
++                // W registers carry 32-bit signed values even when an immediate was decoded as a positive long.
++                if (sourceType.FullName == "System.Int64" && instruction.Operands[1] is LocalVariable { Type.FullName: "System.Int32" or "System.UInt32" })
++                    instructions.Add(CilOpCodes.Conv_U8); // a W write zeroes the upper half of X
++                else
++                    instructions.Add(ScalarConversionOpcode(sourceType));
++                if (instruction.OpCode == OpCode.Convert)
++                {
++                    if (sourceType.FullName is "System.Single" or "System.Double"
++                        && targetType.FullName is "System.Int32" or "System.Int64")
++                        EmitSaturatingSignedConversion(instructions, targetType);
++                    else
++                        instructions.Add(ScalarConversionOpcode(targetType));
++                }
++                else
++                {
++                    var bitcastName = (sourceType.FullName, targetType.FullName) switch
++                    {
++                        ("System.Int32", "System.Single") => "Int32BitsToSingle",
++                        ("System.Single", "System.Int32") => "SingleToInt32Bits",
++                        ("System.Int64", "System.Double") => "Int64BitsToDouble",
++                        ("System.Double", "System.Int64") => "DoubleToInt64Bits",
++                        _ => throw new DecompilerException($"Unsupported scalar bitcast: {sourceType.FullName} -> {targetType.FullName}")
++                    };
++                    var bitConverter = module.CorLibTypeFactory.CorLibScope.CreateTypeReference("System", "BitConverter");
++                    instructions.Add(CilOpCodes.Call, bitConverter.CreateMemberReference(bitcastName,
++                        MethodSignature.CreateStatic(targetType.ToTypeSignature(), [sourceType.ToTypeSignature()])));
++                }
++                StoreToOperand(instruction.Operands[0], method, locals, writeLine);
++                break;
++            }
+             case OpCode.Invalid:
+                 instructions.Add(CilOpCodes.Ldstr, Diagnostic($"Invalid instruction: {instruction}"));
+                 instructions.Add(CilOpCodes.Call, writeLine);
+@@ -625,6 +660,50 @@ public static class IlGenerator
+         };
+     }
+ 
++    private static CilOpCode ScalarConversionOpcode(TypeAnalysisContext type) => type.FullName switch
++    {
++        "System.Int32" => CilOpCodes.Conv_I4,
++        "System.Int64" => CilOpCodes.Conv_I8,
++        "System.Single" => CilOpCodes.Conv_R4,
++        "System.Double" => CilOpCodes.Conv_R8,
++        _ => throw new DecompilerException($"Unsupported scalar conversion type: {type.FullName}")
++    };
++
++    // ARM FCVTZS saturates and maps NaN to zero; bare conv.i4/conv.i8 has runtime-dependent
++    // results outside its representable range. Keep that distinction explicit in emitted IL.
++    private static void EmitSaturatingSignedConversion(CilInstructionCollection instructions, TypeAnalysisContext targetType)
++    {
++        var wide = targetType.FullName == "System.Int64";
++        var nan = new CilInstruction(CilOpCodes.Pop);
++        var upper = new CilInstruction(CilOpCodes.Pop);
++        var lower = new CilInstruction(CilOpCodes.Pop);
++        var done = new CilInstruction(CilOpCodes.Nop);
++        instructions.Add(CilOpCodes.Dup);
++        instructions.Add(CilOpCodes.Dup);
++        instructions.Add(CilOpCodes.Ceq);
++        instructions.Add(CilOpCodes.Brfalse, new CilInstructionLabel(nan));
++        instructions.Add(CilOpCodes.Dup);
++        instructions.Add(CilOpCodes.Ldc_R8, wide ? 9223372036854775808d : 2147483648d);
++        instructions.Add(CilOpCodes.Bge, new CilInstructionLabel(upper));
++        instructions.Add(CilOpCodes.Dup);
++        instructions.Add(CilOpCodes.Ldc_R8, wide ? -9223372036854775808d : -2147483648d);
++        instructions.Add(CilOpCodes.Ble, new CilInstructionLabel(lower));
++        instructions.Add(ScalarConversionOpcode(targetType));
++        instructions.Add(CilOpCodes.Br, new CilInstructionLabel(done));
++        instructions.Add(nan);
++        if (wide) instructions.Add(CilOpCodes.Ldc_I8, 0L);
++        else instructions.Add(CilOpCodes.Ldc_I4_0);
++        instructions.Add(CilOpCodes.Br, new CilInstructionLabel(done));
++        instructions.Add(upper);
++        if (wide) instructions.Add(CilOpCodes.Ldc_I8, long.MaxValue);
++        else instructions.Add(CilOpCodes.Ldc_I4, int.MaxValue);
++        instructions.Add(CilOpCodes.Br, new CilInstructionLabel(done));
++        instructions.Add(lower);
++        if (wide) instructions.Add(CilOpCodes.Ldc_I8, long.MinValue);
++        else instructions.Add(CilOpCodes.Ldc_I4, int.MinValue);
++        instructions.Add(done);
++    }
++
+     private static void LoadOperand(IOperand operand, MethodDefinition method,
+         Dictionary<LocalVariable, CilLocalVariable> locals, IMethodDescriptor writeLine,
+         TypeAnalysisContext? expectedType = null)
+@@ -633,6 +712,14 @@ public static class IlGenerator
+ 
+         var module = method.DeclaringModule!;
+ 
++        if (expectedType?.FullName is "System.Int32" or "System.Int64"
++            && operand is LocalVariable { Type: { IsValueType: true } aggregate } aggregateLocal
++            && aggregate.FullName is not ("System.Int32" or "System.UInt32" or "System.Int64" or "System.UInt64" or "System.Single" or "System.Double" or "System.Boolean" or "System.Byte" or "System.SByte" or "System.Int16" or "System.UInt16" or "System.Char" or "System.IntPtr" or "System.UIntPtr"))
++        {
++            LoadPackedIntegerAggregate(aggregateLocal, aggregate, method, locals);
++            return;
++        }
++
+         // A null reference reaches us as an integer zero, which would otherwise be emitted as a literal 0
+         // and read back as a cast from a number.
+         if (expectedType is { IsValueType: false } && IsZeroConstant(operand))
+@@ -643,6 +730,9 @@ public static class IlGenerator
+ 
+         switch (operand)
+         {
++            case Immediate immediate when expectedType?.FullName is "System.Int32" or "System.UInt32":
++                instructions.Add(CilOpCodes.Ldc_I4, unchecked((int)immediate.Value));
++                break;
+             case Immediate { Value: >= int.MinValue and <= int.MaxValue } immediate:
+                 instructions.Add(CilOpCodes.Ldc_I4, (int)immediate.Value);
+                 break;
+@@ -841,6 +931,29 @@ public static class IlGenerator
+             _ => null
+         };
+ 
++    private static void LoadPackedIntegerAggregate(LocalVariable local, TypeAnalysisContext aggregate,
++        MethodDefinition method, Dictionary<LocalVariable, CilLocalVariable> locals)
++    {
++        var fields = aggregate.Fields.Where(f => !f.IsStatic).OrderBy(f => f.Offset).ToArray();
++        var size = Utils.TypeSizes.UnboxedSize(aggregate, 8);
++        if (size != 8 || fields.Length != 2 || fields[0].Offset != 0 || fields[1].Offset != 4
++            || fields.Any(f => f.FieldType.FullName is not ("System.Int32" or "System.UInt32")))
++            throw new DecompilerException($"Unsupported register aggregate layout: {aggregate.FullName}, size={size}, fields={string.Join(",", fields.Select(f => $"{f.Name}@{f.Offset}:{f.FieldType.FullName}"))}");
++        var il = method.CilMethodBody!.Instructions;
++        foreach (var field in fields)
++        {
++            LoadLocal(local, method, locals);
++            il.Add(CilOpCodes.Ldfld, field.ToFieldDescriptor());
++            il.Add(CilOpCodes.Conv_U8);
++            if (field.Offset != 0)
++            {
++                il.Add(CilOpCodes.Ldc_I4, field.Offset * 8);
++                il.Add(CilOpCodes.Shl);
++                il.Add(CilOpCodes.Or);
++            }
++        }
++    }
++
+     private static void LoadLocal(LocalVariable local, MethodDefinition method, Dictionary<LocalVariable, CilLocalVariable> locals)
+     {
+         var instructions = method.CilMethodBody!.Instructions;
+diff --git a/Cpp2IL.Core/InstructionSets/NewArmV8InstructionSet.cs b/Cpp2IL.Core/InstructionSets/NewArmV8InstructionSet.cs
+index 0ba9188..4bdeb4c 100644
+--- a/Cpp2IL.Core/InstructionSets/NewArmV8InstructionSet.cs
++++ b/Cpp2IL.Core/InstructionSets/NewArmV8InstructionSet.cs
+@@ -195,6 +195,31 @@ public class NewArmV8InstructionSet : Cpp2IlInstructionSet
+ 
+         Instruction Add(ulong address, OpCode opCode, params List<IOperand> operands)
+         {
++            // Register aliases share storage, but integer arithmetic must consume the native width.
++            // Insert explicit reads before SSA so W operands truncate while X shifts can unpack a
++            // small aggregate argument. Moves/calls/memory addressing keep their higher-level types.
++            if (opCode is OpCode.Add or OpCode.Subtract or OpCode.Multiply or OpCode.Divide or OpCode.Modulo
++                or OpCode.ShiftLeft or OpCode.ShiftRight or OpCode.And or OpCode.Or or OpCode.Xor
++                or OpCode.CheckEqual or OpCode.CheckNotEqual or OpCode.CheckLess or OpCode.CheckGreater
++                or OpCode.CheckGreaterOrEqual or OpCode.CheckLessOrEqual)
++            {
++                for (var i = 1; i < operands.Count; i++)
++                {
++                    if (operands[i] is not Register register)
++                        continue;
++                    var nativeRegisters = new[] { instruction.Op0Reg, instruction.Op1Reg, instruction.Op2Reg };
++                    var readWidth = nativeRegisters.Any(r => r is >= Arm64Register.W0 and <= Arm64Register.W31 && NormalizeRegister(r) == register.Name) ? 32
++                        : opCode is OpCode.ShiftLeft or OpCode.ShiftRight && nativeRegisters.Any(r => r is >= Arm64Register.X0 and <= Arm64Register.X31 && NormalizeRegister(r) == register.Name) ? 64 : 0;
++                    if (readWidth == 0)
++                        continue;
++                    var snapshot = new Register(null, $"SCALAR_READ_{instructions.Count}");
++                    var sourceType = context.AppContext.SystemTypes.SystemInt64Type;
++                    var targetType = readWidth == 32 ? context.AppContext.SystemTypes.SystemInt32Type : sourceType;
++                    addresses.Add(address);
++                    instructions.Add(new Instruction(instructions.Count, OpCode.Convert, snapshot, register, sourceType, targetType));
++                    operands[i] = snapshot;
++                }
++            }
+             addresses.Add(address);
+             var newInstruction = new Instruction(instructions.Count, opCode, operands);
+             instructions.Add(newInstruction);
+@@ -390,6 +415,18 @@ public class NewArmV8InstructionSet : Cpp2IlInstructionSet
+ 
+         switch (instruction.Mnemonic)
+         {
++            case Arm64Mnemonic.SCVTF:
++            case Arm64Mnemonic.FCVTZS:
++                if (instruction.Op2Kind == Arm64OperandKind.Immediate)
++                    throw new NotSupportedException("Fixed-point SCVTF/FCVTZS requires a scale-aware conversion and is not supported by scalar recovery.");
++                Add(address, OpCode.Convert, ConvertOperand(instruction, 0), ConvertOperand(instruction, 1),
++                    ScalarRegisterType(instruction.Op1Reg, context), ScalarRegisterType(instruction.Op0Reg, context));
++                break;
++            case Arm64Mnemonic.FMOV when instruction.Op1Kind == Arm64OperandKind.Register
++                && IsFloatRegister(instruction.Op0Reg) != IsFloatRegister(instruction.Op1Reg):
++                Add(address, OpCode.Bitcast, ConvertOperand(instruction, 0), ConvertOperand(instruction, 1),
++                    ScalarRegisterType(instruction.Op1Reg, context), ScalarRegisterType(instruction.Op0Reg, context));
++                break;
+             case Arm64Mnemonic.MOV:
+             case Arm64Mnemonic.MOVZ:
+             case Arm64Mnemonic.FMOV:
+@@ -400,7 +437,6 @@ public class NewArmV8InstructionSet : Cpp2IlInstructionSet
+             case Arm64Mnemonic.UXTH:
+             // conversions are moves for analysis purposes, same as the x86 handling of cvt*
+             case Arm64Mnemonic.FCVT:
+-            case Arm64Mnemonic.FCVTZS:
+             case Arm64Mnemonic.FCVTZU:
+             case Arm64Mnemonic.FCVTMS:
+             case Arm64Mnemonic.FCVTMU:
+@@ -410,7 +446,6 @@ public class NewArmV8InstructionSet : Cpp2IlInstructionSet
+             case Arm64Mnemonic.FCVTPU:
+             case Arm64Mnemonic.FCVTAS:
+             case Arm64Mnemonic.FCVTAU:
+-            case Arm64Mnemonic.SCVTF:
+             case Arm64Mnemonic.UCVTF:
+                 if (instruction.Op0Kind == Arm64OperandKind.Register && IsReg31(instruction.Op0Reg))
+                 {
+@@ -547,15 +582,13 @@ public class NewArmV8InstructionSet : Cpp2IlInstructionSet
+                     // a discarded result means this is only about the flags
+                     var dest = IsReg31(instruction.Op0Reg) ? new Register(null, "TEMP") : ConvertOperand(instruction, 0);
+ 
++                    // SUBS may overwrite one of its own sources. Capture the comparison before
++                    // that write so SSA versions refer to the original operands.
++                    if (setsFlags && isSubtract)
++                        EmitCompareFlags(src1, src2);
+                     Add(address, isSubtract ? OpCode.Subtract : OpCode.Add, dest, src1, src2);
+-
+-                    if (setsFlags)
+-                    {
+-                        if (isSubtract)
+-                            EmitCompareFlags(src1, src2);
+-                        else
+-                            EmitResultFlags(dest);
+-                    }
++                    if (setsFlags && !isSubtract)
++                        EmitResultFlags(dest);
+ 
+                     break;
+                 }
+@@ -933,7 +966,9 @@ public class NewArmV8InstructionSet : Cpp2IlInstructionSet
+                 _ => throw new ArgumentOutOfRangeException(nameof(operand), $"Operand must be between 0 and 3, inclusive. Got {operand}")
+             };
+ 
+-            return new DoubleLiteral(imm);
++            return instruction.Op0Reg is >= Arm64Register.S0 and <= Arm64Register.S31
++                ? new FloatLiteral((float)imm)
++                : new DoubleLiteral(imm);
+         }
+ 
+         if (kind == Arm64OperandKind.Register)
+@@ -1007,5 +1042,17 @@ public class NewArmV8InstructionSet : Cpp2IlInstructionSet
+ 
+     public override BaseKeyFunctionAddresses CreateKeyFunctionAddressesInstance() => new NewArm64KeyFunctionAddresses();
+ 
++    private static bool IsFloatRegister(Arm64Register register) => register is
++        >= Arm64Register.S0 and <= Arm64Register.S31 or >= Arm64Register.D0 and <= Arm64Register.D31;
++
++    private static TypeAnalysisContext ScalarRegisterType(Arm64Register register, MethodAnalysisContext context) => register switch
++    {
++        >= Arm64Register.W0 and <= Arm64Register.W31 => context.AppContext.SystemTypes.SystemInt32Type,
++        >= Arm64Register.X0 and <= Arm64Register.X31 => context.AppContext.SystemTypes.SystemInt64Type,
++        >= Arm64Register.S0 and <= Arm64Register.S31 => context.AppContext.SystemTypes.SystemSingleType,
++        >= Arm64Register.D0 and <= Arm64Register.D31 => context.AppContext.SystemTypes.SystemDoubleType,
++        _ => throw new NotSupportedException($"Unsupported scalar conversion register: {register}")
++    };
++
+     public override string PrintAssembly(MethodAnalysisContext context) => context.RawBytes.Length <= 0 ? "" : string.Join("\n", Disassembler.Disassemble(context.RawBytes.AsSpan(), context.UnderlyingPointer, new Disassembler.Options(true, true, false)).ToList());
+ }

@@ -1,0 +1,655 @@
+// IL code: ECSGroupCompile
+.class private auto ansi '<Module>'
+{
+} // end of class <Module>
+
+.class public auto ansi beforefieldinit Pathfinding.ECS.AIMovementSystemGroup
+	extends [Unity.Entities]Unity.Entities.ComponentSystemGroup
+{
+	.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+		01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 32
+		30 30 30 33 35 38
+	)
+	.custom instance void [Unity.Entities]Unity.Entities.UpdateAfterAttribute::.ctor(class [netstandard]System.Type) = (
+		01 00 6e 55 6e 69 74 79 2e 54 72 61 6e 73 66 6f
+		72 6d 73 2e 54 72 61 6e 73 66 6f 72 6d 53 79 73
+		74 65 6d 47 72 6f 75 70 2c 20 55 6e 69 74 79 2e
+		54 72 61 6e 73 66 6f 72 6d 73 2c 20 56 65 72 73
+		69 6f 6e 3d 30 2e 30 2e 30 2e 30 2c 20 43 75 6c
+		74 75 72 65 3d 6e 65 75 74 72 61 6c 2c 20 50 75
+		62 6c 69 63 4b 65 79 54 6f 6b 65 6e 3d 6e 75 6c
+		6c 00 00
+	)
+	// Nested Types
+	.class nested public auto ansi beforefieldinit TimeScaledRateManager
+		extends [netstandard]System.Object
+		implements [Unity.Entities]Unity.Entities.IRateManager,
+		           [netstandard]System.IDisposable
+	{
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+			01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 32
+			30 30 30 33 35 39
+		)
+		// Fields
+		.field private int32 numUpdatesThisFrame
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+			01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 34
+			30 30 30 45 43 31
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.FieldOffsetAttribute::.ctor() = (
+			01 00 01 00 53 0e 06 4f 66 66 73 65 74 04 30 78
+			31 30
+		)
+		.field private int32 updateIndex
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+			01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 34
+			30 30 30 45 43 32
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.FieldOffsetAttribute::.ctor() = (
+			01 00 01 00 53 0e 06 4f 66 66 73 65 74 04 30 78
+			31 34
+		)
+		.field private float32 stepDt
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+			01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 34
+			30 30 30 45 43 33
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.FieldOffsetAttribute::.ctor() = (
+			01 00 01 00 53 0e 06 4f 66 66 73 65 74 04 30 78
+			31 38
+		)
+		.field private float32 maximumDt
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+			01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 34
+			30 30 30 45 43 34
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.FieldOffsetAttribute::.ctor() = (
+			01 00 01 00 53 0e 06 4f 66 66 73 65 74 04 30 78
+			31 43
+		)
+		.field private float32 ownProcessingTimePerIteration
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+			01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 34
+			30 30 30 45 43 35
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.FieldOffsetAttribute::.ctor() = (
+			01 00 01 00 53 0e 06 4f 66 66 73 65 74 04 30 78
+			32 30
+		)
+		.field private valuetype [Unity.Collections]Unity.Collections.NativeList`1<valuetype [Unity.Entities]Unity.Core.TimeData> cheapTimeDataQueue
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+			01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 34
+			30 30 30 45 43 36
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.FieldOffsetAttribute::.ctor() = (
+			01 00 01 00 53 0e 06 4f 66 66 73 65 74 04 30 78
+			32 38
+		)
+		.field private valuetype [Unity.Collections]Unity.Collections.NativeList`1<valuetype [Unity.Entities]Unity.Core.TimeData> timeDataQueue
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+			01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 34
+			30 30 30 45 43 37
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.FieldOffsetAttribute::.ctor() = (
+			01 00 01 00 53 0e 06 4f 66 66 73 65 74 04 30 78
+			33 30
+		)
+		.field private float64 lastFullSimulation
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+			01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 34
+			30 30 30 45 43 38
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.FieldOffsetAttribute::.ctor() = (
+			01 00 01 00 53 0e 06 4f 66 66 73 65 74 04 30 78
+			33 38
+		)
+		.field private float64 lastCheapSimulation
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+			01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 34
+			30 30 30 45 43 39
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.FieldOffsetAttribute::.ctor() = (
+			01 00 01 00 53 0e 06 4f 66 66 73 65 74 04 30 78
+			34 30
+		)
+		.field private static bool cheapSimulationOnly
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+			01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 34
+			30 30 30 45 43 41
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.FieldOffsetAttribute::.ctor() = (
+			01 00 01 00 53 0e 06 4f 66 66 73 65 74 03 30 78 30
+		)
+		.field private static bool isLastSubstep
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+			01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 34
+			30 30 30 45 43 42
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.FieldOffsetAttribute::.ctor() = (
+			01 00 01 00 53 0e 06 4f 66 66 73 65 74 03 30 78 31
+		)
+		.field private static bool isFirstSubstep
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+			01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 34
+			30 30 30 45 43 43
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.FieldOffsetAttribute::.ctor() = (
+			01 00 01 00 53 0e 06 4f 66 66 73 65 74 03 30 78 32
+		)
+		.field private static bool inGroup
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+			01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 34
+			30 30 30 45 43 44
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.FieldOffsetAttribute::.ctor() = (
+			01 00 01 00 53 0e 06 4f 66 66 73 65 74 03 30 78 33
+		)
+		.field private static valuetype [Unity.Entities]Unity.Core.TimeData cheapTimeData
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+			01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 34
+			30 30 30 45 43 45
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.FieldOffsetAttribute::.ctor() = (
+			01 00 01 00 53 0e 06 4f 66 66 73 65 74 03 30 78 38
+		)
+		.field public float64 CustomTimeScale
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+			01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 34
+			30 30 30 45 43 46
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.FieldOffsetAttribute::.ctor() = (
+			01 00 01 00 53 0e 06 4f 66 66 73 65 74 04 30 78
+			34 38
+		)
+
+		// Methods
+		.method public hidebysig specialname static 
+			bool get_CheapSimulationOnly () cil managed 
+		{
+			.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+				01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 36
+				30 30 31 35 34 39
+			)
+			.custom instance void [Il2CppDummyDll]Il2CppDummyDll.AddressAttribute::.ctor() = (
+				01 00 03 00 53 0e 03 52 56 41 09 30 78 34 34 43
+				44 37 43 43 53 0e 06 4f 66 66 73 65 74 09 30 78
+				34 34 43 39 37 43 43 53 0e 02 56 41 09 30 78 34
+				34 43 44 37 43 43
+			)
+			// Method begins at RVA 0x2092
+			// Header size: 1
+			// Code size: 2 (0x2)
+			.maxstack 8
+
+			IL_0000: ldc.i4.0
+			IL_0001: ret
+		} // end of method TimeScaledRateManager::get_CheapSimulationOnly
+
+		.method public hidebysig specialname static 
+			float32 get_CheapStepDeltaTime () cil managed 
+		{
+			.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+				01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 36
+				30 30 31 35 34 41
+			)
+			.custom instance void [Il2CppDummyDll]Il2CppDummyDll.AddressAttribute::.ctor() = (
+				01 00 03 00 53 0e 03 52 56 41 09 30 78 34 34 43
+				44 38 36 34 53 0e 06 4f 66 66 73 65 74 09 30 78
+				34 34 43 39 38 36 34 53 0e 02 56 41 09 30 78 34
+				34 43 44 38 36 34
+			)
+			// Method begins at RVA 0x2095
+			// Header size: 1
+			// Code size: 6 (0x6)
+			.maxstack 8
+
+			IL_0000: ldc.r4 0.0
+			IL_0005: ret
+		} // end of method TimeScaledRateManager::get_CheapStepDeltaTime
+
+		.method public hidebysig specialname static 
+			bool get_IsLastSubstep () cil managed 
+		{
+			.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+				01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 36
+				30 30 31 35 34 42
+			)
+			.custom instance void [Il2CppDummyDll]Il2CppDummyDll.AddressAttribute::.ctor() = (
+				01 00 03 00 53 0e 03 52 56 41 09 30 78 34 34 43
+				44 38 46 43 53 0e 06 4f 66 66 73 65 74 09 30 78
+				34 34 43 39 38 46 43 53 0e 02 56 41 09 30 78 34
+				34 43 44 38 46 43
+			)
+			// Method begins at RVA 0x209c
+			// Header size: 1
+			// Code size: 2 (0x2)
+			.maxstack 8
+
+			IL_0000: ldc.i4.0
+			IL_0001: ret
+		} // end of method TimeScaledRateManager::get_IsLastSubstep
+
+		.method public hidebysig specialname static 
+			bool get_IsFirstSubstep () cil managed 
+		{
+			.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+				01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 36
+				30 30 31 35 34 43
+			)
+			.custom instance void [Il2CppDummyDll]Il2CppDummyDll.AddressAttribute::.ctor() = (
+				01 00 03 00 53 0e 03 52 56 41 09 30 78 34 34 43
+				44 39 39 34 53 0e 06 4f 66 66 73 65 74 09 30 78
+				34 34 43 39 39 39 34 53 0e 02 56 41 09 30 78 34
+				34 43 44 39 39 34
+			)
+			// Method begins at RVA 0x209f
+			// Header size: 1
+			// Code size: 2 (0x2)
+			.maxstack 8
+
+			IL_0000: ldc.i4.0
+			IL_0001: ret
+		} // end of method TimeScaledRateManager::get_IsFirstSubstep
+
+		.method public hidebysig specialname 
+			instance int32 get_NumUpdatesThisFrame () cil managed 
+		{
+			.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+				01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 36
+				30 30 31 35 34 44
+			)
+			.custom instance void [Il2CppDummyDll]Il2CppDummyDll.AddressAttribute::.ctor() = (
+				01 00 03 00 53 0e 03 52 56 41 09 30 78 34 34 43
+				44 41 32 43 53 0e 06 4f 66 66 73 65 74 09 30 78
+				34 34 43 39 41 32 43 53 0e 02 56 41 09 30 78 34
+				34 43 44 41 32 43
+			)
+			// Method begins at RVA 0x20a2
+			// Header size: 1
+			// Code size: 2 (0x2)
+			.maxstack 8
+
+			IL_0000: ldc.i4.0
+			IL_0001: ret
+		} // end of method TimeScaledRateManager::get_NumUpdatesThisFrame
+
+		.method public final hidebysig specialname newslot virtual 
+			instance float32 get_Timestep () cil managed 
+		{
+			.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+				01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 36
+				30 30 31 35 35 32
+			)
+			.custom instance void [Il2CppDummyDll]Il2CppDummyDll.AddressAttribute::.ctor() = (
+				01 00 04 00 53 0e 03 52 56 41 09 30 78 34 34 43
+				44 45 36 43 53 0e 06 4f 66 66 73 65 74 09 30 78
+				34 34 43 39 45 36 43 53 0e 02 56 41 09 30 78 34
+				34 43 44 45 36 43 53 0e 04 53 6c 6f 74 01 35
+			)
+			// Method begins at RVA 0x20a5
+			// Header size: 1
+			// Code size: 6 (0x6)
+			.maxstack 8
+
+			IL_0000: ldc.r4 0.0
+			IL_0005: ret
+		} // end of method TimeScaledRateManager::get_Timestep
+
+		.method public final hidebysig specialname newslot virtual 
+			instance void set_Timestep (
+				float32 'value'
+			) cil managed 
+		{
+			.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+				01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 36
+				30 30 31 35 35 33
+			)
+			.custom instance void [Il2CppDummyDll]Il2CppDummyDll.AddressAttribute::.ctor() = (
+				01 00 04 00 53 0e 03 52 56 41 09 30 78 34 34 43
+				44 45 37 34 53 0e 06 4f 66 66 73 65 74 09 30 78
+				34 34 43 39 45 37 34 53 0e 02 56 41 09 30 78 34
+				34 43 44 45 37 34 53 0e 04 53 6c 6f 74 01 36
+			)
+			// Method begins at RVA 0x20ac
+			// Header size: 1
+			// Code size: 1 (0x1)
+			.maxstack 8
+
+			IL_0000: ret
+		} // end of method TimeScaledRateManager::set_Timestep
+
+		.method public hidebysig specialname rtspecialname 
+			instance void .ctor () cil managed 
+		{
+			.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+				01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 36
+				30 30 31 35 34 45
+			)
+			.custom instance void [Il2CppDummyDll]Il2CppDummyDll.AddressAttribute::.ctor() = (
+				01 00 03 00 53 0e 03 52 56 41 09 30 78 34 34 43
+				44 37 30 43 53 0e 06 4f 66 66 73 65 74 09 30 78
+				34 34 43 39 37 30 43 53 0e 02 56 41 09 30 78 34
+				34 43 44 37 30 43
+			)
+			// Method begins at RVA 0x20b0
+			// Header size: 12
+			// Code size: 67 (0x43)
+			.maxstack 2
+
+			IL_0000: ldarg.0
+			IL_0001: ldc.r4 0.033333335
+			IL_0006: stfld float32 Pathfinding.ECS.AIMovementSystemGroup/TimeScaledRateManager::maximumDt
+			IL_000b: ldarg.0
+			IL_000c: ldc.r8 1
+			IL_0015: stfld float64 Pathfinding.ECS.AIMovementSystemGroup/TimeScaledRateManager::CustomTimeScale
+			IL_001a: ldarg.0
+			IL_001b: call instance void [netstandard]System.Object::.ctor()
+			IL_0020: ldarg.0
+			IL_0021: ldc.i4.4
+			IL_0022: call valuetype [Unity.Collections]Unity.Collections.AllocatorManager/AllocatorHandle [Unity.Collections]Unity.Collections.AllocatorManager/AllocatorHandle::op_Implicit(valuetype [UnityEngine.CoreModule]Unity.Collections.Allocator)
+			IL_0027: newobj instance void valuetype [Unity.Collections]Unity.Collections.NativeList`1<valuetype [Unity.Entities]Unity.Core.TimeData>::.ctor(valuetype [Unity.Collections]Unity.Collections.AllocatorManager/AllocatorHandle)
+			IL_002c: stfld valuetype [Unity.Collections]Unity.Collections.NativeList`1<valuetype [Unity.Entities]Unity.Core.TimeData> Pathfinding.ECS.AIMovementSystemGroup/TimeScaledRateManager::cheapTimeDataQueue
+			IL_0031: ldarg.0
+			IL_0032: ldc.i4.4
+			IL_0033: call valuetype [Unity.Collections]Unity.Collections.AllocatorManager/AllocatorHandle [Unity.Collections]Unity.Collections.AllocatorManager/AllocatorHandle::op_Implicit(valuetype [UnityEngine.CoreModule]Unity.Collections.Allocator)
+			IL_0038: newobj instance void valuetype [Unity.Collections]Unity.Collections.NativeList`1<valuetype [Unity.Entities]Unity.Core.TimeData>::.ctor(valuetype [Unity.Collections]Unity.Collections.AllocatorManager/AllocatorHandle)
+			IL_003d: stfld valuetype [Unity.Collections]Unity.Collections.NativeList`1<valuetype [Unity.Entities]Unity.Core.TimeData> Pathfinding.ECS.AIMovementSystemGroup/TimeScaledRateManager::timeDataQueue
+			IL_0042: ret
+		} // end of method TimeScaledRateManager::.ctor
+
+		.method public final hidebysig newslot virtual 
+			instance void Dispose () cil managed 
+		{
+			.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+				01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 36
+				30 30 31 35 34 46
+			)
+			.custom instance void [Il2CppDummyDll]Il2CppDummyDll.AddressAttribute::.ctor() = (
+				01 00 04 00 53 0e 03 52 56 41 09 30 78 34 34 43
+				44 36 35 38 53 0e 06 4f 66 66 73 65 74 09 30 78
+				34 34 43 39 36 35 38 53 0e 02 56 41 09 30 78 34
+				34 43 44 36 35 38 53 0e 04 53 6c 6f 74 01 37
+			)
+			// Method begins at RVA 0x20ff
+			// Header size: 1
+			// Code size: 23 (0x17)
+			.maxstack 8
+
+			IL_0000: ldarg.0
+			IL_0001: ldflda valuetype [Unity.Collections]Unity.Collections.NativeList`1<valuetype [Unity.Entities]Unity.Core.TimeData> Pathfinding.ECS.AIMovementSystemGroup/TimeScaledRateManager::cheapTimeDataQueue
+			IL_0006: call instance void valuetype [Unity.Collections]Unity.Collections.NativeList`1<valuetype [Unity.Entities]Unity.Core.TimeData>::Dispose()
+			IL_000b: ldarg.0
+			IL_000c: ldflda valuetype [Unity.Collections]Unity.Collections.NativeList`1<valuetype [Unity.Entities]Unity.Core.TimeData> Pathfinding.ECS.AIMovementSystemGroup/TimeScaledRateManager::timeDataQueue
+			IL_0011: call instance void valuetype [Unity.Collections]Unity.Collections.NativeList`1<valuetype [Unity.Entities]Unity.Core.TimeData>::Dispose()
+			IL_0016: ret
+		} // end of method TimeScaledRateManager::Dispose
+
+		.method public hidebysig 
+			instance void OnSimulationStepsFinished (
+				float32 totalSimulationProcessingTime
+			) cil managed 
+		{
+			.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+				01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 36
+				30 30 31 35 35 30
+			)
+			.custom instance void [Il2CppDummyDll]Il2CppDummyDll.AddressAttribute::.ctor() = (
+				01 00 03 00 53 0e 03 52 56 41 09 30 78 34 34 43
+				44 35 36 38 53 0e 06 4f 66 66 73 65 74 09 30 78
+				34 34 43 39 35 36 38 53 0e 02 56 41 09 30 78 34
+				34 43 44 35 36 38
+			)
+			// Method begins at RVA 0x2117
+			// Header size: 1
+			// Code size: 1 (0x1)
+			.maxstack 8
+
+			IL_0000: ret
+		} // end of method TimeScaledRateManager::OnSimulationStepsFinished
+
+		.method public final hidebysig newslot virtual 
+			instance bool ShouldGroupUpdate (
+				class [Unity.Entities]Unity.Entities.ComponentSystemGroup group
+			) cil managed 
+		{
+			.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+				01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 36
+				30 30 31 35 35 31
+			)
+			.custom instance void [Il2CppDummyDll]Il2CppDummyDll.AddressAttribute::.ctor() = (
+				01 00 04 00 53 0e 03 52 56 41 09 30 78 34 34 43
+				44 41 33 34 53 0e 06 4f 66 66 73 65 74 09 30 78
+				34 34 43 39 41 33 34 53 0e 02 56 41 09 30 78 34
+				34 43 44 41 33 34 53 0e 04 53 6c 6f 74 01 34
+			)
+			// Method begins at RVA 0x2119
+			// Header size: 1
+			// Code size: 2 (0x2)
+			.maxstack 8
+
+			IL_0000: ldc.i4.0
+			IL_0001: ret
+		} // end of method TimeScaledRateManager::ShouldGroupUpdate
+
+		// Properties
+		.property bool CheapSimulationOnly()
+		{
+			.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+				01 00 01 00 53 0e 05 54 6f 6b 65 6e 0a 30 78 31
+				37 30 30 30 33 31 46
+			)
+			.get bool Pathfinding.ECS.AIMovementSystemGroup/TimeScaledRateManager::get_CheapSimulationOnly()
+		}
+		.property float32 CheapStepDeltaTime()
+		{
+			.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+				01 00 01 00 53 0e 05 54 6f 6b 65 6e 0a 30 78 31
+				37 30 30 30 33 32 30
+			)
+			.get float32 Pathfinding.ECS.AIMovementSystemGroup/TimeScaledRateManager::get_CheapStepDeltaTime()
+		}
+		.property bool IsLastSubstep()
+		{
+			.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+				01 00 01 00 53 0e 05 54 6f 6b 65 6e 0a 30 78 31
+				37 30 30 30 33 32 31
+			)
+			.get bool Pathfinding.ECS.AIMovementSystemGroup/TimeScaledRateManager::get_IsLastSubstep()
+		}
+		.property bool IsFirstSubstep()
+		{
+			.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+				01 00 01 00 53 0e 05 54 6f 6b 65 6e 0a 30 78 31
+				37 30 30 30 33 32 32
+			)
+			.get bool Pathfinding.ECS.AIMovementSystemGroup/TimeScaledRateManager::get_IsFirstSubstep()
+		}
+		.property instance int32 NumUpdatesThisFrame()
+		{
+			.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+				01 00 01 00 53 0e 05 54 6f 6b 65 6e 0a 30 78 31
+				37 30 30 30 33 32 33
+			)
+			.get instance int32 Pathfinding.ECS.AIMovementSystemGroup/TimeScaledRateManager::get_NumUpdatesThisFrame()
+		}
+		.property instance float32 Timestep()
+		{
+			.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+				01 00 01 00 53 0e 05 54 6f 6b 65 6e 0a 30 78 31
+				37 30 30 30 33 32 34
+			)
+			.get instance float32 Pathfinding.ECS.AIMovementSystemGroup/TimeScaledRateManager::get_Timestep()
+			.set instance void Pathfinding.ECS.AIMovementSystemGroup/TimeScaledRateManager::set_Timestep(float32)
+		}
+
+	} // end of class TimeScaledRateManager
+
+
+	// Methods
+	.method public hidebysig specialname 
+		instance float64 get_CustomTimeScale () cil managed 
+	{
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+			01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 36
+			30 30 31 35 34 33
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.AddressAttribute::.ctor() = (
+			01 00 03 00 53 0e 03 52 56 41 09 30 78 34 34 43
+			44 30 36 43 53 0e 06 4f 66 66 73 65 74 09 30 78
+			34 34 43 39 30 36 43 53 0e 02 56 41 09 30 78 34
+			34 43 44 30 36 43
+		)
+		// Method begins at RVA 0x2050
+		// Header size: 1
+		// Code size: 10 (0xa)
+		.maxstack 8
+
+		IL_0000: ldc.r8 0.0
+		IL_0009: ret
+	} // end of method AIMovementSystemGroup::get_CustomTimeScale
+
+	.method public hidebysig specialname 
+		instance void set_CustomTimeScale (
+			float64 'value'
+		) cil managed 
+	{
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+			01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 36
+			30 30 31 35 34 34
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.AddressAttribute::.ctor() = (
+			01 00 03 00 53 0e 03 52 56 41 09 30 78 34 34 43
+			44 30 45 38 53 0e 06 4f 66 66 73 65 74 09 30 78
+			34 34 43 39 30 45 38 53 0e 02 56 41 09 30 78 34
+			34 43 44 30 45 38
+		)
+		// Method begins at RVA 0x205b
+		// Header size: 1
+		// Code size: 1 (0x1)
+		.maxstack 8
+
+		IL_0000: ret
+	} // end of method AIMovementSystemGroup::set_CustomTimeScale
+
+	.method family hidebysig virtual 
+		instance void OnUpdate () cil managed 
+	{
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+			01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 36
+			30 30 31 35 34 35
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.AddressAttribute::.ctor() = (
+			01 00 04 00 53 0e 03 52 56 41 09 30 78 34 34 43
+			44 31 37 30 53 0e 06 4f 66 66 73 65 74 09 30 78
+			34 34 43 39 31 37 30 53 0e 02 56 41 09 30 78 34
+			34 43 44 31 37 30 53 0e 04 53 6c 6f 74 02 31 33
+		)
+		.custom instance void [UnityEngine.CoreModule]UnityEngine.Scripting.PreserveAttribute::.ctor() = (
+			01 00 00 00
+		)
+		// Method begins at RVA 0x205d
+		// Header size: 1
+		// Code size: 1 (0x1)
+		.maxstack 8
+
+		IL_0000: ret
+	} // end of method AIMovementSystemGroup::OnUpdate
+
+	.method family hidebysig virtual 
+		instance void OnDestroy () cil managed 
+	{
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+			01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 36
+			30 30 31 35 34 36
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.AddressAttribute::.ctor() = (
+			01 00 04 00 53 0e 03 52 56 41 09 30 78 34 34 43
+			44 35 44 34 53 0e 06 4f 66 66 73 65 74 09 30 78
+			34 34 43 39 35 44 34 53 0e 02 56 41 09 30 78 34
+			34 43 44 35 44 34 53 0e 04 53 6c 6f 74 01 39
+		)
+		.custom instance void [UnityEngine.CoreModule]UnityEngine.Scripting.PreserveAttribute::.ctor() = (
+			01 00 00 00
+		)
+		// Method begins at RVA 0x205f
+		// Header size: 1
+		// Code size: 23 (0x17)
+		.maxstack 8
+
+		IL_0000: ldarg.0
+		IL_0001: call instance void [Unity.Entities]Unity.Entities.ComponentSystemGroup::OnDestroy()
+		IL_0006: ldarg.0
+		IL_0007: call instance class [Unity.Entities]Unity.Entities.IRateManager [Unity.Entities]Unity.Entities.ComponentSystemGroup::get_RateManager()
+		IL_000c: isinst Pathfinding.ECS.AIMovementSystemGroup/TimeScaledRateManager
+		IL_0011: callvirt instance void Pathfinding.ECS.AIMovementSystemGroup/TimeScaledRateManager::Dispose()
+		IL_0016: ret
+	} // end of method AIMovementSystemGroup::OnDestroy
+
+	.method family hidebysig virtual 
+		instance void OnCreate () cil managed 
+	{
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+			01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 36
+			30 30 31 35 34 37
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.AddressAttribute::.ctor() = (
+			01 00 04 00 53 0e 03 52 56 41 09 30 78 34 34 43
+			44 36 41 43 53 0e 06 4f 66 66 73 65 74 09 30 78
+			34 34 43 39 36 41 43 53 0e 02 56 41 09 30 78 34
+			34 43 44 36 41 43 53 0e 04 53 6c 6f 74 01 35
+		)
+		.custom instance void [UnityEngine.CoreModule]UnityEngine.Scripting.PreserveAttribute::.ctor() = (
+			01 00 00 00
+		)
+		// Method begins at RVA 0x2077
+		// Header size: 1
+		// Code size: 18 (0x12)
+		.maxstack 8
+
+		IL_0000: ldarg.0
+		IL_0001: call instance void [Unity.Entities]Unity.Entities.ComponentSystemGroup::OnCreate()
+		IL_0006: ldarg.0
+		IL_0007: newobj instance void Pathfinding.ECS.AIMovementSystemGroup/TimeScaledRateManager::.ctor()
+		IL_000c: call instance void [Unity.Entities]Unity.Entities.ComponentSystemGroup::set_RateManager(class [Unity.Entities]Unity.Entities.IRateManager)
+		IL_0011: ret
+	} // end of method AIMovementSystemGroup::OnCreate
+
+	.method public hidebysig specialname rtspecialname 
+		instance void .ctor () cil managed 
+	{
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+			01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 36
+			30 30 31 35 34 38
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.AddressAttribute::.ctor() = (
+			01 00 03 00 53 0e 03 52 56 41 09 30 78 34 34 43
+			44 37 43 34 53 0e 06 4f 66 66 73 65 74 09 30 78
+			34 34 43 39 37 43 34 53 0e 02 56 41 09 30 78 34
+			34 43 44 37 43 34
+		)
+		.custom instance void [UnityEngine.CoreModule]UnityEngine.Scripting.PreserveAttribute::.ctor() = (
+			01 00 00 00
+		)
+		// Method begins at RVA 0x208a
+		// Header size: 1
+		// Code size: 7 (0x7)
+		.maxstack 8
+
+		IL_0000: ldarg.0
+		IL_0001: call instance void [Unity.Entities]Unity.Entities.ComponentSystemGroup::.ctor()
+		IL_0006: ret
+	} // end of method AIMovementSystemGroup::.ctor
+
+	// Properties
+	.property instance float64 CustomTimeScale()
+	{
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+			01 00 01 00 53 0e 05 54 6f 6b 65 6e 0a 30 78 31
+			37 30 30 30 33 31 45
+		)
+		.get instance float64 Pathfinding.ECS.AIMovementSystemGroup::get_CustomTimeScale()
+		.set instance void Pathfinding.ECS.AIMovementSystemGroup::set_CustomTimeScale(float64)
+	}
+
+} // end of class Pathfinding.ECS.AIMovementSystemGroup
+

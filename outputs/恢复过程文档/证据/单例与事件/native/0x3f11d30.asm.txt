@@ -1,0 +1,45 @@
+0x3f11d30: STR             X30, [SP,#var_20]!
+0x3f11d34: STP             X20, X19, [SP,#0x20+var_10]
+0x3f11d38: MOV             W8, #0xFFFFFFFE
+0x3f11d3c: STR             W8, [X0]
+0x3f11d40: ADRP            X20, #byte_8FFD1B1@PAGE
+0x3f11d44: LDRB            W8, [X20,#byte_8FFD1B1@PAGEOFF]
+0x3f11d48: MOV             X19, X0
+0x3f11d4c: CBNZ            W8, loc_3F11D64
+0x3f11d50: ADRP            X0, #off_8ACDEE0@PAGE
+0x3f11d54: LDR             X0, [X0,#off_8ACDEE0@PAGEOFF]; qword_8CE9038 ; slot
+0x3f11d58: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3f11d5c: MOV             W8, #1
+0x3f11d60: STRB            W8, [X20,#byte_8FFD1B1@PAGEOFF]
+0x3f11d64: LDR             X19, [X19,#8]
+0x3f11d68: CBZ             X19, loc_3F11DB4
+0x3f11d6c: ADRP            X10, #off_8ACDEE0@PAGE
+0x3f11d70: LDR             X8, [X19]
+0x3f11d74: LDR             X10, [X10,#off_8ACDEE0@PAGEOFF]; qword_8CE9038
+0x3f11d78: LDRH            W9, [X8,#0x12E]
+0x3f11d7c: LDR             X1, [X10]
+0x3f11d80: CBZ             X9, loc_3F11DA4
+0x3f11d84: LDR             X10, [X8,#0xB0]
+0x3f11d88: ADD             X10, X10, #8
+0x3f11d8c: LDUR            X11, [X10,#-8]
+0x3f11d90: CMP             X11, X1
+0x3f11d94: B.EQ            loc_3F11DC0
+0x3f11d98: SUBS            X9, X9, #1
+0x3f11d9c: ADD             X10, X10, #0x10
+0x3f11da0: B.NE            loc_3F11D8C
+0x3f11da4: MOV             W2, #2
+0x3f11da8: MOV             X0, X19
+0x3f11dac: BL              unk_3C504A4
+0x3f11db0: B               loc_3F11DD0
+0x3f11db4: LDP             X20, X19, [SP,#0x20+var_10]
+0x3f11db8: LDR             X30, [SP+0x20+var_20],#0x20
+0x3f11dbc: RET
+0x3f11dc0: LDR             W9, [X10]
+0x3f11dc4: ADD             W9, W9, #2
+0x3f11dc8: ADD             X8, X8, W9,SXTW#4
+0x3f11dcc: ADD             X0, X8, #0x138
+0x3f11dd0: LDP             X2, X1, [X0]
+0x3f11dd4: MOV             X0, X19
+0x3f11dd8: LDP             X20, X19, [SP,#0x20+var_10]
+0x3f11ddc: LDR             X30, [SP+0x20+var_20],#0x20
+0x3f11de0: BR              X2

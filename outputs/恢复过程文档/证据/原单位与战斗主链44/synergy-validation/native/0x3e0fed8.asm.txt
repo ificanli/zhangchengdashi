@@ -1,0 +1,21 @@
+0x3e0fed8: fe4fbfa9 stp      x30, x19, [sp, #-0x10]!
+0x3e0fedc: f303012a mov      w19, w1
+0x3e0fee0: 42000012 and      w2, w2, #1
+0x3e0fee4: e1031f2a mov      w1, wzr
+0x3e0fee8: c4fdff97 bl       #0x3e0f5f8 // GameModule.SynergyEffectManager$$GetAtkWayTypeCount
+0x3e0feec: 1f1c0071 cmp      w0, #7
+0x3e0fef0: 8b010054 b.lt     #0x3e0ff20
+0x3e0fef4: 48d1fe90 adrp     x8, #0x1837000
+0x3e0fef8: 00b144bd ldr      s0, [x8, #0x4b0]
+0x3e0fefc: 08f0af52 mov      w8, #0x7f800000
+0x3e0ff00: 6102221e scvtf    s1, w19
+0x3e0ff04: 0201271e fmov     s2, w8
+0x3e0ff08: 2008201e fmul     s0, s1, s0
+0x3e0ff0c: 0800381e fcvtzs   w8, s0
+0x3e0ff10: 0020221e fcmp     s0, s2
+0x3e0ff14: 0900b052 mov      w9, #-0xffffffff80000000
+0x3e0ff18: 2801881a csel     w8, w9, w8, eq
+0x3e0ff1c: 1301130b add      w19, w8, w19
+0x3e0ff20: e003132a mov      w0, w19
+0x3e0ff24: fe4fc1a8 ldp      x30, x19, [sp], #0x10
+0x3e0ff28: c0035fd6 ret      

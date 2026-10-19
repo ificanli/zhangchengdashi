@@ -1,0 +1,7 @@
+void CoreModule_GameLauncher__LoadingCompleted(void *self, void *obj, const MethodInfo *method)
+{
+  __int64 v3; // x0
+
+  v3 = CoreModule_GameLauncher__StopLoadingCompletedListening(self, obj, method);
+  CoreModule_GameLauncher__InitGame(v3);
+}

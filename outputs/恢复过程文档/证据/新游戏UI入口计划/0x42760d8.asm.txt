@@ -1,0 +1,42 @@
+0x42760d8: ff4302d1 sub      sp, sp, #0x90
+0x42760dc: fe5f06a9 stp      x30, x23, [sp, #0x60]
+0x42760e0: f65707a9 stp      x22, x21, [sp, #0x70]
+0x42760e4: f44f08a9 stp      x20, x19, [sp, #0x80]
+0x42760e8: 576c02b0 adrp     x23, #0x8fff000
+0x42760ec: b64302b0 adrp     x22, #0x8aeb000
+0x42760f0: e85e7f39 ldrb     w8, [x23, #0xfd7]
+0x42760f4: d67a43f9 ldr      x22, [x22, #0x6f0] // Method$Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder.Start<UIManager.<ShowPanel>d__12>()
+0x42760f8: f30302aa mov      x19, x2
+0x42760fc: f40301aa mov      x20, x1
+0x4276100: f50300aa mov      x21, x0
+0x4276104: c8000037 tbnz     w8, #0, #0x427611c
+0x4276108: a04302b0 adrp     x0, #0x8aeb000
+0x427610c: 007843f9 ldr      x0, [x0, #0x6f0] // Method$Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder.Start<UIManager.<ShowPanel>d__12>()
+0x4276110: 5c1ce797 bl       #0x3c3d280
+0x4276114: 28008052 mov      w8, #1
+0x4276118: e85e3f39 strb     w8, [x23, #0xfd7]
+0x427611c: c00240f9 ldr      x0, [x22]
+0x4276120: 00e4006f movi     v0.2d, #0000000000000000
+0x4276124: 08008012 mov      w8, #-1
+0x4276128: ff2b00f9 str      xzr, [sp, #0x50]
+0x427612c: e00300ad stp      q0, q0, [sp]
+0x4276130: e08301ad stp      q0, q0, [sp, #0x30]
+0x4276134: e00b803d str      q0, [sp, #0x20]
+0x4276138: f4d701a9 stp      x20, x21, [sp, #0x18]
+0x427613c: f31700f9 str      x19, [sp, #0x28]
+0x4276140: e80300b9 str      w8, [sp]
+0x4276144: 081c40f9 ldr      x8, [x0, #0x38]
+0x4276148: 480000b5 cbnz     x8, #0x4276150
+0x427614c: ac68e797 bl       #0x3c503fc
+0x4276150: e8030091 mov      x8, sp
+0x4276154: e0030091 mov      x0, sp
+0x4276158: 13017db2 orr      x19, x8, #8
+0x427615c: 33060094 bl       #0x4277a28 // UIFramework.UIManager.<ShowPanel>d__12$$MoveNext
+0x4276160: e00313aa mov      x0, x19
+0x4276164: e1031faa mov      x1, xzr
+0x4276168: 8685ea97 bl       #0x3d17780
+0x427616c: f44f48a9 ldp      x20, x19, [sp, #0x80]
+0x4276170: f65747a9 ldp      x22, x21, [sp, #0x70]
+0x4276174: fe5f46a9 ldp      x30, x23, [sp, #0x60]
+0x4276178: ff430291 add      sp, sp, #0x90
+0x427617c: c0035fd6 ret      

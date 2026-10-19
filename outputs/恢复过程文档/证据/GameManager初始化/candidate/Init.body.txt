@@ -1,0 +1,139 @@
+{
+    if (!PlayerPrefs.HasKey("VibratorEnable"))
+        PlayerPrefs.SetInt("VibratorEnable", 0);
+    _ = HWLeaderboardManager.Instance.Init();
+    _ = HomelLandCtrl.Instance.Init();
+    _ = HomelLandCtrlNew.Instance.Init();
+    _ = BadgeManager.Instance.Init();
+    _ = BoxManager.Instance.Init();
+    _ = ArenaManager.Instance.Init();
+    _ = ArenaProgressManager.Instance.Init();
+    _ = TrainingGroundManager.Instance.Init();
+    _ = TrophyProgressManager.Instance.Init();
+    _ = PlayerCustomizationManager.Instance.Init();
+    _ = PlayerLevelManager.Instance.Init();
+    _ = UserLableManager.Instance.Init();
+    _ = UserLablePushPackManager.Instance.Init();
+    _ = MetaBtnSecondClickManager.Instance.Init();
+    _ = SkinManager.Instance.Init();
+    _ = MonthlyPassManager.Instance.Init();
+    _ = DailyBlessManager.Instance.Init();
+    _ = SynergyEffectManager.Instance.Init();
+    _ = RoleShadowManager.Instance.Init();
+    _ = GameCenterManager.Instance.Init();
+    APostProcess = GameObject.Find("Base/ATestPostProcess");
+    BPostProcess = GameObject.Find("Base/BTestPostProcess");
+    APostProcess.SetActive(!ABTestManager.Instance.WeeklyClashImprove02IsBTest);
+    BPostProcess.SetActive(ABTestManager.Instance.WeeklyClashImprove02IsBTest);
+    _isFirstThroghGame = DbtSaveDataManager_PlayerGuideData.I.Data.isFirstThroghGame;
+    RegisterOnTimeToZero();
+    RegisterOnTimeToMonDayZero();
+    if (DbtSaveDataManager_PlayerShopData.I.Data.timingPushGiftPackageCdIng)
+    {
+        DbtSaveDataManager_PlayerShopData.I.Data.timingPushGiftPackageCdIng = false;
+        DbtSaveDataManager_PlayerShopData.I.Save();
+    }
+    if (!DbtSaveDataManager_PlayerShopData.I.Data.hadHandleTwoSixOneBug)
+    {
+        if (DbtSaveDataManager_PlayerShopData.I.Data.isShowNewBieGiftPack)
+        {
+            TimeManager.Timer timer = TimeManager.Instance.GetTimer("NewBieGiftPackKey");
+            if (timer != null && (timer.StartTime.Year < 2025 || timer.TargetEndTime.Year <= 2024))
+                timer.Restart(TimeSpan.FromDays(2), true);
+        }
+        if (DbtSaveDataManager_PlayerShopData.I.Data.canTimingPushGiftPackage)
+        {
+            TimeManager.Timer timer = TimeManager.Instance.GetTimer("GiftPackagePushCountdownKey");
+            if (timer != null && (timer.StartTime.Year < 2025 || timer.TargetEndTime.Year <= 2024))
+                timer.Restart(TimeSpan.FromDays(2), true);
+        }
+        else
+        {
+            TimeManager.Timer timer = TimeManager.Instance.GetTimer("CanGiftPackagePushKey");
+            if (timer != null && (timer.StartTime.Year < 2025 || timer.TargetEndTime.Year <= 2024))
+                timer.Restart(TimeSpan.FromDays(4), true);
+        }
+        DbtSaveDataManager_PlayerShopData.I.Data.hadHandleTwoSixOneBug = true;
+        DbtSaveDataManager_PlayerShopData.I.Save();
+        DbtSaveDataManager_PlayerTimeData.I.Save();
+    }
+    if (ABTestManager.Instance.SelectableOfferIsOn)
+    {
+        Debug.Log("ZZZZ进入定时礼包判断");
+        if (_isFirstThroghGame)
+        {
+            canPushGiftPackTimer = TimeManager.Instance.CreateTimer("CanGiftPackagePushKey", TimeSpan.FromDays(4), true, false);
+            DbtSaveDataManager_PlayerShopData.I.Save();
+            DbtSaveDataManager_PlayerTimeData.I.Save();
+        }
+        else if (!DbtSaveDataManager_PlayerShopData.I.Data.isShowNewBieGiftPack)
+        {
+            canPushGiftPackTimer = TimeManager.Instance.GetTimer("CanGiftPackagePushKey");
+            if (canPushGiftPackTimer == null && !DbtSaveDataManager_PlayerShopData.I.Data.canTimingPushGiftPackage)
+            {
+                DbtSaveDataManager_PlayerShopData.I.Data.canTimingPushGiftPackage = true;
+                _ = TimeManager.Instance.GetTimer("GiftPackagePushOffsetKey");
+                Debug.Log("ZZZZ不是第一次进游戏，新手礼包不在，直接可以推送礼包");
+                DbtSaveDataManager_PlayerShopData.I.Save();
+            }
+        }
+        else
+        {
+            canPushGiftPackTimer = TimeManager.Instance.GetTimer("CanGiftPackagePushKey");
+            if (canPushGiftPackTimer == null && !DbtSaveDataManager_PlayerShopData.I.Data.canTimingPushGiftPackage)
+            {
+                TimeManager.Timer newbieTimer = TimeManager.Instance.GetTimer("NewBieGiftPackKey");
+                canPushGiftPackTimer = TimeManager.Instance.CreateTimer("CanGiftPackagePushKey",
+                    TimeSpan.FromDays(4) - (newbieTimer != null ? newbieTimer.GetRemainingTime() : TimeSpan.Zero), true, false);
+                Debug.Log(string.Format("ZZZZ不是第一次进游戏，新手礼包在，创建倒计时,begintime{0},endtime{1}",
+                    canPushGiftPackTimer.StartTime, canPushGiftPackTimer.TargetEndTime));
+                DbtSaveDataManager_PlayerShopData.I.Save();
+                DbtSaveDataManager_PlayerTimeData.I.Save();
+            }
+        }
+    }
+    await MetaGameManager.Instance.Init();
+    _ = GetNewCardPanelManager.Instance.Init();
+    if (!_isFirstThroghGame)
+    {
+        _ = UIManager.Instance.GetPanel("Assets/_Res/Addressable/Prefabs/UI/Panels/ClimbRankPanel.prefab");
+        MetaGameManager.Instance.ShowMetaSwitchPanel(2);
+        EventManager.Instance.TriggerEvent("InitGameEndCheckIsHasLegacyBox", null);
+    }
+    _ = UIManager.Instance.GetPanel("Assets/_Res/Addressable/02CoreGameBundle/Prefabs/UI/Panels/FoundEnemyPanel.prefab");
+    await CoreGameManager.Instance.Init();
+    _ = SeasonManager.Instance.Init();
+    _ = FundManager.Instance.Init();
+    GiftPackageManager.Instance.Init();
+    _ = GiftChainManager.Instance.Init();
+    _ = GiftChainManager2.Instance.Init();
+    _ = MultistageNewcomerPackageManager.Instance.Init();
+    _ = UpgradeRewardManager.Instance.Init();
+    _ = MysteriousStoreManager.Instance.Init();
+    _ = BackpackManager.Instance.Init();
+    _ = WeeklyCardActivityManager.Instance.Init();
+    Debug.Log("金卡周管理器初始化完成");
+    _ = MysteryAdventureManager.Instance.Init();
+    Debug.Log("秘境大冒险管理器初始化完成");
+    _ = WorldCupActivityManager.Instance.Init();
+    Debug.Log("世界杯狂欢管理器初始化完成");
+    ReportEventsManager.Instance.ArenaUnLockRbi();
+    EventManager.Instance.StartListening("GameSteerEndShowCardProbabilityPanel", ShowCardProbabilityPanel);
+    if (!TutorialManager.Instance.IsStepComplete("1009"))
+        EventManager.Instance.StartListening("CardSteerEnd", CardSteerEnd);
+    if (!TutorialManager.Instance.IsStepComplete("1016"))
+        EventManager.Instance.StartListening("FetterSteerEnd", FetterSteerEnd);
+    EventManager.Instance.StartListening("DanChange", DanChangeUpdateInfo);
+    if (_isFirstThroghGame)
+        EventManager.Instance.TriggerEvent("DanChange", null);
+    EventManager.Instance.StartListening("OnArenaUIBGItemStartBtnClicked", StartCoreGame);
+    EventManager.Instance.StartListening("OnGameOver", EnterMeta);
+    EventManager.Instance.StartListening("CloseLoadPanel", CloseLoadPanel);
+    EventManager.Instance.StartListening("LoadEnd", LoadEnd);
+    onGameManagerInitComplete?.Invoke();
+    InitComplete = true;
+    ReportEventsManager.Instance.AppOpenEvent();
+    LTEmailControl.Instance.InitEmail();
+    FixedRandomTools.Load();
+    StartCoroutine(CheckNetworkState());
+}

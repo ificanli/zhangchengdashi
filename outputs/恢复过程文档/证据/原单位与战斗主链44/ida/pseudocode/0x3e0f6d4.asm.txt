@@ -1,0 +1,7 @@
+0x3e0f6d4: ADRP            X8, #dword_18374B8@PAGE
+0x3e0f6d8: LDR             S1, [X8,#dword_18374B8@PAGEOFF]
+0x3e0f6dc: CMP             W2, W3
+0x3e0f6e0: FMUL            S1, S0, S1
+0x3e0f6e4: FADD            S1, S0, S1
+0x3e0f6e8: FCSEL           S0, S0, S1, LT
+0x3e0f6ec: RET

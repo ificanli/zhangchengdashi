@@ -1,0 +1,40 @@
+0x3d8dbd8: SUB             SP, SP, #0xA0
+0x3d8dbdc: STR             D8, [SP,#0xA0+var_30]
+0x3d8dbe0: STP             X30, X21, [SP,#0xA0+var_20]
+0x3d8dbe4: STP             X20, X19, [SP,#0xA0+var_10]
+0x3d8dbe8: ADRP            X21, #byte_8FFD4AE@PAGE
+0x3d8dbec: ADRP            X20, #off_8AD15D0@PAGE
+0x3d8dbf0: LDRB            W8, [X21,#byte_8FFD4AE@PAGEOFF]
+0x3d8dbf4: LDR             X20, [X20,#off_8AD15D0@PAGEOFF]; qword_8D232C0
+0x3d8dbf8: MOV             V8.16B, V0.16B
+0x3d8dbfc: MOV             X19, X0
+0x3d8dc00: TBNZ            W8, #0, loc_3D8DC18
+0x3d8dc04: ADRP            X0, #off_8AD15D0@PAGE
+0x3d8dc08: LDR             X0, [X0,#off_8AD15D0@PAGEOFF]; qword_8D232C0 ; slot
+0x3d8dc0c: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3d8dc10: MOV             W8, #1
+0x3d8dc14: STRB            W8, [X21,#byte_8FFD4AE@PAGEOFF]
+0x3d8dc18: MOVI            V0.2D, #0
+0x3d8dc1c: MOV             X8, SP
+0x3d8dc20: MOV             X0, XZR
+0x3d8dc24: STP             Q0, Q0, [SP,#0xA0+var_50]
+0x3d8dc28: STP             Q0, Q0, [SP,#0xA0+var_70]
+0x3d8dc2c: STR             Q0, [SP,#0xA0+var_80]
+0x3d8dc30: BL              System.Runtime.CompilerServices.AsyncVoidMethodBuilder$$Create
+0x3d8dc34: LDP             Q0, Q1, [SP,#0xA0+var_A0]
+0x3d8dc38: LDR             X2, [X20]
+0x3d8dc3c: ADD             X8, SP, #0xA0+var_80
+0x3d8dc40: MOV             W9, #0xFFFFFFFF
+0x3d8dc44: ORR             X0, X8, #8
+0x3d8dc48: ADD             X1, SP, #0xA0+var_80
+0x3d8dc4c: STR             X19, [SP,#0xA0+var_58]
+0x3d8dc50: STR             S8, [SP,#0xA0+var_50]
+0x3d8dc54: STUR            Q0, [SP,#0xA0+var_80+8]
+0x3d8dc58: STUR            Q1, [SP,#0xA0+var_70+8]
+0x3d8dc5c: STR             W9, [SP,#0xA0+var_80]
+0x3d8dc60: BL              System.Runtime.CompilerServices.AsyncVoidMethodBuilder$$Start_RoleBehaviour._AddTempMiss_d__274_
+0x3d8dc64: LDP             X20, X19, [SP,#0xA0+var_10]
+0x3d8dc68: LDP             X30, X21, [SP,#0xA0+var_20]
+0x3d8dc6c: LDR             D8, [SP,#0xA0+var_30]
+0x3d8dc70: ADD             SP, SP, #0xA0
+0x3d8dc74: RET

@@ -1,0 +1,66 @@
+0x3de531c: STP             X30, X23, [SP,#var_30]!
+0x3de5320: STP             X22, X21, [SP,#0x30+var_20]
+0x3de5324: STP             X20, X19, [SP,#0x30+var_10]
+0x3de5328: ADRP            X23, #byte_8FFD73D@PAGE
+0x3de532c: ADRP            X22, #off_8ACE700@PAGE
+0x3de5330: ADRP            X21, #off_8ACC8D0@PAGE
+0x3de5334: LDRB            W8, [X23,#byte_8FFD73D@PAGEOFF]
+0x3de5338: LDR             X22, [X22,#off_8ACE700@PAGEOFF]; qword_8D12058
+0x3de533c: LDR             X21, [X21,#off_8ACC8D0@PAGEOFF]; off_8CEB3E0
+0x3de5340: MOV             W20, W1
+0x3de5344: MOV             X19, X0
+0x3de5348: TBNZ            W8, #0, loc_3DE5378
+0x3de534c: ADRP            X0, #off_8AD3840@PAGE
+0x3de5350: LDR             X0, [X0,#off_8AD3840@PAGEOFF]; qword_8CFCF38 ; slot
+0x3de5354: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3de5358: ADRP            X0, #off_8ACE700@PAGE
+0x3de535c: LDR             X0, [X0,#off_8ACE700@PAGEOFF]; qword_8D12058 ; slot
+0x3de5360: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3de5364: ADRP            X0, #off_8ACC8D0@PAGE
+0x3de5368: LDR             X0, [X0,#off_8ACC8D0@PAGEOFF]; off_8CEB3E0 ; slot
+0x3de536c: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3de5370: MOV             W8, #1
+0x3de5374: STRB            W8, [X23,#byte_8FFD73D@PAGEOFF]
+0x3de5378: LDR             X0, [X22]; method
+0x3de537c: BL              ToolModule.ManagerBase_object_$$get_Instance
+0x3de5380: LDR             X8, [X21]
+0x3de5384: MOV             X21, X0
+0x3de5388: LDR             W9, [X8,#0xE0]
+0x3de538c: CBNZ            W9, loc_3DE5398
+0x3de5390: MOV             X0, X8; klass
+0x3de5394: BL              il2cpp_codegen_runtime_class_init
+0x3de5398: MOV             X0, X21
+0x3de539c: MOV             X1, XZR
+0x3de53a0: MOV             X2, XZR
+0x3de53a4: BL              UnityEngine.Object$$op_Equality
+0x3de53a8: TBNZ            W0, #0, loc_3DE53EC
+0x3de53ac: LDR             X0, [X22]; method
+0x3de53b0: BL              ToolModule.ManagerBase_object_$$get_Instance
+0x3de53b4: CBZ             X0, loc_3DE5420
+0x3de53b8: LDR             X1, [X0,#0xB0]
+0x3de53bc: AND             W21, W20, #1
+0x3de53c0: MOV             X0, X19
+0x3de53c4: MOV             W2, W21
+0x3de53c8: BL              GameModule.BattleGameManager$$ApplyAnimationPauseToRoleList
+0x3de53cc: LDR             X0, [X22]; method
+0x3de53d0: BL              ToolModule.ManagerBase_object_$$get_Instance
+0x3de53d4: CBZ             X0, loc_3DE5420
+0x3de53d8: LDR             X1, [X0,#0xB8]
+0x3de53dc: MOV             X0, X19
+0x3de53e0: MOV             W2, W21
+0x3de53e4: BL              GameModule.BattleGameManager$$ApplyAnimationPauseToRoleList
+0x3de53e8: TBZ             W20, #0, loc_3DE53FC
+0x3de53ec: LDP             X20, X19, [SP,#0x30+var_10]
+0x3de53f0: LDP             X22, X21, [SP,#0x30+var_20]
+0x3de53f4: LDP             X30, X23, [SP+0x30+var_30],#0x30
+0x3de53f8: RET
+0x3de53fc: LDR             X0, [X19,#0x20]
+0x3de5400: CBZ             X0, loc_3DE5420
+0x3de5404: ADRP            X8, #off_8AD3840@PAGE
+0x3de5408: LDR             X8, [X8,#off_8AD3840@PAGEOFF]; qword_8CFCF38
+0x3de540c: LDP             X20, X19, [SP,#0x30+var_10]
+0x3de5410: LDP             X22, X21, [SP,#0x30+var_20]
+0x3de5414: LDR             X1, [X8]
+0x3de5418: LDP             X30, X23, [SP+0x30+var_30],#0x30
+0x3de541c: B               System.Collections.Generic.Dictionary_int__BattleGameManager.AnimationPauseSnapshot_$$Clear
+0x3de5420: BL              il2cpp_codegen_raise_null_reference_exception

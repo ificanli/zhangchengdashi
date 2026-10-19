@@ -1,0 +1,84 @@
+0x71d7e7c: fe0f1cf8 str      x30, [sp, #-0x40]!
+0x71d7e80: f85f01a9 stp      x24, x23, [sp, #0x10]
+0x71d7e84: f65702a9 stp      x22, x21, [sp, #0x20]
+0x71d7e88: f44f03a9 stp      x20, x19, [sp, #0x30]
+0x71d7e8c: 97f100d0 adrp     x23, #0x9009000
+0x71d7e90: 18ca00b0 adrp     x24, #0x8b18000
+0x71d7e94: e8665739 ldrb     w8, [x23, #0x5d9]
+0x71d7e98: 184f44f9 ldr      x24, [x24, #0x898] // GameFramework.UIModule.<>c__DisplayClass18_0_TypeInfo
+0x71d7e9c: f30303aa mov      x19, x3
+0x71d7ea0: f40302aa mov      x20, x2
+0x71d7ea4: f60301aa mov      x22, x1
+0x71d7ea8: f50300aa mov      x21, x0
+0x71d7eac: a8020037 tbnz     w8, #0, #0x71d7f00
+0x71d7eb0: c0c900f0 adrp     x0, #0x8b12000
+0x71d7eb4: 003042f9 ldr      x0, [x0, #0x460] // Method$GameFramework.GameFrameEntry.GetModule<ResourcesModule>()
+0x71d7eb8: f2942997 bl       #0x3c3d280
+0x71d7ebc: e0c800b0 adrp     x0, #0x8af4000
+0x71d7ec0: 005043f9 ldr      x0, [x0, #0x6a0] // GameFramework.GameFrameEntry_TypeInfo
+0x71d7ec4: ef942997 bl       #0x3c3d280
+0x71d7ec8: c0c900f0 adrp     x0, #0x8b12000
+0x71d7ecc: 005447f9 ldr      x0, [x0, #0xea8] // GameFramework.Resources.ResourcesModule.LoadAssetCompleteHandler_TypeInfo
+0x71d7ed0: ec942997 bl       #0x3c3d280
+0x71d7ed4: 00ca00b0 adrp     x0, #0x8b18000
+0x71d7ed8: 005044f9 ldr      x0, [x0, #0x8a0] // Method$GameFramework.UIModule.<>c__DisplayClass18_0.<LoadUI>b__0()
+0x71d7edc: e9942997 bl       #0x3c3d280
+0x71d7ee0: 00ca00b0 adrp     x0, #0x8b18000
+0x71d7ee4: 004c44f9 ldr      x0, [x0, #0x898] // GameFramework.UIModule.<>c__DisplayClass18_0_TypeInfo
+0x71d7ee8: e6942997 bl       #0x3c3d280
+0x71d7eec: e0c900d0 adrp     x0, #0x8b15000
+0x71d7ef0: 006041f9 ldr      x0, [x0, #0x2c0] // UI/
+0x71d7ef4: e3942997 bl       #0x3c3d280
+0x71d7ef8: 28008052 mov      w8, #1
+0x71d7efc: e8661739 strb     w8, [x23, #0x5d9]
+0x71d7f00: 000340f9 ldr      x0, [x24]
+0x71d7f04: 70952997 bl       #0x3c3d4c4
+0x71d7f08: e1031faa mov      x1, xzr
+0x71d7f0c: f70300aa mov      x23, x0
+0x71d7f10: ffbd1394 bl       #0x76c770c // System.Object$$.ctor
+0x71d7f14: b70500b4 cbz      x23, #0x71d7fc8
+0x71d7f18: e8c800b0 adrp     x8, #0x8af4000
+0x71d7f1c: 085143f9 ldr      x8, [x8, #0x6a0] // GameFramework.GameFrameEntry_TypeInfo
+0x71d7f20: f65601a9 stp      x22, x21, [x23, #0x10]
+0x71d7f24: f44e02a9 stp      x20, x19, [x23, #0x20]
+0x71d7f28: d6c900f0 adrp     x22, #0x8b12000
+0x71d7f2c: 000140f9 ldr      x0, [x8]
+0x71d7f30: f3c900d0 adrp     x19, #0x8b15000
+0x71d7f34: d4c900f0 adrp     x20, #0x8b12000
+0x71d7f38: 15ca00b0 adrp     x21, #0x8b18000
+0x71d7f3c: 08e040b9 ldr      w8, [x0, #0xe0]
+0x71d7f40: d63242f9 ldr      x22, [x22, #0x460] // Method$GameFramework.GameFrameEntry.GetModule<ResourcesModule>()
+0x71d7f44: 736241f9 ldr      x19, [x19, #0x2c0] // UI/
+0x71d7f48: 945647f9 ldr      x20, [x20, #0xea8] // GameFramework.Resources.ResourcesModule.LoadAssetCompleteHandler_TypeInfo
+0x71d7f4c: b55244f9 ldr      x21, [x21, #0x8a0] // Method$GameFramework.UIModule.<>c__DisplayClass18_0.<LoadUI>b__0()
+0x71d7f50: 48000035 cbnz     w8, #0x71d7f58
+0x71d7f54: 17952997 bl       #0x3c3d3b0
+0x71d7f58: c00240f9 ldr      x0, [x22]
+0x71d7f5c: 99d16a97 bl       #0x4c8c5c0 // GameFramework.GameFrameEntry$$GetModule<object>
+0x71d7f60: 680240f9 ldr      x8, [x19]
+0x71d7f64: e10a40f9 ldr      x1, [x23, #0x10]
+0x71d7f68: f30300aa mov      x19, x0
+0x71d7f6c: e2031faa mov      x2, xzr
+0x71d7f70: e00308aa mov      x0, x8
+0x71d7f74: 0c9a0c94 bl       #0x74fe7a4 // System.String$$Concat
+0x71d7f78: 880240f9 ldr      x8, [x20]
+0x71d7f7c: f40300aa mov      x20, x0
+0x71d7f80: e00308aa mov      x0, x8
+0x71d7f84: 50952997 bl       #0x3c3d4c4
+0x71d7f88: a20240f9 ldr      x2, [x21]
+0x71d7f8c: e10317aa mov      x1, x23
+0x71d7f90: e3031faa mov      x3, xzr
+0x71d7f94: f50300aa mov      x21, x0
+0x71d7f98: 76450494 bl       #0x72e9570 // GameFramework.Resources.ResourcesModule.LoadAssetCompleteHandler$$.ctor
+0x71d7f9c: 730100b4 cbz      x19, #0x71d7fc8
+0x71d7fa0: e00313aa mov      x0, x19
+0x71d7fa4: e10314aa mov      x1, x20
+0x71d7fa8: e20315aa mov      x2, x21
+0x71d7fac: f44f43a9 ldp      x20, x19, [sp, #0x30]
+0x71d7fb0: f65742a9 ldp      x22, x21, [sp, #0x20]
+0x71d7fb4: f85f41a9 ldp      x24, x23, [sp, #0x10]
+0x71d7fb8: e3031faa mov      x3, xzr
+0x71d7fbc: e4031faa mov      x4, xzr
+0x71d7fc0: fe0744f8 ldr      x30, [sp], #0x40
+0x71d7fc4: 68780414 b        #0x72f6164 // GameFramework.Resources.ResourcesModule$$LoadPrefab
+0x71d7fc8: 41952997 bl       #0x3c3d4cc

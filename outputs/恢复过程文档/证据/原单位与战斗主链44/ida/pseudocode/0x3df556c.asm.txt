@@ -1,0 +1,36 @@
+0x3df556c: SUB             SP, SP, #0x90
+0x3df5570: STP             X30, X21, [SP,#0x90+var_20]
+0x3df5574: STP             X20, X19, [SP,#0x90+var_10]
+0x3df5578: ADRP            X21, #byte_8FFD7AF@PAGE
+0x3df557c: ADRP            X20, #off_8AD3D88@PAGE
+0x3df5580: LDRB            W8, [X21,#byte_8FFD7AF@PAGEOFF]
+0x3df5584: LDR             X20, [X20,#off_8AD3D88@PAGEOFF]; qword_8D228C0
+0x3df5588: MOV             X19, X0
+0x3df558c: TBNZ            W8, #0, loc_3DF55A4
+0x3df5590: ADRP            X0, #off_8AD3D88@PAGE
+0x3df5594: LDR             X0, [X0,#off_8AD3D88@PAGEOFF]; qword_8D228C0 ; slot
+0x3df5598: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3df559c: MOV             W8, #1
+0x3df55a0: STRB            W8, [X21,#byte_8FFD7AF@PAGEOFF]
+0x3df55a4: MOVI            V0.2D, #0
+0x3df55a8: MOV             X8, SP
+0x3df55ac: MOV             X0, XZR
+0x3df55b0: STR             XZR, [SP,#0x90+var_30]
+0x3df55b4: STP             Q0, Q0, [SP,#0x90+var_50]
+0x3df55b8: STP             Q0, Q0, [SP,#0x90+var_70]
+0x3df55bc: BL              System.Runtime.CompilerServices.AsyncVoidMethodBuilder$$Create
+0x3df55c0: LDP             Q0, Q1, [SP,#0x90+var_90]
+0x3df55c4: LDR             X2, [X20]
+0x3df55c8: ADD             X8, SP, #0x90+var_70
+0x3df55cc: MOV             W9, #0xFFFFFFFF
+0x3df55d0: ORR             X0, X8, #8
+0x3df55d4: ADD             X1, SP, #0x90+var_70
+0x3df55d8: STR             X19, [SP,#0x90+var_50+8]
+0x3df55dc: STUR            Q0, [SP,#0x90+var_70+8]
+0x3df55e0: STUR            Q1, [SP,#0x38]
+0x3df55e4: STR             W9, [SP,#0x90+var_70]
+0x3df55e8: BL              System.Runtime.CompilerServices.AsyncVoidMethodBuilder$$Start_BattleGameSceneManager._HideAllRole_d__214_
+0x3df55ec: LDP             X20, X19, [SP,#0x90+var_10]
+0x3df55f0: LDP             X30, X21, [SP,#0x90+var_20]
+0x3df55f4: ADD             SP, SP, #0x90
+0x3df55f8: RET

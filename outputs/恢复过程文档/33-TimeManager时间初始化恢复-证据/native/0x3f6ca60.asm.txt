@@ -1,0 +1,19 @@
+0x3f6ca60: STR             X30, [SP,#var_20]!
+0x3f6ca64: STP             X20, X19, [SP,#0x20+var_10]
+0x3f6ca68: MOV             X20, X1
+0x3f6ca6c: MOV             X1, XZR
+0x3f6ca70: MOV             X19, X0
+0x3f6ca74: BL              System.Object$$.ctor
+0x3f6ca78: CBZ             X20, loc_3F6CAA8
+0x3f6ca7c: LDR             X8, [X20,#0x10]
+0x3f6ca80: STR             X8, [X19,#0x10]
+0x3f6ca84: LDR             X8, [X20,#0x18]
+0x3f6ca88: STR             X8, [X19,#0x18]
+0x3f6ca8c: LDR             X8, [X20,#0x20]
+0x3f6ca90: STR             X8, [X19,#0x20]
+0x3f6ca94: LDRB            W8, [X20,#0x28]
+0x3f6ca98: STRB            W8, [X19,#0x28]
+0x3f6ca9c: LDP             X20, X19, [SP,#0x20+var_10]
+0x3f6caa0: LDR             X30, [SP+0x20+var_20],#0x20
+0x3f6caa4: RET
+0x3f6caa8: BL              il2cpp_codegen_raise_null_reference_exception

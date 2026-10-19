@@ -1,0 +1,25 @@
+__int64 __fastcall GameModule_BattleGameSceneManager__AddPlayerStayHex(__int64 a1, __int64 a2)
+{
+  __int64 result; // x0
+  __int64 v5; // x8
+  _QWORD *v6; // x9
+  __int64 v7; // x10
+
+  if ( (byte_8FFD7B7 & 1) == 0 )
+  {
+    il2cpp_codegen_initialize_runtime_metadata((void **)&off_8D0AC98);
+    byte_8FFD7B7 = 1;
+  }
+  result = *(_QWORD *)(a1 + 96);
+  if ( result == 0 || (v5 = *(_QWORD *)(result + 16), v6 = off_8D0AC98, ++*(_DWORD *)(result + 28), v5 == 0) )
+    il2cpp_codegen_raise_null_reference_exception();
+  v7 = *(int *)(result + 24);
+  if ( (unsigned int)v7 >= *(_DWORD *)(v5 + 24) )
+    return System_Collections_Generic_List_object___AddWithResize(
+             result,
+             a2,
+             *(_QWORD *)(*(_QWORD *)(v6[4] + 192LL) + 112LL));
+  *(_DWORD *)(result + 24) = v7 + 1;
+  *(_QWORD *)(v5 + 8 * v7 + 32) = a2;
+  return result;
+}

@@ -1,0 +1,20 @@
+0x7311508: STR             X30, [SP,#var_20]!
+0x731150c: STP             X20, X19, [SP,#0x20+var_10]
+0x7311510: MOV             W2, WZR
+0x7311514: MOV             W3, WZR
+0x7311518: MOV             X20, X1
+0x731151c: MOV             X19, X0
+0x7311520: BL              ___Mpb$$.ctor
+0x7311524: MOV             W8, #0x3F800000
+0x7311528: STR             W8, [X19,#0x50]
+0x731152c: CBZ             X20, loc_7311554
+0x7311530: LDR             X8, [X20,#0x10]
+0x7311534: CBZ             X8, loc_7311554
+0x7311538: LDR             X8, [X8,#0x30]
+0x731153c: MOV             W9, #1
+0x7311540: STR             W9, [X19,#0x28]
+0x7311544: STR             X8, [X19,#0x58]
+0x7311548: LDP             X20, X19, [SP,#0x20+var_10]
+0x731154c: LDR             X30, [SP+0x20+var_20],#0x20
+0x7311550: RET
+0x7311554: BL              il2cpp_codegen_raise_null_reference_exception

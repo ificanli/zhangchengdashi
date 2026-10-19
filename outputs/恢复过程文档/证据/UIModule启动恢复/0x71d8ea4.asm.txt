@@ -1,0 +1,43 @@
+0x71d8ea4: fe0f1df8 str      x30, [sp, #-0x30]!
+0x71d8ea8: f65701a9 stp      x22, x21, [sp, #0x10]
+0x71d8eac: f44f02a9 stp      x20, x19, [sp, #0x20]
+0x71d8eb0: 96f100b0 adrp     x22, #0x9009000
+0x71d8eb4: 14ca0090 adrp     x20, #0x8b18000
+0x71d8eb8: 15ca0090 adrp     x21, #0x8b18000
+0x71d8ebc: 13ca0090 adrp     x19, #0x8b18000
+0x71d8ec0: c89e5739 ldrb     w8, [x22, #0x5e7]
+0x71d8ec4: 946244f9 ldr      x20, [x20, #0x8c0] // GameFramework.UIModule_TypeInfo
+0x71d8ec8: b59644f9 ldr      x21, [x21, #0x928] // System.Collections.Generic.List<BaseUI>_TypeInfo
+0x71d8ecc: 739a44f9 ldr      x19, [x19, #0x930] // Method$System.Collections.Generic.List<BaseUI>..ctor()
+0x71d8ed0: 88010037 tbnz     w8, #0, #0x71d8f00
+0x71d8ed4: 00ca0090 adrp     x0, #0x8b18000
+0x71d8ed8: 009844f9 ldr      x0, [x0, #0x930] // Method$System.Collections.Generic.List<BaseUI>..ctor()
+0x71d8edc: e9902997 bl       #0x3c3d280
+0x71d8ee0: 00ca0090 adrp     x0, #0x8b18000
+0x71d8ee4: 009444f9 ldr      x0, [x0, #0x928] // System.Collections.Generic.List<BaseUI>_TypeInfo
+0x71d8ee8: e6902997 bl       #0x3c3d280
+0x71d8eec: 00ca0090 adrp     x0, #0x8b18000
+0x71d8ef0: 006044f9 ldr      x0, [x0, #0x8c0] // GameFramework.UIModule_TypeInfo
+0x71d8ef4: e3902997 bl       #0x3c3d280
+0x71d8ef8: 28008052 mov      w8, #1
+0x71d8efc: c89e1739 strb     w8, [x22, #0x5e7]
+0x71d8f00: 880240f9 ldr      x8, [x20]
+0x71d8f04: 0933fd90 adrp     x9, #0x1838000
+0x71d8f08: 208946fd ldr      d0, [x9, #0xd10]
+0x71d8f0c: a9999952 mov      w9, #0xcccd
+0x71d8f10: 085d40f9 ldr      x8, [x8, #0xb8]
+0x71d8f14: 89c9a772 movk     w9, #0x3e4c, lsl #16
+0x71d8f18: 000100fd str      d0, [x8]
+0x71d8f1c: 090900b9 str      w9, [x8, #8]
+0x71d8f20: a00240f9 ldr      x0, [x21]
+0x71d8f24: 68912997 bl       #0x3c3d4c4
+0x71d8f28: 610240f9 ldr      x1, [x19]
+0x71d8f2c: f30300aa mov      x19, x0
+0x71d8f30: 8dd79597 bl       #0x574ed64 // System.Collections.Generic.List<object>$$.ctor
+0x71d8f34: 880240f9 ldr      x8, [x20]
+0x71d8f38: f65741a9 ldp      x22, x21, [sp, #0x10]
+0x71d8f3c: 085d40f9 ldr      x8, [x8, #0xb8]
+0x71d8f40: 130900f9 str      x19, [x8, #0x10]
+0x71d8f44: f44f42a9 ldp      x20, x19, [sp, #0x20]
+0x71d8f48: fe0743f8 ldr      x30, [sp], #0x30
+0x71d8f4c: c0035fd6 ret      

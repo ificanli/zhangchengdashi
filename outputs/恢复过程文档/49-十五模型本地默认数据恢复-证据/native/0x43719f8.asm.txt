@@ -1,0 +1,57 @@
+0x43719f8: STP             X30, X23, [SP,#var_30]!
+0x43719fc: STP             X22, X21, [SP,#0x30+var_20]
+0x4371a00: STP             X20, X19, [SP,#0x30+var_10]
+0x4371a04: ADRP            X20, #byte_900072E@PAGE
+0x4371a08: LDRB            W8, [X20,#byte_900072E@PAGEOFF]
+0x4371a0c: MOV             X19, X0
+0x4371a10: TBNZ            W8, #0, loc_4371A28
+0x4371a14: ADRP            X0, #off_8ACE0C0@PAGE
+0x4371a18: LDR             X0, [X0,#off_8ACE0C0@PAGEOFF]; off_8D0BE78 ; slot
+0x4371a1c: BL              il2cpp_codegen_initialize_runtime_metadata
+0x4371a20: MOV             W8, #1
+0x4371a24: STRB            W8, [X20,#byte_900072E@PAGEOFF]
+0x4371a28: ADRP            X21, #off_8ACE0C0@PAGE
+0x4371a2c: LDR             X21, [X21,#off_8ACE0C0@PAGEOFF]; off_8D0BE78
+0x4371a30: MOV             X0, X19
+0x4371a34: MOV             X1, XZR
+0x4371a38: BL              ServerBaseData$$InitFromDefaults
+0x4371a3c: MOV             W22, #1
+0x4371a40: MOV             W8, #0x14
+0x4371a44: MOV             W23, #4
+0x4371a48: STRB            W22, [X19,#0x5C]
+0x4371a4c: STR             W8, [X19,#0x20]
+0x4371a50: LDR             X20, [X19,#0x60]
+0x4371a54: MOV             W1, #0x64 ; 'd'
+0x4371a58: MOV             W0, WZR
+0x4371a5c: MOV             X2, XZR
+0x4371a60: BL              UnityEngine.Random$$Range
+0x4371a64: CMP             W0, #0x50 ; 'P'
+0x4371a68: CINC            W1, W22, GE
+0x4371a6c: CBZ             X20, loc_4371AD8
+0x4371a70: LDR             W10, [X20,#0x1C]
+0x4371a74: LDR             X8, [X20,#0x10]
+0x4371a78: LDR             X9, [X21]
+0x4371a7c: ADD             W10, W10, #1
+0x4371a80: STR             W10, [X20,#0x1C]
+0x4371a84: CBZ             X8, loc_4371AD8
+0x4371a88: LDRSW           X10, [X20,#0x18]
+0x4371a8c: LDR             W11, [X8,#0x18]
+0x4371a90: CMP             W10, W11
+0x4371a94: B.CS            loc_4371AAC
+0x4371a98: ADD             W9, W10, #1
+0x4371a9c: ADD             X8, X8, X10,LSL#2
+0x4371aa0: STR             W9, [X20,#0x18]
+0x4371aa4: STR             W1, [X8,#0x20]
+0x4371aa8: B               loc_4371AC0
+0x4371aac: LDR             X8, [X9,#0x20]
+0x4371ab0: MOV             X0, X20
+0x4371ab4: LDR             X8, [X8,#0xC0]
+0x4371ab8: LDR             X2, [X8,#0x70]
+0x4371abc: BL              System.Collections.Generic.List_int_$$AddWithResize
+0x4371ac0: SUBS            W23, W23, #1
+0x4371ac4: B.NE            loc_4371A50
+0x4371ac8: LDP             X20, X19, [SP,#0x30+var_10]
+0x4371acc: LDP             X22, X21, [SP,#0x30+var_20]
+0x4371ad0: LDP             X30, X23, [SP+0x30+var_30],#0x30
+0x4371ad4: RET
+0x4371ad8: BL              il2cpp_codegen_raise_null_reference_exception

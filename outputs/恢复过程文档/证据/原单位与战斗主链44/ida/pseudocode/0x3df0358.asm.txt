@@ -1,0 +1,70 @@
+0x3df0358: SUB             SP, SP, #0xC0
+0x3df035c: STR             D8, [SP,#0xC0+var_50]
+0x3df0360: STP             X30, X25, [SP,#0xC0+var_40]
+0x3df0364: STP             X24, X23, [SP,#0xC0+var_30]
+0x3df0368: STP             X22, X21, [SP,#0xC0+var_20]
+0x3df036c: STP             X20, X19, [SP,#0xC0+var_10]
+0x3df0370: ADRP            X25, #byte_8FFD78E@PAGE
+0x3df0374: ADRP            X24, #off_8AD3C48@PAGE
+0x3df0378: MOV             X19, X8
+0x3df037c: LDRB            W8, [X25,#byte_8FFD78E@PAGEOFF]
+0x3df0380: LDR             X24, [X24,#off_8AD3C48@PAGEOFF]; off_8CF8EC8
+0x3df0384: MOV             W20, W3
+0x3df0388: MOV             V8.16B, V0.16B
+0x3df038c: MOV             W23, W2
+0x3df0390: MOV             X21, X1
+0x3df0394: MOV             X22, X0
+0x3df0398: TBNZ            W8, #0, loc_3DF03C8
+0x3df039c: ADRP            X0, #off_8AD3C50@PAGE
+0x3df03a0: LDR             X0, [X0,#off_8AD3C50@PAGEOFF]; unk_8CF8ED8 ; slot
+0x3df03a4: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3df03a8: ADRP            X0, #off_8AD3C48@PAGE
+0x3df03ac: LDR             X0, [X0,#off_8AD3C48@PAGEOFF]; off_8CF8EC8 ; slot
+0x3df03b0: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3df03b4: ADRP            X0, #off_8AD3C58@PAGE
+0x3df03b8: LDR             X0, [X0,#off_8AD3C58@PAGEOFF]; qword_8CF8EF8 ; slot
+0x3df03bc: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3df03c0: MOV             W8, #1
+0x3df03c4: STRB            W8, [X25,#byte_8FFD78E@PAGEOFF]
+0x3df03c8: AND             W8, W23, #1
+0x3df03cc: LDR             X23, [X24]
+0x3df03d0: MOVI            V0.2D, #0
+0x3df03d4: STP             Q0, Q0, [SP,#0xC0+var_80]
+0x3df03d8: STRB            W8, [SP,#0xC0+var_80+8]
+0x3df03dc: MOV             W8, #0xFFFFFFFF
+0x3df03e0: STP             Q0, Q0, [SP,#0xC0+var_A0]
+0x3df03e4: STR             Q0, [SP,#0xC0+var_60]
+0x3df03e8: STP             XZR, XZR, [SP,#0xC0+var_90]
+0x3df03ec: STR             XZR, [SP,#0xC0+var_A0+8]
+0x3df03f0: STR             X22, [SP,#0xC0+var_70]
+0x3df03f4: STR             X21, [SP,#0xC0+var_80]
+0x3df03f8: STR             S8, [SP,#0xC0+var_64]
+0x3df03fc: STR             W20, [SP,#0xC0+var_68]
+0x3df0400: STR             W8, [SP,#0xC0+var_A0]
+0x3df0404: ADRP            X21, #off_8AD3C58@PAGE
+0x3df0408: LDR             X8, [X23,#0x38]
+0x3df040c: LDR             X21, [X21,#off_8AD3C58@PAGEOFF]; qword_8CF8EF8
+0x3df0410: ADD             X9, SP, #0xC0+var_A0
+0x3df0414: ORR             X20, X9, #8
+0x3df0418: CBNZ            X8, loc_3DF0428
+0x3df041c: MOV             X0, X23
+0x3df0420: BL              unk_3C503FC
+0x3df0424: LDR             X8, [X23,#0x38]
+0x3df0428: LDR             X1, [X8,#0x10]
+0x3df042c: ADD             X0, SP, #0xC0+var_A0
+0x3df0430: BL              GameModule.BattleGameSceneManager._GetRoleTarget_d__175$$MoveNext
+0x3df0434: LDR             X1, [X21]
+0x3df0438: ADD             X8, SP, #0xC0+var_B8
+0x3df043c: MOV             X0, X20
+0x3df0440: BL              unk_3D31BC0
+0x3df0444: LDR             X8, [SP,#0xC0+var_A8]
+0x3df0448: LDUR            Q0, [SP,#0xC0+var_B8]
+0x3df044c: LDP             X22, X21, [SP,#0xC0+var_20]
+0x3df0450: LDP             X24, X23, [SP,#0xC0+var_30]
+0x3df0454: STR             X8, [X19,#0x10]
+0x3df0458: STR             Q0, [X19]
+0x3df045c: LDP             X20, X19, [SP,#0xC0+var_10]
+0x3df0460: LDP             X30, X25, [SP,#0xC0+var_40]
+0x3df0464: LDR             D8, [SP,#0xC0+var_50]
+0x3df0468: ADD             SP, SP, #0xC0
+0x3df046c: RET

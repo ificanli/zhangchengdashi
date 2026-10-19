@@ -1,0 +1,50 @@
+0x52a9190: STR             X30, [SP,#var_30]!
+0x52a9194: STP             X22, X21, [SP,#0x30+var_20]
+0x52a9198: STP             X20, X19, [SP,#0x30+var_10]
+0x52a919c: ADRP            X22, #byte_9002568@PAGE
+0x52a91a0: LDRB            W8, [X22,#byte_9002568@PAGEOFF]
+0x52a91a4: MOV             X19, X2
+0x52a91a8: MOV             X20, X1
+0x52a91ac: MOV             X21, X0
+0x52a91b0: TBNZ            W8, #0, loc_52A91C8
+0x52a91b4: ADRP            X0, #off_8B0F5E0@PAGE
+0x52a91b8: LDR             X0, [X0,#off_8B0F5E0@PAGEOFF]; qword_8CFF770 ; slot
+0x52a91bc: BL              il2cpp_codegen_initialize_runtime_metadata
+0x52a91c0: MOV             W8, #1
+0x52a91c4: STRB            W8, [X22,#byte_9002568@PAGEOFF]
+0x52a91c8: MOV             X0, X20
+0x52a91cc: MOV             X1, XZR
+0x52a91d0: BL              System.String$$IsNullOrEmpty
+0x52a91d4: TBNZ            W0, #0, loc_52A9218
+0x52a91d8: STR             XZR, [SP,#0x30+var_28]
+0x52a91dc: LDR             X0, [X21,#0x30]
+0x52a91e0: CBZ             X0, loc_52A9254
+0x52a91e4: ADRP            X8, #off_8B0F5E0@PAGE
+0x52a91e8: LDR             X8, [X8,#off_8B0F5E0@PAGEOFF]; qword_8CFF770
+0x52a91ec: ADD             X2, SP, #0x30+var_28
+0x52a91f0: MOV             X1, X20
+0x52a91f4: LDR             X3, [X8]
+0x52a91f8: BL              System.Collections.Generic.Dictionary_object__object_$$TryGetValue
+0x52a91fc: LDR             X8, [SP,#0x30+var_28]
+0x52a9200: LDP             X20, X19, [SP,#0x30+var_10]
+0x52a9204: LDP             X22, X21, [SP,#0x30+var_20]
+0x52a9208: TST             W0, #1
+0x52a920c: CSEL            X0, X8, XZR, NE
+0x52a9210: LDR             X30, [SP+0x30+var_30],#0x30
+0x52a9214: RET
+0x52a9218: ADRP            X0, #off_8B0CF78@PAGE
+0x52a921c: LDR             X0, [X0,#off_8B0CF78@PAGEOFF]; unk_8CE7B50
+0x52a9220: BL              unk_3C3D294
+0x52a9224: BL              unk_3C3D4C4
+0x52a9228: MOV             X20, X0
+0x52a922c: ADRP            X0, #off_8B0CF90@PAGE
+0x52a9230: LDR             X0, [X0,#off_8B0CF90@PAGEOFF]; unk_8D5DB58
+0x52a9234: BL              unk_3C3D294
+0x52a9238: MOV             X1, X0
+0x52a923c: MOV             X0, X20
+0x52a9240: MOV             X2, XZR
+0x52a9244: BL              GameFramework.GameFrameworkException$$.ctor
+0x52a9248: MOV             X0, X20
+0x52a924c: MOV             X1, X19
+0x52a9250: BL              unk_3C3D3A0
+0x52a9254: BL              il2cpp_codegen_raise_null_reference_exception

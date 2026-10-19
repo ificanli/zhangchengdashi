@@ -1,0 +1,88 @@
+0x727ae9c: STR             X30, [SP,#var_30]!
+0x727aea0: STP             X22, X21, [SP,#0x30+var_20]
+0x727aea4: STP             X20, X19, [SP,#0x30+var_10]
+0x727aea8: ADRP            X21, #byte_9009C36@PAGE
+0x727aeac: LDRB            W8, [X21,#byte_9009C36@PAGEOFF]
+0x727aeb0: MOV             X19, X1
+0x727aeb4: MOV             X20, X0
+0x727aeb8: TBNZ            W8, #0, loc_727AEDC
+0x727aebc: ADRP            X0, #off_8ACD660@PAGE
+0x727aec0: LDR             X0, [X0,#off_8ACD660@PAGEOFF]; off_8D1D5E8 ; slot
+0x727aec4: BL              il2cpp_codegen_initialize_runtime_metadata
+0x727aec8: ADRP            X0, #off_8B19988@PAGE
+0x727aecc: LDR             X0, [X0,#off_8B19988@PAGEOFF]; qword_8CDC610 ; slot
+0x727aed0: BL              il2cpp_codegen_initialize_runtime_metadata
+0x727aed4: MOV             W8, #1
+0x727aed8: STRB            W8, [X21,#byte_9009C36@PAGEOFF]
+0x727aedc: LDR             X20, [X20,#0x28]
+0x727aee0: CBZ             X20, loc_727AFB4
+0x727aee4: ADRP            X8, #off_8ACD660@PAGE
+0x727aee8: LDR             X8, [X8,#off_8ACD660@PAGEOFF]; off_8D1D5E8
+0x727aeec: LDR             X21, [X8]
+0x727aef0: LDR             X8, [X21,#0x38]
+0x727aef4: CBNZ            X8, loc_727AF04
+0x727aef8: MOV             X0, X21
+0x727aefc: BL              unk_3C503FC
+0x727af00: LDR             X8, [X21,#0x38]
+0x727af04: LDR             X0, [X8,#0x10]
+0x727af08: LDRB            W8, [X0,#0x135]
+0x727af0c: TBNZ            W8, #0, loc_727AF14
+0x727af10: BL              unk_3C503A0
+0x727af14: LDR             W8, [X0,#0xE0]
+0x727af18: CBNZ            W8, loc_727AF20
+0x727af1c: BL              il2cpp_codegen_runtime_class_init
+0x727af20: LDR             X8, [X21,#0x38]
+0x727af24: ADRP            X22, #off_8B19988@PAGE
+0x727af28: LDR             X0, [X8,#0x10]
+0x727af2c: LDRB            W8, [X0,#0x135]
+0x727af30: LDR             X22, [X22,#off_8B19988@PAGEOFF]; qword_8CDC610
+0x727af34: TBNZ            W8, #0, loc_727AF3C
+0x727af38: BL              unk_3C503A0
+0x727af3c: LDR             X9, [X0,#0xB8]
+0x727af40: LDR             X8, [X20]
+0x727af44: LDR             X1, [X22]
+0x727af48: LDR             X21, [X9]
+0x727af4c: LDRH            W9, [X8,#0x12E]
+0x727af50: CBZ             X9, loc_727AF74
+0x727af54: LDR             X10, [X8,#0xB0]
+0x727af58: ADD             X10, X10, #8
+0x727af5c: LDUR            X11, [X10,#-8]
+0x727af60: CMP             X11, X1
+0x727af64: B.EQ            loc_727AF84
+0x727af68: SUBS            X9, X9, #1
+0x727af6c: ADD             X10, X10, #0x10
+0x727af70: B.NE            loc_727AF5C
+0x727af74: MOV             W2, #9
+0x727af78: MOV             X0, X20
+0x727af7c: BL              unk_3C504A4
+0x727af80: B               loc_727AF94
+0x727af84: LDR             W9, [X10]
+0x727af88: ADD             W9, W9, #9
+0x727af8c: ADD             X8, X8, W9,SXTW#4
+0x727af90: ADD             X0, X8, #0x138
+0x727af94: LDP             X4, X3, [X0]
+0x727af98: MOV             X0, X20
+0x727af9c: MOV             X1, X19
+0x727afa0: MOV             X2, X21
+0x727afa4: LDP             X20, X19, [SP,#0x30+var_10]
+0x727afa8: LDP             X22, X21, [SP,#0x30+var_20]
+0x727afac: LDR             X30, [SP+0x30+var_30],#0x30
+0x727afb0: BR              X4
+0x727afb4: ADRP            X0, #off_8B0CF78@PAGE
+0x727afb8: LDR             X0, [X0,#off_8B0CF78@PAGEOFF]; unk_8CE7B50
+0x727afbc: BL              unk_3C3D294
+0x727afc0: BL              unk_3C3D4C4
+0x727afc4: MOV             X19, X0
+0x727afc8: ADRP            X0, #off_8B0E7C8@PAGE
+0x727afcc: LDR             X0, [X0,#off_8B0E7C8@PAGEOFF]; unk_8D78218
+0x727afd0: BL              unk_3C3D294
+0x727afd4: MOV             X1, X0
+0x727afd8: MOV             X0, X19
+0x727afdc: MOV             X2, XZR
+0x727afe0: BL              GameFramework.GameFrameworkException$$.ctor
+0x727afe4: ADRP            X0, #off_8B199B0@PAGE
+0x727afe8: LDR             X0, [X0,#off_8B199B0@PAGEOFF]; unk_8D36028
+0x727afec: BL              unk_3C3D294
+0x727aff0: MOV             X1, X0
+0x727aff4: MOV             X0, X19
+0x727aff8: BL              unk_3C3D3A0

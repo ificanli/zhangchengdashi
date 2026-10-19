@@ -1,0 +1,42 @@
+0x717284c: STP             X30, X21, [SP,#var_20]!
+0x7172850: STP             X20, X19, [SP,#0x20+var_10]
+0x7172854: ADRP            X20, #byte_900919C@PAGE
+0x7172858: LDRB            W8, [X20,#byte_900919C@PAGEOFF]
+0x717285c: MOV             X19, X0
+0x7172860: TBNZ            W8, #0, loc_7172878
+0x7172864: ADRP            X0, #off_8B0FF28@PAGE
+0x7172868: LDR             X0, [X0,#off_8B0FF28@PAGEOFF]; off_8CEF230 ; slot
+0x717286c: BL              il2cpp_codegen_initialize_runtime_metadata
+0x7172870: MOV             W8, #1
+0x7172874: STRB            W8, [X20,#byte_900919C@PAGEOFF]
+0x7172878: LDR             X8, [X19]
+0x717287c: MOV             X0, X19
+0x7172880: LDP             X9, X1, [X8,#0x178]
+0x7172884: BLR             X9
+0x7172888: LDRB            W1, [X19,#0x11]
+0x717288c: BL              _Oke__$$__D__S
+0x7172890: LDRB            W8, [X19,#0x12]
+0x7172894: MOV             X20, X0
+0x7172898: CBZ             W8, loc_71728E4
+0x717289c: LDR             X8, [X19]
+0x71728a0: ADRP            X21, #off_8B0FF28@PAGE
+0x71728a4: MOV             X0, X19
+0x71728a8: LDP             X9, X1, [X8,#0x178]
+0x71728ac: LDR             X21, [X21,#off_8B0FF28@PAGEOFF]; off_8CEF230
+0x71728b0: BLR             X9
+0x71728b4: LDR             X8, [X21]
+0x71728b8: MOV             X19, X0
+0x71728bc: LDR             W9, [X8,#0xE0]
+0x71728c0: CBNZ            W9, loc_71728CC
+0x71728c4: MOV             X0, X8; klass
+0x71728c8: BL              il2cpp_codegen_runtime_class_init
+0x71728cc: MOV             X0, X19
+0x71728d0: MOV             X1, X20
+0x71728d4: LDP             X20, X19, [SP,#0x20+var_10]
+0x71728d8: MOV             X2, XZR
+0x71728dc: LDP             X30, X21, [SP+0x20+var_20],#0x20
+0x71728e0: B               GameFramework.Utils$$DecompressData
+0x71728e4: MOV             X0, X20
+0x71728e8: LDP             X20, X19, [SP,#0x20+var_10]
+0x71728ec: LDP             X30, X21, [SP+0x20+var_20],#0x20
+0x71728f0: RET

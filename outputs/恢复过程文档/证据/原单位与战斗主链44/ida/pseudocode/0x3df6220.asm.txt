@@ -1,0 +1,58 @@
+0x3df6220: STP             X30, X21, [SP,#var_20]!
+0x3df6224: STP             X20, X19, [SP,#0x20+var_10]
+0x3df6228: ADRP            X21, #byte_8FFD7BF@PAGE
+0x3df622c: LDRB            W8, [X21,#byte_8FFD7BF@PAGEOFF]
+0x3df6230: MOV             X20, X1
+0x3df6234: MOV             X19, X0
+0x3df6238: TBNZ            W8, #0, loc_3DF6250
+0x3df623c: ADRP            X0, #off_8AD1E50@PAGE
+0x3df6240: LDR             X0, [X0,#off_8AD1E50@PAGEOFF]; off_8D0AC98 ; slot
+0x3df6244: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3df6248: MOV             W8, #1
+0x3df624c: STRB            W8, [X21,#byte_8FFD7BF@PAGEOFF]
+0x3df6250: LDR             X0, [X19,#0xA0]
+0x3df6254: CBZ             X0, loc_3DF6304
+0x3df6258: ADRP            X9, #off_8AD1E50@PAGE
+0x3df625c: LDR             X9, [X9,#off_8AD1E50@PAGEOFF]; off_8D0AC98
+0x3df6260: LDR             W10, [X0,#0x1C]
+0x3df6264: LDR             X8, [X0,#0x10]
+0x3df6268: LDR             X9, [X9]
+0x3df626c: ADD             W10, W10, #1
+0x3df6270: STR             W10, [X0,#0x1C]
+0x3df6274: CBZ             X8, loc_3DF6304
+0x3df6278: LDRSW           X10, [X0,#0x18]
+0x3df627c: LDR             W11, [X8,#0x18]
+0x3df6280: CMP             W10, W11
+0x3df6284: B.CS            loc_3DF629C
+0x3df6288: ADD             W9, W10, #1
+0x3df628c: ADD             X8, X8, X10,LSL#3
+0x3df6290: STR             W9, [X0,#0x18]
+0x3df6294: STR             X20, [X8,#0x20]
+0x3df6298: B               loc_3DF62B0
+0x3df629c: LDR             X8, [X9,#0x20]
+0x3df62a0: MOV             X1, X20
+0x3df62a4: LDR             X8, [X8,#0xC0]
+0x3df62a8: LDR             X2, [X8,#0x70]
+0x3df62ac: BL              System.Collections.Generic.List_object_$$AddWithResize
+0x3df62b0: CBZ             X20, loc_3DF6304
+0x3df62b4: MOV             X0, X20
+0x3df62b8: MOV             X1, XZR
+0x3df62bc: BL              UnityEngine.GameObject$$get_transform
+0x3df62c0: LDR             X8, [X19,#0x118]
+0x3df62c4: CBZ             X8, loc_3DF6304
+0x3df62c8: MOV             X20, X0
+0x3df62cc: MOV             X0, X8
+0x3df62d0: MOV             X1, XZR
+0x3df62d4: BL              UnityEngine.GameObject$$get_transform
+0x3df62d8: CBZ             X20, loc_3DF6304
+0x3df62dc: MOV             X1, X0
+0x3df62e0: MOV             X0, X20
+0x3df62e4: MOV             W2, WZR
+0x3df62e8: MOV             X3, XZR
+0x3df62ec: BL              sub_82F9798
+0x3df62f0: MOV             X0, X19
+0x3df62f4: LDP             X20, X19, [SP,#0x20+var_10]
+0x3df62f8: MOV             W1, WZR
+0x3df62fc: LDP             X30, X21, [SP+0x20+var_20],#0x20
+0x3df6300: B               GameModule.BattleGameSceneManager$$MarkWebGLNavigationTargetFieldDirty
+0x3df6304: BL              il2cpp_codegen_raise_null_reference_exception

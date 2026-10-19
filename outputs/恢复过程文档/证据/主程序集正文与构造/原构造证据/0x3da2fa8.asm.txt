@@ -1,0 +1,77 @@
+0x3da2fa8: STR             D8, [SP,#var_60]!
+0x3da2fac: STR             X30, [SP,#0x60+var_58]
+0x3da2fb0: STP             X28, X27, [SP,#0x60+var_50]
+0x3da2fb4: STP             X26, X25, [SP,#0x60+var_40]
+0x3da2fb8: STP             X24, X23, [SP,#0x60+var_30]
+0x3da2fbc: STP             X22, X21, [SP,#0x60+var_20]
+0x3da2fc0: STP             X20, X19, [SP,#0x60+var_10]
+0x3da2fc4: ADRP            X27, #byte_8FFD541@PAGE
+0x3da2fc8: ADRP            X28, #off_8ACDFB8@PAGE
+0x3da2fcc: ADRP            X22, #off_8ACDFA0@PAGE
+0x3da2fd0: ADRP            X26, #off_8ACFA60@PAGE
+0x3da2fd4: ADRP            X25, #off_8ACFA68@PAGE
+0x3da2fd8: ADRP            X24, #off_8AD10A0@PAGE
+0x3da2fdc: ADRP            X23, #off_8AD15E8@PAGE
+0x3da2fe0: LDR             X28, [X28,#off_8ACDFB8@PAGEOFF]; qword_8CDDA40
+0x3da2fe4: LDRB            W8, [X27,#byte_8FFD541@PAGEOFF]
+0x3da2fe8: LDR             X22, [X22,#off_8ACDFA0@PAGEOFF]; qword_8D0BE60
+0x3da2fec: LDR             X26, [X26,#off_8ACFA60@PAGEOFF]; qword_8CDDFF0
+0x3da2ff0: LDR             X25, [X25,#off_8ACFA68@PAGEOFF]; qword_8D0DD68
+0x3da2ff4: LDR             X24, [X24,#off_8AD10A0@PAGEOFF]; qword_8CDE0C0
+0x3da2ff8: LDR             X23, [X23,#off_8AD15E8@PAGEOFF]; qword_8D0E240
+0x3da2ffc: MOV             V8.16B, V0.16B
+0x3da3000: MOV             W19, W2
+0x3da3004: MOV             X20, X1
+0x3da3008: MOV             X21, X0
+0x3da300c: TBNZ            W8, #0, loc_3DA3060
+0x3da3010: ADRP            X0, #off_8ACDFA0@PAGE
+0x3da3014: LDR             X0, [X0,#off_8ACDFA0@PAGEOFF]; qword_8D0BE60 ; slot
+0x3da3018: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3da301c: ADRP            X0, #off_8AD15E8@PAGE
+0x3da3020: LDR             X0, [X0,#off_8AD15E8@PAGEOFF]; qword_8D0E240 ; slot
+0x3da3024: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3da3028: ADRP            X0, #off_8ACFA68@PAGE
+0x3da302c: LDR             X0, [X0,#off_8ACFA68@PAGEOFF]; qword_8D0DD68 ; slot
+0x3da3030: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3da3034: ADRP            X0, #off_8ACDFB8@PAGE
+0x3da3038: LDR             X0, [X0,#off_8ACDFB8@PAGEOFF]; qword_8CDDA40 ; slot
+0x3da303c: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3da3040: ADRP            X0, #off_8AD10A0@PAGE
+0x3da3044: LDR             X0, [X0,#off_8AD10A0@PAGEOFF]; qword_8CDE0C0 ; slot
+0x3da3048: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3da304c: ADRP            X0, #off_8ACFA60@PAGE
+0x3da3050: LDR             X0, [X0,#off_8ACFA60@PAGEOFF]; qword_8CDDFF0 ; slot
+0x3da3054: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3da3058: MOV             W8, #1
+0x3da305c: STRB            W8, [X27,#byte_8FFD541@PAGEOFF]
+0x3da3060: LDR             X0, [X28]
+0x3da3064: BL              unk_3C3D4C4
+0x3da3068: LDR             X1, [X22]
+0x3da306c: MOV             X22, X0
+0x3da3070: BL              System.Collections.Generic.List_int_$$.ctor
+0x3da3074: STR             X22, [X21,#0x28]
+0x3da3078: LDR             X0, [X26]
+0x3da307c: BL              unk_3C3D4C4
+0x3da3080: LDR             X1, [X25]
+0x3da3084: MOV             X22, X0
+0x3da3088: BL              System.Collections.Generic.List_object_$$.ctor
+0x3da308c: STR             X22, [X21,#0x30]
+0x3da3090: LDR             X0, [X24]
+0x3da3094: BL              unk_3C3D4C4
+0x3da3098: LDR             X1, [X23]
+0x3da309c: MOV             X22, X0
+0x3da30a0: BL              System.Collections.Generic.List_float_$$.ctor
+0x3da30a4: STR             X22, [X21,#0x38]
+0x3da30a8: MOV             X0, X21
+0x3da30ac: MOV             X1, X20
+0x3da30b0: MOV             W2, W19
+0x3da30b4: LDP             X20, X19, [SP,#0x60+var_10]
+0x3da30b8: LDP             X22, X21, [SP,#0x60+var_20]
+0x3da30bc: LDP             X24, X23, [SP,#0x60+var_30]
+0x3da30c0: LDP             X26, X25, [SP,#0x60+var_40]
+0x3da30c4: LDP             X28, X27, [SP,#0x60+var_50]
+0x3da30c8: LDR             X30, [SP,#0x60+var_58]
+0x3da30cc: MOV             V0.16B, V8.16B
+0x3da30d0: MOV             X3, XZR
+0x3da30d4: LDR             D8, [SP+0x60+var_60],#0x60
+0x3da30d8: B               GameModule.TalentBase$$.ctor

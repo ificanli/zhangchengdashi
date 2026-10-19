@@ -1,0 +1,28 @@
+0x71d976c: STR             X30, [SP,#var_10]!
+0x71d9770: LDR             W8, [X0,#0x10]
+0x71d9774: CMP             W8, #2
+0x71d9778: B.EQ            loc_71D9798
+0x71d977c: CMP             W8, #1
+0x71d9780: B.EQ            loc_71D97C0
+0x71d9784: CBNZ            W8, loc_71D97B8
+0x71d9788: MOV             W8, #1
+0x71d978c: STR             XZR, [X0,#0x18]
+0x71d9790: STR             W8, [X0,#0x10]
+0x71d9794: B               loc_71D97D0
+0x71d9798: LDR             X8, [X0,#0x20]
+0x71d979c: MOV             W9, #0xFFFFFFFF
+0x71d97a0: STR             W9, [X0,#0x10]
+0x71d97a4: CBZ             X8, loc_71D97D0
+0x71d97a8: LDR             X9, [X8,#0x18]
+0x71d97ac: LDR             X0, [X8,#0x40]
+0x71d97b0: LDR             X1, [X8,#0x28]
+0x71d97b4: BLR             X9
+0x71d97b8: MOV             W8, WZR
+0x71d97bc: B               loc_71D97D0
+0x71d97c0: MOV             W8, #2
+0x71d97c4: STR             XZR, [X0,#0x18]
+0x71d97c8: STR             W8, [X0,#0x10]
+0x71d97cc: MOV             W8, #1
+0x71d97d0: MOV             W0, W8
+0x71d97d4: LDR             X30, [SP+0x10+var_10],#0x10
+0x71d97d8: RET

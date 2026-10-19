@@ -1,0 +1,8 @@
+0x3d84668: ADRP            X8, #dword_1837464@PAGE
+0x3d8466c: LDR             S0, [X0,#0x1C0]
+0x3d84670: LDR             S1, [X8,#dword_1837464@PAGEOFF]
+0x3d84674: ADRP            X8, #dword_1836C44@PAGE
+0x3d84678: LDR             S2, [X8,#dword_1836C44@PAGEOFF]
+0x3d8467c: FCMP            S0, S1
+0x3d84680: FCSEL           S0, S0, S2, GT
+0x3d84684: RET

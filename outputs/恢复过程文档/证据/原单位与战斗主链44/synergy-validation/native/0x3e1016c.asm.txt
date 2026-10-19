@@ -1,0 +1,40 @@
+0x3e1016c: fe57bea9 stp      x30, x21, [sp, #-0x20]!
+0x3e10170: f44f01a9 stp      x20, x19, [sp, #0x10]
+0x3e10174: 758f02b0 adrp     x21, #0x8ffd000
+0x3e10178: f46502b0 adrp     x20, #0x8acd000
+0x3e1017c: a8626139 ldrb     w8, [x21, #0x858]
+0x3e10180: 94be47f9 ldr      x20, [x20, #0xf78] // QuickTutor.Singleton<ABTestManager>_TypeInfo
+0x3e10184: f30300aa mov      x19, x0
+0x3e10188: 88010037 tbnz     w8, #0, #0x3e101b8
+0x3e1018c: 20660290 adrp     x0, #0x8ad4000
+0x3e10190: 001045f9 ldr      x0, [x0, #0xa20] // Method$ToolModule.ManagerBase<SynergyEffectManager>..ctor()
+0x3e10194: 3bb4f897 bl       #0x3c3d280
+0x3e10198: e06502b0 adrp     x0, #0x8acd000
+0x3e1019c: 00c447f9 ldr      x0, [x0, #0xf88] // Method$QuickTutor.Singleton<ABTestManager>.get_Instance()
+0x3e101a0: 38b4f897 bl       #0x3c3d280
+0x3e101a4: e06502b0 adrp     x0, #0x8acd000
+0x3e101a8: 00bc47f9 ldr      x0, [x0, #0xf78] // QuickTutor.Singleton<ABTestManager>_TypeInfo
+0x3e101ac: 35b4f897 bl       #0x3c3d280
+0x3e101b0: 28008052 mov      w8, #1
+0x3e101b4: a8622139 strb     w8, [x21, #0x858]
+0x3e101b8: 800240f9 ldr      x0, [x20]
+0x3e101bc: f46502b0 adrp     x20, #0x8acd000
+0x3e101c0: 08e040b9 ldr      w8, [x0, #0xe0]
+0x3e101c4: 94c647f9 ldr      x20, [x20, #0xf88] // Method$QuickTutor.Singleton<ABTestManager>.get_Instance()
+0x3e101c8: 48000035 cbnz     w8, #0x3e101d0
+0x3e101cc: 79b4f897 bl       #0x3c3d3b0
+0x3e101d0: 800240f9 ldr      x0, [x20]
+0x3e101d4: 64ba8694 bl       #0x5fbeb64 // QuickTutor.Singleton<object>$$get_Instance
+0x3e101d8: 800100b4 cbz      x0, #0x3e10208
+0x3e101dc: 34660290 adrp     x20, #0x8ad4000
+0x3e101e0: 941245f9 ldr      x20, [x20, #0xa20] // Method$ToolModule.ManagerBase<SynergyEffectManager>..ctor()
+0x3e101e4: e1031faa mov      x1, xzr
+0x3e101e8: e5880594 bl       #0x3f7257c // SDKModule.ABTestManager$$get_GamePlayImprove01IsBTest
+0x3e101ec: 08000012 and      w8, w0, #1
+0x3e101f0: 68820039 strb     w8, [x19, #0x20]
+0x3e101f4: 810240f9 ldr      x1, [x20]
+0x3e101f8: e00313aa mov      x0, x19
+0x3e101fc: f44f41a9 ldp      x20, x19, [sp, #0x10]
+0x3e10200: fe57c2a8 ldp      x30, x21, [sp], #0x20
+0x3e10204: 91a16d14 b        #0x5978848 // ToolModule.ManagerBase<object>$$.ctor
+0x3e10208: b1b4f897 bl       #0x3c3d4cc

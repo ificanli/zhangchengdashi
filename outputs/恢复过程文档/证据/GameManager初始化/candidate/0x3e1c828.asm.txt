@@ -1,0 +1,32 @@
+0x3e1c828: fe0f1ef8 str      x30, [sp, #-0x20]!
+0x3e1c82c: f44f01a9 stp      x20, x19, [sp, #0x10]
+0x3e1c830: 138f02b0 adrp     x19, #0x8ffd000
+0x3e1c834: b4650290 adrp     x20, #0x8ad0000
+0x3e1c838: 68a66239 ldrb     w8, [x19, #0x8a9]
+0x3e1c83c: 946e46f9 ldr      x20, [x20, #0xcd8] // DbtSaveDataManagerBase<DbtSaveDataManager_PlayerCoreData, PlayerCoreData>_TypeInfo
+0x3e1c840: 88010037 tbnz     w8, #0, #0x3e1c870
+0x3e1c844: c0650290 adrp     x0, #0x8ad4000
+0x3e1c848: 002447f9 ldr      x0, [x0, #0xe48] // Method$DbtSaveDataManagerBase<DbtSaveDataManager_PlayerCoreData, PlayerCoreData>.Save()
+0x3e1c84c: 8d82f897 bl       #0x3c3d280
+0x3e1c850: a0650290 adrp     x0, #0x8ad0000
+0x3e1c854: 006846f9 ldr      x0, [x0, #0xcd0] // Method$DbtSaveDataManagerBase<DbtSaveDataManager_PlayerCoreData, PlayerCoreData>.get_Data()
+0x3e1c858: 8a82f897 bl       #0x3c3d280
+0x3e1c85c: a0650290 adrp     x0, #0x8ad0000
+0x3e1c860: 006c46f9 ldr      x0, [x0, #0xcd8] // DbtSaveDataManagerBase<DbtSaveDataManager_PlayerCoreData, PlayerCoreData>_TypeInfo
+0x3e1c864: 8782f897 bl       #0x3c3d280
+0x3e1c868: 28008052 mov      w8, #1
+0x3e1c86c: 68a62239 strb     w8, [x19, #0x8a9]
+0x3e1c870: 880240f9 ldr      x8, [x20]
+0x3e1c874: 085d40f9 ldr      x8, [x8, #0xb8]
+0x3e1c878: 000140f9 ldr      x0, [x8]
+0x3e1c87c: 400100b4 cbz      x0, #0x3e1c8a4
+0x3e1c880: 081840f9 ldr      x8, [x0, #0x30]
+0x3e1c884: 080100b4 cbz      x8, #0x3e1c8a4
+0x3e1c888: c9650290 adrp     x9, #0x8ad4000
+0x3e1c88c: 292547f9 ldr      x9, [x9, #0xe48] // Method$DbtSaveDataManagerBase<DbtSaveDataManager_PlayerCoreData, PlayerCoreData>.Save()
+0x3e1c890: 1f1900f9 str      xzr, [x8, #0x30]
+0x3e1c894: f44f41a9 ldp      x20, x19, [sp, #0x10]
+0x3e1c898: 210140f9 ldr      x1, [x9]
+0x3e1c89c: fe0742f8 ldr      x30, [sp], #0x20
+0x3e1c8a0: cd5eb314 b        #0x6af43d4 // DbtSaveDataManagerBase<object, object>$$Save
+0x3e1c8a4: 0a83f897 bl       #0x3c3d4cc

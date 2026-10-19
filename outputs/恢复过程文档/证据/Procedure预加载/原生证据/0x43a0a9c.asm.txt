@@ -1,0 +1,27 @@
+0x43a0a9c: STP             X30, X21, [SP,#var_20]!
+0x43a0aa0: STP             X20, X19, [SP,#0x20+var_10]
+0x43a0aa4: ADRP            X21, #byte_90008CE@PAGE
+0x43a0aa8: ADRP            X20, #off_8ACD420@PAGE
+0x43a0aac: LDRB            W8, [X21,#byte_90008CE@PAGEOFF]
+0x43a0ab0: LDR             X20, [X20,#off_8ACD420@PAGEOFF]; off_8CEC810
+0x43a0ab4: MOV             W19, W1
+0x43a0ab8: TBNZ            W8, #0, loc_43A0AD0
+0x43a0abc: ADRP            X0, #off_8ACD420@PAGE
+0x43a0ac0: LDR             X0, [X0,#off_8ACD420@PAGEOFF]; off_8CEC810 ; slot
+0x43a0ac4: BL              il2cpp_codegen_initialize_runtime_metadata
+0x43a0ac8: MOV             W8, #1
+0x43a0acc: STRB            W8, [X21,#byte_90008CE@PAGEOFF]
+0x43a0ad0: LDR             X0, [X20]; klass
+0x43a0ad4: LDR             W8, [X0,#0xE0]
+0x43a0ad8: CBNZ            W8, loc_43A0AE4
+0x43a0adc: BL              il2cpp_codegen_runtime_class_init
+0x43a0ae0: LDR             X0, [X20]
+0x43a0ae4: LDR             X8, [X0,#0xB8]
+0x43a0ae8: LDR             X0, [X8,#8]
+0x43a0aec: CBZ             X0, loc_43A0B04
+0x43a0af0: MOV             W1, W19
+0x43a0af4: LDP             X20, X19, [SP,#0x20+var_10]
+0x43a0af8: MOV             X2, XZR
+0x43a0afc: LDP             X30, X21, [SP+0x20+var_20],#0x20
+0x43a0b00: B               DBTSDK.ReportManager$$ReportGamePlayTime
+0x43a0b04: BL              il2cpp_codegen_raise_null_reference_exception

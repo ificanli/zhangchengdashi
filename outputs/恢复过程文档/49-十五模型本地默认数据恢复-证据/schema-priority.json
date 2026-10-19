@@ -1,0 +1,587 @@
+{
+  "models": 15,
+  "fields": 203,
+  "declaredCollections": 64,
+  "inheritedInit": 4,
+  "inheritedDefaults": 4,
+  "rows": [
+    {
+      "index": 0,
+      "dataType": "DataModule.PlayerMainCityData",
+      "fields": 9,
+      "dictionaries": 2,
+      "lists": 3,
+      "sets": 0,
+      "collectionFields": [
+        {
+          "name": "playerTalentLevel",
+          "type": "System.Collections.Generic.Dictionary`2<System.String,System.Int32>",
+          "token": "0x40066B7",
+          "offset": "0x10"
+        },
+        {
+          "name": "playerTalentNew",
+          "type": "System.Collections.Generic.Dictionary`2<System.String,System.Int32>",
+          "token": "0x40066BF",
+          "offset": "0x48"
+        },
+        {
+          "name": "HexDatas",
+          "type": "System.Collections.Generic.List`1<DataModule.UserOutsiderHexData>",
+          "token": "0x40066B8",
+          "offset": "0x18"
+        },
+        {
+          "name": "tileDatas",
+          "type": "System.Collections.Generic.List`1<DataModule.UserTileData>",
+          "token": "0x40066B9",
+          "offset": "0x20"
+        },
+        {
+          "name": "familyDatas",
+          "type": "System.Collections.Generic.List`1<DataModule.UserFamilyData>",
+          "token": "0x40066BA",
+          "offset": "0x28"
+        }
+      ],
+      "inheritedInit": false,
+      "inheritedDefaults": false,
+      "protected": false
+    },
+    {
+      "index": 1,
+      "dataType": "DataModule.PlayerCardData",
+      "fields": 11,
+      "dictionaries": 4,
+      "lists": 4,
+      "sets": 0,
+      "collectionFields": [
+        {
+          "name": "userHeroCardDataDic",
+          "type": "System.Collections.Generic.Dictionary`2<System.String,DataModule.UserHeroCardData>",
+          "token": "0x4006662",
+          "offset": "0x18"
+        },
+        {
+          "name": "UserHeroCardTalentData",
+          "type": "System.Collections.Generic.Dictionary`2<System.String,DataModule.UserCardTalentData>",
+          "token": "0x4006667",
+          "offset": "0x40"
+        },
+        {
+          "name": "UserHeroCardTalentDotData",
+          "type": "System.Collections.Generic.Dictionary`2<System.String,System.Int32>",
+          "token": "0x4006668",
+          "offset": "0x48"
+        },
+        {
+          "name": "UserHeroCardTalent2Data",
+          "type": "System.Collections.Generic.Dictionary`2<System.String,System.Collections.Generic.List`1<DataModule.Talent2Data>>",
+          "token": "0x400666A",
+          "offset": "0x58"
+        },
+        {
+          "name": "userHeroCardDataList",
+          "type": "System.Collections.Generic.List`1<DataModule.UserHeroCardData>",
+          "token": "0x4006661",
+          "offset": "0x10"
+        },
+        {
+          "name": "userStayGetCardData",
+          "type": "System.Collections.Generic.List`1<System.String>",
+          "token": "0x4006663",
+          "offset": "0x20"
+        },
+        {
+          "name": "UserCardDeckDataList",
+          "type": "System.Collections.Generic.List`1<DataModule.UserCardDeckData>",
+          "token": "0x4006664",
+          "offset": "0x28"
+        },
+        {
+          "name": "battleCardID",
+          "type": "System.Collections.Generic.List`1<System.Int32>",
+          "token": "0x4006666",
+          "offset": "0x38"
+        }
+      ],
+      "inheritedInit": false,
+      "inheritedDefaults": false,
+      "protected": false
+    },
+    {
+      "index": 2,
+      "dataType": "DataModule.PlayerShopData",
+      "fields": 44,
+      "dictionaries": 15,
+      "lists": 8,
+      "sets": 0,
+      "collectionFields": [
+        {
+          "name": "userHumanPackCofig",
+          "type": "System.Collections.Generic.Dictionary`2<System.String,System.Int32>",
+          "token": "0x40066C7",
+          "offset": "0x18"
+        },
+        {
+          "name": "userOrcPackCofig",
+          "type": "System.Collections.Generic.Dictionary`2<System.String,System.Int32>",
+          "token": "0x40066C8",
+          "offset": "0x20"
+        },
+        {
+          "name": "userMachinePackCofig",
+          "type": "System.Collections.Generic.Dictionary`2<System.String,System.Int32>",
+          "token": "0x40066C9",
+          "offset": "0x28"
+        },
+        {
+          "name": "userUndeadPackCofig",
+          "type": "System.Collections.Generic.Dictionary`2<System.String,System.Int32>",
+          "token": "0x40066CA",
+          "offset": "0x30"
+        },
+        {
+          "name": "userArtifactPackCofig",
+          "type": "System.Collections.Generic.Dictionary`2<System.String,System.Int32>",
+          "token": "0x40066CB",
+          "offset": "0x38"
+        },
+        {
+          "name": "userCommonCardPackCofig",
+          "type": "System.Collections.Generic.Dictionary`2<System.String,System.Int32>",
+          "token": "0x40066D0",
+          "offset": "0x58"
+        },
+        {
+          "name": "userAllFetterPackCofig",
+          "type": "System.Collections.Generic.Dictionary`2<System.String,System.Int32>",
+          "token": "0x40066D1",
+          "offset": "0x60"
+        },
+        {
+          "name": "allUserWatchAdRecords",
+          "type": "System.Collections.Generic.Dictionary`2<System.Int32,System.Int32>",
+          "token": "0x40066DE",
+          "offset": "0xA8"
+        },
+        {
+          "name": "fundData",
+          "type": "System.Collections.Generic.Dictionary`2<GameModule.FundManager/FundType,DataModule.FundData>",
+          "token": "0x40066DF",
+          "offset": "0xB0"
+        },
+        {
+          "name": "cardPackBuyCountNowWeek",
+          "type": "System.Collections.Generic.Dictionary`2<System.String,System.Int32>",
+          "token": "0x40066E0",
+          "offset": "0xB8"
+        },
+        {
+          "name": "universalCardPurchaseRestriction",
+          "type": "System.Collections.Generic.Dictionary`2<System.String,System.Int32>",
+          "token": "0x40066E4",
+          "offset": "0xD8"
+        },
+        {
+          "name": "doubleGemsData",
+          "type": "System.Collections.Generic.Dictionary`2<System.String,System.Boolean>",
+          "token": "0x40066E6",
+          "offset": "0xE8"
+        },
+        {
+          "name": "playerRuneStoneBuyState",
+          "type": "System.Collections.Generic.Dictionary`2<System.String,System.Boolean>",
+          "token": "0x40066ED",
+          "offset": "0x110"
+        },
+        {
+          "name": "limitedPropPackRemainCount",
+          "type": "System.Collections.Generic.Dictionary`2<System.Int32,System.Int32>",
+          "token": "0x40066EE",
+          "offset": "0x118"
+        },
+        {
+          "name": "crystalPackRemainCount",
+          "type": "System.Collections.Generic.Dictionary`2<System.Int32,System.Int32>",
+          "token": "0x40066F0",
+          "offset": "0x128"
+        },
+        {
+          "name": "daliyShopCardDataList",
+          "type": "System.Collections.Generic.List`1<DataModule.UserDailyShopCardData>",
+          "token": "0x40066C6",
+          "offset": "0x10"
+        },
+        {
+          "name": "userArtifactPackDrawnPropIds",
+          "type": "System.Collections.Generic.List`1<System.String>",
+          "token": "0x40066CF",
+          "offset": "0x50"
+        },
+        {
+          "name": "monthPass",
+          "type": "System.Collections.Generic.List`1<System.String>",
+          "token": "0x40066D4",
+          "offset": "0x78"
+        },
+        {
+          "name": "allIAPRecords",
+          "type": "System.Collections.Generic.List`1<DataModule.IAPRecord>",
+          "token": "0x40066DD",
+          "offset": "0xA0"
+        },
+        {
+          "name": "multistageNewcomerPackageData",
+          "type": "System.Collections.Generic.List`1<DataModule.MultistageNewcomerPackageData>",
+          "token": "0x40066E3",
+          "offset": "0xD0"
+        },
+        {
+          "name": "arenaPackageDatas",
+          "type": "System.Collections.Generic.List`1<ArenaPackageData>",
+          "token": "0x40066E5",
+          "offset": "0xE0"
+        },
+        {
+          "name": "mysteriousStoreData",
+          "type": "System.Collections.Generic.List`1<MysteriousStoreData>",
+          "token": "0x40066E7",
+          "offset": "0xF0"
+        },
+        {
+          "name": "goldCardWeeklyGiftPackData",
+          "type": "System.Collections.Generic.List`1<DataModule.GoldCardWeeklyGiftPackData>",
+          "token": "0x40066E8",
+          "offset": "0xF8"
+        }
+      ],
+      "inheritedInit": false,
+      "inheritedDefaults": false,
+      "protected": false
+    },
+    {
+      "index": 3,
+      "dataType": "DataModule.PlayerArenaData",
+      "fields": 7,
+      "dictionaries": 0,
+      "lists": 2,
+      "sets": 0,
+      "collectionFields": [
+        {
+          "name": "userArenaDataList",
+          "type": "System.Collections.Generic.List`1<DataModule.UserArenaData>",
+          "token": "0x4006641",
+          "offset": "0x10"
+        },
+        {
+          "name": "trophyProgressRewardDataList",
+          "type": "System.Collections.Generic.List`1<DataModule.TrophyProgressRewardData>",
+          "token": "0x4006647",
+          "offset": "0x28"
+        }
+      ],
+      "inheritedInit": false,
+      "inheritedDefaults": false,
+      "protected": false
+    },
+    {
+      "index": 4,
+      "dataType": "DataModule.PlayerRankData",
+      "fields": 1,
+      "dictionaries": 0,
+      "lists": 1,
+      "sets": 0,
+      "collectionFields": [
+        {
+          "name": "rankInfo",
+          "type": "System.Collections.Generic.List`1<DataModule.RankItemData>",
+          "token": "0x40066C2",
+          "offset": "0x10"
+        }
+      ],
+      "inheritedInit": false,
+      "inheritedDefaults": true,
+      "protected": false
+    },
+    {
+      "index": 5,
+      "dataType": "DataModule.PlayerResourceData",
+      "fields": 2,
+      "dictionaries": 1,
+      "lists": 1,
+      "sets": 0,
+      "collectionFields": [
+        {
+          "name": "userResourcesDataDic",
+          "type": "System.Collections.Generic.Dictionary`2<System.String,DataModule.UserAssetData>",
+          "token": "0x40066C4",
+          "offset": "0x18"
+        },
+        {
+          "name": "userResourcesDataList",
+          "type": "System.Collections.Generic.List`1<DataModule.UserAssetData>",
+          "token": "0x40066C3",
+          "offset": "0x10"
+        }
+      ],
+      "inheritedInit": false,
+      "inheritedDefaults": false,
+      "protected": false
+    },
+    {
+      "index": 6,
+      "dataType": "DataModule.PlayerChestData",
+      "fields": 8,
+      "dictionaries": 0,
+      "lists": 3,
+      "sets": 0,
+      "collectionFields": [
+        {
+          "name": "userBoxData",
+          "type": "System.Collections.Generic.List`1<DataModule.UserBoxData>",
+          "token": "0x400666E",
+          "offset": "0x10"
+        },
+        {
+          "name": "userStayOpenBoxData",
+          "type": "System.Collections.Generic.List`1<DataModule.UserBoxData>",
+          "token": "0x400666F",
+          "offset": "0x18"
+        },
+        {
+          "name": "userHasAllBoxdata",
+          "type": "System.Collections.Generic.List`1<DataModule.UserBoxData>",
+          "token": "0x4006671",
+          "offset": "0x28"
+        }
+      ],
+      "inheritedInit": false,
+      "inheritedDefaults": false,
+      "protected": false
+    },
+    {
+      "index": 7,
+      "dataType": "DataModule.PlayerTimeData",
+      "fields": 2,
+      "dictionaries": 1,
+      "lists": 0,
+      "sets": 0,
+      "collectionFields": [
+        {
+          "name": "timeInfoDic",
+          "type": "System.Collections.Generic.Dictionary`2<System.String,DataModule.TimeInfo>",
+          "token": "0x40066FA",
+          "offset": "0x10"
+        }
+      ],
+      "inheritedInit": true,
+      "inheritedDefaults": true,
+      "protected": true
+    },
+    {
+      "index": 8,
+      "dataType": "DataModule.PlayerAdData",
+      "fields": 9,
+      "dictionaries": 0,
+      "lists": 0,
+      "sets": 0,
+      "collectionFields": [],
+      "inheritedInit": false,
+      "inheritedDefaults": false,
+      "protected": false
+    },
+    {
+      "index": 9,
+      "dataType": "DataModule.PlayerArtifactData",
+      "fields": 17,
+      "dictionaries": 0,
+      "lists": 3,
+      "sets": 0,
+      "collectionFields": [
+        {
+          "name": "userPropDataList",
+          "type": "System.Collections.Generic.List`1<DataModule.UserPropData>",
+          "token": "0x400664A",
+          "offset": "0x10"
+        },
+        {
+          "name": "_legacyUserPropDataListAIngest",
+          "type": "System.Collections.Generic.List`1<DataModule.UserPropData>",
+          "token": "0x4006654",
+          "offset": "0x50"
+        },
+        {
+          "name": "_legacyUserPropDataListBIngest",
+          "type": "System.Collections.Generic.List`1<DataModule.UserPropData>",
+          "token": "0x4006655",
+          "offset": "0x58"
+        }
+      ],
+      "inheritedInit": false,
+      "inheritedDefaults": false,
+      "protected": false
+    },
+    {
+      "index": 10,
+      "dataType": "DataModule.PlayerCustomizationData",
+      "fields": 9,
+      "dictionaries": 0,
+      "lists": 0,
+      "sets": 0,
+      "collectionFields": [],
+      "inheritedInit": false,
+      "inheritedDefaults": false,
+      "protected": false
+    },
+    {
+      "index": 11,
+      "dataType": "DataModule.PlayerCoreData",
+      "fields": 43,
+      "dictionaries": 2,
+      "lists": 2,
+      "sets": 0,
+      "collectionFields": [
+        {
+          "name": "UpgradeReward",
+          "type": "System.Collections.Generic.Dictionary`2<System.String,System.Boolean>",
+          "token": "0x400669A",
+          "offset": "0x78"
+        },
+        {
+          "name": "cardBattleStatisticsDic",
+          "type": "System.Collections.Generic.Dictionary`2<System.String,DataModule.CardBattleStatisticsData>",
+          "token": "0x40066A1",
+          "offset": "0xB8"
+        },
+        {
+          "name": "nowExpProgressRewardConfig",
+          "type": "System.Collections.Generic.List`1<System.Int32>",
+          "token": "0x4006696",
+          "offset": "0x60"
+        },
+        {
+          "name": "playerDayBless",
+          "type": "System.Collections.Generic.List`1<System.String>",
+          "token": "0x400669D",
+          "offset": "0x98"
+        }
+      ],
+      "inheritedInit": false,
+      "inheritedDefaults": false,
+      "protected": false
+    },
+    {
+      "index": 12,
+      "dataType": "DataModule.PlayerGuideData",
+      "fields": 9,
+      "dictionaries": 2,
+      "lists": 1,
+      "sets": 0,
+      "collectionFields": [
+        {
+          "name": "tutorialDataDic",
+          "type": "System.Collections.Generic.Dictionary`2<System.String,System.Int32>",
+          "token": "0x40066B0",
+          "offset": "0x18"
+        },
+        {
+          "name": "UserUnlockFeatureList",
+          "type": "System.Collections.Generic.Dictionary`2<System.String,DataModule.UserFeatureUnlockData>",
+          "token": "0x40066B2",
+          "offset": "0x28"
+        },
+        {
+          "name": "UserTutorialDataList",
+          "type": "System.Collections.Generic.List`1<DataModule.UserTutorialData>",
+          "token": "0x40066B1",
+          "offset": "0x20"
+        }
+      ],
+      "inheritedInit": true,
+      "inheritedDefaults": false,
+      "protected": false
+    },
+    {
+      "index": 13,
+      "dataType": "DataModule.PlayerMysteryAdventureData",
+      "fields": 22,
+      "dictionaries": 1,
+      "lists": 5,
+      "sets": 0,
+      "collectionFields": [
+        {
+          "name": "dailyGiftPurchaseCounts",
+          "type": "System.Collections.Generic.Dictionary`2<System.Int32,System.Int32>",
+          "token": "0x40065F9",
+          "offset": "0x60"
+        },
+        {
+          "name": "claimedTotalDiceRewardIds",
+          "type": "System.Collections.Generic.List`1<System.Int32>",
+          "token": "0x40065F5",
+          "offset": "0x40"
+        },
+        {
+          "name": "claimedLapRewardLevels",
+          "type": "System.Collections.Generic.List`1<System.Int32>",
+          "token": "0x40065F6",
+          "offset": "0x48"
+        },
+        {
+          "name": "discountShopItemIds",
+          "type": "System.Collections.Generic.List`1<System.Int32>",
+          "token": "0x40065FA",
+          "offset": "0x68"
+        },
+        {
+          "name": "discountShopPurchasedIds",
+          "type": "System.Collections.Generic.List`1<System.Int32>",
+          "token": "0x40065FB",
+          "offset": "0x70"
+        },
+        {
+          "name": "dailyTaskRecords",
+          "type": "System.Collections.Generic.List`1<DataModule.MysteryAdventureDailyTaskRecord>",
+          "token": "0x4006602",
+          "offset": "0xA0"
+        }
+      ],
+      "inheritedInit": true,
+      "inheritedDefaults": true,
+      "protected": false
+    },
+    {
+      "index": 14,
+      "dataType": "DataModule.PlayerWorldCupActivityData",
+      "fields": 10,
+      "dictionaries": 2,
+      "lists": 1,
+      "sets": 0,
+      "collectionFields": [
+        {
+          "name": "shopBuyCounts",
+          "type": "System.Collections.Generic.Dictionary`2<System.Int32,System.Int32>",
+          "token": "0x40067D5",
+          "offset": "0x20"
+        },
+        {
+          "name": "packDailyBuyCounts",
+          "type": "System.Collections.Generic.Dictionary`2<System.Int32,System.Int32>",
+          "token": "0x40067D6",
+          "offset": "0x28"
+        },
+        {
+          "name": "dailyTaskRecords",
+          "type": "System.Collections.Generic.List`1<DataModule.WorldCupDailyTaskRecord>",
+          "token": "0x40067D9",
+          "offset": "0x40"
+        }
+      ],
+      "inheritedInit": true,
+      "inheritedDefaults": true,
+      "protected": false
+    }
+  ],
+  "note": "Collection declarations are schema only, not proof native ctor initializes them; await bounded native body classification"
+}

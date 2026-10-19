@@ -1,0 +1,20 @@
+__int64 __fastcall GameModule_RoleBehaviour__get_WebGLNavigationTarget(__int64 a1)
+{
+  __int64 v2; // x20
+  char v3; // w0
+  __int64 v4; // x8
+
+  if ( (byte_8FFD46C & 1) == 0 )
+  {
+    il2cpp_codegen_initialize_runtime_metadata((void **)&off_8CEB3E0 /* UnityEngine.Object_TypeInfo */);
+    byte_8FFD46C = 1;
+  }
+  v2 = *(_QWORD *)(a1 + 112);
+  if ( *((_DWORD *)off_8CEB3E0 /* UnityEngine.Object_TypeInfo */ + 56) == 0 )
+    il2cpp_codegen_runtime_class_init(off_8CEB3E0 /* UnityEngine.Object_TypeInfo */);
+  v3 = UnityEngine_Object__op_Inequality(v2, 0, 0);
+  v4 = 432;
+  if ( (v3 & 1) != 0 )
+    v4 = 112;
+  return *(_QWORD *)(a1 + v4);
+}

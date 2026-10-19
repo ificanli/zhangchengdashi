@@ -1,0 +1,51 @@
+0x3df53c8: STR             X30, [SP,#var_30]!
+0x3df53cc: STP             X22, X21, [SP,#0x30+var_20]
+0x3df53d0: STP             X20, X19, [SP,#0x30+var_10]
+0x3df53d4: ADRP            X21, #byte_8FFD7AD@PAGE
+0x3df53d8: LDRB            W8, [X21,#byte_8FFD7AD@PAGEOFF]
+0x3df53dc: MOV             X19, X1
+0x3df53e0: MOV             X20, X0
+0x3df53e4: TBNZ            W8, #0, loc_3DF5408
+0x3df53e8: ADRP            X0, #off_8ACF8E0@PAGE
+0x3df53ec: LDR             X0, [X0,#off_8ACF8E0@PAGEOFF]; qword_8D0B528 ; slot
+0x3df53f0: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3df53f4: ADRP            X0, #off_8ACF908@PAGE
+0x3df53f8: LDR             X0, [X0,#off_8ACF908@PAGEOFF]; qword_8D0B530 ; slot
+0x3df53fc: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3df5400: MOV             W8, #1
+0x3df5404: STRB            W8, [X21,#byte_8FFD7AD@PAGEOFF]
+0x3df5408: LDR             X0, [X20,#0x80]
+0x3df540c: CBZ             X0, loc_3DF5490
+0x3df5410: ADRP            X22, #off_8ACF908@PAGE
+0x3df5414: LDR             X22, [X22,#off_8ACF908@PAGEOFF]; qword_8D0B530
+0x3df5418: MOV             W21, WZR
+0x3df541c: LDR             W8, [X0,#0x18]
+0x3df5420: CMP             W21, W8
+0x3df5424: B.GE            loc_3DF545C
+0x3df5428: LDR             X2, [X22]
+0x3df542c: MOV             W1, W21
+0x3df5430: BL              System.Collections.Generic.List_object_$$get_Item
+0x3df5434: CBZ             X0, loc_3DF5490
+0x3df5438: LDR             X0, [X0,#0x40]
+0x3df543c: MOV             X1, X19
+0x3df5440: MOV             X2, XZR
+0x3df5444: BL              System.String$$op_Equality
+0x3df5448: TBNZ            W0, #0, loc_3DF5470
+0x3df544c: LDR             X0, [X20,#0x80]
+0x3df5450: ADD             W21, W21, #1
+0x3df5454: CBNZ            X0, loc_3DF541C
+0x3df5458: B               loc_3DF5490
+0x3df545c: LDP             X20, X19, [SP,#0x30+var_10]
+0x3df5460: LDP             X22, X21, [SP,#0x30+var_20]
+0x3df5464: MOV             X0, XZR
+0x3df5468: LDR             X30, [SP+0x30+var_30],#0x30
+0x3df546c: RET
+0x3df5470: LDR             X0, [X20,#0x80]
+0x3df5474: CBZ             X0, loc_3DF5490
+0x3df5478: LDR             X2, [X22]
+0x3df547c: MOV             W1, W21
+0x3df5480: LDP             X20, X19, [SP,#0x30+var_10]
+0x3df5484: LDP             X22, X21, [SP,#0x30+var_20]
+0x3df5488: LDR             X30, [SP+0x30+var_30],#0x30
+0x3df548c: B               System.Collections.Generic.List_object_$$get_Item
+0x3df5490: BL              il2cpp_codegen_raise_null_reference_exception

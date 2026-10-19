@@ -1,0 +1,30 @@
+__int64 __fastcall sub_3D847E4(__int64 a1)
+{
+  __int64 transform; // x0
+  long double position; // q8
+  long double v4; // q1
+  long double v5; // q9
+  long double v6; // q2
+  long double v7; // q10
+  __int64 result; // x0
+  __int64 v9; // [xsp+8h] [xbp-38h] BYREF
+
+  if ( (byte_8FFD4A7 & 1) == 0 )
+  {
+    il2cpp_codegen_initialize_runtime_metadata((void **)&off_8CE81E8);
+    byte_8FFD4A7 = 1;
+  }
+  v9 = 0;
+  transform = UnityEngine_Component__get_transform(a1, 0);
+  if ( transform == 0 )
+    il2cpp_codegen_raise_null_reference_exception();
+  position = UnityEngine_Transform__get_position(transform, 0);
+  v5 = v4;
+  v7 = v6;
+  if ( *((_DWORD *)off_8CE81E8 + 56) == 0 )
+    il2cpp_codegen_runtime_class_init(off_8CE81E8);
+  result = HexManager__TryGetHexAt(&v9, 0, position, v5, v7);
+  if ( (result & 1) != 0 )
+    return GameModule_RoleBehaviour__ApplyHexPosition(a1, v9);
+  return result;
+}

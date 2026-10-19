@@ -1,0 +1,40 @@
+0x43b965c: STR             X30, [SP,#var_20]!
+0x43b9660: STP             X20, X19, [SP,#0x20+var_10]
+0x43b9664: ADRP            X20, #byte_90009BC@PAGE
+0x43b9668: ADRP            X19, #off_8ACDB38@PAGE
+0x43b966c: LDRB            W8, [X20,#byte_90009BC@PAGEOFF]
+0x43b9670: LDR             X19, [X19,#off_8ACDB38@PAGEOFF]; off_8CED280
+0x43b9674: TBNZ            W8, #0, loc_43B968C
+0x43b9678: ADRP            X0, #off_8ACDB38@PAGE
+0x43b967c: LDR             X0, [X0,#off_8ACDB38@PAGEOFF]; off_8CED280 ; slot
+0x43b9680: BL              il2cpp_codegen_initialize_runtime_metadata
+0x43b9684: MOV             W8, #1
+0x43b9688: STRB            W8, [X20,#byte_90009BC@PAGEOFF]
+0x43b968c: LDR             X0, [X19]; klass
+0x43b9690: LDR             W8, [X0,#0xE0]
+0x43b9694: CBNZ            W8, loc_43B96A0
+0x43b9698: BL              il2cpp_codegen_runtime_class_init
+0x43b969c: LDR             X0, [X19]
+0x43b96a0: LDR             X8, [X0,#0xB8]
+0x43b96a4: MOV             X0, XZR
+0x43b96a8: LDR             X20, [X8,#8]
+0x43b96ac: BL              UnityEngine.Time$$get_realtimeSinceStartup
+0x43b96b0: LDR             X8, [X19]
+0x43b96b4: MOV             W10, #0x7F800000
+0x43b96b8: FMOV            S1, W10
+0x43b96bc: FCVTZS          W9, S0
+0x43b96c0: LDR             X8, [X8,#0xB8]
+0x43b96c4: MOV             X11, #0xFFFFFFFF80000000
+0x43b96c8: SXTW            X9, W9
+0x43b96cc: FCMP            S0, S1
+0x43b96d0: LDR             W10, [X8,#0x1C]
+0x43b96d4: LDR             X8, [X8,#0x10]
+0x43b96d8: CSEL            X9, X11, X9, EQ
+0x43b96dc: MOV             W11, #0xE10
+0x43b96e0: MUL             W10, W10, W11
+0x43b96e4: SUB             X8, X20, X8
+0x43b96e8: LDP             X20, X19, [SP,#0x20+var_10]
+0x43b96ec: ADD             X8, X8, X9
+0x43b96f0: ADD             X0, X8, W10,SXTW
+0x43b96f4: LDR             X30, [SP+0x20+var_20],#0x20
+0x43b96f8: RET

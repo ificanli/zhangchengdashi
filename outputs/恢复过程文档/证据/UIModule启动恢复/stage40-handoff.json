@@ -1,0 +1,62 @@
+{
+  "stage": 40,
+  "status": "source-stable-report-and-evidence-complete-runtime-not-accepted",
+  "ownedSource": "Assets/Scripts/GFRunning/GameFramework/UIModule.cs",
+  "sourceSha256": "0103669938ab5f4f4510b3b8cf25456dcf917f1f0edf084c4225bd9be847d083",
+  "metaSha256": "682342446077e06b3babffaf5cc5841f4702f22f59e434a4a9285692692f88cb",
+  "sourceEditsOutsideOwnedFile": 0,
+  "restoredMethods": 12,
+  "restoredFieldInitializers": 5,
+  "scope": [
+    "Priority=40",
+    "Initialize",
+    "LoadUIRootOver<T>",
+    "wait2Fram factory and original nested iterator constructor/MoveNext/Current/Reset",
+    "_GetUINode",
+    "original UIModule constructor allocations through field initializers",
+    "original cctor Token 0x06005F64 at 0x71D8EA4: timing defaults 0.5f/0.3f/0.2f and original openUIStack list"
+  ],
+  "actualGFRunningCompileErrors": 0,
+  "adaptedControlFlowTests": {
+    "scenarios": 23,
+    "checks": 53,
+    "failures": 0
+  },
+  "baseline": {
+    "scenarios": 23,
+    "checks": 9,
+    "failures": 23
+  },
+  "nativeInstructionExecution": {
+    "waitActionCases": 2,
+    "stepsPerWaitCase": 4,
+    "widthBranchCases": 6,
+    "allPassed": true
+  },
+  "dependencies": {
+    "canvasTag": "GFUICanvas",
+    "cameraChild": "UICamera",
+    "oldPrefabRequest": "ResourcesModule.LoadPrefab(\"UI/UIRoot\", LoadUIRootOver<ResourcesInfo>, null)",
+    "oldQueueDrain": "ResourcesModule.Update(0f, 0f) immediately after LoadPrefab",
+    "newPrefabRequest": "NewResLoadHelper.LoadPrefabOri(\"UI/UIRoot\", LoadUIRootOver<AssetOperationHandle>, Array.Empty<object>())",
+    "instantiate": "IResCallBackInfo.Instantiate(\"UIRoot\", true); native bool means active clone, verified by resource agent",
+    "completion": "Only after actual instantiated RectTransform parent/scale/anchors/offsets and optional original portrait crop; write only UIModule own original ready, then original callback",
+    "FSMAndProcedureOwner": "stage42; not edited",
+    "resourceIOOwner": "stage39; not edited"
+  },
+  "importantSemantics": [
+    "No wait2Fram inserted into startup; original Initialize/LoadUIRootOver does not call it",
+    "wait2Fram yields null exactly twice; original Dispose stays empty",
+    "missing camera child dereference throws as native; an existing camera object without Camera component retains original permissive path",
+    "UI callback exception leaves its already-written original ready true",
+    "AppSetting original special branch is preserved; AppSetting source not edited"
+  ],
+  "UnityRunByThisAgent": false,
+  "UIRuntimeAccepted": false,
+  "plannedReport": "outputs/恢复过程文档/40-UIModule原始启动恢复.md",
+  "remainingWorkByStage40Agent": "None in authorized scope; source remains frozen, root owns Unity acceptance",
+  "staticConstructorFieldWrites": 4,
+  "actualILChecks": 12,
+  "report": "outputs/恢复过程文档/40-UIModule原始启动恢复.md",
+  "authorizedResourceValueObjectExtension": "work/parallel-coordination/stage39-bundleassetinfo-handoff.json"
+}

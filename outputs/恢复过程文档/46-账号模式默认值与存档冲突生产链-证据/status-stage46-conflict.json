@@ -1,0 +1,486 @@
+{
+  "stage": "complete",
+  "methods": [
+    {
+      "name": "DataModule.DataCompareMgr$$Awake",
+      "address": 70555320,
+      "end": 70555740,
+      "signature": "void DataModule_DataCompareMgr__Awake (DataModule_DataCompareMgr_o* __this, const MethodInfo* method);",
+      "prototype": "void CompareAwake(void* self,const MethodInfo* method);",
+      "method_token": "0x6005705",
+      "file": "Assets/Scripts/Assembly-CSharp/DataModule/DataCompareMgr.cs",
+      "readonly": true,
+      "note": "Original conflict producer boundary only; no source scope authorization in stage46",
+      "range_analysis": 1,
+      "direct_callees": [
+        {
+          "callsite": "0x4349768",
+          "address": "0x82ebc6c",
+          "name": "UnityEngine.Object$$op_Inequality",
+          "signature": "bool UnityEngine_Object__op_Inequality (UnityEngine_Object_o* x, UnityEngine_Object_o* y, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x4349778",
+          "address": "0x82e8f3c",
+          "name": "UnityEngine.Component$$get_gameObject",
+          "signature": "UnityEngine_GameObject_o* UnityEngine_Component__get_gameObject (UnityEngine_Component_o* __this, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x43497ac",
+          "address": "0x82f1108",
+          "name": "UnityEngine.Object$$DestroyImmediate",
+          "signature": "void UnityEngine_Object__DestroyImmediate (UnityEngine_Object_o* obj, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x43497ec",
+          "address": "0x82e8f3c",
+          "name": "UnityEngine.Component$$get_gameObject",
+          "signature": "UnityEngine_GameObject_o* UnityEngine_Component__get_gameObject (UnityEngine_Component_o* __this, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x4349810",
+          "address": "0x82f1318",
+          "name": "UnityEngine.Object$$DontDestroyOnLoad",
+          "signature": "void UnityEngine_Object__DontDestroyOnLoad (UnityEngine_Object_o* target, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x434982c",
+          "address": "0x52bbfc8",
+          "name": "System.Func<object, bool>$$.ctor",
+          "signature": "void System_Func_object__bool____ctor (System_Func_object__bool__o* __this, Il2CppObject* object, intptr_t method, const MethodInfo_52BBFC8* method);"
+        },
+        {
+          "callsite": "0x4349858",
+          "address": "0x72b2504",
+          "name": "GameFramework.GameData.GameDataVersionMgr$$add_onManualHandleData",
+          "signature": "void GameFramework_GameData_GameDataVersionMgr__add_onManualHandleData (System_Func_ManualHandleDataDelegate__bool__o* __T__c, const MethodInfo* method);"
+        }
+      ],
+      "prototype_applied": true,
+      "actual_function_start": "0x43496b8",
+      "actual_function_end": "0x434985c",
+      "pseudocode_chars": 1939,
+      "unresolved_jumpout": false
+    },
+    {
+      "name": "DataModule.DataCompareMgr$$StartCompare",
+      "address": 70555740,
+      "end": 70555904,
+      "signature": "bool DataModule_DataCompareMgr__StartCompare (DataModule_DataCompareMgr_o* __this, GameFramework_GameData_ManualHandleDataDelegate_o* manualHandleData, const MethodInfo* method);",
+      "prototype": "unsigned char StartManualCompare(void* self,void* handler,const MethodInfo* method);",
+      "method_token": "0x6005706",
+      "file": "Assets/Scripts/Assembly-CSharp/DataModule/DataCompareMgr.cs",
+      "readonly": true,
+      "note": "Original conflict producer boundary only; no source scope authorization in stage46",
+      "range_analysis": 1,
+      "direct_callees": [
+        {
+          "callsite": "0x43498e0",
+          "address": "0x4349900",
+          "name": "DataModule.DataCompareMgr$$StartCompare",
+          "signature": "void DataModule_DataCompareMgr__StartCompare (DataModule_DataCompareMgr_o* __this, const MethodInfo* method);"
+        }
+      ],
+      "prototype_applied": true,
+      "actual_function_start": "0x434985c",
+      "actual_function_end": "0x4349900",
+      "pseudocode_chars": 696,
+      "unresolved_jumpout": false
+    },
+    {
+      "name": "DataModule.DataCompareMgr$$StartCompare",
+      "address": 70555904,
+      "end": 70556212,
+      "signature": "void DataModule_DataCompareMgr__StartCompare (DataModule_DataCompareMgr_o* __this, const MethodInfo* method);",
+      "prototype": "void StartCompare(void* self,const MethodInfo* method);",
+      "method_token": "0x6005707",
+      "file": "Assets/Scripts/Assembly-CSharp/DataModule/DataCompareMgr.cs",
+      "readonly": true,
+      "note": "Original conflict producer boundary only; no source scope authorization in stage46",
+      "range_analysis": 1,
+      "direct_callees": [
+        {
+          "callsite": "0x434999c",
+          "address": "0x72abb64",
+          "name": "GameFramework.GameData.GameDataVersionMgr$$get_Instance",
+          "signature": "GameFramework_GameData_GameDataVersionMgr_o* GameFramework_GameData_GameDataVersionMgr__get_Instance (const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x43499c0",
+          "address": "0x6c2d20c",
+          "name": "System.Action<object, bool>$$.ctor",
+          "signature": "void System_Action_object__bool____ctor (System_Action_T1__T2__o* __this, Il2CppObject* object, intptr_t method, const MethodInfo_6C2D20C* method);"
+        },
+        {
+          "callsite": "0x4349a28",
+          "address": "0x72ab9dc",
+          "name": "GameFramework.GameData.GameDataVersionMgr$$RequestGameDataOnly",
+          "signature": "void GameFramework_GameData_GameDataVersionMgr__RequestGameDataOnly (GameFramework_GameData_GameDataVersionMgr_o* __this, System_Action_List_RevServerGameData___bool__o* _Y_I__, float _F___X, System_String_array* T__vBs, const MethodInfo* method);"
+        }
+      ],
+      "prototype_applied": true,
+      "actual_function_start": "0x4349900",
+      "actual_function_end": "0x4349a34",
+      "pseudocode_chars": 1637,
+      "unresolved_jumpout": true
+    },
+    {
+      "name": "DataModule.DataCompareMgr$$OnLTCompareFinish",
+      "address": 70558344,
+      "end": 70559136,
+      "signature": "void DataModule_DataCompareMgr__OnLTCompareFinish (DataModule_DataCompareMgr_o* __this, const MethodInfo* method);",
+      "prototype": "void OriginalCompareFinish(void* self,const MethodInfo* method);",
+      "method_token": "0x6005709",
+      "file": "Assets/Scripts/Assembly-CSharp/DataModule/DataCompareMgr.cs",
+      "readonly": true,
+      "note": "Original conflict producer boundary only; no source scope authorization in stage46",
+      "range_analysis": 1,
+      "direct_callees": [
+        {
+          "callsite": "0x434a350",
+          "address": "0x4401af4",
+          "name": "CommonGameModule.Login.LoginProcedureBase$$get_IsNewDevice",
+          "signature": "bool CommonGameModule_Login_LoginProcedureBase__get_IsNewDevice (CommonGameModule_Login_LoginProcedureBase_o* __this, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x434a380",
+          "address": "0x75fd6e0",
+          "name": "System.Boolean$$ToString",
+          "signature": "System_String_o* System_Boolean__ToString (bool __this, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x434a394",
+          "address": "0x74fe7a4",
+          "name": "System.String$$Concat",
+          "signature": "System_String_o* System_String__Concat (System_String_o* str0, System_String_o* str1, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x434a3c0",
+          "address": "0x3f7d81c",
+          "name": "ToolModule.DebugExtend$$LogCompare",
+          "signature": "void ToolModule_DebugExtend__LogCompare (Il2CppObject* message, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x434a3c4",
+          "address": "0x434a5a0",
+          "name": "DataModule.DataCompareMgr$$VersionConflict",
+          "signature": "int32_t DataModule_DataCompareMgr__VersionConflict (DataModule_DataCompareMgr_o* __this, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x434a3e4",
+          "address": "0x71870bc",
+          "name": "GameFramework.GlobalData$$get_LoginUserID",
+          "signature": "System_String_o* GameFramework_GlobalData__get_LoginUserID (const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x434a3f8",
+          "address": "0x74fe7a4",
+          "name": "System.String$$Concat",
+          "signature": "System_String_o* System_String__Concat (System_String_o* str0, System_String_o* str1, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x434a41c",
+          "address": "0x3f7d968",
+          "name": "ToolModule.DebugExtend$$LogCompareError",
+          "signature": "void ToolModule_DebugExtend__LogCompareError (Il2CppObject* message, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x434a464",
+          "address": "0x74fe7a4",
+          "name": "System.String$$Concat",
+          "signature": "System_String_o* System_String__Concat (System_String_o* str0, System_String_o* str1, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x434a488",
+          "address": "0x3f7d968",
+          "name": "ToolModule.DebugExtend$$LogCompareError",
+          "signature": "void ToolModule_DebugExtend__LogCompareError (Il2CppObject* message, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x434a4b0",
+          "address": "0x76831c8",
+          "name": "System.Int64$$ToString",
+          "signature": "System_String_o* System_Int64__ToString (int64_t __this, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x434a4c0",
+          "address": "0x7509d50",
+          "name": "System.String$$op_Inequality",
+          "signature": "bool System_String__op_Inequality (System_String_o* a, System_String_o* b, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x434a4e4",
+          "address": "0x4401af4",
+          "name": "CommonGameModule.Login.LoginProcedureBase$$get_IsNewDevice",
+          "signature": "bool CommonGameModule_Login_LoginProcedureBase__get_IsNewDevice (CommonGameModule_Login_LoginProcedureBase_o* __this, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x434a55c",
+          "address": "0x3f7d968",
+          "name": "ToolModule.DebugExtend$$LogCompareError",
+          "signature": "void ToolModule_DebugExtend__LogCompareError (Il2CppObject* message, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x434a56c",
+          "address": "0x434abd0",
+          "name": "DataModule.DataCompareMgr$$CompareData",
+          "signature": "void DataModule_DataCompareMgr__CompareData (DataModule_DataCompareMgr_o* __this, const MethodInfo* method);"
+        }
+      ],
+      "prototype_applied": true,
+      "actual_function_start": "0x434a288",
+      "actual_function_end": "0x434a5a0",
+      "pseudocode_chars": 4003,
+      "unresolved_jumpout": false
+    },
+    {
+      "name": "DataModule.DataCompareMgr$$OnUseChoose",
+      "address": 70565548,
+      "end": 70565720,
+      "signature": "void DataModule_DataCompareMgr__OnUseChoose (DataModule_DataCompareMgr_o* __this, bool uselocal, const MethodInfo* method);",
+      "prototype": "void UseChoice(void* self,unsigned char useLocal,const MethodInfo* method);",
+      "method_token": "0x6005710",
+      "file": "Assets/Scripts/Assembly-CSharp/DataModule/DataCompareMgr.cs",
+      "readonly": true,
+      "note": "Original conflict producer boundary only; no source scope authorization in stage46",
+      "range_analysis": 1,
+      "direct_callees": [],
+      "prototype_applied": true,
+      "actual_function_start": "0x434beac",
+      "actual_function_end": "0x434bf58",
+      "pseudocode_chars": 756,
+      "unresolved_jumpout": false
+    },
+    {
+      "name": "DataModule.DataCompareMgr$$CompareData",
+      "address": 70560720,
+      "end": 70560864,
+      "signature": "void DataModule_DataCompareMgr__CompareData (DataModule_DataCompareMgr_o* __this, const MethodInfo* method);",
+      "prototype": "void CompareData(void* self,const MethodInfo* method);",
+      "method_token": "0x600570C",
+      "file": "Assets/Scripts/Assembly-CSharp/DataModule/DataCompareMgr.cs",
+      "readonly": true,
+      "note": "Original conflict producer boundary only; no source scope authorization in stage46",
+      "range_analysis": 1,
+      "direct_callees": [
+        {
+          "callsite": "0x434ac20",
+          "address": "0x75b003c",
+          "name": "System.Runtime.CompilerServices.AsyncVoidMethodBuilder$$Create",
+          "signature": "System_Runtime_CompilerServices_AsyncVoidMethodBuilder_o System_Runtime_CompilerServices_AsyncVoidMethodBuilder__Create (const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x434ac4c",
+          "address": "0x4af9d3c",
+          "name": "System.Runtime.CompilerServices.AsyncVoidMethodBuilder$$Start<DataCompareMgr.<CompareData>d__13>",
+          "signature": "void System_Runtime_CompilerServices_AsyncVoidMethodBuilder__Start_DataCompareMgr__CompareData_d__13_ (System_Runtime_CompilerServices_AsyncVoidMethodBuilder_o __this, DataModule_DataCompareMgr__CompareData_d__13_o* stateMachine, const MethodInfo_4AF9D3C* method);"
+        }
+      ],
+      "prototype_applied": true,
+      "actual_function_start": "0x434abd0",
+      "actual_function_end": "0x434ac60",
+      "pseudocode_chars": 675,
+      "unresolved_jumpout": false
+    },
+    {
+      "name": "DataModule.DataCompareMgr.<CompareData>d__13$$MoveNext",
+      "address": 70566248,
+      "end": 70567236,
+      "signature": "void DataModule_DataCompareMgr__CompareData_d__13__MoveNext (DataModule_DataCompareMgr__CompareData_d__13_o __this, const MethodInfo* method);",
+      "prototype": "void CompareMoveNext(void* self,const MethodInfo* method);",
+      "method_token": "0x6005716",
+      "file": "Assets/Scripts/Assembly-CSharp/DataModule/DataCompareMgr.cs",
+      "readonly": true,
+      "note": "Original conflict producer boundary only; no source scope authorization in stage46",
+      "range_analysis": 1,
+      "direct_callees": [
+        {
+          "callsite": "0x434c22c",
+          "address": "0x82f2a78",
+          "name": "UnityEngine.WaitForEndOfFrame$$.ctor",
+          "signature": "void UnityEngine_WaitForEndOfFrame___ctor (UnityEngine_WaitForEndOfFrame_o* __this, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x434c238",
+          "address": "0x706d88c",
+          "name": "IEnumeratorAwaitExtensions$$GetAwaiter",
+          "signature": "IEnumeratorAwaitExtensions_SimpleCoroutineAwaiter_o* IEnumeratorAwaitExtensions__GetAwaiter (UnityEngine_WaitForEndOfFrame_o* __S__C, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x434c270",
+          "address": "0x4a946a0",
+          "name": "System.Runtime.CompilerServices.AsyncVoidMethodBuilder$$AwaitOnCompleted<object, DataCompareMgr.<CompareData>d__13>",
+          "signature": "void System_Runtime_CompilerServices_AsyncVoidMethodBuilder__AwaitOnCompleted_object__DataCompareMgr__CompareData_d__13_ (System_Runtime_CompilerServices_AsyncVoidMethodBuilder_o __this, Il2CppObject** awaiter, DataModule_DataCompareMgr__CompareData_d__13_o* stateMachine, const MethodInfo_4A946A0* method);"
+        },
+        {
+          "callsite": "0x434c2d0",
+          "address": "0x706e014",
+          "name": "IEnumeratorAwaitExtensions.SimpleCoroutineAwaiter$$GetResult",
+          "signature": "void IEnumeratorAwaitExtensions_SimpleCoroutineAwaiter__GetResult (IEnumeratorAwaitExtensions_SimpleCoroutineAwaiter_o* __this, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x434c2f0",
+          "address": "0x43f7750",
+          "name": "L_Tools.PlayerPrefs2RunTime$$.ctor",
+          "signature": "void L_Tools_PlayerPrefs2RunTime___ctor (L_Tools_PlayerPrefs2RunTime_o* __this, System_Action_o* trySaveAction, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x434c310",
+          "address": "0x43fb314",
+          "name": "L_Tools.GameTest.LTPlayerPrefsDataManager$$ReLoadLocalData",
+          "signature": "System_String_o* L_Tools_GameTest_LTPlayerPrefsDataManager__ReLoadLocalData (L_Tools_GameTest_LTPlayerPrefsDataManager_o* __this, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x434c324",
+          "address": "0x43f7c3c",
+          "name": "L_Tools.PlayerPrefs2RunTime$$Init",
+          "signature": "void L_Tools_PlayerPrefs2RunTime__Init (L_Tools_PlayerPrefs2RunTime_o* __this, System_String_o* saveData, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x434c330",
+          "address": "0x43f7be8",
+          "name": "L_Tools.PlayerPrefs2RunTime$$GetXXX",
+          "signature": "System_String_o* L_Tools_PlayerPrefs2RunTime__GetXXX (L_Tools_PlayerPrefs2RunTime_o* __this, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x434c340",
+          "address": "0x4349fe4",
+          "name": "DataModule.DataCompareMgr$$CheckSaveUserID",
+          "signature": "bool DataModule_DataCompareMgr__CheckSaveUserID (DataModule_DataCompareMgr_o* __this, bool isLocal, System_String_o* saveID, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x434c3a0",
+          "address": "0x3f7d968",
+          "name": "ToolModule.DebugExtend$$LogCompareError",
+          "signature": "void ToolModule_DebugExtend__LogCompareError (Il2CppObject* message, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x434c3ec",
+          "address": "0x3f7d968",
+          "name": "ToolModule.DebugExtend$$LogCompareError",
+          "signature": "void ToolModule_DebugExtend__LogCompareError (Il2CppObject* message, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x434c434",
+          "address": "0x75b0140",
+          "name": "System.Runtime.CompilerServices.AsyncVoidMethodBuilder$$SetResult",
+          "signature": "void System_Runtime_CompilerServices_AsyncVoidMethodBuilder__SetResult (System_Runtime_CompilerServices_AsyncVoidMethodBuilder_o __this, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x434c464",
+          "address": "0x434b1e4",
+          "name": "DataModule.DataCompareMgr$$RequestServerData",
+          "signature": "void DataModule_DataCompareMgr__RequestServerData (DataModule_DataCompareMgr_o* __this, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x434c508",
+          "address": "0x75b02a4",
+          "name": "System.Runtime.CompilerServices.AsyncVoidMethodBuilder$$SetException",
+          "signature": "void System_Runtime_CompilerServices_AsyncVoidMethodBuilder__SetException (System_Runtime_CompilerServices_AsyncVoidMethodBuilder_o __this, System_Exception_o* exception, const MethodInfo* method);"
+        }
+      ],
+      "prototype_applied": true,
+      "actual_function_start": "0x434c168",
+      "actual_function_end": "0x434c544",
+      "pseudocode_chars": 4347,
+      "unresolved_jumpout": false
+    },
+    {
+      "name": "DataModule.SaveConflictCanvas$$OnChoice",
+      "address": 70568036,
+      "end": 70568496,
+      "signature": "void DataModule_SaveConflictCanvas__OnChoice (DataModule_SaveConflictCanvas_o* __this, bool isLocal, const MethodInfo* method);",
+      "prototype": "void CanvasChoice(void* self,unsigned char useLocal,const MethodInfo* method);",
+      "method_token": "0x600571D",
+      "file": "Assets/Scripts/Assembly-CSharp/DataModule/SaveConflictCanvas.cs",
+      "readonly": true,
+      "note": "Original conflict producer boundary only; no source scope authorization in stage46",
+      "range_analysis": 1,
+      "direct_callees": [
+        {
+          "callsite": "0x434c904",
+          "address": "0x76c770c",
+          "name": "System.Object$$.ctor",
+          "signature": "void System_Object___ctor (Il2CppObject* __this, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x434c930",
+          "address": "0x82ec364",
+          "name": "UnityEngine.GameObject$$SetActive",
+          "signature": "void UnityEngine_GameObject__SetActive (UnityEngine_GameObject_o* __this, bool value, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x434c954",
+          "address": "0x82ebc6c",
+          "name": "UnityEngine.Object$$op_Inequality",
+          "signature": "bool UnityEngine_Object__op_Inequality (UnityEngine_Object_o* x, UnityEngine_Object_o* y, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x434c99c",
+          "address": "0x750a330",
+          "name": "System.String$$Concat",
+          "signature": "System_String_o* System_String__Concat (System_String_o* str0, System_String_o* str1, System_String_o* str2, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x434c9d0",
+          "address": "0x8302b98",
+          "name": "UnityEngine.Events.UnityEventBase$$RemoveAllListeners",
+          "signature": "void UnityEngine_Events_UnityEventBase__RemoveAllListeners (UnityEngine_Events_UnityEventBase_o* __this, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x434ca08",
+          "address": "0x8302c54",
+          "name": "UnityEngine.Events.UnityAction$$.ctor",
+          "signature": "void UnityEngine_Events_UnityAction___ctor (UnityEngine_Events_UnityAction_o* __this, Il2CppObject* object, intptr_t method, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x434ca28",
+          "address": "0x8302cf8",
+          "name": "UnityEngine.Events.UnityEvent$$AddListener",
+          "signature": "void UnityEngine_Events_UnityEvent__AddListener (UnityEngine_Events_UnityEvent_o* __this, UnityEngine_Events_UnityAction_o* call, const MethodInfo* method);"
+        }
+      ],
+      "prototype_applied": true,
+      "actual_function_start": "0x434c864",
+      "actual_function_end": "0x434ca30",
+      "pseudocode_chars": 2619,
+      "unresolved_jumpout": false
+    },
+    {
+      "name": "DataModule.SaveConflictCanvas.<>c__DisplayClass16_0$$<OnChoice>b__0",
+      "address": 70568612,
+      "end": 70568696,
+      "signature": "void DataModule_SaveConflictCanvas___c__DisplayClass16_0___OnChoice_b__0 (DataModule_SaveConflictCanvas___c__DisplayClass16_0_o* __this, const MethodInfo* method);",
+      "prototype": "void ConfirmChoiceCallback(void* self,const MethodInfo* method);",
+      "method_token": "0x6005723",
+      "file": "Assets/Scripts/Assembly-CSharp/DataModule/SaveConflictCanvas.cs",
+      "readonly": true,
+      "note": "Original conflict producer boundary only; no source scope authorization in stage46",
+      "range_analysis": 1,
+      "direct_callees": [
+        {
+          "callsite": "0x434cadc",
+          "address": "0x82e8f3c",
+          "name": "UnityEngine.Component$$get_gameObject",
+          "signature": "UnityEngine_GameObject_o* UnityEngine_Component__get_gameObject (UnityEngine_Component_o* __this, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x434caf0",
+          "address": "0x82ec364",
+          "name": "UnityEngine.GameObject$$SetActive",
+          "signature": "void UnityEngine_GameObject__SetActive (UnityEngine_GameObject_o* __this, bool value, const MethodInfo* method);"
+        }
+      ],
+      "prototype_applied": true,
+      "actual_function_start": "0x434caa4",
+      "actual_function_end": "0x434caf8",
+      "pseudocode_chars": 678,
+      "unresolved_jumpout": false
+    }
+  ],
+  "image_base": "0x0",
+  "type_errors": 0,
+  "hexrays_available": true,
+  "hexrays_version": "9.4.0.260713",
+  "database_saved": true
+}

@@ -1,0 +1,58 @@
+// local variable allocation has failed, the output may be wrong!
+void GameFramework_GameFrameEntry__Update(float elapsed, float realElapsed, const MethodInfo *method)
+{
+  long double v3; // q8
+  long double v4; // q9
+  void *v5; // x0
+  __int64 v6; // x8
+  __int64 Next; // x19
+  __int64 v8; // x0
+
+  v3 = *(long double *)&realElapsed;
+  v4 = *(long double *)&elapsed;
+  if ( (byte_90090D5 & 1) == 0 )
+  {
+    il2cpp_codegen_initialize_runtime_metadata((void **)&off_8CE7B30);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D07C48);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&unk_8D07C58);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&unk_8D07D90);
+    byte_90090D5 = 1;
+  }
+  v5 = off_8CE7B30;
+  if ( *((_DWORD *)off_8CE7B30 + 56) == 0 )
+  {
+    il2cpp_codegen_runtime_class_init(off_8CE7B30);
+    v5 = off_8CE7B30;
+  }
+  if ( *(_BYTE *)(*((_QWORD *)v5 + 23) + 8LL) != 0 )
+  {
+    if ( *((_DWORD *)v5 + 56) == 0 )
+    {
+      il2cpp_codegen_runtime_class_init(v5);
+      v5 = off_8CE7B30;
+    }
+    v6 = **((_QWORD **)v5 + 23);
+    if ( v6 == 0 )
+      goto LABEL_13;
+    Next = *(_QWORD *)(v6 + 16);
+    if ( Next != 0 )
+    {
+      while ( 1 )
+      {
+        v8 = *(_QWORD *)(Next + 40);
+        if ( v8 == 0 )
+          break;
+        (*(void (__fastcall **)(__int64, _QWORD, long double, long double))(*(_QWORD *)v8 + 424LL))(
+          v8,
+          *(_QWORD *)(*(_QWORD *)v8 + 432LL),
+          v4,
+          v3);
+        Next = System_Collections_Generic_LinkedListNode_object___get_Next(Next, qword_8D07C48);
+        if ( Next == 0 )
+          return;
+      }
+LABEL_13:
+      il2cpp_codegen_raise_null_reference_exception();
+    }
+  }
+}

@@ -1,0 +1,14 @@
+0x727b4c4: STP             X30, X21, [SP,#var_20]!
+0x727b4c8: STP             X20, X19, [SP,#0x20+var_10]
+0x727b4cc: MOV             X19, X4
+0x727b4d0: MOV             X20, X2
+0x727b4d4: MOV             X2, X3
+0x727b4d8: MOV             W3, WZR
+0x727b4dc: MOV             W4, WZR
+0x727b4e0: MOV             X21, X0
+0x727b4e4: BL              GameFramework.ObjectPool.ObjectBase$$.ctor
+0x727b4e8: STR             X20, [X21,#0x38]
+0x727b4ec: STR             X19, [X21,#0x48]
+0x727b4f0: LDP             X20, X19, [SP,#0x20+var_10]
+0x727b4f4: LDP             X30, X21, [SP+0x20+var_20],#0x20
+0x727b4f8: RET

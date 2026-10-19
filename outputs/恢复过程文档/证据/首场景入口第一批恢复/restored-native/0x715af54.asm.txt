@@ -1,0 +1,10 @@
+0x715af54: STR             X30, [SP,#var_10]!
+0x715af58: CBZ             X0, loc_715AF78
+0x715af5c: LDR             X8, [X0]
+0x715af60: STR             X1, [X0,#0x18]
+0x715af64: MOV             X1, X2
+0x715af68: LDP             X3, X8, [X8,#0x188]
+0x715af6c: MOV             X2, X8
+0x715af70: LDR             X30, [SP+0x10+var_10],#0x10
+0x715af74: BR              X3
+0x715af78: BL              il2cpp_codegen_raise_null_reference_exception

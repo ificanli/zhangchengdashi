@@ -1,0 +1,69 @@
+0x7096454: fe0f1bf8 str      x30, [sp, #-0x50]!
+0x7096458: fa6701a9 stp      x26, x25, [sp, #0x10]
+0x709645c: f85f02a9 stp      x24, x23, [sp, #0x20]
+0x7096460: f65703a9 stp      x22, x21, [sp, #0x30]
+0x7096464: f44f04a9 stp      x20, x19, [sp, #0x40]
+0x7096468: 99fb00d0 adrp     x25, #0x9008000
+0x709646c: bad100f0 adrp     x26, #0x8acd000
+0x7096470: b4d100f0 adrp     x20, #0x8acd000
+0x7096474: f8d300b0 adrp     x24, #0x8b13000
+0x7096478: f7d300b0 adrp     x23, #0x8b13000
+0x709647c: f6d300b0 adrp     x22, #0x8b13000
+0x7096480: f5d300b0 adrp     x21, #0x8b13000
+0x7096484: 5adf47f9 ldr      x26, [x26, #0xfb8] // System.Collections.Generic.List<int>_TypeInfo
+0x7096488: 28936439 ldrb     w8, [x25, #0x924]
+0x709648c: 94d247f9 ldr      x20, [x20, #0xfa0] // Method$System.Collections.Generic.List<int>..ctor()
+0x7096490: 184b40f9 ldr      x24, [x24, #0x90] // System.Collections.Generic.List<UpdateManager.UpdateHandle>_TypeInfo
+0x7096494: f74640f9 ldr      x23, [x23, #0x88] // Method$System.Collections.Generic.List<UpdateManager.UpdateHandle>..ctor()
+0x7096498: d69a40f9 ldr      x22, [x22, #0x130] // System.Collections.Generic.Dictionary<int, UpdateData>_TypeInfo
+0x709649c: b59e40f9 ldr      x21, [x21, #0x138] // Method$System.Collections.Generic.Dictionary<int, UpdateData>..ctor()
+0x70964a0: f30300aa mov      x19, x0
+0x70964a4: a8020037 tbnz     w8, #0, #0x70964f8
+0x70964a8: e0d300b0 adrp     x0, #0x8b13000
+0x70964ac: 009c40f9 ldr      x0, [x0, #0x138] // Method$System.Collections.Generic.Dictionary<int, UpdateData>..ctor()
+0x70964b0: 749b2e97 bl       #0x3c3d280
+0x70964b4: e0d300b0 adrp     x0, #0x8b13000
+0x70964b8: 009840f9 ldr      x0, [x0, #0x130] // System.Collections.Generic.Dictionary<int, UpdateData>_TypeInfo
+0x70964bc: 719b2e97 bl       #0x3c3d280
+0x70964c0: a0d100f0 adrp     x0, #0x8acd000
+0x70964c4: 00d047f9 ldr      x0, [x0, #0xfa0] // Method$System.Collections.Generic.List<int>..ctor()
+0x70964c8: 6e9b2e97 bl       #0x3c3d280
+0x70964cc: e0d300b0 adrp     x0, #0x8b13000
+0x70964d0: 004440f9 ldr      x0, [x0, #0x88] // Method$System.Collections.Generic.List<UpdateManager.UpdateHandle>..ctor()
+0x70964d4: 6b9b2e97 bl       #0x3c3d280
+0x70964d8: a0d100f0 adrp     x0, #0x8acd000
+0x70964dc: 00dc47f9 ldr      x0, [x0, #0xfb8] // System.Collections.Generic.List<int>_TypeInfo
+0x70964e0: 689b2e97 bl       #0x3c3d280
+0x70964e4: e0d300b0 adrp     x0, #0x8b13000
+0x70964e8: 004840f9 ldr      x0, [x0, #0x90] // System.Collections.Generic.List<UpdateManager.UpdateHandle>_TypeInfo
+0x70964ec: 659b2e97 bl       #0x3c3d280
+0x70964f0: 28008052 mov      w8, #1
+0x70964f4: 28932439 strb     w8, [x25, #0x924]
+0x70964f8: 400340f9 ldr      x0, [x26]
+0x70964fc: f29b2e97 bl       #0x3c3d4c4
+0x7096500: 810240f9 ldr      x1, [x20]
+0x7096504: f40300aa mov      x20, x0
+0x7096508: d8f19997 bl       #0x5712c68 // System.Collections.Generic.List<int>$$.ctor
+0x709650c: 742a00f9 str      x20, [x19, #0x50]
+0x7096510: 000340f9 ldr      x0, [x24]
+0x7096514: ec9b2e97 bl       #0x3c3d4c4
+0x7096518: e10240f9 ldr      x1, [x23]
+0x709651c: f40300aa mov      x20, x0
+0x7096520: 11e29a97 bl       #0x574ed64 // System.Collections.Generic.List<object>$$.ctor
+0x7096524: 742e00f9 str      x20, [x19, #0x58]
+0x7096528: c00240f9 ldr      x0, [x22]
+0x709652c: e69b2e97 bl       #0x3c3d4c4
+0x7096530: a10240f9 ldr      x1, [x21]
+0x7096534: f40300aa mov      x20, x0
+0x7096538: 79c7eb97 bl       #0x6b8831c // System.Collections.Generic.Dictionary<int, object>$$.ctor
+0x709653c: 08028052 mov      w8, #0x10
+0x7096540: 743200f9 str      x20, [x19, #0x60]
+0x7096544: 686a00b9 str      w8, [x19, #0x68]
+0x7096548: e00313aa mov      x0, x19
+0x709654c: f44f44a9 ldp      x20, x19, [sp, #0x40]
+0x7096550: f65743a9 ldp      x22, x21, [sp, #0x30]
+0x7096554: f85f42a9 ldp      x24, x23, [sp, #0x20]
+0x7096558: fa6741a9 ldp      x26, x25, [sp, #0x10]
+0x709655c: e1031faa mov      x1, xzr
+0x7096560: fe0745f8 ldr      x30, [sp], #0x50
+0x7096564: 665f4914 b        #0x82ee2fc // UnityEngine.MonoBehaviour$$.ctor

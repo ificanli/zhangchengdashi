@@ -1,0 +1,14 @@
+0x3d812cc: STP             X30, X19, [SP,#var_10]!
+0x3d812d0: MOV             W19, W0
+0x3d812d4: MOV             X0, XZR
+0x3d812d8: BL              Pathfinding.AstarWebGLRuntimeConfig$$get_UseWebGLNavigation
+0x3d812dc: TBZ             W0, #0, loc_3D812F8
+0x3d812e0: CMP             W19, #0x4F ; 'O'
+0x3d812e4: FMOV            S0, #2.0
+0x3d812e8: FMOV            S1, #3.0
+0x3d812ec: FCSEL           S0, S1, S0, GT
+0x3d812f0: LDP             X30, X19, [SP+0x10+var_10],#0x10
+0x3d812f4: RET
+0x3d812f8: FMOV            S0, #1.0
+0x3d812fc: LDP             X30, X19, [SP+0x10+var_10],#0x10
+0x3d81300: RET

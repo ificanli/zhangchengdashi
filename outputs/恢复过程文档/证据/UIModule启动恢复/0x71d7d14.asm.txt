@@ -1,0 +1,88 @@
+0x71d7d14: fe0f1cf8 str      x30, [sp, #-0x40]!
+0x71d7d18: f85f01a9 stp      x24, x23, [sp, #0x10]
+0x71d7d1c: f65702a9 stp      x22, x21, [sp, #0x20]
+0x71d7d20: f44f03a9 stp      x20, x19, [sp, #0x30]
+0x71d7d24: 97f100d0 adrp     x23, #0x9009000
+0x71d7d28: 18ca00b0 adrp     x24, #0x8b18000
+0x71d7d2c: e8625739 ldrb     w8, [x23, #0x5d8]
+0x71d7d30: 184744f9 ldr      x24, [x24, #0x888] // GameFramework.UIModule.<>c__DisplayClass17_0_TypeInfo
+0x71d7d34: f40303aa mov      x20, x3
+0x71d7d38: f50302aa mov      x21, x2
+0x71d7d3c: f30301aa mov      x19, x1
+0x71d7d40: f60300aa mov      x22, x0
+0x71d7d44: 48020037 tbnz     w8, #0, #0x71d7d8c
+0x71d7d48: a0c900d0 adrp     x0, #0x8b0d000
+0x71d7d4c: 005043f9 ldr      x0, [x0, #0x6a0] // System.Action<AssetOperationHandle>_TypeInfo
+0x71d7d50: 4c952997 bl       #0x3c3d280
+0x71d7d54: a0c700d0 adrp     x0, #0x8acd000
+0x71d7d58: 003043f9 ldr      x0, [x0, #0x660] // Method$System.Array.Empty<object>()
+0x71d7d5c: 49952997 bl       #0x3c3d280
+0x71d7d60: 00ca00b0 adrp     x0, #0x8b18000
+0x71d7d64: 004844f9 ldr      x0, [x0, #0x890] // Method$GameFramework.UIModule.<>c__DisplayClass17_0.<LoadUI>b__0()
+0x71d7d68: 46952997 bl       #0x3c3d280
+0x71d7d6c: 00ca00b0 adrp     x0, #0x8b18000
+0x71d7d70: 004444f9 ldr      x0, [x0, #0x888] // GameFramework.UIModule.<>c__DisplayClass17_0_TypeInfo
+0x71d7d74: 43952997 bl       #0x3c3d280
+0x71d7d78: e0c900d0 adrp     x0, #0x8b15000
+0x71d7d7c: 006041f9 ldr      x0, [x0, #0x2c0] // UI/
+0x71d7d80: 40952997 bl       #0x3c3d280
+0x71d7d84: 28008052 mov      w8, #1
+0x71d7d88: e8621739 strb     w8, [x23, #0x5d8]
+0x71d7d8c: 000340f9 ldr      x0, [x24]
+0x71d7d90: cd952997 bl       #0x3c3d4c4
+0x71d7d94: e1031faa mov      x1, xzr
+0x71d7d98: f70300aa mov      x23, x0
+0x71d7d9c: 5cbe1394 bl       #0x76c770c // System.Object$$.ctor
+0x71d7da0: 970600b4 cbz      x23, #0x71d7e70
+0x71d7da4: e8c900d0 adrp     x8, #0x8b15000
+0x71d7da8: 086141f9 ldr      x8, [x8, #0x2c0] // UI/
+0x71d7dac: f65601a9 stp      x22, x21, [x23, #0x10]
+0x71d7db0: f41200f9 str      x20, [x23, #0x20]
+0x71d7db4: b4c900d0 adrp     x20, #0x8b0d000
+0x71d7db8: 000140f9 ldr      x0, [x8]
+0x71d7dbc: 15ca00b0 adrp     x21, #0x8b18000
+0x71d7dc0: b6c700d0 adrp     x22, #0x8acd000
+0x71d7dc4: 945243f9 ldr      x20, [x20, #0x6a0] // System.Action<AssetOperationHandle>_TypeInfo
+0x71d7dc8: b54a44f9 ldr      x21, [x21, #0x890] // Method$GameFramework.UIModule.<>c__DisplayClass17_0.<LoadUI>b__0()
+0x71d7dcc: d63243f9 ldr      x22, [x22, #0x660] // Method$System.Array.Empty<object>()
+0x71d7dd0: e10313aa mov      x1, x19
+0x71d7dd4: e2031faa mov      x2, xzr
+0x71d7dd8: 739a0c94 bl       #0x74fe7a4 // System.String$$Concat
+0x71d7ddc: 880240f9 ldr      x8, [x20]
+0x71d7de0: f30300aa mov      x19, x0
+0x71d7de4: e00308aa mov      x0, x8
+0x71d7de8: b7952997 bl       #0x3c3d4c4
+0x71d7dec: a20240f9 ldr      x2, [x21]
+0x71d7df0: e10317aa mov      x1, x23
+0x71d7df4: e3031faa mov      x3, xzr
+0x71d7df8: f40300aa mov      x20, x0
+0x71d7dfc: a7aae597 bl       #0x6b42898 // System.Action<object>$$.ctor
+0x71d7e00: d50240f9 ldr      x21, [x22]
+0x71d7e04: a81e40f9 ldr      x8, [x21, #0x38]
+0x71d7e08: 880000b5 cbnz     x8, #0x71d7e18
+0x71d7e0c: e00315aa mov      x0, x21
+0x71d7e10: 7be12997 bl       #0x3c503fc
+0x71d7e14: a81e40f9 ldr      x8, [x21, #0x38]
+0x71d7e18: 000940f9 ldr      x0, [x8, #0x10]
+0x71d7e1c: 08d44439 ldrb     w8, [x0, #0x135]
+0x71d7e20: 48000037 tbnz     w8, #0, #0x71d7e28
+0x71d7e24: 5fe12997 bl       #0x3c503a0
+0x71d7e28: 08e040b9 ldr      w8, [x0, #0xe0]
+0x71d7e2c: 48000035 cbnz     w8, #0x71d7e34
+0x71d7e30: 60952997 bl       #0x3c3d3b0
+0x71d7e34: a81e40f9 ldr      x8, [x21, #0x38]
+0x71d7e38: 000940f9 ldr      x0, [x8, #0x10]
+0x71d7e3c: 08d44439 ldrb     w8, [x0, #0x135]
+0x71d7e40: 48000037 tbnz     w8, #0, #0x71d7e48
+0x71d7e44: 57e12997 bl       #0x3c503a0
+0x71d7e48: 085c40f9 ldr      x8, [x0, #0xb8]
+0x71d7e4c: e00313aa mov      x0, x19
+0x71d7e50: e10314aa mov      x1, x20
+0x71d7e54: f44f43a9 ldp      x20, x19, [sp, #0x30]
+0x71d7e58: 020140f9 ldr      x2, [x8]
+0x71d7e5c: f65742a9 ldp      x22, x21, [sp, #0x20]
+0x71d7e60: f85f41a9 ldp      x24, x23, [sp, #0x10]
+0x71d7e64: e3031faa mov      x3, xzr
+0x71d7e68: fe0744f8 ldr      x30, [sp], #0x40
+0x71d7e6c: 0161fd17 b        #0x7130270 // GameFramework.NewResLoadHelper$$LoadPrefabOri
+0x71d7e70: 97952997 bl       #0x3c3d4cc

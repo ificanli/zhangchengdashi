@@ -1,0 +1,41 @@
+0x3de65c8: STR             X30, [SP,#var_30]!
+0x3de65cc: STP             X22, X21, [SP,#0x30+var_20]
+0x3de65d0: STP             X20, X19, [SP,#0x30+var_10]
+0x3de65d4: ADRP            X22, #byte_8FFD745@PAGE
+0x3de65d8: LDRB            W8, [X22,#byte_8FFD745@PAGEOFF]
+0x3de65dc: MOV             X19, X2
+0x3de65e0: MOV             W20, W1
+0x3de65e4: MOV             X21, X0
+0x3de65e8: TBNZ            W8, #0, loc_3DE660C
+0x3de65ec: ADRP            X0, #off_8AD33D8@PAGE
+0x3de65f0: LDR             X0, [X0,#off_8AD33D8@PAGEOFF]; qword_8CFC670 ; slot
+0x3de65f4: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3de65f8: ADRP            X0, #off_8AD33E0@PAGE
+0x3de65fc: LDR             X0, [X0,#off_8AD33E0@PAGEOFF]; qword_8CFC680 ; slot
+0x3de6600: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3de6604: MOV             W8, #1
+0x3de6608: STRB            W8, [X22,#byte_8FFD745@PAGEOFF]
+0x3de660c: LDR             X0, [X21,#0xA8]
+0x3de6610: CBZ             X0, loc_3DE6668
+0x3de6614: ADRP            X8, #off_8AD33E0@PAGE
+0x3de6618: LDR             X8, [X8,#off_8AD33E0@PAGEOFF]; qword_8CFC680
+0x3de661c: MOV             W1, W20
+0x3de6620: LDR             X2, [X8]
+0x3de6624: BL              System.Collections.Generic.Dictionary_int__object_$$ContainsKey
+0x3de6628: TBZ             W0, #0, loc_3DE663C
+0x3de662c: LDP             X20, X19, [SP,#0x30+var_10]
+0x3de6630: LDP             X22, X21, [SP,#0x30+var_20]
+0x3de6634: LDR             X30, [SP+0x30+var_30],#0x30
+0x3de6638: RET
+0x3de663c: LDR             X0, [X21,#0xA8]
+0x3de6640: CBZ             X0, loc_3DE6668
+0x3de6644: ADRP            X8, #off_8AD33D8@PAGE
+0x3de6648: LDR             X8, [X8,#off_8AD33D8@PAGEOFF]; qword_8CFC670
+0x3de664c: MOV             W1, W20
+0x3de6650: MOV             X2, X19
+0x3de6654: LDP             X20, X19, [SP,#0x30+var_10]
+0x3de6658: LDR             X3, [X8]
+0x3de665c: LDP             X22, X21, [SP,#0x30+var_20]
+0x3de6660: LDR             X30, [SP+0x30+var_30],#0x30
+0x3de6664: B               System.Collections.Generic.Dictionary_int__object_$$Add
+0x3de6668: BL              il2cpp_codegen_raise_null_reference_exception

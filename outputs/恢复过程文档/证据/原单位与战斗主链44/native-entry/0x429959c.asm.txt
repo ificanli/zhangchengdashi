@@ -1,0 +1,18 @@
+0x429959c: fe4fbfa9 stp      x30, x19, [sp, #-0x10]!
+0x42995a0: 081c40f9 ldr      x8, [x0, #0x38]
+0x42995a4: f30300aa mov      x19, x0
+0x42995a8: c80000b4 cbz      x8, #0x42995c0
+0x42995ac: 001d40f9 ldr      x0, [x8, #0x38]
+0x42995b0: 21008052 mov      w1, #1
+0x42995b4: e2031faa mov      x2, xzr
+0x42995b8: 986ff397 bl       #0x3f75418 // ToolModule.StringTool$$IsNullOrEmpty
+0x42995bc: 60000036 tbz      w0, #0, #0x42995c8
+0x42995c0: 68620391 add      x8, x19, #0xd8
+0x42995c4: 04000014 b        #0x42995d4
+0x42995c8: 681e40f9 ldr      x8, [x19, #0x38]
+0x42995cc: a80000b4 cbz      x8, #0x42995e0
+0x42995d0: 08e10091 add      x8, x8, #0x38
+0x42995d4: 000140f9 ldr      x0, [x8]
+0x42995d8: fe4fc1a8 ldp      x30, x19, [sp], #0x10
+0x42995dc: c0035fd6 ret      
+0x42995e0: bb8fe697 bl       #0x3c3d4cc

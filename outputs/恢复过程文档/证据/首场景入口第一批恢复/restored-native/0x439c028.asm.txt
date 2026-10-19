@@ -1,0 +1,34 @@
+0x439c028: STR             X30, [SP,#var_20]!
+0x439c02c: STP             X20, X19, [SP,#0x20+var_10]
+0x439c030: ADRP            X20, #byte_900088C@PAGE
+0x439c034: ADRP            X19, #off_8AF46A0@PAGE
+0x439c038: LDRB            W8, [X20,#byte_900088C@PAGEOFF]
+0x439c03c: LDR             X19, [X19,#off_8AF46A0@PAGEOFF]; off_8CE7B30
+0x439c040: TBNZ            W8, #0, loc_439C070
+0x439c044: ADRP            X0, #off_8AF4698@PAGE
+0x439c048: LDR             X0, [X0,#off_8AF4698@PAGEOFF]; qword_8D2D170 ; slot
+0x439c04c: BL              il2cpp_codegen_initialize_runtime_metadata
+0x439c050: ADRP            X0, #off_8AF46A0@PAGE
+0x439c054: LDR             X0, [X0,#off_8AF46A0@PAGEOFF]; off_8CE7B30 ; slot
+0x439c058: BL              il2cpp_codegen_initialize_runtime_metadata
+0x439c05c: ADRP            X0, #off_8AF46F0@PAGE
+0x439c060: LDR             X0, [X0,#off_8AF46F0@PAGEOFF]; qword_8D36008 ; slot
+0x439c064: BL              il2cpp_codegen_initialize_runtime_metadata
+0x439c068: MOV             W8, #1
+0x439c06c: STRB            W8, [X20,#byte_900088C@PAGEOFF]
+0x439c070: LDR             X0, [X19]; klass
+0x439c074: ADRP            X19, #off_8AF4698@PAGE
+0x439c078: LDR             W8, [X0,#0xE0]
+0x439c07c: LDR             X19, [X19,#off_8AF4698@PAGEOFF]; qword_8D2D170
+0x439c080: CBNZ            W8, loc_439C088
+0x439c084: BL              il2cpp_codegen_runtime_class_init
+0x439c088: LDR             X0, [X19]
+0x439c08c: BL              GameFramework.GameFrameEntry$$GetModule_object_
+0x439c090: CBZ             X0, loc_439C0AC
+0x439c094: ADRP            X8, #off_8AF46F0@PAGE
+0x439c098: LDR             X8, [X8,#off_8AF46F0@PAGEOFF]; qword_8D36008
+0x439c09c: LDP             X20, X19, [SP,#0x20+var_10]
+0x439c0a0: LDR             X1, [X8]
+0x439c0a4: LDR             X30, [SP+0x20+var_20],#0x20
+0x439c0a8: B               GameFramework.Procedure.ProcedureManager$$StartProcedure_object_
+0x439c0ac: BL              il2cpp_codegen_raise_null_reference_exception

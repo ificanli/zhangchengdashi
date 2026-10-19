@@ -1,0 +1,4490 @@
+{
+  "stage": 41,
+  "review": "independent minimum UniqueID getter scope",
+  "createdAt": "2026-10-19T09:55:41.110614+00:00",
+  "decision": "supported",
+  "constraints": {
+    "productionFilesEdited": false,
+    "existingEvidenceEdited": false,
+    "unityUsed": false,
+    "idaUsed": false,
+    "liveNativeDatabaseTouched": false,
+    "reviewWritesOnlyUnderWork": true
+  },
+  "actualHandoffKey": "unclosedDependencies.requiredRowUniqueIDGetters",
+  "counts": {
+    "handoffTargets": 38,
+    "distinctTypes": 38,
+    "distinctGetterTokens": 38,
+    "sourceDictionaryFields": 38,
+    "nativeTableCalls": 38,
+    "nativeObjectCalls": 3,
+    "nativeTotalConfigCalls": 41,
+    "minimumGetterMethods": 38,
+    "currentNullGetters": 38,
+    "tableRows": 927,
+    "excludedObjectGetters": 3,
+    "excludedExtraResourceTables": 5
+  },
+  "conclusion": "The minimum row-getter change set for the original synchronous ConfigMgr.ReadConfig path is exactly the listed 38 methods: one override per directly consumed Dictionary<object,T> row type. All 38 native getters load the unique int field at this+0x10 and prepare its Int32 boxing arguments. Three object getters and five extra delivered tables are excluded.",
+  "productionIntegrationState": {
+    "configMgrSource": {
+      "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\outputs\\OccupyCityRecovered\\Assets\\Scripts\\Assembly-CSharp\\ljzs_lt\\ConfigMgr.cs",
+      "sha256": "e1560a655ed8ad31f9419ea6273de516703531f4f3158ff2f5f21812877db4da"
+    },
+    "configMgrMatchesHandoffSourceBefore": true,
+    "configMgrReadConfigCurrentlyEmpty": true,
+    "candidateConfigMgr": {
+      "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-41-config\\candidate\\Assets\\Scripts\\Assembly-CSharp\\ljzs_lt\\ConfigMgr.cs",
+      "sha256": "196ddcb72008a21a2757c532ff18c953d915d9d1950c34c919bf82a71a897fe3"
+    },
+    "candidateNativeCallOrderMatches": true,
+    "note": "Scope is required by the original native path and stage41 candidate; current production ConfigMgr is still a stub at this snapshot."
+  },
+  "evidence": {
+    "handoff": {
+      "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-coordination\\stage41-handoff.json",
+      "sha256": "bc63a6247e7c4d87460a869202b714412248db4392ad258faab4a1222eebc617"
+    },
+    "priorRowInventory": {
+      "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-41-config\\evidence\\source-chain\\row-dependencies.json",
+      "sha256": "5d52e19b18d8eb0c732173ae7ff66f7b58e66877426e3ff2a4df2069154cde6b"
+    },
+    "priorResourceAudit": {
+      "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-41-config\\evidence\\resource-audit\\resource-audit.json",
+      "sha256": "3d714bd6d8dfe9456ee832d9d6c3455bde855f90d2d438ade985539471fe3496"
+    },
+    "nativeScriptExport": {
+      "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\il2cpp-dump-decoded\\script.json",
+      "sha256": "a02c5a62b46aa2d1a66abb299a5b25bd96dc8d3537a73c3fee9a973e70c7c46b"
+    },
+    "elf": {
+      "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\ida-input\\libil2cpp-arm64.so",
+      "sha256": "72770d00b2b404acf44cc75cc8bf7a3e06850e9ace1237c9cbb2bc72894220ed",
+      "matchesHandoffEvidenceElf": true
+    },
+    "boxingHelperIdentity": {
+      "name": "il2cpp_value_box",
+      "stValue": "0x3c41820",
+      "stSize": 4,
+      "symbolEntryFileOffset": "0x4878",
+      "exportFirstInstructionBytes": "4c4d0014",
+      "exportBranchTarget": "0x3c54d50",
+      "getterCallTargetRva": "0x3c3d3b8",
+      "getterHelperFirstInstructionBytes": "665e0014",
+      "getterHelperBranchTarget": "0x3c54d50",
+      "sameImplementationTarget": true
+    },
+    "nativeCaller": {
+      "name": "ljzs_lt.ConfigMgr$$ReadConfig",
+      "rva": "0x4399658",
+      "endRvaExclusive": "0x4399bec",
+      "bytes": 1428,
+      "codeSha256": "2350c34fd39e6ecc79c3f34c27fd87c432d6c887cf9a91f3441f1eaf917c72ac",
+      "signature": "void ljzs_lt_ConfigMgr__ReadConfig (ljzs_lt_ConfigMgr_o* __this, const MethodInfo* method);"
+    },
+    "nativeChainExports": [
+      {
+        "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-41-config\\evidence\\ida-chain\\pseudocode\\0x4399658.c",
+        "sha256": "9f247d4311202156f85b375d968cba818691f2ac83c8a8af17155a3677fea1cc"
+      },
+      {
+        "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-41-config\\evidence\\ida-chain\\pseudocode\\0x4399658.asm.txt",
+        "sha256": "f4e825a69c167a3cd8de6f48fb6d9ab74a459bee52e652f78ff926afb5b7634b"
+      },
+      {
+        "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-41-config\\evidence\\ida-chain\\pseudocode\\0x4b8cadc.c",
+        "sha256": "bf1195fd127b89c2a0185dc2008a7e227a447a5c53d3b0921e6425ac25a5b8d6"
+      },
+      {
+        "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-41-config\\evidence\\ida-chain\\pseudocode\\0x4b8cadc.asm.txt",
+        "sha256": "040e672f1745c6cce6769956b02beda56378302ac68743508ae99efdfe17fa99"
+      },
+      {
+        "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-41-config\\evidence\\ida-chain\\pseudocode\\0x4b8b9b0.c",
+        "sha256": "6fae5e754cf97e405bb908397354fec393da0a0f17f2714fd1901f648fbea5e6"
+      },
+      {
+        "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-41-config\\evidence\\ida-chain\\pseudocode\\0x4b8b9b0.asm.txt",
+        "sha256": "d6cc14eda32b41b51b1201dee6b85c147b2d22ca21cb533201aaf19878595e0c"
+      },
+      {
+        "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-41-config\\evidence\\ida-chain\\pseudocode\\0x4b8bf38.c",
+        "sha256": "aaccf055476b026438c9157742757e581b329c521122dce050833f1c4751f008"
+      },
+      {
+        "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-41-config\\evidence\\ida-chain\\pseudocode\\0x4b8bf38.asm.txt",
+        "sha256": "3d40f9b8b006393c1eaea15f88b3e79bf5ca450e73f97ee0c7d2b137781c6579"
+      },
+      {
+        "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-41-config\\evidence\\ida-chain\\pseudocode\\0x4b8d360.c",
+        "sha256": "0a3aadf51e0c43b98018e17f24f615ad1f52334e68026d850e9dd4b2c650fb36"
+      },
+      {
+        "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-41-config\\evidence\\ida-chain\\pseudocode\\0x4b8d360.asm.txt",
+        "sha256": "5ced980d47156ccd1fe828c3eeb04606b31c38d69466871643ba0fb99a5e7de3"
+      }
+    ],
+    "reviewScript": {
+      "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-coordination\\review_stage41_getter_scope.py",
+      "sha256": "5acd403c3f29e49f9f9880fddb010fb974b730cb82739e5906c5a3bcc5123c38"
+    }
+  },
+  "minimalTargets": [
+    {
+      "type": "GoalRewardConfig",
+      "file": "Assets/Scripts/Assembly-CSharp/ljzs_lt/GoalRewardConfig.cs",
+      "source": {
+        "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\outputs\\OccupyCityRecovered\\Assets\\Scripts\\Assembly-CSharp\\ljzs_lt\\GoalRewardConfig.cs",
+        "sha256": "51050b2ae41a120fe8f4eb741777e96d70578d7c8638f845cfdd81ee68b60a87"
+      },
+      "consumer": {
+        "kind": "table",
+        "type": "GoalRewardConfig",
+        "consumerField": "dicGoalReward",
+        "managerOffset": "0x18",
+        "callRva": "0x43998ec",
+        "targetRva": "0x4b8cadc",
+        "methodInfoSlot": "0x8d26e60",
+        "methodInfoName": "Method$GameFramework.ConfigRead.readConfigByUnityJson<GoalRewardConfig>()"
+      },
+      "member": "UniqueID.get",
+      "token": "0x6005B0E",
+      "sourceLine": 34,
+      "currentBody": "return null;",
+      "candidateBody": "return id;",
+      "boxedResultType": "System.Int32",
+      "field": {
+        "token": "0x4006911",
+        "offset": "0x10",
+        "type": "int",
+        "name": "id",
+        "line": 13
+      },
+      "native": {
+        "name": "ljzs_lt.GoalRewardConfig$$get_UniqueID",
+        "rva": "0x439afe4",
+        "endRvaExclusive": "0x439b040",
+        "bytes": 92,
+        "codeSha256": "b93fef4e4c280f6919a8b057f013f1cc69ad698ec5cf88fd9cb47c3bdad2ddb9",
+        "signature": "Il2CppObject* ljzs_lt_GoalRewardConfig__get_UniqueID (ljzs_lt_GoalRewardConfig_o* __this, const MethodInfo* method);"
+      },
+      "nativeEvidence": {
+        "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-41-config\\evidence\\source-chain\\row-native\\0x439afe4.asm.txt",
+        "sha256": "d62a6f9de83a69725dd91e211fec543ef0ef3c9e54f9653186506d18b17ba09d"
+      },
+      "int32Metadata": {
+        "loadedFromRva": "0x8acdac0",
+        "slotRva": "0x8ce95c0",
+        "name": "int_TypeInfo",
+        "signature": "System_Int32_c*"
+      },
+      "loadRva": "0x439b01c",
+      "boxingCallRva": "0x439b02c",
+      "boxingTargetRva": "0x3c3d3b8",
+      "checks": {
+        "currentSourceHashMatchesHandoff": true,
+        "currentSourceHashMatchesPriorRowEvidence": true,
+        "getterTokenMatchesHandoff": true,
+        "getterRvaMatchesHandoffAndNative": true,
+        "nativeEndMatchesHandoff": true,
+        "nativeCodeHashMatchesPriorEvidence": true,
+        "nativeAsmExactBytesMatchElf": true,
+        "candidateMatchesHandoff": true,
+        "getterCurrentlyReturnsNull": true,
+        "exactlyOneGetterOverride": true,
+        "nativeExactInt32LoadAndBoxArgumentSequence": true,
+        "int32MetadataResolved": true
+      }
+    },
+    {
+      "type": "WorldCupdailyTaskConfig",
+      "file": "Assets/Scripts/Assembly-CSharp/ljzs_lt/WorldCupdailyTaskConfig.cs",
+      "source": {
+        "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\outputs\\OccupyCityRecovered\\Assets\\Scripts\\Assembly-CSharp\\ljzs_lt\\WorldCupdailyTaskConfig.cs",
+        "sha256": "f8d6db09c37525bd7836f3a7db3e4aa20158846327da69fa0208b33b1261b477"
+      },
+      "consumer": {
+        "kind": "table",
+        "type": "WorldCupdailyTaskConfig",
+        "consumerField": "dicWorldCupdailyTask",
+        "managerOffset": "0x20",
+        "callRva": "0x43998f8",
+        "targetRva": "0x4b8cadc",
+        "methodInfoSlot": "0x8d26f08",
+        "methodInfoName": "Method$GameFramework.ConfigRead.readConfigByUnityJson<WorldCupdailyTaskConfig>()"
+      },
+      "member": "UniqueID.get",
+      "token": "0x6005B3C",
+      "sourceLine": 50,
+      "currentBody": "return null;",
+      "candidateBody": "return id;",
+      "boxedResultType": "System.Int32",
+      "field": {
+        "token": "0x4006996",
+        "offset": "0x10",
+        "type": "int",
+        "name": "id",
+        "line": 13
+      },
+      "native": {
+        "name": "ljzs_lt.WorldCupdailyTaskConfig$$get_UniqueID",
+        "rva": "0x439b8e0",
+        "endRvaExclusive": "0x439b93c",
+        "bytes": 92,
+        "codeSha256": "e0731e1bbda326983ce2a7e30bfe525ab70dd632166107d5580ef13095eb84c6",
+        "signature": "Il2CppObject* ljzs_lt_WorldCupdailyTaskConfig__get_UniqueID (ljzs_lt_WorldCupdailyTaskConfig_o* __this, const MethodInfo* method);"
+      },
+      "nativeEvidence": {
+        "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-41-config\\evidence\\source-chain\\row-native\\0x439b8e0.asm.txt",
+        "sha256": "34e8c94e79d322a73eb92052507d9f5a7e2b405241704f61368a24b23e55c099"
+      },
+      "int32Metadata": {
+        "loadedFromRva": "0x8acdac0",
+        "slotRva": "0x8ce95c0",
+        "name": "int_TypeInfo",
+        "signature": "System_Int32_c*"
+      },
+      "loadRva": "0x439b918",
+      "boxingCallRva": "0x439b928",
+      "boxingTargetRva": "0x3c3d3b8",
+      "checks": {
+        "currentSourceHashMatchesHandoff": true,
+        "currentSourceHashMatchesPriorRowEvidence": true,
+        "getterTokenMatchesHandoff": true,
+        "getterRvaMatchesHandoffAndNative": true,
+        "nativeEndMatchesHandoff": true,
+        "nativeCodeHashMatchesPriorEvidence": true,
+        "nativeAsmExactBytesMatchElf": true,
+        "candidateMatchesHandoff": true,
+        "getterCurrentlyReturnsNull": true,
+        "exactlyOneGetterOverride": true,
+        "nativeExactInt32LoadAndBoxArgumentSequence": true,
+        "int32MetadataResolved": true
+      }
+    },
+    {
+      "type": "WorldCupdailyPriceConfig",
+      "file": "Assets/Scripts/Assembly-CSharp/ljzs_lt/WorldCupdailyPriceConfig.cs",
+      "source": {
+        "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\outputs\\OccupyCityRecovered\\Assets\\Scripts\\Assembly-CSharp\\ljzs_lt\\WorldCupdailyPriceConfig.cs",
+        "sha256": "36a9a59d8d13b5163854b3144c4265ae61787dcddf26560443aec24774b0b904"
+      },
+      "consumer": {
+        "kind": "table",
+        "type": "WorldCupdailyPriceConfig",
+        "consumerField": "dicWorldCupdailyPrice",
+        "managerOffset": "0x28",
+        "callRva": "0x4399904",
+        "targetRva": "0x4b8cadc",
+        "methodInfoSlot": "0x8d26f00",
+        "methodInfoName": "Method$GameFramework.ConfigRead.readConfigByUnityJson<WorldCupdailyPriceConfig>()"
+      },
+      "member": "UniqueID.get",
+      "token": "0x6005B3A",
+      "sourceLine": 74,
+      "currentBody": "return null;",
+      "candidateBody": "return id;",
+      "boxedResultType": "System.Int32",
+      "field": {
+        "token": "0x4006987",
+        "offset": "0x10",
+        "type": "int",
+        "name": "id",
+        "line": 13
+      },
+      "native": {
+        "name": "ljzs_lt.WorldCupdailyPriceConfig$$get_UniqueID",
+        "rva": "0x439b87c",
+        "endRvaExclusive": "0x439b8d8",
+        "bytes": 92,
+        "codeSha256": "4b54074cf1147d064289267a39614bdcf377e62900f8dd24209f4cb2e0a9a18d",
+        "signature": "Il2CppObject* ljzs_lt_WorldCupdailyPriceConfig__get_UniqueID (ljzs_lt_WorldCupdailyPriceConfig_o* __this, const MethodInfo* method);"
+      },
+      "nativeEvidence": {
+        "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-41-config\\evidence\\source-chain\\row-native\\0x439b87c.asm.txt",
+        "sha256": "c76f7ee57a9d937ddbd19fdc006b7c2a01e7157ca89d32fc069d636d2f9b6ad0"
+      },
+      "int32Metadata": {
+        "loadedFromRva": "0x8acdac0",
+        "slotRva": "0x8ce95c0",
+        "name": "int_TypeInfo",
+        "signature": "System_Int32_c*"
+      },
+      "loadRva": "0x439b8b4",
+      "boxingCallRva": "0x439b8c4",
+      "boxingTargetRva": "0x3c3d3b8",
+      "checks": {
+        "currentSourceHashMatchesHandoff": true,
+        "currentSourceHashMatchesPriorRowEvidence": true,
+        "getterTokenMatchesHandoff": true,
+        "getterRvaMatchesHandoffAndNative": true,
+        "nativeEndMatchesHandoff": true,
+        "nativeCodeHashMatchesPriorEvidence": true,
+        "nativeAsmExactBytesMatchElf": true,
+        "candidateMatchesHandoff": true,
+        "getterCurrentlyReturnsNull": true,
+        "exactlyOneGetterOverride": true,
+        "nativeExactInt32LoadAndBoxArgumentSequence": true,
+        "int32MetadataResolved": true
+      }
+    },
+    {
+      "type": "PointShopConfig",
+      "file": "Assets/Scripts/Assembly-CSharp/ljzs_lt/PointShopConfig.cs",
+      "source": {
+        "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\outputs\\OccupyCityRecovered\\Assets\\Scripts\\Assembly-CSharp\\ljzs_lt\\PointShopConfig.cs",
+        "sha256": "1166afec33c9cbe6fc70b408a6e6301015d82663c107108af046f5d30dda0ba9"
+      },
+      "consumer": {
+        "kind": "table",
+        "type": "PointShopConfig",
+        "consumerField": "dicPointShop",
+        "managerOffset": "0x30",
+        "callRva": "0x4399910",
+        "targetRva": "0x4b8cadc",
+        "methodInfoSlot": "0x8d26e90",
+        "methodInfoName": "Method$GameFramework.ConfigRead.readConfigByUnityJson<PointShopConfig>()"
+      },
+      "member": "UniqueID.get",
+      "token": "0x6005B1A",
+      "sourceLine": 42,
+      "currentBody": "return null;",
+      "candidateBody": "return id;",
+      "boxedResultType": "System.Int32",
+      "field": {
+        "token": "0x400692E",
+        "offset": "0x10",
+        "type": "int",
+        "name": "id",
+        "line": 13
+      },
+      "native": {
+        "name": "ljzs_lt.PointShopConfig$$get_UniqueID",
+        "rva": "0x439b23c",
+        "endRvaExclusive": "0x439b298",
+        "bytes": 92,
+        "codeSha256": "4804a3ad1582e30691554c032f328cd01769d77c961260856078bed3121a55df",
+        "signature": "Il2CppObject* ljzs_lt_PointShopConfig__get_UniqueID (ljzs_lt_PointShopConfig_o* __this, const MethodInfo* method);"
+      },
+      "nativeEvidence": {
+        "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-41-config\\evidence\\source-chain\\row-native\\0x439b23c.asm.txt",
+        "sha256": "1b6c841d803f09a825d261a90074839f00c8ceebc30aafd79beaac7bd4f26ec1"
+      },
+      "int32Metadata": {
+        "loadedFromRva": "0x8acdac0",
+        "slotRva": "0x8ce95c0",
+        "name": "int_TypeInfo",
+        "signature": "System_Int32_c*"
+      },
+      "loadRva": "0x439b274",
+      "boxingCallRva": "0x439b284",
+      "boxingTargetRva": "0x3c3d3b8",
+      "checks": {
+        "currentSourceHashMatchesHandoff": true,
+        "currentSourceHashMatchesPriorRowEvidence": true,
+        "getterTokenMatchesHandoff": true,
+        "getterRvaMatchesHandoffAndNative": true,
+        "nativeEndMatchesHandoff": true,
+        "nativeCodeHashMatchesPriorEvidence": true,
+        "nativeAsmExactBytesMatchElf": true,
+        "candidateMatchesHandoff": true,
+        "getterCurrentlyReturnsNull": true,
+        "exactlyOneGetterOverride": true,
+        "nativeExactInt32LoadAndBoxArgumentSequence": true,
+        "int32MetadataResolved": true
+      }
+    },
+    {
+      "type": "WorldCuphow2PlayConfig",
+      "file": "Assets/Scripts/Assembly-CSharp/ljzs_lt/WorldCuphow2PlayConfig.cs",
+      "source": {
+        "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\outputs\\OccupyCityRecovered\\Assets\\Scripts\\Assembly-CSharp\\ljzs_lt\\WorldCuphow2PlayConfig.cs",
+        "sha256": "b058e535ec886ea53e79a6ceb6fd1a4f3087748b02fec0a4bb4f631a76154b03"
+      },
+      "consumer": {
+        "kind": "table",
+        "type": "WorldCuphow2PlayConfig",
+        "consumerField": "dicWorldCuphow2Play",
+        "managerOffset": "0x38",
+        "callRva": "0x439991c",
+        "targetRva": "0x4b8cadc",
+        "methodInfoSlot": "0x8d26f10",
+        "methodInfoName": "Method$GameFramework.ConfigRead.readConfigByUnityJson<WorldCuphow2PlayConfig>()"
+      },
+      "member": "UniqueID.get",
+      "token": "0x6005B3E",
+      "sourceLine": 22,
+      "currentBody": "return null;",
+      "candidateBody": "return id;",
+      "boxedResultType": "System.Int32",
+      "field": {
+        "token": "0x400699F",
+        "offset": "0x10",
+        "type": "int",
+        "name": "id",
+        "line": 13
+      },
+      "native": {
+        "name": "ljzs_lt.WorldCuphow2PlayConfig$$get_UniqueID",
+        "rva": "0x439b944",
+        "endRvaExclusive": "0x439b9a0",
+        "bytes": 92,
+        "codeSha256": "a224eb7b5b6dbe7a37c34e46a568a9fded9b39c84f97444ec7fda5ded8281f4c",
+        "signature": "Il2CppObject* ljzs_lt_WorldCuphow2PlayConfig__get_UniqueID (ljzs_lt_WorldCuphow2PlayConfig_o* __this, const MethodInfo* method);"
+      },
+      "nativeEvidence": {
+        "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-41-config\\evidence\\source-chain\\row-native\\0x439b944.asm.txt",
+        "sha256": "16d008fc0b9b40f24c98856aec286a8f7e68c7b9e6d35900f501842e1bdb9943"
+      },
+      "int32Metadata": {
+        "loadedFromRva": "0x8acdac0",
+        "slotRva": "0x8ce95c0",
+        "name": "int_TypeInfo",
+        "signature": "System_Int32_c*"
+      },
+      "loadRva": "0x439b97c",
+      "boxingCallRva": "0x439b98c",
+      "boxingTargetRva": "0x3c3d3b8",
+      "checks": {
+        "currentSourceHashMatchesHandoff": true,
+        "currentSourceHashMatchesPriorRowEvidence": true,
+        "getterTokenMatchesHandoff": true,
+        "getterRvaMatchesHandoffAndNative": true,
+        "nativeEndMatchesHandoff": true,
+        "nativeCodeHashMatchesPriorEvidence": true,
+        "nativeAsmExactBytesMatchElf": true,
+        "candidateMatchesHandoff": true,
+        "getterCurrentlyReturnsNull": true,
+        "exactlyOneGetterOverride": true,
+        "nativeExactInt32LoadAndBoxArgumentSequence": true,
+        "int32MetadataResolved": true
+      }
+    },
+    {
+      "type": "DiceConfigConfig",
+      "file": "Assets/Scripts/Assembly-CSharp/ljzs_lt/DiceConfigConfig.cs",
+      "source": {
+        "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\outputs\\OccupyCityRecovered\\Assets\\Scripts\\Assembly-CSharp\\ljzs_lt\\DiceConfigConfig.cs",
+        "sha256": "ac1030b87d1e8eeb91ca884e8c59e2220cd28f6ab6d8d95a61d52e5be68eddde"
+      },
+      "consumer": {
+        "kind": "table",
+        "type": "DiceConfigConfig",
+        "consumerField": "dicDiceConfig",
+        "managerOffset": "0x40",
+        "callRva": "0x4399928",
+        "targetRva": "0x4b8cadc",
+        "methodInfoSlot": "0x8d26e58",
+        "methodInfoName": "Method$GameFramework.ConfigRead.readConfigByUnityJson<DiceConfigConfig>()"
+      },
+      "member": "UniqueID.get",
+      "token": "0x6005B0C",
+      "sourceLine": 22,
+      "currentBody": "return null;",
+      "candidateBody": "return id;",
+      "boxedResultType": "System.Int32",
+      "field": {
+        "token": "0x400690F",
+        "offset": "0x10",
+        "type": "int",
+        "name": "id",
+        "line": 13
+      },
+      "native": {
+        "name": "ljzs_lt.DiceConfigConfig$$get_UniqueID",
+        "rva": "0x439af80",
+        "endRvaExclusive": "0x439afdc",
+        "bytes": 92,
+        "codeSha256": "b8c5f7eb98c367b493d6497107839bde90c5d210593c52f9c53c9778d561e4bc",
+        "signature": "Il2CppObject* ljzs_lt_DiceConfigConfig__get_UniqueID (ljzs_lt_DiceConfigConfig_o* __this, const MethodInfo* method);"
+      },
+      "nativeEvidence": {
+        "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-41-config\\evidence\\source-chain\\row-native\\0x439af80.asm.txt",
+        "sha256": "69013225db1e81bff0fc3ab88c79591fde8642f2c96e4c14abb23a6aade28518"
+      },
+      "int32Metadata": {
+        "loadedFromRva": "0x8acdac0",
+        "slotRva": "0x8ce95c0",
+        "name": "int_TypeInfo",
+        "signature": "System_Int32_c*"
+      },
+      "loadRva": "0x439afb8",
+      "boxingCallRva": "0x439afc8",
+      "boxingTargetRva": "0x3c3d3b8",
+      "checks": {
+        "currentSourceHashMatchesHandoff": true,
+        "currentSourceHashMatchesPriorRowEvidence": true,
+        "getterTokenMatchesHandoff": true,
+        "getterRvaMatchesHandoffAndNative": true,
+        "nativeEndMatchesHandoff": true,
+        "nativeCodeHashMatchesPriorEvidence": true,
+        "nativeAsmExactBytesMatchElf": true,
+        "candidateMatchesHandoff": true,
+        "getterCurrentlyReturnsNull": true,
+        "exactlyOneGetterOverride": true,
+        "nativeExactInt32LoadAndBoxArgumentSequence": true,
+        "int32MetadataResolved": true
+      }
+    },
+    {
+      "type": "BuildConfigConfig",
+      "file": "Assets/Scripts/Assembly-CSharp/ljzs_lt/BuildConfigConfig.cs",
+      "source": {
+        "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\outputs\\OccupyCityRecovered\\Assets\\Scripts\\Assembly-CSharp\\ljzs_lt\\BuildConfigConfig.cs",
+        "sha256": "112e8747a2803363ba77e3699fe2b116e5fae79e066d91e96e2ff6381280c8fb"
+      },
+      "consumer": {
+        "kind": "table",
+        "type": "BuildConfigConfig",
+        "consumerField": "dicBuildConfig",
+        "managerOffset": "0x48",
+        "callRva": "0x4399934",
+        "targetRva": "0x4b8cadc",
+        "methodInfoSlot": "0x8d26e00",
+        "methodInfoName": "Method$GameFramework.ConfigRead.readConfigByUnityJson<BuildConfigConfig>()"
+      },
+      "member": "UniqueID.get",
+      "token": "0x6005AF6",
+      "sourceLine": 42,
+      "currentBody": "return null;",
+      "candidateBody": "return id;",
+      "boxedResultType": "System.Int32",
+      "field": {
+        "token": "0x40068D1",
+        "offset": "0x10",
+        "type": "int",
+        "name": "id",
+        "line": 13
+      },
+      "native": {
+        "name": "ljzs_lt.BuildConfigConfig$$get_UniqueID",
+        "rva": "0x439ab34",
+        "endRvaExclusive": "0x439ab90",
+        "bytes": 92,
+        "codeSha256": "c124d1ab8994aa39dcf83eb9380d1565550a55d8902954a74c255f5143f72141",
+        "signature": "Il2CppObject* ljzs_lt_BuildConfigConfig__get_UniqueID (ljzs_lt_BuildConfigConfig_o* __this, const MethodInfo* method);"
+      },
+      "nativeEvidence": {
+        "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-41-config\\evidence\\source-chain\\row-native\\0x439ab34.asm.txt",
+        "sha256": "871cb78670ce11881db70774885c9860524aa033ac9a0020eb7a057c69f7a2a8"
+      },
+      "int32Metadata": {
+        "loadedFromRva": "0x8acdac0",
+        "slotRva": "0x8ce95c0",
+        "name": "int_TypeInfo",
+        "signature": "System_Int32_c*"
+      },
+      "loadRva": "0x439ab6c",
+      "boxingCallRva": "0x439ab7c",
+      "boxingTargetRva": "0x3c3d3b8",
+      "checks": {
+        "currentSourceHashMatchesHandoff": true,
+        "currentSourceHashMatchesPriorRowEvidence": true,
+        "getterTokenMatchesHandoff": true,
+        "getterRvaMatchesHandoffAndNative": true,
+        "nativeEndMatchesHandoff": true,
+        "nativeCodeHashMatchesPriorEvidence": true,
+        "nativeAsmExactBytesMatchElf": true,
+        "candidateMatchesHandoff": true,
+        "getterCurrentlyReturnsNull": true,
+        "exactlyOneGetterOverride": true,
+        "nativeExactInt32LoadAndBoxArgumentSequence": true,
+        "int32MetadataResolved": true
+      }
+    },
+    {
+      "type": "ChessboardConfig",
+      "file": "Assets/Scripts/Assembly-CSharp/ljzs_lt/ChessboardConfig.cs",
+      "source": {
+        "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\outputs\\OccupyCityRecovered\\Assets\\Scripts\\Assembly-CSharp\\ljzs_lt\\ChessboardConfig.cs",
+        "sha256": "44a8cf79bb37b50ab355e39128c20562b3f4a8c3643bc76115232479edf2da9a"
+      },
+      "consumer": {
+        "kind": "table",
+        "type": "ChessboardConfig",
+        "consumerField": "dicChessboard",
+        "managerOffset": "0x50",
+        "callRva": "0x4399940",
+        "targetRva": "0x4b8cadc",
+        "methodInfoSlot": "0x8d26e20",
+        "methodInfoName": "Method$GameFramework.ConfigRead.readConfigByUnityJson<ChessboardConfig>()"
+      },
+      "member": "UniqueID.get",
+      "token": "0x6005AFE",
+      "sourceLine": 22,
+      "currentBody": "return null;",
+      "candidateBody": "return id;",
+      "boxedResultType": "System.Int32",
+      "field": {
+        "token": "0x40068E2",
+        "offset": "0x10",
+        "type": "int",
+        "name": "id",
+        "line": 13
+      },
+      "native": {
+        "name": "ljzs_lt.ChessboardConfig$$get_UniqueID",
+        "rva": "0x439acc4",
+        "endRvaExclusive": "0x439ad20",
+        "bytes": 92,
+        "codeSha256": "d2df607b8dd75f6ab7cbeac278faa903320d0f23c5d78706372cbece4b2cda89",
+        "signature": "Il2CppObject* ljzs_lt_ChessboardConfig__get_UniqueID (ljzs_lt_ChessboardConfig_o* __this, const MethodInfo* method);"
+      },
+      "nativeEvidence": {
+        "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-41-config\\evidence\\source-chain\\row-native\\0x439acc4.asm.txt",
+        "sha256": "84c4f3a87149cf9ab68464f1aecc579dc073b41c098ea8e73d1c69be86ca5343"
+      },
+      "int32Metadata": {
+        "loadedFromRva": "0x8acdac0",
+        "slotRva": "0x8ce95c0",
+        "name": "int_TypeInfo",
+        "signature": "System_Int32_c*"
+      },
+      "loadRva": "0x439acfc",
+      "boxingCallRva": "0x439ad0c",
+      "boxingTargetRva": "0x3c3d3b8",
+      "checks": {
+        "currentSourceHashMatchesHandoff": true,
+        "currentSourceHashMatchesPriorRowEvidence": true,
+        "getterTokenMatchesHandoff": true,
+        "getterRvaMatchesHandoffAndNative": true,
+        "nativeEndMatchesHandoff": true,
+        "nativeCodeHashMatchesPriorEvidence": true,
+        "nativeAsmExactBytesMatchElf": true,
+        "candidateMatchesHandoff": true,
+        "getterCurrentlyReturnsNull": true,
+        "exactlyOneGetterOverride": true,
+        "nativeExactInt32LoadAndBoxArgumentSequence": true,
+        "int32MetadataResolved": true
+      }
+    },
+    {
+      "type": "PoolConfigConfig",
+      "file": "Assets/Scripts/Assembly-CSharp/ljzs_lt/PoolConfigConfig.cs",
+      "source": {
+        "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\outputs\\OccupyCityRecovered\\Assets\\Scripts\\Assembly-CSharp\\ljzs_lt\\PoolConfigConfig.cs",
+        "sha256": "ca06794cb5d7b75ff391b48205516e238753826ea934c4bd574c988f2fb71bdf"
+      },
+      "consumer": {
+        "kind": "table",
+        "type": "PoolConfigConfig",
+        "consumerField": "dicPoolConfig",
+        "managerOffset": "0x58",
+        "callRva": "0x439994c",
+        "targetRva": "0x4b8cadc",
+        "methodInfoSlot": "0x8d26e98",
+        "methodInfoName": "Method$GameFramework.ConfigRead.readConfigByUnityJson<PoolConfigConfig>()"
+      },
+      "member": "UniqueID.get",
+      "token": "0x6005B1C",
+      "sourceLine": 50,
+      "currentBody": "return null;",
+      "candidateBody": "return id;",
+      "boxedResultType": "System.Int32",
+      "field": {
+        "token": "0x4006935",
+        "offset": "0x10",
+        "type": "int",
+        "name": "id",
+        "line": 13
+      },
+      "native": {
+        "name": "ljzs_lt.PoolConfigConfig$$get_UniqueID",
+        "rva": "0x439b2a0",
+        "endRvaExclusive": "0x439b2fc",
+        "bytes": 92,
+        "codeSha256": "aa63d0fc0d69b2e2825e68553f6cc19faa13a9bb405a707c1076aad65635e166",
+        "signature": "Il2CppObject* ljzs_lt_PoolConfigConfig__get_UniqueID (ljzs_lt_PoolConfigConfig_o* __this, const MethodInfo* method);"
+      },
+      "nativeEvidence": {
+        "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-41-config\\evidence\\source-chain\\row-native\\0x439b2a0.asm.txt",
+        "sha256": "326158ded4b29429a084a2a7e2535832c0906d881d572539c78b552679778107"
+      },
+      "int32Metadata": {
+        "loadedFromRva": "0x8acdac0",
+        "slotRva": "0x8ce95c0",
+        "name": "int_TypeInfo",
+        "signature": "System_Int32_c*"
+      },
+      "loadRva": "0x439b2d8",
+      "boxingCallRva": "0x439b2e8",
+      "boxingTargetRva": "0x3c3d3b8",
+      "checks": {
+        "currentSourceHashMatchesHandoff": true,
+        "currentSourceHashMatchesPriorRowEvidence": true,
+        "getterTokenMatchesHandoff": true,
+        "getterRvaMatchesHandoffAndNative": true,
+        "nativeEndMatchesHandoff": true,
+        "nativeCodeHashMatchesPriorEvidence": true,
+        "nativeAsmExactBytesMatchElf": true,
+        "candidateMatchesHandoff": true,
+        "getterCurrentlyReturnsNull": true,
+        "exactlyOneGetterOverride": true,
+        "nativeExactInt32LoadAndBoxArgumentSequence": true,
+        "int32MetadataResolved": true
+      }
+    },
+    {
+      "type": "RuinsConfigConfig",
+      "file": "Assets/Scripts/Assembly-CSharp/ljzs_lt/RuinsConfigConfig.cs",
+      "source": {
+        "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\outputs\\OccupyCityRecovered\\Assets\\Scripts\\Assembly-CSharp\\ljzs_lt\\RuinsConfigConfig.cs",
+        "sha256": "ddcc905035f3f40e7c1585641d6e6ce6037e6c81645507a6682428ffa8086536"
+      },
+      "consumer": {
+        "kind": "table",
+        "type": "RuinsConfigConfig",
+        "consumerField": "dicRuinsConfig",
+        "managerOffset": "0x60",
+        "callRva": "0x4399960",
+        "targetRva": "0x4b8cadc",
+        "methodInfoSlot": "0x8d26ed8",
+        "methodInfoName": "Method$GameFramework.ConfigRead.readConfigByUnityJson<RuinsConfigConfig>()"
+      },
+      "member": "UniqueID.get",
+      "token": "0x6005B2C",
+      "sourceLine": 54,
+      "currentBody": "return null;",
+      "candidateBody": "return id;",
+      "boxedResultType": "System.Int32",
+      "field": {
+        "token": "0x4006961",
+        "offset": "0x10",
+        "type": "int",
+        "name": "id",
+        "line": 13
+      },
+      "native": {
+        "name": "ljzs_lt.RuinsConfigConfig$$get_UniqueID",
+        "rva": "0x439b5c0",
+        "endRvaExclusive": "0x439b61c",
+        "bytes": 92,
+        "codeSha256": "5e4d7b8f8f2cf7bab4048b5cfbe3893de2e553437d392e68c9ac3c4c7f0b76ce",
+        "signature": "Il2CppObject* ljzs_lt_RuinsConfigConfig__get_UniqueID (ljzs_lt_RuinsConfigConfig_o* __this, const MethodInfo* method);"
+      },
+      "nativeEvidence": {
+        "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-41-config\\evidence\\source-chain\\row-native\\0x439b5c0.asm.txt",
+        "sha256": "a2692df502701b48d89efd53e4d62b25a01fce6d1106c9f97e9018788020230f"
+      },
+      "int32Metadata": {
+        "loadedFromRva": "0x8acdac0",
+        "slotRva": "0x8ce95c0",
+        "name": "int_TypeInfo",
+        "signature": "System_Int32_c*"
+      },
+      "loadRva": "0x439b5f8",
+      "boxingCallRva": "0x439b608",
+      "boxingTargetRva": "0x3c3d3b8",
+      "checks": {
+        "currentSourceHashMatchesHandoff": true,
+        "currentSourceHashMatchesPriorRowEvidence": true,
+        "getterTokenMatchesHandoff": true,
+        "getterRvaMatchesHandoffAndNative": true,
+        "nativeEndMatchesHandoff": true,
+        "nativeCodeHashMatchesPriorEvidence": true,
+        "nativeAsmExactBytesMatchElf": true,
+        "candidateMatchesHandoff": true,
+        "getterCurrentlyReturnsNull": true,
+        "exactlyOneGetterOverride": true,
+        "nativeExactInt32LoadAndBoxArgumentSequence": true,
+        "int32MetadataResolved": true
+      }
+    },
+    {
+      "type": "DailyTaskConfig",
+      "file": "Assets/Scripts/Assembly-CSharp/ljzs_lt/DailyTaskConfig.cs",
+      "source": {
+        "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\outputs\\OccupyCityRecovered\\Assets\\Scripts\\Assembly-CSharp\\ljzs_lt\\DailyTaskConfig.cs",
+        "sha256": "e8125f11a1b540216cbf71edc21f8c9755deb0023ca6768cc45cac00204cd07c"
+      },
+      "consumer": {
+        "kind": "table",
+        "type": "DailyTaskConfig",
+        "consumerField": "dicDailyTask",
+        "managerOffset": "0x68",
+        "callRva": "0x4399974",
+        "targetRva": "0x4b8cadc",
+        "methodInfoSlot": "0x8d26e50",
+        "methodInfoName": "Method$GameFramework.ConfigRead.readConfigByUnityJson<DailyTaskConfig>()"
+      },
+      "member": "UniqueID.get",
+      "token": "0x6005B0A",
+      "sourceLine": 50,
+      "currentBody": "return null;",
+      "candidateBody": "return id;",
+      "boxedResultType": "System.Int32",
+      "field": {
+        "token": "0x4006906",
+        "offset": "0x10",
+        "type": "int",
+        "name": "id",
+        "line": 13
+      },
+      "native": {
+        "name": "ljzs_lt.DailyTaskConfig$$get_UniqueID",
+        "rva": "0x439af1c",
+        "endRvaExclusive": "0x439af78",
+        "bytes": 92,
+        "codeSha256": "ecde79eb72d3ad7eeee32e6cfe269804dd9fec436c6b8a5e25057e9448264faa",
+        "signature": "Il2CppObject* ljzs_lt_DailyTaskConfig__get_UniqueID (ljzs_lt_DailyTaskConfig_o* __this, const MethodInfo* method);"
+      },
+      "nativeEvidence": {
+        "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-41-config\\evidence\\source-chain\\row-native\\0x439af1c.asm.txt",
+        "sha256": "bc47112c421b681f03c0604e1828688b2aeed3bb5b971a8f2131efec4222fc7f"
+      },
+      "int32Metadata": {
+        "loadedFromRva": "0x8acdac0",
+        "slotRva": "0x8ce95c0",
+        "name": "int_TypeInfo",
+        "signature": "System_Int32_c*"
+      },
+      "loadRva": "0x439af54",
+      "boxingCallRva": "0x439af64",
+      "boxingTargetRva": "0x3c3d3b8",
+      "checks": {
+        "currentSourceHashMatchesHandoff": true,
+        "currentSourceHashMatchesPriorRowEvidence": true,
+        "getterTokenMatchesHandoff": true,
+        "getterRvaMatchesHandoffAndNative": true,
+        "nativeEndMatchesHandoff": true,
+        "nativeCodeHashMatchesPriorEvidence": true,
+        "nativeAsmExactBytesMatchElf": true,
+        "candidateMatchesHandoff": true,
+        "getterCurrentlyReturnsNull": true,
+        "exactlyOneGetterOverride": true,
+        "nativeExactInt32LoadAndBoxArgumentSequence": true,
+        "int32MetadataResolved": true
+      }
+    },
+    {
+      "type": "DailyPriceConfig",
+      "file": "Assets/Scripts/Assembly-CSharp/ljzs_lt/DailyPriceConfig.cs",
+      "source": {
+        "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\outputs\\OccupyCityRecovered\\Assets\\Scripts\\Assembly-CSharp\\ljzs_lt\\DailyPriceConfig.cs",
+        "sha256": "a92f818c8402c483020d82a7d9ffc27e683f67a5ffa08b1650bb1998d6ee0f6e"
+      },
+      "consumer": {
+        "kind": "table",
+        "type": "DailyPriceConfig",
+        "consumerField": "dicDailyPrice",
+        "managerOffset": "0x70",
+        "callRva": "0x4399988",
+        "targetRva": "0x4b8cadc",
+        "methodInfoSlot": "0x8d26e48",
+        "methodInfoName": "Method$GameFramework.ConfigRead.readConfigByUnityJson<DailyPriceConfig>()"
+      },
+      "member": "UniqueID.get",
+      "token": "0x6005B08",
+      "sourceLine": 74,
+      "currentBody": "return null;",
+      "candidateBody": "return id;",
+      "boxedResultType": "System.Int32",
+      "field": {
+        "token": "0x40068F7",
+        "offset": "0x10",
+        "type": "int",
+        "name": "id",
+        "line": 13
+      },
+      "native": {
+        "name": "ljzs_lt.DailyPriceConfig$$get_UniqueID",
+        "rva": "0x439aeb8",
+        "endRvaExclusive": "0x439af14",
+        "bytes": 92,
+        "codeSha256": "0850cfa6635194879f933d2630bb6df46e4f708ac5aae5c06e6638167fa8e1f4",
+        "signature": "Il2CppObject* ljzs_lt_DailyPriceConfig__get_UniqueID (ljzs_lt_DailyPriceConfig_o* __this, const MethodInfo* method);"
+      },
+      "nativeEvidence": {
+        "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-41-config\\evidence\\source-chain\\row-native\\0x439aeb8.asm.txt",
+        "sha256": "f792c229941ccd4e3cb7ed56c189e24756454ee2652cb9bb68264adc78446e35"
+      },
+      "int32Metadata": {
+        "loadedFromRva": "0x8acdac0",
+        "slotRva": "0x8ce95c0",
+        "name": "int_TypeInfo",
+        "signature": "System_Int32_c*"
+      },
+      "loadRva": "0x439aef0",
+      "boxingCallRva": "0x439af00",
+      "boxingTargetRva": "0x3c3d3b8",
+      "checks": {
+        "currentSourceHashMatchesHandoff": true,
+        "currentSourceHashMatchesPriorRowEvidence": true,
+        "getterTokenMatchesHandoff": true,
+        "getterRvaMatchesHandoffAndNative": true,
+        "nativeEndMatchesHandoff": true,
+        "nativeCodeHashMatchesPriorEvidence": true,
+        "nativeAsmExactBytesMatchElf": true,
+        "candidateMatchesHandoff": true,
+        "getterCurrentlyReturnsNull": true,
+        "exactlyOneGetterOverride": true,
+        "nativeExactInt32LoadAndBoxArgumentSequence": true,
+        "int32MetadataResolved": true
+      }
+    },
+    {
+      "type": "TotalDiceConfig",
+      "file": "Assets/Scripts/Assembly-CSharp/ljzs_lt/TotalDiceConfig.cs",
+      "source": {
+        "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\outputs\\OccupyCityRecovered\\Assets\\Scripts\\Assembly-CSharp\\ljzs_lt\\TotalDiceConfig.cs",
+        "sha256": "1ec87c23efd2ed80277298178a1675683b777625ccf622963ecee1deb5b2f688"
+      },
+      "consumer": {
+        "kind": "table",
+        "type": "TotalDiceConfig",
+        "consumerField": "dicTotalDice",
+        "managerOffset": "0x78",
+        "callRva": "0x439999c",
+        "targetRva": "0x4b8cadc",
+        "methodInfoSlot": "0x8d26ef0",
+        "methodInfoName": "Method$GameFramework.ConfigRead.readConfigByUnityJson<TotalDiceConfig>()"
+      },
+      "member": "UniqueID.get",
+      "token": "0x6005B34",
+      "sourceLine": 38,
+      "currentBody": "return null;",
+      "candidateBody": "return id;",
+      "boxedResultType": "System.Int32",
+      "field": {
+        "token": "0x400697A",
+        "offset": "0x10",
+        "type": "int",
+        "name": "id",
+        "line": 13
+      },
+      "native": {
+        "name": "ljzs_lt.TotalDiceConfig$$get_UniqueID",
+        "rva": "0x439b750",
+        "endRvaExclusive": "0x439b7ac",
+        "bytes": 92,
+        "codeSha256": "2a951cf47395dd886b0fffd9295bb84ef2faffc33c5f6b9db3ce91d432805410",
+        "signature": "Il2CppObject* ljzs_lt_TotalDiceConfig__get_UniqueID (ljzs_lt_TotalDiceConfig_o* __this, const MethodInfo* method);"
+      },
+      "nativeEvidence": {
+        "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-41-config\\evidence\\source-chain\\row-native\\0x439b750.asm.txt",
+        "sha256": "a287e27fb34b00219f3ba17a4d4197510c7fce264a12586986b4053eba179117"
+      },
+      "int32Metadata": {
+        "loadedFromRva": "0x8acdac0",
+        "slotRva": "0x8ce95c0",
+        "name": "int_TypeInfo",
+        "signature": "System_Int32_c*"
+      },
+      "loadRva": "0x439b788",
+      "boxingCallRva": "0x439b798",
+      "boxingTargetRva": "0x3c3d3b8",
+      "checks": {
+        "currentSourceHashMatchesHandoff": true,
+        "currentSourceHashMatchesPriorRowEvidence": true,
+        "getterTokenMatchesHandoff": true,
+        "getterRvaMatchesHandoffAndNative": true,
+        "nativeEndMatchesHandoff": true,
+        "nativeCodeHashMatchesPriorEvidence": true,
+        "nativeAsmExactBytesMatchElf": true,
+        "candidateMatchesHandoff": true,
+        "getterCurrentlyReturnsNull": true,
+        "exactlyOneGetterOverride": true,
+        "nativeExactInt32LoadAndBoxArgumentSequence": true,
+        "int32MetadataResolved": true
+      }
+    },
+    {
+      "type": "LapsConfigConfig",
+      "file": "Assets/Scripts/Assembly-CSharp/ljzs_lt/LapsConfigConfig.cs",
+      "source": {
+        "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\outputs\\OccupyCityRecovered\\Assets\\Scripts\\Assembly-CSharp\\ljzs_lt\\LapsConfigConfig.cs",
+        "sha256": "b1e83e58bebdc7cd4edc297823bddaa4c0c07ea31d98a3ae472b59396ef7033c"
+      },
+      "consumer": {
+        "kind": "table",
+        "type": "LapsConfigConfig",
+        "consumerField": "dicLapsConfig",
+        "managerOffset": "0x80",
+        "callRva": "0x43999b0",
+        "targetRva": "0x4b8cadc",
+        "methodInfoSlot": "0x8d26e70",
+        "methodInfoName": "Method$GameFramework.ConfigRead.readConfigByUnityJson<LapsConfigConfig>()"
+      },
+      "member": "UniqueID.get",
+      "token": "0x6005B12",
+      "sourceLine": 38,
+      "currentBody": "return null;",
+      "candidateBody": "return id;",
+      "boxedResultType": "System.Int32",
+      "field": {
+        "token": "0x4006919",
+        "offset": "0x10",
+        "type": "int",
+        "name": "id",
+        "line": 13
+      },
+      "native": {
+        "name": "ljzs_lt.LapsConfigConfig$$get_UniqueID",
+        "rva": "0x439b0ac",
+        "endRvaExclusive": "0x439b108",
+        "bytes": 92,
+        "codeSha256": "d2383e010933f44855175ca4850c3680cf6372fc240daceaefb6c4374f5bb43b",
+        "signature": "Il2CppObject* ljzs_lt_LapsConfigConfig__get_UniqueID (ljzs_lt_LapsConfigConfig_o* __this, const MethodInfo* method);"
+      },
+      "nativeEvidence": {
+        "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-41-config\\evidence\\source-chain\\row-native\\0x439b0ac.asm.txt",
+        "sha256": "2bca2fa394f24d22bd1a59d0d30dbe459bacfb374ea1749a136b021515bdf799"
+      },
+      "int32Metadata": {
+        "loadedFromRva": "0x8acdac0",
+        "slotRva": "0x8ce95c0",
+        "name": "int_TypeInfo",
+        "signature": "System_Int32_c*"
+      },
+      "loadRva": "0x439b0e4",
+      "boxingCallRva": "0x439b0f4",
+      "boxingTargetRva": "0x3c3d3b8",
+      "checks": {
+        "currentSourceHashMatchesHandoff": true,
+        "currentSourceHashMatchesPriorRowEvidence": true,
+        "getterTokenMatchesHandoff": true,
+        "getterRvaMatchesHandoffAndNative": true,
+        "nativeEndMatchesHandoff": true,
+        "nativeCodeHashMatchesPriorEvidence": true,
+        "nativeAsmExactBytesMatchElf": true,
+        "candidateMatchesHandoff": true,
+        "getterCurrentlyReturnsNull": true,
+        "exactlyOneGetterOverride": true,
+        "nativeExactInt32LoadAndBoxArgumentSequence": true,
+        "int32MetadataResolved": true
+      }
+    },
+    {
+      "type": "SaleShopConfig",
+      "file": "Assets/Scripts/Assembly-CSharp/ljzs_lt/SaleShopConfig.cs",
+      "source": {
+        "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\outputs\\OccupyCityRecovered\\Assets\\Scripts\\Assembly-CSharp\\ljzs_lt\\SaleShopConfig.cs",
+        "sha256": "19ad63a2e7c2d784107c0bef4414d2d363b61cdd1c68a78b7e70886372855b14"
+      },
+      "consumer": {
+        "kind": "table",
+        "type": "SaleShopConfig",
+        "consumerField": "dicSaleShop",
+        "managerOffset": "0x88",
+        "callRva": "0x43999c4",
+        "targetRva": "0x4b8cadc",
+        "methodInfoSlot": "0x8d26ee0",
+        "methodInfoName": "Method$GameFramework.ConfigRead.readConfigByUnityJson<SaleShopConfig>()"
+      },
+      "member": "UniqueID.get",
+      "token": "0x6005B2E",
+      "sourceLine": 46,
+      "currentBody": "return null;",
+      "candidateBody": "return id;",
+      "boxedResultType": "System.Int32",
+      "field": {
+        "token": "0x400696B",
+        "offset": "0x10",
+        "type": "int",
+        "name": "id",
+        "line": 13
+      },
+      "native": {
+        "name": "ljzs_lt.SaleShopConfig$$get_UniqueID",
+        "rva": "0x439b624",
+        "endRvaExclusive": "0x439b680",
+        "bytes": 92,
+        "codeSha256": "41cb48d5e660ef14469a684b54ad862045479a3374148d695347db4859f4dae6",
+        "signature": "Il2CppObject* ljzs_lt_SaleShopConfig__get_UniqueID (ljzs_lt_SaleShopConfig_o* __this, const MethodInfo* method);"
+      },
+      "nativeEvidence": {
+        "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-41-config\\evidence\\source-chain\\row-native\\0x439b624.asm.txt",
+        "sha256": "dfecdedf7f5b41fde5da70999b6dd599ce19e66fcd6567c1f2b4e59920b86e6b"
+      },
+      "int32Metadata": {
+        "loadedFromRva": "0x8acdac0",
+        "slotRva": "0x8ce95c0",
+        "name": "int_TypeInfo",
+        "signature": "System_Int32_c*"
+      },
+      "loadRva": "0x439b65c",
+      "boxingCallRva": "0x439b66c",
+      "boxingTargetRva": "0x3c3d3b8",
+      "checks": {
+        "currentSourceHashMatchesHandoff": true,
+        "currentSourceHashMatchesPriorRowEvidence": true,
+        "getterTokenMatchesHandoff": true,
+        "getterRvaMatchesHandoffAndNative": true,
+        "nativeEndMatchesHandoff": true,
+        "nativeCodeHashMatchesPriorEvidence": true,
+        "nativeAsmExactBytesMatchElf": true,
+        "candidateMatchesHandoff": true,
+        "getterCurrentlyReturnsNull": true,
+        "exactlyOneGetterOverride": true,
+        "nativeExactInt32LoadAndBoxArgumentSequence": true,
+        "int32MetadataResolved": true
+      }
+    },
+    {
+      "type": "How2PlayConfig",
+      "file": "Assets/Scripts/Assembly-CSharp/ljzs_lt/How2PlayConfig.cs",
+      "source": {
+        "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\outputs\\OccupyCityRecovered\\Assets\\Scripts\\Assembly-CSharp\\ljzs_lt\\How2PlayConfig.cs",
+        "sha256": "3e7e2e678fc7208aacd94dd704bf869a6a845886f6ba4d7b666a440569d2862e"
+      },
+      "consumer": {
+        "kind": "table",
+        "type": "How2PlayConfig",
+        "consumerField": "dicHow2Play",
+        "managerOffset": "0x90",
+        "callRva": "0x43999d8",
+        "targetRva": "0x4b8cadc",
+        "methodInfoSlot": "0x8d26e68",
+        "methodInfoName": "Method$GameFramework.ConfigRead.readConfigByUnityJson<How2PlayConfig>()"
+      },
+      "member": "UniqueID.get",
+      "token": "0x6005B10",
+      "sourceLine": 26,
+      "currentBody": "return null;",
+      "candidateBody": "return id;",
+      "boxedResultType": "System.Int32",
+      "field": {
+        "token": "0x4006916",
+        "offset": "0x10",
+        "type": "int",
+        "name": "id",
+        "line": 13
+      },
+      "native": {
+        "name": "ljzs_lt.How2PlayConfig$$get_UniqueID",
+        "rva": "0x439b048",
+        "endRvaExclusive": "0x439b0a4",
+        "bytes": 92,
+        "codeSha256": "560618b6e075e5069c09cf265a9663bfcb617dceed92e9f2ab0f0f4679ff6627",
+        "signature": "Il2CppObject* ljzs_lt_How2PlayConfig__get_UniqueID (ljzs_lt_How2PlayConfig_o* __this, const MethodInfo* method);"
+      },
+      "nativeEvidence": {
+        "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-41-config\\evidence\\source-chain\\row-native\\0x439b048.asm.txt",
+        "sha256": "5534f64c9e5d653599e72ef403413087ae9418256640c0017dc243a0f975470b"
+      },
+      "int32Metadata": {
+        "loadedFromRva": "0x8acdac0",
+        "slotRva": "0x8ce95c0",
+        "name": "int_TypeInfo",
+        "signature": "System_Int32_c*"
+      },
+      "loadRva": "0x439b080",
+      "boxingCallRva": "0x439b090",
+      "boxingTargetRva": "0x3c3d3b8",
+      "checks": {
+        "currentSourceHashMatchesHandoff": true,
+        "currentSourceHashMatchesPriorRowEvidence": true,
+        "getterTokenMatchesHandoff": true,
+        "getterRvaMatchesHandoffAndNative": true,
+        "nativeEndMatchesHandoff": true,
+        "nativeCodeHashMatchesPriorEvidence": true,
+        "nativeAsmExactBytesMatchElf": true,
+        "candidateMatchesHandoff": true,
+        "getterCurrentlyReturnsNull": true,
+        "exactlyOneGetterOverride": true,
+        "nativeExactInt32LoadAndBoxArgumentSequence": true,
+        "int32MetadataResolved": true
+      }
+    },
+    {
+      "type": "PurchaseConfig",
+      "file": "Assets/Scripts/Assembly-CSharp/ljzs_lt/PurchaseConfig.cs",
+      "source": {
+        "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\outputs\\OccupyCityRecovered\\Assets\\Scripts\\Assembly-CSharp\\ljzs_lt\\PurchaseConfig.cs",
+        "sha256": "fd46652bc4b4612571fd2e44844f8fde8a87c2b24a968b9b1de4c590f172586f"
+      },
+      "consumer": {
+        "kind": "table",
+        "type": "PurchaseConfig",
+        "consumerField": "dicPurchase",
+        "managerOffset": "0x98",
+        "callRva": "0x43999ec",
+        "targetRva": "0x4b8cadc",
+        "methodInfoSlot": "0x8d26ed0",
+        "methodInfoName": "Method$GameFramework.ConfigRead.readConfigByUnityJson<PurchaseConfig>()"
+      },
+      "member": "UniqueID.get",
+      "token": "0x6005B2A",
+      "sourceLine": 50,
+      "currentBody": "return null;",
+      "candidateBody": "return id;",
+      "boxedResultType": "System.Int32",
+      "field": {
+        "token": "0x4006958",
+        "offset": "0x10",
+        "type": "int",
+        "name": "id",
+        "line": 13
+      },
+      "native": {
+        "name": "ljzs_lt.PurchaseConfig$$get_UniqueID",
+        "rva": "0x439b55c",
+        "endRvaExclusive": "0x439b5b8",
+        "bytes": 92,
+        "codeSha256": "63775575dabb840df638787fe1b4c08ff60e124fd0bfd861058ef408c43dd5ca",
+        "signature": "Il2CppObject* ljzs_lt_PurchaseConfig__get_UniqueID (ljzs_lt_PurchaseConfig_o* __this, const MethodInfo* method);"
+      },
+      "nativeEvidence": {
+        "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-41-config\\evidence\\source-chain\\row-native\\0x439b55c.asm.txt",
+        "sha256": "8082c7fd6e36a9001fbb01d5870e695908c831928e91b38c3949cc704c62f351"
+      },
+      "int32Metadata": {
+        "loadedFromRva": "0x8acdac0",
+        "slotRva": "0x8ce95c0",
+        "name": "int_TypeInfo",
+        "signature": "System_Int32_c*"
+      },
+      "loadRva": "0x439b594",
+      "boxingCallRva": "0x439b5a4",
+      "boxingTargetRva": "0x3c3d3b8",
+      "checks": {
+        "currentSourceHashMatchesHandoff": true,
+        "currentSourceHashMatchesPriorRowEvidence": true,
+        "getterTokenMatchesHandoff": true,
+        "getterRvaMatchesHandoffAndNative": true,
+        "nativeEndMatchesHandoff": true,
+        "nativeCodeHashMatchesPriorEvidence": true,
+        "nativeAsmExactBytesMatchElf": true,
+        "candidateMatchesHandoff": true,
+        "getterCurrentlyReturnsNull": true,
+        "exactlyOneGetterOverride": true,
+        "nativeExactInt32LoadAndBoxArgumentSequence": true,
+        "int32MetadataResolved": true
+      }
+    },
+    {
+      "type": "CdkConfig",
+      "file": "Assets/Scripts/Assembly-CSharp/ljzs_lt/CdkConfig.cs",
+      "source": {
+        "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\outputs\\OccupyCityRecovered\\Assets\\Scripts\\Assembly-CSharp\\ljzs_lt\\CdkConfig.cs",
+        "sha256": "93c833d37cc39a6801cc1d4d5bef1d499375b0812cd8a9afd76623cef54fb92f"
+      },
+      "consumer": {
+        "kind": "table",
+        "type": "CdkConfig",
+        "consumerField": "dicCdk",
+        "managerOffset": "0xa0",
+        "callRva": "0x4399a00",
+        "targetRva": "0x4b8cadc",
+        "methodInfoSlot": "0x8d26e08",
+        "methodInfoName": "Method$GameFramework.ConfigRead.readConfigByUnityJson<CdkConfig>()"
+      },
+      "member": "UniqueID.get",
+      "token": "0x6005AF8",
+      "sourceLine": 26,
+      "currentBody": "return null;",
+      "candidateBody": "return id;",
+      "boxedResultType": "System.Int32",
+      "field": {
+        "token": "0x40068D8",
+        "offset": "0x10",
+        "type": "int",
+        "name": "id",
+        "line": 13
+      },
+      "native": {
+        "name": "ljzs_lt.CdkConfig$$get_UniqueID",
+        "rva": "0x439ab98",
+        "endRvaExclusive": "0x439abf4",
+        "bytes": 92,
+        "codeSha256": "42ff8a159ea0a5fab348e3853ee6dca1a39535924ebb27da9971639639158c04",
+        "signature": "Il2CppObject* ljzs_lt_CdkConfig__get_UniqueID (ljzs_lt_CdkConfig_o* __this, const MethodInfo* method);"
+      },
+      "nativeEvidence": {
+        "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-41-config\\evidence\\source-chain\\row-native\\0x439ab98.asm.txt",
+        "sha256": "03c6b839214519a38d475e496f89039c8650770ec37d8ec90266846cb7c0f58b"
+      },
+      "int32Metadata": {
+        "loadedFromRva": "0x8acdac0",
+        "slotRva": "0x8ce95c0",
+        "name": "int_TypeInfo",
+        "signature": "System_Int32_c*"
+      },
+      "loadRva": "0x439abd0",
+      "boxingCallRva": "0x439abe0",
+      "boxingTargetRva": "0x3c3d3b8",
+      "checks": {
+        "currentSourceHashMatchesHandoff": true,
+        "currentSourceHashMatchesPriorRowEvidence": true,
+        "getterTokenMatchesHandoff": true,
+        "getterRvaMatchesHandoffAndNative": true,
+        "nativeEndMatchesHandoff": true,
+        "nativeCodeHashMatchesPriorEvidence": true,
+        "nativeAsmExactBytesMatchElf": true,
+        "candidateMatchesHandoff": true,
+        "getterCurrentlyReturnsNull": true,
+        "exactlyOneGetterOverride": true,
+        "nativeExactInt32LoadAndBoxArgumentSequence": true,
+        "int32MetadataResolved": true
+      }
+    },
+    {
+      "type": "CompareCardInfoConfig",
+      "file": "Assets/Scripts/Assembly-CSharp/ljzs_lt/CompareCardInfoConfig.cs",
+      "source": {
+        "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\outputs\\OccupyCityRecovered\\Assets\\Scripts\\Assembly-CSharp\\ljzs_lt\\CompareCardInfoConfig.cs",
+        "sha256": "fca87ba1f4c840037debec6ac1ed42fd139d6bf6ab1a92edc09d2d494e9ade7e"
+      },
+      "consumer": {
+        "kind": "table",
+        "type": "CompareCardInfoConfig",
+        "consumerField": "dicCompareCardInfo",
+        "managerOffset": "0xa8",
+        "callRva": "0x4399a14",
+        "targetRva": "0x4b8cadc",
+        "methodInfoSlot": "0x8d26e28",
+        "methodInfoName": "Method$GameFramework.ConfigRead.readConfigByUnityJson<CompareCardInfoConfig>()"
+      },
+      "member": "UniqueID.get",
+      "token": "0x6005B00",
+      "sourceLine": 26,
+      "currentBody": "return null;",
+      "candidateBody": "return id;",
+      "boxedResultType": "System.Int32",
+      "field": {
+        "token": "0x40068E4",
+        "offset": "0x10",
+        "type": "int",
+        "name": "id",
+        "line": 13
+      },
+      "native": {
+        "name": "ljzs_lt.CompareCardInfoConfig$$get_UniqueID",
+        "rva": "0x439ad28",
+        "endRvaExclusive": "0x439ad84",
+        "bytes": 92,
+        "codeSha256": "d099a06fee54784f7ae13614721faa347a6e6097c92f05b0e8469529ac0ea95d",
+        "signature": "Il2CppObject* ljzs_lt_CompareCardInfoConfig__get_UniqueID (ljzs_lt_CompareCardInfoConfig_o* __this, const MethodInfo* method);"
+      },
+      "nativeEvidence": {
+        "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-41-config\\evidence\\source-chain\\row-native\\0x439ad28.asm.txt",
+        "sha256": "961f46fe618b4076f0a1f11c6157a48830e54e02c25e5f65dbe3ae9b3e7f31f6"
+      },
+      "int32Metadata": {
+        "loadedFromRva": "0x8acdac0",
+        "slotRva": "0x8ce95c0",
+        "name": "int_TypeInfo",
+        "signature": "System_Int32_c*"
+      },
+      "loadRva": "0x439ad60",
+      "boxingCallRva": "0x439ad70",
+      "boxingTargetRva": "0x3c3d3b8",
+      "checks": {
+        "currentSourceHashMatchesHandoff": true,
+        "currentSourceHashMatchesPriorRowEvidence": true,
+        "getterTokenMatchesHandoff": true,
+        "getterRvaMatchesHandoffAndNative": true,
+        "nativeEndMatchesHandoff": true,
+        "nativeCodeHashMatchesPriorEvidence": true,
+        "nativeAsmExactBytesMatchElf": true,
+        "candidateMatchesHandoff": true,
+        "getterCurrentlyReturnsNull": true,
+        "exactlyOneGetterOverride": true,
+        "nativeExactInt32LoadAndBoxArgumentSequence": true,
+        "int32MetadataResolved": true
+      }
+    },
+    {
+      "type": "WordEmojiConfig",
+      "file": "Assets/Scripts/Assembly-CSharp/ljzs_lt/WordEmojiConfig.cs",
+      "source": {
+        "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\outputs\\OccupyCityRecovered\\Assets\\Scripts\\Assembly-CSharp\\ljzs_lt\\WordEmojiConfig.cs",
+        "sha256": "c99d06fae7784b1847833d230f655d46b799189bd5b03e623b63e44784d8ef4d"
+      },
+      "consumer": {
+        "kind": "table",
+        "type": "WordEmojiConfig",
+        "consumerField": "dicWordEmoji",
+        "managerOffset": "0xb0",
+        "callRva": "0x4399a28",
+        "targetRva": "0x4b8cadc",
+        "methodInfoSlot": "0x8d26ef8",
+        "methodInfoName": "Method$GameFramework.ConfigRead.readConfigByUnityJson<WordEmojiConfig>()"
+      },
+      "member": "UniqueID.get",
+      "token": "0x6005B36",
+      "sourceLine": 22,
+      "currentBody": "return null;",
+      "candidateBody": "return ID;",
+      "boxedResultType": "System.Int32",
+      "field": {
+        "token": "0x4006980",
+        "offset": "0x10",
+        "type": "int",
+        "name": "ID",
+        "line": 13
+      },
+      "native": {
+        "name": "ljzs_lt.WordEmojiConfig$$get_UniqueID",
+        "rva": "0x439b7b4",
+        "endRvaExclusive": "0x439b810",
+        "bytes": 92,
+        "codeSha256": "5aed7aed195854bf2918d21e6c50945b63da6cc1cf550ed83dfeff5533a715c6",
+        "signature": "Il2CppObject* ljzs_lt_WordEmojiConfig__get_UniqueID (ljzs_lt_WordEmojiConfig_o* __this, const MethodInfo* method);"
+      },
+      "nativeEvidence": {
+        "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-41-config\\evidence\\source-chain\\row-native\\0x439b7b4.asm.txt",
+        "sha256": "af711ba060d7ccbff9e3015352a5abf54b551ae3ac7b90c9e3a9aac4ad23411d"
+      },
+      "int32Metadata": {
+        "loadedFromRva": "0x8acdac0",
+        "slotRva": "0x8ce95c0",
+        "name": "int_TypeInfo",
+        "signature": "System_Int32_c*"
+      },
+      "loadRva": "0x439b7ec",
+      "boxingCallRva": "0x439b7fc",
+      "boxingTargetRva": "0x3c3d3b8",
+      "checks": {
+        "currentSourceHashMatchesHandoff": true,
+        "currentSourceHashMatchesPriorRowEvidence": true,
+        "getterTokenMatchesHandoff": true,
+        "getterRvaMatchesHandoffAndNative": true,
+        "nativeEndMatchesHandoff": true,
+        "nativeCodeHashMatchesPriorEvidence": true,
+        "nativeAsmExactBytesMatchElf": true,
+        "candidateMatchesHandoff": true,
+        "getterCurrentlyReturnsNull": true,
+        "exactlyOneGetterOverride": true,
+        "nativeExactInt32LoadAndBoxArgumentSequence": true,
+        "int32MetadataResolved": true
+      }
+    },
+    {
+      "type": "SubGameBuffConfig",
+      "file": "Assets/Scripts/Assembly-CSharp/ljzs_lt/SubGameBuffConfig.cs",
+      "source": {
+        "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\outputs\\OccupyCityRecovered\\Assets\\Scripts\\Assembly-CSharp\\ljzs_lt\\SubGameBuffConfig.cs",
+        "sha256": "f078c9c337b9b244ad447dfe6c52340d52eb9dd5e6ef9f43b23c8ac0362e88bb"
+      },
+      "consumer": {
+        "kind": "table",
+        "type": "SubGameBuffConfig",
+        "consumerField": "dicSubGameBuff",
+        "managerOffset": "0xb8",
+        "callRva": "0x4399a3c",
+        "targetRva": "0x4b8cadc",
+        "methodInfoSlot": "0x8d26ee8",
+        "methodInfoName": "Method$GameFramework.ConfigRead.readConfigByUnityJson<SubGameBuffConfig>()"
+      },
+      "member": "UniqueID.get",
+      "token": "0x6005B32",
+      "sourceLine": 38,
+      "currentBody": "return null;",
+      "candidateBody": "return ID;",
+      "boxedResultType": "System.Int32",
+      "field": {
+        "token": "0x4006974",
+        "offset": "0x10",
+        "type": "int",
+        "name": "ID",
+        "line": 13
+      },
+      "native": {
+        "name": "ljzs_lt.SubGameBuffConfig$$get_UniqueID",
+        "rva": "0x439b6ec",
+        "endRvaExclusive": "0x439b748",
+        "bytes": 92,
+        "codeSha256": "3390f730c77bc9791520f007d0673c045a41cc13fc615f66a7740b8d7b8aa787",
+        "signature": "Il2CppObject* ljzs_lt_SubGameBuffConfig__get_UniqueID (ljzs_lt_SubGameBuffConfig_o* __this, const MethodInfo* method);"
+      },
+      "nativeEvidence": {
+        "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-41-config\\evidence\\source-chain\\row-native\\0x439b6ec.asm.txt",
+        "sha256": "c9dc4db72e71b0c439611813d8e8ef67789a16578e4c9f2c2c61fea14e3dd496"
+      },
+      "int32Metadata": {
+        "loadedFromRva": "0x8acdac0",
+        "slotRva": "0x8ce95c0",
+        "name": "int_TypeInfo",
+        "signature": "System_Int32_c*"
+      },
+      "loadRva": "0x439b724",
+      "boxingCallRva": "0x439b734",
+      "boxingTargetRva": "0x3c3d3b8",
+      "checks": {
+        "currentSourceHashMatchesHandoff": true,
+        "currentSourceHashMatchesPriorRowEvidence": true,
+        "getterTokenMatchesHandoff": true,
+        "getterRvaMatchesHandoffAndNative": true,
+        "nativeEndMatchesHandoff": true,
+        "nativeCodeHashMatchesPriorEvidence": true,
+        "nativeAsmExactBytesMatchElf": true,
+        "candidateMatchesHandoff": true,
+        "getterCurrentlyReturnsNull": true,
+        "exactlyOneGetterOverride": true,
+        "nativeExactInt32LoadAndBoxArgumentSequence": true,
+        "int32MetadataResolved": true
+      }
+    },
+    {
+      "type": "CompareShenqiInfoConfig",
+      "file": "Assets/Scripts/Assembly-CSharp/ljzs_lt/CompareShenqiInfoConfig.cs",
+      "source": {
+        "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\outputs\\OccupyCityRecovered\\Assets\\Scripts\\Assembly-CSharp\\ljzs_lt\\CompareShenqiInfoConfig.cs",
+        "sha256": "f018e499bf94f59cc914620601ace45d0cb10a1a74037fecf3198632388dd65e"
+      },
+      "consumer": {
+        "kind": "table",
+        "type": "CompareShenqiInfoConfig",
+        "consumerField": "dicCompareShenqiInfo",
+        "managerOffset": "0xc0",
+        "callRva": "0x4399a50",
+        "targetRva": "0x4b8cadc",
+        "methodInfoSlot": "0x8d26e30",
+        "methodInfoName": "Method$GameFramework.ConfigRead.readConfigByUnityJson<CompareShenqiInfoConfig>()"
+      },
+      "member": "UniqueID.get",
+      "token": "0x6005B02",
+      "sourceLine": 30,
+      "currentBody": "return null;",
+      "candidateBody": "return id;",
+      "boxedResultType": "System.Int32",
+      "field": {
+        "token": "0x40068E7",
+        "offset": "0x10",
+        "type": "int",
+        "name": "id",
+        "line": 13
+      },
+      "native": {
+        "name": "ljzs_lt.CompareShenqiInfoConfig$$get_UniqueID",
+        "rva": "0x439ad8c",
+        "endRvaExclusive": "0x439ade8",
+        "bytes": 92,
+        "codeSha256": "018cea7717dabc532f10076b78c49a4e337e9d8b602b19385edb6dc393ae50a4",
+        "signature": "Il2CppObject* ljzs_lt_CompareShenqiInfoConfig__get_UniqueID (ljzs_lt_CompareShenqiInfoConfig_o* __this, const MethodInfo* method);"
+      },
+      "nativeEvidence": {
+        "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-41-config\\evidence\\source-chain\\row-native\\0x439ad8c.asm.txt",
+        "sha256": "26c5c824410aaa68d0ab6d6094cc6ce897575ef8676ade72b5fbddeff6ee1590"
+      },
+      "int32Metadata": {
+        "loadedFromRva": "0x8acdac0",
+        "slotRva": "0x8ce95c0",
+        "name": "int_TypeInfo",
+        "signature": "System_Int32_c*"
+      },
+      "loadRva": "0x439adc4",
+      "boxingCallRva": "0x439add4",
+      "boxingTargetRva": "0x3c3d3b8",
+      "checks": {
+        "currentSourceHashMatchesHandoff": true,
+        "currentSourceHashMatchesPriorRowEvidence": true,
+        "getterTokenMatchesHandoff": true,
+        "getterRvaMatchesHandoffAndNative": true,
+        "nativeEndMatchesHandoff": true,
+        "nativeCodeHashMatchesPriorEvidence": true,
+        "nativeAsmExactBytesMatchElf": true,
+        "candidateMatchesHandoff": true,
+        "getterCurrentlyReturnsNull": true,
+        "exactlyOneGetterOverride": true,
+        "nativeExactInt32LoadAndBoxArgumentSequence": true,
+        "int32MetadataResolved": true
+      }
+    },
+    {
+      "type": "PropAttrBuffInfoConfig",
+      "file": "Assets/Scripts/Assembly-CSharp/ljzs_lt/PropAttrBuffInfoConfig.cs",
+      "source": {
+        "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\outputs\\OccupyCityRecovered\\Assets\\Scripts\\Assembly-CSharp\\ljzs_lt\\PropAttrBuffInfoConfig.cs",
+        "sha256": "d8bf26b427adc2b62a1f8128ead5ccb4035ccebfbbea048bba46e15f3f5e5a22"
+      },
+      "consumer": {
+        "kind": "table",
+        "type": "PropAttrBuffInfoConfig",
+        "consumerField": "dicPropAttrBuffInfo",
+        "managerOffset": "0xc8",
+        "callRva": "0x4399a64",
+        "targetRva": "0x4b8cadc",
+        "methodInfoSlot": "0x8d26ea0",
+        "methodInfoName": "Method$GameFramework.ConfigRead.readConfigByUnityJson<PropAttrBuffInfoConfig>()"
+      },
+      "member": "UniqueID.get",
+      "token": "0x6005B1E",
+      "sourceLine": 26,
+      "currentBody": "return null;",
+      "candidateBody": "return id;",
+      "boxedResultType": "System.Int32",
+      "field": {
+        "token": "0x400693E",
+        "offset": "0x10",
+        "type": "int",
+        "name": "id",
+        "line": 13
+      },
+      "native": {
+        "name": "ljzs_lt.PropAttrBuffInfoConfig$$get_UniqueID",
+        "rva": "0x439b304",
+        "endRvaExclusive": "0x439b360",
+        "bytes": 92,
+        "codeSha256": "fa31950be94ad625acb74e7a2bbcb94516804bc5880f6e4c3bf0eb24f0e2278b",
+        "signature": "Il2CppObject* ljzs_lt_PropAttrBuffInfoConfig__get_UniqueID (ljzs_lt_PropAttrBuffInfoConfig_o* __this, const MethodInfo* method);"
+      },
+      "nativeEvidence": {
+        "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-41-config\\evidence\\source-chain\\row-native\\0x439b304.asm.txt",
+        "sha256": "88239accaf9f7e677a2c542b6e6e2c24823e180e596e801fb0258f076590a072"
+      },
+      "int32Metadata": {
+        "loadedFromRva": "0x8acdac0",
+        "slotRva": "0x8ce95c0",
+        "name": "int_TypeInfo",
+        "signature": "System_Int32_c*"
+      },
+      "loadRva": "0x439b33c",
+      "boxingCallRva": "0x439b34c",
+      "boxingTargetRva": "0x3c3d3b8",
+      "checks": {
+        "currentSourceHashMatchesHandoff": true,
+        "currentSourceHashMatchesPriorRowEvidence": true,
+        "getterTokenMatchesHandoff": true,
+        "getterRvaMatchesHandoffAndNative": true,
+        "nativeEndMatchesHandoff": true,
+        "nativeCodeHashMatchesPriorEvidence": true,
+        "nativeAsmExactBytesMatchElf": true,
+        "candidateMatchesHandoff": true,
+        "getterCurrentlyReturnsNull": true,
+        "exactlyOneGetterOverride": true,
+        "nativeExactInt32LoadAndBoxArgumentSequence": true,
+        "int32MetadataResolved": true
+      }
+    },
+    {
+      "type": "PropUpgradeInfoConfig",
+      "file": "Assets/Scripts/Assembly-CSharp/ljzs_lt/PropUpgradeInfoConfig.cs",
+      "source": {
+        "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\outputs\\OccupyCityRecovered\\Assets\\Scripts\\Assembly-CSharp\\ljzs_lt\\PropUpgradeInfoConfig.cs",
+        "sha256": "f862883037adee7d8d5ee7c184286aebcde91651f6c78f657ff899e78b440dac"
+      },
+      "consumer": {
+        "kind": "table",
+        "type": "PropUpgradeInfoConfig",
+        "consumerField": "dicPropUpgradeInfo",
+        "managerOffset": "0xd0",
+        "callRva": "0x4399a78",
+        "targetRva": "0x4b8cadc",
+        "methodInfoSlot": "0x8d26ec8",
+        "methodInfoName": "Method$GameFramework.ConfigRead.readConfigByUnityJson<PropUpgradeInfoConfig>()"
+      },
+      "member": "UniqueID.get",
+      "token": "0x6005B28",
+      "sourceLine": 30,
+      "currentBody": "return null;",
+      "candidateBody": "return Level;",
+      "boxedResultType": "System.Int32",
+      "field": {
+        "token": "0x4006954",
+        "offset": "0x10",
+        "type": "int",
+        "name": "Level",
+        "line": 13
+      },
+      "native": {
+        "name": "ljzs_lt.PropUpgradeInfoConfig$$get_UniqueID",
+        "rva": "0x439b4f8",
+        "endRvaExclusive": "0x439b554",
+        "bytes": 92,
+        "codeSha256": "f26dac337aca450904cb0c230fc271b59e27beab21f644f63b874e7fb0fc545b",
+        "signature": "Il2CppObject* ljzs_lt_PropUpgradeInfoConfig__get_UniqueID (ljzs_lt_PropUpgradeInfoConfig_o* __this, const MethodInfo* method);"
+      },
+      "nativeEvidence": {
+        "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-41-config\\evidence\\source-chain\\row-native\\0x439b4f8.asm.txt",
+        "sha256": "8928319e27f133c437019e8f632f934b529d1a63a2fffbf673772a58d66d4f8a"
+      },
+      "int32Metadata": {
+        "loadedFromRva": "0x8acdac0",
+        "slotRva": "0x8ce95c0",
+        "name": "int_TypeInfo",
+        "signature": "System_Int32_c*"
+      },
+      "loadRva": "0x439b530",
+      "boxingCallRva": "0x439b540",
+      "boxingTargetRva": "0x3c3d3b8",
+      "checks": {
+        "currentSourceHashMatchesHandoff": true,
+        "currentSourceHashMatchesPriorRowEvidence": true,
+        "getterTokenMatchesHandoff": true,
+        "getterRvaMatchesHandoffAndNative": true,
+        "nativeEndMatchesHandoff": true,
+        "nativeCodeHashMatchesPriorEvidence": true,
+        "nativeAsmExactBytesMatchElf": true,
+        "candidateMatchesHandoff": true,
+        "getterCurrentlyReturnsNull": true,
+        "exactlyOneGetterOverride": true,
+        "nativeExactInt32LoadAndBoxArgumentSequence": true,
+        "int32MetadataResolved": true
+      }
+    },
+    {
+      "type": "PropRankUpInfoConfig",
+      "file": "Assets/Scripts/Assembly-CSharp/ljzs_lt/PropRankUpInfoConfig.cs",
+      "source": {
+        "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\outputs\\OccupyCityRecovered\\Assets\\Scripts\\Assembly-CSharp\\ljzs_lt\\PropRankUpInfoConfig.cs",
+        "sha256": "a2ab4e52c7e2a026c0ac830dace73b3d07b65a395567c90dfb9da14d8efdd65e"
+      },
+      "consumer": {
+        "kind": "table",
+        "type": "PropRankUpInfoConfig",
+        "consumerField": "dicPropRankUpInfo",
+        "managerOffset": "0xd8",
+        "callRva": "0x4399a8c",
+        "targetRva": "0x4b8cadc",
+        "methodInfoSlot": "0x8d26ec0",
+        "methodInfoName": "Method$GameFramework.ConfigRead.readConfigByUnityJson<PropRankUpInfoConfig>()"
+      },
+      "member": "UniqueID.get",
+      "token": "0x6005B26",
+      "sourceLine": 50,
+      "currentBody": "return null;",
+      "candidateBody": "return Level;",
+      "boxedResultType": "System.Int32",
+      "field": {
+        "token": "0x400694B",
+        "offset": "0x10",
+        "type": "int",
+        "name": "Level",
+        "line": 13
+      },
+      "native": {
+        "name": "ljzs_lt.PropRankUpInfoConfig$$get_UniqueID",
+        "rva": "0x439b494",
+        "endRvaExclusive": "0x439b4f0",
+        "bytes": 92,
+        "codeSha256": "df832b1e2b6fd82b95a1d34990d90714d028fd7f4247f3de7828afabdb3359f2",
+        "signature": "Il2CppObject* ljzs_lt_PropRankUpInfoConfig__get_UniqueID (ljzs_lt_PropRankUpInfoConfig_o* __this, const MethodInfo* method);"
+      },
+      "nativeEvidence": {
+        "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-41-config\\evidence\\source-chain\\row-native\\0x439b494.asm.txt",
+        "sha256": "bcf5bd85ef6d6af9808a6fa620cd19f3c2432ef6a37d79ed0e275f64d4fcff20"
+      },
+      "int32Metadata": {
+        "loadedFromRva": "0x8acdac0",
+        "slotRva": "0x8ce95c0",
+        "name": "int_TypeInfo",
+        "signature": "System_Int32_c*"
+      },
+      "loadRva": "0x439b4cc",
+      "boxingCallRva": "0x439b4dc",
+      "boxingTargetRva": "0x3c3d3b8",
+      "checks": {
+        "currentSourceHashMatchesHandoff": true,
+        "currentSourceHashMatchesPriorRowEvidence": true,
+        "getterTokenMatchesHandoff": true,
+        "getterRvaMatchesHandoffAndNative": true,
+        "nativeEndMatchesHandoff": true,
+        "nativeCodeHashMatchesPriorEvidence": true,
+        "nativeAsmExactBytesMatchElf": true,
+        "candidateMatchesHandoff": true,
+        "getterCurrentlyReturnsNull": true,
+        "exactlyOneGetterOverride": true,
+        "nativeExactInt32LoadAndBoxArgumentSequence": true,
+        "int32MetadataResolved": true
+      }
+    },
+    {
+      "type": "PropAttrEnumInfoConfig",
+      "file": "Assets/Scripts/Assembly-CSharp/ljzs_lt/PropAttrEnumInfoConfig.cs",
+      "source": {
+        "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\outputs\\OccupyCityRecovered\\Assets\\Scripts\\Assembly-CSharp\\ljzs_lt\\PropAttrEnumInfoConfig.cs",
+        "sha256": "6821ffbc35578fa0c11ee740e29b2c8fede2ec64a1389e3dd0419073091fbe21"
+      },
+      "consumer": {
+        "kind": "table",
+        "type": "PropAttrEnumInfoConfig",
+        "consumerField": "dicPropAttrEnumInfo",
+        "managerOffset": "0xe0",
+        "callRva": "0x4399aa0",
+        "targetRva": "0x4b8cadc",
+        "methodInfoSlot": "0x8d26ea8",
+        "methodInfoName": "Method$GameFramework.ConfigRead.readConfigByUnityJson<PropAttrEnumInfoConfig>()"
+      },
+      "member": "UniqueID.get",
+      "token": "0x6005B20",
+      "sourceLine": 34,
+      "currentBody": "return null;",
+      "candidateBody": "return ID;",
+      "boxedResultType": "System.Int32",
+      "field": {
+        "token": "0x4006941",
+        "offset": "0x10",
+        "type": "int",
+        "name": "ID",
+        "line": 13
+      },
+      "native": {
+        "name": "ljzs_lt.PropAttrEnumInfoConfig$$get_UniqueID",
+        "rva": "0x439b368",
+        "endRvaExclusive": "0x439b3c4",
+        "bytes": 92,
+        "codeSha256": "657bd8f09a0f7ed7f154f4ed333a1431d7b49a951c14bae82e1e7df8d6fa0374",
+        "signature": "Il2CppObject* ljzs_lt_PropAttrEnumInfoConfig__get_UniqueID (ljzs_lt_PropAttrEnumInfoConfig_o* __this, const MethodInfo* method);"
+      },
+      "nativeEvidence": {
+        "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-41-config\\evidence\\source-chain\\row-native\\0x439b368.asm.txt",
+        "sha256": "1ce1d68e30e85345a83d907d2c71dad2956942ddee6ebf87515ab33f83f3a96b"
+      },
+      "int32Metadata": {
+        "loadedFromRva": "0x8acdac0",
+        "slotRva": "0x8ce95c0",
+        "name": "int_TypeInfo",
+        "signature": "System_Int32_c*"
+      },
+      "loadRva": "0x439b3a0",
+      "boxingCallRva": "0x439b3b0",
+      "boxingTargetRva": "0x3c3d3b8",
+      "checks": {
+        "currentSourceHashMatchesHandoff": true,
+        "currentSourceHashMatchesPriorRowEvidence": true,
+        "getterTokenMatchesHandoff": true,
+        "getterRvaMatchesHandoffAndNative": true,
+        "nativeEndMatchesHandoff": true,
+        "nativeCodeHashMatchesPriorEvidence": true,
+        "nativeAsmExactBytesMatchElf": true,
+        "candidateMatchesHandoff": true,
+        "getterCurrentlyReturnsNull": true,
+        "exactlyOneGetterOverride": true,
+        "nativeExactInt32LoadAndBoxArgumentSequence": true,
+        "int32MetadataResolved": true
+      }
+    },
+    {
+      "type": "PropAttrTypeConfig",
+      "file": "Assets/Scripts/Assembly-CSharp/ljzs_lt/PropAttrTypeConfig.cs",
+      "source": {
+        "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\outputs\\OccupyCityRecovered\\Assets\\Scripts\\Assembly-CSharp\\ljzs_lt\\PropAttrTypeConfig.cs",
+        "sha256": "96da2948e6d4b66f4c1e00ac922233d3419465151edc066399f0f0365b94e998"
+      },
+      "consumer": {
+        "kind": "table",
+        "type": "PropAttrTypeConfig",
+        "consumerField": "dicPropAttrType",
+        "managerOffset": "0xe8",
+        "callRva": "0x4399ab4",
+        "targetRva": "0x4b8cadc",
+        "methodInfoSlot": "0x8d26eb0",
+        "methodInfoName": "Method$GameFramework.ConfigRead.readConfigByUnityJson<PropAttrTypeConfig>()"
+      },
+      "member": "UniqueID.get",
+      "token": "0x6005B22",
+      "sourceLine": 26,
+      "currentBody": "return null;",
+      "candidateBody": "return ID;",
+      "boxedResultType": "System.Int32",
+      "field": {
+        "token": "0x4006946",
+        "offset": "0x10",
+        "type": "int",
+        "name": "ID",
+        "line": 13
+      },
+      "native": {
+        "name": "ljzs_lt.PropAttrTypeConfig$$get_UniqueID",
+        "rva": "0x439b3cc",
+        "endRvaExclusive": "0x439b428",
+        "bytes": 92,
+        "codeSha256": "b1cff7aa498834754118f1254ba1763183bad72991d878ba018a78ae3ac67bcc",
+        "signature": "Il2CppObject* ljzs_lt_PropAttrTypeConfig__get_UniqueID (ljzs_lt_PropAttrTypeConfig_o* __this, const MethodInfo* method);"
+      },
+      "nativeEvidence": {
+        "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-41-config\\evidence\\source-chain\\row-native\\0x439b3cc.asm.txt",
+        "sha256": "0f983790f3ec840c59429ec188e27a09fa7fa1278dfd571d2d0b725d1501de6e"
+      },
+      "int32Metadata": {
+        "loadedFromRva": "0x8acdac0",
+        "slotRva": "0x8ce95c0",
+        "name": "int_TypeInfo",
+        "signature": "System_Int32_c*"
+      },
+      "loadRva": "0x439b404",
+      "boxingCallRva": "0x439b414",
+      "boxingTargetRva": "0x3c3d3b8",
+      "checks": {
+        "currentSourceHashMatchesHandoff": true,
+        "currentSourceHashMatchesPriorRowEvidence": true,
+        "getterTokenMatchesHandoff": true,
+        "getterRvaMatchesHandoffAndNative": true,
+        "nativeEndMatchesHandoff": true,
+        "nativeCodeHashMatchesPriorEvidence": true,
+        "nativeAsmExactBytesMatchElf": true,
+        "candidateMatchesHandoff": true,
+        "getterCurrentlyReturnsNull": true,
+        "exactlyOneGetterOverride": true,
+        "nativeExactInt32LoadAndBoxArgumentSequence": true,
+        "int32MetadataResolved": true
+      }
+    },
+    {
+      "type": "PropForgePowerConfig",
+      "file": "Assets/Scripts/Assembly-CSharp/ljzs_lt/PropForgePowerConfig.cs",
+      "source": {
+        "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\outputs\\OccupyCityRecovered\\Assets\\Scripts\\Assembly-CSharp\\ljzs_lt\\PropForgePowerConfig.cs",
+        "sha256": "38f5a088292047e28d8f2ea5c0e1680054b11be11b2fbaf437994219f1088d7a"
+      },
+      "consumer": {
+        "kind": "table",
+        "type": "PropForgePowerConfig",
+        "consumerField": "dicPropForgePower",
+        "managerOffset": "0xf0",
+        "callRva": "0x4399ac8",
+        "targetRva": "0x4b8cadc",
+        "methodInfoSlot": "0x8d26eb8",
+        "methodInfoName": "Method$GameFramework.ConfigRead.readConfigByUnityJson<PropForgePowerConfig>()"
+      },
+      "member": "UniqueID.get",
+      "token": "0x6005B24",
+      "sourceLine": 22,
+      "currentBody": "return null;",
+      "candidateBody": "return Type;",
+      "boxedResultType": "System.Int32",
+      "field": {
+        "token": "0x4006949",
+        "offset": "0x10",
+        "type": "int",
+        "name": "Type",
+        "line": 13
+      },
+      "native": {
+        "name": "ljzs_lt.PropForgePowerConfig$$get_UniqueID",
+        "rva": "0x439b430",
+        "endRvaExclusive": "0x439b48c",
+        "bytes": 92,
+        "codeSha256": "75c28595a865999aba398477e3e0906347866881b685443fa1407b0d62c924bf",
+        "signature": "Il2CppObject* ljzs_lt_PropForgePowerConfig__get_UniqueID (ljzs_lt_PropForgePowerConfig_o* __this, const MethodInfo* method);"
+      },
+      "nativeEvidence": {
+        "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-41-config\\evidence\\source-chain\\row-native\\0x439b430.asm.txt",
+        "sha256": "ebf7ce81888f3de168df094be22a37a753f517f2cff7d968b155173ff89ee0a7"
+      },
+      "int32Metadata": {
+        "loadedFromRva": "0x8acdac0",
+        "slotRva": "0x8ce95c0",
+        "name": "int_TypeInfo",
+        "signature": "System_Int32_c*"
+      },
+      "loadRva": "0x439b468",
+      "boxingCallRva": "0x439b478",
+      "boxingTargetRva": "0x3c3d3b8",
+      "checks": {
+        "currentSourceHashMatchesHandoff": true,
+        "currentSourceHashMatchesPriorRowEvidence": true,
+        "getterTokenMatchesHandoff": true,
+        "getterRvaMatchesHandoffAndNative": true,
+        "nativeEndMatchesHandoff": true,
+        "nativeCodeHashMatchesPriorEvidence": true,
+        "nativeAsmExactBytesMatchElf": true,
+        "candidateMatchesHandoff": true,
+        "getterCurrentlyReturnsNull": true,
+        "exactlyOneGetterOverride": true,
+        "nativeExactInt32LoadAndBoxArgumentSequence": true,
+        "int32MetadataResolved": true
+      }
+    },
+    {
+      "type": "AIPropInfoConfig",
+      "file": "Assets/Scripts/Assembly-CSharp/ljzs_lt/AIPropInfoConfig.cs",
+      "source": {
+        "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\outputs\\OccupyCityRecovered\\Assets\\Scripts\\Assembly-CSharp\\ljzs_lt\\AIPropInfoConfig.cs",
+        "sha256": "e0939af6aea8e1d60a98ec0744f3abd48358f5e459ef7ab4b7c390b84998d970"
+      },
+      "consumer": {
+        "kind": "table",
+        "type": "AIPropInfoConfig",
+        "consumerField": "dicAIPropInfo",
+        "managerOffset": "0xf8",
+        "callRva": "0x4399adc",
+        "targetRva": "0x4b8cadc",
+        "methodInfoSlot": "0x8d26df8",
+        "methodInfoName": "Method$GameFramework.ConfigRead.readConfigByUnityJson<AIPropInfoConfig>()"
+      },
+      "member": "UniqueID.get",
+      "token": "0x6005AF2",
+      "sourceLine": 66,
+      "currentBody": "return null;",
+      "candidateBody": "return arnenaLevel;",
+      "boxedResultType": "System.Int32",
+      "field": {
+        "token": "0x40068BE",
+        "offset": "0x10",
+        "type": "int",
+        "name": "arnenaLevel",
+        "line": 13
+      },
+      "native": {
+        "name": "ljzs_lt.AIPropInfoConfig$$get_UniqueID",
+        "rva": "0x439aa6c",
+        "endRvaExclusive": "0x439aac8",
+        "bytes": 92,
+        "codeSha256": "cfe87b1f2390902ba17c25c5a98b93d5e902dcc7add36014fa0aa8a1445cf2a3",
+        "signature": "Il2CppObject* ljzs_lt_AIPropInfoConfig__get_UniqueID (ljzs_lt_AIPropInfoConfig_o* __this, const MethodInfo* method);"
+      },
+      "nativeEvidence": {
+        "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-41-config\\evidence\\source-chain\\row-native\\0x439aa6c.asm.txt",
+        "sha256": "3013b70eda5554f1ec167133741361f213ed56dafdd5660c7d3197737564f414"
+      },
+      "int32Metadata": {
+        "loadedFromRva": "0x8acdac0",
+        "slotRva": "0x8ce95c0",
+        "name": "int_TypeInfo",
+        "signature": "System_Int32_c*"
+      },
+      "loadRva": "0x439aaa4",
+      "boxingCallRva": "0x439aab4",
+      "boxingTargetRva": "0x3c3d3b8",
+      "checks": {
+        "currentSourceHashMatchesHandoff": true,
+        "currentSourceHashMatchesPriorRowEvidence": true,
+        "getterTokenMatchesHandoff": true,
+        "getterRvaMatchesHandoffAndNative": true,
+        "nativeEndMatchesHandoff": true,
+        "nativeCodeHashMatchesPriorEvidence": true,
+        "nativeAsmExactBytesMatchElf": true,
+        "candidateMatchesHandoff": true,
+        "getterCurrentlyReturnsNull": true,
+        "exactlyOneGetterOverride": true,
+        "nativeExactInt32LoadAndBoxArgumentSequence": true,
+        "int32MetadataResolved": true
+      }
+    },
+    {
+      "type": "AIPropInfoBConfig",
+      "file": "Assets/Scripts/Assembly-CSharp/ljzs_lt/AIPropInfoBConfig.cs",
+      "source": {
+        "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\outputs\\OccupyCityRecovered\\Assets\\Scripts\\Assembly-CSharp\\ljzs_lt\\AIPropInfoBConfig.cs",
+        "sha256": "3e946be2f4630c1dca2de430bf017ca459f686f56c730c723ba59bf6b3a94637"
+      },
+      "consumer": {
+        "kind": "table",
+        "type": "AIPropInfoBConfig",
+        "consumerField": "dicAIPropInfoB",
+        "managerOffset": "0x100",
+        "callRva": "0x4399af0",
+        "targetRva": "0x4b8cadc",
+        "methodInfoSlot": "0x8d26de8",
+        "methodInfoName": "Method$GameFramework.ConfigRead.readConfigByUnityJson<AIPropInfoBConfig>()"
+      },
+      "member": "UniqueID.get",
+      "token": "0x6005AEE",
+      "sourceLine": 66,
+      "currentBody": "return null;",
+      "candidateBody": "return arnenaLevel;",
+      "boxedResultType": "System.Int32",
+      "field": {
+        "token": "0x40068A4",
+        "offset": "0x10",
+        "type": "int",
+        "name": "arnenaLevel",
+        "line": 13
+      },
+      "native": {
+        "name": "ljzs_lt.AIPropInfoBConfig$$get_UniqueID",
+        "rva": "0x439a9a4",
+        "endRvaExclusive": "0x439aa00",
+        "bytes": 92,
+        "codeSha256": "5fc9eea3b9aea292a0e52281346e3062e968f5cb368bd1e10db12d325e4a9d18",
+        "signature": "Il2CppObject* ljzs_lt_AIPropInfoBConfig__get_UniqueID (ljzs_lt_AIPropInfoBConfig_o* __this, const MethodInfo* method);"
+      },
+      "nativeEvidence": {
+        "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-41-config\\evidence\\source-chain\\row-native\\0x439a9a4.asm.txt",
+        "sha256": "f45aa3809a7bbf85017d6601ac3ba7428bdcd9463012e17bce7a6d0990f8e063"
+      },
+      "int32Metadata": {
+        "loadedFromRva": "0x8acdac0",
+        "slotRva": "0x8ce95c0",
+        "name": "int_TypeInfo",
+        "signature": "System_Int32_c*"
+      },
+      "loadRva": "0x439a9dc",
+      "boxingCallRva": "0x439a9ec",
+      "boxingTargetRva": "0x3c3d3b8",
+      "checks": {
+        "currentSourceHashMatchesHandoff": true,
+        "currentSourceHashMatchesPriorRowEvidence": true,
+        "getterTokenMatchesHandoff": true,
+        "getterRvaMatchesHandoffAndNative": true,
+        "nativeEndMatchesHandoff": true,
+        "nativeCodeHashMatchesPriorEvidence": true,
+        "nativeAsmExactBytesMatchElf": true,
+        "candidateMatchesHandoff": true,
+        "getterCurrentlyReturnsNull": true,
+        "exactlyOneGetterOverride": true,
+        "nativeExactInt32LoadAndBoxArgumentSequence": true,
+        "int32MetadataResolved": true
+      }
+    },
+    {
+      "type": "AIPropInfoCConfig",
+      "file": "Assets/Scripts/Assembly-CSharp/ljzs_lt/AIPropInfoCConfig.cs",
+      "source": {
+        "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\outputs\\OccupyCityRecovered\\Assets\\Scripts\\Assembly-CSharp\\ljzs_lt\\AIPropInfoCConfig.cs",
+        "sha256": "622ddfa066bf8647cf00f6f12e8fcbbaa3368e96e1e91654d32a339e8f24a7f2"
+      },
+      "consumer": {
+        "kind": "table",
+        "type": "AIPropInfoCConfig",
+        "consumerField": "dicAIPropInfoC",
+        "managerOffset": "0x108",
+        "callRva": "0x4399b04",
+        "targetRva": "0x4b8cadc",
+        "methodInfoSlot": "0x8d26df0",
+        "methodInfoName": "Method$GameFramework.ConfigRead.readConfigByUnityJson<AIPropInfoCConfig>()"
+      },
+      "member": "UniqueID.get",
+      "token": "0x6005AF0",
+      "sourceLine": 66,
+      "currentBody": "return null;",
+      "candidateBody": "return arnenaLevel;",
+      "boxedResultType": "System.Int32",
+      "field": {
+        "token": "0x40068B1",
+        "offset": "0x10",
+        "type": "int",
+        "name": "arnenaLevel",
+        "line": 13
+      },
+      "native": {
+        "name": "ljzs_lt.AIPropInfoCConfig$$get_UniqueID",
+        "rva": "0x439aa08",
+        "endRvaExclusive": "0x439aa64",
+        "bytes": 92,
+        "codeSha256": "6307268473063609cc48d8db39d3bb2c86579dc69a172b22b76e5ef80c40d1cf",
+        "signature": "Il2CppObject* ljzs_lt_AIPropInfoCConfig__get_UniqueID (ljzs_lt_AIPropInfoCConfig_o* __this, const MethodInfo* method);"
+      },
+      "nativeEvidence": {
+        "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-41-config\\evidence\\source-chain\\row-native\\0x439aa08.asm.txt",
+        "sha256": "e87cdf87ef3a9dce440e7e0794ea780bccbcc60708b7473b0bc1aa319b3fd5cc"
+      },
+      "int32Metadata": {
+        "loadedFromRva": "0x8acdac0",
+        "slotRva": "0x8ce95c0",
+        "name": "int_TypeInfo",
+        "signature": "System_Int32_c*"
+      },
+      "loadRva": "0x439aa40",
+      "boxingCallRva": "0x439aa50",
+      "boxingTargetRva": "0x3c3d3b8",
+      "checks": {
+        "currentSourceHashMatchesHandoff": true,
+        "currentSourceHashMatchesPriorRowEvidence": true,
+        "getterTokenMatchesHandoff": true,
+        "getterRvaMatchesHandoffAndNative": true,
+        "nativeEndMatchesHandoff": true,
+        "nativeCodeHashMatchesPriorEvidence": true,
+        "nativeAsmExactBytesMatchElf": true,
+        "candidateMatchesHandoff": true,
+        "getterCurrentlyReturnsNull": true,
+        "exactlyOneGetterOverride": true,
+        "nativeExactInt32LoadAndBoxArgumentSequence": true,
+        "int32MetadataResolved": true
+      }
+    },
+    {
+      "type": "LimitedPropInfoConfig",
+      "file": "Assets/Scripts/Assembly-CSharp/ljzs_lt/LimitedPropInfoConfig.cs",
+      "source": {
+        "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\outputs\\OccupyCityRecovered\\Assets\\Scripts\\Assembly-CSharp\\ljzs_lt\\LimitedPropInfoConfig.cs",
+        "sha256": "143a2ee112c5d90570378fe55875e36e2f7521e25cc60639f89cd8a933fb77f3"
+      },
+      "consumer": {
+        "kind": "table",
+        "type": "LimitedPropInfoConfig",
+        "consumerField": "dicLimitedPropInfo",
+        "managerOffset": "0x110",
+        "callRva": "0x4399b18",
+        "targetRva": "0x4b8cadc",
+        "methodInfoSlot": "0x8d26e78",
+        "methodInfoName": "Method$GameFramework.ConfigRead.readConfigByUnityJson<LimitedPropInfoConfig>()"
+      },
+      "member": "UniqueID.get",
+      "token": "0x6005B14",
+      "sourceLine": 34,
+      "currentBody": "return null;",
+      "candidateBody": "return id;",
+      "boxedResultType": "System.Int32",
+      "field": {
+        "token": "0x400691F",
+        "offset": "0x10",
+        "type": "int",
+        "name": "id",
+        "line": 13
+      },
+      "native": {
+        "name": "ljzs_lt.LimitedPropInfoConfig$$get_UniqueID",
+        "rva": "0x439b110",
+        "endRvaExclusive": "0x439b16c",
+        "bytes": 92,
+        "codeSha256": "faa5dea7022eda152794c2aa9ac3170843e0807c993fa179f17b25ae51428bfc",
+        "signature": "Il2CppObject* ljzs_lt_LimitedPropInfoConfig__get_UniqueID (ljzs_lt_LimitedPropInfoConfig_o* __this, const MethodInfo* method);"
+      },
+      "nativeEvidence": {
+        "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-41-config\\evidence\\source-chain\\row-native\\0x439b110.asm.txt",
+        "sha256": "a598e5a95b1b1b9c31390760f7340b8e7e2de4be82c25ea63b37e139f5b43125"
+      },
+      "int32Metadata": {
+        "loadedFromRva": "0x8acdac0",
+        "slotRva": "0x8ce95c0",
+        "name": "int_TypeInfo",
+        "signature": "System_Int32_c*"
+      },
+      "loadRva": "0x439b148",
+      "boxingCallRva": "0x439b158",
+      "boxingTargetRva": "0x3c3d3b8",
+      "checks": {
+        "currentSourceHashMatchesHandoff": true,
+        "currentSourceHashMatchesPriorRowEvidence": true,
+        "getterTokenMatchesHandoff": true,
+        "getterRvaMatchesHandoffAndNative": true,
+        "nativeEndMatchesHandoff": true,
+        "nativeCodeHashMatchesPriorEvidence": true,
+        "nativeAsmExactBytesMatchElf": true,
+        "candidateMatchesHandoff": true,
+        "getterCurrentlyReturnsNull": true,
+        "exactlyOneGetterOverride": true,
+        "nativeExactInt32LoadAndBoxArgumentSequence": true,
+        "int32MetadataResolved": true
+      }
+    },
+    {
+      "type": "LimitedPropPackConfig",
+      "file": "Assets/Scripts/Assembly-CSharp/ljzs_lt/LimitedPropPackConfig.cs",
+      "source": {
+        "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\outputs\\OccupyCityRecovered\\Assets\\Scripts\\Assembly-CSharp\\ljzs_lt\\LimitedPropPackConfig.cs",
+        "sha256": "1e31d193ab1863a07ee36335a9ca0820bf2db0396f772891b9f41a8bf9850578"
+      },
+      "consumer": {
+        "kind": "table",
+        "type": "LimitedPropPackConfig",
+        "consumerField": "dicLimitedPropPack",
+        "managerOffset": "0x118",
+        "callRva": "0x4399b2c",
+        "targetRva": "0x4b8cadc",
+        "methodInfoSlot": "0x8d26e88",
+        "methodInfoName": "Method$GameFramework.ConfigRead.readConfigByUnityJson<LimitedPropPackConfig>()"
+      },
+      "member": "UniqueID.get",
+      "token": "0x6005B18",
+      "sourceLine": 46,
+      "currentBody": "return null;",
+      "candidateBody": "return id;",
+      "boxedResultType": "System.Int32",
+      "field": {
+        "token": "0x4006926",
+        "offset": "0x10",
+        "type": "int",
+        "name": "id",
+        "line": 13
+      },
+      "native": {
+        "name": "ljzs_lt.LimitedPropPackConfig$$get_UniqueID",
+        "rva": "0x439b1d8",
+        "endRvaExclusive": "0x439b234",
+        "bytes": 92,
+        "codeSha256": "9cac11b0607128a6c3e60dbf9b9f7e999f80e29947254fd0a1b9df005a5b2a1d",
+        "signature": "Il2CppObject* ljzs_lt_LimitedPropPackConfig__get_UniqueID (ljzs_lt_LimitedPropPackConfig_o* __this, const MethodInfo* method);"
+      },
+      "nativeEvidence": {
+        "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-41-config\\evidence\\source-chain\\row-native\\0x439b1d8.asm.txt",
+        "sha256": "954b90ddc7379c1198f9fee5b112fb4b32124f20ff999e17e5de718d4a8c21e8"
+      },
+      "int32Metadata": {
+        "loadedFromRva": "0x8acdac0",
+        "slotRva": "0x8ce95c0",
+        "name": "int_TypeInfo",
+        "signature": "System_Int32_c*"
+      },
+      "loadRva": "0x439b210",
+      "boxingCallRva": "0x439b220",
+      "boxingTargetRva": "0x3c3d3b8",
+      "checks": {
+        "currentSourceHashMatchesHandoff": true,
+        "currentSourceHashMatchesPriorRowEvidence": true,
+        "getterTokenMatchesHandoff": true,
+        "getterRvaMatchesHandoffAndNative": true,
+        "nativeEndMatchesHandoff": true,
+        "nativeCodeHashMatchesPriorEvidence": true,
+        "nativeAsmExactBytesMatchElf": true,
+        "candidateMatchesHandoff": true,
+        "getterCurrentlyReturnsNull": true,
+        "exactlyOneGetterOverride": true,
+        "nativeExactInt32LoadAndBoxArgumentSequence": true,
+        "int32MetadataResolved": true
+      }
+    },
+    {
+      "type": "CrystalPackConfig",
+      "file": "Assets/Scripts/Assembly-CSharp/ljzs_lt/CrystalPackConfig.cs",
+      "source": {
+        "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\outputs\\OccupyCityRecovered\\Assets\\Scripts\\Assembly-CSharp\\ljzs_lt\\CrystalPackConfig.cs",
+        "sha256": "2512c5b498765d96328a50d7622da67e52c550576521194152a04fe09415a97b"
+      },
+      "consumer": {
+        "kind": "table",
+        "type": "CrystalPackConfig",
+        "consumerField": "dicCrystalPack",
+        "managerOffset": "0x120",
+        "callRva": "0x4399b40",
+        "targetRva": "0x4b8cadc",
+        "methodInfoSlot": "0x8d26e38",
+        "methodInfoName": "Method$GameFramework.ConfigRead.readConfigByUnityJson<CrystalPackConfig>()"
+      },
+      "member": "UniqueID.get",
+      "token": "0x6005B04",
+      "sourceLine": 42,
+      "currentBody": "return null;",
+      "candidateBody": "return id;",
+      "boxedResultType": "System.Int32",
+      "field": {
+        "token": "0x40068EB",
+        "offset": "0x10",
+        "type": "int",
+        "name": "id",
+        "line": 13
+      },
+      "native": {
+        "name": "ljzs_lt.CrystalPackConfig$$get_UniqueID",
+        "rva": "0x439adf0",
+        "endRvaExclusive": "0x439ae4c",
+        "bytes": 92,
+        "codeSha256": "f4cf333c7c6b55be74dd7e7207dbd85bd3b03b0e4ca65843f61c4c90e843bdab",
+        "signature": "Il2CppObject* ljzs_lt_CrystalPackConfig__get_UniqueID (ljzs_lt_CrystalPackConfig_o* __this, const MethodInfo* method);"
+      },
+      "nativeEvidence": {
+        "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-41-config\\evidence\\source-chain\\row-native\\0x439adf0.asm.txt",
+        "sha256": "fc66b265da9f5af055fe4aef06adbffa8d834e237c6462a344f3704ecc076cfa"
+      },
+      "int32Metadata": {
+        "loadedFromRva": "0x8acdac0",
+        "slotRva": "0x8ce95c0",
+        "name": "int_TypeInfo",
+        "signature": "System_Int32_c*"
+      },
+      "loadRva": "0x439ae28",
+      "boxingCallRva": "0x439ae38",
+      "boxingTargetRva": "0x3c3d3b8",
+      "checks": {
+        "currentSourceHashMatchesHandoff": true,
+        "currentSourceHashMatchesPriorRowEvidence": true,
+        "getterTokenMatchesHandoff": true,
+        "getterRvaMatchesHandoffAndNative": true,
+        "nativeEndMatchesHandoff": true,
+        "nativeCodeHashMatchesPriorEvidence": true,
+        "nativeAsmExactBytesMatchElf": true,
+        "candidateMatchesHandoff": true,
+        "getterCurrentlyReturnsNull": true,
+        "exactlyOneGetterOverride": true,
+        "nativeExactInt32LoadAndBoxArgumentSequence": true,
+        "int32MetadataResolved": true
+      }
+    },
+    {
+      "type": "LimitedPropOrderConfig",
+      "file": "Assets/Scripts/Assembly-CSharp/ljzs_lt/LimitedPropOrderConfig.cs",
+      "source": {
+        "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\outputs\\OccupyCityRecovered\\Assets\\Scripts\\Assembly-CSharp\\ljzs_lt\\LimitedPropOrderConfig.cs",
+        "sha256": "7ab0e367edcc8d71fbb0e8b116f6be1706165ec09aa7502487163bfb1cbd9706"
+      },
+      "consumer": {
+        "kind": "table",
+        "type": "LimitedPropOrderConfig",
+        "consumerField": "dicLimitedPropOrder",
+        "managerOffset": "0x128",
+        "callRva": "0x4399b54",
+        "targetRva": "0x4b8cadc",
+        "methodInfoSlot": "0x8d26e80",
+        "methodInfoName": "Method$GameFramework.ConfigRead.readConfigByUnityJson<LimitedPropOrderConfig>()"
+      },
+      "member": "UniqueID.get",
+      "token": "0x6005B16",
+      "sourceLine": 22,
+      "currentBody": "return null;",
+      "candidateBody": "return id;",
+      "boxedResultType": "System.Int32",
+      "field": {
+        "token": "0x4006924",
+        "offset": "0x10",
+        "type": "int",
+        "name": "id",
+        "line": 13
+      },
+      "native": {
+        "name": "ljzs_lt.LimitedPropOrderConfig$$get_UniqueID",
+        "rva": "0x439b174",
+        "endRvaExclusive": "0x439b1d0",
+        "bytes": 92,
+        "codeSha256": "7eb6eaf4e22535b7342417d16473dbd83c88b7dc1b215ad57db7a2ccc6e419d2",
+        "signature": "Il2CppObject* ljzs_lt_LimitedPropOrderConfig__get_UniqueID (ljzs_lt_LimitedPropOrderConfig_o* __this, const MethodInfo* method);"
+      },
+      "nativeEvidence": {
+        "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-41-config\\evidence\\source-chain\\row-native\\0x439b174.asm.txt",
+        "sha256": "cda9e15c138c9e5799525184503e681f38e3f683874f1a7cc36cfef1e61777c9"
+      },
+      "int32Metadata": {
+        "loadedFromRva": "0x8acdac0",
+        "slotRva": "0x8ce95c0",
+        "name": "int_TypeInfo",
+        "signature": "System_Int32_c*"
+      },
+      "loadRva": "0x439b1ac",
+      "boxingCallRva": "0x439b1bc",
+      "boxingTargetRva": "0x3c3d3b8",
+      "checks": {
+        "currentSourceHashMatchesHandoff": true,
+        "currentSourceHashMatchesPriorRowEvidence": true,
+        "getterTokenMatchesHandoff": true,
+        "getterRvaMatchesHandoffAndNative": true,
+        "nativeEndMatchesHandoff": true,
+        "nativeCodeHashMatchesPriorEvidence": true,
+        "nativeAsmExactBytesMatchElf": true,
+        "candidateMatchesHandoff": true,
+        "getterCurrentlyReturnsNull": true,
+        "exactlyOneGetterOverride": true,
+        "nativeExactInt32LoadAndBoxArgumentSequence": true,
+        "int32MetadataResolved": true
+      }
+    },
+    {
+      "type": "CheckInRewardsIndexConfig",
+      "file": "Assets/Scripts/Assembly-CSharp/ljzs_lt/CheckInRewardsIndexConfig.cs",
+      "source": {
+        "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\outputs\\OccupyCityRecovered\\Assets\\Scripts\\Assembly-CSharp\\ljzs_lt\\CheckInRewardsIndexConfig.cs",
+        "sha256": "1b80e1758c5d9b205bb1da877582589ea067638608383ce1b1efd8b0222f9367"
+      },
+      "consumer": {
+        "kind": "table",
+        "type": "CheckInRewardsIndexConfig",
+        "consumerField": "dicCheckInRewardsIndex",
+        "managerOffset": "0x130",
+        "callRva": "0x4399b68",
+        "targetRva": "0x4b8cadc",
+        "methodInfoSlot": "0x8d26e18",
+        "methodInfoName": "Method$GameFramework.ConfigRead.readConfigByUnityJson<CheckInRewardsIndexConfig>()"
+      },
+      "member": "UniqueID.get",
+      "token": "0x6005AFC",
+      "sourceLine": 26,
+      "currentBody": "return null;",
+      "candidateBody": "return ID;",
+      "boxedResultType": "System.Int32",
+      "field": {
+        "token": "0x40068DF",
+        "offset": "0x10",
+        "type": "int",
+        "name": "ID",
+        "line": 13
+      },
+      "native": {
+        "name": "ljzs_lt.CheckInRewardsIndexConfig$$get_UniqueID",
+        "rva": "0x439ac60",
+        "endRvaExclusive": "0x439acbc",
+        "bytes": 92,
+        "codeSha256": "37b59649a886c7f74e09e86518d42f659e1da11090b7359470451f4f72005b03",
+        "signature": "Il2CppObject* ljzs_lt_CheckInRewardsIndexConfig__get_UniqueID (ljzs_lt_CheckInRewardsIndexConfig_o* __this, const MethodInfo* method);"
+      },
+      "nativeEvidence": {
+        "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-41-config\\evidence\\source-chain\\row-native\\0x439ac60.asm.txt",
+        "sha256": "d60d76ce188cda5ca7c39d7571558c41a19fccfc5ec04583f3fa053fc2349270"
+      },
+      "int32Metadata": {
+        "loadedFromRva": "0x8acdac0",
+        "slotRva": "0x8ce95c0",
+        "name": "int_TypeInfo",
+        "signature": "System_Int32_c*"
+      },
+      "loadRva": "0x439ac98",
+      "boxingCallRva": "0x439aca8",
+      "boxingTargetRva": "0x3c3d3b8",
+      "checks": {
+        "currentSourceHashMatchesHandoff": true,
+        "currentSourceHashMatchesPriorRowEvidence": true,
+        "getterTokenMatchesHandoff": true,
+        "getterRvaMatchesHandoffAndNative": true,
+        "nativeEndMatchesHandoff": true,
+        "nativeCodeHashMatchesPriorEvidence": true,
+        "nativeAsmExactBytesMatchElf": true,
+        "candidateMatchesHandoff": true,
+        "getterCurrentlyReturnsNull": true,
+        "exactlyOneGetterOverride": true,
+        "nativeExactInt32LoadAndBoxArgumentSequence": true,
+        "int32MetadataResolved": true
+      }
+    },
+    {
+      "type": "CheckInRewardsConfig",
+      "file": "Assets/Scripts/Assembly-CSharp/ljzs_lt/CheckInRewardsConfig.cs",
+      "source": {
+        "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\outputs\\OccupyCityRecovered\\Assets\\Scripts\\Assembly-CSharp\\ljzs_lt\\CheckInRewardsConfig.cs",
+        "sha256": "008dc1b8de8bab3813181367202f3de93ef45bb19c894009f4fc4dfd55c6e75e"
+      },
+      "consumer": {
+        "kind": "table",
+        "type": "CheckInRewardsConfig",
+        "consumerField": "dicCheckInRewards",
+        "managerOffset": "0x138",
+        "callRva": "0x4399b7c",
+        "targetRva": "0x4b8cadc",
+        "methodInfoSlot": "0x8d26e10",
+        "methodInfoName": "Method$GameFramework.ConfigRead.readConfigByUnityJson<CheckInRewardsConfig>()"
+      },
+      "member": "UniqueID.get",
+      "token": "0x6005AFA",
+      "sourceLine": 30,
+      "currentBody": "return null;",
+      "candidateBody": "return ID;",
+      "boxedResultType": "System.Int32",
+      "field": {
+        "token": "0x40068DB",
+        "offset": "0x10",
+        "type": "int",
+        "name": "ID",
+        "line": 13
+      },
+      "native": {
+        "name": "ljzs_lt.CheckInRewardsConfig$$get_UniqueID",
+        "rva": "0x439abfc",
+        "endRvaExclusive": "0x439ac58",
+        "bytes": 92,
+        "codeSha256": "f651b919bfa05ab4f448b6c0c9d6495372e40b549ae9f55cca0b9a87def0b2c9",
+        "signature": "Il2CppObject* ljzs_lt_CheckInRewardsConfig__get_UniqueID (ljzs_lt_CheckInRewardsConfig_o* __this, const MethodInfo* method);"
+      },
+      "nativeEvidence": {
+        "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-41-config\\evidence\\source-chain\\row-native\\0x439abfc.asm.txt",
+        "sha256": "3e3a86b66a81bac459a89f3cf6a3d5ab76ea43ece05dd733d836c6a3d680a38f"
+      },
+      "int32Metadata": {
+        "loadedFromRva": "0x8acdac0",
+        "slotRva": "0x8ce95c0",
+        "name": "int_TypeInfo",
+        "signature": "System_Int32_c*"
+      },
+      "loadRva": "0x439ac34",
+      "boxingCallRva": "0x439ac44",
+      "boxingTargetRva": "0x3c3d3b8",
+      "checks": {
+        "currentSourceHashMatchesHandoff": true,
+        "currentSourceHashMatchesPriorRowEvidence": true,
+        "getterTokenMatchesHandoff": true,
+        "getterRvaMatchesHandoffAndNative": true,
+        "nativeEndMatchesHandoff": true,
+        "nativeCodeHashMatchesPriorEvidence": true,
+        "nativeAsmExactBytesMatchElf": true,
+        "candidateMatchesHandoff": true,
+        "getterCurrentlyReturnsNull": true,
+        "exactlyOneGetterOverride": true,
+        "nativeExactInt32LoadAndBoxArgumentSequence": true,
+        "int32MetadataResolved": true
+      }
+    },
+    {
+      "type": "CumulativeRewardConfig",
+      "file": "Assets/Scripts/Assembly-CSharp/ljzs_lt/CumulativeRewardConfig.cs",
+      "source": {
+        "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\outputs\\OccupyCityRecovered\\Assets\\Scripts\\Assembly-CSharp\\ljzs_lt\\CumulativeRewardConfig.cs",
+        "sha256": "37935519105777587a56a1fffcfe37e51dc24743a3fdef621b22a9f707582126"
+      },
+      "consumer": {
+        "kind": "table",
+        "type": "CumulativeRewardConfig",
+        "consumerField": "dicCumulativeReward",
+        "managerOffset": "0x140",
+        "callRva": "0x4399b90",
+        "targetRva": "0x4b8cadc",
+        "methodInfoSlot": "0x8d26e40",
+        "methodInfoName": "Method$GameFramework.ConfigRead.readConfigByUnityJson<CumulativeRewardConfig>()"
+      },
+      "member": "UniqueID.get",
+      "token": "0x6005B06",
+      "sourceLine": 34,
+      "currentBody": "return null;",
+      "candidateBody": "return ID;",
+      "boxedResultType": "System.Int32",
+      "field": {
+        "token": "0x40068F2",
+        "offset": "0x10",
+        "type": "int",
+        "name": "ID",
+        "line": 13
+      },
+      "native": {
+        "name": "ljzs_lt.CumulativeRewardConfig$$get_UniqueID",
+        "rva": "0x439ae54",
+        "endRvaExclusive": "0x439aeb0",
+        "bytes": 92,
+        "codeSha256": "502e327d4d51cb5cc25d15e4645228756d89b974d8a487e712d7f4a33b3f0843",
+        "signature": "Il2CppObject* ljzs_lt_CumulativeRewardConfig__get_UniqueID (ljzs_lt_CumulativeRewardConfig_o* __this, const MethodInfo* method);"
+      },
+      "nativeEvidence": {
+        "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-41-config\\evidence\\source-chain\\row-native\\0x439ae54.asm.txt",
+        "sha256": "55406b7243aeae4ac4a63cfe0fcb9899a0bd63f1b353d86f97cbdada388c3b36"
+      },
+      "int32Metadata": {
+        "loadedFromRva": "0x8acdac0",
+        "slotRva": "0x8ce95c0",
+        "name": "int_TypeInfo",
+        "signature": "System_Int32_c*"
+      },
+      "loadRva": "0x439ae8c",
+      "boxingCallRva": "0x439ae9c",
+      "boxingTargetRva": "0x3c3d3b8",
+      "checks": {
+        "currentSourceHashMatchesHandoff": true,
+        "currentSourceHashMatchesPriorRowEvidence": true,
+        "getterTokenMatchesHandoff": true,
+        "getterRvaMatchesHandoffAndNative": true,
+        "nativeEndMatchesHandoff": true,
+        "nativeCodeHashMatchesPriorEvidence": true,
+        "nativeAsmExactBytesMatchElf": true,
+        "candidateMatchesHandoff": true,
+        "getterCurrentlyReturnsNull": true,
+        "exactlyOneGetterOverride": true,
+        "nativeExactInt32LoadAndBoxArgumentSequence": true,
+        "int32MetadataResolved": true
+      }
+    }
+  ],
+  "nativeCallOrder": [
+    {
+      "kind": "table",
+      "type": "GoalRewardConfig",
+      "consumerField": "dicGoalReward",
+      "managerOffset": "0x18",
+      "callRva": "0x43998ec",
+      "targetRva": "0x4b8cadc",
+      "methodInfoSlot": "0x8d26e60",
+      "methodInfoName": "Method$GameFramework.ConfigRead.readConfigByUnityJson<GoalRewardConfig>()"
+    },
+    {
+      "kind": "table",
+      "type": "WorldCupdailyTaskConfig",
+      "consumerField": "dicWorldCupdailyTask",
+      "managerOffset": "0x20",
+      "callRva": "0x43998f8",
+      "targetRva": "0x4b8cadc",
+      "methodInfoSlot": "0x8d26f08",
+      "methodInfoName": "Method$GameFramework.ConfigRead.readConfigByUnityJson<WorldCupdailyTaskConfig>()"
+    },
+    {
+      "kind": "table",
+      "type": "WorldCupdailyPriceConfig",
+      "consumerField": "dicWorldCupdailyPrice",
+      "managerOffset": "0x28",
+      "callRva": "0x4399904",
+      "targetRva": "0x4b8cadc",
+      "methodInfoSlot": "0x8d26f00",
+      "methodInfoName": "Method$GameFramework.ConfigRead.readConfigByUnityJson<WorldCupdailyPriceConfig>()"
+    },
+    {
+      "kind": "table",
+      "type": "PointShopConfig",
+      "consumerField": "dicPointShop",
+      "managerOffset": "0x30",
+      "callRva": "0x4399910",
+      "targetRva": "0x4b8cadc",
+      "methodInfoSlot": "0x8d26e90",
+      "methodInfoName": "Method$GameFramework.ConfigRead.readConfigByUnityJson<PointShopConfig>()"
+    },
+    {
+      "kind": "table",
+      "type": "WorldCuphow2PlayConfig",
+      "consumerField": "dicWorldCuphow2Play",
+      "managerOffset": "0x38",
+      "callRva": "0x439991c",
+      "targetRva": "0x4b8cadc",
+      "methodInfoSlot": "0x8d26f10",
+      "methodInfoName": "Method$GameFramework.ConfigRead.readConfigByUnityJson<WorldCuphow2PlayConfig>()"
+    },
+    {
+      "kind": "table",
+      "type": "DiceConfigConfig",
+      "consumerField": "dicDiceConfig",
+      "managerOffset": "0x40",
+      "callRva": "0x4399928",
+      "targetRva": "0x4b8cadc",
+      "methodInfoSlot": "0x8d26e58",
+      "methodInfoName": "Method$GameFramework.ConfigRead.readConfigByUnityJson<DiceConfigConfig>()"
+    },
+    {
+      "kind": "table",
+      "type": "BuildConfigConfig",
+      "consumerField": "dicBuildConfig",
+      "managerOffset": "0x48",
+      "callRva": "0x4399934",
+      "targetRva": "0x4b8cadc",
+      "methodInfoSlot": "0x8d26e00",
+      "methodInfoName": "Method$GameFramework.ConfigRead.readConfigByUnityJson<BuildConfigConfig>()"
+    },
+    {
+      "kind": "table",
+      "type": "ChessboardConfig",
+      "consumerField": "dicChessboard",
+      "managerOffset": "0x50",
+      "callRva": "0x4399940",
+      "targetRva": "0x4b8cadc",
+      "methodInfoSlot": "0x8d26e20",
+      "methodInfoName": "Method$GameFramework.ConfigRead.readConfigByUnityJson<ChessboardConfig>()"
+    },
+    {
+      "kind": "table",
+      "type": "PoolConfigConfig",
+      "consumerField": "dicPoolConfig",
+      "managerOffset": "0x58",
+      "callRva": "0x439994c",
+      "targetRva": "0x4b8cadc",
+      "methodInfoSlot": "0x8d26e98",
+      "methodInfoName": "Method$GameFramework.ConfigRead.readConfigByUnityJson<PoolConfigConfig>()"
+    },
+    {
+      "kind": "table",
+      "type": "RuinsConfigConfig",
+      "consumerField": "dicRuinsConfig",
+      "managerOffset": "0x60",
+      "callRva": "0x4399960",
+      "targetRva": "0x4b8cadc",
+      "methodInfoSlot": "0x8d26ed8",
+      "methodInfoName": "Method$GameFramework.ConfigRead.readConfigByUnityJson<RuinsConfigConfig>()"
+    },
+    {
+      "kind": "table",
+      "type": "DailyTaskConfig",
+      "consumerField": "dicDailyTask",
+      "managerOffset": "0x68",
+      "callRva": "0x4399974",
+      "targetRva": "0x4b8cadc",
+      "methodInfoSlot": "0x8d26e50",
+      "methodInfoName": "Method$GameFramework.ConfigRead.readConfigByUnityJson<DailyTaskConfig>()"
+    },
+    {
+      "kind": "table",
+      "type": "DailyPriceConfig",
+      "consumerField": "dicDailyPrice",
+      "managerOffset": "0x70",
+      "callRva": "0x4399988",
+      "targetRva": "0x4b8cadc",
+      "methodInfoSlot": "0x8d26e48",
+      "methodInfoName": "Method$GameFramework.ConfigRead.readConfigByUnityJson<DailyPriceConfig>()"
+    },
+    {
+      "kind": "table",
+      "type": "TotalDiceConfig",
+      "consumerField": "dicTotalDice",
+      "managerOffset": "0x78",
+      "callRva": "0x439999c",
+      "targetRva": "0x4b8cadc",
+      "methodInfoSlot": "0x8d26ef0",
+      "methodInfoName": "Method$GameFramework.ConfigRead.readConfigByUnityJson<TotalDiceConfig>()"
+    },
+    {
+      "kind": "table",
+      "type": "LapsConfigConfig",
+      "consumerField": "dicLapsConfig",
+      "managerOffset": "0x80",
+      "callRva": "0x43999b0",
+      "targetRva": "0x4b8cadc",
+      "methodInfoSlot": "0x8d26e70",
+      "methodInfoName": "Method$GameFramework.ConfigRead.readConfigByUnityJson<LapsConfigConfig>()"
+    },
+    {
+      "kind": "table",
+      "type": "SaleShopConfig",
+      "consumerField": "dicSaleShop",
+      "managerOffset": "0x88",
+      "callRva": "0x43999c4",
+      "targetRva": "0x4b8cadc",
+      "methodInfoSlot": "0x8d26ee0",
+      "methodInfoName": "Method$GameFramework.ConfigRead.readConfigByUnityJson<SaleShopConfig>()"
+    },
+    {
+      "kind": "table",
+      "type": "How2PlayConfig",
+      "consumerField": "dicHow2Play",
+      "managerOffset": "0x90",
+      "callRva": "0x43999d8",
+      "targetRva": "0x4b8cadc",
+      "methodInfoSlot": "0x8d26e68",
+      "methodInfoName": "Method$GameFramework.ConfigRead.readConfigByUnityJson<How2PlayConfig>()"
+    },
+    {
+      "kind": "table",
+      "type": "PurchaseConfig",
+      "consumerField": "dicPurchase",
+      "managerOffset": "0x98",
+      "callRva": "0x43999ec",
+      "targetRva": "0x4b8cadc",
+      "methodInfoSlot": "0x8d26ed0",
+      "methodInfoName": "Method$GameFramework.ConfigRead.readConfigByUnityJson<PurchaseConfig>()"
+    },
+    {
+      "kind": "table",
+      "type": "CdkConfig",
+      "consumerField": "dicCdk",
+      "managerOffset": "0xa0",
+      "callRva": "0x4399a00",
+      "targetRva": "0x4b8cadc",
+      "methodInfoSlot": "0x8d26e08",
+      "methodInfoName": "Method$GameFramework.ConfigRead.readConfigByUnityJson<CdkConfig>()"
+    },
+    {
+      "kind": "table",
+      "type": "CompareCardInfoConfig",
+      "consumerField": "dicCompareCardInfo",
+      "managerOffset": "0xa8",
+      "callRva": "0x4399a14",
+      "targetRva": "0x4b8cadc",
+      "methodInfoSlot": "0x8d26e28",
+      "methodInfoName": "Method$GameFramework.ConfigRead.readConfigByUnityJson<CompareCardInfoConfig>()"
+    },
+    {
+      "kind": "table",
+      "type": "WordEmojiConfig",
+      "consumerField": "dicWordEmoji",
+      "managerOffset": "0xb0",
+      "callRva": "0x4399a28",
+      "targetRva": "0x4b8cadc",
+      "methodInfoSlot": "0x8d26ef8",
+      "methodInfoName": "Method$GameFramework.ConfigRead.readConfigByUnityJson<WordEmojiConfig>()"
+    },
+    {
+      "kind": "table",
+      "type": "SubGameBuffConfig",
+      "consumerField": "dicSubGameBuff",
+      "managerOffset": "0xb8",
+      "callRva": "0x4399a3c",
+      "targetRva": "0x4b8cadc",
+      "methodInfoSlot": "0x8d26ee8",
+      "methodInfoName": "Method$GameFramework.ConfigRead.readConfigByUnityJson<SubGameBuffConfig>()"
+    },
+    {
+      "kind": "table",
+      "type": "CompareShenqiInfoConfig",
+      "consumerField": "dicCompareShenqiInfo",
+      "managerOffset": "0xc0",
+      "callRva": "0x4399a50",
+      "targetRva": "0x4b8cadc",
+      "methodInfoSlot": "0x8d26e30",
+      "methodInfoName": "Method$GameFramework.ConfigRead.readConfigByUnityJson<CompareShenqiInfoConfig>()"
+    },
+    {
+      "kind": "table",
+      "type": "PropAttrBuffInfoConfig",
+      "consumerField": "dicPropAttrBuffInfo",
+      "managerOffset": "0xc8",
+      "callRva": "0x4399a64",
+      "targetRva": "0x4b8cadc",
+      "methodInfoSlot": "0x8d26ea0",
+      "methodInfoName": "Method$GameFramework.ConfigRead.readConfigByUnityJson<PropAttrBuffInfoConfig>()"
+    },
+    {
+      "kind": "table",
+      "type": "PropUpgradeInfoConfig",
+      "consumerField": "dicPropUpgradeInfo",
+      "managerOffset": "0xd0",
+      "callRva": "0x4399a78",
+      "targetRva": "0x4b8cadc",
+      "methodInfoSlot": "0x8d26ec8",
+      "methodInfoName": "Method$GameFramework.ConfigRead.readConfigByUnityJson<PropUpgradeInfoConfig>()"
+    },
+    {
+      "kind": "table",
+      "type": "PropRankUpInfoConfig",
+      "consumerField": "dicPropRankUpInfo",
+      "managerOffset": "0xd8",
+      "callRva": "0x4399a8c",
+      "targetRva": "0x4b8cadc",
+      "methodInfoSlot": "0x8d26ec0",
+      "methodInfoName": "Method$GameFramework.ConfigRead.readConfigByUnityJson<PropRankUpInfoConfig>()"
+    },
+    {
+      "kind": "table",
+      "type": "PropAttrEnumInfoConfig",
+      "consumerField": "dicPropAttrEnumInfo",
+      "managerOffset": "0xe0",
+      "callRva": "0x4399aa0",
+      "targetRva": "0x4b8cadc",
+      "methodInfoSlot": "0x8d26ea8",
+      "methodInfoName": "Method$GameFramework.ConfigRead.readConfigByUnityJson<PropAttrEnumInfoConfig>()"
+    },
+    {
+      "kind": "table",
+      "type": "PropAttrTypeConfig",
+      "consumerField": "dicPropAttrType",
+      "managerOffset": "0xe8",
+      "callRva": "0x4399ab4",
+      "targetRva": "0x4b8cadc",
+      "methodInfoSlot": "0x8d26eb0",
+      "methodInfoName": "Method$GameFramework.ConfigRead.readConfigByUnityJson<PropAttrTypeConfig>()"
+    },
+    {
+      "kind": "table",
+      "type": "PropForgePowerConfig",
+      "consumerField": "dicPropForgePower",
+      "managerOffset": "0xf0",
+      "callRva": "0x4399ac8",
+      "targetRva": "0x4b8cadc",
+      "methodInfoSlot": "0x8d26eb8",
+      "methodInfoName": "Method$GameFramework.ConfigRead.readConfigByUnityJson<PropForgePowerConfig>()"
+    },
+    {
+      "kind": "table",
+      "type": "AIPropInfoConfig",
+      "consumerField": "dicAIPropInfo",
+      "managerOffset": "0xf8",
+      "callRva": "0x4399adc",
+      "targetRva": "0x4b8cadc",
+      "methodInfoSlot": "0x8d26df8",
+      "methodInfoName": "Method$GameFramework.ConfigRead.readConfigByUnityJson<AIPropInfoConfig>()"
+    },
+    {
+      "kind": "table",
+      "type": "AIPropInfoBConfig",
+      "consumerField": "dicAIPropInfoB",
+      "managerOffset": "0x100",
+      "callRva": "0x4399af0",
+      "targetRva": "0x4b8cadc",
+      "methodInfoSlot": "0x8d26de8",
+      "methodInfoName": "Method$GameFramework.ConfigRead.readConfigByUnityJson<AIPropInfoBConfig>()"
+    },
+    {
+      "kind": "table",
+      "type": "AIPropInfoCConfig",
+      "consumerField": "dicAIPropInfoC",
+      "managerOffset": "0x108",
+      "callRva": "0x4399b04",
+      "targetRva": "0x4b8cadc",
+      "methodInfoSlot": "0x8d26df0",
+      "methodInfoName": "Method$GameFramework.ConfigRead.readConfigByUnityJson<AIPropInfoCConfig>()"
+    },
+    {
+      "kind": "table",
+      "type": "LimitedPropInfoConfig",
+      "consumerField": "dicLimitedPropInfo",
+      "managerOffset": "0x110",
+      "callRva": "0x4399b18",
+      "targetRva": "0x4b8cadc",
+      "methodInfoSlot": "0x8d26e78",
+      "methodInfoName": "Method$GameFramework.ConfigRead.readConfigByUnityJson<LimitedPropInfoConfig>()"
+    },
+    {
+      "kind": "table",
+      "type": "LimitedPropPackConfig",
+      "consumerField": "dicLimitedPropPack",
+      "managerOffset": "0x118",
+      "callRva": "0x4399b2c",
+      "targetRva": "0x4b8cadc",
+      "methodInfoSlot": "0x8d26e88",
+      "methodInfoName": "Method$GameFramework.ConfigRead.readConfigByUnityJson<LimitedPropPackConfig>()"
+    },
+    {
+      "kind": "table",
+      "type": "CrystalPackConfig",
+      "consumerField": "dicCrystalPack",
+      "managerOffset": "0x120",
+      "callRva": "0x4399b40",
+      "targetRva": "0x4b8cadc",
+      "methodInfoSlot": "0x8d26e38",
+      "methodInfoName": "Method$GameFramework.ConfigRead.readConfigByUnityJson<CrystalPackConfig>()"
+    },
+    {
+      "kind": "table",
+      "type": "LimitedPropOrderConfig",
+      "consumerField": "dicLimitedPropOrder",
+      "managerOffset": "0x128",
+      "callRva": "0x4399b54",
+      "targetRva": "0x4b8cadc",
+      "methodInfoSlot": "0x8d26e80",
+      "methodInfoName": "Method$GameFramework.ConfigRead.readConfigByUnityJson<LimitedPropOrderConfig>()"
+    },
+    {
+      "kind": "table",
+      "type": "CheckInRewardsIndexConfig",
+      "consumerField": "dicCheckInRewardsIndex",
+      "managerOffset": "0x130",
+      "callRva": "0x4399b68",
+      "targetRva": "0x4b8cadc",
+      "methodInfoSlot": "0x8d26e18",
+      "methodInfoName": "Method$GameFramework.ConfigRead.readConfigByUnityJson<CheckInRewardsIndexConfig>()"
+    },
+    {
+      "kind": "table",
+      "type": "CheckInRewardsConfig",
+      "consumerField": "dicCheckInRewards",
+      "managerOffset": "0x138",
+      "callRva": "0x4399b7c",
+      "targetRva": "0x4b8cadc",
+      "methodInfoSlot": "0x8d26e10",
+      "methodInfoName": "Method$GameFramework.ConfigRead.readConfigByUnityJson<CheckInRewardsConfig>()"
+    },
+    {
+      "kind": "table",
+      "type": "CumulativeRewardConfig",
+      "consumerField": "dicCumulativeReward",
+      "managerOffset": "0x140",
+      "callRva": "0x4399b90",
+      "targetRva": "0x4b8cadc",
+      "methodInfoSlot": "0x8d26e40",
+      "methodInfoName": "Method$GameFramework.ConfigRead.readConfigByUnityJson<CumulativeRewardConfig>()"
+    },
+    {
+      "kind": "object",
+      "type": "SettingConfig",
+      "callRva": "0x4399ba0",
+      "targetRva": "0x4b8d360",
+      "methodInfoSlot": "0x8d26f20",
+      "methodInfoName": "Method$GameFramework.ConfigRead.readConfigVByUnityJson<SettingConfig>()",
+      "managerOffset": "0x148",
+      "consumerField": "settingConfig"
+    },
+    {
+      "kind": "object",
+      "type": "WorldCupbaseConfigConfig",
+      "callRva": "0x4399bb4",
+      "targetRva": "0x4b8d360",
+      "methodInfoSlot": "0x8d26f28",
+      "methodInfoName": "Method$GameFramework.ConfigRead.readConfigVByUnityJson<WorldCupbaseConfigConfig>()",
+      "managerOffset": "0x150",
+      "consumerField": "worldCupbaseConfigConfig"
+    },
+    {
+      "kind": "object",
+      "type": "BaseConfigConfig",
+      "callRva": "0x4399bc8",
+      "targetRva": "0x4b8d360",
+      "methodInfoSlot": "0x8d26f18",
+      "methodInfoName": "Method$GameFramework.ConfigRead.readConfigVByUnityJson<BaseConfigConfig>()",
+      "managerOffset": "0x158",
+      "consumerField": "baseConfigConfig"
+    }
+  ],
+  "excludedObjects": [
+    {
+      "kind": "object",
+      "type": "SettingConfig",
+      "callRva": "0x4399ba0",
+      "targetRva": "0x4b8d360",
+      "methodInfoSlot": "0x8d26f20",
+      "methodInfoName": "Method$GameFramework.ConfigRead.readConfigVByUnityJson<SettingConfig>()",
+      "managerOffset": "0x148",
+      "consumerField": "settingConfig",
+      "source": {
+        "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\outputs\\OccupyCityRecovered\\Assets\\Scripts\\Assembly-CSharp\\ljzs_lt\\SettingConfig.cs",
+        "sha256": "febdd16e99d491744bd426f0a293520775116f8019b5d3ea32156323ae429a4c"
+      },
+      "getterToken": "0x6005B30",
+      "getterRva": "0x439B688",
+      "currentBody": "return null;",
+      "required": false,
+      "reason": "Native readConfigVByUnityJson returns the deserialized object directly; it does not enumerate rows or call UniqueID/Dictionary key operations."
+    },
+    {
+      "kind": "object",
+      "type": "WorldCupbaseConfigConfig",
+      "callRva": "0x4399bb4",
+      "targetRva": "0x4b8d360",
+      "methodInfoSlot": "0x8d26f28",
+      "methodInfoName": "Method$GameFramework.ConfigRead.readConfigVByUnityJson<WorldCupbaseConfigConfig>()",
+      "managerOffset": "0x150",
+      "consumerField": "worldCupbaseConfigConfig",
+      "source": {
+        "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\outputs\\OccupyCityRecovered\\Assets\\Scripts\\Assembly-CSharp\\ljzs_lt\\WorldCupbaseConfigConfig.cs",
+        "sha256": "1866bc0b9159de265f8c3e448986baf1ba4686ac1fc33af3b628fd975e8c0e10"
+      },
+      "getterToken": "0x6005B38",
+      "getterRva": "0x439B818",
+      "currentBody": "return null;",
+      "required": false,
+      "reason": "Native readConfigVByUnityJson returns the deserialized object directly; it does not enumerate rows or call UniqueID/Dictionary key operations."
+    },
+    {
+      "kind": "object",
+      "type": "BaseConfigConfig",
+      "callRva": "0x4399bc8",
+      "targetRva": "0x4b8d360",
+      "methodInfoSlot": "0x8d26f18",
+      "methodInfoName": "Method$GameFramework.ConfigRead.readConfigVByUnityJson<BaseConfigConfig>()",
+      "managerOffset": "0x158",
+      "consumerField": "baseConfigConfig",
+      "source": {
+        "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\outputs\\OccupyCityRecovered\\Assets\\Scripts\\Assembly-CSharp\\ljzs_lt\\BaseConfigConfig.cs",
+        "sha256": "3ca959d034875760f9d31046274d4d80fa57ed852256130a1eac9eab47cc37e8"
+      },
+      "getterToken": "0x6005AF4",
+      "getterRva": "0x439AAD0",
+      "currentBody": "return null;",
+      "required": false,
+      "reason": "Native readConfigVByUnityJson returns the deserialized object directly; it does not enumerate rows or call UniqueID/Dictionary key operations."
+    }
+  ],
+  "excludedExtraResourceTables": [
+    {
+      "name": "MLanguageImageConfig",
+      "payload": {
+        "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\outputs\\旧框架资源恢复\\TextAssets\\b1a1165a67f21d096a79a144bac38207--8715614821406730080-MLanguageImageConfig.bytes",
+        "sha256": "b699801bd5ecec49d3a4ac4462eb6aafa8ae74c46dafdc07f00a79db3a4d552b"
+      },
+      "rows": 1,
+      "reason": "Delivered table resource exists, but is absent from all 41 native ConfigMgr.ReadConfig generic calls and from the exact 38-type target set. Its getter recovery is outside this synchronous-chain scope."
+    },
+    {
+      "name": "EffectConfig",
+      "payload": {
+        "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\outputs\\旧框架资源恢复\\TextAssets\\b1a1165a67f21d096a79a144bac38207-908943424015973009-EffectConfig.bytes",
+        "sha256": "3d6fba99b5d6d197e8bf0f9733c051b09de88777768f54e6a34b96648630d856"
+      },
+      "rows": 1,
+      "reason": "Delivered table resource exists, but is absent from all 41 native ConfigMgr.ReadConfig generic calls and from the exact 38-type target set. Its getter recovery is outside this synchronous-chain scope."
+    },
+    {
+      "name": "AudioConfig",
+      "payload": {
+        "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\outputs\\旧框架资源恢复\\TextAssets\\b1a1165a67f21d096a79a144bac38207-1848996798674571071-AudioConfig.bytes",
+        "sha256": "544e42c7d84bbb5718cc232db54217f2f31ce3fd120a0c57d90e78eb4db4da9f"
+      },
+      "rows": 2,
+      "reason": "Delivered table resource exists, but is absent from all 41 native ConfigMgr.ReadConfig generic calls and from the exact 38-type target set. Its getter recovery is outside this synchronous-chain scope."
+    },
+    {
+      "name": "LanguageConfig",
+      "payload": {
+        "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\outputs\\旧框架资源恢复\\TextAssets\\b1a1165a67f21d096a79a144bac38207-5464469900299823051-LanguageConfig.bytes",
+        "sha256": "b324409355517973b0366bbc65ab25c5d609c58beb3e1ef054e9aa27e7b77f92"
+      },
+      "rows": 1,
+      "reason": "Delivered table resource exists, but is absent from all 41 native ConfigMgr.ReadConfig generic calls and from the exact 38-type target set. Its getter recovery is outside this synchronous-chain scope."
+    },
+    {
+      "name": "VideoBtnConfig",
+      "payload": {
+        "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\outputs\\旧框架资源恢复\\TextAssets\\b1a1165a67f21d096a79a144bac38207-5844618410705625657-VideoBtnConfig.bytes",
+        "sha256": "555e31ba09f0791679656fd5257fb1b91a1ed983dd15f595c9c27649c61d3461"
+      },
+      "rows": 19,
+      "reason": "Delivered table resource exists, but is absent from all 41 native ConfigMgr.ReadConfig generic calls and from the exact 38-type target set. Its getter recovery is outside this synchronous-chain scope."
+    }
+  ],
+  "directPayloadChecks": [
+    {
+      "type": "TotalDiceConfig",
+      "kind": "table",
+      "payload": {
+        "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\outputs\\旧框架资源恢复\\TextAssets\\b1a1165a67f21d096a79a144bac38207--9091595167813048920-TotalDiceConfig.bytes",
+        "sha256": "590613d6e4518d0555d5a5898da772654158367aae73e479fabe9088807de74e"
+      },
+      "rowCount": 66,
+      "keyField": "id",
+      "allKeysInt32Compatible": true,
+      "distinctKeys": 66
+    },
+    {
+      "type": "PropAttrEnumInfoConfig",
+      "kind": "table",
+      "payload": {
+        "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\outputs\\旧框架资源恢复\\TextAssets\\b1a1165a67f21d096a79a144bac38207--8956606484019169367-PropAttrEnumInfoConfig.bytes",
+        "sha256": "6b8f498e75625173d6834004714e673c90dd88db49f917c49c9fe073525c6bc8"
+      },
+      "rowCount": 34,
+      "keyField": "ID",
+      "allKeysInt32Compatible": true,
+      "distinctKeys": 34
+    },
+    {
+      "type": "AIPropInfoBConfig",
+      "kind": "table",
+      "payload": {
+        "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\outputs\\旧框架资源恢复\\TextAssets\\b1a1165a67f21d096a79a144bac38207--8590968016891134172-AIPropInfoBConfig.bytes",
+        "sha256": "23b1ba770a20e23d9c987189b99b1ed58bfafbe1a2f321c87c45c03e5aa9b9ea"
+      },
+      "rowCount": 15,
+      "keyField": "arnenaLevel",
+      "allKeysInt32Compatible": true,
+      "distinctKeys": 15
+    },
+    {
+      "type": "SettingConfig",
+      "kind": "object",
+      "payload": {
+        "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\outputs\\旧框架资源恢复\\TextAssets\\b1a1165a67f21d096a79a144bac38207--8151705917418986127-SettingConfig.bytes",
+        "sha256": "ccc71ba0c1f335b05efda257d8d564ca8b686211fa17ce71680f5d8a81c38778"
+      }
+    },
+    {
+      "type": "LimitedPropInfoConfig",
+      "kind": "table",
+      "payload": {
+        "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\outputs\\旧框架资源恢复\\TextAssets\\b1a1165a67f21d096a79a144bac38207--7235332300690186221-LimitedPropInfoConfig.bytes",
+        "sha256": "d7692361c451527d7dde931dd8d359158473676086c6f945208ba1580ff196bf"
+      },
+      "rowCount": 8,
+      "keyField": "id",
+      "allKeysInt32Compatible": true,
+      "distinctKeys": 8
+    },
+    {
+      "type": "LimitedPropOrderConfig",
+      "kind": "table",
+      "payload": {
+        "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\outputs\\旧框架资源恢复\\TextAssets\\b1a1165a67f21d096a79a144bac38207--6642728652075299353-LimitedPropOrderConfig.bytes",
+        "sha256": "a0a66d0a608327850c5173d97a4d987f6fd0cb14338699c16ca52f921e5eabb2"
+      },
+      "rowCount": 6,
+      "keyField": "id",
+      "allKeysInt32Compatible": true,
+      "distinctKeys": 6
+    },
+    {
+      "type": "PropAttrTypeConfig",
+      "kind": "table",
+      "payload": {
+        "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\outputs\\旧框架资源恢复\\TextAssets\\b1a1165a67f21d096a79a144bac38207--6238938216002650600-PropAttrTypeConfig.bytes",
+        "sha256": "9a35bd90c71a2788af140ae542e2f23ca2541f4a50612f4a5a331250876cbef8"
+      },
+      "rowCount": 7,
+      "keyField": "ID",
+      "allKeysInt32Compatible": true,
+      "distinctKeys": 7
+    },
+    {
+      "type": "PropAttrBuffInfoConfig",
+      "kind": "table",
+      "payload": {
+        "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\outputs\\旧框架资源恢复\\TextAssets\\b1a1165a67f21d096a79a144bac38207--5645364168866096205-PropAttrBuffInfoConfig.bytes",
+        "sha256": "44fd213ae20d06db1de7dc5562635379c01dd249da10da98aba9b7775803f55d"
+      },
+      "rowCount": 18,
+      "keyField": "id",
+      "allKeysInt32Compatible": true,
+      "distinctKeys": 18
+    },
+    {
+      "type": "PropForgePowerConfig",
+      "kind": "table",
+      "payload": {
+        "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\outputs\\旧框架资源恢复\\TextAssets\\b1a1165a67f21d096a79a144bac38207--5264477672805151947-PropForgePowerConfig.bytes",
+        "sha256": "0de32940e62ce79ad9ff90d27a334651a81274a47b4fb2841b9ba0fbb38ab2e0"
+      },
+      "rowCount": 3,
+      "keyField": "Type",
+      "allKeysInt32Compatible": true,
+      "distinctKeys": 3
+    },
+    {
+      "type": "CrystalPackConfig",
+      "kind": "table",
+      "payload": {
+        "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\outputs\\旧框架资源恢复\\TextAssets\\b1a1165a67f21d096a79a144bac38207--4291786807470347066-CrystalPackConfig.bytes",
+        "sha256": "5af6a0106aec46cdc37a49136cd0a98f12e009b6c18fe61bae1cf88e5843b4c5"
+      },
+      "rowCount": 3,
+      "keyField": "id",
+      "allKeysInt32Compatible": true,
+      "distinctKeys": 3
+    },
+    {
+      "type": "BuildConfigConfig",
+      "kind": "table",
+      "payload": {
+        "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\outputs\\旧框架资源恢复\\TextAssets\\b1a1165a67f21d096a79a144bac38207--4251205379679346930-BuildConfigConfig.bytes",
+        "sha256": "6a86807ba5ee3b5327d94ec0dc7c0aee47b94225defa52180915449ed8dcfa1c"
+      },
+      "rowCount": 13,
+      "keyField": "id",
+      "allKeysInt32Compatible": true,
+      "distinctKeys": 13
+    },
+    {
+      "type": "ChessboardConfig",
+      "kind": "table",
+      "payload": {
+        "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\outputs\\旧框架资源恢复\\TextAssets\\b1a1165a67f21d096a79a144bac38207--3277586912541243391-ChessboardConfig.bytes",
+        "sha256": "4b00e9fed3846a4b3b4c94309e0737e68e743e15f191a5de76f5292421235dae"
+      },
+      "rowCount": 24,
+      "keyField": "id",
+      "allKeysInt32Compatible": true,
+      "distinctKeys": 24
+    },
+    {
+      "type": "SubGameBuffConfig",
+      "kind": "table",
+      "payload": {
+        "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\outputs\\旧框架资源恢复\\TextAssets\\b1a1165a67f21d096a79a144bac38207--3229376624797531068-SubGameBuffConfig.bytes",
+        "sha256": "9535e53b2496cd4cc3668d389903a6a63e64a599806f5394e71803dca1b9ddcf"
+      },
+      "rowCount": 20,
+      "keyField": "ID",
+      "allKeysInt32Compatible": true,
+      "distinctKeys": 20
+    },
+    {
+      "type": "SaleShopConfig",
+      "kind": "table",
+      "payload": {
+        "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\outputs\\旧框架资源恢复\\TextAssets\\b1a1165a67f21d096a79a144bac38207--2951826195913580458-SaleShopConfig.bytes",
+        "sha256": "3f3cd3280f0cc23aad25e8d2d7a7a27f16c40b17641ec670694076b40259183d"
+      },
+      "rowCount": 30,
+      "keyField": "id",
+      "allKeysInt32Compatible": true,
+      "distinctKeys": 30
+    },
+    {
+      "type": "AIPropInfoCConfig",
+      "kind": "table",
+      "payload": {
+        "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\outputs\\旧框架资源恢复\\TextAssets\\b1a1165a67f21d096a79a144bac38207--1335583921008006971-AIPropInfoCConfig.bytes",
+        "sha256": "2732192bb6e813a9b40b911d695de75693d717d5d07c50d8d9ef5da7819253e0"
+      },
+      "rowCount": 15,
+      "keyField": "arnenaLevel",
+      "allKeysInt32Compatible": true,
+      "distinctKeys": 15
+    },
+    {
+      "type": "PoolConfigConfig",
+      "kind": "table",
+      "payload": {
+        "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\outputs\\旧框架资源恢复\\TextAssets\\b1a1165a67f21d096a79a144bac38207--547345549858044627-PoolConfigConfig.bytes",
+        "sha256": "cdb8f586a838c3332309a7de419f5481bceb6626e52707c69442f7c94596d3a9"
+      },
+      "rowCount": 51,
+      "keyField": "id",
+      "allKeysInt32Compatible": true,
+      "distinctKeys": 51
+    },
+    {
+      "type": "WorldCuphow2PlayConfig",
+      "kind": "table",
+      "payload": {
+        "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\outputs\\旧框架资源恢复\\TextAssets\\b1a1165a67f21d096a79a144bac38207--134632107804785577-WorldCuphow2PlayConfig.bytes",
+        "sha256": "bee8d99111025154c10da7baddb9a6c5291f5f7e708679cb78b225dab9875da0"
+      },
+      "rowCount": 7,
+      "keyField": "id",
+      "allKeysInt32Compatible": true,
+      "distinctKeys": 7
+    },
+    {
+      "type": "WorldCupdailyTaskConfig",
+      "kind": "table",
+      "payload": {
+        "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\outputs\\旧框架资源恢复\\TextAssets\\b1a1165a67f21d096a79a144bac38207-300641993116044563-WorldCupdailyTaskConfig.bytes",
+        "sha256": "02da405f23aa42df1f98fb57936ed46745d76cbb47d98696a0ea3ca81e59337d"
+      },
+      "rowCount": 4,
+      "keyField": "id",
+      "allKeysInt32Compatible": true,
+      "distinctKeys": 4
+    },
+    {
+      "type": "WorldCupdailyPriceConfig",
+      "kind": "table",
+      "payload": {
+        "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\outputs\\旧框架资源恢复\\TextAssets\\b1a1165a67f21d096a79a144bac38207-320137804672358614-WorldCupdailyPriceConfig.bytes",
+        "sha256": "eef1525b6fa5be12be92b7afae893d36fc5ef99ce761e4186113a573bf38dfc2"
+      },
+      "rowCount": 6,
+      "keyField": "id",
+      "allKeysInt32Compatible": true,
+      "distinctKeys": 6
+    },
+    {
+      "type": "LimitedPropPackConfig",
+      "kind": "table",
+      "payload": {
+        "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\outputs\\旧框架资源恢复\\TextAssets\\b1a1165a67f21d096a79a144bac38207-347337049200134071-LimitedPropPackConfig.bytes",
+        "sha256": "54d68a51f034b02615483a277eabbe97a090fdc73ed6f101bf1be5a56c3553ae"
+      },
+      "rowCount": 8,
+      "keyField": "id",
+      "allKeysInt32Compatible": true,
+      "distinctKeys": 8
+    },
+    {
+      "type": "PropRankUpInfoConfig",
+      "kind": "table",
+      "payload": {
+        "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\outputs\\旧框架资源恢复\\TextAssets\\b1a1165a67f21d096a79a144bac38207-493715344127590288-PropRankUpInfoConfig.bytes",
+        "sha256": "7afd5370d6ed23cf8857bd0f0dbdd9dc8121e1575a4fbcc496b9b685f5b82441"
+      },
+      "rowCount": 31,
+      "keyField": "Level",
+      "allKeysInt32Compatible": true,
+      "distinctKeys": 31
+    },
+    {
+      "type": "DailyPriceConfig",
+      "kind": "table",
+      "payload": {
+        "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\outputs\\旧框架资源恢复\\TextAssets\\b1a1165a67f21d096a79a144bac38207-1221630335159245840-DailyPriceConfig.bytes",
+        "sha256": "b48d83dfe12367dea75dc02cd31624893bc3097a78c298bd87a97b4878d741d8"
+      },
+      "rowCount": 6,
+      "keyField": "id",
+      "allKeysInt32Compatible": true,
+      "distinctKeys": 6
+    },
+    {
+      "type": "DiceConfigConfig",
+      "kind": "table",
+      "payload": {
+        "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\outputs\\旧框架资源恢复\\TextAssets\\b1a1165a67f21d096a79a144bac38207-1888868597148559589-DiceConfigConfig.bytes",
+        "sha256": "930920af5905ab464a0685574669fa00fac342a570dcff9f8b47f61bf8ed3b42"
+      },
+      "rowCount": 6,
+      "keyField": "id",
+      "allKeysInt32Compatible": true,
+      "distinctKeys": 6
+    },
+    {
+      "type": "DailyTaskConfig",
+      "kind": "table",
+      "payload": {
+        "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\outputs\\旧框架资源恢复\\TextAssets\\b1a1165a67f21d096a79a144bac38207-2190451955512027853-DailyTaskConfig.bytes",
+        "sha256": "3a9f83359606d0db9115abe8f300b7305603c4aa6946887d1754249dbaee7921"
+      },
+      "rowCount": 8,
+      "keyField": "id",
+      "allKeysInt32Compatible": true,
+      "distinctKeys": 8
+    },
+    {
+      "type": "GoalRewardConfig",
+      "kind": "table",
+      "payload": {
+        "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\outputs\\旧框架资源恢复\\TextAssets\\b1a1165a67f21d096a79a144bac38207-2269587435851928114-GoalRewardConfig.bytes",
+        "sha256": "17985d62c1bba96f790a608fde1c8ca763064ffde747f1a96102bfa376561efa"
+      },
+      "rowCount": 17,
+      "keyField": "id",
+      "allKeysInt32Compatible": true,
+      "distinctKeys": 17
+    },
+    {
+      "type": "WorldCupbaseConfigConfig",
+      "kind": "object",
+      "payload": {
+        "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\outputs\\旧框架资源恢复\\TextAssets\\b1a1165a67f21d096a79a144bac38207-2690038925122498215-WorldCupbaseConfigConfig.bytes",
+        "sha256": "7a7574b8d5a6a088b51d634221b1402e754b2af5db68657e534559fa8f556841"
+      }
+    },
+    {
+      "type": "BaseConfigConfig",
+      "kind": "object",
+      "payload": {
+        "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\outputs\\旧框架资源恢复\\TextAssets\\b1a1165a67f21d096a79a144bac38207-3078229497523199383-BaseConfigConfig.bytes",
+        "sha256": "98145c463024130a5cd5135a757f9b1b0a64c0b4e11eeeda6bd5b24bbd47c8c7"
+      }
+    },
+    {
+      "type": "CompareShenqiInfoConfig",
+      "kind": "table",
+      "payload": {
+        "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\outputs\\旧框架资源恢复\\TextAssets\\b1a1165a67f21d096a79a144bac38207-3092539978352113850-CompareShenqiInfoConfig.bytes",
+        "sha256": "802fd13f87df63a1a3aa5532d833b3f5583bc01045f8143057baea5ce2f5fc95"
+      },
+      "rowCount": 18,
+      "keyField": "id",
+      "allKeysInt32Compatible": true,
+      "distinctKeys": 18
+    },
+    {
+      "type": "How2PlayConfig",
+      "kind": "table",
+      "payload": {
+        "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\outputs\\旧框架资源恢复\\TextAssets\\b1a1165a67f21d096a79a144bac38207-3507063820193813649-How2PlayConfig.bytes",
+        "sha256": "3ff8b82d073bdb698bc5b343c542b911a6424912c49ef231ca25c548741d3bda"
+      },
+      "rowCount": 6,
+      "keyField": "id",
+      "allKeysInt32Compatible": true,
+      "distinctKeys": 6
+    },
+    {
+      "type": "CumulativeRewardConfig",
+      "kind": "table",
+      "payload": {
+        "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\outputs\\旧框架资源恢复\\TextAssets\\b1a1165a67f21d096a79a144bac38207-3513299299263607210-CumulativeRewardConfig.bytes",
+        "sha256": "0a0268f689bb9573dcaefe007a1796a2a0c338542bf4511874a74273c4d78eb0"
+      },
+      "rowCount": 6,
+      "keyField": "ID",
+      "allKeysInt32Compatible": true,
+      "distinctKeys": 6
+    },
+    {
+      "type": "LapsConfigConfig",
+      "kind": "table",
+      "payload": {
+        "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\outputs\\旧框架资源恢复\\TextAssets\\b1a1165a67f21d096a79a144bac38207-4127891165905804526-LapsConfigConfig.bytes",
+        "sha256": "96566f749abc035ccc41414d67d9bc9cf2de7a705d7cad5d6613e0f1ec583bba"
+      },
+      "rowCount": 20,
+      "keyField": "id",
+      "allKeysInt32Compatible": true,
+      "distinctKeys": 20
+    },
+    {
+      "type": "CheckInRewardsIndexConfig",
+      "kind": "table",
+      "payload": {
+        "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\outputs\\旧框架资源恢复\\TextAssets\\b1a1165a67f21d096a79a144bac38207-4222556348009934766-CheckInRewardsIndexConfig.bytes",
+        "sha256": "e88194263ada5e3017d9af032da60f68cb512d63612e9493421a7731499972ac"
+      },
+      "rowCount": 2,
+      "keyField": "ID",
+      "allKeysInt32Compatible": true,
+      "distinctKeys": 2
+    },
+    {
+      "type": "PointShopConfig",
+      "kind": "table",
+      "payload": {
+        "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\outputs\\旧框架资源恢复\\TextAssets\\b1a1165a67f21d096a79a144bac38207-4935519190390561980-PointShopConfig.bytes",
+        "sha256": "5b01423683a3d6d6ad23b650358ce044e2c2ea13cd1b272f3e55f4cb7f1ed3cd"
+      },
+      "rowCount": 17,
+      "keyField": "id",
+      "allKeysInt32Compatible": true,
+      "distinctKeys": 17
+    },
+    {
+      "type": "AIPropInfoConfig",
+      "kind": "table",
+      "payload": {
+        "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\outputs\\旧框架资源恢复\\TextAssets\\b1a1165a67f21d096a79a144bac38207-5005660219748948216-AIPropInfoConfig.bytes",
+        "sha256": "db3391b8d0b5ce338a1c57285cee314127ad223fa63f49b6bab2a9782bf74bca"
+      },
+      "rowCount": 15,
+      "keyField": "arnenaLevel",
+      "allKeysInt32Compatible": true,
+      "distinctKeys": 15
+    },
+    {
+      "type": "CompareCardInfoConfig",
+      "kind": "table",
+      "payload": {
+        "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\outputs\\旧框架资源恢复\\TextAssets\\b1a1165a67f21d096a79a144bac38207-5087551987268556872-CompareCardInfoConfig.bytes",
+        "sha256": "678e1f7e270cb35d9efd85277f54e3fb915dccb4ac69a99627b5fa208b067d27"
+      },
+      "rowCount": 40,
+      "keyField": "id",
+      "allKeysInt32Compatible": true,
+      "distinctKeys": 40
+    },
+    {
+      "type": "WordEmojiConfig",
+      "kind": "table",
+      "payload": {
+        "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\outputs\\旧框架资源恢复\\TextAssets\\b1a1165a67f21d096a79a144bac38207-5747672585443033359-WordEmojiConfig.bytes",
+        "sha256": "3028d0b2bf85baa126d81ecbc8e9e9a627dabe9152ecd6ea45cf1d0b5ce17964"
+      },
+      "rowCount": 26,
+      "keyField": "ID",
+      "allKeysInt32Compatible": true,
+      "distinctKeys": 26
+    },
+    {
+      "type": "PurchaseConfig",
+      "kind": "table",
+      "payload": {
+        "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\outputs\\旧框架资源恢复\\TextAssets\\b1a1165a67f21d096a79a144bac38207-5809273632791846972-PurchaseConfig.bytes",
+        "sha256": "acd265119c079c89d8701b8d08947c7682221637142f3dadf0fb2f3bb7bb37ef"
+      },
+      "rowCount": 128,
+      "keyField": "id",
+      "allKeysInt32Compatible": true,
+      "distinctKeys": 128
+    },
+    {
+      "type": "PropUpgradeInfoConfig",
+      "kind": "table",
+      "payload": {
+        "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\outputs\\旧框架资源恢复\\TextAssets\\b1a1165a67f21d096a79a144bac38207-6553460198265105891-PropUpgradeInfoConfig.bytes",
+        "sha256": "770c6eb88ac58774986f88eedc3cbf46c5012274fb843984097cd5fd87e96999"
+      },
+      "rowCount": 150,
+      "keyField": "Level",
+      "allKeysInt32Compatible": true,
+      "distinctKeys": 150
+    },
+    {
+      "type": "CheckInRewardsConfig",
+      "kind": "table",
+      "payload": {
+        "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\outputs\\旧框架资源恢复\\TextAssets\\b1a1165a67f21d096a79a144bac38207-6875984641219043976-CheckInRewardsConfig.bytes",
+        "sha256": "13179789bd3f44fe80f51c0487948b416996568978a771dfe2b92167d6d397f6"
+      },
+      "rowCount": 60,
+      "keyField": "ID",
+      "allKeysInt32Compatible": true,
+      "distinctKeys": 60
+    },
+    {
+      "type": "RuinsConfigConfig",
+      "kind": "table",
+      "payload": {
+        "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\outputs\\旧框架资源恢复\\TextAssets\\b1a1165a67f21d096a79a144bac38207-7410162579031966890-RuinsConfigConfig.bytes",
+        "sha256": "0008730a67bf9afc796b149ff4e683b508435436f8863099da2baf955280ce82"
+      },
+      "rowCount": 5,
+      "keyField": "id",
+      "allKeysInt32Compatible": true,
+      "distinctKeys": 5
+    },
+    {
+      "type": "CdkConfig",
+      "kind": "table",
+      "payload": {
+        "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\outputs\\旧框架资源恢复\\TextAssets\\b1a1165a67f21d096a79a144bac38207-7749620939875854189-CdkConfig.bytes",
+        "sha256": "f0ef717de9bd9bcd3be30493c7a66bc48db38de57ffc5c8d497ffb4ddb23555f"
+      },
+      "rowCount": 28,
+      "keyField": "id",
+      "allKeysInt32Compatible": true,
+      "distinctKeys": 28
+    }
+  ],
+  "fixtureGetterReview": {
+    "decision": "test-local getter substitutions only",
+    "count": 38,
+    "fixtureDirectory": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-41-config\\tests\\generated\\candidate-fixture-getters\\fixture-rows",
+    "fixtures": [
+      {
+        "type": "GoalRewardConfig",
+        "source": {
+          "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\outputs\\OccupyCityRecovered\\Assets\\Scripts\\Assembly-CSharp\\ljzs_lt\\GoalRewardConfig.cs",
+          "sha256": "51050b2ae41a120fe8f4eb741777e96d70578d7c8638f845cfdd81ee68b60a87"
+        },
+        "fixture": {
+          "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-41-config\\tests\\generated\\candidate-fixture-getters\\fixture-rows\\GoalRewardConfig.cs",
+          "sha256": "b7859d14d4f4846ad51baa32e5966d82bfa550cea3568773d97769f7ede19bb6"
+        },
+        "checks": {
+          "bodyOnlyDifferenceAfterNewlineNormalization": true,
+          "allTokenAttributesPreserved": true,
+          "getterTokenAndRvaPreserved": true,
+          "fixtureBodyMatchesNativeCandidate": true,
+          "exactlyOneGeneratorSubstitution": true,
+          "fixtureHashMatchesProvenance": true,
+          "productionHashMatchesProvenance": true,
+          "provenanceRoleIsTestFixture": true
+        }
+      },
+      {
+        "type": "WorldCupdailyTaskConfig",
+        "source": {
+          "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\outputs\\OccupyCityRecovered\\Assets\\Scripts\\Assembly-CSharp\\ljzs_lt\\WorldCupdailyTaskConfig.cs",
+          "sha256": "f8d6db09c37525bd7836f3a7db3e4aa20158846327da69fa0208b33b1261b477"
+        },
+        "fixture": {
+          "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-41-config\\tests\\generated\\candidate-fixture-getters\\fixture-rows\\WorldCupdailyTaskConfig.cs",
+          "sha256": "abef9188a1e996570bb4e1eeb0856719c11e175d2b5057a78dfe36617664b869"
+        },
+        "checks": {
+          "bodyOnlyDifferenceAfterNewlineNormalization": true,
+          "allTokenAttributesPreserved": true,
+          "getterTokenAndRvaPreserved": true,
+          "fixtureBodyMatchesNativeCandidate": true,
+          "exactlyOneGeneratorSubstitution": true,
+          "fixtureHashMatchesProvenance": true,
+          "productionHashMatchesProvenance": true,
+          "provenanceRoleIsTestFixture": true
+        }
+      },
+      {
+        "type": "WorldCupdailyPriceConfig",
+        "source": {
+          "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\outputs\\OccupyCityRecovered\\Assets\\Scripts\\Assembly-CSharp\\ljzs_lt\\WorldCupdailyPriceConfig.cs",
+          "sha256": "36a9a59d8d13b5163854b3144c4265ae61787dcddf26560443aec24774b0b904"
+        },
+        "fixture": {
+          "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-41-config\\tests\\generated\\candidate-fixture-getters\\fixture-rows\\WorldCupdailyPriceConfig.cs",
+          "sha256": "344223dd2551a059f9b140ff5a007f7022586819ad36ddec3711fab3ac6ab774"
+        },
+        "checks": {
+          "bodyOnlyDifferenceAfterNewlineNormalization": true,
+          "allTokenAttributesPreserved": true,
+          "getterTokenAndRvaPreserved": true,
+          "fixtureBodyMatchesNativeCandidate": true,
+          "exactlyOneGeneratorSubstitution": true,
+          "fixtureHashMatchesProvenance": true,
+          "productionHashMatchesProvenance": true,
+          "provenanceRoleIsTestFixture": true
+        }
+      },
+      {
+        "type": "PointShopConfig",
+        "source": {
+          "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\outputs\\OccupyCityRecovered\\Assets\\Scripts\\Assembly-CSharp\\ljzs_lt\\PointShopConfig.cs",
+          "sha256": "1166afec33c9cbe6fc70b408a6e6301015d82663c107108af046f5d30dda0ba9"
+        },
+        "fixture": {
+          "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-41-config\\tests\\generated\\candidate-fixture-getters\\fixture-rows\\PointShopConfig.cs",
+          "sha256": "7f6ba6fabaf0d0402bcc9c1dd5c7d41ac513bd6281a887038ad449ca2d0f1d96"
+        },
+        "checks": {
+          "bodyOnlyDifferenceAfterNewlineNormalization": true,
+          "allTokenAttributesPreserved": true,
+          "getterTokenAndRvaPreserved": true,
+          "fixtureBodyMatchesNativeCandidate": true,
+          "exactlyOneGeneratorSubstitution": true,
+          "fixtureHashMatchesProvenance": true,
+          "productionHashMatchesProvenance": true,
+          "provenanceRoleIsTestFixture": true
+        }
+      },
+      {
+        "type": "WorldCuphow2PlayConfig",
+        "source": {
+          "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\outputs\\OccupyCityRecovered\\Assets\\Scripts\\Assembly-CSharp\\ljzs_lt\\WorldCuphow2PlayConfig.cs",
+          "sha256": "b058e535ec886ea53e79a6ceb6fd1a4f3087748b02fec0a4bb4f631a76154b03"
+        },
+        "fixture": {
+          "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-41-config\\tests\\generated\\candidate-fixture-getters\\fixture-rows\\WorldCuphow2PlayConfig.cs",
+          "sha256": "4d619570e2aab283c51e7ea37332c555c45a260ec227bb4663f18d5ae9754d17"
+        },
+        "checks": {
+          "bodyOnlyDifferenceAfterNewlineNormalization": true,
+          "allTokenAttributesPreserved": true,
+          "getterTokenAndRvaPreserved": true,
+          "fixtureBodyMatchesNativeCandidate": true,
+          "exactlyOneGeneratorSubstitution": true,
+          "fixtureHashMatchesProvenance": true,
+          "productionHashMatchesProvenance": true,
+          "provenanceRoleIsTestFixture": true
+        }
+      },
+      {
+        "type": "DiceConfigConfig",
+        "source": {
+          "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\outputs\\OccupyCityRecovered\\Assets\\Scripts\\Assembly-CSharp\\ljzs_lt\\DiceConfigConfig.cs",
+          "sha256": "ac1030b87d1e8eeb91ca884e8c59e2220cd28f6ab6d8d95a61d52e5be68eddde"
+        },
+        "fixture": {
+          "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-41-config\\tests\\generated\\candidate-fixture-getters\\fixture-rows\\DiceConfigConfig.cs",
+          "sha256": "3bf68837f050ba1407aada1a31d59d17836be3de2b2e7ac0213b503998b71c2d"
+        },
+        "checks": {
+          "bodyOnlyDifferenceAfterNewlineNormalization": true,
+          "allTokenAttributesPreserved": true,
+          "getterTokenAndRvaPreserved": true,
+          "fixtureBodyMatchesNativeCandidate": true,
+          "exactlyOneGeneratorSubstitution": true,
+          "fixtureHashMatchesProvenance": true,
+          "productionHashMatchesProvenance": true,
+          "provenanceRoleIsTestFixture": true
+        }
+      },
+      {
+        "type": "BuildConfigConfig",
+        "source": {
+          "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\outputs\\OccupyCityRecovered\\Assets\\Scripts\\Assembly-CSharp\\ljzs_lt\\BuildConfigConfig.cs",
+          "sha256": "112e8747a2803363ba77e3699fe2b116e5fae79e066d91e96e2ff6381280c8fb"
+        },
+        "fixture": {
+          "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-41-config\\tests\\generated\\candidate-fixture-getters\\fixture-rows\\BuildConfigConfig.cs",
+          "sha256": "58cee050adabd5817d0fa03092fd094df766270f0aad2416e62464184fc2fc25"
+        },
+        "checks": {
+          "bodyOnlyDifferenceAfterNewlineNormalization": true,
+          "allTokenAttributesPreserved": true,
+          "getterTokenAndRvaPreserved": true,
+          "fixtureBodyMatchesNativeCandidate": true,
+          "exactlyOneGeneratorSubstitution": true,
+          "fixtureHashMatchesProvenance": true,
+          "productionHashMatchesProvenance": true,
+          "provenanceRoleIsTestFixture": true
+        }
+      },
+      {
+        "type": "ChessboardConfig",
+        "source": {
+          "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\outputs\\OccupyCityRecovered\\Assets\\Scripts\\Assembly-CSharp\\ljzs_lt\\ChessboardConfig.cs",
+          "sha256": "44a8cf79bb37b50ab355e39128c20562b3f4a8c3643bc76115232479edf2da9a"
+        },
+        "fixture": {
+          "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-41-config\\tests\\generated\\candidate-fixture-getters\\fixture-rows\\ChessboardConfig.cs",
+          "sha256": "2c5d018008161828e912a80ae3f3e1ab38978486fab8c6e9f13c7b2b0e58b47d"
+        },
+        "checks": {
+          "bodyOnlyDifferenceAfterNewlineNormalization": true,
+          "allTokenAttributesPreserved": true,
+          "getterTokenAndRvaPreserved": true,
+          "fixtureBodyMatchesNativeCandidate": true,
+          "exactlyOneGeneratorSubstitution": true,
+          "fixtureHashMatchesProvenance": true,
+          "productionHashMatchesProvenance": true,
+          "provenanceRoleIsTestFixture": true
+        }
+      },
+      {
+        "type": "PoolConfigConfig",
+        "source": {
+          "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\outputs\\OccupyCityRecovered\\Assets\\Scripts\\Assembly-CSharp\\ljzs_lt\\PoolConfigConfig.cs",
+          "sha256": "ca06794cb5d7b75ff391b48205516e238753826ea934c4bd574c988f2fb71bdf"
+        },
+        "fixture": {
+          "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-41-config\\tests\\generated\\candidate-fixture-getters\\fixture-rows\\PoolConfigConfig.cs",
+          "sha256": "b0f48f6ac6f4d4a31fcfd4fd72d91d479b34f362b68560c068ee19b18f4c57c4"
+        },
+        "checks": {
+          "bodyOnlyDifferenceAfterNewlineNormalization": true,
+          "allTokenAttributesPreserved": true,
+          "getterTokenAndRvaPreserved": true,
+          "fixtureBodyMatchesNativeCandidate": true,
+          "exactlyOneGeneratorSubstitution": true,
+          "fixtureHashMatchesProvenance": true,
+          "productionHashMatchesProvenance": true,
+          "provenanceRoleIsTestFixture": true
+        }
+      },
+      {
+        "type": "RuinsConfigConfig",
+        "source": {
+          "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\outputs\\OccupyCityRecovered\\Assets\\Scripts\\Assembly-CSharp\\ljzs_lt\\RuinsConfigConfig.cs",
+          "sha256": "ddcc905035f3f40e7c1585641d6e6ce6037e6c81645507a6682428ffa8086536"
+        },
+        "fixture": {
+          "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-41-config\\tests\\generated\\candidate-fixture-getters\\fixture-rows\\RuinsConfigConfig.cs",
+          "sha256": "c2de5768feab6b39a271a424e3d0731dc427b5fb3e8a175ea9573f5b611a85a8"
+        },
+        "checks": {
+          "bodyOnlyDifferenceAfterNewlineNormalization": true,
+          "allTokenAttributesPreserved": true,
+          "getterTokenAndRvaPreserved": true,
+          "fixtureBodyMatchesNativeCandidate": true,
+          "exactlyOneGeneratorSubstitution": true,
+          "fixtureHashMatchesProvenance": true,
+          "productionHashMatchesProvenance": true,
+          "provenanceRoleIsTestFixture": true
+        }
+      },
+      {
+        "type": "DailyTaskConfig",
+        "source": {
+          "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\outputs\\OccupyCityRecovered\\Assets\\Scripts\\Assembly-CSharp\\ljzs_lt\\DailyTaskConfig.cs",
+          "sha256": "e8125f11a1b540216cbf71edc21f8c9755deb0023ca6768cc45cac00204cd07c"
+        },
+        "fixture": {
+          "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-41-config\\tests\\generated\\candidate-fixture-getters\\fixture-rows\\DailyTaskConfig.cs",
+          "sha256": "11a3b3d1d750676eeea6086fdbf876b1784637e0634d1a7c586bcc02d0243d7c"
+        },
+        "checks": {
+          "bodyOnlyDifferenceAfterNewlineNormalization": true,
+          "allTokenAttributesPreserved": true,
+          "getterTokenAndRvaPreserved": true,
+          "fixtureBodyMatchesNativeCandidate": true,
+          "exactlyOneGeneratorSubstitution": true,
+          "fixtureHashMatchesProvenance": true,
+          "productionHashMatchesProvenance": true,
+          "provenanceRoleIsTestFixture": true
+        }
+      },
+      {
+        "type": "DailyPriceConfig",
+        "source": {
+          "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\outputs\\OccupyCityRecovered\\Assets\\Scripts\\Assembly-CSharp\\ljzs_lt\\DailyPriceConfig.cs",
+          "sha256": "a92f818c8402c483020d82a7d9ffc27e683f67a5ffa08b1650bb1998d6ee0f6e"
+        },
+        "fixture": {
+          "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-41-config\\tests\\generated\\candidate-fixture-getters\\fixture-rows\\DailyPriceConfig.cs",
+          "sha256": "2b911149ac3022288e2b393f3eea9843f8b99b03d61fc352aa417f63cb9ad1bc"
+        },
+        "checks": {
+          "bodyOnlyDifferenceAfterNewlineNormalization": true,
+          "allTokenAttributesPreserved": true,
+          "getterTokenAndRvaPreserved": true,
+          "fixtureBodyMatchesNativeCandidate": true,
+          "exactlyOneGeneratorSubstitution": true,
+          "fixtureHashMatchesProvenance": true,
+          "productionHashMatchesProvenance": true,
+          "provenanceRoleIsTestFixture": true
+        }
+      },
+      {
+        "type": "TotalDiceConfig",
+        "source": {
+          "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\outputs\\OccupyCityRecovered\\Assets\\Scripts\\Assembly-CSharp\\ljzs_lt\\TotalDiceConfig.cs",
+          "sha256": "1ec87c23efd2ed80277298178a1675683b777625ccf622963ecee1deb5b2f688"
+        },
+        "fixture": {
+          "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-41-config\\tests\\generated\\candidate-fixture-getters\\fixture-rows\\TotalDiceConfig.cs",
+          "sha256": "23f3d0fbeb2be73c7b2b5935646f724dda1841f56ac774aaad88aa431000c49d"
+        },
+        "checks": {
+          "bodyOnlyDifferenceAfterNewlineNormalization": true,
+          "allTokenAttributesPreserved": true,
+          "getterTokenAndRvaPreserved": true,
+          "fixtureBodyMatchesNativeCandidate": true,
+          "exactlyOneGeneratorSubstitution": true,
+          "fixtureHashMatchesProvenance": true,
+          "productionHashMatchesProvenance": true,
+          "provenanceRoleIsTestFixture": true
+        }
+      },
+      {
+        "type": "LapsConfigConfig",
+        "source": {
+          "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\outputs\\OccupyCityRecovered\\Assets\\Scripts\\Assembly-CSharp\\ljzs_lt\\LapsConfigConfig.cs",
+          "sha256": "b1e83e58bebdc7cd4edc297823bddaa4c0c07ea31d98a3ae472b59396ef7033c"
+        },
+        "fixture": {
+          "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-41-config\\tests\\generated\\candidate-fixture-getters\\fixture-rows\\LapsConfigConfig.cs",
+          "sha256": "156ec8be167330814906cc2c91dac9d575eecc804a7e9f5a01bb3181fdeae198"
+        },
+        "checks": {
+          "bodyOnlyDifferenceAfterNewlineNormalization": true,
+          "allTokenAttributesPreserved": true,
+          "getterTokenAndRvaPreserved": true,
+          "fixtureBodyMatchesNativeCandidate": true,
+          "exactlyOneGeneratorSubstitution": true,
+          "fixtureHashMatchesProvenance": true,
+          "productionHashMatchesProvenance": true,
+          "provenanceRoleIsTestFixture": true
+        }
+      },
+      {
+        "type": "SaleShopConfig",
+        "source": {
+          "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\outputs\\OccupyCityRecovered\\Assets\\Scripts\\Assembly-CSharp\\ljzs_lt\\SaleShopConfig.cs",
+          "sha256": "19ad63a2e7c2d784107c0bef4414d2d363b61cdd1c68a78b7e70886372855b14"
+        },
+        "fixture": {
+          "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-41-config\\tests\\generated\\candidate-fixture-getters\\fixture-rows\\SaleShopConfig.cs",
+          "sha256": "f12307c9a3e186ccf3cb87ff1170e6f85b78f1f9fe88eed74866144297f3f542"
+        },
+        "checks": {
+          "bodyOnlyDifferenceAfterNewlineNormalization": true,
+          "allTokenAttributesPreserved": true,
+          "getterTokenAndRvaPreserved": true,
+          "fixtureBodyMatchesNativeCandidate": true,
+          "exactlyOneGeneratorSubstitution": true,
+          "fixtureHashMatchesProvenance": true,
+          "productionHashMatchesProvenance": true,
+          "provenanceRoleIsTestFixture": true
+        }
+      },
+      {
+        "type": "How2PlayConfig",
+        "source": {
+          "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\outputs\\OccupyCityRecovered\\Assets\\Scripts\\Assembly-CSharp\\ljzs_lt\\How2PlayConfig.cs",
+          "sha256": "3e7e2e678fc7208aacd94dd704bf869a6a845886f6ba4d7b666a440569d2862e"
+        },
+        "fixture": {
+          "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-41-config\\tests\\generated\\candidate-fixture-getters\\fixture-rows\\How2PlayConfig.cs",
+          "sha256": "0db12fd82b3f82166e46206e01e909c71fbf78d0c239ceb4cefdf7ddf1d4932b"
+        },
+        "checks": {
+          "bodyOnlyDifferenceAfterNewlineNormalization": true,
+          "allTokenAttributesPreserved": true,
+          "getterTokenAndRvaPreserved": true,
+          "fixtureBodyMatchesNativeCandidate": true,
+          "exactlyOneGeneratorSubstitution": true,
+          "fixtureHashMatchesProvenance": true,
+          "productionHashMatchesProvenance": true,
+          "provenanceRoleIsTestFixture": true
+        }
+      },
+      {
+        "type": "PurchaseConfig",
+        "source": {
+          "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\outputs\\OccupyCityRecovered\\Assets\\Scripts\\Assembly-CSharp\\ljzs_lt\\PurchaseConfig.cs",
+          "sha256": "fd46652bc4b4612571fd2e44844f8fde8a87c2b24a968b9b1de4c590f172586f"
+        },
+        "fixture": {
+          "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-41-config\\tests\\generated\\candidate-fixture-getters\\fixture-rows\\PurchaseConfig.cs",
+          "sha256": "6b1ab8e1c03de53271b02a9cd3f2d5b31e9ff162caf54be954779257ecb19ef2"
+        },
+        "checks": {
+          "bodyOnlyDifferenceAfterNewlineNormalization": true,
+          "allTokenAttributesPreserved": true,
+          "getterTokenAndRvaPreserved": true,
+          "fixtureBodyMatchesNativeCandidate": true,
+          "exactlyOneGeneratorSubstitution": true,
+          "fixtureHashMatchesProvenance": true,
+          "productionHashMatchesProvenance": true,
+          "provenanceRoleIsTestFixture": true
+        }
+      },
+      {
+        "type": "CdkConfig",
+        "source": {
+          "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\outputs\\OccupyCityRecovered\\Assets\\Scripts\\Assembly-CSharp\\ljzs_lt\\CdkConfig.cs",
+          "sha256": "93c833d37cc39a6801cc1d4d5bef1d499375b0812cd8a9afd76623cef54fb92f"
+        },
+        "fixture": {
+          "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-41-config\\tests\\generated\\candidate-fixture-getters\\fixture-rows\\CdkConfig.cs",
+          "sha256": "1e0d5985936a64b31c5052287590414b6dff03e976a145d0241f8d94daca7023"
+        },
+        "checks": {
+          "bodyOnlyDifferenceAfterNewlineNormalization": true,
+          "allTokenAttributesPreserved": true,
+          "getterTokenAndRvaPreserved": true,
+          "fixtureBodyMatchesNativeCandidate": true,
+          "exactlyOneGeneratorSubstitution": true,
+          "fixtureHashMatchesProvenance": true,
+          "productionHashMatchesProvenance": true,
+          "provenanceRoleIsTestFixture": true
+        }
+      },
+      {
+        "type": "CompareCardInfoConfig",
+        "source": {
+          "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\outputs\\OccupyCityRecovered\\Assets\\Scripts\\Assembly-CSharp\\ljzs_lt\\CompareCardInfoConfig.cs",
+          "sha256": "fca87ba1f4c840037debec6ac1ed42fd139d6bf6ab1a92edc09d2d494e9ade7e"
+        },
+        "fixture": {
+          "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-41-config\\tests\\generated\\candidate-fixture-getters\\fixture-rows\\CompareCardInfoConfig.cs",
+          "sha256": "68e54565d02ee1e574fbd853b78866fd207a580bb47403c9246f6d33c4ac3d36"
+        },
+        "checks": {
+          "bodyOnlyDifferenceAfterNewlineNormalization": true,
+          "allTokenAttributesPreserved": true,
+          "getterTokenAndRvaPreserved": true,
+          "fixtureBodyMatchesNativeCandidate": true,
+          "exactlyOneGeneratorSubstitution": true,
+          "fixtureHashMatchesProvenance": true,
+          "productionHashMatchesProvenance": true,
+          "provenanceRoleIsTestFixture": true
+        }
+      },
+      {
+        "type": "WordEmojiConfig",
+        "source": {
+          "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\outputs\\OccupyCityRecovered\\Assets\\Scripts\\Assembly-CSharp\\ljzs_lt\\WordEmojiConfig.cs",
+          "sha256": "c99d06fae7784b1847833d230f655d46b799189bd5b03e623b63e44784d8ef4d"
+        },
+        "fixture": {
+          "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-41-config\\tests\\generated\\candidate-fixture-getters\\fixture-rows\\WordEmojiConfig.cs",
+          "sha256": "23f4cc0e34bc0c5c6aab1a2561162d850444996ddbb4e3ce510c19ad7d01fa50"
+        },
+        "checks": {
+          "bodyOnlyDifferenceAfterNewlineNormalization": true,
+          "allTokenAttributesPreserved": true,
+          "getterTokenAndRvaPreserved": true,
+          "fixtureBodyMatchesNativeCandidate": true,
+          "exactlyOneGeneratorSubstitution": true,
+          "fixtureHashMatchesProvenance": true,
+          "productionHashMatchesProvenance": true,
+          "provenanceRoleIsTestFixture": true
+        }
+      },
+      {
+        "type": "SubGameBuffConfig",
+        "source": {
+          "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\outputs\\OccupyCityRecovered\\Assets\\Scripts\\Assembly-CSharp\\ljzs_lt\\SubGameBuffConfig.cs",
+          "sha256": "f078c9c337b9b244ad447dfe6c52340d52eb9dd5e6ef9f43b23c8ac0362e88bb"
+        },
+        "fixture": {
+          "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-41-config\\tests\\generated\\candidate-fixture-getters\\fixture-rows\\SubGameBuffConfig.cs",
+          "sha256": "b6ff5e3e84437a88e41b4e7e087280899ab4982c7102761cb177ec553d59a01d"
+        },
+        "checks": {
+          "bodyOnlyDifferenceAfterNewlineNormalization": true,
+          "allTokenAttributesPreserved": true,
+          "getterTokenAndRvaPreserved": true,
+          "fixtureBodyMatchesNativeCandidate": true,
+          "exactlyOneGeneratorSubstitution": true,
+          "fixtureHashMatchesProvenance": true,
+          "productionHashMatchesProvenance": true,
+          "provenanceRoleIsTestFixture": true
+        }
+      },
+      {
+        "type": "CompareShenqiInfoConfig",
+        "source": {
+          "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\outputs\\OccupyCityRecovered\\Assets\\Scripts\\Assembly-CSharp\\ljzs_lt\\CompareShenqiInfoConfig.cs",
+          "sha256": "f018e499bf94f59cc914620601ace45d0cb10a1a74037fecf3198632388dd65e"
+        },
+        "fixture": {
+          "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-41-config\\tests\\generated\\candidate-fixture-getters\\fixture-rows\\CompareShenqiInfoConfig.cs",
+          "sha256": "c90d6ab782a124745e637e62964ee0ab08b1431291aa0b304eba1f203c1f65dd"
+        },
+        "checks": {
+          "bodyOnlyDifferenceAfterNewlineNormalization": true,
+          "allTokenAttributesPreserved": true,
+          "getterTokenAndRvaPreserved": true,
+          "fixtureBodyMatchesNativeCandidate": true,
+          "exactlyOneGeneratorSubstitution": true,
+          "fixtureHashMatchesProvenance": true,
+          "productionHashMatchesProvenance": true,
+          "provenanceRoleIsTestFixture": true
+        }
+      },
+      {
+        "type": "PropAttrBuffInfoConfig",
+        "source": {
+          "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\outputs\\OccupyCityRecovered\\Assets\\Scripts\\Assembly-CSharp\\ljzs_lt\\PropAttrBuffInfoConfig.cs",
+          "sha256": "d8bf26b427adc2b62a1f8128ead5ccb4035ccebfbbea048bba46e15f3f5e5a22"
+        },
+        "fixture": {
+          "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-41-config\\tests\\generated\\candidate-fixture-getters\\fixture-rows\\PropAttrBuffInfoConfig.cs",
+          "sha256": "93bed6f7dd32f1971a52f0a977b7536f5955d6ff2b93e36b134d288a511bdc2d"
+        },
+        "checks": {
+          "bodyOnlyDifferenceAfterNewlineNormalization": true,
+          "allTokenAttributesPreserved": true,
+          "getterTokenAndRvaPreserved": true,
+          "fixtureBodyMatchesNativeCandidate": true,
+          "exactlyOneGeneratorSubstitution": true,
+          "fixtureHashMatchesProvenance": true,
+          "productionHashMatchesProvenance": true,
+          "provenanceRoleIsTestFixture": true
+        }
+      },
+      {
+        "type": "PropUpgradeInfoConfig",
+        "source": {
+          "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\outputs\\OccupyCityRecovered\\Assets\\Scripts\\Assembly-CSharp\\ljzs_lt\\PropUpgradeInfoConfig.cs",
+          "sha256": "f862883037adee7d8d5ee7c184286aebcde91651f6c78f657ff899e78b440dac"
+        },
+        "fixture": {
+          "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-41-config\\tests\\generated\\candidate-fixture-getters\\fixture-rows\\PropUpgradeInfoConfig.cs",
+          "sha256": "690625d7a349204b01552d1525958e3d816b8c252f3d65eba0d8ad21a9db61ce"
+        },
+        "checks": {
+          "bodyOnlyDifferenceAfterNewlineNormalization": true,
+          "allTokenAttributesPreserved": true,
+          "getterTokenAndRvaPreserved": true,
+          "fixtureBodyMatchesNativeCandidate": true,
+          "exactlyOneGeneratorSubstitution": true,
+          "fixtureHashMatchesProvenance": true,
+          "productionHashMatchesProvenance": true,
+          "provenanceRoleIsTestFixture": true
+        }
+      },
+      {
+        "type": "PropRankUpInfoConfig",
+        "source": {
+          "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\outputs\\OccupyCityRecovered\\Assets\\Scripts\\Assembly-CSharp\\ljzs_lt\\PropRankUpInfoConfig.cs",
+          "sha256": "a2ab4e52c7e2a026c0ac830dace73b3d07b65a395567c90dfb9da14d8efdd65e"
+        },
+        "fixture": {
+          "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-41-config\\tests\\generated\\candidate-fixture-getters\\fixture-rows\\PropRankUpInfoConfig.cs",
+          "sha256": "6ab28250a3b7c25c0d4f4b0ad759435508b776f8fac9b4b76e00244c6a4a86fb"
+        },
+        "checks": {
+          "bodyOnlyDifferenceAfterNewlineNormalization": true,
+          "allTokenAttributesPreserved": true,
+          "getterTokenAndRvaPreserved": true,
+          "fixtureBodyMatchesNativeCandidate": true,
+          "exactlyOneGeneratorSubstitution": true,
+          "fixtureHashMatchesProvenance": true,
+          "productionHashMatchesProvenance": true,
+          "provenanceRoleIsTestFixture": true
+        }
+      },
+      {
+        "type": "PropAttrEnumInfoConfig",
+        "source": {
+          "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\outputs\\OccupyCityRecovered\\Assets\\Scripts\\Assembly-CSharp\\ljzs_lt\\PropAttrEnumInfoConfig.cs",
+          "sha256": "6821ffbc35578fa0c11ee740e29b2c8fede2ec64a1389e3dd0419073091fbe21"
+        },
+        "fixture": {
+          "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-41-config\\tests\\generated\\candidate-fixture-getters\\fixture-rows\\PropAttrEnumInfoConfig.cs",
+          "sha256": "08f984822eeefa567a227f5c3cf769997b7e4f2e581dfde5dd83beb392f37114"
+        },
+        "checks": {
+          "bodyOnlyDifferenceAfterNewlineNormalization": true,
+          "allTokenAttributesPreserved": true,
+          "getterTokenAndRvaPreserved": true,
+          "fixtureBodyMatchesNativeCandidate": true,
+          "exactlyOneGeneratorSubstitution": true,
+          "fixtureHashMatchesProvenance": true,
+          "productionHashMatchesProvenance": true,
+          "provenanceRoleIsTestFixture": true
+        }
+      },
+      {
+        "type": "PropAttrTypeConfig",
+        "source": {
+          "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\outputs\\OccupyCityRecovered\\Assets\\Scripts\\Assembly-CSharp\\ljzs_lt\\PropAttrTypeConfig.cs",
+          "sha256": "96da2948e6d4b66f4c1e00ac922233d3419465151edc066399f0f0365b94e998"
+        },
+        "fixture": {
+          "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-41-config\\tests\\generated\\candidate-fixture-getters\\fixture-rows\\PropAttrTypeConfig.cs",
+          "sha256": "422a2d359498d737e02775256e2a676f33353a40fb83d9cc06effb82b1f653e0"
+        },
+        "checks": {
+          "bodyOnlyDifferenceAfterNewlineNormalization": true,
+          "allTokenAttributesPreserved": true,
+          "getterTokenAndRvaPreserved": true,
+          "fixtureBodyMatchesNativeCandidate": true,
+          "exactlyOneGeneratorSubstitution": true,
+          "fixtureHashMatchesProvenance": true,
+          "productionHashMatchesProvenance": true,
+          "provenanceRoleIsTestFixture": true
+        }
+      },
+      {
+        "type": "PropForgePowerConfig",
+        "source": {
+          "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\outputs\\OccupyCityRecovered\\Assets\\Scripts\\Assembly-CSharp\\ljzs_lt\\PropForgePowerConfig.cs",
+          "sha256": "38f5a088292047e28d8f2ea5c0e1680054b11be11b2fbaf437994219f1088d7a"
+        },
+        "fixture": {
+          "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-41-config\\tests\\generated\\candidate-fixture-getters\\fixture-rows\\PropForgePowerConfig.cs",
+          "sha256": "5be978aca7e3d07b234eb3c2f1e82b74fb528f0882fecef2a74ccf9f4b3897d4"
+        },
+        "checks": {
+          "bodyOnlyDifferenceAfterNewlineNormalization": true,
+          "allTokenAttributesPreserved": true,
+          "getterTokenAndRvaPreserved": true,
+          "fixtureBodyMatchesNativeCandidate": true,
+          "exactlyOneGeneratorSubstitution": true,
+          "fixtureHashMatchesProvenance": true,
+          "productionHashMatchesProvenance": true,
+          "provenanceRoleIsTestFixture": true
+        }
+      },
+      {
+        "type": "AIPropInfoConfig",
+        "source": {
+          "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\outputs\\OccupyCityRecovered\\Assets\\Scripts\\Assembly-CSharp\\ljzs_lt\\AIPropInfoConfig.cs",
+          "sha256": "e0939af6aea8e1d60a98ec0744f3abd48358f5e459ef7ab4b7c390b84998d970"
+        },
+        "fixture": {
+          "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-41-config\\tests\\generated\\candidate-fixture-getters\\fixture-rows\\AIPropInfoConfig.cs",
+          "sha256": "ae32c707fc440bfd04d79548d94b7c20388afeba3c9253b64ea48c3a24046349"
+        },
+        "checks": {
+          "bodyOnlyDifferenceAfterNewlineNormalization": true,
+          "allTokenAttributesPreserved": true,
+          "getterTokenAndRvaPreserved": true,
+          "fixtureBodyMatchesNativeCandidate": true,
+          "exactlyOneGeneratorSubstitution": true,
+          "fixtureHashMatchesProvenance": true,
+          "productionHashMatchesProvenance": true,
+          "provenanceRoleIsTestFixture": true
+        }
+      },
+      {
+        "type": "AIPropInfoBConfig",
+        "source": {
+          "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\outputs\\OccupyCityRecovered\\Assets\\Scripts\\Assembly-CSharp\\ljzs_lt\\AIPropInfoBConfig.cs",
+          "sha256": "3e946be2f4630c1dca2de430bf017ca459f686f56c730c723ba59bf6b3a94637"
+        },
+        "fixture": {
+          "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-41-config\\tests\\generated\\candidate-fixture-getters\\fixture-rows\\AIPropInfoBConfig.cs",
+          "sha256": "059919c3e67f86eecd928b266ebe1c5ae2e50929fd5196cd3ffafa591d579423"
+        },
+        "checks": {
+          "bodyOnlyDifferenceAfterNewlineNormalization": true,
+          "allTokenAttributesPreserved": true,
+          "getterTokenAndRvaPreserved": true,
+          "fixtureBodyMatchesNativeCandidate": true,
+          "exactlyOneGeneratorSubstitution": true,
+          "fixtureHashMatchesProvenance": true,
+          "productionHashMatchesProvenance": true,
+          "provenanceRoleIsTestFixture": true
+        }
+      },
+      {
+        "type": "AIPropInfoCConfig",
+        "source": {
+          "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\outputs\\OccupyCityRecovered\\Assets\\Scripts\\Assembly-CSharp\\ljzs_lt\\AIPropInfoCConfig.cs",
+          "sha256": "622ddfa066bf8647cf00f6f12e8fcbbaa3368e96e1e91654d32a339e8f24a7f2"
+        },
+        "fixture": {
+          "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-41-config\\tests\\generated\\candidate-fixture-getters\\fixture-rows\\AIPropInfoCConfig.cs",
+          "sha256": "92a0515d0a5a0c318e7414aa6ae481930558d63c06af94f047b0c80ed7255079"
+        },
+        "checks": {
+          "bodyOnlyDifferenceAfterNewlineNormalization": true,
+          "allTokenAttributesPreserved": true,
+          "getterTokenAndRvaPreserved": true,
+          "fixtureBodyMatchesNativeCandidate": true,
+          "exactlyOneGeneratorSubstitution": true,
+          "fixtureHashMatchesProvenance": true,
+          "productionHashMatchesProvenance": true,
+          "provenanceRoleIsTestFixture": true
+        }
+      },
+      {
+        "type": "LimitedPropInfoConfig",
+        "source": {
+          "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\outputs\\OccupyCityRecovered\\Assets\\Scripts\\Assembly-CSharp\\ljzs_lt\\LimitedPropInfoConfig.cs",
+          "sha256": "143a2ee112c5d90570378fe55875e36e2f7521e25cc60639f89cd8a933fb77f3"
+        },
+        "fixture": {
+          "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-41-config\\tests\\generated\\candidate-fixture-getters\\fixture-rows\\LimitedPropInfoConfig.cs",
+          "sha256": "afe7f921bb0cf62d8edccbba845aeb2bcf4c729f0d1f43264f6ab92977edc27d"
+        },
+        "checks": {
+          "bodyOnlyDifferenceAfterNewlineNormalization": true,
+          "allTokenAttributesPreserved": true,
+          "getterTokenAndRvaPreserved": true,
+          "fixtureBodyMatchesNativeCandidate": true,
+          "exactlyOneGeneratorSubstitution": true,
+          "fixtureHashMatchesProvenance": true,
+          "productionHashMatchesProvenance": true,
+          "provenanceRoleIsTestFixture": true
+        }
+      },
+      {
+        "type": "LimitedPropPackConfig",
+        "source": {
+          "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\outputs\\OccupyCityRecovered\\Assets\\Scripts\\Assembly-CSharp\\ljzs_lt\\LimitedPropPackConfig.cs",
+          "sha256": "1e31d193ab1863a07ee36335a9ca0820bf2db0396f772891b9f41a8bf9850578"
+        },
+        "fixture": {
+          "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-41-config\\tests\\generated\\candidate-fixture-getters\\fixture-rows\\LimitedPropPackConfig.cs",
+          "sha256": "9e85a0750dc842d7ad2ea70bedf42d05c3383cb86abc97524b4f0a802057e352"
+        },
+        "checks": {
+          "bodyOnlyDifferenceAfterNewlineNormalization": true,
+          "allTokenAttributesPreserved": true,
+          "getterTokenAndRvaPreserved": true,
+          "fixtureBodyMatchesNativeCandidate": true,
+          "exactlyOneGeneratorSubstitution": true,
+          "fixtureHashMatchesProvenance": true,
+          "productionHashMatchesProvenance": true,
+          "provenanceRoleIsTestFixture": true
+        }
+      },
+      {
+        "type": "CrystalPackConfig",
+        "source": {
+          "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\outputs\\OccupyCityRecovered\\Assets\\Scripts\\Assembly-CSharp\\ljzs_lt\\CrystalPackConfig.cs",
+          "sha256": "2512c5b498765d96328a50d7622da67e52c550576521194152a04fe09415a97b"
+        },
+        "fixture": {
+          "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-41-config\\tests\\generated\\candidate-fixture-getters\\fixture-rows\\CrystalPackConfig.cs",
+          "sha256": "f2b392b34a33fcf0ddfaf1a74244b342ae085cdb8631f43d238af2b60da68318"
+        },
+        "checks": {
+          "bodyOnlyDifferenceAfterNewlineNormalization": true,
+          "allTokenAttributesPreserved": true,
+          "getterTokenAndRvaPreserved": true,
+          "fixtureBodyMatchesNativeCandidate": true,
+          "exactlyOneGeneratorSubstitution": true,
+          "fixtureHashMatchesProvenance": true,
+          "productionHashMatchesProvenance": true,
+          "provenanceRoleIsTestFixture": true
+        }
+      },
+      {
+        "type": "LimitedPropOrderConfig",
+        "source": {
+          "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\outputs\\OccupyCityRecovered\\Assets\\Scripts\\Assembly-CSharp\\ljzs_lt\\LimitedPropOrderConfig.cs",
+          "sha256": "7ab0e367edcc8d71fbb0e8b116f6be1706165ec09aa7502487163bfb1cbd9706"
+        },
+        "fixture": {
+          "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-41-config\\tests\\generated\\candidate-fixture-getters\\fixture-rows\\LimitedPropOrderConfig.cs",
+          "sha256": "e130f53e5362dfba76561586319f7e5b6c87b06b60c2a851b6a82e0bc96f8009"
+        },
+        "checks": {
+          "bodyOnlyDifferenceAfterNewlineNormalization": true,
+          "allTokenAttributesPreserved": true,
+          "getterTokenAndRvaPreserved": true,
+          "fixtureBodyMatchesNativeCandidate": true,
+          "exactlyOneGeneratorSubstitution": true,
+          "fixtureHashMatchesProvenance": true,
+          "productionHashMatchesProvenance": true,
+          "provenanceRoleIsTestFixture": true
+        }
+      },
+      {
+        "type": "CheckInRewardsIndexConfig",
+        "source": {
+          "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\outputs\\OccupyCityRecovered\\Assets\\Scripts\\Assembly-CSharp\\ljzs_lt\\CheckInRewardsIndexConfig.cs",
+          "sha256": "1b80e1758c5d9b205bb1da877582589ea067638608383ce1b1efd8b0222f9367"
+        },
+        "fixture": {
+          "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-41-config\\tests\\generated\\candidate-fixture-getters\\fixture-rows\\CheckInRewardsIndexConfig.cs",
+          "sha256": "cd8cfc57d7eaeb9e3d7ba4ae6f48306e975bb6c60110bd4f33ecf8fc89a78471"
+        },
+        "checks": {
+          "bodyOnlyDifferenceAfterNewlineNormalization": true,
+          "allTokenAttributesPreserved": true,
+          "getterTokenAndRvaPreserved": true,
+          "fixtureBodyMatchesNativeCandidate": true,
+          "exactlyOneGeneratorSubstitution": true,
+          "fixtureHashMatchesProvenance": true,
+          "productionHashMatchesProvenance": true,
+          "provenanceRoleIsTestFixture": true
+        }
+      },
+      {
+        "type": "CheckInRewardsConfig",
+        "source": {
+          "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\outputs\\OccupyCityRecovered\\Assets\\Scripts\\Assembly-CSharp\\ljzs_lt\\CheckInRewardsConfig.cs",
+          "sha256": "008dc1b8de8bab3813181367202f3de93ef45bb19c894009f4fc4dfd55c6e75e"
+        },
+        "fixture": {
+          "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-41-config\\tests\\generated\\candidate-fixture-getters\\fixture-rows\\CheckInRewardsConfig.cs",
+          "sha256": "82b02f36fd5bc0cc1c6d4e227bdb90fd0aa4d76d892471da303f27a13225099e"
+        },
+        "checks": {
+          "bodyOnlyDifferenceAfterNewlineNormalization": true,
+          "allTokenAttributesPreserved": true,
+          "getterTokenAndRvaPreserved": true,
+          "fixtureBodyMatchesNativeCandidate": true,
+          "exactlyOneGeneratorSubstitution": true,
+          "fixtureHashMatchesProvenance": true,
+          "productionHashMatchesProvenance": true,
+          "provenanceRoleIsTestFixture": true
+        }
+      },
+      {
+        "type": "CumulativeRewardConfig",
+        "source": {
+          "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\outputs\\OccupyCityRecovered\\Assets\\Scripts\\Assembly-CSharp\\ljzs_lt\\CumulativeRewardConfig.cs",
+          "sha256": "37935519105777587a56a1fffcfe37e51dc24743a3fdef621b22a9f707582126"
+        },
+        "fixture": {
+          "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-41-config\\tests\\generated\\candidate-fixture-getters\\fixture-rows\\CumulativeRewardConfig.cs",
+          "sha256": "f1127744aac5009abbb97909f4117d7037e7f80c7446875bcc90223d0fb39cb3"
+        },
+        "checks": {
+          "bodyOnlyDifferenceAfterNewlineNormalization": true,
+          "allTokenAttributesPreserved": true,
+          "getterTokenAndRvaPreserved": true,
+          "fixtureBodyMatchesNativeCandidate": true,
+          "exactlyOneGeneratorSubstitution": true,
+          "fixtureHashMatchesProvenance": true,
+          "productionHashMatchesProvenance": true,
+          "provenanceRoleIsTestFixture": true
+        }
+      }
+    ],
+    "generator": {
+      "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-41-config\\tests\\generate_harness.py",
+      "sha256": "31a198da1ddecf1fbbe104f9f62bf645a61858d05c7f810359bfcc0abf463388"
+    },
+    "provenance": {
+      "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-41-config\\tests\\generated\\candidate-fixture-getters\\provenance.json",
+      "sha256": "d9dc5295dfe20faac415495df732a49f61c4c2fee1cf73e00170cd1db759c1b2"
+    },
+    "project": {
+      "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-41-config\\tests\\generated\\candidate-fixture-getters\\ConfigChainHarness.csproj",
+      "sha256": "cd0c28159d356ef23c61918863313b93847a3e7e1114ac3d10df9bd7e4ed185c"
+    },
+    "driver": {
+      "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-41-config\\tests\\Program.cs",
+      "sha256": "6b87de9ba5083a6968b2426ae09b268912cdb8ba2fda8b2aef4d39f06cda33a2"
+    },
+    "boundaryAdapter": {
+      "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-41-config\\tests\\BoundaryAdapters.cs",
+      "sha256": "bf6225a5cba0376efe655d4b63363bb97320944f474304d3f321e349b5724175"
+    },
+    "existingResult": {
+      "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-41-config\\tests\\generated\\candidate-fixture-getters\\result.json",
+      "sha256": "dffc36de13954a7fe1460fc262d6ba8bf2d49362d3aa92e8e1ef64e50fca23f8"
+    },
+    "existingResultSummary": {
+      "passed": true,
+      "checks": 830,
+      "failedChecks": 0,
+      "rowsCompared": 927,
+      "fieldsCompared": 7424,
+      "identitiesCompared": 930
+    },
+    "suiteRerunByThisReview": false,
+    "interpretation": "The existing 830 checks validate the stage41 candidate plus 38 test-local getter bodies under controlled boundary adapters. All remaining source text, constructors, fields, token attributes, RVAs and the three live object rows are preserved. The actual JsonUtility is replaced by a System.Text.Json adapter. This result does not establish a closed production chain or Unity runtime acceptance."
+  },
+  "findings": [],
+  "limitations": [
+    "No Unity import, compilation, playmode, real JsonUtility, scene, or gameplay acceptance was performed.",
+    "IDA was not launched or queried. Native bytes were reread directly from the ELF and independently decoded with Capstone; exported metadata and prior assembly exports were hashed and cross-checked.",
+    "The value-box helper at 0x3c3d3b8 is confirmed to branch to the same implementation as the ELF .dynsym il2cpp_value_box export. That implementation body was not recovered in this review.",
+    "Only getter dependencies for this synchronous ConfigMgr path are reviewed. Framework/resource-mode and diagnostic dependencies in the handoff remain separate integration requirements.",
+    "Source token and field layout identity is checked against the handoff and current DummyDLL declarations; runtime semantics are supported by original native memory offsets and machine bytes rather than field spelling."
+  ]
+}

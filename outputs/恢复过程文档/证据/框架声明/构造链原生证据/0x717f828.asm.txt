@@ -1,0 +1,63 @@
+0x717f828: STP             D15, D14, [SP,#var_80]!
+0x717f82c: STP             D13, D12, [SP,#0x80+var_70]
+0x717f830: STP             D11, D10, [SP,#0x80+var_60]
+0x717f834: STP             D9, D8, [SP,#0x80+var_50]
+0x717f838: STR             X30, [SP,#0x80+var_40]
+0x717f83c: STP             X24, X23, [SP,#0x80+var_30]
+0x717f840: STP             X22, X21, [SP,#0x80+var_20]
+0x717f844: STP             X20, X19, [SP,#0x80+var_10]
+0x717f848: ADRP            X24, #byte_9009228@PAGE
+0x717f84c: ADRP            X23, #off_8B0D928@PAGE
+0x717f850: LDRB            W8, [X24,#byte_9009228@PAGEOFF]
+0x717f854: LDR             X23, [X23,#off_8B0D928@PAGEOFF]; off_8CE4930
+0x717f858: MOV             W21, W3
+0x717f85c: MOV             X19, X2
+0x717f860: MOV             V10.16B, V4.16B
+0x717f864: MOV             V11.16B, V3.16B
+0x717f868: MOV             V12.16B, V1.16B
+0x717f86c: MOV             V13.16B, V0.16B
+0x717f870: MOV             X22, X1
+0x717f874: MOV             X20, X0
+0x717f878: TBNZ            W8, #0, loc_717F8A0
+0x717f87c: ADRP            X0, #off_8B0D928@PAGE
+0x717f880: LDR             X0, [X0,#off_8B0D928@PAGEOFF]; off_8CE4930 ; slot
+0x717f884: MOV             V8.16B, V5.16B
+0x717f888: MOV             V9.16B, V2.16B
+0x717f88c: BL              il2cpp_codegen_initialize_runtime_metadata
+0x717f890: MOV             V2.16B, V9.16B
+0x717f894: MOV             V5.16B, V8.16B
+0x717f898: MOV             W8, #1
+0x717f89c: STRB            W8, [X24,#byte_9009228@PAGEOFF]
+0x717f8a0: LDR             X0, [X23]; klass
+0x717f8a4: LDP             S8, S14, [SP,#0x80+arg3.y]
+0x717f8a8: LDR             S9, [SP,#0x80+arg3]
+0x717f8ac: LDR             S15, [SP,#0x80+arg4]
+0x717f8b0: LDR             W8, [X0,#0xE0]
+0x717f8b4: CBNZ            W8, loc_717F8D4
+0x717f8b8: STP             S10, S11, [SP,#0x80+var_38]
+0x717f8bc: MOV             V10.16B, V5.16B
+0x717f8c0: MOV             V11.16B, V2.16B
+0x717f8c4: BL              il2cpp_codegen_runtime_class_init
+0x717f8c8: MOV             V2.16B, V11.16B
+0x717f8cc: MOV             V5.16B, V10.16B
+0x717f8d0: LDP             S10, S11, [SP,#0x80+var_38]
+0x717f8d4: AND             W3, W21, #1
+0x717f8d8: MOV             X0, X20
+0x717f8dc: MOV             X1, X22
+0x717f8e0: MOV             V0.16B, V13.16B
+0x717f8e4: MOV             V1.16B, V12.16B
+0x717f8e8: MOV             V3.16B, V11.16B
+0x717f8ec: MOV             V4.16B, V10.16B
+0x717f8f0: MOV             X2, X19
+0x717f8f4: BL              GameFramework.BaseEffect$$.ctor
+0x717f8f8: STP             S9, S8, [X20,#0x7C]
+0x717f8fc: STP             S14, S15, [X20,#0x84]
+0x717f900: LDP             X20, X19, [SP,#0x80+var_10]
+0x717f904: LDP             X22, X21, [SP,#0x80+var_20]
+0x717f908: LDP             X24, X23, [SP,#0x80+var_30]
+0x717f90c: LDR             X30, [SP,#0x80+var_40]
+0x717f910: LDP             D9, D8, [SP,#0x80+var_50]
+0x717f914: LDP             D11, D10, [SP,#0x80+var_60]
+0x717f918: LDP             D13, D12, [SP,#0x80+var_70]
+0x717f91c: LDP             D15, D14, [SP+0x80+var_80],#0x80
+0x717f920: RET

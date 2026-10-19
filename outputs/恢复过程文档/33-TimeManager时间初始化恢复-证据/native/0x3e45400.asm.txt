@@ -1,0 +1,44 @@
+0x3e45400: SUB             SP, SP, #0x30
+0x3e45404: STP             X30, X1, [SP,#0x30+var_20]
+0x3e45408: STP             X20, X19, [SP,#0x30+var_10]
+0x3e4540c: ADRP            X20, #byte_8FFD9ED@PAGE
+0x3e45410: ADRP            X19, #off_8ACDB30@PAGE
+0x3e45414: LDRB            W8, [X20,#byte_8FFD9ED@PAGEOFF]
+0x3e45418: LDR             X19, [X19,#off_8ACDB30@PAGEOFF]; off_8CE6460
+0x3e4541c: TBNZ            W8, #0, loc_3E45434
+0x3e45420: ADRP            X0, #off_8ACDB30@PAGE
+0x3e45424: LDR             X0, [X0,#off_8ACDB30@PAGEOFF]; off_8CE6460 ; slot
+0x3e45428: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3e4542c: MOV             W8, #1
+0x3e45430: STRB            W8, [X20,#byte_8FFD9ED@PAGEOFF]
+0x3e45434: LDR             X0, [X19]; klass
+0x3e45438: STR             XZR, [SP,#0x30+var_28]
+0x3e4543c: LDR             W8, [X0,#0xE0]
+0x3e45440: CBNZ            W8, loc_3E45448
+0x3e45444: BL              il2cpp_codegen_runtime_class_init
+0x3e45448: ADD             X0, SP, #0x30+var_18
+0x3e4544c: MOV             X1, XZR
+0x3e45450: BL              System.DateTime$$get_DayOfWeek
+0x3e45454: MOV             W9, #0x2493
+0x3e45458: ADD             W8, W0, #6
+0x3e4545c: MOVK            W9, #0x9249,LSL#16
+0x3e45460: SMULL           X9, W8, W9
+0x3e45464: LSR             X9, X9, #0x20 ; ' '
+0x3e45468: ADD             W9, W9, W8
+0x3e4546c: ASR             W10, W9, #2
+0x3e45470: ADD             W9, W10, W9,LSR#31
+0x3e45474: LSL             W10, W9, #3
+0x3e45478: SUB             W9, W10, W9
+0x3e4547c: SUB             W8, W9, W8
+0x3e45480: SCVTF           D0, W8
+0x3e45484: ADD             X0, SP, #0x30+var_18
+0x3e45488: MOV             X1, XZR
+0x3e4548c: BL              System.DateTime$$AddDays
+0x3e45490: STR             X0, [SP,#0x30+var_28]
+0x3e45494: ADD             X0, SP, #0x30+var_28
+0x3e45498: MOV             X1, XZR
+0x3e4549c: BL              System.DateTime$$get_Date
+0x3e454a0: LDP             X20, X19, [SP,#0x30+var_10]
+0x3e454a4: LDR             X30, [SP,#0x30+var_20]
+0x3e454a8: ADD             SP, SP, #0x30 ; '0'
+0x3e454ac: RET

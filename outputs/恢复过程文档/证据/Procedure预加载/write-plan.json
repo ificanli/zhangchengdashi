@@ -1,0 +1,113 @@
+{
+  "files": [
+    {
+      "path": "Assets/Scripts/Assembly-CSharp/ljzs_lt/Procedure/ProcedurePreLoad.cs",
+      "usings": [],
+      "methods": [
+        {
+          "token": "0x6005BB4",
+          "body": "{ base.OnInit(procedureOwner); m_ProcedureOwner = procedureOwner; }",
+          "makeAsync": false
+        },
+        {
+          "token": "0x6005BB5",
+          "body": "{ base.OnEnter(procedureOwner); PreLoad(); }",
+          "makeAsync": false
+        },
+        {
+          "token": "0x6005BB6",
+          "body": "{ PreLoadAsync(); UnityEngine.Debug.Log(\"预加载完成\"); ChangeState<ProcedureStarGame>(m_ProcedureOwner, System.Array.Empty<object>()); }",
+          "makeAsync": false
+        },
+        {
+          "token": "0x6005BB7",
+          "body": "{\n var closure = new _003C_003Ec__DisplayClass4_0();\n InitGameSetting();\n var assetsManager = AssetsModule.AssetsManager.Instance;\n UnityEngine.Object.DontDestroyOnLoad(assetsManager.gameObject);\n await assetsManager.Init();\n LocalizationModule.Runtime.CustomBundlesManager.Instance.Preload().Forget();\n new UnityEngine.GameObject(\"DataCompareMgr\").AddComponent<DataModule.DataCompareMgr>();\n closure.loginControl = new L_Tools.LoginControl(OnLoginValid);\n string appChannelGroup = DBTSDK.AppInfoManager.Instance.GetAppChannelGroup();\n if (!string.IsNullOrEmpty(appChannelGroup))\n {\n  UnityEngine.Debug.Log(appChannelGroup);\n  if (appChannelGroup.ToLower().Contains(\"huawei\"))\n  {\n   closure.loginControl.IsDefaultTouristLogin = false;\n   closure.loginControl.UseLoginCache = false;\n  }\n }\n closure.afterLoginAction = null;\n closure._003CPreLoadAsync_003Eg__TryLogin_007C0();\n}",
+          "makeAsync": true
+        },
+        {
+          "token": "0x6005BB8",
+          "body": "{\n I2.Loc.LocalizationManager.EnableChangingCultureInfo(false);\n LocalizationModule.StartupLanguageHelper.EnsureStartupLanguage();\n System.Globalization.CultureInfo.DefaultThreadCurrentCulture = System.Globalization.CultureInfo.GetCultureInfo(\"en-US\");\n System.Globalization.CultureInfo.DefaultThreadCurrentUICulture = System.Globalization.CultureInfo.GetCultureInfo(\"en-US\");\n System.Threading.Thread.CurrentThread.CurrentCulture = System.Globalization.CultureInfo.GetCultureInfo(\"en-US\");\n System.Threading.Thread.CurrentThread.CurrentUICulture = System.Globalization.CultureInfo.GetCultureInfo(\"en-US\");\n ToolModule.LitJsonExtent.Init();\n}",
+          "makeAsync": false
+        },
+        {
+          "token": "0x6005BB9",
+          "body": "{\n if (errorCode == 1019)\n {\n  AccountMsgCanvas.SetContent(I2.Loc.LocalizationManager.GetTranslation(\"Login_Vaild\",true,0,true,false,null,null,true),\n   I2.Loc.LocalizationManager.GetTranslation(\"Login_Vaild_Message\",true,0,true,false,null,null,true),\n   I2.Loc.LocalizationManager.GetTranslation(\"Exit_Game\",true,0,true,false,null,null,true), AccountMsgCanvas.ExitGame, false, false);\n }\n else if (errorCode == 3302)\n {\n  AccountMsgCanvas.SetContent(I2.Loc.LocalizationManager.GetTranslation(\"Login_Vaild\",true,0,true,false,null,null,true),\n   \"该账号已被封禁,如有疑问请联系客服反馈\",\n   I2.Loc.LocalizationManager.GetTranslation(\"Exit_Game\",true,0,true,false,null,null,true), AccountMsgCanvas.ExitGame, true, true);\n }\n else\n {\n  AccountMsgCanvas.SetContent(I2.Loc.LocalizationManager.GetTranslation(\"Login_Failed\",true,0,true,false,null,null,true),\n   string.Format(\"Error Code : {0}\",errorCode),\n   I2.Loc.LocalizationManager.GetTranslation(\"Exit_Game\",true,0,true,false,null,null,true), AccountMsgCanvas.ExitGame, false, false);\n }\n}",
+          "makeAsync": false
+        },
+        {
+          "token": "0x6005BBA",
+          "body": "{ base.OnUpdate(procedureOwner, elapseSeconds, realElapseSeconds); }",
+          "makeAsync": false
+        },
+        {
+          "token": "0x6005BBB",
+          "body": "{ base.OnLeave(procedureOwner, isShutdown); }",
+          "makeAsync": false
+        },
+        {
+          "token": "0x6005BBC",
+          "body": "{ base.OnDestroy(procedureOwner); }",
+          "makeAsync": false
+        },
+        {
+          "token": "0x6005BC0",
+          "body": "{\n if (b)\n {\n  GameFramework.CLog.Log(\"Login 登录成功\");\n  afterLoginAction?.Invoke();\n }\n else\n {\n  AccountMsgCanvas.SetContent(\n   I2.Loc.LocalizationManager.GetTranslation(\"Login_Failed\",true,0,true,false,null,null,true),\n   I2.Loc.LocalizationManager.GetTranslation(\"Login_Failed_Message\",true,0,true,false,null,null,true),\n   \"重试\", _003CPreLoadAsync_003Eg__TryLogin_007C0, false, false);\n }\n}",
+          "makeAsync": false
+        }
+      ],
+      "helperClassToken": "0x2000F52",
+      "addHelper": "[Token(Token = \"0x6005BBF\")]\n[Address(RVA = \"0x439FEE0\", Offset = \"0x439BEE0\", VA = \"0x439FEE0\")]\ninternal void _003CPreLoadAsync_003Eg__TryLogin_007C0()\n{\n loginControl.Login(_003CPreLoadAsync_003Eb__1, false);\n}\n"
+    },
+    {
+      "path": "Assets/Scripts/Assembly-CSharp/ljzs_lt/Procedure/ProcedureStarGame.cs",
+      "usings": [],
+      "methods": [
+        {
+          "token": "0x6005BC3",
+          "body": "{ base.OnInit(procedureOwner); m_ProcedureOwner = procedureOwner; }",
+          "makeAsync": false
+        },
+        {
+          "token": "0x6005BC4",
+          "body": "{\n base.OnEnter(procedureOwner);\n GameFramework.MsgDispatcher.AddEventListener(\"ReadyExitGame\", ReadyExitGame);\n GameTimer = GameFramework.GameFrameEntry.GetModule<GameFramework.TimeModule>().AddLoopTimer(30, true, ReportGameTimes, true, false);\n DBTSDK.ReportManager.Instance.StartGameModel(MineGameModel.None);\n GameFramework.Base.GameStartEntry.EnterGame = true;\n GameFramework.GlobalData.CheckNewDay();\n StarGame();\n}",
+          "makeAsync": false
+        },
+        {
+          "token": "0x6005BC5",
+          "body": "{ DBTSDK.ReportManager.Instance.ReportGamePlayTime(times); }",
+          "makeAsync": false
+        },
+        {
+          "token": "0x6005BC6",
+          "body": "{\n UnityEngine.Debug.Log(\"显示主UI\");\n UnityEngine.AddressableAssets.Addressables.LoadSceneAsync(\"Assets/_Scene/Game.unity\", UnityEngine.SceneManagement.LoadSceneMode.Single, true, 100);\n}",
+          "makeAsync": false
+        },
+        {
+          "token": "0x6005BC7",
+          "body": "{ GameFramework.ResLoadHelper.LoadScene(\"MineGameTest\", null, false, null); }",
+          "makeAsync": false
+        },
+        {
+          "token": "0x6005BC8",
+          "body": "{\n GameFramework.MsgDispatcher.SendMessage(\"MineGameExitLogic\", (object[])null);\n ChangeState<ProcedureExitGame>(m_ProcedureOwner, System.Array.Empty<object>());\n}",
+          "makeAsync": false
+        },
+        {
+          "token": "0x6005BC9",
+          "body": "{ base.OnUpdate(procedureOwner, elapseSeconds, realElapseSeconds); }",
+          "makeAsync": false
+        },
+        {
+          "token": "0x6005BCA",
+          "body": "{\n base.OnLeave(procedureOwner, isShutdown);\n GameFramework.GameFrameEntry.GetModule<GameFramework.TimeModule>().RemoveLoopTimer(GameTimer, time => ReportGameTimes(time));\n GameFramework.MsgDispatcher.RemoveEventListener(\"ReadyExitGame\", ReadyExitGame);\n}",
+          "makeAsync": false
+        },
+        {
+          "token": "0x6005BCB",
+          "body": "{ base.OnDestroy(procedureOwner); }",
+          "makeAsync": false
+        }
+      ]
+    }
+  ]
+}

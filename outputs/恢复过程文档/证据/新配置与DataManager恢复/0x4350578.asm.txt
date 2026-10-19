@@ -1,0 +1,49 @@
+0x4350578: ff0302d1 sub      sp, sp, #0x80
+0x435057c: fe5706a9 stp      x30, x21, [sp, #0x60]
+0x4350580: f44f07a9 stp      x20, x19, [sp, #0x70]
+0x4350584: 95650290 adrp     x21, #0x9000000
+0x4350588: 343c02b0 adrp     x20, #0x8ad5000
+0x435058c: a8ee5939 ldrb     w8, [x21, #0x67b]
+0x4350590: 946a45f9 ldr      x20, [x20, #0xad0] // System.Runtime.CompilerServices.AsyncTaskMethodBuilder_TypeInfo
+0x4350594: f30300aa mov      x19, x0
+0x4350598: 28010037 tbnz     w8, #0, #0x43505bc
+0x435059c: 003d02d0 adrp     x0, #0x8af2000
+0x43505a0: 00e842f9 ldr      x0, [x0, #0x5d0] // Method$System.Runtime.CompilerServices.AsyncTaskMethodBuilder.Start<GlobalInfo.<InitInfo>d__92>()
+0x43505a4: 37b3e397 bl       #0x3c3d280
+0x43505a8: 203c02b0 adrp     x0, #0x8ad5000
+0x43505ac: 006845f9 ldr      x0, [x0, #0xad0] // System.Runtime.CompilerServices.AsyncTaskMethodBuilder_TypeInfo
+0x43505b0: 34b3e397 bl       #0x3c3d280
+0x43505b4: 28008052 mov      w8, #1
+0x43505b8: a8ee1939 strb     w8, [x21, #0x67b]
+0x43505bc: 800240f9 ldr      x0, [x20]
+0x43505c0: 00e4006f movi     v0.2d, #0000000000000000
+0x43505c4: ff2b00f9 str      xzr, [sp, #0x50]
+0x43505c8: e08301ad stp      q0, q0, [sp, #0x30]
+0x43505cc: e00b803d str      q0, [sp, #0x20]
+0x43505d0: 143d02d0 adrp     x20, #0x8af2000
+0x43505d4: 08e040b9 ldr      w8, [x0, #0xe0]
+0x43505d8: 94ea42f9 ldr      x20, [x20, #0x5d0] // Method$System.Runtime.CompilerServices.AsyncTaskMethodBuilder.Start<GlobalInfo.<InitInfo>d__92>()
+0x43505dc: 48000035 cbnz     w8, #0x43505e4
+0x43505e0: 74b3e397 bl       #0x3c3d3b0
+0x43505e4: e8230091 add      x8, sp, #8
+0x43505e8: e0031faa mov      x0, xzr
+0x43505ec: 3080c994 bl       #0x75b06ac // System.Runtime.CompilerServices.AsyncTaskMethodBuilder$$Create
+0x43505f0: e083c03c ldur     q0, [sp, #8]
+0x43505f4: e90f40f9 ldr      x9, [sp, #0x18]
+0x43505f8: 820240f9 ldr      x2, [x20]
+0x43505fc: e8830091 add      x8, sp, #0x20
+0x4350600: 14017db2 orr      x20, x8, #8
+0x4350604: 0a008012 mov      w10, #-1
+0x4350608: e1830091 add      x1, sp, #0x20
+0x435060c: e00314aa mov      x0, x20
+0x4350610: e083823c stur     q0, [sp, #0x28]
+0x4350614: e9cf03a9 stp      x9, x19, [sp, #0x38]
+0x4350618: ea2300b9 str      w10, [sp, #0x20]
+0x435061c: 6a271c94 bl       #0x4a5a3c4 // System.Runtime.CompilerServices.AsyncTaskMethodBuilder$$Start<GlobalInfo.<InitInfo>d__92>
+0x4350620: e00314aa mov      x0, x20
+0x4350624: e1031faa mov      x1, xzr
+0x4350628: 9278c994 bl       #0x75ae870 // System.Runtime.CompilerServices.AsyncTaskMethodBuilder$$get_Task
+0x435062c: f44f47a9 ldp      x20, x19, [sp, #0x70]
+0x4350630: fe5746a9 ldp      x30, x21, [sp, #0x60]
+0x4350634: ff030291 add      sp, sp, #0x80
+0x4350638: c0035fd6 ret      

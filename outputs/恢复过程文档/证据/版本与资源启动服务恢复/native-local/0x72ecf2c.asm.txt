@@ -1,0 +1,43 @@
+0x72ecf2c: fe67bca9 stp      x30, x25, [sp, #-0x40]!
+0x72ecf30: f85f01a9 stp      x24, x23, [sp, #0x10]
+0x72ecf34: f65702a9 stp      x22, x21, [sp, #0x20]
+0x72ecf38: f44f03a9 stp      x20, x19, [sp, #0x30]
+0x72ecf3c: f9e800d0 adrp     x25, #0x900a000
+0x72ecf40: 77c100d0 adrp     x23, #0x8b1a000
+0x72ecf44: 18bf0090 adrp     x24, #0x8acc000
+0x72ecf48: 28cf4139 ldrb     w8, [x25, #0x73]
+0x72ecf4c: f75a46f9 ldr      x23, [x23, #0xcb0] // GameFramework.Resources.PatchManifest_TypeInfo
+0x72ecf50: 188346f9 ldr      x24, [x24, #0xd00] // /
+0x72ecf54: f303032a mov      w19, w3
+0x72ecf58: f50302aa mov      x21, x2
+0x72ecf5c: f60301aa mov      x22, x1
+0x72ecf60: f40300aa mov      x20, x0
+0x72ecf64: 28010037 tbnz     w8, #0, #0x72ecf88
+0x72ecf68: 60c100d0 adrp     x0, #0x8b1a000
+0x72ecf6c: 005846f9 ldr      x0, [x0, #0xcb0] // GameFramework.Resources.PatchManifest_TypeInfo
+0x72ecf70: c4402597 bl       #0x3c3d280
+0x72ecf74: 00bf0090 adrp     x0, #0x8acc000
+0x72ecf78: 008046f9 ldr      x0, [x0, #0xd00] // /
+0x72ecf7c: c1402597 bl       #0x3c3d280
+0x72ecf80: 28008052 mov      w8, #1
+0x72ecf84: 28cf0139 strb     w8, [x25, #0x73]
+0x72ecf88: e00314aa mov      x0, x20
+0x72ecf8c: e1031faa mov      x1, xzr
+0x72ecf90: df690f94 bl       #0x76c770c // System.Object$$.ctor
+0x72ecf94: e00240f9 ldr      x0, [x23]
+0x72ecf98: 4b412597 bl       #0x3c3d4c4
+0x72ecf9c: e10316aa mov      x1, x22
+0x72ecfa0: f70300aa mov      x23, x0
+0x72ecfa4: 0d000094 bl       #0x72ecfd8 // GameFramework.Resources.PatchManifest$$.ctor
+0x72ecfa8: 970a00f9 str      x23, [x20, #0x10]
+0x72ecfac: 010340f9 ldr      x1, [x24]
+0x72ecfb0: e00315aa mov      x0, x21
+0x72ecfb4: e2031faa mov      x2, xzr
+0x72ecfb8: fb450894 bl       #0x74fe7a4 // System.String$$Concat
+0x72ecfbc: 800e00f9 str      x0, [x20, #0x18]
+0x72ecfc0: 932200b9 str      w19, [x20, #0x20]
+0x72ecfc4: f44f43a9 ldp      x20, x19, [sp, #0x30]
+0x72ecfc8: f65742a9 ldp      x22, x21, [sp, #0x20]
+0x72ecfcc: f85f41a9 ldp      x24, x23, [sp, #0x10]
+0x72ecfd0: fe67c4a8 ldp      x30, x25, [sp], #0x40
+0x72ecfd4: c0035fd6 ret      

@@ -1,0 +1,33 @@
+0x3e1a9ec: STR             X30, [SP,#var_20]!
+0x3e1a9f0: STP             X20, X19, [SP,#0x20+var_10]
+0x3e1a9f4: ADRP            X20, #byte_8FFD89E@PAGE
+0x3e1a9f8: LDRB            W8, [X20,#byte_8FFD89E@PAGEOFF]
+0x3e1a9fc: MOV             X19, X0
+0x3e1aa00: TBNZ            W8, #0, loc_3E1AA24
+0x3e1aa04: ADRP            X0, #off_8ACDE40@PAGE
+0x3e1aa08: LDR             X0, [X0,#off_8ACDE40@PAGEOFF]; qword_8D12148 ; slot
+0x3e1aa0c: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3e1aa10: ADRP            X0, #off_8AD1D28@PAGE
+0x3e1aa14: LDR             X0, [X0,#off_8AD1D28@PAGEOFF]; qword_8D690B8 ; slot
+0x3e1aa18: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3e1aa1c: MOV             W8, #1
+0x3e1aa20: STRB            W8, [X20,#byte_8FFD89E@PAGEOFF]
+0x3e1aa24: LDRB            W8, [X19,#0x21]
+0x3e1aa28: CBZ             W8, loc_3E1AA60
+0x3e1aa2c: ADRP            X8, #off_8ACDE40@PAGE
+0x3e1aa30: LDR             X8, [X8,#off_8ACDE40@PAGEOFF]; qword_8D12148
+0x3e1aa34: LDR             X0, [X8]
+0x3e1aa38: BL              ToolModule.ManagerBase_object_$$get_Instance
+0x3e1aa3c: CBZ             X0, loc_3E1AA6C
+0x3e1aa40: ADRP            X8, #off_8AD1D28@PAGE
+0x3e1aa44: LDR             X8, [X8,#off_8AD1D28@PAGEOFF]; qword_8D690B8
+0x3e1aa48: LDP             X20, X19, [SP,#0x20+var_10]
+0x3e1aa4c: MOV             X2, XZR
+0x3e1aa50: MOV             X3, XZR
+0x3e1aa54: LDR             X1, [X8]
+0x3e1aa58: LDR             X30, [SP+0x20+var_20],#0x20
+0x3e1aa5c: B               EventModule.EventManager$$TriggerEvent
+0x3e1aa60: LDP             X20, X19, [SP,#0x20+var_10]
+0x3e1aa64: LDR             X30, [SP+0x20+var_20],#0x20
+0x3e1aa68: RET
+0x3e1aa6c: BL              il2cpp_codegen_raise_null_reference_exception

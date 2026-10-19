@@ -1,0 +1,45 @@
+0x3d8e08c: STP             X30, X21, [SP,#var_20]!
+0x3d8e090: STP             X20, X19, [SP,#0x20+var_10]
+0x3d8e094: ADRP            X21, #byte_8FFD4B1@PAGE
+0x3d8e098: ADRP            X19, #off_8ACFB40@PAGE
+0x3d8e09c: LDRB            W8, [X21,#byte_8FFD4B1@PAGEOFF]
+0x3d8e0a0: LDR             X19, [X19,#off_8ACFB40@PAGEOFF]; qword_8D12128
+0x3d8e0a4: MOV             X20, X0
+0x3d8e0a8: TBNZ            W8, #0, loc_3D8E0CC
+0x3d8e0ac: ADRP            X0, #off_8ACFB40@PAGE
+0x3d8e0b0: LDR             X0, [X0,#off_8ACFB40@PAGEOFF]; qword_8D12128 ; slot
+0x3d8e0b4: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3d8e0b8: ADRP            X0, #off_8ACFD78@PAGE
+0x3d8e0bc: LDR             X0, [X0,#off_8ACFD78@PAGEOFF]; qword_8D57368 ; slot
+0x3d8e0c0: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3d8e0c4: MOV             W8, #1
+0x3d8e0c8: STRB            W8, [X21,#byte_8FFD4B1@PAGEOFF]
+0x3d8e0cc: LDR             X8, [X20]
+0x3d8e0d0: MOV             X0, X20
+0x3d8e0d4: MOV             W1, WZR
+0x3d8e0d8: LDR             X9, [X8,#0x2B8]
+0x3d8e0dc: LDR             X2, [X8,#0x2C0]
+0x3d8e0e0: BLR             X9
+0x3d8e0e4: LDR             X0, [X19]; method
+0x3d8e0e8: BL              ToolModule.ManagerBase_object_$$get_Instance
+0x3d8e0ec: MOV             X19, X0
+0x3d8e0f0: MOV             X0, X20
+0x3d8e0f4: MOV             X1, XZR
+0x3d8e0f8: BL              UnityEngine.Component$$get_transform
+0x3d8e0fc: CBZ             X0, loc_3D8E13C
+0x3d8e100: MOV             X1, XZR
+0x3d8e104: BL              UnityEngine.Transform$$get_position
+0x3d8e108: CBZ             X19, loc_3D8E13C
+0x3d8e10c: ADRP            X8, #off_8ACFD78@PAGE
+0x3d8e110: LDR             X8, [X8,#off_8ACFD78@PAGEOFF]; qword_8D57368
+0x3d8e114: MOV             X0, X19
+0x3d8e118: LDP             X20, X19, [SP,#0x20+var_10]
+0x3d8e11c: FMOV            S3, WZR
+0x3d8e120: LDR             X1, [X8]
+0x3d8e124: FMOV            S4, WZR
+0x3d8e128: FMOV            S5, WZR
+0x3d8e12c: FMOV            S6, #1.0
+0x3d8e130: MOV             X2, XZR
+0x3d8e134: LDP             X30, X21, [SP+0x20+var_20],#0x20
+0x3d8e138: B               AssetsModule.EffectManager$$ShowEffect
+0x3d8e13c: BL              il2cpp_codegen_raise_null_reference_exception

@@ -1,0 +1,44 @@
+0x3f6e440: STP             X30, X21, [SP,#var_20]!
+0x3f6e444: STP             X20, X19, [SP,#0x20+var_10]
+0x3f6e448: ADRP            X20, #byte_8FFE38C@PAGE
+0x3f6e44c: LDRB            W8, [X20,#byte_8FFE38C@PAGEOFF]
+0x3f6e450: MOV             X19, X0
+0x3f6e454: TBNZ            W8, #0, loc_3F6E46C
+0x3f6e458: ADRP            X0, #off_8ACCC30@PAGE
+0x3f6e45c: LDR             X0, [X0,#off_8ACCC30@PAGEOFF]; qword_8CEF660 ; slot
+0x3f6e460: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3f6e464: MOV             W8, #1
+0x3f6e468: STRB            W8, [X20,#byte_8FFE38C@PAGEOFF]
+0x3f6e46c: LDR             W8, [X19,#0x10]
+0x3f6e470: SUB             W9, W8, #1
+0x3f6e474: CMP             W9, #2
+0x3f6e478: B.CS            loc_3F6E49C
+0x3f6e47c: LDR             X0, [X19,#0x20]; self
+0x3f6e480: MOV             W8, #0xFFFFFFFF
+0x3f6e484: STR             W8, [X19,#0x10]
+0x3f6e488: CBZ             X0, loc_3F6E4EC
+0x3f6e48c: MOV             X1, XZR; method
+0x3f6e490: BL              TimeModuleO.TimeManager$$CheckTimerEndEvent
+0x3f6e494: MOV             W21, #2
+0x3f6e498: B               loc_3F6E4AC
+0x3f6e49c: CBNZ            W8, loc_3F6E4DC
+0x3f6e4a0: MOV             W8, #0xFFFFFFFF
+0x3f6e4a4: STR             W8, [X19,#0x10]
+0x3f6e4a8: MOV             W21, #1
+0x3f6e4ac: ADRP            X8, #off_8ACCC30@PAGE
+0x3f6e4b0: LDR             X8, [X8,#off_8ACCC30@PAGEOFF]; qword_8CEF660
+0x3f6e4b4: LDR             X0, [X8]
+0x3f6e4b8: BL              unk_3C3D4C4
+0x3f6e4bc: FMOV            S0, #1.0
+0x3f6e4c0: MOV             X1, XZR
+0x3f6e4c4: MOV             X20, X0
+0x3f6e4c8: BL              UnityEngine.WaitForSeconds$$.ctor
+0x3f6e4cc: MOV             W0, #1
+0x3f6e4d0: STR             X20, [X19,#0x18]
+0x3f6e4d4: STR             W21, [X19,#0x10]
+0x3f6e4d8: B               loc_3F6E4E0
+0x3f6e4dc: MOV             W0, WZR
+0x3f6e4e0: LDP             X20, X19, [SP,#0x20+var_10]
+0x3f6e4e4: LDP             X30, X21, [SP+0x20+var_20],#0x20
+0x3f6e4e8: RET
+0x3f6e4ec: BL              il2cpp_codegen_raise_null_reference_exception

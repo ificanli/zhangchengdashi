@@ -1,0 +1,29 @@
+0x4399f1c: STR             X30, [SP,#var_20]!
+0x4399f20: STP             X20, X19, [SP,#0x20+var_10]
+0x4399f24: ADRP            X19, #byte_900085B@PAGE
+0x4399f28: ADRP            X20, #off_8AF4408@PAGE
+0x4399f2c: LDRB            W8, [X19,#byte_900085B@PAGEOFF]
+0x4399f30: LDR             X20, [X20,#off_8AF4408@PAGEOFF]; off_8CE5BB0
+0x4399f34: TBNZ            W8, #0, loc_4399F4C
+0x4399f38: ADRP            X0, #off_8AF4408@PAGE
+0x4399f3c: LDR             X0, [X0,#off_8AF4408@PAGEOFF]; off_8CE5BB0 ; slot
+0x4399f40: BL              il2cpp_codegen_initialize_runtime_metadata
+0x4399f44: MOV             W8, #1
+0x4399f48: STRB            W8, [X19,#byte_900085B@PAGEOFF]
+0x4399f4c: LDR             X0, [X20]
+0x4399f50: LDR             X8, [X0,#0xB8]
+0x4399f54: LDR             X8, [X8]
+0x4399f58: CBNZ            X8, loc_4399F80
+0x4399f5c: BL              unk_3C3D4C4
+0x4399f60: MOV             X19, X0
+0x4399f64: BL              ljzs_lt.ConfigMgr$$.ctor
+0x4399f68: LDR             X8, [X20]
+0x4399f6c: LDR             X8, [X8,#0xB8]
+0x4399f70: STR             X19, [X8]
+0x4399f74: LDR             X8, [X20]
+0x4399f78: LDR             X8, [X8,#0xB8]
+0x4399f7c: LDR             X8, [X8]
+0x4399f80: LDP             X20, X19, [SP,#0x20+var_10]
+0x4399f84: MOV             X0, X8
+0x4399f88: LDR             X30, [SP+0x20+var_20],#0x20
+0x4399f8c: RET

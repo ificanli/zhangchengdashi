@@ -1,0 +1,57 @@
+--- DataManager.cs.before
++++ DataManager.cs
+@@ -5,6 +5,7 @@
+ using Cysharp.Threading.Tasks.CompilerServices;
+ using Il2CppDummyDll;
+ using ToolModule;
++using EventModule;
+ 
+ namespace DataModule
+ {
+@@ -151,16 +152,11 @@
+ 			[Token(Token = "0x600572E")]
+ 			[Address(RVA = "0x434D55C", Offset = "0x434955C", VA = "0x434D55C")]
+ 			[CompilerGenerated]
+-			get
+-			{
+-				return null;
+-			}
++			get;
+ 			[Token(Token = "0x600572F")]
+ 			[Address(RVA = "0x434D564", Offset = "0x4349564", VA = "0x434D564")]
+ 			[CompilerGenerated]
+-			private set
+-			{
+-			}
++			private set;
+ 		}
+ 
+ 		[Token(Token = "0x6005730")]
+@@ -171,18 +167,19 @@
+ 
+ 		[Token(Token = "0x6005731")]
+ 		[Address(RVA = "0x434D5C0", Offset = "0x43495C0", VA = "0x434D5C0", Slot = "4")]
+-		[AsyncStateMachine(typeof(_003CInit_003Ed__14))]
+-		public override UniTask Init()
+-		{
+-			return default;
++		public override async UniTask Init()
++		{
++			EventManager.Instance.StartListening("StartGame", PlayGame);
++			EventManager.Instance.StartListening("GameWin", GameWin);
+ 		}
+ 
+ 		[Token(Token = "0x6005732")]
+ 		[Address(RVA = "0x434D644", Offset = "0x4349644", VA = "0x434D644")]
+-		[AsyncStateMachine(typeof(_003CLoadConfig_003Ed__15))]
+-		public UniTask LoadConfig()
+-		{
+-			return default;
++		public async UniTask LoadConfig()
++		{
++			GlobalInfo = new GlobalInfo();
++			await GlobalInfo.InitInfo();
++			loadConfigComplete = true;
+ 		}
+ 
+ 		[Token(Token = "0x6005733")]

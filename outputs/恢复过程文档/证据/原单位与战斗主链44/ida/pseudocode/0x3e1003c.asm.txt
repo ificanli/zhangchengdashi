@@ -1,0 +1,76 @@
+0x3e1003c: STR             X30, [SP,#var_40]!
+0x3e10040: STP             X24, X23, [SP,#0x40+var_30]
+0x3e10044: STP             X22, X21, [SP,#0x40+var_20]
+0x3e10048: STP             X20, X19, [SP,#0x40+var_10]
+0x3e1004c: ADRP            X24, #byte_8FFD857@PAGE
+0x3e10050: LDRB            W8, [X24,#byte_8FFD857@PAGEOFF]
+0x3e10054: MOV             W22, W4
+0x3e10058: MOV             W20, W3
+0x3e1005c: MOV             X21, X2
+0x3e10060: MOV             W19, W1
+0x3e10064: MOV             X23, X0
+0x3e10068: TBNZ            W8, #0, loc_3E1008C
+0x3e1006c: ADRP            X0, #off_8AD15A0@PAGE
+0x3e10070: LDR             X0, [X0,#off_8AD15A0@PAGEOFF]; off_8CE4180 ; slot
+0x3e10074: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3e10078: ADRP            X0, #off_8ACFAA0@PAGE
+0x3e1007c: LDR             X0, [X0,#off_8ACFAA0@PAGEOFF]; off_8CECB08 ; slot
+0x3e10080: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3e10084: MOV             W8, #1
+0x3e10088: STRB            W8, [X24,#byte_8FFD857@PAGEOFF]
+0x3e1008c: CMP             W22, #1
+0x3e10090: B.NE            loc_3E10154
+0x3e10094: LDRB            W8, [X23,#0x20]
+0x3e10098: CBZ             W8, loc_3E10154
+0x3e1009c: CBZ             X21, loc_3E10154
+0x3e100a0: ADRP            X9, #off_8ACFAA0@PAGE
+0x3e100a4: LDR             X9, [X9,#off_8ACFAA0@PAGEOFF]; off_8CECB08
+0x3e100a8: LDR             X8, [X21]
+0x3e100ac: LDR             X10, [X9]
+0x3e100b0: LDRB            W9, [X8,#0x130]
+0x3e100b4: LDRB            W11, [X10,#0x130]
+0x3e100b8: CMP             W9, W11
+0x3e100bc: B.CC            loc_3E100E0
+0x3e100c0: LDR             X12, [X8,#0xC8]
+0x3e100c4: ADD             X11, X12, X11,LSL#3
+0x3e100c8: LDUR            X11, [X11,#-8]
+0x3e100cc: CMP             X11, X10
+0x3e100d0: B.NE            loc_3E100E0
+0x3e100d4: LDR             W10, [X21,#0xC8]
+0x3e100d8: CMP             W10, #3
+0x3e100dc: B.EQ            loc_3E10118
+0x3e100e0: ADRP            X10, #off_8AD15A0@PAGE
+0x3e100e4: LDR             X10, [X10,#off_8AD15A0@PAGEOFF]; off_8CE4180
+0x3e100e8: LDR             X10, [X10]
+0x3e100ec: LDRB            W11, [X10,#0x130]
+0x3e100f0: CMP             W9, W11
+0x3e100f4: B.CC            loc_3E10154
+0x3e100f8: LDR             X8, [X8,#0xC8]
+0x3e100fc: ADD             X8, X8, X11,LSL#3
+0x3e10100: LDUR            X8, [X8,#-8]
+0x3e10104: CMP             X8, X10
+0x3e10108: B.NE            loc_3E10154
+0x3e1010c: LDR             W8, [X21,#0x80]
+0x3e10110: CMP             W8, #3
+0x3e10114: B.NE            loc_3E10154
+0x3e10118: AND             W2, W20, #1
+0x3e1011c: MOV             W1, #3
+0x3e10120: BL              GameModule.SynergyEffectManager$$GetFetterCount
+0x3e10124: CMP             W0, #6
+0x3e10128: B.LT            loc_3E10154
+0x3e1012c: SCVTF           S0, W19
+0x3e10130: FMOV            S1, #0.5
+0x3e10134: MOV             W8, #0x7F800000
+0x3e10138: FMUL            S0, S0, S1
+0x3e1013c: FMOV            S1, W8
+0x3e10140: FCVTZS          W8, S0
+0x3e10144: FCMP            S0, S1
+0x3e10148: MOV             W9, #0x80000000
+0x3e1014c: CSEL            W8, W9, W8, EQ
+0x3e10150: SUB             W19, W19, W8
+0x3e10154: MOV             W0, W19
+0x3e10158: LDP             X20, X19, [SP,#0x40+var_10]
+0x3e1015c: LDP             X22, X21, [SP,#0x40+var_20]
+0x3e10160: LDP             X24, X23, [SP,#0x40+var_30]
+0x3e10164: LDR             X30, [SP+0x40+var_40],#0x40
+0x3e10168: RET

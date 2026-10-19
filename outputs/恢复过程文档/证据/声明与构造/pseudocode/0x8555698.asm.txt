@@ -1,0 +1,25 @@
+0x8555698: AND             W8, W1, #1
+0x855569c: FMOV            S3, #1.0
+0x85556a0: FCMP            S0, #0.0
+0x85556a4: FMOV            S4, WZR
+0x85556a8: STRB            W8, [X0,#0xC]
+0x85556ac: ADRP            X8, #qword_1837AA8@PAGE
+0x85556b0: FMIN            S0, S0, S3
+0x85556b4: FMIN            S3, S2, S3
+0x85556b8: FCSEL           S0, S0, S4, PL
+0x85556bc: FCMP            S2, #0.0
+0x85556c0: LDR             D2, [X8,#qword_1837AA8@PAGEOFF]
+0x85556c4: AND             W9, W2, #1
+0x85556c8: STRB            W9, [X0,#0xD]
+0x85556cc: MOV             W9, #1
+0x85556d0: MOVI            V5.2S, #1
+0x85556d4: STP             S0, S1, [X0]
+0x85556d8: FCSEL           S0, S3, S4, PL
+0x85556dc: STR             XZR, [X0,#0x10]
+0x85556e0: STRB            W9, [X0,#0x20]
+0x85556e4: STR             W9, [X0,#0x24]
+0x85556e8: STRB            W9, [X0,#0x28]
+0x85556ec: STR             S0, [X0,#8]
+0x85556f0: STR             D2, [X0,#0x18]
+0x85556f4: STUR            D5, [X0,#0x2C]
+0x85556f8: RET

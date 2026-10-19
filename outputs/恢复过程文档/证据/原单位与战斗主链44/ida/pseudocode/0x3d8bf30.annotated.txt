@@ -1,0 +1,190 @@
+void __fastcall GameModule_RoleBehaviour__UpdateHpBar(__int64 a1, __int64 a2)
+{
+  long double v2; // q8
+  __int64 v4; // x8
+  int v5; // w20
+  int v6; // w21
+  __int64 GameGlobalConfig; // x0
+  void *Instance; // x20
+  __int64 transform; // x0
+  __int64 v10; // x8
+  __int64 v11; // x21
+  __int64 v12; // x0
+  __int64 v13; // x22
+  float *v14; // x8
+  float v15; // s0
+  float v16; // s1
+  float v17; // s2
+  long double v18; // q0
+  long double v19; // q1
+  long double v20; // q2
+  long double v21; // q3
+  void *v22; // x0
+  long double BackgroundColor; // q0
+  long double v24; // q1
+  long double v25; // q2
+  long double v26; // q3
+  void *v27; // x0
+  long double ProgressColor; // q0
+  long double v29; // q1
+  long double v30; // q2
+  long double v31; // q3
+  __int64 v32; // x20
+  void *v33; // x20
+  __int64 gameObject; // x0
+  __int64 HpBarHUD; // x0
+  long double v36; // q1
+  int v37; // w8
+  long double v38; // q0
+  __int64 v39; // x8
+  __int64 v40; // x19
+  __int64 v41; // x0
+  __int128 v42; // [xsp+10h] [xbp-100h] BYREF
+  int v43; // [xsp+20h] [xbp-F0h]
+  __int128 v44; // [xsp+30h] [xbp-E0h] BYREF
+  int v45; // [xsp+40h] [xbp-D0h]
+  __int128 v46; // [xsp+50h] [xbp-C0h] BYREF
+  int v47; // [xsp+60h] [xbp-B0h]
+  __int128 v48; // [xsp+68h] [xbp-A8h] BYREF
+  int v49; // [xsp+78h] [xbp-98h]
+  __int128 v50; // [xsp+80h] [xbp-90h] BYREF
+  int v51; // [xsp+90h] [xbp-80h]
+  __int128 v52; // [xsp+98h] [xbp-78h] BYREF
+  int v53; // [xsp+A8h] [xbp-68h]
+  __int64 v54; // [xsp+B0h] [xbp-60h] BYREF
+  __int64 v55; // [xsp+B8h] [xbp-58h]
+  int v56; // [xsp+CCh] [xbp-44h] BYREF
+
+  if ( (byte_8FFD49C & 1) == 0 )
+  {
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8CE95C0 /* int_TypeInfo */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D12168 /* Method$ToolModule.ManagerBase<FloatingTextManager>.get_Instance() */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D124B8 /* Method$ToolModule.ManagerBase<UIHUDManager>.get_Instance() */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D156D0 /* Method$System.Nullable<Color>..ctor() */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D15D18 /* Method$System.Nullable<Vector3>..ctor() */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&off_8CEB3E0 /* UnityEngine.Object_TypeInfo */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D85350 /* {0} */);
+    byte_8FFD49C = 1;
+  }
+  if ( *(_BYTE *)(a1 + 33) == 0 )
+  {
+    v4 = *(_QWORD *)(a1 + 64);
+    if ( v4 == 0 )
+      goto LABEL_30;
+    v5 = *(_DWORD *)(v4 + 24);
+    v6 = *(_DWORD *)(v4 + 28);
+    if ( v5 >= v6 )
+    {
+      GameModule_RoleBehaviour__RemoveHPUI(a1, a2);
+    }
+    else
+    {
+      GameGlobalConfig = GameConfigModule_GameConfigManager__get_GameGlobalConfig(0, a2);
+      if ( GameGlobalConfig == 0 )
+        goto LABEL_30;
+      *(float *)&v2 = (float)v5 / (float)v6;
+      if ( *(_BYTE *)(GameGlobalConfig + 18) != 0 )
+      {
+        Instance = ToolModule_ManagerBase_object___get_Instance((const MethodInfo *)qword_8D12168 /* Method$ToolModule.ManagerBase<FloatingTextManager>.get_Instance() */);
+        transform = UnityEngine_Component__get_transform(a1, 0);
+        v10 = *(_QWORD *)(a1 + 64);
+        if ( v10 != 0 )
+        {
+          v11 = transform;
+          v56 = *(_DWORD *)(v10 + 24);
+          v12 = ((__int64 (__fastcall *)(__int64, int *))unk_3C3D3B8)(qword_8CE95C0 /* int_TypeInfo */, &v56);
+          v13 = System_String__Format(qword_8D85350 /* {0} */, v12, 0);
+          if ( byte_8FFCFFE == 0 )
+          {
+            il2cpp_codegen_initialize_runtime_metadata((void **)&off_8CEF3D8 /* UnityEngine.Vector3_TypeInfo */);
+            byte_8FFCFFE = 1;
+          }
+          v14 = *((float **)off_8CEF3D8 /* UnityEngine.Vector3_TypeInfo */ + 23);
+          v15 = v14[6];
+          v16 = v14[7];
+          v17 = v14[8];
+          v54 = 0;
+          v55 = 0;
+          *(__n128 *)&v18 = System_Nullable_Vector3____ctor(&v54, qword_8D15D18 /* Method$System.Nullable<Vector3>..ctor() */, v15, v16, v17);
+          LODWORD(v18) = 1.0;
+          LODWORD(v19) = 1.0;
+          LODWORD(v20) = 1.0;
+          LODWORD(v21) = 1.0;
+          v52 = 0u;
+          v53 = 0;
+          System_Nullable_Color____ctor(&v52, qword_8D156D0 /* Method$System.Nullable<Color>..ctor() */, v18, v19, v20, v21);
+          v22 = ToolModule_ManagerBase_object___get_Instance((const MethodInfo *)qword_8D12168 /* Method$ToolModule.ManagerBase<FloatingTextManager>.get_Instance() */);
+          if ( v22 != nullptr )
+          {
+            BackgroundColor = GameModule_FloatingTextManager__GetBackgroundColor(v22, 0);
+            v50 = 0u;
+            v51 = 0;
+            System_Nullable_Color____ctor(&v50, qword_8D156D0 /* Method$System.Nullable<Color>..ctor() */, BackgroundColor, v24, v25, v26);
+            v27 = ToolModule_ManagerBase_object___get_Instance((const MethodInfo *)qword_8D12168 /* Method$ToolModule.ManagerBase<FloatingTextManager>.get_Instance() */);
+            if ( v27 != nullptr )
+            {
+              ProgressColor = GameModule_FloatingTextManager__GetProgressColor(v27, *(unsigned __int8 *)(a1 + 32), 0);
+              v48 = 0u;
+              v49 = 0;
+              System_Nullable_Color____ctor(&v48, qword_8D156D0 /* Method$System.Nullable<Color>..ctor() */, ProgressColor, v29, v30, v31);
+              if ( Instance != nullptr )
+              {
+                v46 = v52;
+                v47 = v53;
+                v44 = v50;
+                v45 = v51;
+                v42 = v48;
+                v43 = v49;
+                ((void (__fastcall *)(void *, __int64, __int64, __int64, __int64, __int128 *, __int128 *, __int128 *, long double, _QWORD))GameModule_FloatingTextManager__UpdateHp)(
+                  Instance,
+                  v11,
+                  v13,
+                  v54,
+                  v55,
+                  &v46,
+                  &v44,
+                  &v42,
+                  v2,
+                  0);
+                return;
+              }
+            }
+          }
+        }
+LABEL_30:
+        il2cpp_codegen_raise_null_reference_exception();
+      }
+      v32 = *(_QWORD *)(a1 + 40);
+      if ( *((_DWORD *)off_8CEB3E0 /* UnityEngine.Object_TypeInfo */ + 56) == 0 )
+        il2cpp_codegen_runtime_class_init(off_8CEB3E0 /* UnityEngine.Object_TypeInfo */);
+      if ( (UnityEngine_Object__op_Equality(v32, 0, 0) & 1) != 0 )
+      {
+        v33 = ToolModule_ManagerBase_object___get_Instance((const MethodInfo *)qword_8D124B8 /* Method$ToolModule.ManagerBase<UIHUDManager>.get_Instance() */);
+        gameObject = UnityEngine_Component__get_gameObject(a1, 0);
+        if ( v33 == nullptr )
+          goto LABEL_30;
+        HpBarHUD = UIModuleO_UIHUDManager__GetHpBarHUD(v33, gameObject, 0, 65.0);
+        v37 = *(unsigned __int8 *)(a1 + 32);
+        LODWORD(v38) = 0;
+        *(_QWORD *)(a1 + 40) = HpBarHUD;
+        if ( v37 != 0 )
+          *(float *)&v36 = 0.0;
+        else
+          *(float *)&v36 = 1.0;
+        if ( v37 != 0 )
+          *(float *)&v38 = 1.0;
+        if ( HpBarHUD == 0 )
+          goto LABEL_30;
+        UIModuleO_HpBarUI__SetColor(HpBarHUD, 0, v38, v36, 0.0, 1.0);
+      }
+      v39 = *(_QWORD *)(a1 + 64);
+      if ( v39 == 0 )
+        goto LABEL_30;
+      v40 = *(_QWORD *)(a1 + 40);
+      v41 = System_Int32__ToString(v39 + 24, 0);
+      if ( v40 == 0 )
+        goto LABEL_30;
+      UIModuleO_HpBarUI__UpdateInfo(v40, v41, 0, v2);
+    }
+  }
+}

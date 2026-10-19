@@ -1,0 +1,23 @@
+void __fastcall GameModule_RoleBehaviour__RecordCurrentRoleTargetDistance(__int64 a1)
+{
+  __int64 v2; // x1
+  __int64 v3; // x10
+
+  if ( (byte_8FFD45C & 1) == 0 )
+  {
+    il2cpp_codegen_initialize_runtime_metadata((void **)&off_8CECB08);
+    byte_8FFD45C = 1;
+  }
+  v2 = *(_QWORD *)(a1 + 88);
+  if ( v2 != 0
+    && (v3 = *((unsigned __int8 *)off_8CECB08 + 304), *(unsigned __int8 *)(*(_QWORD *)v2 + 304LL) >= (unsigned int)v3)
+    && *(_UNKNOWN **)(*(_QWORD *)(*(_QWORD *)v2 + 200LL) + 8 * v3 - 8) == off_8CECB08 )
+  {
+    GameModule_RoleBehaviour__UpdateRoleTargetHexDistance(a1, v2);
+  }
+  else
+  {
+    *(_QWORD *)(a1 + 280) = 0;
+    *(_DWORD *)(a1 + 288) = -1;
+  }
+}

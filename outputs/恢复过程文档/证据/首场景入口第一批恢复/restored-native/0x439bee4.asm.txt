@@ -1,0 +1,81 @@
+0x439bee4: STR             X30, [SP,#var_30]!
+0x439bee8: STP             X22, X21, [SP,#0x30+var_20]
+0x439beec: STP             X20, X19, [SP,#0x30+var_10]
+0x439bef0: ADRP            X20, #byte_900088B@PAGE
+0x439bef4: ADRP            X21, #off_8AF46A0@PAGE
+0x439bef8: LDRB            W8, [X20,#byte_900088B@PAGEOFF]
+0x439befc: LDR             X21, [X21,#off_8AF46A0@PAGEOFF]; off_8CE7B30
+0x439bf00: MOV             X19, X0
+0x439bf04: TBNZ            W8, #0, loc_439BF4C
+0x439bf08: ADRP            X0, #off_8AF46E0@PAGE
+0x439bf0c: LDR             X0, [X0,#off_8AF46E0@PAGEOFF]; qword_8CFB068 ; slot
+0x439bf10: BL              il2cpp_codegen_initialize_runtime_metadata
+0x439bf14: ADRP            X0, #off_8AF46E8@PAGE
+0x439bf18: LDR             X0, [X0,#off_8AF46E8@PAGEOFF]; qword_8D2D160 ; slot
+0x439bf1c: BL              il2cpp_codegen_initialize_runtime_metadata
+0x439bf20: ADRP            X0, #off_8AF46A0@PAGE
+0x439bf24: LDR             X0, [X0,#off_8AF46A0@PAGEOFF]; off_8CE7B30 ; slot
+0x439bf28: BL              il2cpp_codegen_initialize_runtime_metadata
+0x439bf2c: ADRP            X0, #off_8ADBC98@PAGE
+0x439bf30: LDR             X0, [X0,#off_8ADBC98@PAGEOFF]; qword_8D173B8 ; slot
+0x439bf34: BL              il2cpp_codegen_initialize_runtime_metadata
+0x439bf38: ADRP            X0, #off_8ADCB08@PAGE
+0x439bf3c: LDR             X0, [X0,#off_8ADCB08@PAGEOFF]; qword_8D173C8 ; slot
+0x439bf40: BL              il2cpp_codegen_initialize_runtime_metadata
+0x439bf44: MOV             W8, #1
+0x439bf48: STRB            W8, [X20,#byte_900088B@PAGEOFF]
+0x439bf4c: ADRP            X20, #off_8AF46E8@PAGE
+0x439bf50: ADRP            X22, #off_8ADCB08@PAGE
+0x439bf54: LDR             X20, [X20,#off_8AF46E8@PAGEOFF]; qword_8D2D160
+0x439bf58: LDR             X22, [X22,#off_8ADCB08@PAGEOFF]; qword_8D173C8
+0x439bf5c: MOV             X0, X19
+0x439bf60: MOV             X1, XZR
+0x439bf64: BL              GameFramework.Base.IGameStart$$RegisterLogicCtr
+0x439bf68: LDR             X0, [X21]; klass
+0x439bf6c: LDR             W8, [X0,#0xE0]
+0x439bf70: CBNZ            W8, loc_439BF78
+0x439bf74: BL              il2cpp_codegen_runtime_class_init
+0x439bf78: LDR             X0, [X20]
+0x439bf7c: BL              GameFramework.GameFrameEntry$$GetModule_object_
+0x439bf80: LDR             X8, [X22]
+0x439bf84: MOV             X19, X0
+0x439bf88: MOV             X0, X8
+0x439bf8c: BL              L_Tools.RichControlBase_object_$$get_I
+0x439bf90: CBZ             X19, loc_439C024
+0x439bf94: ADRP            X21, #off_8ADBC98@PAGE
+0x439bf98: LDR             X21, [X21,#off_8ADBC98@PAGEOFF]; qword_8D173B8
+0x439bf9c: MOV             X1, X0
+0x439bfa0: MOV             X0, X19
+0x439bfa4: MOV             W2, WZR
+0x439bfa8: MOV             X3, XZR
+0x439bfac: BL              GameFramework.MineGameLogicModule$$RegisterLogicCtr
+0x439bfb0: LDR             X0, [X20]
+0x439bfb4: BL              GameFramework.GameFrameEntry$$GetModule_object_
+0x439bfb8: LDR             X8, [X21]
+0x439bfbc: MOV             X19, X0
+0x439bfc0: MOV             X0, X8
+0x439bfc4: BL              L_Tools.RichControlBase_object_$$get_I
+0x439bfc8: CBZ             X19, loc_439C024
+0x439bfcc: ADRP            X21, #off_8AF46E0@PAGE
+0x439bfd0: LDR             X21, [X21,#off_8AF46E0@PAGEOFF]; qword_8CFB068
+0x439bfd4: MOV             X1, X0
+0x439bfd8: MOV             X0, X19
+0x439bfdc: MOV             W2, WZR
+0x439bfe0: MOV             X3, XZR
+0x439bfe4: BL              GameFramework.MineGameLogicModule$$RegisterLogicCtr
+0x439bfe8: LDR             X0, [X20]
+0x439bfec: BL              GameFramework.GameFrameEntry$$GetModule_object_
+0x439bff0: LDR             X8, [X21]
+0x439bff4: MOV             X19, X0
+0x439bff8: MOV             X0, X8
+0x439bffc: BL              GameFramework.ControlBase_object_$$get_I
+0x439c000: CBZ             X19, loc_439C024
+0x439c004: MOV             X1, X0
+0x439c008: MOV             X0, X19
+0x439c00c: LDP             X20, X19, [SP,#0x30+var_10]
+0x439c010: LDP             X22, X21, [SP,#0x30+var_20]
+0x439c014: MOV             W2, WZR
+0x439c018: MOV             X3, XZR
+0x439c01c: LDR             X30, [SP+0x30+var_30],#0x30
+0x439c020: B               GameFramework.MineGameLogicModule$$RegisterLogicCtr
+0x439c024: BL              il2cpp_codegen_raise_null_reference_exception

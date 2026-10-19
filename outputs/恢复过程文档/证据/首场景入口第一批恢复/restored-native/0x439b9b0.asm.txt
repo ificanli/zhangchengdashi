@@ -1,0 +1,17 @@
+0x439b9b0: STR             X30, [SP,#var_20]!
+0x439b9b4: STP             X20, X19, [SP,#0x20+var_10]
+0x439b9b8: MOV             X20, X1
+0x439b9bc: MOV             X19, X0
+0x439b9c0: BL              ljzs_lt.ConfigMgr$$get_Instance
+0x439b9c4: CBZ             X0, loc_439B9F0
+0x439b9c8: MOV             X1, X20
+0x439b9cc: BL              ljzs_lt.ConfigMgr$$SetConfigABRes
+0x439b9d0: BL              ljzs_lt.ConfigMgr$$get_Instance
+0x439b9d4: CBZ             X0, loc_439B9F0
+0x439b9d8: BL              ljzs_lt.ConfigMgr$$Initialize
+0x439b9dc: MOV             X0, X19
+0x439b9e0: LDP             X20, X19, [SP,#0x20+var_10]
+0x439b9e4: MOV             X1, XZR
+0x439b9e8: LDR             X30, [SP+0x20+var_20],#0x20
+0x439b9ec: B               GameFramework.Base.IGameStart$$InitConfigOver
+0x439b9f0: BL              il2cpp_codegen_raise_null_reference_exception

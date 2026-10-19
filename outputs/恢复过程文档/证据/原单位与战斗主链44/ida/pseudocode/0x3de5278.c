@@ -1,0 +1,15 @@
+__int64 __fastcall GameModule_BattleGameManager__Countdown(__int64 a1)
+{
+  __int64 v2; // x20
+
+  if ( (byte_8FFD73C & 1) == 0 )
+  {
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8CF1460);
+    byte_8FFD73C = 1;
+  }
+  v2 = ((__int64 (__fastcall *)(__int64))unk_3C3D4C4)(qword_8CF1460);
+  System_Object___ctor(v2, 0);
+  *(_DWORD *)(v2 + 16) = 0;
+  *(_QWORD *)(v2 + 32) = a1;
+  return v2;
+}

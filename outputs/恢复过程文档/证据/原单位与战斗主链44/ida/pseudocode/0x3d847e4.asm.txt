@@ -1,0 +1,64 @@
+0x3d847e4: SUB             SP, SP, #0x40
+0x3d847e8: STR             D10, [SP,#0x40+var_30]
+0x3d847ec: STP             D9, D8, [SP,#0x40+var_28]
+0x3d847f0: STR             X30, [SP,#0x40+var_18]
+0x3d847f4: STP             X20, X19, [SP,#0x40+var_10]
+0x3d847f8: ADRP            X20, #byte_8FFD4A7@PAGE
+0x3d847fc: LDRB            W8, [X20,#byte_8FFD4A7@PAGEOFF]
+0x3d84800: MOV             X19, X0
+0x3d84804: TBNZ            W8, #0, loc_3D8481C
+0x3d84808: ADRP            X0, #off_8ACF180@PAGE
+0x3d8480c: LDR             X0, [X0,#off_8ACF180@PAGEOFF]; off_8CE81E8 ; slot
+0x3d84810: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3d84814: MOV             W8, #1
+0x3d84818: STRB            W8, [X20,#byte_8FFD4A7@PAGEOFF]
+0x3d8481c: STR             XZR, [SP,#0x40+var_38]
+0x3d84820: MOV             X0, X19
+0x3d84824: MOV             X1, XZR
+0x3d84828: BL              UnityEngine.Component$$get_transform
+0x3d8482c: CBZ             X0, loc_3D8489C
+0x3d84830: MOV             X1, XZR
+0x3d84834: BL              UnityEngine.Transform$$get_position
+0x3d84838: ADRP            X8, #off_8ACF180@PAGE
+0x3d8483c: LDR             X8, [X8,#off_8ACF180@PAGEOFF]; off_8CE81E8
+0x3d84840: MOV             V8.16B, V0.16B
+0x3d84844: MOV             V9.16B, V1.16B
+0x3d84848: MOV             V10.16B, V2.16B
+0x3d8484c: LDR             X0, [X8]; klass
+0x3d84850: LDR             W8, [X0,#0xE0]
+0x3d84854: CBNZ            W8, loc_3D8485C
+0x3d84858: BL              il2cpp_codegen_runtime_class_init
+0x3d8485c: ADD             X0, SP, #0x40+var_38
+0x3d84860: MOV             V0.16B, V8.16B
+0x3d84864: MOV             V1.16B, V9.16B
+0x3d84868: MOV             V2.16B, V10.16B
+0x3d8486c: MOV             X1, XZR
+0x3d84870: BL              HexManager$$TryGetHexAt
+0x3d84874: TBZ             W0, #0, loc_3D84884
+0x3d84878: LDR             X1, [SP,#0x40+var_38]
+0x3d8487c: MOV             X0, X19
+0x3d84880: BL              GameModule.RoleBehaviour$$ApplyHexPosition
+0x3d84884: LDP             X20, X19, [SP,#0x40+var_10]
+0x3d84888: LDR             X30, [SP,#0x40+var_18]
+0x3d8488c: LDP             D9, D8, [SP,#0x40+var_28]
+0x3d84890: LDR             D10, [SP,#0x40+var_30]
+0x3d84894: ADD             SP, SP, #0x40 ; '@'
+0x3d84898: RET
+0x3d8489c: BL              il2cpp_codegen_raise_null_reference_exception
+0x3d848a0: B               loc_3D848B0
+0x3d848a4: B               loc_3D848B0
+0x3d848a8: B               loc_3D848B0
+0x3d848ac: B               loc_3D848B0
+0x3d848b0: CMP             W1, #1
+0x3d848b4: B.NE            loc_3D848D4
+0x3d848b8: BL              .__cxa_begin_catch
+0x3d848bc: LDR             X19, [X0]
+0x3d848c0: BL              .__cxa_end_catch
+0x3d848c4: CBZ             X19, loc_3D84884
+0x3d848c8: MOV             X0, X19
+0x3d848cc: BL              sub_3C38CF8
+0x3d848d0: CBNZ            X19, loc_3D848D8
+0x3d848d4: BL              sub_3CE73C4
+0x3d848d8: MOV             X0, X19
+0x3d848dc: BL              sub_3C38CF8
+0x3d848e0: BL              unk_35BC500

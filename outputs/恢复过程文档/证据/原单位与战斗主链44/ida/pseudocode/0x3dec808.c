@@ -1,0 +1,18 @@
+bool GameModule_BattleGameSceneManager__IsLegendaryTileV1EnabledThisBattle(const MethodInfo *method)
+{
+  char v1; // w0
+  int v3; // [xsp+8h] [xbp-18h] BYREF
+  _BYTE v4[4]; // [xsp+Ch] [xbp-14h] BYREF
+
+  if ( (byte_8FFD760 & 1) == 0 )
+  {
+    il2cpp_codegen_initialize_runtime_metadata((void **)&off_8CE4A38);
+    byte_8FFD760 = 1;
+  }
+  v4[0] = 0;
+  v3 = 0;
+  if ( *((_DWORD *)off_8CE4A38 + 56) == 0 )
+    il2cpp_codegen_runtime_class_init(off_8CE4A38);
+  v1 = GameModule_BattleGameSceneManager__TryParseLegendaryTileV1OnlineParam(v4, &v3);
+  return v1 & v4[0] & 1;
+}

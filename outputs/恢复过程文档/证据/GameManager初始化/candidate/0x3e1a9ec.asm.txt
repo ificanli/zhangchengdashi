@@ -1,0 +1,33 @@
+0x3e1a9ec: fe0f1ef8 str      x30, [sp, #-0x20]!
+0x3e1a9f0: f44f01a9 stp      x20, x19, [sp, #0x10]
+0x3e1a9f4: 148f02f0 adrp     x20, #0x8ffd000
+0x3e1a9f8: 887a6239 ldrb     w8, [x20, #0x89e]
+0x3e1a9fc: f30300aa mov      x19, x0
+0x3e1aa00: 28010037 tbnz     w8, #0, #0x3e1aa24
+0x3e1aa04: 806502f0 adrp     x0, #0x8acd000
+0x3e1aa08: 002047f9 ldr      x0, [x0, #0xe40] // Method$ToolModule.ManagerBase<EventManager>.get_Instance()
+0x3e1aa0c: 1d8af897 bl       #0x3c3d280
+0x3e1aa10: a06502f0 adrp     x0, #0x8ad1000
+0x3e1aa14: 009446f9 ldr      x0, [x0, #0xd28] // OnArenaUIBGItemStartBtnClicked
+0x3e1aa18: 1a8af897 bl       #0x3c3d280
+0x3e1aa1c: 28008052 mov      w8, #1
+0x3e1aa20: 887a2239 strb     w8, [x20, #0x89e]
+0x3e1aa24: 68864039 ldrb     w8, [x19, #0x21]
+0x3e1aa28: c8010034 cbz      w8, #0x3e1aa60
+0x3e1aa2c: 886502f0 adrp     x8, #0x8acd000
+0x3e1aa30: 082147f9 ldr      x8, [x8, #0xe40] // Method$ToolModule.ManagerBase<EventManager>.get_Instance()
+0x3e1aa34: 000140f9 ldr      x0, [x8]
+0x3e1aa38: 8a766d94 bl       #0x5978460 // ToolModule.ManagerBase<object>$$get_Instance
+0x3e1aa3c: 800100b4 cbz      x0, #0x3e1aa6c
+0x3e1aa40: a86502f0 adrp     x8, #0x8ad1000
+0x3e1aa44: 089546f9 ldr      x8, [x8, #0xd28] // OnArenaUIBGItemStartBtnClicked
+0x3e1aa48: f44f41a9 ldp      x20, x19, [sp, #0x10]
+0x3e1aa4c: e2031faa mov      x2, xzr
+0x3e1aa50: e3031faa mov      x3, xzr
+0x3e1aa54: 010140f9 ldr      x1, [x8]
+0x3e1aa58: fe0742f8 ldr      x30, [sp], #0x20
+0x3e1aa5c: 42ad0314 b        #0x3f05f64 // EventModule.EventManager$$TriggerEvent
+0x3e1aa60: f44f41a9 ldp      x20, x19, [sp, #0x10]
+0x3e1aa64: fe0742f8 ldr      x30, [sp], #0x20
+0x3e1aa68: c0035fd6 ret      
+0x3e1aa6c: 988af897 bl       #0x3c3d4cc

@@ -1,0 +1,35 @@
+0x434d6cc: SUB             SP, SP, #0x50
+0x434d6d0: STP             X30, X21, [SP,#0x50+var_20]
+0x434d6d4: STP             X20, X19, [SP,#0x50+var_10]
+0x434d6d8: ADRP            X21, #byte_90005FC@PAGE
+0x434d6dc: ADRP            X20, #off_8AF24C0@PAGE
+0x434d6e0: LDRB            W8, [X21,#byte_90005FC@PAGEOFF]
+0x434d6e4: LDR             X20, [X20,#off_8AF24C0@PAGEOFF]; off_8D201F0
+0x434d6e8: MOV             X19, X0
+0x434d6ec: TBNZ            W8, #0, loc_434D704
+0x434d6f0: ADRP            X0, #off_8AF24C0@PAGE
+0x434d6f4: LDR             X0, [X0,#off_8AF24C0@PAGEOFF]; off_8D201F0 ; slot
+0x434d6f8: BL              il2cpp_codegen_initialize_runtime_metadata
+0x434d6fc: MOV             W8, #1
+0x434d700: STRB            W8, [X21,#byte_90005FC@PAGEOFF]
+0x434d704: LDR             X0, [X20]
+0x434d708: MOVI            V0.2D, #0
+0x434d70c: MOV             W8, #0xFFFFFFFF
+0x434d710: STP             Q0, Q0, [SP,#0x50+var_50]
+0x434d714: STR             Q0, [SP,#0x50+var_30]
+0x434d718: STR             X19, [SP,#0x50+var_38]
+0x434d71c: STR             W8, [SP,#0x50+var_50]
+0x434d720: LDR             X8, [X0,#0x38]
+0x434d724: CBNZ            X8, loc_434D72C
+0x434d728: BL              unk_3C503FC
+0x434d72c: MOV             X8, SP
+0x434d730: MOV             X0, SP; self
+0x434d734: ORR             X19, X8, #8
+0x434d738: BL              DataModule.DataManager._LoadData_d__16$$MoveNext
+0x434d73c: MOV             X0, X19
+0x434d740: MOV             X1, XZR
+0x434d744: BL              unk_3D17780
+0x434d748: LDP             X20, X19, [SP,#0x50+var_10]
+0x434d74c: LDP             X30, X21, [SP,#0x50+var_20]
+0x434d750: ADD             SP, SP, #0x50 ; 'P'
+0x434d754: RET

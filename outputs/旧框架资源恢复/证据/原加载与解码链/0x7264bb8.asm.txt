@@ -1,0 +1,32 @@
+0x7264bb8: STR             X30, [SP,#var_20]!
+0x7264bbc: STP             X20, X19, [SP,#0x20+var_10]
+0x7264bc0: ADRP            X20, #byte_9009AEA@PAGE
+0x7264bc4: LDRB            W8, [X20,#byte_9009AEA@PAGEOFF]
+0x7264bc8: MOV             X19, X0
+0x7264bcc: TBNZ            W8, #0, loc_7264BE4
+0x7264bd0: ADRP            X0, #off_8AD1278@PAGE
+0x7264bd4: LDR             X0, [X0,#off_8AD1278@PAGEOFF]; qword_8CE36B0 ; slot
+0x7264bd8: BL              il2cpp_codegen_initialize_runtime_metadata
+0x7264bdc: MOV             W8, #1
+0x7264be0: STRB            W8, [X20,#byte_9009AEA@PAGEOFF]
+0x7264be4: CBZ             X19, loc_7264C34
+0x7264be8: LDR             W8, [X19,#0x18]
+0x7264bec: CMP             W8, #3
+0x7264bf0: B.GT            loc_7264C24
+0x7264bf4: ADRP            X8, #off_8AD1278@PAGE
+0x7264bf8: LDR             X8, [X8,#off_8AD1278@PAGEOFF]; qword_8CE36B0
+0x7264bfc: MOV             W1, #4
+0x7264c00: LDR             X0, [X8]
+0x7264c04: BL              unk_3C3D320
+0x7264c08: MOV             X20, X0
+0x7264c0c: MOV             X0, X19
+0x7264c10: MOV             X1, X20
+0x7264c14: MOV             W2, WZR
+0x7264c18: MOV             X3, XZR
+0x7264c1c: BL              System.Array$$CopyTo
+0x7264c20: MOV             X19, X20
+0x7264c24: MOV             X0, X19
+0x7264c28: LDP             X20, X19, [SP,#0x20+var_10]
+0x7264c2c: LDR             X30, [SP+0x20+var_20],#0x20
+0x7264c30: RET
+0x7264c34: BL              il2cpp_codegen_raise_null_reference_exception

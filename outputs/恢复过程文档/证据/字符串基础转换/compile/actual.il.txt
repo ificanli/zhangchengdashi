@@ -1,0 +1,369 @@
+// IL code: StringToolCompile
+.class private auto ansi '<Module>'
+{
+} // end of class <Module>
+
+.class public auto ansi abstract sealed beforefieldinit ToolModule.StringTool
+	extends [netstandard]System.Object
+{
+	.custom instance void [netstandard]System.Runtime.CompilerServices.ExtensionAttribute::.ctor() = (
+		01 00 00 00
+	)
+	.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+		01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 32
+		30 30 30 31 41 34
+	)
+	// Methods
+	.method public hidebysig static 
+		valuetype [netstandard]System.Numerics.BigInteger ToBigInter (
+			string str
+		) cil managed 
+	{
+		.custom instance void [netstandard]System.Runtime.CompilerServices.ExtensionAttribute::.ctor() = (
+			01 00 00 00
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+			01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 36
+			30 30 30 36 41 44
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.AddressAttribute::.ctor() = (
+			01 00 03 00 53 0e 03 52 56 41 09 30 78 33 46 38
+			32 34 36 34 53 0e 06 4f 66 66 73 65 74 09 30 78
+			33 46 37 45 34 36 34 53 0e 02 56 41 09 30 78 33
+			46 38 32 34 36 34
+		)
+		// Method begins at RVA 0x2050
+		// Header size: 12
+		// Code size: 10 (0xa)
+		.maxstack 1
+		.locals init (
+			[0] valuetype [netstandard]System.Numerics.BigInteger
+		)
+
+		IL_0000: ldloca.s 0
+		IL_0002: initobj [netstandard]System.Numerics.BigInteger
+		IL_0008: ldloc.0
+		IL_0009: ret
+	} // end of method StringTool::ToBigInter
+
+	.method public hidebysig static 
+		bool ToBool (
+			string str
+		) cil managed 
+	{
+		.custom instance void [netstandard]System.Runtime.CompilerServices.ExtensionAttribute::.ctor() = (
+			01 00 00 00
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+			01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 36
+			30 30 30 36 41 45
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.AddressAttribute::.ctor() = (
+			01 00 03 00 53 0e 03 52 56 41 09 30 78 33 46 38
+			32 35 31 30 53 0e 06 4f 66 66 73 65 74 09 30 78
+			33 46 37 45 35 31 30 53 0e 02 56 41 09 30 78 33
+			46 38 32 35 31 30
+		)
+		// Method begins at RVA 0x2066
+		// Header size: 1
+		// Code size: 2 (0x2)
+		.maxstack 8
+
+		IL_0000: ldc.i4.0
+		IL_0001: ret
+	} // end of method StringTool::ToBool
+
+	.method public hidebysig static 
+		int32 ToInt (
+			string str
+		) cil managed 
+	{
+		.custom instance void [netstandard]System.Runtime.CompilerServices.ExtensionAttribute::.ctor() = (
+			01 00 00 00
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+			01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 36
+			30 30 30 36 41 46
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.AddressAttribute::.ctor() = (
+			01 00 03 00 53 0e 03 52 56 41 09 30 78 33 46 37
+			33 41 37 30 53 0e 06 4f 66 66 73 65 74 09 30 78
+			33 46 36 46 41 37 30 53 0e 02 56 41 09 30 78 33
+			46 37 33 41 37 30
+		)
+		// Method begins at RVA 0x206c
+		// Header size: 12
+		// Code size: 23 (0x17)
+		.maxstack 4
+		.locals init (
+			[0] int32
+		)
+
+		IL_0000: ldc.i4.0
+		IL_0001: stloc.0
+		IL_0002: ldarg.0
+		IL_0003: ldc.i4 167
+		IL_0008: call class [netstandard]System.Globalization.CultureInfo [netstandard]System.Globalization.CultureInfo::get_InvariantCulture()
+		IL_000d: ldloca.s 0
+		IL_000f: call bool [netstandard]System.Int32::TryParse(string, valuetype [netstandard]System.Globalization.NumberStyles, class [netstandard]System.IFormatProvider, int32&)
+		IL_0014: pop
+		IL_0015: ldloc.0
+		IL_0016: ret
+	} // end of method StringTool::ToInt
+
+	.method public hidebysig static 
+		float32 ToFloat (
+			string str
+		) cil managed 
+	{
+		.custom instance void [netstandard]System.Runtime.CompilerServices.ExtensionAttribute::.ctor() = (
+			01 00 00 00
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+			01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 36
+			30 30 30 36 42 30
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.AddressAttribute::.ctor() = (
+			01 00 03 00 53 0e 03 52 56 41 09 30 78 33 46 37
+			38 43 37 34 53 0e 06 4f 66 66 73 65 74 09 30 78
+			33 46 37 34 43 37 34 53 0e 02 56 41 09 30 78 33
+			46 37 38 43 37 34
+		)
+		// Method begins at RVA 0x208f
+		// Header size: 1
+		// Code size: 6 (0x6)
+		.maxstack 8
+
+		IL_0000: ldc.r4 0.0
+		IL_0005: ret
+	} // end of method StringTool::ToFloat
+
+	.method public hidebysig static 
+		!!T ToEnum<T> (
+			string str
+		) cil managed 
+	{
+		.custom instance void [netstandard]System.Runtime.CompilerServices.ExtensionAttribute::.ctor() = (
+			01 00 00 00
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+			01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 36
+			30 30 30 36 42 31
+		)
+		// Method begins at RVA 0x2096
+		// Header size: 1
+		// Code size: 11 (0xb)
+		.maxstack 8
+
+		IL_0000: ldstr "Unrecovered IL2CPP method ToolModule.StringTool.ToEnum<T>; Token=0x060006B1; generic RVAs=0x4ED6794 (Int32Enum), 0x4ED68A4 (fully shared)."
+		IL_0005: newobj instance void [netstandard]System.NotImplementedException::.ctor(string)
+		IL_000a: throw
+	} // end of method StringTool::ToEnum
+
+	.method public hidebysig static 
+		class [netstandard]System.Collections.Generic.List`1<string> ToList (
+			string content,
+			[opt] char separator
+		) cil managed 
+	{
+		.custom instance void [netstandard]System.Runtime.CompilerServices.ExtensionAttribute::.ctor() = (
+			01 00 00 00
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+			01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 36
+			30 30 30 36 42 32
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.AddressAttribute::.ctor() = (
+			01 00 03 00 53 0e 03 52 56 41 09 30 78 33 46 38
+			32 36 41 34 53 0e 06 4f 66 66 73 65 74 09 30 78
+			33 46 37 45 36 41 34 53 0e 02 56 41 09 30 78 33
+			46 38 32 36 41 34
+		)
+		.param [2] = char(44)
+		// Method begins at RVA 0x20a2
+		// Header size: 1
+		// Code size: 2 (0x2)
+		.maxstack 8
+
+		IL_0000: ldnull
+		IL_0001: ret
+	} // end of method StringTool::ToList
+
+	.method public hidebysig static 
+		class [netstandard]System.Collections.Generic.Dictionary`2<!!T, !!TV> ToDictionary<T, TV> (
+			string content
+		) cil managed 
+	{
+		.custom instance void [netstandard]System.Runtime.CompilerServices.ExtensionAttribute::.ctor() = (
+			01 00 00 00
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+			01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 36
+			30 30 30 36 42 33
+		)
+		// Method begins at RVA 0x20a5
+		// Header size: 1
+		// Code size: 2 (0x2)
+		.maxstack 8
+
+		IL_0000: ldnull
+		IL_0001: ret
+	} // end of method StringTool::ToDictionary
+
+	.method public hidebysig static 
+		uint8[] ToBase64Bytes (
+			string content
+		) cil managed 
+	{
+		.custom instance void [netstandard]System.Runtime.CompilerServices.ExtensionAttribute::.ctor() = (
+			01 00 00 00
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+			01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 36
+			30 30 30 36 42 34
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.AddressAttribute::.ctor() = (
+			01 00 03 00 53 0e 03 52 56 41 09 30 78 33 46 38
+			32 37 37 30 53 0e 06 4f 66 66 73 65 74 09 30 78
+			33 46 37 45 37 37 30 53 0e 02 56 41 09 30 78 33
+			46 38 32 37 37 30
+		)
+		// Method begins at RVA 0x20a8
+		// Header size: 1
+		// Code size: 2 (0x2)
+		.maxstack 8
+
+		IL_0000: ldnull
+		IL_0001: ret
+	} // end of method StringTool::ToBase64Bytes
+
+	.method public hidebysig static 
+		string ToBase64String (
+			uint8[] bytes
+		) cil managed 
+	{
+		.custom instance void [netstandard]System.Runtime.CompilerServices.ExtensionAttribute::.ctor() = (
+			01 00 00 00
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+			01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 36
+			30 30 30 36 42 35
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.AddressAttribute::.ctor() = (
+			01 00 03 00 53 0e 03 52 56 41 09 30 78 33 46 38
+			30 38 39 43 53 0e 06 4f 66 66 73 65 74 09 30 78
+			33 46 37 43 38 39 43 53 0e 02 56 41 09 30 78 33
+			46 38 30 38 39 43
+		)
+		// Method begins at RVA 0x20ab
+		// Header size: 1
+		// Code size: 2 (0x2)
+		.maxstack 8
+
+		IL_0000: ldnull
+		IL_0001: ret
+	} // end of method StringTool::ToBase64String
+
+	.method private hidebysig static 
+		bool IsListString (
+			class [netstandard]System.Type 'type'
+		) cil managed 
+	{
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+			01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 36
+			30 30 30 36 42 36
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.AddressAttribute::.ctor() = (
+			01 00 03 00 53 0e 03 52 56 41 09 30 78 33 46 38
+			32 38 34 38 53 0e 06 4f 66 66 73 65 74 09 30 78
+			33 46 37 45 38 34 38 53 0e 02 56 41 09 30 78 33
+			46 38 32 38 34 38
+		)
+		// Method begins at RVA 0x20ae
+		// Header size: 1
+		// Code size: 2 (0x2)
+		.maxstack 8
+
+		IL_0000: ldc.i4.0
+		IL_0001: ret
+	} // end of method StringTool::IsListString
+
+	.method public hidebysig static 
+		bool IsNullOrEmpty (
+			string s,
+			[opt] bool trimSpaces
+		) cil managed 
+	{
+		.custom instance void [netstandard]System.Runtime.CompilerServices.ExtensionAttribute::.ctor() = (
+			01 00 00 00
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+			01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 36
+			30 30 30 36 42 37
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.AddressAttribute::.ctor() = (
+			01 00 03 00 53 0e 03 52 56 41 09 30 78 33 46 37
+			35 34 31 38 53 0e 06 4f 66 66 73 65 74 09 30 78
+			33 46 37 31 34 31 38 53 0e 02 56 41 09 30 78 33
+			46 37 35 34 31 38
+		)
+		.param [2] = bool(true)
+		// Method begins at RVA 0x20b1
+		// Header size: 1
+		// Code size: 26 (0x1a)
+		.maxstack 8
+
+		IL_0000: ldarg.0
+		IL_0001: brtrue.s IL_0005
+
+		IL_0003: ldc.i4.1
+		IL_0004: ret
+
+		IL_0005: ldarg.1
+		IL_0006: brfalse.s IL_0010
+
+		IL_0008: ldarg.0
+		IL_0009: callvirt instance string [netstandard]System.String::Trim()
+		IL_000e: starg.s s
+
+		IL_0010: ldarg.0
+		IL_0011: callvirt instance int32 [netstandard]System.String::get_Length()
+		IL_0016: ldc.i4.0
+		IL_0017: ceq
+		IL_0019: ret
+	} // end of method StringTool::IsNullOrEmpty
+
+	.method public hidebysig static 
+		string GetLocalization (
+			string key,
+			object[] args
+		) cil managed 
+	{
+		.custom instance void [netstandard]System.Runtime.CompilerServices.ExtensionAttribute::.ctor() = (
+			01 00 00 00
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+			01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 36
+			30 30 30 36 42 38
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.AddressAttribute::.ctor() = (
+			01 00 03 00 53 0e 03 52 56 41 09 30 78 33 46 38
+			32 39 39 34 53 0e 06 4f 66 66 73 65 74 09 30 78
+			33 46 37 45 39 39 34 53 0e 02 56 41 09 30 78 33
+			46 38 32 39 39 34
+		)
+		.param [2]
+			.custom instance void [netstandard]System.ParamArrayAttribute::.ctor() = (
+				01 00 00 00
+			)
+		// Method begins at RVA 0x20cc
+		// Header size: 1
+		// Code size: 2 (0x2)
+		.maxstack 8
+
+		IL_0000: ldnull
+		IL_0001: ret
+	} // end of method StringTool::GetLocalization
+
+} // end of class ToolModule.StringTool
+

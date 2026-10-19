@@ -1,0 +1,24 @@
+void *UIFramework_UIManager__FindRectTrans(void *self, void *path, const MethodInfo *method)
+{
+  __int64 v5; // x0
+  __int64 v6; // x19
+
+  if ( (byte_8FFFFDB & 1) == 0 )
+  {
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D26298);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&off_8CEB3E0);
+    byte_8FFFFDB = 1;
+  }
+  v5 = *((_QWORD *)self + 4);
+  if ( v5 != 0 )
+  {
+    v6 = UnityEngine_Transform__Find(v5, path, 0);
+    if ( *((_DWORD *)off_8CEB3E0 + 56) == 0 )
+      il2cpp_codegen_runtime_class_init(off_8CEB3E0);
+    if ( (UnityEngine_Object__op_Equality(v6, 0, 0) & 1) != 0 )
+      return nullptr;
+    if ( v6 != 0 )
+      return (void *)UnityEngine_Component__GetComponent_object_(v6, qword_8D26298);
+  }
+  il2cpp_codegen_raise_null_reference_exception();
+}

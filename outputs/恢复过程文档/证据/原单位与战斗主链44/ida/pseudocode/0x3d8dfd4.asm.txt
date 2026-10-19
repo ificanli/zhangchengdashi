@@ -1,0 +1,17 @@
+0x3d8dfd4: LDR             X8, [X0,#0x40]
+0x3d8dfd8: CBZ             X8, locret_3D8E014
+0x3d8dfdc: FCMP            S0, #0.0
+0x3d8dfe0: B.PL            loc_3D8DFEC
+0x3d8dfe4: LDR             S0, [X0,#0x2C4]
+0x3d8dfe8: B               loc_3D8E010
+0x3d8dfec: LDR             S1, [X8,#0x2C]
+0x3d8dff0: MOV             W9, #0x42C80000
+0x3d8dff4: FMOV            S2, W9
+0x3d8dff8: FMUL            S0, S1, S0
+0x3d8dffc: FSUB            S0, S1, S0
+0x3d8e000: FMIN            S1, S0, S2
+0x3d8e004: FCMP            S0, #0.0
+0x3d8e008: FMOV            S0, WZR
+0x3d8e00c: FCSEL           S0, S1, S0, PL
+0x3d8e010: STR             S0, [X8,#0x2C]
+0x3d8e014: RET

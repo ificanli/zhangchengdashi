@@ -1,0 +1,54 @@
+0x3d84edc: STR             D8, [SP,#var_30]!
+0x3d84ee0: STP             X30, X21, [SP,#0x30+var_20]
+0x3d84ee4: STP             X20, X19, [SP,#0x30+var_10]
+0x3d84ee8: ADRP            X20, #byte_8FFD478@PAGE
+0x3d84eec: LDRB            W8, [X20,#byte_8FFD478@PAGEOFF]
+0x3d84ef0: MOV             X19, X0
+0x3d84ef4: TBNZ            W8, #0, loc_3D84F0C
+0x3d84ef8: ADRP            X0, #off_8ACDA30@PAGE
+0x3d84efc: LDR             X0, [X0,#off_8ACDA30@PAGEOFF]; off_8CE5E20 ; slot
+0x3d84f00: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3d84f04: MOV             W8, #1
+0x3d84f08: STRB            W8, [X20,#byte_8FFD478@PAGEOFF]
+0x3d84f0c: LDR             W8, [X19,#0x13C]
+0x3d84f10: CMP             W8, #6
+0x3d84f14: B.NE            loc_3D84F24
+0x3d84f18: LDR             S0, [X19,#0x124]
+0x3d84f1c: FCMP            S0, #0.0
+0x3d84f20: B.NE            loc_3D84F34
+0x3d84f24: LDP             X20, X19, [SP,#0x30+var_10]
+0x3d84f28: LDP             X30, X21, [SP,#0x30+var_20]
+0x3d84f2c: LDR             D8, [SP+0x30+var_30],#0x30
+0x3d84f30: RET
+0x3d84f34: ADRP            X20, #off_8ACDA30@PAGE
+0x3d84f38: LDR             X20, [X20,#off_8ACDA30@PAGEOFF]; off_8CE5E20
+0x3d84f3c: LDR             X0, [X20]; klass
+0x3d84f40: LDR             W8, [X0,#0xE0]
+0x3d84f44: CBNZ            W8, loc_3D84F4C
+0x3d84f48: BL              il2cpp_codegen_runtime_class_init
+0x3d84f4c: ADRP            X21, #byte_8FFD1AB@PAGE
+0x3d84f50: LDRB            W8, [X21,#byte_8FFD1AB@PAGEOFF]
+0x3d84f54: CBNZ            W8, loc_3D84F6C
+0x3d84f58: ADRP            X0, #off_8ACDA30@PAGE
+0x3d84f5c: LDR             X0, [X0,#off_8ACDA30@PAGEOFF]; off_8CE5E20 ; slot
+0x3d84f60: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3d84f64: MOV             W8, #1
+0x3d84f68: STRB            W8, [X21,#byte_8FFD1AB@PAGEOFF]
+0x3d84f6c: LDR             X0, [X20]; klass
+0x3d84f70: LDR             W8, [X0,#0xE0]
+0x3d84f74: CBNZ            W8, loc_3D84F80
+0x3d84f78: BL              il2cpp_codegen_runtime_class_init
+0x3d84f7c: LDR             X0, [X20]
+0x3d84f80: LDR             X8, [X0,#0xB8]
+0x3d84f84: LDRB            W8, [X8]
+0x3d84f88: CBZ             W8, loc_3D84F24
+0x3d84f8c: LDRB            W8, [X19,#0x12C]
+0x3d84f90: CBNZ            W8, loc_3D84F24
+0x3d84f94: LDR             S8, [X19,#0x128]
+0x3d84f98: MOV             X0, XZR
+0x3d84f9c: BL              UnityEngine.Time$$get_time
+0x3d84fa0: FCMP            S8, S0
+0x3d84fa4: B.PL            loc_3D84F24
+0x3d84fa8: MOV             W8, #1
+0x3d84fac: STRB            W8, [X19,#0x12C]
+0x3d84fb0: B               loc_3D84F24

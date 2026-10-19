@@ -1,0 +1,36 @@
+0x3deded4: STR             D8, [SP,#var_30]!
+0x3deded8: STP             X30, X21, [SP,#0x30+var_20]
+0x3dededc: STP             X20, X19, [SP,#0x30+var_10]
+0x3dedee0: ADRP            X20, #byte_8FFD772@PAGE
+0x3dedee4: ADRP            X21, #off_8AD31C0@PAGE
+0x3dedee8: LDRB            W8, [X20,#byte_8FFD772@PAGEOFF]
+0x3dedeec: LDR             X21, [X21,#off_8AD31C0@PAGEOFF]; off_8CE4A38
+0x3dedef0: MOV             V8.16B, V0.16B
+0x3dedef4: MOV             X19, X0
+0x3dedef8: TBNZ            W8, #0, loc_3DEDF10
+0x3dedefc: ADRP            X0, #off_8AD31C0@PAGE
+0x3dedf00: LDR             X0, [X0,#off_8AD31C0@PAGEOFF]; off_8CE4A38 ; slot
+0x3dedf04: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3dedf08: MOV             W8, #1
+0x3dedf0c: STRB            W8, [X20,#byte_8FFD772@PAGEOFF]
+0x3dedf10: LDR             X0, [X21]; klass
+0x3dedf14: LDR             W8, [X0,#0xE0]
+0x3dedf18: CBNZ            W8, loc_3DEDF20
+0x3dedf1c: BL              il2cpp_codegen_runtime_class_init
+0x3dedf20: MOV             X0, XZR
+0x3dedf24: BL              Pathfinding.AstarWebGLRuntimeConfig$$get_UseWebGLNavigation
+0x3dedf28: TBZ             W0, #0, loc_3DEDF54
+0x3dedf2c: MOV             X0, X19; this
+0x3dedf30: BL              GameModule.BattleGameSceneManager$$EnsureWebGLNavigationManager
+0x3dedf34: LDR             X0, [X19,#0x140]
+0x3dedf38: CBZ             X0, loc_3DEDF54
+0x3dedf3c: LDP             X20, X19, [SP,#0x30+var_10]
+0x3dedf40: LDP             X30, X21, [SP,#0x30+var_20]
+0x3dedf44: MOV             V0.16B, V8.16B
+0x3dedf48: MOV             X1, XZR
+0x3dedf4c: LDR             D8, [SP+0x30+var_30],#0x30
+0x3dedf50: B               GameModule.WebGLNavigationManager$$Tick
+0x3dedf54: LDP             X20, X19, [SP,#0x30+var_10]
+0x3dedf58: LDP             X30, X21, [SP,#0x30+var_20]
+0x3dedf5c: LDR             D8, [SP+0x30+var_30],#0x30
+0x3dedf60: RET

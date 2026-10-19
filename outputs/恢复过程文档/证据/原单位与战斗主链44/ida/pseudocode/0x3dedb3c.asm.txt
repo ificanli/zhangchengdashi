@@ -1,0 +1,46 @@
+0x3dedb3c: STP             X30, X23, [SP,#var_30]!
+0x3dedb40: STP             X22, X21, [SP,#0x30+var_20]
+0x3dedb44: STP             X20, X19, [SP,#0x30+var_10]
+0x3dedb48: ADRP            X23, #byte_8FFD76D@PAGE
+0x3dedb4c: ADRP            X22, #off_8ACDF78@PAGE
+0x3dedb50: LDRB            W8, [X23,#byte_8FFD76D@PAGEOFF]
+0x3dedb54: LDR             X22, [X22,#off_8ACDF78@PAGEOFF]; off_8CE1928
+0x3dedb58: MOV             W20, W2
+0x3dedb5c: MOV             W21, W1
+0x3dedb60: MOV             X19, X0
+0x3dedb64: TBNZ            W8, #0, loc_3DEDB88
+0x3dedb68: ADRP            X0, #off_8ACDF88@PAGE
+0x3dedb6c: LDR             X0, [X0,#off_8ACDF88@PAGEOFF]; qword_8D17890 ; slot
+0x3dedb70: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3dedb74: ADRP            X0, #off_8ACDF78@PAGE
+0x3dedb78: LDR             X0, [X0,#off_8ACDF78@PAGEOFF]; off_8CE1928 ; slot
+0x3dedb7c: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3dedb80: MOV             W8, #1
+0x3dedb84: STRB            W8, [X23,#byte_8FFD76D@PAGEOFF]
+0x3dedb88: LDR             X0, [X22]; klass
+0x3dedb8c: ADRP            X22, #off_8ACDF88@PAGE
+0x3dedb90: LDR             W8, [X0,#0xE0]
+0x3dedb94: LDR             X22, [X22,#off_8ACDF88@PAGEOFF]; qword_8D17890
+0x3dedb98: CBNZ            W8, loc_3DEDBA0
+0x3dedb9c: BL              il2cpp_codegen_runtime_class_init
+0x3dedba0: LDR             X0, [X22]
+0x3dedba4: BL              QuickTutor.Singleton_object_$$get_Instance
+0x3dedba8: CBZ             X0, loc_3DEDBF0
+0x3dedbac: MOV             X1, XZR
+0x3dedbb0: BL              SDKModule.ABTestManager$$get_GamePlayImprove01IsBTest
+0x3dedbb4: TBZ             W0, #0, loc_3DEDBE0
+0x3dedbb8: TBZ             W21, #0, loc_3DEDBD0
+0x3dedbbc: LDR             W8, [X19,#0x20C]
+0x3dedbc0: SUB             W8, W8, W20
+0x3dedbc4: BIC             W8, W8, W8,ASR#31
+0x3dedbc8: STR             W8, [X19,#0x20C]
+0x3dedbcc: B               loc_3DEDBE0
+0x3dedbd0: LDR             W8, [X19,#0x208]
+0x3dedbd4: SUB             W8, W8, W20
+0x3dedbd8: BIC             W8, W8, W8,ASR#31
+0x3dedbdc: STR             W8, [X19,#0x208]
+0x3dedbe0: LDP             X20, X19, [SP,#0x30+var_10]
+0x3dedbe4: LDP             X22, X21, [SP,#0x30+var_20]
+0x3dedbe8: LDP             X30, X23, [SP+0x30+var_30],#0x30
+0x3dedbec: RET
+0x3dedbf0: BL              il2cpp_codegen_raise_null_reference_exception

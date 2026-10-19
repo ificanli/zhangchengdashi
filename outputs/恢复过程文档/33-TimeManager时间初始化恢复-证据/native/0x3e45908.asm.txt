@@ -1,0 +1,31 @@
+0x3e45908: STP             X30, X21, [SP,#var_20]!
+0x3e4590c: STP             X20, X19, [SP,#0x20+var_10]
+0x3e45910: ADRP            X21, #byte_8FFD9F5@PAGE
+0x3e45914: ADRP            X20, #off_8AD5FC8@PAGE
+0x3e45918: LDRB            W8, [X21,#byte_8FFD9F5@PAGEOFF]
+0x3e4591c: LDR             X20, [X20,#off_8AD5FC8@PAGEOFF]; qword_8D73740
+0x3e45920: MOV             X19, X0
+0x3e45924: TBNZ            W8, #0, loc_3E4593C
+0x3e45928: ADRP            X0, #off_8AD5FC8@PAGE
+0x3e4592c: LDR             X0, [X0,#off_8AD5FC8@PAGEOFF]; qword_8D73740 ; slot
+0x3e45930: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3e45934: MOV             W8, #1
+0x3e45938: STRB            W8, [X21,#byte_8FFD9F5@PAGEOFF]
+0x3e4593c: LDR             X1, [X20]; key
+0x3e45940: MOV             X0, X19; self
+0x3e45944: BL              TimeModuleO.TimeManager$$GetTimer
+0x3e45948: CBNZ            X0, loc_3E4596C
+0x3e4594c: MOV             X0, X19
+0x3e45950: BL              TimeModuleO.TimeManager$$GetTimeSpanToWeek
+0x3e45954: LDR             X1, [X20]; key
+0x3e45958: MOV             X2, X0; duration
+0x3e4595c: MOV             W3, #1; countdown
+0x3e45960: MOV             X0, X19; self
+0x3e45964: MOV             W4, WZR; standard
+0x3e45968: BL              TimeModuleO.TimeManager$$CreateTimer
+0x3e4596c: CBZ             X19, loc_3E45980
+0x3e45970: STR             X0, [X19,#0x68]
+0x3e45974: LDP             X20, X19, [SP,#0x20+var_10]
+0x3e45978: LDP             X30, X21, [SP+0x20+var_20],#0x20
+0x3e4597c: RET
+0x3e45980: BL              il2cpp_codegen_raise_null_reference_exception

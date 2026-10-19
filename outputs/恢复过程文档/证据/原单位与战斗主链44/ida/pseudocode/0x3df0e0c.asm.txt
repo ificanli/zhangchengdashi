@@ -1,0 +1,6 @@
+0x3df0e0c: TST             W1, #1
+0x3df0e10: MOV             W8, #0xC0
+0x3df0e14: MOV             W9, #0xC8
+0x3df0e18: CSEL            X8, X9, X8, NE
+0x3df0e1c: LDR             X0, [X0,X8]
+0x3df0e20: RET

@@ -1,0 +1,60 @@
+0x3e45814: SUB             SP, SP, #0x30
+0x3e45818: STP             X30, X21, [SP,#0x30+var_20]
+0x3e4581c: STP             X20, X19, [SP,#0x30+var_10]
+0x3e45820: ADRP            X21, #byte_8FFDA0F@PAGE
+0x3e45824: ADRP            X20, #off_8ACDB30@PAGE
+0x3e45828: LDRB            W8, [X21,#byte_8FFDA0F@PAGEOFF]
+0x3e4582c: LDR             X20, [X20,#off_8ACDB30@PAGEOFF]; off_8CE6460
+0x3e45830: MOV             X19, X0
+0x3e45834: TBNZ            W8, #0, loc_3E4584C
+0x3e45838: ADRP            X0, #off_8ACDB30@PAGE
+0x3e4583c: LDR             X0, [X0,#off_8ACDB30@PAGEOFF]; off_8CE6460 ; slot
+0x3e45840: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3e45844: MOV             W8, #1
+0x3e45848: STRB            W8, [X21,#byte_8FFDA0F@PAGEOFF]
+0x3e4584c: MOV             X0, X19; self
+0x3e45850: STR             XZR, [SP,#0x30+var_30]
+0x3e45854: BL              TimeModuleO.TimeManager$$GetLocalNetworkTime
+0x3e45858: LDR             X8, [X20]
+0x3e4585c: STR             X0, [SP,#0x30+var_28]
+0x3e45860: LDR             W9, [X8,#0xE0]
+0x3e45864: CBNZ            W9, loc_3E45870
+0x3e45868: MOV             X0, X8; klass
+0x3e4586c: BL              il2cpp_codegen_runtime_class_init
+0x3e45870: ADD             X0, SP, #0x30+var_28
+0x3e45874: MOV             X1, XZR
+0x3e45878: BL              System.DateTime$$get_DayOfWeek
+0x3e4587c: MOV             W8, W0
+0x3e45880: MOV             W9, #8
+0x3e45884: MOV             W10, #0x92492493
+0x3e4588c: SUB             W9, W9, W8
+0x3e45890: LDR             X0, [X20]; klass
+0x3e45894: SMULL           X10, W9, W10
+0x3e45898: LSR             X10, X10, #0x20 ; ' '
+0x3e4589c: ADD             W9, W10, W9
+0x3e458a0: ASR             W10, W9, #2
+0x3e458a4: LDR             W11, [X0,#0xE0]
+0x3e458a8: ADD             W9, W10, W9,LSR#31
+0x3e458ac: ADD             W8, W8, W9,LSL#3
+0x3e458b0: SUB             W8, W9, W8
+0x3e458b4: ADD             W19, W8, #8
+0x3e458b8: CBNZ            W11, loc_3E458C0
+0x3e458bc: BL              il2cpp_codegen_runtime_class_init
+0x3e458c0: CMP             W19, #0
+0x3e458c4: MOV             W8, #7
+0x3e458c8: CSEL            W8, W8, W19, EQ
+0x3e458cc: SCVTF           D0, W8
+0x3e458d0: ADD             X0, SP, #0x30+var_28
+0x3e458d4: MOV             X1, XZR
+0x3e458d8: BL              System.DateTime$$AddDays
+0x3e458dc: STR             X0, [SP,#0x30+var_30]
+0x3e458e0: MOV             X0, SP
+0x3e458e4: MOV             X1, XZR
+0x3e458e8: BL              System.DateTime$$get_Date
+0x3e458ec: LDR             X1, [SP,#0x30+var_28]
+0x3e458f0: MOV             X2, XZR
+0x3e458f4: BL              System.DateTime$$op_Subtraction
+0x3e458f8: LDP             X20, X19, [SP,#0x30+var_10]
+0x3e458fc: LDP             X30, X21, [SP,#0x30+var_20]
+0x3e45900: ADD             SP, SP, #0x30 ; '0'
+0x3e45904: RET

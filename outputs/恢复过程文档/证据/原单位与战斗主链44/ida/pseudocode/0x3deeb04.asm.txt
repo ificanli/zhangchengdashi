@@ -1,0 +1,43 @@
+0x3deeb04: SUB             SP, SP, #0x70
+0x3deeb08: STR             X30, [SP,#0x70+var_30]
+0x3deeb0c: STP             X22, X21, [SP,#0x70+var_20]
+0x3deeb10: STP             X20, X19, [SP,#0x70+var_10]
+0x3deeb14: ADRP            X22, #byte_8FFD77F@PAGE
+0x3deeb18: ADRP            X21, #off_8AD3BF0@PAGE
+0x3deeb1c: LDRB            W8, [X22,#byte_8FFD77F@PAGEOFF]
+0x3deeb20: LDR             X21, [X21,#off_8AD3BF0@PAGEOFF]; off_8D1FE78
+0x3deeb24: MOV             W19, W1
+0x3deeb28: MOV             X20, X0
+0x3deeb2c: TBNZ            W8, #0, loc_3DEEB44
+0x3deeb30: ADRP            X0, #off_8AD3BF0@PAGE
+0x3deeb34: LDR             X0, [X0,#off_8AD3BF0@PAGEOFF]; off_8D1FE78 ; slot
+0x3deeb38: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3deeb3c: MOV             W8, #1
+0x3deeb40: STRB            W8, [X22,#byte_8FFD77F@PAGEOFF]
+0x3deeb44: LDR             X21, [X21]
+0x3deeb48: MOVI            V0.2D, #0
+0x3deeb4c: MOV             W8, #0xFFFFFFFF
+0x3deeb50: STR             XZR, [SP,#0x70+var_40]
+0x3deeb54: STP             Q0, Q0, [SP,#0x70+var_60]
+0x3deeb58: STR             Q0, [SP,#0x70+var_70]
+0x3deeb5c: STR             X20, [SP,#0x70+var_60+8]
+0x3deeb60: STR             W19, [SP,#0x70+var_50]
+0x3deeb64: STR             W8, [SP,#0x70+var_70]
+0x3deeb68: LDR             X8, [X21,#0x38]
+0x3deeb6c: CBNZ            X8, loc_3DEEB7C
+0x3deeb70: MOV             X0, X21
+0x3deeb74: BL              unk_3C503FC
+0x3deeb78: LDR             X8, [X21,#0x38]
+0x3deeb7c: LDR             X1, [X8,#0x10]
+0x3deeb80: MOV             X8, SP
+0x3deeb84: MOV             X0, SP
+0x3deeb88: ORR             X19, X8, #8
+0x3deeb8c: BL              GameModule.BattleGameSceneManager._LoadMapGround_d__147$$MoveNext
+0x3deeb90: MOV             X0, X19
+0x3deeb94: MOV             X1, XZR
+0x3deeb98: BL              unk_3D17780
+0x3deeb9c: LDP             X20, X19, [SP,#0x70+var_10]
+0x3deeba0: LDP             X22, X21, [SP,#0x70+var_20]
+0x3deeba4: LDR             X30, [SP,#0x70+var_30]
+0x3deeba8: ADD             SP, SP, #0x70 ; 'p'
+0x3deebac: RET

@@ -1,0 +1,20 @@
+0x3df8f5c: STP             X30, X19, [SP,#var_10]!
+0x3df8f60: CBZ             X1, loc_3DF8FA8
+0x3df8f64: MOV             X19, X0
+0x3df8f68: MOV             X0, X1
+0x3df8f6c: MOV             X1, XZR
+0x3df8f70: BL              UnityEngine.GameObject$$get_transform
+0x3df8f74: LDR             X8, [X19,#0x48]
+0x3df8f78: CBZ             X8, loc_3DF8FA8
+0x3df8f7c: MOV             X19, X0
+0x3df8f80: MOV             X0, X8
+0x3df8f84: MOV             X1, XZR
+0x3df8f88: BL              UnityEngine.GameObject$$get_transform
+0x3df8f8c: CBZ             X19, loc_3DF8FA8
+0x3df8f90: MOV             X1, X0
+0x3df8f94: MOV             X0, X19
+0x3df8f98: MOV             W2, WZR
+0x3df8f9c: MOV             X3, XZR
+0x3df8fa0: LDP             X30, X19, [SP+0x10+var_10],#0x10
+0x3df8fa4: B               sub_82F9798
+0x3df8fa8: BL              il2cpp_codegen_raise_null_reference_exception

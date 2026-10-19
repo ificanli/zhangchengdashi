@@ -1,0 +1,23 @@
+0x3e0f7c8: fe4fbfa9 stp      x30, x19, [sp, #-0x10]!
+0x3e0f7cc: 08804039 ldrb     w8, [x0, #0x20]
+0x3e0f7d0: f303012a mov      w19, w1
+0x3e0f7d4: 28020035 cbnz     w8, #0x3e0f818
+0x3e0f7d8: 42000012 and      w2, w2, #1
+0x3e0f7dc: 41008052 mov      w1, #2
+0x3e0f7e0: 28ffff97 bl       #0x3e0f480 // GameModule.SynergyEffectManager$$GetFetterCount
+0x3e0f7e4: 1f180071 cmp      w0, #6
+0x3e0f7e8: 8b010054 b.lt     #0x3e0f818
+0x3e0f7ec: 48d1fe90 adrp     x8, #0x1837000
+0x3e0f7f0: 00b144bd ldr      s0, [x8, #0x4b0]
+0x3e0f7f4: 08f0af52 mov      w8, #0x7f800000
+0x3e0f7f8: 6102221e scvtf    s1, w19
+0x3e0f7fc: 0201271e fmov     s2, w8
+0x3e0f800: 2008201e fmul     s0, s1, s0
+0x3e0f804: 0800381e fcvtzs   w8, s0
+0x3e0f808: 0020221e fcmp     s0, s2
+0x3e0f80c: 0900b052 mov      w9, #-0xffffffff80000000
+0x3e0f810: 2801881a csel     w8, w9, w8, eq
+0x3e0f814: 1301130b add      w19, w8, w19
+0x3e0f818: e003132a mov      w0, w19
+0x3e0f81c: fe4fc1a8 ldp      x30, x19, [sp], #0x10
+0x3e0f820: c0035fd6 ret      

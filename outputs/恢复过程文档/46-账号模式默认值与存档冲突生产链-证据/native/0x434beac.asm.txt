@@ -1,0 +1,43 @@
+0x434beac: STP             X30, X21, [SP,#var_20]!
+0x434beb0: STP             X20, X19, [SP,#0x20+var_10]
+0x434beb4: ADRP            X21, #byte_90005EB@PAGE
+0x434beb8: LDRB            W8, [X21,#byte_90005EB@PAGEOFF]
+0x434bebc: MOV             W19, W1
+0x434bec0: MOV             X20, X0
+0x434bec4: TBNZ            W8, #0, loc_434BEE8
+0x434bec8: ADRP            X0, #off_8AF21B0@PAGE
+0x434becc: LDR             X0, [X0,#off_8AF21B0@PAGEOFF]; off_8CE6168 ; slot
+0x434bed0: BL              il2cpp_codegen_initialize_runtime_metadata
+0x434bed4: ADRP            X0, #off_8AF23B8@PAGE
+0x434bed8: LDR             X0, [X0,#off_8AF23B8@PAGEOFF]; off_8CEA258 ; slot
+0x434bedc: BL              il2cpp_codegen_initialize_runtime_metadata
+0x434bee0: MOV             W8, #1
+0x434bee4: STRB            W8, [X21,#byte_90005EB@PAGEOFF]
+0x434bee8: LDR             X8, [X20,#0x20]
+0x434beec: ADRP            X21, #off_8AF23B8@PAGE
+0x434bef0: ADRP            X20, #off_8AF21B0@PAGE
+0x434bef4: LDR             X21, [X21,#off_8AF23B8@PAGEOFF]; off_8CEA258
+0x434bef8: LDR             X20, [X20,#off_8AF21B0@PAGEOFF]; off_8CE6168
+0x434befc: TBZ             W19, #0, loc_434BF18
+0x434bf00: CBZ             X8, loc_434BF30
+0x434bf04: LDR             X9, [X8,#0x18]
+0x434bf08: LDR             X0, [X8,#0x40]
+0x434bf0c: LDR             X2, [X8,#0x28]
+0x434bf10: MOV             W1, #1
+0x434bf14: B               loc_434BF2C
+0x434bf18: CBZ             X8, loc_434BF30
+0x434bf1c: LDR             X9, [X8,#0x18]
+0x434bf20: LDR             X0, [X8,#0x40]
+0x434bf24: LDR             X2, [X8,#0x28]
+0x434bf28: MOV             W1, #2
+0x434bf2c: BLR             X9
+0x434bf30: LDR             X8, [X21]
+0x434bf34: MOV             W9, #1
+0x434bf38: LDR             X8, [X8,#0xB8]
+0x434bf3c: STRB            WZR, [X8]
+0x434bf40: LDR             X8, [X20]
+0x434bf44: LDP             X20, X19, [SP,#0x20+var_10]
+0x434bf48: LDR             X8, [X8,#0xB8]
+0x434bf4c: STRB            W9, [X8]
+0x434bf50: LDP             X30, X21, [SP+0x20+var_20],#0x20
+0x434bf54: RET

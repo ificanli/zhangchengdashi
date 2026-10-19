@@ -1,0 +1,134 @@
+0x3de3cf4: SUB             SP, SP, #0x50
+0x3de3cf8: STP             X30, X25, [SP,#0x50+var_40]
+0x3de3cfc: STP             X24, X23, [SP,#0x50+var_30]
+0x3de3d00: STP             X22, X21, [SP,#0x50+var_20]
+0x3de3d04: STP             X20, X19, [SP,#0x50+var_10]
+0x3de3d08: ADRP            X21, #byte_8FFD73A@PAGE
+0x3de3d0c: LDRB            W8, [X21,#byte_8FFD73A@PAGEOFF]
+0x3de3d10: MOV             W20, W1
+0x3de3d14: MOV             X19, X0
+0x3de3d18: TBNZ            W8, #0, loc_3DE3D60
+0x3de3d1c: ADRP            X0, #off_8ACDAC0@PAGE
+0x3de3d20: LDR             X0, [X0,#off_8ACDAC0@PAGEOFF]; qword_8CE95C0 ; slot
+0x3de3d24: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3de3d28: ADRP            X0, #off_8ACDE40@PAGE
+0x3de3d2c: LDR             X0, [X0,#off_8ACDE40@PAGEOFF]; qword_8D12148 ; slot
+0x3de3d30: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3de3d34: ADRP            X0, #off_8AD3748@PAGE
+0x3de3d38: LDR             X0, [X0,#off_8AD3748@PAGEOFF]; qword_8D5C020 ; slot
+0x3de3d3c: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3de3d40: ADRP            X0, #off_8AD3750@PAGE
+0x3de3d44: LDR             X0, [X0,#off_8AD3750@PAGEOFF]; qword_8D6C128 ; slot
+0x3de3d48: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3de3d4c: ADRP            X0, #off_8AD3758@PAGE
+0x3de3d50: LDR             X0, [X0,#off_8AD3758@PAGEOFF]; qword_8D6C138 ; slot
+0x3de3d54: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3de3d58: MOV             W8, #1
+0x3de3d5c: STRB            W8, [X21,#byte_8FFD73A@PAGEOFF]
+0x3de3d60: ADRP            X23, #off_8ACDE40@PAGE
+0x3de3d64: ADRP            X22, #off_8ACDAC0@PAGE
+0x3de3d68: LDR             X23, [X23,#off_8ACDE40@PAGEOFF]; qword_8D12148
+0x3de3d6c: LDR             X22, [X22,#off_8ACDAC0@PAGEOFF]; qword_8CE95C0
+0x3de3d70: TBNZ            W20, #0x1F, loc_3DE3D88
+0x3de3d74: CBZ             W20, loc_3DE3E54
+0x3de3d78: LDR             W8, [X19,#0x30]
+0x3de3d7c: ADD             W8, W8, W20
+0x3de3d80: STR             W8, [X19,#0x30]
+0x3de3d84: B               loc_3DE3E54
+0x3de3d88: LDR             X0, [X23]; method
+0x3de3d8c: BL              ToolModule.ManagerBase_object_$$get_Instance
+0x3de3d90: ADRP            X24, #byte_8FFD308@PAGE
+0x3de3d94: LDRB            W8, [X24,#byte_8FFD308@PAGEOFF]
+0x3de3d98: MOV             X21, X0
+0x3de3d9c: CBNZ            W8, loc_3DE3DB4
+0x3de3da0: ADRP            X0, #off_8ACC8F0@PAGE
+0x3de3da4: LDR             X0, [X0,#off_8ACC8F0@PAGEOFF]; off_8CEA738 ; slot
+0x3de3da8: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3de3dac: MOV             W8, #1
+0x3de3db0: STRB            W8, [X24,#byte_8FFD308@PAGEOFF]
+0x3de3db4: ADRP            X25, #off_8ACC8F0@PAGE
+0x3de3db8: LDR             X25, [X25,#off_8ACC8F0@PAGEOFF]; off_8CEA738
+0x3de3dbc: LDR             X0, [X25]; klass
+0x3de3dc0: LDR             W8, [X0,#0xE0]
+0x3de3dc4: CBNZ            W8, loc_3DE3DCC
+0x3de3dc8: BL              il2cpp_codegen_runtime_class_init
+0x3de3dcc: LDR             X0, [X22]
+0x3de3dd0: CMP             W20, #0
+0x3de3dd4: CNEG            W8, W20, MI
+0x3de3dd8: ADD             X1, SP, #0x50+var_44
+0x3de3ddc: STR             W8, [SP,#0x50+var_44]
+0x3de3de0: BL              unk_3C3D3B8
+0x3de3de4: CBZ             X21, loc_3DE3F0C
+0x3de3de8: ADRP            X8, #off_8AD3758@PAGE
+0x3de3dec: LDR             X8, [X8,#off_8AD3758@PAGEOFF]; qword_8D6C138
+0x3de3df0: MOV             X2, X0; parameter
+0x3de3df4: MOV             X0, X21; self
+0x3de3df8: MOV             X3, XZR; method
+0x3de3dfc: LDR             X1, [X8]; eventName
+0x3de3e00: BL              EventModule.EventManager$$TriggerEvent
+0x3de3e04: LDR             W8, [X19,#0x28]
+0x3de3e08: LDRB            W9, [X24,#byte_8FFD308@PAGEOFF]
+0x3de3e0c: LDR             W21, [X19,#0x34]
+0x3de3e10: NEG             W10, W20
+0x3de3e14: CMP             W8, W10
+0x3de3e18: CSNEG           W20, W20, W8, GE
+0x3de3e1c: CBNZ            W9, loc_3DE3E34
+0x3de3e20: ADRP            X0, #off_8ACC8F0@PAGE
+0x3de3e24: LDR             X0, [X0,#off_8ACC8F0@PAGEOFF]; off_8CEA738 ; slot
+0x3de3e28: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3de3e2c: MOV             W8, #1
+0x3de3e30: STRB            W8, [X24,#byte_8FFD308@PAGEOFF]
+0x3de3e34: LDR             X0, [X25]; klass
+0x3de3e38: LDR             W8, [X0,#0xE0]
+0x3de3e3c: CBNZ            W8, loc_3DE3E44
+0x3de3e40: BL              il2cpp_codegen_runtime_class_init
+0x3de3e44: CMP             W20, #0
+0x3de3e48: CNEG            W8, W20, MI
+0x3de3e4c: ADD             W8, W8, W21
+0x3de3e50: STR             W8, [X19,#0x34]
+0x3de3e54: LDR             W8, [X19,#0x28]
+0x3de3e58: MOV             W9, #0x989680
+0x3de3e60: ADD             W8, W8, W20
+0x3de3e64: CMP             W8, W9
+0x3de3e68: CSEL            W8, W8, W9, LT
+0x3de3e6c: BIC             W8, W8, W8,ASR#31
+0x3de3e70: STR             W8, [X19,#0x28]
+0x3de3e74: LDR             X0, [X23]; method
+0x3de3e78: BL              ToolModule.ManagerBase_object_$$get_Instance
+0x3de3e7c: CBZ             X0, loc_3DE3F0C
+0x3de3e80: ADRP            X8, #off_8AD3748@PAGE
+0x3de3e84: LDR             X8, [X8,#off_8AD3748@PAGEOFF]; qword_8D5C020
+0x3de3e88: MOV             X2, XZR; parameter
+0x3de3e8c: MOV             X3, XZR; method
+0x3de3e90: LDR             X1, [X8]; eventName
+0x3de3e94: BL              EventModule.EventManager$$TriggerEvent
+0x3de3e98: LDR             X0, [X23]; method
+0x3de3e9c: BL              ToolModule.ManagerBase_object_$$get_Instance
+0x3de3ea0: MOV             X20, X0
+0x3de3ea4: LDR             W8, [X19,#0x28]
+0x3de3ea8: LDR             X0, [X22]
+0x3de3eac: ADD             X1, SP, #0x50+var_48
+0x3de3eb0: STR             W8, [SP,#0x50+var_48]
+0x3de3eb4: BL              unk_3C3D3B8
+0x3de3eb8: CBZ             X20, loc_3DE3F0C
+0x3de3ebc: ADRP            X8, #off_8AD3750@PAGE
+0x3de3ec0: LDR             X8, [X8,#off_8AD3750@PAGEOFF]; qword_8D6C128
+0x3de3ec4: MOV             X2, X0; parameter
+0x3de3ec8: MOV             X0, X20; self
+0x3de3ecc: MOV             X3, XZR; method
+0x3de3ed0: LDR             X1, [X8]; eventName
+0x3de3ed4: BL              EventModule.EventManager$$TriggerEvent
+0x3de3ed8: MOV             X0, XZR
+0x3de3edc: BL              GameModule.SubGameBuffManager$$get_Instance
+0x3de3ee0: CBZ             X0, loc_3DE3F0C
+0x3de3ee4: LDR             W2, [X19,#0x28]
+0x3de3ee8: MOV             W1, WZR
+0x3de3eec: MOV             X3, XZR
+0x3de3ef0: BL              GameModule.SubGameBuffManager$$OnCoinChanged
+0x3de3ef4: LDP             X20, X19, [SP,#0x50+var_10]
+0x3de3ef8: LDP             X22, X21, [SP,#0x50+var_20]
+0x3de3efc: LDP             X24, X23, [SP,#0x50+var_30]
+0x3de3f00: LDP             X30, X25, [SP,#0x50+var_40]
+0x3de3f04: ADD             SP, SP, #0x50 ; 'P'
+0x3de3f08: RET
+0x3de3f0c: BL              il2cpp_codegen_raise_null_reference_exception

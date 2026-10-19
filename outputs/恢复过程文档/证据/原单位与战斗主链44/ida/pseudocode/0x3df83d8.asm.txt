@@ -1,0 +1,76 @@
+0x3df83d8: STP             X30, X23, [SP,#var_30]!
+0x3df83dc: STP             X22, X21, [SP,#0x30+var_20]
+0x3df83e0: STP             X20, X19, [SP,#0x30+var_10]
+0x3df83e4: ADRP            X23, #byte_8FFD7CB@PAGE
+0x3df83e8: ADRP            X22, #off_8ACDF78@PAGE
+0x3df83ec: LDRB            W8, [X23,#byte_8FFD7CB@PAGEOFF]
+0x3df83f0: LDR             X22, [X22,#off_8ACDF78@PAGEOFF]; off_8CE1928
+0x3df83f4: MOV             W21, W2
+0x3df83f8: MOV             X19, X1
+0x3df83fc: MOV             X20, X0
+0x3df8400: TBNZ            W8, #0, loc_3DF8448
+0x3df8404: ADRP            X0, #off_8ACEE98@PAGE
+0x3df8408: LDR             X0, [X0,#off_8ACEE98@PAGEOFF]; qword_8CFEA68 ; slot
+0x3df840c: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3df8410: ADRP            X0, #off_8ACEEA0@PAGE
+0x3df8414: LDR             X0, [X0,#off_8ACEEA0@PAGEOFF]; qword_8CFEA98 ; slot
+0x3df8418: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3df841c: ADRP            X0, #off_8ACEEA8@PAGE
+0x3df8420: LDR             X0, [X0,#off_8ACEEA8@PAGEOFF]; qword_8CFEAB0 ; slot
+0x3df8424: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3df8428: ADRP            X0, #off_8ACDF88@PAGE
+0x3df842c: LDR             X0, [X0,#off_8ACDF88@PAGEOFF]; qword_8D17890 ; slot
+0x3df8430: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3df8434: ADRP            X0, #off_8ACDF78@PAGE
+0x3df8438: LDR             X0, [X0,#off_8ACDF78@PAGEOFF]; off_8CE1928 ; slot
+0x3df843c: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3df8440: MOV             W8, #1
+0x3df8444: STRB            W8, [X23,#byte_8FFD7CB@PAGEOFF]
+0x3df8448: LDR             X0, [X22]; klass
+0x3df844c: ADRP            X22, #off_8ACDF88@PAGE
+0x3df8450: LDR             W8, [X0,#0xE0]
+0x3df8454: LDR             X22, [X22,#off_8ACDF88@PAGEOFF]; qword_8D17890
+0x3df8458: CBNZ            W8, loc_3DF8460
+0x3df845c: BL              il2cpp_codegen_runtime_class_init
+0x3df8460: LDR             X0, [X22]
+0x3df8464: BL              QuickTutor.Singleton_object_$$get_Instance
+0x3df8468: CBZ             X0, loc_3DF8504
+0x3df846c: MOV             X1, XZR
+0x3df8470: BL              SDKModule.ABTestManager$$get_GamePlayImprove01IsBTest
+0x3df8474: TBZ             W0, #0, loc_3DF84CC
+0x3df8478: TST             W21, #1
+0x3df847c: MOV             W8, #0x230
+0x3df8480: MOV             W9, #0x238
+0x3df8484: CSEL            X8, X9, X8, NE
+0x3df8488: LDR             X20, [X20,X8]
+0x3df848c: CBZ             X20, loc_3DF8504
+0x3df8490: ADRP            X8, #off_8ACEE98@PAGE
+0x3df8494: LDR             X8, [X8,#off_8ACEE98@PAGEOFF]; qword_8CFEA68
+0x3df8498: MOV             X0, X20
+0x3df849c: MOV             X1, X19
+0x3df84a0: LDR             X2, [X8]
+0x3df84a4: BL              System.Collections.Generic.Dictionary_object__int_$$ContainsKey
+0x3df84a8: TBZ             W0, #0, loc_3DF84DC
+0x3df84ac: ADRP            X8, #off_8ACEEA0@PAGE
+0x3df84b0: LDR             X8, [X8,#off_8ACEEA0@PAGEOFF]; qword_8CFEA98
+0x3df84b4: MOV             X0, X20
+0x3df84b8: MOV             X1, X19
+0x3df84bc: LDR             X2, [X8]
+0x3df84c0: BL              System.Collections.Generic.Dictionary_object__int_$$get_Item
+0x3df84c4: ADD             W2, W0, #1
+0x3df84c8: B               loc_3DF84E0
+0x3df84cc: LDP             X20, X19, [SP,#0x30+var_10]
+0x3df84d0: LDP             X22, X21, [SP,#0x30+var_20]
+0x3df84d4: LDP             X30, X23, [SP+0x30+var_30],#0x30
+0x3df84d8: RET
+0x3df84dc: MOV             W2, #1
+0x3df84e0: ADRP            X8, #off_8ACEEA8@PAGE
+0x3df84e4: LDR             X8, [X8,#off_8ACEEA8@PAGEOFF]; qword_8CFEAB0
+0x3df84e8: MOV             X0, X20
+0x3df84ec: MOV             X1, X19
+0x3df84f0: LDP             X20, X19, [SP,#0x30+var_10]
+0x3df84f4: LDR             X3, [X8]
+0x3df84f8: LDP             X22, X21, [SP,#0x30+var_20]
+0x3df84fc: LDP             X30, X23, [SP+0x30+var_30],#0x30
+0x3df8500: B               System.Collections.Generic.Dictionary_object__int_$$set_Item
+0x3df8504: BL              il2cpp_codegen_raise_null_reference_exception

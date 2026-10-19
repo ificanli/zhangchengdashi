@@ -1,0 +1,24 @@
+0x713b660: fe57bea9 stp      x30, x21, [sp, #-0x20]!
+0x713b664: f44f01a9 stp      x20, x19, [sp, #0x10]
+0x713b668: 74f600b0 adrp     x20, #0x9008000
+0x713b66c: d5ce00f0 adrp     x21, #0x8b16000
+0x713b670: 88f67c39 ldrb     w8, [x20, #0xf3d]
+0x713b674: b54a41f9 ldr      x21, [x21, #0x290] // GameFramework.AssetbundleModule.<LoadManifest>d__6_TypeInfo
+0x713b678: f30300aa mov      x19, x0
+0x713b67c: c8000037 tbnz     w8, #0, #0x713b694
+0x713b680: c0ce00f0 adrp     x0, #0x8b16000
+0x713b684: 004841f9 ldr      x0, [x0, #0x290] // GameFramework.AssetbundleModule.<LoadManifest>d__6_TypeInfo
+0x713b688: fe062c97 bl       #0x3c3d280
+0x713b68c: 28008052 mov      w8, #1
+0x713b690: 88f63c39 strb     w8, [x20, #0xf3d]
+0x713b694: a00240f9 ldr      x0, [x21]
+0x713b698: 8b072c97 bl       #0x3c3d4c4
+0x713b69c: e1031faa mov      x1, xzr
+0x713b6a0: f40300aa mov      x20, x0
+0x713b6a4: 1a301694 bl       #0x76c770c // System.Object$$.ctor
+0x713b6a8: 9f1200b9 str      wzr, [x20, #0x10]
+0x713b6ac: 931200f9 str      x19, [x20, #0x20]
+0x713b6b0: e00314aa mov      x0, x20
+0x713b6b4: f44f41a9 ldp      x20, x19, [sp, #0x10]
+0x713b6b8: fe57c2a8 ldp      x30, x21, [sp], #0x20
+0x713b6bc: c0035fd6 ret      

@@ -1,0 +1,515 @@
+0x68939ac: ff8302d1 sub      sp, sp, #0xa0
+0x68939b0: fe6706a9 stp      x30, x25, [sp, #0x60]
+0x68939b4: f85f07a9 stp      x24, x23, [sp, #0x70]
+0x68939b8: f65708a9 stp      x22, x21, [sp, #0x80]
+0x68939bc: f44f09a9 stp      x20, x19, [sp, #0x90]
+0x68939c0: b53b0190 adrp     x21, #0x9007000
+0x68939c4: a88e4639 ldrb     w8, [x21, #0x1a3]
+0x68939c8: f40301aa mov      x20, x1
+0x68939cc: f30300aa mov      x19, x0
+0x68939d0: a8050037 tbnz     w8, #0, #0x6893a84
+0x68939d4: e01301d0 adrp     x0, #0x8b11000
+0x68939d8: 002042f9 ldr      x0, [x0, #0x440] // Method$AssetsModule.AssetsManager.LoadAssetAsync<TextAsset>()
+0x68939dc: 29a64e97 bl       #0x3c3d280
+0x68939e0: e01301d0 adrp     x0, #0x8b11000
+0x68939e4: 002442f9 ldr      x0, [x0, #0x448] // Method$Cysharp.Threading.Tasks.UniTask.Awaiter<TextAsset>.GetResult()
+0x68939e8: 26a64e97 bl       #0x3c3d280
+0x68939ec: e01301d0 adrp     x0, #0x8b11000
+0x68939f0: 002842f9 ldr      x0, [x0, #0x450] // Method$Cysharp.Threading.Tasks.UniTask.Awaiter<TextAsset>.get_IsCompleted()
+0x68939f4: 23a64e97 bl       #0x3c3d280
+0x68939f8: c01101b0 adrp     x0, #0x8acc000
+0x68939fc: 006444f9 ldr      x0, [x0, #0x8c8] // UnityEngine.Debug_TypeInfo
+0x6893a00: 20a64e97 bl       #0x3c3d280
+0x6893a04: c01101d0 adrp     x0, #0x8acd000
+0x6893a08: 004044f9 ldr      x0, [x0, #0x880] // Method$System.Collections.Generic.List<string>.Add()
+0x6893a0c: 1da64e97 bl       #0x3c3d280
+0x6893a10: c01101d0 adrp     x0, #0x8acd000
+0x6893a14: 004444f9 ldr      x0, [x0, #0x888] // Method$System.Collections.Generic.List<string>.Contains()
+0x6893a18: 1aa64e97 bl       #0x3c3d280
+0x6893a1c: 00120190 adrp     x0, #0x8ad3000
+0x6893a20: 007442f9 ldr      x0, [x0, #0x4e8] // Method$System.Collections.Generic.List<string>.Remove()
+0x6893a24: 17a64e97 bl       #0x3c3d280
+0x6893a28: c01101d0 adrp     x0, #0x8acd000
+0x6893a2c: 003846f9 ldr      x0, [x0, #0xc70] // Method$ToolModule.ManagerBase<AssetsManager>.get_Instance()
+0x6893a30: 14a64e97 bl       #0x3c3d280
+0x6893a34: c01101b0 adrp     x0, #0x8acc000
+0x6893a38: 006844f9 ldr      x0, [x0, #0x8d0] // UnityEngine.Object_TypeInfo
+0x6893a3c: 11a64e97 bl       #0x3c3d280
+0x6893a40: 201201f0 adrp     x0, #0x8ada000
+0x6893a44: 004447f9 ldr      x0, [x0, #0xe88] // Method$UnityEngine.Resources.Load<TextAsset>()
+0x6893a48: 0ea64e97 bl       #0x3c3d280
+0x6893a4c: e01301d0 adrp     x0, #0x8b11000
+0x6893a50: 002c42f9 ldr      x0, [x0, #0x458] // Method$Cysharp.Threading.Tasks.UniTask<TextAsset>.GetAwaiter()
+0x6893a54: 0ba64e97 bl       #0x3c3d280
+0x6893a58: e01301d0 adrp     x0, #0x8b11000
+0x6893a5c: 003042f9 ldr      x0, [x0, #0x460] // 配置文件文件多次加载：
+0x6893a60: 08a64e97 bl       #0x3c3d280
+0x6893a64: e01301d0 adrp     x0, #0x8b11000
+0x6893a68: 003442f9 ldr      x0, [x0, #0x468] // JsonData/
+0x6893a6c: 05a64e97 bl       #0x3c3d280
+0x6893a70: e01301d0 adrp     x0, #0x8b11000
+0x6893a74: 003842f9 ldr      x0, [x0, #0x470] // 配置文件文件不在Resources目录下，尝试从StreamingAssets目录加载：
+0x6893a78: 02a64e97 bl       #0x3c3d280
+0x6893a7c: 28008052 mov      w8, #1
+0x6893a80: a88e0639 strb     w8, [x21, #0x1a3]
+0x6893a84: ff7f04a9 stp      xzr, xzr, [sp, #0x40]
+0x6893a88: ff2b00f9 str      xzr, [sp, #0x50]
+0x6893a8c: ff7f02a9 stp      xzr, xzr, [sp, #0x20]
+0x6893a90: ff1b00f9 str      xzr, [sp, #0x30]
+0x6893a94: 680240b9 ldr      w8, [x19]
+0x6893a98: 751640f9 ldr      x21, [x19, #0x28]
+0x6893a9c: a8030034 cbz      w8, #0x6893b10
+0x6893aa0: d52700b4 cbz      x21, #0x6893f98
+0x6893aa4: a07a41f9 ldr      x0, [x21, #0x2f0]
+0x6893aa8: a02700b4 cbz      x0, #0x6893f9c
+0x6893aac: c81101d0 adrp     x8, #0x8acd000
+0x6893ab0: 084544f9 ldr      x8, [x8, #0x888] // Method$System.Collections.Generic.List<string>.Contains()
+0x6893ab4: 611a40f9 ldr      x1, [x19, #0x30]
+0x6893ab8: 020140f9 ldr      x2, [x8]
+0x6893abc: 7fefba97 bl       #0x574f8b8 // System.Collections.Generic.List<object>$$Contains
+0x6893ac0: d71101d0 adrp     x23, #0x8acd000
+0x6893ac4: f74244f9 ldr      x23, [x23, #0x880] // Method$System.Collections.Generic.List<string>.Add()
+0x6893ac8: 60030036 tbz      w0, #0, #0x6893b34
+0x6893acc: e81301d0 adrp     x8, #0x8b11000
+0x6893ad0: 611a40f9 ldr      x1, [x19, #0x30]
+0x6893ad4: 083142f9 ldr      x8, [x8, #0x460] // 配置文件文件多次加载：
+0x6893ad8: 000140f9 ldr      x0, [x8]
+0x6893adc: e2031faa mov      x2, xzr
+0x6893ae0: 31ab3194 bl       #0x74fe7a4 // System.String$$Concat
+0x6893ae4: c81101b0 adrp     x8, #0x8acc000
+0x6893ae8: 086544f9 ldr      x8, [x8, #0x8c8] // UnityEngine.Debug_TypeInfo
+0x6893aec: f60300aa mov      x22, x0
+0x6893af0: 000140f9 ldr      x0, [x8]
+0x6893af4: 08e040b9 ldr      w8, [x0, #0xe0]
+0x6893af8: 48000035 cbnz     w8, #0x6893b00
+0x6893afc: 2da64e97 bl       #0x3c3d3b0
+0x6893b00: e00316aa mov      x0, x22
+0x6893b04: e1031faa mov      x1, xzr
+0x6893b08: b3426894 bl       #0x82a45d4 // UnityEngine.Debug$$LogError
+0x6893b0c: 20000014 b        #0x6893b8c
+0x6893b10: 682a40f9 ldr      x8, [x19, #0x50]
+0x6893b14: 6012c03d ldr      q0, [x19, #0x40]
+0x6893b18: 09008012 mov      w9, #-1
+0x6893b1c: e82b00f9 str      x8, [sp, #0x50]
+0x6893b20: e013803d str      q0, [sp, #0x40]
+0x6893b24: 7ffe04a9 stp      xzr, xzr, [x19, #0x48]
+0x6893b28: 7f2200f9 str      xzr, [x19, #0x40]
+0x6893b2c: 690200b9 str      w9, [x19]
+0x6893b30: 86000014 b        #0x6893d48
+0x6893b34: a07a41f9 ldr      x0, [x21, #0x2f0]
+0x6893b38: 202400b4 cbz      x0, #0x6893fbc
+0x6893b3c: 0a1c40b9 ldr      w10, [x0, #0x1c]
+0x6893b40: 611a40f9 ldr      x1, [x19, #0x30]
+0x6893b44: 080840f9 ldr      x8, [x0, #0x10]
+0x6893b48: e90240f9 ldr      x9, [x23]
+0x6893b4c: 4a050011 add      w10, w10, #1
+0x6893b50: 0a1c00b9 str      w10, [x0, #0x1c]
+0x6893b54: 682300b4 cbz      x8, #0x6893fc0
+0x6893b58: 0a1880b9 ldrsw    x10, [x0, #0x18]
+0x6893b5c: 0b1940b9 ldr      w11, [x8, #0x18]
+0x6893b60: 5f010b6b cmp      w10, w11
+0x6893b64: c2000054 b.hs     #0x6893b7c
+0x6893b68: 49050011 add      w9, w10, #1
+0x6893b6c: 080d0a8b add      x8, x8, x10, lsl #3
+0x6893b70: 091800b9 str      w9, [x0, #0x18]
+0x6893b74: 011100f9 str      x1, [x8, #0x20]
+0x6893b78: 05000014 b        #0x6893b8c
+0x6893b7c: 281140f9 ldr      x8, [x9, #0x20]
+0x6893b80: 086140f9 ldr      x8, [x8, #0xc0]
+0x6893b84: 023940f9 ldr      x2, [x8, #0x70]
+0x6893b88: 6aeeba97 bl       #0x574f530 // System.Collections.Generic.List<object>$$AddWithResize
+0x6893b8c: a00a40f9 ldr      x0, [x21, #0x10]
+0x6893b90: 802000b4 cbz      x0, #0x6893fa0
+0x6893b94: 0a1c40b9 ldr      w10, [x0, #0x1c]
+0x6893b98: 611a40f9 ldr      x1, [x19, #0x30]
+0x6893b9c: 080840f9 ldr      x8, [x0, #0x10]
+0x6893ba0: e90240f9 ldr      x9, [x23]
+0x6893ba4: 4a050011 add      w10, w10, #1
+0x6893ba8: 0a1c00b9 str      w10, [x0, #0x1c]
+0x6893bac: c81f00b4 cbz      x8, #0x6893fa4
+0x6893bb0: 0a1880b9 ldrsw    x10, [x0, #0x18]
+0x6893bb4: 0b1940b9 ldr      w11, [x8, #0x18]
+0x6893bb8: 5f010b6b cmp      w10, w11
+0x6893bbc: c2000054 b.hs     #0x6893bd4
+0x6893bc0: 49050011 add      w9, w10, #1
+0x6893bc4: 080d0a8b add      x8, x8, x10, lsl #3
+0x6893bc8: 091800b9 str      w9, [x0, #0x18]
+0x6893bcc: 011100f9 str      x1, [x8, #0x20]
+0x6893bd0: 05000014 b        #0x6893be4
+0x6893bd4: 281140f9 ldr      x8, [x9, #0x20]
+0x6893bd8: 086140f9 ldr      x8, [x8, #0xc0]
+0x6893bdc: 023940f9 ldr      x2, [x8, #0x70]
+0x6893be0: 54eeba97 bl       #0x574f530 // System.Collections.Generic.List<object>$$AddWithResize
+0x6893be4: 601a40f9 ldr      x0, [x19, #0x30]
+0x6893be8: 001e00b4 cbz      x0, #0x6893fa8
+0x6893bec: e1058052 mov      w1, #0x2f
+0x6893bf0: e2031faa mov      x2, xzr
+0x6893bf4: 9bed3194 bl       #0x750f260 // System.String$$LastIndexOf
+0x6893bf8: f603002a mov      w22, w0
+0x6893bfc: 601a40f9 ldr      x0, [x19, #0x30]
+0x6893c00: 601d00b4 cbz      x0, #0x6893fac
+0x6893c04: c1058052 mov      w1, #0x2e
+0x6893c08: e2031faa mov      x2, xzr
+0x6893c0c: 95ed3194 bl       #0x750f260 // System.String$$LastIndexOf
+0x6893c10: 681a40f9 ldr      x8, [x19, #0x30]
+0x6893c14: e81c00b4 cbz      x8, #0x6893fb0
+0x6893c18: c1060011 add      w1, w22, #1
+0x6893c1c: e903362a mvn      w9, w22
+0x6893c20: 0200090b add      w2, w0, w9
+0x6893c24: e00308aa mov      x0, x8
+0x6893c28: e3031faa mov      x3, xzr
+0x6893c2c: 10e03194 bl       #0x750bc6c // System.String$$Substring
+0x6893c30: e10300aa mov      x1, x0
+0x6893c34: e81301d0 adrp     x8, #0x8b11000
+0x6893c38: 083542f9 ldr      x8, [x8, #0x468] // JsonData/
+0x6893c3c: 000140f9 ldr      x0, [x8]
+0x6893c40: e2031faa mov      x2, xzr
+0x6893c44: d8aa3194 bl       #0x74fe7a4 // System.String$$Concat
+0x6893c48: 281201f0 adrp     x8, #0x8ada000
+0x6893c4c: 084547f9 ldr      x8, [x8, #0xe88] // Method$UnityEngine.Resources.Load<TextAsset>()
+0x6893c50: 010140f9 ldr      x1, [x8]
+0x6893c54: 37309897 bl       #0x4e9fd30 // UnityEngine.Resources$$Load<object>
+0x6893c58: c81101b0 adrp     x8, #0x8acc000
+0x6893c5c: 086944f9 ldr      x8, [x8, #0x8d0] // UnityEngine.Object_TypeInfo
+0x6893c60: f80300aa mov      x24, x0
+0x6893c64: 000140f9 ldr      x0, [x8]
+0x6893c68: 08e040b9 ldr      w8, [x0, #0xe0]
+0x6893c6c: 48000035 cbnz     w8, #0x6893c74
+0x6893c70: d0a54e97 bl       #0x3c3d3b0
+0x6893c74: e00318aa mov      x0, x24
+0x6893c78: e1031faa mov      x1, xzr
+0x6893c7c: e2031faa mov      x2, xzr
+0x6893c80: a5666994 bl       #0x82ed714 // UnityEngine.Object$$op_Equality
+0x6893c84: 400d0036 tbz      w0, #0, #0x6893e2c
+0x6893c88: e81301d0 adrp     x8, #0x8b11000
+0x6893c8c: 611a40f9 ldr      x1, [x19, #0x30]
+0x6893c90: 083942f9 ldr      x8, [x8, #0x470] // 配置文件文件不在Resources目录下，尝试从StreamingAssets目录加载：
+0x6893c94: 000140f9 ldr      x0, [x8]
+0x6893c98: e2031faa mov      x2, xzr
+0x6893c9c: c2aa3194 bl       #0x74fe7a4 // System.String$$Concat
+0x6893ca0: c81101b0 adrp     x8, #0x8acc000
+0x6893ca4: 086544f9 ldr      x8, [x8, #0x8c8] // UnityEngine.Debug_TypeInfo
+0x6893ca8: f60300aa mov      x22, x0
+0x6893cac: 000140f9 ldr      x0, [x8]
+0x6893cb0: 08e040b9 ldr      w8, [x0, #0xe0]
+0x6893cb4: 48000035 cbnz     w8, #0x6893cbc
+0x6893cb8: bea54e97 bl       #0x3c3d3b0
+0x6893cbc: e00316aa mov      x0, x22
+0x6893cc0: e1031faa mov      x1, xzr
+0x6893cc4: 90396894 bl       #0x82a2304 // UnityEngine.Debug$$LogWarning
+0x6893cc8: c81101d0 adrp     x8, #0x8acd000
+0x6893ccc: 083946f9 ldr      x8, [x8, #0xc70] // Method$ToolModule.ManagerBase<AssetsManager>.get_Instance()
+0x6893cd0: 000140f9 ldr      x0, [x8]
+0x6893cd4: e391c397 bl       #0x5978460 // ToolModule.ManagerBase<object>$$get_Instance
+0x6893cd8: 601700b4 cbz      x0, #0x6893fc4
+0x6893cdc: e81301d0 adrp     x8, #0x8b11000
+0x6893ce0: 611a40f9 ldr      x1, [x19, #0x30]
+0x6893ce4: 082142f9 ldr      x8, [x8, #0x440] // Method$AssetsModule.AssetsManager.LoadAssetAsync<TextAsset>()
+0x6893ce8: 020140f9 ldr      x2, [x8]
+0x6893cec: e8230091 add      x8, sp, #8
+0x6893cf0: 69ef8697 bl       #0x4a4fa94 // AssetsModule.AssetsManager$$LoadAssetAsync<object>
+0x6893cf4: e91301d0 adrp     x9, #0x8b11000
+0x6893cf8: e083c03c ldur     q0, [sp, #8]
+0x6893cfc: e80f40f9 ldr      x8, [sp, #0x18]
+0x6893d00: 292d42f9 ldr      x9, [x9, #0x458] // Method$Cysharp.Threading.Tasks.UniTask<TextAsset>.GetAwaiter()
+0x6893d04: e00b803d str      q0, [sp, #0x20]
+0x6893d08: e81b00f9 str      x8, [sp, #0x30]
+0x6893d0c: 290140f9 ldr      x9, [x9]
+0x6893d10: 201140f9 ldr      x0, [x9, #0x20]
+0x6893d14: 08d44439 ldrb     w8, [x0, #0x135]
+0x6893d18: 48000037 tbnz     w8, #0, #0x6893d20
+0x6893d1c: a1f14e97 bl       #0x3c503a0
+0x6893d20: e91301d0 adrp     x9, #0x8b11000
+0x6893d24: e00bc03d ldr      q0, [sp, #0x20]
+0x6893d28: e81b40f9 ldr      x8, [sp, #0x30]
+0x6893d2c: 292942f9 ldr      x9, [x9, #0x450] // Method$Cysharp.Threading.Tasks.UniTask.Awaiter<TextAsset>.get_IsCompleted()
+0x6893d30: e013803d str      q0, [sp, #0x40]
+0x6893d34: e82b00f9 str      x8, [sp, #0x50]
+0x6893d38: 210140f9 ldr      x1, [x9]
+0x6893d3c: e0030191 add      x0, sp, #0x40
+0x6893d40: d5755297 bl       #0x3d31494
+0x6893d44: 60040036 tbz      w0, #0, #0x6893dd0
+0x6893d48: f62340f9 ldr      x22, [sp, #0x40]
+0x6893d4c: f60300b4 cbz      x22, #0x6893dc8
+0x6893d50: e81301d0 adrp     x8, #0x8b11000
+0x6893d54: 082542f9 ldr      x8, [x8, #0x448] // Method$Cysharp.Threading.Tasks.UniTask.Awaiter<TextAsset>.GetResult()
+0x6893d58: f7a34079 ldrh     w23, [sp, #0x50]
+0x6893d5c: 080140f9 ldr      x8, [x8]
+0x6893d60: 001140f9 ldr      x0, [x8, #0x20]
+0x6893d64: 08d44439 ldrb     w8, [x0, #0x135]
+0x6893d68: 48000037 tbnz     w8, #0, #0x6893d70
+0x6893d6c: 8df14e97 bl       #0x3c503a0
+0x6893d70: 086040f9 ldr      x8, [x0, #0xc0]
+0x6893d74: 011540f9 ldr      x1, [x8, #0x28]
+0x6893d78: 28d44439 ldrb     w8, [x1, #0x135]
+0x6893d7c: 88000037 tbnz     w8, #0, #0x6893d8c
+0x6893d80: e00301aa mov      x0, x1
+0x6893d84: 87f14e97 bl       #0x3c503a0
+0x6893d88: e10300aa mov      x1, x0
+0x6893d8c: c80240f9 ldr      x8, [x22]
+0x6893d90: 095d4279 ldrh     w9, [x8, #0x12e]
+0x6893d94: 290100b4 cbz      x9, #0x6893db8
+0x6893d98: 0a5940f9 ldr      x10, [x8, #0xb0]
+0x6893d9c: 4a210091 add      x10, x10, #8
+0x6893da0: 4b815ff8 ldur     x11, [x10, #-8]
+0x6893da4: 7f0101eb cmp      x11, x1
+0x6893da8: 20030054 b.eq     #0x6893e0c
+0x6893dac: 290500f1 subs     x9, x9, #1
+0x6893db0: 4a410091 add      x10, x10, #0x10
+0x6893db4: 61ffff54 b.ne     #0x6893da0
+0x6893db8: e00316aa mov      x0, x22
+0x6893dbc: e2031f2a mov      w2, wzr
+0x6893dc0: b9f14e97 bl       #0x3c504a4
+0x6893dc4: 15000014 b        #0x6893e18
+0x6893dc8: f82740f9 ldr      x24, [sp, #0x48]
+0x6893dcc: 18000014 b        #0x6893e2c
+0x6893dd0: 7f0200b9 str      wzr, [x19]
+0x6893dd4: e82b40f9 ldr      x8, [sp, #0x50]
+0x6893dd8: e013c03d ldr      q0, [sp, #0x40]
+0x6893ddc: 682a00f9 str      x8, [x19, #0x50]
+0x6893de0: 6012803d str      q0, [x19, #0x40]
+0x6893de4: 801240f9 ldr      x0, [x20, #0x20]
+0x6893de8: 08d40491 add      x8, x0, #0x135
+0x6893dec: 09014079 ldrh     w9, [x8]
+0x6893df0: 890b0037 tbnz     w9, #0, #0x6893f60
+0x6893df4: 6bf14e97 bl       #0x3c503a0
+0x6893df8: e80300aa mov      x8, x0
+0x6893dfc: 801240f9 ldr      x0, [x20, #0x20]
+0x6893e00: 09d40491 add      x9, x0, #0x135
+0x6893e04: 29014079 ldrh     w9, [x9]
+0x6893e08: 57000014 b        #0x6893f64
+0x6893e0c: 490180b9 ldrsw    x9, [x10]
+0x6893e10: 0811098b add      x8, x8, x9, lsl #4
+0x6893e14: 00e10491 add      x0, x8, #0x138
+0x6893e18: 080840a9 ldp      x8, x2, [x0]
+0x6893e1c: e00316aa mov      x0, x22
+0x6893e20: e103172a mov      w1, w23
+0x6893e24: 00013fd6 blr      x8
+0x6893e28: f80300aa mov      x24, x0
+0x6893e2c: 761e40f9 ldr      x22, [x19, #0x38]
+0x6893e30: 560200b4 cbz      x22, #0x6893e78
+0x6893e34: 180c00b4 cbz      x24, #0x6893fb4
+0x6893e38: 771a40f9 ldr      x23, [x19, #0x30]
+0x6893e3c: e00318aa mov      x0, x24
+0x6893e40: e1031faa mov      x1, xzr
+0x6893e44: db6d6994 bl       #0x82ef5b0 // UnityEngine.TextAsset$$get_text
+0x6893e48: 950b00b4 cbz      x21, #0x6893fb8
+0x6893e4c: f80300aa mov      x24, x0
+0x6893e50: 801240f9 ldr      x0, [x20, #0x20]
+0x6893e54: 08d40491 add      x8, x0, #0x135
+0x6893e58: 09014079 ldrh     w9, [x8]
+0x6893e5c: 29010037 tbnz     w9, #0, #0x6893e80
+0x6893e60: 50f14e97 bl       #0x3c503a0
+0x6893e64: e80300aa mov      x8, x0
+0x6893e68: 801240f9 ldr      x0, [x20, #0x20]
+0x6893e6c: 09d40491 add      x9, x0, #0x135
+0x6893e70: 29014079 ldrh     w9, [x9]
+0x6893e74: 04000014 b        #0x6893e84
+0x6893e78: 150500b5 cbnz     x21, #0x6893f18
+0x6893e7c: 94a54e97 bl       #0x3c3d4cc
+0x6893e80: e80300aa mov      x8, x0
+0x6893e84: 086140f9 ldr      x8, [x8, #0xc0]
+0x6893e88: 081140f9 ldr      x8, [x8, #0x20]
+0x6893e8c: 190140f9 ldr      x25, [x8]
+0x6893e90: 49000037 tbnz     w9, #0, #0x6893e98
+0x6893e94: 43f14e97 bl       #0x3c503a0
+0x6893e98: 086040f9 ldr      x8, [x0, #0xc0]
+0x6893e9c: 031140f9 ldr      x3, [x8, #0x20]
+0x6893ea0: e00315aa mov      x0, x21
+0x6893ea4: e10317aa mov      x1, x23
+0x6893ea8: e20318aa mov      x2, x24
+0x6893eac: 20033fd6 blr      x25
+0x6893eb0: f70300aa mov      x23, x0
+0x6893eb4: 801240f9 ldr      x0, [x20, #0x20]
+0x6893eb8: 08d40491 add      x8, x0, #0x135
+0x6893ebc: 09014079 ldrh     w9, [x8]
+0x6893ec0: e9000037 tbnz     w9, #0, #0x6893edc
+0x6893ec4: 37f14e97 bl       #0x3c503a0
+0x6893ec8: e80300aa mov      x8, x0
+0x6893ecc: 801240f9 ldr      x0, [x20, #0x20]
+0x6893ed0: 09d40491 add      x9, x0, #0x135
+0x6893ed4: 29014079 ldrh     w9, [x9]
+0x6893ed8: 02000014 b        #0x6893ee0
+0x6893edc: e80300aa mov      x8, x0
+0x6893ee0: 086140f9 ldr      x8, [x8, #0xc0]
+0x6893ee4: 081940f9 ldr      x8, [x8, #0x30]
+0x6893ee8: 140140f9 ldr      x20, [x8]
+0x6893eec: 49000037 tbnz     w9, #0, #0x6893ef4
+0x6893ef0: 2cf14e97 bl       #0x3c503a0
+0x6893ef4: 086040f9 ldr      x8, [x0, #0xc0]
+0x6893ef8: 011940f9 ldr      x1, [x8, #0x30]
+0x6893efc: f70700f9 str      x23, [sp, #8]
+0x6893f00: 280840f9 ldr      x8, [x1, #0x10]
+0x6893f04: e3230091 add      x3, sp, #8
+0x6893f08: e00314aa mov      x0, x20
+0x6893f0c: e20316aa mov      x2, x22
+0x6893f10: e40317aa mov      x4, x23
+0x6893f14: 00013fd6 blr      x8
+0x6893f18: a00a40f9 ldr      x0, [x21, #0x10]
+0x6893f1c: c00300b4 cbz      x0, #0x6893f94
+0x6893f20: 08120190 adrp     x8, #0x8ad3000
+0x6893f24: 087542f9 ldr      x8, [x8, #0x4e8] // Method$System.Collections.Generic.List<string>.Remove()
+0x6893f28: 611a40f9 ldr      x1, [x19, #0x30]
+0x6893f2c: 020140f9 ldr      x2, [x8]
+0x6893f30: 86f2ba97 bl       #0x5750948 // System.Collections.Generic.List<object>$$Remove
+0x6893f34: 28008012 mov      w8, #-2
+0x6893f38: 688600b8 str      w8, [x19], #8
+0x6893f3c: e00313aa mov      x0, x19
+0x6893f40: e1031faa mov      x1, xzr
+0x6893f44: 7f703494 bl       #0x75b0140 // System.Runtime.CompilerServices.AsyncVoidMethodBuilder$$SetResult
+0x6893f48: f44f49a9 ldp      x20, x19, [sp, #0x90]
+0x6893f4c: f65748a9 ldp      x22, x21, [sp, #0x80]
+0x6893f50: f85f47a9 ldp      x24, x23, [sp, #0x70]
+0x6893f54: fe6746a9 ldp      x30, x25, [sp, #0x60]
+0x6893f58: ff830291 add      sp, sp, #0xa0
+0x6893f5c: c0035fd6 ret      
+0x6893f60: e80300aa mov      x8, x0
+0x6893f64: 086140f9 ldr      x8, [x8, #0xc0]
+0x6893f68: 080540f9 ldr      x8, [x8, #8]
+0x6893f6c: 140140f9 ldr      x20, [x8]
+0x6893f70: 49000037 tbnz     w9, #0, #0x6893f78
+0x6893f74: 0bf14e97 bl       #0x3c503a0
+0x6893f78: 086040f9 ldr      x8, [x0, #0xc0]
+0x6893f7c: 60220091 add      x0, x19, #8
+0x6893f80: 030540f9 ldr      x3, [x8, #8]
+0x6893f84: e1030191 add      x1, sp, #0x40
+0x6893f88: e20313aa mov      x2, x19
+0x6893f8c: 80023fd6 blr      x20
+0x6893f90: eeffff17 b        #0x6893f48
+0x6893f94: 4ea54e97 bl       #0x3c3d4cc
+0x6893f98: 4da54e97 bl       #0x3c3d4cc
+0x6893f9c: 4ca54e97 bl       #0x3c3d4cc
+0x6893fa0: 4ba54e97 bl       #0x3c3d4cc
+0x6893fa4: 4aa54e97 bl       #0x3c3d4cc
+0x6893fa8: 49a54e97 bl       #0x3c3d4cc
+0x6893fac: 48a54e97 bl       #0x3c3d4cc
+0x6893fb0: 47a54e97 bl       #0x3c3d4cc
+0x6893fb4: 46a54e97 bl       #0x3c3d4cc
+0x6893fb8: 45a54e97 bl       #0x3c3d4cc
+0x6893fbc: 44a54e97 bl       #0x3c3d4cc
+0x6893fc0: 43a54e97 bl       #0x3c3d4cc
+0x6893fc4: 42a54e97 bl       #0x3c3d4cc
+0x6893fc8: 1f000014 b        #0x6894044
+0x6893fcc: 1e000014 b        #0x6894044
+0x6893fd0: 1d000014 b        #0x6894044
+0x6893fd4: 1c000014 b        #0x6894044
+0x6893fd8: 1b000014 b        #0x6894044
+0x6893fdc: 1a000014 b        #0x6894044
+0x6893fe0: 19000014 b        #0x6894044
+0x6893fe4: 15000014 b        #0x6894038
+0x6893fe8: 17000014 b        #0x6894044
+0x6893fec: 16000014 b        #0x6894044
+0x6893ff0: 15000014 b        #0x6894044
+0x6893ff4: 14000014 b        #0x6894044
+0x6893ff8: 13000014 b        #0x6894044
+0x6893ffc: 12000014 b        #0x6894044
+0x6894000: 11000014 b        #0x6894044
+0x6894004: 10000014 b        #0x6894044
+0x6894008: 0f000014 b        #0x6894044
+0x689400c: 0e000014 b        #0x6894044
+0x6894010: 0a000014 b        #0x6894038
+0x6894014: 09000014 b        #0x6894038
+0x6894018: 08000014 b        #0x6894038
+0x689401c: 0a000014 b        #0x6894044
+0x6894020: 06000014 b        #0x6894038
+0x6894024: 05000014 b        #0x6894038
+0x6894028: 04000014 b        #0x6894038
+0x689402c: 03000014 b        #0x6894038
+0x6894030: 05000014 b        #0x6894044
+0x6894034: 04000014 b        #0x6894044
+0x6894038: f40301aa mov      x20, x1
+0x689403c: f50300aa mov      x21, x0
+0x6894040: 05000014 b        #0x6894054
+0x6894044: f40301aa mov      x20, x1
+0x6894048: f50300aa mov      x21, x0
+0x689404c: 9f060071 cmp      w20, #1
+0x6894050: e0030054 b.eq     #0x68940cc
+0x6894054: 9f060071 cmp      w20, #1
+0x6894058: a10a0054 b.ne     #0x68941ac
+0x689405c: e00315aa mov      x0, x21
+0x6894060: 506b7394 bl       #0x856eda0
+0x6894064: f40300aa mov      x20, x0
+0x6894068: c0110190 adrp     x0, #0x8acc000
+0x689406c: 00c847f9 ldr      x0, [x0, #0xf90] // System.Exception_TypeInfo
+0x6894070: 89a44e97 bl       #0x3c3d294
+0x6894074: 880240f9 ldr      x8, [x20]
+0x6894078: 010140f9 ldr      x1, [x8]
+0x689407c: 1fa64e97 bl       #0x3c3d8f8
+0x6894080: 40010036 tbz      w0, #0, #0x68940a8
+0x6894084: 940240f9 ldr      x20, [x20]
+0x6894088: 4a6b7394 bl       #0x856edb0
+0x689408c: 28008012 mov      w8, #-2
+0x6894090: 688600b8 str      w8, [x19], #8
+0x6894094: e00313aa mov      x0, x19
+0x6894098: e10314aa mov      x1, x20
+0x689409c: e2031faa mov      x2, xzr
+0x68940a0: 81703494 bl       #0x75b02a4 // System.Runtime.CompilerServices.AsyncVoidMethodBuilder$$SetException
+0x68940a4: a9ffff17 b        #0x6893f48
+0x68940a8: 00018052 mov      w0, #8
+0x68940ac: 456b7394 bl       #0x856edc0
+0x68940b0: 880240f9 ldr      x8, [x20]
+0x68940b4: 080000f9 str      x8, [x0]
+0x68940b8: 01e700b0 adrp     x1, #0x8575000
+0x68940bc: 21a00891 add      x1, x1, #0x228
+0x68940c0: e2031faa mov      x2, xzr
+0x68940c4: 436b7394 bl       #0x856edd0
+0x68940c8: 31000014 b        #0x689418c
+0x68940cc: e00315aa mov      x0, x21
+0x68940d0: 346b7394 bl       #0x856eda0
+0x68940d4: f40300aa mov      x20, x0
+0x68940d8: c0110190 adrp     x0, #0x8acc000
+0x68940dc: 00c847f9 ldr      x0, [x0, #0xf90] // System.Exception_TypeInfo
+0x68940e0: 6da44e97 bl       #0x3c3d294
+0x68940e4: 880240f9 ldr      x8, [x20]
+0x68940e8: 010140f9 ldr      x1, [x8]
+0x68940ec: 03a64e97 bl       #0x3c3d8f8
+0x68940f0: e0030036 tbz      w0, #0, #0x689416c
+0x68940f4: 940240f9 ldr      x20, [x20]
+0x68940f8: 2e6b7394 bl       #0x856edb0
+0x68940fc: 751a40f9 ldr      x21, [x19, #0x30]
+0x6894100: e01301b0 adrp     x0, #0x8b11000
+0x6894104: 003c42f9 ldr      x0, [x0, #0x478] // 加载json文件失败：
+0x6894108: 63a44e97 bl       #0x3c3d294
+0x689410c: e10315aa mov      x1, x21
+0x6894110: e2031faa mov      x2, xzr
+0x6894114: a4a93194 bl       #0x74fe7a4 // System.String$$Concat
+0x6894118: f50300aa mov      x21, x0
+0x689411c: c0110190 adrp     x0, #0x8acc000
+0x6894120: 006444f9 ldr      x0, [x0, #0x8c8] // UnityEngine.Debug_TypeInfo
+0x6894124: 5ca44e97 bl       #0x3c3d294
+0x6894128: 08e040b9 ldr      w8, [x0, #0xe0]
+0x689412c: 48000035 cbnz     w8, #0x6894134
+0x6894130: a0a44e97 bl       #0x3c3d3b0
+0x6894134: e00315aa mov      x0, x21
+0x6894138: e1031faa mov      x1, xzr
+0x689413c: 26416894 bl       #0x82a45d4 // UnityEngine.Debug$$LogError
+0x6894140: 401201b0 adrp     x0, #0x8add000
+0x6894144: 008843f9 ldr      x0, [x0, #0x710] // System.Console_TypeInfo
+0x6894148: 53a44e97 bl       #0x3c3d294
+0x689414c: 08e040b9 ldr      w8, [x0, #0xe0]
+0x6894150: 48000035 cbnz     w8, #0x6894158
+0x6894154: 97a44e97 bl       #0x3c3d3b0
+0x6894158: e00314aa mov      x0, x20
+0x689415c: e1031faa mov      x1, xzr
+0x6894160: d0e33894 bl       #0x76cd0a0 // System.Console$$WriteLine
+0x6894164: e00314aa mov      x0, x20
+0x6894168: e4924e97 bl       #0x3c38cf8
+0x689416c: 00018052 mov      w0, #8
+0x6894170: 146b7394 bl       #0x856edc0
+0x6894174: 880240f9 ldr      x8, [x20]
+0x6894178: 080000f9 str      x8, [x0]
+0x689417c: 01e700b0 adrp     x1, #0x8575000
+0x6894180: 21a00891 add      x1, x1, #0x228
+0x6894184: e2031faa mov      x2, xzr
+0x6894188: 126b7394 bl       #0x856edd0
+0x689418c: abffff17 b        #0x6894038
+0x6894190: aaffff17 b        #0x6894038
+0x6894194: f40301aa mov      x20, x1
+0x6894198: f50300aa mov      x21, x0
+0x689419c: 056b7394 bl       #0x856edb0
+0x68941a0: adffff17 b        #0x6894054
+0x68941a4: f50300aa mov      x21, x0
+0x68941a8: 026b7394 bl       #0x856edb0
+0x68941ac: e00315aa mov      x0, x21
+0x68941b0: 854c5197 bl       #0x3ce73c4
+0x68941b4: d3a03497 bl       #0x35bc500

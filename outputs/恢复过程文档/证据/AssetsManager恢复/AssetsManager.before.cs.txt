@@ -1,0 +1,336 @@
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
+using System.Threading;
+using Cysharp.Threading.Tasks;
+using Cysharp.Threading.Tasks.CompilerServices;
+using Il2CppDummyDll;
+using ToolModule;
+using UnityEngine;
+using UnityEngine.ResourceManagement.AsyncOperations;
+
+namespace AssetsModule
+{
+	[Token(Token = "0x2000632")]
+	public class AssetsManager : ManagerBase<AssetsManager>
+	{
+		[Token(Token = "0x2000633")]
+		private class AssetHandleInfo
+		{
+			[Token(Token = "0x40032B3")]
+			[Il2CppDummyDll.FieldOffset(Offset = "0x10")]
+			public AsyncOperationHandle Handle;
+
+			[Token(Token = "0x40032B4")]
+			[Il2CppDummyDll.FieldOffset(Offset = "0x28")]
+			public int RefCount;
+
+			[Token(Token = "0x40032B5")]
+			[Il2CppDummyDll.FieldOffset(Offset = "0x30")]
+			public UniTaskCompletionSource<object> WaitSource;
+
+			[Token(Token = "0x60020C7")]
+			[Address(RVA = "0x3F136B4", Offset = "0x3F0F6B4", VA = "0x3F136B4")]
+			public AssetHandleInfo()
+			{
+			}
+		}
+
+		[Token(Token = "0x2000634")]
+		[CompilerGenerated]
+		private sealed class _003C_003Ec__DisplayClass19_0<T> where T : Object
+		{
+			[Token(Token = "0x40032B6")]
+			[Il2CppDummyDll.FieldOffset(Offset = "0x0")]
+			public AssetsManager _003C_003E4__this;
+
+			[Token(Token = "0x40032B7")]
+			[Il2CppDummyDll.FieldOffset(Offset = "0x0")]
+			public string assetPath;
+
+			[Token(Token = "0x40032B8")]
+			[Il2CppDummyDll.FieldOffset(Offset = "0x0")]
+			public string groupName;
+
+			[Token(Token = "0x40032B9")]
+			[Il2CppDummyDll.FieldOffset(Offset = "0x0")]
+			public AssetHandleInfo newHandleInfo;
+
+			[Token(Token = "0x60020C8")]
+			public _003C_003Ec__DisplayClass19_0()
+			{
+			}
+
+			[Token(Token = "0x60020C9")]
+			internal void _003CLoadAssetAsync_003Eb__0(AsyncOperationHandle<T> operationHandle)
+			{
+			}
+		}
+
+		[StructLayout((LayoutKind)3)]
+		[Token(Token = "0x2000635")]
+		[CompilerGenerated]
+		private struct _003CGenerateGroupsMap_003Ed__18 : IAsyncStateMachine
+		{
+			[Token(Token = "0x40032BA")]
+			[Il2CppDummyDll.FieldOffset(Offset = "0x0")]
+			public int _003C_003E1__state;
+
+			[Token(Token = "0x40032BB")]
+			[Il2CppDummyDll.FieldOffset(Offset = "0x8")]
+			public AsyncUniTaskMethodBuilder _003C_003Et__builder;
+
+			[Token(Token = "0x40032BC")]
+			[Il2CppDummyDll.FieldOffset(Offset = "0x18")]
+			public AssetsManager _003C_003E4__this;
+
+			[Token(Token = "0x60020CA")]
+			[Address(RVA = "0x3F136BC", Offset = "0x3F0F6BC", VA = "0x3F136BC", Slot = "4")]
+void System.Runtime.CompilerServices.IAsyncStateMachine.MoveNext()
+			{
+			}
+
+			[Token(Token = "0x60020CB")]
+			[Address(RVA = "0x3F13BD8", Offset = "0x3F0FBD8", VA = "0x3F13BD8", Slot = "5")]
+			[DebuggerHidden]
+void System.Runtime.CompilerServices.IAsyncStateMachine.SetStateMachine(IAsyncStateMachine stateMachine)
+			{
+			}
+		}
+
+		[StructLayout((LayoutKind)3)]
+		[Token(Token = "0x2000636")]
+		[CompilerGenerated]
+		private struct _003CInit_003Ed__15 : IAsyncStateMachine
+		{
+			[Token(Token = "0x40032BD")]
+			[Il2CppDummyDll.FieldOffset(Offset = "0x0")]
+			public int _003C_003E1__state;
+
+			[Token(Token = "0x40032BE")]
+			[Il2CppDummyDll.FieldOffset(Offset = "0x8")]
+			public AsyncUniTaskMethodBuilder _003C_003Et__builder;
+
+			[Token(Token = "0x40032BF")]
+			[Il2CppDummyDll.FieldOffset(Offset = "0x18")]
+			public AssetsManager _003C_003E4__this;
+
+			[Token(Token = "0x40032C0")]
+			[Il2CppDummyDll.FieldOffset(Offset = "0x20")]
+			private UniTask.Awaiter _003C_003Eu__1;
+
+			[Token(Token = "0x60020CC")]
+			[Address(RVA = "0x3F13BE4", Offset = "0x3F0FBE4", VA = "0x3F13BE4", Slot = "4")]
+void System.Runtime.CompilerServices.IAsyncStateMachine.MoveNext()
+			{
+			}
+
+			[Token(Token = "0x60020CD")]
+			[Address(RVA = "0x3F14074", Offset = "0x3F10074", VA = "0x3F14074", Slot = "5")]
+			[DebuggerHidden]
+void System.Runtime.CompilerServices.IAsyncStateMachine.SetStateMachine(IAsyncStateMachine stateMachine)
+			{
+			}
+		}
+
+		[StructLayout((LayoutKind)3)]
+		[Token(Token = "0x2000637")]
+		[CompilerGenerated]
+		private struct _003CLoadAssetAsync_003Ed__19<T> : IAsyncStateMachine where T : Object
+		{
+			[Token(Token = "0x40032C1")]
+			[Il2CppDummyDll.FieldOffset(Offset = "0x0")]
+			public int _003C_003E1__state;
+
+			[Token(Token = "0x40032C2")]
+			[Il2CppDummyDll.FieldOffset(Offset = "0x0")]
+			public AsyncUniTaskMethodBuilder<T> _003C_003Et__builder;
+
+			[Token(Token = "0x40032C3")]
+			[Il2CppDummyDll.FieldOffset(Offset = "0x0")]
+			public AssetsManager _003C_003E4__this;
+
+			[Token(Token = "0x40032C4")]
+			[Il2CppDummyDll.FieldOffset(Offset = "0x0")]
+			public string assetPath;
+
+			[Token(Token = "0x40032C5")]
+			[Il2CppDummyDll.FieldOffset(Offset = "0x0")]
+			private _003C_003Ec__DisplayClass19_0<T> _003C_003E8__1;
+
+			[Token(Token = "0x40032C6")]
+			[Il2CppDummyDll.FieldOffset(Offset = "0x0")]
+			private AssetHandleInfo _003CexistingHandle_003E5__2;
+
+			[Token(Token = "0x40032C7")]
+			[Il2CppDummyDll.FieldOffset(Offset = "0x0")]
+			private TaskAwaiter<object> _003C_003Eu__1;
+
+			[Token(Token = "0x40032C8")]
+			[Il2CppDummyDll.FieldOffset(Offset = "0x0")]
+			private AssetHandleInfo _003ChandleInfo_003E5__3;
+
+			[Token(Token = "0x40032C9")]
+			[Il2CppDummyDll.FieldOffset(Offset = "0x0")]
+			private AsyncOperationHandle<T> _003CnewHandle_003E5__4;
+
+			[Token(Token = "0x40032CA")]
+			[Il2CppDummyDll.FieldOffset(Offset = "0x0")]
+			private TaskAwaiter<T> _003C_003Eu__2;
+
+			[Token(Token = "0x60020CE")]
+void System.Runtime.CompilerServices.IAsyncStateMachine.MoveNext()
+			{
+			}
+
+			[Token(Token = "0x60020CF")]
+			[DebuggerHidden]
+void System.Runtime.CompilerServices.IAsyncStateMachine.SetStateMachine(IAsyncStateMachine stateMachine)
+			{
+			}
+		}
+
+		[Token(Token = "0x40032A4")]
+		[Il2CppDummyDll.FieldOffset(Offset = "0x20")]
+		private Dictionary<string, List<AsyncOperationHandle>> _assetHandles;
+
+		[Token(Token = "0x40032A5")]
+		[Il2CppDummyDll.FieldOffset(Offset = "0x28")]
+		private bool _showDebugInfo;
+
+		[Token(Token = "0x40032A6")]
+		[Il2CppDummyDll.FieldOffset(Offset = "0x2C")]
+		private Vector2 _scrollPosition;
+
+		[Token(Token = "0x40032A7")]
+		[Il2CppDummyDll.FieldOffset(Offset = "0x38")]
+		private Dictionary<string, AssetHandleInfo> _assetHandleMap;
+
+		[Token(Token = "0x40032A8")]
+		[Il2CppDummyDll.FieldOffset(Offset = "0x40")]
+		private readonly ReaderWriterLockSlim _lock;
+
+		[Token(Token = "0x40032AB")]
+		[Il2CppDummyDll.FieldOffset(Offset = "0x4D")]
+		public bool initcomplete;
+
+		[Token(Token = "0x40032AC")]
+		[Il2CppDummyDll.FieldOffset(Offset = "0x50")]
+		private Dictionary<string, List<string>> _assetGroupDict;
+
+		[Token(Token = "0x40032AD")]
+		[Il2CppDummyDll.FieldOffset(Offset = "0x58")]
+		private Dictionary<string, AssetsPathInfo> _assetGroupNameDict;
+
+		[Token(Token = "0x40032AE")]
+		[Il2CppDummyDll.FieldOffset(Offset = "0x60")]
+		private GUIStyle _largeLabelStyle;
+
+		[Token(Token = "0x40032AF")]
+		[Il2CppDummyDll.FieldOffset(Offset = "0x68")]
+		private GUIStyle _largeButtonStyle;
+
+		[Token(Token = "0x40032B0")]
+		[Il2CppDummyDll.FieldOffset(Offset = "0x70")]
+		private GUIStyle _headerStyle;
+
+		[Token(Token = "0x40032B1")]
+		[Il2CppDummyDll.FieldOffset(Offset = "0x78")]
+		private bool _showDetails;
+
+		[Token(Token = "0x40032B2")]
+		[Il2CppDummyDll.FieldOffset(Offset = "0x7C")]
+		private float _fontSizeScale;
+
+		[Token(Token = "0x170001C8")]
+		public float BundleLoadingProgress
+		{
+			[Token(Token = "0x60020BA")]
+			[Address(RVA = "0x3F12964", Offset = "0x3F0E964", VA = "0x3F12964")]
+			[CompilerGenerated]
+			get;
+			[Token(Token = "0x60020BB")]
+			[Address(RVA = "0x3F1296C", Offset = "0x3F0E96C", VA = "0x3F1296C")]
+			[CompilerGenerated]
+			private set;
+		}
+
+		[Token(Token = "0x170001C9")]
+		public bool IsUpdating
+		{
+			[Token(Token = "0x60020BC")]
+			[Address(RVA = "0x3F12974", Offset = "0x3F0E974", VA = "0x3F12974")]
+			[CompilerGenerated]
+			get
+			{
+				return default;
+			}
+			[Token(Token = "0x60020BD")]
+			[Address(RVA = "0x3F1297C", Offset = "0x3F0E97C", VA = "0x3F1297C")]
+			[CompilerGenerated]
+			private set
+			{
+			}
+		}
+
+		[Token(Token = "0x60020BE")]
+		[Address(RVA = "0x3F12988", Offset = "0x3F0E988", VA = "0x3F12988", Slot = "4")]
+		[AsyncStateMachine(typeof(_003CInit_003Ed__15))]
+		public override UniTask Init()
+		{
+			return default;
+		}
+
+		[Token(Token = "0x60020BF")]
+		[Address(RVA = "0x3F12A14", Offset = "0x3F0EA14", VA = "0x3F12A14")]
+		[AsyncStateMachine(typeof(_003CGenerateGroupsMap_003Ed__18))]
+		private UniTask GenerateGroupsMap()
+		{
+			return default;
+		}
+
+		[Token(Token = "0x60020C0")]
+		[AsyncStateMachine(typeof(_003CLoadAssetAsync_003Ed__19<>))]
+		public UniTask<T> LoadAssetAsync<T>(string assetPath) where T : Object
+		{
+			return default;
+		}
+
+		[Token(Token = "0x60020C1")]
+		[Address(RVA = "0x3F12A98", Offset = "0x3F0EA98", VA = "0x3F12A98")]
+		public void UnloadAsset(string assetPath)
+		{
+		}
+
+		[Token(Token = "0x60020C2")]
+		[Address(RVA = "0x3F12DB8", Offset = "0x3F0EDB8", VA = "0x3F12DB8")]
+		public void UnloadGroup(string groupName)
+		{
+		}
+
+		[Token(Token = "0x60020C3")]
+		[Address(RVA = "0x3F12F6C", Offset = "0x3F0EF6C", VA = "0x3F12F6C")]
+		private void InitGUIStyles()
+		{
+		}
+
+		[Token(Token = "0x60020C4")]
+		[Address(RVA = "0x3F1337C", Offset = "0x3F0F37C", VA = "0x3F1337C")]
+		public void ForceUnloadUnusedAssets()
+		{
+		}
+
+		[Token(Token = "0x60020C5")]
+		[Address(RVA = "0x3F133D4", Offset = "0x3F0F3D4", VA = "0x3F133D4")]
+		public void ForceUnloadAsset(string assetPath)
+		{
+		}
+
+		[Token(Token = "0x60020C6")]
+		[Address(RVA = "0x3F13590", Offset = "0x3F0F590", VA = "0x3F13590")]
+		public AssetsManager()
+		{
+		}
+	}
+}

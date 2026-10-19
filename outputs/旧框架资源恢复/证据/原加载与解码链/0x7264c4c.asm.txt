@@ -1,0 +1,104 @@
+0x7264c4c: STP             X30, X23, [SP,#var_30]!
+0x7264c50: STP             X22, X21, [SP,#0x30+var_20]
+0x7264c54: STP             X20, X19, [SP,#0x30+var_10]
+0x7264c58: ADRP            X21, #byte_9009AE8@PAGE
+0x7264c5c: LDRB            W8, [X21,#byte_9009AE8@PAGEOFF]
+0x7264c60: MOV             X20, X1
+0x7264c64: MOV             X19, X0
+0x7264c68: TBNZ            W8, #0, loc_7264C8C
+0x7264c6c: ADRP            X0, #off_8B195B8@PAGE
+0x7264c70: LDR             X0, [X0,#off_8B195B8@PAGEOFF]; qword_8D4B250 ; slot
+0x7264c74: BL              il2cpp_codegen_initialize_runtime_metadata
+0x7264c78: ADRP            X0, #off_8B195F0@PAGE
+0x7264c7c: LDR             X0, [X0,#off_8B195F0@PAGEOFF]; off_8CF6340 ; slot
+0x7264c80: BL              il2cpp_codegen_initialize_runtime_metadata
+0x7264c84: MOV             W8, #1
+0x7264c88: STRB            W8, [X21,#byte_9009AE8@PAGEOFF]
+0x7264c8c: CBZ             X19, loc_7264DE8
+0x7264c90: LDR             W22, [X19,#0x18]
+0x7264c94: SUB             W21, W22, #1
+0x7264c98: CMP             W21, #1
+0x7264c9c: B.LT            loc_7264DD0
+0x7264ca0: ADRP            X23, #off_8B195F0@PAGE
+0x7264ca4: LDR             X23, [X23,#off_8B195F0@PAGEOFF]; off_8CF6340
+0x7264ca8: LDR             X0, [X23]; klass
+0x7264cac: LDR             W8, [X0,#0xE0]
+0x7264cb0: CBNZ            W8, loc_7264CB8
+0x7264cb4: BL              il2cpp_codegen_runtime_class_init
+0x7264cb8: MOV             X0, X20
+0x7264cbc: BL              GameFramework.Tools.UIGradientBlender._hG_j_$$______
+0x7264cc0: LDR             X10, [X19,#0x18]
+0x7264cc4: CMP             W21, W10
+0x7264cc8: B.CS            loc_7264DE4
+0x7264ccc: LDR             X8, [X23]
+0x7264cd0: MOV             W9, #0x34 ; '4'
+0x7264cd4: SDIV            W9, W9, W22
+0x7264cd8: ADD             W9, W9, #6
+0x7264cdc: LDR             X8, [X8,#0xB8]
+0x7264ce0: LDR             W8, [X8]
+0x7264ce4: MUL             W9, W9, W8
+0x7264ce8: CBZ             W9, loc_7264DD0
+0x7264cec: LDR             W13, [X19,#0x20]
+0x7264cf0: ADD             X11, X19, W21,UXTW#2
+0x7264cf4: AND             X10, X10, #0xFFFFFFFF
+0x7264cf8: ADD             X11, X11, #0x20 ; ' '
+0x7264cfc: MOV             W12, W21
+0x7264d00: UBFX            W14, W9, #2, #2
+0x7264d04: MOV             X15, X11
+0x7264d08: MOV             X17, X12
+0x7264d0c: SUB             X16, X17, #1
+0x7264d10: CMP             X16, X10
+0x7264d14: B.CS            loc_7264DE4
+0x7264d18: CBZ             X0, loc_7264DE8
+0x7264d1c: LDR             W1, [X0,#0x18]
+0x7264d20: AND             W17, W17, #3
+0x7264d24: EOR             W17, W17, W14
+0x7264d28: CMP             W17, W1
+0x7264d2c: B.CS            loc_7264DE4
+0x7264d30: LDP             W1, W2, [X15,#-4]
+0x7264d34: ADD             X17, X0, X17,LSL#2
+0x7264d38: LDR             W17, [X17,#0x20]
+0x7264d3c: LSR             W3, W1, #5
+0x7264d40: LSL             W4, W1, #4
+0x7264d44: EOR             W3, W3, W13,LSL#2
+0x7264d48: EOR             W4, W4, W13,LSR#3
+0x7264d4c: EOR             W13, W13, W9
+0x7264d50: EOR             W17, W17, W1
+0x7264d54: ADD             W3, W4, W3
+0x7264d58: ADD             W13, W17, W13
+0x7264d5c: EOR             W13, W13, W3
+0x7264d60: ADD             X1, X16, #1
+0x7264d64: SUB             W13, W2, W13
+0x7264d68: CMP             X1, #1
+0x7264d6c: STR             W13, [X15],#-4
+0x7264d70: MOV             X17, X16
+0x7264d74: B.GT            loc_7264D0C
+0x7264d78: LDR             W15, [X0,#0x18]
+0x7264d7c: AND             W16, W16, #3
+0x7264d80: EOR             W14, W16, W14
+0x7264d84: CMP             W14, W15
+0x7264d88: B.CS            loc_7264DE4
+0x7264d8c: LDR             W15, [X11]
+0x7264d90: ADD             X14, X0, W14,UXTW#2
+0x7264d94: LDR             W14, [X14,#0x20]
+0x7264d98: LDR             W16, [X19,#0x20]
+0x7264d9c: LSR             W17, W15, #5
+0x7264da0: LSL             W1, W15, #4
+0x7264da4: EOR             W17, W17, W13,LSL#2
+0x7264da8: EOR             W1, W1, W13,LSR#3
+0x7264dac: EOR             W13, W13, W9
+0x7264db0: EOR             W14, W14, W15
+0x7264db4: ADD             W15, W1, W17
+0x7264db8: ADD             W13, W14, W13
+0x7264dbc: EOR             W13, W13, W15
+0x7264dc0: SUB             W13, W16, W13
+0x7264dc4: SUBS            W9, W9, W8
+0x7264dc8: STR             W13, [X19,#0x20]
+0x7264dcc: B.NE            loc_7264D00
+0x7264dd0: MOV             X0, X19
+0x7264dd4: LDP             X20, X19, [SP,#0x30+var_10]
+0x7264dd8: LDP             X22, X21, [SP,#0x30+var_20]
+0x7264ddc: LDP             X30, X23, [SP+0x30+var_30],#0x30
+0x7264de0: RET
+0x7264de4: BL              unk_3C3D4D4
+0x7264de8: BL              il2cpp_codegen_raise_null_reference_exception

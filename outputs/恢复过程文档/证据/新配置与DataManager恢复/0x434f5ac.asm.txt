@@ -1,0 +1,195 @@
+0x434f5ac: fe0f1cf8 str      x30, [sp, #-0x40]!
+0x434f5b0: f85f01a9 stp      x24, x23, [sp, #0x10]
+0x434f5b4: f65702a9 stp      x22, x21, [sp, #0x20]
+0x434f5b8: f44f03a9 stp      x20, x19, [sp, #0x30]
+0x434f5bc: 946502b0 adrp     x20, #0x9000000
+0x434f5c0: f73b02d0 adrp     x23, #0x8acd000
+0x434f5c4: 88225839 ldrb     w8, [x20, #0x608]
+0x434f5c8: f72247f9 ldr      x23, [x23, #0xe40] // Method$ToolModule.ManagerBase<EventManager>.get_Instance()
+0x434f5cc: f30300aa mov      x19, x0
+0x434f5d0: a8020037 tbnz     w8, #0, #0x434f624
+0x434f5d4: e03b02d0 adrp     x0, #0x8acd000
+0x434f5d8: 001847f9 ldr      x0, [x0, #0xe30] // System.Action<object>_TypeInfo
+0x434f5dc: 29b7e397 bl       #0x3c3d280
+0x434f5e0: 003d02f0 adrp     x0, #0x8af2000
+0x434f5e4: 00d842f9 ldr      x0, [x0, #0x5b0] // Method$DataModule.DataManager.GameWin()
+0x434f5e8: 26b7e397 bl       #0x3c3d280
+0x434f5ec: 003d02f0 adrp     x0, #0x8af2000
+0x434f5f0: 00dc42f9 ldr      x0, [x0, #0x5b8] // Method$DataModule.DataManager.PlayGame()
+0x434f5f4: 23b7e397 bl       #0x3c3d280
+0x434f5f8: e03b02d0 adrp     x0, #0x8acd000
+0x434f5fc: 002047f9 ldr      x0, [x0, #0xe40] // Method$ToolModule.ManagerBase<EventManager>.get_Instance()
+0x434f600: 20b7e397 bl       #0x3c3d280
+0x434f604: 203c02b0 adrp     x0, #0x8ad4000
+0x434f608: 003041f9 ldr      x0, [x0, #0x260] // StartGame
+0x434f60c: 1db7e397 bl       #0x3c3d280
+0x434f610: 403c02b0 adrp     x0, #0x8ad8000
+0x434f614: 00bc41f9 ldr      x0, [x0, #0x378] // GameWin
+0x434f618: 1ab7e397 bl       #0x3c3d280
+0x434f61c: 28008052 mov      w8, #1
+0x434f620: 88221839 strb     w8, [x20, #0x608]
+0x434f624: 740e40f9 ldr      x20, [x19, #0x18]
+0x434f628: e00240f9 ldr      x0, [x23]
+0x434f62c: 8da35894 bl       #0x5978460 // ToolModule.ManagerBase<object>$$get_Instance
+0x434f630: f83b02d0 adrp     x24, #0x8acd000
+0x434f634: 181b47f9 ldr      x24, [x24, #0xe30] // System.Action<object>_TypeInfo
+0x434f638: f50300aa mov      x21, x0
+0x434f63c: 000340f9 ldr      x0, [x24]
+0x434f640: a1b7e397 bl       #0x3c3d4c4
+0x434f644: 083d02f0 adrp     x8, #0x8af2000
+0x434f648: 08dd42f9 ldr      x8, [x8, #0x5b8] // Method$DataModule.DataManager.PlayGame()
+0x434f64c: f60300aa mov      x22, x0
+0x434f650: 020140f9 ldr      x2, [x8]
+0x434f654: e10314aa mov      x1, x20
+0x434f658: e3031faa mov      x3, xzr
+0x434f65c: 8fcc9f94 bl       #0x6b42898 // System.Action<object>$$.ctor
+0x434f660: b50800b4 cbz      x21, #0x434f774
+0x434f664: 283c02b0 adrp     x8, #0x8ad4000
+0x434f668: 083141f9 ldr      x8, [x8, #0x260] // StartGame
+0x434f66c: 010140f9 ldr      x1, [x8]
+0x434f670: e00315aa mov      x0, x21
+0x434f674: e20316aa mov      x2, x22
+0x434f678: e3031faa mov      x3, xzr
+0x434f67c: 30e2ee97 bl       #0x3f07f3c // EventModule.EventManager$$StartListening
+0x434f680: e00240f9 ldr      x0, [x23]
+0x434f684: 77a35894 bl       #0x5978460 // ToolModule.ManagerBase<object>$$get_Instance
+0x434f688: f50300aa mov      x21, x0
+0x434f68c: 000340f9 ldr      x0, [x24]
+0x434f690: 8db7e397 bl       #0x3c3d4c4
+0x434f694: 083d02f0 adrp     x8, #0x8af2000
+0x434f698: 08d942f9 ldr      x8, [x8, #0x5b0] // Method$DataModule.DataManager.GameWin()
+0x434f69c: f60300aa mov      x22, x0
+0x434f6a0: 020140f9 ldr      x2, [x8]
+0x434f6a4: e10314aa mov      x1, x20
+0x434f6a8: e3031faa mov      x3, xzr
+0x434f6ac: 7bcc9f94 bl       #0x6b42898 // System.Action<object>$$.ctor
+0x434f6b0: 550600b4 cbz      x21, #0x434f778
+0x434f6b4: 483c02b0 adrp     x8, #0x8ad8000
+0x434f6b8: 08bd41f9 ldr      x8, [x8, #0x378] // GameWin
+0x434f6bc: 010140f9 ldr      x1, [x8]
+0x434f6c0: e00315aa mov      x0, x21
+0x434f6c4: e20316aa mov      x2, x22
+0x434f6c8: e3031faa mov      x3, xzr
+0x434f6cc: 1ce2ee97 bl       #0x3f07f3c // EventModule.EventManager$$StartListening
+0x434f6d0: 28008012 mov      w8, #-2
+0x434f6d4: 680200b9 str      w8, [x19]
+0x434f6d8: 746502d0 adrp     x20, #0x8ffd000
+0x434f6dc: 88c64639 ldrb     w8, [x20, #0x1b1]
+0x434f6e0: c8000035 cbnz     w8, #0x434f6f8
+0x434f6e4: e03b02d0 adrp     x0, #0x8acd000
+0x434f6e8: 007047f9 ldr      x0, [x0, #0xee0] // Cysharp.Threading.Tasks.CompilerServices.IStateMachineRunnerPromise_TypeInfo
+0x434f6ec: e5b6e397 bl       #0x3c3d280
+0x434f6f0: 28008052 mov      w8, #1
+0x434f6f4: 88c60639 strb     w8, [x20, #0x1b1]
+0x434f6f8: 730640f9 ldr      x19, [x19, #8]
+0x434f6fc: 330a00b4 cbz      x19, #0x434f840
+0x434f700: ea3b02d0 adrp     x10, #0x8acd000
+0x434f704: 680240f9 ldr      x8, [x19]
+0x434f708: 4a7147f9 ldr      x10, [x10, #0xee0] // Cysharp.Threading.Tasks.CompilerServices.IStateMachineRunnerPromise_TypeInfo
+0x434f70c: 095d4279 ldrh     w9, [x8, #0x12e]
+0x434f710: 410140f9 ldr      x1, [x10]
+0x434f714: 290100b4 cbz      x9, #0x434f738
+0x434f718: 0a5940f9 ldr      x10, [x8, #0xb0]
+0x434f71c: 4a210091 add      x10, x10, #8
+0x434f720: 4b815ff8 ldur     x11, [x10, #-8]
+0x434f724: 7f0101eb cmp      x11, x1
+0x434f728: 00010054 b.eq     #0x434f748
+0x434f72c: 290500f1 subs     x9, x9, #1
+0x434f730: 4a410091 add      x10, x10, #0x10
+0x434f734: 61ffff54 b.ne     #0x434f720
+0x434f738: 42008052 mov      w2, #2
+0x434f73c: e00313aa mov      x0, x19
+0x434f740: 5903e497 bl       #0x3c504a4
+0x434f744: 05000014 b        #0x434f758
+0x434f748: 490140b9 ldr      w9, [x10]
+0x434f74c: 29090011 add      w9, w9, #2
+0x434f750: 08d1298b add      x8, x8, w9, sxtw #4
+0x434f754: 00e10491 add      x0, x8, #0x138
+0x434f758: 020440a9 ldp      x2, x1, [x0]
+0x434f75c: e00313aa mov      x0, x19
+0x434f760: f44f43a9 ldp      x20, x19, [sp, #0x30]
+0x434f764: f65742a9 ldp      x22, x21, [sp, #0x20]
+0x434f768: f85f41a9 ldp      x24, x23, [sp, #0x10]
+0x434f76c: fe0744f8 ldr      x30, [sp], #0x40
+0x434f770: 40001fd6 br       x2
+0x434f774: 56b7e397 bl       #0x3c3d4cc
+0x434f778: 55b7e397 bl       #0x3c3d4cc
+0x434f77c: 03000014 b        #0x434f788
+0x434f780: 02000014 b        #0x434f788
+0x434f784: 01000014 b        #0x434f788
+0x434f788: f40300aa mov      x20, x0
+0x434f78c: 3f040071 cmp      w1, #1
+0x434f790: e1080054 b.ne     #0x434f8ac
+0x434f794: e00314aa mov      x0, x20
+0x434f798: 827d0895 bl       #0x856eda0
+0x434f79c: f40300aa mov      x20, x0
+0x434f7a0: e03b02b0 adrp     x0, #0x8acc000
+0x434f7a4: 00c847f9 ldr      x0, [x0, #0xf90] // System.Exception_TypeInfo
+0x434f7a8: bbb6e397 bl       #0x3c3d294
+0x434f7ac: 880240f9 ldr      x8, [x20]
+0x434f7b0: 010140f9 ldr      x1, [x8]
+0x434f7b4: 51b8e397 bl       #0x3c3d8f8
+0x434f7b8: 60060036 tbz      w0, #0, #0x434f884
+0x434f7bc: 940240f9 ldr      x20, [x20]
+0x434f7c0: 7c7d0895 bl       #0x856edb0
+0x434f7c4: 28008012 mov      w8, #-2
+0x434f7c8: 680200b9 str      w8, [x19]
+0x434f7cc: 756502d0 adrp     x21, #0x8ffd000
+0x434f7d0: a8c24639 ldrb     w8, [x21, #0x1b0]
+0x434f7d4: c8000035 cbnz     w8, #0x434f7ec
+0x434f7d8: e03b02d0 adrp     x0, #0x8acd000
+0x434f7dc: 007047f9 ldr      x0, [x0, #0xee0] // Cysharp.Threading.Tasks.CompilerServices.IStateMachineRunnerPromise_TypeInfo
+0x434f7e0: a8b6e397 bl       #0x3c3d280
+0x434f7e4: 28008052 mov      w8, #1
+0x434f7e8: a8c20639 strb     w8, [x21, #0x1b0]
+0x434f7ec: 750640f9 ldr      x21, [x19, #8]
+0x434f7f0: 750200b4 cbz      x21, #0x434f83c
+0x434f7f4: ea3b02d0 adrp     x10, #0x8acd000
+0x434f7f8: a80240f9 ldr      x8, [x21]
+0x434f7fc: 4a7147f9 ldr      x10, [x10, #0xee0] // Cysharp.Threading.Tasks.CompilerServices.IStateMachineRunnerPromise_TypeInfo
+0x434f800: 095d4279 ldrh     w9, [x8, #0x12e]
+0x434f804: 410140f9 ldr      x1, [x10]
+0x434f808: 290100b4 cbz      x9, #0x434f82c
+0x434f80c: 0a5940f9 ldr      x10, [x8, #0xb0]
+0x434f810: 4a210091 add      x10, x10, #8
+0x434f814: 4b815ff8 ldur     x11, [x10, #-8]
+0x434f818: 7f0101eb cmp      x11, x1
+0x434f81c: c0010054 b.eq     #0x434f854
+0x434f820: 290500f1 subs     x9, x9, #1
+0x434f824: 4a410091 add      x10, x10, #0x10
+0x434f828: 61ffff54 b.ne     #0x434f814
+0x434f82c: 62008052 mov      w2, #3
+0x434f830: e00315aa mov      x0, x21
+0x434f834: 1c03e497 bl       #0x3c504a4
+0x434f838: 0b000014 b        #0x434f864
+0x434f83c: 740a00f9 str      x20, [x19, #0x10]
+0x434f840: f44f43a9 ldp      x20, x19, [sp, #0x30]
+0x434f844: f65742a9 ldp      x22, x21, [sp, #0x20]
+0x434f848: f85f41a9 ldp      x24, x23, [sp, #0x10]
+0x434f84c: fe0744f8 ldr      x30, [sp], #0x40
+0x434f850: c0035fd6 ret      
+0x434f854: 490140b9 ldr      w9, [x10]
+0x434f858: 290d0011 add      w9, w9, #3
+0x434f85c: 08d1298b add      x8, x8, w9, sxtw #4
+0x434f860: 00e10491 add      x0, x8, #0x138
+0x434f864: 030840a9 ldp      x3, x2, [x0]
+0x434f868: e00315aa mov      x0, x21
+0x434f86c: e10314aa mov      x1, x20
+0x434f870: f44f43a9 ldp      x20, x19, [sp, #0x30]
+0x434f874: f65742a9 ldp      x22, x21, [sp, #0x20]
+0x434f878: f85f41a9 ldp      x24, x23, [sp, #0x10]
+0x434f87c: fe0744f8 ldr      x30, [sp], #0x40
+0x434f880: 60001fd6 br       x3
+0x434f884: 00018052 mov      w0, #8
+0x434f888: 4e7d0895 bl       #0x856edc0
+0x434f88c: 880240f9 ldr      x8, [x20]
+0x434f890: 080000f9 str      x8, [x0]
+0x434f894: 211102d0 adrp     x1, #0x8575000
+0x434f898: 21a00891 add      x1, x1, #0x228
+0x434f89c: e2031faa mov      x2, xzr
+0x434f8a0: 4c7d0895 bl       #0x856edd0
+0x434f8a4: f40300aa mov      x20, x0
+0x434f8a8: 427d0895 bl       #0x856edb0
+0x434f8ac: e00314aa mov      x0, x20
+0x434f8b0: c55ee697 bl       #0x3ce73c4
+0x434f8b4: 13b3c997 bl       #0x35bc500

@@ -1,0 +1,14 @@
+0x71d91ac: fe0f1ff8 str      x30, [sp, #-0x10]!
+0x71d91b0: 081040f9 ldr      x8, [x0, #0x20]
+0x71d91b4: 680100b4 cbz      x8, #0x71d91e0
+0x71d91b8: 081140f9 ldr      x8, [x8, #0x20]
+0x71d91bc: e80000b4 cbz      x8, #0x71d91d8
+0x71d91c0: 010841a9 ldp      x1, x2, [x0, #0x10]
+0x71d91c4: 040d40f9 ldr      x4, [x8, #0x18]
+0x71d91c8: 002140f9 ldr      x0, [x8, #0x40]
+0x71d91cc: 031540f9 ldr      x3, [x8, #0x28]
+0x71d91d0: fe0741f8 ldr      x30, [sp], #0x10
+0x71d91d4: 80001fd6 br       x4
+0x71d91d8: fe0741f8 ldr      x30, [sp], #0x10
+0x71d91dc: c0035fd6 ret      
+0x71d91e0: bb902997 bl       #0x3c3d4cc

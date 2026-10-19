@@ -1,0 +1,73 @@
+0x3f13590: fe0f1bf8 str      x30, [sp, #-0x50]!
+0x3f13594: fa6701a9 stp      x26, x25, [sp, #0x10]
+0x3f13598: f85f02a9 stp      x24, x23, [sp, #0x20]
+0x3f1359c: f65703a9 stp      x22, x21, [sp, #0x30]
+0x3f135a0: f44f04a9 stp      x20, x19, [sp, #0x40]
+0x3f135a4: 598702f0 adrp     x25, #0x8ffe000
+0x3f135a8: 3a5e02f0 adrp     x26, #0x8ada000
+0x3f135ac: 345e02f0 adrp     x20, #0x8ada000
+0x3f135b0: 385e02f0 adrp     x24, #0x8ada000
+0x3f135b4: 375e02f0 adrp     x23, #0x8ada000
+0x3f135b8: 365e02f0 adrp     x22, #0x8ada000
+0x3f135bc: 355e02f0 adrp     x21, #0x8ada000
+0x3f135c0: 5aff46f9 ldr      x26, [x26, #0xdf8] // System.Collections.Generic.Dictionary<string, List<AsyncOperationHandle>>_TypeInfo
+0x3f135c4: 28d74139 ldrb     w8, [x25, #0x75]
+0x3f135c8: 940247f9 ldr      x20, [x20, #0xe00] // Method$System.Collections.Generic.Dictionary<string, List<AsyncOperationHandle>>..ctor()
+0x3f135cc: 180747f9 ldr      x24, [x24, #0xe08] // System.Collections.Generic.Dictionary<string, AssetsManager.AssetHandleInfo>_TypeInfo
+0x3f135d0: f70a47f9 ldr      x23, [x23, #0xe10] // Method$System.Collections.Generic.Dictionary<string, AssetsManager.AssetHandleInfo>..ctor()
+0x3f135d4: d60e47f9 ldr      x22, [x22, #0xe18] // System.Threading.ReaderWriterLockSlim_TypeInfo
+0x3f135d8: b51247f9 ldr      x21, [x21, #0xe20] // Method$ToolModule.ManagerBase<AssetsManager>..ctor()
+0x3f135dc: f30300aa mov      x19, x0
+0x3f135e0: a8020037 tbnz     w8, #0, #0x3f13634
+0x3f135e4: 205e02f0 adrp     x0, #0x8ada000
+0x3f135e8: 000847f9 ldr      x0, [x0, #0xe10] // Method$System.Collections.Generic.Dictionary<string, AssetsManager.AssetHandleInfo>..ctor()
+0x3f135ec: 25a7f497 bl       #0x3c3d280
+0x3f135f0: 205e02f0 adrp     x0, #0x8ada000
+0x3f135f4: 000047f9 ldr      x0, [x0, #0xe00] // Method$System.Collections.Generic.Dictionary<string, List<AsyncOperationHandle>>..ctor()
+0x3f135f8: 22a7f497 bl       #0x3c3d280
+0x3f135fc: 205e02f0 adrp     x0, #0x8ada000
+0x3f13600: 00fc46f9 ldr      x0, [x0, #0xdf8] // System.Collections.Generic.Dictionary<string, List<AsyncOperationHandle>>_TypeInfo
+0x3f13604: 1fa7f497 bl       #0x3c3d280
+0x3f13608: 205e02f0 adrp     x0, #0x8ada000
+0x3f1360c: 000447f9 ldr      x0, [x0, #0xe08] // System.Collections.Generic.Dictionary<string, AssetsManager.AssetHandleInfo>_TypeInfo
+0x3f13610: 1ca7f497 bl       #0x3c3d280
+0x3f13614: 205e02f0 adrp     x0, #0x8ada000
+0x3f13618: 001047f9 ldr      x0, [x0, #0xe20] // Method$ToolModule.ManagerBase<AssetsManager>..ctor()
+0x3f1361c: 19a7f497 bl       #0x3c3d280
+0x3f13620: 205e02f0 adrp     x0, #0x8ada000
+0x3f13624: 000c47f9 ldr      x0, [x0, #0xe18] // System.Threading.ReaderWriterLockSlim_TypeInfo
+0x3f13628: 16a7f497 bl       #0x3c3d280
+0x3f1362c: 28008052 mov      w8, #1
+0x3f13630: 28d70139 strb     w8, [x25, #0x75]
+0x3f13634: 400340f9 ldr      x0, [x26]
+0x3f13638: a3a7f497 bl       #0x3c3d4c4
+0x3f1363c: 810240f9 ldr      x1, [x20]
+0x3f13640: f40300aa mov      x20, x0
+0x3f13644: 47cab394 bl       #0x6c05f60 // System.Collections.Generic.Dictionary<object, object>$$.ctor
+0x3f13648: 741200f9 str      x20, [x19, #0x20]
+0x3f1364c: 000340f9 ldr      x0, [x24]
+0x3f13650: 9da7f497 bl       #0x3c3d4c4
+0x3f13654: e10240f9 ldr      x1, [x23]
+0x3f13658: f40300aa mov      x20, x0
+0x3f1365c: 41cab394 bl       #0x6c05f60 // System.Collections.Generic.Dictionary<object, object>$$.ctor
+0x3f13660: 741e00f9 str      x20, [x19, #0x38]
+0x3f13664: c00240f9 ldr      x0, [x22]
+0x3f13668: 97a7f497 bl       #0x3c3d4c4
+0x3f1366c: 21008052 mov      w1, #1
+0x3f13670: e2031faa mov      x2, xzr
+0x3f13674: f40300aa mov      x20, x0
+0x3f13678: 36008052 mov      w22, #1
+0x3f1367c: bc86e994 bl       #0x797516c // System.Threading.ReaderWriterLockSlim$$.ctor
+0x3f13680: 48339352 mov      w8, #0x999a
+0x3f13684: 28f3a772 movk     w8, #0x3f99, lsl #16
+0x3f13688: 742200f9 str      x20, [x19, #0x40]
+0x3f1368c: 76e20139 strb     w22, [x19, #0x78]
+0x3f13690: 687e00b9 str      w8, [x19, #0x7c]
+0x3f13694: a10240f9 ldr      x1, [x21]
+0x3f13698: e00313aa mov      x0, x19
+0x3f1369c: f44f44a9 ldp      x20, x19, [sp, #0x40]
+0x3f136a0: f65743a9 ldp      x22, x21, [sp, #0x30]
+0x3f136a4: f85f42a9 ldp      x24, x23, [sp, #0x20]
+0x3f136a8: fa6741a9 ldp      x26, x25, [sp, #0x10]
+0x3f136ac: fe0745f8 ldr      x30, [sp], #0x50
+0x3f136b0: 66946914 b        #0x5978848 // ToolModule.ManagerBase<object>$$.ctor

@@ -1,0 +1,21 @@
+0x3f80924: STP             X30, X21, [SP,#var_20]!
+0x3f80928: STP             X20, X19, [SP,#0x20+var_10]
+0x3f8092c: ADRP            X20, #byte_8FFE412@PAGE
+0x3f80930: ADRP            X21, #off_8AD5EB8@PAGE
+0x3f80934: LDRB            W8, [X20,#byte_8FFE412@PAGEOFF]
+0x3f80938: LDR             X21, [X21,#off_8AD5EB8@PAGEOFF]; off_8CE7AE8
+0x3f8093c: MOV             X19, X0
+0x3f80940: TBNZ            W8, #0, loc_3F80958
+0x3f80944: ADRP            X0, #off_8AD5EB8@PAGE
+0x3f80948: LDR             X0, [X0,#off_8AD5EB8@PAGEOFF]; off_8CE7AE8 ; slot
+0x3f8094c: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3f80950: MOV             W8, #1
+0x3f80954: STRB            W8, [X20,#byte_8FFE412@PAGEOFF]
+0x3f80958: LDR             X0, [X21]; klass
+0x3f8095c: LDR             W8, [X0,#0xE0]
+0x3f80960: CBNZ            W8, loc_3F80968
+0x3f80964: BL              il2cpp_codegen_runtime_class_init
+0x3f80968: MOV             X0, X19; input
+0x3f8096c: LDP             X20, X19, [SP,#0x20+var_10]
+0x3f80970: LDP             X30, X21, [SP+0x20+var_20],#0x20
+0x3f80974: B               ToolModule.GZipTool$$CompressCore

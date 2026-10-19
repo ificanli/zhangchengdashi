@@ -1,0 +1,41 @@
+0x4275d78: fe0f1df8 str      x30, [sp, #-0x30]!
+0x4275d7c: f65701a9 stp      x22, x21, [sp, #0x10]
+0x4275d80: f44f02a9 stp      x20, x19, [sp, #0x20]
+0x4275d84: 566c02d0 adrp     x22, #0x8fff000
+0x4275d88: c84e7f39 ldrb     w8, [x22, #0xfd3]
+0x4275d8c: f30302aa mov      x19, x2
+0x4275d90: f40301aa mov      x20, x1
+0x4275d94: f50300aa mov      x21, x0
+0x4275d98: c8000037 tbnz     w8, #0, #0x4275db0
+0x4275d9c: a04302d0 adrp     x0, #0x8aeb000
+0x4275da0: 005843f9 ldr      x0, [x0, #0x6b0] // Method$System.Collections.Generic.Dictionary<string, UIPanel>.TryGetValue()
+0x4275da4: 371de797 bl       #0x3c3d280
+0x4275da8: 28008052 mov      w8, #1
+0x4275dac: c84e3f39 strb     w8, [x22, #0xfd3]
+0x4275db0: ff0700f9 str      xzr, [sp, #8]
+0x4275db4: a01640f9 ldr      x0, [x21, #0x28]
+0x4275db8: 000300b4 cbz      x0, #0x4275e18
+0x4275dbc: a84302d0 adrp     x8, #0x8aeb000
+0x4275dc0: 085943f9 ldr      x8, [x8, #0x6b0] // Method$System.Collections.Generic.Dictionary<string, UIPanel>.TryGetValue()
+0x4275dc4: e2230091 add      x2, sp, #8
+0x4275dc8: e10314aa mov      x1, x20
+0x4275dcc: 030140f9 ldr      x3, [x8]
+0x4275dd0: 9849a694 bl       #0x6c08430 // System.Collections.Generic.Dictionary<object, object>$$TryGetValue
+0x4275dd4: 40010036 tbz      w0, #0, #0x4275dfc
+0x4275dd8: e00740f9 ldr      x0, [sp, #8]
+0x4275ddc: 600200f9 str      x0, [x19]
+0x4275de0: c00100b4 cbz      x0, #0x4275e18
+0x4275de4: e1031faa mov      x1, xzr
+0x4275de8: 55cc0195 bl       #0x82e8f3c // UnityEngine.Component$$get_gameObject
+0x4275dec: 600100b4 cbz      x0, #0x4275e18
+0x4275df0: e1031faa mov      x1, xzr
+0x4275df4: 7cd90195 bl       #0x82ec3e4 // UnityEngine.GameObject$$get_activeInHierarchy
+0x4275df8: 03000014 b        #0x4275e04
+0x4275dfc: e0031f2a mov      w0, wzr
+0x4275e00: 7f0200f9 str      xzr, [x19]
+0x4275e04: f44f42a9 ldp      x20, x19, [sp, #0x20]
+0x4275e08: f65741a9 ldp      x22, x21, [sp, #0x10]
+0x4275e0c: 00000012 and      w0, w0, #1
+0x4275e10: fe0743f8 ldr      x30, [sp], #0x30
+0x4275e14: c0035fd6 ret      
+0x4275e18: ad1de797 bl       #0x3c3d4cc

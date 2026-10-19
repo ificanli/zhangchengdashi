@@ -1,0 +1,511 @@
+{
+  "mode": "candidate",
+  "testCount": 52,
+  "passed": 52,
+  "failed": 0,
+  "sourcePolicy": "Actual byte-identical baseline or candidate files compiled; no duplicated FSM/Procedure business implementation",
+  "level": "Independent CLR lifecycle semantics with explicit Utility/GameFrameEntry/CLog test boundaries; not Unity/native runtime acceptance",
+  "tests": [
+    {
+      "name": "construct_retains_owner_and_initializes_states_in_input_order",
+      "passed": true,
+      "trace": [
+        "A.init",
+        "B.init"
+      ],
+      "boundaryTrace": []
+    },
+    {
+      "name": "null_owner_rejected",
+      "passed": true,
+      "trace": [],
+      "boundaryTrace": []
+    },
+    {
+      "name": "null_states_rejected",
+      "passed": true,
+      "trace": [],
+      "boundaryTrace": []
+    },
+    {
+      "name": "empty_states_rejected",
+      "passed": true,
+      "trace": [],
+      "boundaryTrace": []
+    },
+    {
+      "name": "null_state_rejected_after_previous_state_init",
+      "passed": true,
+      "trace": [
+        "A.init"
+      ],
+      "boundaryTrace": []
+    },
+    {
+      "name": "duplicate_state_rejected_after_first_state_init",
+      "passed": true,
+      "trace": [
+        "A.init"
+      ],
+      "boundaryTrace": [
+        "Utility.Text.GetFullName:Owner:named"
+      ]
+    },
+    {
+      "name": "start_without_args_uses_noargs_overload_and_sets_current_first",
+      "passed": true,
+      "trace": [
+        "A.enter"
+      ],
+      "boundaryTrace": []
+    },
+    {
+      "name": "start_nonempty_args_preserves_original_array_identity",
+      "passed": true,
+      "trace": [
+        "A.enterArgs"
+      ],
+      "boundaryTrace": []
+    },
+    {
+      "name": "start_null_args_uses_noargs_overload",
+      "passed": true,
+      "trace": [
+        "A.enter"
+      ],
+      "boundaryTrace": []
+    },
+    {
+      "name": "start_empty_args_uses_noargs_overload",
+      "passed": true,
+      "trace": [
+        "A.enter"
+      ],
+      "boundaryTrace": []
+    },
+    {
+      "name": "start_twice_throws_without_extra_enter",
+      "passed": true,
+      "trace": [],
+      "boundaryTrace": []
+    },
+    {
+      "name": "unknown_start_state_throws_and_stays_not_running",
+      "passed": true,
+      "trace": [
+        "A.init"
+      ],
+      "boundaryTrace": [
+        "Utility.Text.GetFullName:Owner:named"
+      ]
+    },
+    {
+      "name": "state_queries_and_null_type_contract",
+      "passed": true,
+      "trace": [
+        "A.init"
+      ],
+      "boundaryTrace": []
+    },
+    {
+      "name": "update_increments_scaled_time_before_callback_and_preserves_both_deltas",
+      "passed": true,
+      "trace": [
+        "A.update"
+      ],
+      "boundaryTrace": []
+    },
+    {
+      "name": "change_before_start_rejected",
+      "passed": true,
+      "trace": [
+        "A.init",
+        "B.init"
+      ],
+      "boundaryTrace": []
+    },
+    {
+      "name": "change_leaves_old_before_setting_new_and_entering_new",
+      "passed": true,
+      "trace": [
+        "A.leave:False",
+        "B.enter"
+      ],
+      "boundaryTrace": []
+    },
+    {
+      "name": "change_type_nonempty_args_preserves_identity",
+      "passed": true,
+      "trace": [
+        "A.leave:False",
+        "B.enterArgs"
+      ],
+      "boundaryTrace": []
+    },
+    {
+      "name": "same_state_change_runs_leave_and_enter",
+      "passed": true,
+      "trace": [
+        "A.leave:False",
+        "A.enter"
+      ],
+      "boundaryTrace": []
+    },
+    {
+      "name": "missing_change_target_does_not_leave_or_reset_time",
+      "passed": true,
+      "trace": [],
+      "boundaryTrace": [
+        "Utility.Text.GetFullName:Owner:named"
+      ]
+    },
+    {
+      "name": "enter_reentrancy_completes_nested_change_synchronously",
+      "passed": true,
+      "trace": [
+        "A.enter",
+        "A.leave:False",
+        "B.enter",
+        "A.enter.afterNested"
+      ],
+      "boundaryTrace": []
+    },
+    {
+      "name": "leave_reentrancy_retains_original_outer_target",
+      "passed": true,
+      "trace": [
+        "A.leave:False",
+        "A.leave:False",
+        "C.enter",
+        "A.leave.afterNested",
+        "B.enter"
+      ],
+      "boundaryTrace": []
+    },
+    {
+      "name": "leave_exception_keeps_old_current_and_time",
+      "passed": true,
+      "trace": [
+        "A.init",
+        "B.init",
+        "A.enter",
+        "A.update",
+        "A.leave:False"
+      ],
+      "boundaryTrace": []
+    },
+    {
+      "name": "enter_exception_keeps_assigned_target_and_zero_time",
+      "passed": true,
+      "trace": [
+        "A.init",
+        "B.init",
+        "A.enter",
+        "A.update",
+        "A.leave:False",
+        "B.enter"
+      ],
+      "boundaryTrace": []
+    },
+    {
+      "name": "shutdown_leaves_then_destroys_all_states_and_clears_storage",
+      "passed": true,
+      "trace": [
+        "A.leave:True",
+        "A.destroy",
+        "B.destroy"
+      ],
+      "boundaryTrace": []
+    },
+    {
+      "name": "data_roundtrip_replace_remove_and_invalid_names",
+      "passed": true,
+      "trace": [
+        "A.init"
+      ],
+      "boundaryTrace": []
+    },
+    {
+      "name": "events_multicast_current_state_only_and_unsubscribe",
+      "passed": true,
+      "trace": [
+        "h2"
+      ],
+      "boundaryTrace": []
+    },
+    {
+      "name": "manager_initialization_sets_ready_before_saved_callback",
+      "passed": true,
+      "trace": [],
+      "boundaryTrace": []
+    },
+    {
+      "name": "manager_named_create_lookup_duplicate_destroy",
+      "passed": true,
+      "trace": [
+        "A.init",
+        "A.enter",
+        "A.leave:True",
+        "A.destroy"
+      ],
+      "boundaryTrace": [
+        "Utility.Text.GetFullName:Owner:one",
+        "Utility.Text.GetFullName:Owner:one",
+        "Utility.Text.GetFullName:Owner:one",
+        "Utility.Text.GetFullName:Owner:one",
+        "Utility.Text.GetFullName:Owner:",
+        "Utility.Text.GetFullName:Owner:one",
+        "Utility.Text.GetFullName:Owner:one",
+        "Utility.Text.GetFullName:Owner:one",
+        "Utility.Text.GetFullName:Owner:one"
+      ]
+    },
+    {
+      "name": "manager_self_removal_skips_shifted_next_entry_native_contract",
+      "passed": true,
+      "trace": [
+        "A.update",
+        "A.leave:True",
+        "A.destroy",
+        "A.update",
+        "c.updated"
+      ],
+      "boundaryTrace": [
+        "Utility.Text.GetFullName:Owner:a",
+        "Utility.Text.GetFullName:Owner:a",
+        "Utility.Text.GetFullName:Owner:b",
+        "Utility.Text.GetFullName:Owner:b",
+        "Utility.Text.GetFullName:Owner:c",
+        "Utility.Text.GetFullName:Owner:c",
+        "Utility.Text.GetFullName:Owner:a"
+      ]
+    },
+    {
+      "name": "manager_new_entry_updates_in_same_frame_native_contract",
+      "passed": true,
+      "trace": [
+        "A.update",
+        "B.init",
+        "B.enter",
+        "B.update",
+        "new.updated"
+      ],
+      "boundaryTrace": [
+        "Utility.Text.GetFullName:Owner:a",
+        "Utility.Text.GetFullName:Owner:a",
+        "Utility.Text.GetFullName:Owner:new",
+        "Utility.Text.GetFullName:Owner:new"
+      ]
+    },
+    {
+      "name": "manager_shutdown_destroys_all_and_clears_ready",
+      "passed": true,
+      "trace": [
+        "A.init",
+        "A.init",
+        "A.enter",
+        "A.enter",
+        "A.leave:True",
+        "A.destroy",
+        "A.leave:True",
+        "A.destroy"
+      ],
+      "boundaryTrace": [
+        "Utility.Text.GetFullName:Owner:a",
+        "Utility.Text.GetFullName:Owner:a",
+        "Utility.Text.GetFullName:Owner:b",
+        "Utility.Text.GetFullName:Owner:b"
+      ]
+    },
+    {
+      "name": "procedure_initialize_does_not_register_or_enter",
+      "passed": true,
+      "trace": [],
+      "boundaryTrace": []
+    },
+    {
+      "name": "procedure_register_and_start_uses_real_fsm_and_updates_once",
+      "passed": true,
+      "trace": [
+        "ProcA.enter",
+        "ProcA.leave:True"
+      ],
+      "boundaryTrace": [
+        "GameFrameEntry.GetModule:GameFramework.Fsm.FsmManager",
+        "Utility.Text.GetFullName:GameFramework.Procedure.IProcedureManager:",
+        "Utility.Text.GetFullName:GameFramework.Procedure.IProcedureManager:",
+        "CLog.LogProcedure:Enter \u0027ProcA\u0027 procedure.",
+        "Utility.Text.GetFullName:GameFramework.Procedure.IProcedureManager:",
+        "CLog.LogProcedure:Leave \u0027ProcA\u0027 procedure."
+      ]
+    },
+    {
+      "name": "procedure_enter_changes_state_through_original_generic_bridge",
+      "passed": true,
+      "trace": [
+        "ProcA.enter",
+        "ProcA.leave:False",
+        "ProcB.enter"
+      ],
+      "boundaryTrace": [
+        "GameFrameEntry.GetModule:GameFramework.Fsm.FsmManager",
+        "Utility.Text.GetFullName:GameFramework.Procedure.IProcedureManager:",
+        "Utility.Text.GetFullName:GameFramework.Procedure.IProcedureManager:",
+        "CLog.LogProcedure:Enter \u0027ProcA\u0027 procedure.",
+        "CLog.LogProcedure:Leave \u0027ProcA\u0027 procedure.",
+        "CLog.LogProcedure:Enter \u0027ProcB\u0027 procedure."
+      ]
+    },
+    {
+      "name": "procedure_missing_fsm_manager_is_real_error",
+      "passed": true,
+      "trace": [],
+      "boundaryTrace": [
+        "GameFrameEntry.GetModule:GameFramework.Fsm.FsmManager"
+      ]
+    },
+    {
+      "name": "production_empty_Utility_key_is_explicit_integration_blocker",
+      "passed": true,
+      "trace": [],
+      "boundaryTrace": [
+        "Utility.Text.GetFullName:Owner:blocked"
+      ]
+    },
+    {
+      "name": "default_FsmBase_constructor_normalizes_name_to_empty",
+      "passed": true,
+      "trace": [],
+      "boundaryTrace": []
+    },
+    {
+      "name": "FsmState_args_enter_does_not_forward_to_noargs_overload",
+      "passed": true,
+      "trace": [],
+      "boundaryTrace": []
+    },
+    {
+      "name": "constructor_init_may_start_and_reenter_but_finally_resets_current",
+      "passed": true,
+      "trace": [
+        "A.init",
+        "A.enter",
+        "B.init",
+        "A.leave:False",
+        "B.enter"
+      ],
+      "boundaryTrace": []
+    },
+    {
+      "name": "state_change_bridge_rejects_null_and_foreign_Ifsm",
+      "passed": true,
+      "trace": [],
+      "boundaryTrace": []
+    },
+    {
+      "name": "shutdown_leave_exception_retains_current_time_storage_and_manager_entry",
+      "passed": true,
+      "trace": [
+        "A.leave:True"
+      ],
+      "boundaryTrace": [
+        "Utility.Text.GetFullName:Owner:throwLeave",
+        "Utility.Text.GetFullName:Owner:throwLeave",
+        "Utility.Text.GetFullName:Owner:throwLeave",
+        "Utility.Text.GetFullName:Owner:throwLeave"
+      ]
+    },
+    {
+      "name": "shutdown_destroy_exception_has_cleared_current_but_keeps_storage_and_flag",
+      "passed": true,
+      "trace": [
+        "A.leave:True",
+        "A.destroy"
+      ],
+      "boundaryTrace": [
+        "Utility.Text.GetFullName:Owner:throwDestroy",
+        "Utility.Text.GetFullName:Owner:throwDestroy",
+        "Utility.Text.GetFullName:Owner:throwDestroy"
+      ]
+    },
+    {
+      "name": "unregistered_procedure_CurrentProcedure_throws",
+      "passed": true,
+      "trace": [],
+      "boundaryTrace": []
+    },
+    {
+      "name": "unregistered_procedure_CurrentProcedureTime_throws",
+      "passed": true,
+      "trace": [],
+      "boundaryTrace": []
+    },
+    {
+      "name": "unregistered_procedure_Start_generic_throws",
+      "passed": true,
+      "trace": [],
+      "boundaryTrace": []
+    },
+    {
+      "name": "unregistered_procedure_Start_type_throws",
+      "passed": true,
+      "trace": [],
+      "boundaryTrace": []
+    },
+    {
+      "name": "unregistered_procedure_Has_generic_throws",
+      "passed": true,
+      "trace": [],
+      "boundaryTrace": []
+    },
+    {
+      "name": "unregistered_procedure_Has_type_throws",
+      "passed": true,
+      "trace": [],
+      "boundaryTrace": []
+    },
+    {
+      "name": "unregistered_procedure_Get_generic_throws",
+      "passed": true,
+      "trace": [],
+      "boundaryTrace": []
+    },
+    {
+      "name": "unregistered_procedure_Get_type_throws",
+      "passed": true,
+      "trace": [],
+      "boundaryTrace": []
+    },
+    {
+      "name": "duplicate_register_reacquires_manager_but_retains_previous_fsm_on_error",
+      "passed": true,
+      "trace": [],
+      "boundaryTrace": [
+        "GameFrameEntry.GetModule:GameFramework.Fsm.FsmManager",
+        "Utility.Text.GetFullName:GameFramework.Procedure.IProcedureManager:",
+        "Utility.Text.GetFullName:GameFramework.Procedure.IProcedureManager:",
+        "Utility.Text.GetFullName:GameFramework.Procedure.IProcedureManager:",
+        "Utility.Text.GetFullName:GameFramework.Procedure.IProcedureManager:",
+        "GameFrameEntry.GetModule:GameFramework.Fsm.FsmManager",
+        "Utility.Text.GetFullName:GameFramework.Procedure.IProcedureManager:",
+        "Utility.Text.GetFullName:GameFramework.Procedure.IProcedureManager:"
+      ]
+    },
+    {
+      "name": "procedure_shutdown_destroy_error_retains_fields_ready_and_current",
+      "passed": true,
+      "trace": [
+        "ProcA.enter",
+        "ProcA.leave:True"
+      ],
+      "boundaryTrace": [
+        "GameFrameEntry.GetModule:GameFramework.Fsm.FsmManager",
+        "Utility.Text.GetFullName:GameFramework.Procedure.IProcedureManager:",
+        "Utility.Text.GetFullName:GameFramework.Procedure.IProcedureManager:",
+        "CLog.LogProcedure:Enter \u0027ProcA\u0027 procedure.",
+        "Utility.Text.GetFullName:GameFramework.Procedure.IProcedureManager:",
+        "CLog.LogProcedure:Leave \u0027ProcA\u0027 procedure."
+      ]
+    }
+  ]
+}

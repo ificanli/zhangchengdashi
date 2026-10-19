@@ -1,0 +1,3375 @@
+// IL code: GameManagerCompile
+.class private auto ansi '<Module>'
+{
+} // end of class <Module>
+
+.class public auto ansi beforefieldinit GameModule.GameManager
+	extends class ['Assembly-CSharp']ToolModule.ManagerBase`1<class GameModule.GameManager>
+{
+	.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+		01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 32
+		30 30 30 34 36 34
+	)
+	// Nested Types
+	.class nested private auto ansi sealed beforefieldinit _003CCheckNetworkState_003Ed__14
+		extends [netstandard]System.Object
+		implements class [netstandard]System.Collections.Generic.IEnumerator`1<object>,
+		           [netstandard]System.Collections.IEnumerator,
+		           [netstandard]System.IDisposable
+	{
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+			01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 32
+			30 30 30 34 36 36
+		)
+		.custom instance void [netstandard]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = (
+			01 00 00 00
+		)
+		// Fields
+		.field private int32 _003C_003E1__state
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+			01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 34
+			30 30 32 41 44 43
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.FieldOffsetAttribute::.ctor() = (
+			01 00 01 00 53 0e 06 4f 66 66 73 65 74 04 30 78
+			31 30
+		)
+		.field private object _003C_003E2__current
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+			01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 34
+			30 30 32 41 44 44
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.FieldOffsetAttribute::.ctor() = (
+			01 00 01 00 53 0e 06 4f 66 66 73 65 74 04 30 78
+			31 38
+		)
+		.field public class GameModule.GameManager _003C_003E4__this
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+			01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 34
+			30 30 32 41 44 45
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.FieldOffsetAttribute::.ctor() = (
+			01 00 01 00 53 0e 06 4f 66 66 73 65 74 04 30 78
+			32 30
+		)
+
+		// Methods
+		.method private final hidebysig specialname newslot virtual 
+			instance object 'System.Collections.Generic.IEnumerator<System.Object>.get_Current' () cil managed 
+		{
+			.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+				01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 36
+				30 30 31 35 39 43
+			)
+			.custom instance void [Il2CppDummyDll]Il2CppDummyDll.AddressAttribute::.ctor() = (
+				01 00 04 00 53 0e 03 52 56 41 09 30 78 33 45 31
+				43 46 34 43 53 0e 06 4f 66 66 73 65 74 09 30 78
+				33 45 31 38 46 34 43 53 0e 02 56 41 09 30 78 33
+				45 31 43 46 34 43 53 0e 04 53 6c 6f 74 01 34
+			)
+			.custom instance void [netstandard]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = (
+				01 00 00 00
+			)
+			.override method instance !0 class [netstandard]System.Collections.Generic.IEnumerator`1<object>::get_Current()
+			// Method begins at RVA 0x24c3
+			// Header size: 1
+			// Code size: 7 (0x7)
+			.maxstack 8
+
+			IL_0000: ldarg.0
+			IL_0001: call instance object GameModule.GameManager/_003CCheckNetworkState_003Ed__14::System_002ECollections_002EGeneric_002EIEnumerator_003CSystem_002EObject_003E_002Eget_Current()
+			IL_0006: ret
+		} // end of method _003CCheckNetworkState_003Ed__14::'System.Collections.Generic.IEnumerator<System.Object>.get_Current'
+
+		.method private final hidebysig specialname newslot virtual 
+			instance object System.Collections.IEnumerator.get_Current () cil managed 
+		{
+			.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+				01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 36
+				30 30 31 35 39 45
+			)
+			.custom instance void [Il2CppDummyDll]Il2CppDummyDll.AddressAttribute::.ctor() = (
+				01 00 04 00 53 0e 03 52 56 41 09 30 78 33 45 31
+				43 46 38 43 53 0e 06 4f 66 66 73 65 74 09 30 78
+				33 45 31 38 46 38 43 53 0e 02 56 41 09 30 78 33
+				45 31 43 46 38 43 53 0e 04 53 6c 6f 74 01 37
+			)
+			.custom instance void [netstandard]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = (
+				01 00 00 00
+			)
+			.override method instance object [netstandard]System.Collections.IEnumerator::get_Current()
+			// Method begins at RVA 0x24cb
+			// Header size: 1
+			// Code size: 7 (0x7)
+			.maxstack 8
+
+			IL_0000: ldarg.0
+			IL_0001: call instance object GameModule.GameManager/_003CCheckNetworkState_003Ed__14::System_002ECollections_002EIEnumerator_002Eget_Current()
+			IL_0006: ret
+		} // end of method _003CCheckNetworkState_003Ed__14::System.Collections.IEnumerator.get_Current
+
+		.method public hidebysig specialname rtspecialname 
+			instance void .ctor (
+				int32 _003C_003E1__state
+			) cil managed 
+		{
+			.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+				01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 36
+				30 30 31 35 39 39
+			)
+			.custom instance void [Il2CppDummyDll]Il2CppDummyDll.AddressAttribute::.ctor() = (
+				01 00 03 00 53 0e 03 52 56 41 09 30 78 33 45 31
+				39 39 38 38 53 0e 06 4f 66 66 73 65 74 09 30 78
+				33 45 31 35 39 38 38 53 0e 02 56 41 09 30 78 33
+				45 31 39 39 38 38
+			)
+			.custom instance void [netstandard]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = (
+				01 00 00 00
+			)
+			// Method begins at RVA 0x24d3
+			// Header size: 1
+			// Code size: 7 (0x7)
+			.maxstack 8
+
+			IL_0000: ldarg.0
+			IL_0001: call instance void [netstandard]System.Object::.ctor()
+			IL_0006: ret
+		} // end of method _003CCheckNetworkState_003Ed__14::.ctor
+
+		.method private final hidebysig newslot virtual 
+			instance void System.IDisposable.Dispose () cil managed 
+		{
+			.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+				01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 36
+				30 30 31 35 39 41
+			)
+			.custom instance void [Il2CppDummyDll]Il2CppDummyDll.AddressAttribute::.ctor() = (
+				01 00 04 00 53 0e 03 52 56 41 09 30 78 33 45 31
+				43 41 46 30 53 0e 06 4f 66 66 73 65 74 09 30 78
+				33 45 31 38 41 46 30 53 0e 02 56 41 09 30 78 33
+				45 31 43 41 46 30 53 0e 04 53 6c 6f 74 01 35
+			)
+			.custom instance void [netstandard]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = (
+				01 00 00 00
+			)
+			.override method instance void [netstandard]System.IDisposable::Dispose()
+			// Method begins at RVA 0x24db
+			// Header size: 1
+			// Code size: 1 (0x1)
+			.maxstack 8
+
+			IL_0000: ret
+		} // end of method _003CCheckNetworkState_003Ed__14::System.IDisposable.Dispose
+
+		.method private final hidebysig newslot virtual 
+			instance bool System.Collections.IEnumerator.MoveNext () cil managed 
+		{
+			.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+				01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 36
+				30 30 31 35 39 42
+			)
+			.custom instance void [Il2CppDummyDll]Il2CppDummyDll.AddressAttribute::.ctor() = (
+				01 00 04 00 53 0e 03 52 56 41 09 30 78 33 45 31
+				43 41 46 34 53 0e 06 4f 66 66 73 65 74 09 30 78
+				33 45 31 38 41 46 34 53 0e 02 56 41 09 30 78 33
+				45 31 43 41 46 34 53 0e 04 53 6c 6f 74 01 36
+			)
+			.override method instance bool [netstandard]System.Collections.IEnumerator::MoveNext()
+			// Method begins at RVA 0x24dd
+			// Header size: 1
+			// Code size: 2 (0x2)
+			.maxstack 8
+
+			IL_0000: ldc.i4.0
+			IL_0001: ret
+		} // end of method _003CCheckNetworkState_003Ed__14::System.Collections.IEnumerator.MoveNext
+
+		.method private hidebysig 
+			instance object System_002ECollections_002EGeneric_002EIEnumerator_003CSystem_002EObject_003E_002Eget_Current () cil managed 
+		{
+			.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+				01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 36
+				30 30 31 35 39 43
+			)
+			.custom instance void [Il2CppDummyDll]Il2CppDummyDll.AddressAttribute::.ctor() = (
+				01 00 04 00 53 0e 03 52 56 41 09 30 78 33 45 31
+				43 46 34 43 53 0e 06 4f 66 66 73 65 74 09 30 78
+				33 45 31 38 46 34 43 53 0e 02 56 41 09 30 78 33
+				45 31 43 46 34 43 53 0e 04 53 6c 6f 74 01 34
+			)
+			.custom instance void [netstandard]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = (
+				01 00 00 00
+			)
+			// Method begins at RVA 0x24e0
+			// Header size: 1
+			// Code size: 2 (0x2)
+			.maxstack 8
+
+			IL_0000: ldnull
+			IL_0001: ret
+		} // end of method _003CCheckNetworkState_003Ed__14::System_002ECollections_002EGeneric_002EIEnumerator_003CSystem_002EObject_003E_002Eget_Current
+
+		.method private final hidebysig newslot virtual 
+			instance void System.Collections.IEnumerator.Reset () cil managed 
+		{
+			.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+				01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 36
+				30 30 31 35 39 44
+			)
+			.custom instance void [Il2CppDummyDll]Il2CppDummyDll.AddressAttribute::.ctor() = (
+				01 00 04 00 53 0e 03 52 56 41 09 30 78 33 45 31
+				43 46 35 34 53 0e 06 4f 66 66 73 65 74 09 30 78
+				33 45 31 38 46 35 34 53 0e 02 56 41 09 30 78 33
+				45 31 43 46 35 34 53 0e 04 53 6c 6f 74 01 38
+			)
+			.custom instance void [netstandard]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = (
+				01 00 00 00
+			)
+			.override method instance void [netstandard]System.Collections.IEnumerator::Reset()
+			// Method begins at RVA 0x24e3
+			// Header size: 1
+			// Code size: 1 (0x1)
+			.maxstack 8
+
+			IL_0000: ret
+		} // end of method _003CCheckNetworkState_003Ed__14::System.Collections.IEnumerator.Reset
+
+		.method private hidebysig 
+			instance object System_002ECollections_002EIEnumerator_002Eget_Current () cil managed 
+		{
+			.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+				01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 36
+				30 30 31 35 39 45
+			)
+			.custom instance void [Il2CppDummyDll]Il2CppDummyDll.AddressAttribute::.ctor() = (
+				01 00 04 00 53 0e 03 52 56 41 09 30 78 33 45 31
+				43 46 38 43 53 0e 06 4f 66 66 73 65 74 09 30 78
+				33 45 31 38 46 38 43 53 0e 02 56 41 09 30 78 33
+				45 31 43 46 38 43 53 0e 04 53 6c 6f 74 01 37
+			)
+			.custom instance void [netstandard]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = (
+				01 00 00 00
+			)
+			// Method begins at RVA 0x24e5
+			// Header size: 1
+			// Code size: 2 (0x2)
+			.maxstack 8
+
+			IL_0000: ldnull
+			IL_0001: ret
+		} // end of method _003CCheckNetworkState_003Ed__14::System_002ECollections_002EIEnumerator_002Eget_Current
+
+		// Properties
+		.property instance object 'System.Collections.Generic.IEnumerator<System.Object>.Current'()
+		{
+			.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+				01 00 01 00 53 0e 05 54 6f 6b 65 6e 0a 30 78 31
+				37 30 30 30 31 34 33
+			)
+			.get instance object GameModule.GameManager/_003CCheckNetworkState_003Ed__14::'System.Collections.Generic.IEnumerator<System.Object>.get_Current'()
+		}
+		.property instance object System.Collections.IEnumerator.Current()
+		{
+			.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+				01 00 01 00 53 0e 05 54 6f 6b 65 6e 0a 30 78 31
+				37 30 30 30 31 34 34
+			)
+			.get instance object GameModule.GameManager/_003CCheckNetworkState_003Ed__14::System.Collections.IEnumerator.get_Current()
+		}
+
+	} // end of class _003CCheckNetworkState_003Ed__14
+
+	.class nested private auto ansi sealed beforefieldinit _003CEnterMeta_003Ed__20
+		extends [netstandard]System.ValueType
+		implements [netstandard]System.Runtime.CompilerServices.IAsyncStateMachine
+	{
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+			01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 32
+			30 30 30 34 36 37
+		)
+		.custom instance void [netstandard]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = (
+			01 00 00 00
+		)
+		// Fields
+		.field public int32 _003C_003E1__state
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+			01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 34
+			30 30 32 41 44 46
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.FieldOffsetAttribute::.ctor() = (
+			01 00 01 00 53 0e 06 4f 66 66 73 65 74 03 30 78 30
+		)
+		.field public valuetype [netstandard]System.Runtime.CompilerServices.AsyncVoidMethodBuilder _003C_003Et__builder
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+			01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 34
+			30 30 32 41 45 30
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.FieldOffsetAttribute::.ctor() = (
+			01 00 01 00 53 0e 06 4f 66 66 73 65 74 03 30 78 38
+		)
+		.field public object obj
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+			01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 34
+			30 30 32 41 45 31
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.FieldOffsetAttribute::.ctor() = (
+			01 00 01 00 53 0e 06 4f 66 66 73 65 74 04 30 78
+			32 38
+		)
+
+		// Methods
+		.method private final hidebysig newslot virtual 
+			instance void System.Runtime.CompilerServices.IAsyncStateMachine.MoveNext () cil managed 
+		{
+			.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+				01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 36
+				30 30 31 35 39 46
+			)
+			.custom instance void [Il2CppDummyDll]Il2CppDummyDll.AddressAttribute::.ctor() = (
+				01 00 04 00 53 0e 03 52 56 41 09 30 78 33 45 31
+				43 46 39 34 53 0e 06 4f 66 66 73 65 74 09 30 78
+				33 45 31 38 46 39 34 53 0e 02 56 41 09 30 78 33
+				45 31 43 46 39 34 53 0e 04 53 6c 6f 74 01 34
+			)
+			.override method instance void [netstandard]System.Runtime.CompilerServices.IAsyncStateMachine::MoveNext()
+			// Method begins at RVA 0x24e8
+			// Header size: 1
+			// Code size: 1 (0x1)
+			.maxstack 8
+
+			IL_0000: ret
+		} // end of method _003CEnterMeta_003Ed__20::System.Runtime.CompilerServices.IAsyncStateMachine.MoveNext
+
+		.method private final hidebysig newslot virtual 
+			instance void System.Runtime.CompilerServices.IAsyncStateMachine.SetStateMachine (
+				class [netstandard]System.Runtime.CompilerServices.IAsyncStateMachine stateMachine
+			) cil managed 
+		{
+			.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+				01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 36
+				30 30 31 35 41 30
+			)
+			.custom instance void [Il2CppDummyDll]Il2CppDummyDll.AddressAttribute::.ctor() = (
+				01 00 04 00 53 0e 03 52 56 41 09 30 78 33 45 31
+				44 32 45 34 53 0e 06 4f 66 66 73 65 74 09 30 78
+				33 45 31 39 32 45 34 53 0e 02 56 41 09 30 78 33
+				45 31 44 32 45 34 53 0e 04 53 6c 6f 74 01 35
+			)
+			.custom instance void [netstandard]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = (
+				01 00 00 00
+			)
+			.override method instance void [netstandard]System.Runtime.CompilerServices.IAsyncStateMachine::SetStateMachine(class [netstandard]System.Runtime.CompilerServices.IAsyncStateMachine)
+			// Method begins at RVA 0x24ea
+			// Header size: 1
+			// Code size: 1 (0x1)
+			.maxstack 8
+
+			IL_0000: ret
+		} // end of method _003CEnterMeta_003Ed__20::System.Runtime.CompilerServices.IAsyncStateMachine.SetStateMachine
+
+	} // end of class _003CEnterMeta_003Ed__20
+
+	.class nested private auto ansi sealed beforefieldinit _003CInit_003Ed__9
+		extends [netstandard]System.ValueType
+		implements [netstandard]System.Runtime.CompilerServices.IAsyncStateMachine
+	{
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+			01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 32
+			30 30 30 34 36 38
+		)
+		.custom instance void [netstandard]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = (
+			01 00 00 00
+		)
+		// Fields
+		.field public int32 _003C_003E1__state
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+			01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 34
+			30 30 32 41 45 32
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.FieldOffsetAttribute::.ctor() = (
+			01 00 01 00 53 0e 06 4f 66 66 73 65 74 03 30 78 30
+		)
+		.field public valuetype [UniTask]Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder _003C_003Et__builder
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+			01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 34
+			30 30 32 41 45 33
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.FieldOffsetAttribute::.ctor() = (
+			01 00 01 00 53 0e 06 4f 66 66 73 65 74 03 30 78 38
+		)
+		.field public class GameModule.GameManager _003C_003E4__this
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+			01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 34
+			30 30 32 41 45 34
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.FieldOffsetAttribute::.ctor() = (
+			01 00 01 00 53 0e 06 4f 66 66 73 65 74 04 30 78
+			31 38
+		)
+		.field private valuetype [UniTask]Cysharp.Threading.Tasks.UniTask/Awaiter _003C_003Eu__1
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+			01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 34
+			30 30 32 41 45 35
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.FieldOffsetAttribute::.ctor() = (
+			01 00 01 00 53 0e 06 4f 66 66 73 65 74 04 30 78
+			32 30
+		)
+
+		// Methods
+		.method private final hidebysig newslot virtual 
+			instance void System.Runtime.CompilerServices.IAsyncStateMachine.MoveNext () cil managed 
+		{
+			.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+				01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 36
+				30 30 31 35 41 31
+			)
+			.custom instance void [Il2CppDummyDll]Il2CppDummyDll.AddressAttribute::.ctor() = (
+				01 00 04 00 53 0e 03 52 56 41 09 30 78 33 45 31
+				44 32 46 30 53 0e 06 4f 66 66 73 65 74 09 30 78
+				33 45 31 39 32 46 30 53 0e 02 56 41 09 30 78 33
+				45 31 44 32 46 30 53 0e 04 53 6c 6f 74 01 34
+			)
+			.override method instance void [netstandard]System.Runtime.CompilerServices.IAsyncStateMachine::MoveNext()
+			// Method begins at RVA 0x24ec
+			// Header size: 1
+			// Code size: 1 (0x1)
+			.maxstack 8
+
+			IL_0000: ret
+		} // end of method _003CInit_003Ed__9::System.Runtime.CompilerServices.IAsyncStateMachine.MoveNext
+
+		.method private final hidebysig newslot virtual 
+			instance void System.Runtime.CompilerServices.IAsyncStateMachine.SetStateMachine (
+				class [netstandard]System.Runtime.CompilerServices.IAsyncStateMachine stateMachine
+			) cil managed 
+		{
+			.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+				01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 36
+				30 30 31 35 41 32
+			)
+			.custom instance void [Il2CppDummyDll]Il2CppDummyDll.AddressAttribute::.ctor() = (
+				01 00 04 00 53 0e 03 52 56 41 09 30 78 33 45 31
+				46 32 43 34 53 0e 06 4f 66 66 73 65 74 09 30 78
+				33 45 31 42 32 43 34 53 0e 02 56 41 09 30 78 33
+				45 31 46 32 43 34 53 0e 04 53 6c 6f 74 01 35
+			)
+			.custom instance void [netstandard]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = (
+				01 00 00 00
+			)
+			.override method instance void [netstandard]System.Runtime.CompilerServices.IAsyncStateMachine::SetStateMachine(class [netstandard]System.Runtime.CompilerServices.IAsyncStateMachine)
+			// Method begins at RVA 0x24ee
+			// Header size: 1
+			// Code size: 1 (0x1)
+			.maxstack 8
+
+			IL_0000: ret
+		} // end of method _003CInit_003Ed__9::System.Runtime.CompilerServices.IAsyncStateMachine.SetStateMachine
+
+	} // end of class _003CInit_003Ed__9
+
+	.class nested private auto ansi sealed beforefieldinit _003CShowCardProbabilityPanel_003Ed__24
+		extends [netstandard]System.ValueType
+		implements [netstandard]System.Runtime.CompilerServices.IAsyncStateMachine
+	{
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+			01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 32
+			30 30 30 34 36 39
+		)
+		.custom instance void [netstandard]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = (
+			01 00 00 00
+		)
+		// Fields
+		.field public int32 _003C_003E1__state
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+			01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 34
+			30 30 32 41 45 36
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.FieldOffsetAttribute::.ctor() = (
+			01 00 01 00 53 0e 06 4f 66 66 73 65 74 03 30 78 30
+		)
+		.field public valuetype [netstandard]System.Runtime.CompilerServices.AsyncVoidMethodBuilder _003C_003Et__builder
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+			01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 34
+			30 30 32 41 45 37
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.FieldOffsetAttribute::.ctor() = (
+			01 00 01 00 53 0e 06 4f 66 66 73 65 74 03 30 78 38
+		)
+		.field private valuetype [UniTask]Cysharp.Threading.Tasks.UniTask/Awaiter _003C_003Eu__1
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+			01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 34
+			30 30 32 41 45 38
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.FieldOffsetAttribute::.ctor() = (
+			01 00 01 00 53 0e 06 4f 66 66 73 65 74 04 30 78
+			32 38
+		)
+
+		// Methods
+		.method private final hidebysig newslot virtual 
+			instance void System.Runtime.CompilerServices.IAsyncStateMachine.MoveNext () cil managed 
+		{
+			.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+				01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 36
+				30 30 31 35 41 33
+			)
+			.custom instance void [Il2CppDummyDll]Il2CppDummyDll.AddressAttribute::.ctor() = (
+				01 00 04 00 53 0e 03 52 56 41 09 30 78 33 45 31
+				46 32 44 30 53 0e 06 4f 66 66 73 65 74 09 30 78
+				33 45 31 42 32 44 30 53 0e 02 56 41 09 30 78 33
+				45 31 46 32 44 30 53 0e 04 53 6c 6f 74 01 34
+			)
+			.override method instance void [netstandard]System.Runtime.CompilerServices.IAsyncStateMachine::MoveNext()
+			// Method begins at RVA 0x24f0
+			// Header size: 1
+			// Code size: 1 (0x1)
+			.maxstack 8
+
+			IL_0000: ret
+		} // end of method _003CShowCardProbabilityPanel_003Ed__24::System.Runtime.CompilerServices.IAsyncStateMachine.MoveNext
+
+		.method private final hidebysig newslot virtual 
+			instance void System.Runtime.CompilerServices.IAsyncStateMachine.SetStateMachine (
+				class [netstandard]System.Runtime.CompilerServices.IAsyncStateMachine stateMachine
+			) cil managed 
+		{
+			.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+				01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 36
+				30 30 31 35 41 34
+			)
+			.custom instance void [Il2CppDummyDll]Il2CppDummyDll.AddressAttribute::.ctor() = (
+				01 00 04 00 53 0e 03 52 56 41 09 30 78 33 45 31
+				46 36 36 43 53 0e 06 4f 66 66 73 65 74 09 30 78
+				33 45 31 42 36 36 43 53 0e 02 56 41 09 30 78 33
+				45 31 46 36 36 43 53 0e 04 53 6c 6f 74 01 35
+			)
+			.custom instance void [netstandard]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = (
+				01 00 00 00
+			)
+			.override method instance void [netstandard]System.Runtime.CompilerServices.IAsyncStateMachine::SetStateMachine(class [netstandard]System.Runtime.CompilerServices.IAsyncStateMachine)
+			// Method begins at RVA 0x24f2
+			// Header size: 1
+			// Code size: 1 (0x1)
+			.maxstack 8
+
+			IL_0000: ret
+		} // end of method _003CShowCardProbabilityPanel_003Ed__24::System.Runtime.CompilerServices.IAsyncStateMachine.SetStateMachine
+
+	} // end of class _003CShowCardProbabilityPanel_003Ed__24
+
+	.class nested private auto ansi sealed serializable beforefieldinit '<>c'
+		extends [netstandard]System.Object
+	{
+		.custom instance void [netstandard]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = (
+			01 00 00 00
+		)
+		// Fields
+		.field public static initonly class GameModule.GameManager/'<>c' '<>9'
+		.field public static class [netstandard]System.Func`2<bool, class ['Assembly-CSharp']GameModule.RewardConfig> '<>9__24_0'
+		.field public static class [netstandard]System.Action '<>9__26_0'
+		.field public static class [netstandard]System.Action '<>9__26_1'
+		.field public static class [netstandard]System.Action '<>9__26_2'
+		.field public static class [netstandard]System.Action '<>9__26_3'
+		.field public static class [netstandard]System.Action '<>9__26_4'
+		.field public static class [netstandard]System.Action '<>9__27_0'
+		.field public static class [netstandard]System.Action '<>9__27_1'
+		.field public static class [netstandard]System.Action '<>9__27_2'
+		.field public static class [netstandard]System.Action '<>9__27_3'
+
+		// Methods
+		.method private hidebysig specialname rtspecialname static 
+			void .cctor () cil managed 
+		{
+			// Method begins at RVA 0x24f4
+			// Header size: 1
+			// Code size: 11 (0xb)
+			.maxstack 8
+
+			IL_0000: newobj instance void GameModule.GameManager/'<>c'::.ctor()
+			IL_0005: stsfld class GameModule.GameManager/'<>c' GameModule.GameManager/'<>c'::'<>9'
+			IL_000a: ret
+		} // end of method '<>c'::.cctor
+
+		.method public hidebysig specialname rtspecialname 
+			instance void .ctor () cil managed 
+		{
+			// Method begins at RVA 0x2500
+			// Header size: 1
+			// Code size: 7 (0x7)
+			.maxstack 8
+
+			IL_0000: ldarg.0
+			IL_0001: call instance void [netstandard]System.Object::.ctor()
+			IL_0006: ret
+		} // end of method '<>c'::.ctor
+
+		.method assembly hidebysig 
+			instance class ['Assembly-CSharp']GameModule.RewardConfig '<StartCoreGame>b__24_0' (
+				bool win
+			) cil managed 
+		{
+			// Method begins at RVA 0x2508
+			// Header size: 12
+			// Code size: 1016 (0x3f8)
+			.maxstack 6
+			.locals init (
+				[0] class ['Assembly-CSharp']GameModule.RewardConfig,
+				[1] int32,
+				[2] class [netstandard]System.Collections.Generic.List`1<class ['Assembly-CSharp']GameModule.RewardConfigSingle>,
+				[3] string,
+				[4] string,
+				[5] string,
+				[6] int32,
+				[7] float32,
+				[8] int32,
+				[9] int32,
+				[10] int32,
+				[11] int32,
+				[12] int32,
+				[13] string,
+				[14] int32,
+				[15] string,
+				[16] int32,
+				[17] int32
+			)
+
+			IL_0000: ldnull
+			IL_0001: stloc.0
+			IL_0002: call bool ['Assembly-CSharp']GameModule.TrainingGroundManager::get_IsInTrainingGround()
+			IL_0007: brfalse.s IL_004d
+
+			IL_0009: ldc.i4.5
+			IL_000a: newobj instance void ['Assembly-CSharp']GameModule.RewardConfig::.ctor(valuetype ['Assembly-CSharp']GameModule.CurrencyTransactionSceneType)
+			IL_000f: stloc.0
+			IL_0010: call !0 class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']GameConfigModule.GameConfigManager>::get_Instance()
+			IL_0015: ldarg.1
+			IL_0016: brtrue.s IL_001f
+
+			IL_0018: ldstr "NormalPVPLoseExp"
+			IL_001d: br.s IL_0024
+
+			IL_001f: ldstr "NormalPVPWinExp"
+
+			IL_0024: callvirt instance int32 ['Assembly-CSharp']GameConfigModule.GameConfigManager::GetConfigInt(string)
+			IL_0029: stloc.1
+			IL_002a: ldloc.0
+			IL_002b: newobj instance void class [netstandard]System.Collections.Generic.List`1<class ['Assembly-CSharp']GameModule.RewardConfigSingle>::.ctor()
+			IL_0030: dup
+			IL_0031: ldstr "20007"
+			IL_0036: ldloca.s 1
+			IL_0038: call instance string [netstandard]System.Int32::ToString()
+			IL_003d: ldnull
+			IL_003e: newobj instance void ['Assembly-CSharp']GameModule.RewardConfigSingle::.ctor(string, string, class [netstandard]System.Collections.Generic.List`1<string>)
+			IL_0043: callvirt instance void class [netstandard]System.Collections.Generic.List`1<class ['Assembly-CSharp']GameModule.RewardConfigSingle>::Add(!0)
+			IL_0048: callvirt instance void ['Assembly-CSharp']GameModule.RewardConfig::AddAssetDataList(class [netstandard]System.Collections.Generic.List`1<class ['Assembly-CSharp']GameModule.RewardConfigSingle>)
+
+			IL_004d: call bool ['Assembly-CSharp']GameModule.TrainingGroundManager::get_IsInGuidedGame()
+			IL_0052: brfalse.s IL_005f
+
+			IL_0054: call !0 class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']GameModule.TrainingGroundManager>::get_Instance()
+			IL_0059: ldarg.1
+			IL_005a: callvirt instance void ['Assembly-CSharp']GameModule.TrainingGroundManager::OnTrainingGameComplete(bool)
+
+			IL_005f: ldloc.0
+			IL_0060: brtrue IL_03f6
+
+			IL_0065: ldc.i4.5
+			IL_0066: newobj instance void ['Assembly-CSharp']GameModule.RewardConfig::.ctor(valuetype ['Assembly-CSharp']GameModule.CurrencyTransactionSceneType)
+			IL_006b: stloc.0
+			IL_006c: ldarg.1
+			IL_006d: brfalse IL_02a7
+
+			IL_0072: call !0 class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']GameModule.BattleGameManager>::get_Instance()
+			IL_0077: callvirt instance string ['Assembly-CSharp']GameModule.BattleGameManager::GameSuccessGetTrophyNumber()
+			IL_007c: stloc.3
+			IL_007d: call !0 class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']DataModule.DataManager>::get_Instance()
+			IL_0082: callvirt instance class ['Assembly-CSharp']DataModule.GlobalInfo ['Assembly-CSharp']DataModule.DataManager::get_GlobalInfo()
+			IL_0087: ldfld class [netstandard]System.Collections.Generic.Dictionary`2<string, class ['Assembly-CSharp']DataModule.GlobalArenaInfo> ['Assembly-CSharp']DataModule.GlobalInfo::arenaInfoDic
+			IL_008c: call string ['Assembly-CSharp']GameModule.CoreGameManager::get_NowPlayEdArenaID()
+			IL_0091: callvirt instance !1 class [netstandard]System.Collections.Generic.Dictionary`2<string, class ['Assembly-CSharp']DataModule.GlobalArenaInfo>::get_Item(!0)
+			IL_0096: ldfld string ['Assembly-CSharp']DataModule.GlobalArenaInfo::diamondReward
+			IL_009b: stloc.s 4
+			IL_009d: call !0 class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']DataModule.DataManager>::get_Instance()
+			IL_00a2: callvirt instance class ['Assembly-CSharp']DataModule.GlobalInfo ['Assembly-CSharp']DataModule.DataManager::get_GlobalInfo()
+			IL_00a7: ldfld class [netstandard]System.Collections.Generic.Dictionary`2<string, class ['Assembly-CSharp']DataModule.GlobalArenaInfo> ['Assembly-CSharp']DataModule.GlobalInfo::arenaInfoDic
+			IL_00ac: call string ['Assembly-CSharp']GameModule.CoreGameManager::get_NowPlayEdArenaID()
+			IL_00b1: callvirt instance !1 class [netstandard]System.Collections.Generic.Dictionary`2<string, class ['Assembly-CSharp']DataModule.GlobalArenaInfo>::get_Item(!0)
+			IL_00b6: ldfld string ['Assembly-CSharp']DataModule.GlobalArenaInfo::keyReward
+			IL_00bb: stloc.s 5
+			IL_00bd: call !0 class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']GameConfigModule.GameConfigManager>::get_Instance()
+			IL_00c2: ldstr "NormalPVPWinExp"
+			IL_00c7: callvirt instance int32 ['Assembly-CSharp']GameConfigModule.GameConfigManager::GetConfigInt(string)
+			IL_00cc: stloc.s 6
+			IL_00ce: call !0 class ['Assembly-CSharp']QuickTutor.Singleton`1<class ['Assembly-CSharp']SDKModule.ABTestManager>::get_Instance()
+			IL_00d3: callvirt instance bool ['Assembly-CSharp']SDKModule.ABTestManager::get_NoBetIsBTest()
+			IL_00d8: brfalse.s IL_00f9
+
+			IL_00da: call !0 class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']GameModule.BattleGameManager>::get_Instance()
+			IL_00df: callvirt instance string ['Assembly-CSharp']GameModule.BattleGameManager::get_BetRewardNum()
+			IL_00e4: stloc.s 4
+			IL_00e6: call !0 class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']GameModule.ArenaManager>::get_Instance()
+			IL_00eb: ldloc.s 4
+			IL_00ed: call int32 ['Assembly-CSharp']ToolModule.StringTool::ToInt(string)
+			IL_00f2: callvirt instance void ['Assembly-CSharp']GameModule.ArenaManager::ApplyNoBetVictoryGold(int32)
+			IL_00f7: br.s IL_0123
+
+			IL_00f9: call string ['Assembly-CSharp']GameModule.CoreGameManager::get_NowPlayEdArenaID()
+			IL_00fe: ldc.i4.1
+			IL_00ff: call bool ['Assembly-CSharp']ToolModule.StringTool::IsNullOrEmpty(string, bool)
+			IL_0104: brtrue.s IL_0123
+
+			IL_0106: call string ['Assembly-CSharp']GameModule.CoreGameManager::get_NowPlayEdArenaID()
+			IL_010b: ldstr "1001"
+			IL_0110: call bool [netstandard]System.String::op_Inequality(string, string)
+			IL_0115: brfalse.s IL_0123
+
+			IL_0117: call !0 class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']GameModule.BattleGameManager>::get_Instance()
+			IL_011c: callvirt instance string ['Assembly-CSharp']GameModule.BattleGameManager::get_BetRewardNum()
+			IL_0121: stloc.s 4
+
+			IL_0123: call !0 class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']GameModule.MonthlyPassManager>::get_Instance()
+			IL_0128: callvirt instance bool ['Assembly-CSharp']GameModule.MonthlyPassManager::HadBuyMonthPass()
+			IL_012d: brfalse.s IL_0179
+
+			IL_012f: ldloc.s 4
+			IL_0131: call int32 ['Assembly-CSharp']ToolModule.StringTool::ToInt(string)
+			IL_0136: conv.r4
+			IL_0137: ldc.r4 1.2
+			IL_013c: mul
+			IL_013d: stloc.s 7
+			IL_013f: ldloc.s 7
+			IL_0141: call bool [netstandard]System.Single::IsNaN(float32)
+			IL_0146: brtrue.s IL_016d
+
+			IL_0148: ldloc.s 7
+			IL_014a: ldc.r4 2.1474836E+09
+			IL_014f: bge.s IL_0166
+
+			IL_0151: ldloc.s 7
+			IL_0153: ldc.r4 -2.1474836E+09
+			IL_0158: ble.s IL_015f
+
+			IL_015a: ldloc.s 7
+			IL_015c: conv.i4
+			IL_015d: br.s IL_016e
+
+			IL_015f: ldc.i4 -2147483648 // 0x80000000
+			IL_0164: br.s IL_016e
+
+			IL_0166: ldc.i4 2147483647
+			IL_016b: br.s IL_016e
+
+			IL_016d: ldc.i4.0
+
+			IL_016e: stloc.s 8
+			IL_0170: ldloca.s 8
+			IL_0172: call instance string [netstandard]System.Int32::ToString()
+			IL_0177: stloc.s 4
+
+			IL_0179: newobj instance void class [netstandard]System.Collections.Generic.List`1<class ['Assembly-CSharp']GameModule.RewardConfigSingle>::.ctor()
+			IL_017e: dup
+			IL_017f: ldstr "20005"
+			IL_0184: ldloc.s 4
+			IL_0186: ldnull
+			IL_0187: newobj instance void ['Assembly-CSharp']GameModule.RewardConfigSingle::.ctor(string, string, class [netstandard]System.Collections.Generic.List`1<string>)
+			IL_018c: callvirt instance void class [netstandard]System.Collections.Generic.List`1<class ['Assembly-CSharp']GameModule.RewardConfigSingle>::Add(!0)
+			IL_0191: dup
+			IL_0192: ldstr "20006"
+			IL_0197: ldloc.s 5
+			IL_0199: ldnull
+			IL_019a: newobj instance void ['Assembly-CSharp']GameModule.RewardConfigSingle::.ctor(string, string, class [netstandard]System.Collections.Generic.List`1<string>)
+			IL_019f: callvirt instance void class [netstandard]System.Collections.Generic.List`1<class ['Assembly-CSharp']GameModule.RewardConfigSingle>::Add(!0)
+			IL_01a4: dup
+			IL_01a5: ldstr "20007"
+			IL_01aa: ldloca.s 6
+			IL_01ac: call instance string [netstandard]System.Int32::ToString()
+			IL_01b1: ldnull
+			IL_01b2: newobj instance void ['Assembly-CSharp']GameModule.RewardConfigSingle::.ctor(string, string, class [netstandard]System.Collections.Generic.List`1<string>)
+			IL_01b7: callvirt instance void class [netstandard]System.Collections.Generic.List`1<class ['Assembly-CSharp']GameModule.RewardConfigSingle>::Add(!0)
+			IL_01bc: stloc.2
+			IL_01bd: call !0 class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']GameModule.ArenaManager>::get_Instance()
+			IL_01c2: call string ['Assembly-CSharp']GameModule.CoreGameManager::get_NowPlayEdArenaID()
+			IL_01c7: callvirt instance bool ['Assembly-CSharp']GameModule.ArenaManager::GetArenaIsCollectAllTrophy(string)
+			IL_01cc: brtrue IL_0267
+
+			IL_01d1: ldloc.2
+			IL_01d2: ldstr "20004"
+			IL_01d7: ldloc.3
+			IL_01d8: ldnull
+			IL_01d9: newobj instance void ['Assembly-CSharp']GameModule.RewardConfigSingle::.ctor(string, string, class [netstandard]System.Collections.Generic.List`1<string>)
+			IL_01de: callvirt instance void class [netstandard]System.Collections.Generic.List`1<class ['Assembly-CSharp']GameModule.RewardConfigSingle>::Add(!0)
+			IL_01e3: call !0 class ['Assembly-CSharp']QuickTutor.Singleton`1<class ['Assembly-CSharp']SDKModule.ABTestManager>::get_Instance()
+			IL_01e8: callvirt instance bool ['Assembly-CSharp']SDKModule.ABTestManager::get_NewArenaProcessIsBTest()
+			IL_01ed: brfalse.s IL_0251
+
+			IL_01ef: call !0 class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']GameModule.ArenaManager>::get_Instance()
+			IL_01f4: call string ['Assembly-CSharp']GameModule.CoreGameManager::get_NowPlayEdArenaID()
+			IL_01f9: callvirt instance int32 ['Assembly-CSharp']GameModule.ArenaManager::GetArenaTrophyNumber(string)
+			IL_01fe: stloc.s 9
+			IL_0200: call !0 class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']DataModule.DataManager>::get_Instance()
+			IL_0205: callvirt instance class ['Assembly-CSharp']DataModule.GlobalInfo ['Assembly-CSharp']DataModule.DataManager::get_GlobalInfo()
+			IL_020a: ldfld class [netstandard]System.Collections.Generic.Dictionary`2<string, class ['Assembly-CSharp']DataModule.GlobalArenaInfo> ['Assembly-CSharp']DataModule.GlobalInfo::arenaInfoDic
+			IL_020f: call string ['Assembly-CSharp']GameModule.CoreGameManager::get_NowPlayEdArenaID()
+			IL_0214: callvirt instance !1 class [netstandard]System.Collections.Generic.Dictionary`2<string, class ['Assembly-CSharp']DataModule.GlobalArenaInfo>::get_Item(!0)
+			IL_0219: ldfld string ['Assembly-CSharp']DataModule.GlobalArenaInfo::completeTrophyRequire
+			IL_021e: call int32 ['Assembly-CSharp']ToolModule.StringTool::ToInt(string)
+			IL_0223: ldloc.s 9
+			IL_0225: sub
+			IL_0226: stloc.s 10
+			IL_0228: ldloc.3
+			IL_0229: call int32 ['Assembly-CSharp']ToolModule.StringTool::ToInt(string)
+			IL_022e: stloc.s 11
+			IL_0230: ldloc.s 11
+			IL_0232: ldloc.s 10
+			IL_0234: ble.s IL_0251
+
+			IL_0236: call !0 class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']GameModule.UserResourcesManager>::get_Instance()
+			IL_023b: ldstr "20004"
+			IL_0240: ldloc.s 11
+			IL_0242: ldloc.s 10
+			IL_0244: sub
+			IL_0245: newobj instance void [netstandard]System.Numerics.BigInteger::.ctor(int32)
+			IL_024a: ldc.i4.0
+			IL_024b: ldc.i4.0
+			IL_024c: callvirt instance void ['Assembly-CSharp']GameModule.UserResourcesManager::LoseResourceCount(string, valuetype [netstandard]System.Numerics.BigInteger, bool, valuetype ['Assembly-CSharp']GameModule.CurrencyTransactionSceneType)
+
+			IL_0251: call !0 class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']GameModule.ArenaManager>::get_Instance()
+			IL_0256: call string ['Assembly-CSharp']GameModule.CoreGameManager::get_NowPlayEdArenaID()
+			IL_025b: ldloc.3
+			IL_025c: call int32 ['Assembly-CSharp']ToolModule.StringTool::ToInt(string)
+			IL_0261: ldc.i4.0
+			IL_0262: callvirt instance void ['Assembly-CSharp']GameModule.ArenaManager::ChangeArenaTrophy(string, int32, bool)
+
+			IL_0267: call !0 class ['Assembly-CSharp']QuickTutor.Singleton`1<class ['Assembly-CSharp']SDKModule.ABTestManager>::get_Instance()
+			IL_026c: callvirt instance bool ['Assembly-CSharp']SDKModule.ABTestManager::get_SeasonIsBTest()
+			IL_0271: brfalse IL_03cc
+
+			IL_0276: call !0 class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']GameModule.SeasonManager>::get_Instance()
+			IL_027b: callvirt instance int32 ['Assembly-CSharp']GameModule.SeasonManager::CalculatePVPWinSeasonPassExpReward()
+			IL_0280: stloc.s 12
+			IL_0282: ldloc.s 12
+			IL_0284: ldc.i4.0
+			IL_0285: ble IL_03cc
+
+			IL_028a: ldloc.2
+			IL_028b: ldstr "20017"
+			IL_0290: ldloca.s 12
+			IL_0292: call instance string [netstandard]System.Int32::ToString()
+			IL_0297: ldnull
+			IL_0298: newobj instance void ['Assembly-CSharp']GameModule.RewardConfigSingle::.ctor(string, string, class [netstandard]System.Collections.Generic.List`1<string>)
+			IL_029d: callvirt instance void class [netstandard]System.Collections.Generic.List`1<class ['Assembly-CSharp']GameModule.RewardConfigSingle>::Add(!0)
+			IL_02a2: br IL_03cc
+
+			IL_02a7: call !0 class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']DataModule.DataManager>::get_Instance()
+			IL_02ac: callvirt instance class ['Assembly-CSharp']DataModule.GlobalInfo ['Assembly-CSharp']DataModule.DataManager::get_GlobalInfo()
+			IL_02b1: ldfld class [netstandard]System.Collections.Generic.Dictionary`2<string, class ['Assembly-CSharp']DataModule.GlobalArenaInfo> ['Assembly-CSharp']DataModule.GlobalInfo::arenaInfoDic
+			IL_02b6: call string ['Assembly-CSharp']GameModule.CoreGameManager::get_NowPlayEdArenaID()
+			IL_02bb: callvirt instance !1 class [netstandard]System.Collections.Generic.Dictionary`2<string, class ['Assembly-CSharp']DataModule.GlobalArenaInfo>::get_Item(!0)
+			IL_02c0: ldfld string ['Assembly-CSharp']DataModule.GlobalArenaInfo::trophyPunish
+			IL_02c5: stloc.s 13
+			IL_02c7: call !0 class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']GameConfigModule.GameConfigManager>::get_Instance()
+			IL_02cc: ldstr "NormalPVPLoseExp"
+			IL_02d1: callvirt instance int32 ['Assembly-CSharp']GameConfigModule.GameConfigManager::GetConfigInt(string)
+			IL_02d6: stloc.s 14
+			IL_02d8: newobj instance void class [netstandard]System.Collections.Generic.List`1<class ['Assembly-CSharp']GameModule.RewardConfigSingle>::.ctor()
+			IL_02dd: dup
+			IL_02de: ldstr "20007"
+			IL_02e3: ldloca.s 14
+			IL_02e5: call instance string [netstandard]System.Int32::ToString()
+			IL_02ea: ldnull
+			IL_02eb: newobj instance void ['Assembly-CSharp']GameModule.RewardConfigSingle::.ctor(string, string, class [netstandard]System.Collections.Generic.List`1<string>)
+			IL_02f0: callvirt instance void class [netstandard]System.Collections.Generic.List`1<class ['Assembly-CSharp']GameModule.RewardConfigSingle>::Add(!0)
+			IL_02f5: stloc.2
+			IL_02f6: call !0 class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']GameModule.ArenaManager>::get_Instance()
+			IL_02fb: call string ['Assembly-CSharp']GameModule.CoreGameManager::get_NowPlayEdArenaID()
+			IL_0300: callvirt instance bool ['Assembly-CSharp']GameModule.ArenaManager::GetArenaIsCollectAllTrophy(string)
+			IL_0305: brtrue IL_03cc
+
+			IL_030a: call !0 class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']GameModule.BattleGameManager>::get_Instance()
+			IL_030f: callvirt instance float32 ['Assembly-CSharp']GameModule.BattleGameManager::get_ElapseTime()
+			IL_0314: ldc.r4 10
+			IL_0319: ble.un IL_03cc
+
+			IL_031e: call !0 class ['Assembly-CSharp']QuickTutor.Singleton`1<class ['Assembly-CSharp']SDKModule.ABTestManager>::get_Instance()
+			IL_0323: callvirt instance bool ['Assembly-CSharp']SDKModule.ABTestManager::get_NewArenaProcessIsBTest()
+			IL_0328: brfalse.s IL_0393
+
+			IL_032a: call !0 class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']GameModule.ArenaManager>::get_Instance()
+			IL_032f: call string ['Assembly-CSharp']GameModule.CoreGameManager::get_NowPlayEdArenaID()
+			IL_0334: callvirt instance int32 ['Assembly-CSharp']GameModule.ArenaManager::GetArenaTrophyNumber(string)
+			IL_0339: stloc.s 16
+			IL_033b: ldloc.s 16
+			IL_033d: ldc.i4.0
+			IL_033e: ble IL_03cc
+
+			IL_0343: ldloc.s 13
+			IL_0345: call int32 ['Assembly-CSharp']ToolModule.StringTool::ToInt(string)
+			IL_034a: ldloc.s 16
+			IL_034c: call int32 [UnityEngine.CoreModule]UnityEngine.Mathf::Min(int32, int32)
+			IL_0351: stloc.s 17
+			IL_0353: ldloca.s 17
+			IL_0355: call instance string [netstandard]System.Int32::ToString()
+			IL_035a: stloc.s 15
+			IL_035c: ldloc.2
+			IL_035d: ldstr "20004"
+			IL_0362: ldstr "-"
+			IL_0367: ldloc.s 15
+			IL_0369: call string [netstandard]System.String::Concat(string, string)
+			IL_036e: ldnull
+			IL_036f: newobj instance void ['Assembly-CSharp']GameModule.RewardConfigSingle::.ctor(string, string, class [netstandard]System.Collections.Generic.List`1<string>)
+			IL_0374: callvirt instance void class [netstandard]System.Collections.Generic.List`1<class ['Assembly-CSharp']GameModule.RewardConfigSingle>::Add(!0)
+			IL_0379: call !0 class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']GameModule.ArenaManager>::get_Instance()
+			IL_037e: call string ['Assembly-CSharp']GameModule.CoreGameManager::get_NowPlayEdArenaID()
+			IL_0383: ldloc.s 13
+			IL_0385: call int32 ['Assembly-CSharp']ToolModule.StringTool::ToInt(string)
+			IL_038a: neg
+			IL_038b: ldc.i4.0
+			IL_038c: callvirt instance void ['Assembly-CSharp']GameModule.ArenaManager::ChangeArenaTrophy(string, int32, bool)
+			IL_0391: br.s IL_03cc
+
+			IL_0393: ldloc.s 13
+			IL_0395: stloc.s 15
+			IL_0397: ldloc.2
+			IL_0398: ldstr "20004"
+			IL_039d: ldstr "-"
+			IL_03a2: ldloc.s 15
+			IL_03a4: call string [netstandard]System.String::Concat(string, string)
+			IL_03a9: ldnull
+			IL_03aa: newobj instance void ['Assembly-CSharp']GameModule.RewardConfigSingle::.ctor(string, string, class [netstandard]System.Collections.Generic.List`1<string>)
+			IL_03af: callvirt instance void class [netstandard]System.Collections.Generic.List`1<class ['Assembly-CSharp']GameModule.RewardConfigSingle>::Add(!0)
+			IL_03b4: call !0 class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']GameModule.ArenaManager>::get_Instance()
+			IL_03b9: call string ['Assembly-CSharp']GameModule.CoreGameManager::get_NowPlayEdArenaID()
+			IL_03be: ldloc.s 13
+			IL_03c0: call int32 ['Assembly-CSharp']ToolModule.StringTool::ToInt(string)
+			IL_03c5: neg
+			IL_03c6: ldc.i4.0
+			IL_03c7: callvirt instance void ['Assembly-CSharp']GameModule.ArenaManager::ChangeArenaTrophy(string, int32, bool)
+
+			IL_03cc: ldloc.0
+			IL_03cd: ldloc.2
+			IL_03ce: callvirt instance void ['Assembly-CSharp']GameModule.RewardConfig::AddAssetDataList(class [netstandard]System.Collections.Generic.List`1<class ['Assembly-CSharp']GameModule.RewardConfigSingle>)
+			IL_03d3: call !0 class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']GameModule.BattleGameManager>::get_Instance()
+			IL_03d8: ldloc.0
+			IL_03d9: stfld class ['Assembly-CSharp']GameModule.RewardConfig ['Assembly-CSharp']GameModule.BattleGameManager::rewardConfig
+			IL_03de: call !0 class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']GameModule.BattleGameManager>::get_Instance()
+			IL_03e3: ldloc.0
+			IL_03e4: stfld class ['Assembly-CSharp']GameModule.RewardConfig ['Assembly-CSharp']GameModule.BattleGameManager::tempConfig
+			IL_03e9: call !0 class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']GameModule.ReportEventsManager>::get_Instance()
+			IL_03ee: ldarg.1
+			IL_03ef: ldc.i4.0
+			IL_03f0: ldc.i4.0
+			IL_03f1: callvirt instance void ['Assembly-CSharp']GameModule.ReportEventsManager::OnGameFinish(bool, int32, valuetype ['Assembly-CSharp']GameModule.GameType)
+
+			IL_03f6: ldloc.0
+			IL_03f7: ret
+		} // end of method '<>c'::'<StartCoreGame>b__24_0'
+
+		.method assembly hidebysig 
+			instance void '<RegisterOnTimeToZero>b__26_0' () cil managed 
+		{
+			// Method begins at RVA 0x290c
+			// Header size: 1
+			// Code size: 63 (0x3f)
+			.maxstack 8
+
+			IL_0000: ldsfld !0 class ['Assembly-CSharp']DbtSaveDataManagerBase`2<class ['Assembly-CSharp']DbtSaveDataManager_PlayerAdData, class ['Assembly-CSharp']DataModule.PlayerAdData>::I
+			IL_0005: callvirt instance !1 class ['Assembly-CSharp']DbtSaveDataManagerBase`2<class ['Assembly-CSharp']DbtSaveDataManager_PlayerAdData, class ['Assembly-CSharp']DataModule.PlayerAdData>::get_Data()
+			IL_000a: callvirt instance void ['Assembly-CSharp']DataModule.PlayerAdData::InitializeVideosNumber()
+			IL_000f: ldsfld !0 class ['Assembly-CSharp']DbtSaveDataManagerBase`2<class ['Assembly-CSharp']DbtSaveDataManager_PlayerAdData, class ['Assembly-CSharp']DataModule.PlayerAdData>::I
+			IL_0014: callvirt instance void class ['Assembly-CSharp']DbtSaveDataManagerBase`2<class ['Assembly-CSharp']DbtSaveDataManager_PlayerAdData, class ['Assembly-CSharp']DataModule.PlayerAdData>::Save()
+			IL_0019: call !0 class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']GameModule.ShopManager>::get_Instance()
+			IL_001e: ldfld class ['Assembly-CSharp']BadgeGraph.ThrottleTrigger ['Assembly-CSharp']GameModule.ShopManager::redDotThrottleTrigger
+			IL_0023: dup
+			IL_0024: brtrue.s IL_0029
+
+			IL_0026: pop
+			IL_0027: br.s IL_002e
+
+			IL_0029: call instance void ['Assembly-CSharp']BadgeGraph.ThrottleTrigger::RegisterOneTrigger()
+
+			IL_002e: call !0 class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']EventModule.EventManager>::get_Instance()
+			IL_0033: ldstr "TimeToZeroRefreshFreeResUI"
+			IL_0038: ldnull
+			IL_0039: callvirt instance void ['Assembly-CSharp']EventModule.EventManager::TriggerEvent(string, object)
+			IL_003e: ret
+		} // end of method '<>c'::'<RegisterOnTimeToZero>b__26_0'
+
+		.method assembly hidebysig 
+			instance void '<RegisterOnTimeToZero>b__26_1' () cil managed 
+		{
+			// Method begins at RVA 0x294c
+			// Header size: 1
+			// Code size: 43 (0x2b)
+			.maxstack 8
+
+			IL_0000: ldsfld !0 class ['Assembly-CSharp']DbtSaveDataManagerBase`2<class ['Assembly-CSharp']DbtSaveDataManager_PlayerCoreData, class ['Assembly-CSharp']DataModule.PlayerCoreData>::I
+			IL_0005: callvirt instance !1 class ['Assembly-CSharp']DbtSaveDataManagerBase`2<class ['Assembly-CSharp']DbtSaveDataManager_PlayerCoreData, class ['Assembly-CSharp']DataModule.PlayerCoreData>::get_Data()
+			IL_000a: ldc.i4.0
+			IL_000b: stfld bool ['Assembly-CSharp']DataModule.PlayerCoreData::nowLingquReward
+			IL_0010: ldsfld !0 class ['Assembly-CSharp']DbtSaveDataManagerBase`2<class ['Assembly-CSharp']DbtSaveDataManager_PlayerAdData, class ['Assembly-CSharp']DataModule.PlayerAdData>::I
+			IL_0015: callvirt instance void class ['Assembly-CSharp']DbtSaveDataManagerBase`2<class ['Assembly-CSharp']DbtSaveDataManager_PlayerAdData, class ['Assembly-CSharp']DataModule.PlayerAdData>::Save()
+			IL_001a: call !0 class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']EventModule.EventManager>::get_Instance()
+			IL_001f: ldstr "TimeToZeroRefreshSubscription"
+			IL_0024: ldnull
+			IL_0025: callvirt instance void ['Assembly-CSharp']EventModule.EventManager::TriggerEvent(string, object)
+			IL_002a: ret
+		} // end of method '<>c'::'<RegisterOnTimeToZero>b__26_1'
+
+		.method assembly hidebysig 
+			instance void '<RegisterOnTimeToZero>b__26_2' () cil managed 
+		{
+			// Method begins at RVA 0x2978
+			// Header size: 1
+			// Code size: 27 (0x1b)
+			.maxstack 8
+
+			IL_0000: ldsfld !0 class ['Assembly-CSharp']DbtSaveDataManagerBase`2<class ['Assembly-CSharp']DbtSaveDataManager_PlayerAdData, class ['Assembly-CSharp']DataModule.PlayerAdData>::I
+			IL_0005: callvirt instance !1 class ['Assembly-CSharp']DbtSaveDataManagerBase`2<class ['Assembly-CSharp']DbtSaveDataManager_PlayerAdData, class ['Assembly-CSharp']DataModule.PlayerAdData>::get_Data()
+			IL_000a: ldc.i4.0
+			IL_000b: stfld bool ['Assembly-CSharp']DataModule.PlayerAdData::ShowInterstitialEd
+			IL_0010: ldsfld !0 class ['Assembly-CSharp']DbtSaveDataManagerBase`2<class ['Assembly-CSharp']DbtSaveDataManager_PlayerAdData, class ['Assembly-CSharp']DataModule.PlayerAdData>::I
+			IL_0015: callvirt instance void class ['Assembly-CSharp']DbtSaveDataManagerBase`2<class ['Assembly-CSharp']DbtSaveDataManager_PlayerAdData, class ['Assembly-CSharp']DataModule.PlayerAdData>::Save()
+			IL_001a: ret
+		} // end of method '<>c'::'<RegisterOnTimeToZero>b__26_2'
+
+		.method assembly hidebysig 
+			instance void '<RegisterOnTimeToZero>b__26_3' () cil managed 
+		{
+			// Method begins at RVA 0x2994
+			// Header size: 1
+			// Code size: 27 (0x1b)
+			.maxstack 8
+
+			IL_0000: ldsfld !0 class ['Assembly-CSharp']DbtSaveDataManagerBase`2<class ['Assembly-CSharp']DbtSaveDataManager_PlayerChestData, class ['Assembly-CSharp']DataModule.PlayerChestData>::I
+			IL_0005: callvirt instance !1 class ['Assembly-CSharp']DbtSaveDataManagerBase`2<class ['Assembly-CSharp']DbtSaveDataManager_PlayerChestData, class ['Assembly-CSharp']DataModule.PlayerChestData>::get_Data()
+			IL_000a: ldc.i4.0
+			IL_000b: stfld int32 ['Assembly-CSharp']DataModule.PlayerChestData::userGetBoxCount
+			IL_0010: ldsfld !0 class ['Assembly-CSharp']DbtSaveDataManagerBase`2<class ['Assembly-CSharp']DbtSaveDataManager_PlayerChestData, class ['Assembly-CSharp']DataModule.PlayerChestData>::I
+			IL_0015: callvirt instance void class ['Assembly-CSharp']DbtSaveDataManagerBase`2<class ['Assembly-CSharp']DbtSaveDataManager_PlayerChestData, class ['Assembly-CSharp']DataModule.PlayerChestData>::Save()
+			IL_001a: ret
+		} // end of method '<>c'::'<RegisterOnTimeToZero>b__26_3'
+
+		.method assembly hidebysig 
+			instance void '<RegisterOnTimeToZero>b__26_4' () cil managed 
+		{
+			// Method begins at RVA 0x29b0
+			// Header size: 12
+			// Code size: 67 (0x43)
+			.maxstack 3
+			.locals init (
+				[0] class ['Assembly-CSharp']UIFramework.UIPanel
+			)
+
+			IL_0000: call !0 class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']GameModule.DailyBlessManager>::get_Instance()
+			IL_0005: callvirt instance void ['Assembly-CSharp']GameModule.DailyBlessManager::RefreshDailyBless()
+			IL_000a: call !0 class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']EventModule.EventManager>::get_Instance()
+			IL_000f: ldstr "DailyBlessBtnActive"
+			IL_0014: ldc.i4.1
+			IL_0015: box [netstandard]System.Boolean
+			IL_001a: callvirt instance void ['Assembly-CSharp']EventModule.EventManager::TriggerEvent(string, object)
+			IL_001f: call !0 class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']UIFramework.UIManager>::get_Instance()
+			IL_0024: ldstr "Assets/_Res/Addressable/04MetaGameBundle/Prefabs/UI/Panels/DailyBlessPanel.prefab"
+			IL_0029: ldloca.s 0
+			IL_002b: callvirt instance bool ['Assembly-CSharp']UIFramework.UIManager::IsPanelShowing(string, class ['Assembly-CSharp']UIFramework.UIPanel&)
+			IL_0030: brfalse.s IL_0042
+
+			IL_0032: call !0 class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']UIFramework.UIManager>::get_Instance()
+			IL_0037: ldstr "Assets/_Res/Addressable/04MetaGameBundle/Prefabs/UI/Panels/DailyBlessPanel.prefab"
+			IL_003c: callvirt instance valuetype [UniTask]Cysharp.Threading.Tasks.UniTask ['Assembly-CSharp']UIFramework.UIManager::HidePanel(string)
+			IL_0041: pop
+
+			IL_0042: ret
+		} // end of method '<>c'::'<RegisterOnTimeToZero>b__26_4'
+
+		.method assembly hidebysig 
+			instance void '<RegisterOnTimeToMonDayZero>b__27_0' () cil managed 
+		{
+			// Method begins at RVA 0x2a00
+			// Header size: 12
+			// Code size: 87 (0x57)
+			.maxstack 3
+			.locals init (
+				[0] class [netstandard]System.Collections.Generic.Dictionary`2<string, int32>,
+				[1] valuetype [netstandard]System.Collections.Generic.List`1/Enumerator<string>,
+				[2] string
+			)
+
+			IL_0000: ldsfld !0 class ['Assembly-CSharp']DbtSaveDataManagerBase`2<class ['Assembly-CSharp']DbtSaveDataManager_PlayerShopData, class ['Assembly-CSharp']DataModule.PlayerShopData>::I
+			IL_0005: callvirt instance !1 class ['Assembly-CSharp']DbtSaveDataManagerBase`2<class ['Assembly-CSharp']DbtSaveDataManager_PlayerShopData, class ['Assembly-CSharp']DataModule.PlayerShopData>::get_Data()
+			IL_000a: ldfld class [netstandard]System.Collections.Generic.Dictionary`2<string, int32> ['Assembly-CSharp']DataModule.PlayerShopData::cardPackBuyCountNowWeek
+			IL_000f: stloc.0
+			IL_0010: ldloc.0
+			IL_0011: callvirt instance class [netstandard]System.Collections.Generic.Dictionary`2/KeyCollection<!0, !1> class [netstandard]System.Collections.Generic.Dictionary`2<string, int32>::get_Keys()
+			IL_0016: call class [netstandard]System.Collections.Generic.List`1<!!0> [netstandard]System.Linq.Enumerable::ToList<string>(class [netstandard]System.Collections.Generic.IEnumerable`1<!!0>)
+			IL_001b: callvirt instance valuetype [netstandard]System.Collections.Generic.List`1/Enumerator<!0> class [netstandard]System.Collections.Generic.List`1<string>::GetEnumerator()
+			IL_0020: stloc.1
+			.try
+			{
+				IL_0021: br.s IL_0033
+				// loop start (head: IL_0033)
+					IL_0023: ldloca.s 1
+					IL_0025: call instance !0 valuetype [netstandard]System.Collections.Generic.List`1/Enumerator<string>::get_Current()
+					IL_002a: stloc.2
+					IL_002b: ldloc.0
+					IL_002c: ldloc.2
+					IL_002d: ldc.i4.0
+					IL_002e: callvirt instance void class [netstandard]System.Collections.Generic.Dictionary`2<string, int32>::set_Item(!0, !1)
+
+					IL_0033: ldloca.s 1
+					IL_0035: call instance bool valuetype [netstandard]System.Collections.Generic.List`1/Enumerator<string>::MoveNext()
+					IL_003a: brtrue.s IL_0023
+				// end loop
+
+				IL_003c: leave.s IL_004c
+			} // end .try
+			finally
+			{
+				IL_003e: ldloca.s 1
+				IL_0040: constrained. valuetype [netstandard]System.Collections.Generic.List`1/Enumerator<string>
+				IL_0046: callvirt instance void [netstandard]System.IDisposable::Dispose()
+				IL_004b: endfinally
+			} // end handler
+
+			IL_004c: ldsfld !0 class ['Assembly-CSharp']DbtSaveDataManagerBase`2<class ['Assembly-CSharp']DbtSaveDataManager_PlayerShopData, class ['Assembly-CSharp']DataModule.PlayerShopData>::I
+			IL_0051: callvirt instance void class ['Assembly-CSharp']DbtSaveDataManagerBase`2<class ['Assembly-CSharp']DbtSaveDataManager_PlayerShopData, class ['Assembly-CSharp']DataModule.PlayerShopData>::Save()
+			IL_0056: ret
+		} // end of method '<>c'::'<RegisterOnTimeToMonDayZero>b__27_0'
+
+		.method assembly hidebysig 
+			instance void '<RegisterOnTimeToMonDayZero>b__27_1' () cil managed 
+		{
+			// Method begins at RVA 0x2a74
+			// Header size: 12
+			// Code size: 101 (0x65)
+			.maxstack 2
+
+			IL_0000: ldsfld !0 class ['Assembly-CSharp']DbtSaveDataManagerBase`2<class ['Assembly-CSharp']DbtSaveDataManager_PlayerCoreData, class ['Assembly-CSharp']DataModule.PlayerCoreData>::I
+			IL_0005: callvirt instance !1 class ['Assembly-CSharp']DbtSaveDataManagerBase`2<class ['Assembly-CSharp']DbtSaveDataManager_PlayerCoreData, class ['Assembly-CSharp']DataModule.PlayerCoreData>::get_Data()
+			IL_000a: ldc.i4.0
+			IL_000b: stfld int32 ['Assembly-CSharp']DataModule.PlayerCoreData::PlayerDailyPlayGameCount
+			IL_0010: ldsfld !0 class ['Assembly-CSharp']DbtSaveDataManagerBase`2<class ['Assembly-CSharp']DbtSaveDataManager_PlayerCoreData, class ['Assembly-CSharp']DataModule.PlayerCoreData>::I
+			IL_0015: callvirt instance !1 class ['Assembly-CSharp']DbtSaveDataManagerBase`2<class ['Assembly-CSharp']DbtSaveDataManager_PlayerCoreData, class ['Assembly-CSharp']DataModule.PlayerCoreData>::get_Data()
+			IL_001a: ldc.i4.0
+			IL_001b: stfld int32 ['Assembly-CSharp']DataModule.PlayerCoreData::PlayerDailyWonGameCount
+			IL_0020: ldsfld !0 class ['Assembly-CSharp']DbtSaveDataManagerBase`2<class ['Assembly-CSharp']DbtSaveDataManager_PlayerCoreData, class ['Assembly-CSharp']DataModule.PlayerCoreData>::I
+			IL_0025: callvirt instance !1 class ['Assembly-CSharp']DbtSaveDataManagerBase`2<class ['Assembly-CSharp']DbtSaveDataManager_PlayerCoreData, class ['Assembly-CSharp']DataModule.PlayerCoreData>::get_Data()
+			IL_002a: ldfld class ['Assembly-CSharp']DataModule.SeasonData ['Assembly-CSharp']DataModule.PlayerCoreData::seasonData
+			IL_002f: ldc.i4.0
+			IL_0030: stfld int32 ['Assembly-CSharp']DataModule.SeasonData::PlayerDailyGetSeasonPassCount
+			IL_0035: ldsfld !0 class ['Assembly-CSharp']DbtSaveDataManagerBase`2<class ['Assembly-CSharp']DbtSaveDataManager_PlayerCoreData, class ['Assembly-CSharp']DataModule.PlayerCoreData>::I
+			IL_003a: callvirt instance !1 class ['Assembly-CSharp']DbtSaveDataManagerBase`2<class ['Assembly-CSharp']DbtSaveDataManager_PlayerCoreData, class ['Assembly-CSharp']DataModule.PlayerCoreData>::get_Data()
+			IL_003f: ldfld class ['Assembly-CSharp']DataModule.SeasonData ['Assembly-CSharp']DataModule.PlayerCoreData::seasonData
+			IL_0044: ldc.i4.0
+			IL_0045: stfld int32 ['Assembly-CSharp']DataModule.SeasonData::PlayerDailyGetSeasonPassScore
+			IL_004a: ldsfld !0 class ['Assembly-CSharp']DbtSaveDataManagerBase`2<class ['Assembly-CSharp']DbtSaveDataManager_PlayerCoreData, class ['Assembly-CSharp']DataModule.PlayerCoreData>::I
+			IL_004f: callvirt instance !1 class ['Assembly-CSharp']DbtSaveDataManagerBase`2<class ['Assembly-CSharp']DbtSaveDataManager_PlayerCoreData, class ['Assembly-CSharp']DataModule.PlayerCoreData>::get_Data()
+			IL_0054: ldc.i4.0
+			IL_0055: stfld int32 ['Assembly-CSharp']DataModule.PlayerCoreData::DailyNoBetGoldEarned
+			IL_005a: ldsfld !0 class ['Assembly-CSharp']DbtSaveDataManagerBase`2<class ['Assembly-CSharp']DbtSaveDataManager_PlayerCoreData, class ['Assembly-CSharp']DataModule.PlayerCoreData>::I
+			IL_005f: callvirt instance void class ['Assembly-CSharp']DbtSaveDataManagerBase`2<class ['Assembly-CSharp']DbtSaveDataManager_PlayerCoreData, class ['Assembly-CSharp']DataModule.PlayerCoreData>::Save()
+			IL_0064: ret
+		} // end of method '<>c'::'<RegisterOnTimeToMonDayZero>b__27_1'
+
+		.method assembly hidebysig 
+			instance void '<RegisterOnTimeToMonDayZero>b__27_2' () cil managed 
+		{
+			// Method begins at RVA 0x2ae5
+			// Header size: 1
+			// Code size: 43 (0x2b)
+			.maxstack 8
+
+			IL_0000: ldsfld !0 class ['Assembly-CSharp']DbtSaveDataManagerBase`2<class ['Assembly-CSharp']DbtSaveDataManager_PlayerCoreData, class ['Assembly-CSharp']DataModule.PlayerCoreData>::I
+			IL_0005: callvirt instance !1 class ['Assembly-CSharp']DbtSaveDataManagerBase`2<class ['Assembly-CSharp']DbtSaveDataManager_PlayerCoreData, class ['Assembly-CSharp']DataModule.PlayerCoreData>::get_Data()
+			IL_000a: ldc.i4.0
+			IL_000b: stfld int32 ['Assembly-CSharp']DataModule.PlayerCoreData::PlayerWeeklyPlayGameCount
+			IL_0010: ldsfld !0 class ['Assembly-CSharp']DbtSaveDataManagerBase`2<class ['Assembly-CSharp']DbtSaveDataManager_PlayerCoreData, class ['Assembly-CSharp']DataModule.PlayerCoreData>::I
+			IL_0015: callvirt instance !1 class ['Assembly-CSharp']DbtSaveDataManagerBase`2<class ['Assembly-CSharp']DbtSaveDataManager_PlayerCoreData, class ['Assembly-CSharp']DataModule.PlayerCoreData>::get_Data()
+			IL_001a: ldc.i4.0
+			IL_001b: stfld int32 ['Assembly-CSharp']DataModule.PlayerCoreData::PlayerWeeklyWonGameCount
+			IL_0020: ldsfld !0 class ['Assembly-CSharp']DbtSaveDataManagerBase`2<class ['Assembly-CSharp']DbtSaveDataManager_PlayerCoreData, class ['Assembly-CSharp']DataModule.PlayerCoreData>::I
+			IL_0025: callvirt instance void class ['Assembly-CSharp']DbtSaveDataManagerBase`2<class ['Assembly-CSharp']DbtSaveDataManager_PlayerCoreData, class ['Assembly-CSharp']DataModule.PlayerCoreData>::Save()
+			IL_002a: ret
+		} // end of method '<>c'::'<RegisterOnTimeToMonDayZero>b__27_2'
+
+		.method assembly hidebysig 
+			instance void '<RegisterOnTimeToMonDayZero>b__27_3' () cil managed 
+		{
+			// Method begins at RVA 0x2b14
+			// Header size: 12
+			// Code size: 103 (0x67)
+			.maxstack 3
+			.locals init (
+				[0] class [netstandard]System.Collections.Generic.Dictionary`2<string, bool>,
+				[1] valuetype [netstandard]System.Collections.Generic.List`1/Enumerator<string>,
+				[2] string
+			)
+
+			IL_0000: ldsfld !0 class ['Assembly-CSharp']DbtSaveDataManagerBase`2<class ['Assembly-CSharp']DbtSaveDataManager_PlayerShopData, class ['Assembly-CSharp']DataModule.PlayerShopData>::I
+			IL_0005: callvirt instance !1 class ['Assembly-CSharp']DbtSaveDataManagerBase`2<class ['Assembly-CSharp']DbtSaveDataManager_PlayerShopData, class ['Assembly-CSharp']DataModule.PlayerShopData>::get_Data()
+			IL_000a: ldfld class [netstandard]System.Collections.Generic.Dictionary`2<string, bool> ['Assembly-CSharp']DataModule.PlayerShopData::playerRuneStoneBuyState
+			IL_000f: stloc.0
+			IL_0010: ldloc.0
+			IL_0011: callvirt instance class [netstandard]System.Collections.Generic.Dictionary`2/KeyCollection<!0, !1> class [netstandard]System.Collections.Generic.Dictionary`2<string, bool>::get_Keys()
+			IL_0016: call class [netstandard]System.Collections.Generic.List`1<!!0> [netstandard]System.Linq.Enumerable::ToList<string>(class [netstandard]System.Collections.Generic.IEnumerable`1<!!0>)
+			IL_001b: callvirt instance valuetype [netstandard]System.Collections.Generic.List`1/Enumerator<!0> class [netstandard]System.Collections.Generic.List`1<string>::GetEnumerator()
+			IL_0020: stloc.1
+			.try
+			{
+				IL_0021: br.s IL_0033
+				// loop start (head: IL_0033)
+					IL_0023: ldloca.s 1
+					IL_0025: call instance !0 valuetype [netstandard]System.Collections.Generic.List`1/Enumerator<string>::get_Current()
+					IL_002a: stloc.2
+					IL_002b: ldloc.0
+					IL_002c: ldloc.2
+					IL_002d: ldc.i4.0
+					IL_002e: callvirt instance void class [netstandard]System.Collections.Generic.Dictionary`2<string, bool>::set_Item(!0, !1)
+
+					IL_0033: ldloca.s 1
+					IL_0035: call instance bool valuetype [netstandard]System.Collections.Generic.List`1/Enumerator<string>::MoveNext()
+					IL_003a: brtrue.s IL_0023
+				// end loop
+
+				IL_003c: leave.s IL_004c
+			} // end .try
+			finally
+			{
+				IL_003e: ldloca.s 1
+				IL_0040: constrained. valuetype [netstandard]System.Collections.Generic.List`1/Enumerator<string>
+				IL_0046: callvirt instance void [netstandard]System.IDisposable::Dispose()
+				IL_004b: endfinally
+			} // end handler
+
+			IL_004c: ldsfld !0 class ['Assembly-CSharp']DbtSaveDataManagerBase`2<class ['Assembly-CSharp']DbtSaveDataManager_PlayerShopData, class ['Assembly-CSharp']DataModule.PlayerShopData>::I
+			IL_0051: callvirt instance void class ['Assembly-CSharp']DbtSaveDataManagerBase`2<class ['Assembly-CSharp']DbtSaveDataManager_PlayerShopData, class ['Assembly-CSharp']DataModule.PlayerShopData>::Save()
+			IL_0056: call !0 class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']EventModule.EventManager>::get_Instance()
+			IL_005b: ldstr "RefreshRuneStonePack"
+			IL_0060: ldnull
+			IL_0061: callvirt instance void ['Assembly-CSharp']EventModule.EventManager::TriggerEvent(string, object)
+			IL_0066: ret
+		} // end of method '<>c'::'<RegisterOnTimeToMonDayZero>b__27_3'
+
+	} // end of class <>c
+
+	.class nested private auto ansi sealed beforefieldinit '<CheckNetworkState>d__20'
+		extends [netstandard]System.Object
+		implements class [netstandard]System.Collections.Generic.IEnumerator`1<object>,
+		           [netstandard]System.Collections.IEnumerator,
+		           [netstandard]System.IDisposable
+	{
+		.custom instance void [netstandard]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = (
+			01 00 00 00
+		)
+		// Fields
+		.field private int32 '<>1__state'
+		.field private object '<>2__current'
+		.field public class GameModule.GameManager '<>4__this'
+
+		// Methods
+		.method public hidebysig specialname rtspecialname 
+			instance void .ctor (
+				int32 '<>1__state'
+			) cil managed 
+		{
+			.custom instance void [netstandard]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = (
+				01 00 00 00
+			)
+			// Method begins at RVA 0x2b98
+			// Header size: 1
+			// Code size: 14 (0xe)
+			.maxstack 8
+
+			IL_0000: ldarg.0
+			IL_0001: call instance void [netstandard]System.Object::.ctor()
+			IL_0006: ldarg.0
+			IL_0007: ldarg.1
+			IL_0008: stfld int32 GameModule.GameManager/'<CheckNetworkState>d__20'::'<>1__state'
+			IL_000d: ret
+		} // end of method '<CheckNetworkState>d__20'::.ctor
+
+		.method private final hidebysig newslot virtual 
+			instance void System.IDisposable.Dispose () cil managed 
+		{
+			.custom instance void [netstandard]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = (
+				01 00 00 00
+			)
+			.override method instance void [netstandard]System.IDisposable::Dispose()
+			// Method begins at RVA 0x2ba7
+			// Header size: 1
+			// Code size: 9 (0x9)
+			.maxstack 8
+
+			IL_0000: ldarg.0
+			IL_0001: ldc.i4.s -2
+			IL_0003: stfld int32 GameModule.GameManager/'<CheckNetworkState>d__20'::'<>1__state'
+			IL_0008: ret
+		} // end of method '<CheckNetworkState>d__20'::System.IDisposable.Dispose
+
+		.method private final hidebysig newslot virtual 
+			instance bool MoveNext () cil managed 
+		{
+			.override method instance bool [netstandard]System.Collections.IEnumerator::MoveNext()
+			// Method begins at RVA 0x2bb4
+			// Header size: 12
+			// Code size: 349 (0x15d)
+			.maxstack 4
+			.locals init (
+				[0] int32,
+				[1] class GameModule.GameManager,
+				[2] class ['Assembly-CSharp']UIFramework.UIPanel
+			)
+
+			IL_0000: ldarg.0
+			IL_0001: ldfld int32 GameModule.GameManager/'<CheckNetworkState>d__20'::'<>1__state'
+			IL_0006: stloc.0
+			IL_0007: ldarg.0
+			IL_0008: ldfld class GameModule.GameManager GameModule.GameManager/'<CheckNetworkState>d__20'::'<>4__this'
+			IL_000d: stloc.1
+			IL_000e: ldloc.0
+			IL_000f: switch (IL_0026, IL_0074, IL_00e0, IL_0134)
+
+			IL_0024: ldc.i4.0
+			IL_0025: ret
+
+			IL_0026: ldarg.0
+			IL_0027: ldc.i4.m1
+			IL_0028: stfld int32 GameModule.GameManager/'<CheckNetworkState>d__20'::'<>1__state'
+			IL_002d: br IL_014f
+
+			IL_0032: ldloc.1
+			IL_0033: ldfld bool GameModule.GameManager::InitComplete
+			IL_0038: brfalse IL_014f
+
+			IL_003d: call !0 class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']TimeModuleO.TimeManager>::get_Instance()
+			IL_0042: ldfld bool ['Assembly-CSharp']TimeModuleO.TimeManager::initComplete
+			IL_0047: brfalse IL_014f
+
+			IL_004c: call !0 class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']DataModule.DataManager>::get_Instance()
+			IL_0051: callvirt instance bool ['Assembly-CSharp']DataModule.DataManager::get_LoadDataCompleted()
+			IL_0056: brfalse IL_014f
+
+			IL_005b: ldarg.0
+			IL_005c: ldc.r4 0.02
+			IL_0061: newobj instance void [UnityEngine.CoreModule]UnityEngine.WaitForSeconds::.ctor(float32)
+			IL_0066: stfld object GameModule.GameManager/'<CheckNetworkState>d__20'::'<>2__current'
+			IL_006b: ldarg.0
+			IL_006c: ldc.i4.1
+			IL_006d: stfld int32 GameModule.GameManager/'<CheckNetworkState>d__20'::'<>1__state'
+			IL_0072: ldc.i4.1
+			IL_0073: ret
+
+			IL_0074: ldarg.0
+			IL_0075: ldc.i4.m1
+			IL_0076: stfld int32 GameModule.GameManager/'<CheckNetworkState>d__20'::'<>1__state'
+			IL_007b: call !0 class ['Assembly-CSharp']QuickTutor.Singleton`1<class ['Assembly-CSharp']QuickTutor.TutorialManager>::get_Instance()
+			IL_0080: ldstr "1008"
+			IL_0085: callvirt instance bool ['Assembly-CSharp']QuickTutor.TutorialManager::IsStepComplete(string)
+			IL_008a: brfalse IL_014f
+
+			IL_008f: call !0 class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']TimeModuleO.TimeManager>::get_Instance()
+			IL_0094: callvirt instance bool ['Assembly-CSharp']TimeModuleO.TimeManager::get_IsNetworkConnected()
+			IL_0099: brtrue.s IL_00fd
+
+			IL_009b: ldloc.1
+			IL_009c: ldfld bool GameModule.GameManager::showNoInternetPanel
+			IL_00a1: brtrue.s IL_00fd
+
+			IL_00a3: call !0 class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']UIFramework.UIManager>::get_Instance()
+			IL_00a8: ldstr "Assets/_Res/Addressable/Prefabs/UI/Panels/MaskPanel.prefab"
+			IL_00ad: ldloca.s 2
+			IL_00af: callvirt instance bool ['Assembly-CSharp']UIFramework.UIManager::IsPanelShowing(string, class ['Assembly-CSharp']UIFramework.UIPanel&)
+			IL_00b4: brfalse.s IL_00b8
+
+			IL_00b6: ldc.i4.0
+			IL_00b7: ret
+
+			IL_00b8: ldarg.0
+			IL_00b9: call !0 class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']UIFramework.UIManager>::get_Instance()
+			IL_00be: ldstr "Assets/_Res/Addressable/01FirstBundle/Prefabs/UI/Panels/NoInternetPanel.prefab"
+			IL_00c3: call !!0[] [netstandard]System.Array::Empty<object>()
+			IL_00c8: callvirt instance valuetype [UniTask]Cysharp.Threading.Tasks.UniTask ['Assembly-CSharp']UIFramework.UIManager::ShowPanel(string, object[])
+			IL_00cd: box [UniTask]Cysharp.Threading.Tasks.UniTask
+			IL_00d2: stfld object GameModule.GameManager/'<CheckNetworkState>d__20'::'<>2__current'
+			IL_00d7: ldarg.0
+			IL_00d8: ldc.i4.2
+			IL_00d9: stfld int32 GameModule.GameManager/'<CheckNetworkState>d__20'::'<>1__state'
+			IL_00de: ldc.i4.1
+			IL_00df: ret
+
+			IL_00e0: ldarg.0
+			IL_00e1: ldc.i4.m1
+			IL_00e2: stfld int32 GameModule.GameManager/'<CheckNetworkState>d__20'::'<>1__state'
+			IL_00e7: ldloc.1
+			IL_00e8: ldc.i4.1
+			IL_00e9: stfld bool GameModule.GameManager::showNoInternetPanel
+			IL_00ee: call bool ['Assembly-CSharp']GameModule.CoreGameManager::get_Gaming()
+			IL_00f3: brfalse.s IL_014f
+
+			IL_00f5: ldloc.1
+			IL_00f6: call instance void GameModule.GameManager::PauseGame()
+			IL_00fb: br.s IL_014f
+
+			IL_00fd: call !0 class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']TimeModuleO.TimeManager>::get_Instance()
+			IL_0102: callvirt instance bool ['Assembly-CSharp']TimeModuleO.TimeManager::get_IsNetworkConnected()
+			IL_0107: brfalse.s IL_014f
+
+			IL_0109: ldloc.1
+			IL_010a: ldfld bool GameModule.GameManager::showNoInternetPanel
+			IL_010f: brfalse.s IL_014f
+
+			IL_0111: ldarg.0
+			IL_0112: call !0 class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']UIFramework.UIManager>::get_Instance()
+			IL_0117: ldstr "Assets/_Res/Addressable/01FirstBundle/Prefabs/UI/Panels/NoInternetPanel.prefab"
+			IL_011c: callvirt instance valuetype [UniTask]Cysharp.Threading.Tasks.UniTask ['Assembly-CSharp']UIFramework.UIManager::HidePanel(string)
+			IL_0121: box [UniTask]Cysharp.Threading.Tasks.UniTask
+			IL_0126: stfld object GameModule.GameManager/'<CheckNetworkState>d__20'::'<>2__current'
+			IL_012b: ldarg.0
+			IL_012c: ldc.i4.3
+			IL_012d: stfld int32 GameModule.GameManager/'<CheckNetworkState>d__20'::'<>1__state'
+			IL_0132: ldc.i4.1
+			IL_0133: ret
+
+			IL_0134: ldarg.0
+			IL_0135: ldc.i4.m1
+			IL_0136: stfld int32 GameModule.GameManager/'<CheckNetworkState>d__20'::'<>1__state'
+			IL_013b: ldloc.1
+			IL_013c: ldc.i4.0
+			IL_013d: stfld bool GameModule.GameManager::showNoInternetPanel
+			IL_0142: call bool ['Assembly-CSharp']GameModule.CoreGameManager::get_Gaming()
+			IL_0147: brfalse.s IL_014f
+
+			IL_0149: ldloc.1
+			IL_014a: call instance void GameModule.GameManager::ResumeGame()
+
+			IL_014f: ldloc.1
+			IL_0150: ldnull
+			IL_0151: call bool [UnityEngine.CoreModule]UnityEngine.Object::op_Inequality(class [UnityEngine.CoreModule]UnityEngine.Object, class [UnityEngine.CoreModule]UnityEngine.Object)
+			IL_0156: brtrue IL_0032
+
+			IL_015b: ldc.i4.0
+			IL_015c: ret
+		} // end of method '<CheckNetworkState>d__20'::MoveNext
+
+		.method private final hidebysig specialname newslot virtual 
+			instance object 'System.Collections.Generic.IEnumerator<System.Object>.get_Current' () cil managed 
+		{
+			.custom instance void [netstandard]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = (
+				01 00 00 00
+			)
+			.override method instance !0 class [netstandard]System.Collections.Generic.IEnumerator`1<object>::get_Current()
+			// Method begins at RVA 0x2d1d
+			// Header size: 1
+			// Code size: 7 (0x7)
+			.maxstack 8
+
+			IL_0000: ldarg.0
+			IL_0001: ldfld object GameModule.GameManager/'<CheckNetworkState>d__20'::'<>2__current'
+			IL_0006: ret
+		} // end of method '<CheckNetworkState>d__20'::'System.Collections.Generic.IEnumerator<System.Object>.get_Current'
+
+		.method private final hidebysig newslot virtual 
+			instance void System.Collections.IEnumerator.Reset () cil managed 
+		{
+			.custom instance void [netstandard]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = (
+				01 00 00 00
+			)
+			.override method instance void [netstandard]System.Collections.IEnumerator::Reset()
+			// Method begins at RVA 0x2d25
+			// Header size: 1
+			// Code size: 6 (0x6)
+			.maxstack 8
+
+			IL_0000: newobj instance void [netstandard]System.NotSupportedException::.ctor()
+			IL_0005: throw
+		} // end of method '<CheckNetworkState>d__20'::System.Collections.IEnumerator.Reset
+
+		.method private final hidebysig specialname newslot virtual 
+			instance object System.Collections.IEnumerator.get_Current () cil managed 
+		{
+			.custom instance void [netstandard]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = (
+				01 00 00 00
+			)
+			.override method instance object [netstandard]System.Collections.IEnumerator::get_Current()
+			// Method begins at RVA 0x2d2c
+			// Header size: 1
+			// Code size: 7 (0x7)
+			.maxstack 8
+
+			IL_0000: ldarg.0
+			IL_0001: ldfld object GameModule.GameManager/'<CheckNetworkState>d__20'::'<>2__current'
+			IL_0006: ret
+		} // end of method '<CheckNetworkState>d__20'::System.Collections.IEnumerator.get_Current
+
+		// Properties
+		.property instance object 'System.Collections.Generic.IEnumerator<System.Object>.Current'()
+		{
+			.get instance object GameModule.GameManager/'<CheckNetworkState>d__20'::'System.Collections.Generic.IEnumerator<System.Object>.get_Current'()
+		}
+		.property instance object System.Collections.IEnumerator.Current()
+		{
+			.get instance object GameModule.GameManager/'<CheckNetworkState>d__20'::System.Collections.IEnumerator.get_Current()
+		}
+
+	} // end of class <CheckNetworkState>d__20
+
+	.class nested private auto ansi sealed beforefieldinit '<EnterMeta>d__25'
+		extends [netstandard]System.ValueType
+		implements [netstandard]System.Runtime.CompilerServices.IAsyncStateMachine
+	{
+		.custom instance void [netstandard]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = (
+			01 00 00 00
+		)
+		// Fields
+		.field public int32 '<>1__state'
+		.field public valuetype [netstandard]System.Runtime.CompilerServices.AsyncVoidMethodBuilder '<>t__builder'
+		.field public object obj
+
+		// Methods
+		.method private final hidebysig newslot virtual 
+			instance void MoveNext () cil managed 
+		{
+			.override method instance void [netstandard]System.Runtime.CompilerServices.IAsyncStateMachine::MoveNext()
+			// Method begins at RVA 0x2d34
+			// Header size: 12
+			// Code size: 217 (0xd9)
+			.maxstack 2
+			.locals init (
+				[0] valuetype ['Assembly-CSharp']GameModule.GameType,
+				[1] class [netstandard]System.Exception
+			)
+
+			.try
+			{
+				IL_0000: call bool ['Assembly-CSharp']GameModule.TrainingGroundManager::get_IsInTrainingGround()
+				IL_0005: brfalse.s IL_0021
+
+				IL_0007: call !0 class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']GameModule.MetaGameManager>::get_Instance()
+				IL_000c: ldc.i4.2
+				IL_000d: callvirt instance void ['Assembly-CSharp']GameModule.MetaGameManager::ShowMetaSwitchPanel(int32)
+				IL_0012: call !0 class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']GameModule.PanelPopHandleManager>::get_Instance()
+				IL_0017: callvirt instance void ['Assembly-CSharp']GameModule.PanelPopHandleManager::PanelPopPlay()
+				IL_001c: br IL_00ac
+
+				IL_0021: call !0 class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']GameModule.BattleGameManager>::get_Instance()
+				IL_0026: ldfld valuetype ['Assembly-CSharp']GameModule.GameType ['Assembly-CSharp']GameModule.BattleGameManager::GameType
+				IL_002b: stloc.0
+				IL_002c: ldloc.0
+				IL_002d: switch (IL_0044, IL_005b, IL_0068, IL_0075)
+
+				IL_0042: br.s IL_00ac
+
+				IL_0044: call !0 class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']GameModule.MetaGameManager>::get_Instance()
+				IL_0049: ldc.i4.2
+				IL_004a: callvirt instance void ['Assembly-CSharp']GameModule.MetaGameManager::ShowMetaSwitchPanel(int32)
+				IL_004f: call !0 class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']GameModule.PanelPopHandleManager>::get_Instance()
+				IL_0054: callvirt instance void ['Assembly-CSharp']GameModule.PanelPopHandleManager::PanelPopPlay()
+				IL_0059: br.s IL_00ac
+
+				IL_005b: call !0 class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']GameModule.MetaGameManager>::get_Instance()
+				IL_0060: ldc.i4.3
+				IL_0061: callvirt instance void ['Assembly-CSharp']GameModule.MetaGameManager::ShowMetaSwitchPanel(int32)
+				IL_0066: br.s IL_00ac
+
+				IL_0068: call !0 class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']GameModule.MetaGameManager>::get_Instance()
+				IL_006d: ldc.i4.2
+				IL_006e: callvirt instance void ['Assembly-CSharp']GameModule.MetaGameManager::ShowMetaSwitchPanel(int32)
+				IL_0073: br.s IL_00ac
+
+				IL_0075: call !0 class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']GameModule.MetaGameManager>::get_Instance()
+				IL_007a: ldc.i4.2
+				IL_007b: callvirt instance void ['Assembly-CSharp']GameModule.MetaGameManager::ShowMetaSwitchPanel(int32)
+				IL_0080: call !0 class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']GameModule.PanelPopHandleManager>::get_Instance()
+				IL_0085: callvirt instance void ['Assembly-CSharp']GameModule.PanelPopHandleManager::PanelPopPlay()
+				IL_008a: call !0 class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']GameModule.SubGameChaosTrailsManager>::get_Instance()
+				IL_008f: ldnull
+				IL_0090: call bool [UnityEngine.CoreModule]UnityEngine.Object::op_Inequality(class [UnityEngine.CoreModule]UnityEngine.Object, class [UnityEngine.CoreModule]UnityEngine.Object)
+				IL_0095: brfalse.s IL_00ac
+
+				IL_0097: call !0 class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']GameModule.SubGameChaosTrailsManager>::get_Instance()
+				IL_009c: ldarg.0
+				IL_009d: ldfld object GameModule.GameManager/'<EnterMeta>d__25'::obj
+				IL_00a2: isinst ['Assembly-CSharp']GameModule.BattleResult
+				IL_00a7: callvirt instance void ['Assembly-CSharp']GameModule.SubGameChaosTrailsManager::TryReturnToPanelAfterEnterMeta(class ['Assembly-CSharp']GameModule.BattleResult)
+
+				IL_00ac: leave.s IL_00c5
+			} // end .try
+			catch [netstandard]System.Exception
+			{
+				IL_00ae: stloc.1
+				IL_00af: ldarg.0
+				IL_00b0: ldc.i4.s -2
+				IL_00b2: stfld int32 GameModule.GameManager/'<EnterMeta>d__25'::'<>1__state'
+				IL_00b7: ldarg.0
+				IL_00b8: ldflda valuetype [netstandard]System.Runtime.CompilerServices.AsyncVoidMethodBuilder GameModule.GameManager/'<EnterMeta>d__25'::'<>t__builder'
+				IL_00bd: ldloc.1
+				IL_00be: call instance void [netstandard]System.Runtime.CompilerServices.AsyncVoidMethodBuilder::SetException(class [netstandard]System.Exception)
+				IL_00c3: leave.s IL_00d8
+			} // end handler
+
+			IL_00c5: ldarg.0
+			IL_00c6: ldc.i4.s -2
+			IL_00c8: stfld int32 GameModule.GameManager/'<EnterMeta>d__25'::'<>1__state'
+			IL_00cd: ldarg.0
+			IL_00ce: ldflda valuetype [netstandard]System.Runtime.CompilerServices.AsyncVoidMethodBuilder GameModule.GameManager/'<EnterMeta>d__25'::'<>t__builder'
+			IL_00d3: call instance void [netstandard]System.Runtime.CompilerServices.AsyncVoidMethodBuilder::SetResult()
+
+			IL_00d8: ret
+		} // end of method '<EnterMeta>d__25'::MoveNext
+
+		.method private final hidebysig newslot virtual 
+			instance void SetStateMachine (
+				class [netstandard]System.Runtime.CompilerServices.IAsyncStateMachine stateMachine
+			) cil managed 
+		{
+			.custom instance void [netstandard]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = (
+				01 00 00 00
+			)
+			.override method instance void [netstandard]System.Runtime.CompilerServices.IAsyncStateMachine::SetStateMachine(class [netstandard]System.Runtime.CompilerServices.IAsyncStateMachine)
+			// Method begins at RVA 0x2e2c
+			// Header size: 1
+			// Code size: 13 (0xd)
+			.maxstack 8
+
+			IL_0000: ldarg.0
+			IL_0001: ldflda valuetype [netstandard]System.Runtime.CompilerServices.AsyncVoidMethodBuilder GameModule.GameManager/'<EnterMeta>d__25'::'<>t__builder'
+			IL_0006: ldarg.1
+			IL_0007: call instance void [netstandard]System.Runtime.CompilerServices.AsyncVoidMethodBuilder::SetStateMachine(class [netstandard]System.Runtime.CompilerServices.IAsyncStateMachine)
+			IL_000c: ret
+		} // end of method '<EnterMeta>d__25'::SetStateMachine
+
+	} // end of class <EnterMeta>d__25
+
+	.class nested private auto ansi sealed beforefieldinit '<Init>d__17'
+		extends [netstandard]System.ValueType
+		implements [netstandard]System.Runtime.CompilerServices.IAsyncStateMachine
+	{
+		.custom instance void [netstandard]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = (
+			01 00 00 00
+		)
+		// Fields
+		.field public int32 '<>1__state'
+		.field public valuetype [UniTask]Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder '<>t__builder'
+		.field public class GameModule.GameManager '<>4__this'
+		.field private valuetype [UniTask]Cysharp.Threading.Tasks.UniTask/Awaiter '<>u__1'
+
+		// Methods
+		.method private final hidebysig newslot virtual 
+			instance void MoveNext () cil managed 
+		{
+			.override method instance void [netstandard]System.Runtime.CompilerServices.IAsyncStateMachine::MoveNext()
+			// Method begins at RVA 0x2e3c
+			// Header size: 12
+			// Code size: 2027 (0x7eb)
+			.maxstack 6
+			.locals init (
+				[0] int32,
+				[1] class GameModule.GameManager,
+				[2] class ['Assembly-CSharp']TimeModuleO.TimeManager/Timer,
+				[3] valuetype [netstandard]System.DateTime,
+				[4] class ['Assembly-CSharp']TimeModuleO.TimeManager/Timer,
+				[5] class ['Assembly-CSharp']TimeModuleO.TimeManager/Timer,
+				[6] class ['Assembly-CSharp']TimeModuleO.TimeManager/Timer,
+				[7] valuetype [UniTask]Cysharp.Threading.Tasks.UniTask/Awaiter,
+				[8] valuetype [UniTask]Cysharp.Threading.Tasks.UniTask,
+				[9] class [netstandard]System.Exception
+			)
+
+			IL_0000: ldarg.0
+			IL_0001: ldfld int32 GameModule.GameManager/'<Init>d__17'::'<>1__state'
+			IL_0006: stloc.0
+			IL_0007: ldarg.0
+			IL_0008: ldfld class GameModule.GameManager GameModule.GameManager/'<Init>d__17'::'<>4__this'
+			IL_000d: stloc.1
+			.try
+			{
+				IL_000e: ldloc.0
+				IL_000f: brfalse IL_04e9
+
+				IL_0014: ldloc.0
+				IL_0015: ldc.i4.1
+				IL_0016: beq IL_059d
+
+				IL_001b: ldstr "VibratorEnable"
+				IL_0020: call bool [UnityEngine.CoreModule]UnityEngine.PlayerPrefs::HasKey(string)
+				IL_0025: brtrue.s IL_0032
+
+				IL_0027: ldstr "VibratorEnable"
+				IL_002c: ldc.i4.0
+				IL_002d: call void [UnityEngine.CoreModule]UnityEngine.PlayerPrefs::SetInt(string, int32)
+
+				IL_0032: call !0 class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']SDKModule.HWLeaderboardManager>::get_Instance()
+				IL_0037: callvirt instance valuetype [UniTask]Cysharp.Threading.Tasks.UniTask class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']SDKModule.HWLeaderboardManager>::Init()
+				IL_003c: pop
+				IL_003d: call !0 class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']GameModule.HomelLandCtrl>::get_Instance()
+				IL_0042: callvirt instance valuetype [UniTask]Cysharp.Threading.Tasks.UniTask class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']GameModule.HomelLandCtrl>::Init()
+				IL_0047: pop
+				IL_0048: call !0 class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']GameModule.HomelLandCtrlNew>::get_Instance()
+				IL_004d: callvirt instance valuetype [UniTask]Cysharp.Threading.Tasks.UniTask class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']GameModule.HomelLandCtrlNew>::Init()
+				IL_0052: pop
+				IL_0053: call !0 class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']BadgeGraph.BadgeManager>::get_Instance()
+				IL_0058: callvirt instance valuetype [UniTask]Cysharp.Threading.Tasks.UniTask class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']BadgeGraph.BadgeManager>::Init()
+				IL_005d: pop
+				IL_005e: call !0 class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']GameModule.BoxManager>::get_Instance()
+				IL_0063: callvirt instance valuetype [UniTask]Cysharp.Threading.Tasks.UniTask class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']GameModule.BoxManager>::Init()
+				IL_0068: pop
+				IL_0069: call !0 class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']GameModule.ArenaManager>::get_Instance()
+				IL_006e: callvirt instance valuetype [UniTask]Cysharp.Threading.Tasks.UniTask class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']GameModule.ArenaManager>::Init()
+				IL_0073: pop
+				IL_0074: call !0 class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']GameModule.ArenaProgressManager>::get_Instance()
+				IL_0079: callvirt instance valuetype [UniTask]Cysharp.Threading.Tasks.UniTask class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']GameModule.ArenaProgressManager>::Init()
+				IL_007e: pop
+				IL_007f: call !0 class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']GameModule.TrainingGroundManager>::get_Instance()
+				IL_0084: callvirt instance valuetype [UniTask]Cysharp.Threading.Tasks.UniTask class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']GameModule.TrainingGroundManager>::Init()
+				IL_0089: pop
+				IL_008a: call !0 class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']GameModule.TrophyProgressManager>::get_Instance()
+				IL_008f: callvirt instance valuetype [UniTask]Cysharp.Threading.Tasks.UniTask class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']GameModule.TrophyProgressManager>::Init()
+				IL_0094: pop
+				IL_0095: call !0 class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']GameModule.PlayerCustomizationManager>::get_Instance()
+				IL_009a: callvirt instance valuetype [UniTask]Cysharp.Threading.Tasks.UniTask class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']GameModule.PlayerCustomizationManager>::Init()
+				IL_009f: pop
+				IL_00a0: call !0 class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']GameModule.PlayerLevelManager>::get_Instance()
+				IL_00a5: callvirt instance valuetype [UniTask]Cysharp.Threading.Tasks.UniTask class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']GameModule.PlayerLevelManager>::Init()
+				IL_00aa: pop
+				IL_00ab: call !0 class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']GameModule.UserLableManager>::get_Instance()
+				IL_00b0: callvirt instance valuetype [UniTask]Cysharp.Threading.Tasks.UniTask class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']GameModule.UserLableManager>::Init()
+				IL_00b5: pop
+				IL_00b6: call !0 class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']GameModule.UserLablePushPackManager>::get_Instance()
+				IL_00bb: callvirt instance valuetype [UniTask]Cysharp.Threading.Tasks.UniTask class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']GameModule.UserLablePushPackManager>::Init()
+				IL_00c0: pop
+				IL_00c1: call !0 class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']GameModule.MetaBtnSecondClickManager>::get_Instance()
+				IL_00c6: callvirt instance valuetype [UniTask]Cysharp.Threading.Tasks.UniTask class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']GameModule.MetaBtnSecondClickManager>::Init()
+				IL_00cb: pop
+				IL_00cc: call !0 class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']GameModule.SkinManager>::get_Instance()
+				IL_00d1: callvirt instance valuetype [UniTask]Cysharp.Threading.Tasks.UniTask class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']GameModule.SkinManager>::Init()
+				IL_00d6: pop
+				IL_00d7: call !0 class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']GameModule.MonthlyPassManager>::get_Instance()
+				IL_00dc: callvirt instance valuetype [UniTask]Cysharp.Threading.Tasks.UniTask class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']GameModule.MonthlyPassManager>::Init()
+				IL_00e1: pop
+				IL_00e2: call !0 class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']GameModule.DailyBlessManager>::get_Instance()
+				IL_00e7: callvirt instance valuetype [UniTask]Cysharp.Threading.Tasks.UniTask class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']GameModule.DailyBlessManager>::Init()
+				IL_00ec: pop
+				IL_00ed: call !0 class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']GameModule.SynergyEffectManager>::get_Instance()
+				IL_00f2: callvirt instance valuetype [UniTask]Cysharp.Threading.Tasks.UniTask class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']GameModule.SynergyEffectManager>::Init()
+				IL_00f7: pop
+				IL_00f8: call !0 class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']GameModule.RoleShadowManager>::get_Instance()
+				IL_00fd: callvirt instance valuetype [UniTask]Cysharp.Threading.Tasks.UniTask class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']GameModule.RoleShadowManager>::Init()
+				IL_0102: pop
+				IL_0103: call !0 class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']SDKModule.GameCenterManager>::get_Instance()
+				IL_0108: callvirt instance valuetype [UniTask]Cysharp.Threading.Tasks.UniTask class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']SDKModule.GameCenterManager>::Init()
+				IL_010d: pop
+				IL_010e: ldloc.1
+				IL_010f: ldstr "Base/ATestPostProcess"
+				IL_0114: call class [UnityEngine.CoreModule]UnityEngine.GameObject [UnityEngine.CoreModule]UnityEngine.GameObject::Find(string)
+				IL_0119: stfld class [UnityEngine.CoreModule]UnityEngine.GameObject GameModule.GameManager::APostProcess
+				IL_011e: ldloc.1
+				IL_011f: ldstr "Base/BTestPostProcess"
+				IL_0124: call class [UnityEngine.CoreModule]UnityEngine.GameObject [UnityEngine.CoreModule]UnityEngine.GameObject::Find(string)
+				IL_0129: stfld class [UnityEngine.CoreModule]UnityEngine.GameObject GameModule.GameManager::BPostProcess
+				IL_012e: ldloc.1
+				IL_012f: ldfld class [UnityEngine.CoreModule]UnityEngine.GameObject GameModule.GameManager::APostProcess
+				IL_0134: call !0 class ['Assembly-CSharp']QuickTutor.Singleton`1<class ['Assembly-CSharp']SDKModule.ABTestManager>::get_Instance()
+				IL_0139: callvirt instance bool ['Assembly-CSharp']SDKModule.ABTestManager::get_WeeklyClashImprove02IsBTest()
+				IL_013e: ldc.i4.0
+				IL_013f: ceq
+				IL_0141: callvirt instance void [UnityEngine.CoreModule]UnityEngine.GameObject::SetActive(bool)
+				IL_0146: ldloc.1
+				IL_0147: ldfld class [UnityEngine.CoreModule]UnityEngine.GameObject GameModule.GameManager::BPostProcess
+				IL_014c: call !0 class ['Assembly-CSharp']QuickTutor.Singleton`1<class ['Assembly-CSharp']SDKModule.ABTestManager>::get_Instance()
+				IL_0151: callvirt instance bool ['Assembly-CSharp']SDKModule.ABTestManager::get_WeeklyClashImprove02IsBTest()
+				IL_0156: callvirt instance void [UnityEngine.CoreModule]UnityEngine.GameObject::SetActive(bool)
+				IL_015b: ldloc.1
+				IL_015c: ldsfld !0 class ['Assembly-CSharp']DbtSaveDataManagerBase`2<class ['Assembly-CSharp']DbtSaveDataManager_PlayerGuideData, class ['Assembly-CSharp']DataModule.PlayerGuideData>::I
+				IL_0161: callvirt instance !1 class ['Assembly-CSharp']DbtSaveDataManagerBase`2<class ['Assembly-CSharp']DbtSaveDataManager_PlayerGuideData, class ['Assembly-CSharp']DataModule.PlayerGuideData>::get_Data()
+				IL_0166: ldfld bool ['Assembly-CSharp']DataModule.PlayerGuideData::isFirstThroghGame
+				IL_016b: stfld bool GameModule.GameManager::_isFirstThroghGame
+				IL_0170: ldloc.1
+				IL_0171: call instance void GameModule.GameManager::RegisterOnTimeToZero()
+				IL_0176: ldloc.1
+				IL_0177: call instance void GameModule.GameManager::RegisterOnTimeToMonDayZero()
+				IL_017c: ldsfld !0 class ['Assembly-CSharp']DbtSaveDataManagerBase`2<class ['Assembly-CSharp']DbtSaveDataManager_PlayerShopData, class ['Assembly-CSharp']DataModule.PlayerShopData>::I
+				IL_0181: callvirt instance !1 class ['Assembly-CSharp']DbtSaveDataManagerBase`2<class ['Assembly-CSharp']DbtSaveDataManager_PlayerShopData, class ['Assembly-CSharp']DataModule.PlayerShopData>::get_Data()
+				IL_0186: ldfld bool ['Assembly-CSharp']DataModule.PlayerShopData::timingPushGiftPackageCdIng
+				IL_018b: brfalse.s IL_01a7
+
+				IL_018d: ldsfld !0 class ['Assembly-CSharp']DbtSaveDataManagerBase`2<class ['Assembly-CSharp']DbtSaveDataManager_PlayerShopData, class ['Assembly-CSharp']DataModule.PlayerShopData>::I
+				IL_0192: callvirt instance !1 class ['Assembly-CSharp']DbtSaveDataManagerBase`2<class ['Assembly-CSharp']DbtSaveDataManager_PlayerShopData, class ['Assembly-CSharp']DataModule.PlayerShopData>::get_Data()
+				IL_0197: ldc.i4.0
+				IL_0198: stfld bool ['Assembly-CSharp']DataModule.PlayerShopData::timingPushGiftPackageCdIng
+				IL_019d: ldsfld !0 class ['Assembly-CSharp']DbtSaveDataManagerBase`2<class ['Assembly-CSharp']DbtSaveDataManager_PlayerShopData, class ['Assembly-CSharp']DataModule.PlayerShopData>::I
+				IL_01a2: callvirt instance void class ['Assembly-CSharp']DbtSaveDataManagerBase`2<class ['Assembly-CSharp']DbtSaveDataManager_PlayerShopData, class ['Assembly-CSharp']DataModule.PlayerShopData>::Save()
+
+				IL_01a7: ldsfld !0 class ['Assembly-CSharp']DbtSaveDataManagerBase`2<class ['Assembly-CSharp']DbtSaveDataManager_PlayerShopData, class ['Assembly-CSharp']DataModule.PlayerShopData>::I
+				IL_01ac: callvirt instance !1 class ['Assembly-CSharp']DbtSaveDataManagerBase`2<class ['Assembly-CSharp']DbtSaveDataManager_PlayerShopData, class ['Assembly-CSharp']DataModule.PlayerShopData>::get_Data()
+				IL_01b1: ldfld bool ['Assembly-CSharp']DataModule.PlayerShopData::hadHandleTwoSixOneBug
+				IL_01b6: brtrue IL_0306
+
+				IL_01bb: ldsfld !0 class ['Assembly-CSharp']DbtSaveDataManagerBase`2<class ['Assembly-CSharp']DbtSaveDataManager_PlayerShopData, class ['Assembly-CSharp']DataModule.PlayerShopData>::I
+				IL_01c0: callvirt instance !1 class ['Assembly-CSharp']DbtSaveDataManagerBase`2<class ['Assembly-CSharp']DbtSaveDataManager_PlayerShopData, class ['Assembly-CSharp']DataModule.PlayerShopData>::get_Data()
+				IL_01c5: ldfld bool ['Assembly-CSharp']DataModule.PlayerShopData::isShowNewBieGiftPack
+				IL_01ca: brfalse.s IL_021e
+
+				IL_01cc: call !0 class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']TimeModuleO.TimeManager>::get_Instance()
+				IL_01d1: ldstr "NewBieGiftPackKey"
+				IL_01d6: callvirt instance class ['Assembly-CSharp']TimeModuleO.TimeManager/Timer ['Assembly-CSharp']TimeModuleO.TimeManager::GetTimer(string)
+				IL_01db: stloc.2
+				IL_01dc: ldloc.2
+				IL_01dd: brfalse.s IL_021e
+
+				IL_01df: ldloc.2
+				IL_01e0: callvirt instance valuetype [netstandard]System.DateTime ['Assembly-CSharp']TimeModuleO.TimeManager/Timer::get_StartTime()
+				IL_01e5: stloc.3
+				IL_01e6: ldloca.s 3
+				IL_01e8: call instance int32 [netstandard]System.DateTime::get_Year()
+				IL_01ed: ldc.i4 2025
+				IL_01f2: blt.s IL_0209
+
+				IL_01f4: ldloc.2
+				IL_01f5: callvirt instance valuetype [netstandard]System.DateTime ['Assembly-CSharp']TimeModuleO.TimeManager/Timer::get_TargetEndTime()
+				IL_01fa: stloc.3
+				IL_01fb: ldloca.s 3
+				IL_01fd: call instance int32 [netstandard]System.DateTime::get_Year()
+				IL_0202: ldc.i4 2024
+				IL_0207: bgt.s IL_021e
+
+				IL_0209: ldloc.2
+				IL_020a: ldc.r8 2
+				IL_0213: call valuetype [netstandard]System.TimeSpan [netstandard]System.TimeSpan::FromDays(float64)
+				IL_0218: ldc.i4.1
+				IL_0219: callvirt instance void ['Assembly-CSharp']TimeModuleO.TimeManager/Timer::Restart(valuetype [netstandard]System.TimeSpan, bool)
+
+				IL_021e: ldsfld !0 class ['Assembly-CSharp']DbtSaveDataManagerBase`2<class ['Assembly-CSharp']DbtSaveDataManager_PlayerShopData, class ['Assembly-CSharp']DataModule.PlayerShopData>::I
+				IL_0223: callvirt instance !1 class ['Assembly-CSharp']DbtSaveDataManagerBase`2<class ['Assembly-CSharp']DbtSaveDataManager_PlayerShopData, class ['Assembly-CSharp']DataModule.PlayerShopData>::get_Data()
+				IL_0228: ldfld bool ['Assembly-CSharp']DataModule.PlayerShopData::canTimingPushGiftPackage
+				IL_022d: brfalse.s IL_028b
+
+				IL_022f: call !0 class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']TimeModuleO.TimeManager>::get_Instance()
+				IL_0234: ldstr "GiftPackagePushCountdownKey"
+				IL_0239: callvirt instance class ['Assembly-CSharp']TimeModuleO.TimeManager/Timer ['Assembly-CSharp']TimeModuleO.TimeManager::GetTimer(string)
+				IL_023e: stloc.s 4
+				IL_0240: ldloc.s 4
+				IL_0242: brfalse IL_02e2
+
+				IL_0247: ldloc.s 4
+				IL_0249: callvirt instance valuetype [netstandard]System.DateTime ['Assembly-CSharp']TimeModuleO.TimeManager/Timer::get_StartTime()
+				IL_024e: stloc.3
+				IL_024f: ldloca.s 3
+				IL_0251: call instance int32 [netstandard]System.DateTime::get_Year()
+				IL_0256: ldc.i4 2025
+				IL_025b: blt.s IL_0273
+
+				IL_025d: ldloc.s 4
+				IL_025f: callvirt instance valuetype [netstandard]System.DateTime ['Assembly-CSharp']TimeModuleO.TimeManager/Timer::get_TargetEndTime()
+				IL_0264: stloc.3
+				IL_0265: ldloca.s 3
+				IL_0267: call instance int32 [netstandard]System.DateTime::get_Year()
+				IL_026c: ldc.i4 2024
+				IL_0271: bgt.s IL_02e2
+
+				IL_0273: ldloc.s 4
+				IL_0275: ldc.r8 2
+				IL_027e: call valuetype [netstandard]System.TimeSpan [netstandard]System.TimeSpan::FromDays(float64)
+				IL_0283: ldc.i4.1
+				IL_0284: callvirt instance void ['Assembly-CSharp']TimeModuleO.TimeManager/Timer::Restart(valuetype [netstandard]System.TimeSpan, bool)
+				IL_0289: br.s IL_02e2
+
+				IL_028b: call !0 class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']TimeModuleO.TimeManager>::get_Instance()
+				IL_0290: ldstr "CanGiftPackagePushKey"
+				IL_0295: callvirt instance class ['Assembly-CSharp']TimeModuleO.TimeManager/Timer ['Assembly-CSharp']TimeModuleO.TimeManager::GetTimer(string)
+				IL_029a: stloc.s 5
+				IL_029c: ldloc.s 5
+				IL_029e: brfalse.s IL_02e2
+
+				IL_02a0: ldloc.s 5
+				IL_02a2: callvirt instance valuetype [netstandard]System.DateTime ['Assembly-CSharp']TimeModuleO.TimeManager/Timer::get_StartTime()
+				IL_02a7: stloc.3
+				IL_02a8: ldloca.s 3
+				IL_02aa: call instance int32 [netstandard]System.DateTime::get_Year()
+				IL_02af: ldc.i4 2025
+				IL_02b4: blt.s IL_02cc
+
+				IL_02b6: ldloc.s 5
+				IL_02b8: callvirt instance valuetype [netstandard]System.DateTime ['Assembly-CSharp']TimeModuleO.TimeManager/Timer::get_TargetEndTime()
+				IL_02bd: stloc.3
+				IL_02be: ldloca.s 3
+				IL_02c0: call instance int32 [netstandard]System.DateTime::get_Year()
+				IL_02c5: ldc.i4 2024
+				IL_02ca: bgt.s IL_02e2
+
+				IL_02cc: ldloc.s 5
+				IL_02ce: ldc.r8 4
+				IL_02d7: call valuetype [netstandard]System.TimeSpan [netstandard]System.TimeSpan::FromDays(float64)
+				IL_02dc: ldc.i4.1
+				IL_02dd: callvirt instance void ['Assembly-CSharp']TimeModuleO.TimeManager/Timer::Restart(valuetype [netstandard]System.TimeSpan, bool)
+
+				IL_02e2: ldsfld !0 class ['Assembly-CSharp']DbtSaveDataManagerBase`2<class ['Assembly-CSharp']DbtSaveDataManager_PlayerShopData, class ['Assembly-CSharp']DataModule.PlayerShopData>::I
+				IL_02e7: callvirt instance !1 class ['Assembly-CSharp']DbtSaveDataManagerBase`2<class ['Assembly-CSharp']DbtSaveDataManager_PlayerShopData, class ['Assembly-CSharp']DataModule.PlayerShopData>::get_Data()
+				IL_02ec: ldc.i4.1
+				IL_02ed: stfld bool ['Assembly-CSharp']DataModule.PlayerShopData::hadHandleTwoSixOneBug
+				IL_02f2: ldsfld !0 class ['Assembly-CSharp']DbtSaveDataManagerBase`2<class ['Assembly-CSharp']DbtSaveDataManager_PlayerShopData, class ['Assembly-CSharp']DataModule.PlayerShopData>::I
+				IL_02f7: callvirt instance void class ['Assembly-CSharp']DbtSaveDataManagerBase`2<class ['Assembly-CSharp']DbtSaveDataManager_PlayerShopData, class ['Assembly-CSharp']DataModule.PlayerShopData>::Save()
+				IL_02fc: ldsfld !0 class ['Assembly-CSharp']DbtSaveDataManagerBase`2<class ['Assembly-CSharp']DbtSaveDataManager_PlayerTimeData, class ['Assembly-CSharp']DataModule.PlayerTimeData>::I
+				IL_0301: callvirt instance void class ['Assembly-CSharp']DbtSaveDataManagerBase`2<class ['Assembly-CSharp']DbtSaveDataManager_PlayerTimeData, class ['Assembly-CSharp']DataModule.PlayerTimeData>::Save()
+
+				IL_0306: call !0 class ['Assembly-CSharp']QuickTutor.Singleton`1<class ['Assembly-CSharp']SDKModule.ABTestManager>::get_Instance()
+				IL_030b: callvirt instance bool ['Assembly-CSharp']SDKModule.ABTestManager::get_SelectableOfferIsOn()
+				IL_0310: brfalse IL_04a7
+
+				IL_0315: ldstr "ZZZZ进入定时礼包判断"
+				IL_031a: call void [UnityEngine.CoreModule]UnityEngine.Debug::Log(object)
+				IL_031f: ldloc.1
+				IL_0320: ldfld bool GameModule.GameManager::_isFirstThroghGame
+				IL_0325: brfalse.s IL_0365
+
+				IL_0327: ldloc.1
+				IL_0328: call !0 class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']TimeModuleO.TimeManager>::get_Instance()
+				IL_032d: ldstr "CanGiftPackagePushKey"
+				IL_0332: ldc.r8 4
+				IL_033b: call valuetype [netstandard]System.TimeSpan [netstandard]System.TimeSpan::FromDays(float64)
+				IL_0340: ldc.i4.1
+				IL_0341: ldc.i4.0
+				IL_0342: callvirt instance class ['Assembly-CSharp']TimeModuleO.TimeManager/Timer ['Assembly-CSharp']TimeModuleO.TimeManager::CreateTimer(string, valuetype [netstandard]System.TimeSpan, bool, bool)
+				IL_0347: stfld class ['Assembly-CSharp']TimeModuleO.TimeManager/Timer GameModule.GameManager::canPushGiftPackTimer
+				IL_034c: ldsfld !0 class ['Assembly-CSharp']DbtSaveDataManagerBase`2<class ['Assembly-CSharp']DbtSaveDataManager_PlayerShopData, class ['Assembly-CSharp']DataModule.PlayerShopData>::I
+				IL_0351: callvirt instance void class ['Assembly-CSharp']DbtSaveDataManagerBase`2<class ['Assembly-CSharp']DbtSaveDataManager_PlayerShopData, class ['Assembly-CSharp']DataModule.PlayerShopData>::Save()
+				IL_0356: ldsfld !0 class ['Assembly-CSharp']DbtSaveDataManagerBase`2<class ['Assembly-CSharp']DbtSaveDataManager_PlayerTimeData, class ['Assembly-CSharp']DataModule.PlayerTimeData>::I
+				IL_035b: callvirt instance void class ['Assembly-CSharp']DbtSaveDataManagerBase`2<class ['Assembly-CSharp']DbtSaveDataManager_PlayerTimeData, class ['Assembly-CSharp']DataModule.PlayerTimeData>::Save()
+				IL_0360: br IL_04a7
+
+				IL_0365: ldsfld !0 class ['Assembly-CSharp']DbtSaveDataManagerBase`2<class ['Assembly-CSharp']DbtSaveDataManager_PlayerShopData, class ['Assembly-CSharp']DataModule.PlayerShopData>::I
+				IL_036a: callvirt instance !1 class ['Assembly-CSharp']DbtSaveDataManagerBase`2<class ['Assembly-CSharp']DbtSaveDataManager_PlayerShopData, class ['Assembly-CSharp']DataModule.PlayerShopData>::get_Data()
+				IL_036f: ldfld bool ['Assembly-CSharp']DataModule.PlayerShopData::isShowNewBieGiftPack
+				IL_0374: brtrue.s IL_03e3
+
+				IL_0376: ldloc.1
+				IL_0377: call !0 class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']TimeModuleO.TimeManager>::get_Instance()
+				IL_037c: ldstr "CanGiftPackagePushKey"
+				IL_0381: callvirt instance class ['Assembly-CSharp']TimeModuleO.TimeManager/Timer ['Assembly-CSharp']TimeModuleO.TimeManager::GetTimer(string)
+				IL_0386: stfld class ['Assembly-CSharp']TimeModuleO.TimeManager/Timer GameModule.GameManager::canPushGiftPackTimer
+				IL_038b: ldloc.1
+				IL_038c: ldfld class ['Assembly-CSharp']TimeModuleO.TimeManager/Timer GameModule.GameManager::canPushGiftPackTimer
+				IL_0391: brtrue IL_04a7
+
+				IL_0396: ldsfld !0 class ['Assembly-CSharp']DbtSaveDataManagerBase`2<class ['Assembly-CSharp']DbtSaveDataManager_PlayerShopData, class ['Assembly-CSharp']DataModule.PlayerShopData>::I
+				IL_039b: callvirt instance !1 class ['Assembly-CSharp']DbtSaveDataManagerBase`2<class ['Assembly-CSharp']DbtSaveDataManager_PlayerShopData, class ['Assembly-CSharp']DataModule.PlayerShopData>::get_Data()
+				IL_03a0: ldfld bool ['Assembly-CSharp']DataModule.PlayerShopData::canTimingPushGiftPackage
+				IL_03a5: brtrue IL_04a7
+
+				IL_03aa: ldsfld !0 class ['Assembly-CSharp']DbtSaveDataManagerBase`2<class ['Assembly-CSharp']DbtSaveDataManager_PlayerShopData, class ['Assembly-CSharp']DataModule.PlayerShopData>::I
+				IL_03af: callvirt instance !1 class ['Assembly-CSharp']DbtSaveDataManagerBase`2<class ['Assembly-CSharp']DbtSaveDataManager_PlayerShopData, class ['Assembly-CSharp']DataModule.PlayerShopData>::get_Data()
+				IL_03b4: ldc.i4.1
+				IL_03b5: stfld bool ['Assembly-CSharp']DataModule.PlayerShopData::canTimingPushGiftPackage
+				IL_03ba: call !0 class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']TimeModuleO.TimeManager>::get_Instance()
+				IL_03bf: ldstr "GiftPackagePushOffsetKey"
+				IL_03c4: callvirt instance class ['Assembly-CSharp']TimeModuleO.TimeManager/Timer ['Assembly-CSharp']TimeModuleO.TimeManager::GetTimer(string)
+				IL_03c9: pop
+				IL_03ca: ldstr "ZZZZ不是第一次进游戏，新手礼包不在，直接可以推送礼包"
+				IL_03cf: call void [UnityEngine.CoreModule]UnityEngine.Debug::Log(object)
+				IL_03d4: ldsfld !0 class ['Assembly-CSharp']DbtSaveDataManagerBase`2<class ['Assembly-CSharp']DbtSaveDataManager_PlayerShopData, class ['Assembly-CSharp']DataModule.PlayerShopData>::I
+				IL_03d9: callvirt instance void class ['Assembly-CSharp']DbtSaveDataManagerBase`2<class ['Assembly-CSharp']DbtSaveDataManager_PlayerShopData, class ['Assembly-CSharp']DataModule.PlayerShopData>::Save()
+				IL_03de: br IL_04a7
+
+				IL_03e3: ldloc.1
+				IL_03e4: call !0 class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']TimeModuleO.TimeManager>::get_Instance()
+				IL_03e9: ldstr "CanGiftPackagePushKey"
+				IL_03ee: callvirt instance class ['Assembly-CSharp']TimeModuleO.TimeManager/Timer ['Assembly-CSharp']TimeModuleO.TimeManager::GetTimer(string)
+				IL_03f3: stfld class ['Assembly-CSharp']TimeModuleO.TimeManager/Timer GameModule.GameManager::canPushGiftPackTimer
+				IL_03f8: ldloc.1
+				IL_03f9: ldfld class ['Assembly-CSharp']TimeModuleO.TimeManager/Timer GameModule.GameManager::canPushGiftPackTimer
+				IL_03fe: brtrue IL_04a7
+
+				IL_0403: ldsfld !0 class ['Assembly-CSharp']DbtSaveDataManagerBase`2<class ['Assembly-CSharp']DbtSaveDataManager_PlayerShopData, class ['Assembly-CSharp']DataModule.PlayerShopData>::I
+				IL_0408: callvirt instance !1 class ['Assembly-CSharp']DbtSaveDataManagerBase`2<class ['Assembly-CSharp']DbtSaveDataManager_PlayerShopData, class ['Assembly-CSharp']DataModule.PlayerShopData>::get_Data()
+				IL_040d: ldfld bool ['Assembly-CSharp']DataModule.PlayerShopData::canTimingPushGiftPackage
+				IL_0412: brtrue IL_04a7
+
+				IL_0417: call !0 class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']TimeModuleO.TimeManager>::get_Instance()
+				IL_041c: ldstr "NewBieGiftPackKey"
+				IL_0421: callvirt instance class ['Assembly-CSharp']TimeModuleO.TimeManager/Timer ['Assembly-CSharp']TimeModuleO.TimeManager::GetTimer(string)
+				IL_0426: stloc.s 6
+				IL_0428: ldloc.1
+				IL_0429: call !0 class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']TimeModuleO.TimeManager>::get_Instance()
+				IL_042e: ldstr "CanGiftPackagePushKey"
+				IL_0433: ldc.r8 4
+				IL_043c: call valuetype [netstandard]System.TimeSpan [netstandard]System.TimeSpan::FromDays(float64)
+				IL_0441: ldloc.s 6
+				IL_0443: brtrue.s IL_044c
+
+				IL_0445: ldsfld valuetype [netstandard]System.TimeSpan [netstandard]System.TimeSpan::Zero
+				IL_044a: br.s IL_0453
+
+				IL_044c: ldloc.s 6
+				IL_044e: callvirt instance valuetype [netstandard]System.TimeSpan ['Assembly-CSharp']TimeModuleO.TimeManager/Timer::GetRemainingTime()
+
+				IL_0453: call valuetype [netstandard]System.TimeSpan [netstandard]System.TimeSpan::op_Subtraction(valuetype [netstandard]System.TimeSpan, valuetype [netstandard]System.TimeSpan)
+				IL_0458: ldc.i4.1
+				IL_0459: ldc.i4.0
+				IL_045a: callvirt instance class ['Assembly-CSharp']TimeModuleO.TimeManager/Timer ['Assembly-CSharp']TimeModuleO.TimeManager::CreateTimer(string, valuetype [netstandard]System.TimeSpan, bool, bool)
+				IL_045f: stfld class ['Assembly-CSharp']TimeModuleO.TimeManager/Timer GameModule.GameManager::canPushGiftPackTimer
+				IL_0464: ldstr "ZZZZ不是第一次进游戏，新手礼包在，创建倒计时,begintime{0},endtime{1}"
+				IL_0469: ldloc.1
+				IL_046a: ldfld class ['Assembly-CSharp']TimeModuleO.TimeManager/Timer GameModule.GameManager::canPushGiftPackTimer
+				IL_046f: callvirt instance valuetype [netstandard]System.DateTime ['Assembly-CSharp']TimeModuleO.TimeManager/Timer::get_StartTime()
+				IL_0474: box [netstandard]System.DateTime
+				IL_0479: ldloc.1
+				IL_047a: ldfld class ['Assembly-CSharp']TimeModuleO.TimeManager/Timer GameModule.GameManager::canPushGiftPackTimer
+				IL_047f: callvirt instance valuetype [netstandard]System.DateTime ['Assembly-CSharp']TimeModuleO.TimeManager/Timer::get_TargetEndTime()
+				IL_0484: box [netstandard]System.DateTime
+				IL_0489: call string [netstandard]System.String::Format(string, object, object)
+				IL_048e: call void [UnityEngine.CoreModule]UnityEngine.Debug::Log(object)
+				IL_0493: ldsfld !0 class ['Assembly-CSharp']DbtSaveDataManagerBase`2<class ['Assembly-CSharp']DbtSaveDataManager_PlayerShopData, class ['Assembly-CSharp']DataModule.PlayerShopData>::I
+				IL_0498: callvirt instance void class ['Assembly-CSharp']DbtSaveDataManagerBase`2<class ['Assembly-CSharp']DbtSaveDataManager_PlayerShopData, class ['Assembly-CSharp']DataModule.PlayerShopData>::Save()
+				IL_049d: ldsfld !0 class ['Assembly-CSharp']DbtSaveDataManagerBase`2<class ['Assembly-CSharp']DbtSaveDataManager_PlayerTimeData, class ['Assembly-CSharp']DataModule.PlayerTimeData>::I
+				IL_04a2: callvirt instance void class ['Assembly-CSharp']DbtSaveDataManagerBase`2<class ['Assembly-CSharp']DbtSaveDataManager_PlayerTimeData, class ['Assembly-CSharp']DataModule.PlayerTimeData>::Save()
+
+				IL_04a7: call !0 class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']GameModule.MetaGameManager>::get_Instance()
+				IL_04ac: callvirt instance valuetype [UniTask]Cysharp.Threading.Tasks.UniTask class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']GameModule.MetaGameManager>::Init()
+				IL_04b1: stloc.s 8
+				IL_04b3: ldloca.s 8
+				IL_04b5: call instance valuetype [UniTask]Cysharp.Threading.Tasks.UniTask/Awaiter [UniTask]Cysharp.Threading.Tasks.UniTask::GetAwaiter()
+				IL_04ba: stloc.s 7
+				IL_04bc: ldloca.s 7
+				IL_04be: call instance bool [UniTask]Cysharp.Threading.Tasks.UniTask/Awaiter::get_IsCompleted()
+				IL_04c3: brtrue.s IL_0506
+
+				IL_04c5: ldarg.0
+				IL_04c6: ldc.i4.0
+				IL_04c7: dup
+				IL_04c8: stloc.0
+				IL_04c9: stfld int32 GameModule.GameManager/'<Init>d__17'::'<>1__state'
+				IL_04ce: ldarg.0
+				IL_04cf: ldloc.s 7
+				IL_04d1: stfld valuetype [UniTask]Cysharp.Threading.Tasks.UniTask/Awaiter GameModule.GameManager/'<Init>d__17'::'<>u__1'
+				IL_04d6: ldarg.0
+				IL_04d7: ldflda valuetype [UniTask]Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder GameModule.GameManager/'<Init>d__17'::'<>t__builder'
+				IL_04dc: ldloca.s 7
+				IL_04de: ldarg.0
+				IL_04df: call instance void [UniTask]Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder::AwaitUnsafeOnCompleted<valuetype [UniTask]Cysharp.Threading.Tasks.UniTask/Awaiter, valuetype GameModule.GameManager/'<Init>d__17'>(!!0&, !!1&)
+				IL_04e4: leave IL_07ea
+
+				IL_04e9: ldarg.0
+				IL_04ea: ldfld valuetype [UniTask]Cysharp.Threading.Tasks.UniTask/Awaiter GameModule.GameManager/'<Init>d__17'::'<>u__1'
+				IL_04ef: stloc.s 7
+				IL_04f1: ldarg.0
+				IL_04f2: ldflda valuetype [UniTask]Cysharp.Threading.Tasks.UniTask/Awaiter GameModule.GameManager/'<Init>d__17'::'<>u__1'
+				IL_04f7: initobj [UniTask]Cysharp.Threading.Tasks.UniTask/Awaiter
+				IL_04fd: ldarg.0
+				IL_04fe: ldc.i4.m1
+				IL_04ff: dup
+				IL_0500: stloc.0
+				IL_0501: stfld int32 GameModule.GameManager/'<Init>d__17'::'<>1__state'
+
+				IL_0506: ldloca.s 7
+				IL_0508: call instance void [UniTask]Cysharp.Threading.Tasks.UniTask/Awaiter::GetResult()
+				IL_050d: call !0 class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']GameModule.GetNewCardPanelManager>::get_Instance()
+				IL_0512: callvirt instance valuetype [UniTask]Cysharp.Threading.Tasks.UniTask class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']GameModule.GetNewCardPanelManager>::Init()
+				IL_0517: pop
+				IL_0518: ldloc.1
+				IL_0519: ldfld bool GameModule.GameManager::_isFirstThroghGame
+				IL_051e: brtrue.s IL_054b
+
+				IL_0520: call !0 class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']UIFramework.UIManager>::get_Instance()
+				IL_0525: ldstr "Assets/_Res/Addressable/Prefabs/UI/Panels/ClimbRankPanel.prefab"
+				IL_052a: callvirt instance valuetype [UniTask]Cysharp.Threading.Tasks.UniTask`1<class ['Assembly-CSharp']UIFramework.UIPanel> ['Assembly-CSharp']UIFramework.UIManager::GetPanel(string)
+				IL_052f: pop
+				IL_0530: call !0 class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']GameModule.MetaGameManager>::get_Instance()
+				IL_0535: ldc.i4.2
+				IL_0536: callvirt instance void ['Assembly-CSharp']GameModule.MetaGameManager::ShowMetaSwitchPanel(int32)
+				IL_053b: call !0 class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']EventModule.EventManager>::get_Instance()
+				IL_0540: ldstr "InitGameEndCheckIsHasLegacyBox"
+				IL_0545: ldnull
+				IL_0546: callvirt instance void ['Assembly-CSharp']EventModule.EventManager::TriggerEvent(string, object)
+
+				IL_054b: call !0 class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']UIFramework.UIManager>::get_Instance()
+				IL_0550: ldstr "Assets/_Res/Addressable/02CoreGameBundle/Prefabs/UI/Panels/FoundEnemyPanel.prefab"
+				IL_0555: callvirt instance valuetype [UniTask]Cysharp.Threading.Tasks.UniTask`1<class ['Assembly-CSharp']UIFramework.UIPanel> ['Assembly-CSharp']UIFramework.UIManager::GetPanel(string)
+				IL_055a: pop
+				IL_055b: call !0 class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']GameModule.CoreGameManager>::get_Instance()
+				IL_0560: callvirt instance valuetype [UniTask]Cysharp.Threading.Tasks.UniTask class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']GameModule.CoreGameManager>::Init()
+				IL_0565: stloc.s 8
+				IL_0567: ldloca.s 8
+				IL_0569: call instance valuetype [UniTask]Cysharp.Threading.Tasks.UniTask/Awaiter [UniTask]Cysharp.Threading.Tasks.UniTask::GetAwaiter()
+				IL_056e: stloc.s 7
+				IL_0570: ldloca.s 7
+				IL_0572: call instance bool [UniTask]Cysharp.Threading.Tasks.UniTask/Awaiter::get_IsCompleted()
+				IL_0577: brtrue.s IL_05ba
+
+				IL_0579: ldarg.0
+				IL_057a: ldc.i4.1
+				IL_057b: dup
+				IL_057c: stloc.0
+				IL_057d: stfld int32 GameModule.GameManager/'<Init>d__17'::'<>1__state'
+				IL_0582: ldarg.0
+				IL_0583: ldloc.s 7
+				IL_0585: stfld valuetype [UniTask]Cysharp.Threading.Tasks.UniTask/Awaiter GameModule.GameManager/'<Init>d__17'::'<>u__1'
+				IL_058a: ldarg.0
+				IL_058b: ldflda valuetype [UniTask]Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder GameModule.GameManager/'<Init>d__17'::'<>t__builder'
+				IL_0590: ldloca.s 7
+				IL_0592: ldarg.0
+				IL_0593: call instance void [UniTask]Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder::AwaitUnsafeOnCompleted<valuetype [UniTask]Cysharp.Threading.Tasks.UniTask/Awaiter, valuetype GameModule.GameManager/'<Init>d__17'>(!!0&, !!1&)
+				IL_0598: leave IL_07ea
+
+				IL_059d: ldarg.0
+				IL_059e: ldfld valuetype [UniTask]Cysharp.Threading.Tasks.UniTask/Awaiter GameModule.GameManager/'<Init>d__17'::'<>u__1'
+				IL_05a3: stloc.s 7
+				IL_05a5: ldarg.0
+				IL_05a6: ldflda valuetype [UniTask]Cysharp.Threading.Tasks.UniTask/Awaiter GameModule.GameManager/'<Init>d__17'::'<>u__1'
+				IL_05ab: initobj [UniTask]Cysharp.Threading.Tasks.UniTask/Awaiter
+				IL_05b1: ldarg.0
+				IL_05b2: ldc.i4.m1
+				IL_05b3: dup
+				IL_05b4: stloc.0
+				IL_05b5: stfld int32 GameModule.GameManager/'<Init>d__17'::'<>1__state'
+
+				IL_05ba: ldloca.s 7
+				IL_05bc: call instance void [UniTask]Cysharp.Threading.Tasks.UniTask/Awaiter::GetResult()
+				IL_05c1: call !0 class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']GameModule.SeasonManager>::get_Instance()
+				IL_05c6: callvirt instance valuetype [UniTask]Cysharp.Threading.Tasks.UniTask class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']GameModule.SeasonManager>::Init()
+				IL_05cb: pop
+				IL_05cc: call !0 class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']GameModule.FundManager>::get_Instance()
+				IL_05d1: callvirt instance valuetype [UniTask]Cysharp.Threading.Tasks.UniTask class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']GameModule.FundManager>::Init()
+				IL_05d6: pop
+				IL_05d7: call !0 class ['Assembly-CSharp']QuickTutor.Demo.ManagerBase`1<class ['Assembly-CSharp']GameModule.GiftPackageManager>::get_Instance()
+				IL_05dc: callvirt instance void class ['Assembly-CSharp']QuickTutor.Demo.ManagerBase`1<class ['Assembly-CSharp']GameModule.GiftPackageManager>::Init()
+				IL_05e1: call !0 class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']GameModule.GiftChainManager>::get_Instance()
+				IL_05e6: callvirt instance valuetype [UniTask]Cysharp.Threading.Tasks.UniTask class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']GameModule.GiftChainManager>::Init()
+				IL_05eb: pop
+				IL_05ec: call !0 class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']GameModule.GiftChainManager2>::get_Instance()
+				IL_05f1: callvirt instance valuetype [UniTask]Cysharp.Threading.Tasks.UniTask class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']GameModule.GiftChainManager2>::Init()
+				IL_05f6: pop
+				IL_05f7: call !0 class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']GameModule.MultistageNewcomerPackageManager>::get_Instance()
+				IL_05fc: callvirt instance valuetype [UniTask]Cysharp.Threading.Tasks.UniTask class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']GameModule.MultistageNewcomerPackageManager>::Init()
+				IL_0601: pop
+				IL_0602: call !0 class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']GameModule.UpgradeRewardManager>::get_Instance()
+				IL_0607: callvirt instance valuetype [UniTask]Cysharp.Threading.Tasks.UniTask class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']GameModule.UpgradeRewardManager>::Init()
+				IL_060c: pop
+				IL_060d: call !0 class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']GameModule.MysteriousStoreManager>::get_Instance()
+				IL_0612: callvirt instance valuetype [UniTask]Cysharp.Threading.Tasks.UniTask class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']GameModule.MysteriousStoreManager>::Init()
+				IL_0617: pop
+				IL_0618: call !0 class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']GameModule.BackpackManager>::get_Instance()
+				IL_061d: callvirt instance valuetype [UniTask]Cysharp.Threading.Tasks.UniTask class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']GameModule.BackpackManager>::Init()
+				IL_0622: pop
+				IL_0623: call !0 class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']GameModule.WeeklyCardActivityManager>::get_Instance()
+				IL_0628: callvirt instance valuetype [UniTask]Cysharp.Threading.Tasks.UniTask class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']GameModule.WeeklyCardActivityManager>::Init()
+				IL_062d: pop
+				IL_062e: ldstr "金卡周管理器初始化完成"
+				IL_0633: call void [UnityEngine.CoreModule]UnityEngine.Debug::Log(object)
+				IL_0638: call !0 class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']GameModule.MysteryAdventureManager>::get_Instance()
+				IL_063d: callvirt instance valuetype [UniTask]Cysharp.Threading.Tasks.UniTask class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']GameModule.MysteryAdventureManager>::Init()
+				IL_0642: pop
+				IL_0643: ldstr "秘境大冒险管理器初始化完成"
+				IL_0648: call void [UnityEngine.CoreModule]UnityEngine.Debug::Log(object)
+				IL_064d: call !0 class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']GameModule.WorldCupActivityManager>::get_Instance()
+				IL_0652: callvirt instance valuetype [UniTask]Cysharp.Threading.Tasks.UniTask class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']GameModule.WorldCupActivityManager>::Init()
+				IL_0657: pop
+				IL_0658: ldstr "世界杯狂欢管理器初始化完成"
+				IL_065d: call void [UnityEngine.CoreModule]UnityEngine.Debug::Log(object)
+				IL_0662: call !0 class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']GameModule.ReportEventsManager>::get_Instance()
+				IL_0667: callvirt instance void ['Assembly-CSharp']GameModule.ReportEventsManager::ArenaUnLockRbi()
+				IL_066c: call !0 class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']EventModule.EventManager>::get_Instance()
+				IL_0671: ldstr "GameSteerEndShowCardProbabilityPanel"
+				IL_0676: ldloc.1
+				IL_0677: ldftn instance void GameModule.GameManager::ShowCardProbabilityPanel(object)
+				IL_067d: newobj instance void class [netstandard]System.Action`1<object>::.ctor(object, native int)
+				IL_0682: callvirt instance void ['Assembly-CSharp']EventModule.EventManager::StartListening(string, class [netstandard]System.Action`1<object>)
+				IL_0687: call !0 class ['Assembly-CSharp']QuickTutor.Singleton`1<class ['Assembly-CSharp']QuickTutor.TutorialManager>::get_Instance()
+				IL_068c: ldstr "1009"
+				IL_0691: callvirt instance bool ['Assembly-CSharp']QuickTutor.TutorialManager::IsStepComplete(string)
+				IL_0696: brtrue.s IL_06b3
+
+				IL_0698: call !0 class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']EventModule.EventManager>::get_Instance()
+				IL_069d: ldstr "CardSteerEnd"
+				IL_06a2: ldloc.1
+				IL_06a3: ldftn instance void GameModule.GameManager::CardSteerEnd(object)
+				IL_06a9: newobj instance void class [netstandard]System.Action`1<object>::.ctor(object, native int)
+				IL_06ae: callvirt instance void ['Assembly-CSharp']EventModule.EventManager::StartListening(string, class [netstandard]System.Action`1<object>)
+
+				IL_06b3: call !0 class ['Assembly-CSharp']QuickTutor.Singleton`1<class ['Assembly-CSharp']QuickTutor.TutorialManager>::get_Instance()
+				IL_06b8: ldstr "1016"
+				IL_06bd: callvirt instance bool ['Assembly-CSharp']QuickTutor.TutorialManager::IsStepComplete(string)
+				IL_06c2: brtrue.s IL_06df
+
+				IL_06c4: call !0 class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']EventModule.EventManager>::get_Instance()
+				IL_06c9: ldstr "FetterSteerEnd"
+				IL_06ce: ldloc.1
+				IL_06cf: ldftn instance void GameModule.GameManager::FetterSteerEnd(object)
+				IL_06d5: newobj instance void class [netstandard]System.Action`1<object>::.ctor(object, native int)
+				IL_06da: callvirt instance void ['Assembly-CSharp']EventModule.EventManager::StartListening(string, class [netstandard]System.Action`1<object>)
+
+				IL_06df: call !0 class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']EventModule.EventManager>::get_Instance()
+				IL_06e4: ldstr "DanChange"
+				IL_06e9: ldloc.1
+				IL_06ea: ldftn instance void GameModule.GameManager::DanChangeUpdateInfo(object)
+				IL_06f0: newobj instance void class [netstandard]System.Action`1<object>::.ctor(object, native int)
+				IL_06f5: callvirt instance void ['Assembly-CSharp']EventModule.EventManager::StartListening(string, class [netstandard]System.Action`1<object>)
+				IL_06fa: ldloc.1
+				IL_06fb: ldfld bool GameModule.GameManager::_isFirstThroghGame
+				IL_0700: brfalse.s IL_0712
+
+				IL_0702: call !0 class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']EventModule.EventManager>::get_Instance()
+				IL_0707: ldstr "DanChange"
+				IL_070c: ldnull
+				IL_070d: callvirt instance void ['Assembly-CSharp']EventModule.EventManager::TriggerEvent(string, object)
+
+				IL_0712: call !0 class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']EventModule.EventManager>::get_Instance()
+				IL_0717: ldstr "OnArenaUIBGItemStartBtnClicked"
+				IL_071c: ldloc.1
+				IL_071d: ldftn instance void GameModule.GameManager::StartCoreGame(object)
+				IL_0723: newobj instance void class [netstandard]System.Action`1<object>::.ctor(object, native int)
+				IL_0728: callvirt instance void ['Assembly-CSharp']EventModule.EventManager::StartListening(string, class [netstandard]System.Action`1<object>)
+				IL_072d: call !0 class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']EventModule.EventManager>::get_Instance()
+				IL_0732: ldstr "OnGameOver"
+				IL_0737: ldloc.1
+				IL_0738: ldftn instance void GameModule.GameManager::EnterMeta(object)
+				IL_073e: newobj instance void class [netstandard]System.Action`1<object>::.ctor(object, native int)
+				IL_0743: callvirt instance void ['Assembly-CSharp']EventModule.EventManager::StartListening(string, class [netstandard]System.Action`1<object>)
+				IL_0748: call !0 class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']EventModule.EventManager>::get_Instance()
+				IL_074d: ldstr "CloseLoadPanel"
+				IL_0752: ldloc.1
+				IL_0753: ldftn instance void GameModule.GameManager::CloseLoadPanel(object)
+				IL_0759: newobj instance void class [netstandard]System.Action`1<object>::.ctor(object, native int)
+				IL_075e: callvirt instance void ['Assembly-CSharp']EventModule.EventManager::StartListening(string, class [netstandard]System.Action`1<object>)
+				IL_0763: call !0 class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']EventModule.EventManager>::get_Instance()
+				IL_0768: ldstr "LoadEnd"
+				IL_076d: ldloc.1
+				IL_076e: ldftn instance void GameModule.GameManager::LoadEnd(object)
+				IL_0774: newobj instance void class [netstandard]System.Action`1<object>::.ctor(object, native int)
+				IL_0779: callvirt instance void ['Assembly-CSharp']EventModule.EventManager::StartListening(string, class [netstandard]System.Action`1<object>)
+				IL_077e: ldloc.1
+				IL_077f: ldfld class [netstandard]System.Action GameModule.GameManager::onGameManagerInitComplete
+				IL_0784: dup
+				IL_0785: brtrue.s IL_078a
+
+				IL_0787: pop
+				IL_0788: br.s IL_078f
+
+				IL_078a: callvirt instance void [netstandard]System.Action::Invoke()
+
+				IL_078f: ldloc.1
+				IL_0790: ldc.i4.1
+				IL_0791: stfld bool GameModule.GameManager::InitComplete
+				IL_0796: call !0 class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']GameModule.ReportEventsManager>::get_Instance()
+				IL_079b: callvirt instance void ['Assembly-CSharp']GameModule.ReportEventsManager::AppOpenEvent()
+				IL_07a0: call !0 class ['Assembly-CSharp']L_Tools.Singleton`1<class ['Assembly-CSharp']ljzs_lt.LTEmailControl>::get_Instance()
+				IL_07a5: callvirt instance void ['Assembly-CSharp']ljzs_lt.LTEmailControl::InitEmail()
+				IL_07aa: call void ['Assembly-CSharp']FixedRandomTools::Load()
+				IL_07af: ldloc.1
+				IL_07b0: ldloc.1
+				IL_07b1: call instance class [netstandard]System.Collections.IEnumerator GameModule.GameManager::CheckNetworkState()
+				IL_07b6: call instance class [UnityEngine.CoreModule]UnityEngine.Coroutine [UnityEngine.CoreModule]UnityEngine.MonoBehaviour::StartCoroutine(class [netstandard]System.Collections.IEnumerator)
+				IL_07bb: pop
+				IL_07bc: leave.s IL_07d7
+			} // end .try
+			catch [netstandard]System.Exception
+			{
+				IL_07be: stloc.s 9
+				IL_07c0: ldarg.0
+				IL_07c1: ldc.i4.s -2
+				IL_07c3: stfld int32 GameModule.GameManager/'<Init>d__17'::'<>1__state'
+				IL_07c8: ldarg.0
+				IL_07c9: ldflda valuetype [UniTask]Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder GameModule.GameManager/'<Init>d__17'::'<>t__builder'
+				IL_07ce: ldloc.s 9
+				IL_07d0: call instance void [UniTask]Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder::SetException(class [netstandard]System.Exception)
+				IL_07d5: leave.s IL_07ea
+			} // end handler
+
+			IL_07d7: ldarg.0
+			IL_07d8: ldc.i4.s -2
+			IL_07da: stfld int32 GameModule.GameManager/'<Init>d__17'::'<>1__state'
+			IL_07df: ldarg.0
+			IL_07e0: ldflda valuetype [UniTask]Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder GameModule.GameManager/'<Init>d__17'::'<>t__builder'
+			IL_07e5: call instance void [UniTask]Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder::SetResult()
+
+			IL_07ea: ret
+		} // end of method '<Init>d__17'::MoveNext
+
+		.method private final hidebysig newslot virtual 
+			instance void SetStateMachine (
+				class [netstandard]System.Runtime.CompilerServices.IAsyncStateMachine stateMachine
+			) cil managed 
+		{
+			.custom instance void [netstandard]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = (
+				01 00 00 00
+			)
+			.override method instance void [netstandard]System.Runtime.CompilerServices.IAsyncStateMachine::SetStateMachine(class [netstandard]System.Runtime.CompilerServices.IAsyncStateMachine)
+			// Method begins at RVA 0x3650
+			// Header size: 1
+			// Code size: 13 (0xd)
+			.maxstack 8
+
+			IL_0000: ldarg.0
+			IL_0001: ldflda valuetype [UniTask]Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder GameModule.GameManager/'<Init>d__17'::'<>t__builder'
+			IL_0006: ldarg.1
+			IL_0007: call instance void [UniTask]Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder::SetStateMachine(class [netstandard]System.Runtime.CompilerServices.IAsyncStateMachine)
+			IL_000c: ret
+		} // end of method '<Init>d__17'::SetStateMachine
+
+	} // end of class <Init>d__17
+
+	.class nested private auto ansi sealed beforefieldinit '<ShowCardProbabilityPanel>d__29'
+		extends [netstandard]System.ValueType
+		implements [netstandard]System.Runtime.CompilerServices.IAsyncStateMachine
+	{
+		.custom instance void [netstandard]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = (
+			01 00 00 00
+		)
+		// Fields
+		.field public int32 '<>1__state'
+		.field public valuetype [netstandard]System.Runtime.CompilerServices.AsyncVoidMethodBuilder '<>t__builder'
+		.field private valuetype [UniTask]Cysharp.Threading.Tasks.UniTask/Awaiter '<>u__1'
+
+		// Methods
+		.method private final hidebysig newslot virtual 
+			instance void MoveNext () cil managed 
+		{
+			.override method instance void [netstandard]System.Runtime.CompilerServices.IAsyncStateMachine::MoveNext()
+			// Method begins at RVA 0x3660
+			// Header size: 12
+			// Code size: 185 (0xb9)
+			.maxstack 5
+			.locals init (
+				[0] int32,
+				[1] valuetype [UniTask]Cysharp.Threading.Tasks.UniTask/Awaiter,
+				[2] valuetype [netstandard]System.Threading.CancellationToken,
+				[3] valuetype [UniTask]Cysharp.Threading.Tasks.UniTask,
+				[4] class [netstandard]System.Exception
+			)
+
+			IL_0000: ldarg.0
+			IL_0001: ldfld int32 GameModule.GameManager/'<ShowCardProbabilityPanel>d__29'::'<>1__state'
+			IL_0006: stloc.0
+			.try
+			{
+				IL_0007: ldloc.0
+				IL_0008: brfalse.s IL_0052
+
+				IL_000a: ldc.r4 0.05
+				IL_000f: ldc.i4.0
+				IL_0010: ldc.i4.8
+				IL_0011: ldloca.s 2
+				IL_0013: initobj [netstandard]System.Threading.CancellationToken
+				IL_0019: ldloc.2
+				IL_001a: ldc.i4.0
+				IL_001b: call valuetype [UniTask]Cysharp.Threading.Tasks.UniTask [UniTask]Cysharp.Threading.Tasks.UniTask::WaitForSeconds(float32, bool, valuetype [UniTask]Cysharp.Threading.Tasks.PlayerLoopTiming, valuetype [netstandard]System.Threading.CancellationToken, bool)
+				IL_0020: stloc.3
+				IL_0021: ldloca.s 3
+				IL_0023: call instance valuetype [UniTask]Cysharp.Threading.Tasks.UniTask/Awaiter [UniTask]Cysharp.Threading.Tasks.UniTask::GetAwaiter()
+				IL_0028: stloc.1
+				IL_0029: ldloca.s 1
+				IL_002b: call instance bool [UniTask]Cysharp.Threading.Tasks.UniTask/Awaiter::get_IsCompleted()
+				IL_0030: brtrue.s IL_006e
+
+				IL_0032: ldarg.0
+				IL_0033: ldc.i4.0
+				IL_0034: dup
+				IL_0035: stloc.0
+				IL_0036: stfld int32 GameModule.GameManager/'<ShowCardProbabilityPanel>d__29'::'<>1__state'
+				IL_003b: ldarg.0
+				IL_003c: ldloc.1
+				IL_003d: stfld valuetype [UniTask]Cysharp.Threading.Tasks.UniTask/Awaiter GameModule.GameManager/'<ShowCardProbabilityPanel>d__29'::'<>u__1'
+				IL_0042: ldarg.0
+				IL_0043: ldflda valuetype [netstandard]System.Runtime.CompilerServices.AsyncVoidMethodBuilder GameModule.GameManager/'<ShowCardProbabilityPanel>d__29'::'<>t__builder'
+				IL_0048: ldloca.s 1
+				IL_004a: ldarg.0
+				IL_004b: call instance void [netstandard]System.Runtime.CompilerServices.AsyncVoidMethodBuilder::AwaitUnsafeOnCompleted<valuetype [UniTask]Cysharp.Threading.Tasks.UniTask/Awaiter, valuetype GameModule.GameManager/'<ShowCardProbabilityPanel>d__29'>(!!0&, !!1&)
+				IL_0050: leave.s IL_00b8
+
+				IL_0052: ldarg.0
+				IL_0053: ldfld valuetype [UniTask]Cysharp.Threading.Tasks.UniTask/Awaiter GameModule.GameManager/'<ShowCardProbabilityPanel>d__29'::'<>u__1'
+				IL_0058: stloc.1
+				IL_0059: ldarg.0
+				IL_005a: ldflda valuetype [UniTask]Cysharp.Threading.Tasks.UniTask/Awaiter GameModule.GameManager/'<ShowCardProbabilityPanel>d__29'::'<>u__1'
+				IL_005f: initobj [UniTask]Cysharp.Threading.Tasks.UniTask/Awaiter
+				IL_0065: ldarg.0
+				IL_0066: ldc.i4.m1
+				IL_0067: dup
+				IL_0068: stloc.0
+				IL_0069: stfld int32 GameModule.GameManager/'<ShowCardProbabilityPanel>d__29'::'<>1__state'
+
+				IL_006e: ldloca.s 1
+				IL_0070: call instance void [UniTask]Cysharp.Threading.Tasks.UniTask/Awaiter::GetResult()
+				IL_0075: call !0 class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']UIFramework.UIManager>::get_Instance()
+				IL_007a: ldstr "Assets/_Res/Addressable/02CoreGameBundle/Prefabs/UI/Panels/HexDescribesPanel.prefab"
+				IL_007f: call !!0[] [netstandard]System.Array::Empty<object>()
+				IL_0084: callvirt instance valuetype [UniTask]Cysharp.Threading.Tasks.UniTask ['Assembly-CSharp']UIFramework.UIManager::ShowPanel(string, object[])
+				IL_0089: pop
+				IL_008a: leave.s IL_00a5
+			} // end .try
+			catch [netstandard]System.Exception
+			{
+				IL_008c: stloc.s 4
+				IL_008e: ldarg.0
+				IL_008f: ldc.i4.s -2
+				IL_0091: stfld int32 GameModule.GameManager/'<ShowCardProbabilityPanel>d__29'::'<>1__state'
+				IL_0096: ldarg.0
+				IL_0097: ldflda valuetype [netstandard]System.Runtime.CompilerServices.AsyncVoidMethodBuilder GameModule.GameManager/'<ShowCardProbabilityPanel>d__29'::'<>t__builder'
+				IL_009c: ldloc.s 4
+				IL_009e: call instance void [netstandard]System.Runtime.CompilerServices.AsyncVoidMethodBuilder::SetException(class [netstandard]System.Exception)
+				IL_00a3: leave.s IL_00b8
+			} // end handler
+
+			IL_00a5: ldarg.0
+			IL_00a6: ldc.i4.s -2
+			IL_00a8: stfld int32 GameModule.GameManager/'<ShowCardProbabilityPanel>d__29'::'<>1__state'
+			IL_00ad: ldarg.0
+			IL_00ae: ldflda valuetype [netstandard]System.Runtime.CompilerServices.AsyncVoidMethodBuilder GameModule.GameManager/'<ShowCardProbabilityPanel>d__29'::'<>t__builder'
+			IL_00b3: call instance void [netstandard]System.Runtime.CompilerServices.AsyncVoidMethodBuilder::SetResult()
+
+			IL_00b8: ret
+		} // end of method '<ShowCardProbabilityPanel>d__29'::MoveNext
+
+		.method private final hidebysig newslot virtual 
+			instance void SetStateMachine (
+				class [netstandard]System.Runtime.CompilerServices.IAsyncStateMachine stateMachine
+			) cil managed 
+		{
+			.custom instance void [netstandard]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = (
+				01 00 00 00
+			)
+			.override method instance void [netstandard]System.Runtime.CompilerServices.IAsyncStateMachine::SetStateMachine(class [netstandard]System.Runtime.CompilerServices.IAsyncStateMachine)
+			// Method begins at RVA 0x3738
+			// Header size: 1
+			// Code size: 13 (0xd)
+			.maxstack 8
+
+			IL_0000: ldarg.0
+			IL_0001: ldflda valuetype [netstandard]System.Runtime.CompilerServices.AsyncVoidMethodBuilder GameModule.GameManager/'<ShowCardProbabilityPanel>d__29'::'<>t__builder'
+			IL_0006: ldarg.1
+			IL_0007: call instance void [netstandard]System.Runtime.CompilerServices.AsyncVoidMethodBuilder::SetStateMachine(class [netstandard]System.Runtime.CompilerServices.IAsyncStateMachine)
+			IL_000c: ret
+		} // end of method '<ShowCardProbabilityPanel>d__29'::SetStateMachine
+
+	} // end of class <ShowCardProbabilityPanel>d__29
+
+
+	// Fields
+	.field public bool InitComplete
+	.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+		01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 34
+		30 30 32 41 43 34
+	)
+	.custom instance void [Il2CppDummyDll]Il2CppDummyDll.FieldOffsetAttribute::.ctor() = (
+		01 00 01 00 53 0e 06 4f 66 66 73 65 74 04 30 78
+		32 30
+	)
+	.field private bool _isFirstThroghGame
+	.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+		01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 34
+		30 30 32 41 43 35
+	)
+	.custom instance void [Il2CppDummyDll]Il2CppDummyDll.FieldOffsetAttribute::.ctor() = (
+		01 00 01 00 53 0e 06 4f 66 66 73 65 74 04 30 78
+		32 31
+	)
+	.field public class ['Assembly-CSharp']GameModule.UpdateController updateController
+	.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+		01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 34
+		30 30 32 41 43 36
+	)
+	.custom instance void [Il2CppDummyDll]Il2CppDummyDll.FieldOffsetAttribute::.ctor() = (
+		01 00 01 00 53 0e 06 4f 66 66 73 65 74 04 30 78
+		32 38
+	)
+	.field private class [UnityEngine.CoreModule]UnityEngine.GameObject APostProcess
+	.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+		01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 34
+		30 30 32 41 43 37
+	)
+	.custom instance void [Il2CppDummyDll]Il2CppDummyDll.FieldOffsetAttribute::.ctor() = (
+		01 00 01 00 53 0e 06 4f 66 66 73 65 74 04 30 78
+		33 30
+	)
+	.field private class [UnityEngine.CoreModule]UnityEngine.GameObject BPostProcess
+	.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+		01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 34
+		30 30 32 41 43 38
+	)
+	.custom instance void [Il2CppDummyDll]Il2CppDummyDll.FieldOffsetAttribute::.ctor() = (
+		01 00 01 00 53 0e 06 4f 66 66 73 65 74 04 30 78
+		33 38
+	)
+	.field private class ['Assembly-CSharp']TimeModuleO.TimeManager/Timer canPushGiftPackTimer
+	.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+		01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 34
+		30 30 32 41 43 39
+	)
+	.custom instance void [Il2CppDummyDll]Il2CppDummyDll.FieldOffsetAttribute::.ctor() = (
+		01 00 01 00 53 0e 06 4f 66 66 73 65 74 04 30 78
+		34 30
+	)
+	.field private class ['Assembly-CSharp']TimeModuleO.TimeManager/Timer pushGiftPackCutDownTimer
+	.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+		01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 34
+		30 30 32 41 43 41
+	)
+	.custom instance void [Il2CppDummyDll]Il2CppDummyDll.FieldOffsetAttribute::.ctor() = (
+		01 00 01 00 53 0e 06 4f 66 66 73 65 74 04 30 78
+		34 38
+	)
+	.field private class ['Assembly-CSharp']TimeModuleO.TimeManager/Timer pushGiftPackCdTimer
+	.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+		01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 34
+		30 30 32 41 43 42
+	)
+	.custom instance void [Il2CppDummyDll]Il2CppDummyDll.FieldOffsetAttribute::.ctor() = (
+		01 00 01 00 53 0e 06 4f 66 66 73 65 74 04 30 78
+		35 30
+	)
+	.field private class [netstandard]System.Action onGameManagerInitComplete
+	.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+		01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 34
+		30 30 32 41 43 43
+	)
+	.custom instance void [Il2CppDummyDll]Il2CppDummyDll.FieldOffsetAttribute::.ctor() = (
+		01 00 01 00 53 0e 06 4f 66 66 73 65 74 04 30 78
+		35 38
+	)
+	.field private bool showNoInternetPanel
+	.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+		01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 34
+		30 30 32 41 43 44
+	)
+	.custom instance void [Il2CppDummyDll]Il2CppDummyDll.FieldOffsetAttribute::.ctor() = (
+		01 00 01 00 53 0e 06 4f 66 66 73 65 74 04 30 78
+		36 30
+	)
+	.field private bool _cheatGamePaused
+	.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+		01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 34
+		30 30 32 41 43 45
+	)
+	.custom instance void [Il2CppDummyDll]Il2CppDummyDll.FieldOffsetAttribute::.ctor() = (
+		01 00 01 00 53 0e 06 4f 66 66 73 65 74 04 30 78
+		36 31
+	)
+	.field private class ['Assembly-CSharp']TimeModuleO.TimeManager/Timer monthPass
+	.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+		01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 34
+		30 30 32 41 43 46
+	)
+	.custom instance void [Il2CppDummyDll]Il2CppDummyDll.FieldOffsetAttribute::.ctor() = (
+		01 00 01 00 53 0e 06 4f 66 66 73 65 74 04 30 78
+		36 38
+	)
+	.field private bool closeLoadPanel
+	.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+		01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 34
+		30 30 32 41 44 30
+	)
+	.custom instance void [Il2CppDummyDll]Il2CppDummyDll.FieldOffsetAttribute::.ctor() = (
+		01 00 01 00 53 0e 06 4f 66 66 73 65 74 04 30 78
+		37 30
+	)
+
+	// Methods
+	.method public hidebysig virtual 
+		instance valuetype [UniTask]Cysharp.Threading.Tasks.UniTask Init () cil managed 
+	{
+		.custom instance void [netstandard]System.Runtime.CompilerServices.AsyncStateMachineAttribute::.ctor(class [netstandard]System.Type) = (
+			01 00 22 47 61 6d 65 4d 6f 64 75 6c 65 2e 47 61
+			6d 65 4d 61 6e 61 67 65 72 2b 3c 49 6e 69 74 3e
+			64 5f 5f 31 37 00 00
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+			01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 36
+			30 30 31 35 37 41
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.AddressAttribute::.ctor() = (
+			01 00 04 00 53 0e 03 52 56 41 09 30 78 33 45 31
+			39 37 43 30 53 0e 06 4f 66 66 73 65 74 09 30 78
+			33 45 31 35 37 43 30 53 0e 02 56 41 09 30 78 33
+			45 31 39 37 43 30 53 0e 04 53 6c 6f 74 01 34
+		)
+		// Method begins at RVA 0x2050
+		// Header size: 12
+		// Code size: 55 (0x37)
+		.maxstack 2
+		.locals init (
+			[0] valuetype GameModule.GameManager/'<Init>d__17'
+		)
+
+		IL_0000: ldloca.s 0
+		IL_0002: call valuetype [UniTask]Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder [UniTask]Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder::Create()
+		IL_0007: stfld valuetype [UniTask]Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder GameModule.GameManager/'<Init>d__17'::'<>t__builder'
+		IL_000c: ldloca.s 0
+		IL_000e: ldarg.0
+		IL_000f: stfld class GameModule.GameManager GameModule.GameManager/'<Init>d__17'::'<>4__this'
+		IL_0014: ldloca.s 0
+		IL_0016: ldc.i4.m1
+		IL_0017: stfld int32 GameModule.GameManager/'<Init>d__17'::'<>1__state'
+		IL_001c: ldloca.s 0
+		IL_001e: ldflda valuetype [UniTask]Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder GameModule.GameManager/'<Init>d__17'::'<>t__builder'
+		IL_0023: ldloca.s 0
+		IL_0025: call instance void [UniTask]Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder::Start<valuetype GameModule.GameManager/'<Init>d__17'>(!!0&)
+		IL_002a: ldloca.s 0
+		IL_002c: ldflda valuetype [UniTask]Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder GameModule.GameManager/'<Init>d__17'::'<>t__builder'
+		IL_0031: call instance valuetype [UniTask]Cysharp.Threading.Tasks.UniTask [UniTask]Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder::get_Task()
+		IL_0036: ret
+	} // end of method GameManager::Init
+
+	.method public hidebysig 
+		instance void RegisterOnGameManagerInitComplete (
+			class [netstandard]System.Action action
+		) cil managed 
+	{
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+			01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 36
+			30 30 31 35 37 42
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.AddressAttribute::.ctor() = (
+			01 00 03 00 53 0e 03 52 56 41 09 30 78 33 45 31
+			39 38 34 43 53 0e 06 4f 66 66 73 65 74 09 30 78
+			33 45 31 35 38 34 43 53 0e 02 56 41 09 30 78 33
+			45 31 39 38 34 43
+		)
+		// Method begins at RVA 0x2093
+		// Header size: 1
+		// Code size: 42 (0x2a)
+		.maxstack 8
+
+		IL_0000: ldarg.0
+		IL_0001: ldfld bool GameModule.GameManager::InitComplete
+		IL_0006: brfalse.s IL_0012
+
+		IL_0008: ldarg.1
+		IL_0009: brfalse.s IL_0029
+
+		IL_000b: ldarg.1
+		IL_000c: callvirt instance void [netstandard]System.Action::Invoke()
+		IL_0011: ret
+
+		IL_0012: ldarg.0
+		IL_0013: ldarg.0
+		IL_0014: ldfld class [netstandard]System.Action GameModule.GameManager::onGameManagerInitComplete
+		IL_0019: ldarg.1
+		IL_001a: call class [netstandard]System.Delegate [netstandard]System.Delegate::Combine(class [netstandard]System.Delegate, class [netstandard]System.Delegate)
+		IL_001f: castclass [netstandard]System.Action
+		IL_0024: stfld class [netstandard]System.Action GameModule.GameManager::onGameManagerInitComplete
+
+		IL_0029: ret
+	} // end of method GameManager::RegisterOnGameManagerInitComplete
+
+	.method private hidebysig 
+		instance void Update () cil managed 
+	{
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+			01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 36
+			30 30 31 35 37 43
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.AddressAttribute::.ctor() = (
+			01 00 03 00 53 0e 03 52 56 41 09 30 78 33 45 31
+			39 38 46 30 53 0e 06 4f 66 66 73 65 74 09 30 78
+			33 45 31 35 38 46 30 53 0e 02 56 41 09 30 78 33
+			45 31 39 38 46 30
+		)
+		// Method begins at RVA 0x20be
+		// Header size: 1
+		// Code size: 30 (0x1e)
+		.maxstack 8
+
+		IL_0000: ldarg.0
+		IL_0001: ldfld bool GameModule.GameManager::InitComplete
+		IL_0006: brfalse.s IL_001d
+
+		IL_0008: ldarg.0
+		IL_0009: ldfld class ['Assembly-CSharp']GameModule.UpdateController GameModule.GameManager::updateController
+		IL_000e: dup
+		IL_000f: brtrue.s IL_0013
+
+		IL_0011: pop
+		IL_0012: ret
+
+		IL_0013: call float32 [UnityEngine.CoreModule]UnityEngine.Time::get_deltaTime()
+		IL_0018: call instance void ['Assembly-CSharp']GameModule.UpdateController::ToUpdate(float32)
+
+		IL_001d: ret
+	} // end of method GameManager::Update
+
+	.method private hidebysig 
+		instance class [netstandard]System.Collections.IEnumerator CheckNetworkState () cil managed 
+	{
+		.custom instance void [netstandard]System.Runtime.CompilerServices.IteratorStateMachineAttribute::.ctor(class [netstandard]System.Type) = (
+			01 00 2f 47 61 6d 65 4d 6f 64 75 6c 65 2e 47 61
+			6d 65 4d 61 6e 61 67 65 72 2b 3c 43 68 65 63 6b
+			4e 65 74 77 6f 72 6b 53 74 61 74 65 3e 64 5f 5f
+			32 30 00 00
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+			01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 36
+			30 30 31 35 37 44
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.AddressAttribute::.ctor() = (
+			01 00 03 00 53 0e 03 52 56 41 09 30 78 33 45 31
+			39 39 32 38 53 0e 06 4f 66 66 73 65 74 09 30 78
+			33 45 31 35 39 32 38 53 0e 02 56 41 09 30 78 33
+			45 31 39 39 32 38
+		)
+		// Method begins at RVA 0x20dd
+		// Header size: 1
+		// Code size: 14 (0xe)
+		.maxstack 8
+
+		IL_0000: ldc.i4.0
+		IL_0001: newobj instance void GameModule.GameManager/'<CheckNetworkState>d__20'::.ctor(int32)
+		IL_0006: dup
+		IL_0007: ldarg.0
+		IL_0008: stfld class GameModule.GameManager GameModule.GameManager/'<CheckNetworkState>d__20'::'<>4__this'
+		IL_000d: ret
+	} // end of method GameManager::CheckNetworkState
+
+	.method private hidebysig 
+		instance void PauseGame () cil managed 
+	{
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+			01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 36
+			30 30 31 35 37 45
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.AddressAttribute::.ctor() = (
+			01 00 03 00 53 0e 03 52 56 41 09 30 78 33 45 31
+			39 39 42 30 53 0e 06 4f 66 66 73 65 74 09 30 78
+			33 45 31 35 39 42 30 53 0e 02 56 41 09 30 78 33
+			45 31 39 39 42 30
+		)
+		// Method begins at RVA 0x20ec
+		// Header size: 1
+		// Code size: 49 (0x31)
+		.maxstack 8
+
+		IL_0000: call !0 class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']GameModule.BattleGameManager>::get_Instance()
+		IL_0005: ldnull
+		IL_0006: call bool [UnityEngine.CoreModule]UnityEngine.Object::op_Inequality(class [UnityEngine.CoreModule]UnityEngine.Object, class [UnityEngine.CoreModule]UnityEngine.Object)
+		IL_000b: brfalse.s IL_0018
+
+		IL_000d: call !0 class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']GameModule.BattleGameManager>::get_Instance()
+		IL_0012: ldc.i4.1
+		IL_0013: callvirt instance void ['Assembly-CSharp']GameModule.BattleGameManager::SetGamePaused(bool)
+
+		IL_0018: call !0 class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']GameModule.AIBehaviourManager>::get_Instance()
+		IL_001d: ldnull
+		IL_001e: call bool [UnityEngine.CoreModule]UnityEngine.Object::op_Inequality(class [UnityEngine.CoreModule]UnityEngine.Object, class [UnityEngine.CoreModule]UnityEngine.Object)
+		IL_0023: brfalse.s IL_0030
+
+		IL_0025: call !0 class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']GameModule.AIBehaviourManager>::get_Instance()
+		IL_002a: ldc.i4.1
+		IL_002b: callvirt instance void ['Assembly-CSharp']GameModule.AIBehaviourManager::SetGamePaused(bool)
+
+		IL_0030: ret
+	} // end of method GameManager::PauseGame
+
+	.method private hidebysig 
+		instance void ResumeGame () cil managed 
+	{
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+			01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 36
+			30 30 31 35 37 46
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.AddressAttribute::.ctor() = (
+			01 00 03 00 53 0e 03 52 56 41 09 30 78 33 45 31
+			39 41 42 38 53 0e 06 4f 66 66 73 65 74 09 30 78
+			33 45 31 35 41 42 38 53 0e 02 56 41 09 30 78 33
+			45 31 39 41 42 38
+		)
+		// Method begins at RVA 0x211e
+		// Header size: 1
+		// Code size: 49 (0x31)
+		.maxstack 8
+
+		IL_0000: call !0 class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']GameModule.BattleGameManager>::get_Instance()
+		IL_0005: ldnull
+		IL_0006: call bool [UnityEngine.CoreModule]UnityEngine.Object::op_Inequality(class [UnityEngine.CoreModule]UnityEngine.Object, class [UnityEngine.CoreModule]UnityEngine.Object)
+		IL_000b: brfalse.s IL_0018
+
+		IL_000d: call !0 class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']GameModule.BattleGameManager>::get_Instance()
+		IL_0012: ldc.i4.0
+		IL_0013: callvirt instance void ['Assembly-CSharp']GameModule.BattleGameManager::SetGamePaused(bool)
+
+		IL_0018: call !0 class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']GameModule.AIBehaviourManager>::get_Instance()
+		IL_001d: ldnull
+		IL_001e: call bool [UnityEngine.CoreModule]UnityEngine.Object::op_Inequality(class [UnityEngine.CoreModule]UnityEngine.Object, class [UnityEngine.CoreModule]UnityEngine.Object)
+		IL_0023: brfalse.s IL_0030
+
+		IL_0025: call !0 class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']GameModule.AIBehaviourManager>::get_Instance()
+		IL_002a: ldc.i4.0
+		IL_002b: callvirt instance void ['Assembly-CSharp']GameModule.AIBehaviourManager::SetGamePaused(bool)
+
+		IL_0030: ret
+	} // end of method GameManager::ResumeGame
+
+	.method private hidebysig 
+		instance void CheckMonthPass () cil managed 
+	{
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+			01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 36
+			30 30 31 35 38 30
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.AddressAttribute::.ctor() = (
+			01 00 03 00 53 0e 03 52 56 41 09 30 78 33 45 31
+			39 39 32 34 53 0e 06 4f 66 66 73 65 74 09 30 78
+			33 45 31 35 39 32 34 53 0e 02 56 41 09 30 78 33
+			45 31 39 39 32 34
+		)
+		// Method begins at RVA 0x2150
+		// Header size: 1
+		// Code size: 1 (0x1)
+		.maxstack 8
+
+		IL_0000: ret
+	} // end of method GameManager::CheckMonthPass
+
+	.method private hidebysig 
+		instance void StartCoreGame (
+			object obj
+		) cil managed 
+	{
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+			01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 36
+			30 30 31 35 38 31
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.AddressAttribute::.ctor() = (
+			01 00 03 00 53 0e 03 52 56 41 09 30 78 33 45 31
+			39 42 43 30 53 0e 06 4f 66 66 73 65 74 09 30 78
+			33 45 31 35 42 43 30 53 0e 02 56 41 09 30 78 33
+			45 31 39 42 43 30
+		)
+		// Method begins at RVA 0x2154
+		// Header size: 12
+		// Code size: 75 (0x4b)
+		.maxstack 5
+		.locals init (
+			[0] class [netstandard]System.Func`2<bool, class ['Assembly-CSharp']GameModule.RewardConfig>,
+			[1] class ['Assembly-CSharp']GameModule.BattleContext
+		)
+
+		IL_0000: ldnull
+		IL_0001: stloc.0
+		IL_0002: ldloc.0
+		IL_0003: ldsfld class [netstandard]System.Func`2<bool, class ['Assembly-CSharp']GameModule.RewardConfig> GameModule.GameManager/'<>c'::'<>9__24_0'
+		IL_0008: dup
+		IL_0009: brtrue.s IL_0022
+
+		IL_000b: pop
+		IL_000c: ldsfld class GameModule.GameManager/'<>c' GameModule.GameManager/'<>c'::'<>9'
+		IL_0011: ldftn instance class ['Assembly-CSharp']GameModule.RewardConfig GameModule.GameManager/'<>c'::'<StartCoreGame>b__24_0'(bool)
+		IL_0017: newobj instance void class [netstandard]System.Func`2<bool, class ['Assembly-CSharp']GameModule.RewardConfig>::.ctor(object, native int)
+		IL_001c: dup
+		IL_001d: stsfld class [netstandard]System.Func`2<bool, class ['Assembly-CSharp']GameModule.RewardConfig> GameModule.GameManager/'<>c'::'<>9__24_0'
+
+		IL_0022: call class [netstandard]System.Delegate [netstandard]System.Delegate::Combine(class [netstandard]System.Delegate, class [netstandard]System.Delegate)
+		IL_0027: castclass class [netstandard]System.Func`2<bool, class ['Assembly-CSharp']GameModule.RewardConfig>
+		IL_002c: stloc.0
+		IL_002d: ldc.i4.1
+		IL_002e: ldnull
+		IL_002f: ldloc.0
+		IL_0030: ldnull
+		IL_0031: ldnull
+		IL_0032: newobj instance void ['Assembly-CSharp']GameModule.BattleContext::.ctor(bool, class ['Assembly-CSharp']GameModule.EnemyBattleDataCofig, class [netstandard]System.Func`2<bool, class ['Assembly-CSharp']GameModule.RewardConfig>, class [UnityEngine.CoreModule]UnityEngine.Events.UnityAction`1<bool>, class [UnityEngine.CoreModule]UnityEngine.Events.UnityAction`1<bool>)
+		IL_0037: stloc.1
+		IL_0038: ldloc.1
+		IL_0039: ldc.i4.0
+		IL_003a: stfld valuetype ['Assembly-CSharp']GameModule.GameType ['Assembly-CSharp']GameModule.BattleContext::GameType
+		IL_003f: call !0 class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']GameModule.CoreGameManager>::get_Instance()
+		IL_0044: ldloc.1
+		IL_0045: callvirt instance void ['Assembly-CSharp']GameModule.CoreGameManager::StartGame(class ['Assembly-CSharp']GameModule.BattleContext)
+		IL_004a: ret
+	} // end of method GameManager::StartCoreGame
+
+	.method private hidebysig 
+		instance void EnterMeta (
+			object obj
+		) cil managed 
+	{
+		.custom instance void [netstandard]System.Runtime.CompilerServices.AsyncStateMachineAttribute::.ctor(class [netstandard]System.Type) = (
+			01 00 27 47 61 6d 65 4d 6f 64 75 6c 65 2e 47 61
+			6d 65 4d 61 6e 61 67 65 72 2b 3c 45 6e 74 65 72
+			4d 65 74 61 3e 64 5f 5f 32 35 00 00
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+			01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 36
+			30 30 31 35 38 32
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.AddressAttribute::.ctor() = (
+			01 00 03 00 53 0e 03 52 56 41 09 30 78 33 45 31
+			39 44 33 38 53 0e 06 4f 66 66 73 65 74 09 30 78
+			33 45 31 35 44 33 38 53 0e 02 56 41 09 30 78 33
+			45 31 39 44 33 38
+		)
+		// Method begins at RVA 0x21ac
+		// Header size: 12
+		// Code size: 43 (0x2b)
+		.maxstack 2
+		.locals init (
+			[0] valuetype GameModule.GameManager/'<EnterMeta>d__25'
+		)
+
+		IL_0000: ldloca.s 0
+		IL_0002: call valuetype [netstandard]System.Runtime.CompilerServices.AsyncVoidMethodBuilder [netstandard]System.Runtime.CompilerServices.AsyncVoidMethodBuilder::Create()
+		IL_0007: stfld valuetype [netstandard]System.Runtime.CompilerServices.AsyncVoidMethodBuilder GameModule.GameManager/'<EnterMeta>d__25'::'<>t__builder'
+		IL_000c: ldloca.s 0
+		IL_000e: ldarg.1
+		IL_000f: stfld object GameModule.GameManager/'<EnterMeta>d__25'::obj
+		IL_0014: ldloca.s 0
+		IL_0016: ldc.i4.m1
+		IL_0017: stfld int32 GameModule.GameManager/'<EnterMeta>d__25'::'<>1__state'
+		IL_001c: ldloca.s 0
+		IL_001e: ldflda valuetype [netstandard]System.Runtime.CompilerServices.AsyncVoidMethodBuilder GameModule.GameManager/'<EnterMeta>d__25'::'<>t__builder'
+		IL_0023: ldloca.s 0
+		IL_0025: call instance void [netstandard]System.Runtime.CompilerServices.AsyncVoidMethodBuilder::Start<valuetype GameModule.GameManager/'<EnterMeta>d__25'>(!!0&)
+		IL_002a: ret
+	} // end of method GameManager::EnterMeta
+
+	.method private hidebysig 
+		instance void RegisterOnTimeToZero () cil managed 
+	{
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+			01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 36
+			30 30 31 35 38 33
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.AddressAttribute::.ctor() = (
+			01 00 03 00 53 0e 03 52 56 41 09 30 78 33 45 31
+			39 44 43 34 53 0e 06 4f 66 66 73 65 74 09 30 78
+			33 45 31 35 44 43 34 53 0e 02 56 41 09 30 78 33
+			45 31 39 44 43 34
+		)
+		// Method begins at RVA 0x21e4
+		// Header size: 12
+		// Code size: 296 (0x128)
+		.maxstack 3
+
+		IL_0000: call !0 class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']TimeModuleO.TimeManager>::get_Instance()
+		IL_0005: call !0 class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']GameModule.ShopManager>::get_Instance()
+		IL_000a: ldftn instance void ['Assembly-CSharp']GameModule.ShopManager::RefreshUserUniversalCardData()
+		IL_0010: newobj instance void [netstandard]System.Action::.ctor(object, native int)
+		IL_0015: callvirt instance void ['Assembly-CSharp']TimeModuleO.TimeManager::RegisterOnTimeToZero(class [netstandard]System.Action)
+		IL_001a: call !0 class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']TimeModuleO.TimeManager>::get_Instance()
+		IL_001f: call !0 class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']GameModule.ShopManager>::get_Instance()
+		IL_0024: ldftn instance void ['Assembly-CSharp']GameModule.ShopManager::ResetWatchAdCount()
+		IL_002a: newobj instance void [netstandard]System.Action::.ctor(object, native int)
+		IL_002f: callvirt instance void ['Assembly-CSharp']TimeModuleO.TimeManager::RegisterOnTimeToZero(class [netstandard]System.Action)
+		IL_0034: call !0 class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']TimeModuleO.TimeManager>::get_Instance()
+		IL_0039: call !0 class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']GameModule.ShopManager>::get_Instance()
+		IL_003e: ldftn instance void ['Assembly-CSharp']GameModule.ShopManager::ResetPopPacks()
+		IL_0044: newobj instance void [netstandard]System.Action::.ctor(object, native int)
+		IL_0049: callvirt instance void ['Assembly-CSharp']TimeModuleO.TimeManager::RegisterOnTimeToZero(class [netstandard]System.Action)
+		IL_004e: call !0 class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']TimeModuleO.TimeManager>::get_Instance()
+		IL_0053: ldsfld class [netstandard]System.Action GameModule.GameManager/'<>c'::'<>9__26_0'
+		IL_0058: dup
+		IL_0059: brtrue.s IL_0072
+
+		IL_005b: pop
+		IL_005c: ldsfld class GameModule.GameManager/'<>c' GameModule.GameManager/'<>c'::'<>9'
+		IL_0061: ldftn instance void GameModule.GameManager/'<>c'::'<RegisterOnTimeToZero>b__26_0'()
+		IL_0067: newobj instance void [netstandard]System.Action::.ctor(object, native int)
+		IL_006c: dup
+		IL_006d: stsfld class [netstandard]System.Action GameModule.GameManager/'<>c'::'<>9__26_0'
+
+		IL_0072: callvirt instance void ['Assembly-CSharp']TimeModuleO.TimeManager::RegisterOnTimeToZero(class [netstandard]System.Action)
+		IL_0077: call !0 class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']TimeModuleO.TimeManager>::get_Instance()
+		IL_007c: ldsfld class [netstandard]System.Action GameModule.GameManager/'<>c'::'<>9__26_1'
+		IL_0081: dup
+		IL_0082: brtrue.s IL_009b
+
+		IL_0084: pop
+		IL_0085: ldsfld class GameModule.GameManager/'<>c' GameModule.GameManager/'<>c'::'<>9'
+		IL_008a: ldftn instance void GameModule.GameManager/'<>c'::'<RegisterOnTimeToZero>b__26_1'()
+		IL_0090: newobj instance void [netstandard]System.Action::.ctor(object, native int)
+		IL_0095: dup
+		IL_0096: stsfld class [netstandard]System.Action GameModule.GameManager/'<>c'::'<>9__26_1'
+
+		IL_009b: callvirt instance void ['Assembly-CSharp']TimeModuleO.TimeManager::RegisterOnTimeToZero(class [netstandard]System.Action)
+		IL_00a0: call !0 class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']TimeModuleO.TimeManager>::get_Instance()
+		IL_00a5: ldsfld class [netstandard]System.Action GameModule.GameManager/'<>c'::'<>9__26_2'
+		IL_00aa: dup
+		IL_00ab: brtrue.s IL_00c4
+
+		IL_00ad: pop
+		IL_00ae: ldsfld class GameModule.GameManager/'<>c' GameModule.GameManager/'<>c'::'<>9'
+		IL_00b3: ldftn instance void GameModule.GameManager/'<>c'::'<RegisterOnTimeToZero>b__26_2'()
+		IL_00b9: newobj instance void [netstandard]System.Action::.ctor(object, native int)
+		IL_00be: dup
+		IL_00bf: stsfld class [netstandard]System.Action GameModule.GameManager/'<>c'::'<>9__26_2'
+
+		IL_00c4: callvirt instance void ['Assembly-CSharp']TimeModuleO.TimeManager::RegisterOnTimeToZero(class [netstandard]System.Action)
+		IL_00c9: call !0 class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']TimeModuleO.TimeManager>::get_Instance()
+		IL_00ce: ldsfld class [netstandard]System.Action GameModule.GameManager/'<>c'::'<>9__26_3'
+		IL_00d3: dup
+		IL_00d4: brtrue.s IL_00ed
+
+		IL_00d6: pop
+		IL_00d7: ldsfld class GameModule.GameManager/'<>c' GameModule.GameManager/'<>c'::'<>9'
+		IL_00dc: ldftn instance void GameModule.GameManager/'<>c'::'<RegisterOnTimeToZero>b__26_3'()
+		IL_00e2: newobj instance void [netstandard]System.Action::.ctor(object, native int)
+		IL_00e7: dup
+		IL_00e8: stsfld class [netstandard]System.Action GameModule.GameManager/'<>c'::'<>9__26_3'
+
+		IL_00ed: callvirt instance void ['Assembly-CSharp']TimeModuleO.TimeManager::RegisterOnTimeToZero(class [netstandard]System.Action)
+		IL_00f2: call !0 class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']GameModule.DailyBlessManager>::get_Instance()
+		IL_00f7: callvirt instance bool ['Assembly-CSharp']GameModule.DailyBlessManager::IsBTest()
+		IL_00fc: brfalse.s IL_0127
+
+		IL_00fe: call !0 class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']TimeModuleO.TimeManager>::get_Instance()
+		IL_0103: ldsfld class [netstandard]System.Action GameModule.GameManager/'<>c'::'<>9__26_4'
+		IL_0108: dup
+		IL_0109: brtrue.s IL_0122
+
+		IL_010b: pop
+		IL_010c: ldsfld class GameModule.GameManager/'<>c' GameModule.GameManager/'<>c'::'<>9'
+		IL_0111: ldftn instance void GameModule.GameManager/'<>c'::'<RegisterOnTimeToZero>b__26_4'()
+		IL_0117: newobj instance void [netstandard]System.Action::.ctor(object, native int)
+		IL_011c: dup
+		IL_011d: stsfld class [netstandard]System.Action GameModule.GameManager/'<>c'::'<>9__26_4'
+
+		IL_0122: callvirt instance void ['Assembly-CSharp']TimeModuleO.TimeManager::RegisterOnTimeToZero(class [netstandard]System.Action)
+
+		IL_0127: ret
+	} // end of method GameManager::RegisterOnTimeToZero
+
+	.method private hidebysig 
+		instance void RegisterOnTimeToMonDayZero () cil managed 
+	{
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+			01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 36
+			30 30 31 35 38 34
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.AddressAttribute::.ctor() = (
+			01 00 03 00 53 0e 03 52 56 41 09 30 78 33 45 31
+			41 32 43 34 53 0e 06 4f 66 66 73 65 74 09 30 78
+			33 45 31 36 32 43 34 53 0e 02 56 41 09 30 78 33
+			45 31 41 32 43 34
+		)
+		// Method begins at RVA 0x2318
+		// Header size: 12
+		// Code size: 165 (0xa5)
+		.maxstack 3
+
+		IL_0000: call !0 class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']TimeModuleO.TimeManager>::get_Instance()
+		IL_0005: ldsfld class [netstandard]System.Action GameModule.GameManager/'<>c'::'<>9__27_0'
+		IL_000a: dup
+		IL_000b: brtrue.s IL_0024
+
+		IL_000d: pop
+		IL_000e: ldsfld class GameModule.GameManager/'<>c' GameModule.GameManager/'<>c'::'<>9'
+		IL_0013: ldftn instance void GameModule.GameManager/'<>c'::'<RegisterOnTimeToMonDayZero>b__27_0'()
+		IL_0019: newobj instance void [netstandard]System.Action::.ctor(object, native int)
+		IL_001e: dup
+		IL_001f: stsfld class [netstandard]System.Action GameModule.GameManager/'<>c'::'<>9__27_0'
+
+		IL_0024: callvirt instance void ['Assembly-CSharp']TimeModuleO.TimeManager::RegisterOnWeekPassed(class [netstandard]System.Action)
+		IL_0029: call !0 class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']TimeModuleO.TimeManager>::get_Instance()
+		IL_002e: ldsfld class [netstandard]System.Action GameModule.GameManager/'<>c'::'<>9__27_1'
+		IL_0033: dup
+		IL_0034: brtrue.s IL_004d
+
+		IL_0036: pop
+		IL_0037: ldsfld class GameModule.GameManager/'<>c' GameModule.GameManager/'<>c'::'<>9'
+		IL_003c: ldftn instance void GameModule.GameManager/'<>c'::'<RegisterOnTimeToMonDayZero>b__27_1'()
+		IL_0042: newobj instance void [netstandard]System.Action::.ctor(object, native int)
+		IL_0047: dup
+		IL_0048: stsfld class [netstandard]System.Action GameModule.GameManager/'<>c'::'<>9__27_1'
+
+		IL_004d: callvirt instance void ['Assembly-CSharp']TimeModuleO.TimeManager::RegisterOnTimeToZero(class [netstandard]System.Action)
+		IL_0052: call !0 class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']TimeModuleO.TimeManager>::get_Instance()
+		IL_0057: ldsfld class [netstandard]System.Action GameModule.GameManager/'<>c'::'<>9__27_2'
+		IL_005c: dup
+		IL_005d: brtrue.s IL_0076
+
+		IL_005f: pop
+		IL_0060: ldsfld class GameModule.GameManager/'<>c' GameModule.GameManager/'<>c'::'<>9'
+		IL_0065: ldftn instance void GameModule.GameManager/'<>c'::'<RegisterOnTimeToMonDayZero>b__27_2'()
+		IL_006b: newobj instance void [netstandard]System.Action::.ctor(object, native int)
+		IL_0070: dup
+		IL_0071: stsfld class [netstandard]System.Action GameModule.GameManager/'<>c'::'<>9__27_2'
+
+		IL_0076: callvirt instance void ['Assembly-CSharp']TimeModuleO.TimeManager::RegisterOnWeekPassed(class [netstandard]System.Action)
+		IL_007b: call !0 class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']TimeModuleO.TimeManager>::get_Instance()
+		IL_0080: ldsfld class [netstandard]System.Action GameModule.GameManager/'<>c'::'<>9__27_3'
+		IL_0085: dup
+		IL_0086: brtrue.s IL_009f
+
+		IL_0088: pop
+		IL_0089: ldsfld class GameModule.GameManager/'<>c' GameModule.GameManager/'<>c'::'<>9'
+		IL_008e: ldftn instance void GameModule.GameManager/'<>c'::'<RegisterOnTimeToMonDayZero>b__27_3'()
+		IL_0094: newobj instance void [netstandard]System.Action::.ctor(object, native int)
+		IL_0099: dup
+		IL_009a: stsfld class [netstandard]System.Action GameModule.GameManager/'<>c'::'<>9__27_3'
+
+		IL_009f: callvirt instance void ['Assembly-CSharp']TimeModuleO.TimeManager::RegisterOnWeekPassed(class [netstandard]System.Action)
+		IL_00a4: ret
+	} // end of method GameManager::RegisterOnTimeToMonDayZero
+
+	.method private hidebysig 
+		instance void DanChangeUpdateInfo (
+			object o
+		) cil managed 
+	{
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+			01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 36
+			30 30 31 35 38 35
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.AddressAttribute::.ctor() = (
+			01 00 03 00 53 0e 03 52 56 41 09 30 78 33 45 31
+			41 35 42 38 53 0e 06 4f 66 66 73 65 74 09 30 78
+			33 45 31 36 35 42 38 53 0e 02 56 41 09 30 78 33
+			45 31 41 35 42 38
+		)
+		// Method begins at RVA 0x23c9
+		// Header size: 1
+		// Code size: 11 (0xb)
+		.maxstack 8
+
+		IL_0000: call !0 class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']GameModule.RankManager>::get_Instance()
+		IL_0005: callvirt instance void ['Assembly-CSharp']GameModule.RankManager::UpdateRankInfo()
+		IL_000a: ret
+	} // end of method GameManager::DanChangeUpdateInfo
+
+	.method private hidebysig 
+		instance void ShowCardProbabilityPanel (
+			object o
+		) cil managed 
+	{
+		.custom instance void [netstandard]System.Runtime.CompilerServices.AsyncStateMachineAttribute::.ctor(class [netstandard]System.Type) = (
+			01 00 36 47 61 6d 65 4d 6f 64 75 6c 65 2e 47 61
+			6d 65 4d 61 6e 61 67 65 72 2b 3c 53 68 6f 77 43
+			61 72 64 50 72 6f 62 61 62 69 6c 69 74 79 50 61
+			6e 65 6c 3e 64 5f 5f 32 39 00 00
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+			01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 36
+			30 30 31 35 38 36
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.AddressAttribute::.ctor() = (
+			01 00 03 00 53 0e 03 52 56 41 09 30 78 33 45 31
+			41 36 30 38 53 0e 06 4f 66 66 73 65 74 09 30 78
+			33 45 31 36 36 30 38 53 0e 02 56 41 09 30 78 33
+			45 31 41 36 30 38
+		)
+		// Method begins at RVA 0x23d8
+		// Header size: 12
+		// Code size: 35 (0x23)
+		.maxstack 2
+		.locals init (
+			[0] valuetype GameModule.GameManager/'<ShowCardProbabilityPanel>d__29'
+		)
+
+		IL_0000: ldloca.s 0
+		IL_0002: call valuetype [netstandard]System.Runtime.CompilerServices.AsyncVoidMethodBuilder [netstandard]System.Runtime.CompilerServices.AsyncVoidMethodBuilder::Create()
+		IL_0007: stfld valuetype [netstandard]System.Runtime.CompilerServices.AsyncVoidMethodBuilder GameModule.GameManager/'<ShowCardProbabilityPanel>d__29'::'<>t__builder'
+		IL_000c: ldloca.s 0
+		IL_000e: ldc.i4.m1
+		IL_000f: stfld int32 GameModule.GameManager/'<ShowCardProbabilityPanel>d__29'::'<>1__state'
+		IL_0014: ldloca.s 0
+		IL_0016: ldflda valuetype [netstandard]System.Runtime.CompilerServices.AsyncVoidMethodBuilder GameModule.GameManager/'<ShowCardProbabilityPanel>d__29'::'<>t__builder'
+		IL_001b: ldloca.s 0
+		IL_001d: call instance void [netstandard]System.Runtime.CompilerServices.AsyncVoidMethodBuilder::Start<valuetype GameModule.GameManager/'<ShowCardProbabilityPanel>d__29'>(!!0&)
+		IL_0022: ret
+	} // end of method GameManager::ShowCardProbabilityPanel
+
+	.method private hidebysig 
+		instance void CardSteerEnd (
+			object o
+		) cil managed 
+	{
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+			01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 36
+			30 30 31 35 38 37
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.AddressAttribute::.ctor() = (
+			01 00 03 00 53 0e 03 52 56 41 09 30 78 33 45 31
+			41 36 39 30 53 0e 06 4f 66 66 73 65 74 09 30 78
+			33 45 31 36 36 39 30 53 0e 02 56 41 09 30 78 33
+			45 31 41 36 39 30
+		)
+		// Method begins at RVA 0x2407
+		// Header size: 1
+		// Code size: 1 (0x1)
+		.maxstack 8
+
+		IL_0000: ret
+	} // end of method GameManager::CardSteerEnd
+
+	.method public hidebysig 
+		instance void ShowConfirmPanel (
+			string titleStr,
+			string contentStr,
+			string buttonTextStr,
+			bool canCancelPanel,
+			class [netstandard]System.Action`1<bool> onClick
+		) cil managed 
+	{
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+			01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 36
+			30 30 31 35 38 38
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.AddressAttribute::.ctor() = (
+			01 00 03 00 53 0e 03 52 56 41 09 30 78 33 45 31
+			41 36 39 34 53 0e 06 4f 66 66 73 65 74 09 30 78
+			33 45 31 36 36 39 34 53 0e 02 56 41 09 30 78 33
+			45 31 41 36 39 34
+		)
+		// Method begins at RVA 0x2409
+		// Header size: 1
+		// Code size: 50 (0x32)
+		.maxstack 8
+
+		IL_0000: call !0 class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']UIFramework.UIManager>::get_Instance()
+		IL_0005: ldstr "Assets/_Res/Addressable/Prefabs/UI/Panels/ConfirmPanel.prefab"
+		IL_000a: ldc.i4.5
+		IL_000b: newarr [netstandard]System.Object
+		IL_0010: dup
+		IL_0011: ldc.i4.0
+		IL_0012: ldarg.1
+		IL_0013: stelem.ref
+		IL_0014: dup
+		IL_0015: ldc.i4.1
+		IL_0016: ldarg.2
+		IL_0017: stelem.ref
+		IL_0018: dup
+		IL_0019: ldc.i4.2
+		IL_001a: ldarg.3
+		IL_001b: stelem.ref
+		IL_001c: dup
+		IL_001d: ldc.i4.3
+		IL_001e: ldarg.s canCancelPanel
+		IL_0020: box [netstandard]System.Boolean
+		IL_0025: stelem.ref
+		IL_0026: dup
+		IL_0027: ldc.i4.4
+		IL_0028: ldarg.s onClick
+		IL_002a: stelem.ref
+		IL_002b: callvirt instance valuetype [UniTask]Cysharp.Threading.Tasks.UniTask ['Assembly-CSharp']UIFramework.UIManager::ShowPanel(string, object[])
+		IL_0030: pop
+		IL_0031: ret
+	} // end of method GameManager::ShowConfirmPanel
+
+	.method private hidebysig 
+		instance void FetterSteerEnd (
+			object o
+		) cil managed 
+	{
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+			01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 36
+			30 30 31 35 38 39
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.AddressAttribute::.ctor() = (
+			01 00 03 00 53 0e 03 52 56 41 09 30 78 33 45 31
+			41 38 36 34 53 0e 06 4f 66 66 73 65 74 09 30 78
+			33 45 31 36 38 36 34 53 0e 02 56 41 09 30 78 33
+			45 31 41 38 36 34
+		)
+		// Method begins at RVA 0x243c
+		// Header size: 12
+		// Code size: 31 (0x1f)
+		.maxstack 1
+		.locals init (
+			[0] valuetype [UniTask]Cysharp.Threading.Tasks.UniTaskVoid
+		)
+
+		IL_0000: call !0 class ['Assembly-CSharp']QuickTutor.Singleton`1<class ['Assembly-CSharp']SDKModule.ABTestManager>::get_Instance()
+		IL_0005: callvirt instance bool ['Assembly-CSharp']SDKModule.ABTestManager::get_GameCenterIsBTest()
+		IL_000a: brfalse.s IL_001e
+
+		IL_000c: call !0 class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']SDKModule.GameCenterManager>::get_Instance()
+		IL_0011: callvirt instance valuetype [UniTask]Cysharp.Threading.Tasks.UniTaskVoid ['Assembly-CSharp']SDKModule.GameCenterManager::AllowGameCenter()
+		IL_0016: stloc.0
+		IL_0017: ldloca.s 0
+		IL_0019: call instance void [UniTask]Cysharp.Threading.Tasks.UniTaskVoid::Forget()
+
+		IL_001e: ret
+	} // end of method GameManager::FetterSteerEnd
+
+	.method private hidebysig 
+		instance void CloseLoadPanel (
+			object o
+		) cil managed 
+	{
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+			01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 36
+			30 30 31 35 38 41
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.AddressAttribute::.ctor() = (
+			01 00 03 00 53 0e 03 52 56 41 09 30 78 33 45 31
+			41 39 31 38 53 0e 06 4f 66 66 73 65 74 09 30 78
+			33 45 31 36 39 31 38 53 0e 02 56 41 09 30 78 33
+			45 31 41 39 31 38
+		)
+		// Method begins at RVA 0x2467
+		// Header size: 1
+		// Code size: 46 (0x2e)
+		.maxstack 8
+
+		IL_0000: ldarg.0
+		IL_0001: ldc.i4.1
+		IL_0002: stfld bool GameModule.GameManager::closeLoadPanel
+		IL_0007: ldsfld class [GFRunning]DBTSDK.SDKToolManager [GFRunning]DBTSDK.SDKToolManager::Instance
+		IL_000c: ldstr ""
+		IL_0011: callvirt instance void [GFRunning]DBTSDK.SDKToolManager::ReportGameInteractive(string)
+		IL_0016: ldarg.0
+		IL_0017: ldfld bool GameModule.GameManager::_isFirstThroghGame
+		IL_001c: brtrue.s IL_0028
+
+		IL_001e: call !0 class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']GameModule.PacksTipManager>::get_Instance()
+		IL_0023: callvirt instance void ['Assembly-CSharp']GameModule.PacksTipManager::FirstPopPacks()
+
+		IL_0028: call void ['Assembly-CSharp']DBT.StartupGift.StartupGiftSystem::CheckAndGrantGift()
+		IL_002d: ret
+	} // end of method GameManager::CloseLoadPanel
+
+	.method private hidebysig 
+		instance void LoadEnd (
+			object o
+		) cil managed 
+	{
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+			01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 36
+			30 30 31 35 38 42
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.AddressAttribute::.ctor() = (
+			01 00 03 00 53 0e 03 52 56 41 09 30 78 33 45 31
+			41 39 45 43 53 0e 06 4f 66 66 73 65 74 09 30 78
+			33 45 31 36 39 45 43 53 0e 02 56 41 09 30 78 33
+			45 31 41 39 45 43
+		)
+		// Method begins at RVA 0x2496
+		// Header size: 1
+		// Code size: 25 (0x19)
+		.maxstack 8
+
+		IL_0000: ldarg.0
+		IL_0001: ldfld bool GameModule.GameManager::_isFirstThroghGame
+		IL_0006: brfalse.s IL_0018
+
+		IL_0008: call !0 class ['Assembly-CSharp']ToolModule.ManagerBase`1<class ['Assembly-CSharp']EventModule.EventManager>::get_Instance()
+		IL_000d: ldstr "OnArenaUIBGItemStartBtnClicked"
+		IL_0012: ldnull
+		IL_0013: callvirt instance void ['Assembly-CSharp']EventModule.EventManager::TriggerEvent(string, object)
+
+		IL_0018: ret
+	} // end of method GameManager::LoadEnd
+
+	.method public hidebysig specialname rtspecialname 
+		instance void .ctor () cil managed 
+	{
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+			01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 36
+			30 30 31 35 38 43
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.AddressAttribute::.ctor() = (
+			01 00 03 00 53 0e 03 52 56 41 09 30 78 33 45 31
+			41 41 37 30 53 0e 06 4f 66 66 73 65 74 09 30 78
+			33 45 31 36 41 37 30 53 0e 02 56 41 09 30 78 33
+			45 31 41 41 37 30
+		)
+		// Method begins at RVA 0x24b0
+		// Header size: 1
+		// Code size: 18 (0x12)
+		.maxstack 8
+
+		IL_0000: ldarg.0
+		IL_0001: newobj instance void ['Assembly-CSharp']GameModule.UpdateController::.ctor()
+		IL_0006: stfld class ['Assembly-CSharp']GameModule.UpdateController GameModule.GameManager::updateController
+		IL_000b: ldarg.0
+		IL_000c: call instance void class ['Assembly-CSharp']ToolModule.ManagerBase`1<class GameModule.GameManager>::.ctor()
+		IL_0011: ret
+	} // end of method GameManager::.ctor
+
+} // end of class GameModule.GameManager
+

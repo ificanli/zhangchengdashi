@@ -1,0 +1,33 @@
+0x4275c18: ff0301d1 sub      sp, sp, #0x40
+0x4275c1c: fe5702a9 stp      x30, x21, [sp, #0x20]
+0x4275c20: f44f03a9 stp      x20, x19, [sp, #0x30]
+0x4275c24: 556c02d0 adrp     x21, #0x8fff000
+0x4275c28: b44302d0 adrp     x20, #0x8aeb000
+0x4275c2c: a8467f39 ldrb     w8, [x21, #0xfd1]
+0x4275c30: 944a43f9 ldr      x20, [x20, #0x690] // Method$Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder.Start<UIManager.<Init>d__6>()
+0x4275c34: f30300aa mov      x19, x0
+0x4275c38: c8000037 tbnz     w8, #0, #0x4275c50
+0x4275c3c: a04302d0 adrp     x0, #0x8aeb000
+0x4275c40: 004843f9 ldr      x0, [x0, #0x690] // Method$Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder.Start<UIManager.<Init>d__6>()
+0x4275c44: 8f1de797 bl       #0x3c3d280
+0x4275c48: 28008052 mov      w8, #1
+0x4275c4c: a8463f39 strb     w8, [x21, #0xfd1]
+0x4275c50: 800240f9 ldr      x0, [x20]
+0x4275c54: 08008012 mov      w8, #-1
+0x4275c58: ff7f00a9 stp      xzr, xzr, [sp]
+0x4275c5c: ff4f01a9 stp      xzr, x19, [sp, #0x10]
+0x4275c60: e80300b9 str      w8, [sp]
+0x4275c64: 081c40f9 ldr      x8, [x0, #0x38]
+0x4275c68: 480000b5 cbnz     x8, #0x4275c70
+0x4275c6c: e469e797 bl       #0x3c503fc
+0x4275c70: e8030091 mov      x8, sp
+0x4275c74: e0030091 mov      x0, sp
+0x4275c78: 13210091 add      x19, x8, #8
+0x4275c7c: a7040094 bl       #0x4276f18 // UIFramework.UIManager.<Init>d__6$$MoveNext
+0x4275c80: e00313aa mov      x0, x19
+0x4275c84: e1031faa mov      x1, xzr
+0x4275c88: be86ea97 bl       #0x3d17780
+0x4275c8c: f44f43a9 ldp      x20, x19, [sp, #0x30]
+0x4275c90: fe5742a9 ldp      x30, x21, [sp, #0x20]
+0x4275c94: ff030191 add      sp, sp, #0x40
+0x4275c98: c0035fd6 ret      

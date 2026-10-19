@@ -1,0 +1,56 @@
+0x439c0bc: STR             X30, [SP,#var_20]!
+0x439c0c0: STP             X20, X19, [SP,#0x20+var_10]
+0x439c0c4: ADRP            X20, #byte_900088D@PAGE
+0x439c0c8: LDRB            W8, [X20,#byte_900088D@PAGEOFF]
+0x439c0cc: MOV             X19, X0
+0x439c0d0: TBNZ            W8, #0, loc_439C100
+0x439c0d4: ADRP            X0, #off_8ACC8C8@PAGE
+0x439c0d8: LDR             X0, [X0,#off_8ACC8C8@PAGEOFF]; off_8CE64E8 ; slot
+0x439c0dc: BL              il2cpp_codegen_initialize_runtime_metadata
+0x439c0e0: ADRP            X0, #off_8ACDAC0@PAGE
+0x439c0e4: LDR             X0, [X0,#off_8ACDAC0@PAGEOFF]; qword_8CE95C0 ; slot
+0x439c0e8: BL              il2cpp_codegen_initialize_runtime_metadata
+0x439c0ec: ADRP            X0, #off_8AF46F8@PAGE
+0x439c0f0: LDR             X0, [X0,#off_8AF46F8@PAGEOFF]; qword_8D6AAC0 ; slot
+0x439c0f4: BL              il2cpp_codegen_initialize_runtime_metadata
+0x439c0f8: MOV             W8, #1
+0x439c0fc: STRB            W8, [X20,#byte_900088D@PAGEOFF]
+0x439c100: LDR             W8, [X19,#0x10]
+0x439c104: CMP             W8, #1
+0x439c108: B.EQ            loc_439C16C
+0x439c10c: CBNZ            W8, loc_439C18C
+0x439c110: MOV             W8, #0xFFFFFFFF
+0x439c114: STR             W8, [X19,#0x10]
+0x439c118: ADRP            X8, #off_8ACC8C8@PAGE
+0x439c11c: LDR             X8, [X8,#off_8ACC8C8@PAGEOFF]; off_8CE64E8
+0x439c120: LDR             X0, [X8]; klass
+0x439c124: LDR             W8, [X0,#0xE0]
+0x439c128: CBNZ            W8, loc_439C130
+0x439c12c: BL              il2cpp_codegen_runtime_class_init
+0x439c130: ADRP            X8, #off_8AF46F8@PAGE
+0x439c134: LDR             X8, [X8,#off_8AF46F8@PAGEOFF]; qword_8D6AAC0
+0x439c138: MOV             X1, XZR
+0x439c13c: LDR             X0, [X8]
+0x439c140: BL              UnityEngine.Debug$$Log
+0x439c144: ADRP            X8, #off_8ACDAC0@PAGE
+0x439c148: LDR             X8, [X8,#off_8ACDAC0@PAGEOFF]; qword_8CE95C0
+0x439c14c: ADD             X1, SP, #0x20+var_14
+0x439c150: STR             WZR, [SP,#0x20+var_14]
+0x439c154: LDR             X0, [X8]
+0x439c158: BL              unk_3C3D3B8
+0x439c15c: STR             X0, [X19,#0x18]
+0x439c160: MOV             W0, #1
+0x439c164: STR             W0, [X19,#0x10]
+0x439c168: B               loc_439C190
+0x439c16c: LDR             X8, [X19,#0x20]
+0x439c170: MOV             W9, #0xFFFFFFFF
+0x439c174: STR             W9, [X19,#0x10]
+0x439c178: CBZ             X8, loc_439C18C
+0x439c17c: LDR             X9, [X8,#0x18]
+0x439c180: LDR             X0, [X8,#0x40]
+0x439c184: LDR             X1, [X8,#0x28]
+0x439c188: BLR             X9
+0x439c18c: MOV             W0, WZR
+0x439c190: LDP             X20, X19, [SP,#0x20+var_10]
+0x439c194: LDR             X30, [SP+0x20+var_20],#0x20
+0x439c198: RET

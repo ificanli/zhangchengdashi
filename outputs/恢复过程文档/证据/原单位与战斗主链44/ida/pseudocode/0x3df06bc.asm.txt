@@ -1,0 +1,123 @@
+0x3df06bc: SUB             SP, SP, #0x60
+0x3df06c0: STR             D12, [SP,#0x60+var_50]
+0x3df06c4: STP             D11, D10, [SP,#0x60+var_48]
+0x3df06c8: STP             D9, D8, [SP,#0x60+var_38]
+0x3df06cc: STR             X30, [SP,#0x60+var_28]
+0x3df06d0: STP             X22, X21, [SP,#0x60+var_20]
+0x3df06d4: STP             X20, X19, [SP,#0x60+var_10]
+0x3df06d8: ADRP            X22, #byte_8FFD792@PAGE
+0x3df06dc: LDRB            W8, [X22,#byte_8FFD792@PAGEOFF]
+0x3df06e0: MOV             X20, X2
+0x3df06e4: MOV             V8.16B, V3.16B
+0x3df06e8: MOV             W19, W1
+0x3df06ec: MOV             V9.16B, V2.16B
+0x3df06f0: MOV             V10.16B, V1.16B
+0x3df06f4: MOV             V11.16B, V0.16B
+0x3df06f8: MOV             X21, X0
+0x3df06fc: TBNZ            W8, #0, loc_3DF0720
+0x3df0700: ADRP            X0, #off_8AD31C0@PAGE
+0x3df0704: LDR             X0, [X0,#off_8AD31C0@PAGEOFF]; off_8CE4A38 ; slot
+0x3df0708: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3df070c: ADRP            X0, #off_8ACE708@PAGE
+0x3df0710: LDR             X0, [X0,#off_8ACE708@PAGEOFF]; qword_8D0DDC0 ; slot
+0x3df0714: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3df0718: MOV             W8, #1
+0x3df071c: STRB            W8, [X22,#byte_8FFD792@PAGEOFF]
+0x3df0720: TST             W19, #1
+0x3df0724: MOV             W8, #0xC0
+0x3df0728: MOV             W9, #0xC8
+0x3df072c: STRB            WZR, [SP,#0x60+var_54]
+0x3df0730: STR             XZR, [X20]
+0x3df0734: CSEL            X8, X9, X8, NE
+0x3df0738: LDR             X22, [X21,X8]
+0x3df073c: CBZ             X22, loc_3DF0868
+0x3df0740: FCMP            S8, #0.0
+0x3df0744: MOV             W0, WZR
+0x3df0748: B.MI            loc_3DF086C
+0x3df074c: LDR             W8, [X22,#0x18]
+0x3df0750: CBZ             W8, loc_3DF086C
+0x3df0754: FMUL            S12, S8, S8
+0x3df0758: AND             W1, W19, #1
+0x3df075c: MOV             X0, X21
+0x3df0760: MOV             V0.16B, V11.16B
+0x3df0764: MOV             V1.16B, V10.16B
+0x3df0768: MOV             V2.16B, V9.16B
+0x3df076c: MOV             V3.16B, V8.16B
+0x3df0770: MOV             V4.16B, V12.16B
+0x3df0774: MOV             X2, X20
+0x3df0778: BL              GameModule.BattleGameSceneManager$$TryGetCachedNearestRoleTarget
+0x3df077c: TBNZ            W0, #0, loc_3DF07D0
+0x3df0780: EOR             W8, W19, #1
+0x3df0784: AND             W1, W8, #1
+0x3df0788: ADD             X3, SP, #0x60+var_54
+0x3df078c: MOV             X0, X21
+0x3df0790: MOV             V0.16B, V11.16B
+0x3df0794: MOV             V1.16B, V10.16B
+0x3df0798: MOV             V2.16B, V9.16B
+0x3df079c: MOV             V3.16B, V8.16B
+0x3df07a0: MOV             V4.16B, V12.16B
+0x3df07a4: MOV             X2, X20
+0x3df07a8: BL              GameModule.BattleGameSceneManager$$TryGetNearestRoleTargetFromHexRing
+0x3df07ac: TBZ             W0, #0, loc_3DF07D8
+0x3df07b0: LDR             X2, [X20]
+0x3df07b4: AND             W1, W19, #1
+0x3df07b8: MOV             X0, X21
+0x3df07bc: MOV             V0.16B, V11.16B
+0x3df07c0: MOV             V1.16B, V10.16B
+0x3df07c4: MOV             V2.16B, V9.16B
+0x3df07c8: MOV             V3.16B, V8.16B
+0x3df07cc: BL              GameModule.BattleGameSceneManager$$CacheNearestRoleTarget
+0x3df07d0: MOV             W0, #1
+0x3df07d4: B               loc_3DF086C
+0x3df07d8: LDRB            W8, [SP,#0x60+var_54]
+0x3df07dc: CBNZ            W8, loc_3DF0868
+0x3df07e0: ADRP            X8, #off_8AD31C0@PAGE
+0x3df07e4: LDR             X8, [X8,#off_8AD31C0@PAGEOFF]; off_8CE4A38
+0x3df07e8: LDR             X0, [X8]; klass
+0x3df07ec: LDR             W8, [X0,#0xE0]
+0x3df07f0: CBNZ            W8, loc_3DF07F8
+0x3df07f4: BL              il2cpp_codegen_runtime_class_init
+0x3df07f8: MOV             V0.16B, V11.16B
+0x3df07fc: MOV             V1.16B, V10.16B
+0x3df0800: MOV             V2.16B, V9.16B
+0x3df0804: MOV             X0, X22
+0x3df0808: MOV             V3.16B, V12.16B
+0x3df080c: MOV             X1, X20
+0x3df0810: BL              GameModule.BattleGameSceneManager$$TryGetNearestRoleTargetFromList
+0x3df0814: TBZ             W0, #0, loc_3DF0868
+0x3df0818: LDR             X2, [X20]
+0x3df081c: AND             W1, W19, #1
+0x3df0820: MOV             X0, X21
+0x3df0824: MOV             V0.16B, V11.16B
+0x3df0828: MOV             V1.16B, V10.16B
+0x3df082c: MOV             V2.16B, V9.16B
+0x3df0830: MOV             V3.16B, V8.16B
+0x3df0834: BL              GameModule.BattleGameSceneManager$$CacheNearestRoleTarget
+0x3df0838: B               loc_3DF07D0
+0x3df083c: B               loc_3DF0850
+0x3df0840: B               loc_3DF0850
+0x3df0844: B               loc_3DF0850
+0x3df0848: B               loc_3DF0850
+0x3df084c: B               loc_3DF0850
+0x3df0850: CMP             W1, #1
+0x3df0854: B.NE            loc_3DF0898
+0x3df0858: BL              .__cxa_begin_catch
+0x3df085c: LDR             X19, [X0]
+0x3df0860: BL              .__cxa_end_catch
+0x3df0864: CBNZ            X19, loc_3DF088C
+0x3df0868: MOV             W0, WZR
+0x3df086c: LDP             X20, X19, [SP,#0x60+var_10]
+0x3df0870: LDP             X22, X21, [SP,#0x60+var_20]
+0x3df0874: LDR             X30, [SP,#0x60+var_28]
+0x3df0878: LDP             D9, D8, [SP,#0x60+var_38]
+0x3df087c: LDP             D11, D10, [SP,#0x60+var_48]
+0x3df0880: LDR             D12, [SP,#0x60+var_50]
+0x3df0884: ADD             SP, SP, #0x60 ; '`'
+0x3df0888: RET
+0x3df088c: MOV             X0, X19
+0x3df0890: BL              sub_3C38CF8
+0x3df0894: CBNZ            X19, loc_3DF089C
+0x3df0898: BL              sub_3CE73C4
+0x3df089c: MOV             X0, X19
+0x3df08a0: BL              sub_3C38CF8
+0x3df08a4: BL              unk_35BC500

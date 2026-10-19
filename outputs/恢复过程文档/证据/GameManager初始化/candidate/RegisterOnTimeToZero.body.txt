@@ -1,0 +1,38 @@
+{
+    TimeManager.Instance.RegisterOnTimeToZero(ShopManager.Instance.RefreshUserUniversalCardData);
+    TimeManager.Instance.RegisterOnTimeToZero(ShopManager.Instance.ResetWatchAdCount);
+    TimeManager.Instance.RegisterOnTimeToZero(ShopManager.Instance.ResetPopPacks);
+    TimeManager.Instance.RegisterOnTimeToZero(() =>
+    {
+        DbtSaveDataManager_PlayerAdData.I.Data.InitializeVideosNumber();
+        DbtSaveDataManager_PlayerAdData.I.Save();
+        ShopManager.Instance.redDotThrottleTrigger?.RegisterOneTrigger();
+        EventManager.Instance.TriggerEvent("TimeToZeroRefreshFreeResUI", null);
+    });
+    TimeManager.Instance.RegisterOnTimeToZero(() =>
+    {
+        DbtSaveDataManager_PlayerCoreData.I.Data.nowLingquReward = false;
+        DbtSaveDataManager_PlayerAdData.I.Save();
+        EventManager.Instance.TriggerEvent("TimeToZeroRefreshSubscription", null);
+    });
+    TimeManager.Instance.RegisterOnTimeToZero(() =>
+    {
+        DbtSaveDataManager_PlayerAdData.I.Data.ShowInterstitialEd = false;
+        DbtSaveDataManager_PlayerAdData.I.Save();
+    });
+    TimeManager.Instance.RegisterOnTimeToZero(() =>
+    {
+        DbtSaveDataManager_PlayerChestData.I.Data.userGetBoxCount = 0;
+        DbtSaveDataManager_PlayerChestData.I.Save();
+    });
+    if (DailyBlessManager.Instance.IsBTest())
+    {
+        TimeManager.Instance.RegisterOnTimeToZero(() =>
+        {
+            DailyBlessManager.Instance.RefreshDailyBless();
+            EventManager.Instance.TriggerEvent("DailyBlessBtnActive", true);
+            if (UIManager.Instance.IsPanelShowing("Assets/_Res/Addressable/04MetaGameBundle/Prefabs/UI/Panels/DailyBlessPanel.prefab", out UIPanel panel))
+                _ = UIManager.Instance.HidePanel("Assets/_Res/Addressable/04MetaGameBundle/Prefabs/UI/Panels/DailyBlessPanel.prefab");
+        });
+    }
+}

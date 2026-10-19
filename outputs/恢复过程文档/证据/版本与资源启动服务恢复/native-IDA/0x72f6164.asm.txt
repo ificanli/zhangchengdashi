@@ -1,0 +1,31 @@
+0x72f6164: STR             X30, [SP,#var_40]!
+0x72f6168: STP             X24, X23, [SP,#0x40+var_30]
+0x72f616c: STP             X22, X21, [SP,#0x40+var_20]
+0x72f6170: STP             X20, X19, [SP,#0x40+var_10]
+0x72f6174: ADRP            X23, #byte_900A104@PAGE
+0x72f6178: ADRP            X24, #off_8AF2678@PAGE
+0x72f617c: LDRB            W8, [X23,#byte_900A104@PAGEOFF]
+0x72f6180: LDR             X24, [X24,#off_8AF2678@PAGEOFF]; qword_8D52DA8
+0x72f6184: MOV             X19, X3
+0x72f6188: MOV             X20, X2
+0x72f618c: MOV             X22, X1
+0x72f6190: MOV             X21, X0
+0x72f6194: TBNZ            W8, #0, loc_72F61AC
+0x72f6198: ADRP            X0, #off_8AF2678@PAGE
+0x72f619c: LDR             X0, [X0,#off_8AF2678@PAGEOFF]; qword_8D52DA8 ; slot
+0x72f61a0: BL              il2cpp_codegen_initialize_runtime_metadata
+0x72f61a4: MOV             W8, #1
+0x72f61a8: STRB            W8, [X23,#byte_900A104@PAGEOFF]
+0x72f61ac: LDR             X1, [X24]
+0x72f61b0: MOV             X0, X22
+0x72f61b4: MOV             X2, XZR
+0x72f61b8: BL              sub_74FE7A4
+0x72f61bc: MOV             X1, X0
+0x72f61c0: MOV             X0, X21
+0x72f61c4: MOV             X2, X20
+0x72f61c8: MOV             X3, X19
+0x72f61cc: LDP             X20, X19, [SP,#0x40+var_10]
+0x72f61d0: LDP             X22, X21, [SP,#0x40+var_20]
+0x72f61d4: LDP             X24, X23, [SP,#0x40+var_30]
+0x72f61d8: LDR             X30, [SP+0x40+var_40],#0x40
+0x72f61dc: B               GameFramework.Resources.ResourcesModule$$_LoadAsset

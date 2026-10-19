@@ -1,0 +1,38 @@
+0x3e4577c: SUB             SP, SP, #0x30
+0x3e45780: STP             X30, X21, [SP,#0x30+var_20]
+0x3e45784: STP             X20, X19, [SP,#0x30+var_10]
+0x3e45788: ADRP            X21, #byte_8FFDA0E@PAGE
+0x3e4578c: ADRP            X20, #off_8ACDB30@PAGE
+0x3e45790: LDRB            W8, [X21,#byte_8FFDA0E@PAGEOFF]
+0x3e45794: LDR             X20, [X20,#off_8ACDB30@PAGEOFF]; off_8CE6460
+0x3e45798: MOV             X19, X0
+0x3e4579c: TBNZ            W8, #0, loc_3E457B4
+0x3e457a0: ADRP            X0, #off_8ACDB30@PAGE
+0x3e457a4: LDR             X0, [X0,#off_8ACDB30@PAGEOFF]; off_8CE6460 ; slot
+0x3e457a8: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3e457ac: MOV             W8, #1
+0x3e457b0: STRB            W8, [X21,#byte_8FFDA0E@PAGEOFF]
+0x3e457b4: MOV             X0, X19; self
+0x3e457b8: STR             XZR, [SP,#0x30+var_30]
+0x3e457bc: BL              TimeModuleO.TimeManager$$GetStandardNetworkTime
+0x3e457c0: LDR             X8, [X20]
+0x3e457c4: STR             X0, [SP,#0x30+var_28]
+0x3e457c8: LDR             W9, [X8,#0xE0]
+0x3e457cc: CBNZ            W9, loc_3E457D8
+0x3e457d0: MOV             X0, X8; klass
+0x3e457d4: BL              il2cpp_codegen_runtime_class_init
+0x3e457d8: ADD             X0, SP, #0x30+var_28
+0x3e457dc: MOV             X1, XZR
+0x3e457e0: BL              System.DateTime$$get_Date
+0x3e457e4: STR             X0, [SP,#0x30+var_30]
+0x3e457e8: MOV             X0, SP
+0x3e457ec: FMOV            D0, #1.0
+0x3e457f0: MOV             X1, XZR
+0x3e457f4: BL              System.DateTime$$AddDays
+0x3e457f8: LDR             X1, [SP,#0x30+var_28]
+0x3e457fc: MOV             X2, XZR
+0x3e45800: BL              System.DateTime$$op_Subtraction
+0x3e45804: LDP             X20, X19, [SP,#0x30+var_10]
+0x3e45808: LDP             X30, X21, [SP,#0x30+var_20]
+0x3e4580c: ADD             SP, SP, #0x30 ; '0'
+0x3e45810: RET

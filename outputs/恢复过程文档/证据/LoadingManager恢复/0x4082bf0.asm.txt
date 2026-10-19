@@ -1,0 +1,103 @@
+0x4082bf0: fe57bea9 stp      x30, x21, [sp, #-0x20]!
+0x4082bf4: f44f01a9 stp      x20, x19, [sp, #0x10]
+0x4082bf8: f47b0290 adrp     x20, #0x8ffe000
+0x4082bfc: 15530290 adrp     x21, #0x8ae2000
+0x4082c00: 88167739 ldrb     w8, [x20, #0xdc5]
+0x4082c04: b54a42f9 ldr      x21, [x21, #0x490] // LoadingPanel
+0x4082c08: f30300aa mov      x19, x0
+0x4082c0c: 48020037 tbnz     w8, #0, #0x4082c54
+0x4082c10: 405202f0 adrp     x0, #0x8acd000
+0x4082c14: 003043f9 ldr      x0, [x0, #0x660] // Method$System.Array.Empty<object>()
+0x4082c18: 9ae9ee97 bl       #0x3c3d280
+0x4082c1c: 00530290 adrp     x0, #0x8ae2000
+0x4082c20: 004c42f9 ldr      x0, [x0, #0x498] // Method$UnityEngine.GameObject.GetComponent<UIPanel>()
+0x4082c24: 97e9ee97 bl       #0x3c3d280
+0x4082c28: 00530290 adrp     x0, #0x8ae2000
+0x4082c2c: 005042f9 ldr      x0, [x0, #0x4a0] // UIModuleO.LoadingPanel_TypeInfo
+0x4082c30: 94e9ee97 bl       #0x3c3d280
+0x4082c34: 405202d0 adrp     x0, #0x8acc000
+0x4082c38: 006844f9 ldr      x0, [x0, #0x8d0] // UnityEngine.Object_TypeInfo
+0x4082c3c: 91e9ee97 bl       #0x3c3d280
+0x4082c40: 00530290 adrp     x0, #0x8ae2000
+0x4082c44: 004842f9 ldr      x0, [x0, #0x490] // LoadingPanel
+0x4082c48: 8ee9ee97 bl       #0x3c3d280
+0x4082c4c: 28008052 mov      w8, #1
+0x4082c50: 88163739 strb     w8, [x20, #0xdc5]
+0x4082c54: a00240f9 ldr      x0, [x21]
+0x4082c58: e1031faa mov      x1, xzr
+0x4082c5c: 88a70995 bl       #0x82eca7c // UnityEngine.GameObject$$Find
+0x4082c60: 400900b4 cbz      x0, #0x4082d88
+0x4082c64: 08530290 adrp     x8, #0x8ae2000
+0x4082c68: 084d42f9 ldr      x8, [x8, #0x498] // Method$UnityEngine.GameObject.GetComponent<UIPanel>()
+0x4082c6c: 555202d0 adrp     x21, #0x8acc000
+0x4082c70: 010140f9 ldr      x1, [x8]
+0x4082c74: b56a44f9 ldr      x21, [x21, #0x8d0] // UnityEngine.Object_TypeInfo
+0x4082c78: 8b293094 bl       #0x4c8d2a4 // UnityEngine.GameObject$$GetComponent<object>
+0x4082c7c: 601200f9 str      x0, [x19, #0x20]
+0x4082c80: 200100b4 cbz      x0, #0x4082ca4
+0x4082c84: 08530290 adrp     x8, #0x8ae2000
+0x4082c88: 085142f9 ldr      x8, [x8, #0x4a0] // UIModuleO.LoadingPanel_TypeInfo
+0x4082c8c: 090040f9 ldr      x9, [x0]
+0x4082c90: 080140f9 ldr      x8, [x8]
+0x4082c94: 2bc14439 ldrb     w11, [x9, #0x130]
+0x4082c98: 0ac14439 ldrb     w10, [x8, #0x130]
+0x4082c9c: 7f010a6b cmp      w11, w10
+0x4082ca0: 62000054 b.hs     #0x4082cac
+0x4082ca4: f4031faa mov      x20, xzr
+0x4082ca8: 06000014 b        #0x4082cc0
+0x4082cac: 296540f9 ldr      x9, [x9, #0xc8]
+0x4082cb0: 290d0a8b add      x9, x9, x10, lsl #3
+0x4082cb4: 29815ff8 ldur     x9, [x9, #-8]
+0x4082cb8: 3f0108eb cmp      x9, x8
+0x4082cbc: 14009f9a csel     x20, x0, xzr, eq
+0x4082cc0: a00240f9 ldr      x0, [x21]
+0x4082cc4: 08e040b9 ldr      w8, [x0, #0xe0]
+0x4082cc8: 48000035 cbnz     w8, #0x4082cd0
+0x4082ccc: b9e9ee97 bl       #0x3c3d3b0
+0x4082cd0: e00314aa mov      x0, x20
+0x4082cd4: e1031faa mov      x1, xzr
+0x4082cd8: e2031faa mov      x2, xzr
+0x4082cdc: e4a30995 bl       #0x82ebc6c // UnityEngine.Object$$op_Inequality
+0x4082ce0: c0000036 tbz      w0, #0, #0x4082cf8
+0x4082ce4: 340500b4 cbz      x20, #0x4082d88
+0x4082ce8: 21008052 mov      w1, #1
+0x4082cec: e00314aa mov      x0, x20
+0x4082cf0: e2031faa mov      x2, xzr
+0x4082cf4: 44ac0094 bl       #0x40ade04 // UIModuleO.LoadingPanel$$SetProgressBarActive
+0x4082cf8: 741240f9 ldr      x20, [x19, #0x20]
+0x4082cfc: 740300b4 cbz      x20, #0x4082d68
+0x4082d00: 485202f0 adrp     x8, #0x8acd000
+0x4082d04: 083143f9 ldr      x8, [x8, #0x660] // Method$System.Array.Empty<object>()
+0x4082d08: 150140f9 ldr      x21, [x8]
+0x4082d0c: a81e40f9 ldr      x8, [x21, #0x38]
+0x4082d10: 880000b5 cbnz     x8, #0x4082d20
+0x4082d14: e00315aa mov      x0, x21
+0x4082d18: b935ef97 bl       #0x3c503fc
+0x4082d1c: a81e40f9 ldr      x8, [x21, #0x38]
+0x4082d20: 000940f9 ldr      x0, [x8, #0x10]
+0x4082d24: 08d44439 ldrb     w8, [x0, #0x135]
+0x4082d28: 48000037 tbnz     w8, #0, #0x4082d30
+0x4082d2c: 9d35ef97 bl       #0x3c503a0
+0x4082d30: 08e040b9 ldr      w8, [x0, #0xe0]
+0x4082d34: 48000035 cbnz     w8, #0x4082d3c
+0x4082d38: 9ee9ee97 bl       #0x3c3d3b0
+0x4082d3c: a81e40f9 ldr      x8, [x21, #0x38]
+0x4082d40: 000940f9 ldr      x0, [x8, #0x10]
+0x4082d44: 08d44439 ldrb     w8, [x0, #0x135]
+0x4082d48: 48000037 tbnz     w8, #0, #0x4082d50
+0x4082d4c: 9535ef97 bl       #0x3c503a0
+0x4082d50: 085c40f9 ldr      x8, [x0, #0xb8]
+0x4082d54: 890240f9 ldr      x9, [x20]
+0x4082d58: e00314aa mov      x0, x20
+0x4082d5c: 010140f9 ldr      x1, [x8]
+0x4082d60: 288958a9 ldp      x8, x2, [x9, #0x188]
+0x4082d64: 00013fd6 blr      x8
+0x4082d68: e00313aa mov      x0, x19
+0x4082d6c: 08000094 bl       #0x4082d8c // LoadingModule.LoadingManager$$LoadingScene
+0x4082d70: e10300aa mov      x1, x0
+0x4082d74: e00313aa mov      x0, x19
+0x4082d78: f44f41a9 ldp      x20, x19, [sp, #0x10]
+0x4082d7c: e2031faa mov      x2, xzr
+0x4082d80: fe57c2a8 ldp      x30, x21, [sp], #0x20
+0x4082d84: 11ac0915 b        #0x82eddc8 // UnityEngine.MonoBehaviour$$StartCoroutine
+0x4082d88: d1e9ee97 bl       #0x3c3d4cc

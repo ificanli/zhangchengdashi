@@ -1,0 +1,63 @@
+--- before/Assets/Scripts/Assembly-CSharp/ljzs_lt/GameStart.cs
++++ after/Assets/Scripts/Assembly-CSharp/ljzs_lt/GameStart.cs
+@@ -101,18 +101,28 @@
+ 		[Address(RVA = "0x439B9B0", Offset = "0x43979B0", VA = "0x439B9B0", Slot = "6")]
+ 		public override void InitConfig(ResourcesInfo resourcesInfo)
+ 		{
++			ConfigMgr.Instance.SetConfigABRes(resourcesInfo);
++			ConfigMgr.Instance.Initialize();
++			InitConfigOver();
+ 		}
+ 
+ 		[Token(Token = "0x6005B42")]
+ 		[Address(RVA = "0x439B9F4", Offset = "0x43979F4", VA = "0x439B9F4", Slot = "9")]
+ 		public override void RegisterProcedure()
+ 		{
++			base.RegisterProcedure();
++			var procedures = new List<GameFramework.Procedure.ProcedureBase>();
++			procedures.Add(new ljzs_lt.Procedure.ProcedurePreLoad());
++			procedures.Add(new ljzs_lt.Procedure.ProcedureStarGame());
++			procedures.Add(new ljzs_lt.Procedure.ProcedureExitGame());
++			GameFramework.GameFrameEntry.GetModule<GameFramework.Procedure.ProcedureManager>().Register(procedures.ToArray());
+ 		}
+ 
+ 		[Token(Token = "0x6005B43")]
+ 		[Address(RVA = "0x439BC8C", Offset = "0x4397C8C", VA = "0x439BC8C", Slot = "4")]
+ 		public override void InitPatchManager()
+ 		{
++			StartCoroutine(OpenLoadingUI(LoadingUIShow));
+ 		}
+ 
+ 		[Token(Token = "0x6005B44")]
+@@ -123,10 +133,11 @@
+ 
+ 		[Token(Token = "0x6005B45")]
+ 		[Address(RVA = "0x439BD18", Offset = "0x4397D18", VA = "0x439BD18")]
+-		[IteratorStateMachine(typeof(_003COpenLoadingUI_003Ed__4))]
+ 		private IEnumerator OpenLoadingUI(Action loadOver)
+ 		{
+-			return null;
++			UnityEngine.Debug.Log("OpenLoadingUI");
++			yield return 0;
++			loadOver?.Invoke();
+ 		}
+ 
+ 		[Token(Token = "0x6005B46")]
+@@ -145,12 +156,17 @@
+ 		[Address(RVA = "0x439BEE4", Offset = "0x4397EE4", VA = "0x439BEE4", Slot = "10")]
+ 		public override void RegisterLogicCtr()
+ 		{
++			base.RegisterLogicCtr();
++			GameFramework.GameFrameEntry.GetModule<GameFramework.MineGameLogicModule>().RegisterLogicCtr(L_Tools.ServerTimeMgr.I, false);
++			GameFramework.GameFrameEntry.GetModule<GameFramework.MineGameLogicModule>().RegisterLogicCtr(PurchaseControl.I, false);
++			GameFramework.GameFrameEntry.GetModule<GameFramework.MineGameLogicModule>().RegisterLogicCtr(CommonGameModule.Email.EmailControl.I, false);
+ 		}
+ 
+ 		[Token(Token = "0x6005B49")]
+ 		[Address(RVA = "0x439C028", Offset = "0x4398028", VA = "0x439C028", Slot = "7")]
+ 		public override void StartGame()
+ 		{
++			GameFramework.GameFrameEntry.GetModule<GameFramework.Procedure.ProcedureManager>().StartProcedure<ljzs_lt.Procedure.ProcedurePreLoad>();
+ 		}
+ 
+ 		[Token(Token = "0x6005B4A")]

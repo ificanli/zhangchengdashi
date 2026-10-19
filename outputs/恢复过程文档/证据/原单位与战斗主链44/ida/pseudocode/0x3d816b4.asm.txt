@@ -1,0 +1,13 @@
+0x3d816b4: STP             X30, X19, [SP,#var_10]!
+0x3d816b8: MOV             X19, X0
+0x3d816bc: MOV             X0, XZR
+0x3d816c0: BL              Pathfinding.AstarWebGLRuntimeConfig$$get_UseWebGLNavigation
+0x3d816c4: TBZ             W0, #0, loc_3D816D8
+0x3d816c8: LDR             X8, [X19,#0x40]
+0x3d816cc: CBZ             X8, loc_3D816D8
+0x3d816d0: ADD             X8, X8, #0x28 ; '('
+0x3d816d4: B               loc_3D816DC
+0x3d816d8: ADD             X8, X19, #0x1BC
+0x3d816dc: LDR             S0, [X8]
+0x3d816e0: LDP             X30, X19, [SP+0x10+var_10],#0x10
+0x3d816e4: RET

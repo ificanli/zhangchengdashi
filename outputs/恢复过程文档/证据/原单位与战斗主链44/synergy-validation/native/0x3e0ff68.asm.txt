@@ -1,0 +1,20 @@
+0x3e0ff68: fe4fbfa9 stp      x30, x19, [sp, #-0x10]!
+0x3e0ff6c: f303012a mov      w19, w1
+0x3e0ff70: 42000012 and      w2, w2, #1
+0x3e0ff74: 21008052 mov      w1, #1
+0x3e0ff78: a0fdff97 bl       #0x3e0f5f8 // GameModule.SynergyEffectManager$$GetAtkWayTypeCount
+0x3e0ff7c: 1f140071 cmp      w0, #5
+0x3e0ff80: 6b010054 b.lt     #0x3e0ffac
+0x3e0ff84: 6002221e scvtf    s0, w19
+0x3e0ff88: 01102c1e fmov     s1, #0.50000000
+0x3e0ff8c: 08f0af52 mov      w8, #0x7f800000
+0x3e0ff90: 0008211e fmul     s0, s0, s1
+0x3e0ff94: 0101271e fmov     s1, w8
+0x3e0ff98: 0800381e fcvtzs   w8, s0
+0x3e0ff9c: 0020211e fcmp     s0, s1
+0x3e0ffa0: 0900b052 mov      w9, #-0xffffffff80000000
+0x3e0ffa4: 2801881a csel     w8, w9, w8, eq
+0x3e0ffa8: 1301130b add      w19, w8, w19
+0x3e0ffac: e003132a mov      w0, w19
+0x3e0ffb0: fe4fc1a8 ldp      x30, x19, [sp], #0x10
+0x3e0ffb4: c0035fd6 ret      

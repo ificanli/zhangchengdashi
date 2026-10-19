@@ -1,0 +1,11 @@
+0x4564c00: STR             D8, [SP,#var_20]!
+0x4564c04: STP             X30, X19, [SP,#0x20+var_10]
+0x4564c08: MOV             W8, #0x41200000
+0x4564c0c: MOV             V8.16B, V0.16B
+0x4564c10: MOV             X19, X0
+0x4564c14: STR             W8, [X0,#0x20]
+0x4564c18: BL              Pathfinding.ABPathEndingCondition$$.ctor
+0x4564c1c: STR             S8, [X19,#0x20]
+0x4564c20: LDP             X30, X19, [SP,#0x20+var_10]
+0x4564c24: LDR             D8, [SP+0x20+var_20],#0x20
+0x4564c28: RET

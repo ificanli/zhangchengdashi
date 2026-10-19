@@ -1,0 +1,54 @@
+__int64 __fastcall GameModule_RoleBehaviour__IsNeighbor(__int64 a1, _QWORD *a2, __int64 a3)
+{
+  __int64 v6; // x21
+  __int64 v7; // x21
+  __int64 v8; // x21
+  __int64 v9; // x21
+  __int64 v10; // x21
+  __int64 v11; // x20
+
+  if ( (byte_8FFD48F & 1) == 0 )
+  {
+    il2cpp_codegen_initialize_runtime_metadata((void **)&off_8CEB3E0);
+    byte_8FFD48F = 1;
+  }
+  if ( *((_DWORD *)off_8CEB3E0 + 56) == 0 )
+    il2cpp_codegen_runtime_class_init(off_8CEB3E0);
+  if ( (UnityEngine_Object__op_Equality(a2, 0, 0) & 1) != 0 )
+    return 0;
+  if ( *((_DWORD *)off_8CEB3E0 + 56) == 0 )
+    il2cpp_codegen_runtime_class_init(off_8CEB3E0);
+  if ( (UnityEngine_Object__op_Equality(a3, 0, 0) & 1) != 0 )
+    return 0;
+  if ( a2 == nullptr )
+    il2cpp_codegen_raise_null_reference_exception();
+  v6 = a2[13];
+  if ( *((_DWORD *)off_8CEB3E0 + 56) == 0 )
+    il2cpp_codegen_runtime_class_init(off_8CEB3E0);
+  if ( (UnityEngine_Object__op_Equality(a3, v6, 0) & 1) != 0 )
+    return 1;
+  v7 = a2[14];
+  if ( *((_DWORD *)off_8CEB3E0 + 56) == 0 )
+    il2cpp_codegen_runtime_class_init(off_8CEB3E0);
+  if ( (UnityEngine_Object__op_Equality(a3, v7, 0) & 1) != 0 )
+    return 1;
+  v8 = a2[15];
+  if ( *((_DWORD *)off_8CEB3E0 + 56) == 0 )
+    il2cpp_codegen_runtime_class_init(off_8CEB3E0);
+  if ( (UnityEngine_Object__op_Equality(a3, v8, 0) & 1) != 0 )
+    return 1;
+  v9 = a2[16];
+  if ( *((_DWORD *)off_8CEB3E0 + 56) == 0 )
+    il2cpp_codegen_runtime_class_init(off_8CEB3E0);
+  if ( (UnityEngine_Object__op_Equality(a3, v9, 0) & 1) != 0 )
+    return 1;
+  v10 = a2[17];
+  if ( *((_DWORD *)off_8CEB3E0 + 56) == 0 )
+    il2cpp_codegen_runtime_class_init(off_8CEB3E0);
+  if ( (UnityEngine_Object__op_Equality(a3, v10, 0) & 1) != 0 )
+    return 1;
+  v11 = a2[18];
+  if ( *((_DWORD *)off_8CEB3E0 + 56) == 0 )
+    il2cpp_codegen_runtime_class_init(off_8CEB3E0);
+  return UnityEngine_Object__op_Equality(a3, v11, 0);
+}

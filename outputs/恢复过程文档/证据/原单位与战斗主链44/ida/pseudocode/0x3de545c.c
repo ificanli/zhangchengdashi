@@ -1,0 +1,37 @@
+void __fastcall GameModule_BattleGameManager__ApplyAnimationPauseToRoleList(__int64 a1, __int64 a2, char a3)
+{
+  int v6; // w8
+  int v7; // w21
+  unsigned int v8; // w22
+  __int64 Item; // x23
+
+  if ( (byte_8FFD73E & 1) == 0 )
+  {
+    il2cpp_codegen_initialize_runtime_metadata(&qword_8D0ACF0);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D0ACF8);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&off_8CEB3E0);
+    byte_8FFD73E = 1;
+  }
+  if ( a2 != 0 )
+  {
+    v6 = *(_DWORD *)(a2 + 24);
+    if ( v6 != 0 )
+    {
+      v7 = v6 - 1;
+      if ( v6 - 1 >= 0 )
+      {
+        v8 = a3 & 1;
+        do
+        {
+          Item = System_Collections_Generic_List_object___get_Item(a2, (unsigned int)v7, qword_8D0ACF8);
+          if ( *((_DWORD *)off_8CEB3E0 + 56) == 0 )
+            il2cpp_codegen_runtime_class_init(off_8CEB3E0);
+          if ( (UnityEngine_Object__op_Equality(Item, 0, 0) & 1) == 0 )
+            GameModule_BattleGameManager__ApplyAnimationPauseToSingleRole(a1, Item, v8);
+          --v7;
+        }
+        while ( v7 >= 0 );
+      }
+    }
+  }
+}

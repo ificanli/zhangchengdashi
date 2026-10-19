@@ -1,0 +1,100 @@
+0x3d8d5a8: STR             D10, [SP,#var_50]!
+0x3d8d5ac: STP             D9, D8, [SP,#0x50+var_40]
+0x3d8d5b0: STP             X30, X23, [SP,#0x50+var_30]
+0x3d8d5b4: STP             X22, X21, [SP,#0x50+var_20]
+0x3d8d5b8: STP             X20, X19, [SP,#0x50+var_10]
+0x3d8d5bc: ADRP            X21, #byte_8FFD4A6@PAGE
+0x3d8d5c0: LDRB            W8, [X21,#byte_8FFD4A6@PAGEOFF]
+0x3d8d5c4: MOV             W20, W1
+0x3d8d5c8: MOV             X19, X0
+0x3d8d5cc: TBNZ            W8, #0, loc_3D8D5F0
+0x3d8d5d0: ADRP            X0, #off_8ACF180@PAGE
+0x3d8d5d4: LDR             X0, [X0,#off_8ACF180@PAGEOFF]; off_8CE81E8 ; slot
+0x3d8d5d8: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3d8d5dc: ADRP            X0, #off_8ACC8D0@PAGE
+0x3d8d5e0: LDR             X0, [X0,#off_8ACC8D0@PAGEOFF]; off_8CEB3E0 ; slot
+0x3d8d5e4: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3d8d5e8: MOV             W8, #1
+0x3d8d5ec: STRB            W8, [X21,#byte_8FFD4A6@PAGEOFF]
+0x3d8d5f0: MOV             X0, X19
+0x3d8d5f4: MOV             X1, XZR
+0x3d8d5f8: STR             XZR, [SP,#0x50+var_48]
+0x3d8d5fc: BL              UnityEngine.Component$$get_transform
+0x3d8d600: CBZ             X0, loc_3D8D734
+0x3d8d604: ADRP            X21, #off_8ACF180@PAGE
+0x3d8d608: ADRP            X23, #off_8ACC8D0@PAGE
+0x3d8d60c: LDR             X21, [X21,#off_8ACF180@PAGEOFF]; off_8CE81E8
+0x3d8d610: LDR             X23, [X23,#off_8ACC8D0@PAGEOFF]; off_8CEB3E0
+0x3d8d614: MOV             X1, XZR
+0x3d8d618: BL              UnityEngine.Transform$$get_position
+0x3d8d61c: LDR             X0, [X21]; klass
+0x3d8d620: MOV             V8.16B, V0.16B
+0x3d8d624: MOV             V9.16B, V1.16B
+0x3d8d628: MOV             V10.16B, V2.16B
+0x3d8d62c: LDR             W8, [X0,#0xE0]
+0x3d8d630: CBNZ            W8, loc_3D8D638
+0x3d8d634: BL              il2cpp_codegen_runtime_class_init
+0x3d8d638: ADD             X0, SP, #0x50+var_48
+0x3d8d63c: MOV             V0.16B, V8.16B
+0x3d8d640: MOV             V1.16B, V9.16B
+0x3d8d644: MOV             V2.16B, V10.16B
+0x3d8d648: MOV             X1, XZR
+0x3d8d64c: BL              HexManager$$TryGetHexAt
+0x3d8d650: LDR             X0, [X23]; klass
+0x3d8d654: LDR             X21, [X19,#0x280]
+0x3d8d658: LDR             W8, [X0,#0xE0]
+0x3d8d65c: CBNZ            W8, loc_3D8D664
+0x3d8d660: BL              il2cpp_codegen_runtime_class_init
+0x3d8d664: MOV             X0, X21
+0x3d8d668: MOV             X1, XZR
+0x3d8d66c: MOV             X2, XZR
+0x3d8d670: BL              UnityEngine.Object$$op_Inequality
+0x3d8d674: TBZ             W0, #0, loc_3D8D6C4
+0x3d8d678: LDR             X0, [X23]; klass
+0x3d8d67c: LDR             X21, [X19,#0x280]
+0x3d8d680: LDR             X22, [SP,#0x50+var_48]
+0x3d8d684: LDR             W8, [X0,#0xE0]
+0x3d8d688: CBNZ            W8, loc_3D8D690
+0x3d8d68c: BL              il2cpp_codegen_runtime_class_init
+0x3d8d690: MOV             X0, X21
+0x3d8d694: MOV             X1, X22
+0x3d8d698: MOV             X2, XZR
+0x3d8d69c: BL              UnityEngine.Object$$op_Inequality
+0x3d8d6a0: TBZ             W0, #0, loc_3D8D6C4
+0x3d8d6a4: LDR             X0, [X19,#0x280]
+0x3d8d6a8: CBZ             X0, loc_3D8D734
+0x3d8d6ac: LDR             W1, [X19,#0x38]
+0x3d8d6b0: MVN             W8, W20
+0x3d8d6b4: AND             W2, W8, #1
+0x3d8d6b8: MOV             X3, X19
+0x3d8d6bc: MOV             X4, XZR
+0x3d8d6c0: BL              GameModule.HexBehaviour$$RemoveRole
+0x3d8d6c4: LDR             X0, [X23]; klass
+0x3d8d6c8: LDR             X20, [SP,#0x50+var_48]
+0x3d8d6cc: LDR             W8, [X0,#0xE0]
+0x3d8d6d0: CBNZ            W8, loc_3D8D6D8
+0x3d8d6d4: BL              il2cpp_codegen_runtime_class_init
+0x3d8d6d8: MOV             X0, X20
+0x3d8d6dc: MOV             X1, XZR
+0x3d8d6e0: MOV             X2, XZR
+0x3d8d6e4: BL              UnityEngine.Object$$op_Equality
+0x3d8d6e8: MOV             X8, XZR
+0x3d8d6ec: TBNZ            W0, #0, loc_3D8D718
+0x3d8d6f0: LDR             X0, [SP,#0x50+var_48]
+0x3d8d6f4: CBZ             X0, loc_3D8D734
+0x3d8d6f8: LDRB            W8, [X19,#0x20]
+0x3d8d6fc: LDR             W1, [X19,#0x38]
+0x3d8d700: MOV             X3, X19
+0x3d8d704: MOV             X4, XZR
+0x3d8d708: CMP             W8, #0
+0x3d8d70c: CSET            W2, EQ
+0x3d8d710: BL              GameModule.HexBehaviour$$RefreshRoleCamp
+0x3d8d714: LDR             X8, [SP,#0x50+var_48]
+0x3d8d718: STR             X8, [X19,#0x280]
+0x3d8d71c: LDP             X20, X19, [SP,#0x50+var_10]
+0x3d8d720: LDP             X22, X21, [SP,#0x50+var_20]
+0x3d8d724: LDP             X30, X23, [SP,#0x50+var_30]
+0x3d8d728: LDP             D9, D8, [SP,#0x50+var_40]
+0x3d8d72c: LDR             D10, [SP+0x50+var_50],#0x50
+0x3d8d730: RET
+0x3d8d734: BL              il2cpp_codegen_raise_null_reference_exception

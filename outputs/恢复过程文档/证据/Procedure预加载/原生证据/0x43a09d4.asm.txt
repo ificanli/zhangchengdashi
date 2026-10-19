@@ -1,0 +1,50 @@
+0x43a09d4: SUB             SP, SP, #0x40
+0x43a09d8: STR             X30, [SP,#0x40+var_20]
+0x43a09dc: STP             X20, X19, [SP,#0x40+var_10]
+0x43a09e0: ADRP            X20, #byte_90008CF@PAGE
+0x43a09e4: ADRP            X19, #off_8ACC8C8@PAGE
+0x43a09e8: LDRB            W8, [X20,#byte_90008CF@PAGEOFF]
+0x43a09ec: LDR             X19, [X19,#off_8ACC8C8@PAGEOFF]; off_8CE64E8
+0x43a09f0: TBNZ            W8, #0, loc_43A0A2C
+0x43a09f4: ADRP            X0, #off_8ADADC8@PAGE
+0x43a09f8: LDR             X0, [X0,#off_8ADADC8@PAGEOFF]; off_8CE3D98 ; slot
+0x43a09fc: BL              il2cpp_codegen_initialize_runtime_metadata
+0x43a0a00: ADRP            X0, #off_8ACC8C8@PAGE
+0x43a0a04: LDR             X0, [X0,#off_8ACC8C8@PAGEOFF]; off_8CE64E8 ; slot
+0x43a0a08: BL              il2cpp_codegen_initialize_runtime_metadata
+0x43a0a0c: ADRP            X0, #off_8AF4A68@PAGE
+0x43a0a10: LDR             X0, [X0,#off_8AF4A68@PAGEOFF]; qword_8D581F0 ; slot
+0x43a0a14: BL              il2cpp_codegen_initialize_runtime_metadata
+0x43a0a18: ADRP            X0, #off_8AF4A70@PAGE
+0x43a0a1c: LDR             X0, [X0,#off_8AF4A70@PAGEOFF]; qword_8D87640 ; slot
+0x43a0a20: BL              il2cpp_codegen_initialize_runtime_metadata
+0x43a0a24: MOV             W8, #1
+0x43a0a28: STRB            W8, [X20,#byte_90008CF@PAGEOFF]
+0x43a0a2c: LDR             X0, [X19]; klass
+0x43a0a30: ADRP            X20, #off_8AF4A70@PAGE
+0x43a0a34: ADRP            X19, #off_8ADADC8@PAGE
+0x43a0a38: LDR             W8, [X0,#0xE0]
+0x43a0a3c: LDR             X20, [X20,#off_8AF4A70@PAGEOFF]; qword_8D87640
+0x43a0a40: LDR             X19, [X19,#off_8ADADC8@PAGEOFF]; off_8CE3D98
+0x43a0a44: CBNZ            W8, loc_43A0A4C
+0x43a0a48: BL              il2cpp_codegen_runtime_class_init
+0x43a0a4c: LDR             X0, [X20]
+0x43a0a50: ADRP            X20, #off_8AF4A68@PAGE
+0x43a0a54: LDR             X20, [X20,#off_8AF4A68@PAGEOFF]; qword_8D581F0
+0x43a0a58: MOV             X1, XZR
+0x43a0a5c: BL              UnityEngine.Debug$$Log
+0x43a0a60: LDR             X0, [X19]; klass
+0x43a0a64: LDR             W8, [X0,#0xE0]
+0x43a0a68: CBNZ            W8, loc_43A0A70
+0x43a0a6c: BL              il2cpp_codegen_runtime_class_init
+0x43a0a70: LDR             X0, [X20]
+0x43a0a74: ADD             X8, SP, #0x40+var_38
+0x43a0a78: MOV             W2, #1
+0x43a0a7c: MOV             W3, #0x64 ; 'd'
+0x43a0a80: MOV             W1, WZR
+0x43a0a84: MOV             X4, XZR
+0x43a0a88: BL              UnityEngine.AddressableAssets.Addressables$$LoadSceneAsync
+0x43a0a8c: LDP             X20, X19, [SP,#0x40+var_10]
+0x43a0a90: LDR             X30, [SP,#0x40+var_20]
+0x43a0a94: ADD             SP, SP, #0x40 ; '@'
+0x43a0a98: RET

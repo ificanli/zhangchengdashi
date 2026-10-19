@@ -1,0 +1,24 @@
+FAIL Awake stores live base task before CheatControl.Init: performance setup runs
+FAIL InitBaseManager waits event, asset flag, parent, then config: must return a real task
+FAIL Start waits stored base task before subscribing and loading: listen precedes loading
+FAIL Login pending and failed states block until Success: login predicate created
+FAIL GameLogic waits AB before progress and fire-and-forget InitManager: AB task remains pending
+FAIL InitManager preserves 11 await gates and concurrent task start: initialization is pending
+FAIL firstEnterGameTime uses network time with guide=True: real init task
+FAIL firstEnterGameTime uses network time with guide=False: real init task
+FAIL existing firstEnterGameTime is preserved: real init task
+FAIL failed awaited dependency stops InitManager with original exception: real init task
+FAIL loading listener is idempotent and unsubscribes before game initialization: one subscription
+FAIL background initialization launches all 17 without waiting: background launch order
+FAIL performance ram=2048 compute=True URP=True: native frame rate policy
+FAIL performance ram=4096 compute=True URP=True: native frame rate policy
+FAIL performance ram=2048 compute=False URP=True: native frame rate policy
+FAIL performance ram=4096 compute=False URP=True: native frame rate policy
+FAIL performance ram=2048 compute=False URP=False: native frame rate policy
+FAIL performance ram=4096 compute=False URP=False: native frame rate policy
+FAIL renderer data property, fallback fields, invalid index and null: nonpublic property first
+FAIL renderer feature name comparison and warning results: case insensitive feature disable
+FAIL reflection setter priority, private fallback, public-field exclusion and exception: private setter has priority
+FAIL camera post processing and antialiasing disable: Sequence contains no elements
+FAIL explicit thirty FPS rendering helper retains lighting and feature effects: MSAA one and shadow distance zero
+RESULT scenarios=23 checks=23 failures=23

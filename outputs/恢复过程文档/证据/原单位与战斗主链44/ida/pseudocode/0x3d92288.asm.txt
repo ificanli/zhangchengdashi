@@ -1,0 +1,145 @@
+0x3d92288: SUB             SP, SP, #0x30
+0x3d9228c: STP             X30, X21, [SP,#0x30+var_20]
+0x3d92290: STP             X20, X19, [SP,#0x30+var_10]
+0x3d92294: ADRP            X20, #byte_8FFD4C2@PAGE
+0x3d92298: LDRB            W8, [X20,#byte_8FFD4C2@PAGEOFF]
+0x3d9229c: MOV             X19, X0
+0x3d922a0: TBNZ            W8, #0, loc_3D922D0
+0x3d922a4: ADRP            X0, #off_8AD1688@PAGE
+0x3d922a8: LDR             X0, [X0,#off_8AD1688@PAGEOFF]; qword_8D21610 ; slot
+0x3d922ac: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3d922b0: ADRP            X0, #off_8ACC8D0@PAGE
+0x3d922b4: LDR             X0, [X0,#off_8ACC8D0@PAGEOFF]; off_8CEB3E0 ; slot
+0x3d922b8: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3d922bc: ADRP            X0, #off_8ACDE20@PAGE
+0x3d922c0: LDR             X0, [X0,#off_8ACDE20@PAGEOFF]; off_8CEEDF8 ; slot
+0x3d922c4: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3d922c8: MOV             W8, #1
+0x3d922cc: STRB            W8, [X20,#byte_8FFD4C2@PAGEOFF]
+0x3d922d0: STR             WZR, [SP,#0x30+var_28]
+0x3d922d4: STR             WZR, [SP,#0x30+var_30]
+0x3d922d8: LDR             W8, [X19]
+0x3d922dc: LDR             X20, [X19,#0x10]
+0x3d922e0: CBZ             W8, loc_3D92354
+0x3d922e4: ADRP            X8, #off_8ACDE20@PAGE
+0x3d922e8: LDR             X8, [X8,#off_8ACDE20@PAGEOFF]; off_8CEEDF8
+0x3d922ec: LDR             X0, [X8]; klass
+0x3d922f0: LDR             W8, [X0,#0xE0]
+0x3d922f4: CBNZ            W8, loc_3D922FC
+0x3d922f8: BL              il2cpp_codegen_runtime_class_init
+0x3d922fc: MOV             X0, XZR
+0x3d92300: BL              Cysharp.Threading.Tasks.UniTask$$Yield
+0x3d92304: STR             W0, [SP,#0x30+var_30]
+0x3d92308: MOV             X0, SP
+0x3d9230c: MOV             X1, XZR
+0x3d92310: BL              Cysharp.Threading.Tasks.YieldAwaitable$$GetAwaiter
+0x3d92314: STR             W0, [SP,#0x30+var_28]
+0x3d92318: ADD             X0, SP, #0x30+var_28
+0x3d9231c: MOV             X1, XZR
+0x3d92320: BL              Cysharp.Threading.Tasks.YieldAwaitable.Awaiter$$get_IsCompleted
+0x3d92324: TBNZ            W0, #0, loc_3D92368
+0x3d92328: STR             WZR, [X19]
+0x3d9232c: LDR             W8, [SP,#0x30+var_28]
+0x3d92330: ADD             X0, X19, #8
+0x3d92334: STR             W8, [X19,#0x18]
+0x3d92338: ADRP            X8, #off_8AD1688@PAGE
+0x3d9233c: LDR             X8, [X8,#off_8AD1688@PAGEOFF]; qword_8D21610
+0x3d92340: LDR             X3, [X8]
+0x3d92344: ADD             X1, SP, #0x30+var_28
+0x3d92348: MOV             X2, X19
+0x3d9234c: BL              unk_3DA3B88
+0x3d92350: B               loc_3D923DC
+0x3d92354: LDR             W8, [X19,#0x18]
+0x3d92358: MOV             W9, #0xFFFFFFFF
+0x3d9235c: STR             W8, [SP,#0x30+var_28]
+0x3d92360: STR             WZR, [X19,#0x18]
+0x3d92364: STR             W9, [X19]
+0x3d92368: ADD             X0, SP, #0x30+var_28
+0x3d9236c: MOV             X1, XZR
+0x3d92370: BL              Cysharp.Threading.Tasks.YieldAwaitable.Awaiter$$GetResult
+0x3d92374: ADRP            X8, #off_8ACC8D0@PAGE
+0x3d92378: LDR             X8, [X8,#off_8ACC8D0@PAGEOFF]; off_8CEB3E0
+0x3d9237c: LDR             X0, [X8]; klass
+0x3d92380: LDR             W8, [X0,#0xE0]
+0x3d92384: CBNZ            W8, loc_3D9238C
+0x3d92388: BL              il2cpp_codegen_runtime_class_init
+0x3d9238c: MOV             X0, X20
+0x3d92390: MOV             X1, XZR
+0x3d92394: MOV             X2, XZR
+0x3d92398: BL              UnityEngine.Object$$op_Equality
+0x3d9239c: TBNZ            W0, #0, loc_3D923C8
+0x3d923a0: CBZ             X20, loc_3D923EC
+0x3d923a4: LDRB            W8, [X20,#0x21]
+0x3d923a8: CBNZ            W8, loc_3D923C8
+0x3d923ac: LDRB            W8, [X20,#0x27C]
+0x3d923b0: CBNZ            W8, loc_3D923C8
+0x3d923b4: MOV             X0, X20
+0x3d923b8: MOV             W1, WZR
+0x3d923bc: MOV             W2, WZR
+0x3d923c0: MOV             X3, XZR
+0x3d923c4: BL              sub_3D7F628
+0x3d923c8: MOV             W8, #0xFFFFFFFE
+0x3d923cc: STR             W8, [X19],#8
+0x3d923d0: MOV             X0, X19
+0x3d923d4: MOV             X1, XZR
+0x3d923d8: BL              unk_3D313B0
+0x3d923dc: LDP             X20, X19, [SP,#0x30+var_10]
+0x3d923e0: LDP             X30, X21, [SP,#0x30+var_20]
+0x3d923e4: ADD             SP, SP, #0x30 ; '0'
+0x3d923e8: RET
+0x3d923ec: BL              il2cpp_codegen_raise_null_reference_exception
+0x3d923f0: B               loc_3D9240C
+0x3d923f4: B               loc_3D9240C
+0x3d923f8: B               loc_3D92444
+0x3d923fc: B               loc_3D9240C
+0x3d92400: B               loc_3D92444
+0x3d92404: B               loc_3D92444
+0x3d92408: B               loc_3D92444
+0x3d9240c: MOV             X20, X0
+0x3d92410: CMP             W1, #1
+0x3d92414: B.NE            loc_3D92448
+0x3d92418: MOV             X0, X20
+0x3d9241c: BL              .__cxa_begin_catch
+0x3d92420: LDR             X21, [X0]
+0x3d92424: BL              .__cxa_end_catch
+0x3d92428: CBZ             X21, loc_3D923C8
+0x3d9242c: MOV             X0, X21
+0x3d92430: BL              sub_3C38CF8
+0x3d92434: B               loc_3D92444
+0x3d92438: CBZ             X21, loc_3D92444
+0x3d9243c: MOV             X0, X21
+0x3d92440: BL              sub_3C38CF8
+0x3d92444: MOV             X20, X0
+0x3d92448: CMP             W1, #1
+0x3d9244c: B.NE            loc_3D924C4
+0x3d92450: MOV             X0, X20
+0x3d92454: BL              .__cxa_begin_catch
+0x3d92458: MOV             X20, X0
+0x3d9245c: ADRP            X0, #off_8ACCF90@PAGE
+0x3d92460: LDR             X0, [X0,#off_8ACCF90@PAGEOFF]; unk_8CE71D0
+0x3d92464: BL              unk_3C3D294
+0x3d92468: LDR             X8, [X20]
+0x3d9246c: LDR             X1, [X8]
+0x3d92470: BL              unk_3C3D8F8
+0x3d92474: TBZ             W0, #0, loc_3D9249C
+0x3d92478: LDR             X20, [X20]
+0x3d9247c: BL              .__cxa_end_catch
+0x3d92480: MOV             W8, #0xFFFFFFFE
+0x3d92484: STR             W8, [X19],#8
+0x3d92488: MOV             X0, X19
+0x3d9248c: MOV             X1, X20
+0x3d92490: MOV             X2, XZR
+0x3d92494: BL              unk_3D3129C
+0x3d92498: B               loc_3D923DC
+0x3d9249c: MOV             W0, #8
+0x3d924a0: BL              .__cxa_allocate_exception
+0x3d924a4: LDR             X8, [X20]
+0x3d924a8: STR             X8, [X0]
+0x3d924ac: ADRL            X1, _ZTI22Il2CppExceptionWrapper; `typeinfo for'Il2CppExceptionWrapper
+0x3d924b4: MOV             X2, XZR
+0x3d924b8: BL              .__cxa_throw
+0x3d924bc: MOV             X20, X0
+0x3d924c0: BL              .__cxa_end_catch
+0x3d924c4: MOV             X0, X20
+0x3d924c8: BL              sub_3CE73C4
+0x3d924cc: BL              unk_35BC500

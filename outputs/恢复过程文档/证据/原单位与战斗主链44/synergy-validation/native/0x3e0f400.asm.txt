@@ -1,0 +1,32 @@
+0x3e0f400: ff0301d1 sub      sp, sp, #0x40
+0x3e0f404: fe1300f9 str      x30, [sp, #0x20]
+0x3e0f408: f44f03a9 stp      x20, x19, [sp, #0x30]
+0x3e0f40c: 748f02d0 adrp     x20, #0x8ffd000
+0x3e0f410: 336602b0 adrp     x19, #0x8ad4000
+0x3e0f414: 884e6139 ldrb     w8, [x20, #0x853]
+0x3e0f418: 730e45f9 ldr      x19, [x19, #0xa18] // Method$Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder.Start<SynergyEffectManager.<Init>d__1>()
+0x3e0f41c: c8000037 tbnz     w8, #0, #0x3e0f434
+0x3e0f420: 206602b0 adrp     x0, #0x8ad4000
+0x3e0f424: 000c45f9 ldr      x0, [x0, #0xa18] // Method$Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder.Start<SynergyEffectManager.<Init>d__1>()
+0x3e0f428: 96b7f897 bl       #0x3c3d280
+0x3e0f42c: 28008052 mov      w8, #1
+0x3e0f430: 884e2139 strb     w8, [x20, #0x853]
+0x3e0f434: 600240f9 ldr      x0, [x19]
+0x3e0f438: 08008012 mov      w8, #-1
+0x3e0f43c: ffff00a9 stp      xzr, xzr, [sp, #8]
+0x3e0f440: ff0f00f9 str      xzr, [sp, #0x18]
+0x3e0f444: e80b00b9 str      w8, [sp, #8]
+0x3e0f448: 081c40f9 ldr      x8, [x0, #0x38]
+0x3e0f44c: 480000b5 cbnz     x8, #0x3e0f454
+0x3e0f450: eb03f997 bl       #0x3c503fc
+0x3e0f454: e8230091 add      x8, sp, #8
+0x3e0f458: e0230091 add      x0, sp, #8
+0x3e0f45c: 13210091 add      x19, x8, #8
+0x3e0f460: 6b030094 bl       #0x3e1020c // GameModule.SynergyEffectManager.<Init>d__1$$MoveNext
+0x3e0f464: e00313aa mov      x0, x19
+0x3e0f468: e1031faa mov      x1, xzr
+0x3e0f46c: c520fc97 bl       #0x3d17780
+0x3e0f470: f44f43a9 ldp      x20, x19, [sp, #0x30]
+0x3e0f474: fe1340f9 ldr      x30, [sp, #0x20]
+0x3e0f478: ff030191 add      sp, sp, #0x40
+0x3e0f47c: c0035fd6 ret      

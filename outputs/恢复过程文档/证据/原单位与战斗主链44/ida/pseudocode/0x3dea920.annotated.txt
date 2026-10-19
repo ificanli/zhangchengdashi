@@ -1,0 +1,279 @@
+__int64 __fastcall GameModule_BattleGameManager__GameEnd_d__52__MoveNext(__int64 a1)
+{
+  __int64 v2; // x20
+  void *Instance; // x0
+  void *v4; // x21
+  __int64 v5; // x22
+  __int64 v6; // x0
+  __int64 v7; // x23
+  __int64 v8; // x0
+  __int64 v9; // x23
+  void *v10; // x0
+  _BYTE **v11; // x0
+  void *v12; // x0
+  __int64 v13; // x2
+  __int64 v14; // x1
+  __int64 v15; // x0
+  __int64 v16; // x1
+  __int64 v17; // x20
+  __int64 v18; // x8
+  unsigned int v19; // w21
+  __int64 v20; // x9
+  int *v21; // x10
+  __int64 v22; // x0
+  __int64 v23; // x20
+  __int64 v24; // x8
+  unsigned int v25; // w21
+  __int64 v26; // x9
+  _DWORD *v27; // x10
+  __int64 v28; // x0
+  GameModule_BattleGameSceneManager_o *v29; // x0
+  const MethodInfo *v30; // x2
+  __int64 v32; // x0
+  __int64 v33; // x0
+  __int64 v34; // x0
+  int v35; // w1
+  _QWORD **v36; // x20
+  __int64 v37; // x0
+  _QWORD *v38; // x20
+  int v39; // [xsp+8h] [xbp-58h] BYREF
+  int v40; // [xsp+Ch] [xbp-54h] BYREF
+  __int128 v41; // [xsp+10h] [xbp-50h] BYREF
+  __int64 v42; // [xsp+28h] [xbp-38h]
+
+  if ( (byte_8FFD75C & 1) == 0 )
+  {
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D221E0 /* Method$System.Runtime.CompilerServices.AsyncVoidMethodBuilder.AwaitUnsafeOnCompleted<UniTask.Awaiter, BattleGameManager.<GameEnd>d__52>() */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&off_8CE5E20 /* GameModule.CoreGameManager_TypeInfo */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8CE95C0 /* int_TypeInfo */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D121C0 /* Method$ToolModule.ManagerBase<GamePanelManager>.get_Instance() */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D12058 /* Method$ToolModule.ManagerBase<BattleGameSceneManager>.get_Instance() */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D12148 /* Method$ToolModule.ManagerBase<EventManager>.get_Instance() */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D124C8 /* Method$ToolModule.ManagerBase<UIManager>.get_Instance() */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D12540 /* Method$ToolModule.ManagerBase<WeeklyCardActivityManager>.get_Instance() */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8CE3258 /* object[]_TypeInfo */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D178A0 /* Method$QuickTutor.Singleton<TutorialManager>.get_Instance() */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&off_8CE1930 /* QuickTutor.Singleton<TutorialManager>_TypeInfo */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&off_8CEEDF8 /* Cysharp.Threading.Tasks.UniTask_TypeInfo */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8CF6A50 /* GameModule.WeeklyCardActivityManager.WeekLyTaskType_TypeInfo */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D57460 /* Assets/_Res/Addressable/02CoreGameBundle/Prefabs/UI/Panels/HexDescribesPanel.prefab */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D61410 /* GameEnd */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D779A0 /* WeeklyCardActivityTaskTrigger */);
+    byte_8FFD75C = 1;
+  }
+  v42 = 0;
+  v41 = 0u;
+  if ( *(_DWORD *)a1 == 0 )
+  {
+    v41 = *(_OWORD *)(a1 + 64);
+    *(_QWORD *)(a1 + 64) = 0;
+    *(_QWORD *)(a1 + 72) = 0;
+    *(_DWORD *)a1 = -1;
+    goto LABEL_54;
+  }
+  v2 = *(_QWORD *)(a1 + 48);
+  if ( *(_BYTE *)(a1 + 40) == 0 )
+    goto LABEL_16;
+  Instance = ToolModule_ManagerBase_object___get_Instance((const MethodInfo *)qword_8D12540 /* Method$ToolModule.ManagerBase<WeeklyCardActivityManager>.get_Instance() */);
+  if ( Instance == nullptr )
+    il2cpp_codegen_raise_null_reference_exception();
+  if ( (GameModule_WeeklyCardActivityManager__IsBTest(Instance, 0) & 1) == 0 )
+  {
+LABEL_16:
+    if ( v2 == 0 )
+      il2cpp_codegen_raise_null_reference_exception();
+    *(_BYTE *)(v2 + 128) = *(_BYTE *)(a1 + 40);
+    if ( *(_BYTE *)(a1 + 56) != 0 )
+    {
+      v10 = ToolModule_ManagerBase_object___get_Instance((const MethodInfo *)qword_8D121C0 /* Method$ToolModule.ManagerBase<GamePanelManager>.get_Instance() */);
+      if ( v10 == nullptr )
+        il2cpp_codegen_raise_null_reference_exception();
+      GameModule_GamePanelManager__DoAni(v10, 0);
+    }
+    if ( *((_DWORD *)off_8CE5E20 /* GameModule.CoreGameManager_TypeInfo */ + 56) == 0 )
+      il2cpp_codegen_runtime_class_init(off_8CE5E20 /* GameModule.CoreGameManager_TypeInfo */);
+    if ( byte_8FFD7DD == 0 )
+    {
+      il2cpp_codegen_initialize_runtime_metadata((void **)&off_8CE5E20 /* GameModule.CoreGameManager_TypeInfo */);
+      byte_8FFD7DD = 1;
+    }
+    v11 = (_BYTE **)off_8CE5E20 /* GameModule.CoreGameManager_TypeInfo */;
+    if ( *((_DWORD *)off_8CE5E20 /* GameModule.CoreGameManager_TypeInfo */ + 56) == 0 )
+    {
+      il2cpp_codegen_runtime_class_init(off_8CE5E20 /* GameModule.CoreGameManager_TypeInfo */);
+      v11 = (_BYTE **)off_8CE5E20 /* GameModule.CoreGameManager_TypeInfo */;
+    }
+    *v11[23] = 0;
+    v12 = ToolModule_ManagerBase_object___get_Instance((const MethodInfo *)qword_8D12148 /* Method$ToolModule.ManagerBase<EventManager>.get_Instance() */);
+    if ( v12 == nullptr )
+      il2cpp_codegen_raise_null_reference_exception();
+    EventModule_EventManager__TriggerEvent(v12, (void *)qword_8D61410 /* GameEnd */, nullptr, nullptr);
+    v14 = *(_QWORD *)(v2 + 88);
+    *(_BYTE *)(v2 + 80) = 0;
+    if ( v14 != 0 )
+      UnityEngine_MonoBehaviour__StopCoroutine(v2, v14, 0);
+    if ( *((_DWORD *)off_8CE1930 /* QuickTutor.Singleton<TutorialManager>_TypeInfo */ + 56) == 0 )
+      il2cpp_codegen_runtime_class_init(off_8CE1930 /* QuickTutor.Singleton<TutorialManager>_TypeInfo */);
+    v15 = QuickTutor_Singleton_object___get_Instance(qword_8D178A0 /* Method$QuickTutor.Singleton<TutorialManager>.get_Instance() */, v14, v13);
+    if ( v15 == 0 )
+      il2cpp_codegen_raise_null_reference_exception();
+    QuickTutor_TutorialManager__ForceCloseTutorial(v15, 0);
+    if ( ToolModule_ManagerBase_object___get_Instance((const MethodInfo *)qword_8D124C8 /* Method$ToolModule.ManagerBase<UIManager>.get_Instance() */) == nullptr )
+      il2cpp_codegen_raise_null_reference_exception();
+    if ( (UIFramework_UIManager__IsPanelShowing() & 1) != 0 )
+    {
+      if ( ToolModule_ManagerBase_object___get_Instance((const MethodInfo *)qword_8D124C8 /* Method$ToolModule.ManagerBase<UIManager>.get_Instance() */) == nullptr )
+        il2cpp_codegen_raise_null_reference_exception();
+      UIFramework_UIManager__HidePanel();
+    }
+    if ( *(_BYTE *)(a1 + 56) == 0 )
+    {
+LABEL_64:
+      v29 = (GameModule_BattleGameSceneManager_o *)ToolModule_ManagerBase_object___get_Instance((const MethodInfo *)qword_8D12058 /* Method$ToolModule.ManagerBase<BattleGameSceneManager>.get_Instance() */);
+      if ( v29 == nullptr )
+        il2cpp_codegen_raise_null_reference_exception();
+      GameModule_BattleGameSceneManager__SettlementAnimation(v29, *(_BYTE *)(a1 + 40), v30);
+      *(_DWORD *)a1 = -2;
+      return System_Runtime_CompilerServices_AsyncVoidMethodBuilder__SetResult(a1 + 8, 0);
+    }
+    if ( *((_DWORD *)off_8CEEDF8 /* Cysharp.Threading.Tasks.UniTask_TypeInfo */ + 56) == 0 )
+      il2cpp_codegen_runtime_class_init(off_8CEEDF8 /* Cysharp.Threading.Tasks.UniTask_TypeInfo */);
+    *(_QWORD *)&v41 = Cysharp_Threading_Tasks_UniTask__WaitForSeconds(0, 8, 0, 0, 0, 2.3);
+    *((_QWORD *)&v41 + 1) = v16;
+    if ( byte_8FFD1AD == 0 )
+    {
+      il2cpp_codegen_initialize_runtime_metadata((void **)&off_8CEEDF8 /* Cysharp.Threading.Tasks.UniTask_TypeInfo */);
+      byte_8FFD1AD = 1;
+    }
+    if ( *((_DWORD *)off_8CEEDF8 /* Cysharp.Threading.Tasks.UniTask_TypeInfo */ + 56) == 0 )
+      il2cpp_codegen_runtime_class_init(off_8CEEDF8 /* Cysharp.Threading.Tasks.UniTask_TypeInfo */);
+    if ( byte_8FFD1AE == 0 )
+    {
+      il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8CE91C8 /* Cysharp.Threading.Tasks.IUniTaskSource_TypeInfo */);
+      byte_8FFD1AE = 1;
+    }
+    v17 = v41;
+    if ( (_QWORD)v41 != 0 )
+    {
+      v18 = *(_QWORD *)v41;
+      v19 = WORD4(v41);
+      v20 = *(unsigned __int16 *)(*(_QWORD *)v41 + 302LL);
+      if ( *(_WORD *)(*(_QWORD *)v41 + 302LL) != 0 )
+      {
+        v21 = (int *)(*(_QWORD *)(v18 + 176) + 8LL);
+        while ( *((_QWORD *)v21 - 1) != qword_8CE91C8 /* Cysharp.Threading.Tasks.IUniTaskSource_TypeInfo */ )
+        {
+          --v20;
+          v21 += 4;
+          if ( v20 == 0 )
+            goto LABEL_50;
+        }
+        v22 = v18 + 16LL * *v21 + 312;
+      }
+      else
+      {
+LABEL_50:
+        v22 = ((__int64 (__fastcall *)(_QWORD, __int64, _QWORD))unk_3C504A4)(v41, qword_8CE91C8 /* Cysharp.Threading.Tasks.IUniTaskSource_TypeInfo */, 0);
+      }
+      if ( (*(unsigned int (__fastcall **)(__int64, _QWORD, _QWORD))v22)(v17, v19, *(_QWORD *)(v22 + 8)) == 0 )
+      {
+        *(_DWORD *)a1 = 0;
+        *(_OWORD *)(a1 + 64) = v41;
+        return System_Runtime_CompilerServices_AsyncVoidMethodBuilder__AwaitUnsafeOnCompleted_UniTask_Awaiter__BattleGameManager__GameEnd_d__52_(
+                 a1 + 8,
+                 &v41,
+                 a1,
+                 qword_8D221E0 /* Method$System.Runtime.CompilerServices.AsyncVoidMethodBuilder.AwaitUnsafeOnCompleted<UniTask.Awaiter, BattleGameManager.<GameEnd>d__52>() */);
+      }
+    }
+LABEL_54:
+    if ( byte_8FFD1AF == 0 )
+    {
+      il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8CE91C8 /* Cysharp.Threading.Tasks.IUniTaskSource_TypeInfo */);
+      byte_8FFD1AF = 1;
+    }
+    v23 = v41;
+    if ( (_QWORD)v41 != 0 )
+    {
+      v24 = *(_QWORD *)v41;
+      v25 = WORD4(v41);
+      v26 = *(unsigned __int16 *)(*(_QWORD *)v41 + 302LL);
+      if ( *(_WORD *)(*(_QWORD *)v41 + 302LL) != 0 )
+      {
+        v27 = (_DWORD *)(*(_QWORD *)(v24 + 176) + 8LL);
+        while ( *((_QWORD *)v27 - 1) != qword_8CE91C8 /* Cysharp.Threading.Tasks.IUniTaskSource_TypeInfo */ )
+        {
+          --v26;
+          v27 += 4;
+          if ( v26 == 0 )
+            goto LABEL_61;
+        }
+        v28 = v24 + 16LL * (*v27 + 2) + 312;
+      }
+      else
+      {
+LABEL_61:
+        v28 = ((__int64 (__fastcall *)(_QWORD, __int64, __int64))unk_3C504A4)(v41, qword_8CE91C8 /* Cysharp.Threading.Tasks.IUniTaskSource_TypeInfo */, 2);
+      }
+      (*(void (__fastcall **)(__int64, _QWORD, _QWORD))v28)(v23, v25, *(_QWORD *)(v28 + 8));
+    }
+    goto LABEL_64;
+  }
+  v4 = ToolModule_ManagerBase_object___get_Instance((const MethodInfo *)qword_8D12148 /* Method$ToolModule.ManagerBase<EventManager>.get_Instance() */);
+  v5 = ((__int64 (__fastcall *)(__int64, __int64))unk_3C3D320)(qword_8CE3258 /* object[]_TypeInfo */, 2);
+  v40 = 1;
+  v6 = ((__int64 (__fastcall *)(__int64, int *))unk_3C3D3B8)(qword_8CF6A50 /* GameModule.WeeklyCardActivityManager.WeekLyTaskType_TypeInfo */, &v40);
+  if ( v5 == 0 )
+    il2cpp_codegen_raise_null_reference_exception();
+  v7 = v6;
+  if ( v6 != 0 && ((__int64 (__fastcall *)(__int64, _QWORD))unk_3C3D3B4)(v6, *(_QWORD *)(*(_QWORD *)v5 + 64LL)) == 0 )
+  {
+    v32 = ((__int64 (*)(void))unk_3C3D4F0)();
+    v8 = ((__int64 (__fastcall *)(__int64, _QWORD))unk_3C3D3A0)(v32, 0);
+  }
+  else
+  {
+    if ( *(_DWORD *)(v5 + 24) == 0 )
+    {
+      v8 = ((__int64 (*)(void))unk_3C3D4D4)();
+      goto LABEL_77;
+    }
+    *(_QWORD *)(v5 + 32) = v7;
+    v39 = 1;
+    v8 = ((__int64 (__fastcall *)(__int64, int *))unk_3C3D3B8)(qword_8CE95C0 /* int_TypeInfo */, &v39);
+    v9 = v8;
+    if ( v8 == 0
+      || (v8 = ((__int64 (__fastcall *)(__int64, _QWORD))unk_3C3D3B4)(v8, *(_QWORD *)(*(_QWORD *)v5 + 64LL))) != 0 )
+    {
+      if ( *(_DWORD *)(v5 + 24) > 1u )
+      {
+        *(_QWORD *)(v5 + 40) = v9;
+        if ( v4 != nullptr )
+        {
+          EventModule_EventManager__TriggerEvent(v4, (void *)qword_8D779A0 /* WeeklyCardActivityTaskTrigger */, (void *)v5, nullptr);
+          goto LABEL_16;
+        }
+LABEL_78:
+        il2cpp_codegen_raise_null_reference_exception();
+      }
+LABEL_77:
+      ((void (__fastcall *)(__int64))unk_3C3D4D4)(v8);
+      goto LABEL_78;
+    }
+  }
+  v33 = ((__int64 (__fastcall *)(__int64))unk_3C3D4F0)(v8);
+  v34 = ((__int64 (__fastcall *)(__int64, _QWORD))unk_3C3D3A0)(v33, 0);
+  if ( v35 != 1 )
+    sub_3CE73C4(v34);
+  v36 = (_QWORD **)((__int64 (__fastcall *)(__int64))__cxa_begin_catch)(v34);
+  v37 = ((__int64 (__fastcall *)(void *))unk_3C3D294)(&unk_8CE71D0 /* System.Exception_TypeInfo */);
+  if ( (((__int64 (__fastcall *)(__int64, _QWORD))unk_3C3D8F8)(v37, **v36) & 1) == 0 )
+  {
+    *(_QWORD *)((__int64 (__fastcall *)(__int64))__cxa_allocate_exception)(8) = *v36;
+    ((void (__noreturn *)(void))__cxa_throw)();
+  }
+  v38 = *v36;
+  ((void (*)(void))__cxa_end_catch)();
+  *(_DWORD *)a1 = -2;
+  return System_Runtime_CompilerServices_AsyncVoidMethodBuilder__SetException(a1 + 8, v38, 0);
+}

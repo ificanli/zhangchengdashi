@@ -1,0 +1,29 @@
+0x3d816e8: SUB             SP, SP, #0x40
+0x3d816ec: STP             X30, X21, [SP,#0x40+var_20]
+0x3d816f0: STP             X20, X19, [SP,#0x40+var_10]
+0x3d816f4: ADRP            X21, #byte_8FFD457@PAGE
+0x3d816f8: ADRP            X20, #off_8AD1290@PAGE
+0x3d816fc: LDRB            W8, [X21,#byte_8FFD457@PAGEOFF]
+0x3d81700: LDR             X20, [X20,#off_8AD1290@PAGEOFF]; qword_8D217A0
+0x3d81704: MOV             X19, X0
+0x3d81708: TBNZ            W8, #0, loc_3D81720
+0x3d8170c: ADRP            X0, #off_8AD1290@PAGE
+0x3d81710: LDR             X0, [X0,#off_8AD1290@PAGEOFF]; qword_8D217A0 ; slot
+0x3d81714: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3d81718: MOV             W8, #1
+0x3d8171c: STRB            W8, [X21,#byte_8FFD457@PAGEOFF]
+0x3d81720: LDR             X2, [X20]
+0x3d81724: MOV             X8, SP
+0x3d81728: MOVI            V0.2D, #0
+0x3d8172c: ORR             X0, X8, #8
+0x3d81730: MOV             W8, #0xFFFFFFFF
+0x3d81734: MOV             X1, SP
+0x3d81738: STP             Q0, Q0, [SP,#0x40+var_40]
+0x3d8173c: STR             X19, [SP,#0x40+var_30]
+0x3d81740: STR             W8, [SP,#0x40+var_40]
+0x3d81744: BL              Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder$$Start_RoleBehaviour._InitAnimationAsync_d__70_
+0x3d81748: LDP             X20, X19, [SP,#0x40+var_10]
+0x3d8174c: LDP             X30, X21, [SP,#0x40+var_20]
+0x3d81750: MOV             X0, XZR
+0x3d81754: ADD             SP, SP, #0x40 ; '@'
+0x3d81758: RET

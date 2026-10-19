@@ -1,0 +1,22 @@
+0x3dea55c: STR             X30, [SP,#var_20]!
+0x3dea560: STP             X20, X19, [SP,#0x20+var_10]
+0x3dea564: ADRP            X20, #byte_8FFD768@PAGE
+0x3dea568: LDRB            W8, [X20,#byte_8FFD768@PAGEOFF]
+0x3dea56c: MOV             X19, X0
+0x3dea570: TBNZ            W8, #0, loc_3DEA588
+0x3dea574: ADRP            X0, #off_8AD0D68@PAGE
+0x3dea578: LDR             X0, [X0,#off_8AD0D68@PAGEOFF]; qword_8D0ACF0 ; slot
+0x3dea57c: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3dea580: MOV             W8, #1
+0x3dea584: STRB            W8, [X20,#byte_8FFD768@PAGEOFF]
+0x3dea588: LDR             X8, [X19,#0x60]
+0x3dea58c: CBZ             X8, loc_3DEA5B0
+0x3dea590: LDR             X9, [X19,#0x90]
+0x3dea594: CBZ             X9, loc_3DEA5B0
+0x3dea598: LDR             W8, [X8,#0x18]
+0x3dea59c: LDR             W9, [X9,#0x18]
+0x3dea5a0: LDP             X20, X19, [SP,#0x20+var_10]
+0x3dea5a4: ADD             W0, W9, W8
+0x3dea5a8: LDR             X30, [SP+0x20+var_20],#0x20
+0x3dea5ac: RET
+0x3dea5b0: BL              il2cpp_codegen_raise_null_reference_exception

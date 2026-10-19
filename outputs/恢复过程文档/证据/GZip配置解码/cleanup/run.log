@@ -1,0 +1,8 @@
+PASS none new:input > new:gzip > new:output > rent:81920 > read:81920 > read:81920 > return:False > dispose:output > dispose:gzip > dispose:input > dispose:input
+PASS read new:input > new:gzip > new:output > rent:81920 > read:81920 > return:False > dispose:output > dispose:gzip > dispose:input > dispose:input
+PASS rent new:input > new:gzip > new:output > rent:81920 > dispose:output > dispose:gzip > dispose:input > dispose:input
+PASS return new:input > new:gzip > new:output > rent:81920 > read:81920 > read:81920 > return:False > dispose:output > dispose:gzip > dispose:input > dispose:input
+PASS output-new new:input > new:gzip > new:output > dispose:gzip > dispose:input > dispose:input
+PASS output-dispose new:input > new:gzip > new:output > rent:81920 > read:81920 > read:81920 > return:False > dispose:output > dispose:gzip > dispose:input > dispose:input
+PASS gzip-dispose new:input > new:gzip > new:output > rent:81920 > read:81920 > read:81920 > return:False > dispose:output > dispose:gzip > dispose:input > dispose:input
+RESULT cleanupScenarios=7 checks=46 failures=0

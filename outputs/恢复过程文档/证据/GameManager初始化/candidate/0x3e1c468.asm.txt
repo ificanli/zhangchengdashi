@@ -1,0 +1,77 @@
+0x3e1c468: ffc300d1 sub      sp, sp, #0x30
+0x3e1c46c: fe0b00f9 str      x30, [sp, #0x10]
+0x3e1c470: f44f02a9 stp      x20, x19, [sp, #0x20]
+0x3e1c474: 148f02b0 adrp     x20, #0x8ffd000
+0x3e1c478: b36502b0 adrp     x19, #0x8ad1000
+0x3e1c47c: 889a6239 ldrb     w8, [x20, #0x8a6]
+0x3e1c480: 733641f9 ldr      x19, [x19, #0x268] // Method$ToolModule.ManagerBase<DailyBlessManager>.get_Instance()
+0x3e1c484: a8020037 tbnz     w8, #0, #0x3e1c4d8
+0x3e1c488: 806502b0 adrp     x0, #0x8acd000
+0x3e1c48c: 004c43f9 ldr      x0, [x0, #0x698] // bool_TypeInfo
+0x3e1c490: 7c83f897 bl       #0x3c3d280
+0x3e1c494: 806502b0 adrp     x0, #0x8acd000
+0x3e1c498: 002047f9 ldr      x0, [x0, #0xe40] // Method$ToolModule.ManagerBase<EventManager>.get_Instance()
+0x3e1c49c: 7983f897 bl       #0x3c3d280
+0x3e1c4a0: 806502b0 adrp     x0, #0x8acd000
+0x3e1c4a4: 007c47f9 ldr      x0, [x0, #0xef8] // Method$ToolModule.ManagerBase<UIManager>.get_Instance()
+0x3e1c4a8: 7683f897 bl       #0x3c3d280
+0x3e1c4ac: a06502b0 adrp     x0, #0x8ad1000
+0x3e1c4b0: 003441f9 ldr      x0, [x0, #0x268] // Method$ToolModule.ManagerBase<DailyBlessManager>.get_Instance()
+0x3e1c4b4: 7383f897 bl       #0x3c3d280
+0x3e1c4b8: c0650290 adrp     x0, #0x8ad4000
+0x3e1c4bc: 006847f9 ldr      x0, [x0, #0xed0] // Assets/_Res/Addressable/04MetaGameBundle/Prefabs/UI/Panels/DailyBlessPanel.prefab
+0x3e1c4c0: 7083f897 bl       #0x3c3d280
+0x3e1c4c4: c0650290 adrp     x0, #0x8ad4000
+0x3e1c4c8: 006c47f9 ldr      x0, [x0, #0xed8] // DailyBlessBtnActive
+0x3e1c4cc: 6d83f897 bl       #0x3c3d280
+0x3e1c4d0: 28008052 mov      w8, #1
+0x3e1c4d4: 889a2239 strb     w8, [x20, #0x8a6]
+0x3e1c4d8: 600240f9 ldr      x0, [x19]
+0x3e1c4dc: ff0f00f9 str      xzr, [sp, #0x18]
+0x3e1c4e0: e06f6d94 bl       #0x5978460 // ToolModule.ManagerBase<object>$$get_Instance
+0x3e1c4e4: a00500b4 cbz      x0, #0x3e1c598
+0x3e1c4e8: 936502b0 adrp     x19, #0x8acd000
+0x3e1c4ec: 946502b0 adrp     x20, #0x8acd000
+0x3e1c4f0: 732247f9 ldr      x19, [x19, #0xe40] // Method$ToolModule.ManagerBase<EventManager>.get_Instance()
+0x3e1c4f4: 944e43f9 ldr      x20, [x20, #0x698] // bool_TypeInfo
+0x3e1c4f8: e1031faa mov      x1, xzr
+0x3e1c4fc: 16ba0094 bl       #0x3e4ad54 // GameModule.DailyBlessManager$$RefreshDailyBless
+0x3e1c500: 600240f9 ldr      x0, [x19]
+0x3e1c504: d76f6d94 bl       #0x5978460 // ToolModule.ManagerBase<object>$$get_Instance
+0x3e1c508: f30300aa mov      x19, x0
+0x3e1c50c: 800240f9 ldr      x0, [x20]
+0x3e1c510: 28008052 mov      w8, #1
+0x3e1c514: e1330091 add      x1, sp, #0xc
+0x3e1c518: e8330039 strb     w8, [sp, #0xc]
+0x3e1c51c: a783f897 bl       #0x3c3d3b8
+0x3e1c520: d30300b4 cbz      x19, #0x3e1c598
+0x3e1c524: c8650290 adrp     x8, #0x8ad4000
+0x3e1c528: 086d47f9 ldr      x8, [x8, #0xed8] // DailyBlessBtnActive
+0x3e1c52c: 946502b0 adrp     x20, #0x8acd000
+0x3e1c530: e20300aa mov      x2, x0
+0x3e1c534: e00313aa mov      x0, x19
+0x3e1c538: 010140f9 ldr      x1, [x8]
+0x3e1c53c: 947e47f9 ldr      x20, [x20, #0xef8] // Method$ToolModule.ManagerBase<UIManager>.get_Instance()
+0x3e1c540: e3031faa mov      x3, xzr
+0x3e1c544: 88a60394 bl       #0x3f05f64 // EventModule.EventManager$$TriggerEvent
+0x3e1c548: 800240f9 ldr      x0, [x20]
+0x3e1c54c: c56f6d94 bl       #0x5978460 // ToolModule.ManagerBase<object>$$get_Instance
+0x3e1c550: 400200b4 cbz      x0, #0x3e1c598
+0x3e1c554: d3650290 adrp     x19, #0x8ad4000
+0x3e1c558: 736a47f9 ldr      x19, [x19, #0xed0] // Assets/_Res/Addressable/04MetaGameBundle/Prefabs/UI/Panels/DailyBlessPanel.prefab
+0x3e1c55c: e2630091 add      x2, sp, #0x18
+0x3e1c560: e3031faa mov      x3, xzr
+0x3e1c564: 610240f9 ldr      x1, [x19]
+0x3e1c568: 04661194 bl       #0x4275d78 // UIFramework.UIManager$$IsPanelShowing
+0x3e1c56c: e0000036 tbz      w0, #0, #0x3e1c588
+0x3e1c570: 800240f9 ldr      x0, [x20]
+0x3e1c574: bb6f6d94 bl       #0x5978460 // ToolModule.ManagerBase<object>$$get_Instance
+0x3e1c578: 000100b4 cbz      x0, #0x3e1c598
+0x3e1c57c: 610240f9 ldr      x1, [x19]
+0x3e1c580: e2031faa mov      x2, xzr
+0x3e1c584: ff661194 bl       #0x4276180 // UIFramework.UIManager$$HidePanel
+0x3e1c588: f44f42a9 ldp      x20, x19, [sp, #0x20]
+0x3e1c58c: fe0b40f9 ldr      x30, [sp, #0x10]
+0x3e1c590: ffc30091 add      sp, sp, #0x30
+0x3e1c594: c0035fd6 ret      
+0x3e1c598: cd83f897 bl       #0x3c3d4cc

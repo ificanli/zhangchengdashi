@@ -1,0 +1,2672 @@
+[
+  {
+    "type": "AstarPath",
+    "token": "0x2000004",
+    "parameters": [],
+    "methods": [
+      {
+        "name": "Unity.Jobs.JobHandle AstarPath::AllocateNodes(T[],System.Int32,System.Func\u00601\u003CT\u003E,System.UInt32)",
+        "token": "0x600002D",
+        "parameters": [
+          {
+            "Name": "T",
+            "Attributes": 0,
+            "constraints": [
+              "Pathfinding.GraphNode"
+            ],
+            "customAttributes": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "Pathfinding.AstarData",
+    "token": "0x2000048",
+    "parameters": [],
+    "methods": [
+      {
+        "name": "T Pathfinding.AstarData::AddGraph()",
+        "token": "0x60002D4",
+        "parameters": [
+          {
+            "Name": "T",
+            "Attributes": 0,
+            "constraints": [
+              "Pathfinding.NavGraph"
+            ],
+            "customAttributes": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "Pathfinding.GraphModifier",
+    "token": "0x2000075",
+    "parameters": [],
+    "methods": [
+      {
+        "name": "System.Collections.Generic.List\u00601\u003CT\u003E Pathfinding.GraphModifier::GetModifiersOfType()",
+        "token": "0x6000438",
+        "parameters": [
+          {
+            "Name": "T",
+            "Attributes": 0,
+            "constraints": [
+              "Pathfinding.GraphModifier"
+            ],
+            "customAttributes": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "Pathfinding.WorkItemProcessor/IndexedQueue\u00601",
+    "token": "0x200009A",
+    "parameters": [
+      {
+        "Name": "T",
+        "Attributes": 0,
+        "constraints": [],
+        "customAttributes": []
+      }
+    ],
+    "methods": []
+  },
+  {
+    "type": "Pathfinding.GraphNode",
+    "token": "0x200009C",
+    "parameters": [],
+    "methods": [
+      {
+        "name": "System.Void Pathfinding.GraphNode::GetConnections(Pathfinding.GraphNode/NodeActionWithData\u00601\u003CT\u003E,T\u0026,System.Int32)",
+        "token": "0x6000537",
+        "parameters": [
+          {
+            "Name": "T",
+            "Attributes": 0,
+            "constraints": [],
+            "customAttributes": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "Pathfinding.GraphNode/NodeActionWithData\u00601",
+    "token": "0x200009D",
+    "parameters": [
+      {
+        "Name": "T",
+        "Attributes": 0,
+        "constraints": [],
+        "customAttributes": []
+      }
+    ],
+    "methods": []
+  },
+  {
+    "type": "Pathfinding.MeshNode",
+    "token": "0x20000A0",
+    "parameters": [],
+    "methods": [
+      {
+        "name": "System.Void Pathfinding.MeshNode::GetConnections(Pathfinding.GraphNode/NodeActionWithData\u00601\u003CT\u003E,T\u0026,System.Int32)",
+        "token": "0x600055F",
+        "parameters": [
+          {
+            "Name": "T",
+            "Attributes": 0,
+            "constraints": [],
+            "customAttributes": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "Pathfinding.GlobalNodeStorage",
+    "token": "0x20000A1",
+    "parameters": [],
+    "methods": [
+      {
+        "name": "Unity.Jobs.JobHandle Pathfinding.GlobalNodeStorage::AllocateNodesJob(T[],System.Int32,System.Func\u00601\u003CT\u003E,System.UInt32)",
+        "token": "0x6000573",
+        "parameters": [
+          {
+            "Name": "T",
+            "Attributes": 0,
+            "constraints": [
+              "Pathfinding.GraphNode"
+            ],
+            "customAttributes": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "Pathfinding.GlobalNodeStorage/IndexedStack\u00601",
+    "token": "0x20000A3",
+    "parameters": [
+      {
+        "Name": "T",
+        "Attributes": 0,
+        "constraints": [],
+        "customAttributes": []
+      }
+    ],
+    "methods": []
+  },
+  {
+    "type": "Pathfinding.GlobalNodeStorage/JobAllocateNodes\u00601",
+    "token": "0x20000A4",
+    "parameters": [
+      {
+        "Name": "T",
+        "Attributes": 0,
+        "constraints": [
+          "Pathfinding.GraphNode"
+        ],
+        "customAttributes": []
+      }
+    ],
+    "methods": []
+  },
+  {
+    "type": "Pathfinding.GridGraph",
+    "token": "0x20000C7",
+    "parameters": [],
+    "methods": [
+      {
+        "name": "System.Void Pathfinding.GridGraph::GetNodes(Pathfinding.GraphNode/NodeActionWithData\u00601\u003CT\u003E,T\u0026)",
+        "token": "0x6000696",
+        "parameters": [
+          {
+            "Name": "T",
+            "Attributes": 0,
+            "constraints": [],
+            "customAttributes": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "Pathfinding.LinkGraph",
+    "token": "0x20000D8",
+    "parameters": [],
+    "methods": [
+      {
+        "name": "System.Void Pathfinding.LinkGraph::GetNodes(Pathfinding.GraphNode/NodeActionWithData\u00601\u003CT\u003E,T\u0026)",
+        "token": "0x6000730",
+        "parameters": [
+          {
+            "Name": "T",
+            "Attributes": 0,
+            "constraints": [],
+            "customAttributes": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "Pathfinding.NavGraph",
+    "token": "0x20000DC",
+    "parameters": [],
+    "methods": [
+      {
+        "name": "System.Void Pathfinding.NavGraph::GetNodes(Pathfinding.GraphNode/NodeActionWithData\u00601\u003CT\u003E,T\u0026)",
+        "token": "0x6000751",
+        "parameters": [
+          {
+            "Name": "T",
+            "Attributes": 0,
+            "constraints": [],
+            "customAttributes": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "Pathfinding.NavmeshBase",
+    "token": "0x20000E1",
+    "parameters": [],
+    "methods": [
+      {
+        "name": "System.Void Pathfinding.NavmeshBase::GetNodes(Pathfinding.GraphNode/NodeActionWithData\u00601\u003CT\u003E,T\u0026)",
+        "token": "0x60007A1",
+        "parameters": [
+          {
+            "Name": "T",
+            "Attributes": 0,
+            "constraints": [],
+            "customAttributes": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "Pathfinding.GridNode",
+    "token": "0x20000EB",
+    "parameters": [],
+    "methods": [
+      {
+        "name": "System.Void Pathfinding.GridNode::GetConnections(Pathfinding.GraphNode/NodeActionWithData\u00601\u003CT\u003E,T\u0026,System.Int32)",
+        "token": "0x6000807",
+        "parameters": [
+          {
+            "Name": "T",
+            "Attributes": 0,
+            "constraints": [],
+            "customAttributes": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "Pathfinding.GridNodeBase",
+    "token": "0x20000EC",
+    "parameters": [],
+    "methods": [
+      {
+        "name": "System.Void Pathfinding.GridNodeBase::GetConnections(Pathfinding.GraphNode/NodeActionWithData\u00601\u003CT\u003E,T\u0026,System.Int32)",
+        "token": "0x6000830",
+        "parameters": [
+          {
+            "Name": "T",
+            "Attributes": 0,
+            "constraints": [],
+            "customAttributes": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "Pathfinding.LevelGridNode",
+    "token": "0x20000ED",
+    "parameters": [],
+    "methods": [
+      {
+        "name": "System.Void Pathfinding.LevelGridNode::GetConnections(Pathfinding.GraphNode/NodeActionWithData\u00601\u003CT\u003E,T\u0026,System.Int32)",
+        "token": "0x6000846",
+        "parameters": [
+          {
+            "Name": "T",
+            "Attributes": 0,
+            "constraints": [],
+            "customAttributes": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "Pathfinding.PointNode",
+    "token": "0x20000EE",
+    "parameters": [],
+    "methods": [
+      {
+        "name": "System.Void Pathfinding.PointNode::GetConnections(Pathfinding.GraphNode/NodeActionWithData\u00601\u003CT\u003E,T\u0026,System.Int32)",
+        "token": "0x6000859",
+        "parameters": [
+          {
+            "Name": "T",
+            "Attributes": 0,
+            "constraints": [],
+            "customAttributes": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "Pathfinding.PointGraph",
+    "token": "0x20000FC",
+    "parameters": [],
+    "methods": [
+      {
+        "name": "System.Void Pathfinding.PointGraph::GetNodes(Pathfinding.GraphNode/NodeActionWithData\u00601\u003CT\u003E,T\u0026)",
+        "token": "0x60008D1",
+        "parameters": [
+          {
+            "Name": "T",
+            "Attributes": 0,
+            "constraints": [],
+            "customAttributes": []
+          }
+        ]
+      },
+      {
+        "name": "T Pathfinding.PointGraph::AddNode(T,Pathfinding.Int3)",
+        "token": "0x60008D6",
+        "parameters": [
+          {
+            "Name": "T",
+            "Attributes": 0,
+            "constraints": [
+              "Pathfinding.PointNode"
+            ],
+            "customAttributes": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "Pathfinding.Jobs.Slice3D",
+    "token": "0x2000176",
+    "parameters": [],
+    "methods": [
+      {
+        "name": "System.Void Pathfinding.Jobs.Slice3D::AssertMatchesOuter(Pathfinding.Collections.UnsafeSpan\u00601\u003CT\u003E)",
+        "token": "0x6000B8B",
+        "parameters": [
+          {
+            "Name": "T",
+            "Attributes": 24,
+            "constraints": [
+              "System.ValueType"
+            ],
+            "customAttributes": []
+          }
+        ]
+      },
+      {
+        "name": "System.Void Pathfinding.Jobs.Slice3D::AssertMatchesOuter(Unity.Collections.NativeArray\u00601\u003CT\u003E)",
+        "token": "0x6000B8C",
+        "parameters": [
+          {
+            "Name": "T",
+            "Attributes": 24,
+            "constraints": [
+              "System.ValueType"
+            ],
+            "customAttributes": []
+          }
+        ]
+      },
+      {
+        "name": "System.Void Pathfinding.Jobs.Slice3D::AssertMatchesInner(Unity.Collections.NativeArray\u00601\u003CT\u003E)",
+        "token": "0x6000B8D",
+        "parameters": [
+          {
+            "Name": "T",
+            "Attributes": 24,
+            "constraints": [
+              "System.ValueType"
+            ],
+            "customAttributes": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "Pathfinding.Jobs.NativeArrayExtensions",
+    "token": "0x2000177",
+    "parameters": [],
+    "methods": [
+      {
+        "name": "Pathfinding.Jobs.JobMemSet\u00601\u003CT\u003E Pathfinding.Jobs.NativeArrayExtensions::MemSet(Unity.Collections.NativeArray\u00601\u003CT\u003E,T)",
+        "token": "0x6000B95",
+        "parameters": [
+          {
+            "Name": "T",
+            "Attributes": 24,
+            "constraints": [
+              "System.ValueType"
+            ],
+            "customAttributes": []
+          }
+        ]
+      },
+      {
+        "name": "Pathfinding.Jobs.JobCopy\u00601\u003CT\u003E Pathfinding.Jobs.NativeArrayExtensions::CopyToJob(Unity.Collections.NativeArray\u00601\u003CT\u003E,Unity.Collections.NativeArray\u00601\u003CT\u003E)",
+        "token": "0x6000B97",
+        "parameters": [
+          {
+            "Name": "T",
+            "Attributes": 24,
+            "constraints": [
+              "System.ValueType"
+            ],
+            "customAttributes": []
+          }
+        ]
+      },
+      {
+        "name": "Pathfinding.Jobs.SliceActionJob\u00601\u003CT\u003E Pathfinding.Jobs.NativeArrayExtensions::WithSlice(T,Pathfinding.Jobs.Slice3D)",
+        "token": "0x6000B98",
+        "parameters": [
+          {
+            "Name": "T",
+            "Attributes": 24,
+            "constraints": [
+              "Pathfinding.Graphs.Grid.GridIterationUtilities/ISliceAction",
+              "System.ValueType"
+            ],
+            "customAttributes": []
+          }
+        ]
+      },
+      {
+        "name": "Pathfinding.Jobs.IndexActionJob\u00601\u003CT\u003E Pathfinding.Jobs.NativeArrayExtensions::WithLength(T,System.Int32)",
+        "token": "0x6000B99",
+        "parameters": [
+          {
+            "Name": "T",
+            "Attributes": 24,
+            "constraints": [
+              "Pathfinding.Graphs.Grid.GridIterationUtilities/ISliceAction",
+              "System.ValueType"
+            ],
+            "customAttributes": []
+          }
+        ]
+      },
+      {
+        "name": "Pathfinding.Jobs.JobRotate3DArray\u00601\u003CT\u003E Pathfinding.Jobs.NativeArrayExtensions::Rotate3D(Unity.Collections.NativeArray\u00601\u003CT\u003E,Unity.Mathematics.int3,System.Int32,System.Int32)",
+        "token": "0x6000B9A",
+        "parameters": [
+          {
+            "Name": "T",
+            "Attributes": 24,
+            "constraints": [
+              "System.ValueType"
+            ],
+            "customAttributes": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "Pathfinding.Jobs.JobCopyRectangle\u00601",
+    "token": "0x2000178",
+    "parameters": [
+      {
+        "Name": "T",
+        "Attributes": 24,
+        "constraints": [
+          "System.ValueType"
+        ],
+        "customAttributes": []
+      }
+    ],
+    "methods": []
+  },
+  {
+    "type": "Pathfinding.Jobs.JobMemSet\u00601",
+    "token": "0x2000179",
+    "parameters": [
+      {
+        "Name": "T",
+        "Attributes": 24,
+        "constraints": [
+          "System.ValueType"
+        ],
+        "customAttributes": []
+      }
+    ],
+    "methods": []
+  },
+  {
+    "type": "Pathfinding.Jobs.JobCopy\u00601",
+    "token": "0x200017A",
+    "parameters": [
+      {
+        "Name": "T",
+        "Attributes": 24,
+        "constraints": [
+          "System.ValueType"
+        ],
+        "customAttributes": []
+      }
+    ],
+    "methods": []
+  },
+  {
+    "type": "Pathfinding.Jobs.IndexActionJob\u00601",
+    "token": "0x200017B",
+    "parameters": [
+      {
+        "Name": "T",
+        "Attributes": 24,
+        "constraints": [
+          "Pathfinding.Graphs.Grid.GridIterationUtilities/ISliceAction",
+          "System.ValueType"
+        ],
+        "customAttributes": []
+      }
+    ],
+    "methods": []
+  },
+  {
+    "type": "Pathfinding.Jobs.SliceActionJob\u00601",
+    "token": "0x200017C",
+    "parameters": [
+      {
+        "Name": "T",
+        "Attributes": 24,
+        "constraints": [
+          "Pathfinding.Graphs.Grid.GridIterationUtilities/ISliceAction",
+          "System.ValueType"
+        ],
+        "customAttributes": []
+      }
+    ],
+    "methods": []
+  },
+  {
+    "type": "Pathfinding.Jobs.JobRotate3DArray\u00601",
+    "token": "0x2000181",
+    "parameters": [
+      {
+        "Name": "T",
+        "Attributes": 24,
+        "constraints": [
+          "System.ValueType"
+        ],
+        "customAttributes": []
+      }
+    ],
+    "methods": []
+  },
+  {
+    "type": "Pathfinding.Jobs.JobParallelForBatchedExtensions",
+    "token": "0x2000183",
+    "parameters": [],
+    "methods": [
+      {
+        "name": "Unity.Jobs.JobHandle Pathfinding.Jobs.JobParallelForBatchedExtensions::ScheduleBatch(T,System.Int32,System.Int32,Unity.Jobs.JobHandle)",
+        "token": "0x6000BA9",
+        "parameters": [
+          {
+            "Name": "T",
+            "Attributes": 24,
+            "constraints": [
+              "Pathfinding.Jobs.IJobParallelForBatched",
+              "System.ValueType"
+            ],
+            "customAttributes": []
+          }
+        ]
+      },
+      {
+        "name": "System.Void Pathfinding.Jobs.JobParallelForBatchedExtensions::RunBatch(T,System.Int32)",
+        "token": "0x6000BAA",
+        "parameters": [
+          {
+            "Name": "T",
+            "Attributes": 24,
+            "constraints": [
+              "Pathfinding.Jobs.IJobParallelForBatched",
+              "System.ValueType"
+            ],
+            "customAttributes": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "Pathfinding.Jobs.JobParallelForBatchedExtensions/ParallelForBatchJobStruct\u00601",
+    "token": "0x2000184",
+    "parameters": [
+      {
+        "Name": "T",
+        "Attributes": 24,
+        "constraints": [
+          "Pathfinding.Jobs.IJobParallelForBatched",
+          "System.ValueType"
+        ],
+        "customAttributes": []
+      }
+    ],
+    "methods": []
+  },
+  {
+    "type": "Pathfinding.Jobs.JobParallelForBatchedExtensions/ParallelForBatchJobStruct\u00601/ExecuteJobFunction",
+    "token": "0x2000185",
+    "parameters": [
+      {
+        "Name": "T",
+        "Attributes": 24,
+        "constraints": [
+          "Pathfinding.Jobs.IJobParallelForBatched",
+          "System.ValueType"
+        ],
+        "customAttributes": []
+      }
+    ],
+    "methods": []
+  },
+  {
+    "type": "Pathfinding.Jobs.DisposeArena",
+    "token": "0x2000188",
+    "parameters": [],
+    "methods": [
+      {
+        "name": "System.Void Pathfinding.Jobs.DisposeArena::Add(Unity.Collections.NativeArray\u00601\u003CT\u003E)",
+        "token": "0x6000BB3",
+        "parameters": [
+          {
+            "Name": "T",
+            "Attributes": 24,
+            "constraints": [
+              "System.ValueType"
+            ],
+            "customAttributes": []
+          }
+        ]
+      },
+      {
+        "name": "System.Void Pathfinding.Jobs.DisposeArena::Add(Unity.Collections.NativeList\u00601\u003CT\u003E)",
+        "token": "0x6000BB4",
+        "parameters": [
+          {
+            "Name": "T",
+            "Attributes": 24,
+            "constraints": [
+              "System.ValueType"
+            ],
+            "customAttributes": []
+          }
+        ]
+      },
+      {
+        "name": "System.Void Pathfinding.Jobs.DisposeArena::Add(Unity.Collections.NativeQueue\u00601\u003CT\u003E)",
+        "token": "0x6000BB5",
+        "parameters": [
+          {
+            "Name": "T",
+            "Attributes": 24,
+            "constraints": [
+              "System.ValueType"
+            ],
+            "customAttributes": []
+          }
+        ]
+      },
+      {
+        "name": "System.Void Pathfinding.Jobs.DisposeArena::Add(Unity.Collections.LowLevel.Unsafe.UnsafeList\u00601\u003CT\u003E)",
+        "token": "0x6000BB6",
+        "parameters": [
+          {
+            "Name": "T",
+            "Attributes": 24,
+            "constraints": [
+              "System.ValueType"
+            ],
+            "customAttributes": []
+          }
+        ]
+      },
+      {
+        "name": "System.Void Pathfinding.Jobs.DisposeArena::Add(Pathfinding.Collections.UnsafeSpan\u00601\u003CT\u003E)",
+        "token": "0x6000BB7",
+        "parameters": [
+          {
+            "Name": "T",
+            "Attributes": 24,
+            "constraints": [
+              "System.ValueType"
+            ],
+            "customAttributes": []
+          }
+        ]
+      },
+      {
+        "name": "System.Void Pathfinding.Jobs.DisposeArena::Remove(Unity.Collections.NativeArray\u00601\u003CT\u003E)",
+        "token": "0x6000BB8",
+        "parameters": [
+          {
+            "Name": "T",
+            "Attributes": 24,
+            "constraints": [
+              "System.ValueType"
+            ],
+            "customAttributes": []
+          }
+        ]
+      },
+      {
+        "name": "System.Void Pathfinding.Jobs.DisposeArena::Add(T)",
+        "token": "0x6000BB9",
+        "parameters": [
+          {
+            "Name": "T",
+            "Attributes": 0,
+            "constraints": [
+              "Pathfinding.Jobs.IArenaDisposable"
+            ],
+            "customAttributes": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "Pathfinding.Jobs.JobHandleWithMainThreadWork\u00601",
+    "token": "0x2000189",
+    "parameters": [
+      {
+        "Name": "T",
+        "Attributes": 24,
+        "constraints": [
+          "System.ValueType"
+        ],
+        "customAttributes": []
+      }
+    ],
+    "methods": []
+  },
+  {
+    "type": "Pathfinding.Jobs.JobHandleWithMainThreadWork\u00601/\u003CCompleteTimeSliced\u003Ed__4",
+    "token": "0x200018A",
+    "parameters": [
+      {
+        "Name": "T",
+        "Attributes": 24,
+        "constraints": [
+          "System.ValueType"
+        ],
+        "customAttributes": []
+      }
+    ],
+    "methods": []
+  },
+  {
+    "type": "Pathfinding.Jobs.JobDependencyTracker",
+    "token": "0x200018C",
+    "parameters": [],
+    "methods": [
+      {
+        "name": "Unity.Collections.NativeArray\u00601\u003CT\u003E Pathfinding.Jobs.JobDependencyTracker::NewNativeArray(System.Int32,Unity.Collections.Allocator,Unity.Collections.NativeArrayOptions)",
+        "token": "0x6000BCC",
+        "parameters": [
+          {
+            "Name": "T",
+            "Attributes": 24,
+            "constraints": [
+              "System.ValueType"
+            ],
+            "customAttributes": []
+          }
+        ]
+      },
+      {
+        "name": "System.Void Pathfinding.Jobs.JobDependencyTracker::Track(Unity.Collections.NativeArray\u00601\u003CT\u003E,System.Boolean)",
+        "token": "0x6000BCD",
+        "parameters": [
+          {
+            "Name": "T",
+            "Attributes": 24,
+            "constraints": [
+              "System.ValueType"
+            ],
+            "customAttributes": []
+          }
+        ]
+      },
+      {
+        "name": "System.Void Pathfinding.Jobs.JobDependencyTracker::Persist(Unity.Collections.NativeArray\u00601\u003CT\u003E)",
+        "token": "0x6000BCE",
+        "parameters": [
+          {
+            "Name": "T",
+            "Attributes": 24,
+            "constraints": [
+              "System.ValueType"
+            ],
+            "customAttributes": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "Pathfinding.Jobs.IJobExtensions",
+    "token": "0x2000195",
+    "parameters": [],
+    "methods": [
+      {
+        "name": "Unity.Jobs.JobHandle Pathfinding.Jobs.IJobExtensions::Schedule(T,Pathfinding.Jobs.JobDependencyTracker)",
+        "token": "0x6000BE3",
+        "parameters": [
+          {
+            "Name": "T",
+            "Attributes": 24,
+            "constraints": [
+              "Unity.Jobs.IJob",
+              "System.ValueType"
+            ],
+            "customAttributes": []
+          }
+        ]
+      },
+      {
+        "name": "Unity.Jobs.JobHandle Pathfinding.Jobs.IJobExtensions::ScheduleBatch(T,System.Int32,System.Int32,Pathfinding.Jobs.JobDependencyTracker,Unity.Jobs.JobHandle)",
+        "token": "0x6000BE4",
+        "parameters": [
+          {
+            "Name": "T",
+            "Attributes": 24,
+            "constraints": [
+              "Pathfinding.Jobs.IJobParallelForBatched",
+              "System.ValueType"
+            ],
+            "customAttributes": []
+          }
+        ]
+      },
+      {
+        "name": "Unity.Jobs.JobHandle Pathfinding.Jobs.IJobExtensions::ScheduleManaged(T,Unity.Jobs.JobHandle)",
+        "token": "0x6000BE5",
+        "parameters": [
+          {
+            "Name": "T",
+            "Attributes": 24,
+            "constraints": [
+              "Unity.Jobs.IJob",
+              "System.ValueType"
+            ],
+            "customAttributes": []
+          }
+        ]
+      },
+      {
+        "name": "Unity.Jobs.JobHandle Pathfinding.Jobs.IJobExtensions::GetDependencies(T,Pathfinding.Jobs.JobDependencyTracker)",
+        "token": "0x6000BE7",
+        "parameters": [
+          {
+            "Name": "T",
+            "Attributes": 24,
+            "constraints": [
+              "Unity.Jobs.IJob",
+              "System.ValueType"
+            ],
+            "customAttributes": []
+          }
+        ]
+      },
+      {
+        "name": "System.Collections.Generic.IEnumerator\u00601\u003CUnity.Jobs.JobHandle\u003E Pathfinding.Jobs.IJobExtensions::ExecuteMainThreadJob(T,Pathfinding.Jobs.JobDependencyTracker)",
+        "token": "0x6000BE8",
+        "parameters": [
+          {
+            "Name": "T",
+            "Attributes": 24,
+            "constraints": [
+              "Pathfinding.Jobs.IJobTimeSliced",
+              "System.ValueType"
+            ],
+            "customAttributes": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "Pathfinding.Jobs.IJobExtensions/\u003CExecuteMainThreadJob\u003Ed__7\u00601",
+    "token": "0x2000198",
+    "parameters": [
+      {
+        "Name": "T",
+        "Attributes": 24,
+        "constraints": [
+          "Pathfinding.Jobs.IJobTimeSliced",
+          "System.ValueType"
+        ],
+        "customAttributes": []
+      }
+    ],
+    "methods": []
+  },
+  {
+    "type": "Pathfinding.Jobs.JobDependencyAnalyzer\u00601",
+    "token": "0x200019A",
+    "parameters": [
+      {
+        "Name": "T",
+        "Attributes": 24,
+        "constraints": [
+          "System.ValueType"
+        ],
+        "customAttributes": []
+      }
+    ],
+    "methods": []
+  },
+  {
+    "type": "Pathfinding.Jobs.JobDependencyAnalyzer\u00601/ReflectionData",
+    "token": "0x200019B",
+    "parameters": [
+      {
+        "Name": "T",
+        "Attributes": 24,
+        "constraints": [
+          "System.ValueType"
+        ],
+        "customAttributes": []
+      }
+    ],
+    "methods": []
+  },
+  {
+    "type": "Pathfinding.Graphs.Grid.GridIterationUtilities",
+    "token": "0x2000209",
+    "parameters": [],
+    "methods": [
+      {
+        "name": "System.Void Pathfinding.Graphs.Grid.GridIterationUtilities::ForEachCellIn3DSlice(Pathfinding.Jobs.Slice3D,T\u0026)",
+        "token": "0x6000DBD",
+        "parameters": [
+          {
+            "Name": "T",
+            "Attributes": 24,
+            "constraints": [
+              "Pathfinding.Graphs.Grid.GridIterationUtilities/ISliceAction",
+              "System.ValueType"
+            ],
+            "customAttributes": []
+          }
+        ]
+      },
+      {
+        "name": "System.Void Pathfinding.Graphs.Grid.GridIterationUtilities::ForEachCellIn3DSliceWithCoords(Pathfinding.Jobs.Slice3D,T\u0026)",
+        "token": "0x6000DBE",
+        "parameters": [
+          {
+            "Name": "T",
+            "Attributes": 24,
+            "constraints": [
+              "Pathfinding.Graphs.Grid.GridIterationUtilities/ISliceActionWithCoords",
+              "System.ValueType"
+            ],
+            "customAttributes": []
+          }
+        ]
+      },
+      {
+        "name": "System.Void Pathfinding.Graphs.Grid.GridIterationUtilities::ForEachCellIn3DArray(Unity.Mathematics.int3,T\u0026)",
+        "token": "0x6000DBF",
+        "parameters": [
+          {
+            "Name": "T",
+            "Attributes": 24,
+            "constraints": [
+              "Pathfinding.Graphs.Grid.GridIterationUtilities/ICellAction",
+              "System.ValueType"
+            ],
+            "customAttributes": []
+          }
+        ]
+      },
+      {
+        "name": "System.Void Pathfinding.Graphs.Grid.GridIterationUtilities::ForEachNode(Unity.Mathematics.int3,Unity.Collections.NativeArray\u00601\u003CUnity.Mathematics.float4\u003E,T\u0026)",
+        "token": "0x6000DC0",
+        "parameters": [
+          {
+            "Name": "T",
+            "Attributes": 24,
+            "constraints": [
+              "Pathfinding.Graphs.Grid.GridIterationUtilities/INodeModifier",
+              "System.ValueType"
+            ],
+            "customAttributes": []
+          }
+        ]
+      },
+      {
+        "name": "System.Void Pathfinding.Graphs.Grid.GridIterationUtilities::FilterNodeConnections(Pathfinding.IntBounds,Unity.Collections.NativeArray\u00601\u003CSystem.UInt64\u003E,System.Boolean,T\u0026)",
+        "token": "0x6000DC1",
+        "parameters": [
+          {
+            "Name": "T",
+            "Attributes": 24,
+            "constraints": [
+              "Pathfinding.Graphs.Grid.GridIterationUtilities/IConnectionFilter",
+              "System.ValueType"
+            ],
+            "customAttributes": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "Pathfinding.Graphs.Grid.Jobs.JobErosion\u00601",
+    "token": "0x2000229",
+    "parameters": [
+      {
+        "Name": "AdjacencyMapper",
+        "Attributes": 16,
+        "constraints": [
+          "Pathfinding.Graphs.Grid.GridAdjacencyMapper"
+        ],
+        "customAttributes": []
+      }
+    ],
+    "methods": []
+  },
+  {
+    "type": "Pathfinding.Sync.BlockableChannel\u00601",
+    "token": "0x2000237",
+    "parameters": [
+      {
+        "Name": "T",
+        "Attributes": 4,
+        "constraints": [],
+        "customAttributes": []
+      }
+    ],
+    "methods": []
+  },
+  {
+    "type": "Pathfinding.Sync.BlockableChannel\u00601/PopState",
+    "token": "0x2000238",
+    "parameters": [
+      {
+        "Name": "T",
+        "Attributes": 4,
+        "constraints": [],
+        "customAttributes": []
+      }
+    ],
+    "methods": []
+  },
+  {
+    "type": "Pathfinding.Sync.BlockableChannel\u00601/Receiver",
+    "token": "0x2000239",
+    "parameters": [
+      {
+        "Name": "T",
+        "Attributes": 4,
+        "constraints": [],
+        "customAttributes": []
+      }
+    ],
+    "methods": []
+  },
+  {
+    "type": "Pathfinding.Sync.Promise\u00601",
+    "token": "0x200023B",
+    "parameters": [
+      {
+        "Name": "T",
+        "Attributes": 0,
+        "constraints": [
+          "Pathfinding.Sync.IProgress",
+          "System.IDisposable"
+        ],
+        "customAttributes": []
+      }
+    ],
+    "methods": []
+  },
+  {
+    "type": "Pathfinding.Serialization.GraphSerializationContext",
+    "token": "0x2000242",
+    "parameters": [],
+    "methods": [
+      {
+        "name": "Pathfinding.Collections.UnsafeSpan\u00601\u003CT\u003E Pathfinding.Serialization.GraphSerializationContext::ReadSpan(Unity.Collections.Allocator)",
+        "token": "0x6000E5B",
+        "parameters": [
+          {
+            "Name": "T",
+            "Attributes": 24,
+            "constraints": [
+              "System.ValueType"
+            ],
+            "customAttributes": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "Pathfinding.Pooling.ArrayPool\u00601",
+    "token": "0x2000253",
+    "parameters": [
+      {
+        "Name": "T",
+        "Attributes": 0,
+        "constraints": [],
+        "customAttributes": []
+      }
+    ],
+    "methods": []
+  },
+  {
+    "type": "Pathfinding.Pooling.ListExtensions",
+    "token": "0x2000254",
+    "parameters": [],
+    "methods": [
+      {
+        "name": "T[] Pathfinding.Pooling.ListExtensions::ToArrayFromPool(System.Collections.Generic.List\u00601\u003CT\u003E)",
+        "token": "0x6000EB8",
+        "parameters": [
+          {
+            "Name": "T",
+            "Attributes": 0,
+            "constraints": [],
+            "customAttributes": []
+          }
+        ]
+      },
+      {
+        "name": "System.Void Pathfinding.Pooling.ListExtensions::ClearFast(System.Collections.Generic.List\u00601\u003CT\u003E)",
+        "token": "0x6000EB9",
+        "parameters": [
+          {
+            "Name": "T",
+            "Attributes": 0,
+            "constraints": [],
+            "customAttributes": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "Pathfinding.Pooling.ListPool\u00601",
+    "token": "0x2000255",
+    "parameters": [
+      {
+        "Name": "T",
+        "Attributes": 0,
+        "constraints": [],
+        "customAttributes": []
+      }
+    ],
+    "methods": []
+  },
+  {
+    "type": "Pathfinding.Pooling.ObjectPool\u00601",
+    "token": "0x2000257",
+    "parameters": [
+      {
+        "Name": "T",
+        "Attributes": 20,
+        "constraints": [
+          "Pathfinding.Pooling.IAstarPooledObject"
+        ],
+        "customAttributes": []
+      }
+    ],
+    "methods": []
+  },
+  {
+    "type": "Pathfinding.Pooling.ObjectPoolSimple\u00601",
+    "token": "0x2000258",
+    "parameters": [
+      {
+        "Name": "T",
+        "Attributes": 20,
+        "constraints": [],
+        "customAttributes": []
+      }
+    ],
+    "methods": []
+  },
+  {
+    "type": "Pathfinding.Pooling.PathPool",
+    "token": "0x2000259",
+    "parameters": [],
+    "methods": [
+      {
+        "name": "T Pathfinding.Pooling.PathPool::GetPath()",
+        "token": "0x6000ECE",
+        "parameters": [
+          {
+            "Name": "T",
+            "Attributes": 16,
+            "constraints": [
+              "Pathfinding.Path"
+            ],
+            "customAttributes": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "Pathfinding.Pooling.StackPool\u00601",
+    "token": "0x200025A",
+    "parameters": [
+      {
+        "Name": "T",
+        "Attributes": 0,
+        "constraints": [],
+        "customAttributes": []
+      }
+    ],
+    "methods": []
+  },
+  {
+    "type": "Pathfinding.Collections.CircularBuffer\u00601",
+    "token": "0x2000263",
+    "parameters": [
+      {
+        "Name": "T",
+        "Attributes": 0,
+        "constraints": [],
+        "customAttributes": []
+      }
+    ],
+    "methods": []
+  },
+  {
+    "type": "Pathfinding.Collections.CircularBuffer\u00601/\u003CGetEnumerator\u003Ed__39",
+    "token": "0x2000264",
+    "parameters": [
+      {
+        "Name": "T",
+        "Attributes": 0,
+        "constraints": [],
+        "customAttributes": []
+      }
+    ],
+    "methods": []
+  },
+  {
+    "type": "Pathfinding.Collections.CircularBuffer\u00601/\u003CSystem-Collections-IEnumerable-GetEnumerator\u003Ed__40",
+    "token": "0x2000265",
+    "parameters": [
+      {
+        "Name": "T",
+        "Attributes": 0,
+        "constraints": [],
+        "customAttributes": []
+      }
+    ],
+    "methods": []
+  },
+  {
+    "type": "Pathfinding.Collections.NativeCircularBuffer\u00601",
+    "token": "0x200026A",
+    "parameters": [
+      {
+        "Name": "T",
+        "Attributes": 24,
+        "constraints": [
+          "System.ValueType"
+        ],
+        "customAttributes": []
+      }
+    ],
+    "methods": []
+  },
+  {
+    "type": "Pathfinding.Collections.NativeCircularBuffer\u00601/\u003CGetEnumerator\u003Ed__44",
+    "token": "0x200026B",
+    "parameters": [
+      {
+        "Name": "T",
+        "Attributes": 24,
+        "constraints": [
+          "System.ValueType"
+        ],
+        "customAttributes": []
+      }
+    ],
+    "methods": []
+  },
+  {
+    "type": "Pathfinding.Collections.NativeCircularBuffer\u00601/\u003CSystem-Collections-IEnumerable-GetEnumerator\u003Ed__45",
+    "token": "0x200026C",
+    "parameters": [
+      {
+        "Name": "T",
+        "Attributes": 24,
+        "constraints": [
+          "System.ValueType"
+        ],
+        "customAttributes": []
+      }
+    ],
+    "methods": []
+  },
+  {
+    "type": "Pathfinding.Collections.SlabAllocator\u00601",
+    "token": "0x200026D",
+    "parameters": [
+      {
+        "Name": "T",
+        "Attributes": 24,
+        "constraints": [
+          "System.ValueType"
+        ],
+        "customAttributes": []
+      }
+    ],
+    "methods": []
+  },
+  {
+    "type": "Pathfinding.Collections.SlabAllocator\u00601/AllocatorData",
+    "token": "0x200026E",
+    "parameters": [
+      {
+        "Name": "T",
+        "Attributes": 24,
+        "constraints": [
+          "System.ValueType"
+        ],
+        "customAttributes": []
+      }
+    ],
+    "methods": []
+  },
+  {
+    "type": "Pathfinding.Collections.SlabAllocator\u00601/AllocatorData/\u003CfreeHeads\u003Ee__FixedBuffer",
+    "token": "0x200026F",
+    "parameters": [
+      {
+        "Name": "T",
+        "Attributes": 24,
+        "constraints": [
+          "System.ValueType"
+        ],
+        "customAttributes": []
+      }
+    ],
+    "methods": []
+  },
+  {
+    "type": "Pathfinding.Collections.SlabAllocator\u00601/Header",
+    "token": "0x2000270",
+    "parameters": [
+      {
+        "Name": "T",
+        "Attributes": 24,
+        "constraints": [
+          "System.ValueType"
+        ],
+        "customAttributes": []
+      }
+    ],
+    "methods": []
+  },
+  {
+    "type": "Pathfinding.Collections.SlabAllocator\u00601/NextBlock",
+    "token": "0x2000271",
+    "parameters": [
+      {
+        "Name": "T",
+        "Attributes": 24,
+        "constraints": [
+          "System.ValueType"
+        ],
+        "customAttributes": []
+      }
+    ],
+    "methods": []
+  },
+  {
+    "type": "Pathfinding.Collections.SlabAllocator\u00601/List",
+    "token": "0x2000272",
+    "parameters": [
+      {
+        "Name": "T",
+        "Attributes": 24,
+        "constraints": [
+          "System.ValueType"
+        ],
+        "customAttributes": []
+      }
+    ],
+    "methods": []
+  },
+  {
+    "type": "Pathfinding.Collections.SlabListExtensions",
+    "token": "0x2000273",
+    "parameters": [],
+    "methods": [
+      {
+        "name": "System.Void Pathfinding.Collections.SlabListExtensions::Remove(Pathfinding.Collections.SlabAllocator\u00601/List\u003CT\u003E\u0026,T)",
+        "token": "0x6000F8A",
+        "parameters": [
+          {
+            "Name": "T",
+            "Attributes": 24,
+            "constraints": [
+              "System.ValueType",
+              "System.IEquatable\u00601\u003CT\u003E"
+            ],
+            "customAttributes": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "Pathfinding.Collections.UnsafeSpan\u00601",
+    "token": "0x2000274",
+    "parameters": [
+      {
+        "Name": "T",
+        "Attributes": 24,
+        "constraints": [
+          "System.ValueType"
+        ],
+        "customAttributes": []
+      }
+    ],
+    "methods": [
+      {
+        "name": "Pathfinding.Collections.UnsafeSpan\u00601\u003CU\u003E Pathfinding.Collections.UnsafeSpan\u00601::Reinterpret()",
+        "token": "0x6000F93",
+        "parameters": [
+          {
+            "Name": "U",
+            "Attributes": 24,
+            "constraints": [
+              "System.ValueType"
+            ],
+            "customAttributes": []
+          }
+        ]
+      },
+      {
+        "name": "Pathfinding.Collections.UnsafeSpan\u00601\u003CU\u003E Pathfinding.Collections.UnsafeSpan\u00601::Reinterpret(System.Int32)",
+        "token": "0x6000F94",
+        "parameters": [
+          {
+            "Name": "U",
+            "Attributes": 24,
+            "constraints": [
+              "System.ValueType"
+            ],
+            "customAttributes": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "Pathfinding.Collections.SpanExtensions",
+    "token": "0x2000275",
+    "parameters": [],
+    "methods": [
+      {
+        "name": "System.Void Pathfinding.Collections.SpanExtensions::FillZeros(Pathfinding.Collections.UnsafeSpan\u00601\u003CT\u003E)",
+        "token": "0x6000FA1",
+        "parameters": [
+          {
+            "Name": "T",
+            "Attributes": 24,
+            "constraints": [
+              "System.ValueType"
+            ],
+            "customAttributes": []
+          }
+        ]
+      },
+      {
+        "name": "System.Void Pathfinding.Collections.SpanExtensions::Fill(Pathfinding.Collections.UnsafeSpan\u00601\u003CT\u003E,T)",
+        "token": "0x6000FA2",
+        "parameters": [
+          {
+            "Name": "T",
+            "Attributes": 24,
+            "constraints": [
+              "System.ValueType"
+            ],
+            "customAttributes": []
+          }
+        ]
+      },
+      {
+        "name": "System.Void Pathfinding.Collections.SpanExtensions::CopyFrom(Pathfinding.Collections.UnsafeSpan\u00601\u003CT\u003E,Unity.Collections.NativeArray\u00601\u003CT\u003E)",
+        "token": "0x6000FA3",
+        "parameters": [
+          {
+            "Name": "T",
+            "Attributes": 24,
+            "constraints": [
+              "System.ValueType"
+            ],
+            "customAttributes": []
+          }
+        ]
+      },
+      {
+        "name": "System.Void Pathfinding.Collections.SpanExtensions::CopyFrom(Pathfinding.Collections.UnsafeSpan\u00601\u003CT\u003E,Pathfinding.Collections.UnsafeSpan\u00601\u003CT\u003E)",
+        "token": "0x6000FA4",
+        "parameters": [
+          {
+            "Name": "T",
+            "Attributes": 24,
+            "constraints": [
+              "System.ValueType"
+            ],
+            "customAttributes": []
+          }
+        ]
+      },
+      {
+        "name": "System.Void Pathfinding.Collections.SpanExtensions::CopyFrom(Pathfinding.Collections.UnsafeSpan\u00601\u003CT\u003E,T[])",
+        "token": "0x6000FA5",
+        "parameters": [
+          {
+            "Name": "T",
+            "Attributes": 24,
+            "constraints": [
+              "System.ValueType"
+            ],
+            "customAttributes": []
+          }
+        ]
+      },
+      {
+        "name": "Pathfinding.Collections.UnsafeSpan\u00601\u003CT\u003E Pathfinding.Collections.SpanExtensions::AsUnsafeSpan(Unity.Collections.LowLevel.Unsafe.UnsafeAppendBuffer)",
+        "token": "0x6000FA6",
+        "parameters": [
+          {
+            "Name": "T",
+            "Attributes": 24,
+            "constraints": [
+              "System.ValueType"
+            ],
+            "customAttributes": []
+          }
+        ]
+      },
+      {
+        "name": "Pathfinding.Collections.UnsafeSpan\u00601\u003CT\u003E Pathfinding.Collections.SpanExtensions::AsUnsafeSpan(Unity.Collections.NativeList\u00601\u003CT\u003E)",
+        "token": "0x6000FA7",
+        "parameters": [
+          {
+            "Name": "T",
+            "Attributes": 24,
+            "constraints": [
+              "System.ValueType"
+            ],
+            "customAttributes": []
+          }
+        ]
+      },
+      {
+        "name": "Pathfinding.Collections.UnsafeSpan\u00601\u003CT\u003E Pathfinding.Collections.SpanExtensions::AsUnsafeSpan(Unity.Collections.NativeArray\u00601\u003CT\u003E)",
+        "token": "0x6000FA8",
+        "parameters": [
+          {
+            "Name": "T",
+            "Attributes": 24,
+            "constraints": [
+              "System.ValueType"
+            ],
+            "customAttributes": []
+          }
+        ]
+      },
+      {
+        "name": "Pathfinding.Collections.UnsafeSpan\u00601\u003CT\u003E Pathfinding.Collections.SpanExtensions::MoveToUnsafeSpan(Unity.Collections.NativeArray\u00601\u003CT\u003E)",
+        "token": "0x6000FA9",
+        "parameters": [
+          {
+            "Name": "T",
+            "Attributes": 24,
+            "constraints": [
+              "System.ValueType"
+            ],
+            "customAttributes": []
+          }
+        ]
+      },
+      {
+        "name": "Pathfinding.Collections.UnsafeSpan\u00601\u003CT\u003E Pathfinding.Collections.SpanExtensions::AsUnsafeSpanNoChecks(Unity.Collections.NativeArray\u00601\u003CT\u003E)",
+        "token": "0x6000FAA",
+        "parameters": [
+          {
+            "Name": "T",
+            "Attributes": 24,
+            "constraints": [
+              "System.ValueType"
+            ],
+            "customAttributes": []
+          }
+        ]
+      },
+      {
+        "name": "Pathfinding.Collections.UnsafeSpan\u00601\u003CT\u003E Pathfinding.Collections.SpanExtensions::AsUnsafeReadOnlySpan(Unity.Collections.NativeArray\u00601\u003CT\u003E)",
+        "token": "0x6000FAB",
+        "parameters": [
+          {
+            "Name": "T",
+            "Attributes": 24,
+            "constraints": [
+              "System.ValueType"
+            ],
+            "customAttributes": []
+          }
+        ]
+      },
+      {
+        "name": "Unity.Collections.Allocator Pathfinding.Collections.SpanExtensions::GetAllocator(Unity.Collections.NativeArray\u00601\u003CT\u003E)",
+        "token": "0x6000FAC",
+        "parameters": [
+          {
+            "Name": "T",
+            "Attributes": 24,
+            "constraints": [
+              "System.ValueType"
+            ],
+            "customAttributes": []
+          }
+        ]
+      },
+      {
+        "name": "Pathfinding.Collections.UnsafeSpan\u00601\u003CT\u003E Pathfinding.Collections.SpanExtensions::AsUnsafeSpan(Unity.Collections.LowLevel.Unsafe.UnsafeList\u00601\u003CT\u003E)",
+        "token": "0x6000FAD",
+        "parameters": [
+          {
+            "Name": "T",
+            "Attributes": 24,
+            "constraints": [
+              "System.ValueType"
+            ],
+            "customAttributes": []
+          }
+        ]
+      },
+      {
+        "name": "Pathfinding.Collections.UnsafeSpan\u00601\u003CT\u003E Pathfinding.Collections.SpanExtensions::AsUnsafeSpan(Unity.Collections.NativeSlice\u00601\u003CT\u003E)",
+        "token": "0x6000FAE",
+        "parameters": [
+          {
+            "Name": "T",
+            "Attributes": 24,
+            "constraints": [
+              "System.ValueType"
+            ],
+            "customAttributes": []
+          }
+        ]
+      },
+      {
+        "name": "System.Boolean Pathfinding.Collections.SpanExtensions::Contains(Pathfinding.Collections.UnsafeSpan\u00601\u003CT\u003E,T)",
+        "token": "0x6000FAF",
+        "parameters": [
+          {
+            "Name": "T",
+            "Attributes": 24,
+            "constraints": [
+              "System.ValueType",
+              "System.IEquatable\u00601\u003CT\u003E"
+            ],
+            "customAttributes": []
+          }
+        ]
+      },
+      {
+        "name": "System.Int32 Pathfinding.Collections.SpanExtensions::IndexOf(Pathfinding.Collections.UnsafeSpan\u00601\u003CT\u003E,T)",
+        "token": "0x6000FB0",
+        "parameters": [
+          {
+            "Name": "T",
+            "Attributes": 24,
+            "constraints": [
+              "System.ValueType",
+              "System.IEquatable\u00601\u003CT\u003E"
+            ],
+            "customAttributes": []
+          }
+        ]
+      },
+      {
+        "name": "System.Void Pathfinding.Collections.SpanExtensions::Sort(Pathfinding.Collections.UnsafeSpan\u00601\u003CT\u003E)",
+        "token": "0x6000FB1",
+        "parameters": [
+          {
+            "Name": "T",
+            "Attributes": 24,
+            "constraints": [
+              "System.ValueType",
+              "System.IComparable\u00601\u003CT\u003E"
+            ],
+            "customAttributes": []
+          }
+        ]
+      },
+      {
+        "name": "System.Void Pathfinding.Collections.SpanExtensions::Sort(Pathfinding.Collections.UnsafeSpan\u00601\u003CT\u003E,U)",
+        "token": "0x6000FB2",
+        "parameters": [
+          {
+            "Name": "T",
+            "Attributes": 24,
+            "constraints": [
+              "System.ValueType"
+            ],
+            "customAttributes": []
+          },
+          {
+            "Name": "U",
+            "Attributes": 0,
+            "constraints": [
+              "System.Collections.Generic.IComparer\u00601\u003CT\u003E"
+            ],
+            "customAttributes": []
+          }
+        ]
+      },
+      {
+        "name": "System.Void Pathfinding.Collections.SpanExtensions::InsertRange(Unity.Collections.NativeList\u00601\u003CT\u003E,System.Int32,System.Int32)",
+        "token": "0x6000FB3",
+        "parameters": [
+          {
+            "Name": "T",
+            "Attributes": 24,
+            "constraints": [
+              "System.ValueType"
+            ],
+            "customAttributes": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "Pathfinding.Collections.AABBTree\u00601",
+    "token": "0x2000276",
+    "parameters": [
+      {
+        "Name": "T",
+        "Attributes": 0,
+        "constraints": [],
+        "customAttributes": []
+      }
+    ],
+    "methods": []
+  },
+  {
+    "type": "Pathfinding.Collections.AABBTree\u00601/Node",
+    "token": "0x2000277",
+    "parameters": [
+      {
+        "Name": "T",
+        "Attributes": 0,
+        "constraints": [],
+        "customAttributes": []
+      }
+    ],
+    "methods": []
+  },
+  {
+    "type": "Pathfinding.Collections.AABBTree\u00601/Key",
+    "token": "0x2000278",
+    "parameters": [
+      {
+        "Name": "T",
+        "Attributes": 0,
+        "constraints": [],
+        "customAttributes": []
+      }
+    ],
+    "methods": []
+  },
+  {
+    "type": "Pathfinding.Collections.AABBTree\u00601/AABBComparer",
+    "token": "0x2000279",
+    "parameters": [
+      {
+        "Name": "T",
+        "Attributes": 0,
+        "constraints": [],
+        "customAttributes": []
+      }
+    ],
+    "methods": []
+  },
+  {
+    "type": "Pathfinding.Collections.GridLookup\u00601",
+    "token": "0x2000287",
+    "parameters": [
+      {
+        "Name": "T",
+        "Attributes": 4,
+        "constraints": [],
+        "customAttributes": []
+      }
+    ],
+    "methods": [
+      {
+        "name": "System.Collections.Generic.List\u00601\u003CU\u003E Pathfinding.Collections.GridLookup\u00601::QueryRect(Pathfinding.IntRect)",
+        "token": "0x6001019",
+        "parameters": [
+          {
+            "Name": "U",
+            "Attributes": 4,
+            "constraints": [
+              "T"
+            ],
+            "customAttributes": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "Pathfinding.Collections.GridLookup\u00601/Item",
+    "token": "0x2000288",
+    "parameters": [
+      {
+        "Name": "T",
+        "Attributes": 4,
+        "constraints": [],
+        "customAttributes": []
+      }
+    ],
+    "methods": []
+  },
+  {
+    "type": "Pathfinding.Collections.GridLookup\u00601/Root",
+    "token": "0x2000289",
+    "parameters": [
+      {
+        "Name": "T",
+        "Attributes": 4,
+        "constraints": [],
+        "customAttributes": []
+      }
+    ],
+    "methods": []
+  },
+  {
+    "type": "Pathfinding.Util.Memory",
+    "token": "0x200028B",
+    "parameters": [],
+    "methods": [
+      {
+        "name": "T[] Pathfinding.Util.Memory::ShrinkArray(T[],System.Int32)",
+        "token": "0x600101E",
+        "parameters": [
+          {
+            "Name": "T",
+            "Attributes": 0,
+            "constraints": [],
+            "customAttributes": []
+          }
+        ]
+      },
+      {
+        "name": "System.Void Pathfinding.Util.Memory::Swap(T\u0026,T\u0026)",
+        "token": "0x600101F",
+        "parameters": [
+          {
+            "Name": "T",
+            "Attributes": 0,
+            "constraints": [],
+            "customAttributes": []
+          }
+        ]
+      },
+      {
+        "name": "System.Void Pathfinding.Util.Memory::Realloc(Unity.Collections.NativeArray\u00601\u003CT\u003E\u0026,System.Int32,Unity.Collections.Allocator,Unity.Collections.NativeArrayOptions)",
+        "token": "0x6001020",
+        "parameters": [
+          {
+            "Name": "T",
+            "Attributes": 24,
+            "constraints": [
+              "System.ValueType"
+            ],
+            "customAttributes": []
+          }
+        ]
+      },
+      {
+        "name": "System.Void Pathfinding.Util.Memory::Realloc(T[]\u0026,System.Int32)",
+        "token": "0x6001021",
+        "parameters": [
+          {
+            "Name": "T",
+            "Attributes": 0,
+            "constraints": [],
+            "customAttributes": []
+          }
+        ]
+      },
+      {
+        "name": "T[] Pathfinding.Util.Memory::UnsafeAppendBufferToArray(Unity.Collections.LowLevel.Unsafe.UnsafeAppendBuffer)",
+        "token": "0x6001022",
+        "parameters": [
+          {
+            "Name": "T",
+            "Attributes": 24,
+            "constraints": [
+              "System.ValueType"
+            ],
+            "customAttributes": []
+          }
+        ]
+      },
+      {
+        "name": "System.Boolean Pathfinding.Util.Memory::SequenceEqual(T[],T[])",
+        "token": "0x6001023",
+        "parameters": [
+          {
+            "Name": "T",
+            "Attributes": 0,
+            "constraints": [
+              "System.IEquatable\u00601\u003CT\u003E"
+            ],
+            "customAttributes": []
+          }
+        ]
+      },
+      {
+        "name": "System.Void Pathfinding.Util.Memory::Rotate3DArray(T[],Unity.Mathematics.int3,System.Int32,System.Int32)",
+        "token": "0x6001024",
+        "parameters": [
+          {
+            "Name": "T",
+            "Attributes": 0,
+            "constraints": [],
+            "customAttributes": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "Pathfinding.Util.AssemblySearcher",
+    "token": "0x200028E",
+    "parameters": [],
+    "methods": [
+      {
+        "name": "System.Collections.Generic.List\u00601\u003CSystem.Type\u003E Pathfinding.Util.AssemblySearcher::FindTypesInheritingFrom()",
+        "token": "0x6001029",
+        "parameters": [
+          {
+            "Name": "T",
+            "Attributes": 0,
+            "constraints": [],
+            "customAttributes": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "Pathfinding.Util.PathInterpolator/Cursor",
+    "token": "0x2000292",
+    "parameters": [],
+    "methods": [
+      {
+        "name": "System.Void Pathfinding.Util.PathInterpolator/Cursor::MoveToCircleIntersection2D(UnityEngine.Vector3,System.Single,T)",
+        "token": "0x600104A",
+        "parameters": [
+          {
+            "Name": "T",
+            "Attributes": 0,
+            "constraints": [
+              "Pathfinding.Util.IMovementPlane"
+            ],
+            "customAttributes": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "Pathfinding.Util.UnityCompatibility",
+    "token": "0x2000294",
+    "parameters": [],
+    "methods": [
+      {
+        "name": "T[] Pathfinding.Util.UnityCompatibility::FindObjectsByTypeSorted()",
+        "token": "0x6001055",
+        "parameters": [
+          {
+            "Name": "T",
+            "Attributes": 0,
+            "constraints": [
+              "UnityEngine.Object"
+            ],
+            "customAttributes": []
+          }
+        ]
+      },
+      {
+        "name": "T[] Pathfinding.Util.UnityCompatibility::FindObjectsByTypeUnsorted()",
+        "token": "0x6001056",
+        "parameters": [
+          {
+            "Name": "T",
+            "Attributes": 0,
+            "constraints": [
+              "UnityEngine.Object"
+            ],
+            "customAttributes": []
+          }
+        ]
+      },
+      {
+        "name": "T[] Pathfinding.Util.UnityCompatibility::FindObjectsByTypeUnsortedWithInactive()",
+        "token": "0x6001057",
+        "parameters": [
+          {
+            "Name": "T",
+            "Attributes": 0,
+            "constraints": [
+              "UnityEngine.Object"
+            ],
+            "customAttributes": []
+          }
+        ]
+      },
+      {
+        "name": "T Pathfinding.Util.UnityCompatibility::FindAnyObjectByType()",
+        "token": "0x6001058",
+        "parameters": [
+          {
+            "Name": "T",
+            "Attributes": 0,
+            "constraints": [
+              "UnityEngine.Object"
+            ],
+            "customAttributes": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "Pathfinding.Util.BatchedEvents",
+    "token": "0x200029F",
+    "parameters": [],
+    "methods": [
+      {
+        "name": "T Pathfinding.Util.BatchedEvents::Find(K,System.Func\u00603\u003CT,K,System.Boolean\u003E)",
+        "token": "0x60010AC",
+        "parameters": [
+          {
+            "Name": "T",
+            "Attributes": 4,
+            "constraints": [
+              "Pathfinding.Util.IEntityIndex"
+            ],
+            "customAttributes": []
+          },
+          {
+            "Name": "K",
+            "Attributes": 0,
+            "constraints": [],
+            "customAttributes": []
+          }
+        ]
+      },
+      {
+        "name": "System.Void Pathfinding.Util.BatchedEvents::Remove(T)",
+        "token": "0x60010AD",
+        "parameters": [
+          {
+            "Name": "T",
+            "Attributes": 0,
+            "constraints": [
+              "Pathfinding.Util.IEntityIndex"
+            ],
+            "customAttributes": []
+          }
+        ]
+      },
+      {
+        "name": "System.Int32 Pathfinding.Util.BatchedEvents::GetComponents(Pathfinding.Util.BatchedEvents/Event,UnityEngine.Jobs.TransformAccessArray\u0026,T[]\u0026)",
+        "token": "0x60010AE",
+        "parameters": [
+          {
+            "Name": "T",
+            "Attributes": 0,
+            "constraints": [
+              "UnityEngine.Component",
+              "Pathfinding.Util.IEntityIndex"
+            ],
+            "customAttributes": []
+          }
+        ]
+      },
+      {
+        "name": "System.Boolean Pathfinding.Util.BatchedEvents::Has(T)",
+        "token": "0x60010AF",
+        "parameters": [
+          {
+            "Name": "T",
+            "Attributes": 0,
+            "constraints": [
+              "Pathfinding.Util.IEntityIndex"
+            ],
+            "customAttributes": []
+          }
+        ]
+      },
+      {
+        "name": "System.Void Pathfinding.Util.BatchedEvents::Add(T,Pathfinding.Util.BatchedEvents/Event,System.Action\u00602\u003CT[],System.Int32\u003E,System.Int32)",
+        "token": "0x60010B0",
+        "parameters": [
+          {
+            "Name": "T",
+            "Attributes": 0,
+            "constraints": [
+              "UnityEngine.Component",
+              "Pathfinding.Util.IEntityIndex"
+            ],
+            "customAttributes": []
+          }
+        ]
+      },
+      {
+        "name": "System.Void Pathfinding.Util.BatchedEvents::Add(T,Pathfinding.Util.BatchedEvents/Event,System.Action\u00604\u003CT[],System.Int32,UnityEngine.Jobs.TransformAccessArray,Pathfinding.Util.BatchedEvents/Event\u003E,System.Int32)",
+        "token": "0x60010B1",
+        "parameters": [
+          {
+            "Name": "T",
+            "Attributes": 0,
+            "constraints": [
+              "UnityEngine.Component",
+              "Pathfinding.Util.IEntityIndex"
+            ],
+            "customAttributes": []
+          }
+        ]
+      },
+      {
+        "name": "System.Void Pathfinding.Util.BatchedEvents::Add(T,Pathfinding.Util.BatchedEvents/Event,System.Action\u00604\u003CT[],System.Int32,UnityEngine.Jobs.TransformAccessArray,Pathfinding.Util.BatchedEvents/Event\u003E,System.Action\u00602\u003CT[],System.Int32\u003E,System.Int32)",
+        "token": "0x60010B2",
+        "parameters": [
+          {
+            "Name": "T",
+            "Attributes": 0,
+            "constraints": [
+              "UnityEngine.Component",
+              "Pathfinding.Util.IEntityIndex"
+            ],
+            "customAttributes": []
+          }
+        ]
+      },
+      {
+        "name": "System.Void Pathfinding.Util.BatchedEvents::ProcessEvent(Pathfinding.Util.BatchedEvents/Event)",
+        "token": "0x60010B4",
+        "parameters": [
+          {
+            "Name": "T",
+            "Attributes": 0,
+            "constraints": [],
+            "customAttributes": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "Pathfinding.Util.BatchedEvents/\u003C\u003Ec__DisplayClass17_0\u00601",
+    "token": "0x20002A2",
+    "parameters": [
+      {
+        "Name": "T",
+        "Attributes": 0,
+        "constraints": [
+          "UnityEngine.Component",
+          "Pathfinding.Util.IEntityIndex"
+        ],
+        "customAttributes": []
+      }
+    ],
+    "methods": []
+  },
+  {
+    "type": "Pathfinding.Util.NodeHasher",
+    "token": "0x20002A4",
+    "parameters": [],
+    "methods": [
+      {
+        "name": "System.Void Pathfinding.Util.NodeHasher::Add(T)",
+        "token": "0x60010CC",
+        "parameters": [
+          {
+            "Name": "T",
+            "Attributes": 0,
+            "constraints": [],
+            "customAttributes": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "Pathfinding.RVO.JobRVOPreprocess\u00601",
+    "token": "0x20002AF",
+    "parameters": [
+      {
+        "Name": "MovementPlaneWrapper",
+        "Attributes": 24,
+        "constraints": [
+          "Pathfinding.RVO.IMovementPlaneWrapper",
+          "System.ValueType"
+        ],
+        "customAttributes": []
+      }
+    ],
+    "methods": []
+  },
+  {
+    "type": "Pathfinding.RVO.JobHorizonAvoidancePhase1\u00601",
+    "token": "0x20002B0",
+    "parameters": [
+      {
+        "Name": "MovementPlaneWrapper",
+        "Attributes": 24,
+        "constraints": [
+          "Pathfinding.RVO.IMovementPlaneWrapper",
+          "System.ValueType"
+        ],
+        "customAttributes": []
+      }
+    ],
+    "methods": [
+      {
+        "name": "System.Void Pathfinding.RVO.JobHorizonAvoidancePhase1\u00601::Sort(Unity.Collections.NativeSlice\u00601\u003CT\u003E,Unity.Collections.NativeSlice\u00601\u003CSystem.Single\u003E)",
+        "token": "0x60010FD",
+        "parameters": [
+          {
+            "Name": "T",
+            "Attributes": 24,
+            "constraints": [
+              "System.ValueType"
+            ],
+            "customAttributes": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "Pathfinding.RVO.JobHorizonAvoidancePhase2\u00601",
+    "token": "0x20002B1",
+    "parameters": [
+      {
+        "Name": "MovementPlaneWrapper",
+        "Attributes": 24,
+        "constraints": [
+          "Pathfinding.RVO.IMovementPlaneWrapper",
+          "System.ValueType"
+        ],
+        "customAttributes": []
+      }
+    ],
+    "methods": []
+  },
+  {
+    "type": "Pathfinding.RVO.JobHardCollisions\u00601",
+    "token": "0x20002B2",
+    "parameters": [
+      {
+        "Name": "MovementPlaneWrapper",
+        "Attributes": 24,
+        "constraints": [
+          "Pathfinding.RVO.IMovementPlaneWrapper",
+          "System.ValueType"
+        ],
+        "customAttributes": []
+      }
+    ],
+    "methods": []
+  },
+  {
+    "type": "Pathfinding.RVO.JobRVOCalculateNeighbours\u00601",
+    "token": "0x20002B3",
+    "parameters": [
+      {
+        "Name": "MovementPlaneWrapper",
+        "Attributes": 24,
+        "constraints": [
+          "Pathfinding.RVO.IMovementPlaneWrapper",
+          "System.ValueType"
+        ],
+        "customAttributes": []
+      }
+    ],
+    "methods": []
+  },
+  {
+    "type": "Pathfinding.RVO.JobDestinationReached\u00601",
+    "token": "0x20002B4",
+    "parameters": [
+      {
+        "Name": "MovementPlaneWrapper",
+        "Attributes": 24,
+        "constraints": [
+          "Pathfinding.RVO.IMovementPlaneWrapper",
+          "System.ValueType"
+        ],
+        "customAttributes": []
+      }
+    ],
+    "methods": []
+  },
+  {
+    "type": "Pathfinding.RVO.JobDestinationReached\u00601/TempAgentData",
+    "token": "0x20002B5",
+    "parameters": [
+      {
+        "Name": "MovementPlaneWrapper",
+        "Attributes": 24,
+        "constraints": [
+          "Pathfinding.RVO.IMovementPlaneWrapper",
+          "System.ValueType"
+        ],
+        "customAttributes": []
+      }
+    ],
+    "methods": []
+  },
+  {
+    "type": "Pathfinding.RVO.JobRVO\u00601",
+    "token": "0x20002B6",
+    "parameters": [
+      {
+        "Name": "MovementPlaneWrapper",
+        "Attributes": 24,
+        "constraints": [
+          "Pathfinding.RVO.IMovementPlaneWrapper",
+          "System.ValueType"
+        ],
+        "customAttributes": []
+      }
+    ],
+    "methods": [
+      {
+        "name": "System.Void Pathfinding.RVO.JobRVO\u00601::InsertionSort(Pathfinding.Collections.UnsafeSpan\u00601\u003CT\u003E,U)",
+        "token": "0x600110B",
+        "parameters": [
+          {
+            "Name": "T",
+            "Attributes": 24,
+            "constraints": [
+              "System.ValueType"
+            ],
+            "customAttributes": []
+          },
+          {
+            "Name": "U",
+            "Attributes": 0,
+            "constraints": [
+              "System.Collections.Generic.IComparer\u00601\u003CT\u003E"
+            ],
+            "customAttributes": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "Pathfinding.RVO.JobRVO\u00601/SortByKey",
+    "token": "0x20002B7",
+    "parameters": [
+      {
+        "Name": "MovementPlaneWrapper",
+        "Attributes": 24,
+        "constraints": [
+          "Pathfinding.RVO.IMovementPlaneWrapper",
+          "System.ValueType"
+        ],
+        "customAttributes": []
+      }
+    ],
+    "methods": []
+  },
+  {
+    "type": "Pathfinding.RVO.JobRVO\u00601/ORCALine",
+    "token": "0x20002B8",
+    "parameters": [
+      {
+        "Name": "MovementPlaneWrapper",
+        "Attributes": 24,
+        "constraints": [
+          "Pathfinding.RVO.IMovementPlaneWrapper",
+          "System.ValueType"
+        ],
+        "customAttributes": []
+      }
+    ],
+    "methods": []
+  },
+  {
+    "type": "Pathfinding.RVO.JobRVO\u00601/LinearProgram2Output",
+    "token": "0x20002B9",
+    "parameters": [
+      {
+        "Name": "MovementPlaneWrapper",
+        "Attributes": 24,
+        "constraints": [
+          "Pathfinding.RVO.IMovementPlaneWrapper",
+          "System.ValueType"
+        ],
+        "customAttributes": []
+      }
+    ],
+    "methods": []
+  },
+  {
+    "type": "Pathfinding.RVO.SimulatorBurst",
+    "token": "0x20002C6",
+    "parameters": [],
+    "methods": [
+      {
+        "name": "Unity.Jobs.JobHandle Pathfinding.RVO.SimulatorBurst::UpdateInternal(Unity.Jobs.JobHandle,System.Single,System.Boolean,Unity.Collections.Allocator)",
+        "token": "0x6001180",
+        "parameters": [
+          {
+            "Name": "T",
+            "Attributes": 24,
+            "constraints": [
+              "Pathfinding.RVO.IMovementPlaneWrapper",
+              "System.ValueType"
+            ],
+            "customAttributes": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "Pathfinding.ECS.FollowerEntityProxy",
+    "token": "0x20002E1",
+    "parameters": [],
+    "methods": [
+      {
+        "name": "System.Void Pathfinding.ECS.FollowerEntityProxy::ToggleComponent(Unity.Entities.World,Unity.Entities.Entity,System.Boolean,System.Boolean)",
+        "token": "0x6001280",
+        "parameters": [
+          {
+            "Name": "T",
+            "Attributes": 24,
+            "constraints": [
+              "Unity.Entities.IComponentData",
+              "System.ValueType"
+            ],
+            "customAttributes": []
+          }
+        ]
+      },
+      {
+        "name": "System.Void Pathfinding.ECS.FollowerEntityProxy::ToggleComponentEnabled(Unity.Entities.World,Unity.Entities.Entity,System.Boolean,System.Boolean)",
+        "token": "0x6001281",
+        "parameters": [
+          {
+            "Name": "T",
+            "Attributes": 24,
+            "constraints": [
+              "Unity.Entities.IComponentData",
+              "Unity.Entities.IEnableableComponent",
+              "System.ValueType"
+            ],
+            "customAttributes": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "Pathfinding.ECS.ManagedMovementOverrides",
+    "token": "0x20002F6",
+    "parameters": [],
+    "methods": [
+      {
+        "name": "System.Void Pathfinding.ECS.ManagedMovementOverrides::AddCallback(T)",
+        "token": "0x60012C1",
+        "parameters": [
+          {
+            "Name": "C",
+            "Attributes": 16,
+            "constraints": [
+              "Pathfinding.ECS.ManagedMovementOverride\u00601\u003CT\u003E",
+              "Unity.Entities.IComponentData"
+            ],
+            "customAttributes": []
+          },
+          {
+            "Name": "T",
+            "Attributes": 0,
+            "constraints": [
+              "System.Delegate"
+            ],
+            "customAttributes": []
+          }
+        ]
+      },
+      {
+        "name": "System.Void Pathfinding.ECS.ManagedMovementOverrides::RemoveCallback(T)",
+        "token": "0x60012C2",
+        "parameters": [
+          {
+            "Name": "C",
+            "Attributes": 16,
+            "constraints": [
+              "Pathfinding.ECS.ManagedMovementOverride\u00601\u003CT\u003E",
+              "Unity.Entities.IComponentData"
+            ],
+            "customAttributes": []
+          },
+          {
+            "Name": "T",
+            "Attributes": 0,
+            "constraints": [
+              "System.Delegate"
+            ],
+            "customAttributes": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "Pathfinding.ECS.ManagedMovementOverride\u00601",
+    "token": "0x20002F7",
+    "parameters": [
+      {
+        "Name": "T",
+        "Attributes": 4,
+        "constraints": [
+          "System.Delegate"
+        ],
+        "customAttributes": []
+      }
+    ],
+    "methods": []
+  },
+  {
+    "type": "Pathfinding.ECS.ComponentRef\u00601",
+    "token": "0x200030E",
+    "parameters": [
+      {
+        "Name": "T",
+        "Attributes": 24,
+        "constraints": [
+          "System.ValueType"
+        ],
+        "customAttributes": []
+      }
+    ],
+    "methods": []
+  },
+  {
+    "type": "Pathfinding.ECS.EntityStorageCache",
+    "token": "0x200030F",
+    "parameters": [],
+    "methods": [
+      {
+        "name": "System.Boolean Pathfinding.ECS.EntityStorageCache::GetComponentData(Unity.Entities.World,Unity.Entities.Entity,Pathfinding.ECS.EntityAccess\u00601\u003CA\u003E\u0026,Pathfinding.ECS.ComponentRef\u00601\u003CA\u003E\u0026)",
+        "token": "0x60012F9",
+        "parameters": [
+          {
+            "Name": "A",
+            "Attributes": 24,
+            "constraints": [
+              "System.ValueType",
+              "Unity.Entities.IComponentData"
+            ],
+            "customAttributes": []
+          }
+        ]
+      },
+      {
+        "name": "System.Boolean Pathfinding.ECS.EntityStorageCache::GetComponentData(Unity.Entities.World,Unity.Entities.Entity,Pathfinding.ECS.ManagedEntityAccess\u00601\u003CA\u003E\u0026,A\u0026)",
+        "token": "0x60012FA",
+        "parameters": [
+          {
+            "Name": "A",
+            "Attributes": 4,
+            "constraints": [
+              "Unity.Entities.IComponentData"
+            ],
+            "customAttributes": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "Pathfinding.ECS.EntityAccess\u00601",
+    "token": "0x2000310",
+    "parameters": [
+      {
+        "Name": "T",
+        "Attributes": 24,
+        "constraints": [
+          "System.ValueType",
+          "Unity.Entities.IComponentData"
+        ],
+        "customAttributes": []
+      }
+    ],
+    "methods": []
+  },
+  {
+    "type": "Pathfinding.ECS.ManagedEntityAccess\u00601",
+    "token": "0x2000311",
+    "parameters": [
+      {
+        "Name": "T",
+        "Attributes": 4,
+        "constraints": [
+          "Unity.Entities.IComponentData"
+        ],
+        "customAttributes": []
+      }
+    ],
+    "methods": []
+  }
+]

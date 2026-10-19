@@ -1,0 +1,38 @@
+__int64 __fastcall GameModule_BattleGameSceneManager__GetDesignatedKeyHex(__int64 a1, __int64 a2)
+{
+  __int64 v4; // x0
+  unsigned int v5; // w21
+  __int64 Item; // x0
+  __int64 v7; // x3
+  __int64 v9; // x0
+
+  if ( (byte_8FFD7AD & 1) == 0 )
+  {
+    il2cpp_codegen_initialize_runtime_metadata(&qword_8D0B528);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D0B530);
+    byte_8FFD7AD = 1;
+  }
+  v4 = *(_QWORD *)(a1 + 128);
+  if ( v4 == 0 )
+    goto LABEL_13;
+  v5 = 0;
+  while ( 1 )
+  {
+    if ( (signed int)v5 >= *(_DWORD *)(v4 + 24) )
+      return 0;
+    Item = System_Collections_Generic_List_object___get_Item(v4, v5, qword_8D0B530);
+    if ( Item == 0 )
+      goto LABEL_13;
+    if ( (System_String__op_Equality(*(_QWORD *)(Item + 64), a2, 0, v7) & 1) != 0 )
+      break;
+    v4 = *(_QWORD *)(a1 + 128);
+    ++v5;
+    if ( v4 == 0 )
+      goto LABEL_13;
+  }
+  v9 = *(_QWORD *)(a1 + 128);
+  if ( v9 == 0 )
+LABEL_13:
+    il2cpp_codegen_raise_null_reference_exception();
+  return System_Collections_Generic_List_object___get_Item(v9, v5, qword_8D0B530);
+}

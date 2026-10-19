@@ -1,0 +1,51 @@
+0x3df4890: SUB             SP, SP, #0x70
+0x3df4894: STR             X30, [SP,#0x70+var_30]
+0x3df4898: STP             X22, X21, [SP,#0x70+var_20]
+0x3df489c: STP             X20, X19, [SP,#0x70+var_10]
+0x3df48a0: ADRP            X21, #byte_8FFD7A9@PAGE
+0x3df48a4: ADRP            X20, #off_8AD3D20@PAGE
+0x3df48a8: MOV             X19, X8
+0x3df48ac: LDRB            W8, [X21,#byte_8FFD7A9@PAGEOFF]
+0x3df48b0: LDR             X20, [X20,#off_8AD3D20@PAGEOFF]; off_8CF8E88
+0x3df48b4: TBNZ            W8, #0, loc_3DF48E4
+0x3df48b8: ADRP            X0, #off_8AD3D28@PAGE
+0x3df48bc: LDR             X0, [X0,#off_8AD3D28@PAGEOFF]; unk_8CF8E90 ; slot
+0x3df48c0: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3df48c4: ADRP            X0, #off_8AD3D20@PAGE
+0x3df48c8: LDR             X0, [X0,#off_8AD3D20@PAGEOFF]; off_8CF8E88 ; slot
+0x3df48cc: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3df48d0: ADRP            X0, #off_8AD3D30@PAGE
+0x3df48d4: LDR             X0, [X0,#off_8AD3D30@PAGEOFF]; qword_8CF8EB0 ; slot
+0x3df48d8: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3df48dc: MOV             W8, #1
+0x3df48e0: STRB            W8, [X21,#byte_8FFD7A9@PAGEOFF]
+0x3df48e4: LDR             X21, [X20]
+0x3df48e8: MOV             W8, #0xFFFFFFFF
+0x3df48ec: STP             XZR, XZR, [SP,#0x70+var_50]
+0x3df48f0: STP             XZR, XZR, [SP,#0x70+var_40]
+0x3df48f4: STR             W8, [SP,#0x70+var_50]
+0x3df48f8: ADRP            X22, #off_8AD3D30@PAGE
+0x3df48fc: LDR             X8, [X21,#0x38]
+0x3df4900: LDR             X22, [X22,#off_8AD3D30@PAGEOFF]; qword_8CF8EB0
+0x3df4904: ADD             X9, SP, #0x70+var_50
+0x3df4908: ADD             X20, X9, #8
+0x3df490c: CBNZ            X8, loc_3DF491C
+0x3df4910: MOV             X0, X21
+0x3df4914: BL              unk_3C503FC
+0x3df4918: LDR             X8, [X21,#0x38]
+0x3df491c: LDR             X1, [X8,#0x10]
+0x3df4920: ADD             X0, SP, #0x70+var_50
+0x3df4924: BL              GameModule.BattleGameSceneManager._GetRoleTarget_d__207$$MoveNext
+0x3df4928: LDR             X1, [X22]
+0x3df492c: ADD             X8, SP, #0x70+var_68
+0x3df4930: MOV             X0, X20
+0x3df4934: BL              unk_3D31BC0
+0x3df4938: LDR             X8, [SP,#0x70+var_58]
+0x3df493c: LDUR            Q0, [SP,#0x70+var_68]
+0x3df4940: LDP             X22, X21, [SP,#0x70+var_20]
+0x3df4944: LDR             X30, [SP,#0x70+var_30]
+0x3df4948: STR             X8, [X19,#0x10]
+0x3df494c: STR             Q0, [X19]
+0x3df4950: LDP             X20, X19, [SP,#0x70+var_10]
+0x3df4954: ADD             SP, SP, #0x70 ; 'p'
+0x3df4958: RET

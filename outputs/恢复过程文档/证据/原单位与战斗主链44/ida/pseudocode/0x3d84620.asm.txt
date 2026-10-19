@@ -1,0 +1,14 @@
+0x3d84620: ADRP            X8, #dword_1837464@PAGE
+0x3d84624: LDR             S0, [X0,#0x1BC]
+0x3d84628: LDR             S1, [X8,#dword_1837464@PAGEOFF]
+0x3d8462c: FCMP            S0, S1
+0x3d84630: B.GT            locret_3D8464C
+0x3d84634: LDR             X8, [X0,#0x40]
+0x3d84638: CBZ             X8, loc_3D84650
+0x3d8463c: LDR             S0, [X8,#0x28]
+0x3d84640: ADRP            X8, #dword_1836DC0@PAGE
+0x3d84644: LDR             S1, [X8,#dword_1836DC0@PAGEOFF]
+0x3d84648: FMUL            S0, S0, S1
+0x3d8464c: RET
+0x3d84650: FMOV            S0, WZR
+0x3d84654: RET

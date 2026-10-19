@@ -1,0 +1,19 @@
+bool __fastcall GameModule_BattleGameManager__get_IsGamePaused(__int64 a1, __int64 a2, __int64 a3)
+{
+  __int64 Instance; // x0
+
+  if ( (byte_8FFD72C & 1) == 0 )
+  {
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D178A0 /* Method$QuickTutor.Singleton<TutorialManager>.get_Instance() */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&off_8CE1930 /* QuickTutor.Singleton<TutorialManager>_TypeInfo */);
+    byte_8FFD72C = 1;
+  }
+  if ( *(_BYTE *)(a1 + 218) != 0 )
+    return true;
+  if ( *((_DWORD *)off_8CE1930 /* QuickTutor.Singleton<TutorialManager>_TypeInfo */ + 56) == 0 )
+    il2cpp_codegen_runtime_class_init(off_8CE1930 /* QuickTutor.Singleton<TutorialManager>_TypeInfo */);
+  Instance = QuickTutor_Singleton_object___get_Instance(qword_8D178A0 /* Method$QuickTutor.Singleton<TutorialManager>.get_Instance() */, a2, a3);
+  if ( Instance == 0 )
+    il2cpp_codegen_raise_null_reference_exception();
+  return *(_BYTE *)(Instance + 40) != 0;
+}

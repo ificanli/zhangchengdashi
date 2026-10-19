@@ -1,0 +1,38 @@
+0x3e019f4: fe5fbda9 stp      x30, x23, [sp, #-0x30]!
+0x3e019f8: f65701a9 stp      x22, x21, [sp, #0x10]
+0x3e019fc: f44f02a9 stp      x20, x19, [sp, #0x20]
+0x3e01a00: f78f0290 adrp     x23, #0x8ffd000
+0x3e01a04: 966602f0 adrp     x22, #0x8ad4000
+0x3e01a08: 946602f0 adrp     x20, #0x8ad4000
+0x3e01a0c: 956602f0 adrp     x21, #0x8ad4000
+0x3e01a10: e81a6039 ldrb     w8, [x23, #0x806]
+0x3e01a14: d6de40f9 ldr      x22, [x22, #0x1b8] // System.Collections.Generic.HashSet<GameObject>_TypeInfo
+0x3e01a18: 94e240f9 ldr      x20, [x20, #0x1c0] // Method$System.Collections.Generic.HashSet<GameObject>..ctor()
+0x3e01a1c: b5e640f9 ldr      x21, [x21, #0x1c8] // Method$ToolModule.ManagerBase<CoreGameManager>..ctor()
+0x3e01a20: f30300aa mov      x19, x0
+0x3e01a24: 88010037 tbnz     w8, #0, #0x3e01a54
+0x3e01a28: 806602f0 adrp     x0, #0x8ad4000
+0x3e01a2c: 00e040f9 ldr      x0, [x0, #0x1c0] // Method$System.Collections.Generic.HashSet<GameObject>..ctor()
+0x3e01a30: 14eef897 bl       #0x3c3d280
+0x3e01a34: 806602f0 adrp     x0, #0x8ad4000
+0x3e01a38: 00dc40f9 ldr      x0, [x0, #0x1b8] // System.Collections.Generic.HashSet<GameObject>_TypeInfo
+0x3e01a3c: 11eef897 bl       #0x3c3d280
+0x3e01a40: 806602f0 adrp     x0, #0x8ad4000
+0x3e01a44: 00e440f9 ldr      x0, [x0, #0x1c8] // Method$ToolModule.ManagerBase<CoreGameManager>..ctor()
+0x3e01a48: 0eeef897 bl       #0x3c3d280
+0x3e01a4c: 28008052 mov      w8, #1
+0x3e01a50: e81a2039 strb     w8, [x23, #0x806]
+0x3e01a54: 28008052 mov      w8, #1
+0x3e01a58: 68f20039 strb     w8, [x19, #0x3c]
+0x3e01a5c: c00240f9 ldr      x0, [x22]
+0x3e01a60: 99eef897 bl       #0x3c3d4c4
+0x3e01a64: 810240f9 ldr      x1, [x20]
+0x3e01a68: f40300aa mov      x20, x0
+0x3e01a6c: a58c5594 bl       #0x5364d00 // System.Collections.Generic.HashSet<object>$$.ctor
+0x3e01a70: 742200f9 str      x20, [x19, #0x40]
+0x3e01a74: a10240f9 ldr      x1, [x21]
+0x3e01a78: e00313aa mov      x0, x19
+0x3e01a7c: f44f42a9 ldp      x20, x19, [sp, #0x20]
+0x3e01a80: f65741a9 ldp      x22, x21, [sp, #0x10]
+0x3e01a84: fe5fc3a8 ldp      x30, x23, [sp], #0x30
+0x3e01a88: 70db6d14 b        #0x5978848 // ToolModule.ManagerBase<object>$$.ctor

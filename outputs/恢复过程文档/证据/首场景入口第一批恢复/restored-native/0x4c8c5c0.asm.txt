@@ -1,0 +1,53 @@
+0x4c8c5c0: STR             X30, [SP,#var_20]!
+0x4c8c5c4: STP             X20, X19, [SP,#0x20+var_10]
+0x4c8c5c8: LDR             X8, [X0,#0x38]
+0x4c8c5cc: MOV             X19, X0
+0x4c8c5d0: CBNZ            X8, loc_4C8C5F0
+0x4c8c5d4: ADRP            X0, #off_8AF46A0@PAGE
+0x4c8c5d8: LDR             X0, [X0,#off_8AF46A0@PAGEOFF]; off_8CE7B30 ; slot
+0x4c8c5dc: BL              il2cpp_codegen_initialize_runtime_metadata
+0x4c8c5e0: LDR             X8, [X19,#0x38]
+0x4c8c5e4: CBNZ            X8, loc_4C8C5F0
+0x4c8c5e8: MOV             X0, X19
+0x4c8c5ec: BL              unk_3C503FC
+0x4c8c5f0: ADRP            X8, #off_8AF46A0@PAGE
+0x4c8c5f4: LDR             X8, [X8,#off_8AF46A0@PAGEOFF]; off_8CE7B30
+0x4c8c5f8: LDR             X0, [X8]; klass
+0x4c8c5fc: LDR             W8, [X0,#0xE0]
+0x4c8c600: CBNZ            W8, loc_4C8C608
+0x4c8c604: BL              il2cpp_codegen_runtime_class_init
+0x4c8c608: LDR             X8, [X19,#0x38]
+0x4c8c60c: LDR             X0, [X8]
+0x4c8c610: BL              GameFramework.GameFrameEntry$$K______object_
+0x4c8c614: MOV             X1, XZR
+0x4c8c618: BL              GameFramework.GameFrameEntry$$K____b
+0x4c8c61c: LDR             X8, [X19,#0x38]
+0x4c8c620: MOV             X20, X0
+0x4c8c624: LDR             X1, [X8,#8]
+0x4c8c628: LDRB            W8, [X1,#0x135]
+0x4c8c62c: TBNZ            W8, #0, loc_4C8C63C
+0x4c8c630: MOV             X0, X1
+0x4c8c634: BL              unk_3C503A0
+0x4c8c638: MOV             X1, X0
+0x4c8c63c: MOV             X0, X20
+0x4c8c640: BL              unk_3C3D3B4
+0x4c8c644: LDR             X8, [X19,#0x38]
+0x4c8c648: MOV             X20, X0
+0x4c8c64c: LDR             X19, [X8,#8]
+0x4c8c650: LDRB            W8, [X19,#0x135]
+0x4c8c654: TBNZ            W8, #0, loc_4C8C664
+0x4c8c658: MOV             X0, X19
+0x4c8c65c: BL              unk_3C503A0
+0x4c8c660: MOV             X19, X0
+0x4c8c664: CBZ             X20, loc_4C8C684
+0x4c8c668: MOV             X0, X20
+0x4c8c66c: MOV             X1, X19
+0x4c8c670: BL              unk_3C3D3B4
+0x4c8c674: CBNZ            X0, loc_4C8C688
+0x4c8c678: MOV             X0, X20
+0x4c8c67c: MOV             X1, X19
+0x4c8c680: BL              unk_3C3D868
+0x4c8c684: MOV             X0, XZR
+0x4c8c688: LDP             X20, X19, [SP,#0x20+var_10]
+0x4c8c68c: LDR             X30, [SP+0x20+var_20],#0x20
+0x4c8c690: RET

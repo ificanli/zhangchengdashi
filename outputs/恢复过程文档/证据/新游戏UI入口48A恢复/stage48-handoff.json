@@ -1,0 +1,222 @@
+{
+  "stage": 48,
+  "status": "stable-48A-actual-four-method-source-applied-and-verified-runtime-not-accepted",
+  "stable": true,
+  "ownedFiles": [
+    "Assets/Scripts/Assembly-CSharp/UIFramework/UIManager.cs",
+    "Assets/Scripts/Assembly-CSharp/UIFramework/UIPanel.cs"
+  ],
+  "files": [
+    {
+      "path": "Assets/Scripts/Assembly-CSharp/UIFramework/UIManager.cs",
+      "beforeSha256": "bed0b6d3bbbc19f750a0788ea6a03d04c9cb74e768aa02ad69459b77cd125ef7",
+      "afterSha256": "845f55cd139cbdb070ecdbee1f01a386e131266b286e2e27eee76fdd00b3310a",
+      "metaSha256": "5de2955a2830fe0fd7c06b378c2d26badf260c0433849a0829893e5cc77a386d",
+      "restoredTokens": [
+        "0x6004C57",
+        "0x6004C58",
+        "0x6004C5C"
+      ],
+      "allOtherTextByteEquivalent": true,
+      "originalTokenSequencePreserved": true
+    },
+    {
+      "path": "Assets/Scripts/Assembly-CSharp/UIFramework/UIPanel.cs",
+      "beforeSha256": "9e4341d8e5282556f645c26fd4003f420619b80db5a32a4bee687eafad078a30",
+      "afterSha256": "381d97687c8d1935fe951394d6a8ec6d86f883c29d7d738768c5cf5bfeb291cc",
+      "metaSha256": "2ade62ecb7a07be41b763d86c518cc4328f3df0b15df196b8defd954c6aaf671",
+      "restoredTokens": [
+        "0x6004C4C"
+      ],
+      "allOtherTextByteEquivalent": true,
+      "originalTokenSequencePreserved": true
+    }
+  ],
+  "restoredMethodCount": 4,
+  "originalMethods": [
+    {
+      "file": "Assets/Scripts/Assembly-CSharp/UIFramework/UIManager.cs",
+      "method": "Init",
+      "token": "0x06004C57",
+      "rva": "0x4275c18",
+      "body": "0x4276f18",
+      "awaits": 0,
+      "nativeBodyBytes": 652,
+      "nativeBodySha256": "4e784097893b7a89c1fb1d5c3a3489469096c7780e24326e36fca67ef938fb28"
+    },
+    {
+      "file": "Assets/Scripts/Assembly-CSharp/UIFramework/UIManager.cs",
+      "method": "GetPanel",
+      "token": "0x06004C58",
+      "rva": "0x4275c9c",
+      "body": "0x42767ac",
+      "awaits": 1,
+      "nativeBodyBytes": 852,
+      "nativeBodySha256": "d11c5940bc9ef068c0e5c8ee1d567497fb578987db9b297b1b45a42611c06e97"
+    },
+    {
+      "file": "Assets/Scripts/Assembly-CSharp/UIFramework/UIManager.cs",
+      "method": "LoadPanel",
+      "token": "0x06004C5C",
+      "rva": "0x4275fec",
+      "body": "0x42771b0",
+      "awaits": 1,
+      "nativeBodyBytes": 2044,
+      "nativeBodySha256": "d92970a98211781cbdfd1433057dafe251a751d0a2094c8b2d512af2742dca48"
+    },
+    {
+      "file": "Assets/Scripts/Assembly-CSharp/UIFramework/UIPanel.cs",
+      "method": "Init(PanelConfig)",
+      "token": "0x06004C4C",
+      "rva": "0x4275658",
+      "nativeBodyBytes": 8,
+      "body": "original panelConfig private field store"
+    }
+  ],
+  "protectedNonempty": [
+    {
+      "file": "Assets/Scripts/Assembly-CSharp/UIFramework/UIManager.cs",
+      "method": "IsPanelShowing",
+      "token": "0x06004C59",
+      "rva": "0x4275d78",
+      "protection": "explicit RECOVERY_UNIMPLEMENTED diagnostic retained byte-for-byte; not part of minimum candidate"
+    },
+    {
+      "file": "Assets/Scripts/Assembly-CSharp/UIFramework/UIPanel.cs",
+      "method": "IsPlayTween getter",
+      "token": "0x06004C40",
+      "rva": "0x4275278",
+      "protection": "existing restored field getter untouched"
+    },
+    {
+      "file": "Assets/Scripts/Assembly-CSharp/AssetsModule/AssetsManager.cs",
+      "method": "LoadAssetAsync<T>",
+      "protection": "reuse actual typed Addressables/cache/reference-count implementation; do not replace with placeholder/provider shortcut"
+    }
+  ],
+  "originalTokenSequencePreserved": true,
+  "allOtherMethodBodiesAndMetasUnchanged": true,
+  "tests": {
+    "baseline": {
+      "scenarios": 19,
+      "checks": 19,
+      "failures": 19
+    },
+    "candidate": {
+      "scenarios": 19,
+      "checks": 92,
+      "failures": 0
+    },
+    "actual": {
+      "scenarios": 19,
+      "checks": 92,
+      "failures": 0
+    }
+  },
+  "sourceChecks": {
+    "Init_async_original_zero_await": true,
+    "Init_original_cache_root_own_flag_order": true,
+    "GetPanel_original_Task_await": true,
+    "LoadPanel_original_typed_UniTask_await": true,
+    "LoadPanel_after_await_recheck_before_instantiate": true,
+    "LoadPanel_hide_cache_then_camera_config_leaf": true,
+    "LoadPanel_exact_case_predicate": true,
+    "UIPanel_original_single_field_store": true,
+    "protected_diagnostic_and_existing_getter_unchanged": true
+  },
+  "ILChecks": {
+    "Init_real_UniTask_builder_zero_await_exception_capture": true,
+    "Init_dictionary_root_transform_then_own_completion": true,
+    "GetPanel_one_Task_await_with_UniTask_builder": true,
+    "GetPanel_hot_exact_cache_lookup_before_load": true,
+    "LoadPanel_one_typed_UniTask_await_with_Task_builder": true,
+    "LoadPanel_after_GetResult_cache_recheck_before_Instantiate": true,
+    "LoadPanel_original_Instantiate_parent_and_real_component": true,
+    "LoadPanel_false_active_then_cache_before_camera_config_leaf": true,
+    "LoadPanel_optional_Canvas_layer_and_original_binding": true,
+    "LoadPanel_case_sensitive_original_string_predicate": true,
+    "UIPanel_Init_exact_single_original_field_store": true,
+    "protected_getter_and_diagnostic_still_compiled": true
+  },
+  "fullMainCompile": {
+    "assembly": "Assembly-CSharp",
+    "status": "full-actual-source-csc-only",
+    "exitCode": 0,
+    "errorCount": 0,
+    "warningCount": 7867,
+    "errors": [],
+    "sourceRspSha256": "949172735caead43197af97d3547738730d3231b6d0658c5d6ed05e4b31c4516",
+    "modifiedRspSha256": "2a69feac57cf8d5c87d0526737f191536dacb8f6ddc5172491dc2ef8f049cfff",
+    "assemblySha256": "48d6ef24cea117939880d126d77610cd862a4abad621b79d80dc3d62aab255b4",
+    "sourceFiles": [
+      {
+        "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\outputs\\OccupyCityRecovered\\Assets\\Scripts\\Assembly-CSharp\\UIFramework\\UIManager.cs",
+        "sha256": "845f55cd139cbdb070ecdbee1f01a386e131266b286e2e27eee76fdd00b3310a"
+      },
+      {
+        "path": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\outputs\\OccupyCityRecovered\\Assets\\Scripts\\Assembly-CSharp\\UIFramework\\UIPanel.cs",
+        "sha256": "381d97687c8d1935fe951394d6a8ec6d86f883c29d7d738768c5cf5bfeb291cc"
+      }
+    ],
+    "unityStarted": false,
+    "installedExperimentDll": false
+  },
+  "typedLoad": "Existing AssetsManager.LoadAssetAsync<GameObject>(full panelPath), original await then second dictionary lookup, original Object.Instantiate(prefab,parent), actual UIPanel component",
+  "originalFailureSemantics": "Asset/Instantiate failures before insertion do not cache. Hidden/cache insertion precedes camera/config; later dependency failures retain the original already-inserted hidden cache. No rollback or placeholder.",
+  "firstPanel": "GameLauncher.InitManager only preloads NoInternetPanel through GetPanel; originally hidden in cache, not a mandated visible first screen",
+  "dependencies": [
+    {
+      "file": "Assets/Scripts/Assembly-CSharp/CameraModule/CameraManager.cs",
+      "method": "UICamera getter",
+      "token": "0x060020A7",
+      "rva": "0x3f0e8cc",
+      "currentBody": "return null",
+      "neededScope": "separate native camera producer/retrieval audit before claiming original worldCamera binding"
+    },
+    {
+      "file": "Assets/Scripts/Assembly-CSharp/UIFramework/UIPanel.cs",
+      "method": "Show/Hide/IsShowing/Canvas/TweenRoot",
+      "token": "0x06004C44 / 45 / 41 / 42 / 3E / 3F",
+      "rva": "0x4275338 / 0x42753bc / 0x4275280 / 0x42752a0 / 0x427520c / 0x4275214",
+      "currentBody": "exported stubs",
+      "neededScope": "later actual display/animation closure; minimum preload does not call Show"
+    },
+    {
+      "file": "Assets/Scripts/Assembly-CSharp/UIModuleO/NoInternetPanel.cs",
+      "method": "Show override and component binding",
+      "token": "0x06003E88",
+      "rva": "0x416f664",
+      "body": "0x416fee0",
+      "currentBody": "exported stubs",
+      "neededScope": "later concrete first-panel display/connection policy; not authorized in minimum manager-only step"
+    },
+    {
+      "file": "Assets/Scripts/Assembly-CSharp/DataModule/GlobalInfo.cs",
+      "method": "panelConfigs real load/deserialize",
+      "currentBody": "stage41 owner",
+      "neededScope": "read-only dependency; use actual loaded config, no injected substitute rows"
+    }
+  ],
+  "excludedScopes": [
+    "UICamera getter/CameraManager.Init",
+    "UIManager Show/Hide wrappers",
+    "UIPanel Show/Hide/IsShowing/Canvas/TweenRoot",
+    "NoInternetPanel.Show and component binding",
+    "stage50 CoreBlit2 shader error",
+    "stage39 old resource probe"
+  ],
+  "inspectedNativeMethods": 38,
+  "inspectedNativeBytes": 11772,
+  "boundedNativeTargets": 21,
+  "UnityOperations": 0,
+  "installedExperimentDll": false,
+  "actualTypedUnityLoad": false,
+  "UnityInstantiationAccepted": false,
+  "visibleUIAccepted": false,
+  "coreGameplayAccepted": false,
+  "stableNotifiedToParent": true,
+  "report": "outputs/恢复过程文档/48-新游戏UI入口最小恢复路线.md",
+  "implementationEvidence": "outputs/恢复过程文档/证据/新游戏UI入口48A恢复",
+  "previousPlanningEvidence": "outputs/恢复过程文档/证据/新游戏UI入口计划",
+  "nextRuntimeObservation": "Root only: official typed NoInternetPanel load and actual address/type/identity/parent/activeSelf/config/camera/cache readback under real upstream prerequisites; no forced Show or flags"
+}

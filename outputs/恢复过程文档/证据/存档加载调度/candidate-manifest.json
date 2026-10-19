@@ -1,0 +1,57 @@
+{
+  "stage": 45,
+  "files": [
+    {
+      "path": "Assets/Scripts/Assembly-CSharp/DataModule/DataManager.cs",
+      "beforeSha256": "44968437878d1800023105935555caddb27950bf07b9c3b197ff89b51cab5409",
+      "candidateSha256": "c13ac70deb97fee2a199cf3576b06fb2362cad9b217b3c1d298c034b292029a4",
+      "metaSha256": "db45484eafbd78a236600c2fb2e04111e3f3cade0a4f816f30c302df94cc848b"
+    }
+  ],
+  "methods": [
+    {
+      "name": "ChooseConflict",
+      "signature": "public void ChooseConflict(ComflictStatus comflictStatus)"
+    },
+    {
+      "name": "LoadData",
+      "signature": "public UniTask LoadData()"
+    },
+    {
+      "name": "LoadAllSaveData",
+      "signature": "private void LoadAllSaveData()"
+    },
+    {
+      "name": "StopAllSave",
+      "signature": "public void StopAllSave()"
+    }
+  ],
+  "nativeModelsInLoadOrder": [
+    "DbtSaveDataManager_PlayerMainCityData",
+    "DbtSaveDataManager_PlayerCardData",
+    "DbtSaveDataManager_PlayerShopData",
+    "DbtSaveDataManager_PlayerArenaData",
+    "DbtSaveDataManager_PlayerRankData",
+    "DbtSaveDataManager_PlayerResourceData",
+    "DbtSaveDataManager_PlayerChestData",
+    "DbtSaveDataManager_PlayerTimeData",
+    "DbtSaveDataManager_PlayerAdData",
+    "DbtSaveDataManager_PlayerArtifactData",
+    "DbtSaveDataManager_PlayerCustomizationData",
+    "DbtSaveDataManager_PlayerCoreData",
+    "DbtSaveDataManager_PlayerGuideData",
+    "DbtSaveDataManager_PlayerMysteryAdventureData",
+    "DbtSaveDataManager_PlayerWorldCupActivityData"
+  ],
+  "preservedGates": [
+    "loadConfigComplete",
+    "SaveConflictCheckFinish"
+  ],
+  "originalFieldWrite": "PlayerCoreData.LoginSuccessfully=true only after all actual Load calls; Save before LoadDataCompleted=true",
+  "notRestored": [
+    "SaveAllData",
+    "ClearAllData",
+    "conflict decision producer",
+    "concrete data defaults/init bodies"
+  ]
+}

@@ -1,0 +1,70 @@
+0x3df8b1c: STP             X30, X21, [SP,#var_20]!
+0x3df8b20: STP             X20, X19, [SP,#0x20+var_10]
+0x3df8b24: ADRP            X21, #byte_8FFD7D2@PAGE
+0x3df8b28: LDRB            W8, [X21,#byte_8FFD7D2@PAGEOFF]
+0x3df8b2c: MOV             X19, X1
+0x3df8b30: MOV             X20, X0
+0x3df8b34: TBNZ            W8, #0, loc_3DF8B4C
+0x3df8b38: ADRP            X0, #off_8AD0198@PAGE
+0x3df8b3c: LDR             X0, [X0,#off_8AD0198@PAGEOFF]; off_8D08FC0 ; slot
+0x3df8b40: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3df8b44: MOV             W8, #1
+0x3df8b48: STRB            W8, [X21,#byte_8FFD7D2@PAGEOFF]
+0x3df8b4c: LDR             X0, [X20,#0xD8]
+0x3df8b50: CBZ             X0, loc_3DF8C30
+0x3df8b54: ADRP            X21, #off_8AD0198@PAGE
+0x3df8b58: LDR             X21, [X21,#off_8AD0198@PAGEOFF]; off_8D08FC0
+0x3df8b5c: LDR             W10, [X0,#0x1C]
+0x3df8b60: LDR             X8, [X0,#0x10]
+0x3df8b64: LDR             X9, [X21]
+0x3df8b68: ADD             W10, W10, #1
+0x3df8b6c: STR             W10, [X0,#0x1C]
+0x3df8b70: CBZ             X8, loc_3DF8C30
+0x3df8b74: LDRSW           X10, [X0,#0x18]
+0x3df8b78: LDR             W11, [X8,#0x18]
+0x3df8b7c: CMP             W10, W11
+0x3df8b80: B.CS            loc_3DF8B98
+0x3df8b84: ADD             W9, W10, #1
+0x3df8b88: ADD             X8, X8, X10,LSL#3
+0x3df8b8c: STR             W9, [X0,#0x18]
+0x3df8b90: STR             X19, [X8,#0x20]
+0x3df8b94: B               loc_3DF8BAC
+0x3df8b98: LDR             X8, [X9,#0x20]
+0x3df8b9c: MOV             X1, X19
+0x3df8ba0: LDR             X8, [X8,#0xC0]
+0x3df8ba4: LDR             X2, [X8,#0x70]
+0x3df8ba8: BL              System.Collections.Generic.List_object_$$AddWithResize
+0x3df8bac: CBZ             X19, loc_3DF8C30
+0x3df8bb0: LDRB            W8, [X19,#0x20]
+0x3df8bb4: CBZ             W8, loc_3DF8BC4
+0x3df8bb8: LDR             X0, [X20,#0xE8]
+0x3df8bbc: CBNZ            X0, loc_3DF8BCC
+0x3df8bc0: B               loc_3DF8C30
+0x3df8bc4: LDR             X0, [X20,#0xE0]
+0x3df8bc8: CBZ             X0, loc_3DF8C30
+0x3df8bcc: LDR             W10, [X0,#0x1C]
+0x3df8bd0: LDR             X8, [X0,#0x10]
+0x3df8bd4: LDR             X9, [X21]
+0x3df8bd8: ADD             W10, W10, #1
+0x3df8bdc: STR             W10, [X0,#0x1C]
+0x3df8be0: CBZ             X8, loc_3DF8C30
+0x3df8be4: LDRSW           X10, [X0,#0x18]
+0x3df8be8: LDR             W11, [X8,#0x18]
+0x3df8bec: CMP             W10, W11
+0x3df8bf0: B.CS            loc_3DF8C08
+0x3df8bf4: ADD             W9, W10, #1
+0x3df8bf8: ADD             X8, X8, X10,LSL#3
+0x3df8bfc: STR             W9, [X0,#0x18]
+0x3df8c00: STR             X19, [X8,#0x20]
+0x3df8c04: B               loc_3DF8C1C
+0x3df8c08: LDR             X8, [X9,#0x20]
+0x3df8c0c: MOV             X1, X19
+0x3df8c10: LDR             X8, [X8,#0xC0]
+0x3df8c14: LDR             X2, [X8,#0x70]
+0x3df8c18: BL              System.Collections.Generic.List_object_$$AddWithResize
+0x3df8c1c: LDRB            W1, [X19,#0x20]
+0x3df8c20: MOV             X0, X20
+0x3df8c24: LDP             X20, X19, [SP,#0x20+var_10]
+0x3df8c28: LDP             X30, X21, [SP+0x20+var_20],#0x20
+0x3df8c2c: B               GameModule.BattleGameSceneManager$$MarkWebGLNavigationTargetFieldDirty
+0x3df8c30: BL              il2cpp_codegen_raise_null_reference_exception

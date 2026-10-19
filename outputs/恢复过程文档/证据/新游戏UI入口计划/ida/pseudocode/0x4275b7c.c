@@ -1,0 +1,22 @@
+void *UIFramework_UIManager__get_SceneEventSystem(void *self, const MethodInfo *method)
+{
+  __int64 v3; // x20
+  void *result; // x0
+
+  if ( (byte_8FFFFD0 & 1) == 0 )
+  {
+    il2cpp_codegen_initialize_runtime_metadata((void **)&off_8CE71A0);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&off_8CEB3E0);
+    byte_8FFFFD0 = 1;
+  }
+  v3 = *((_QWORD *)self + 6);
+  if ( *((_DWORD *)off_8CEB3E0 + 56) == 0 )
+    il2cpp_codegen_runtime_class_init(off_8CEB3E0);
+  if ( (UnityEngine_Object__op_Implicit(v3, 0) & 1) != 0 )
+    return *((void **)self + 6);
+  if ( *((_DWORD *)off_8CE71A0 + 56) == 0 )
+    il2cpp_codegen_runtime_class_init(off_8CE71A0);
+  result = (void *)UnityEngine_EventSystems_EventSystem__get_current(0);
+  *((_QWORD *)self + 6) = result;
+  return result;
+}

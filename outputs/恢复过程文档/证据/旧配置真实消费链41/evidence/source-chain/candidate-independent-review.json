@@ -1,0 +1,307 @@
+{
+  "stage": 41,
+  "generatedUtc": "2026-10-19T09:30:04.176522+00:00",
+  "reviewerScope": "Independent source diff, declarations, original native exported pseudocode/ASM and csc evidence; no apply or Unity",
+  "files": [
+    {
+      "path": "Assets/Scripts/Assembly-CSharp/ljzs_lt/ConfigMgr.cs",
+      "sourceUnchanged": true,
+      "candidateMatchesWritePlan": true,
+      "metaMatchesWritePlan": true,
+      "oldMethodCount": 7,
+      "newMethodCount": 7,
+      "changedTokens": [
+        "0x6005AEA",
+        "0x6005AE7",
+        "0x6005AE8",
+        "0x6005AE9",
+        "0x6005AEB",
+        "0x6005AED"
+      ],
+      "addedTokens": [],
+      "removedTokens": [],
+      "signatureChanges": [],
+      "unplannedChangedTokens": [],
+      "fieldTypeAttributeSkeletonUnchanged": true,
+      "changedMethodDetails": [
+        {
+          "token": "0x6005AEA",
+          "rva": "0x4399F1C",
+          "signature": "[Address(RVA = \"0x4399F1C\", Offset = \"0x4395F1C\", VA = \"0x4399F1C\")]\n\t\t\tget",
+          "body": "if (_instance == null)\n\t\t\t    _instance = new ConfigMgr();\n\t\t\treturn _instance;",
+          "line": 189
+        },
+        {
+          "token": "0x6005AE7",
+          "rva": "0x4399578",
+          "signature": "[Address(RVA = \"0x4399578\", Offset = \"0x4395578\", VA = \"0x4399578\")]\n\t\tpublic void Initialize()",
+          "body": "GameFramework.ConfigRead.IsUserJsonUtility = true;\n\t\t\tGameFramework.AppSetting.IsUseMemoryPack = false;\n\t\t\tif (!IsInitialize)\n\t\t\t{\n\t\t\t    ReadConfig();\n\t\t\t    customRead();\n\t\t\t    IsInitialize = true;\n\t\t\t}",
+          "line": 199
+        },
+        {
+          "token": "0x6005AE8",
+          "rva": "0x4399658",
+          "signature": "[Address(RVA = \"0x4399658\", Offset = \"0x4395658\", VA = \"0x4399658\")]\n\t\tprivate void ReadConfig()",
+          "body": "GameFramework.ConfigRead.readConfigByUnityJson<GoalRewardConfig>(dicGoalReward);\n\t\t\tGameFramework.ConfigRead.readConfigByUnityJson<WorldCupdailyTaskConfig>(dicWorldCupdailyTask);\n\t\t\tGameFramework.ConfigRead.readConfigByUnityJson<WorldCupdailyPriceConfig>(dicWorldCupdailyPrice);\n\t\t\tGameFramework.ConfigRead.readConfigByUnityJson<PointShopConfig>(dicPointShop);\n\t\t\tGameFramework.ConfigRead.readConfigByUnityJson<WorldCuphow2PlayConfig>(dicWorldCuphow2Play);\n\t\t\tGameFramework.ConfigRead.readConfigByUnityJson<DiceConfigConfig>(dicDiceConfig);\n\t\t\tGameFramework.ConfigRead.readConfigByUnityJson<BuildConfigConfig>(dicBuildConfig);\n\t\t\tGameFramework.ConfigRead.readConfigByUnityJson<ChessboardConfig>(dicChessboard);\n\t\t\tGameFramework.ConfigRead.readConfigByUnityJson<PoolConfigConfig>(dicPoolConfig);\n\t\t\tGameFramework.ConfigRead.readConfigByUnityJson<RuinsConfigConfig>(dicRuinsConfig);\n\t\t\tGameFramework.ConfigRead.readConfigByUnityJson<DailyTaskConfig>(dicDailyTask);\n\t\t\tGameFramework.ConfigRead.readConfigByUnityJson<DailyPriceConfig>(dicDailyPrice);\n\t\t\tGameFramework.ConfigRead.readConfigByUnityJson<TotalDiceConfig>(dicTotalDice);\n\t\t\tGameFramework.ConfigRead.readConfigByUnityJson<LapsConfigConfig>(dicLapsConfig);\n\t\t\tGameFramework.ConfigRead.readConfigByUnityJson<SaleShopConfig>(dicSaleShop);\n\t\t\tGameFramework.ConfigRead.readConfigByUnityJson<How2PlayConfig>(dicHow2Play);\n\t\t\tGameFramework.ConfigRead.readConfigByUnityJson<PurchaseConfig>(dicPurchase);\n\t\t\tGameFramework.ConfigRead.readConfigByUnityJson<CdkConfig>(dicCdk);\n\t\t\tGameFramework.ConfigRead.readConfigByUnityJson<CompareCardInfoConfig>(dicCompareCardInfo);\n\t\t\tGameFramework.ConfigRead.readConfigByUnityJson<WordEmojiConfig>(dicWordEmoji);\n\t\t\tGameFramework.ConfigRead.readConfigByUnityJson<SubGameBuffConfig>(dicSubGameBuff);\n\t\t\tGameFramework.ConfigRead.readConfigByUnityJson<CompareShenqiInfoConfig>(dicCompareShenqiInfo);\n\t\t\tGameFramework.ConfigRead.readConfigByUnityJson<PropAttrBuffInfoConfig>(dicPropAttrBuffInfo);\n\t\t\tGameFramework.ConfigRead.readConfigByUnityJson<PropUpgradeInfoConfig>(dicPropUpgradeInfo);\n\t\t\tGameFramework.ConfigRead.readConfigByUnityJson<PropRankUpInfoConfig>(dicPropRankUpInfo);\n\t\t\tGameFramework.ConfigRead.readConfigByUnityJson<PropAttrEnumInfoConfig>(dicPropAttrEnumInfo);\n\t\t\tGameFramework.ConfigRead.readConfigByUnityJson<PropAttrTypeConfig>(dicPropAttrType);\n\t\t\tGameFramework.ConfigRead.readConfigByUnityJson<PropForgePowerConfig>(dicPropForgePower);\n\t\t\tGameFramework.ConfigRead.readConfigByUnityJson<AIPropInfoConfig>(dicAIPropInfo);\n\t\t\tGameFramework.ConfigRead.readConfigByUnityJson<AIPropInfoBConfig>(dicAIPropInfoB);\n\t\t\tGameFramework.ConfigRead.readConfigByUnityJson<AIPropInfoCConfig>(dicAIPropInfoC);\n\t\t\tGameFramework.ConfigRead.readConfigByUnityJson<LimitedPropInfoConfig>(dicLimitedPropInfo);\n\t\t\tGameFramework.ConfigRead.readConfigByUnityJson<LimitedPropPackConfig>(dicLimitedPropPack);\n\t\t\tGameFramework.ConfigRead.readConfigByUnityJson<CrystalPackConfig>(dicCrystalPack);\n\t\t\tGameFramework.ConfigRead.readConfigByUnityJson<LimitedPropOrderConfig>(dicLimitedPropOrder);\n\t\t\tGameFramework.ConfigRead.readConfigByUnityJson<CheckInRewardsIndexConfig>(dicCheckInRewardsIndex);\n\t\t\tGameFramework.ConfigRead.readConfigByUnityJson<CheckInRewardsConfig>(dicCheckInRewards);\n\t\t\tGameFramework.ConfigRead.readConfigByUnityJson<CumulativeRewardConfig>(dicCumulativeReward);\n\t\t\tsettingConfig = GameFramework.ConfigRead.readConfigVByUnityJson<SettingConfig>();\n\t\t\tworldCupbaseConfigConfig = GameFramework.ConfigRead.readConfigVByUnityJson<WorldCupbaseConfigConfig>();\n\t\t\tbaseConfigConfig = GameFramework.ConfigRead.readConfigVByUnityJson<BaseConfigConfig>();",
+          "line": 213
+        },
+        {
+          "token": "0x6005AE9",
+          "rva": "0x4399EBC",
+          "signature": "[Address(RVA = \"0x4399EBC\", Offset = \"0x4395EBC\", VA = \"0x4399EBC\")]\n\t\tpublic void SetConfigABRes(ResourcesInfo resourcesInfo)",
+          "body": "GameFramework.ConfigRead.configRes = resourcesInfo;",
+          "line": 260
+        },
+        {
+          "token": "0x6005AEB",
+          "rva": "0x4399BEC",
+          "signature": "[Address(RVA = \"0x4399BEC\", Offset = \"0x4395BEC\", VA = \"0x4399BEC\")]\n\t\tprivate void customRead()",
+          "body": "dicPoolConfigByPoolId.Clear();\n\t\t\tforeach (KeyValuePair<object, PoolConfigConfig> pair in dicPoolConfig)\n\t\t\t{\n\t\t\t    PoolConfigConfig value = pair.Value;\n\t\t\t    if (value == null || value.pool_id < 1)\n\t\t\t        continue;\n\t\t\t    List<PoolConfigConfig> list;\n\t\t\t    if (!dicPoolConfigByPoolId.TryGetValue(value.pool_id, out list))\n\t\t\t    {\n\t\t\t        list = new List<PoolConfigConfig>();\n\t\t\t        dicPoolConfigByPoolId.Add(value.pool_id, list);\n\t\t\t    }\n\t\t\t    list.Add(value);\n\t\t\t}",
+          "line": 267
+        },
+        {
+          "token": "0x6005AED",
+          "rva": "0x4399F90",
+          "signature": "[Address(RVA = \"0x4399F90\", Offset = \"0x4395F90\", VA = \"0x4399F90\")]\n\t\tpublic ConfigMgr()",
+          "body": "dicGoalReward = new Dictionary<object, GoalRewardConfig>();\n\t\t\tdicWorldCupdailyTask = new Dictionary<object, WorldCupdailyTaskConfig>();\n\t\t\tdicWorldCupdailyPrice = new Dictionary<object, WorldCupdailyPriceConfig>();\n\t\t\tdicPointShop = new Dictionary<object, PointShopConfig>();\n\t\t\tdicWorldCuphow2Play = new Dictionary<object, WorldCuphow2PlayConfig>();\n\t\t\tdicDiceConfig = new Dictionary<object, DiceConfigConfig>();\n\t\t\tdicBuildConfig = new Dictionary<object, BuildConfigConfig>();\n\t\t\tdicChessboard = new Dictionary<object, ChessboardConfig>();\n\t\t\tdicPoolConfig = new Dictionary<object, PoolConfigConfig>();\n\t\t\tdicRuinsConfig = new Dictionary<object, RuinsConfigConfig>();\n\t\t\tdicDailyTask = new Dictionary<object, DailyTaskConfig>();\n\t\t\tdicDailyPrice = new Dictionary<object, DailyPriceConfig>();\n\t\t\tdicTotalDice = new Dictionary<object, TotalDiceConfig>();\n\t\t\tdicLapsConfig = new Dictionary<object, LapsConfigConfig>();\n\t\t\tdicSaleShop = new Dictionary<object, SaleShopConfig>();\n\t\t\tdicHow2Play = new Dictionary<object, How2PlayConfig>();\n\t\t\tdicPurchase = new Dictionary<object, PurchaseConfig>();\n\t\t\tdicCdk = new Dictionary<object, CdkConfig>();\n\t\t\tdicCompareCardInfo = new Dictionary<object, CompareCardInfoConfig>();\n\t\t\tdicWordEmoji = new Dictionary<object, WordEmojiConfig>();\n\t\t\tdicSubGameBuff = new Dictionary<object, SubGameBuffConfig>();\n\t\t\tdicCompareShenqiInfo = new Dictionary<object, CompareShenqiInfoConfig>();\n\t\t\tdicPropAttrBuffInfo = new Dictionary<object, PropAttrBuffInfoConfig>();\n\t\t\tdicPropUpgradeInfo = new Dictionary<object, PropUpgradeInfoConfig>();\n\t\t\tdicPropRankUpInfo = new Dictionary<object, PropRankUpInfoConfig>();\n\t\t\tdicPropAttrEnumInfo = new Dictionary<object, PropAttrEnumInfoConfig>();\n\t\t\tdicPropAttrType = new Dictionary<object, PropAttrTypeConfig>();\n\t\t\tdicPropForgePower = new Dictionary<object, PropForgePowerConfig>();\n\t\t\tdicAIPropInfo = new Dictionary<object, AIPropInfoConfig>();\n\t\t\tdicAIPropInfoB = new Dictionary<object, AIPropInfoBConfig>();\n\t\t\tdicAIPropInfoC = new Dictionary<object, AIPropInfoCConfig>();\n\t\t\tdicLimitedPropInfo = new Dictionary<object, LimitedPropInfoConfig>();\n\t\t\tdicLimitedPropPack = new Dictionary<object, LimitedPropPackConfig>();\n\t\t\tdicCrystalPack = new Dictionary<object, CrystalPackConfig>();\n\t\t\tdicLimitedPropOrder = new Dictionary<object, LimitedPropOrderConfig>();\n\t\t\tdicCheckInRewardsIndex = new Dictionary<object, CheckInRewardsIndexConfig>();\n\t\t\tdicCheckInRewards = new Dictionary<object, CheckInRewardsConfig>();\n\t\t\tdicCumulativeReward = new Dictionary<object, CumulativeRewardConfig>();\n\t\t\tdicPoolConfigByPoolId = new Dictionary<int, List<PoolConfigConfig>>();",
+          "line": 293
+        }
+      ],
+      "passed": true
+    },
+    {
+      "path": "Assets/Scripts/GFRunning/GameFramework/ConfigRead.cs",
+      "sourceUnchanged": true,
+      "candidateMatchesWritePlan": true,
+      "metaMatchesWritePlan": true,
+      "oldMethodCount": 80,
+      "newMethodCount": 81,
+      "changedTokens": [
+        "0x6005731",
+        "0x6005734",
+        "0x6005735",
+        "0x6005737",
+        "0x6005750",
+        "0x600575E",
+        "0x600575F"
+      ],
+      "addedTokens": [
+        "0x6005765"
+      ],
+      "removedTokens": [],
+      "signatureChanges": [],
+      "unplannedChangedTokens": [],
+      "fieldTypeAttributeSkeletonUnchanged": true,
+      "changedMethodDetails": [
+        {
+          "token": "0x6005731",
+          "rva": null,
+          "signature": "public static T readConfigVByUnityJson<T>() where T : BaseConfig",
+          "body": "string configName = typeof(T).Name;\n\t\t\tTextAsset asset = _0083_0098it_007EW(configName);\n\t\t\tif (asset != null)\n\t\t\t{\n\t\t\t    string text = asset.text;\n\t\t\t    return JsonUtility.FromJson<T>(text.Substring(text.IndexOf(\"{\")));\n\t\t\t}\n\t\t\tCLog.Error(\"配置文件不存在\" + configName);\n\t\t\treturn null;",
+          "line": 256
+        },
+        {
+          "token": "0x6005734",
+          "rva": "0x7166F08",
+          "signature": "[Address(RVA = \"0x7166F08\", Offset = \"0x7162F08\", VA = \"0x7166F08\")]\n\t\tpublic static UnityEngine.Object GetConfigDataForNewResWebgl(string _0093_00B8_0082eyc)",
+          "body": "UnityEngine.Object asset;\n\t\t\tif (newResLoadForWebgl == null)\n\t\t\t    CLog.Error(\"newResLoadForWebgl is null, unable to get config object. Requested configName=\" + _0093_00B8_0082eyc);\n\t\t\telse if (newResLoadForWebgl.TryGetValue(_0093_00B8_0082eyc, out asset))\n\t\t\t    return asset;\n\t\t\telse\n\t\t\t    CLog.Error(\"GetConfig Object Failed ObjName=\" + _0093_00B8_0082eyc);\n\t\t\treturn null;",
+          "line": 282
+        },
+        {
+          "token": "0x6005735",
+          "rva": null,
+          "signature": "private static void _0060_007Fit_008Bg<T>(string _00AD_0092zG_00ABd, Dictionary<object, T> _0081C_0082m_00A4G, string _0093_00B8_0082eyc) where T : BaseConfig",
+          "body": "List<T> list = _0060_007Fit_008Bg<T>(_00AD_0092zG_00ABd);\n\t\t\tif (list != null)\n\t\t\t{\n\t\t\t    for (int i = 0; i < list.Count; i++)\n\t\t\t    {\n\t\t\t        if (_0081C_0082m_00A4G.ContainsKey(list[i].UniqueID))\n\t\t\t            CLog.Error(string.Format(\"表[{0}]中有相同键({1})\", _0093_00B8_0082eyc, list[i].UniqueID));\n\t\t\t        else\n\t\t\t            _0081C_0082m_00A4G.Add(list[i].UniqueID, list[i]);\n\t\t\t    }\n\t\t\t}",
+          "line": 296
+        },
+        {
+          "token": "0x6005737",
+          "rva": null,
+          "signature": "private static void A_0086_00A3_00B8_00BDi<T>(Dictionary<object, T> _0081C_0082m_00A4G, TextAsset _0094wxV_00B9N, string _0093_00B8_0082eyc, ConfigType _009CqHÁ_009Bn) where T : BaseConfig",
+          "body": "if (_0094wxV_00B9N != null)\n\t\t\t{\n\t\t\t    switch (_009CqHÁ_009Bn)\n\t\t\t    {\n\t\t\t        case ConfigType.LitJson:\n\t\t\t            _00B9_0087_00A9_00BF_0097_00BF(_0094wxV_00B9N.text, _0081C_0082m_00A4G, _0093_00B8_0082eyc);\n\t\t\t            return;\n\t\t\t        case ConfigType.UnityJson:\n\t\t\t            _0060_007Fit_008Bg(_0094wxV_00B9N.text, _0081C_0082m_00A4G, _0093_00B8_0082eyc);\n\t\t\t            return;\n\t\t\t        case ConfigType.MemoryPack:\n\t\t\t            _00A3_00B1f_008AI_00BF(_0094wxV_00B9N.bytes, _0081C_0082m_00A4G, _0093_00B8_0082eyc);\n\t\t\t            return;\n\t\t\t        default:\n\t\t\t            CLog.Error(\"ConfigType error\" + _009CqHÁ_009Bn.ToString());\n\t\t\t            return;\n\t\t\t    }\n\t\t\t}\n\t\t\tCLog.Error(\"配置文件不存在\" + _0093_00B8_0082eyc);",
+          "line": 319
+        },
+        {
+          "token": "0x6005750",
+          "rva": null,
+          "signature": "private static List<T> _0060_007Fit_008Bg<T>(string _00AD_0092zG_00ABd) where T : BaseConfig",
+          "body": "return JsonUtility.FromJson<UnSerialization<T>>(_00AD_0092zG_00ABd.Substring(_00AD_0092zG_00ABd.IndexOf(\"{\"))).Datas;",
+          "line": 496
+        },
+        {
+          "token": "0x600575E",
+          "rva": "0x7168D84",
+          "signature": "[Address(RVA = \"0x7168D84\", Offset = \"0x7164D84\", VA = \"0x7168D84\")]\n\t\tprivate static TextAsset _0083_0098it_007EW(string _0093_00B8_0082eyc)",
+          "body": "if (configRes == null && !AppSetting.UseNewRes)\n\t\t\t    CLog.Error(\"ResourcesInfo为NULL\");\n\t\t\tif (isUseNewRes)\n\t\t\t{\n\t\t\t    if (_0092_0096uWU_008B)\n\t\t\t    {\n\t\t\t        if (newResLoadForWebgl == null)\n\t\t\t            CLog.Error(\"allAssetsOperationHandle  == null\");\n\t\t\t        return GetConfigDataForNewResWebgl(_0093_00B8_0082eyc) as TextAsset;\n\t\t\t    }\n\t\t\t    AssetOperationHandle handle = NewResLoadHelper.LoadAssetSync<TextAsset>(_0093_00B8_0082eyc);\n\t\t\t    TextAsset asset = (TextAsset)handle.mainObject;\n\t\t\t    handle.Release();\n\t\t\t    return asset;\n\t\t\t}\n\t\t\treturn configRes.LoadAsset<TextAsset>(null, _0093_00B8_0082eyc);",
+          "line": 587
+        },
+        {
+          "token": "0x600575F",
+          "rva": null,
+          "signature": "public static void readConfigByUnityJson<T>(Dictionary<object, T> _0081C_0082m_00A4G) where T : BaseConfig",
+          "body": "string configName = typeof(T).Name;\n\t\t\tTextAsset asset = _0083_0098it_007EW(configName);\n\t\t\tA_0086_00A3_00B8_00BDi(_0081C_0082m_00A4G, asset, configName, ConfigType.UnityJson);\n\t\t\tn_00B9XZd_009C++;",
+          "line": 609
+        },
+        {
+          "token": "0x6005765",
+          "rva": "0x716C144",
+          "signature": "[Address(RVA = \"0x716C144\", Offset = \"0x7168144\", VA = \"0x716C144\")]\n        static ConfigRead()",
+          "body": "IsUserJsonUtility = false;\n            isUseNewRes = AppSetting.UseNewRes;\n            n_00B9XZd_009C = 0;\n            uGÀ_009AV_00A1 = 0;\n            configAssetbundle = \"Data/Config/\".TrimEnd('/');\n            _0092_0096uWU_008B = false;",
+          "line": 729
+        }
+      ],
+      "passed": true
+    },
+    {
+      "path": "Assets/Scripts/GFRunning/GameFramework/BaseConfig.cs",
+      "sourceUnchanged": true,
+      "candidateMatchesWritePlan": true,
+      "metaMatchesWritePlan": true,
+      "oldMethodCount": 18,
+      "newMethodCount": 18,
+      "changedTokens": [
+        "0x600571D"
+      ],
+      "addedTokens": [],
+      "removedTokens": [],
+      "signatureChanges": [],
+      "unplannedChangedTokens": [],
+      "fieldTypeAttributeSkeletonUnchanged": true,
+      "changedMethodDetails": [
+        {
+          "token": "0x600571D",
+          "rva": "0x71656C0",
+          "signature": "[Address(RVA = \"0x71656C0\", Offset = \"0x71616C0\", VA = \"0x71656C0\", Slot = \"4\")]\n\t\t\tget",
+          "body": "throw new NotImplementedException();",
+          "line": 151
+        }
+      ],
+      "passed": true
+    }
+  ],
+  "candidateDirectoryFiles": [
+    "Assets/Scripts/Assembly-CSharp/ljzs_lt/ConfigMgr.cs",
+    "Assets/Scripts/GFRunning/GameFramework/BaseConfig.cs",
+    "Assets/Scripts/GFRunning/GameFramework/ConfigRead.cs"
+  ],
+  "candidateDirectoryOnlyOwnedFiles": true,
+  "nativeSemanticReview": [
+    {
+      "tokens": [
+        "0x6005AEA"
+      ],
+      "native": "ida/pseudocode/0x4399f1c.c",
+      "finding": "Reference-null singleton allocation/return preserved"
+    },
+    {
+      "tokens": [
+        "0x6005AE7"
+      ],
+      "native": "ida/pseudocode/0x4399578.c",
+      "finding": "JSON flag true and AppSetting memorypack false before once guard; ReadConfig then customRead then completion flag true"
+    },
+    {
+      "tokens": [
+        "0x6005AE8"
+      ],
+      "native": "ida/pseudocode/0x4399658.c",
+      "finding": "38 table generic calls followed by Setting, WorldCupbase, Base objects in original metadata order"
+    },
+    {
+      "tokens": [
+        "0x6005AE9"
+      ],
+      "native": "ida/pseudocode/0x4399ebc.c",
+      "finding": "Original ResourcesInfo reference stored to ConfigRead.configRes; no replacement source"
+    },
+    {
+      "tokens": [
+        "0x6005AEB"
+      ],
+      "native": "ida/pseudocode/0x4399bec.c",
+      "finding": "Pool grouping clears first, skips null and pool_id<1, retains original row object in each list"
+    },
+    {
+      "tokens": [
+        "0x6005AED"
+      ],
+      "native": "ida/pseudocode/0x4399f90.c",
+      "finding": "38 typed object dictionaries and int->List pool map allocated in field order; existing fields unchanged"
+    },
+    {
+      "tokens": [
+        "0x6005731"
+      ],
+      "native": "ida/pseudocode/0x4b8d360.c",
+      "finding": "Exact typeof(T).Name; Unity object null check, substring from first brace, FromJson<T>; missing asset logs and null"
+    },
+    {
+      "tokens": [
+        "0x6005735"
+      ],
+      "native": "ida/pseudocode/0x4b8bf38.c and .asm.txt",
+      "finding": "No clear; null list no-op; repeated UniqueID evaluations preserved; duplicate key logs and retains first; null row/key exceptions propagate"
+    },
+    {
+      "tokens": [
+        "0x6005737"
+      ],
+      "native": "ida/pseudocode/0x4b8b9b0.c and .asm.txt",
+      "finding": "TextAsset Unity null gate and 0/1/2 parser dispatch; default enum/missing asset log paths preserved"
+    },
+    {
+      "tokens": [
+        "0x6005750"
+      ],
+      "native": "ida/pseudocode/0x4b8beb4.c",
+      "finding": "Substring from first brace then original UnSerialization<T>.Datas field; no replacement wrapper"
+    },
+    {
+      "tokens": [
+        "0x600575E"
+      ],
+      "native": "ida/pseudocode/0x7168d84.c and .asm.txt",
+      "finding": "Original configRes/AppSetting diagnostic gate, cached isUseNewRes gate, WebGL lookup, sync load cast-release-return order; old ResourcesInfo.LoadAsset<TextAsset>(null,name)"
+    },
+    {
+      "tokens": [
+        "0x600575F"
+      ],
+      "native": "ida/pseudocode/0x4b8cadc.c",
+      "finding": "Resolver then JSON dispatcher then counter increment; thrown parse/key failure prevents increment"
+    },
+    {
+      "tokens": [
+        "0x6005734"
+      ],
+      "native": "ida/pseudocode/0x7166f08.c",
+      "finding": "WebGL TryGetValue returns original Unity object; null/missing diagnostic paths return null"
+    },
+    {
+      "tokens": [
+        "0x6005765"
+      ],
+      "native": "ida/pseudocode/0x716c144.c and .asm.txt",
+      "finding": "Added missing original cctor; bool defaults, AppSetting-cached mode, both counters zero, Data/Config slash trim, WebGL flag false"
+    },
+    {
+      "tokens": [
+        "0x600571D"
+      ],
+      "native": "ida/pseudocode/0x71656c0.c and .asm.txt",
+      "finding": "Original NotImplementedException restored; derived UniqueID dependency left explicit"
+    }
+  ],
+  "internalActionableFindings": [],
+  "externalIntegrationGates": [
+    "38 table UniqueID overrides still return null; no fully typed real dictionary consumption until exact row dependency candidates are integrated",
+    "AppSetting UseNewRes and IsUseMemoryPack properties remain placeholders; candidate preserves original calls but their backing-field semantics are external",
+    "CLog.Error currently empty; controlled logger tests cannot imply production diagnostic emission",
+    "Unity JsonUtility and original resource provider integration remain runtime verification by root",
+    "Unrestored LitJson/MemoryPack and async methods retain baseline bodies; current ConfigMgr path uses synchronous UnityJson only"
+  ],
+  "sourceWrites": false,
+  "applyExecuted": false,
+  "unityStarted": false,
+  "passed": true
+}

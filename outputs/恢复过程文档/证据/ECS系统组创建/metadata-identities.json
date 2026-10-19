@@ -1,0 +1,612 @@
+[
+  {
+    "type": "Unity.Entities.ComponentSystemGroup",
+    "token": "0x0200003A",
+    "baseType": "Unity.Entities.SystemBase",
+    "attributes": "Public, Abstract, BeforeFieldInit",
+    "fields": [
+      {
+        "Name": "m_systemSortDirty",
+        "type": "System.Boolean",
+        "IsStatic": false,
+        "Offset": 24,
+        "token": "0x04000066"
+      },
+      {
+        "Name": "InitialSystemGroupAllocatorBlockSizeInBytes",
+        "type": "System.Int32",
+        "IsStatic": true,
+        "Offset": 0,
+        "token": "0x04000067"
+      },
+      {
+        "Name": "m_EnableSystemSorting",
+        "type": "System.Boolean",
+        "IsStatic": false,
+        "Offset": 25,
+        "token": "0x04000068"
+      },
+      {
+        "Name": "\u003CCreated\u003Ek__BackingField",
+        "type": "System.Boolean",
+        "IsStatic": false,
+        "Offset": 26,
+        "token": "0x04000069"
+      },
+      {
+        "Name": "m_managedSystemsToUpdate",
+        "type": "System.Collections.Generic.List\u00601\u003CUnity.Entities.ComponentSystemBase\u003E",
+        "IsStatic": false,
+        "Offset": 32,
+        "token": "0x0400006A"
+      },
+      {
+        "Name": "m_managedSystemsToRemove",
+        "type": "System.Collections.Generic.List\u00601\u003CUnity.Entities.ComponentSystemBase\u003E",
+        "IsStatic": false,
+        "Offset": 40,
+        "token": "0x0400006B"
+      },
+      {
+        "Name": "m_MasterUpdateList",
+        "type": "Unity.Collections.LowLevel.Unsafe.UnsafeList\u00601\u003CUnity.Entities.UpdateIndex\u003E",
+        "IsStatic": false,
+        "Offset": 48,
+        "token": "0x0400006C"
+      },
+      {
+        "Name": "m_UnmanagedSystemsToUpdate",
+        "type": "Unity.Collections.LowLevel.Unsafe.UnsafeList\u00601\u003CUnity.Entities.SystemHandle\u003E",
+        "IsStatic": false,
+        "Offset": 72,
+        "token": "0x0400006D"
+      },
+      {
+        "Name": "m_UnmanagedSystemsToRemove",
+        "type": "Unity.Collections.LowLevel.Unsafe.UnsafeList\u00601\u003CUnity.Entities.SystemHandle\u003E",
+        "IsStatic": false,
+        "Offset": 96,
+        "token": "0x0400006E"
+      },
+      {
+        "Name": "m_RateGroupAllocators",
+        "type": "Unity.Collections.DoubleRewindableAllocators*",
+        "IsStatic": false,
+        "Offset": 120,
+        "token": "0x0400006F"
+      },
+      {
+        "Name": "\u003CRateGroupAllocatorsCreated\u003Ek__BackingField",
+        "type": "System.Byte",
+        "IsStatic": false,
+        "Offset": 128,
+        "token": "0x04000070"
+      },
+      {
+        "Name": "m_RateManager",
+        "type": "Unity.Entities.IRateManager",
+        "IsStatic": false,
+        "Offset": 136,
+        "token": "0x04000071"
+      },
+      {
+        "Name": "\u003CCurrentGroupAllocators\u003Ek__BackingField",
+        "type": "Unity.Collections.DoubleRewindableAllocators*",
+        "IsStatic": false,
+        "Offset": 144,
+        "token": "0x04000072"
+      }
+    ],
+    "methods": [
+      {
+        "Name": "get_EnableSystemSorting",
+        "signature": "System.Boolean Unity.Entities.ComponentSystemGroup::get_EnableSystemSorting()",
+        "IsStatic": false,
+        "token": "0x060001A5",
+        "address": "0x7E435C8"
+      },
+      {
+        "Name": "set_EnableSystemSorting",
+        "signature": "System.Void Unity.Entities.ComponentSystemGroup::set_EnableSystemSorting(System.Boolean value)",
+        "IsStatic": false,
+        "token": "0x060001A6",
+        "address": "0x7E435D0"
+      },
+      {
+        "Name": "get_Created",
+        "signature": "System.Boolean Unity.Entities.ComponentSystemGroup::get_Created()",
+        "IsStatic": false,
+        "token": "0x060001A7",
+        "address": "0x7E435F0"
+      },
+      {
+        "Name": "set_Created",
+        "signature": "System.Void Unity.Entities.ComponentSystemGroup::set_Created(System.Boolean value)",
+        "IsStatic": false,
+        "token": "0x060001A8",
+        "address": "0x7E435F8"
+      },
+      {
+        "Name": "get_ManagedSystems",
+        "signature": "System.Collections.Generic.IReadOnlyList\u00601\u003CUnity.Entities.ComponentSystemBase\u003E Unity.Entities.ComponentSystemGroup::get_ManagedSystems()",
+        "IsStatic": false,
+        "token": "0x060001A9",
+        "address": "0x7E43604"
+      },
+      {
+        "Name": "get_UnmanagedSystems",
+        "signature": "Unity.Collections.LowLevel.Unsafe.UnsafeList\u00601\u003CUnity.Entities.SystemHandle\u003E Unity.Entities.ComponentSystemGroup::get_UnmanagedSystems()",
+        "IsStatic": false,
+        "token": "0x060001AA",
+        "address": "0x7E4360C"
+      },
+      {
+        "Name": "GetUnmanagedSystems",
+        "signature": "Unity.Collections.NativeList\u00601\u003CUnity.Entities.SystemHandle\u003E Unity.Entities.ComponentSystemGroup::GetUnmanagedSystems(Unity.Collections.Allocator allocator)",
+        "IsStatic": false,
+        "token": "0x060001AB",
+        "address": "0x7E43620"
+      },
+      {
+        "Name": "GetAllSystems",
+        "signature": "Unity.Collections.NativeList\u00601\u003CUnity.Entities.SystemHandle\u003E Unity.Entities.ComponentSystemGroup::GetAllSystems(Unity.Collections.Allocator allocator)",
+        "IsStatic": false,
+        "token": "0x060001AC",
+        "address": "0x7E436D4"
+      },
+      {
+        "Name": "get_RateGroupAllocatorsCreated",
+        "signature": "System.Byte Unity.Entities.ComponentSystemGroup::get_RateGroupAllocatorsCreated()",
+        "IsStatic": false,
+        "token": "0x060001AD",
+        "address": "0x7E4382C"
+      },
+      {
+        "Name": "set_RateGroupAllocatorsCreated",
+        "signature": "System.Void Unity.Entities.ComponentSystemGroup::set_RateGroupAllocatorsCreated(System.Byte value)",
+        "IsStatic": false,
+        "token": "0x060001AE",
+        "address": "0x7E43834"
+      },
+      {
+        "Name": "OnCreate",
+        "signature": "System.Void Unity.Entities.ComponentSystemGroup::OnCreate()",
+        "IsStatic": false,
+        "token": "0x060001AF",
+        "address": "0x7E4383C"
+      },
+      {
+        "Name": "OnDestroy",
+        "signature": "System.Void Unity.Entities.ComponentSystemGroup::OnDestroy()",
+        "IsStatic": false,
+        "token": "0x060001B0",
+        "address": "0x7E4395C"
+      },
+      {
+        "Name": "CheckCreated",
+        "signature": "System.Void Unity.Entities.ComponentSystemGroup::CheckCreated()",
+        "IsStatic": false,
+        "token": "0x060001B1",
+        "address": "0x7E43AD0"
+      },
+      {
+        "Name": "AddSystemToUpdateList",
+        "signature": "System.Void Unity.Entities.ComponentSystemGroup::AddSystemToUpdateList(Unity.Entities.ComponentSystemBase sys)",
+        "IsStatic": false,
+        "token": "0x060001B2",
+        "address": "0x7E43B4C"
+      },
+      {
+        "Name": "UnmanagedSystemIndex",
+        "signature": "System.Int32 Unity.Entities.ComponentSystemGroup::UnmanagedSystemIndex(Unity.Entities.SystemHandle sysHandle)",
+        "IsStatic": false,
+        "token": "0x060001B3",
+        "address": "0x7E43DC0"
+      },
+      {
+        "Name": "AddSystemToUpdateList",
+        "signature": "System.Void Unity.Entities.ComponentSystemGroup::AddSystemToUpdateList(Unity.Entities.SystemHandle sysHandle)",
+        "IsStatic": false,
+        "token": "0x060001B4",
+        "address": "0x7E43E4C"
+      },
+      {
+        "Name": "RemoveSystemFromUpdateList",
+        "signature": "System.Void Unity.Entities.ComponentSystemGroup::RemoveSystemFromUpdateList(Unity.Entities.ComponentSystemBase sys)",
+        "IsStatic": false,
+        "token": "0x060001B5",
+        "address": "0x7E44120"
+      },
+      {
+        "Name": "RemoveSystemFromUpdateList",
+        "signature": "System.Void Unity.Entities.ComponentSystemGroup::RemoveSystemFromUpdateList(Unity.Entities.SystemHandle sys)",
+        "IsStatic": false,
+        "token": "0x060001B6",
+        "address": "0x7E44218"
+      },
+      {
+        "Name": "RemovePending",
+        "signature": "System.Void Unity.Entities.ComponentSystemGroup::RemovePending()",
+        "IsStatic": false,
+        "token": "0x060001B7",
+        "address": "0x7E44350"
+      },
+      {
+        "Name": "RemoveSystemsFromUnsortedUpdateList",
+        "signature": "System.Void Unity.Entities.ComponentSystemGroup::RemoveSystemsFromUnsortedUpdateList()",
+        "IsStatic": false,
+        "token": "0x060001B8",
+        "address": "0x7E445E4"
+      },
+      {
+        "Name": "RecurseUpdate",
+        "signature": "System.Void Unity.Entities.ComponentSystemGroup::RecurseUpdate()",
+        "IsStatic": false,
+        "token": "0x060001B9",
+        "address": "0x7E452E0"
+      },
+      {
+        "Name": "GenerateMasterUpdateList",
+        "signature": "System.Void Unity.Entities.ComponentSystemGroup::GenerateMasterUpdateList()",
+        "IsStatic": false,
+        "token": "0x060001BA",
+        "address": "0x7E454D0"
+      },
+      {
+        "Name": "ComputeSystemOrdering",
+        "signature": "System.Int32 Unity.Entities.ComponentSystemGroup::ComputeSystemOrdering(Unity.Entities.SystemTypeIndex sysType, Unity.Entities.SystemTypeIndex ourTypeIndex)",
+        "IsStatic": true,
+        "token": "0x060001BB",
+        "address": "0x7E46094"
+      },
+      {
+        "Name": "SortSystems",
+        "signature": "System.Void Unity.Entities.ComponentSystemGroup::SortSystems()",
+        "IsStatic": false,
+        "token": "0x060001BC",
+        "address": "0x7E46EC0"
+      },
+      {
+        "Name": "OnStopRunningInternal",
+        "signature": "System.Void Unity.Entities.ComponentSystemGroup::OnStopRunningInternal()",
+        "IsStatic": false,
+        "token": "0x060001BD",
+        "address": "0x7E46ED8"
+      },
+      {
+        "Name": "get_FixedRateManager",
+        "signature": "Unity.Entities.IRateManager Unity.Entities.ComponentSystemGroup::get_FixedRateManager()",
+        "IsStatic": false,
+        "token": "0x060001BE",
+        "address": "0x7E47164"
+      },
+      {
+        "Name": "set_FixedRateManager",
+        "signature": "System.Void Unity.Entities.ComponentSystemGroup::set_FixedRateManager(Unity.Entities.IRateManager value)",
+        "IsStatic": false,
+        "token": "0x060001BF",
+        "address": "0x7E4716C"
+      },
+      {
+        "Name": "get_RateManager",
+        "signature": "Unity.Entities.IRateManager Unity.Entities.ComponentSystemGroup::get_RateManager()",
+        "IsStatic": false,
+        "token": "0x060001C0",
+        "address": "0x7E47174"
+      },
+      {
+        "Name": "set_RateManager",
+        "signature": "System.Void Unity.Entities.ComponentSystemGroup::set_RateManager(Unity.Entities.IRateManager value)",
+        "IsStatic": false,
+        "token": "0x060001C1",
+        "address": "0x7E4717C"
+      },
+      {
+        "Name": "SetRateManagerCreateAllocator",
+        "signature": "System.Void Unity.Entities.ComponentSystemGroup::SetRateManagerCreateAllocator(Unity.Entities.IRateManager rateManager)",
+        "IsStatic": false,
+        "token": "0x060001C2",
+        "address": "0x7E47184"
+      },
+      {
+        "Name": "get_RateGroupAllocators",
+        "signature": "Unity.Collections.DoubleRewindableAllocators* Unity.Entities.ComponentSystemGroup::get_RateGroupAllocators()",
+        "IsStatic": false,
+        "token": "0x060001C3",
+        "address": "0x7E47238"
+      },
+      {
+        "Name": "get_CurrentGroupAllocators",
+        "signature": "Unity.Collections.DoubleRewindableAllocators* Unity.Entities.ComponentSystemGroup::get_CurrentGroupAllocators()",
+        "IsStatic": false,
+        "token": "0x060001C4",
+        "address": "0x7E47240"
+      },
+      {
+        "Name": "set_CurrentGroupAllocators",
+        "signature": "System.Void Unity.Entities.ComponentSystemGroup::set_CurrentGroupAllocators(Unity.Collections.DoubleRewindableAllocators* value)",
+        "IsStatic": false,
+        "token": "0x060001C5",
+        "address": "0x7E47248"
+      },
+      {
+        "Name": "OnUpdate",
+        "signature": "System.Void Unity.Entities.ComponentSystemGroup::OnUpdate()",
+        "IsStatic": false,
+        "token": "0x060001C6",
+        "address": "0x7E47250"
+      },
+      {
+        "Name": "UpdateAllSystems",
+        "signature": "System.Void Unity.Entities.ComponentSystemGroup::UpdateAllSystems()",
+        "IsStatic": false,
+        "token": "0x060001C7",
+        "address": "0x7E47324"
+      },
+      {
+        "Name": "CreateRateGroupAllocators",
+        "signature": "System.Void Unity.Entities.ComponentSystemGroup::CreateRateGroupAllocators()",
+        "IsStatic": false,
+        "token": "0x060001C8",
+        "address": "0x7E471A8"
+      },
+      {
+        "Name": "DestroyRateGroupAllocators",
+        "signature": "System.Void Unity.Entities.ComponentSystemGroup::DestroyRateGroupAllocators()",
+        "IsStatic": false,
+        "token": "0x060001C9",
+        "address": "0x7E43A5C"
+      },
+      {
+        "Name": ".ctor",
+        "signature": "System.Void Unity.Entities.ComponentSystemGroup::.ctor()",
+        "IsStatic": false,
+        "token": "0x060001CA",
+        "address": "0x7E4752C"
+      }
+    ]
+  },
+  {
+    "type": "Pathfinding.ECS.AIMovementSystemGroup\u002BTimeScaledRateManager",
+    "token": "0x02000359",
+    "baseType": "System.Object",
+    "attributes": "NestedPublic, BeforeFieldInit",
+    "fields": [
+      {
+        "Name": "numUpdatesThisFrame",
+        "type": "System.Int32",
+        "IsStatic": false,
+        "Offset": 16,
+        "token": "0x04000EC1"
+      },
+      {
+        "Name": "updateIndex",
+        "type": "System.Int32",
+        "IsStatic": false,
+        "Offset": 20,
+        "token": "0x04000EC2"
+      },
+      {
+        "Name": "stepDt",
+        "type": "System.Single",
+        "IsStatic": false,
+        "Offset": 24,
+        "token": "0x04000EC3"
+      },
+      {
+        "Name": "maximumDt",
+        "type": "System.Single",
+        "IsStatic": false,
+        "Offset": 28,
+        "token": "0x04000EC4"
+      },
+      {
+        "Name": "ownProcessingTimePerIteration",
+        "type": "System.Single",
+        "IsStatic": false,
+        "Offset": 32,
+        "token": "0x04000EC5"
+      },
+      {
+        "Name": "cheapTimeDataQueue",
+        "type": "Unity.Collections.NativeList\u00601\u003CUnity.Core.TimeData\u003E",
+        "IsStatic": false,
+        "Offset": 40,
+        "token": "0x04000EC6"
+      },
+      {
+        "Name": "timeDataQueue",
+        "type": "Unity.Collections.NativeList\u00601\u003CUnity.Core.TimeData\u003E",
+        "IsStatic": false,
+        "Offset": 48,
+        "token": "0x04000EC7"
+      },
+      {
+        "Name": "lastFullSimulation",
+        "type": "System.Double",
+        "IsStatic": false,
+        "Offset": 56,
+        "token": "0x04000EC8"
+      },
+      {
+        "Name": "lastCheapSimulation",
+        "type": "System.Double",
+        "IsStatic": false,
+        "Offset": 64,
+        "token": "0x04000EC9"
+      },
+      {
+        "Name": "cheapSimulationOnly",
+        "type": "System.Boolean",
+        "IsStatic": true,
+        "Offset": 0,
+        "token": "0x04000ECA"
+      },
+      {
+        "Name": "isLastSubstep",
+        "type": "System.Boolean",
+        "IsStatic": true,
+        "Offset": 1,
+        "token": "0x04000ECB"
+      },
+      {
+        "Name": "isFirstSubstep",
+        "type": "System.Boolean",
+        "IsStatic": true,
+        "Offset": 2,
+        "token": "0x04000ECC"
+      },
+      {
+        "Name": "inGroup",
+        "type": "System.Boolean",
+        "IsStatic": true,
+        "Offset": 3,
+        "token": "0x04000ECD"
+      },
+      {
+        "Name": "cheapTimeData",
+        "type": "Unity.Core.TimeData",
+        "IsStatic": true,
+        "Offset": 8,
+        "token": "0x04000ECE"
+      },
+      {
+        "Name": "CustomTimeScale",
+        "type": "System.Double",
+        "IsStatic": false,
+        "Offset": 72,
+        "token": "0x04000ECF"
+      }
+    ],
+    "methods": [
+      {
+        "Name": "get_CheapSimulationOnly",
+        "signature": "System.Boolean Pathfinding.ECS.AIMovementSystemGroup\u002BTimeScaledRateManager::get_CheapSimulationOnly()",
+        "IsStatic": true,
+        "token": "0x06001549",
+        "address": "0x44CD7CC"
+      },
+      {
+        "Name": "get_CheapStepDeltaTime",
+        "signature": "System.Single Pathfinding.ECS.AIMovementSystemGroup\u002BTimeScaledRateManager::get_CheapStepDeltaTime()",
+        "IsStatic": true,
+        "token": "0x0600154A",
+        "address": "0x44CD864"
+      },
+      {
+        "Name": "get_IsLastSubstep",
+        "signature": "System.Boolean Pathfinding.ECS.AIMovementSystemGroup\u002BTimeScaledRateManager::get_IsLastSubstep()",
+        "IsStatic": true,
+        "token": "0x0600154B",
+        "address": "0x44CD8FC"
+      },
+      {
+        "Name": "get_IsFirstSubstep",
+        "signature": "System.Boolean Pathfinding.ECS.AIMovementSystemGroup\u002BTimeScaledRateManager::get_IsFirstSubstep()",
+        "IsStatic": true,
+        "token": "0x0600154C",
+        "address": "0x44CD994"
+      },
+      {
+        "Name": "get_NumUpdatesThisFrame",
+        "signature": "System.Int32 Pathfinding.ECS.AIMovementSystemGroup\u002BTimeScaledRateManager::get_NumUpdatesThisFrame()",
+        "IsStatic": false,
+        "token": "0x0600154D",
+        "address": "0x44CDA2C"
+      },
+      {
+        "Name": ".ctor",
+        "signature": "System.Void Pathfinding.ECS.AIMovementSystemGroup\u002BTimeScaledRateManager::.ctor()",
+        "IsStatic": false,
+        "token": "0x0600154E",
+        "address": "0x44CD70C"
+      },
+      {
+        "Name": "Dispose",
+        "signature": "System.Void Pathfinding.ECS.AIMovementSystemGroup\u002BTimeScaledRateManager::Dispose()",
+        "IsStatic": false,
+        "token": "0x0600154F",
+        "address": "0x44CD658"
+      },
+      {
+        "Name": "OnSimulationStepsFinished",
+        "signature": "System.Void Pathfinding.ECS.AIMovementSystemGroup\u002BTimeScaledRateManager::OnSimulationStepsFinished(System.Single totalSimulationProcessingTime)",
+        "IsStatic": false,
+        "token": "0x06001550",
+        "address": "0x44CD568"
+      },
+      {
+        "Name": "ShouldGroupUpdate",
+        "signature": "System.Boolean Pathfinding.ECS.AIMovementSystemGroup\u002BTimeScaledRateManager::ShouldGroupUpdate(Unity.Entities.ComponentSystemGroup group)",
+        "IsStatic": false,
+        "token": "0x06001551",
+        "address": "0x44CDA34"
+      },
+      {
+        "Name": "get_Timestep",
+        "signature": "System.Single Pathfinding.ECS.AIMovementSystemGroup\u002BTimeScaledRateManager::get_Timestep()",
+        "IsStatic": false,
+        "token": "0x06001552",
+        "address": "0x44CDE6C"
+      },
+      {
+        "Name": "set_Timestep",
+        "signature": "System.Void Pathfinding.ECS.AIMovementSystemGroup\u002BTimeScaledRateManager::set_Timestep(System.Single value)",
+        "IsStatic": false,
+        "token": "0x06001553",
+        "address": "0x44CDE74"
+      }
+    ]
+  },
+  {
+    "type": "Pathfinding.ECS.AIMovementSystemGroup",
+    "token": "0x02000358",
+    "baseType": "Unity.Entities.ComponentSystemGroup",
+    "attributes": "Public, BeforeFieldInit",
+    "fields": [],
+    "methods": [
+      {
+        "Name": "get_CustomTimeScale",
+        "signature": "System.Double Pathfinding.ECS.AIMovementSystemGroup::get_CustomTimeScale()",
+        "IsStatic": false,
+        "token": "0x06001543",
+        "address": "0x44CD06C"
+      },
+      {
+        "Name": "set_CustomTimeScale",
+        "signature": "System.Void Pathfinding.ECS.AIMovementSystemGroup::set_CustomTimeScale(System.Double value)",
+        "IsStatic": false,
+        "token": "0x06001544",
+        "address": "0x44CD0E8"
+      },
+      {
+        "Name": "OnUpdate",
+        "signature": "System.Void Pathfinding.ECS.AIMovementSystemGroup::OnUpdate()",
+        "IsStatic": false,
+        "token": "0x06001545",
+        "address": "0x44CD170"
+      },
+      {
+        "Name": "OnDestroy",
+        "signature": "System.Void Pathfinding.ECS.AIMovementSystemGroup::OnDestroy()",
+        "IsStatic": false,
+        "token": "0x06001546",
+        "address": "0x44CD5D4"
+      },
+      {
+        "Name": "OnCreate",
+        "signature": "System.Void Pathfinding.ECS.AIMovementSystemGroup::OnCreate()",
+        "IsStatic": false,
+        "token": "0x06001547",
+        "address": "0x44CD6AC"
+      },
+      {
+        "Name": ".ctor",
+        "signature": "System.Void Pathfinding.ECS.AIMovementSystemGroup::.ctor()",
+        "IsStatic": false,
+        "token": "0x06001548",
+        "address": "0x44CD7C4"
+      }
+    ]
+  }
+]

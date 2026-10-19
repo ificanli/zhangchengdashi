@@ -1,0 +1,74 @@
+void GameModule_BattleGameSceneManager__FinalizeLegendaryTiles(
+        GameModule_BattleGameSceneManager_o *this,
+        const MethodInfo *method)
+{
+  const MethodInfo *v3; // x0
+  __int64 MainTowerHexCoord; // x0
+  char v5; // w20
+  int v6; // w1
+  __int64 v7; // x0
+  int v8; // w1
+  __int64 Value; // x0
+  __int64 v10; // x21
+  __int64 v11; // x0
+  __int64 v12; // x0
+  __int64 v13; // x20
+  __int64 v14; // [xsp+0h] [xbp-40h] BYREF
+  int v15; // [xsp+8h] [xbp-38h]
+  __int64 v16; // [xsp+10h] [xbp-30h] BYREF
+  int v17; // [xsp+18h] [xbp-28h]
+
+  if ( (byte_8FFD764 & 1) == 0 )
+  {
+    il2cpp_codegen_initialize_runtime_metadata((void **)&off_8CE4A38);
+    il2cpp_codegen_initialize_runtime_metadata(&qword_8D15DC8);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D15DD0);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&off_8CEB3E0);
+    byte_8FFD764 = 1;
+  }
+  *(_QWORD *)&this->fields._unknown_object_0010_to_01FF[384] = 0;
+  *(_QWORD *)&this->fields._unknown_object_0010_to_01FF[392] = 0;
+  v3 = (const MethodInfo *)off_8CE4A38;
+  if ( *((_DWORD *)off_8CE4A38 + 56) == 0 )
+    il2cpp_codegen_runtime_class_init(off_8CE4A38);
+  if ( GameModule_BattleGameSceneManager__IsLegendaryTileV1EnabledThisBattle(v3) )
+  {
+    MainTowerHexCoord = GameModule_BattleGameSceneManager__GetMainTowerHexCoord(this, 0);
+    v5 = MainTowerHexCoord;
+    v16 = MainTowerHexCoord;
+    v17 = v6;
+    v7 = GameModule_BattleGameSceneManager__GetMainTowerHexCoord(this, 1);
+    v14 = v7;
+    v15 = v8;
+    if ( v5 != 0 && (_BYTE)v7 != 0 )
+    {
+      Value = System_Nullable_HexManager_HexCoord___get_Value(&v16, qword_8D15DD0);
+      v10 = GameModule_BattleGameSceneManager__LegendaryTileV1PickOneHalf(this, 0, Value);
+      v11 = System_Nullable_HexManager_HexCoord___get_Value(&v14, qword_8D15DD0);
+      v12 = GameModule_BattleGameSceneManager__LegendaryTileV1PickOneHalf(this, 1, v11);
+      *(_QWORD *)&this->fields._unknown_object_0010_to_01FF[384] = v10;
+      *(_QWORD *)&this->fields._unknown_object_0010_to_01FF[392] = v12;
+      v13 = v12;
+      if ( *((_DWORD *)off_8CEB3E0 + 56) == 0 )
+        il2cpp_codegen_runtime_class_init(off_8CEB3E0);
+      if ( (UnityEngine_Object__op_Inequality(v10, 0, 0) & 1) != 0 )
+      {
+        if ( v10 == 0 )
+          goto LABEL_19;
+        GameModule_HexBehaviour__ApplyLegendaryTileV1(v10, 0);
+      }
+      if ( *((_DWORD *)off_8CEB3E0 + 56) == 0 )
+        il2cpp_codegen_runtime_class_init(off_8CEB3E0);
+      if ( (UnityEngine_Object__op_Inequality(v13, 0, 0) & 1) != 0 )
+      {
+        if ( v13 != 0 )
+        {
+          GameModule_HexBehaviour__ApplyLegendaryTileV1(v13, 0);
+          return;
+        }
+LABEL_19:
+        il2cpp_codegen_raise_null_reference_exception();
+      }
+    }
+  }
+}

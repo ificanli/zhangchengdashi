@@ -1,0 +1,34 @@
+0x4082e2c: fe0f1df8 str      x30, [sp, #-0x30]!
+0x4082e30: f65701a9 stp      x22, x21, [sp, #0x10]
+0x4082e34: f44f02a9 stp      x20, x19, [sp, #0x20]
+0x4082e38: f47b0290 adrp     x20, #0x8ffe000
+0x4082e3c: 565202d0 adrp     x22, #0x8acc000
+0x4082e40: 881e7739 ldrb     w8, [x20, #0xdc7]
+0x4082e44: d68644f9 ldr      x22, [x22, #0x908] // 
+0x4082e48: f30301aa mov      x19, x1
+0x4082e4c: f50300aa mov      x21, x0
+0x4082e50: c8000037 tbnz     w8, #0, #0x4082e68
+0x4082e54: 405202d0 adrp     x0, #0x8acc000
+0x4082e58: 008444f9 ldr      x0, [x0, #0x908] // 
+0x4082e5c: 09e9ee97 bl       #0x3c3d280
+0x4082e60: 28008052 mov      w8, #1
+0x4082e64: 881e3739 strb     w8, [x20, #0xdc7]
+0x4082e68: d40240f9 ldr      x20, [x22]
+0x4082e6c: e00315aa mov      x0, x21
+0x4082e70: e10313aa mov      x1, x19
+0x4082e74: 10000094 bl       #0x4082eb4 // LoadingModule.LoadingManager$$GetFilePath
+0x4082e78: e1031faa mov      x1, xzr
+0x4082e7c: f30300aa mov      x19, x0
+0x4082e80: 303dd594 bl       #0x75d2340 // System.IO.File$$Exists
+0x4082e84: e0000036 tbz      w0, #0, #0x4082ea0
+0x4082e88: e00313aa mov      x0, x19
+0x4082e8c: f44f42a9 ldp      x20, x19, [sp, #0x20]
+0x4082e90: f65741a9 ldp      x22, x21, [sp, #0x10]
+0x4082e94: e1031faa mov      x1, xzr
+0x4082e98: fe0743f8 ldr      x30, [sp], #0x30
+0x4082e9c: 1b85d514 b        #0x75e4308 // System.IO.File$$ReadAllText
+0x4082ea0: e00314aa mov      x0, x20
+0x4082ea4: f44f42a9 ldp      x20, x19, [sp, #0x20]
+0x4082ea8: f65741a9 ldp      x22, x21, [sp, #0x10]
+0x4082eac: fe0743f8 ldr      x30, [sp], #0x30
+0x4082eb0: c0035fd6 ret      

@@ -1,0 +1,94 @@
+0x4275e74: fe0f1df8 str      x30, [sp, #-0x30]!
+0x4275e78: f65701a9 stp      x22, x21, [sp, #0x10]
+0x4275e7c: f44f02a9 stp      x20, x19, [sp, #0x20]
+0x4275e80: 566c02d0 adrp     x22, #0x8fff000
+0x4275e84: c8567f39 ldrb     w8, [x22, #0xfd5]
+0x4275e88: f30302aa mov      x19, x2
+0x4275e8c: f40301aa mov      x20, x1
+0x4275e90: f50300aa mov      x21, x0
+0x4275e94: 48020037 tbnz     w8, #0, #0x4275edc
+0x4275e98: a04302d0 adrp     x0, #0x8aeb000
+0x4275e9c: 006043f9 ldr      x0, [x0, #0x6c0] // Method$UnityEngine.Component.TryGetComponent<Canvas>()
+0x4275ea0: f81ce797 bl       #0x3c3d280
+0x4275ea4: a04302d0 adrp     x0, #0x8aeb000
+0x4275ea8: 006443f9 ldr      x0, [x0, #0x6c8] // Method$System.Collections.Generic.Dictionary<string, UIPanel>.Add()
+0x4275eac: f51ce797 bl       #0x3c3d280
+0x4275eb0: c04202b0 adrp     x0, #0x8ace000
+0x4275eb4: 00f847f9 ldr      x0, [x0, #0xff0] // Method$ToolModule.ManagerBase<CameraManager>.get_Instance()
+0x4275eb8: f21ce797 bl       #0x3c3d280
+0x4275ebc: c0420290 adrp     x0, #0x8acd000
+0x4275ec0: 003c42f9 ldr      x0, [x0, #0x478] // string_TypeInfo
+0x4275ec4: ef1ce797 bl       #0x3c3d280
+0x4275ec8: 204302d0 adrp     x0, #0x8adb000
+0x4275ecc: 005441f9 ldr      x0, [x0, #0x2a8] // (Clone)
+0x4275ed0: ec1ce797 bl       #0x3c3d280
+0x4275ed4: 28008052 mov      w8, #1
+0x4275ed8: c8563f39 strb     w8, [x22, #0xfd5]
+0x4275edc: ff0700f9 str      xzr, [sp, #8]
+0x4275ee0: 530800b4 cbz      x19, #0x4275fe8
+0x4275ee4: e00313aa mov      x0, x19
+0x4275ee8: e1031faa mov      x1, xzr
+0x4275eec: 89e90195 bl       #0x82f0510 // UnityEngine.Object$$get_name
+0x4275ef0: c00700b4 cbz      x0, #0x4275fe8
+0x4275ef4: c8420290 adrp     x8, #0x8acd000
+0x4275ef8: 083d42f9 ldr      x8, [x8, #0x478] // string_TypeInfo
+0x4275efc: 294302d0 adrp     x9, #0x8adb000
+0x4275f00: e3031faa mov      x3, xzr
+0x4275f04: 080140f9 ldr      x8, [x8]
+0x4275f08: 085d40f9 ldr      x8, [x8, #0xb8]
+0x4275f0c: 295541f9 ldr      x9, [x9, #0x2a8] // (Clone)
+0x4275f10: 020140f9 ldr      x2, [x8]
+0x4275f14: 210140f9 ldr      x1, [x9]
+0x4275f18: f157ca94 bl       #0x750bedc // System.String$$Replace
+0x4275f1c: e10300aa mov      x1, x0
+0x4275f20: e00313aa mov      x0, x19
+0x4275f24: e2031faa mov      x2, xzr
+0x4275f28: a6e90195 bl       #0x82f05c0 // UnityEngine.Object$$set_name
+0x4275f2c: e00313aa mov      x0, x19
+0x4275f30: e1031faa mov      x1, xzr
+0x4275f34: 02cc0195 bl       #0x82e8f3c // UnityEngine.Component$$get_gameObject
+0x4275f38: 800500b4 cbz      x0, #0x4275fe8
+0x4275f3c: e1031f2a mov      w1, wzr
+0x4275f40: e2031faa mov      x2, xzr
+0x4275f44: 08d90195 bl       #0x82ec364 // UnityEngine.GameObject$$SetActive
+0x4275f48: a01640f9 ldr      x0, [x21, #0x28]
+0x4275f4c: e00400b4 cbz      x0, #0x4275fe8
+0x4275f50: a84302d0 adrp     x8, #0x8aeb000
+0x4275f54: 086543f9 ldr      x8, [x8, #0x6c8] // Method$System.Collections.Generic.Dictionary<string, UIPanel>.Add()
+0x4275f58: e10314aa mov      x1, x20
+0x4275f5c: e20313aa mov      x2, x19
+0x4275f60: 030140f9 ldr      x3, [x8]
+0x4275f64: 5743a694 bl       #0x6c06cc0 // System.Collections.Generic.Dictionary<object, object>$$Add
+0x4275f68: e00313aa mov      x0, x19
+0x4275f6c: e1031faa mov      x1, xzr
+0x4275f70: e4cb0195 bl       #0x82e8f00 // UnityEngine.Component$$get_transform
+0x4275f74: a00300b4 cbz      x0, #0x4275fe8
+0x4275f78: a84302d0 adrp     x8, #0x8aeb000
+0x4275f7c: 086143f9 ldr      x8, [x8, #0x6c0] // Method$UnityEngine.Component.TryGetComponent<Canvas>()
+0x4275f80: e1230091 add      x1, sp, #8
+0x4275f84: 020140f9 ldr      x2, [x8]
+0x4275f88: 453a2494 bl       #0x4b8489c // UnityEngine.Component$$TryGetComponent<object>
+0x4275f8c: 60020036 tbz      w0, #0, #0x4275fd8
+0x4275f90: e00740f9 ldr      x0, [sp, #8]
+0x4275f94: a00200b4 cbz      x0, #0x4275fe8
+0x4275f98: 21008052 mov      w1, #1
+0x4275f9c: e2031faa mov      x2, xzr
+0x4275fa0: d64b0a95 bl       #0x8508ef8 // UnityEngine.Canvas$$set_renderMode
+0x4275fa4: c84202b0 adrp     x8, #0x8ace000
+0x4275fa8: f30740f9 ldr      x19, [sp, #8]
+0x4275fac: 08f947f9 ldr      x8, [x8, #0xff0] // Method$ToolModule.ManagerBase<CameraManager>.get_Instance()
+0x4275fb0: 000140f9 ldr      x0, [x8]
+0x4275fb4: 2b095c94 bl       #0x5978460 // ToolModule.ManagerBase<object>$$get_Instance
+0x4275fb8: 800100b4 cbz      x0, #0x4275fe8
+0x4275fbc: e1031faa mov      x1, xzr
+0x4275fc0: 4362f297 bl       #0x3f0e8cc // CameraModule.CameraManager$$get_UICamera
+0x4275fc4: 330100b4 cbz      x19, #0x4275fe8
+0x4275fc8: e10300aa mov      x1, x0
+0x4275fcc: e00313aa mov      x0, x19
+0x4275fd0: e2031faa mov      x2, xzr
+0x4275fd4: 944e0a95 bl       #0x8509a24 // UnityEngine.Canvas$$set_worldCamera
+0x4275fd8: f44f42a9 ldp      x20, x19, [sp, #0x20]
+0x4275fdc: f65741a9 ldp      x22, x21, [sp, #0x10]
+0x4275fe0: fe0743f8 ldr      x30, [sp], #0x30
+0x4275fe4: c0035fd6 ret      
+0x4275fe8: 391de797 bl       #0x3c3d4cc

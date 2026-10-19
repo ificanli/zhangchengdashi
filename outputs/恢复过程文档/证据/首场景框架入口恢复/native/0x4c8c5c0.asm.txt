@@ -1,0 +1,53 @@
+0x4c8c5c0: fe0f1ef8 str      x30, [sp, #-0x20]!
+0x4c8c5c4: f44f01a9 stp      x20, x19, [sp, #0x10]
+0x4c8c5c8: 081c40f9 ldr      x8, [x0, #0x38]
+0x4c8c5cc: f30300aa mov      x19, x0
+0x4c8c5d0: 080100b5 cbnz     x8, #0x4c8c5f0
+0x4c8c5d4: 40f30190 adrp     x0, #0x8af4000
+0x4c8c5d8: 005043f9 ldr      x0, [x0, #0x6a0] // GameFramework.GameFrameEntry_TypeInfo
+0x4c8c5dc: 29c3be97 bl       #0x3c3d280
+0x4c8c5e0: 681e40f9 ldr      x8, [x19, #0x38]
+0x4c8c5e4: 680000b5 cbnz     x8, #0x4c8c5f0
+0x4c8c5e8: e00313aa mov      x0, x19
+0x4c8c5ec: 840fbf97 bl       #0x3c503fc
+0x4c8c5f0: 48f30190 adrp     x8, #0x8af4000
+0x4c8c5f4: 085143f9 ldr      x8, [x8, #0x6a0] // GameFramework.GameFrameEntry_TypeInfo
+0x4c8c5f8: 000140f9 ldr      x0, [x8]
+0x4c8c5fc: 08e040b9 ldr      w8, [x0, #0xe0]
+0x4c8c600: 48000035 cbnz     w8, #0x4c8c608
+0x4c8c604: 6bc3be97 bl       #0x3c3d3b0
+0x4c8c608: 681e40f9 ldr      x8, [x19, #0x38]
+0x4c8c60c: 000140f9 ldr      x0, [x8]
+0x4c8c610: bf000094 bl       #0x4c8c90c // GameFramework.GameFrameEntry$$K<object>
+0x4c8c614: e1031faa mov      x1, xzr
+0x4c8c618: 1a3c9394 bl       #0x715b680 // GameFramework.GameFrameEntry$$K~^«b
+0x4c8c61c: 681e40f9 ldr      x8, [x19, #0x38]
+0x4c8c620: f40300aa mov      x20, x0
+0x4c8c624: 010540f9 ldr      x1, [x8, #8]
+0x4c8c628: 28d44439 ldrb     w8, [x1, #0x135]
+0x4c8c62c: 88000037 tbnz     w8, #0, #0x4c8c63c
+0x4c8c630: e00301aa mov      x0, x1
+0x4c8c634: 5b0fbf97 bl       #0x3c503a0
+0x4c8c638: e10300aa mov      x1, x0
+0x4c8c63c: e00314aa mov      x0, x20
+0x4c8c640: 5dc3be97 bl       #0x3c3d3b4
+0x4c8c644: 681e40f9 ldr      x8, [x19, #0x38]
+0x4c8c648: f40300aa mov      x20, x0
+0x4c8c64c: 130540f9 ldr      x19, [x8, #8]
+0x4c8c650: 68d64439 ldrb     w8, [x19, #0x135]
+0x4c8c654: 88000037 tbnz     w8, #0, #0x4c8c664
+0x4c8c658: e00313aa mov      x0, x19
+0x4c8c65c: 510fbf97 bl       #0x3c503a0
+0x4c8c660: f30300aa mov      x19, x0
+0x4c8c664: 140100b4 cbz      x20, #0x4c8c684
+0x4c8c668: e00314aa mov      x0, x20
+0x4c8c66c: e10313aa mov      x1, x19
+0x4c8c670: 51c3be97 bl       #0x3c3d3b4
+0x4c8c674: a00000b5 cbnz     x0, #0x4c8c688
+0x4c8c678: e00314aa mov      x0, x20
+0x4c8c67c: e10313aa mov      x1, x19
+0x4c8c680: 7ac4be97 bl       #0x3c3d868
+0x4c8c684: e0031faa mov      x0, xzr
+0x4c8c688: f44f41a9 ldp      x20, x19, [sp, #0x10]
+0x4c8c68c: fe0742f8 ldr      x30, [sp], #0x20
+0x4c8c690: c0035fd6 ret      

@@ -1,0 +1,21 @@
+0x436c0c0: STP             X30, X21, [SP,#var_20]!
+0x436c0c4: STP             X20, X19, [SP,#0x20+var_10]
+0x436c0c8: ADRP            X21, #byte_900070E@PAGE
+0x436c0cc: ADRP            X20, #off_8AD02A8@PAGE
+0x436c0d0: LDRB            W8, [X21,#byte_900070E@PAGEOFF]
+0x436c0d4: LDR             X20, [X20,#off_8AD02A8@PAGEOFF]; qword_8D53EC0
+0x436c0d8: MOV             X19, X0
+0x436c0dc: TBNZ            W8, #0, loc_436C0F4
+0x436c0e0: ADRP            X0, #off_8AD02A8@PAGE
+0x436c0e4: LDR             X0, [X0,#off_8AD02A8@PAGEOFF]; qword_8D53EC0 ; slot
+0x436c0e8: BL              il2cpp_codegen_initialize_runtime_metadata
+0x436c0ec: MOV             W8, #1
+0x436c0f0: STRB            W8, [X21,#byte_900070E@PAGEOFF]
+0x436c0f4: MOV             X0, X19
+0x436c0f8: MOV             X1, XZR
+0x436c0fc: BL              ServerBaseData$$InitFromDefaults
+0x436c100: LDR             X8, [X20]
+0x436c104: STR             X8, [X19,#0x18]
+0x436c108: LDP             X20, X19, [SP,#0x20+var_10]
+0x436c10c: LDP             X30, X21, [SP+0x20+var_20],#0x20
+0x436c110: RET

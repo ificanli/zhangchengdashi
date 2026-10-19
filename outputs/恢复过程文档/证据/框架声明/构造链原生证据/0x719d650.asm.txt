@@ -1,0 +1,53 @@
+0x719d650: STR             X30, [SP,#var_50]!
+0x719d654: STP             X26, X25, [SP,#0x50+var_40]
+0x719d658: STP             X24, X23, [SP,#0x50+var_30]
+0x719d65c: STP             X22, X21, [SP,#0x50+var_20]
+0x719d660: STP             X20, X19, [SP,#0x50+var_10]
+0x719d664: ADRP            X26, #byte_9009370@PAGE
+0x719d668: LDRB            W8, [X26,#byte_9009370@PAGEOFF]
+0x719d66c: MOV             W19, W6
+0x719d670: MOV             W21, W5
+0x719d674: MOV             W23, W4
+0x719d678: MOV             X22, X3
+0x719d67c: MOV             X24, X2
+0x719d680: MOV             X25, X1
+0x719d684: MOV             X20, X0
+0x719d688: TBNZ            W8, #0, loc_719D6A0
+0x719d68c: ADRP            X0, #off_8ADD758@PAGE
+0x719d690: LDR             X0, [X0,#off_8ADD758@PAGEOFF]; off_8CEB838 ; slot
+0x719d694: BL              il2cpp_codegen_initialize_runtime_metadata
+0x719d698: MOV             W8, #1
+0x719d69c: STRB            W8, [X26,#byte_9009370@PAGEOFF]
+0x719d6a0: MOV             X0, X20
+0x719d6a4: MOV             X1, X25
+0x719d6a8: MOV             X2, X24
+0x719d6ac: MOV             X3, X22
+0x719d6b0: MOV             X4, XZR
+0x719d6b4: BL              ___Hcp$$.ctor
+0x719d6b8: STR             W23, [X20,#0xB0]
+0x719d6bc: CBZ             X22, loc_719D720
+0x719d6c0: ADRP            X23, #off_8ADD758@PAGE
+0x719d6c4: LDR             X23, [X23,#off_8ADD758@PAGEOFF]; off_8CEB838
+0x719d6c8: MOV             X0, X22
+0x719d6cc: MOV             X1, XZR
+0x719d6d0: BL              YooAsset.AssetInfo$$get_AssetPath
+0x719d6d4: LDR             X8, [X23]
+0x719d6d8: MOV             X22, X0
+0x719d6dc: LDR             W9, [X8,#0xE0]
+0x719d6e0: CBNZ            W9, loc_719D6EC
+0x719d6e4: MOV             X0, X8; klass
+0x719d6e8: BL              il2cpp_codegen_runtime_class_init
+0x719d6ec: MOV             X0, X22
+0x719d6f0: MOV             X1, XZR
+0x719d6f4: AND             W21, W21, #1
+0x719d6f8: BL              System.IO.Path$$GetFileNameWithoutExtension
+0x719d6fc: STR             X0, [X20,#0xB8]
+0x719d700: STRB            W21, [X20,#0xC0]
+0x719d704: STR             W19, [X20,#0xC4]
+0x719d708: LDP             X20, X19, [SP,#0x50+var_10]
+0x719d70c: LDP             X22, X21, [SP,#0x50+var_20]
+0x719d710: LDP             X24, X23, [SP,#0x50+var_30]
+0x719d714: LDP             X26, X25, [SP,#0x50+var_40]
+0x719d718: LDR             X30, [SP+0x50+var_50],#0x50
+0x719d71c: RET
+0x719d720: BL              il2cpp_codegen_raise_null_reference_exception

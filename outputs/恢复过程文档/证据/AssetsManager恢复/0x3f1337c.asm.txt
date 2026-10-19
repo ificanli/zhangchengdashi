@@ -1,0 +1,22 @@
+0x3f1337c: fe0f1ef8 str      x30, [sp, #-0x20]!
+0x3f13380: f44f01a9 stp      x20, x19, [sp, #0x10]
+0x3f13384: 548702f0 adrp     x20, #0x8ffe000
+0x3f13388: 335e02f0 adrp     x19, #0x8ada000
+0x3f1338c: 88ce4139 ldrb     w8, [x20, #0x73]
+0x3f13390: 73fa46f9 ldr      x19, [x19, #0xdf0] // System.GC_TypeInfo
+0x3f13394: c8000037 tbnz     w8, #0, #0x3f133ac
+0x3f13398: 205e02f0 adrp     x0, #0x8ada000
+0x3f1339c: 00f846f9 ldr      x0, [x0, #0xdf0] // System.GC_TypeInfo
+0x3f133a0: b8a7f497 bl       #0x3c3d280
+0x3f133a4: 28008052 mov      w8, #1
+0x3f133a8: 88ce0139 strb     w8, [x20, #0x73]
+0x3f133ac: e0031faa mov      x0, xzr
+0x3f133b0: 044f0f95 bl       #0x82e6fc0 // UnityEngine.Resources$$UnloadUnusedAssets
+0x3f133b4: 600240f9 ldr      x0, [x19]
+0x3f133b8: 08e040b9 ldr      w8, [x0, #0xe0]
+0x3f133bc: 48000035 cbnz     w8, #0x3f133c4
+0x3f133c0: fca7f497 bl       #0x3c3d3b0
+0x3f133c4: f44f41a9 ldp      x20, x19, [sp, #0x10]
+0x3f133c8: e0031faa mov      x0, xzr
+0x3f133cc: fe0742f8 ldr      x30, [sp], #0x20
+0x3f133d0: 4aa8de14 b        #0x76bd4f8 // System.GC$$Collect

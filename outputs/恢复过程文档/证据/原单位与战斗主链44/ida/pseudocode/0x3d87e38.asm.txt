@@ -1,0 +1,36 @@
+0x3d87e38: SUB             SP, SP, #0x90
+0x3d87e3c: STP             X30, X21, [SP,#0x90+var_20]
+0x3d87e40: STP             X20, X19, [SP,#0x90+var_10]
+0x3d87e44: ADRP            X21, #byte_8FFD483@PAGE
+0x3d87e48: ADRP            X20, #off_8AD1450@PAGE
+0x3d87e4c: LDRB            W8, [X21,#byte_8FFD483@PAGEOFF]
+0x3d87e50: LDR             X20, [X20,#off_8AD1450@PAGEOFF]; qword_8D232F0
+0x3d87e54: MOV             X19, X0
+0x3d87e58: TBNZ            W8, #0, loc_3D87E70
+0x3d87e5c: ADRP            X0, #off_8AD1450@PAGE
+0x3d87e60: LDR             X0, [X0,#off_8AD1450@PAGEOFF]; qword_8D232F0 ; slot
+0x3d87e64: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3d87e68: MOV             W8, #1
+0x3d87e6c: STRB            W8, [X21,#byte_8FFD483@PAGEOFF]
+0x3d87e70: MOVI            V0.2D, #0
+0x3d87e74: MOV             X8, SP
+0x3d87e78: MOV             X0, XZR
+0x3d87e7c: STR             XZR, [SP,#0x90+var_30]
+0x3d87e80: STP             Q0, Q0, [SP,#0x90+var_50]
+0x3d87e84: STP             Q0, Q0, [SP,#0x90+var_70]
+0x3d87e88: BL              System.Runtime.CompilerServices.AsyncVoidMethodBuilder$$Create
+0x3d87e8c: LDP             Q0, Q1, [SP,#0x90+var_90]
+0x3d87e90: LDR             X2, [X20]
+0x3d87e94: ADD             X8, SP, #0x90+var_70
+0x3d87e98: MOV             W9, #0xFFFFFFFF
+0x3d87e9c: ORR             X0, X8, #8
+0x3d87ea0: ADD             X1, SP, #0x90+var_70
+0x3d87ea4: STR             X19, [SP,#0x90+var_50+8]
+0x3d87ea8: STUR            Q0, [SP,#0x90+var_70+8]
+0x3d87eac: STUR            Q1, [SP,#0x38]
+0x3d87eb0: STR             W9, [SP,#0x90+var_70]
+0x3d87eb4: BL              System.Runtime.CompilerServices.AsyncVoidMethodBuilder$$Start_RoleBehaviour._HellFireDeadCallBack_d__195_
+0x3d87eb8: LDP             X20, X19, [SP,#0x90+var_10]
+0x3d87ebc: LDP             X30, X21, [SP,#0x90+var_20]
+0x3d87ec0: ADD             SP, SP, #0x90
+0x3d87ec4: RET

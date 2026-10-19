@@ -1,0 +1,10 @@
+0x52a8bf0: MOV             X1, X0
+0x52a8bf4: LDR             X0, [X0,#0x38]
+0x52a8bf8: CBZ             X0, locret_52A8C14
+0x52a8bfc: LDR             S2, [X1,#0x40]
+0x52a8c00: FADD            S2, S2, S0
+0x52a8c04: STR             S2, [X1,#0x40]
+0x52a8c08: LDR             X8, [X0]
+0x52a8c0c: LDP             X3, X2, [X8,#0x1A8]
+0x52a8c10: BR              X3
+0x52a8c14: RET

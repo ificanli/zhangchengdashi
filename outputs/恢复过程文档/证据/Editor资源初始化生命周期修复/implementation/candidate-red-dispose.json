@@ -1,0 +1,96 @@
+{
+  "scenarios": 22,
+  "checks": 81,
+  "failures": 1,
+  "results": [
+    {
+      "name": "dispose-at-hash-yield",
+      "passed": true
+    },
+    {
+      "name": "guard-bridge-dispose-at-hash",
+      "passed": true
+    },
+    {
+      "name": "cancel-after-partial-load",
+      "passed": true
+    },
+    {
+      "name": "complete-only-after-final-resource-gate",
+      "passed": true
+    },
+    {
+      "name": "actual-resource-error-remains-sticky",
+      "passed": true
+    },
+    {
+      "name": "wrong-owner-lease-cannot-cancel",
+      "passed": true
+    },
+    {
+      "name": "cancel-resume-does-not-complete",
+      "passed": true
+    },
+    {
+      "name": "duplicate-call-does-not-poison-owner",
+      "passed": true
+    },
+    {
+      "name": "ready-reuse-and-app-mismatch",
+      "passed": true
+    },
+    {
+      "name": "fresh-instance-revalidates-after-cancel",
+      "passed": true
+    },
+    {
+      "name": "old-cancellation-does-not-overwrite-new-canonical",
+      "passed": true
+    },
+    {
+      "name": "dispose-error-keeps-cancellation-primary",
+      "passed": false,
+      "error": "System.IO.IOException: core disposal marker\r\n   at OccupyCity.Recovery.LocalResources.Editor.LocalEditorResourcesProvider.InitializeCore(String applicationName)\u002B\u003C\u003Em__Finally1() in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage39-lifecycle\\fixture\\Provider.cs:line 194\r\n   at OccupyCity.Recovery.LocalResources.Editor.LocalEditorResourcesProvider.InitializeCore(String applicationName)\u002BSystem.IDisposable.Dispose()\r\n   at OccupyCity.Recovery.LocalResources.Editor.LocalEditorResourcesProvider.InitializeCore(String applicationName)\u002BSystem.IDisposable.Dispose()\r\n   at OccupyCity.Recovery.LocalResources.Editor.LocalEditorResourcesProvider.DisposeInitializationCore(InitializationLease lease) in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage39-lifecycle\\fixture\\Provider.cs:line 138\r\n   at OccupyCity.Recovery.LocalResources.Editor.LocalEditorResourcesProvider.Initialize(String applicationName)\u002B\u003C\u003Em__Finally1() in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage39-lifecycle\\fixture\\Provider.cs:line 91\r\n   at OccupyCity.Recovery.LocalResources.Editor.LocalEditorResourcesProvider.Initialize(String applicationName)\u002BSystem.IDisposable.Dispose()\r\n   at OccupyCity.Recovery.LocalResources.Editor.LocalEditorResourcesProvider.Initialize(String applicationName)\u002BSystem.IDisposable.Dispose()\r\n   at Program.Dispose(IEnumerator value) in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage39-lifecycle\\fixture\\Program.cs:line 25\r\n   at Program.\u003C\u003Ec.\u003CMain\u003Eb__11_11() in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage39-lifecycle\\fixture\\Program.cs:line 42\r\n   at Program.Case(String name, Action run) in C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\stage39-lifecycle\\fixture\\Program.cs:line 23"
+    },
+    {
+      "name": "dispose-error-after-success-is-failure",
+      "passed": true
+    },
+    {
+      "name": "guard-normal-nested-dispose",
+      "passed": true
+    },
+    {
+      "name": "guard-primary-preserved-through-dispose-errors",
+      "passed": true
+    },
+    {
+      "name": "guard-dispose-only-failure-propagates",
+      "passed": true
+    },
+    {
+      "name": "bridge-provider-identity-is-fixed",
+      "passed": true
+    },
+    {
+      "name": "play-exit-cancels-only-shared-play-owner",
+      "passed": true
+    },
+    {
+      "name": "reload-cancels-only-shared-play-owner",
+      "passed": true
+    },
+    {
+      "name": "normal-next-play-gets-fresh-shared-instance",
+      "passed": true
+    },
+    {
+      "name": "disabled-domain-reload-does-not-reset-state",
+      "passed": true
+    },
+    {
+      "name": "active-shared-editor-session-is-not-replaced",
+      "passed": true
+    }
+  ]
+}

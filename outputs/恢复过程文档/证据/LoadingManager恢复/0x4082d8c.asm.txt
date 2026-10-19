@@ -1,0 +1,24 @@
+0x4082d8c: fe57bea9 stp      x30, x21, [sp, #-0x20]!
+0x4082d90: f44f01a9 stp      x20, x19, [sp, #0x10]
+0x4082d94: f47b0290 adrp     x20, #0x8ffe000
+0x4082d98: 15530290 adrp     x21, #0x8ae2000
+0x4082d9c: 881a7739 ldrb     w8, [x20, #0xdc6]
+0x4082da0: b55642f9 ldr      x21, [x21, #0x4a8] // LoadingModule.LoadingManager.<LoadingScene>d__12_TypeInfo
+0x4082da4: f30300aa mov      x19, x0
+0x4082da8: c8000037 tbnz     w8, #0, #0x4082dc0
+0x4082dac: 00530290 adrp     x0, #0x8ae2000
+0x4082db0: 005442f9 ldr      x0, [x0, #0x4a8] // LoadingModule.LoadingManager.<LoadingScene>d__12_TypeInfo
+0x4082db4: 33e9ee97 bl       #0x3c3d280
+0x4082db8: 28008052 mov      w8, #1
+0x4082dbc: 881a3739 strb     w8, [x20, #0xdc6]
+0x4082dc0: a00240f9 ldr      x0, [x21]
+0x4082dc4: c0e9ee97 bl       #0x3c3d4c4
+0x4082dc8: e1031faa mov      x1, xzr
+0x4082dcc: f40300aa mov      x20, x0
+0x4082dd0: 4f12d994 bl       #0x76c770c // System.Object$$.ctor
+0x4082dd4: 9f1200b9 str      wzr, [x20, #0x10]
+0x4082dd8: 931200f9 str      x19, [x20, #0x20]
+0x4082ddc: e00314aa mov      x0, x20
+0x4082de0: f44f41a9 ldp      x20, x19, [sp, #0x10]
+0x4082de4: fe57c2a8 ldp      x30, x21, [sp], #0x20
+0x4082de8: c0035fd6 ret      

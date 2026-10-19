@@ -1,0 +1,94 @@
+0x3e0f480: STP             X30, X21, [SP,#var_20]!
+0x3e0f484: STP             X20, X19, [SP,#0x20+var_10]
+0x3e0f488: ADRP            X21, #byte_8FFD854@PAGE
+0x3e0f48c: LDRB            W8, [X21,#byte_8FFD854@PAGEOFF]
+0x3e0f490: MOV             W20, W2
+0x3e0f494: MOV             W19, W1
+0x3e0f498: TBNZ            W8, #0, loc_3E0F4BC
+0x3e0f49c: ADRP            X0, #off_8ACFF28@PAGE
+0x3e0f4a0: LDR             X0, [X0,#off_8ACFF28@PAGEOFF]; qword_8D11FA8 ; slot
+0x3e0f4a4: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3e0f4a8: ADRP            X0, #off_8ACFF30@PAGE
+0x3e0f4ac: LDR             X0, [X0,#off_8ACFF30@PAGEOFF]; qword_8D12138 ; slot
+0x3e0f4b0: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3e0f4b4: MOV             W8, #1
+0x3e0f4b8: STRB            W8, [X21,#byte_8FFD854@PAGEOFF]
+0x3e0f4bc: CMP             W19, #3; switch 4 cases
+0x3e0f4c0: TBZ             W20, #0, loc_3E0F500
+0x3e0f4c4: B.HI            def_3E0F4E0; jumptable 0000000003E0F4E0 default case
+0x3e0f4c8: ADRP            X9, #jpt_3E0F4E0@PAGE
+0x3e0f4cc: MOV             W8, W19
+0x3e0f4d0: ADD             X9, X9, #jpt_3E0F4E0@PAGEOFF
+0x3e0f4d4: ADR             X10, loc_3E0F4E4; jumptable 0000000003E0F4E0 case 0
+0x3e0f4d8: LDRB            W11, [X9,X8]
+0x3e0f4dc: ADD             X10, X10, X11,LSL#2
+0x3e0f4e0: BR              X10; switch jump
+0x3e0f4e4: ADRP            X8, #off_8ACFF28@PAGE; jumptable 0000000003E0F4E0 case 0
+0x3e0f4e8: LDR             X8, [X8,#off_8ACFF28@PAGEOFF]; qword_8D11FA8
+0x3e0f4ec: LDR             X0, [X8]; method
+0x3e0f4f0: BL              ToolModule.ManagerBase_object_$$get_Instance
+0x3e0f4f4: CBZ             X0, loc_3E0F5F4
+0x3e0f4f8: LDR             W0, [X0,#0xC4]
+0x3e0f4fc: B               loc_3E0F5E8
+0x3e0f500: B.HI            def_3E0F4E0; jumptable 0000000003E0F4E0 default case
+0x3e0f504: ADRP            X9, #jpt_3E0F51C@PAGE
+0x3e0f508: MOV             W8, W19
+0x3e0f50c: ADD             X9, X9, #jpt_3E0F51C@PAGEOFF
+0x3e0f510: ADR             X10, loc_3E0F520; jumptable 0000000003E0F51C case 0
+0x3e0f514: LDRB            W11, [X9,X8]
+0x3e0f518: ADD             X10, X10, X11,LSL#2
+0x3e0f51c: BR              X10; switch jump
+0x3e0f520: ADRP            X8, #off_8ACFF30@PAGE; jumptable 0000000003E0F51C case 0
+0x3e0f524: LDR             X8, [X8,#off_8ACFF30@PAGEOFF]; qword_8D12138
+0x3e0f528: LDR             X0, [X8]; method
+0x3e0f52c: BL              ToolModule.ManagerBase_object_$$get_Instance
+0x3e0f530: CBZ             X0, loc_3E0F5F4
+0x3e0f534: LDR             W0, [X0,#0x50]
+0x3e0f538: B               loc_3E0F5E8
+0x3e0f53c: MOV             W0, WZR; jumptable 0000000003E0F4E0 default case
+0x3e0f540: B               loc_3E0F5E8
+0x3e0f544: ADRP            X8, #off_8ACFF28@PAGE; jumptable 0000000003E0F4E0 case 2
+0x3e0f548: LDR             X8, [X8,#off_8ACFF28@PAGEOFF]; qword_8D11FA8
+0x3e0f54c: LDR             X0, [X8]; method
+0x3e0f550: BL              ToolModule.ManagerBase_object_$$get_Instance
+0x3e0f554: CBZ             X0, loc_3E0F5F4
+0x3e0f558: LDR             W0, [X0,#0xCC]
+0x3e0f55c: B               loc_3E0F5E8
+0x3e0f560: ADRP            X8, #off_8ACFF30@PAGE; jumptable 0000000003E0F51C case 2
+0x3e0f564: LDR             X8, [X8,#off_8ACFF30@PAGEOFF]; qword_8D12138
+0x3e0f568: LDR             X0, [X8]; method
+0x3e0f56c: BL              ToolModule.ManagerBase_object_$$get_Instance
+0x3e0f570: CBZ             X0, loc_3E0F5F4
+0x3e0f574: LDR             W0, [X0,#0x58]
+0x3e0f578: B               loc_3E0F5E8
+0x3e0f57c: ADRP            X8, #off_8ACFF28@PAGE; jumptable 0000000003E0F4E0 case 1
+0x3e0f580: LDR             X8, [X8,#off_8ACFF28@PAGEOFF]; qword_8D11FA8
+0x3e0f584: LDR             X0, [X8]; method
+0x3e0f588: BL              ToolModule.ManagerBase_object_$$get_Instance
+0x3e0f58c: CBZ             X0, loc_3E0F5F4
+0x3e0f590: LDR             W0, [X0,#0xC8]
+0x3e0f594: B               loc_3E0F5E8
+0x3e0f598: ADRP            X8, #off_8ACFF28@PAGE; jumptable 0000000003E0F4E0 case 3
+0x3e0f59c: LDR             X8, [X8,#off_8ACFF28@PAGEOFF]; qword_8D11FA8
+0x3e0f5a0: LDR             X0, [X8]; method
+0x3e0f5a4: BL              ToolModule.ManagerBase_object_$$get_Instance
+0x3e0f5a8: CBZ             X0, loc_3E0F5F4
+0x3e0f5ac: LDR             W0, [X0,#0xD8]
+0x3e0f5b0: B               loc_3E0F5E8
+0x3e0f5b4: ADRP            X8, #off_8ACFF30@PAGE; jumptable 0000000003E0F51C case 1
+0x3e0f5b8: LDR             X8, [X8,#off_8ACFF30@PAGEOFF]; qword_8D12138
+0x3e0f5bc: LDR             X0, [X8]; method
+0x3e0f5c0: BL              ToolModule.ManagerBase_object_$$get_Instance
+0x3e0f5c4: CBZ             X0, loc_3E0F5F4
+0x3e0f5c8: LDR             W0, [X0,#0x54]
+0x3e0f5cc: B               loc_3E0F5E8
+0x3e0f5d0: ADRP            X8, #off_8ACFF30@PAGE; jumptable 0000000003E0F51C case 3
+0x3e0f5d4: LDR             X8, [X8,#off_8ACFF30@PAGEOFF]; qword_8D12138
+0x3e0f5d8: LDR             X0, [X8]; method
+0x3e0f5dc: BL              ToolModule.ManagerBase_object_$$get_Instance
+0x3e0f5e0: CBZ             X0, loc_3E0F5F4
+0x3e0f5e4: LDR             W0, [X0,#0x64]
+0x3e0f5e8: LDP             X20, X19, [SP,#0x20+var_10]
+0x3e0f5ec: LDP             X30, X21, [SP+0x20+var_20],#0x20
+0x3e0f5f0: RET
+0x3e0f5f4: BL              il2cpp_codegen_raise_null_reference_exception

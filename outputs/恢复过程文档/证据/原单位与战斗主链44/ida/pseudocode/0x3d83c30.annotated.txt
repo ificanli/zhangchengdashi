@@ -1,0 +1,216 @@
+void __fastcall GameModule_RoleBehaviour__SetAiEnableLocalAvoidance(__int64 a1, char a2)
+{
+  long double v2; // q8
+  int v5; // w21
+  void *v6; // x20
+  void *v7; // x0
+  char hideDamageText; // w0
+  long double v9; // q0
+  _BYTE *v10; // x8
+  float v11; // s8
+  float v12; // s9
+  __int64 v13; // x20
+  __int64 Component_object; // x20
+  void *Instance; // x20
+  void *v16; // x0
+  __int64 transform; // x0
+  long double v18; // q0
+  __int64 v19; // x0
+  __int64 v20; // x0
+  long double v21; // q0
+  __int64 v22; // x0
+  float radius; // s9
+  __int64 v24; // x0
+  __int64 v25; // x0
+  __int64 v26; // x1
+  __int64 v27; // x2
+  __int64 v28; // x0
+  char IsBTest; // w0
+  float v30; // s10
+  __int64 v31; // x1
+  __int64 v32; // x2
+  __int64 v33; // x0
+  __int64 v34; // x0
+  long double v35; // q0
+  float v36; // s8
+  __int64 v37; // x0
+
+  if ( (byte_8FFD476 & 1) == 0 )
+  {
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D25FB0 /* Method$UnityEngine.Component.GetComponent<FollowerEntity>() */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D12168 /* Method$ToolModule.ManagerBase<FloatingTextManager>.get_Instance() */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&off_8CEA738 /* System.Math_TypeInfo */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&off_8CEB3E0 /* UnityEngine.Object_TypeInfo */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D17890 /* Method$QuickTutor.Singleton<ABTestManager>.get_Instance() */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&off_8CE1928 /* QuickTutor.Singleton<ABTestManager>_TypeInfo */);
+    byte_8FFD476 = 1;
+  }
+  if ( (a2 & 1) != 0 )
+    v5 = *(unsigned __int8 *)(a1 + 336);
+  else
+    v5 = 0;
+  if ( !Pathfinding_AstarWebGLRuntimeConfig__get_UseWebGLNavigation(0) )
+  {
+    v13 = *(_QWORD *)(a1 + 128);
+    if ( *((_DWORD *)off_8CEB3E0 /* UnityEngine.Object_TypeInfo */ + 56) == 0 )
+      il2cpp_codegen_runtime_class_init(off_8CEB3E0 /* UnityEngine.Object_TypeInfo */);
+    if ( (UnityEngine_Object__op_Equality(v13, 0, 0) & 1) != 0 )
+    {
+      Component_object = UnityEngine_Component__GetComponent_object_(a1, qword_8D25FB0 /* Method$UnityEngine.Component.GetComponent<FollowerEntity>() */);
+      *(_QWORD *)(a1 + 128) = Component_object;
+    }
+    else
+    {
+      Component_object = *(_QWORD *)(a1 + 128);
+    }
+    if ( *((_DWORD *)off_8CEB3E0 /* UnityEngine.Object_TypeInfo */ + 56) == 0 )
+      il2cpp_codegen_runtime_class_init(off_8CEB3E0 /* UnityEngine.Object_TypeInfo */);
+    if ( (UnityEngine_Object__op_Inequality(Component_object, 0, 0) & 1) == 0 )
+      return;
+    Instance = ToolModule_ManagerBase_object___get_Instance((const MethodInfo *)qword_8D12168 /* Method$ToolModule.ManagerBase<FloatingTextManager>.get_Instance() */);
+    if ( *((_DWORD *)off_8CEB3E0 /* UnityEngine.Object_TypeInfo */ + 56) == 0 )
+      il2cpp_codegen_runtime_class_init(off_8CEB3E0 /* UnityEngine.Object_TypeInfo */);
+    if ( (UnityEngine_Object__op_Inequality(Instance, 0, 0) & 1) == 0 )
+      goto LABEL_46;
+    v16 = ToolModule_ManagerBase_object___get_Instance((const MethodInfo *)qword_8D12168 /* Method$ToolModule.ManagerBase<FloatingTextManager>.get_Instance() */);
+    if ( v16 == nullptr )
+      goto LABEL_69;
+    if ( (GameModule_FloatingTextManager__get_hideDamageText(v16, 0) & 1) != 0 )
+    {
+      if ( *(float *)(a1 + 144) < 0.0 )
+      {
+        transform = UnityEngine_Component__get_transform(a1, 0);
+        if ( transform == 0 )
+          goto LABEL_69;
+        UnityEngine_Transform__get_localScale(transform, 0);
+        v19 = *(_QWORD *)(a1 + 128);
+        if ( v19 == 0 )
+          goto LABEL_69;
+        v2 = v18;
+        *(float *)(a1 + 144) = (float)(0.5 / *(float *)&v18) * Pathfinding_FollowerEntity__get_radius(v19, 0);
+      }
+      v20 = *(_QWORD *)(a1 + 128);
+      if ( v20 != 0 )
+      {
+        Pathfinding_FollowerEntity__set_enableLocalAvoidance(v20, 1, 0);
+        *(_BYTE *)(a1 + 464) = 1;
+        if ( v5 != 0 )
+        {
+          LODWORD(v2) = *(_DWORD *)(a1 + 144);
+          if ( *(float *)&v2 <= 0.0 )
+            return;
+          v22 = *(_QWORD *)(a1 + 128);
+          if ( v22 != 0 )
+          {
+            radius = Pathfinding_FollowerEntity__get_radius(v22, 0);
+            if ( *((_DWORD *)off_8CEA738 /* System.Math_TypeInfo */ + 56) == 0 )
+              il2cpp_codegen_runtime_class_init(off_8CEA738 /* System.Math_TypeInfo */);
+            if ( vabds_f32(radius, *(float *)&v2) <= 0.001 )
+              return;
+            v24 = *(_QWORD *)(a1 + 128);
+            if ( v24 != 0 )
+            {
+              Pathfinding_FollowerEntity__set_radius(v24, 0, v2);
+LABEL_57:
+              *(_DWORD *)(a1 + 448) = LODWORD(v2);
+              return;
+            }
+          }
+        }
+        else
+        {
+          LODWORD(v21) = 0.25;
+          GameModule_RoleBehaviour__GetScaledRadius(a1, v21);
+          if ( *((_DWORD *)off_8CE1928 /* QuickTutor.Singleton<ABTestManager>_TypeInfo */ + 56) == 0 )
+            il2cpp_codegen_runtime_class_init(off_8CE1928 /* QuickTutor.Singleton<ABTestManager>_TypeInfo */);
+          v33 = QuickTutor_Singleton_object___get_Instance(qword_8D17890 /* Method$QuickTutor.Singleton<ABTestManager>.get_Instance() */, v31, v32);
+          if ( v33 != 0 )
+          {
+            if ( (SDKModule_ABTestManager__get_UnitCollisionEnableIsBTest(v33, 0) & 1) != 0 )
+              return;
+            v34 = *(_QWORD *)(a1 + 128);
+            if ( v34 != 0 )
+            {
+              v36 = Pathfinding_FollowerEntity__get_radius(v34, 0);
+              if ( *((_DWORD *)off_8CEA738 /* System.Math_TypeInfo */ + 56) == 0 )
+                il2cpp_codegen_runtime_class_init(off_8CEA738 /* System.Math_TypeInfo */);
+              LODWORD(v35) = 981668463;
+              if ( fabsf(v36 + -0.001) < 0.001 )
+                return;
+              v37 = *(_QWORD *)(a1 + 128);
+              if ( v37 != 0 )
+              {
+                Pathfinding_FollowerEntity__set_radius(v37, 0, v35);
+                *(_DWORD *)(a1 + 448) = 981668463;
+                return;
+              }
+            }
+          }
+        }
+      }
+    }
+    else
+    {
+LABEL_46:
+      if ( v5 == *(unsigned __int8 *)(a1 + 464) )
+        return;
+      v25 = *(_QWORD *)(a1 + 128);
+      *(_BYTE *)(a1 + 464) = v5;
+      if ( v25 != 0 )
+      {
+        ((void (*)(void))Pathfinding_FollowerEntity__set_enableLocalAvoidance)();
+        return;
+      }
+    }
+LABEL_69:
+    il2cpp_codegen_raise_null_reference_exception();
+  }
+  v6 = ToolModule_ManagerBase_object___get_Instance((const MethodInfo *)qword_8D12168 /* Method$ToolModule.ManagerBase<FloatingTextManager>.get_Instance() */);
+  if ( *((_DWORD *)off_8CEB3E0 /* UnityEngine.Object_TypeInfo */ + 56) == 0 )
+    il2cpp_codegen_runtime_class_init(off_8CEB3E0 /* UnityEngine.Object_TypeInfo */);
+  if ( (UnityEngine_Object__op_Inequality(v6, 0, 0) & 1) == 0 )
+  {
+    v10 = (_BYTE *)(a1 + 464);
+    goto LABEL_23;
+  }
+  v7 = ToolModule_ManagerBase_object___get_Instance((const MethodInfo *)qword_8D12168 /* Method$ToolModule.ManagerBase<FloatingTextManager>.get_Instance() */);
+  if ( v7 == nullptr )
+    goto LABEL_69;
+  hideDamageText = GameModule_FloatingTextManager__get_hideDamageText(v7, 0);
+  v10 = (_BYTE *)(a1 + 464);
+  if ( (hideDamageText & 1) == 0 )
+  {
+LABEL_23:
+    *v10 = v5;
+    return;
+  }
+  *v10 = 1;
+  if ( v5 != 0 )
+  {
+    v11 = *(float *)(a1 + 144);
+    if ( v11 > 0.0 )
+    {
+      v12 = *(float *)(a1 + 448);
+      if ( *((_DWORD *)off_8CEA738 /* System.Math_TypeInfo */ + 56) == 0 )
+        il2cpp_codegen_runtime_class_init(off_8CEA738 /* System.Math_TypeInfo */);
+      if ( vabds_f32(v12, v11) > 0.001 )
+        *(_DWORD *)(a1 + 448) = *(_DWORD *)(a1 + 144);
+    }
+    return;
+  }
+  LODWORD(v9) = 0.25;
+  LODWORD(v2) = COERCE_UNSIGNED_INT128(GameModule_RoleBehaviour__GetScaledRadius(a1, v9));
+  if ( *((_DWORD *)off_8CE1928 /* QuickTutor.Singleton<ABTestManager>_TypeInfo */ + 56) == 0 )
+    il2cpp_codegen_runtime_class_init(off_8CE1928 /* QuickTutor.Singleton<ABTestManager>_TypeInfo */);
+  v28 = QuickTutor_Singleton_object___get_Instance(qword_8D17890 /* Method$QuickTutor.Singleton<ABTestManager>.get_Instance() */, v26, v27);
+  if ( v28 == 0 )
+    goto LABEL_69;
+  IsBTest = SDKModule_ABTestManager__get_UnitCollisionEnableIsBTest(v28, 0);
+  v30 = *(float *)(a1 + 448);
+  if ( (IsBTest & 1) == 0 )
+    *(float *)&v2 = 0.001;
+  if ( *((_DWORD *)off_8CEA738 /* System.Math_TypeInfo */ + 56) == 0 )
+    il2cpp_codegen_runtime_class_init(off_8CEA738 /* System.Math_TypeInfo */);
+  if ( vabds_f32(v30, *(float *)&v2) >= 0.001 )
+    goto LABEL_57;
+}

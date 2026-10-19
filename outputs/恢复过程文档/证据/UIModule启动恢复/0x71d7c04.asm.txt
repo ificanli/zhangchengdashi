@@ -1,0 +1,68 @@
+0x71d7c04: fe0f1df8 str      x30, [sp, #-0x30]!
+0x71d7c08: f65701a9 stp      x22, x21, [sp, #0x10]
+0x71d7c0c: f44f02a9 stp      x20, x19, [sp, #0x20]
+0x71d7c10: 94f100d0 adrp     x20, #0x9009000
+0x71d7c14: 885e5739 ldrb     w8, [x20, #0x5d7]
+0x71d7c18: f30300aa mov      x19, x0
+0x71d7c1c: 28010037 tbnz     w8, #0, #0x71d7c40
+0x71d7c20: 00ca00b0 adrp     x0, #0x8b18000
+0x71d7c24: 003c44f9 ldr      x0, [x0, #0x878] // Method$UnityEngine.GameObject.GetComponentsInChildren<IUILang>()
+0x71d7c28: 96952997 bl       #0x3c3d280
+0x71d7c2c: 00ca00b0 adrp     x0, #0x8b18000
+0x71d7c30: 004044f9 ldr      x0, [x0, #0x880] // GameFramework.IUILang_TypeInfo
+0x71d7c34: 93952997 bl       #0x3c3d280
+0x71d7c38: 28008052 mov      w8, #1
+0x71d7c3c: 885e1739 strb     w8, [x20, #0x5d7]
+0x71d7c40: 601240f9 ldr      x0, [x19, #0x20]
+0x71d7c44: 600600b4 cbz      x0, #0x71d7d10
+0x71d7c48: 08ca00b0 adrp     x8, #0x8b18000
+0x71d7c4c: 083d44f9 ldr      x8, [x8, #0x878] // Method$UnityEngine.GameObject.GetComponentsInChildren<IUILang>()
+0x71d7c50: 21008052 mov      w1, #1
+0x71d7c54: 020140f9 ldr      x2, [x8]
+0x71d7c58: fad86a97 bl       #0x4c8e040 // UnityEngine.GameObject$$GetComponentsInChildren<object>
+0x71d7c5c: a00500b4 cbz      x0, #0x71d7d10
+0x71d7c60: 080c40f9 ldr      x8, [x0, #0x18]
+0x71d7c64: f30300aa mov      x19, x0
+0x71d7c68: 15050071 subs     w21, w8, #1
+0x71d7c6c: a4040054 b.mi     #0x71d7d00
+0x71d7c70: bf02086b cmp      w21, w8
+0x71d7c74: 42040054 b.hs     #0x71d7cfc
+0x71d7c78: 16ca00b0 adrp     x22, #0x8b18000
+0x71d7c7c: d64244f9 ldr      x22, [x22, #0x880] // GameFramework.IUILang_TypeInfo
+0x71d7c80: 684e358b add      x8, x19, w21, uxtw #3
+0x71d7c84: 141140f9 ldr      x20, [x8, #0x20]
+0x71d7c88: 540400b4 cbz      x20, #0x71d7d10
+0x71d7c8c: 880240f9 ldr      x8, [x20]
+0x71d7c90: c10240f9 ldr      x1, [x22]
+0x71d7c94: 095d4279 ldrh     w9, [x8, #0x12e]
+0x71d7c98: 290100b4 cbz      x9, #0x71d7cbc
+0x71d7c9c: 0a5940f9 ldr      x10, [x8, #0xb0]
+0x71d7ca0: 4a210091 add      x10, x10, #8
+0x71d7ca4: 4b815ff8 ldur     x11, [x10, #-8]
+0x71d7ca8: 7f0101eb cmp      x11, x1
+0x71d7cac: 00010054 b.eq     #0x71d7ccc
+0x71d7cb0: 290500f1 subs     x9, x9, #1
+0x71d7cb4: 4a410091 add      x10, x10, #0x10
+0x71d7cb8: 61ffff54 b.ne     #0x71d7ca4
+0x71d7cbc: 82008052 mov      w2, #4
+0x71d7cc0: e00314aa mov      x0, x20
+0x71d7cc4: f8e12997 bl       #0x3c504a4
+0x71d7cc8: 05000014 b        #0x71d7cdc
+0x71d7ccc: 490140b9 ldr      w9, [x10]
+0x71d7cd0: 29110011 add      w9, w9, #4
+0x71d7cd4: 08d1298b add      x8, x8, w9, sxtw #4
+0x71d7cd8: 00e10491 add      x0, x8, #0x138
+0x71d7cdc: 080440a9 ldp      x8, x1, [x0]
+0x71d7ce0: e00314aa mov      x0, x20
+0x71d7ce4: 00013fd6 blr      x8
+0x71d7ce8: b5060071 subs     w21, w21, #1
+0x71d7cec: a4000054 b.mi     #0x71d7d00
+0x71d7cf0: 681a40b9 ldr      w8, [x19, #0x18]
+0x71d7cf4: bf02086b cmp      w21, w8
+0x71d7cf8: 43fcff54 b.lo     #0x71d7c80
+0x71d7cfc: f6952997 bl       #0x3c3d4d4
+0x71d7d00: f44f42a9 ldp      x20, x19, [sp, #0x20]
+0x71d7d04: f65741a9 ldp      x22, x21, [sp, #0x10]
+0x71d7d08: fe0743f8 ldr      x30, [sp], #0x30
+0x71d7d0c: c0035fd6 ret      
+0x71d7d10: ef952997 bl       #0x3c3d4cc

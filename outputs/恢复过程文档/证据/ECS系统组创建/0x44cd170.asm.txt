@@ -1,0 +1,254 @@
+0x44cd170: ff4303d1 sub      sp, sp, #0xd0
+0x44cd174: fd7b07a9 stp      x29, x30, [sp, #0x70]
+0x44cd178: fc6f08a9 stp      x28, x27, [sp, #0x80]
+0x44cd17c: fa6709a9 stp      x26, x25, [sp, #0x90]
+0x44cd180: f85f0aa9 stp      x24, x23, [sp, #0xa0]
+0x44cd184: f6570ba9 stp      x22, x21, [sp, #0xb0]
+0x44cd188: f44f0ca9 stp      x20, x19, [sp, #0xc0]
+0x44cd18c: b4590290 adrp     x20, #0x9001000
+0x44cd190: 35300290 adrp     x21, #0x8ad1000
+0x44cd194: 88de4239 ldrb     w8, [x20, #0xb7]
+0x44cd198: b5ba41f9 ldr      x21, [x21, #0x370] // AstarPath_TypeInfo
+0x44cd19c: f30300aa mov      x19, x0
+0x44cd1a0: 68030037 tbnz     w8, #0, #0x44cd20c
+0x44cd1a4: 20300290 adrp     x0, #0x8ad1000
+0x44cd1a8: 00b841f9 ldr      x0, [x0, #0x370] // AstarPath_TypeInfo
+0x44cd1ac: 35c0dd97 bl       #0x3c3d280
+0x44cd1b0: 803102f0 adrp     x0, #0x8b00000
+0x44cd1b4: 00ac46f9 ldr      x0, [x0, #0xd58] // Method$Unity.Collections.NativeList<SystemHandle>.Dispose()
+0x44cd1b8: 32c0dd97 bl       #0x3c3d280
+0x44cd1bc: 803102f0 adrp     x0, #0x8b00000
+0x44cd1c0: 00b046f9 ldr      x0, [x0, #0xd60] // Method$Unity.Collections.NativeList<SystemHandle>.get_Item()
+0x44cd1c4: 2fc0dd97 bl       #0x3c3d280
+0x44cd1c8: 803102f0 adrp     x0, #0x8b00000
+0x44cd1cc: 00b446f9 ldr      x0, [x0, #0xd68] // Method$Unity.Collections.NativeList<SystemHandle>.get_Length()
+0x44cd1d0: 2cc0dd97 bl       #0x3c3d280
+0x44cd1d4: e02f02f0 adrp     x0, #0x8acc000
+0x44cd1d8: 006844f9 ldr      x0, [x0, #0x8d0] // UnityEngine.Object_TypeInfo
+0x44cd1dc: 29c0dd97 bl       #0x3c3d280
+0x44cd1e0: 603002b0 adrp     x0, #0x8ada000
+0x44cd1e4: 008847f9 ldr      x0, [x0, #0xf10] // System.Diagnostics.Stopwatch_TypeInfo
+0x44cd1e8: 26c0dd97 bl       #0x3c3d280
+0x44cd1ec: 803102f0 adrp     x0, #0x8b00000
+0x44cd1f0: 00a846f9 ldr      x0, [x0, #0xd50] // Pathfinding.ECS.AIMovementSystemGroup.TimeScaledRateManager_TypeInfo
+0x44cd1f4: 23c0dd97 bl       #0x3c3d280
+0x44cd1f8: 803102f0 adrp     x0, #0x8b00000
+0x44cd1fc: 00b846f9 ldr      x0, [x0, #0xd70] // Unity.Entities.WorldUnmanaged_TypeInfo
+0x44cd200: 20c0dd97 bl       #0x3c3d280
+0x44cd204: 28008052 mov      w8, #1
+0x44cd208: 88de0239 strb     w8, [x20, #0xb7]
+0x44cd20c: a00240f9 ldr      x0, [x21]
+0x44cd210: ff7f05a9 stp      xzr, xzr, [sp, #0x50]
+0x44cd214: ff3300f9 str      xzr, [sp, #0x60]
+0x44cd218: ff7f04a9 stp      xzr, xzr, [sp, #0x40]
+0x44cd21c: f42f02f0 adrp     x20, #0x8acc000
+0x44cd220: 08e040b9 ldr      w8, [x0, #0xe0]
+0x44cd224: 946a44f9 ldr      x20, [x20, #0x8d0] // UnityEngine.Object_TypeInfo
+0x44cd228: 68000035 cbnz     w8, #0x44cd234
+0x44cd22c: 61c0dd97 bl       #0x3c3d3b0
+0x44cd230: a00240f9 ldr      x0, [x21]
+0x44cd234: 880240f9 ldr      x8, [x20]
+0x44cd238: 095c40f9 ldr      x9, [x0, #0xb8]
+0x44cd23c: 0ae140b9 ldr      w10, [x8, #0xe0]
+0x44cd240: 340d40f9 ldr      x20, [x9, #0x18]
+0x44cd244: 6a000035 cbnz     w10, #0x44cd250
+0x44cd248: e00308aa mov      x0, x8
+0x44cd24c: 59c0dd97 bl       #0x3c3d3b0
+0x44cd250: e00314aa mov      x0, x20
+0x44cd254: e1031faa mov      x1, xzr
+0x44cd258: e2031faa mov      x2, xzr
+0x44cd25c: 847af894 bl       #0x82ebc6c // UnityEngine.Object$$op_Inequality
+0x44cd260: 20020036 tbz      w0, #0, #0x44cd2a4
+0x44cd264: a00240f9 ldr      x0, [x21]
+0x44cd268: 08e040b9 ldr      w8, [x0, #0xe0]
+0x44cd26c: 68000035 cbnz     w8, #0x44cd278
+0x44cd270: 50c0dd97 bl       #0x3c3d3b0
+0x44cd274: a00240f9 ldr      x0, [x21]
+0x44cd278: 085c40f9 ldr      x8, [x0, #0xb8]
+0x44cd27c: 000d40f9 ldr      x0, [x8, #0x18]
+0x44cd280: 201700b4 cbz      x0, #0x44cd564
+0x44cd284: e8230091 add      x8, sp, #8
+0x44cd288: e1031faa mov      x1, xzr
+0x44cd28c: d2e0fd97 bl       #0x44455d4 // AstarPath$$LockGraphDataForReading
+0x44cd290: e083c03c ldur     q0, [sp, #8]
+0x44cd294: e80f40f9 ldr      x8, [sp, #0x18]
+0x44cd298: e00b803d str      q0, [sp, #0x20]
+0x44cd29c: e81b00f9 str      x8, [sp, #0x30]
+0x44cd2a0: 03000014 b        #0x44cd2ac
+0x44cd2a4: ff7f02a9 stp      xzr, xzr, [sp, #0x20]
+0x44cd2a8: ff1b00f9 str      xzr, [sp, #0x30]
+0x44cd2ac: 983102f0 adrp     x24, #0x8b00000
+0x44cd2b0: 993102f0 adrp     x25, #0x8b00000
+0x44cd2b4: 9a3102f0 adrp     x26, #0x8b00000
+0x44cd2b8: 763002b0 adrp     x22, #0x8ada000
+0x44cd2bc: 18b746f9 ldr      x24, [x24, #0xd68] // Method$Unity.Collections.NativeList<SystemHandle>.get_Length()
+0x44cd2c0: 39b346f9 ldr      x25, [x25, #0xd60] // Method$Unity.Collections.NativeList<SystemHandle>.get_Item()
+0x44cd2c4: 5abb46f9 ldr      x26, [x26, #0xd70] // Unity.Entities.WorldUnmanaged_TypeInfo
+0x44cd2c8: d68a47f9 ldr      x22, [x22, #0xf10] // System.Diagnostics.Stopwatch_TypeInfo
+0x44cd2cc: e00bc03d ldr      q0, [sp, #0x20]
+0x44cd2d0: e81b40f9 ldr      x8, [sp, #0x30]
+0x44cd2d4: 973102f0 adrp     x23, #0x8b00000
+0x44cd2d8: 9b3102f0 adrp     x27, #0x8b00000
+0x44cd2dc: f7aa46f9 ldr      x23, [x23, #0xd50] // Pathfinding.ECS.AIMovementSystemGroup.TimeScaledRateManager_TypeInfo
+0x44cd2e0: 7baf46f9 ldr      x27, [x27, #0xd58] // Method$Unity.Collections.NativeList<SystemHandle>.Dispose()
+0x44cd2e4: 41008052 mov      w1, #2
+0x44cd2e8: e00313aa mov      x0, x19
+0x44cd2ec: e2031faa mov      x2, xzr
+0x44cd2f0: e017803d str      q0, [sp, #0x50]
+0x44cd2f4: e83300f9 str      x8, [sp, #0x60]
+0x44cd2f8: cad8e594 bl       #0x7e43620 // Unity.Entities.ComponentSystemGroup$$GetUnmanagedSystems
+0x44cd2fc: f40300aa mov      x20, x0
+0x44cd300: fc031faa mov      x28, xzr
+0x44cd304: fd031faa mov      x29, xzr
+0x44cd308: e02700f9 str      x0, [sp, #0x48]
+0x44cd30c: 080340f9 ldr      x8, [x24]
+0x44cd310: 001140f9 ldr      x0, [x8, #0x20]
+0x44cd314: 08d44439 ldrb     w8, [x0, #0x135]
+0x44cd318: 48000037 tbnz     w8, #0, #0x44cd320
+0x44cd31c: 210cde97 bl       #0x3c503a0
+0x44cd320: 880a80b9 ldrsw    x8, [x20, #8]
+0x44cd324: bf0308eb cmp      x29, x8
+0x44cd328: 4a050054 b.ge     #0x44cd3d0
+0x44cd32c: e00313aa mov      x0, x19
+0x44cd330: e1031faa mov      x1, xzr
+0x44cd334: 77d5e594 bl       #0x7e42910 // Unity.Entities.ComponentSystemBase$$get_World
+0x44cd338: 601100b4 cbz      x0, #0x44cd564
+0x44cd33c: 081440f9 ldr      x8, [x0, #0x28]
+0x44cd340: 290340f9 ldr      x9, [x25]
+0x44cd344: f42740f9 ldr      x20, [sp, #0x48]
+0x44cd348: e82300f9 str      x8, [sp, #0x40]
+0x44cd34c: 201140f9 ldr      x0, [x9, #0x20]
+0x44cd350: 08d44439 ldrb     w8, [x0, #0x135]
+0x44cd354: 48000037 tbnz     w8, #0, #0x44cd35c
+0x44cd358: 120cde97 bl       #0x3c503a0
+0x44cd35c: 880240f9 ldr      x8, [x20]
+0x44cd360: 400340f9 ldr      x0, [x26]
+0x44cd364: 8803088b add      x8, x28, x8
+0x44cd368: 09e040b9 ldr      w9, [x0, #0xe0]
+0x44cd36c: 155140a9 ldp      x21, x20, [x8]
+0x44cd370: 49000035 cbnz     w9, #0x44cd378
+0x44cd374: 0fc0dd97 bl       #0x3c3d3b0
+0x44cd378: e0030191 add      x0, sp, #0x40
+0x44cd37c: e10315aa mov      x1, x21
+0x44cd380: e20314aa mov      x2, x20
+0x44cd384: e3031faa mov      x3, xzr
+0x44cd388: 4a31e794 bl       #0x7e998b0 // Unity.Entities.WorldUnmanaged$$ResolveSystemStateRef
+0x44cd38c: e1031faa mov      x1, xzr
+0x44cd390: f40300aa mov      x20, x0
+0x44cd394: 164cea94 bl       #0x7f603ec // Unity.Entities.SystemState$$get_Dependency
+0x44cd398: e28f45a9 ldp      x2, x3, [sp, #0x58]
+0x44cd39c: e4031faa mov      x4, xzr
+0x44cd3a0: 1c24f794 bl       #0x8296410 // Unity.Jobs.JobHandle$$CombineDependencies
+0x44cd3a4: e20300aa mov      x2, x0
+0x44cd3a8: e30301aa mov      x3, x1
+0x44cd3ac: e00314aa mov      x0, x20
+0x44cd3b0: e10302aa mov      x1, x2
+0x44cd3b4: e20303aa mov      x2, x3
+0x44cd3b8: e3031faa mov      x3, xzr
+0x44cd3bc: 364cea94 bl       #0x7f60494 // Unity.Entities.SystemState$$set_Dependency
+0x44cd3c0: f42740f9 ldr      x20, [sp, #0x48]
+0x44cd3c4: bd070091 add      x29, x29, #1
+0x44cd3c8: 9c430091 add      x28, x28, #0x10
+0x44cd3cc: d0ffff17 b        #0x44cd30c
+0x44cd3d0: c00240f9 ldr      x0, [x22]
+0x44cd3d4: 08e040b9 ldr      w8, [x0, #0xe0]
+0x44cd3d8: 48000035 cbnz     w8, #0x44cd3e0
+0x44cd3dc: f5bfdd97 bl       #0x3c3d3b0
+0x44cd3e0: e0031faa mov      x0, xzr
+0x44cd3e4: 49c2df94 bl       #0x7cbdd08 // System.Diagnostics.Stopwatch$$GetTimestamp
+0x44cd3e8: f40300aa mov      x20, x0
+0x44cd3ec: e00313aa mov      x0, x19
+0x44cd3f0: e1031faa mov      x1, xzr
+0x44cd3f4: 97e7e594 bl       #0x7e47250 // Unity.Entities.ComponentSystemGroup$$OnUpdate
+0x44cd3f8: e0031faa mov      x0, xzr
+0x44cd3fc: 43c2df94 bl       #0x7cbdd08 // System.Diagnostics.Stopwatch$$GetTimestamp
+0x44cd400: 684640f9 ldr      x8, [x19, #0x88]
+0x44cd404: 080b00b4 cbz      x8, #0x44cd564
+0x44cd408: 0a0140f9 ldr      x10, [x8]
+0x44cd40c: e90240f9 ldr      x9, [x23]
+0x44cd410: 4cc14439 ldrb     w12, [x10, #0x130]
+0x44cd414: 2bc14439 ldrb     w11, [x9, #0x130]
+0x44cd418: 9f010b6b cmp      w12, w11
+0x44cd41c: 430a0054 b.lo     #0x44cd564
+0x44cd420: 4a6540f9 ldr      x10, [x10, #0xc8]
+0x44cd424: 4a0d0b8b add      x10, x10, x11, lsl #3
+0x44cd428: 4a815ff8 ldur     x10, [x10, #-8]
+0x44cd42c: 5f0109eb cmp      x10, x9
+0x44cd430: a1090054 b.ne     #0x44cd564
+0x44cd434: c90240f9 ldr      x9, [x22]
+0x44cd438: 295d40f9 ldr      x9, [x9, #0xb8]
+0x44cd43c: 200140fd ldr      d0, [x9]
+0x44cd440: 090014cb sub      x9, x0, x20
+0x44cd444: 2101629e scvtf    d1, x9
+0x44cd448: e00308aa mov      x0, x8
+0x44cd44c: 00d8615e scvtf    d0, d0
+0x44cd450: 2018601e fdiv     d0, d1, d0
+0x44cd454: 0040621e fcvt     s0, d0
+0x44cd458: 44000094 bl       #0x44cd568 // Pathfinding.ECS.AIMovementSystemGroup.TimeScaledRateManager$$OnSimulationStepsFinished
+0x44cd45c: fc031faa mov      x28, xzr
+0x44cd460: fd031faa mov      x29, xzr
+0x44cd464: f4031faa mov      x20, xzr
+0x44cd468: f5031faa mov      x21, xzr
+0x44cd46c: 080340f9 ldr      x8, [x24]
+0x44cd470: f62740f9 ldr      x22, [sp, #0x48]
+0x44cd474: 001140f9 ldr      x0, [x8, #0x20]
+0x44cd478: 08d44439 ldrb     w8, [x0, #0x135]
+0x44cd47c: 48000037 tbnz     w8, #0, #0x44cd484
+0x44cd480: c80bde97 bl       #0x3c503a0
+0x44cd484: c80a80b9 ldrsw    x8, [x22, #8]
+0x44cd488: bf0308eb cmp      x29, x8
+0x44cd48c: ca040054 b.ge     #0x44cd524
+0x44cd490: e00313aa mov      x0, x19
+0x44cd494: e1031faa mov      x1, xzr
+0x44cd498: 1ed5e594 bl       #0x7e42910 // Unity.Entities.ComponentSystemBase$$get_World
+0x44cd49c: 400600b4 cbz      x0, #0x44cd564
+0x44cd4a0: 081440f9 ldr      x8, [x0, #0x28]
+0x44cd4a4: 290340f9 ldr      x9, [x25]
+0x44cd4a8: f62740f9 ldr      x22, [sp, #0x48]
+0x44cd4ac: e82300f9 str      x8, [sp, #0x40]
+0x44cd4b0: 201140f9 ldr      x0, [x9, #0x20]
+0x44cd4b4: 08d44439 ldrb     w8, [x0, #0x135]
+0x44cd4b8: 48000037 tbnz     w8, #0, #0x44cd4c0
+0x44cd4bc: b90bde97 bl       #0x3c503a0
+0x44cd4c0: c80240f9 ldr      x8, [x22]
+0x44cd4c4: 400340f9 ldr      x0, [x26]
+0x44cd4c8: 8803088b add      x8, x28, x8
+0x44cd4cc: 09e040b9 ldr      w9, [x0, #0xe0]
+0x44cd4d0: 175940a9 ldp      x23, x22, [x8]
+0x44cd4d4: 49000035 cbnz     w9, #0x44cd4dc
+0x44cd4d8: b6bfdd97 bl       #0x3c3d3b0
+0x44cd4dc: e0030191 add      x0, sp, #0x40
+0x44cd4e0: e10317aa mov      x1, x23
+0x44cd4e4: e20316aa mov      x2, x22
+0x44cd4e8: e3031faa mov      x3, xzr
+0x44cd4ec: f130e794 bl       #0x7e998b0 // Unity.Entities.WorldUnmanaged$$ResolveSystemStateRef
+0x44cd4f0: e1031faa mov      x1, xzr
+0x44cd4f4: be4bea94 bl       #0x7f603ec // Unity.Entities.SystemState$$get_Dependency
+0x44cd4f8: e20300aa mov      x2, x0
+0x44cd4fc: e30301aa mov      x3, x1
+0x44cd500: e00314aa mov      x0, x20
+0x44cd504: e10315aa mov      x1, x21
+0x44cd508: e4031faa mov      x4, xzr
+0x44cd50c: c123f794 bl       #0x8296410 // Unity.Jobs.JobHandle$$CombineDependencies
+0x44cd510: f40300aa mov      x20, x0
+0x44cd514: f50301aa mov      x21, x1
+0x44cd518: bd070091 add      x29, x29, #1
+0x44cd51c: 9c430091 add      x28, x28, #0x10
+0x44cd520: d3ffff17 b        #0x44cd46c
+0x44cd524: 610340f9 ldr      x1, [x27]
+0x44cd528: e0230191 add      x0, sp, #0x48
+0x44cd52c: 95135b94 bl       #0x5b92380 // Unity.Collections.NativeList<SystemHandle>$$Dispose
+0x44cd530: e0430191 add      x0, sp, #0x50
+0x44cd534: e10314aa mov      x1, x20
+0x44cd538: e20315aa mov      x2, x21
+0x44cd53c: e3031faa mov      x3, xzr
+0x44cd540: 47c1fe97 bl       #0x447da5c // Pathfinding.Sync.RWLock.ReadLockAsync$$UnlockAfter
+0x44cd544: f44f4ca9 ldp      x20, x19, [sp, #0xc0]
+0x44cd548: f6574ba9 ldp      x22, x21, [sp, #0xb0]
+0x44cd54c: f85f4aa9 ldp      x24, x23, [sp, #0xa0]
+0x44cd550: fa6749a9 ldp      x26, x25, [sp, #0x90]
+0x44cd554: fc6f48a9 ldp      x28, x27, [sp, #0x80]
+0x44cd558: fd7b47a9 ldp      x29, x30, [sp, #0x70]
+0x44cd55c: ff430391 add      sp, sp, #0xd0
+0x44cd560: c0035fd6 ret      
+0x44cd564: dabfdd97 bl       #0x3c3d4cc

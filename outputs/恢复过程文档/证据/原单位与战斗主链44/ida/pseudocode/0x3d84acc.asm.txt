@@ -1,0 +1,37 @@
+0x3d84acc: STP             D9, D8, [SP,#var_30]!
+0x3d84ad0: STR             X30, [SP,#0x30+var_20]
+0x3d84ad4: STP             X20, X19, [SP,#0x30+var_10]
+0x3d84ad8: ADRP            X20, #byte_8FFD475@PAGE
+0x3d84adc: LDRB            W8, [X20,#byte_8FFD475@PAGEOFF]
+0x3d84ae0: MOV             V8.16B, V0.16B
+0x3d84ae4: MOV             X19, X0
+0x3d84ae8: TBNZ            W8, #0, loc_3D84B00
+0x3d84aec: ADRP            X0, #off_8ACC8F0@PAGE
+0x3d84af0: LDR             X0, [X0,#off_8ACC8F0@PAGEOFF]; off_8CEA738 ; slot
+0x3d84af4: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3d84af8: MOV             W8, #1
+0x3d84afc: STRB            W8, [X20,#byte_8FFD475@PAGEOFF]
+0x3d84b00: MOV             X0, XZR
+0x3d84b04: BL              Pathfinding.AstarWebGLRuntimeConfig$$get_UseWebGLNavigation
+0x3d84b08: TBZ             W0, #0, loc_3D84B50
+0x3d84b0c: ADRP            X20, #off_8ACC8F0@PAGE
+0x3d84b10: LDR             X20, [X20,#off_8ACC8F0@PAGEOFF]; off_8CEA738
+0x3d84b14: MOV             X0, X19
+0x3d84b18: MOV             V0.16B, V8.16B
+0x3d84b1c: BL              GameModule.RoleBehaviour$$GetScaledRadius
+0x3d84b20: LDR             X0, [X20]; klass
+0x3d84b24: LDR             S9, [X19,#0x1C0]
+0x3d84b28: MOV             V8.16B, V0.16B
+0x3d84b2c: LDR             W8, [X0,#0xE0]
+0x3d84b30: CBNZ            W8, loc_3D84B38
+0x3d84b34: BL              il2cpp_codegen_runtime_class_init
+0x3d84b38: ADRP            X8, #dword_1837464@PAGE
+0x3d84b3c: LDR             S0, [X8,#dword_1837464@PAGEOFF]
+0x3d84b40: FABD            S1, S9, S8
+0x3d84b44: FCMP            S1, S0
+0x3d84b48: B.LE            loc_3D84B50
+0x3d84b4c: STR             S8, [X19,#0x1C0]
+0x3d84b50: LDP             X20, X19, [SP,#0x30+var_10]
+0x3d84b54: LDR             X30, [SP,#0x30+var_20]
+0x3d84b58: LDP             D9, D8, [SP+0x30+var_30],#0x30
+0x3d84b5c: RET

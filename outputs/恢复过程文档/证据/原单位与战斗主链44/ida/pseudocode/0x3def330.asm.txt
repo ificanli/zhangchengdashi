@@ -1,0 +1,25 @@
+0x3def330: CMP             W1, #3; switch 4 cases
+0x3def334: B.HI            def_3DEF350; jumptable 0000000003DEF350 default case
+0x3def338: ADRP            X9, #jpt_3DEF350@PAGE
+0x3def33c: MOV             W8, W1
+0x3def340: ADD             X9, X9, #jpt_3DEF350@PAGEOFF
+0x3def344: ADR             X10, loc_3DEF354; jumptable 0000000003DEF350 case 0
+0x3def348: LDRB            W11, [X9,X8]
+0x3def34c: ADD             X10, X10, X11,LSL#2
+0x3def350: BR              X10; switch jump
+0x3def354: LDR             W8, [X0,#0x1C0]; jumptable 0000000003DEF350 case 0
+0x3def358: ADD             W8, W8, #1
+0x3def35c: STR             W8, [X0,#0x1C0]
+0x3def360: RET
+0x3def364: LDR             W8, [X0,#0x1C4]; jumptable 0000000003DEF350 case 1
+0x3def368: ADD             W8, W8, #1
+0x3def36c: STR             W8, [X0,#0x1C4]
+0x3def370: RET
+0x3def374: LDR             W8, [X0,#0x1C8]; jumptable 0000000003DEF350 case 2
+0x3def378: ADD             W8, W8, #1
+0x3def37c: STR             W8, [X0,#0x1C8]
+0x3def380: RET
+0x3def384: LDR             W8, [X0,#0x1CC]; jumptable 0000000003DEF350 case 3
+0x3def388: ADD             W8, W8, #1
+0x3def38c: STR             W8, [X0,#0x1CC]
+0x3def390: RET; jumptable 0000000003DEF350 default case

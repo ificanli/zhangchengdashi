@@ -1,0 +1,22 @@
+0x4276b00: fe0f1df8 str      x30, [sp, #-0x30]!
+0x4276b04: f65701a9 stp      x22, x21, [sp, #0x10]
+0x4276b08: f44f02a9 stp      x20, x19, [sp, #0x20]
+0x4276b0c: 566c02b0 adrp     x22, #0x8fff000
+0x4276b10: b54302b0 adrp     x21, #0x8aeb000
+0x4276b14: c87a7f39 ldrb     w8, [x22, #0xfde]
+0x4276b18: b5a643f9 ldr      x21, [x21, #0x748] // Method$Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<UIPanel>.SetStateMachine()
+0x4276b1c: f30301aa mov      x19, x1
+0x4276b20: f40300aa mov      x20, x0
+0x4276b24: c8000037 tbnz     w8, #0, #0x4276b3c
+0x4276b28: a04302b0 adrp     x0, #0x8aeb000
+0x4276b2c: 00a443f9 ldr      x0, [x0, #0x748] // Method$Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<UIPanel>.SetStateMachine()
+0x4276b30: d419e797 bl       #0x3c3d280
+0x4276b34: 28008052 mov      w8, #1
+0x4276b38: c87a3f39 strb     w8, [x22, #0xfde]
+0x4276b3c: a20240f9 ldr      x2, [x21]
+0x4276b40: 80220091 add      x0, x20, #8
+0x4276b44: e10313aa mov      x1, x19
+0x4276b48: f44f42a9 ldp      x20, x19, [sp, #0x20]
+0x4276b4c: f65741a9 ldp      x22, x21, [sp, #0x10]
+0x4276b50: fe0743f8 ldr      x30, [sp], #0x30
+0x4276b54: d9eb7a14 b        #0x6131ab8 // Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<object>$$SetStateMachine

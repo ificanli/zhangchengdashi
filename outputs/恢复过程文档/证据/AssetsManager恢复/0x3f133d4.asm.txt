@@ -1,0 +1,111 @@
+0x3f133d4: ff8301d1 sub      sp, sp, #0x60
+0x3f133d8: fe5704a9 stp      x30, x21, [sp, #0x40]
+0x3f133dc: f44f05a9 stp      x20, x19, [sp, #0x50]
+0x3f133e0: 558702f0 adrp     x21, #0x8ffe000
+0x3f133e4: a8d24139 ldrb     w8, [x21, #0x74]
+0x3f133e8: f40301aa mov      x20, x1
+0x3f133ec: f30300aa mov      x19, x0
+0x3f133f0: 88010037 tbnz     w8, #0, #0x3f13420
+0x3f133f4: 205e02f0 adrp     x0, #0x8ada000
+0x3f133f8: 00e446f9 ldr      x0, [x0, #0xdc8] // UnityEngine.AddressableAssets.Addressables_TypeInfo
+0x3f133fc: a1a7f497 bl       #0x3c3d280
+0x3f13400: 205e02f0 adrp     x0, #0x8ada000
+0x3f13404: 00e846f9 ldr      x0, [x0, #0xdd0] // Method$System.Collections.Generic.Dictionary<string, AssetsManager.AssetHandleInfo>.Remove()
+0x3f13408: 9ea7f497 bl       #0x3c3d280
+0x3f1340c: 205e02f0 adrp     x0, #0x8ada000
+0x3f13410: 00ec46f9 ldr      x0, [x0, #0xdd8] // Method$System.Collections.Generic.Dictionary<string, AssetsManager.AssetHandleInfo>.TryGetValue()
+0x3f13414: 9ba7f497 bl       #0x3c3d280
+0x3f13418: 28008052 mov      w8, #1
+0x3f1341c: a8d20139 strb     w8, [x21, #0x74]
+0x3f13420: ff1f00f9 str      xzr, [sp, #0x38]
+0x3f13424: 602240f9 ldr      x0, [x19, #0x40]
+0x3f13428: c00600b4 cbz      x0, #0x3f13500
+0x3f1342c: e1031faa mov      x1, xzr
+0x3f13430: d487e994 bl       #0x7975380 // System.Threading.ReaderWriterLockSlim$$EnterWriteLock
+0x3f13434: 601e40f9 ldr      x0, [x19, #0x38]
+0x3f13438: 600600b4 cbz      x0, #0x3f13504
+0x3f1343c: 285e02f0 adrp     x8, #0x8ada000
+0x3f13440: 08ed46f9 ldr      x8, [x8, #0xdd8] // Method$System.Collections.Generic.Dictionary<string, AssetsManager.AssetHandleInfo>.TryGetValue()
+0x3f13444: 030140f9 ldr      x3, [x8]
+0x3f13448: e2e30091 add      x2, sp, #0x38
+0x3f1344c: e10314aa mov      x1, x20
+0x3f13450: f8d3b394 bl       #0x6c08430 // System.Collections.Generic.Dictionary<object, object>$$TryGetValue
+0x3f13454: 20040036 tbz      w0, #0, #0x3f134d8
+0x3f13458: e81f40f9 ldr      x8, [sp, #0x38]
+0x3f1345c: a80500b4 cbz      x8, #0x3f13510
+0x3f13460: 00410091 add      x0, x8, #0x10
+0x3f13464: e1031faa mov      x1, xzr
+0x3f13468: 8d330a95 bl       #0x81a029c // UnityEngine.ResourceManagement.AsyncOperations.AsyncOperationHandle$$IsValid
+0x3f1346c: 80020036 tbz      w0, #0, #0x3f134bc
+0x3f13470: e81f40f9 ldr      x8, [sp, #0x38]
+0x3f13474: 280500b4 cbz      x8, #0x3f13518
+0x3f13478: 295e02f0 adrp     x9, #0x8ada000
+0x3f1347c: 0005c03d ldr      q0, [x8, #0x10]
+0x3f13480: 081140f9 ldr      x8, [x8, #0x20]
+0x3f13484: 29e546f9 ldr      x9, [x9, #0xdc8] // UnityEngine.AddressableAssets.Addressables_TypeInfo
+0x3f13488: e00b803d str      q0, [sp, #0x20]
+0x3f1348c: e81b00f9 str      x8, [sp, #0x30]
+0x3f13490: 200140f9 ldr      x0, [x9]
+0x3f13494: 08e040b9 ldr      w8, [x0, #0xe0]
+0x3f13498: 48000035 cbnz     w8, #0x3f134a0
+0x3f1349c: c5a7f497 bl       #0x3c3d3b0
+0x3f134a0: e00bc03d ldr      q0, [sp, #0x20]
+0x3f134a4: e81b40f9 ldr      x8, [sp, #0x30]
+0x3f134a8: e003803d str      q0, [sp]
+0x3f134ac: e80b00f9 str      x8, [sp, #0x10]
+0x3f134b0: e0030091 mov      x0, sp
+0x3f134b4: e1031faa mov      x1, xzr
+0x3f134b8: f388fa94 bl       #0x7db5884 // UnityEngine.AddressableAssets.Addressables$$Release
+0x3f134bc: 601e40f9 ldr      x0, [x19, #0x38]
+0x3f134c0: a00200b4 cbz      x0, #0x3f13514
+0x3f134c4: 285e02f0 adrp     x8, #0x8ada000
+0x3f134c8: 08e946f9 ldr      x8, [x8, #0xdd0] // Method$System.Collections.Generic.Dictionary<string, AssetsManager.AssetHandleInfo>.Remove()
+0x3f134cc: 020140f9 ldr      x2, [x8]
+0x3f134d0: e10314aa mov      x1, x20
+0x3f134d4: 13d3b394 bl       #0x6c08120 // System.Collections.Generic.Dictionary<object, object>$$Remove
+0x3f134d8: f4031faa mov      x20, xzr
+0x3f134dc: 602240f9 ldr      x0, [x19, #0x40]
+0x3f134e0: 000100b4 cbz      x0, #0x3f13500
+0x3f134e4: e1031faa mov      x1, xzr
+0x3f134e8: 778ae994 bl       #0x7975ec4 // System.Threading.ReaderWriterLockSlim$$ExitWriteLock
+0x3f134ec: f40000b5 cbnz     x20, #0x3f13508
+0x3f134f0: f44f45a9 ldp      x20, x19, [sp, #0x50]
+0x3f134f4: fe5744a9 ldp      x30, x21, [sp, #0x40]
+0x3f134f8: ff830191 add      sp, sp, #0x60
+0x3f134fc: c0035fd6 ret      
+0x3f13500: f3a7f497 bl       #0x3c3d4cc
+0x3f13504: f2a7f497 bl       #0x3c3d4cc
+0x3f13508: e00314aa mov      x0, x20
+0x3f1350c: fb95f497 bl       #0x3c38cf8
+0x3f13510: efa7f497 bl       #0x3c3d4cc
+0x3f13514: eea7f497 bl       #0x3c3d4cc
+0x3f13518: eda7f497 bl       #0x3c3d4cc
+0x3f1351c: 07000014 b        #0x3f13538
+0x3f13520: 06000014 b        #0x3f13538
+0x3f13524: 05000014 b        #0x3f13538
+0x3f13528: 04000014 b        #0x3f13538
+0x3f1352c: 03000014 b        #0x3f13538
+0x3f13530: 02000014 b        #0x3f13538
+0x3f13534: 01000014 b        #0x3f13538
+0x3f13538: f50300aa mov      x21, x0
+0x3f1353c: 3f040071 cmp      w1, #1
+0x3f13540: c1000054 b.ne     #0x3f13558
+0x3f13544: e00315aa mov      x0, x21
+0x3f13548: 166e1995 bl       #0x856eda0
+0x3f1354c: 140040f9 ldr      x20, [x0]
+0x3f13550: 186e1995 bl       #0x856edb0
+0x3f13554: e2ffff17 b        #0x3f134dc
+0x3f13558: f4031faa mov      x20, xzr
+0x3f1355c: 02000014 b        #0x3f13564
+0x3f13560: f50300aa mov      x21, x0
+0x3f13564: 602240f9 ldr      x0, [x19, #0x40]
+0x3f13568: 400000b5 cbnz     x0, #0x3f13570
+0x3f1356c: d8a7f497 bl       #0x3c3d4cc
+0x3f13570: e1031faa mov      x1, xzr
+0x3f13574: 548ae994 bl       #0x7975ec4 // System.Threading.ReaderWriterLockSlim$$ExitWriteLock
+0x3f13578: 740000b5 cbnz     x20, #0x3f13584
+0x3f1357c: e00315aa mov      x0, x21
+0x3f13580: 914ff797 bl       #0x3ce73c4
+0x3f13584: e00314aa mov      x0, x20
+0x3f13588: dc95f497 bl       #0x3c38cf8
+0x3f1358c: dda3da97 bl       #0x35bc500

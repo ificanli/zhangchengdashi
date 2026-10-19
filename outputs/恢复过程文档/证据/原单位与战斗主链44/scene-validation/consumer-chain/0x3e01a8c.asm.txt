@@ -1,0 +1,24 @@
+0x3e01a8c: fe57bea9 stp      x30, x21, [sp, #-0x20]!
+0x3e01a90: f44f01a9 stp      x20, x19, [sp, #0x10]
+0x3e01a94: f48f0290 adrp     x20, #0x8ffd000
+0x3e01a98: 73660290 adrp     x19, #0x8acd000
+0x3e01a9c: 75660290 adrp     x21, #0x8acd000
+0x3e01aa0: 881e6039 ldrb     w8, [x20, #0x807]
+0x3e01aa4: 736647f9 ldr      x19, [x19, #0xec8] // 1001
+0x3e01aa8: b51a45f9 ldr      x21, [x21, #0xa30] // GameModule.CoreGameManager_TypeInfo
+0x3e01aac: 28010037 tbnz     w8, #0, #0x3e01ad0
+0x3e01ab0: 60660290 adrp     x0, #0x8acd000
+0x3e01ab4: 001845f9 ldr      x0, [x0, #0xa30] // GameModule.CoreGameManager_TypeInfo
+0x3e01ab8: f2edf897 bl       #0x3c3d280
+0x3e01abc: 60660290 adrp     x0, #0x8acd000
+0x3e01ac0: 006447f9 ldr      x0, [x0, #0xec8] // 1001
+0x3e01ac4: efedf897 bl       #0x3c3d280
+0x3e01ac8: 28008052 mov      w8, #1
+0x3e01acc: 881e2039 strb     w8, [x20, #0x807]
+0x3e01ad0: a80240f9 ldr      x8, [x21]
+0x3e01ad4: 690240f9 ldr      x9, [x19]
+0x3e01ad8: f44f41a9 ldp      x20, x19, [sp, #0x10]
+0x3e01adc: 085d40f9 ldr      x8, [x8, #0xb8]
+0x3e01ae0: 090500f9 str      x9, [x8, #8]
+0x3e01ae4: fe57c2a8 ldp      x30, x21, [sp], #0x20
+0x3e01ae8: c0035fd6 ret      

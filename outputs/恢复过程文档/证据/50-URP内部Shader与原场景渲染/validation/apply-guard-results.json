@@ -1,0 +1,96 @@
+{
+  "stage": 50,
+  "generatedUtc": "2026-10-19T09:20:43.418598+00:00",
+  "fixtureRoot": "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-50-render\\guard-tests\\20261019T092040213894Z",
+  "actualApplyScriptSha256": "80af03600a3d647e77fd9d33ef391888827b1f938d6c2126c6146f64b4b093e9",
+  "sharedProjectWritten": false,
+  "unityStarted": false,
+  "cases": 10,
+  "passed": 10,
+  "failed": 0,
+  "results": [
+    {
+      "case": "default_check_only",
+      "passed": true,
+      "exitCode": 0,
+      "stdout": "{\"stage\": 50, \"status\": \"preflight_passed_check_only\", \"projectRoot\": \"C:\\\\Users\\\\luxinyu\\\\Documents\\\\Codex\\\\2026-10-19\\\\x20\\\\work\\\\parallel-50-render\\\\guard-tests\\\\20261019T092040213894Z\\\\check_only\\\\project\", \"files\": 4, \"writtenFiles\": 0, \"unityTouched\": false}\n",
+      "stderr": ""
+    },
+    {
+      "case": "apply_writes_exactly_four_sources_preserves_metas",
+      "passed": true,
+      "exitCode": 0,
+      "changed": [
+        "Assets/Shader/Hidden_Universal_CoreBlit.shader",
+        "Assets/Shader/Hidden_Universal_CoreBlitColorAndDepth.shader",
+        "Assets/Shader/Hidden_Universal_CoreBlitColorAndDepth_0.shader",
+        "Assets/Shader/Hidden_Universal_CoreBlit_0.shader"
+      ],
+      "stdout": "{\"stage\": 50, \"status\": \"applied_four_shaders\", \"projectRoot\": \"C:\\\\Users\\\\luxinyu\\\\Documents\\\\Codex\\\\2026-10-19\\\\x20\\\\work\\\\parallel-50-render\\\\guard-tests\\\\20261019T092040213894Z\\\\successful_apply\\\\project\", \"writtenFiles\": 4, \"metasWritten\": 0, \"unityTouched\": false, \"next\": \"Root reimports four shaders, verifies compiled pass/keyword/bindings, then runs original Main6\"}\n",
+      "stderr": ""
+    },
+    {
+      "case": "already_changed_source_refused",
+      "passed": true,
+      "exitCode": 2,
+      "stdout": "",
+      "stderr": "Preflight rejected all writes:\nsource-before SHA256 mismatch: C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-50-render\\guard-tests\\20261019T092040213894Z\\successful_apply\\project\\Assets\\Shader\\Hidden_Universal_CoreBlit.shader; expected 6f3165b151180bc899f6ae57a61318f6a2bd8a98d1be2d105a5ae2a9f49e35a3; actual 00f324fc5b358d6d172bf31d919eabce575e2dffe08cced1e53d5a50ad57640d\nsource-before SHA256 mismatch: C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-50-render\\guard-tests\\20261019T092040213894Z\\successful_apply\\project\\Assets\\Shader\\Hidden_Universal_CoreBlit_0.shader; expected 6f3165b151180bc899f6ae57a61318f6a2bd8a98d1be2d105a5ae2a9f49e35a3; actual 00f324fc5b358d6d172bf31d919eabce575e2dffe08cced1e53d5a50ad57640d\nsource-before SHA256 mismatch: C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-50-render\\guard-tests\\20261019T092040213894Z\\successful_apply\\project\\Assets\\Shader\\Hidden_Universal_CoreBlitColorAndDepth.shader; expected b921fd0c8ff6032989597d8322f2fa55cbeac32eb66ae2b4a79c07ae71841f88; actual 98ec3a4073d017c3b653e95f2327a90c8d8655ca4ced66d943e53901b00e79de\nsource-before SHA256 mismatch: C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-50-render\\guard-tests\\20261019T092040213894Z\\successful_apply\\project\\Assets\\Shader\\Hidden_Universal_CoreBlitColorAndDepth_0.shader; expected b921fd0c8ff6032989597d8322f2fa55cbeac32eb66ae2b4a79c07ae71841f88; actual 98ec3a4073d017c3b653e95f2327a90c8d8655ca4ced66d943e53901b00e79de\n"
+    },
+    {
+      "case": "source_drift_last_file",
+      "passed": true,
+      "exitCode": 2,
+      "zeroProjectWrites": true,
+      "stdout": "",
+      "stderr": "Preflight rejected all writes:\nsource-before SHA256 mismatch: C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-50-render\\guard-tests\\20261019T092040213894Z\\source_drift_last_file\\project\\Assets\\Shader\\Hidden_Universal_CoreBlitColorAndDepth_0.shader; expected b921fd0c8ff6032989597d8322f2fa55cbeac32eb66ae2b4a79c07ae71841f88; actual de4ca605f2c0ab4e8330f6e94556ad1c3e2cb857f9c4c1bdad8cec1924db8145\n"
+    },
+    {
+      "case": "meta_drift",
+      "passed": true,
+      "exitCode": 2,
+      "zeroProjectWrites": true,
+      "stdout": "",
+      "stderr": "Preflight rejected all writes:\noriginal-meta SHA256 mismatch: C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-50-render\\guard-tests\\20261019T092040213894Z\\meta_drift\\project\\Assets\\Shader\\Hidden_Universal_CoreBlitColorAndDepth_0.shader.meta; expected 04dfacad95209dc1ccdd6dc99713b56f57057413e089b01f423882985ea79da5; actual 74b9d53ed824027b70d012024069bfbe4ab86fa1995f1e892193eb82b3d93ed9\n"
+    },
+    {
+      "case": "candidate_drift",
+      "passed": true,
+      "exitCode": 2,
+      "zeroProjectWrites": true,
+      "stdout": "",
+      "stderr": "Preflight rejected all writes:\ncandidate SHA256 mismatch: C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-50-render\\guard-tests\\20261019T092040213894Z\\candidate_drift\\task\\candidate\\Assets\\Shader\\Hidden_Universal_CoreBlitColorAndDepth_0.shader; expected 98ec3a4073d017c3b653e95f2327a90c8d8655ca4ced66d943e53901b00e79de; actual bec62e35e07f1aaae00d122fb7c2592ec57883943341d9b6600f8dc1ecd7d57f\n"
+    },
+    {
+      "case": "official_drift",
+      "passed": true,
+      "exitCode": 2,
+      "zeroProjectWrites": true,
+      "stdout": "",
+      "stderr": "Preflight rejected all writes:\ninstalled-official SHA256 mismatch: C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-50-render\\guard-tests\\20261019T092040213894Z\\official_drift\\project\\Library\\PackageCache\\com.unity.render-pipelines.universal@14.0.12\\Shaders\\Utils\\CoreBlitColorAndDepth.shader; expected 98ec3a4073d017c3b653e95f2327a90c8d8655ca4ced66d943e53901b00e79de; actual bec62e35e07f1aaae00d122fb7c2592ec57883943341d9b6600f8dc1ecd7d57f\ninstalled-official SHA256 mismatch: C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-50-render\\guard-tests\\20261019T092040213894Z\\official_drift\\project\\Library\\PackageCache\\com.unity.render-pipelines.universal@14.0.12\\Shaders\\Utils\\CoreBlitColorAndDepth.shader; expected 98ec3a4073d017c3b653e95f2327a90c8d8655ca4ced66d943e53901b00e79de; actual bec62e35e07f1aaae00d122fb7c2592ec57883943341d9b6600f8dc1ecd7d57f\n"
+    },
+    {
+      "case": "binding_drift",
+      "passed": true,
+      "exitCode": 2,
+      "zeroProjectWrites": true,
+      "stdout": "",
+      "stderr": "Preflight rejected all writes:\nRenderer binding changed: C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-50-render\\guard-tests\\20261019T092040213894Z\\binding_drift\\project\\Assets\\_Res\\Addressable\\01FirstBundle\\Config\\SamplesForwardRenderer.asset: coreBlitColorAndDepthPS must point to e6b6d875b4a83ac4fae4edb450598540\n"
+    },
+    {
+      "case": "source_missing",
+      "passed": true,
+      "exitCode": 2,
+      "zeroProjectWrites": true,
+      "stdout": "",
+      "stderr": "Preflight rejected all writes:\nsource-before missing: C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-50-render\\guard-tests\\20261019T092040213894Z\\source_missing\\project\\Assets\\Shader\\Hidden_Universal_CoreBlitColorAndDepth_0.shader\n"
+    },
+    {
+      "case": "manifest_scope_drift",
+      "passed": true,
+      "exitCode": 2,
+      "zeroProjectWrites": true,
+      "stdout": "",
+      "stderr": "Manifest scope must be exactly the four reviewed stage50 Shader files\n"
+    }
+  ]
+}

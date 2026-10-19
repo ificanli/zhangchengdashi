@@ -1,0 +1,345 @@
+// IL code: GZipCompile
+.class private auto ansi '<Module>'
+{
+} // end of class <Module>
+
+.class public auto ansi abstract sealed beforefieldinit ToolModule.GZipTool
+	extends [netstandard]System.Object
+{
+	.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+		01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 32
+		30 30 30 31 39 44
+	)
+	// Fields
+	.field private static literal int32 BufferSize = int32(81920)
+	.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+		01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 34
+		30 30 31 41 42 46
+	)
+	.field private static literal valuetype [netstandard]System.IO.Compression.CompressionLevel Level = int32(0)
+	.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+		01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 34
+		30 30 31 41 43 30
+	)
+	.field private static initonly class [netstandard]System.Text.Encoding DefaultEncoding
+	.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+		01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 34
+		30 30 31 41 43 31
+	)
+	.custom instance void [Il2CppDummyDll]Il2CppDummyDll.FieldOffsetAttribute::.ctor() = (
+		01 00 01 00 53 0e 06 4f 66 66 73 65 74 03 30 78 30
+	)
+
+	// Methods
+	.method public hidebysig static 
+		string CompressToBase64 (
+			string json
+		) cil managed 
+	{
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+			01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 36
+			30 30 30 36 39 38
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.AddressAttribute::.ctor() = (
+			01 00 03 00 53 0e 03 52 56 41 09 30 78 33 46 38
+			30 34 35 43 53 0e 06 4f 66 66 73 65 74 09 30 78
+			33 46 37 43 34 35 43 53 0e 02 56 41 09 30 78 33
+			46 38 30 34 35 43
+		)
+		// Method begins at RVA 0x2050
+		// Header size: 1
+		// Code size: 2 (0x2)
+		.maxstack 8
+
+		IL_0000: ldnull
+		IL_0001: ret
+	} // end of method GZipTool::CompressToBase64
+
+	.method public hidebysig static 
+		uint8[] Compress (
+			uint8[] input
+		) cil managed 
+	{
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+			01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 36
+			30 30 30 36 39 39
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.AddressAttribute::.ctor() = (
+			01 00 03 00 53 0e 03 52 56 41 09 30 78 33 46 38
+			30 39 32 34 53 0e 06 4f 66 66 73 65 74 09 30 78
+			33 46 37 43 39 32 34 53 0e 02 56 41 09 30 78 33
+			46 38 30 39 32 34
+		)
+		// Method begins at RVA 0x2053
+		// Header size: 1
+		// Code size: 2 (0x2)
+		.maxstack 8
+
+		IL_0000: ldnull
+		IL_0001: ret
+	} // end of method GZipTool::Compress
+
+	.method private hidebysig static 
+		uint8[] CompressCore (
+			uint8[] input
+		) cil managed 
+	{
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+			01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 36
+			30 30 30 36 39 41
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.AddressAttribute::.ctor() = (
+			01 00 03 00 53 0e 03 52 56 41 09 30 78 33 46 38
+			30 35 31 34 53 0e 06 4f 66 66 73 65 74 09 30 78
+			33 46 37 43 35 31 34 53 0e 02 56 41 09 30 78 33
+			46 38 30 35 31 34
+		)
+		// Method begins at RVA 0x2056
+		// Header size: 1
+		// Code size: 2 (0x2)
+		.maxstack 8
+
+		IL_0000: ldnull
+		IL_0001: ret
+	} // end of method GZipTool::CompressCore
+
+	.method public hidebysig static 
+		string DecompressFromBase64 (
+			string base64Data
+		) cil managed 
+	{
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+			01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 36
+			30 30 30 36 39 42
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.AddressAttribute::.ctor() = (
+			01 00 03 00 53 0e 03 52 56 41 09 30 78 33 46 38
+			30 39 37 38 53 0e 06 4f 66 66 73 65 74 09 30 78
+			33 46 37 43 39 37 38 53 0e 02 56 41 09 30 78 33
+			46 38 30 39 37 38
+		)
+		// Method begins at RVA 0x205c
+		// Header size: 12
+		// Code size: 66 (0x42)
+		.maxstack 3
+		.locals init (
+			[0] uint8[],
+			[1] string
+		)
+
+		IL_0000: ldarg.0
+		IL_0001: call bool [netstandard]System.String::IsNullOrEmpty(string)
+		IL_0006: brfalse.s IL_000e
+
+		IL_0008: ldsfld string [netstandard]System.String::Empty
+		IL_000d: ret
+
+		IL_000e: nop
+		.try
+		{
+			IL_000f: ldarg.0
+			IL_0010: call uint8[] [netstandard]System.Convert::FromBase64String(string)
+			IL_0015: stloc.0
+			IL_0016: ldsfld class [netstandard]System.Text.Encoding ToolModule.GZipTool::DefaultEncoding
+			IL_001b: ldloc.0
+			IL_001c: call uint8[] ToolModule.GZipTool::DecompressCore(uint8[])
+			IL_0021: callvirt instance string [netstandard]System.Text.Encoding::GetString(uint8[])
+			IL_0026: stloc.1
+			IL_0027: leave.s IL_0040
+		} // end .try
+		catch [netstandard]System.Exception
+		{
+			IL_0029: ldstr "解压失败："
+			IL_002e: ldarg.0
+			IL_002f: call string [netstandard]System.String::Concat(string, string)
+			IL_0034: call void [UnityEngine.CoreModule]UnityEngine.Debug::LogError(object)
+			IL_0039: call void [netstandard]System.Console::WriteLine(object)
+			IL_003e: rethrow
+		} // end handler
+
+		IL_0040: ldloc.1
+		IL_0041: ret
+	} // end of method GZipTool::DecompressFromBase64
+
+	.method public hidebysig static 
+		uint8[] Decompress (
+			uint8[] compressedData
+		) cil managed 
+	{
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+			01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 36
+			30 30 30 36 39 43
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.AddressAttribute::.ctor() = (
+			01 00 03 00 53 0e 03 52 56 41 09 30 78 33 46 38
+			31 32 31 43 53 0e 06 4f 66 66 73 65 74 09 30 78
+			33 46 37 44 32 31 43 53 0e 02 56 41 09 30 78 33
+			46 38 31 32 31 43
+		)
+		// Method begins at RVA 0x20bc
+		// Header size: 1
+		// Code size: 7 (0x7)
+		.maxstack 8
+
+		IL_0000: ldarg.0
+		IL_0001: call uint8[] ToolModule.GZipTool::DecompressCore(uint8[])
+		IL_0006: ret
+	} // end of method GZipTool::Decompress
+
+	.method private hidebysig static 
+		uint8[] DecompressCore (
+			uint8[] compressedData
+		) cil managed 
+	{
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+			01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 36
+			30 30 30 36 39 44
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.AddressAttribute::.ctor() = (
+			01 00 03 00 53 0e 03 52 56 41 09 30 78 33 46 38
+			30 42 33 43 53 0e 06 4f 66 66 73 65 74 09 30 78
+			33 46 37 43 42 33 43 53 0e 02 56 41 09 30 78 33
+			46 38 30 42 33 43
+		)
+		// Method begins at RVA 0x20c4
+		// Header size: 12
+		// Code size: 142 (0x8e)
+		.maxstack 4
+		.locals init (
+			[0] class [netstandard]System.IO.MemoryStream,
+			[1] class [netstandard]System.IO.Compression.GZipStream,
+			[2] class [netstandard]System.IO.MemoryStream,
+			[3] uint8[],
+			[4] int32,
+			[5] uint8[]
+		)
+
+		IL_0000: ldarg.0
+		IL_0001: brfalse.s IL_0007
+
+		IL_0003: ldarg.0
+		IL_0004: ldlen
+		IL_0005: brtrue.s IL_0009
+
+		IL_0007: ldarg.0
+		IL_0008: ret
+
+		IL_0009: nop
+		.try
+		{
+			IL_000a: ldarg.0
+			IL_000b: newobj instance void [netstandard]System.IO.MemoryStream::.ctor(uint8[])
+			IL_0010: stloc.0
+			.try
+			{
+				IL_0011: ldloc.0
+				IL_0012: ldc.i4.0
+				IL_0013: newobj instance void [netstandard]System.IO.Compression.GZipStream::.ctor(class [netstandard]System.IO.Stream, valuetype [netstandard]System.IO.Compression.CompressionMode)
+				IL_0018: stloc.1
+				.try
+				{
+					IL_0019: newobj instance void [netstandard]System.IO.MemoryStream::.ctor()
+					IL_001e: stloc.2
+					.try
+					{
+						IL_001f: call class [netstandard]System.Buffers.ArrayPool`1<!0> class [netstandard]System.Buffers.ArrayPool`1<uint8>::get_Shared()
+						IL_0024: ldc.i4 81920
+						IL_0029: callvirt instance !0[] class [netstandard]System.Buffers.ArrayPool`1<uint8>::Rent(int32)
+						IL_002e: stloc.3
+						.try
+						{
+							IL_002f: br.s IL_003b
+							// loop start (head: IL_003b)
+								IL_0031: ldloc.2
+								IL_0032: ldloc.3
+								IL_0033: ldc.i4.0
+								IL_0034: ldloc.s 4
+								IL_0036: callvirt instance void [netstandard]System.IO.Stream::Write(uint8[], int32, int32)
+
+								IL_003b: ldloc.1
+								IL_003c: ldloc.3
+								IL_003d: ldc.i4.0
+								IL_003e: ldc.i4 81920
+								IL_0043: callvirt instance int32 [netstandard]System.IO.Stream::Read(uint8[], int32, int32)
+								IL_0048: dup
+								IL_0049: stloc.s 4
+								IL_004b: ldc.i4.0
+								IL_004c: bgt.s IL_0031
+							// end loop
+
+							IL_004e: leave.s IL_005d
+						} // end .try
+						finally
+						{
+							IL_0050: call class [netstandard]System.Buffers.ArrayPool`1<!0> class [netstandard]System.Buffers.ArrayPool`1<uint8>::get_Shared()
+							IL_0055: ldloc.3
+							IL_0056: ldc.i4.0
+							IL_0057: callvirt instance void class [netstandard]System.Buffers.ArrayPool`1<uint8>::Return(!0[], bool)
+							IL_005c: endfinally
+						} // end handler
+
+						IL_005d: ldloc.2
+						IL_005e: callvirt instance uint8[] [netstandard]System.IO.MemoryStream::ToArray()
+						IL_0063: stloc.s 5
+						IL_0065: leave.s IL_008b
+					} // end .try
+					finally
+					{
+						IL_0067: ldloc.2
+						IL_0068: brfalse.s IL_0070
+
+						IL_006a: ldloc.2
+						IL_006b: callvirt instance void [netstandard]System.IDisposable::Dispose()
+
+						IL_0070: endfinally
+					} // end handler
+				} // end .try
+				finally
+				{
+					IL_0071: ldloc.1
+					IL_0072: brfalse.s IL_007a
+
+					IL_0074: ldloc.1
+					IL_0075: callvirt instance void [netstandard]System.IDisposable::Dispose()
+
+					IL_007a: endfinally
+				} // end handler
+			} // end .try
+			finally
+			{
+				IL_007b: ldloc.0
+				IL_007c: brfalse.s IL_0084
+
+				IL_007e: ldloc.0
+				IL_007f: callvirt instance void [netstandard]System.IDisposable::Dispose()
+
+				IL_0084: endfinally
+			} // end handler
+		} // end .try
+		catch [netstandard]System.Exception
+		{
+			IL_0085: pop
+			IL_0086: ldarg.0
+			IL_0087: stloc.s 5
+			IL_0089: leave.s IL_008b
+		} // end handler
+
+		IL_008b: ldloc.s 5
+		IL_008d: ret
+	} // end of method GZipTool::DecompressCore
+
+	.method private hidebysig specialname rtspecialname static 
+		void .cctor () cil managed 
+	{
+		// Method begins at RVA 0x21a0
+		// Header size: 1
+		// Code size: 11 (0xb)
+		.maxstack 8
+
+		IL_0000: call class [netstandard]System.Text.Encoding [netstandard]System.Text.Encoding::get_UTF8()
+		IL_0005: stsfld class [netstandard]System.Text.Encoding ToolModule.GZipTool::DefaultEncoding
+		IL_000a: ret
+	} // end of method GZipTool::.cctor
+
+} // end of class ToolModule.GZipTool
+

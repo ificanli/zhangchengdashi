@@ -1,0 +1,26 @@
+0x3d8dabc: LDR             X8, [X0,#0x40]
+0x3d8dac0: CBZ             X8, locret_3D8DAD4
+0x3d8dac4: FCMP            S0, #0.0
+0x3d8dac8: B.PL            loc_3D8DAD8
+0x3d8dacc: LDR             S0, [X0,#0xEC]
+0x3d8dad0: B               loc_3D8DB18
+0x3d8dad4: RET
+0x3d8dad8: LDP             S2, S1, [X0,#0xEC]
+0x3d8dadc: FMOV            S3, #1.0
+0x3d8dae0: ADRP            X9, #dword_18374B8@PAGE
+0x3d8dae4: FSUB            S0, S3, S0
+0x3d8dae8: LDR             S3, [X9,#dword_18374B8@PAGEOFF]
+0x3d8daec: FMUL            S0, S0, S1
+0x3d8daf0: LDR             S1, [X8,#0x28]
+0x3d8daf4: FCMP            S2, #0.0
+0x3d8daf8: FADD            S2, S2, S3
+0x3d8dafc: FMOV            S3, WZR
+0x3d8db00: FCSEL           S2, S2, S3, GT
+0x3d8db04: FSUB            S2, S1, S2
+0x3d8db08: FCMP            S0, S2
+0x3d8db0c: FCSEL           S0, S0, S2, MI
+0x3d8db10: FMAXNM          S0, S0, S3
+0x3d8db14: FSUB            S0, S1, S0
+0x3d8db18: MOV             W1, WZR
+0x3d8db1c: STR             S0, [X8,#0x28]
+0x3d8db20: B               GameModule.RoleBehaviour$$SetAiSPeed

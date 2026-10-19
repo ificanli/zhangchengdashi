@@ -1,0 +1,18 @@
+0x7171934: STR             X30, [SP,#var_30]!
+0x7171938: STP             X22, X21, [SP,#0x30+var_20]
+0x717193c: STP             X20, X19, [SP,#0x30+var_10]
+0x7171940: MOV             X19, X1
+0x7171944: MOV             W8, #1
+0x7171948: MOV             X1, XZR
+0x717194c: MOV             X20, X0
+0x7171950: AND             W21, W2, #1
+0x7171954: AND             W22, W3, #1
+0x7171958: STRB            W8, [X0,#0x18]
+0x717195c: BL              System.Attribute$$.ctor
+0x7171960: STR             X19, [X20,#0x10]
+0x7171964: STRB            W21, [X20,#0x18]
+0x7171968: STRB            W22, [X20,#0x19]
+0x717196c: LDP             X20, X19, [SP,#0x30+var_10]
+0x7171970: LDP             X22, X21, [SP,#0x30+var_20]
+0x7171974: LDR             X30, [SP+0x30+var_30],#0x30
+0x7171978: RET

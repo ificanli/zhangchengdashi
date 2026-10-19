@@ -1,0 +1,35 @@
+0x439bc8c: fe0f1df8 str      x30, [sp, #-0x30]!
+0x439bc90: f65701a9 stp      x22, x21, [sp, #0x10]
+0x439bc94: f44f02a9 stp      x20, x19, [sp, #0x20]
+0x439bc98: 356302b0 adrp     x21, #0x9000000
+0x439bc9c: 963902d0 adrp     x22, #0x8acd000
+0x439bca0: d43a02b0 adrp     x20, #0x8af4000
+0x439bca4: a8226239 ldrb     w8, [x21, #0x888]
+0x439bca8: d68a44f9 ldr      x22, [x22, #0x910] // System.Action_TypeInfo
+0x439bcac: 946643f9 ldr      x20, [x20, #0x6c8] // Method$GameFramework.Base.IGameStart.LoadingUIShow()
+0x439bcb0: f30300aa mov      x19, x0
+0x439bcb4: 28010037 tbnz     w8, #0, #0x439bcd8
+0x439bcb8: 803902d0 adrp     x0, #0x8acd000
+0x439bcbc: 008844f9 ldr      x0, [x0, #0x910] // System.Action_TypeInfo
+0x439bcc0: 7085e297 bl       #0x3c3d280
+0x439bcc4: c03a02b0 adrp     x0, #0x8af4000
+0x439bcc8: 006443f9 ldr      x0, [x0, #0x6c8] // Method$GameFramework.Base.IGameStart.LoadingUIShow()
+0x439bccc: 6d85e297 bl       #0x3c3d280
+0x439bcd0: 28008052 mov      w8, #1
+0x439bcd4: a8222239 strb     w8, [x21, #0x888]
+0x439bcd8: c00240f9 ldr      x0, [x22]
+0x439bcdc: fa85e297 bl       #0x3c3d4c4
+0x439bce0: 820240f9 ldr      x2, [x20]
+0x439bce4: e10313aa mov      x1, x19
+0x439bce8: e3031faa mov      x3, xzr
+0x439bcec: f40300aa mov      x20, x0
+0x439bcf0: ad78c994 bl       #0x75f9fa4 // System.Action$$.ctor
+0x439bcf4: e10314aa mov      x1, x20
+0x439bcf8: 08000094 bl       #0x439bd18 // ljzs_lt.GameStart$$OpenLoadingUI
+0x439bcfc: e10300aa mov      x1, x0
+0x439bd00: e00313aa mov      x0, x19
+0x439bd04: f44f42a9 ldp      x20, x19, [sp, #0x20]
+0x439bd08: f65741a9 ldp      x22, x21, [sp, #0x10]
+0x439bd0c: e2031faa mov      x2, xzr
+0x439bd10: fe0743f8 ldr      x30, [sp], #0x30
+0x439bd14: 2d48fd14 b        #0x82eddc8 // UnityEngine.MonoBehaviour$$StartCoroutine

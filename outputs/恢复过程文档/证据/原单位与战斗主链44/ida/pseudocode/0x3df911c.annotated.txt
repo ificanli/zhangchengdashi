@@ -1,0 +1,41 @@
+__int64 __fastcall GameModule_BattleGameSceneManager__AddSpecialHexObject(__int64 a1, __int64 a2)
+{
+  __int64 result; // x0
+  __int64 v5; // x21
+  __int64 v6; // x21
+  __int64 transform; // x0
+  __int64 v8; // x8
+  __int64 v9; // x19
+  __int64 v10; // x0
+
+  if ( (byte_8FFD7D9 & 1) == 0 )
+  {
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8CE7B80 /* UnityEngine.GameObject_TypeInfo */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&off_8CEB3E0 /* UnityEngine.Object_TypeInfo */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D6FDA0 /* SpecialHexRoot */);
+    byte_8FFD7D9 = 1;
+  }
+  if ( *((_DWORD *)off_8CEB3E0 /* UnityEngine.Object_TypeInfo */ + 56) == 0 )
+    il2cpp_codegen_runtime_class_init(off_8CEB3E0 /* UnityEngine.Object_TypeInfo */);
+  result = UnityEngine_Object__op_Equality(a2, 0, 0);
+  if ( (result & 1) == 0 )
+  {
+    v5 = *(_QWORD *)(a1 + 312);
+    if ( *((_DWORD *)off_8CEB3E0 /* UnityEngine.Object_TypeInfo */ + 56) == 0 )
+      il2cpp_codegen_runtime_class_init(off_8CEB3E0 /* UnityEngine.Object_TypeInfo */);
+    if ( (UnityEngine_Object__op_Equality(v5, 0, 0) & 1) != 0 )
+    {
+      v6 = ((__int64 (__fastcall *)(__int64))unk_3C3D4C4)(qword_8CE7B80 /* UnityEngine.GameObject_TypeInfo */);
+      UnityEngine_GameObject___ctor(v6, qword_8D6FDA0 /* SpecialHexRoot */, 0);
+      *(_QWORD *)(a1 + 312) = v6;
+    }
+    if ( a2 == 0
+      || (transform = UnityEngine_GameObject__get_transform(a2, 0), (v8 = *(_QWORD *)(a1 + 312)) == 0)
+      || (v9 = transform, v10 = UnityEngine_GameObject__get_transform(v8, 0), v9 == 0) )
+    {
+      il2cpp_codegen_raise_null_reference_exception();
+    }
+    return sub_82F9798(v9, v10, 1, 0);
+  }
+  return result;
+}

@@ -1,0 +1,47 @@
+0x3d7ac50: SUB             SP, SP, #0xB0
+0x3d7ac54: STR             X30, [SP,#0xB0+var_40]
+0x3d7ac58: STP             X24, X23, [SP,#0xB0+var_30]
+0x3d7ac5c: STP             X22, X21, [SP,#0xB0+var_20]
+0x3d7ac60: STP             X20, X19, [SP,#0xB0+var_10]
+0x3d7ac64: ADRP            X24, #byte_8FFD488@PAGE
+0x3d7ac68: ADRP            X23, #off_8AD1120@PAGE
+0x3d7ac6c: LDRB            W8, [X24,#byte_8FFD488@PAGEOFF]
+0x3d7ac70: LDR             X23, [X23,#off_8AD1120@PAGEOFF]; qword_8D23308
+0x3d7ac74: MOV             W22, W3
+0x3d7ac78: MOV             W19, W2
+0x3d7ac7c: MOV             W20, W1
+0x3d7ac80: MOV             X21, X0
+0x3d7ac84: TBNZ            W8, #0, loc_3D7AC9C
+0x3d7ac88: ADRP            X0, #off_8AD1120@PAGE
+0x3d7ac8c: LDR             X0, [X0,#off_8AD1120@PAGEOFF]; qword_8D23308 ; slot
+0x3d7ac90: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3d7ac94: MOV             W8, #1
+0x3d7ac98: STRB            W8, [X24,#byte_8FFD488@PAGEOFF]
+0x3d7ac9c: MOVI            V0.2D, #0
+0x3d7aca0: MOV             X8, SP
+0x3d7aca4: MOV             X0, XZR
+0x3d7aca8: AND             W22, W22, #1
+0x3d7acac: STP             Q0, Q0, [SP,#0xB0+var_60]
+0x3d7acb0: STP             Q0, Q0, [SP,#0xB0+var_80]
+0x3d7acb4: STR             Q0, [SP,#0xB0+var_90]
+0x3d7acb8: BL              System.Runtime.CompilerServices.AsyncVoidMethodBuilder$$Create
+0x3d7acbc: LDP             Q0, Q1, [SP,#0xB0+var_B0]
+0x3d7acc0: LDR             X2, [X23]
+0x3d7acc4: ADD             X8, SP, #0xB0+var_90
+0x3d7acc8: MOV             W9, #0xFFFFFFFF
+0x3d7accc: ORR             X0, X8, #8
+0x3d7acd0: ADD             X1, SP, #0xB0+var_90
+0x3d7acd4: STR             X21, [SP,#0xB0+var_68]
+0x3d7acd8: STR             W20, [SP,#0xB0+var_60]
+0x3d7acdc: STR             W19, [SP,#0xB0+var_60+8]
+0x3d7ace0: STRB            W22, [SP,#0xB0+var_60+4]
+0x3d7ace4: STUR            Q0, [SP,#0xB0+var_90+8]
+0x3d7ace8: STUR            Q1, [SP,#0xB0+var_80+8]
+0x3d7acec: STR             W9, [SP,#0xB0+var_90]
+0x3d7acf0: BL              System.Runtime.CompilerServices.AsyncVoidMethodBuilder$$Start_RoleBehaviour._SetAnimation_d__203_
+0x3d7acf4: LDP             X20, X19, [SP,#0xB0+var_10]
+0x3d7acf8: LDP             X22, X21, [SP,#0xB0+var_20]
+0x3d7acfc: LDP             X24, X23, [SP,#0xB0+var_30]
+0x3d7ad00: LDR             X30, [SP,#0xB0+var_40]
+0x3d7ad04: ADD             SP, SP, #0xB0
+0x3d7ad08: RET

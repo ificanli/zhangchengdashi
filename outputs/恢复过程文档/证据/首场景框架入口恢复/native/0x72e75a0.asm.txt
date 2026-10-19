@@ -1,0 +1,57 @@
+0x72e75a0: e923bd6d stp      d9, d8, [sp, #-0x30]!
+0x72e75a4: fe0b00f9 str      x30, [sp, #0x10]
+0x72e75a8: f44f02a9 stp      x20, x19, [sp, #0x20]
+0x72e75ac: 14e900f0 adrp     x20, #0x900a000
+0x72e75b0: 88124139 ldrb     w8, [x20, #0x44]
+0x72e75b4: f30300aa mov      x19, x0
+0x72e75b8: c8000037 tbnz     w8, #0, #0x72e75d0
+0x72e75bc: 60c000b0 adrp     x0, #0x8af4000
+0x72e75c0: 005043f9 ldr      x0, [x0, #0x6a0] // GameFramework.GameFrameEntry_TypeInfo
+0x72e75c4: 2f572597 bl       #0x3c3d280
+0x72e75c8: 28008052 mov      w8, #1
+0x72e75cc: 88120139 strb     w8, [x20, #0x44]
+0x72e75d0: 68264139 ldrb     w8, [x19, #0x49]
+0x72e75d4: a8000034 cbz      w8, #0x72e75e8
+0x72e75d8: f44f42a9 ldp      x20, x19, [sp, #0x20]
+0x72e75dc: fe0b40f9 ldr      x30, [sp, #0x10]
+0x72e75e0: e923c36c ldp      d9, d8, [sp], #0x30
+0x72e75e4: c0035fd6 ret      
+0x72e75e8: 682a4139 ldrb     w8, [x19, #0x4a]
+0x72e75ec: 28020034 cbz      w8, #0x72e7630
+0x72e75f0: e0031faa mov      x0, xzr
+0x72e75f4: d7394094 bl       #0x82f5d50 // UnityEngine.Time$$get_deltaTime
+0x72e75f8: e0031faa mov      x0, xzr
+0x72e75fc: 081ca04e mov      v8.16b, v0.16b
+0x72e7600: fc394094 bl       #0x82f5df0 // UnityEngine.Time$$get_unscaledDeltaTime
+0x72e7604: 68c000b0 adrp     x8, #0x8af4000
+0x72e7608: 085143f9 ldr      x8, [x8, #0x6a0] // GameFramework.GameFrameEntry_TypeInfo
+0x72e760c: 091ca04e mov      v9.16b, v0.16b
+0x72e7610: 000140f9 ldr      x0, [x8]
+0x72e7614: 08e040b9 ldr      w8, [x0, #0xe0]
+0x72e7618: 48000035 cbnz     w8, #0x72e7620
+0x72e761c: 65572597 bl       #0x3c3d3b0
+0x72e7620: 001da84e mov      v0.16b, v8.16b
+0x72e7624: 211da94e mov      v1.16b, v9.16b
+0x72e7628: e0031faa mov      x0, xzr
+0x72e762c: c6cef997 bl       #0x715b144 // GameFramework.GameFrameEntry$$ResourcesModuleUpdate
+0x72e7630: 68f24039 ldrb     w8, [x19, #0x3c]
+0x72e7634: 28fdff34 cbz      w8, #0x72e75d8
+0x72e7638: e0031faa mov      x0, xzr
+0x72e763c: c5394094 bl       #0x82f5d50 // UnityEngine.Time$$get_deltaTime
+0x72e7640: e0031faa mov      x0, xzr
+0x72e7644: 081ca04e mov      v8.16b, v0.16b
+0x72e7648: ea394094 bl       #0x82f5df0 // UnityEngine.Time$$get_unscaledDeltaTime
+0x72e764c: 68c000b0 adrp     x8, #0x8af4000
+0x72e7650: 085143f9 ldr      x8, [x8, #0x6a0] // GameFramework.GameFrameEntry_TypeInfo
+0x72e7654: 091ca04e mov      v9.16b, v0.16b
+0x72e7658: 000140f9 ldr      x0, [x8]
+0x72e765c: 08e040b9 ldr      w8, [x0, #0xe0]
+0x72e7660: 48000035 cbnz     w8, #0x72e7668
+0x72e7664: 53572597 bl       #0x3c3d3b0
+0x72e7668: f44f42a9 ldp      x20, x19, [sp, #0x20]
+0x72e766c: fe0b40f9 ldr      x30, [sp, #0x10]
+0x72e7670: 001da84e mov      v0.16b, v8.16b
+0x72e7674: 211da94e mov      v1.16b, v9.16b
+0x72e7678: e0031faa mov      x0, xzr
+0x72e767c: e923c36c ldp      d9, d8, [sp], #0x30
+0x72e7680: f8cef917 b        #0x715b260 // GameFramework.GameFrameEntry$$Update

@@ -1,0 +1,13 @@
+0x3df5394: STP             X30, X19, [SP,#var_10]!
+0x3df5398: CBZ             X0, loc_3DF53C4
+0x3df539c: ANDS            W19, W1, #1
+0x3df53a0: MOV             W8, #0x160
+0x3df53a4: MOV             W9, #0x158
+0x3df53a8: CSEL            X8, X9, X8, NE
+0x3df53ac: LDR             X1, [X0,X8]
+0x3df53b0: BL              GameModule.BattleGameSceneManager$$GetDesignatedKeyHex
+0x3df53b4: MOV             X1, X0
+0x3df53b8: MOV             W2, W19
+0x3df53bc: LDP             X30, X19, [SP+0x10+var_10],#0x10
+0x3df53c0: B               GameModule.BattleGameSceneManager$$FindTopMostObject
+0x3df53c4: BL              il2cpp_codegen_raise_null_reference_exception

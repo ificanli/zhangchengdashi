@@ -1,0 +1,66 @@
+{
+  "stage": "complete",
+  "methods": [
+    {
+      "name": "GameFramework_Utility_Text__GetFullName_object__511d668",
+      "original_name": "GameFramework.Utility.Text$$GetFullName<object>",
+      "address": 85055080,
+      "end": 85055196,
+      "prototype": "void* GameFramework_Utility_Text__GetFullName_object_ (void* name, const MethodInfo* method);",
+      "token": "0x0600603C",
+      "range_analysis": 1,
+      "direct_callees": [
+        {
+          "callsite": "0x511d6c4",
+          "address": "0x76935a4",
+          "name": "System.Type$$GetTypeFromHandle",
+          "signature": "System_Type_o* System_Type__GetTypeFromHandle (System_RuntimeTypeHandle_o handle, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x511d6d8",
+          "address": "0x71e37c0",
+          "name": "GameFramework.Utility.Text$$GetFullName",
+          "signature": "System_String_o* GameFramework_Utility_Text__GetFullName (System_Type_o* _gpR_V, System_String_o* ___iPJ, const MethodInfo* method);"
+        }
+      ],
+      "prototype_applied": true,
+      "actual_function_start": "0x511d668",
+      "actual_function_end": "0x511d6dc",
+      "pseudocode_chars": 737,
+      "unresolved_jumpout": false
+    },
+    {
+      "name": "GameFramework_Utility_Text__GetFullName_71e37c0",
+      "original_name": "GameFramework.Utility.Text$$GetFullName",
+      "address": 119420864,
+      "end": 119421012,
+      "prototype": "void* GameFramework_Utility_Text__GetFullName (void* type, void* name, const MethodInfo* method);",
+      "token": "0x0600603D",
+      "range_analysis": 1,
+      "direct_callees": [
+        {
+          "callsite": "0x71e3814",
+          "address": "0x750a620",
+          "name": "System.String$$IsNullOrEmpty",
+          "signature": "bool System_String__IsNullOrEmpty (System_String_o* value, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x71e384c",
+          "address": "0x750aa4c",
+          "name": "System.String$$Format",
+          "signature": "System_String_o* System_String__Format (System_String_o* format, Il2CppObject* arg0, Il2CppObject* arg1, const MethodInfo* method);"
+        }
+      ],
+      "prototype_applied": true,
+      "actual_function_start": "0x71e37c0",
+      "actual_function_end": "0x71e3854",
+      "pseudocode_chars": 692,
+      "unresolved_jumpout": false
+    }
+  ],
+  "image_base": "0x0",
+  "type_errors": 0,
+  "hexrays_available": true,
+  "hexrays_version": "9.4.0.260713",
+  "database_saved": true
+}

@@ -1,0 +1,19 @@
+0x73689e8: STR             X30, [SP,#var_20]!
+0x73689ec: STP             X20, X19, [SP,#0x20+var_10]
+0x73689f0: ADRP            X19, #byte_900A6F5@PAGE
+0x73689f4: ADRP            X20, #off_8B119F0@PAGE
+0x73689f8: LDRB            W8, [X19,#byte_900A6F5@PAGEOFF]
+0x73689fc: LDR             X20, [X20,#off_8B119F0@PAGEOFF]; off_8CE4408
+0x7368a00: TBNZ            W8, #0, loc_7368A18
+0x7368a04: ADRP            X0, #off_8B119F0@PAGE
+0x7368a08: LDR             X0, [X0,#off_8B119F0@PAGEOFF]; off_8CE4408 ; slot
+0x7368a0c: BL              il2cpp_codegen_initialize_runtime_metadata
+0x7368a10: MOV             W8, #1
+0x7368a14: STRB            W8, [X19,#byte_900A6F5@PAGEOFF]
+0x7368a18: LDR             X0, [X20]; klass
+0x7368a1c: LDR             W8, [X0,#0xE0]
+0x7368a20: CBNZ            W8, loc_7368A28
+0x7368a24: BL              il2cpp_codegen_runtime_class_init
+0x7368a28: LDP             X20, X19, [SP,#0x20+var_10]
+0x7368a2c: LDR             X30, [SP+0x20+var_20],#0x20
+0x7368a30: B               AssetBundles.AssetBundleManager$$Fl_m_g

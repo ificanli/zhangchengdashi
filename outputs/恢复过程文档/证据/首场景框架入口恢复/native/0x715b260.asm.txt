@@ -1,0 +1,60 @@
+0x715b260: e923bd6d stp      d9, d8, [sp, #-0x30]!
+0x715b264: fe0b00f9 str      x30, [sp, #0x10]
+0x715b268: f44f02a9 stp      x20, x19, [sp, #0x20]
+0x715b26c: 74f500d0 adrp     x20, #0x9009000
+0x715b270: d3cc00b0 adrp     x19, #0x8af4000
+0x715b274: 88564339 ldrb     w8, [x20, #0xd5]
+0x715b278: 735243f9 ldr      x19, [x19, #0x6a0] // GameFramework.GameFrameEntry_TypeInfo
+0x715b27c: 281ca14e mov      v8.16b, v1.16b
+0x715b280: 091ca04e mov      v9.16b, v0.16b
+0x715b284: e8010037 tbnz     w8, #0, #0x715b2c0
+0x715b288: c0cc00b0 adrp     x0, #0x8af4000
+0x715b28c: 005043f9 ldr      x0, [x0, #0x6a0] // GameFramework.GameFrameEntry_TypeInfo
+0x715b290: fc872b97 bl       #0x3c3d280
+0x715b294: c0cd00f0 adrp     x0, #0x8b16000
+0x715b298: 00c445f9 ldr      x0, [x0, #0xb88] // Method$System.Collections.Generic.LinkedListNode<GameFrameModule>.get_Next()
+0x715b29c: f9872b97 bl       #0x3c3d280
+0x715b2a0: c0cd00f0 adrp     x0, #0x8b16000
+0x715b2a4: 00c845f9 ldr      x0, [x0, #0xb90] // Method$System.Collections.Generic.LinkedListNode<GameFrameModule>.get_Value()
+0x715b2a8: f6872b97 bl       #0x3c3d280
+0x715b2ac: c0cd00f0 adrp     x0, #0x8b16000
+0x715b2b0: 00cc45f9 ldr      x0, [x0, #0xb98] // Method$System.Collections.Generic.LinkedList<GameFrameModule>.get_First()
+0x715b2b4: f3872b97 bl       #0x3c3d280
+0x715b2b8: 28008052 mov      w8, #1
+0x715b2bc: 88560339 strb     w8, [x20, #0xd5]
+0x715b2c0: 600240f9 ldr      x0, [x19]
+0x715b2c4: 08e040b9 ldr      w8, [x0, #0xe0]
+0x715b2c8: 68000035 cbnz     w8, #0x715b2d4
+0x715b2cc: 39882b97 bl       #0x3c3d3b0
+0x715b2d0: 600240f9 ldr      x0, [x19]
+0x715b2d4: 085c40f9 ldr      x8, [x0, #0xb8]
+0x715b2d8: 08214039 ldrb     w8, [x8, #8]
+0x715b2dc: 08030034 cbz      w8, #0x715b33c
+0x715b2e0: 08e040b9 ldr      w8, [x0, #0xe0]
+0x715b2e4: 68000035 cbnz     w8, #0x715b2f0
+0x715b2e8: 32882b97 bl       #0x3c3d3b0
+0x715b2ec: 600240f9 ldr      x0, [x19]
+0x715b2f0: 085c40f9 ldr      x8, [x0, #0xb8]
+0x715b2f4: 080140f9 ldr      x8, [x8]
+0x715b2f8: a80200b4 cbz      x8, #0x715b34c
+0x715b2fc: 130940f9 ldr      x19, [x8, #0x10]
+0x715b300: f30100b4 cbz      x19, #0x715b33c
+0x715b304: d4cd00f0 adrp     x20, #0x8b16000
+0x715b308: 94c645f9 ldr      x20, [x20, #0xb88] // Method$System.Collections.Generic.LinkedListNode<GameFrameModule>.get_Next()
+0x715b30c: 601640f9 ldr      x0, [x19, #0x28]
+0x715b310: e00100b4 cbz      x0, #0x715b34c
+0x715b314: 080040f9 ldr      x8, [x0]
+0x715b318: 201da94e mov      v0.16b, v9.16b
+0x715b31c: 011da84e mov      v1.16b, v8.16b
+0x715b320: 09855aa9 ldp      x9, x1, [x8, #0x1a8]
+0x715b324: 20013fd6 blr      x9
+0x715b328: 810240f9 ldr      x1, [x20]
+0x715b32c: e00313aa mov      x0, x19
+0x715b330: 78849197 bl       #0x55bc510 // System.Collections.Generic.LinkedListNode<object>$$get_Next
+0x715b334: f30300aa mov      x19, x0
+0x715b338: a0feffb5 cbnz     x0, #0x715b30c
+0x715b33c: f44f42a9 ldp      x20, x19, [sp, #0x20]
+0x715b340: fe0b40f9 ldr      x30, [sp, #0x10]
+0x715b344: e923c36c ldp      d9, d8, [sp], #0x30
+0x715b348: c0035fd6 ret      
+0x715b34c: 60882b97 bl       #0x3c3d4cc

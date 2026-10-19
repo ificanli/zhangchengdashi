@@ -1,0 +1,30 @@
+void GameModule_GameManager__RegisterOnGameManagerInitComplete(void *self, void *action, const MethodInfo *method)
+{
+  _QWORD *v5; // x0
+  __int64 v6; // x1
+
+  if ( (byte_8FFD891 & 1) == 0 )
+  {
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8CE3CE0);
+    byte_8FFD891 = 1;
+  }
+  if ( *((_BYTE *)self + 32) != 0 )
+  {
+    if ( action != nullptr )
+      (*((void (__fastcall **)(_QWORD, _QWORD))action + 3))(*((_QWORD *)action + 8), *((_QWORD *)action + 5));
+    return;
+  }
+  v5 = (_QWORD *)System_Delegate__Combine(*((_QWORD *)self + 11), action, 0);
+  if ( v5 == nullptr )
+  {
+LABEL_10:
+    *((_QWORD *)self + 11) = v5;
+    return;
+  }
+  v6 = qword_8CE3CE0;
+  if ( *v5 != qword_8CE3CE0 || (*((_QWORD *)self + 11) = v5, *v5 != v6) )
+  {
+    v5 = (_QWORD *)((__int64 (*)(void))unk_3C3D868)();
+    goto LABEL_10;
+  }
+}

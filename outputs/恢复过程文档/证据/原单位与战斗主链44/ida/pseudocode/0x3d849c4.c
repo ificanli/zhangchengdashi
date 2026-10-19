@@ -1,0 +1,45 @@
+void __fastcall GameModule_RoleBehaviour__TryRefreshSearchPath(__int64 a1)
+{
+  __int64 v2; // x20
+  __int64 v3; // x0
+  float time; // s0
+  __int64 v5; // x0
+
+  if ( (byte_8FFD46F & 1) == 0 )
+  {
+    il2cpp_codegen_initialize_runtime_metadata((void **)&off_8CEB3E0);
+    byte_8FFD46F = 1;
+  }
+  if ( *(_BYTE *)(a1 + 452) != 0 )
+  {
+    if ( Pathfinding_AstarWebGLRuntimeConfig__get_UseWebGLNavigation(0) )
+    {
+      *(_BYTE *)(a1 + 452) = 0;
+      *(float *)(a1 + 456) = UnityEngine_Time__get_time(0);
+      return;
+    }
+    v2 = *(_QWORD *)(a1 + 128);
+    if ( *((_DWORD *)off_8CEB3E0 + 56) == 0 )
+      il2cpp_codegen_runtime_class_init(off_8CEB3E0);
+    if ( (UnityEngine_Object__op_Equality(v2, 0, 0) & 1) == 0 )
+    {
+      v3 = *(_QWORD *)(a1 + 128);
+      if ( v3 == 0 )
+        goto LABEL_14;
+      if ( (UnityEngine_Behaviour__get_enabled(v3, 0) & 1) != 0 )
+      {
+        *(_BYTE *)(a1 + 452) = 0;
+        time = UnityEngine_Time__get_time(0);
+        v5 = *(_QWORD *)(a1 + 128);
+        *(float *)(a1 + 456) = time;
+        if ( v5 != 0 )
+        {
+          Pathfinding_FollowerEntity__SearchPath(v5, 0);
+          return;
+        }
+LABEL_14:
+        il2cpp_codegen_raise_null_reference_exception();
+      }
+    }
+  }
+}

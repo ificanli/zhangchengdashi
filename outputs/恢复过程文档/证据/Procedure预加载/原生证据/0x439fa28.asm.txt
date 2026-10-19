@@ -1,0 +1,74 @@
+0x439fa28: STR             X30, [SP,#var_20]!
+0x439fa2c: STP             X20, X19, [SP,#0x20+var_10]
+0x439fa30: ADRP            X20, #byte_90008C8@PAGE
+0x439fa34: ADRP            X19, #off_8AD9058@PAGE
+0x439fa38: LDRB            W8, [X20,#byte_90008C8@PAGEOFF]
+0x439fa3c: LDR             X19, [X19,#off_8AD9058@PAGEOFF]; off_8CEA0B8
+0x439fa40: TBNZ            W8, #0, loc_439FA70
+0x439fa44: ADRP            X0, #off_8AD0800@PAGE
+0x439fa48: LDR             X0, [X0,#off_8AD0800@PAGEOFF]; off_8CE5F18 ; slot
+0x439fa4c: BL              il2cpp_codegen_initialize_runtime_metadata
+0x439fa50: ADRP            X0, #off_8AD9058@PAGE
+0x439fa54: LDR             X0, [X0,#off_8AD9058@PAGEOFF]; off_8CEA0B8 ; slot
+0x439fa58: BL              il2cpp_codegen_initialize_runtime_metadata
+0x439fa5c: ADRP            X0, #off_8AEFB30@PAGE
+0x439fa60: LDR             X0, [X0,#off_8AEFB30@PAGEOFF]; qword_8D7DCC8 ; slot
+0x439fa64: BL              il2cpp_codegen_initialize_runtime_metadata
+0x439fa68: MOV             W8, #1
+0x439fa6c: STRB            W8, [X20,#byte_90008C8@PAGEOFF]
+0x439fa70: LDR             X0, [X19]; klass
+0x439fa74: ADRP            X19, #off_8AD0800@PAGE
+0x439fa78: LDR             W8, [X0,#0xE0]
+0x439fa7c: LDR             X19, [X19,#off_8AD0800@PAGEOFF]; off_8CE5F18
+0x439fa80: CBNZ            W8, loc_439FA88
+0x439fa84: BL              il2cpp_codegen_runtime_class_init
+0x439fa88: ADRP            X20, #off_8AEFB30@PAGE
+0x439fa8c: LDR             X20, [X20,#off_8AEFB30@PAGEOFF]; qword_8D7DCC8
+0x439fa90: MOV             W0, WZR
+0x439fa94: MOV             X1, XZR
+0x439fa98: BL              I2.Loc.LocalizationManager$$EnableChangingCultureInfo
+0x439fa9c: MOV             X0, XZR
+0x439faa0: BL              LocalizationModule.StartupLanguageHelper$$EnsureStartupLanguage
+0x439faa4: LDR             X0, [X19]; klass
+0x439faa8: LDR             W8, [X0,#0xE0]
+0x439faac: CBNZ            W8, loc_439FAB4
+0x439fab0: BL              il2cpp_codegen_runtime_class_init
+0x439fab4: LDR             X0, [X20]
+0x439fab8: MOV             X1, XZR
+0x439fabc: BL              System.Globalization.CultureInfo$$GetCultureInfo
+0x439fac0: MOV             X1, XZR
+0x439fac4: BL              System.Globalization.CultureInfo$$set_DefaultThreadCurrentCulture
+0x439fac8: LDR             X0, [X20]
+0x439facc: MOV             X1, XZR
+0x439fad0: BL              System.Globalization.CultureInfo$$GetCultureInfo
+0x439fad4: MOV             X1, XZR
+0x439fad8: BL              System.Globalization.CultureInfo$$set_DefaultThreadCurrentUICulture
+0x439fadc: MOV             X0, XZR
+0x439fae0: BL              System.Threading.Thread$$get_CurrentThread
+0x439fae4: LDR             X8, [X20]
+0x439fae8: MOV             X19, X0
+0x439faec: MOV             X1, XZR
+0x439faf0: MOV             X0, X8
+0x439faf4: BL              System.Globalization.CultureInfo$$GetCultureInfo
+0x439faf8: CBZ             X19, loc_439FB4C
+0x439fafc: MOV             X1, X0
+0x439fb00: MOV             X0, X19
+0x439fb04: MOV             X2, XZR
+0x439fb08: BL              System.Threading.Thread$$set_CurrentCulture
+0x439fb0c: MOV             X0, XZR
+0x439fb10: BL              System.Threading.Thread$$get_CurrentThread
+0x439fb14: LDR             X8, [X20]
+0x439fb18: MOV             X19, X0
+0x439fb1c: MOV             X1, XZR
+0x439fb20: MOV             X0, X8
+0x439fb24: BL              System.Globalization.CultureInfo$$GetCultureInfo
+0x439fb28: CBZ             X19, loc_439FB4C
+0x439fb2c: MOV             X1, X0
+0x439fb30: MOV             X0, X19
+0x439fb34: MOV             X2, XZR
+0x439fb38: BL              System.Threading.Thread$$set_CurrentUICulture
+0x439fb3c: LDP             X20, X19, [SP,#0x20+var_10]
+0x439fb40: MOV             X0, XZR
+0x439fb44: LDR             X30, [SP+0x20+var_20],#0x20
+0x439fb48: B               ToolModule.LitJsonExtent$$Init
+0x439fb4c: BL              il2cpp_codegen_raise_null_reference_exception

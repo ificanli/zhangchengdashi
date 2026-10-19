@@ -1,0 +1,75 @@
+0x52a8504: STP             X30, X23, [SP,#var_30]!
+0x52a8508: STP             X22, X21, [SP,#0x30+var_20]
+0x52a850c: STP             X20, X19, [SP,#0x30+var_10]
+0x52a8510: MOV             X19, X3
+0x52a8514: CBZ             X2, loc_52A85F4
+0x52a8518: MOV             X21, X0
+0x52a851c: LDR             X0, [X0,#0x10]
+0x52a8520: CBZ             X0, loc_52A85F0
+0x52a8524: LDR             X8, [X19,#0x20]
+0x52a8528: MOV             X22, X2
+0x52a852c: MOV             W20, W1
+0x52a8530: LDR             X8, [X8,#0xC0]
+0x52a8534: LDR             X2, [X8,#0x28]
+0x52a8538: BL              System.Collections.Generic.Dictionary_int__object_$$ContainsKey
+0x52a853c: LDR             X21, [X21,#0x10]
+0x52a8540: CBZ             X21, loc_52A85F0
+0x52a8544: LDR             X8, [X19,#0x20]
+0x52a8548: LDR             X8, [X8,#0xC0]
+0x52a854c: TBZ             W0, #0, loc_52A85B4
+0x52a8550: LDR             X2, [X8,#0x38]
+0x52a8554: MOV             X0, X21
+0x52a8558: MOV             W1, W20
+0x52a855c: BL              System.Collections.Generic.Dictionary_int__object_$$get_Item
+0x52a8560: MOV             X1, X22
+0x52a8564: MOV             X2, XZR
+0x52a8568: BL              System.Delegate$$Combine
+0x52a856c: LDR             X8, [X19,#0x20]
+0x52a8570: MOV             X23, X0
+0x52a8574: LDR             X8, [X8,#0xC0]
+0x52a8578: LDR             X22, [X8,#0x20]
+0x52a857c: LDRB            W8, [X22,#0x135]
+0x52a8580: TBNZ            W8, #0, loc_52A8590
+0x52a8584: MOV             X0, X22
+0x52a8588: BL              unk_3C503A0
+0x52a858c: MOV             X22, X0
+0x52a8590: CBZ             X23, loc_52A85C8
+0x52a8594: MOV             X0, X23
+0x52a8598: MOV             X1, X22
+0x52a859c: BL              unk_3C3D3B4
+0x52a85a0: MOV             X2, X0
+0x52a85a4: CBNZ            X0, loc_52A85CC
+0x52a85a8: MOV             X0, X23
+0x52a85ac: MOV             X1, X22
+0x52a85b0: BL              unk_3C3D868
+0x52a85b4: LDR             X3, [X8,#0x30]
+0x52a85b8: MOV             X0, X21
+0x52a85bc: MOV             W1, W20
+0x52a85c0: MOV             X2, X22
+0x52a85c4: B               loc_52A85E0
+0x52a85c8: MOV             X2, XZR
+0x52a85cc: LDR             X8, [X19,#0x20]
+0x52a85d0: MOV             X0, X21
+0x52a85d4: MOV             W1, W20
+0x52a85d8: LDR             X8, [X8,#0xC0]
+0x52a85dc: LDR             X3, [X8,#0x30]
+0x52a85e0: LDP             X20, X19, [SP,#0x30+var_10]
+0x52a85e4: LDP             X22, X21, [SP,#0x30+var_20]
+0x52a85e8: LDP             X30, X23, [SP+0x30+var_30],#0x30
+0x52a85ec: B               System.Collections.Generic.Dictionary_int__object_$$set_Item
+0x52a85f0: BL              il2cpp_codegen_raise_null_reference_exception
+0x52a85f4: ADRP            X0, #off_8B0CF78@PAGE
+0x52a85f8: LDR             X0, [X0,#off_8B0CF78@PAGEOFF]; unk_8CE7B50
+0x52a85fc: BL              unk_3C3D294
+0x52a8600: BL              unk_3C3D4C4
+0x52a8604: MOV             X20, X0
+0x52a8608: ADRP            X0, #off_8B0F588@PAGE
+0x52a860c: LDR             X0, [X0,#off_8B0F588@PAGEOFF]; unk_8D5FAD8
+0x52a8610: BL              unk_3C3D294
+0x52a8614: MOV             X1, X0
+0x52a8618: MOV             X0, X20
+0x52a861c: MOV             X2, XZR
+0x52a8620: BL              GameFramework.GameFrameworkException$$.ctor
+0x52a8624: MOV             X0, X20
+0x52a8628: MOV             X1, X19
+0x52a862c: BL              unk_3C3D3A0

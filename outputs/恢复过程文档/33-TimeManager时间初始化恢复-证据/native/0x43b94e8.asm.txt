@@ -1,0 +1,7 @@
+0x43b94e8: TBZ             W1, #0, locret_43B9500
+0x43b94ec: STP             X30, X19, [SP,#var_10]!
+0x43b94f0: MOV             X19, X0
+0x43b94f4: BL              L_Tools.ServerTimeMgr$$GetCurrentServerTime
+0x43b94f8: STR             WZR, [X19,#0x3C]
+0x43b94fc: LDP             X30, X19, [SP+0x10+var_10],#0x10
+0x43b9500: RET

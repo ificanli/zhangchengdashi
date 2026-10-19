@@ -1,0 +1,21 @@
+0x3f6e3c0: STR             X30, [SP,#var_20]!
+0x3f6e3c4: STP             X20, X19, [SP,#0x20+var_10]
+0x3f6e3c8: ADRP            X19, #byte_8FFE38B@PAGE
+0x3f6e3cc: ADRP            X20, #off_8AD5858@PAGE
+0x3f6e3d0: LDRB            W8, [X19,#byte_8FFE38B@PAGEOFF]
+0x3f6e3d4: LDR             X20, [X20,#off_8AD5858@PAGEOFF]; off_8CE40C0
+0x3f6e3d8: TBNZ            W8, #0, loc_3F6E3F0
+0x3f6e3dc: ADRP            X0, #off_8AD5858@PAGE
+0x3f6e3e0: LDR             X0, [X0,#off_8AD5858@PAGEOFF]; off_8CE40C0 ; slot
+0x3f6e3e4: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3f6e3e8: MOV             W8, #1
+0x3f6e3ec: STRB            W8, [X19,#byte_8FFE38B@PAGEOFF]
+0x3f6e3f0: LDR             X8, [X20]
+0x3f6e3f4: LDR             X8, [X8,#0xB8]
+0x3f6e3f8: LDR             X0, [X8]
+0x3f6e3fc: CBZ             X0, loc_3F6E410
+0x3f6e400: LDP             X20, X19, [SP,#0x20+var_10]
+0x3f6e404: MOV             X1, XZR
+0x3f6e408: LDR             X30, [SP+0x20+var_20],#0x20
+0x3f6e40c: B               DBTSDK.AppInfoManager$$IsOnlineParamReady_Override
+0x3f6e410: BL              il2cpp_codegen_raise_null_reference_exception

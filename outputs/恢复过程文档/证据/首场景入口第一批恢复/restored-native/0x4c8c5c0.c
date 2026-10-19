@@ -1,0 +1,35 @@
+void *GameFramework_GameFrameEntry__GetModule_object_(const MethodInfo *method)
+{
+  __int64 v2; // x0
+  __int64 v3; // x20
+  __int64 v4; // x1
+  __int64 v5; // x20
+  __int64 v6; // x19
+  void *result; // x0
+
+  if ( *((_QWORD *)method + 7) == 0 )
+  {
+    il2cpp_codegen_initialize_runtime_metadata((void **)&off_8CE7B30);
+    if ( *((_QWORD *)method + 7) == 0 )
+      ((void (__fastcall *)(const MethodInfo *))unk_3C503FC)(method);
+  }
+  if ( *((_DWORD *)off_8CE7B30 + 56) == 0 )
+    il2cpp_codegen_runtime_class_init(off_8CE7B30);
+  v2 = GameFramework_GameFrameEntry__K______object_(**((_QWORD **)method + 7));
+  v3 = GameFramework_GameFrameEntry__K____b(v2, 0);
+  v4 = *(_QWORD *)(*((_QWORD *)method + 7) + 8LL);
+  if ( (*(_BYTE *)(v4 + 309) & 1) == 0 )
+    v4 = ((__int64 (__fastcall *)(_QWORD))unk_3C503A0)(*(_QWORD *)(*((_QWORD *)method + 7) + 8LL));
+  v5 = ((__int64 (__fastcall *)(__int64, __int64))unk_3C3D3B4)(v3, v4);
+  v6 = *(_QWORD *)(*((_QWORD *)method + 7) + 8LL);
+  if ( (*(_BYTE *)(v6 + 309) & 1) == 0 )
+    v6 = ((__int64 (__fastcall *)(__int64))unk_3C503A0)(v6);
+  if ( v5 != 0 )
+  {
+    result = (void *)((__int64 (__fastcall *)(__int64, __int64))unk_3C3D3B4)(v5, v6);
+    if ( result != nullptr )
+      return result;
+    ((void (__fastcall *)(__int64, __int64))unk_3C3D868)(v5, v6);
+  }
+  return nullptr;
+}

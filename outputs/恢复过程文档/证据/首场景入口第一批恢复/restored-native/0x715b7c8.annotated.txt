@@ -1,0 +1,146 @@
+void *GameFramework_GameFrameEntry___X____(void *type, const MethodInfo *method)
+{
+  __int64 Instance; // x0
+  void *v4; // x19
+  __int64 v5; // x9
+  __int64 v6; // x0
+  __int64 v7; // x21
+  __int64 v8; // x0
+  __int64 v9; // x0
+  __int64 v10; // x20
+  _QWORD **v11; // x0
+  __int64 v12; // x8
+  __int64 Next; // x20
+  signed int v14; // w0
+  _QWORD *v15; // x8
+  signed int v16; // w21
+  signed int v17; // w22
+  bool v18; // w21
+  _QWORD **v19; // x0
+  __int64 v21; // x19
+  __int64 v22; // x19
+  __int64 v23; // x0
+  __int64 v24; // x19
+  __int64 v25; // x0
+  __int64 v26; // x20
+  __int64 v27; // x0
+  __int64 v28; // x0
+
+  if ( (byte_90090D9 & 1) == 0 )
+  {
+    il2cpp_codegen_initialize_runtime_metadata((void **)&off_8CE5250 /* GameFramework.CLog_TypeInfo */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&off_8CE7B30 /* GameFramework.GameFrameEntry_TypeInfo */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&off_8CE7B38 /* GameFramework.GameFrameModule_TypeInfo */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D07C48 /* Method$System.Collections.Generic.LinkedListNode<GameFrameModule>.get_Next() */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&unk_8D07C58 /* Method$System.Collections.Generic.LinkedListNode<GameFrameModule>.get_Value() */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D07D68 /* Method$System.Collections.Generic.LinkedList<GameFrameModule>.AddBefore() */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D07D70 /* Method$System.Collections.Generic.LinkedList<GameFrameModule>.AddLast() */);
+    il2cpp_codegen_initialize_runtime_metadata(&qword_8D07D90 /* Method$System.Collections.Generic.LinkedList<GameFrameModule>.get_First() */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8CE3258 /* object[]_TypeInfo */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D865C0 /* 创建模块=== */);
+    byte_90090D9 = 1;
+  }
+  Instance = System_Activator__CreateInstance(type, 0);
+  if ( Instance == 0 )
+    goto LABEL_31;
+  v4 = (void *)Instance;
+  v5 = *((unsigned __int8 *)off_8CE7B38 /* GameFramework.GameFrameModule_TypeInfo */ + 304);
+  if ( *(unsigned __int8 *)(*(_QWORD *)Instance + 304LL) < (unsigned int)v5
+    || *(_UNKNOWN **)(*(_QWORD *)(*(_QWORD *)Instance + 200LL) + 8 * v5 - 8) != off_8CE7B38 /* GameFramework.GameFrameModule_TypeInfo */ )
+  {
+    Instance = ((__int64 (__fastcall *)(__int64))unk_3C3D868)(Instance);
+LABEL_31:
+    ((void (__fastcall *)(__int64))unk_35C5DE8)(Instance);
+    v21 = System_Object__GetType(0, 0);
+    ((void (*)(void))unk_35C5DE8)();
+    v22 = (*(__int64 (__fastcall **)(__int64, _QWORD))(*(_QWORD *)v21 + 776LL))(
+            v21,
+            *(_QWORD *)(*(_QWORD *)v21 + 784LL));
+    v23 = ((__int64 (__fastcall *)(void *))unk_3C3D294)(&unk_8D5A378 /* Can not create module '{0}'. */);
+    v24 = System_String__Format(v23, v22, 0);
+    v25 = ((__int64 (__fastcall *)(void *))unk_3C3D294)(&unk_8CE71D0 /* System.Exception_TypeInfo */);
+    v26 = ((__int64 (__fastcall *)(__int64))unk_3C3D4C4)(v25);
+    System_Exception___ctor(v26, v24, 0);
+    v27 = ((__int64 (__fastcall *)(void *))unk_3C3D294)(&unk_8D2D1B0 /* Method$GameFramework.GameFrameEntry.¹X() */);
+    v9 = ((__int64 (__fastcall *)(__int64, __int64))unk_3C3D3A0)(v26, v27);
+    goto LABEL_32;
+  }
+  v6 = ((__int64 (__fastcall *)(__int64, __int64))unk_3C3D320)(qword_8CE3258 /* object[]_TypeInfo */, 1);
+  if ( type == nullptr )
+    goto LABEL_29;
+  v7 = v6;
+  v8 = (*(__int64 (__fastcall **)(void *, _QWORD))(*(_QWORD *)type + 440LL))(type, *(_QWORD *)(*(_QWORD *)type + 448LL));
+  v9 = sub_74FE7A4(qword_8D865C0 /* 创建模块=== */, v8, 0);
+  if ( v7 == 0 )
+    goto LABEL_29;
+  v10 = v9;
+  if ( v9 != 0 )
+  {
+    v9 = ((__int64 (__fastcall *)(__int64, _QWORD))unk_3C3D3B4)(v9, *(_QWORD *)(*(_QWORD *)v7 + 64LL));
+    if ( v9 == 0 )
+    {
+LABEL_33:
+      v28 = ((__int64 (__fastcall *)(__int64))unk_3C3D4F0)(v9);
+      ((void (__fastcall *)(__int64, _QWORD))unk_3C3D3A0)(v28, 0);
+      JUMPOUT(0x715BAE8);
+    }
+  }
+  if ( *(_DWORD *)(v7 + 24) == 0 )
+  {
+LABEL_32:
+    v9 = ((__int64 (__fastcall *)(__int64))unk_3C3D4D4)(v9);
+    goto LABEL_33;
+  }
+  *(_QWORD *)(v7 + 32) = v10;
+  if ( *((_DWORD *)off_8CE5250 /* GameFramework.CLog_TypeInfo */ + 56) == 0 )
+    il2cpp_codegen_runtime_class_init(off_8CE5250 /* GameFramework.CLog_TypeInfo */);
+  GameFramework_CLog__d_e___(v7, 0);
+  v11 = (_QWORD **)off_8CE7B30 /* GameFramework.GameFrameEntry_TypeInfo */;
+  if ( *((_DWORD *)off_8CE7B30 /* GameFramework.GameFrameEntry_TypeInfo */ + 56) == 0 )
+  {
+    il2cpp_codegen_runtime_class_init(off_8CE7B30 /* GameFramework.GameFrameEntry_TypeInfo */);
+    v11 = (_QWORD **)off_8CE7B30 /* GameFramework.GameFrameEntry_TypeInfo */;
+  }
+  v12 = *v11[23];
+  if ( v12 == 0 )
+    goto LABEL_29;
+  Next = *(_QWORD *)(v12 + 16);
+  if ( Next != 0 )
+  {
+    do
+    {
+      v14 = (*(__int64 (__fastcall **)(void *, _QWORD))(*(_QWORD *)v4 + 376LL))(v4, *(_QWORD *)(*(_QWORD *)v4 + 384LL));
+      v15 = *(_QWORD **)(Next + 40);
+      if ( v15 == nullptr )
+        goto LABEL_29;
+      v16 = v14;
+      v17 = (unsigned int)(*(_QWORD *(__fastcall **)(_QWORD *__return_ptr, _QWORD, _QWORD))(*v15 + 376LL))(
+                            v15,
+                            *(_QWORD *)(Next + 40),
+                            *(_QWORD *)(*v15 + 384LL));
+      if ( v16 > v17 )
+        break;
+      Next = System_Collections_Generic_LinkedListNode_object___get_Next(Next, qword_8D07C48 /* Method$System.Collections.Generic.LinkedListNode<GameFrameModule>.get_Next() */);
+    }
+    while ( Next != 0 );
+    v18 = v16 <= v17;
+  }
+  else
+  {
+    v18 = true;
+  }
+  v19 = (_QWORD **)off_8CE7B30 /* GameFramework.GameFrameEntry_TypeInfo */;
+  if ( *((_DWORD *)off_8CE7B30 /* GameFramework.GameFrameEntry_TypeInfo */ + 56) == 0 )
+  {
+    il2cpp_codegen_runtime_class_init(off_8CE7B30 /* GameFramework.GameFrameEntry_TypeInfo */);
+    v19 = (_QWORD **)off_8CE7B30 /* GameFramework.GameFrameEntry_TypeInfo */;
+  }
+  if ( *v19[23] == 0 )
+LABEL_29:
+    il2cpp_codegen_raise_null_reference_exception();
+  if ( v18 )
+    System_Collections_Generic_LinkedList_object___AddLast();
+  else
+    System_Collections_Generic_LinkedList_object___AddBefore();
+  return v4;
+}

@@ -1,0 +1,103 @@
+void GameModule_BattleGameSceneManager__EnsureSpawnHexVertices(
+        GameModule_BattleGameSceneManager_o *this,
+        float hexSize,
+        const MethodInfo *method)
+{
+  float v3; // s9
+  float v6; // s1
+  float v7; // s2
+  float v8; // s0
+  float v9; // s3
+  __int64 v10; // x8
+  __int64 v11; // x8
+  float v12; // s0
+  float v13; // s1
+  __int64 v14; // x8
+  __int64 v15; // x8
+  __int64 v16; // x8
+  float v17; // s1
+  __int64 v18; // x8
+
+  v3 = *(float *)&this->fields._unknown_object_0010_to_01FF[48];
+  if ( byte_8FFD090 == 0 )
+  {
+    il2cpp_codegen_initialize_runtime_metadata((void **)&off_8CEA750);
+    byte_8FFD090 = 1;
+  }
+  v6 = fabsf(v3);
+  v7 = fabsf(hexSize);
+  if ( v6 <= v7 )
+    v6 = v7;
+  v8 = v6 * 0.000001;
+  v9 = **((float **)off_8CEA750 + 23);
+  if ( (float)(v6 * 0.000001) <= (float)(v9 * 8.0) )
+    v8 = v9 * 8.0;
+  if ( vabds_f32(hexSize, v3) >= v8 )
+  {
+    v10 = *(_QWORD *)&this->fields._unknown_object_0010_to_01FF[40];
+    *(float *)&this->fields._unknown_object_0010_to_01FF[48] = hexSize;
+    if ( v10 != 0 )
+    {
+      if ( *(_DWORD *)(v10 + 24) == 0 )
+        goto LABEL_23;
+      *(_QWORD *)(v10 + 32) = 0;
+      *(float *)(v10 + 40) = hexSize;
+      v11 = *(_QWORD *)&this->fields._unknown_object_0010_to_01FF[40];
+      if ( v11 != 0 )
+      {
+        if ( *(_DWORD *)(v11 + 24) <= 1u )
+          goto LABEL_23;
+        v12 = hexSize * 0.5;
+        v13 = (float)((float)(hexSize / 1.7321) * 3.0) * 0.5;
+        *(_DWORD *)(v11 + 48) = 0;
+        *(float *)(v11 + 44) = v13;
+        *(float *)(v11 + 52) = hexSize * 0.5;
+        v14 = *(_QWORD *)&this->fields._unknown_object_0010_to_01FF[40];
+        if ( v14 != 0 )
+        {
+          if ( *(_DWORD *)(v14 + 24) <= 2u )
+            goto LABEL_23;
+          *(float *)(v14 + 56) = v13;
+          *(_DWORD *)(v14 + 60) = 0;
+          *(float *)(v14 + 64) = -v12;
+          v15 = *(_QWORD *)&this->fields._unknown_object_0010_to_01FF[40];
+          if ( v15 != 0 )
+          {
+            if ( *(_DWORD *)(v15 + 24) <= 3u )
+              goto LABEL_23;
+            *(_DWORD *)(v15 + 68) = 0;
+            *(_DWORD *)(v15 + 72) = 0;
+            *(float *)(v15 + 76) = -hexSize;
+            v16 = *(_QWORD *)&this->fields._unknown_object_0010_to_01FF[40];
+            if ( v16 != 0 )
+            {
+              if ( *(_DWORD *)(v16 + 24) <= 4u )
+                goto LABEL_23;
+              v17 = -v13;
+              *(_DWORD *)(v16 + 84) = 0;
+              *(float *)(v16 + 80) = v17;
+              *(float *)(v16 + 88) = -v12;
+              v18 = *(_QWORD *)&this->fields._unknown_object_0010_to_01FF[40];
+              if ( v18 != 0 )
+              {
+                if ( *(_DWORD *)(v18 + 24) > 5u )
+                {
+                  *(float *)(v18 + 92) = v17;
+                  *(_DWORD *)(v18 + 96) = 0;
+                  *(float *)(v18 + 100) = v12;
+                  return;
+                }
+LABEL_23:
+                ((void (__fastcall *)(GameModule_BattleGameSceneManager_o *, const MethodInfo *))unk_3C3D4D4)(
+                  this,
+                  method);
+                JUMPOUT(0x3DF4778);
+              }
+            }
+          }
+        }
+      }
+    }
+    il2cpp_codegen_raise_null_reference_exception();
+  }
+}

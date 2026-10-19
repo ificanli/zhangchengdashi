@@ -1,0 +1,13 @@
+0x3e198f0: fe4fbfa9 stp      x30, x19, [sp, #-0x10]!
+0x3e198f4: 08804039 ldrb     w8, [x0, #0x20]
+0x3e198f8: 28010034 cbz      w8, #0x3e1991c
+0x3e198fc: 131440f9 ldr      x19, [x0, #0x28]
+0x3e19900: f30000b4 cbz      x19, #0x3e1991c
+0x3e19904: e0031faa mov      x0, xzr
+0x3e19908: 12711395 bl       #0x82f5d50 // UnityEngine.Time$$get_deltaTime
+0x3e1990c: e00313aa mov      x0, x19
+0x3e19910: e1031faa mov      x1, xzr
+0x3e19914: fe4fc1a8 ldp      x30, x19, [sp], #0x10
+0x3e19918: a4e1fe17 b        #0x3dd1fa8 // GameModule.UpdateController$$ToUpdate
+0x3e1991c: fe4fc1a8 ldp      x30, x19, [sp], #0x10
+0x3e19920: c0035fd6 ret      

@@ -1,0 +1,101 @@
+__int64 __fastcall GameModule_RoleBehaviour__GetWallsFromHex(__int64 a1, _QWORD *a2)
+{
+  __int64 v3; // x19
+  _QWORD *v4; // x0
+  _QWORD *v5; // x20
+  __int64 v6; // x8
+  unsigned __int64 v7; // x22
+  __int64 v8; // x21
+  __int64 Component_object; // x21
+  __int64 v10; // x8
+  _QWORD *v11; // x9
+  __int64 v12; // x10
+
+  if ( (byte_8FFD496 & 1) == 0 )
+  {
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8CE2EE8);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D2DC48);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&off_8D0E5B8);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D0E5C8);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D0E5B0);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8CDE170);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&off_8CEB3E0);
+    byte_8FFD496 = 1;
+  }
+  v3 = ((__int64 (__fastcall *)(__int64))unk_3C3D4C4)(qword_8CDE170);
+  System_Collections_Generic_List_object____ctor(v3, qword_8D0E5B0);
+  v4 = (_QWORD *)((__int64 (__fastcall *)(__int64, __int64))unk_3C3D320)(qword_8CE2EE8, 6);
+  if ( a2 == nullptr || (v5 = v4, v4 == nullptr) )
+LABEL_33:
+    il2cpp_codegen_raise_null_reference_exception();
+  v6 = v4[3];
+  if ( (_DWORD)v6 == 0
+    || (v4[4] = a2[37], (_DWORD)v6 == 1)
+    || (v4[5] = a2[38], (unsigned int)v6 <= 2)
+    || (v4[6] = a2[39], (_DWORD)v6 == 3)
+    || (v4[7] = a2[40], (unsigned int)v6 <= 4)
+    || (v4[8] = a2[41], (_DWORD)v6 == 5) )
+  {
+LABEL_32:
+    ((void (*)(void))unk_3C3D4D4)();
+    goto LABEL_33;
+  }
+  v4[9] = a2[42];
+  if ( (int)v6 >= 1 )
+  {
+    v7 = 0;
+    while ( v7 < (unsigned int)v6 )
+    {
+      v8 = v5[v7 + 4];
+      if ( *((_DWORD *)off_8CEB3E0 + 56) == 0 )
+        il2cpp_codegen_runtime_class_init(off_8CEB3E0);
+      if ( (UnityEngine_Object__op_Inequality(v8, 0, 0) & 1) != 0 )
+      {
+        if ( v8 == 0 )
+          goto LABEL_33;
+        if ( (UnityEngine_GameObject__get_activeSelf(v8, 0) & 1) != 0 )
+        {
+          Component_object = UnityEngine_GameObject__GetComponent_object_(v8, qword_8D2DC48);
+          if ( *((_DWORD *)off_8CEB3E0 + 56) == 0 )
+            il2cpp_codegen_runtime_class_init(off_8CEB3E0);
+          if ( (UnityEngine_Object__op_Inequality(Component_object, 0, 0) & 1) != 0 )
+          {
+            if ( Component_object == 0 )
+              goto LABEL_33;
+            if ( *(_BYTE *)(Component_object + 33) == 0 )
+            {
+              if ( v3 == 0 )
+                goto LABEL_33;
+              v10 = *(_QWORD *)(v3 + 16);
+              v11 = off_8D0E5B8;
+              ++*(_DWORD *)(v3 + 28);
+              if ( v10 == 0 )
+                goto LABEL_33;
+              v12 = *(int *)(v3 + 24);
+              if ( (unsigned int)v12 >= *(_DWORD *)(v10 + 24) )
+              {
+                System_Collections_Generic_List_object___AddWithResize(
+                  v3,
+                  Component_object,
+                  *(_QWORD *)(*(_QWORD *)(v11[4] + 192LL) + 112LL));
+              }
+              else
+              {
+                *(_DWORD *)(v3 + 24) = v12 + 1;
+                *(_QWORD *)(v10 + 8 * v12 + 32) = Component_object;
+              }
+            }
+          }
+        }
+      }
+      LODWORD(v6) = *((_DWORD *)v5 + 6);
+      if ( (__int64)++v7 >= (int)v6 )
+        goto LABEL_30;
+    }
+    goto LABEL_32;
+  }
+LABEL_30:
+  if ( v3 == 0 )
+    goto LABEL_33;
+  return System_Collections_Generic_List_object___ToArray(v3, qword_8D0E5C8);
+}

@@ -1,0 +1,160 @@
+0x439b9f4: fe5fbda9 stp      x30, x23, [sp, #-0x30]!
+0x439b9f8: f65701a9 stp      x22, x21, [sp, #0x10]
+0x439b9fc: f44f02a9 stp      x20, x19, [sp, #0x20]
+0x439ba00: 376302b0 adrp     x23, #0x9000000
+0x439ba04: d63a02b0 adrp     x22, #0x8af4000
+0x439ba08: d53a02b0 adrp     x21, #0x8af4000
+0x439ba0c: d43a02b0 adrp     x20, #0x8af4000
+0x439ba10: e81e6239 ldrb     w8, [x23, #0x887]
+0x439ba14: d64243f9 ldr      x22, [x22, #0x680] // System.Collections.Generic.List<ProcedureBase>_TypeInfo
+0x439ba18: b54643f9 ldr      x21, [x21, #0x688] // Method$System.Collections.Generic.List<ProcedureBase>..ctor()
+0x439ba1c: 944a43f9 ldr      x20, [x20, #0x690] // ljzs_lt.Procedure.ProcedurePreLoad_TypeInfo
+0x439ba20: f30300aa mov      x19, x0
+0x439ba24: c8030037 tbnz     w8, #0, #0x439ba9c
+0x439ba28: c03a02b0 adrp     x0, #0x8af4000
+0x439ba2c: 004c43f9 ldr      x0, [x0, #0x698] // Method$GameFramework.GameFrameEntry.GetModule<ProcedureManager>()
+0x439ba30: 1486e297 bl       #0x3c3d280
+0x439ba34: c03a02b0 adrp     x0, #0x8af4000
+0x439ba38: 005043f9 ldr      x0, [x0, #0x6a0] // GameFramework.GameFrameEntry_TypeInfo
+0x439ba3c: 1186e297 bl       #0x3c3d280
+0x439ba40: c03a02b0 adrp     x0, #0x8af4000
+0x439ba44: 005443f9 ldr      x0, [x0, #0x6a8] // Method$System.Collections.Generic.List<ProcedureBase>.Add()
+0x439ba48: 0e86e297 bl       #0x3c3d280
+0x439ba4c: c03a02b0 adrp     x0, #0x8af4000
+0x439ba50: 005843f9 ldr      x0, [x0, #0x6b0] // Method$System.Collections.Generic.List<ProcedureBase>.ToArray()
+0x439ba54: 0b86e297 bl       #0x3c3d280
+0x439ba58: c03a02b0 adrp     x0, #0x8af4000
+0x439ba5c: 004443f9 ldr      x0, [x0, #0x688] // Method$System.Collections.Generic.List<ProcedureBase>..ctor()
+0x439ba60: 0886e297 bl       #0x3c3d280
+0x439ba64: c03a02b0 adrp     x0, #0x8af4000
+0x439ba68: 004043f9 ldr      x0, [x0, #0x680] // System.Collections.Generic.List<ProcedureBase>_TypeInfo
+0x439ba6c: 0586e297 bl       #0x3c3d280
+0x439ba70: c03a02b0 adrp     x0, #0x8af4000
+0x439ba74: 005c43f9 ldr      x0, [x0, #0x6b8] // ljzs_lt.Procedure.ProcedureExitGame_TypeInfo
+0x439ba78: 0286e297 bl       #0x3c3d280
+0x439ba7c: c03a02b0 adrp     x0, #0x8af4000
+0x439ba80: 004843f9 ldr      x0, [x0, #0x690] // ljzs_lt.Procedure.ProcedurePreLoad_TypeInfo
+0x439ba84: ff85e297 bl       #0x3c3d280
+0x439ba88: c03a02b0 adrp     x0, #0x8af4000
+0x439ba8c: 006043f9 ldr      x0, [x0, #0x6c0] // ljzs_lt.Procedure.ProcedureStarGame_TypeInfo
+0x439ba90: fc85e297 bl       #0x3c3d280
+0x439ba94: 28008052 mov      w8, #1
+0x439ba98: e81e2239 strb     w8, [x23, #0x887]
+0x439ba9c: e00313aa mov      x0, x19
+0x439baa0: e1031faa mov      x1, xzr
+0x439baa4: 063dbd94 bl       #0x72eaebc // GameFramework.Base.IGameStart$$RegisterProcedure
+0x439baa8: c00240f9 ldr      x0, [x22]
+0x439baac: 8686e297 bl       #0x3c3d4c4
+0x439bab0: a10240f9 ldr      x1, [x21]
+0x439bab4: f30300aa mov      x19, x0
+0x439bab8: abcc4e94 bl       #0x574ed64 // System.Collections.Generic.List<object>$$.ctor
+0x439babc: 800240f9 ldr      x0, [x20]
+0x439bac0: 8186e297 bl       #0x3c3d4c4
+0x439bac4: e1031faa mov      x1, xzr
+0x439bac8: f40300aa mov      x20, x0
+0x439bacc: ba7bbb94 bl       #0x727a9b4 // GameFramework.Procedure.ProcedureBase$$.ctor
+0x439bad0: 130d00b4 cbz      x19, #0x439bc70
+0x439bad4: d53a02b0 adrp     x21, #0x8af4000
+0x439bad8: b55643f9 ldr      x21, [x21, #0x6a8] // Method$System.Collections.Generic.List<ProcedureBase>.Add()
+0x439badc: 6a1e40b9 ldr      w10, [x19, #0x1c]
+0x439bae0: 680a40f9 ldr      x8, [x19, #0x10]
+0x439bae4: a90240f9 ldr      x9, [x21]
+0x439bae8: 4a050011 add      w10, w10, #1
+0x439baec: 6a1e00b9 str      w10, [x19, #0x1c]
+0x439baf0: 080c00b4 cbz      x8, #0x439bc70
+0x439baf4: 6a1a80b9 ldrsw    x10, [x19, #0x18]
+0x439baf8: 0b1940b9 ldr      w11, [x8, #0x18]
+0x439bafc: d63a02b0 adrp     x22, #0x8af4000
+0x439bb00: d66243f9 ldr      x22, [x22, #0x6c0] // ljzs_lt.Procedure.ProcedureStarGame_TypeInfo
+0x439bb04: 5f010b6b cmp      w10, w11
+0x439bb08: c2000054 b.hs     #0x439bb20
+0x439bb0c: 49050011 add      w9, w10, #1
+0x439bb10: 080d0a8b add      x8, x8, x10, lsl #3
+0x439bb14: 691a00b9 str      w9, [x19, #0x18]
+0x439bb18: 141100f9 str      x20, [x8, #0x20]
+0x439bb1c: 07000014 b        #0x439bb38
+0x439bb20: 281140f9 ldr      x8, [x9, #0x20]
+0x439bb24: e00313aa mov      x0, x19
+0x439bb28: e10314aa mov      x1, x20
+0x439bb2c: 086140f9 ldr      x8, [x8, #0xc0]
+0x439bb30: 023940f9 ldr      x2, [x8, #0x70]
+0x439bb34: 7fce4e94 bl       #0x574f530 // System.Collections.Generic.List<object>$$AddWithResize
+0x439bb38: c00240f9 ldr      x0, [x22]
+0x439bb3c: 6286e297 bl       #0x3c3d4c4
+0x439bb40: e1031faa mov      x1, xzr
+0x439bb44: f40300aa mov      x20, x0
+0x439bb48: 9b7bbb94 bl       #0x727a9b4 // GameFramework.Procedure.ProcedureBase$$.ctor
+0x439bb4c: 6a1e40b9 ldr      w10, [x19, #0x1c]
+0x439bb50: 680a40f9 ldr      x8, [x19, #0x10]
+0x439bb54: a90240f9 ldr      x9, [x21]
+0x439bb58: 4a050011 add      w10, w10, #1
+0x439bb5c: 6a1e00b9 str      w10, [x19, #0x1c]
+0x439bb60: 880800b4 cbz      x8, #0x439bc70
+0x439bb64: 6a1a80b9 ldrsw    x10, [x19, #0x18]
+0x439bb68: 0b1940b9 ldr      w11, [x8, #0x18]
+0x439bb6c: d63a02b0 adrp     x22, #0x8af4000
+0x439bb70: d65e43f9 ldr      x22, [x22, #0x6b8] // ljzs_lt.Procedure.ProcedureExitGame_TypeInfo
+0x439bb74: 5f010b6b cmp      w10, w11
+0x439bb78: c2000054 b.hs     #0x439bb90
+0x439bb7c: 49050011 add      w9, w10, #1
+0x439bb80: 080d0a8b add      x8, x8, x10, lsl #3
+0x439bb84: 691a00b9 str      w9, [x19, #0x18]
+0x439bb88: 141100f9 str      x20, [x8, #0x20]
+0x439bb8c: 07000014 b        #0x439bba8
+0x439bb90: 281140f9 ldr      x8, [x9, #0x20]
+0x439bb94: e00313aa mov      x0, x19
+0x439bb98: e10314aa mov      x1, x20
+0x439bb9c: 086140f9 ldr      x8, [x8, #0xc0]
+0x439bba0: 023940f9 ldr      x2, [x8, #0x70]
+0x439bba4: 63ce4e94 bl       #0x574f530 // System.Collections.Generic.List<object>$$AddWithResize
+0x439bba8: c00240f9 ldr      x0, [x22]
+0x439bbac: 4686e297 bl       #0x3c3d4c4
+0x439bbb0: e1031faa mov      x1, xzr
+0x439bbb4: f40300aa mov      x20, x0
+0x439bbb8: 7f7bbb94 bl       #0x727a9b4 // GameFramework.Procedure.ProcedureBase$$.ctor
+0x439bbbc: 6a1e40b9 ldr      w10, [x19, #0x1c]
+0x439bbc0: 680a40f9 ldr      x8, [x19, #0x10]
+0x439bbc4: a90240f9 ldr      x9, [x21]
+0x439bbc8: 4a050011 add      w10, w10, #1
+0x439bbcc: 6a1e00b9 str      w10, [x19, #0x1c]
+0x439bbd0: 080500b4 cbz      x8, #0x439bc70
+0x439bbd4: 6a1a80b9 ldrsw    x10, [x19, #0x18]
+0x439bbd8: 0b1940b9 ldr      w11, [x8, #0x18]
+0x439bbdc: d53a02b0 adrp     x21, #0x8af4000
+0x439bbe0: b55243f9 ldr      x21, [x21, #0x6a0] // GameFramework.GameFrameEntry_TypeInfo
+0x439bbe4: 5f010b6b cmp      w10, w11
+0x439bbe8: c2000054 b.hs     #0x439bc00
+0x439bbec: 49050011 add      w9, w10, #1
+0x439bbf0: 080d0a8b add      x8, x8, x10, lsl #3
+0x439bbf4: 691a00b9 str      w9, [x19, #0x18]
+0x439bbf8: 141100f9 str      x20, [x8, #0x20]
+0x439bbfc: 07000014 b        #0x439bc18
+0x439bc00: 281140f9 ldr      x8, [x9, #0x20]
+0x439bc04: e00313aa mov      x0, x19
+0x439bc08: e10314aa mov      x1, x20
+0x439bc0c: 086140f9 ldr      x8, [x8, #0xc0]
+0x439bc10: 023940f9 ldr      x2, [x8, #0x70]
+0x439bc14: 47ce4e94 bl       #0x574f530 // System.Collections.Generic.List<object>$$AddWithResize
+0x439bc18: a00240f9 ldr      x0, [x21]
+0x439bc1c: d53a02b0 adrp     x21, #0x8af4000
+0x439bc20: d43a02b0 adrp     x20, #0x8af4000
+0x439bc24: 08e040b9 ldr      w8, [x0, #0xe0]
+0x439bc28: b54e43f9 ldr      x21, [x21, #0x698] // Method$GameFramework.GameFrameEntry.GetModule<ProcedureManager>()
+0x439bc2c: 945a43f9 ldr      x20, [x20, #0x6b0] // Method$System.Collections.Generic.List<ProcedureBase>.ToArray()
+0x439bc30: 48000035 cbnz     w8, #0x439bc38
+0x439bc34: df85e297 bl       #0x3c3d3b0
+0x439bc38: a00240f9 ldr      x0, [x21]
+0x439bc3c: 61c22394 bl       #0x4c8c5c0 // GameFramework.GameFrameEntry$$GetModule<object>
+0x439bc40: 810240f9 ldr      x1, [x20]
+0x439bc44: f40300aa mov      x20, x0
+0x439bc48: e00313aa mov      x0, x19
+0x439bc4c: c6d44e94 bl       #0x5750f64 // System.Collections.Generic.List<object>$$ToArray
+0x439bc50: 140100b4 cbz      x20, #0x439bc70
+0x439bc54: e10300aa mov      x1, x0
+0x439bc58: e00314aa mov      x0, x20
+0x439bc5c: f44f42a9 ldp      x20, x19, [sp, #0x20]
+0x439bc60: f65741a9 ldp      x22, x21, [sp, #0x10]
+0x439bc64: e2031faa mov      x2, xzr
+0x439bc68: fe5fc3a8 ldp      x30, x23, [sp], #0x30
+0x439bc6c: 747bbb14 b        #0x727aa3c // GameFramework.Procedure.ProcedureManager$$Register
+0x439bc70: 1786e297 bl       #0x3c3d4cc

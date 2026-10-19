@@ -1,0 +1,121 @@
+0x6af3f94: STR             X30, [SP,#var_30]!
+0x6af3f98: STP             X22, X21, [SP,#0x30+var_20]
+0x6af3f9c: STP             X20, X19, [SP,#0x30+var_10]
+0x6af3fa0: ADRP            X21, #byte_9007B6D@PAGE
+0x6af3fa4: ADRP            X22, #off_8B11C18@PAGE
+0x6af3fa8: LDRB            W8, [X21,#byte_9007B6D@PAGEOFF]
+0x6af3fac: LDR             X22, [X22,#off_8B11C18@PAGEOFF]; qword_8D76CF8
+0x6af3fb0: MOV             X20, X1
+0x6af3fb4: MOV             X19, X0
+0x6af3fb8: TBNZ            W8, #0, loc_6AF4024
+0x6af3fbc: ADRP            X0, #off_8ACD5C0@PAGE
+0x6af3fc0: LDR             X0, [X0,#off_8ACD5C0@PAGEOFF]; off_8CE40C8 ; slot
+0x6af3fc4: BL              il2cpp_codegen_initialize_runtime_metadata
+0x6af3fc8: ADRP            X0, #off_8ACD690@PAGE
+0x6af3fcc: LDR             X0, [X0,#off_8ACD690@PAGEOFF]; off_8CEA1F0 ; slot
+0x6af3fd0: BL              il2cpp_codegen_initialize_runtime_metadata
+0x6af3fd4: ADRP            X0, #off_8AF21E0@PAGE
+0x6af3fd8: LDR             X0, [X0,#off_8AF21E0@PAGEOFF]; off_8CEBB08 ; slot
+0x6af3fdc: BL              il2cpp_codegen_initialize_runtime_metadata
+0x6af3fe0: ADRP            X0, #off_8ACD5F8@PAGE
+0x6af3fe4: LDR             X0, [X0,#off_8ACD5F8@PAGEOFF]; qword_8D371A0 ; slot
+0x6af3fe8: BL              il2cpp_codegen_initialize_runtime_metadata
+0x6af3fec: ADRP            X0, #off_8ACD420@PAGE
+0x6af3ff0: LDR             X0, [X0,#off_8ACD420@PAGEOFF]; off_8CEC810 ; slot
+0x6af3ff4: BL              il2cpp_codegen_initialize_runtime_metadata
+0x6af3ff8: ADRP            X0, #off_8AFC668@PAGE
+0x6af3ffc: LDR             X0, [X0,#off_8AFC668@PAGEOFF]; qword_8D65BE8 ; slot
+0x6af4000: BL              il2cpp_codegen_initialize_runtime_metadata
+0x6af4004: ADRP            X0, #off_8B11C18@PAGE
+0x6af4008: LDR             X0, [X0,#off_8B11C18@PAGEOFF]; qword_8D76CF8 ; slot
+0x6af400c: BL              il2cpp_codegen_initialize_runtime_metadata
+0x6af4010: ADRP            X0, #off_8B11C20@PAGE
+0x6af4014: LDR             X0, [X0,#off_8B11C20@PAGEOFF]; qword_8D87890 ; slot
+0x6af4018: BL              il2cpp_codegen_initialize_runtime_metadata
+0x6af401c: MOV             W8, #1
+0x6af4020: STRB            W8, [X21,#byte_9007B6D@PAGEOFF]
+0x6af4024: LDR             X0, [X22]
+0x6af4028: MOV             X1, X20
+0x6af402c: MOV             X2, XZR
+0x6af4030: BL              sub_74FE7A4
+0x6af4034: MOV             X2, X0
+0x6af4038: MOV             W1, #1
+0x6af403c: MOV             X0, X19
+0x6af4040: BL              DbtSaveDataManagerBase_object__object_$$Log
+0x6af4044: MOV             X0, X20
+0x6af4048: MOV             X1, XZR
+0x6af404c: BL              System.String$$IsNullOrEmpty
+0x6af4050: TBZ             W0, #0, loc_6AF4074
+0x6af4054: ADRP            X8, #off_8ACD690@PAGE
+0x6af4058: LDR             X8, [X8,#off_8ACD690@PAGEOFF]; off_8CEA1F0
+0x6af405c: LDR             X8, [X8]
+0x6af4060: LDR             X8, [X8,#0xB8]
+0x6af4064: LDR             X8, [X8]
+0x6af4068: CBZ             X8, loc_6AF4088
+0x6af406c: LDRB            W8, [X8,#0x50]
+0x6af4070: CBZ             W8, loc_6AF4088
+0x6af4074: STR             X20, [X19,#0x38]
+0x6af4078: LDP             X20, X19, [SP,#0x30+var_10]
+0x6af407c: LDP             X22, X21, [SP,#0x30+var_20]
+0x6af4080: LDR             X30, [SP+0x30+var_30],#0x30
+0x6af4084: RET
+0x6af4088: LDR             X0, [X19,#0x38]
+0x6af408c: MOV             X1, XZR
+0x6af4090: BL              System.String$$IsNullOrEmpty
+0x6af4094: TBNZ            W0, #0, loc_6AF4078
+0x6af4098: ADRP            X8, #off_8AF21E0@PAGE
+0x6af409c: LDR             X8, [X8,#off_8AF21E0@PAGEOFF]; off_8CEBB08
+0x6af40a0: LDR             X8, [X8]
+0x6af40a4: LDR             X8, [X8,#0xB8]
+0x6af40a8: LDRB            W8, [X8]
+0x6af40ac: CBNZ            W8, loc_6AF4078
+0x6af40b0: ADRP            X8, #off_8B11C20@PAGE
+0x6af40b4: LDR             X8, [X8,#off_8B11C20@PAGEOFF]; qword_8D87890
+0x6af40b8: MOV             W1, #2
+0x6af40bc: MOV             X0, X19
+0x6af40c0: LDR             X2, [X8]
+0x6af40c4: BL              DbtSaveDataManagerBase_object__object_$$Log
+0x6af40c8: ADRP            X20, #off_8ACD420@PAGE
+0x6af40cc: LDR             X20, [X20,#off_8ACD420@PAGEOFF]; off_8CEC810
+0x6af40d0: LDR             X0, [X20]; klass
+0x6af40d4: LDR             W8, [X0,#0xE0]
+0x6af40d8: CBNZ            W8, loc_6AF40E4
+0x6af40dc: BL              il2cpp_codegen_runtime_class_init
+0x6af40e0: LDR             X0, [X20]
+0x6af40e4: LDR             X8, [X0,#0xB8]
+0x6af40e8: LDR             X0, [X8,#8]
+0x6af40ec: CBZ             X0, loc_6AF4174
+0x6af40f0: ADRP            X8, #off_8ACD5F8@PAGE
+0x6af40f4: LDR             X8, [X8,#off_8ACD5F8@PAGEOFF]; qword_8D371A0
+0x6af40f8: MOV             W1, #1
+0x6af40fc: MOV             W2, WZR
+0x6af4100: LDR             X3, [X8]
+0x6af4104: BL              DBTSDK.ReportManager$$GetNewReportJsonData_object_
+0x6af4108: ADRP            X8, #off_8ACD5C0@PAGE
+0x6af410c: LDR             X8, [X8,#off_8ACD5C0@PAGEOFF]; off_8CE40C8
+0x6af4110: MOV             X19, X0
+0x6af4114: LDR             X8, [X8]
+0x6af4118: LDR             W9, [X8,#0xE0]
+0x6af411c: CBNZ            W9, loc_6AF4128
+0x6af4120: MOV             X0, X8; klass
+0x6af4124: BL              il2cpp_codegen_runtime_class_init
+0x6af4128: MOV             X0, XZR
+0x6af412c: BL              GameFramework.AppSetting$$get_MineGameName
+0x6af4130: CBZ             X19, loc_6AF4174
+0x6af4134: STR             X0, [X19,#0x10]
+0x6af4138: ADRP            X8, #off_8AFC668@PAGE
+0x6af413c: LDR             X8, [X8,#off_8AFC668@PAGEOFF]; qword_8D65BE8
+0x6af4140: LDR             X8, [X8]
+0x6af4144: STR             X8, [X19,#0x58]
+0x6af4148: STR             X8, [X19,#0x40]
+0x6af414c: LDR             X8, [X20]
+0x6af4150: LDR             X8, [X8,#0xB8]
+0x6af4154: LDR             X0, [X8,#8]
+0x6af4158: CBZ             X0, loc_6AF4174
+0x6af415c: MOV             X1, X19
+0x6af4160: LDP             X20, X19, [SP,#0x30+var_10]
+0x6af4164: LDP             X22, X21, [SP,#0x30+var_20]
+0x6af4168: MOV             X2, XZR
+0x6af416c: LDR             X30, [SP+0x30+var_30],#0x30
+0x6af4170: B               DBTSDK.ReportManager$$NewReport_activity_complete
+0x6af4174: BL              il2cpp_codegen_raise_null_reference_exception

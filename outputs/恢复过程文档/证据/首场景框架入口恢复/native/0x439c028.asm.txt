@@ -1,0 +1,34 @@
+0x439c028: fe0f1ef8 str      x30, [sp, #-0x20]!
+0x439c02c: f44f01a9 stp      x20, x19, [sp, #0x10]
+0x439c030: 34630290 adrp     x20, #0x9000000
+0x439c034: d33a0290 adrp     x19, #0x8af4000
+0x439c038: 88326239 ldrb     w8, [x20, #0x88c]
+0x439c03c: 735243f9 ldr      x19, [x19, #0x6a0] // GameFramework.GameFrameEntry_TypeInfo
+0x439c040: 88010037 tbnz     w8, #0, #0x439c070
+0x439c044: c03a0290 adrp     x0, #0x8af4000
+0x439c048: 004c43f9 ldr      x0, [x0, #0x698] // Method$GameFramework.GameFrameEntry.GetModule<ProcedureManager>()
+0x439c04c: 8d84e297 bl       #0x3c3d280
+0x439c050: c03a0290 adrp     x0, #0x8af4000
+0x439c054: 005043f9 ldr      x0, [x0, #0x6a0] // GameFramework.GameFrameEntry_TypeInfo
+0x439c058: 8a84e297 bl       #0x3c3d280
+0x439c05c: c03a0290 adrp     x0, #0x8af4000
+0x439c060: 007843f9 ldr      x0, [x0, #0x6f0] // Method$GameFramework.Procedure.ProcedureManager.StartProcedure<ProcedurePreLoad>()
+0x439c064: 8784e297 bl       #0x3c3d280
+0x439c068: 28008052 mov      w8, #1
+0x439c06c: 88322239 strb     w8, [x20, #0x88c]
+0x439c070: 600240f9 ldr      x0, [x19]
+0x439c074: d33a0290 adrp     x19, #0x8af4000
+0x439c078: 08e040b9 ldr      w8, [x0, #0xe0]
+0x439c07c: 734e43f9 ldr      x19, [x19, #0x698] // Method$GameFramework.GameFrameEntry.GetModule<ProcedureManager>()
+0x439c080: 48000035 cbnz     w8, #0x439c088
+0x439c084: cb84e297 bl       #0x3c3d3b0
+0x439c088: 600240f9 ldr      x0, [x19]
+0x439c08c: 4dc12394 bl       #0x4c8c5c0 // GameFramework.GameFrameEntry$$GetModule<object>
+0x439c090: e00000b4 cbz      x0, #0x439c0ac
+0x439c094: c83a0290 adrp     x8, #0x8af4000
+0x439c098: 087943f9 ldr      x8, [x8, #0x6f0] // Method$GameFramework.Procedure.ProcedureManager.StartProcedure<ProcedurePreLoad>()
+0x439c09c: f44f41a9 ldp      x20, x19, [sp, #0x10]
+0x439c0a0: 010140f9 ldr      x1, [x8]
+0x439c0a4: fe0742f8 ldr      x30, [sp], #0x20
+0x439c0a8: 34052b14 b        #0x4e5d578 // GameFramework.Procedure.ProcedureManager$$StartProcedure<object>
+0x439c0ac: 0885e297 bl       #0x3c3d4cc

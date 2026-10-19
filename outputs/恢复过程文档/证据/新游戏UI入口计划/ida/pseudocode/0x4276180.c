@@ -1,0 +1,35 @@
+void UIFramework_UIManager__HidePanel(void *self, void *path, const MethodInfo *method)
+{
+  __int64 v3; // x3
+  __int64 v4; // x4
+  __int64 v5; // x5
+  __int64 v6; // x6
+  __int64 v7; // x7
+  _DWORD v10[6]; // [xsp+0h] [xbp-70h] BYREF
+  void *v11; // [xsp+18h] [xbp-58h]
+  __int128 v12; // [xsp+20h] [xbp-50h]
+  __int128 v13; // [xsp+30h] [xbp-40h]
+
+  if ( (byte_8FFFFD8 & 1) == 0 )
+  {
+    il2cpp_codegen_initialize_runtime_metadata((void **)&off_8D21040);
+    byte_8FFFFD8 = 1;
+  }
+  memset(v10, 0, sizeof(v10));
+  v13 = 0u;
+  v11 = self;
+  v12 = (unsigned __int64)path;
+  v10[0] = -1;
+  if ( *((_QWORD *)off_8D21040 + 7) == 0 )
+    ((void (__fastcall *)(void *, void *, const MethodInfo *, __int64, __int64, __int64, __int64, __int64))unk_3C503FC)(
+      off_8D21040,
+      path,
+      method,
+      v3,
+      v4,
+      v5,
+      v6,
+      v7);
+  UIFramework_UIManager__HidePanel_d__13__MoveNext(v10, (const MethodInfo *)path);
+  ((void (__fastcall *)(_DWORD *, _QWORD))unk_3D17780)(&v10[2], 0);
+}

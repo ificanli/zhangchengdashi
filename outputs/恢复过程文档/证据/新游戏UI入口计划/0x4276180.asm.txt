@@ -1,0 +1,38 @@
+0x4276180: ffc301d1 sub      sp, sp, #0x70
+0x4276184: fe2300f9 str      x30, [sp, #0x40]
+0x4276188: f65705a9 stp      x22, x21, [sp, #0x50]
+0x427618c: f44f06a9 stp      x20, x19, [sp, #0x60]
+0x4276190: 566c02b0 adrp     x22, #0x8fff000
+0x4276194: b54302b0 adrp     x21, #0x8aeb000
+0x4276198: c8627f39 ldrb     w8, [x22, #0xfd8]
+0x427619c: b57e43f9 ldr      x21, [x21, #0x6f8] // Method$Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder.Start<UIManager.<HidePanel>d__13>()
+0x42761a0: f30301aa mov      x19, x1
+0x42761a4: f40300aa mov      x20, x0
+0x42761a8: c8000037 tbnz     w8, #0, #0x42761c0
+0x42761ac: a04302b0 adrp     x0, #0x8aeb000
+0x42761b0: 007c43f9 ldr      x0, [x0, #0x6f8] // Method$Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder.Start<UIManager.<HidePanel>d__13>()
+0x42761b4: 331ce797 bl       #0x3c3d280
+0x42761b8: 28008052 mov      w8, #1
+0x42761bc: c8623f39 strb     w8, [x22, #0xfd8]
+0x42761c0: a00240f9 ldr      x0, [x21]
+0x42761c4: 00e4006f movi     v0.2d, #0000000000000000
+0x42761c8: 08008012 mov      w8, #-1
+0x42761cc: e00300ad stp      q0, q0, [sp]
+0x42761d0: e00301ad stp      q0, q0, [sp, #0x20]
+0x42761d4: f4cf01a9 stp      x20, x19, [sp, #0x18]
+0x42761d8: e80300b9 str      w8, [sp]
+0x42761dc: 081c40f9 ldr      x8, [x0, #0x38]
+0x42761e0: 480000b5 cbnz     x8, #0x42761e8
+0x42761e4: 8668e797 bl       #0x3c503fc
+0x42761e8: e8030091 mov      x8, sp
+0x42761ec: e0030091 mov      x0, sp
+0x42761f0: 13017db2 orr      x19, x8, #8
+0x42761f4: 59020094 bl       #0x4276b58 // UIFramework.UIManager.<HidePanel>d__13$$MoveNext
+0x42761f8: e00313aa mov      x0, x19
+0x42761fc: e1031faa mov      x1, xzr
+0x4276200: 6085ea97 bl       #0x3d17780
+0x4276204: f44f46a9 ldp      x20, x19, [sp, #0x60]
+0x4276208: f65745a9 ldp      x22, x21, [sp, #0x50]
+0x427620c: fe2340f9 ldr      x30, [sp, #0x40]
+0x4276210: ffc30191 add      sp, sp, #0x70
+0x4276214: c0035fd6 ret      

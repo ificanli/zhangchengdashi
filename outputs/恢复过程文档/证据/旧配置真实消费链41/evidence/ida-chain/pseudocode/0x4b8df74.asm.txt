@@ -1,0 +1,42 @@
+0x4b8df74: STR             X30, [SP,#var_20]!
+0x4b8df78: STP             X20, X19, [SP,#0x20+var_10]
+0x4b8df7c: LDR             X8, [X1,#0x38]
+0x4b8df80: MOV             X19, X1
+0x4b8df84: MOV             X20, X0
+0x4b8df88: CBNZ            X8, loc_4B8DFB4
+0x4b8df8c: ADRP            X0, #off_8ADD7D8@PAGE
+0x4b8df90: LDR             X0, [X0,#off_8ADD7D8@PAGEOFF]; off_8CE9A10 ; slot
+0x4b8df94: BL              il2cpp_codegen_initialize_runtime_metadata
+0x4b8df98: ADRP            X0, #off_8AEF698@PAGE
+0x4b8df9c: LDR             X0, [X0,#off_8AEF698@PAGEOFF]; qword_8D783B0 ; slot
+0x4b8dfa0: BL              il2cpp_codegen_initialize_runtime_metadata
+0x4b8dfa4: LDR             X8, [X19,#0x38]
+0x4b8dfa8: CBNZ            X8, loc_4B8DFB4
+0x4b8dfac: MOV             X0, X19
+0x4b8dfb0: BL              unk_3C503FC
+0x4b8dfb4: CBZ             X20, loc_4B8E018
+0x4b8dfb8: ADRP            X8, #off_8AEF698@PAGE
+0x4b8dfbc: LDR             X8, [X8,#off_8AEF698@PAGEOFF]; qword_8D783B0
+0x4b8dfc0: MOV             X0, X20
+0x4b8dfc4: MOV             X2, XZR
+0x4b8dfc8: LDR             X1, [X8]
+0x4b8dfcc: BL              System.String$$IndexOf
+0x4b8dfd0: MOV             W1, W0
+0x4b8dfd4: MOV             X0, X20
+0x4b8dfd8: MOV             X2, XZR
+0x4b8dfdc: BL              sub_750DE48
+0x4b8dfe0: ADRP            X8, #off_8ADD7D8@PAGE
+0x4b8dfe4: LDR             X8, [X8,#off_8ADD7D8@PAGEOFF]; off_8CE9A10
+0x4b8dfe8: MOV             X20, X0
+0x4b8dfec: LDR             X8, [X8]
+0x4b8dff0: LDR             W9, [X8,#0xE0]
+0x4b8dff4: CBNZ            W9, loc_4B8E000
+0x4b8dff8: MOV             X0, X8; klass
+0x4b8dffc: BL              il2cpp_codegen_runtime_class_init
+0x4b8e000: LDR             X8, [X19,#0x38]
+0x4b8e004: MOV             X0, X20
+0x4b8e008: LDP             X20, X19, [SP,#0x20+var_10]
+0x4b8e00c: LDR             X1, [X8]
+0x4b8e010: LDR             X30, [SP+0x20+var_20],#0x20
+0x4b8e014: B               LitJson.JsonMapper$$ToObject_object_
+0x4b8e018: BL              il2cpp_codegen_raise_null_reference_exception

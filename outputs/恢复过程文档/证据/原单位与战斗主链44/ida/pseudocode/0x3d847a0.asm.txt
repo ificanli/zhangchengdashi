@@ -1,0 +1,17 @@
+0x3d847a0: STP             X30, X19, [SP,#var_10]!
+0x3d847a4: BL              GameModule.RoleBehaviour$$ApplyHexPosition
+0x3d847a8: LDP             X30, X19, [SP+0x10+var_10],#0x10
+0x3d847ac: RET
+0x3d847b0: CMP             W1, #1
+0x3d847b4: B.NE            loc_3D847D4
+0x3d847b8: BL              .__cxa_begin_catch
+0x3d847bc: LDR             X19, [X0]
+0x3d847c0: BL              .__cxa_end_catch
+0x3d847c4: CBZ             X19, loc_3D847A8
+0x3d847c8: MOV             X0, X19
+0x3d847cc: BL              sub_3C38CF8
+0x3d847d0: CBNZ            X19, loc_3D847D8
+0x3d847d4: BL              sub_3CE73C4
+0x3d847d8: MOV             X0, X19
+0x3d847dc: BL              sub_3C38CF8
+0x3d847e0: BL              unk_35BC500

@@ -1,0 +1,16 @@
+0x3d83b14: STP             X30, X19, [SP,#var_10]!
+0x3d83b18: LDRB            W8, [X0,#0xBC]
+0x3d83b1c: MOV             X19, X0
+0x3d83b20: CBZ             W8, loc_3D83B2C
+0x3d83b24: MOV             W8, WZR
+0x3d83b28: B               loc_3D83B38
+0x3d83b2c: MOV             X0, X19
+0x3d83b30: BL              GameModule.RoleBehaviour$$IsAiMovementBlockedByState
+0x3d83b34: EOR             W8, W0, #1
+0x3d83b38: AND             W1, W8, #1
+0x3d83b3c: MOV             X0, X19
+0x3d83b40: BL              GameModule.RoleBehaviour$$SetAiCanMove
+0x3d83b44: MOV             W1, #1
+0x3d83b48: MOV             X0, X19
+0x3d83b4c: LDP             X30, X19, [SP+0x10+var_10],#0x10
+0x3d83b50: B               GameModule.RoleBehaviour$$SetAiEnableLocalAvoidance

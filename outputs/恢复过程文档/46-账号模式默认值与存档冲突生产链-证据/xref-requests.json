@@ -1,0 +1,33 @@
+{
+  "methods": [
+    {
+      "address": "0x7301010",
+      "name": "GameFramework.Login.ILoginProcedure$$get_accountType"
+    },
+    {
+      "address": "0x7301068",
+      "name": "GameFramework.Login.ILoginProcedure$$set_accountType"
+    },
+    {
+      "address": "0x7301214",
+      "name": "GameFramework.Login.ILoginProcedure$$.cctor"
+    },
+    {
+      "address": "0x434d56c",
+      "name": "DataModule.DataManager$$ChooseConflict"
+    }
+  ],
+  "metadataGlobals": [
+    {
+      "address": "0x8CE8C58",
+      "name": "GameFramework.Login.ILoginProcedure_TypeInfo",
+      "purpose": "incoming type refs may inline accountType field writes; inspect only actual startup assignment producers"
+    },
+    {
+      "address": "0x8ce6168",
+      "name": "DataModule.DataManager_TypeInfo",
+      "purpose": "Incoming refs may inline static SaveConflictCheckFinish/ComflictStatus writes; select original conflict decision producers"
+    }
+  ],
+  "required": "Incoming call xrefs for set_accountType and ChooseConflict; trace SaveConflictCheckFinish original producer, no SDK flags written"
+}

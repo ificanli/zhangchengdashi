@@ -1,0 +1,109 @@
+0x3f12db8: ff4301d1 sub      sp, sp, #0x50
+0x3f12dbc: fe1300f9 str      x30, [sp, #0x20]
+0x3f12dc0: f65703a9 stp      x22, x21, [sp, #0x30]
+0x3f12dc4: f44f04a9 stp      x20, x19, [sp, #0x40]
+0x3f12dc8: 75870290 adrp     x21, #0x8ffe000
+0x3f12dcc: a8c64139 ldrb     w8, [x21, #0x71]
+0x3f12dd0: f40301aa mov      x20, x1
+0x3f12dd4: f30300aa mov      x19, x0
+0x3f12dd8: 08030037 tbnz     w8, #0, #0x3f12e38
+0x3f12ddc: 405e0290 adrp     x0, #0x8ada000
+0x3f12de0: 00f446f9 ldr      x0, [x0, #0xde8] // Method$System.Collections.Generic.Dictionary<string, List<string>>.get_Item()
+0x3f12de4: 27a9f497 bl       #0x3c3d280
+0x3f12de8: e05d02f0 adrp     x0, #0x8ad1000
+0x3f12dec: 006041f9 ldr      x0, [x0, #0x2c0] // Method$System.Collections.Generic.List.Enumerator<string>.Dispose()
+0x3f12df0: 24a9f497 bl       #0x3c3d280
+0x3f12df4: e05d02f0 adrp     x0, #0x8ad1000
+0x3f12df8: 006c41f9 ldr      x0, [x0, #0x2d8] // Method$System.Collections.Generic.List.Enumerator<string>.MoveNext()
+0x3f12dfc: 21a9f497 bl       #0x3c3d280
+0x3f12e00: e05d02f0 adrp     x0, #0x8ad1000
+0x3f12e04: 007041f9 ldr      x0, [x0, #0x2e0] // Method$System.Collections.Generic.List.Enumerator<string>.get_Current()
+0x3f12e08: 1ea9f497 bl       #0x3c3d280
+0x3f12e0c: e05d02f0 adrp     x0, #0x8ad1000
+0x3f12e10: 008441f9 ldr      x0, [x0, #0x308] // Method$System.Collections.Generic.List<string>.GetEnumerator()
+0x3f12e14: 1ba9f497 bl       #0x3c3d280
+0x3f12e18: c05d02f0 adrp     x0, #0x8acd000
+0x3f12e1c: 008c43f9 ldr      x0, [x0, #0x718] // Method$System.Collections.Generic.List<string>..ctor()
+0x3f12e20: 18a9f497 bl       #0x3c3d280
+0x3f12e24: c05d02f0 adrp     x0, #0x8acd000
+0x3f12e28: 009043f9 ldr      x0, [x0, #0x720] // System.Collections.Generic.List<string>_TypeInfo
+0x3f12e2c: 15a9f497 bl       #0x3c3d280
+0x3f12e30: 28008052 mov      w8, #1
+0x3f12e34: a8c60139 strb     w8, [x21, #0x71]
+0x3f12e38: ffff00a9 stp      xzr, xzr, [sp, #8]
+0x3f12e3c: ff0f00f9 str      xzr, [sp, #0x18]
+0x3f12e40: 602a40f9 ldr      x0, [x19, #0x50]
+0x3f12e44: e00500b4 cbz      x0, #0x3f12f00
+0x3f12e48: 485e0290 adrp     x8, #0x8ada000
+0x3f12e4c: 08f546f9 ldr      x8, [x8, #0xde8] // Method$System.Collections.Generic.Dictionary<string, List<string>>.get_Item()
+0x3f12e50: d55d02f0 adrp     x21, #0x8acd000
+0x3f12e54: d65d02f0 adrp     x22, #0x8acd000
+0x3f12e58: e10314aa mov      x1, x20
+0x3f12e5c: 020140f9 ldr      x2, [x8]
+0x3f12e60: b59243f9 ldr      x21, [x21, #0x720] // System.Collections.Generic.List<string>_TypeInfo
+0x3f12e64: d68e43f9 ldr      x22, [x22, #0x718] // Method$System.Collections.Generic.List<string>..ctor()
+0x3f12e68: 76cfb394 bl       #0x6c06c40 // System.Collections.Generic.Dictionary<object, object>$$get_Item
+0x3f12e6c: a80240f9 ldr      x8, [x21]
+0x3f12e70: f50300aa mov      x21, x0
+0x3f12e74: e00308aa mov      x0, x8
+0x3f12e78: 93a9f497 bl       #0x3c3d4c4
+0x3f12e7c: c20240f9 ldr      x2, [x22]
+0x3f12e80: e10315aa mov      x1, x21
+0x3f12e84: f40300aa mov      x20, x0
+0x3f12e88: feef6094 bl       #0x574ee80 // System.Collections.Generic.List<object>$$.ctor
+0x3f12e8c: b40300b4 cbz      x20, #0x3f12f00
+0x3f12e90: e85d02f0 adrp     x8, #0x8ad1000
+0x3f12e94: 088541f9 ldr      x8, [x8, #0x308] // Method$System.Collections.Generic.List<string>.GetEnumerator()
+0x3f12e98: f65d02f0 adrp     x22, #0x8ad1000
+0x3f12e9c: f55d02f0 adrp     x21, #0x8ad1000
+0x3f12ea0: e00314aa mov      x0, x20
+0x3f12ea4: 010140f9 ldr      x1, [x8]
+0x3f12ea8: d66e41f9 ldr      x22, [x22, #0x2d8] // Method$System.Collections.Generic.List.Enumerator<string>.MoveNext()
+0x3f12eac: b56241f9 ldr      x21, [x21, #0x2c0] // Method$System.Collections.Generic.List.Enumerator<string>.Dispose()
+0x3f12eb0: e8230091 add      x8, sp, #8
+0x3f12eb4: 1bf46094 bl       #0x574ff20 // System.Collections.Generic.List<object>$$GetEnumerator
+0x3f12eb8: c10240f9 ldr      x1, [x22]
+0x3f12ebc: e0230091 add      x0, sp, #8
+0x3f12ec0: 3969bb94 bl       #0x6ded3a4 // System.Collections.Generic.List.Enumerator<object>$$MoveNext
+0x3f12ec4: a0000036 tbz      w0, #0, #0x3f12ed8
+0x3f12ec8: e10f40f9 ldr      x1, [sp, #0x18]
+0x3f12ecc: e00313aa mov      x0, x19
+0x3f12ed0: f2feff97 bl       #0x3f12a98 // AssetsModule.AssetsManager$$UnloadAsset
+0x3f12ed4: f9ffff17 b        #0x3f12eb8
+0x3f12ed8: a10240f9 ldr      x1, [x21]
+0x3f12edc: e0230091 add      x0, sp, #8
+0x3f12ee0: 3069bb94 bl       #0x6ded3a0 // System.Collections.Generic.List.Enumerator<object>$$Dispose
+0x3f12ee4: e0031faa mov      x0, xzr
+0x3f12ee8: 36500f95 bl       #0x82e6fc0 // UnityEngine.Resources$$UnloadUnusedAssets
+0x3f12eec: f44f44a9 ldp      x20, x19, [sp, #0x40]
+0x3f12ef0: f65743a9 ldp      x22, x21, [sp, #0x30]
+0x3f12ef4: fe1340f9 ldr      x30, [sp, #0x20]
+0x3f12ef8: ff430191 add      sp, sp, #0x50
+0x3f12efc: c0035fd6 ret      
+0x3f12f00: 73a9f497 bl       #0x3c3d4cc
+0x3f12f04: 01000014 b        #0x3f12f08
+0x3f12f08: f40300aa mov      x20, x0
+0x3f12f0c: 3f040071 cmp      w1, #1
+0x3f12f10: 61010054 b.ne     #0x3f12f3c
+0x3f12f14: e00314aa mov      x0, x20
+0x3f12f18: a26f1995 bl       #0x856eda0
+0x3f12f1c: 130040f9 ldr      x19, [x0]
+0x3f12f20: a46f1995 bl       #0x856edb0
+0x3f12f24: a10240f9 ldr      x1, [x21]
+0x3f12f28: e0230091 add      x0, sp, #8
+0x3f12f2c: 1d69bb94 bl       #0x6ded3a0 // System.Collections.Generic.List.Enumerator<object>$$Dispose
+0x3f12f30: b3fdffb4 cbz      x19, #0x3f12ee4
+0x3f12f34: e00313aa mov      x0, x19
+0x3f12f38: 7097f497 bl       #0x3c38cf8
+0x3f12f3c: f3031faa mov      x19, xzr
+0x3f12f40: 02000014 b        #0x3f12f48
+0x3f12f44: f40300aa mov      x20, x0
+0x3f12f48: a10240f9 ldr      x1, [x21]
+0x3f12f4c: e0230091 add      x0, sp, #8
+0x3f12f50: 1469bb94 bl       #0x6ded3a0 // System.Collections.Generic.List.Enumerator<object>$$Dispose
+0x3f12f54: 730000b5 cbnz     x19, #0x3f12f60
+0x3f12f58: e00314aa mov      x0, x20
+0x3f12f5c: 1a51f797 bl       #0x3ce73c4
+0x3f12f60: e00313aa mov      x0, x19
+0x3f12f64: 6597f497 bl       #0x3c38cf8
+0x3f12f68: 66a5da97 bl       #0x35bc500

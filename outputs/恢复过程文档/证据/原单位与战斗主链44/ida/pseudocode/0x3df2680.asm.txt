@@ -1,0 +1,106 @@
+0x3df2680: SUB             SP, SP, #0x70
+0x3df2684: STP             D11, D10, [SP,#0x70+var_50]
+0x3df2688: STP             D9, D8, [SP,#0x70+var_40]
+0x3df268c: STP             X30, X23, [SP,#0x70+var_30]
+0x3df2690: STP             X22, X21, [SP,#0x70+var_20]
+0x3df2694: STP             X20, X19, [SP,#0x70+var_10]
+0x3df2698: ADRP            X22, #byte_8FFD798@PAGE
+0x3df269c: LDRB            W8, [X22,#byte_8FFD798@PAGEOFF]
+0x3df26a0: MOV             X19, X2
+0x3df26a4: MOV             V8.16B, V3.16B
+0x3df26a8: MOV             W20, W1
+0x3df26ac: MOV             V9.16B, V2.16B
+0x3df26b0: MOV             V10.16B, V1.16B
+0x3df26b4: MOV             V11.16B, V0.16B
+0x3df26b8: MOV             X21, X0
+0x3df26bc: TBNZ            W8, #0, loc_3DF26E0
+0x3df26c0: ADRP            X0, #off_8ACF180@PAGE
+0x3df26c4: LDR             X0, [X0,#off_8ACF180@PAGEOFF]; off_8CE81E8 ; slot
+0x3df26c8: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3df26cc: ADRP            X0, #off_8ACC8D0@PAGE
+0x3df26d0: LDR             X0, [X0,#off_8ACC8D0@PAGEOFF]; off_8CEB3E0 ; slot
+0x3df26d4: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3df26d8: MOV             W8, #1
+0x3df26dc: STRB            W8, [X22,#byte_8FFD798@PAGEOFF]
+0x3df26e0: ADD             X1, SP, #0x70+var_5C
+0x3df26e4: MOV             X0, X21
+0x3df26e8: MOV             V0.16B, V8.16B
+0x3df26ec: STR             XZR, [SP,#0x70+var_58]
+0x3df26f0: STR             WZR, [SP,#0x70+var_5C]
+0x3df26f4: STP             XZR, XZR, [X19]
+0x3df26f8: BL              GameModule.BattleGameSceneManager$$TryGetRoleTargetHexSearchRing
+0x3df26fc: MOV             W8, W0
+0x3df2700: MOV             W0, WZR
+0x3df2704: TBZ             W8, #0, loc_3DF2808
+0x3df2708: ADRP            X8, #off_8ACF180@PAGE
+0x3df270c: LDR             X8, [X8,#off_8ACF180@PAGEOFF]; off_8CE81E8
+0x3df2710: LDR             X0, [X8]; klass
+0x3df2714: LDR             W8, [X0,#0xE0]
+0x3df2718: CBNZ            W8, loc_3DF2720
+0x3df271c: BL              il2cpp_codegen_runtime_class_init
+0x3df2720: ADD             X0, SP, #0x70+var_58
+0x3df2724: MOV             V0.16B, V11.16B
+0x3df2728: MOV             V1.16B, V10.16B
+0x3df272c: MOV             V2.16B, V9.16B
+0x3df2730: MOV             X1, XZR
+0x3df2734: BL              HexManager$$TryGetHexAt
+0x3df2738: TBZ             W0, #0, loc_3DF276C
+0x3df273c: ADRP            X8, #off_8ACC8D0@PAGE
+0x3df2740: LDR             X8, [X8,#off_8ACC8D0@PAGEOFF]; off_8CEB3E0
+0x3df2744: LDR             X21, [SP,#0x70+var_58]
+0x3df2748: LDR             X0, [X8]; klass
+0x3df274c: LDR             W8, [X0,#0xE0]
+0x3df2750: CBNZ            W8, loc_3DF2758
+0x3df2754: BL              il2cpp_codegen_runtime_class_init
+0x3df2758: MOV             X0, X21
+0x3df275c: MOV             X1, XZR
+0x3df2760: MOV             X2, XZR
+0x3df2764: BL              UnityEngine.Object$$op_Equality
+0x3df2768: TBZ             W0, #0, loc_3DF2774
+0x3df276c: MOV             W0, WZR
+0x3df2770: B               loc_3DF2808
+0x3df2774: LDR             X8, [SP,#0x70+var_58]
+0x3df2778: CBZ             X8, loc_3DF2824
+0x3df277c: ADRP            X23, #byte_8FFD1B2@PAGE
+0x3df2780: LDRB            W9, [X23,#byte_8FFD1B2@PAGEOFF]
+0x3df2784: LDP             W22, W21, [X8,#0x20]
+0x3df2788: MOV             W8, #0x42C80000
+0x3df278c: FMOV            S9, W8
+0x3df2790: CBNZ            W9, loc_3DF27A8
+0x3df2794: ADRP            X0, #off_8ACC8F0@PAGE
+0x3df2798: LDR             X0, [X0,#off_8ACC8F0@PAGEOFF]; off_8CEA738 ; slot
+0x3df279c: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3df27a0: MOV             W8, #1
+0x3df27a4: STRB            W8, [X23,#byte_8FFD1B2@PAGEOFF]
+0x3df27a8: ADRP            X8, #off_8ACC8F0@PAGE
+0x3df27ac: LDR             X8, [X8,#off_8ACC8F0@PAGEOFF]; off_8CEA738
+0x3df27b0: FMUL            S8, S8, S9
+0x3df27b4: LDR             X0, [X8]; klass
+0x3df27b8: LDR             W8, [X0,#0xE0]
+0x3df27bc: CBNZ            W8, loc_3DF27C4
+0x3df27c0: BL              il2cpp_codegen_runtime_class_init
+0x3df27c4: MOV             W9, #0x7F800000
+0x3df27c8: FRINTP          S0, S8
+0x3df27cc: FMOV            S1, W9
+0x3df27d0: FCVTPS          W8, S8
+0x3df27d4: MOV             W10, #0x80000000
+0x3df27d8: FCMP            S0, S1
+0x3df27dc: CSEL            W4, W10, W8, EQ
+0x3df27e0: AND             W1, W20, #1
+0x3df27e4: MOV             X0, SP
+0x3df27e8: MOV             W2, W22
+0x3df27ec: MOV             W3, W21
+0x3df27f0: MOV             X5, XZR
+0x3df27f4: STP             XZR, XZR, [SP,#0x70+var_70]
+0x3df27f8: BL              GameModule.BattleGameSceneManager.RoleTargetFrameCacheKey$$.ctor
+0x3df27fc: LDR             Q0, [SP,#0x70+var_70]
+0x3df2800: MOV             W0, #1
+0x3df2804: STR             Q0, [X19]
+0x3df2808: LDP             X20, X19, [SP,#0x70+var_10]
+0x3df280c: LDP             X22, X21, [SP,#0x70+var_20]
+0x3df2810: LDP             X30, X23, [SP,#0x70+var_30]
+0x3df2814: LDP             D9, D8, [SP,#0x70+var_40]
+0x3df2818: LDP             D11, D10, [SP,#0x70+var_50]
+0x3df281c: ADD             SP, SP, #0x70 ; 'p'
+0x3df2820: RET
+0x3df2824: BL              il2cpp_codegen_raise_null_reference_exception

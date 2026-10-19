@@ -1,0 +1,142 @@
+0x3d83404: STR             X30, [SP,#var_50]!
+0x3d83408: STP             X26, X25, [SP,#0x50+var_40]
+0x3d8340c: STP             X24, X23, [SP,#0x50+var_30]
+0x3d83410: STP             X22, X21, [SP,#0x50+var_20]
+0x3d83414: STP             X20, X19, [SP,#0x50+var_10]
+0x3d83418: ADRP            X21, #byte_8FFD461@PAGE
+0x3d8341c: LDRB            W8, [X21,#byte_8FFD461@PAGEOFF]
+0x3d83420: MOV             W20, W1
+0x3d83424: MOV             X19, X0
+0x3d83428: TBNZ            W8, #0, loc_3D83464
+0x3d8342c: ADRP            X0, #off_8AD1298@PAGE
+0x3d83430: LDR             X0, [X0,#off_8AD1298@PAGEOFF]; qword_8CE7B28 ; slot
+0x3d83434: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3d83438: ADRP            X0, #off_8AD12A0@PAGE
+0x3d8343c: LDR             X0, [X0,#off_8AD12A0@PAGEOFF]; qword_8D0EBD8 ; slot
+0x3d83440: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3d83444: ADRP            X0, #off_8AD12A8@PAGE
+0x3d83448: LDR             X0, [X0,#off_8AD12A8@PAGEOFF]; qword_8D0EBE0 ; slot
+0x3d8344c: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3d83450: ADRP            X0, #off_8ACD528@PAGE
+0x3d83454: LDR             X0, [X0,#off_8ACD528@PAGEOFF]; qword_8CEEE50 ; slot
+0x3d83458: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3d8345c: MOV             W8, #1
+0x3d83460: STRB            W8, [X21,#byte_8FFD461@PAGEOFF]
+0x3d83464: ADRP            X23, #off_8ACD528@PAGE
+0x3d83468: ADRP            X21, #off_8AD1298@PAGE
+0x3d8346c: ADRP            X25, #off_8AD12A8@PAGE
+0x3d83470: LDR             X8, [X19,#0x168]
+0x3d83474: LDR             X23, [X23,#off_8ACD528@PAGEOFF]; qword_8CEEE50
+0x3d83478: LDR             X21, [X21,#off_8AD1298@PAGEOFF]; qword_8CE7B28
+0x3d8347c: LDR             X25, [X25,#off_8AD12A8@PAGEOFF]; qword_8D0EBE0
+0x3d83480: CBZ             X8, loc_3D8353C
+0x3d83484: LDR             X22, [X19,#0x68]
+0x3d83488: MOV             X0, X19
+0x3d8348c: BL              GameModule.RoleBehaviour$$GetNearOneMTeamMate
+0x3d83490: LDR             X8, [X23]
+0x3d83494: LDR             W26, [X19,#0x48]
+0x3d83498: MOV             X23, X0
+0x3d8349c: MOV             X0, X8
+0x3d834a0: BL              unk_3C3D4C4
+0x3d834a4: LDR             X8, [X19]
+0x3d834a8: MOV             X1, X19
+0x3d834ac: MOV             X3, XZR
+0x3d834b0: MOV             X24, X0
+0x3d834b4: LDR             X2, [X8,#0x360]
+0x3d834b8: BL              UnityEngine.Events.UnityAction$$.ctor
+0x3d834bc: LDR             X0, [X21]
+0x3d834c0: BL              unk_3C3D4C4
+0x3d834c4: CMP             W26, #1
+0x3d834c8: SCVTF           S0, W20
+0x3d834cc: CSET            W4, EQ
+0x3d834d0: FMOV            S1, WZR
+0x3d834d4: MOV             X1, X19
+0x3d834d8: MOV             X2, X22
+0x3d834dc: MOV             X3, X23
+0x3d834e0: MOV             X5, X24
+0x3d834e4: MOV             X6, XZR
+0x3d834e8: MOV             X21, X0
+0x3d834ec: BL              GameModule.GameEventArgs$$.ctor
+0x3d834f0: LDR             X0, [X19,#0x168]
+0x3d834f4: CBZ             X0, loc_3D83638
+0x3d834f8: MOV             W20, WZR
+0x3d834fc: LDR             W8, [X0,#0x18]
+0x3d83500: CMP             W20, W8
+0x3d83504: B.GE            loc_3D835FC
+0x3d83508: LDR             X2, [X25]
+0x3d8350c: MOV             W1, W20
+0x3d83510: BL              System.Collections.Generic.List_object_$$get_Item
+0x3d83514: CBZ             X0, loc_3D83638
+0x3d83518: LDR             X8, [X0]
+0x3d8351c: MOV             W1, WZR
+0x3d83520: MOV             X2, X21
+0x3d83524: LDP             X9, X3, [X8,#0x188]
+0x3d83528: BLR             X9
+0x3d8352c: LDR             X0, [X19,#0x168]
+0x3d83530: ADD             W20, W20, #1
+0x3d83534: CBNZ            X0, loc_3D834FC
+0x3d83538: B               loc_3D83638
+0x3d8353c: LDR             X8, [X19,#0x160]
+0x3d83540: CBZ             X8, loc_3D8361C
+0x3d83544: LDR             X22, [X19,#0x68]
+0x3d83548: MOV             X0, X19
+0x3d8354c: BL              GameModule.RoleBehaviour$$GetNearOneMTeamMate
+0x3d83550: LDR             X8, [X23]
+0x3d83554: LDR             W26, [X19,#0x48]
+0x3d83558: MOV             X23, X0
+0x3d8355c: MOV             X0, X8
+0x3d83560: BL              unk_3C3D4C4
+0x3d83564: LDR             X8, [X19]
+0x3d83568: MOV             X1, X19
+0x3d8356c: MOV             X3, XZR
+0x3d83570: MOV             X24, X0
+0x3d83574: LDR             X2, [X8,#0x360]
+0x3d83578: BL              UnityEngine.Events.UnityAction$$.ctor
+0x3d8357c: LDR             X0, [X21]
+0x3d83580: BL              unk_3C3D4C4
+0x3d83584: CMP             W26, #1
+0x3d83588: SCVTF           S0, W20
+0x3d8358c: CSET            W4, EQ
+0x3d83590: FMOV            S1, WZR
+0x3d83594: MOV             X1, X19
+0x3d83598: MOV             X2, X22
+0x3d8359c: MOV             X3, X23
+0x3d835a0: MOV             X5, X24
+0x3d835a4: MOV             X6, XZR
+0x3d835a8: MOV             X21, X0
+0x3d835ac: BL              GameModule.GameEventArgs$$.ctor
+0x3d835b0: LDR             X0, [X19,#0x160]
+0x3d835b4: CBZ             X0, loc_3D83638
+0x3d835b8: MOV             W20, WZR
+0x3d835bc: LDR             W8, [X0,#0x18]
+0x3d835c0: CMP             W20, W8
+0x3d835c4: B.GE            loc_3D835FC
+0x3d835c8: LDR             X2, [X25]
+0x3d835cc: MOV             W1, W20
+0x3d835d0: BL              System.Collections.Generic.List_object_$$get_Item
+0x3d835d4: CBZ             X0, loc_3D83638
+0x3d835d8: LDR             X8, [X0]
+0x3d835dc: MOV             W1, WZR
+0x3d835e0: MOV             X2, X21
+0x3d835e4: LDP             X9, X3, [X8,#0x188]
+0x3d835e8: BLR             X9
+0x3d835ec: LDR             X0, [X19,#0x160]
+0x3d835f0: ADD             W20, W20, #1
+0x3d835f4: CBNZ            X0, loc_3D835BC
+0x3d835f8: B               loc_3D83638
+0x3d835fc: CBZ             X21, loc_3D83638
+0x3d83600: LDR             S0, [X21,#0x30]
+0x3d83604: MOV             W8, #0x7F800000
+0x3d83608: FMOV            S1, W8
+0x3d8360c: MOV             W9, #0x80000000
+0x3d83610: FCVTZS          W8, S0
+0x3d83614: FCMP            S0, S1
+0x3d83618: CSEL            W20, W9, W8, EQ
+0x3d8361c: MOV             W0, W20
+0x3d83620: LDP             X20, X19, [SP,#0x50+var_10]
+0x3d83624: LDP             X22, X21, [SP,#0x50+var_20]
+0x3d83628: LDP             X24, X23, [SP,#0x50+var_30]
+0x3d8362c: LDP             X26, X25, [SP,#0x50+var_40]
+0x3d83630: LDR             X30, [SP+0x50+var_50],#0x50
+0x3d83634: RET
+0x3d83638: BL              il2cpp_codegen_raise_null_reference_exception

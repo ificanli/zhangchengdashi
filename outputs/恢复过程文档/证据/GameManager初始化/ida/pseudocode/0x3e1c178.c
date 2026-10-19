@@ -1,0 +1,46 @@
+void GameModule_GameManager___c___RegisterOnTimeToZero_b__21_0(void *self, const MethodInfo *method)
+{
+  __int64 v2; // x8
+  __int64 v3; // x0
+  __int64 v4; // x0
+  __int64 v5; // x1
+  __int64 v6; // x2
+  __int64 Instance; // x0
+  __int64 v8; // x1
+  __int64 v9; // x2
+  __int64 v10; // x0
+  __int64 v11; // x0
+
+  if ( (byte_8FFD8A2 & 1) == 0 )
+  {
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8CFB168);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&unk_8CFB170);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&off_8CD91F0);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D12148);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D12420);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D73760);
+    byte_8FFD8A2 = 1;
+  }
+  v2 = **((_QWORD **)off_8CD91F0 + 23);
+  if ( v2 == 0 )
+    goto LABEL_11;
+  v3 = *(_QWORD *)(v2 + 48);
+  if ( v3 == 0 )
+    goto LABEL_11;
+  DataModule_PlayerAdData__InitializeVideosNumber(v3, 0);
+  v4 = **((_QWORD **)off_8CD91F0 + 23);
+  if ( v4 == 0 )
+    goto LABEL_11;
+  DbtSaveDataManagerBase_object__object___Save(v4, qword_8CFB168);
+  Instance = ToolModule_ManagerBase_object___get_Instance(qword_8D12420, v5, v6);
+  if ( Instance == 0 )
+    goto LABEL_11;
+  v10 = *(_QWORD *)(Instance + 32);
+  if ( v10 != 0 )
+    BadgeGraph_ThrottleTrigger__RegisterOneTrigger(v10, 0);
+  v11 = ToolModule_ManagerBase_object___get_Instance(qword_8D12148, v8, v9);
+  if ( v11 == 0 )
+LABEL_11:
+    il2cpp_codegen_raise_null_reference_exception();
+  EventModule_EventManager__TriggerEvent(v11, qword_8D73760, 0, 0);
+}

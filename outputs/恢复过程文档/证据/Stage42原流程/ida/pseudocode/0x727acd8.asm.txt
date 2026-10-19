@@ -1,0 +1,58 @@
+0x727acd8: STR             X30, [SP,#var_20]!
+0x727acdc: STP             X20, X19, [SP,#0x20+var_10]
+0x727ace0: ADRP            X20, #byte_9009C34@PAGE
+0x727ace4: LDRB            W8, [X20,#byte_9009C34@PAGEOFF]
+0x727ace8: MOV             X19, X0
+0x727acec: TBNZ            W8, #0, loc_727AD04
+0x727acf0: ADRP            X0, #off_8B19988@PAGE
+0x727acf4: LDR             X0, [X0,#off_8B19988@PAGEOFF]; qword_8CDC610 ; slot
+0x727acf8: BL              il2cpp_codegen_initialize_runtime_metadata
+0x727acfc: MOV             W8, #1
+0x727ad00: STRB            W8, [X20,#byte_9009C34@PAGEOFF]
+0x727ad04: LDR             X19, [X19,#0x28]
+0x727ad08: CBZ             X19, loc_727AD78
+0x727ad0c: ADRP            X10, #off_8B19988@PAGE
+0x727ad10: LDR             X8, [X19]
+0x727ad14: LDR             X10, [X10,#off_8B19988@PAGEOFF]; qword_8CDC610
+0x727ad18: LDRH            W9, [X8,#0x12E]
+0x727ad1c: LDR             X1, [X10]
+0x727ad20: CBZ             X9, loc_727AD44
+0x727ad24: LDR             X10, [X8,#0xB0]
+0x727ad28: ADD             X10, X10, #8
+0x727ad2c: LDUR            X11, [X10,#-8]
+0x727ad30: CMP             X11, X1
+0x727ad34: B.EQ            loc_727AD54
+0x727ad38: SUBS            X9, X9, #1
+0x727ad3c: ADD             X10, X10, #0x10
+0x727ad40: B.NE            loc_727AD2C
+0x727ad44: MOV             W2, #7
+0x727ad48: MOV             X0, X19
+0x727ad4c: BL              unk_3C504A4
+0x727ad50: B               loc_727AD64
+0x727ad54: LDR             W9, [X10]
+0x727ad58: ADD             W9, W9, #7
+0x727ad5c: ADD             X8, X8, W9,SXTW#4
+0x727ad60: ADD             X0, X8, #0x138
+0x727ad64: LDP             X2, X1, [X0]
+0x727ad68: MOV             X0, X19
+0x727ad6c: LDP             X20, X19, [SP,#0x20+var_10]
+0x727ad70: LDR             X30, [SP+0x20+var_20],#0x20
+0x727ad74: BR              X2
+0x727ad78: ADRP            X0, #off_8B0CF78@PAGE
+0x727ad7c: LDR             X0, [X0,#off_8B0CF78@PAGEOFF]; unk_8CE7B50
+0x727ad80: BL              unk_3C3D294
+0x727ad84: BL              unk_3C3D4C4
+0x727ad88: MOV             X19, X0
+0x727ad8c: ADRP            X0, #off_8B0E7C8@PAGE
+0x727ad90: LDR             X0, [X0,#off_8B0E7C8@PAGEOFF]; unk_8D78218
+0x727ad94: BL              unk_3C3D294
+0x727ad98: MOV             X1, X0
+0x727ad9c: MOV             X0, X19
+0x727ada0: MOV             X2, XZR
+0x727ada4: BL              GameFramework.GameFrameworkException$$.ctor
+0x727ada8: ADRP            X0, #off_8B199A0@PAGE
+0x727adac: LDR             X0, [X0,#off_8B199A0@PAGEOFF]; unk_8D36038
+0x727adb0: BL              unk_3C3D294
+0x727adb4: MOV             X1, X0
+0x727adb8: MOV             X0, X19
+0x727adbc: BL              unk_3C3D3A0

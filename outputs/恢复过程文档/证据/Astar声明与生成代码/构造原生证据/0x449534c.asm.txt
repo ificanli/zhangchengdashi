@@ -1,0 +1,18 @@
+0x449534c: SUB             SP, SP, #0x60
+0x4495350: STR             X30, [SP,#0x60+var_20]
+0x4495354: STP             X20, X19, [SP,#0x60+var_10]
+0x4495358: MOV             X19, X1
+0x449535c: MOV             X1, XZR
+0x4495360: MOV             X20, X0
+0x4495364: BL              System.Object$$.ctor
+0x4495368: LDP             Q1, Q0, [X19,#0x20]
+0x449536c: LDP             Q3, Q2, [X19]
+0x4495370: MOV             X1, SP
+0x4495374: MOV             X0, X20
+0x4495378: STP             Q1, Q0, [SP,#0x60+var_40]
+0x449537c: STP             Q3, Q2, [SP,#0x60+var_60]
+0x4495380: BL              Pathfinding.Util.GraphTransform$$Set
+0x4495384: LDP             X20, X19, [SP,#0x60+var_10]
+0x4495388: LDR             X30, [SP,#0x60+var_20]
+0x449538c: ADD             SP, SP, #0x60 ; '`'
+0x4495390: RET

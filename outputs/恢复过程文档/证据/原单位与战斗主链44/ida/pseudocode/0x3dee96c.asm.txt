@@ -1,0 +1,36 @@
+0x3dee96c: SUB             SP, SP, #0x30
+0x3dee970: STP             X30, X21, [SP,#0x30+var_20]
+0x3dee974: STP             X20, X19, [SP,#0x30+var_10]
+0x3dee978: ADRP            X21, #byte_8FFD77D@PAGE
+0x3dee97c: LDRB            W8, [X21,#byte_8FFD77D@PAGEOFF]
+0x3dee980: MOV             X20, X1
+0x3dee984: MOV             X19, X0
+0x3dee988: TBNZ            W8, #0, loc_3DEE9A0
+0x3dee98c: ADRP            X0, #off_8AD3BD0@PAGE
+0x3dee990: LDR             X0, [X0,#off_8AD3BD0@PAGEOFF]; qword_8CFB638 ; slot
+0x3dee994: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3dee998: MOV             W8, #1
+0x3dee99c: STRB            W8, [X21,#byte_8FFD77D@PAGEOFF]
+0x3dee9a0: MOV             X0, X19
+0x3dee9a4: MOV             X1, X20
+0x3dee9a8: STR             XZR, [SP,#0x30+var_28]
+0x3dee9ac: BL              GameModule.BattleGameSceneManager$$ParseKey
+0x3dee9b0: MOV             X4, X0
+0x3dee9b4: MOV             X0, XZR
+0x3dee9b8: TBNZ            W1, #0, loc_3DEE9E8
+0x3dee9bc: LDR             X0, [X19,#0x180]
+0x3dee9c0: CBZ             X0, loc_3DEE9F8
+0x3dee9c4: ADRP            X8, #off_8AD3BD0@PAGE
+0x3dee9c8: LDR             X8, [X8,#off_8AD3BD0@PAGEOFF]; qword_8CFB638
+0x3dee9cc: ADD             X2, SP, #0x30+var_28
+0x3dee9d0: MOV             X1, X4
+0x3dee9d4: LDR             X3, [X8]
+0x3dee9d8: BL              System.Collections.Generic.Dictionary_object__object_$$TryGetValue
+0x3dee9dc: LDR             X8, [SP,#0x30+var_28]
+0x3dee9e0: TST             W0, #1
+0x3dee9e4: CSEL            X0, X8, XZR, NE
+0x3dee9e8: LDP             X20, X19, [SP,#0x30+var_10]
+0x3dee9ec: LDP             X30, X21, [SP,#0x30+var_20]
+0x3dee9f0: ADD             SP, SP, #0x30 ; '0'
+0x3dee9f4: RET
+0x3dee9f8: BL              il2cpp_codegen_raise_null_reference_exception

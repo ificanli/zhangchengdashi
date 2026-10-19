@@ -1,0 +1,33 @@
+0x854f0b8: STR             D8, [SP,#var_40]!
+0x854f0bc: STR             X30, [SP,#0x40+var_38]
+0x854f0c0: STP             X24, X23, [SP,#0x40+var_30]
+0x854f0c4: STP             X22, X21, [SP,#0x40+var_20]
+0x854f0c8: STP             X20, X19, [SP,#0x40+var_10]
+0x854f0cc: ADRP            X24, #byte_901B90A@PAGE
+0x854f0d0: ADRP            X23, #off_8ACC908@PAGE
+0x854f0d4: LDRB            W8, [X24,#byte_901B90A@PAGEOFF]
+0x854f0d8: LDR             X23, [X23,#off_8ACC908@PAGEOFF]; qword_8D4ECC0
+0x854f0dc: MOV             X20, X3
+0x854f0e0: MOV             X21, X2
+0x854f0e4: MOV             X22, X1
+0x854f0e8: MOV             V8.16B, V0.16B
+0x854f0ec: MOV             X19, X0
+0x854f0f0: TBNZ            W8, #0, loc_854F108
+0x854f0f4: ADRP            X0, #off_8ACC908@PAGE
+0x854f0f8: LDR             X0, [X0,#off_8ACC908@PAGEOFF]; qword_8D4ECC0 ; slot
+0x854f0fc: BL              il2cpp_codegen_initialize_runtime_metadata
+0x854f100: MOV             W8, #1
+0x854f104: STRB            W8, [X24,#byte_901B90A@PAGEOFF]
+0x854f108: STR             S8, [X19,#8]
+0x854f10c: STP             X22, X21, [X19,#0x10]
+0x854f110: STR             X20, [X19,#0x20]
+0x854f114: LDR             X8, [X23]
+0x854f118: MOV             W9, #0xFFFFFFFF
+0x854f11c: STR             W9, [X19,#0x28]
+0x854f120: LDP             X22, X21, [SP,#0x40+var_20]
+0x854f124: STR             X8, [X19]
+0x854f128: LDP             X20, X19, [SP,#0x40+var_10]
+0x854f12c: LDP             X24, X23, [SP,#0x40+var_30]
+0x854f130: LDR             X30, [SP,#0x40+var_38]
+0x854f134: LDR             D8, [SP+0x40+var_40],#0x40
+0x854f138: RET

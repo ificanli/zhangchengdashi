@@ -1,0 +1,56 @@
+0x736221c: STR             X30, [SP,#var_20]!
+0x7362220: STP             X20, X19, [SP,#0x20+var_10]
+0x7362224: ADRP            X20, #byte_900A6C1@PAGE
+0x7362228: LDRB            W8, [X20,#byte_900A6C1@PAGEOFF]
+0x736222c: MOV             X19, X0
+0x7362230: TBNZ            W8, #0, loc_7362248
+0x7362234: ADRP            X0, #off_8B12A00@PAGE
+0x7362238: LDR             X0, [X0,#off_8B12A00@PAGEOFF]; unk_8D77EF0 ; slot
+0x736223c: BL              il2cpp_codegen_initialize_runtime_metadata
+0x7362240: MOV             W8, #1
+0x7362244: STRB            W8, [X20,#byte_900A6C1@PAGEOFF]
+0x7362248: LDR             X0, [X19,#0x18]
+0x736224c: CBZ             X0, loc_73622F8
+0x7362250: MOV             X1, XZR
+0x7362254: BL              UnityEngine.Networking.UnityWebRequest$$get_isNetworkError
+0x7362258: TBNZ            W0, #0, loc_73622E0
+0x736225c: LDR             X0, [X19,#0x18]
+0x7362260: CBZ             X0, loc_73622F8
+0x7362264: MOV             X1, XZR
+0x7362268: BL              UnityEngine.Networking.UnityWebRequest$$get_isHttpError
+0x736226c: TBNZ            W0, #0, loc_73622E0
+0x7362270: LDR             X0, [X19,#0x18]
+0x7362274: CBZ             X0, loc_73622F8
+0x7362278: MOV             X1, XZR
+0x736227c: BL              UnityEngine.Networking.UnityWebRequest$$get_isDone
+0x7362280: TBZ             W0, #0, loc_73622F0
+0x7362284: LDR             X0, [X19,#0x18]
+0x7362288: CBZ             X0, loc_73622F8
+0x736228c: MOV             X1, XZR
+0x7362290: BL              UnityEngine.Networking.UnityWebRequest$$get_downloadHandler
+0x7362294: CBZ             X0, loc_73622F8
+0x7362298: MOV             X1, XZR
+0x736229c: BL              UnityEngine.Networking.DownloadHandler$$get_data
+0x73622a0: LDR             X8, [X19,#0x20]!
+0x73622a4: MOV             X20, X0
+0x73622a8: MOV             X1, XZR
+0x73622ac: MOV             X0, X8
+0x73622b0: BL              System.String$$IsNullOrEmpty
+0x73622b4: ADRP            X8, #off_8B12A00@PAGE
+0x73622b8: LDR             X8, [X8,#off_8B12A00@PAGEOFF]; unk_8D77EF0
+0x73622bc: TST             W0, #1
+0x73622c0: MOV             X0, X20
+0x73622c4: MOV             X2, XZR
+0x73622c8: CSEL            X8, X8, X19, NE
+0x73622cc: LDR             X1, [X8]
+0x73622d0: BL              _Oke__$$__dZ_x
+0x73622d4: MOV             X1, XZR
+0x73622d8: BL              UnityEngine.AssetBundle$$LoadFromMemory
+0x73622dc: STUR            X0, [X19,#-0x10]
+0x73622e0: MOV             W0, #1
+0x73622e4: LDP             X20, X19, [SP,#0x20+var_10]
+0x73622e8: LDR             X30, [SP+0x20+var_20],#0x20
+0x73622ec: RET
+0x73622f0: MOV             W0, WZR
+0x73622f4: B               loc_73622E4
+0x73622f8: BL              il2cpp_codegen_raise_null_reference_exception

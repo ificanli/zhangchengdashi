@@ -1,0 +1,23 @@
+0x507b6a0: fe57bea9 stp      x30, x21, [sp, #-0x20]!
+0x507b6a4: f44f01a9 stp      x20, x19, [sp, #0x10]
+0x507b6a8: 481c40f9 ldr      x8, [x2, #0x38]
+0x507b6ac: f303012a mov      w19, w1
+0x507b6b0: f40300aa mov      x20, x0
+0x507b6b4: a80000b5 cbnz     x8, #0x507b6c8
+0x507b6b8: e00302aa mov      x0, x2
+0x507b6bc: f50302aa mov      x21, x2
+0x507b6c0: 4f53af97 bl       #0x3c503fc
+0x507b6c4: a81e40f9 ldr      x8, [x21, #0x38]
+0x507b6c8: 010140f9 ldr      x1, [x8]
+0x507b6cc: e00314aa mov      x0, x20
+0x507b6d0: a6fdff97 bl       #0x507ad68 // GameFramework.UIModule$$GetUI<object>
+0x507b6d4: e00000b4 cbz      x0, #0x507b6f0
+0x507b6d8: 080040f9 ldr      x8, [x0]
+0x507b6dc: 61020012 and      w1, w19, #1
+0x507b6e0: f44f41a9 ldp      x20, x19, [sp, #0x10]
+0x507b6e4: 03895ca9 ldp      x3, x2, [x8, #0x1c8]
+0x507b6e8: fe57c2a8 ldp      x30, x21, [sp], #0x20
+0x507b6ec: 60001fd6 br       x3
+0x507b6f0: f44f41a9 ldp      x20, x19, [sp, #0x10]
+0x507b6f4: fe57c2a8 ldp      x30, x21, [sp], #0x20
+0x507b6f8: c0035fd6 ret      

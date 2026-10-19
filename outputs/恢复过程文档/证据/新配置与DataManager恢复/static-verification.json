@@ -1,0 +1,54 @@
+{
+  "scope": "Static source/native/resource payload audit only; no Unity run or config runtime acceptance by this agent",
+  "sources": [
+    {
+      "name": "DataManager.cs",
+      "sourceSha256": "44968437878d1800023105935555caddb27950bf07b9c3b197ff89b51cab5409",
+      "bytes": 7580,
+      "metaUnchanged": true,
+      "metaSha256": "db45484eafbd78a236600c2fb2e04111e3f3cade0a4f816f30c302df94cc848b"
+    },
+    {
+      "name": "GlobalInfo.cs",
+      "sourceSha256": "8af0eb9c42d52c3027e518b6774e0177edb8851aad076a5a0fb46e0a78dcd0c2",
+      "bytes": 53853,
+      "metaUnchanged": true,
+      "metaSha256": "3cbb1b983dfde7a1ae14aefd8b89647fcdc9d32a4eeb345593f634b7e4cc5e69"
+    }
+  ],
+  "checks": {
+    "twoMetasUnchanged": true,
+    "sourceMatchesStablePoint": true,
+    "latest22LoadDataCompletedPropertyPreserved": true,
+    "loadDataBodyPreserved": true,
+    "saveAndLoginRelatedBodiesPreserved": true,
+    "configFlagOnlyAfterRealAwait": true,
+    "noFakeDataComplete": true,
+    "all81ExactNativeAddressesCovered": true,
+    "all72LoadCallsPresent": true,
+    "all73CallbacksPresent": true,
+    "realCountPredicateAndAwait": true,
+    "resourcesThenAddressables": true,
+    "onlyRemoveAfterCallback": true,
+    "noUnconditionalCompletionClear": true,
+    "provenGzipLitJsonExpression": true,
+    "all81ResourcesRawBytesMatch": true,
+    "all25DictionaryFixturesValid": true,
+    "eightIdaMethodsBounded": true
+  },
+  "allStaticChecksPassed": true,
+  "uniqueNativeAddresses": 81,
+  "staticLoadCallsites": 72,
+  "selectedLoadsPerRun": 65,
+  "callbackMethodsIncludingPredicate": 73,
+  "dictionaryCallbacks": 25,
+  "dictionaryVariantFixtures": 34,
+  "mainCityMap": {
+    "outerRecords": 10,
+    "flattenedTileRecords": 941,
+    "uniqueTileKeys": 941,
+    "duplicateTileKeys": 0,
+    "nativePolicy": "List.Add every tile, Dictionary.TryAdd by tileKey; first value retained on duplicate"
+  },
+  "unityCompile": "delegated to root unified import; result not asserted here"
+}

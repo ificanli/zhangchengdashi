@@ -1,0 +1,28 @@
+__int64 __fastcall GameModule_BattleGameManager__GameEnd(__int64 a1, __int64 a2, char a3)
+{
+  char v4; // w20
+  _QWORD v7[4]; // [xsp+0h] [xbp-A0h] BYREF
+  _QWORD v8[6]; // [xsp+20h] [xbp-80h] BYREF
+  __int128 v9; // [xsp+50h] [xbp-50h]
+  __int128 v10; // [xsp+60h] [xbp-40h]
+
+  v4 = a2;
+  if ( (byte_8FFD730 & 1) == 0 )
+  {
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D228A8 /* Method$System.Runtime.CompilerServices.AsyncVoidMethodBuilder.Start<BattleGameManager.<GameEnd>d__52>() */);
+    byte_8FFD730 = 1;
+  }
+  v9 = 0u;
+  v10 = 0u;
+  memset(v8, 0, sizeof(v8));
+  System_Runtime_CompilerServices_AsyncVoidMethodBuilder__Create(v7, 0, a2);
+  *(_QWORD *)&v9 = a1;
+  LOBYTE(v8[5]) = v4 & 1;
+  BYTE8(v9) = a3 & 1;
+  qmemcpy(&v8[1], v7, 32);
+  LODWORD(v8[0]) = -1;
+  return System_Runtime_CompilerServices_AsyncVoidMethodBuilder__Start_BattleGameManager__GameEnd_d__52_(
+           &v8[1],
+           v8,
+           qword_8D228A8 /* Method$System.Runtime.CompilerServices.AsyncVoidMethodBuilder.Start<BattleGameManager.<GameEnd>d__52>() */);
+}

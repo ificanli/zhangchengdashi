@@ -1,0 +1,706 @@
+[
+  {
+    "rva": "0x3d7ab7c",
+    "token": "0x6000F43",
+    "declaration": "public void SetAiCanMove(bool can)",
+    "body": "if (followerEntityCurrentCanMove == can)\n    return;\nfollowerEntityCurrentCanMove = can;\nif (AstarWebGLRuntimeConfig.UseWebGLNavigation)\n{\n    if (can)\n        WebGLNavigationManager.TryRegisterRole(this);\n}\nelse if (followerEntity != null)\n    followerEntity.canMove = can;",
+    "evidence": [
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d7ab7c.c",
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d7ab7c.asm.txt",
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d7ab7c.annotated.txt"
+    ]
+  },
+  {
+    "rva": "0x3d7e054",
+    "token": "0x6000F29",
+    "declaration": "protected Vector3 GetXZDirection(Vector3 targetPosition)",
+    "body": "Vector3 delta = targetPosition - transform.position;\ndelta.y = 0f;\nreturn delta.normalized;",
+    "evidence": [
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d7e054.c",
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d7e054.asm.txt",
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d7e054.annotated.txt"
+    ]
+  },
+  {
+    "rva": "0x3d7eda8",
+    "token": "0x6000F48",
+    "declaration": "public void SetAiSPeed(float s, bool isReduceSpeed = false)",
+    "body": "if (this == null)\n    return;\nif (AstarWebGLRuntimeConfig.UseWebGLNavigation)\n{\n    float speed = s * 0.8f;\n    if (Mathf.Abs(speed - followerEntityCurrentSpeed) > 0.01f)\n        followerEntityCurrentSpeed = speed;\n    return;\n}\nfloat nextSpeed = GetFollowerEntityMoveSpeed(s);\nif (followerEntity == null)\n    followerEntity = GetComponent<FollowerEntity>();\nif (followerEntity != null && Mathf.Abs(nextSpeed - followerEntityCurrentSpeed) > 0.01f)\n{\n    followerEntityCurrentSpeed = nextSpeed;\n    followerEntity.maxSpeed = nextSpeed;\n}",
+    "evidence": [
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d7eda8.c",
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d7eda8.asm.txt",
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d7eda8.annotated.txt"
+    ]
+  },
+  {
+    "rva": "0x3d7f628",
+    "token": "0x6000F65",
+    "declaration": "public void SetAnimation(GPUInstanceAnimationBehaviour.AnimationName nextAnimationName, bool force = false)",
+    "body": "if (this == null)\n    return;\nif (gpuInstanceAnimationBehaviour == null)\n    gpuInstanceAnimationBehaviour = ResolveAnimationBehaviour();\nif (gpuInstanceAnimationBehaviour == null)\n    return;\nif ((nextAnimationName != GPUInstanceAnimationBehaviour.AnimationName.Dead && isDead)\n    || (!force && waitToChangeAnimationing))\n    return;\nwaitToChangeAnimationing = false;\nlastChangeTime = Time.time;\ngpuInstanceAnimationBehaviour.SetAnimation(nextAnimationName);",
+    "evidence": [
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d7f628.c",
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d7f628.asm.txt",
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d7f628.annotated.txt"
+    ]
+  },
+  {
+    "rva": "0x3d7f778",
+    "token": "0x6000F08",
+    "declaration": "get",
+    "body": "return PropertyTemp.roleType == \"land\";",
+    "evidence": [
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d7f778.c",
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d7f778.asm.txt",
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d7f778.annotated.txt"
+    ]
+  },
+  {
+    "rva": "0x3d7f7d0",
+    "token": "0x6000F09",
+    "declaration": "get",
+    "body": "return skillRequireCount > 0f;",
+    "evidence": [
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d7f7d0.c",
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d7f7d0.asm.txt",
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d7f7d0.annotated.txt"
+    ]
+  },
+  {
+    "rva": "0x3d7f9e0",
+    "token": "0x6000F49",
+    "declaration": "private float GetScaledRadius(float baseRadius)",
+    "body": "if (!(baseRadius < 0f))\n    return (0.5f / transform.localScale.x) * baseRadius;\nreturn baseRadius;",
+    "evidence": [
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d7f9e0.c",
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d7f9e0.asm.txt",
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d7f9e0.annotated.txt"
+    ]
+  },
+  {
+    "rva": "0x3d7fa30",
+    "token": "0x6000F3A",
+    "declaration": "private void SetPathfindingEnabled(bool enabled)",
+    "body": "if (!Application.isPlaying)\n    return;\nif (followerEntity == null)\n    followerEntity = GetComponent<FollowerEntity>();\nif (DestinationSetter == null)\n    DestinationSetter = GetComponent<AIDestinationSetter>();\nif (AstarWebGLRuntimeConfig.UseWebGLNavigation)\n{\n    if (followerEntity != null)\n        followerEntity.enabled = false;\n    if (DestinationSetter != null)\n    {\n        DestinationSetter.target = null;\n        DestinationSetter.enabled = false;\n    }\n    if (enabled)\n        WebGLNavigationManager.TryRegisterRole(this);\n    else\n    {\n        WebGLNavigationManager.TryUnregisterRole(this);\n        followerEntityNeedSearchPath = false;\n        followerEntityLastSearchPathTime = -999f;\n        _followerEntityLastTargetSyncTime = -999f;\n        followerEntityCurrentTarget = null;\n        followerEntityCurrentSourceTarget = null;\n    }\n    return;\n}\nif (followerEntity != null)\n    followerEntity.enabled = enabled;\nif (!enabled)\n{\n    followerEntityNeedSearchPath = false;\n    followerEntityLastSearchPathTime = -999f;\n    _followerEntityLastTargetSyncTime = -999f;\n    followerEntityCurrentSourceTarget = null;\n}\nif (DestinationSetter != null)\n    DestinationSetter.enabled = enabled;",
+    "evidence": [
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d7fa30.c",
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d7fa30.asm.txt",
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d7fa30.annotated.txt"
+    ]
+  },
+  {
+    "rva": "0x3d7fd58",
+    "token": "0x6000F0B",
+    "declaration": "private IAnimation ResolveAnimationBehaviour()",
+    "body": "var aniInstancing = GetComponent<global::AnimationInstancing.AnimationInstancing>();\nif (aniInstancing != null)\n    return aniInstancing;\nvar gpuInstancer = GetComponent<GPUInstanceAnimationBehaviour>();\nreturn gpuInstancer != null ? gpuInstancer : null;",
+    "evidence": [
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d7fd58.c",
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d7fd58.asm.txt",
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d7fd58.annotated.txt"
+    ]
+  },
+  {
+    "rva": "0x3d7fe44",
+    "token": "0x6000F0C",
+    "declaration": "public RoleAnimationDriverType GetAnimationDriverType()",
+    "body": "return GetComponent<global::AnimationInstancing.AnimationInstancing>() != null\n    ? RoleAnimationDriverType.AniInstancing : RoleAnimationDriverType.GPUInstancer;",
+    "evidence": [
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d7fe44.c",
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d7fe44.asm.txt",
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d7fe44.annotated.txt"
+    ]
+  },
+  {
+    "rva": "0x3d7fed8",
+    "token": "0x6000F0D",
+    "declaration": "public bool IsGPUInstancerAnimationDriver()",
+    "body": "return GetAnimationDriverType() == RoleAnimationDriverType.GPUInstancer;",
+    "evidence": [
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d7fed8.c",
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d7fed8.asm.txt",
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d7fed8.annotated.txt"
+    ]
+  },
+  {
+    "rva": "0x3d7fef0",
+    "token": "0x6000F0E",
+    "declaration": "public IAnimation GetAnimationBehaviour()",
+    "body": "if (gpuInstanceAnimationBehaviour == null)\n    gpuInstanceAnimationBehaviour = ResolveAnimationBehaviour();\nreturn gpuInstanceAnimationBehaviour;",
+    "evidence": [
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d7fef0.c",
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d7fef0.asm.txt",
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d7fef0.annotated.txt"
+    ]
+  },
+  {
+    "rva": "0x3d81228",
+    "token": "0x6000F16",
+    "declaration": "private void ClearRoleTargetTracking()",
+    "body": "_lastTrackedRoleTarget = null;\n_lastRoleTargetHexDistance = -1;",
+    "evidence": [
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d81228.c",
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d81228.asm.txt",
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d81228.annotated.txt"
+    ]
+  },
+  {
+    "rva": "0x3d81238",
+    "token": "0x6000F93",
+    "declaration": "private void ClearDizzyState()",
+    "body": "isDizzy = false;\ndizzyTime = 0f;\nif (stunEffect != null)\n{\n    Object.Destroy(stunEffect);\n    stunEffect = null;\n}",
+    "evidence": [
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d81238.c",
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d81238.asm.txt",
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d81238.annotated.txt"
+    ]
+  },
+  {
+    "rva": "0x3d812cc",
+    "token": "0x6000F3F",
+    "declaration": "private static float GetAutoRepathPeriod(int roleCount)",
+    "body": "if (!AstarWebGLRuntimeConfig.UseWebGLNavigation)\n    return 1f;\nreturn roleCount > 79 ? 3f : 2f;",
+    "evidence": [
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d812cc.c",
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d812cc.asm.txt",
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d812cc.annotated.txt"
+    ]
+  },
+  {
+    "rva": "0x3d816b4",
+    "token": "0x6000F45",
+    "declaration": "public float GetAiSPeed()",
+    "body": "if (AstarWebGLRuntimeConfig.UseWebGLNavigation && PropertyTemp != null)\n    return PropertyTemp.moveSpeed;\nreturn followerEntityCurrentSpeed;",
+    "evidence": [
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d816b4.c",
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d816b4.asm.txt",
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d816b4.annotated.txt"
+    ]
+  },
+  {
+    "rva": "0x3d81f00",
+    "token": "0x6000F12",
+    "declaration": "private bool ShouldSkipFindTarget(float range)",
+    "body": "if (_RoleBehaviour != null)\n{\n    if (IsRoleTargetValidInRange(_RoleBehaviour, range))\n        return true;\n    _RoleBehaviour = null;\n    _nextFindTargetTime = 0f;\n    ClearRoleTargetTracking();\n}\nfloat now = Time.time;\nif (now < _nextFindTargetTime && Mathf.Abs(_lastFindTargetRange - range) <= 0.01f)\n    return true;\n_lastFindTargetRange = range;\n_nextFindTargetTime = now + GetFindTargetInterval();\nreturn false;",
+    "evidence": [
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d81f00.c",
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d81f00.asm.txt",
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d81f00.annotated.txt"
+    ]
+  },
+  {
+    "rva": "0x3d82018",
+    "token": "0x6000F73",
+    "declaration": "private bool TryGetAstarRemainingPath(List<Vector3> outPathPoints)",
+    "body": "if (outPathPoints == null)\n    return false;\noutPathPoints.Clear();\nif (AstarWebGLRuntimeConfig.UseWebGLNavigation)\n    return WebGLNavigationManager.TryGetRemainingPath(this, outPathPoints, 32) && outPathPoints.Count > 0;\nif (followerEntity == null)\n    return false;\nbool stale = false;\nfollowerEntity.GetRemainingPath(outPathPoints, out stale);\nreturn outPathPoints.Count > 0;",
+    "evidence": [
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d82018.c",
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d82018.asm.txt",
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d82018.annotated.txt"
+    ]
+  },
+  {
+    "rva": "0x3d82110",
+    "token": "0x6000F15",
+    "declaration": "private void RecordCurrentRoleTargetDistance()",
+    "body": "RoleBehaviour roleTarget = _RoleBehaviour as RoleBehaviour;\nif (roleTarget != null)\n    UpdateRoleTargetHexDistance(roleTarget);\nelse\n    ClearRoleTargetTracking();",
+    "evidence": [
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d82110.c",
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d82110.asm.txt",
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d82110.annotated.txt"
+    ]
+  },
+  {
+    "rva": "0x3d821a0",
+    "token": "0x6000F13",
+    "declaration": "private bool IsRoleTargetValidInRange(EntityBase target, float range)",
+    "body": "if (target == null || target == this || target.isDead)\n    return false;\nRoleBehaviour roleTarget = target as RoleBehaviour;\nif (roleTarget == null || roleTarget.StealthIng)\n    return false;\nfloat allowedRange = PropertyTemp != null ? PropertyTemp.atkRange : range;\nallowedRange = allowedRange >= range ? allowedRange : range;\nVector3 delta = roleTarget.transform.position - transform.position;\ndelta.y = 0f;\nreturn delta.sqrMagnitude <= allowedRange * allowedRange && UpdateRoleTargetHexDistance(roleTarget);",
+    "evidence": [
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d821a0.c",
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d821a0.asm.txt",
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d821a0.annotated.txt"
+    ]
+  },
+  {
+    "rva": "0x3d82340",
+    "token": "0x6000F17",
+    "declaration": "private float GetFindTargetInterval()",
+    "body": "if (AtkWayType == AtkWayType.Remote || skillRequireCount > 0f\n    || (PropertyTemp != null && PropertyTemp.rareLevel == RareLevel.SSSR))\n    return 0.15f;\nreturn 0.25f;",
+    "evidence": [
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d82340.c",
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d82340.asm.txt",
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d82340.annotated.txt"
+    ]
+  },
+  {
+    "rva": "0x3d8237c",
+    "token": "0x6000F14",
+    "declaration": "private bool UpdateRoleTargetHexDistance(RoleBehaviour roleTarget)",
+    "body": "if (roleTarget == null)\n{\n    ClearRoleTargetTracking();\n    return false;\n}\nHexBehaviour sourceHex;\nHexBehaviour targetHex;\nif (!HexManager.TryGetHexAt(transform.position, out sourceHex) || sourceHex == null\n    || !HexManager.TryGetHexAt(roleTarget.transform.position, out targetHex) || targetHex == null)\n{\n    _lastTrackedRoleTarget = roleTarget;\n    _lastRoleTargetHexDistance = -1;\n    return true;\n}\nint distance = HexManager.HexDistance(sourceHex.HexCoord, targetHex.HexCoord);\nif (_lastTrackedRoleTarget != roleTarget || _lastRoleTargetHexDistance < 0)\n{\n    _lastTrackedRoleTarget = roleTarget;\n    _lastRoleTargetHexDistance = distance;\n    return true;\n}\nif (distance > unchecked(_lastRoleTargetHexDistance + 1))\n    return false;\nif (distance < _lastRoleTargetHexDistance)\n    _lastRoleTargetHexDistance = distance;\nreturn true;",
+    "evidence": [
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d8237c.c",
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d8237c.asm.txt",
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d8237c.annotated.txt"
+    ]
+  },
+  {
+    "rva": "0x3d82fe8",
+    "token": "0x6000F1C",
+    "declaration": "protected virtual void OnHealthChangeTalentTrigger()",
+    "body": "bool second = allTalent2 != null;\nif (second || allTalent != null)\n{\n    GameEventArgs args = new GameEventArgs(this, AttackObj, GetNearOneMTeamMate(), 0f, 0f, true, null);\n    for (int i = 0; i < (second ? allTalent2 : allTalent).Count; i++)\n        (second ? allTalent2 : allTalent)[i].OnEventTrigger(GameEventType.OnHealthChange, args);\n}\nUpdateHpBar();",
+    "evidence": [
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d82fe8.c",
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d82fe8.asm.txt",
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d82fe8.annotated.txt"
+    ]
+  },
+  {
+    "rva": "0x3d83190",
+    "token": "0x6000F21",
+    "declaration": "public List<RoleBehaviour> GetNearOneMTeamMate()",
+    "body": "return BattleGameSceneManager.Instance.GetNearRole(isEnemy, this, 1f, -1);",
+    "evidence": [
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d83190.c",
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d83190.asm.txt",
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d83190.annotated.txt"
+    ]
+  },
+  {
+    "rva": "0x3d831f4",
+    "token": "0x6000F1D",
+    "declaration": "protected (int, float) OnHurtTalentTrigger(int damage)",
+    "body": "bool second = allTalent2 != null;\nif (!second && allTalent == null)\n    return (damage, 0f);\nGameEventArgs args = new GameEventArgs(this, AttackObj, GetNearOneMTeamMate(), (float)damage, 0f, false, null);\nfor (int i = 0; i < (second ? allTalent2 : allTalent).Count; i++)\n    (second ? allTalent2 : allTalent)[i].OnEventTrigger(GameEventType.OnHurt, args);\nfloat value = args.ValueNumber;\nint result = float.IsPositiveInfinity(value) ? int.MinValue\n    : float.IsNaN(value) ? 0\n    : value >= 2147483648f ? int.MaxValue\n    : value <= -2147483648f ? int.MinValue : (int)value;\nreturn (result, args.ValueNumber2);",
+    "evidence": [
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d831f4.c",
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d831f4.asm.txt",
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d831f4.annotated.txt"
+    ]
+  },
+  {
+    "rva": "0x3d8363c",
+    "token": "0x6000F20",
+    "declaration": "protected void OnKillTalentTrigger()",
+    "body": "bool second = allTalent2 != null;\nif (!second && allTalent == null)\n    return;\nGameEventArgs args = new GameEventArgs(this, null, null, 0f, 0f, false, null);\nfor (int i = 0; i < (second ? allTalent2 : allTalent).Count; i++)\n    (second ? allTalent2 : allTalent)[i].OnEventTrigger(GameEventType.OnKill, args);",
+    "evidence": [
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d8363c.c",
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d8363c.asm.txt",
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d8363c.annotated.txt"
+    ]
+  },
+  {
+    "rva": "0x3d83b14",
+    "token": "0x6000F2A",
+    "declaration": "protected void RestoreAiAfterSkillRespectFreeze()",
+    "body": "SetAiCanMove(!Skilling && !IsAiMovementBlockedByState());\nSetAiEnableLocalAvoidance(true);",
+    "evidence": [
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d83b14.c",
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d83b14.asm.txt",
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d83b14.annotated.txt"
+    ]
+  },
+  {
+    "rva": "0x3d83b54",
+    "token": "0x6000F2B",
+    "declaration": "protected bool IsAiMovementBlockedByState()",
+    "body": "if (hadRecycle || destroying || isDead || isFreeze || isDizzy)\n    return true;\nreturn BattleGameManager.Instance != null && BattleGameManager.Instance.IsGamePaused;",
+    "evidence": [
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d83b54.c",
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d83b54.asm.txt",
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d83b54.annotated.txt"
+    ]
+  },
+  {
+    "rva": "0x3d84098",
+    "token": "0x6000F2C",
+    "declaration": "protected void RestoreAiAfterControlStateReleased()",
+    "body": "if (Skilling || IsAiMovementBlockedByState())\n{\n    SetAiCanMove(false);\n    return;\n}\nSetAiCanMove(true);\nSetAnimation(GPUInstanceAnimationBehaviour.AnimationName.Run);",
+    "evidence": [
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d84098.c",
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d84098.asm.txt",
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d84098.annotated.txt"
+    ]
+  },
+  {
+    "rva": "0x3d840e4",
+    "token": "0x6000F2D",
+    "declaration": "protected void ClearAiControlStates()",
+    "body": "isFreeze = false;\nfreezeEndTime = 0f;\nif (IceBall != null)\n    IceBall.gameObject.SetActive(false);\nisDizzy = false;\ndizzyTime = 0f;\nif (stunEffect != null)\n{\n    Object.Destroy(stunEffect);\n    stunEffect = null;\n}\nisShocking = false;\nif (shockTW != null)\n    shockTW.Kill();",
+    "evidence": [
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d840e4.c",
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d840e4.asm.txt",
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d840e4.annotated.txt"
+    ]
+  },
+  {
+    "rva": "0x3d841c4",
+    "token": "0x6000F5A",
+    "declaration": "public void ShowDamageText(string damage, Color color)",
+    "body": "if (global::GameConfigModule.GameConfigManager.GameGlobalConfig.useNewFloatingText)\n{\n    FloatingTextManager.Instance.ShowDamageText(damage, transform, false, color, null, false, false, 1f, null, null);\n    return;\n}\nglobal::UIModuleO.UITextEffectManager.Instance.ShowTextEffect(\n    string.Concat(\"<color=#\", global::ToolModule.ColorExtend.ColorToHex(color), \">\", damage, \"</color>\"),\n    transform.position, global::UIModuleO.TextEffImgType.Null, 1f, global::UIModuleO.PositionType.WorldPosition);",
+    "evidence": [
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d841c4.c",
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d841c4.asm.txt",
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d841c4.annotated.txt"
+    ]
+  },
+  {
+    "rva": "0x3d84470",
+    "token": "0x6000F30",
+    "declaration": "get",
+    "body": "return hadInit && !hadRecycle && !destroying && !isDead && gameObject.activeInHierarchy;",
+    "evidence": [
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d84470.c",
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d84470.asm.txt",
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d84470.annotated.txt"
+    ]
+  },
+  {
+    "rva": "0x3d844bc",
+    "token": "0x6000F31",
+    "declaration": "get",
+    "body": "return followerEntityCurrentCanMove && !attacking && !Skilling && !isFreeze && !isDizzy\n    && !_isAttackingWall && !_isBreakingWall && !isDead && !hadRecycle;",
+    "evidence": [
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d844bc.c",
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d844bc.asm.txt",
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d844bc.annotated.txt"
+    ]
+  },
+  {
+    "rva": "0x3d84514",
+    "token": "0x6000F32",
+    "declaration": "get",
+    "body": "return attacking && hadInit && !hadRecycle && !destroying && !isDead && gameObject.activeInHierarchy\n    && !Skilling && !isFreeze && !isDizzy && !_isAttackingWall && !_isBreakingWall;",
+    "evidence": [
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d84514.c",
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d84514.asm.txt",
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d84514.annotated.txt"
+    ]
+  },
+  {
+    "rva": "0x3d845a0",
+    "token": "0x6000F33",
+    "declaration": "get",
+    "body": "return _targetTrans != null ? _targetTrans : followerEntityCurrentSourceTarget;",
+    "evidence": [
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d845a0.c",
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d845a0.asm.txt",
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d845a0.annotated.txt"
+    ]
+  },
+  {
+    "rva": "0x3d84618",
+    "token": "0x6000F34",
+    "declaration": "get",
+    "body": "return TargetType;",
+    "evidence": [
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d84618.c",
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d84618.asm.txt",
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d84618.annotated.txt"
+    ]
+  },
+  {
+    "rva": "0x3d84620",
+    "token": "0x6000F35",
+    "declaration": "get",
+    "body": "if (!(followerEntityCurrentSpeed > 0.01f))\n    return PropertyTemp != null ? GetWebGLNavigationMoveSpeed(PropertyTemp.moveSpeed) : 0f;\nreturn followerEntityCurrentSpeed;",
+    "evidence": [
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d84620.c",
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d84620.asm.txt",
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d84620.annotated.txt"
+    ]
+  },
+  {
+    "rva": "0x3d84658",
+    "token": "0x6000F47",
+    "declaration": "private float GetWebGLNavigationMoveSpeed(float speed)",
+    "body": "return speed * 0.8f;",
+    "evidence": [
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d84658.c",
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d84658.asm.txt",
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d84658.annotated.txt"
+    ]
+  },
+  {
+    "rva": "0x3d84668",
+    "token": "0x6000F36",
+    "declaration": "get",
+    "body": "return followerEntityCurrentRadius > 0.01f ? followerEntityCurrentRadius : 0.35f;",
+    "evidence": [
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d84668.c",
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d84668.asm.txt",
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d84668.annotated.txt"
+    ]
+  },
+  {
+    "rva": "0x3d84688",
+    "token": "0x6000F37",
+    "declaration": "get",
+    "body": "return PropertyTemp != null ? PropertyTemp.atkRange : 0f;",
+    "evidence": [
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d84688.c",
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d84688.asm.txt",
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d84688.annotated.txt"
+    ]
+  },
+  {
+    "rva": "0x3d848e4",
+    "token": "0x6000F3C",
+    "declaration": "private void RequestSearchPathRefresh()",
+    "body": "followerEntityNeedSearchPath = true;",
+    "evidence": [
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d848e4.c",
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d848e4.asm.txt",
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d848e4.annotated.txt"
+    ]
+  },
+  {
+    "rva": "0x3d848f0",
+    "token": "0x6000F3D",
+    "declaration": "private bool ShouldSyncPathfindingTargetPosition(bool sourceTargetChanged, Vector3 currentPosition, Vector3 targetPosition)",
+    "body": "if (!AstarWebGLRuntimeConfig.UseWebGLNavigation || sourceTargetChanged)\n    return true;\nfloat distanceSqr = (targetPosition - currentPosition).sqrMagnitude;\nif (distanceSqr <= 0.0001f)\n    return false;\nreturn distanceSqr >= 0.16f || Time.time - _followerEntityLastTargetSyncTime >= 0.15f;",
+    "evidence": [
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d848f0.c",
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d848f0.asm.txt",
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d848f0.annotated.txt"
+    ]
+  },
+  {
+    "rva": "0x3d849c4",
+    "token": "0x6000F3E",
+    "declaration": "private void TryRefreshSearchPath()",
+    "body": "if (!followerEntityNeedSearchPath)\n    return;\nif (AstarWebGLRuntimeConfig.UseWebGLNavigation)\n{\n    followerEntityNeedSearchPath = false;\n    followerEntityLastSearchPathTime = Time.time;\n    return;\n}\nif (followerEntity != null && followerEntity.enabled)\n{\n    followerEntityNeedSearchPath = false;\n    followerEntityLastSearchPathTime = Time.time;\n    followerEntity.SearchPath();\n}",
+    "evidence": [
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d849c4.c",
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d849c4.asm.txt",
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d849c4.annotated.txt"
+    ]
+  },
+  {
+    "rva": "0x3d84a94",
+    "token": "0x6000F42",
+    "declaration": "public bool GetAiCanMove()",
+    "body": "return followerEntityCurrentCanMove;",
+    "evidence": [
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d84a94.c",
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d84a94.asm.txt",
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d84a94.annotated.txt"
+    ]
+  },
+  {
+    "rva": "0x3d84a9c",
+    "token": "0x6000F46",
+    "declaration": "private float GetFollowerEntityMoveSpeed(float speed)",
+    "body": "if (!(_bornScaleX <= 0.001f))\n    speed /= _bornScaleX;\nreturn speed * 0.8f;",
+    "evidence": [
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d84a9c.c",
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d84a9c.asm.txt",
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d84a9c.annotated.txt"
+    ]
+  },
+  {
+    "rva": "0x3d84ac4",
+    "token": "0x6000F4A",
+    "declaration": "public float GetAiRadius()",
+    "body": "return followerEntityCurrentRadius;",
+    "evidence": [
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d84ac4.c",
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d84ac4.asm.txt",
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d84ac4.annotated.txt"
+    ]
+  },
+  {
+    "rva": "0x3d84acc",
+    "token": "0x6000F4B",
+    "declaration": "public void SetAiRadius(float s)",
+    "body": "if (AstarWebGLRuntimeConfig.UseWebGLNavigation)\n{\n    float radius = GetScaledRadius(s);\n    if (Mathf.Abs(followerEntityCurrentRadius - radius) > 0.01f)\n        followerEntityCurrentRadius = radius;\n}",
+    "evidence": [
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d84acc.c",
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d84acc.asm.txt",
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d84acc.annotated.txt"
+    ]
+  },
+  {
+    "rva": "0x3d84b60",
+    "token": "0x6000F4C",
+    "declaration": "public bool GetAiEnableLocalAvoidance()",
+    "body": "return followerEntityCurrentEnableLocalAvoidance;",
+    "evidence": [
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d84b60.c",
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d84b60.asm.txt",
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d84b60.annotated.txt"
+    ]
+  },
+  {
+    "rva": "0x3d84b68",
+    "token": "0x6000F4E",
+    "declaration": "private void ApplyOccupancyPenalty(bool enable)",
+    "body": "if (AstarWebGLRuntimeConfig.UseWebGLNavigation)\n{\n    _currentOccupancyGUO = null;\n    _isPenaltyApplied = false;\n    _occupancyBounds = default;\n    return;\n}\nif (!enable)\n{\n    if (!_isPenaltyApplied)\n        return;\n    if (_occupancyBounds.size == Vector3.zero)\n    {\n        _currentOccupancyGUO = null;\n        _isPenaltyApplied = false;\n        return;\n    }\n    GraphUpdateObject removal = new GraphUpdateObject(_occupancyBounds);\n    removal.addPenalty = -999999999;\n    removal.updatePhysics = false;\n    if (!AstarWebGLRuntimeConfig.DisableAstarRuntime && AstarPath.active != null)\n        AstarPath.active.UpdateGraphs(removal);\n    _currentOccupancyGUO = null;\n    _isPenaltyApplied = false;\n    _occupancyBounds = default;\n    return;\n}\nif (_isPenaltyApplied)\n    return;\nfloat radius = followerEntity != null ? followerEntity.radius\n    : followerEntityCurrentRadius > 0f ? followerEntityCurrentRadius : 0.5f;\nfloat diameter = radius + radius;\n_occupancyBounds = new Bounds(transform.position, new Vector3(diameter, diameter, diameter));\nGraphUpdateObject addition = new GraphUpdateObject(_occupancyBounds);\naddition.addPenalty = 999999999;\naddition.updatePhysics = false;\nif (!AstarWebGLRuntimeConfig.DisableAstarRuntime && AstarPath.active != null)\n{\n    AstarPath.active.UpdateGraphs(addition);\n    _currentOccupancyGUO = addition;\n    _isPenaltyApplied = true;\n}",
+    "evidence": [
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d84b68.c",
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d84b68.asm.txt",
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d84b68.annotated.txt"
+    ]
+  },
+  {
+    "rva": "0x3d86a44",
+    "token": "0x6000F59",
+    "declaration": "public override void Wound(int damage, string id, [Optional][DefaultParameterValue(false)] bool isBuild, [Optional] EntityBase target, [Optional][DefaultParameterValue(false)] bool isLandRole, [Optional][DefaultParameterValue((AtkWayType)0)] AtkWayType atkWayType, [Optional][DefaultParameterValue((CardFettersType)4)] CardFettersType fetterType, [Optional] Object linkAttackObj)",
+    "body": "if (this == null || !CoreGameManager.Gaming || isDead || PropertyTemp == null)\n    return;\nif (damage == 0 || (PropertyTemp.id == \"1012\" && Skilling))\n    return;\nAttackObj = target;\nvar hurt = OnHurtTalentTrigger(damage);\nint remaining = hurt.Item1;\nfloat dodge = (hurt.Item2 + PropertyTemp.missObb) * 100f;\nif (dodge > UnityEngine.Random.Range(0, 101))\n{\n    ShowDamageText(\"闪避\", new Color(0f, 0f, 1f, 1f));\n    return;\n}\nfrontWoundTime = Time.time;\nfloat reductionValue = PropertyTemp.damageReduceObb * (float)remaining;\nint reduction = float.IsPositiveInfinity(reductionValue) ? int.MinValue\n    : float.IsNaN(reductionValue) ? 0\n    : reductionValue >= 2147483648f ? int.MaxValue\n    : reductionValue <= -2147483648f ? int.MinValue : (int)reductionValue;\nremaining = unchecked(remaining - reduction);\nif (CardFettersType == CardFettersType.Terran)\n    remaining = SynergyEffectManager.Instance.HumanFetter4_DamageReduction(remaining, this, isEnemy, 1f);\nif (CardFettersType == CardFettersType.Machine)\n    remaining = SynergyEffectManager.Instance.MachineFetter6_RemoteDamageReduction(remaining, this, isEnemy, atkWayType);\nif (remaining <= 0)\n    return;\nif (linkRoleList != null)\n{\n    for (int i = 0; i < linkRoleList.Count; i++)\n    {\n        if (linkRoleList[i] == null)\n            continue;\n        float linkedValue = linkNum * (float)remaining;\n        int linkedDamage = float.IsPositiveInfinity(linkedValue) ? int.MinValue\n            : float.IsNaN(linkedValue) ? 0\n            : linkedValue >= 2147483648f ? int.MaxValue\n            : linkedValue <= -2147483648f ? int.MinValue : (int)linkedValue;\n        linkRoleList[i].Wound(linkedDamage, id, isBuild, target, isLandRole, atkWayType, fetterType, null);\n        remaining = unchecked(remaining - linkedDamage);\n        if (remaining <= 0)\n            return;\n    }\n}\n_damageTextBuilder.Clear();\n_damageTextBuilder.Append(\"-\");\n_damageTextBuilder.Append(remaining);\nShowDamageText(_damageTextBuilder.ToString(), FloatingTextManager.Instance.GetDamageTextColor(isEnemy, false));\nPropertyTemp.hp = unchecked(PropertyTemp.hp - remaining);\nglobal::AssetsModule.EffectManager.Instance.ShowEffect(\n    \"Assets/_Res/Addressable/EffectsBundle/Effects/BloodExplosionSpiky.prefab\", transform.position, default, 1f);\nif (isEnemy)\n{\n    if (isBuild)\n        BattleGameManager.Instance.RecordBuildDamage(id, remaining);\n    else\n        BattleGameManager.Instance.RecordDamage(id, remaining);\n}\nOnHealthChangeTalentTrigger();\nif (PropertyTemp.hp <= 0)\n{\n    PropertyTemp.hp = 0;\n    Dead(linkAttackObj != null && GetIsHellFireAtk(linkAttackObj) ? DeadType.HellFire : DeadType.Common);\n    UpdateHpBar();\n    if (!isBuild && target is RoleBehaviour attacker && !attacker.isDead)\n        attacker.OnKillTalentTrigger();\n}\nelse\n{\n    UpdateHpBar();\n    global::AudioManager.Instance.PlaySFX(\"Assets/_Res/Addressable/AudiosBundle/SFX/Hit1.mp3\", transform, 1f, 0);\n}",
+    "evidence": [
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d86a44.c",
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d86a44.asm.txt",
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d86a44.annotated.txt"
+    ]
+  },
+  {
+    "rva": "0x3d87450",
+    "token": "0x6000F60",
+    "declaration": "private bool GetIsHellFireAtk(object link)",
+    "body": "if (AttackObj == null)\n    return false;\nDemonLordRoleBehaviour demonLord = AttackObj as DemonLordRoleBehaviour;\nreturn demonLord != null && demonLord.EmitHellFireIng && (link as HellfireBehaviour) != null;",
+    "evidence": [
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d87450.c",
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d87450.asm.txt",
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d87450.annotated.txt"
+    ]
+  },
+  {
+    "rva": "0x3d876cc",
+    "token": "0x6000F5C",
+    "declaration": "protected virtual void Dead(DeadType deadType = DeadType.Common)",
+    "body": "var stateMachine = new _003CDead_003Ed__190\n{\n    _003C_003Et__builder = AsyncVoidMethodBuilder.Create(),\n    _003C_003E4__this = this,\n    deadType = deadType,\n    _003C_003E1__state = -1\n};\nstateMachine._003C_003Et__builder.Start(ref stateMachine);",
+    "evidence": [
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d876cc.c",
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d876cc.asm.txt",
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d876cc.annotated.txt"
+    ]
+  },
+  {
+    "rva": "0x3d8776c",
+    "token": "0x6000F5D",
+    "declaration": "protected virtual void StartListeningEvent()",
+    "body": "global::EventModule.EventManager.Instance.StartListening(\"HasHexOpen\", UpdateArchitectureTarget);",
+    "evidence": [
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d8776c.c",
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d8776c.asm.txt",
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d8776c.annotated.txt"
+    ]
+  },
+  {
+    "rva": "0x3d87828",
+    "token": "0x6000F5E",
+    "declaration": "protected virtual void StopListeningEvent()",
+    "body": "global::EventModule.EventManager.Instance.StopListening(\"HasHexOpen\", UpdateArchitectureTarget);",
+    "evidence": [
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d87828.c",
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d87828.asm.txt",
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d87828.annotated.txt"
+    ]
+  },
+  {
+    "rva": "0x3d878e4",
+    "token": "0x6000F5F",
+    "declaration": "protected virtual void DeadCallBack(DeadType deadType = DeadType.Common)",
+    "body": "if (!Application.isPlaying)\n    return;\nif (global::SDKModule.ABTestManager.Instance.GamePlayImprove01IsBTest\n    && PropertyTemp != null && PropertyTemp.rareLevel == RareLevel.SSSR)\n    BattleGameSceneManager.Instance.RemoveLegendaryUnit(PropertyTemp.id, isEnemy);\nif (SkillType != GameEventType.OnTime && !isClone)\n    OnDeadSkill();\nDeadUnitInfo deadUnit = new DeadUnitInfo(RoleInfo, isEnemy, CardLevel, PropertyTemp.rareLevel,\n    RelativeCardID, CardFettersType, AtkWayType);\nif (isEnemy)\n    AIBehaviourManager.Instance.AddDeadUnit(_instanceID, deadUnit);\nelse\n    BattleGameManager.Instance.AddDeadUnit(_instanceID, deadUnit);\nif (!global::CheatControl.DisableDeathEffect)\n    global::AssetsModule.EffectManager.Instance.ShowEffect(\n        \"Assets/_Res/Addressable/EffectsBundle/Effects/RoleDead.prefab\", transform.position, default, 1f);\nif (HWGPUInstancerManager.Instance != null\n    && (HWGPUInstancerManager.Instance.IsDestroying || !HWGPUInstancerManager.Instance.IsCrowdManagerAlive))\n{\n    var prefabs = GetComponentsInChildren<global::GPUInstancer.CrowdAnimations.GPUICrowdPrefab>(true);\n    for (int i = 0; i < prefabs.Length; i++)\n        if (prefabs[i] != null && (int)prefabs[i].state != 0)\n            prefabs[i].state = (global::GPUInstancer.PrefabInstancingState)0;\n}\ngameObject.SetActive(false);\nglobal::AssetsModule.ObjPoolManager.Instance.Recycle(gameObject);\nif (deadType == DeadType.HellFire)\n    HellFireDeadCallBack();\nOnRecycle();\nhadInit = false;\nSetAiCanMove(false);",
+    "evidence": [
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d878e4.c",
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d878e4.asm.txt",
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d878e4.annotated.txt"
+    ]
+  },
+  {
+    "rva": "0x3d8bc2c",
+    "token": "0x6000F81",
+    "declaration": "public void RemoveHPUI()",
+    "body": "if (global::GameConfigModule.GameConfigManager.GameGlobalConfig.useNewFloatingText)\n{\n    FloatingTextManager.Instance.RemoveTextByTarget(transform);\n    return;\n}\nif (hpBarUI != null)\n    global::UIModuleO.UIHUDManager.Instance.RecycleHealthBatHUD(hpBarUI);\nhpBarUI = null;",
+    "evidence": [
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d8bc2c.c",
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d8bc2c.asm.txt",
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d8bc2c.annotated.txt"
+    ]
+  },
+  {
+    "rva": "0x3d8cdd8",
+    "token": "0x6000F8A",
+    "declaration": "public void RecycleOnBattleEnd()",
+    "body": "if (!hadRecycle)\n    OnRecycle();\nhadInit = false;\nSetAiCanMove(false);\ngameObject.SetActive(false);\nglobal::AssetsModule.ObjPoolManager.Instance.Recycle(gameObject);",
+    "evidence": [
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d8cdd8.c",
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d8cdd8.asm.txt",
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d8cdd8.annotated.txt"
+    ]
+  },
+  {
+    "rva": "0x3d8ce8c",
+    "token": "0x6000F8B",
+    "declaration": "protected virtual void OnRecycle()",
+    "body": "if (global::SDKModule.ABTestManager.Instance.UnitCollisionEnableIsBTest)\n    ApplyOccupancyPenalty(false);\nSetPathfindingEnabled(false);\nif (_currentHex != null)\n{\n    _currentHex.RemoveRole(_instanceID, !isEnemy, this);\n    _currentHex = null;\n}\nRoleShadowManager.Instance.Unbind(this);\nif (gpuInstanceAnimationBehaviour != null)\n    gpuInstanceAnimationBehaviour.ResetState();\ntransform.DOKill();\ntransform.localScale = new Vector3(_bornScaleX, _bornScaleX, _bornScaleX);\nfindTargeting = false;\nFrontAtkTime = 0f;\nfrontWoundTime = 0f;\nskillCompleteTime = 0f;\nSkillNumber = 0f;\nSkillType = 0;\nisClone = false;\n_tempRangePercent = 0f;\n_tempBuildingDamagePercent = 0f;\ndontWound = false;\nSetAiCanMove(false);\nglobal::EventModule.EventManager.Instance.StopListening(\"HasHexOpen\", UpdateArchitectureTarget);\nisSummonKuLou = false;\nisConvertSkeleton = false;\nhadRecycle = true;\nRemoveHPUI();\nClearDizzyState();\nClearFreezeState();\naddSpeedIng = false;\nObject.Destroy(addSpeedEff);\nObject.Destroy(addAttackEff);\nObject.Destroy(addMissEff);\nObject.Destroy(charmEff);\ncharmEff = null;\nisShocking = false;\nlinkRoleList.Clear();\nshockTW.Kill();\nlinkNum = 0f;\nTalentTreeData = null;\nif (allTalent != null)\n{\n    for (int i = 0; i < allTalent.Count; i++)\n        allTalent[i].Clear();\n    allTalent.Clear();\n}\nallTalent = null;\nif (allTalent2 != null)\n{\n    for (int i = 0; i < allTalent2.Count; i++)\n        allTalent2[i].Clear();\n    allTalent2.Clear();\n}\nStealthIng = false;\nstealNum = 0f;\nallTalent2 = null;\nAttackObj = null;\nif (global::SDKModule.ABTestManager.Instance.GamePlayImprove01IsBTest\n    && gpuInstanceAnimationBehaviour != null && originalAttackAnimationSpeed > 0f)\n{\n    gpuInstanceAnimationBehaviour.ChangeAnimatorSpeed(GPUInstanceAnimationBehaviour.AnimationName.Attack, originalAttackAnimationSpeed);\n    originalAttackAnimationSpeed = 0f;\n}\nif (_pathfindingTarget != null)\n{\n    Object.Destroy(_pathfindingTarget);\n    _pathfindingTarget = null;\n}",
+    "evidence": [
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d8ce8c.c",
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d8ce8c.asm.txt",
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d8ce8c.annotated.txt"
+    ]
+  },
+  {
+    "rva": "0x3d8d3f8",
+    "token": "0x6000F94",
+    "declaration": "private void ClearFreezeState()",
+    "body": "isFreeze = false;\nfreezeEndTime = 0f;\nif (IceBall != null)\n    IceBall.SetActive(false);",
+    "evidence": [
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d8d3f8.c",
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d8d3f8.asm.txt",
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d8d3f8.annotated.txt"
+    ]
+  },
+  {
+    "rva": "0x3d8d5a8",
+    "token": "0x6000F8D",
+    "declaration": "private void SyncCurrentHexCampRegistration(bool previousIsEnemy)",
+    "body": "HexBehaviour newHex;\nHexManager.TryGetHexAt(transform.position, out newHex);\nif (_currentHex != null && _currentHex != newHex)\n    _currentHex.RemoveRole(_instanceID, !previousIsEnemy, this);\nif (newHex != null)\n    newHex.RefreshRoleCamp(_instanceID, !isEnemy, this);\n_currentHex = newHex;",
+    "evidence": [
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d8d5a8.c",
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d8d5a8.asm.txt",
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d8d5a8.annotated.txt"
+    ]
+  },
+  {
+    "rva": "0x3d8d738",
+    "token": "0x6000F90",
+    "declaration": "private void ApplyHexPosition(HexBehaviour newHex)",
+    "body": "if (newHex == null || newHex == _currentHex)\n    return;\nif (_currentHex != null)\n    _currentHex.RemoveRole(_instanceID, !isEnemy, this);\nnewHex.AddRole(_instanceID, !isEnemy, this);\n_currentHex = newHex;",
+    "evidence": [
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d8d738.c",
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d8d738.asm.txt",
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d8d738.annotated.txt"
+    ]
+  },
+  {
+    "rva": "0x3d8e1e4",
+    "token": "0x6000FA2",
+    "declaration": "public RoleBehaviour()",
+    "body": "_bornFollowerRadius = -1f;\n_lastFindTargetRange = -1f;\n_lastRoleTargetHexDistance = -1;\nfirstSkill = true;\nattackDamageDelay = new List<float>();\nlinkRoleList = new List<RoleBehaviour>();\nfollowerEntityCurrentSpeed = -1f;\nfollowerEntityCurrentRadius = -1f;\nfollowerEntityLastSearchPathTime = -999f;\n_followerEntityLastTargetSyncTime = -999f;\ntargetList = new List<RoleBehaviour>();\nallPos = new List<Vector3>();\nallPosLength = new List<float>();\n_targetRemainingPathPoints = new List<Vector3>(32);\n_damageTextBuilder = new StringBuilder(16);\n_attackWallStateEnterTime = -1f;\n_lastWatchdogMoveTime = -1f;",
+    "evidence": [
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d8e1e4.c",
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d8e1e4.asm.txt",
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d8e1e4.annotated.txt"
+    ]
+  },
+  {
+    "rva": "0x3d90878",
+    "token": "0x6000FB3",
+    "declaration": "void System.Runtime.CompilerServices.IAsyncStateMachine.MoveNext()",
+    "body": "RoleBehaviour role = _003C_003E4__this;\ntry\n{\n    UniTask.Awaiter awaiter;\n    if (_003C_003E1__state != 0)\n    {\n        if (role.isDead)\n        {\n            _003C_003E1__state = -2;\n            _003C_003Et__builder.SetResult();\n            return;\n        }\n        role.waitToChangeAnimationing = false;\n        role.SetPathfindingEnabled(false);\n        role.isDead = true;\n        if (role._currentHex != null)\n            role._currentHex.RemoveRole(role._instanceID, !role.isEnemy, role);\n        role.transform.DOKill();\n        global::EventModule.EventManager.Instance.TriggerEvent(\"HasRoleDead\", role.gameObject);\n        SubGameBuffManager.Instance.OnFriendlyUnitDead(role.isEnemy, role.transform.position);\n        role.RemoveHPUI();\n        int coin = global::SDKModule.ABTestManager.Instance.GamePlayImprove01IsBTest ? 1 : 5;\n        coin = unchecked(coin + DailyBlessManager.Instance.KillUnitCoinHandle(role.isEnemy));\n        SubGameBuffManager.Instance.ModifyKillCoin(ref coin, role.isEnemy);\n        if (role.isEnemy)\n        {\n            global::UIModuleO.UITextEffectManager.Instance.ShowTextEffect(\n                string.Format(\"<color=#FFFF00>+{0}</color>\", coin), role.transform.position,\n                global::UIModuleO.TextEffImgType.Coin, 1f, global::UIModuleO.PositionType.WorldPosition);\n            BattleGameManager.Instance.ChangeCoin(coin);\n        }\n        else if (!(global::GameConfigModule.GameConfigManager.GameGlobalConfig.enableReduceArena12EnemyDifficulty\n            && global::SDKModule.ABTestManager.Instance.GamePlayImprove01IsBTest\n            && (CoreGameManager.NowPlayEdArenaID == \"1001\" || CoreGameManager.NowPlayEdArenaID == \"1002\")))\n        {\n            AIBehaviourManager.Instance.ChangeCoin(coin);\n        }\n        role.StopListeningEvent();\n        role.SetAnimation(GPUInstanceAnimationBehaviour.AnimationName.Dead, true);\n        role.SetAiCanMove(false);\n        if (role.isEnemy)\n            BattleGameSceneManager.Instance.RemoveEnemyRole(role.gameObject, true);\n        else\n            BattleGameSceneManager.Instance.RemovePlayerRole(role.gameObject, true);\n        float delay = role.gpuInstanceAnimationBehaviour.GetAnimationLength(GPUInstanceAnimationBehaviour.AnimationName.Dead) + -0.1f;\n        delay = delay <= 0f ? 0.1f : delay;\n        awaiter = UniTask.WaitForSeconds(delay, false, PlayerLoopTiming.Update, default, false).GetAwaiter();\n        if (!awaiter.IsCompleted)\n        {\n            _003C_003E1__state = 0;\n            _003C_003Eu__1 = awaiter;\n            _003C_003Et__builder.AwaitUnsafeOnCompleted(ref awaiter, ref this);\n            return;\n        }\n    }\n    else\n    {\n        awaiter = _003C_003Eu__1;\n        _003C_003Eu__1 = default;\n        _003C_003E1__state = -1;\n    }\n    awaiter.GetResult();\n    RoleShadowManager.Instance.Unbind(role);\n    role.DeadCallBack(deadType);\n}\ncatch (global::System.Exception exception)\n{\n    _003C_003E1__state = -2;\n    _003C_003Et__builder.SetException(exception);\n    return;\n}\n_003C_003E1__state = -2;\n_003C_003Et__builder.SetResult();",
+    "evidence": [
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d90878.c",
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d90878.asm.txt",
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d90878.annotated.txt"
+    ]
+  },
+  {
+    "rva": "0x3d914e4",
+    "token": "0x6000FB4",
+    "declaration": "void System.Runtime.CompilerServices.IAsyncStateMachine.SetStateMachine(IAsyncStateMachine stateMachine)",
+    "body": "_003C_003Et__builder.SetStateMachine(stateMachine);",
+    "evidence": [
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d914e4.c",
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d914e4.asm.txt",
+      "C:\\Users\\luxinyu\\Documents\\Codex\\2026-10-19\\x20\\work\\parallel-44-battle\\ida\\pseudocode\\0x3d914e4.annotated.txt"
+    ]
+  }
+]

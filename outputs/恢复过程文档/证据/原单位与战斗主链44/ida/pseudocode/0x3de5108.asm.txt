@@ -1,0 +1,17 @@
+0x3de5108: STR             D8, [SP,#var_20]!
+0x3de510c: STP             X30, X19, [SP,#0x20+var_10]
+0x3de5110: LDRB            W8, [X0,#0x50]
+0x3de5114: CBZ             W8, loc_3DE5140
+0x3de5118: LDRB            W8, [X0,#0x64]
+0x3de511c: MOV             X19, X0
+0x3de5120: CBZ             W8, loc_3DE5140
+0x3de5124: LDR             S8, [X19,#0x68]
+0x3de5128: FCMP            S8, #0.0
+0x3de512c: B.LE            loc_3DE5140
+0x3de5130: MOV             X0, XZR
+0x3de5134: BL              UnityEngine.Time$$get_deltaTime
+0x3de5138: FSUB            S0, S8, S0
+0x3de513c: STR             S0, [X19,#0x68]
+0x3de5140: LDP             X30, X19, [SP,#0x20+var_10]
+0x3de5144: LDR             D8, [SP+0x20+var_20],#0x20
+0x3de5148: RET

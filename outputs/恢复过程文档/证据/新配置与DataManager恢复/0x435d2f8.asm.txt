@@ -1,0 +1,77 @@
+0x435d2f8: fe0f1cf8 str      x30, [sp, #-0x40]!
+0x435d2fc: f85f01a9 stp      x24, x23, [sp, #0x10]
+0x435d300: f65702a9 stp      x22, x21, [sp, #0x20]
+0x435d304: f44f03a9 stp      x20, x19, [sp, #0x30]
+0x435d308: 176502f0 adrp     x23, #0x9000000
+0x435d30c: b63c02b0 adrp     x22, #0x8af2000
+0x435d310: b53c02b0 adrp     x21, #0x8af2000
+0x435d314: e8425a39 ldrb     w8, [x23, #0x690]
+0x435d318: d6ea44f9 ldr      x22, [x22, #0x9d0] // System.Collections.Generic.Dictionary<int, EnemyDifficultLevelInfos>_TypeInfo
+0x435d31c: b5ee44f9 ldr      x21, [x21, #0x9d8] // Method$System.Collections.Generic.Dictionary<int, EnemyDifficultLevelInfos>..ctor()
+0x435d320: f40301aa mov      x20, x1
+0x435d324: f30300aa mov      x19, x0
+0x435d328: 48020037 tbnz     w8, #0, #0x435d370
+0x435d32c: a03c02b0 adrp     x0, #0x8af2000
+0x435d330: 00f044f9 ldr      x0, [x0, #0x9e0] // Method$System.Collections.Generic.Dictionary<int, EnemyDifficultLevelInfos>.Add()
+0x435d334: d37fe397 bl       #0x3c3d280
+0x435d338: a03c02b0 adrp     x0, #0x8af2000
+0x435d33c: 00ec44f9 ldr      x0, [x0, #0x9d8] // Method$System.Collections.Generic.Dictionary<int, EnemyDifficultLevelInfos>..ctor()
+0x435d340: d07fe397 bl       #0x3c3d280
+0x435d344: a03c02b0 adrp     x0, #0x8af2000
+0x435d348: 00e844f9 ldr      x0, [x0, #0x9d0] // System.Collections.Generic.Dictionary<int, EnemyDifficultLevelInfos>_TypeInfo
+0x435d34c: cd7fe397 bl       #0x3c3d280
+0x435d350: e03b02b0 adrp     x0, #0x8ada000
+0x435d354: 009c42f9 ldr      x0, [x0, #0x538] // Method$System.Collections.Generic.List<EnemyDifficultLevelInfos>.get_Count()
+0x435d358: ca7fe397 bl       #0x3c3d280
+0x435d35c: a03c02b0 adrp     x0, #0x8af2000
+0x435d360: 00f444f9 ldr      x0, [x0, #0x9e8] // Method$System.Collections.Generic.List<EnemyDifficultLevelInfos>.get_Item()
+0x435d364: c77fe397 bl       #0x3c3d280
+0x435d368: 28008052 mov      w8, #1
+0x435d36c: e8421a39 strb     w8, [x23, #0x690]
+0x435d370: 748e00f9 str      x20, [x19, #0x118]
+0x435d374: c00240f9 ldr      x0, [x22]
+0x435d378: 5380e397 bl       #0x3c3d4c4
+0x435d37c: a10240f9 ldr      x1, [x21]
+0x435d380: f40300aa mov      x20, x0
+0x435d384: e6aba094 bl       #0x6b8831c // System.Collections.Generic.Dictionary<int, object>$$.ctor
+0x435d388: 608e40f9 ldr      x0, [x19, #0x118]
+0x435d38c: 749200f9 str      x20, [x19, #0x120]
+0x435d390: 200400b4 cbz      x0, #0x435d414
+0x435d394: b73c02b0 adrp     x23, #0x8af2000
+0x435d398: b83c02b0 adrp     x24, #0x8af2000
+0x435d39c: f7f644f9 ldr      x23, [x23, #0x9e8] // Method$System.Collections.Generic.List<EnemyDifficultLevelInfos>.get_Item()
+0x435d3a0: 18f344f9 ldr      x24, [x24, #0x9e0] // Method$System.Collections.Generic.Dictionary<int, EnemyDifficultLevelInfos>.Add()
+0x435d3a4: f4031f2a mov      w20, wzr
+0x435d3a8: 081840b9 ldr      w8, [x0, #0x18]
+0x435d3ac: 9f02086b cmp      w20, w8
+0x435d3b0: 4a030054 b.ge     #0x435d418
+0x435d3b4: e20240f9 ldr      x2, [x23]
+0x435d3b8: 759240f9 ldr      x21, [x19, #0x120]
+0x435d3bc: e103142a mov      w1, w20
+0x435d3c0: abc74f94 bl       #0x574f26c // System.Collections.Generic.List<object>$$get_Item
+0x435d3c4: 800200b4 cbz      x0, #0x435d414
+0x435d3c8: 000840f9 ldr      x0, [x0, #0x10]
+0x435d3cc: e1031faa mov      x1, xzr
+0x435d3d0: a859f097 bl       #0x3f73a70 // ToolModule.StringTool$$ToInt
+0x435d3d4: 688e40f9 ldr      x8, [x19, #0x118]
+0x435d3d8: e80100b4 cbz      x8, #0x435d414
+0x435d3dc: e20240f9 ldr      x2, [x23]
+0x435d3e0: f603002a mov      w22, w0
+0x435d3e4: e00308aa mov      x0, x8
+0x435d3e8: e103142a mov      w1, w20
+0x435d3ec: a0c74f94 bl       #0x574f26c // System.Collections.Generic.List<object>$$get_Item
+0x435d3f0: 350100b4 cbz      x21, #0x435d414
+0x435d3f4: 030340f9 ldr      x3, [x24]
+0x435d3f8: e20300aa mov      x2, x0
+0x435d3fc: e00315aa mov      x0, x21
+0x435d400: e103162a mov      w1, w22
+0x435d404: 27afa094 bl       #0x6b890a0 // System.Collections.Generic.Dictionary<int, object>$$Add
+0x435d408: 608e40f9 ldr      x0, [x19, #0x118]
+0x435d40c: 94060011 add      w20, w20, #1
+0x435d410: c0fcffb5 cbnz     x0, #0x435d3a8
+0x435d414: 2e80e397 bl       #0x3c3d4cc
+0x435d418: f44f43a9 ldp      x20, x19, [sp, #0x30]
+0x435d41c: f65742a9 ldp      x22, x21, [sp, #0x20]
+0x435d420: f85f41a9 ldp      x24, x23, [sp, #0x10]
+0x435d424: fe0744f8 ldr      x30, [sp], #0x40
+0x435d428: c0035fd6 ret      

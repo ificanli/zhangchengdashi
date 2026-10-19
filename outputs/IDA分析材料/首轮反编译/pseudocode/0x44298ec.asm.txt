@@ -1,0 +1,49 @@
+0x44298ec: STR             X30, [SP,#var_20]!
+0x44298f0: STP             X20, X19, [SP,#0x20+var_10]
+0x44298f4: ADRP            X20, #byte_9000BE3@PAGE
+0x44298f8: LDRB            W8, [X20,#byte_9000BE3@PAGEOFF]
+0x44298fc: MOV             X19, X0
+0x4429900: TBNZ            W8, #0, loc_4429918
+0x4429904: ADRP            X0, #off_8ACE708@PAGE
+0x4429908: LDR             X0, [X0,#off_8ACE708@PAGEOFF]; unk_8D0DDC0
+0x442990c: BL              unk_3C3D280
+0x4429910: MOV             W8, #1
+0x4429914: STRB            W8, [X20,#byte_9000BE3@PAGEOFF]
+0x4429918: LDRB            W8, [X19,#0xA1]
+0x442991c: CBZ             W8, loc_442992C
+0x4429920: LDP             X20, X19, [SP,#0x20+var_10]
+0x4429924: LDR             X30, [SP+0x20+var_20],#0x20
+0x4429928: RET
+0x442992c: LDR             X8, [X19,#0x1E0]
+0x4429930: CBZ             X8, loc_44299AC
+0x4429934: LDR             W9, [X8,#0x18]
+0x4429938: CMP             W9, #1
+0x442993c: B.LT            loc_442996C
+0x4429940: LDR             X8, [X19,#0x1D8]
+0x4429944: CBZ             X8, loc_44299AC
+0x4429948: LDR             W9, [X8,#0x18]
+0x442994c: CMP             W9, #0
+0x4429950: B.GT            loc_4429920
+0x4429954: LDRB            W9, [X19,#0xA0]
+0x4429958: CBZ             W9, loc_4429988
+0x442995c: MOV             X0, X19
+0x4429960: LDP             X20, X19, [SP,#0x20+var_10]
+0x4429964: LDR             X30, [SP+0x20+var_20],#0x20
+0x4429968: B               GameModule.HexBehaviour$$EncroachmentEnemy
+0x442996c: LDR             X8, [X19,#0x1D8]
+0x4429970: CBZ             W9, loc_442997C
+0x4429974: CBNZ            X8, loc_4429988
+0x4429978: B               loc_44299AC
+0x442997c: CBZ             X8, loc_44299AC
+0x4429980: LDR             W9, [X8,#0x18]
+0x4429984: CBZ             W9, loc_4429920
+0x4429988: LDR             W8, [X8,#0x18]
+0x442998c: CMP             W8, #1
+0x4429990: B.LT            loc_4429920
+0x4429994: LDRB            W8, [X19,#0xA0]
+0x4429998: CBNZ            W8, loc_4429920
+0x442999c: MOV             X0, X19
+0x44299a0: LDP             X20, X19, [SP,#0x20+var_10]
+0x44299a4: LDR             X30, [SP+0x20+var_20],#0x20
+0x44299a8: B               GameModule.HexBehaviour$$EncroachmentPlayer
+0x44299ac: BL              unk_3C3D4CC

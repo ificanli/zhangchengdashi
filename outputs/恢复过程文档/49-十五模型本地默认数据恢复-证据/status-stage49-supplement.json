@@ -1,0 +1,63 @@
+{
+  "stage": "complete",
+  "methods": [
+    {
+      "name": "DataModule.SeasonData$$.ctor",
+      "address": 70689316,
+      "end": 70689512,
+      "signature": "void DataModule_SeasonData___ctor (DataModule_SeasonData_o* __this, const MethodInfo* method);",
+      "prototype": "void SeasonDataCtor(void* self,const MethodInfo* method);",
+      "method_token": "0x600593D",
+      "file": "Assets/Scripts/Assembly-CSharp/DataModule/SeasonData.cs",
+      "note": "Only direct child constructor of original PlayerCoreData ctor; no gameplay/SDK expansion",
+      "range_analysis": 1,
+      "direct_callees": [
+        {
+          "callsite": "0x436a2ac",
+          "address": "0x6c05f60",
+          "name": "System.Collections.Generic.Dictionary<object, object>$$.ctor",
+          "signature": "void System_Collections_Generic_Dictionary_object__object____ctor (System_Collections_Generic_Dictionary_object__object__o* __this, const MethodInfo_6C05F60* method);"
+        },
+        {
+          "callsite": "0x436a2c4",
+          "address": "0x6c05f60",
+          "name": "System.Collections.Generic.Dictionary<object, object>$$.ctor",
+          "signature": "void System_Collections_Generic_Dictionary_object__object____ctor (System_Collections_Generic_Dictionary_object__object__o* __this, const MethodInfo_6C05F60* method);"
+        },
+        {
+          "callsite": "0x436a2e4",
+          "address": "0x76c770c",
+          "name": "System.Object$$.ctor",
+          "signature": "void System_Object___ctor (Il2CppObject* __this, const MethodInfo* method);"
+        }
+      ],
+      "prototype_applied": true,
+      "actual_function_start": "0x436a224",
+      "actual_function_end": "0x436a2e8",
+      "pseudocode_chars": 901,
+      "unresolved_jumpout": false
+    },
+    {
+      "name": "Readonly.PlayerArenaData.CtorOutlinedBlock",
+      "address": 139913184,
+      "end": 139913232,
+      "signature": "Outlined block entered after original ctor saved X19/X20/X21/X22; not independent managed method",
+      "prototype": "void ArenaCtorOutlinedBlock(void);",
+      "method_token": null,
+      "file": "Assets/Scripts/Assembly-CSharp/DataModule/PlayerArenaData.cs",
+      "note": "Readonly ARM64 block for original ctor0x436BFE4; need branch side effects and return-to0x436C008; do not invent standalone source method",
+      "range_analysis": 1,
+      "direct_callees": [],
+      "prototype_applied": true,
+      "actual_function_start": "0x856e7e0",
+      "actual_function_end": "0x856e810",
+      "pseudocode_chars": 76,
+      "unresolved_jumpout": true
+    }
+  ],
+  "image_base": "0x0",
+  "type_errors": 0,
+  "hexrays_available": true,
+  "hexrays_version": "9.4.0.260713",
+  "database_saved": true
+}

@@ -1,0 +1,21 @@
+0x44cd658: STP             X30, X21, [SP,#var_20]!
+0x44cd65c: STP             X20, X19, [SP,#0x20+var_10]
+0x44cd660: ADRP            X21, #byte_90010BF@PAGE
+0x44cd664: ADRP            X20, #off_8B00D78@PAGE
+0x44cd668: LDRB            W8, [X21,#byte_90010BF@PAGEOFF]
+0x44cd66c: LDR             X20, [X20,#off_8B00D78@PAGEOFF]; qword_8D13EE8
+0x44cd670: MOV             X19, X0
+0x44cd674: TBNZ            W8, #0, loc_44CD68C
+0x44cd678: ADRP            X0, #off_8B00D78@PAGE
+0x44cd67c: LDR             X0, [X0,#off_8B00D78@PAGEOFF]; qword_8D13EE8 ; slot
+0x44cd680: BL              il2cpp_codegen_initialize_runtime_metadata
+0x44cd684: MOV             W8, #1
+0x44cd688: STRB            W8, [X21,#byte_90010BF@PAGEOFF]
+0x44cd68c: LDR             X1, [X20]
+0x44cd690: ADD             X0, X19, #0x28 ; '('
+0x44cd694: BL              Unity.Collections.NativeList_TimeData_$$Dispose
+0x44cd698: LDR             X1, [X20]
+0x44cd69c: ADD             X0, X19, #0x30 ; '0'
+0x44cd6a0: LDP             X20, X19, [SP,#0x20+var_10]
+0x44cd6a4: LDP             X30, X21, [SP+0x20+var_20],#0x20
+0x44cd6a8: B               Unity.Collections.NativeList_TimeData_$$Dispose

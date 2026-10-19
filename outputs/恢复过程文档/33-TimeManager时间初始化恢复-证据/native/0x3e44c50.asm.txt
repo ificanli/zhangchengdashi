@@ -1,0 +1,180 @@
+0x3e44c50: STR             X30, [SP,#var_30]!
+0x3e44c54: STP             X22, X21, [SP,#0x30+var_20]
+0x3e44c58: STP             X20, X19, [SP,#0x30+var_10]
+0x3e44c5c: ADRP            X20, #byte_8FFD9F4@PAGE
+0x3e44c60: LDRB            W8, [X20,#byte_8FFD9F4@PAGEOFF]
+0x3e44c64: MOV             X19, X0
+0x3e44c68: TBNZ            W8, #0, loc_3E44CEC
+0x3e44c6c: ADRP            X0, #off_8ACDB30@PAGE
+0x3e44c70: LDR             X0, [X0,#off_8ACDB30@PAGEOFF]; off_8CE6460 ; slot
+0x3e44c74: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3e44c78: ADRP            X0, #off_8ACC8C8@PAGE
+0x3e44c7c: LDR             X0, [X0,#off_8ACC8C8@PAGEOFF]; off_8CE64E8 ; slot
+0x3e44c80: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3e44c84: ADRP            X0, #off_8ACDE40@PAGE
+0x3e44c88: LDR             X0, [X0,#off_8ACDE40@PAGEOFF]; qword_8D12148 ; slot
+0x3e44c8c: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3e44c90: ADRP            X0, #off_8AD5F60@PAGE
+0x3e44c94: LDR             X0, [X0,#off_8AD5F60@PAGEOFF]; qword_8D73748 ; slot
+0x3e44c98: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3e44c9c: ADRP            X0, #off_8AD5290@PAGE
+0x3e44ca0: LDR             X0, [X0,#off_8AD5290@PAGEOFF]; qword_8D73730 ; slot
+0x3e44ca4: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3e44ca8: ADRP            X0, #off_8AD5F68@PAGE
+0x3e44cac: LDR             X0, [X0,#off_8AD5F68@PAGEOFF]; qword_8D73778 ; slot
+0x3e44cb0: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3e44cb4: ADRP            X0, #off_8AD5F70@PAGE
+0x3e44cb8: LDR             X0, [X0,#off_8AD5F70@PAGEOFF]; qword_8D86A60 ; slot
+0x3e44cbc: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3e44cc0: ADRP            X0, #off_8AD5F58@PAGE
+0x3e44cc4: LDR             X0, [X0,#off_8AD5F58@PAGEOFF]; qword_8D73750 ; slot
+0x3e44cc8: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3e44ccc: ADRP            X0, #off_8AD5F78@PAGE
+0x3e44cd0: LDR             X0, [X0,#off_8AD5F78@PAGEOFF]; qword_8D73758 ; slot
+0x3e44cd4: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3e44cd8: ADRP            X0, #off_8AD5F80@PAGE
+0x3e44cdc: LDR             X0, [X0,#off_8AD5F80@PAGEOFF]; qword_8D87B68 ; slot
+0x3e44ce0: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3e44ce4: MOV             W8, #1
+0x3e44ce8: STRB            W8, [X20,#byte_8FFD9F4@PAGEOFF]
+0x3e44cec: STR             XZR, [SP,#0x30+var_28]
+0x3e44cf0: LDR             X0, [X19,#0x58]; self
+0x3e44cf4: CBZ             X0, loc_3E44E74
+0x3e44cf8: MOV             X1, XZR; method
+0x3e44cfc: BL              TimeModuleO.TimeManager.Timer$$IsCompleted
+0x3e44d00: TBZ             W0, #0, loc_3E44E74
+0x3e44d04: LDR             X20, [X19,#0x58]
+0x3e44d08: MOV             X0, X19; self
+0x3e44d0c: BL              TimeModuleO.TimeManager$$GetTimeSpanToZero
+0x3e44d10: CBZ             X20, loc_3E44F1C
+0x3e44d14: MOV             X1, X0; duration
+0x3e44d18: MOV             W2, #1; countdown
+0x3e44d1c: MOV             X0, X20; self
+0x3e44d20: MOV             X3, XZR; method
+0x3e44d24: BL              TimeModuleO.TimeManager.Timer$$Restart
+0x3e44d28: LDR             X8, [X19,#0x30]
+0x3e44d2c: CBZ             X8, loc_3E44D40
+0x3e44d30: LDR             X9, [X8,#0x18]
+0x3e44d34: LDR             X0, [X8,#0x40]
+0x3e44d38: LDR             X1, [X8,#0x28]
+0x3e44d3c: BLR             X9
+0x3e44d40: LDR             X8, [X19,#0x58]
+0x3e44d44: CBZ             X8, loc_3E44F1C
+0x3e44d48: LDR             X1, [X8,#0x20]
+0x3e44d4c: ADRP            X8, #off_8AD5F58@PAGE
+0x3e44d50: LDR             X8, [X8,#off_8AD5F58@PAGEOFF]; qword_8D73750
+0x3e44d54: LDR             X0, [X8]
+0x3e44d58: BL              TimeModuleO.TimeManager$$ChangeTimeInfoEndTime
+0x3e44d5c: ADRP            X21, #off_8ACC8C8@PAGE
+0x3e44d60: LDR             X21, [X21,#off_8ACC8C8@PAGEOFF]; off_8CE64E8
+0x3e44d64: LDR             X0, [X21]; klass
+0x3e44d68: LDR             W8, [X0,#0xE0]
+0x3e44d6c: CBNZ            W8, loc_3E44D74
+0x3e44d70: BL              il2cpp_codegen_runtime_class_init
+0x3e44d74: ADRP            X8, #off_8AD5F80@PAGE
+0x3e44d78: LDR             X8, [X8,#off_8AD5F80@PAGEOFF]; qword_8D87B68
+0x3e44d7c: MOV             X1, XZR
+0x3e44d80: LDR             X0, [X8]
+0x3e44d84: BL              UnityEngine.Debug$$Log
+0x3e44d88: ADRP            X22, #off_8ACDE40@PAGE
+0x3e44d8c: LDR             X22, [X22,#off_8ACDE40@PAGEOFF]; qword_8D12148
+0x3e44d90: LDR             X0, [X22]; method
+0x3e44d94: BL              ToolModule.ManagerBase_object_$$get_Instance
+0x3e44d98: CBZ             X0, loc_3E44F1C
+0x3e44d9c: ADRP            X8, #off_8AD5F60@PAGE
+0x3e44da0: LDR             X8, [X8,#off_8AD5F60@PAGEOFF]; qword_8D73748
+0x3e44da4: MOV             X2, XZR; parameter
+0x3e44da8: MOV             X3, XZR; method
+0x3e44dac: LDR             X1, [X8]; eventName
+0x3e44db0: BL              EventModule.EventManager$$TriggerEvent
+0x3e44db4: MOV             X0, X19; self
+0x3e44db8: BL              TimeModuleO.TimeManager$$GetLocalNetworkTime
+0x3e44dbc: ADRP            X8, #off_8ACDB30@PAGE
+0x3e44dc0: LDR             X8, [X8,#off_8ACDB30@PAGEOFF]; off_8CE6460
+0x3e44dc4: STR             X0, [SP,#0x30+var_28]
+0x3e44dc8: LDR             X8, [X8]
+0x3e44dcc: LDR             W9, [X8,#0xE0]
+0x3e44dd0: CBNZ            W9, loc_3E44DDC
+0x3e44dd4: MOV             X0, X8; klass
+0x3e44dd8: BL              il2cpp_codegen_runtime_class_init
+0x3e44ddc: ADD             X0, SP, #0x30+var_28
+0x3e44de0: MOV             X1, XZR
+0x3e44de4: BL              System.DateTime$$get_DayOfWeek
+0x3e44de8: CMP             W0, #1
+0x3e44dec: B.NE            loc_3E44E74
+0x3e44df0: LDR             X20, [X19,#0x68]
+0x3e44df4: MOV             X0, X19; self
+0x3e44df8: BL              TimeModuleO.TimeManager$$GetTimeSpanToWeek
+0x3e44dfc: CBZ             X20, loc_3E44F1C
+0x3e44e00: MOV             X1, X0; duration
+0x3e44e04: MOV             W2, #1; countdown
+0x3e44e08: MOV             X0, X20; self
+0x3e44e0c: MOV             X3, XZR; method
+0x3e44e10: BL              TimeModuleO.TimeManager.Timer$$Restart
+0x3e44e14: LDR             X8, [X19,#0x40]
+0x3e44e18: CBZ             X8, loc_3E44E2C
+0x3e44e1c: LDR             X9, [X8,#0x18]
+0x3e44e20: LDR             X0, [X8,#0x40]
+0x3e44e24: LDR             X1, [X8,#0x28]
+0x3e44e28: BLR             X9
+0x3e44e2c: LDR             X0, [X21]; klass
+0x3e44e30: LDR             W8, [X0,#0xE0]
+0x3e44e34: CBNZ            W8, loc_3E44E3C
+0x3e44e38: BL              il2cpp_codegen_runtime_class_init
+0x3e44e3c: ADRP            X8, #off_8AD5F70@PAGE
+0x3e44e40: LDR             X8, [X8,#off_8AD5F70@PAGEOFF]; qword_8D86A60
+0x3e44e44: MOV             X1, XZR
+0x3e44e48: LDR             X0, [X8]
+0x3e44e4c: BL              UnityEngine.Debug$$Log
+0x3e44e50: LDR             X0, [X22]; method
+0x3e44e54: BL              ToolModule.ManagerBase_object_$$get_Instance
+0x3e44e58: CBZ             X0, loc_3E44F1C
+0x3e44e5c: ADRP            X8, #off_8AD5290@PAGE
+0x3e44e60: LDR             X8, [X8,#off_8AD5290@PAGEOFF]; qword_8D73730
+0x3e44e64: MOV             X2, XZR; parameter
+0x3e44e68: MOV             X3, XZR; method
+0x3e44e6c: LDR             X1, [X8]; eventName
+0x3e44e70: BL              EventModule.EventManager$$TriggerEvent
+0x3e44e74: LDR             X0, [X19,#0x60]; self
+0x3e44e78: CBZ             X0, loc_3E44F0C
+0x3e44e7c: MOV             X1, XZR; method
+0x3e44e80: BL              TimeModuleO.TimeManager.Timer$$IsCompleted
+0x3e44e84: TBZ             W0, #0, loc_3E44F0C
+0x3e44e88: LDR             X20, [X19,#0x60]
+0x3e44e8c: MOV             X0, X19; self
+0x3e44e90: BL              TimeModuleO.TimeManager$$GetTimeSpanToZeroStandardNetworkTime
+0x3e44e94: CBZ             X20, loc_3E44F1C
+0x3e44e98: MOV             X1, X0; duration
+0x3e44e9c: MOV             W2, #1; countdown
+0x3e44ea0: MOV             X0, X20; self
+0x3e44ea4: MOV             X3, XZR; method
+0x3e44ea8: BL              TimeModuleO.TimeManager.Timer$$Restart
+0x3e44eac: LDR             X8, [X19,#0x38]
+0x3e44eb0: CBZ             X8, loc_3E44EC4
+0x3e44eb4: LDR             X9, [X8,#0x18]
+0x3e44eb8: LDR             X0, [X8,#0x40]
+0x3e44ebc: LDR             X1, [X8,#0x28]
+0x3e44ec0: BLR             X9
+0x3e44ec4: LDR             X8, [X19,#0x60]
+0x3e44ec8: CBZ             X8, loc_3E44F1C
+0x3e44ecc: LDR             X1, [X8,#0x20]
+0x3e44ed0: ADRP            X8, #off_8AD5F78@PAGE
+0x3e44ed4: LDR             X8, [X8,#off_8AD5F78@PAGEOFF]; qword_8D73758
+0x3e44ed8: LDR             X0, [X8]
+0x3e44edc: BL              TimeModuleO.TimeManager$$ChangeTimeInfoEndTime
+0x3e44ee0: ADRP            X8, #off_8ACDE40@PAGE
+0x3e44ee4: LDR             X8, [X8,#off_8ACDE40@PAGEOFF]; qword_8D12148
+0x3e44ee8: LDR             X0, [X8]; method
+0x3e44eec: BL              ToolModule.ManagerBase_object_$$get_Instance
+0x3e44ef0: CBZ             X0, loc_3E44F1C
+0x3e44ef4: ADRP            X8, #off_8AD5F68@PAGE
+0x3e44ef8: LDR             X8, [X8,#off_8AD5F68@PAGEOFF]; qword_8D73778
+0x3e44efc: MOV             X2, XZR; parameter
+0x3e44f00: MOV             X3, XZR; method
+0x3e44f04: LDR             X1, [X8]; eventName
+0x3e44f08: BL              EventModule.EventManager$$TriggerEvent
+0x3e44f0c: LDP             X20, X19, [SP,#0x30+var_10]
+0x3e44f10: LDP             X22, X21, [SP,#0x30+var_20]
+0x3e44f14: LDR             X30, [SP+0x30+var_30],#0x30
+0x3e44f18: RET
+0x3e44f1c: BL              il2cpp_codegen_raise_null_reference_exception

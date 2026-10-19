@@ -1,0 +1,833 @@
+{
+  "scope": "IDA known xrefs; absence is not proof of no inlined writes",
+  "results": [
+    {
+      "address": "0x7301010",
+      "name": "GameFramework.Login.ILoginProcedure$$get_accountType",
+      "group": "methods",
+      "direct": [],
+      "secondLevel": []
+    },
+    {
+      "address": "0x7301068",
+      "name": "GameFramework.Login.ILoginProcedure$$set_accountType",
+      "group": "methods",
+      "direct": [],
+      "secondLevel": []
+    },
+    {
+      "address": "0x7301214",
+      "name": "GameFramework.Login.ILoginProcedure$$.cctor",
+      "group": "methods",
+      "direct": [],
+      "secondLevel": []
+    },
+    {
+      "address": "0x434d56c",
+      "name": "DataModule.DataManager$$ChooseConflict",
+      "group": "methods",
+      "direct": [],
+      "secondLevel": []
+    },
+    {
+      "address": "0x8CE8C58",
+      "name": "GameFramework.Login.ILoginProcedure_TypeInfo",
+      "purpose": "incoming type refs may inline accountType field writes; inspect only actual startup assignment producers",
+      "group": "metadataGlobals",
+      "direct": [
+        {
+          "from": "0x7171ea8",
+          "to": "0x8ce8c58",
+          "type": 1,
+          "instruction": "LDR             X0, [X0,#off_8AF5540@PAGEOFF]; off_8CE8C58 ; slot",
+          "metadata_preceding_method": {
+            "Address": 118955592,
+            "Name": "GameFramework.DataManagerBase$$SaveLocalData",
+            "Signature": "void GameFramework_DataManagerBase__SaveLocalData (GameFramework_DataManagerBase_o* __this, System_String_o* ___cf_, const MethodInfo* method);",
+            "TypeSignature": "viii"
+          }
+        },
+        {
+          "from": "0x7172128",
+          "to": "0x8ce8c58",
+          "type": 1,
+          "instruction": "LDR             X21, [X21,#off_8AF5540@PAGEOFF]; off_8CE8C58",
+          "metadata_preceding_method": {
+            "Address": 118955592,
+            "Name": "GameFramework.DataManagerBase$$SaveLocalData",
+            "Signature": "void GameFramework_DataManagerBase__SaveLocalData (GameFramework_DataManagerBase_o* __this, System_String_o* ___cf_, const MethodInfo* method);",
+            "TypeSignature": "viii"
+          }
+        },
+        {
+          "from": "0x717212c",
+          "to": "0x8ce8c58",
+          "type": 3,
+          "instruction": "LDR             X0, [X21]; klass",
+          "metadata_preceding_method": {
+            "Address": 118955592,
+            "Name": "GameFramework.DataManagerBase$$SaveLocalData",
+            "Signature": "void GameFramework_DataManagerBase__SaveLocalData (GameFramework_DataManagerBase_o* __this, System_String_o* ___cf_, const MethodInfo* method);",
+            "TypeSignature": "viii"
+          }
+        },
+        {
+          "from": "0x717214c",
+          "to": "0x8ce8c58",
+          "type": 1,
+          "instruction": "LDR             X0, [X0,#off_8AF5540@PAGEOFF]; off_8CE8C58 ; slot",
+          "metadata_preceding_method": {
+            "Address": 118955592,
+            "Name": "GameFramework.DataManagerBase$$SaveLocalData",
+            "Signature": "void GameFramework_DataManagerBase__SaveLocalData (GameFramework_DataManagerBase_o* __this, System_String_o* ___cf_, const MethodInfo* method);",
+            "TypeSignature": "viii"
+          }
+        },
+        {
+          "from": "0x717215c",
+          "to": "0x8ce8c58",
+          "type": 3,
+          "instruction": "LDR             X8, [X21]",
+          "metadata_preceding_method": {
+            "Address": 118955592,
+            "Name": "GameFramework.DataManagerBase$$SaveLocalData",
+            "Signature": "void GameFramework_DataManagerBase__SaveLocalData (GameFramework_DataManagerBase_o* __this, System_String_o* ___cf_, const MethodInfo* method);",
+            "TypeSignature": "viii"
+          }
+        },
+        {
+          "from": "0x7172170",
+          "to": "0x8ce8c58",
+          "type": 3,
+          "instruction": "LDR             X8, [X21]",
+          "metadata_preceding_method": {
+            "Address": 118955592,
+            "Name": "GameFramework.DataManagerBase$$SaveLocalData",
+            "Signature": "void GameFramework_DataManagerBase__SaveLocalData (GameFramework_DataManagerBase_o* __this, System_String_o* ___cf_, const MethodInfo* method);",
+            "TypeSignature": "viii"
+          }
+        },
+        {
+          "from": "0x71722d0",
+          "to": "0x8ce8c58",
+          "type": 1,
+          "instruction": "LDR             X21, [X21,#off_8AF5540@PAGEOFF]; off_8CE8C58",
+          "metadata_preceding_method": {
+            "Address": 118956728,
+            "Name": "GameFramework.DataManagerBase$$T½{LGZ",
+            "Signature": "void GameFramework_DataManagerBase__T__LGZ (GameFramework_DataManagerBase_o* __this, System_String_o* ___cf_, const MethodInfo* method);",
+            "TypeSignature": "viii"
+          }
+        },
+        {
+          "from": "0x71722f0",
+          "to": "0x8ce8c58",
+          "type": 1,
+          "instruction": "LDR             X0, [X0,#off_8AF5540@PAGEOFF]; off_8CE8C58 ; slot",
+          "metadata_preceding_method": {
+            "Address": 118956728,
+            "Name": "GameFramework.DataManagerBase$$T½{LGZ",
+            "Signature": "void GameFramework_DataManagerBase__T__LGZ (GameFramework_DataManagerBase_o* __this, System_String_o* ___cf_, const MethodInfo* method);",
+            "TypeSignature": "viii"
+          }
+        },
+        {
+          "from": "0x7172300",
+          "to": "0x8ce8c58",
+          "type": 3,
+          "instruction": "LDR             X0, [X21]; klass",
+          "metadata_preceding_method": {
+            "Address": 118956728,
+            "Name": "GameFramework.DataManagerBase$$T½{LGZ",
+            "Signature": "void GameFramework_DataManagerBase__T__LGZ (GameFramework_DataManagerBase_o* __this, System_String_o* ___cf_, const MethodInfo* method);",
+            "TypeSignature": "viii"
+          }
+        },
+        {
+          "from": "0x7172320",
+          "to": "0x8ce8c58",
+          "type": 1,
+          "instruction": "LDR             X0, [X0,#off_8AF5540@PAGEOFF]; off_8CE8C58 ; slot",
+          "metadata_preceding_method": {
+            "Address": 118956728,
+            "Name": "GameFramework.DataManagerBase$$T½{LGZ",
+            "Signature": "void GameFramework_DataManagerBase__T__LGZ (GameFramework_DataManagerBase_o* __this, System_String_o* ___cf_, const MethodInfo* method);",
+            "TypeSignature": "viii"
+          }
+        },
+        {
+          "from": "0x7172330",
+          "to": "0x8ce8c58",
+          "type": 3,
+          "instruction": "LDR             X0, [X21]; klass",
+          "metadata_preceding_method": {
+            "Address": 118956728,
+            "Name": "GameFramework.DataManagerBase$$T½{LGZ",
+            "Signature": "void GameFramework_DataManagerBase__T__LGZ (GameFramework_DataManagerBase_o* __this, System_String_o* ___cf_, const MethodInfo* method);",
+            "TypeSignature": "viii"
+          }
+        },
+        {
+          "from": "0x7172340",
+          "to": "0x8ce8c58",
+          "type": 3,
+          "instruction": "LDR             X0, [X21]",
+          "metadata_preceding_method": {
+            "Address": 118956728,
+            "Name": "GameFramework.DataManagerBase$$T½{LGZ",
+            "Signature": "void GameFramework_DataManagerBase__T__LGZ (GameFramework_DataManagerBase_o* __this, System_String_o* ___cf_, const MethodInfo* method);",
+            "TypeSignature": "viii"
+          }
+        },
+        {
+          "from": "0x7301024",
+          "to": "0x8ce8c58",
+          "type": 1,
+          "instruction": "LDR             X19, [X19,#off_8AF5540@PAGEOFF]; off_8CE8C58",
+          "metadata_preceding_method": {
+            "Address": 120590352,
+            "Name": "GameFramework.Login.ILoginProcedure$$get_accountType",
+            "Signature": "int32_t GameFramework_Login_ILoginProcedure__get_accountType (const MethodInfo* method);",
+            "TypeSignature": "ii"
+          }
+        },
+        {
+          "from": "0x7301030",
+          "to": "0x8ce8c58",
+          "type": 1,
+          "instruction": "LDR             X0, [X0,#off_8AF5540@PAGEOFF]; off_8CE8C58 ; slot",
+          "metadata_preceding_method": {
+            "Address": 120590352,
+            "Name": "GameFramework.Login.ILoginProcedure$$get_accountType",
+            "Signature": "int32_t GameFramework_Login_ILoginProcedure__get_accountType (const MethodInfo* method);",
+            "TypeSignature": "ii"
+          }
+        },
+        {
+          "from": "0x7301040",
+          "to": "0x8ce8c58",
+          "type": 3,
+          "instruction": "LDR             X0, [X19]; klass",
+          "metadata_preceding_method": {
+            "Address": 120590352,
+            "Name": "GameFramework.Login.ILoginProcedure$$get_accountType",
+            "Signature": "int32_t GameFramework_Login_ILoginProcedure__get_accountType (const MethodInfo* method);",
+            "TypeSignature": "ii"
+          }
+        },
+        {
+          "from": "0x7301050",
+          "to": "0x8ce8c58",
+          "type": 3,
+          "instruction": "LDR             X0, [X19]",
+          "metadata_preceding_method": {
+            "Address": 120590352,
+            "Name": "GameFramework.Login.ILoginProcedure$$get_accountType",
+            "Signature": "int32_t GameFramework_Login_ILoginProcedure__get_accountType (const MethodInfo* method);",
+            "TypeSignature": "ii"
+          }
+        },
+        {
+          "from": "0x730107c",
+          "to": "0x8ce8c58",
+          "type": 1,
+          "instruction": "LDR             X20, [X20,#off_8AF5540@PAGEOFF]; off_8CE8C58",
+          "metadata_preceding_method": {
+            "Address": 120590440,
+            "Name": "GameFramework.Login.ILoginProcedure$$set_accountType",
+            "Signature": "void GameFramework_Login_ILoginProcedure__set_accountType (int32_t __T__c, const MethodInfo* method);",
+            "TypeSignature": "vii"
+          }
+        },
+        {
+          "from": "0x730108c",
+          "to": "0x8ce8c58",
+          "type": 1,
+          "instruction": "LDR             X0, [X0,#off_8AF5540@PAGEOFF]; off_8CE8C58 ; slot",
+          "metadata_preceding_method": {
+            "Address": 120590440,
+            "Name": "GameFramework.Login.ILoginProcedure$$set_accountType",
+            "Signature": "void GameFramework_Login_ILoginProcedure__set_accountType (int32_t __T__c, const MethodInfo* method);",
+            "TypeSignature": "vii"
+          }
+        },
+        {
+          "from": "0x730109c",
+          "to": "0x8ce8c58",
+          "type": 3,
+          "instruction": "LDR             X0, [X20]; klass",
+          "metadata_preceding_method": {
+            "Address": 120590440,
+            "Name": "GameFramework.Login.ILoginProcedure$$set_accountType",
+            "Signature": "void GameFramework_Login_ILoginProcedure__set_accountType (int32_t __T__c, const MethodInfo* method);",
+            "TypeSignature": "vii"
+          }
+        },
+        {
+          "from": "0x73010ac",
+          "to": "0x8ce8c58",
+          "type": 3,
+          "instruction": "LDR             X0, [X20]",
+          "metadata_preceding_method": {
+            "Address": 120590440,
+            "Name": "GameFramework.Login.ILoginProcedure$$set_accountType",
+            "Signature": "void GameFramework_Login_ILoginProcedure__set_accountType (int32_t __T__c, const MethodInfo* method);",
+            "TypeSignature": "vii"
+          }
+        },
+        {
+          "from": "0x7301228",
+          "to": "0x8ce8c58",
+          "type": 1,
+          "instruction": "LDR             X20, [X20,#off_8AF5540@PAGEOFF]; off_8CE8C58",
+          "metadata_preceding_method": {
+            "Address": 120590868,
+            "Name": "GameFramework.Login.ILoginProcedure$$.cctor",
+            "Signature": "void GameFramework_Login_ILoginProcedure___cctor (const MethodInfo* method);",
+            "TypeSignature": "vi"
+          }
+        },
+        {
+          "from": "0x7301234",
+          "to": "0x8ce8c58",
+          "type": 1,
+          "instruction": "LDR             X0, [X0,#off_8AF5540@PAGEOFF]; off_8CE8C58 ; slot",
+          "metadata_preceding_method": {
+            "Address": 120590868,
+            "Name": "GameFramework.Login.ILoginProcedure$$.cctor",
+            "Signature": "void GameFramework_Login_ILoginProcedure___cctor (const MethodInfo* method);",
+            "TypeSignature": "vi"
+          }
+        },
+        {
+          "from": "0x7301244",
+          "to": "0x8ce8c58",
+          "type": 3,
+          "instruction": "LDR             X8, [X20]",
+          "metadata_preceding_method": {
+            "Address": 120590868,
+            "Name": "GameFramework.Login.ILoginProcedure$$.cctor",
+            "Signature": "void GameFramework_Login_ILoginProcedure___cctor (const MethodInfo* method);",
+            "TypeSignature": "vi"
+          }
+        }
+      ],
+      "secondLevel": [
+        {
+          "from": "0x7171ea4",
+          "to": "0x7171ea8",
+          "type": 21,
+          "instruction": "ADRP            X0, #off_8AF5540@PAGE",
+          "metadata_preceding_method": {
+            "Address": 118955592,
+            "Name": "GameFramework.DataManagerBase$$SaveLocalData",
+            "Signature": "void GameFramework_DataManagerBase__SaveLocalData (GameFramework_DataManagerBase_o* __this, System_String_o* ___cf_, const MethodInfo* method);",
+            "TypeSignature": "viii"
+          }
+        },
+        {
+          "from": "0x7172124",
+          "to": "0x7172128",
+          "type": 21,
+          "instruction": "ADRP            X21, #off_8AF5540@PAGE",
+          "metadata_preceding_method": {
+            "Address": 118955592,
+            "Name": "GameFramework.DataManagerBase$$SaveLocalData",
+            "Signature": "void GameFramework_DataManagerBase__SaveLocalData (GameFramework_DataManagerBase_o* __this, System_String_o* ___cf_, const MethodInfo* method);",
+            "TypeSignature": "viii"
+          }
+        },
+        {
+          "from": "0x7172128",
+          "to": "0x717212c",
+          "type": 21,
+          "instruction": "LDR             X21, [X21,#off_8AF5540@PAGEOFF]; off_8CE8C58",
+          "metadata_preceding_method": {
+            "Address": 118955592,
+            "Name": "GameFramework.DataManagerBase$$SaveLocalData",
+            "Signature": "void GameFramework_DataManagerBase__SaveLocalData (GameFramework_DataManagerBase_o* __this, System_String_o* ___cf_, const MethodInfo* method);",
+            "TypeSignature": "viii"
+          }
+        },
+        {
+          "from": "0x7172148",
+          "to": "0x717214c",
+          "type": 21,
+          "instruction": "ADRP            X0, #off_8AF5540@PAGE",
+          "metadata_preceding_method": {
+            "Address": 118955592,
+            "Name": "GameFramework.DataManagerBase$$SaveLocalData",
+            "Signature": "void GameFramework_DataManagerBase__SaveLocalData (GameFramework_DataManagerBase_o* __this, System_String_o* ___cf_, const MethodInfo* method);",
+            "TypeSignature": "viii"
+          }
+        },
+        {
+          "from": "0x7172158",
+          "to": "0x717215c",
+          "type": 21,
+          "instruction": "STRB            W8, [X23,#byte_90092BD@PAGEOFF]",
+          "metadata_preceding_method": {
+            "Address": 118955592,
+            "Name": "GameFramework.DataManagerBase$$SaveLocalData",
+            "Signature": "void GameFramework_DataManagerBase__SaveLocalData (GameFramework_DataManagerBase_o* __this, System_String_o* ___cf_, const MethodInfo* method);",
+            "TypeSignature": "viii"
+          }
+        },
+        {
+          "from": "0x7172144",
+          "to": "0x717215c",
+          "type": 19,
+          "instruction": "CBNZ            W8, loc_717215C",
+          "metadata_preceding_method": {
+            "Address": 118955592,
+            "Name": "GameFramework.DataManagerBase$$SaveLocalData",
+            "Signature": "void GameFramework_DataManagerBase__SaveLocalData (GameFramework_DataManagerBase_o* __this, System_String_o* ___cf_, const MethodInfo* method);",
+            "TypeSignature": "viii"
+          }
+        },
+        {
+          "from": "0x717216c",
+          "to": "0x7172170",
+          "type": 21,
+          "instruction": "BL              il2cpp_codegen_runtime_class_init",
+          "metadata_preceding_method": {
+            "Address": 118955592,
+            "Name": "GameFramework.DataManagerBase$$SaveLocalData",
+            "Signature": "void GameFramework_DataManagerBase__SaveLocalData (GameFramework_DataManagerBase_o* __this, System_String_o* ___cf_, const MethodInfo* method);",
+            "TypeSignature": "viii"
+          }
+        },
+        {
+          "from": "0x71722cc",
+          "to": "0x71722d0",
+          "type": 21,
+          "instruction": "LDRB            W8, [X22,#byte_900919B@PAGEOFF]",
+          "metadata_preceding_method": {
+            "Address": 118956728,
+            "Name": "GameFramework.DataManagerBase$$T½{LGZ",
+            "Signature": "void GameFramework_DataManagerBase__T__LGZ (GameFramework_DataManagerBase_o* __this, System_String_o* ___cf_, const MethodInfo* method);",
+            "TypeSignature": "viii"
+          }
+        },
+        {
+          "from": "0x71722ec",
+          "to": "0x71722f0",
+          "type": 21,
+          "instruction": "ADRP            X0, #off_8AF5540@PAGE",
+          "metadata_preceding_method": {
+            "Address": 118956728,
+            "Name": "GameFramework.DataManagerBase$$T½{LGZ",
+            "Signature": "void GameFramework_DataManagerBase__T__LGZ (GameFramework_DataManagerBase_o* __this, System_String_o* ___cf_, const MethodInfo* method);",
+            "TypeSignature": "viii"
+          }
+        },
+        {
+          "from": "0x71722fc",
+          "to": "0x7172300",
+          "type": 21,
+          "instruction": "STRB            W8, [X22,#byte_900919B@PAGEOFF]",
+          "metadata_preceding_method": {
+            "Address": 118956728,
+            "Name": "GameFramework.DataManagerBase$$T½{LGZ",
+            "Signature": "void GameFramework_DataManagerBase__T__LGZ (GameFramework_DataManagerBase_o* __this, System_String_o* ___cf_, const MethodInfo* method);",
+            "TypeSignature": "viii"
+          }
+        },
+        {
+          "from": "0x71722dc",
+          "to": "0x7172300",
+          "type": 19,
+          "instruction": "TBNZ            W8, #0, loc_7172300",
+          "metadata_preceding_method": {
+            "Address": 118956728,
+            "Name": "GameFramework.DataManagerBase$$T½{LGZ",
+            "Signature": "void GameFramework_DataManagerBase__T__LGZ (GameFramework_DataManagerBase_o* __this, System_String_o* ___cf_, const MethodInfo* method);",
+            "TypeSignature": "viii"
+          }
+        },
+        {
+          "from": "0x717231c",
+          "to": "0x7172320",
+          "type": 21,
+          "instruction": "ADRP            X0, #off_8AF5540@PAGE",
+          "metadata_preceding_method": {
+            "Address": 118956728,
+            "Name": "GameFramework.DataManagerBase$$T½{LGZ",
+            "Signature": "void GameFramework_DataManagerBase__T__LGZ (GameFramework_DataManagerBase_o* __this, System_String_o* ___cf_, const MethodInfo* method);",
+            "TypeSignature": "viii"
+          }
+        },
+        {
+          "from": "0x717232c",
+          "to": "0x7172330",
+          "type": 21,
+          "instruction": "STRB            W8, [X22,#byte_9000A16@PAGEOFF]",
+          "metadata_preceding_method": {
+            "Address": 118956728,
+            "Name": "GameFramework.DataManagerBase$$T½{LGZ",
+            "Signature": "void GameFramework_DataManagerBase__T__LGZ (GameFramework_DataManagerBase_o* __this, System_String_o* ___cf_, const MethodInfo* method);",
+            "TypeSignature": "viii"
+          }
+        },
+        {
+          "from": "0x7172318",
+          "to": "0x7172330",
+          "type": 19,
+          "instruction": "CBNZ            W8, loc_7172330",
+          "metadata_preceding_method": {
+            "Address": 118956728,
+            "Name": "GameFramework.DataManagerBase$$T½{LGZ",
+            "Signature": "void GameFramework_DataManagerBase__T__LGZ (GameFramework_DataManagerBase_o* __this, System_String_o* ___cf_, const MethodInfo* method);",
+            "TypeSignature": "viii"
+          }
+        },
+        {
+          "from": "0x717233c",
+          "to": "0x7172340",
+          "type": 21,
+          "instruction": "BL              il2cpp_codegen_runtime_class_init",
+          "metadata_preceding_method": {
+            "Address": 118956728,
+            "Name": "GameFramework.DataManagerBase$$T½{LGZ",
+            "Signature": "void GameFramework_DataManagerBase__T__LGZ (GameFramework_DataManagerBase_o* __this, System_String_o* ___cf_, const MethodInfo* method);",
+            "TypeSignature": "viii"
+          }
+        },
+        {
+          "from": "0x7301020",
+          "to": "0x7301024",
+          "type": 21,
+          "instruction": "LDRB            W8, [X20,#byte_900A19C@PAGEOFF]",
+          "metadata_preceding_method": {
+            "Address": 120590352,
+            "Name": "GameFramework.Login.ILoginProcedure$$get_accountType",
+            "Signature": "int32_t GameFramework_Login_ILoginProcedure__get_accountType (const MethodInfo* method);",
+            "TypeSignature": "ii"
+          }
+        },
+        {
+          "from": "0x730102c",
+          "to": "0x7301030",
+          "type": 21,
+          "instruction": "ADRP            X0, #off_8AF5540@PAGE",
+          "metadata_preceding_method": {
+            "Address": 120590352,
+            "Name": "GameFramework.Login.ILoginProcedure$$get_accountType",
+            "Signature": "int32_t GameFramework_Login_ILoginProcedure__get_accountType (const MethodInfo* method);",
+            "TypeSignature": "ii"
+          }
+        },
+        {
+          "from": "0x730103c",
+          "to": "0x7301040",
+          "type": 21,
+          "instruction": "STRB            W8, [X20,#byte_900A19C@PAGEOFF]",
+          "metadata_preceding_method": {
+            "Address": 120590352,
+            "Name": "GameFramework.Login.ILoginProcedure$$get_accountType",
+            "Signature": "int32_t GameFramework_Login_ILoginProcedure__get_accountType (const MethodInfo* method);",
+            "TypeSignature": "ii"
+          }
+        },
+        {
+          "from": "0x7301028",
+          "to": "0x7301040",
+          "type": 19,
+          "instruction": "TBNZ            W8, #0, loc_7301040",
+          "metadata_preceding_method": {
+            "Address": 120590352,
+            "Name": "GameFramework.Login.ILoginProcedure$$get_accountType",
+            "Signature": "int32_t GameFramework_Login_ILoginProcedure__get_accountType (const MethodInfo* method);",
+            "TypeSignature": "ii"
+          }
+        },
+        {
+          "from": "0x730104c",
+          "to": "0x7301050",
+          "type": 21,
+          "instruction": "BL              il2cpp_codegen_runtime_class_init",
+          "metadata_preceding_method": {
+            "Address": 120590352,
+            "Name": "GameFramework.Login.ILoginProcedure$$get_accountType",
+            "Signature": "int32_t GameFramework_Login_ILoginProcedure__get_accountType (const MethodInfo* method);",
+            "TypeSignature": "ii"
+          }
+        },
+        {
+          "from": "0x7301078",
+          "to": "0x730107c",
+          "type": 21,
+          "instruction": "LDRB            W8, [X21,#byte_900A19D@PAGEOFF]",
+          "metadata_preceding_method": {
+            "Address": 120590440,
+            "Name": "GameFramework.Login.ILoginProcedure$$set_accountType",
+            "Signature": "void GameFramework_Login_ILoginProcedure__set_accountType (int32_t __T__c, const MethodInfo* method);",
+            "TypeSignature": "vii"
+          }
+        },
+        {
+          "from": "0x7301088",
+          "to": "0x730108c",
+          "type": 21,
+          "instruction": "ADRP            X0, #off_8AF5540@PAGE",
+          "metadata_preceding_method": {
+            "Address": 120590440,
+            "Name": "GameFramework.Login.ILoginProcedure$$set_accountType",
+            "Signature": "void GameFramework_Login_ILoginProcedure__set_accountType (int32_t __T__c, const MethodInfo* method);",
+            "TypeSignature": "vii"
+          }
+        },
+        {
+          "from": "0x7301098",
+          "to": "0x730109c",
+          "type": 21,
+          "instruction": "STRB            W8, [X21,#byte_900A19D@PAGEOFF]",
+          "metadata_preceding_method": {
+            "Address": 120590440,
+            "Name": "GameFramework.Login.ILoginProcedure$$set_accountType",
+            "Signature": "void GameFramework_Login_ILoginProcedure__set_accountType (int32_t __T__c, const MethodInfo* method);",
+            "TypeSignature": "vii"
+          }
+        },
+        {
+          "from": "0x7301084",
+          "to": "0x730109c",
+          "type": 19,
+          "instruction": "TBNZ            W8, #0, loc_730109C",
+          "metadata_preceding_method": {
+            "Address": 120590440,
+            "Name": "GameFramework.Login.ILoginProcedure$$set_accountType",
+            "Signature": "void GameFramework_Login_ILoginProcedure__set_accountType (int32_t __T__c, const MethodInfo* method);",
+            "TypeSignature": "vii"
+          }
+        },
+        {
+          "from": "0x73010a8",
+          "to": "0x73010ac",
+          "type": 21,
+          "instruction": "BL              il2cpp_codegen_runtime_class_init",
+          "metadata_preceding_method": {
+            "Address": 120590440,
+            "Name": "GameFramework.Login.ILoginProcedure$$set_accountType",
+            "Signature": "void GameFramework_Login_ILoginProcedure__set_accountType (int32_t __T__c, const MethodInfo* method);",
+            "TypeSignature": "vii"
+          }
+        },
+        {
+          "from": "0x7301224",
+          "to": "0x7301228",
+          "type": 21,
+          "instruction": "LDRB            W8, [X19,#byte_900A1A1@PAGEOFF]",
+          "metadata_preceding_method": {
+            "Address": 120590868,
+            "Name": "GameFramework.Login.ILoginProcedure$$.cctor",
+            "Signature": "void GameFramework_Login_ILoginProcedure___cctor (const MethodInfo* method);",
+            "TypeSignature": "vi"
+          }
+        },
+        {
+          "from": "0x7301230",
+          "to": "0x7301234",
+          "type": 21,
+          "instruction": "ADRP            X0, #off_8AF5540@PAGE",
+          "metadata_preceding_method": {
+            "Address": 120590868,
+            "Name": "GameFramework.Login.ILoginProcedure$$.cctor",
+            "Signature": "void GameFramework_Login_ILoginProcedure___cctor (const MethodInfo* method);",
+            "TypeSignature": "vi"
+          }
+        },
+        {
+          "from": "0x7301240",
+          "to": "0x7301244",
+          "type": 21,
+          "instruction": "STRB            W8, [X19,#byte_900A1A1@PAGEOFF]",
+          "metadata_preceding_method": {
+            "Address": 120590868,
+            "Name": "GameFramework.Login.ILoginProcedure$$.cctor",
+            "Signature": "void GameFramework_Login_ILoginProcedure___cctor (const MethodInfo* method);",
+            "TypeSignature": "vi"
+          }
+        },
+        {
+          "from": "0x730122c",
+          "to": "0x7301244",
+          "type": 19,
+          "instruction": "TBNZ            W8, #0, loc_7301244",
+          "metadata_preceding_method": {
+            "Address": 120590868,
+            "Name": "GameFramework.Login.ILoginProcedure$$.cctor",
+            "Signature": "void GameFramework_Login_ILoginProcedure___cctor (const MethodInfo* method);",
+            "TypeSignature": "vi"
+          }
+        }
+      ]
+    },
+    {
+      "address": "0x8ce6168",
+      "name": "DataModule.DataManager_TypeInfo",
+      "purpose": "Incoming refs may inline static SaveConflictCheckFinish/ComflictStatus writes; select original conflict decision producers",
+      "group": "metadataGlobals",
+      "direct": [
+        {
+          "from": "0x434d580",
+          "to": "0x8ce6168",
+          "type": 1,
+          "instruction": "LDR             X21, [X21,#off_8AF21B0@PAGEOFF]; off_8CE6168",
+          "metadata_preceding_method": {
+            "Address": 70571372,
+            "Name": "DataModule.DataManager$$ChooseConflict",
+            "Signature": "void DataModule_DataManager__ChooseConflict (DataModule_DataManager_o* __this, int32_t comflictStatus, const MethodInfo* method);",
+            "TypeSignature": "viii"
+          }
+        },
+        {
+          "from": "0x434d590",
+          "to": "0x8ce6168",
+          "type": 1,
+          "instruction": "LDR             X0, [X0,#off_8AF21B0@PAGEOFF]; off_8CE6168 ; slot",
+          "metadata_preceding_method": {
+            "Address": 70571372,
+            "Name": "DataModule.DataManager$$ChooseConflict",
+            "Signature": "void DataModule_DataManager__ChooseConflict (DataModule_DataManager_o* __this, int32_t comflictStatus, const MethodInfo* method);",
+            "TypeSignature": "viii"
+          }
+        },
+        {
+          "from": "0x434d5a0",
+          "to": "0x8ce6168",
+          "type": 3,
+          "instruction": "LDR             X8, [X21]",
+          "metadata_preceding_method": {
+            "Address": 70571372,
+            "Name": "DataModule.DataManager$$ChooseConflict",
+            "Signature": "void DataModule_DataManager__ChooseConflict (DataModule_DataManager_o* __this, int32_t comflictStatus, const MethodInfo* method);",
+            "TypeSignature": "viii"
+          }
+        },
+        {
+          "from": "0x4350684",
+          "to": "0x8ce6168",
+          "type": 1,
+          "instruction": "LDR             X0, [X0,#off_8AF21B0@PAGEOFF]; off_8CE6168 ; slot",
+          "metadata_preceding_method": {
+            "Address": 70583880,
+            "Name": "DataModule.DataManager.<LoadData>d__16$$MoveNext",
+            "Signature": "void DataModule_DataManager__LoadData_d__16__MoveNext (DataModule_DataManager__LoadData_d__16_o __this, const MethodInfo* method);",
+            "TypeSignature": "vii"
+          }
+        },
+        {
+          "from": "0x43507b8",
+          "to": "0x8ce6168",
+          "type": 1,
+          "instruction": "LDR             X8, [X8,#off_8AF21B0@PAGEOFF]; off_8CE6168",
+          "metadata_preceding_method": {
+            "Address": 70583880,
+            "Name": "DataModule.DataManager.<LoadData>d__16$$MoveNext",
+            "Signature": "void DataModule_DataManager__LoadData_d__16__MoveNext (DataModule_DataManager__LoadData_d__16_o __this, const MethodInfo* method);",
+            "TypeSignature": "vii"
+          }
+        },
+        {
+          "from": "0x43507bc",
+          "to": "0x8ce6168",
+          "type": 3,
+          "instruction": "LDR             X8, [X8]",
+          "metadata_preceding_method": {
+            "Address": 70583880,
+            "Name": "DataModule.DataManager.<LoadData>d__16$$MoveNext",
+            "Signature": "void DataModule_DataManager__LoadData_d__16__MoveNext (DataModule_DataManager__LoadData_d__16_o __this, const MethodInfo* method);",
+            "TypeSignature": "vii"
+          }
+        }
+      ],
+      "secondLevel": [
+        {
+          "from": "0x434d57c",
+          "to": "0x434d580",
+          "type": 21,
+          "instruction": "LDRB            W8, [X20,#byte_90005F9@PAGEOFF]",
+          "metadata_preceding_method": {
+            "Address": 70571372,
+            "Name": "DataModule.DataManager$$ChooseConflict",
+            "Signature": "void DataModule_DataManager__ChooseConflict (DataModule_DataManager_o* __this, int32_t comflictStatus, const MethodInfo* method);",
+            "TypeSignature": "viii"
+          }
+        },
+        {
+          "from": "0x434d58c",
+          "to": "0x434d590",
+          "type": 21,
+          "instruction": "ADRP            X0, #off_8AF21B0@PAGE",
+          "metadata_preceding_method": {
+            "Address": 70571372,
+            "Name": "DataModule.DataManager$$ChooseConflict",
+            "Signature": "void DataModule_DataManager__ChooseConflict (DataModule_DataManager_o* __this, int32_t comflictStatus, const MethodInfo* method);",
+            "TypeSignature": "viii"
+          }
+        },
+        {
+          "from": "0x434d59c",
+          "to": "0x434d5a0",
+          "type": 21,
+          "instruction": "STRB            W8, [X20,#byte_90005F9@PAGEOFF]",
+          "metadata_preceding_method": {
+            "Address": 70571372,
+            "Name": "DataModule.DataManager$$ChooseConflict",
+            "Signature": "void DataModule_DataManager__ChooseConflict (DataModule_DataManager_o* __this, int32_t comflictStatus, const MethodInfo* method);",
+            "TypeSignature": "viii"
+          }
+        },
+        {
+          "from": "0x434d588",
+          "to": "0x434d5a0",
+          "type": 19,
+          "instruction": "TBNZ            W8, #0, loc_434D5A0",
+          "metadata_preceding_method": {
+            "Address": 70571372,
+            "Name": "DataModule.DataManager$$ChooseConflict",
+            "Signature": "void DataModule_DataManager__ChooseConflict (DataModule_DataManager_o* __this, int32_t comflictStatus, const MethodInfo* method);",
+            "TypeSignature": "viii"
+          }
+        },
+        {
+          "from": "0x4350680",
+          "to": "0x4350684",
+          "type": 21,
+          "instruction": "ADRP            X0, #off_8AF21B0@PAGE",
+          "metadata_preceding_method": {
+            "Address": 70583880,
+            "Name": "DataModule.DataManager.<LoadData>d__16$$MoveNext",
+            "Signature": "void DataModule_DataManager__LoadData_d__16__MoveNext (DataModule_DataManager__LoadData_d__16_o __this, const MethodInfo* method);",
+            "TypeSignature": "vii"
+          }
+        },
+        {
+          "from": "0x43507b4",
+          "to": "0x43507b8",
+          "type": 21,
+          "instruction": "ADRP            X8, #off_8AF21B0@PAGE",
+          "metadata_preceding_method": {
+            "Address": 70583880,
+            "Name": "DataModule.DataManager.<LoadData>d__16$$MoveNext",
+            "Signature": "void DataModule_DataManager__LoadData_d__16__MoveNext (DataModule_DataManager__LoadData_d__16_o __this, const MethodInfo* method);",
+            "TypeSignature": "vii"
+          }
+        },
+        {
+          "from": "0x43507b8",
+          "to": "0x43507bc",
+          "type": 21,
+          "instruction": "LDR             X8, [X8,#off_8AF21B0@PAGEOFF]; off_8CE6168",
+          "metadata_preceding_method": {
+            "Address": 70583880,
+            "Name": "DataModule.DataManager.<LoadData>d__16$$MoveNext",
+            "Signature": "void DataModule_DataManager__LoadData_d__16__MoveNext (DataModule_DataManager__LoadData_d__16_o __this, const MethodInfo* method);",
+            "TypeSignature": "vii"
+          }
+        }
+      ]
+    }
+  ]
+}

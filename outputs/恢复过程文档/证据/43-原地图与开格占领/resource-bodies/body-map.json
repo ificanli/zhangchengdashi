@@ -1,0 +1,50 @@
+{
+  "bodyCount": 7,
+  "bodySha256": "9a92fbb6606311526929f0504d0f01843fde523f5272491b75febfe1045981f6",
+  "restored": [
+    {
+      "rva": "0x4411a0c",
+      "name": "Awake",
+      "async": false
+    },
+    {
+      "rva": "0x4412270",
+      "name": "OnDestroy",
+      "async": false
+    },
+    {
+      "rva": "0x4411f4c",
+      "name": "GetHexPrefabPaths",
+      "async": false
+    },
+    {
+      "rva": "0x4411fe8",
+      "name": "GetGroundPrefabPaths",
+      "async": false
+    },
+    {
+      "rva": "0x4412084",
+      "name": "LoadHexPrefabs",
+      "async": true
+    },
+    {
+      "rva": "0x4415440",
+      "name": "LoadBTestHexPrefabs",
+      "async": true
+    },
+    {
+      "rva": "0x4412124",
+      "name": "LoadSeasonBTestHexPrefabs",
+      "async": true
+    }
+  ],
+  "notRestored": [
+    {
+      "rva": "0x4412c0c",
+      "moveNext": "0x441dd78",
+      "name": "LoadGround",
+      "reason": "Complete native includes map selection, randomized polygon map configuration, training main tower keys and BattleGameSceneManager field changes. The original loadGroundResEnd flag is set false at 0x441e23c and true at 0x441ea10 BEFORE asset await; prefab res is assigned at 0x441e3e4 AFTER GetResult. Therefore this flag is not a successful asset-load completion marker. Rectangle main-tower branch contains suspicious decompiler early return requiring ASM CFG closure. Full exact method boundary/exception island evidence is retained for root; no partial body supplied."
+    }
+  ],
+  "runtimeLimit": "These source bodies still require external MapGenerateConfig actual property storage and getters. Their current non-auto stub getters return null/default in shared source. This subagent cannot edit that file."
+}

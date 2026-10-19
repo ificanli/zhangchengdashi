@@ -1,0 +1,105 @@
+unsigned __int8 CoreModule_GameLauncher__TryGetDefaultRendererData(
+        void *self,
+        void *asset,
+        void **result,
+        const MethodInfo *method)
+{
+  void *Value; // x0
+  __int64 Type; // x0
+  __int64 v8; // x21
+  __int64 Property; // x0
+  __int64 v10; // x10
+  __int64 v11; // x23
+  __int64 v12; // x22
+  __int64 v13; // x0
+  __int64 v14; // x21
+  __int64 v15; // x8
+  int v16; // w9
+  void *v17; // x20
+  void *v18; // x0
+  const MethodInfo *v19; // x1
+
+  if ( (byte_8FFF6B5 & 1) == 0 )
+  {
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8CE95C0);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&off_8CEB3E0);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8CE3418);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&off_8CECF88);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D806A0);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D82868);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D80630);
+    byte_8FFF6B5 = 1;
+  }
+  *result = nullptr;
+  if ( *((_DWORD *)off_8CEB3E0 + 56) == 0 )
+    il2cpp_codegen_runtime_class_init(off_8CEB3E0);
+  if ( (UnityEngine_Object__op_Equality(asset, 0, 0) & 1) != 0 )
+    goto LABEL_6;
+  if ( asset == nullptr || (Type = System_Object__GetType(asset, 0)) == 0 )
+    il2cpp_codegen_raise_null_reference_exception();
+  v8 = Type;
+  Property = System_Type__GetProperty(Type, qword_8D82868, 36, 0);
+  if ( Property != 0
+    && (Value = (void *)System_Reflection_PropertyInfo__GetValue(Property, asset, 0)) != nullptr
+    && (v10 = *((unsigned __int8 *)off_8CECF88 + 304),
+        *(unsigned __int8 *)(*(_QWORD *)Value + 304LL) >= (unsigned int)v10)
+    && *(_UNKNOWN **)(*(_QWORD *)(*(_QWORD *)Value + 200LL) + 8 * v10 - 8) == off_8CECF88 )
+  {
+    *result = Value;
+    LOBYTE(Value) = 1;
+  }
+  else
+  {
+    v11 = (*(__int64 (__fastcall **)(__int64, __int64, __int64, _QWORD))(*(_QWORD *)v8 + 1752LL))(
+            v8,
+            qword_8D806A0,
+            36,
+            *(_QWORD *)(*(_QWORD *)v8 + 1760LL));
+    v12 = (*(__int64 (__fastcall **)(__int64, __int64, __int64, _QWORD))(*(_QWORD *)v8 + 1752LL))(
+            v8,
+            qword_8D80630,
+            36,
+            *(_QWORD *)(*(_QWORD *)v8 + 1760LL));
+    if ( v11 != 0 )
+      v13 = (*(__int64 (__fastcall **)(__int64, void *, _QWORD))(*(_QWORD *)v11 + 744LL))(
+              v11,
+              asset,
+              *(_QWORD *)(*(_QWORD *)v11 + 752LL));
+    else
+      v13 = 0;
+    v14 = ((__int64 (__fastcall *)(__int64, __int64))unk_3C3D3B4)(v13, qword_8CE3418);
+    LOBYTE(Value) = 0;
+    if ( v12 != 0 && v14 != 0 )
+    {
+      Value = (void *)(*(__int64 (__fastcall **)(__int64, void *, _QWORD))(*(_QWORD *)v12 + 744LL))(
+                        v12,
+                        asset,
+                        *(_QWORD *)(*(_QWORD *)v12 + 752LL));
+      if ( Value != nullptr )
+      {
+        if ( *(_QWORD *)Value != qword_8CE95C0
+          || ((v15 = *(unsigned int *)((__int64 (*)(void))unk_3C3D3BC)()) & 0x80000000) != 0
+          || (v16 = *(_DWORD *)(v14 + 24), (int)v15 >= v16) )
+        {
+LABEL_6:
+          LOBYTE(Value) = 0;
+          return (unsigned __int8)Value;
+        }
+        if ( (unsigned int)v15 >= v16 )
+        {
+          v18 = (void *)((__int64 (*)(void))unk_3C3D4D4)();
+          CoreModule_GameLauncher___ctor(v18, v19);
+        }
+        else
+        {
+          v17 = *(void **)(v14 + 8 * v15 + 32);
+          *result = v17;
+          if ( *((_DWORD *)off_8CEB3E0 + 56) == 0 )
+            il2cpp_codegen_runtime_class_init(off_8CEB3E0);
+          LOBYTE(Value) = UnityEngine_Object__op_Inequality(v17, 0, 0);
+        }
+      }
+    }
+  }
+  return (unsigned __int8)Value;
+}

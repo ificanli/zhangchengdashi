@@ -1,0 +1,40 @@
+0x3d2a600: STR             X30, [SP,#var_40]!
+0x3d2a604: STP             X24, X23, [SP,#0x40+var_30]
+0x3d2a608: STP             X22, X21, [SP,#0x40+var_20]
+0x3d2a60c: STP             X20, X19, [SP,#0x40+var_10]
+0x3d2a610: ADRP            X24, #byte_8FFD24D@PAGE
+0x3d2a614: ADRP            X23, #off_8ACC8F0@PAGE
+0x3d2a618: LDRB            W8, [X24,#byte_8FFD24D@PAGEOFF]
+0x3d2a61c: LDR             X23, [X23,#off_8ACC8F0@PAGEOFF]; off_8CEA738
+0x3d2a620: MOV             X19, X1
+0x3d2a624: MOV             X20, X0
+0x3d2a628: LSR             X21, X0, #0x20 ; ' '
+0x3d2a62c: LSR             X22, X1, #0x20 ; ' '
+0x3d2a630: TBNZ            W8, #0, loc_3D2A648
+0x3d2a634: ADRP            X0, #off_8ACC8F0@PAGE
+0x3d2a638: LDR             X0, [X0,#off_8ACC8F0@PAGEOFF]; off_8CEA738
+0x3d2a63c: BL              unk_3C3D280
+0x3d2a640: MOV             W8, #1
+0x3d2a644: STRB            W8, [X24,#byte_8FFD24D@PAGEOFF]
+0x3d2a648: LDR             X0, [X23]
+0x3d2a64c: LDR             W8, [X0,#0xE0]
+0x3d2a650: CBNZ            W8, loc_3D2A658
+0x3d2a654: BL              unk_3C3D3B0
+0x3d2a658: ADD             W9, W21, W20
+0x3d2a65c: SUBS            W8, W20, W19
+0x3d2a660: SUB             W9, W9, W19
+0x3d2a664: CNEG            W8, W8, MI
+0x3d2a668: SUBS            W9, W9, W22
+0x3d2a66c: CNEG            W9, W9, MI
+0x3d2a670: SUBS            W10, W21, W22
+0x3d2a674: CNEG            W10, W10, MI
+0x3d2a678: ADD             W8, W10, W8
+0x3d2a67c: ADD             W8, W8, W9
+0x3d2a680: LDP             X20, X19, [SP,#0x40+var_10]
+0x3d2a684: LDP             X22, X21, [SP,#0x40+var_20]
+0x3d2a688: LDP             X24, X23, [SP,#0x40+var_30]
+0x3d2a68c: CMP             W8, #0
+0x3d2a690: CINC            W8, W8, LT
+0x3d2a694: ASR             W0, W8, #1
+0x3d2a698: LDR             X30, [SP+0x40+var_40],#0x40
+0x3d2a69c: RET

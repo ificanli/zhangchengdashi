@@ -1,0 +1,325 @@
+0x437a9e8: STR             X30, [SP,#var_40]!
+0x437a9ec: STP             X24, X23, [SP,#0x40+var_30]
+0x437a9f0: STP             X22, X21, [SP,#0x40+var_20]
+0x437a9f4: STP             X20, X19, [SP,#0x40+var_10]
+0x437a9f8: ADRP            X20, #byte_9000786@PAGE
+0x437a9fc: ADRP            X24, #off_8ACD640@PAGE
+0x437aa00: ADRP            X23, #off_8ACD648@PAGE
+0x437aa04: ADRP            X22, #off_8ADABA8@PAGE
+0x437aa08: ADRP            X21, #off_8ADABA0@PAGE
+0x437aa0c: LDRB            W8, [X20,#byte_9000786@PAGEOFF]
+0x437aa10: LDR             X24, [X24,#off_8ACD640@PAGEOFF]; qword_8CD96C8
+0x437aa14: LDR             X23, [X23,#off_8ACD648@PAGEOFF]; qword_8CFC8D0
+0x437aa18: LDR             X22, [X22,#off_8ADABA8@PAGEOFF]; qword_8CDE518
+0x437aa1c: LDR             X21, [X21,#off_8ADABA0@PAGEOFF]; qword_8D0FC88
+0x437aa20: MOV             X19, X0
+0x437aa24: TBNZ            W8, #0, loc_437AA60
+0x437aa28: ADRP            X0, #off_8ACD648@PAGE
+0x437aa2c: LDR             X0, [X0,#off_8ACD648@PAGEOFF]; qword_8CFC8D0 ; slot
+0x437aa30: BL              il2cpp_codegen_initialize_runtime_metadata
+0x437aa34: ADRP            X0, #off_8ACD640@PAGE
+0x437aa38: LDR             X0, [X0,#off_8ACD640@PAGEOFF]; qword_8CD96C8 ; slot
+0x437aa3c: BL              il2cpp_codegen_initialize_runtime_metadata
+0x437aa40: ADRP            X0, #off_8ADABA0@PAGE
+0x437aa44: LDR             X0, [X0,#off_8ADABA0@PAGEOFF]; qword_8D0FC88 ; slot
+0x437aa48: BL              il2cpp_codegen_initialize_runtime_metadata
+0x437aa4c: ADRP            X0, #off_8ADABA8@PAGE
+0x437aa50: LDR             X0, [X0,#off_8ADABA8@PAGEOFF]; qword_8CDE518 ; slot
+0x437aa54: BL              il2cpp_codegen_initialize_runtime_metadata
+0x437aa58: MOV             W8, #1
+0x437aa5c: STRB            W8, [X20,#byte_9000786@PAGEOFF]
+0x437aa60: LDR             X0, [X24]
+0x437aa64: BL              unk_3C3D4C4
+0x437aa68: LDR             X1, [X23]
+0x437aa6c: MOV             X20, X0
+0x437aa70: BL              System.Collections.Generic.Dictionary_int__int_$$.ctor
+0x437aa74: STR             X20, [X19,#0x20]
+0x437aa78: LDR             X0, [X24]
+0x437aa7c: BL              unk_3C3D4C4
+0x437aa80: LDR             X1, [X23]
+0x437aa84: MOV             X20, X0
+0x437aa88: BL              System.Collections.Generic.Dictionary_int__int_$$.ctor
+0x437aa8c: STR             X20, [X19,#0x28]
+0x437aa90: LDR             X0, [X22]
+0x437aa94: BL              unk_3C3D4C4
+0x437aa98: LDR             X1, [X21]
+0x437aa9c: MOV             X20, X0
+0x437aaa0: BL              System.Collections.Generic.List_object_$$.ctor
+0x437aaa4: STR             X20, [X19,#0x40]
+0x437aaa8: MOV             X0, X19
+0x437aaac: LDP             X20, X19, [SP,#0x40+var_10]
+0x437aab0: LDP             X22, X21, [SP,#0x40+var_20]
+0x437aab4: LDP             X24, X23, [SP,#0x40+var_30]
+0x437aab8: MOV             X1, XZR
+0x437aabc: LDR             X30, [SP+0x40+var_40],#0x40
+0x437aac0: B               ServerBaseData$$.ctor
+0x437aac4: STP             X30, X23, [SP,#var_30]!
+0x437aac8: STP             X22, X21, [SP,#0x30+var_20]
+0x437aacc: STP             X20, X19, [SP,#0x30+var_10]
+0x437aad0: LDR             X8, [X3,#0x38]
+0x437aad4: MOV             X20, X3
+0x437aad8: MOV             X23, X2
+0x437aadc: MOV             X19, X1
+0x437aae0: MOV             X22, X0
+0x437aae4: CBNZ            X8, loc_437AAF0
+0x437aae8: MOV             X0, X20
+0x437aaec: BL              unk_3C503FC
+0x437aaf0: LDR             X21, [X22]
+0x437aaf4: CBNZ            X21, loc_437AB34
+0x437aaf8: LDR             X8, [X20,#0x38]
+0x437aafc: LDR             X0, [X8,#0x10]
+0x437ab00: LDRB            W8, [X0,#0x135]
+0x437ab04: TBNZ            W8, #0, loc_437AB0C
+0x437ab08: BL              unk_3C503A0
+0x437ab0c: LDR             W8, [X0,#0xE0]
+0x437ab10: CBNZ            W8, loc_437AB18
+0x437ab14: BL              il2cpp_codegen_runtime_class_init
+0x437ab18: LDR             X8, [X20,#0x38]
+0x437ab1c: MOV             X0, X23
+0x437ab20: MOV             X1, X22
+0x437ab24: LDR             X2, [X8,#8]
+0x437ab28: BL              Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask_GlobalPropInfo._GetBgIcon_d__44__object_$$SetStateMachine
+0x437ab2c: LDR             X21, [X22]
+0x437ab30: CBZ             X21, loc_437ABD4
+0x437ab34: LDR             X0, [X20,#0x20]
+0x437ab38: LDRB            W8, [X0,#0x135]
+0x437ab3c: TBNZ            W8, #0, loc_437AB44
+0x437ab40: BL              unk_3C503A0
+0x437ab44: LDR             X8, [X0,#0xC0]
+0x437ab48: LDR             X1, [X8,#8]
+0x437ab4c: LDRB            W8, [X1,#0x135]
+0x437ab50: TBNZ            W8, #0, loc_437AB60
+0x437ab54: MOV             X0, X1
+0x437ab58: BL              unk_3C503A0
+0x437ab5c: MOV             X1, X0
+0x437ab60: LDR             X8, [X21]
+0x437ab64: LDRH            W9, [X8,#0x12E]
+0x437ab68: CBZ             X9, loc_437AB8C
+0x437ab6c: LDR             X10, [X8,#0xB0]
+0x437ab70: ADD             X10, X10, #8
+0x437ab74: LDUR            X11, [X10,#-8]
+0x437ab78: CMP             X11, X1
+0x437ab7c: B.EQ            loc_437AB9C
+0x437ab80: SUBS            X9, X9, #1
+0x437ab84: ADD             X10, X10, #0x10
+0x437ab88: B.NE            loc_437AB74
+0x437ab8c: MOV             X0, X21
+0x437ab90: MOV             W2, WZR
+0x437ab94: BL              unk_3C504A4
+0x437ab98: B               loc_437ABA8
+0x437ab9c: LDRSW           X9, [X10]
+0x437aba0: ADD             X8, X8, X9,LSL#4
+0x437aba4: ADD             X0, X8, #0x138
+0x437aba8: LDP             X8, X1, [X0]
+0x437abac: MOV             X0, X21
+0x437abb0: BLR             X8
+0x437abb4: LDR             X8, [X20,#0x38]
+0x437abb8: MOV             X1, X0
+0x437abbc: MOV             X0, X19
+0x437abc0: LDP             X20, X19, [SP,#0x30+var_10]
+0x437abc4: LDR             X2, [X8,#0x28]
+0x437abc8: LDP             X22, X21, [SP,#0x30+var_20]
+0x437abcc: LDP             X30, X23, [SP+0x30+var_30],#0x30
+0x437abd0: B               unk_3D31678
+0x437abd4: BL              il2cpp_codegen_raise_null_reference_exception
+0x437abd8: STP             X30, X23, [SP,#var_30]!
+0x437abdc: STP             X22, X21, [SP,#0x30+var_20]
+0x437abe0: STP             X20, X19, [SP,#0x30+var_10]
+0x437abe4: LDR             X8, [X3,#0x38]
+0x437abe8: MOV             X20, X3
+0x437abec: MOV             X23, X2
+0x437abf0: MOV             X19, X1
+0x437abf4: MOV             X22, X0
+0x437abf8: CBNZ            X8, loc_437AC04
+0x437abfc: MOV             X0, X20
+0x437ac00: BL              unk_3C503FC
+0x437ac04: LDR             X21, [X22]
+0x437ac08: CBNZ            X21, loc_437AC48
+0x437ac0c: LDR             X8, [X20,#0x38]
+0x437ac10: LDR             X0, [X8,#0x10]
+0x437ac14: LDRB            W8, [X0,#0x135]
+0x437ac18: TBNZ            W8, #0, loc_437AC20
+0x437ac1c: BL              unk_3C503A0
+0x437ac20: LDR             W8, [X0,#0xE0]
+0x437ac24: CBNZ            W8, loc_437AC2C
+0x437ac28: BL              il2cpp_codegen_runtime_class_init
+0x437ac2c: LDR             X8, [X20,#0x38]
+0x437ac30: MOV             X0, X23
+0x437ac34: MOV             X1, X22
+0x437ac38: LDR             X2, [X8,#8]
+0x437ac3c: BL              Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask_GlobalPropInfo._GetIconSprite_d__42__object_$$SetStateMachine
+0x437ac40: LDR             X21, [X22]
+0x437ac44: CBZ             X21, loc_437ACE8
+0x437ac48: LDR             X0, [X20,#0x20]
+0x437ac4c: LDRB            W8, [X0,#0x135]
+0x437ac50: TBNZ            W8, #0, loc_437AC58
+0x437ac54: BL              unk_3C503A0
+0x437ac58: LDR             X8, [X0,#0xC0]
+0x437ac5c: LDR             X1, [X8,#8]
+0x437ac60: LDRB            W8, [X1,#0x135]
+0x437ac64: TBNZ            W8, #0, loc_437AC74
+0x437ac68: MOV             X0, X1
+0x437ac6c: BL              unk_3C503A0
+0x437ac70: MOV             X1, X0
+0x437ac74: LDR             X8, [X21]
+0x437ac78: LDRH            W9, [X8,#0x12E]
+0x437ac7c: CBZ             X9, loc_437ACA0
+0x437ac80: LDR             X10, [X8,#0xB0]
+0x437ac84: ADD             X10, X10, #8
+0x437ac88: LDUR            X11, [X10,#-8]
+0x437ac8c: CMP             X11, X1
+0x437ac90: B.EQ            loc_437ACB0
+0x437ac94: SUBS            X9, X9, #1
+0x437ac98: ADD             X10, X10, #0x10
+0x437ac9c: B.NE            loc_437AC88
+0x437aca0: MOV             X0, X21
+0x437aca4: MOV             W2, WZR
+0x437aca8: BL              unk_3C504A4
+0x437acac: B               loc_437ACBC
+0x437acb0: LDRSW           X9, [X10]
+0x437acb4: ADD             X8, X8, X9,LSL#4
+0x437acb8: ADD             X0, X8, #0x138
+0x437acbc: LDP             X8, X1, [X0]
+0x437acc0: MOV             X0, X21
+0x437acc4: BLR             X8
+0x437acc8: LDR             X8, [X20,#0x38]
+0x437accc: MOV             X1, X0
+0x437acd0: MOV             X0, X19
+0x437acd4: LDP             X20, X19, [SP,#0x30+var_10]
+0x437acd8: LDR             X2, [X8,#0x28]
+0x437acdc: LDP             X22, X21, [SP,#0x30+var_20]
+0x437ace0: LDP             X30, X23, [SP+0x30+var_30],#0x30
+0x437ace4: B               unk_3D31678
+0x437ace8: BL              il2cpp_codegen_raise_null_reference_exception
+0x437acec: STP             X30, X23, [SP,#var_30]!
+0x437acf0: STP             X22, X21, [SP,#0x30+var_20]
+0x437acf4: STP             X20, X19, [SP,#0x30+var_10]
+0x437acf8: LDR             X8, [X3,#0x38]
+0x437acfc: MOV             X20, X3
+0x437ad00: MOV             X23, X2
+0x437ad04: MOV             X19, X1
+0x437ad08: MOV             X22, X0
+0x437ad0c: CBNZ            X8, loc_437AD2C
+0x437ad10: ADRP            X0, #off_8ACDEE0@PAGE
+0x437ad14: LDR             X0, [X0,#off_8ACDEE0@PAGEOFF]; qword_8CE9038 ; slot
+0x437ad18: BL              il2cpp_codegen_initialize_runtime_metadata
+0x437ad1c: LDR             X8, [X20,#0x38]
+0x437ad20: CBNZ            X8, loc_437AD2C
+0x437ad24: MOV             X0, X20
+0x437ad28: BL              unk_3C503FC
+0x437ad2c: LDR             X21, [X22]
+0x437ad30: CBNZ            X21, loc_437AD70
+0x437ad34: LDR             X8, [X20,#0x38]
+0x437ad38: LDR             X0, [X8,#0x10]
+0x437ad3c: LDRB            W8, [X0,#0x135]
+0x437ad40: TBNZ            W8, #0, loc_437AD48
+0x437ad44: BL              unk_3C503A0
+0x437ad48: LDR             W8, [X0,#0xE0]
+0x437ad4c: CBNZ            W8, loc_437AD54
+0x437ad50: BL              il2cpp_codegen_runtime_class_init
+0x437ad54: LDR             X8, [X20,#0x38]
+0x437ad58: MOV             X0, X23
+0x437ad5c: MOV             X1, X22
+0x437ad60: LDR             X2, [X8,#8]
+0x437ad64: BL              Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask_MapCreateDataManager._Init_d__9_$$SetStateMachine
+0x437ad68: LDR             X21, [X22]
+0x437ad6c: CBZ             X21, loc_437ADF0
+0x437ad70: ADRP            X10, #off_8ACDEE0@PAGE
+0x437ad74: LDR             X8, [X21]
+0x437ad78: LDR             X10, [X10,#off_8ACDEE0@PAGEOFF]; qword_8CE9038
+0x437ad7c: LDRH            W9, [X8,#0x12E]
+0x437ad80: LDR             X1, [X10]
+0x437ad84: CBZ             X9, loc_437ADA8
+0x437ad88: LDR             X10, [X8,#0xB0]
+0x437ad8c: ADD             X10, X10, #8
+0x437ad90: LDUR            X11, [X10,#-8]
+0x437ad94: CMP             X11, X1
+0x437ad98: B.EQ            loc_437ADB8
+0x437ad9c: SUBS            X9, X9, #1
+0x437ada0: ADD             X10, X10, #0x10
+0x437ada4: B.NE            loc_437AD90
+0x437ada8: MOV             X0, X21
+0x437adac: MOV             W2, WZR
+0x437adb0: BL              unk_3C504A4
+0x437adb4: B               loc_437ADC4
+0x437adb8: LDRSW           X9, [X10]
+0x437adbc: ADD             X8, X8, X9,LSL#4
+0x437adc0: ADD             X0, X8, #0x138
+0x437adc4: LDP             X8, X1, [X0]
+0x437adc8: MOV             X0, X21
+0x437adcc: BLR             X8
+0x437add0: LDR             X8, [X20,#0x38]
+0x437add4: MOV             X1, X0
+0x437add8: MOV             X0, X19
+0x437addc: LDP             X20, X19, [SP,#0x30+var_10]
+0x437ade0: LDR             X2, [X8,#0x28]
+0x437ade4: LDP             X22, X21, [SP,#0x30+var_20]
+0x437ade8: LDP             X30, X23, [SP+0x30+var_30],#0x30
+0x437adec: B               unk_3D17980
+0x437adf0: BL              il2cpp_codegen_raise_null_reference_exception
+0x437adf4: STP             X30, X23, [SP,#var_30]!
+0x437adf8: STP             X22, X21, [SP,#0x30+var_20]
+0x437adfc: STP             X20, X19, [SP,#0x30+var_10]
+0x437ae00: LDR             X8, [X3,#0x38]
+0x437ae04: MOV             X20, X3
+0x437ae08: MOV             X23, X2
+0x437ae0c: MOV             X19, X1
+0x437ae10: MOV             X22, X0
+0x437ae14: CBNZ            X8, loc_437AE34
+0x437ae18: ADRP            X0, #off_8ACDEE0@PAGE
+0x437ae1c: LDR             X0, [X0,#off_8ACDEE0@PAGEOFF]; qword_8CE9038 ; slot
+0x437ae20: BL              il2cpp_codegen_initialize_runtime_metadata
+0x437ae24: LDR             X8, [X20,#0x38]
+0x437ae28: CBNZ            X8, loc_437AE34
+0x437ae2c: MOV             X0, X20
+0x437ae30: BL              unk_3C503FC
+0x437ae34: LDR             X21, [X22]
+0x437ae38: CBNZ            X21, loc_437AE78
+0x437ae3c: LDR             X8, [X20,#0x38]
+0x437ae40: LDR             X0, [X8,#0x10]
+0x437ae44: LDRB            W8, [X0,#0x135]
+0x437ae48: TBNZ            W8, #0, loc_437AE50
+0x437ae4c: BL              unk_3C503A0
+0x437ae50: LDR             W8, [X0,#0xE0]
+0x437ae54: CBNZ            W8, loc_437AE5C
+0x437ae58: BL              il2cpp_codegen_runtime_class_init
+0x437ae5c: LDR             X8, [X20,#0x38]
+0x437ae60: MOV             X0, X23
+0x437ae64: MOV             X1, X22
+0x437ae68: LDR             X2, [X8,#8]
+0x437ae6c: BL              Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask_MapCreateDataManager._LoadData_d__10_$$SetStateMachine
+0x437ae70: LDR             X21, [X22]
+0x437ae74: CBZ             X21, loc_437AEF8
+0x437ae78: ADRP            X10, #off_8ACDEE0@PAGE
+0x437ae7c: LDR             X8, [X21]
+0x437ae80: LDR             X10, [X10,#off_8ACDEE0@PAGEOFF]; qword_8CE9038
+0x437ae84: LDRH            W9, [X8,#0x12E]
+0x437ae88: LDR             X1, [X10]
+0x437ae8c: CBZ             X9, loc_437AEB0
+0x437ae90: LDR             X10, [X8,#0xB0]
+0x437ae94: ADD             X10, X10, #8
+0x437ae98: LDUR            X11, [X10,#-8]
+0x437ae9c: CMP             X11, X1
+0x437aea0: B.EQ            loc_437AEC0
+0x437aea4: SUBS            X9, X9, #1
+0x437aea8: ADD             X10, X10, #0x10
+0x437aeac: B.NE            loc_437AE98
+0x437aeb0: MOV             X0, X21
+0x437aeb4: MOV             W2, WZR
+0x437aeb8: BL              unk_3C504A4
+0x437aebc: B               loc_437AECC
+0x437aec0: LDRSW           X9, [X10]
+0x437aec4: ADD             X8, X8, X9,LSL#4
+0x437aec8: ADD             X0, X8, #0x138
+0x437aecc: LDP             X8, X1, [X0]
+0x437aed0: MOV             X0, X21
+0x437aed4: BLR             X8
+0x437aed8: LDR             X8, [X20,#0x38]
+0x437aedc: MOV             X1, X0
+0x437aee0: MOV             X0, X19
+0x437aee4: LDP             X20, X19, [SP,#0x30+var_10]
+0x437aee8: LDR             X2, [X8,#0x28]
+0x437aeec: LDP             X22, X21, [SP,#0x30+var_20]
+0x437aef0: LDP             X30, X23, [SP+0x30+var_30],#0x30
+0x437aef4: B               System.Runtime.CompilerServices.TaskAwaiter$$UnsafeOnCompleted
+0x437aef8: BL              il2cpp_codegen_raise_null_reference_exception

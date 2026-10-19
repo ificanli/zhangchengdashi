@@ -1,0 +1,20 @@
+0x7296cb8: STR             X30, [SP,#var_20]!
+0x7296cbc: STP             X20, X19, [SP,#0x20+var_10]
+0x7296cc0: ADRP            X20, #byte_9009D29@PAGE
+0x7296cc4: LDRB            W8, [X20,#byte_9009D29@PAGEOFF]
+0x7296cc8: MOV             X19, X0
+0x7296ccc: TBNZ            W8, #0, loc_7296CE4
+0x7296cd0: ADRP            X0, #off_8B19F78@PAGE
+0x7296cd4: LDR             X0, [X0,#off_8B19F78@PAGEOFF]; qword_8CFE4F8 ; slot
+0x7296cd8: BL              il2cpp_codegen_initialize_runtime_metadata
+0x7296cdc: MOV             W8, #1
+0x7296ce0: STRB            W8, [X20,#byte_9009D29@PAGEOFF]
+0x7296ce4: LDR             X0, [X19,#0x20]
+0x7296ce8: CBZ             X0, loc_7296D04
+0x7296cec: ADRP            X8, #off_8B19F78@PAGE
+0x7296cf0: LDR             X8, [X8,#off_8B19F78@PAGEOFF]; qword_8CFE4F8
+0x7296cf4: LDP             X20, X19, [SP,#0x20+var_10]
+0x7296cf8: LDR             X1, [X8]
+0x7296cfc: LDR             X30, [SP+0x20+var_20],#0x20
+0x7296d00: B               System.Collections.Generic.Dictionary_object__object_$$get_Count
+0x7296d04: BL              il2cpp_codegen_raise_null_reference_exception

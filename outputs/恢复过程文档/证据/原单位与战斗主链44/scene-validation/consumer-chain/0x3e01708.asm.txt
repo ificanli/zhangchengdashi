@@ -1,0 +1,127 @@
+0x3e01708: fe0f1ef8 str      x30, [sp, #-0x20]!
+0x3e0170c: f44f01a9 stp      x20, x19, [sp, #0x10]
+0x3e01710: f48f0290 adrp     x20, #0x8ffd000
+0x3e01714: 73660290 adrp     x19, #0x8acd000
+0x3e01718: 88126039 ldrb     w8, [x20, #0x804]
+0x3e0171c: 731a45f9 ldr      x19, [x19, #0xa30] // GameModule.CoreGameManager_TypeInfo
+0x3e01720: 28040037 tbnz     w8, #0, #0x3e017a4
+0x3e01724: 60660290 adrp     x0, #0x8acd000
+0x3e01728: 002c43f9 ldr      x0, [x0, #0x658] // DBTSDK.AppUserManager_TypeInfo
+0x3e0172c: d5eef897 bl       #0x3c3d280
+0x3e01730: 60660290 adrp     x0, #0x8acd000
+0x3e01734: 001845f9 ldr      x0, [x0, #0xa30] // GameModule.CoreGameManager_TypeInfo
+0x3e01738: d2eef897 bl       #0x3c3d280
+0x3e0173c: 606602f0 adrp     x0, #0x8ad0000
+0x3e01740: 006846f9 ldr      x0, [x0, #0xcd0] // Method$DbtSaveDataManagerBase<DbtSaveDataManager_PlayerCoreData, PlayerCoreData>.get_Data()
+0x3e01744: cfeef897 bl       #0x3c3d280
+0x3e01748: 606602f0 adrp     x0, #0x8ad0000
+0x3e0174c: 006c46f9 ldr      x0, [x0, #0xcd8] // DbtSaveDataManagerBase<DbtSaveDataManager_PlayerCoreData, PlayerCoreData>_TypeInfo
+0x3e01750: cceef897 bl       #0x3c3d280
+0x3e01754: 606602b0 adrp     x0, #0x8ace000
+0x3e01758: 008043f9 ldr      x0, [x0, #0x700] // Method$ToolModule.ManagerBase<BattleGameSceneManager>.get_Instance()
+0x3e0175c: c9eef897 bl       #0x3c3d280
+0x3e01760: 606602d0 adrp     x0, #0x8acf000
+0x3e01764: 00fc45f9 ldr      x0, [x0, #0xbf8] // Method$ToolModule.ManagerBase<AudioManager>.get_Instance()
+0x3e01768: c6eef897 bl       #0x3c3d280
+0x3e0176c: 606602b0 adrp     x0, #0x8ace000
+0x3e01770: 004442f9 ldr      x0, [x0, #0x488] // Method$ToolModule.ManagerBase<BattleGameManager>.get_Instance()
+0x3e01774: c3eef897 bl       #0x3c3d280
+0x3e01778: 80660290 adrp     x0, #0x8ad1000
+0x3e0177c: 00a842f9 ldr      x0, [x0, #0x550] // Method$ToolModule.ManagerBase<UIHUDManager>.get_Instance()
+0x3e01780: c0eef897 bl       #0x3c3d280
+0x3e01784: 606602d0 adrp     x0, #0x8acf000
+0x3e01788: 009447f9 ldr      x0, [x0, #0xf28] // Method$ToolModule.ManagerBase<AIBehaviourManager>.get_Instance()
+0x3e0178c: bdeef897 bl       #0x3c3d280
+0x3e01790: 606602d0 adrp     x0, #0x8acf000
+0x3e01794: 002c40f9 ldr      x0, [x0, #0x58] // Assets/_Res/Addressable/AudiosBundle/BGM/Bgm1.mp3
+0x3e01798: baeef897 bl       #0x3c3d280
+0x3e0179c: 28008052 mov      w8, #1
+0x3e017a0: 88122039 strb     w8, [x20, #0x804]
+0x3e017a4: 600240f9 ldr      x0, [x19]
+0x3e017a8: 08e040b9 ldr      w8, [x0, #0xe0]
+0x3e017ac: 48000035 cbnz     w8, #0x3e017b4
+0x3e017b0: 00eff897 bl       #0x3c3d3b0
+0x3e017b4: f48f0290 adrp     x20, #0x8ffd000
+0x3e017b8: 88765f39 ldrb     w8, [x20, #0x7dd]
+0x3e017bc: c8000035 cbnz     w8, #0x3e017d4
+0x3e017c0: 60660290 adrp     x0, #0x8acd000
+0x3e017c4: 001845f9 ldr      x0, [x0, #0xa30] // GameModule.CoreGameManager_TypeInfo
+0x3e017c8: aeeef897 bl       #0x3c3d280
+0x3e017cc: 28008052 mov      w8, #1
+0x3e017d0: 88761f39 strb     w8, [x20, #0x7dd]
+0x3e017d4: 600240f9 ldr      x0, [x19]
+0x3e017d8: 08e040b9 ldr      w8, [x0, #0xe0]
+0x3e017dc: 68000035 cbnz     w8, #0x3e017e8
+0x3e017e0: f4eef897 bl       #0x3c3d3b0
+0x3e017e4: 600240f9 ldr      x0, [x19]
+0x3e017e8: 085c40f9 ldr      x8, [x0, #0xb8]
+0x3e017ec: e0031faa mov      x0, xzr
+0x3e017f0: 1f010039 strb     wzr, [x8]
+0x3e017f4: bd3efe97 bl       #0x3d912e8 // GameModule.SubGameBuffManager$$get_Instance
+0x3e017f8: 400800b4 cbz      x0, #0x3e01900
+0x3e017fc: 736602b0 adrp     x19, #0x8ace000
+0x3e01800: 738243f9 ldr      x19, [x19, #0x700] // Method$ToolModule.ManagerBase<BattleGameSceneManager>.get_Instance()
+0x3e01804: e1031faa mov      x1, xzr
+0x3e01808: 7e73fe97 bl       #0x3d9e600 // GameModule.SubGameBuffManager$$Reset
+0x3e0180c: 600240f9 ldr      x0, [x19]
+0x3e01810: 14db6d94 bl       #0x5978460 // ToolModule.ManagerBase<object>$$get_Instance
+0x3e01814: 600700b4 cbz      x0, #0x3e01900
+0x3e01818: 736602b0 adrp     x19, #0x8ace000
+0x3e0181c: 734642f9 ldr      x19, [x19, #0x488] // Method$ToolModule.ManagerBase<BattleGameManager>.get_Instance()
+0x3e01820: e1031faa mov      x1, xzr
+0x3e01824: 22d1ff97 bl       #0x3df5cac // GameModule.BattleGameSceneManager$$EndGame
+0x3e01828: 600240f9 ldr      x0, [x19]
+0x3e0182c: 0ddb6d94 bl       #0x5978460 // ToolModule.ManagerBase<object>$$get_Instance
+0x3e01830: 800600b4 cbz      x0, #0x3e01900
+0x3e01834: 736602d0 adrp     x19, #0x8acf000
+0x3e01838: 739647f9 ldr      x19, [x19, #0xf28] // Method$ToolModule.ManagerBase<AIBehaviourManager>.get_Instance()
+0x3e0183c: e1031faa mov      x1, xzr
+0x3e01840: 5b95ff97 bl       #0x3de6dac // GameModule.BattleGameManager$$EndGame
+0x3e01844: 600240f9 ldr      x0, [x19]
+0x3e01848: 06db6d94 bl       #0x5978460 // ToolModule.ManagerBase<object>$$get_Instance
+0x3e0184c: a00500b4 cbz      x0, #0x3e01900
+0x3e01850: 93660290 adrp     x19, #0x8ad1000
+0x3e01854: 73aa42f9 ldr      x19, [x19, #0x550] // Method$ToolModule.ManagerBase<UIHUDManager>.get_Instance()
+0x3e01858: e1031faa mov      x1, xzr
+0x3e0185c: 2366ff97 bl       #0x3ddb0e8 // GameModule.AIBehaviourManager$$EndGame
+0x3e01860: 600240f9 ldr      x0, [x19]
+0x3e01864: ffda6d94 bl       #0x5978460 // ToolModule.ManagerBase<object>$$get_Instance
+0x3e01868: c00400b4 cbz      x0, #0x3e01900
+0x3e0186c: 736602d0 adrp     x19, #0x8acf000
+0x3e01870: 73fe45f9 ldr      x19, [x19, #0xbf8] // Method$ToolModule.ManagerBase<AudioManager>.get_Instance()
+0x3e01874: e1031faa mov      x1, xzr
+0x3e01878: 18c51194 bl       #0x4272cd8 // UIModuleO.UIHUDManager$$Clear
+0x3e0187c: 600240f9 ldr      x0, [x19]
+0x3e01880: f8da6d94 bl       #0x5978460 // ToolModule.ManagerBase<object>$$get_Instance
+0x3e01884: e00300b4 cbz      x0, #0x3e01900
+0x3e01888: 686602d0 adrp     x8, #0x8acf000
+0x3e0188c: 082d40f9 ldr      x8, [x8, #0x58] // Assets/_Res/Addressable/AudiosBundle/BGM/Bgm1.mp3
+0x3e01890: 736602f0 adrp     x19, #0x8ad0000
+0x3e01894: e2031faa mov      x2, xzr
+0x3e01898: 010140f9 ldr      x1, [x8]
+0x3e0189c: 736e46f9 ldr      x19, [x19, #0xcd8] // DbtSaveDataManagerBase<DbtSaveDataManager_PlayerCoreData, PlayerCoreData>_TypeInfo
+0x3e018a0: 038afc97 bl       #0x3d240ac // AudioManager$$PlayBGM
+0x3e018a4: 680240f9 ldr      x8, [x19]
+0x3e018a8: 085d40f9 ldr      x8, [x8, #0xb8]
+0x3e018ac: 080140f9 ldr      x8, [x8]
+0x3e018b0: 880200b4 cbz      x8, #0x3e01900
+0x3e018b4: 081940f9 ldr      x8, [x8, #0x30]
+0x3e018b8: 480200b4 cbz      x8, #0x3e01900
+0x3e018bc: 082940b9 ldr      w8, [x8, #0x28]
+0x3e018c0: 1f0d0071 cmp      w8, #3
+0x3e018c4: 81010054 b.ne     #0x3e018f4
+0x3e018c8: 68660290 adrp     x8, #0x8acd000
+0x3e018cc: 082d43f9 ldr      x8, [x8, #0x658] // DBTSDK.AppUserManager_TypeInfo
+0x3e018d0: 080140f9 ldr      x8, [x8]
+0x3e018d4: 085d40f9 ldr      x8, [x8, #0xb8]
+0x3e018d8: 000140f9 ldr      x0, [x8]
+0x3e018dc: 200100b4 cbz      x0, #0x3e01900
+0x3e018e0: f44f41a9 ldp      x20, x19, [sp, #0x10]
+0x3e018e4: e1031faa mov      x1, xzr
+0x3e018e8: e2031faa mov      x2, xzr
+0x3e018ec: fe0742f8 ldr      x30, [sp], #0x20
+0x3e018f0: 1682d614 b        #0x73a2148 // DBTSDK.AppUserManager$$ShowEvaluate_M
+0x3e018f4: f44f41a9 ldp      x20, x19, [sp, #0x10]
+0x3e018f8: fe0742f8 ldr      x30, [sp], #0x20
+0x3e018fc: c0035fd6 ret      
+0x3e01900: f3eef897 bl       #0x3c3d4cc

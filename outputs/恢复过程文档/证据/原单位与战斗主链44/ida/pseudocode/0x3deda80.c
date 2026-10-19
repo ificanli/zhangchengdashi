@@ -1,0 +1,24 @@
+// local variable allocation has failed, the output may be wrong!
+void sub_3DEDA80(GameModule_BattleGameSceneManager_o *this, bool isEnemy, int32_t count, const MethodInfo *method)
+{
+  __int64 Instance; // x0
+
+  if ( (byte_8FFD76C & 1) == 0 )
+  {
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D17890);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&off_8CE1928);
+    byte_8FFD76C = 1;
+  }
+  if ( *((_DWORD *)off_8CE1928 + 56) == 0 )
+    il2cpp_codegen_runtime_class_init(off_8CE1928);
+  Instance = QuickTutor_Singleton_object___get_Instance(qword_8D17890, isEnemy, *(_QWORD *)&count);
+  if ( Instance == 0 )
+    il2cpp_codegen_raise_null_reference_exception();
+  if ( (SDKModule_ABTestManager__get_GamePlayImprove01IsBTest(Instance, 0) & 1) != 0 )
+  {
+    if ( isEnemy )
+      this->fields._enemyReservedCount += count;
+    else
+      this->fields._playerReservedCount += count;
+  }
+}

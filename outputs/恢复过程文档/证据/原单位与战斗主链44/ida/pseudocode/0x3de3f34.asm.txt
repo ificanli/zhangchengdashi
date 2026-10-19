@@ -1,0 +1,41 @@
+0x3de3f34: STP             X30, X21, [SP,#var_20]!
+0x3de3f38: STP             X20, X19, [SP,#0x20+var_10]
+0x3de3f3c: ADRP            X21, #byte_8FFD72F@PAGE
+0x3de3f40: ADRP            X20, #off_8ACE700@PAGE
+0x3de3f44: LDRB            W8, [X21,#byte_8FFD72F@PAGEOFF]
+0x3de3f48: LDR             X20, [X20,#off_8ACE700@PAGEOFF]; qword_8D12058
+0x3de3f4c: MOV             X19, X0
+0x3de3f50: TBNZ            W8, #0, loc_3DE3F74
+0x3de3f54: ADRP            X0, #off_8AD0D68@PAGE
+0x3de3f58: LDR             X0, [X0,#off_8AD0D68@PAGEOFF]; qword_8D0ACF0 ; slot
+0x3de3f5c: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3de3f60: ADRP            X0, #off_8ACE700@PAGE
+0x3de3f64: LDR             X0, [X0,#off_8ACE700@PAGEOFF]; qword_8D12058 ; slot
+0x3de3f68: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3de3f6c: MOV             W8, #1
+0x3de3f70: STRB            W8, [X21,#byte_8FFD72F@PAGEOFF]
+0x3de3f74: LDR             X0, [X20]; method
+0x3de3f78: BL              ToolModule.ManagerBase_object_$$get_Instance
+0x3de3f7c: CBZ             X0, loc_3DE3FD4
+0x3de3f80: LDR             X8, [X0,#0xA0]
+0x3de3f84: CBZ             X8, loc_3DE3FD4
+0x3de3f88: LDR             W21, [X8,#0x18]
+0x3de3f8c: CBZ             W21, loc_3DE3FB8
+0x3de3f90: LDR             X0, [X20]; method
+0x3de3f94: BL              ToolModule.ManagerBase_object_$$get_Instance
+0x3de3f98: CBZ             X0, loc_3DE3FD4
+0x3de3f9c: LDR             X8, [X0,#0xA8]
+0x3de3fa0: CBZ             X8, loc_3DE3FD4
+0x3de3fa4: LDR             W8, [X8,#0x18]
+0x3de3fa8: CBZ             W8, loc_3DE3FB8
+0x3de3fac: LDP             X20, X19, [SP,#0x20+var_10]
+0x3de3fb0: LDP             X30, X21, [SP+0x20+var_20],#0x20
+0x3de3fb4: RET
+0x3de3fb8: MOV             X0, X19
+0x3de3fbc: LDP             X20, X19, [SP,#0x20+var_10]
+0x3de3fc0: CMP             W21, #0
+0x3de3fc4: CSET            W1, NE
+0x3de3fc8: MOV             W2, WZR
+0x3de3fcc: LDP             X30, X21, [SP+0x20+var_20],#0x20
+0x3de3fd0: B               GameModule.BattleGameManager$$GameEnd
+0x3de3fd4: BL              il2cpp_codegen_raise_null_reference_exception

@@ -1,0 +1,36 @@
+0x6af44fc: STR             X30, [SP,#var_20]!
+0x6af4500: STP             X20, X19, [SP,#0x20+var_10]
+0x6af4504: ADRP            X20, #byte_9007B71@PAGE
+0x6af4508: LDRB            W8, [X20,#byte_9007B71@PAGEOFF]
+0x6af450c: MOV             X19, X0
+0x6af4510: TBNZ            W8, #0, loc_6AF4534
+0x6af4514: ADRP            X0, #off_8B11C28@PAGE
+0x6af4518: LDR             X0, [X0,#off_8B11C28@PAGEOFF]; qword_8D5BE60 ; slot
+0x6af451c: BL              il2cpp_codegen_initialize_runtime_metadata
+0x6af4520: ADRP            X0, #off_8ACC908@PAGE
+0x6af4524: LDR             X0, [X0,#off_8ACC908@PAGEOFF]; qword_8D4ECC0 ; slot
+0x6af4528: BL              il2cpp_codegen_initialize_runtime_metadata
+0x6af452c: MOV             W8, #1
+0x6af4530: STRB            W8, [X20,#byte_9007B71@PAGEOFF]
+0x6af4534: LDRB            W8, [X19,#0x41]
+0x6af4538: CBZ             W8, loc_6AF4548
+0x6af453c: LDP             X20, X19, [SP,#0x20+var_10]
+0x6af4540: LDR             X30, [SP+0x20+var_20],#0x20
+0x6af4544: RET
+0x6af4548: MOV             W8, #1
+0x6af454c: STRB            W8, [X19,#0x41]
+0x6af4550: ADRP            X8, #off_8B11C28@PAGE
+0x6af4554: LDR             X8, [X8,#off_8B11C28@PAGEOFF]; qword_8D5BE60
+0x6af4558: MOV             X0, X19
+0x6af455c: MOV             W1, WZR
+0x6af4560: LDR             X2, [X8]
+0x6af4564: BL              DbtSaveDataManagerBase_object__object_$$Log
+0x6af4568: ADRP            X9, #off_8ACC908@PAGE
+0x6af456c: LDR             X8, [X19]
+0x6af4570: LDR             X9, [X9,#off_8ACC908@PAGEOFF]; qword_8D4ECC0
+0x6af4574: MOV             X0, X19
+0x6af4578: LDP             X20, X19, [SP,#0x20+var_10]
+0x6af457c: LDP             X3, X2, [X8,#0x1B8]
+0x6af4580: LDR             X1, [X9]
+0x6af4584: LDR             X30, [SP+0x20+var_20],#0x20
+0x6af4588: BR              X3

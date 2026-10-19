@@ -1,0 +1,94 @@
+0x52a9308: STP             X30, X23, [SP,#var_30]!
+0x52a930c: STP             X22, X21, [SP,#0x30+var_20]
+0x52a9310: STP             X20, X19, [SP,#0x30+var_10]
+0x52a9314: LDR             X8, [X0,#0x38]
+0x52a9318: MOV             X19, X3
+0x52a931c: CBZ             X8, loc_52A93B8
+0x52a9320: LDR             X8, [X19,#0x20]
+0x52a9324: MOV             X21, X2
+0x52a9328: MOV             X20, X0
+0x52a932c: MOV             X22, X1
+0x52a9330: LDR             X8, [X8,#0xC0]
+0x52a9334: LDR             X2, [X8,#0xD8]; method
+0x52a9338: BL              GameFramework.Fsm.Fsm_object_$$GetState
+0x52a933c: CBZ             X0, loc_52A93F0
+0x52a9340: MOV             X23, X0
+0x52a9344: LDR             X0, [X20,#0x38]
+0x52a9348: CBZ             X0, loc_52A947C
+0x52a934c: LDR             X8, [X0]
+0x52a9350: MOV             X1, X20
+0x52a9354: MOV             W2, WZR
+0x52a9358: LDP             X9, X3, [X8,#0x1B8]
+0x52a935c: BLR             X9
+0x52a9360: STR             WZR, [X20,#0x40]
+0x52a9364: STR             X23, [X20,#0x38]
+0x52a9368: CBZ             X21, loc_52A9398
+0x52a936c: LDR             X8, [X21,#0x18]
+0x52a9370: CBZ             X8, loc_52A9398
+0x52a9374: LDR             X8, [X23]
+0x52a9378: MOV             X1, X20
+0x52a937c: MOV             X2, X21
+0x52a9380: LDP             X20, X19, [SP,#0x30+var_10]
+0x52a9384: LDP             X4, X3, [X8,#0x198]
+0x52a9388: LDP             X22, X21, [SP,#0x30+var_20]
+0x52a938c: MOV             X0, X23
+0x52a9390: LDP             X30, X23, [SP+0x30+var_30],#0x30
+0x52a9394: BR              X4
+0x52a9398: LDR             X8, [X23]
+0x52a939c: MOV             X1, X20
+0x52a93a0: LDP             X20, X19, [SP,#0x30+var_10]
+0x52a93a4: LDP             X22, X21, [SP,#0x30+var_20]
+0x52a93a8: LDP             X3, X2, [X8,#0x188]
+0x52a93ac: MOV             X0, X23
+0x52a93b0: LDP             X30, X23, [SP+0x30+var_30],#0x30
+0x52a93b4: BR              X3
+0x52a93b8: ADRP            X0, #off_8B0CF78@PAGE
+0x52a93bc: LDR             X0, [X0,#off_8B0CF78@PAGEOFF]; unk_8CE7B50
+0x52a93c0: BL              unk_3C3D294
+0x52a93c4: BL              unk_3C3D4C4
+0x52a93c8: MOV             X20, X0
+0x52a93cc: ADRP            X0, #off_8B0F5D0@PAGE
+0x52a93d0: LDR             X0, [X0,#off_8B0F5D0@PAGEOFF]; unk_8D5D620
+0x52a93d4: BL              unk_3C3D294
+0x52a93d8: MOV             X1, X0
+0x52a93dc: MOV             X0, X20
+0x52a93e0: MOV             X2, XZR
+0x52a93e4: BL              GameFramework.GameFrameworkException$$.ctor
+0x52a93e8: MOV             X0, X20
+0x52a93ec: B               loc_52A9474
+0x52a93f0: MOV             X0, X20
+0x52a93f4: BL              unk_35C5DE8
+0x52a93f8: LDR             X8, [X19,#0x20]
+0x52a93fc: LDR             X0, [X20,#0x10]
+0x52a9400: LDR             X8, [X8,#0xC0]
+0x52a9404: LDR             X1, [X8,#0x30]
+0x52a9408: BL              unk_35FB8E0
+0x52a940c: MOV             X20, X0
+0x52a9410: MOV             X0, X22
+0x52a9414: BL              unk_35C5DE8
+0x52a9418: LDR             X8, [X22]
+0x52a941c: MOV             X0, X22
+0x52a9420: LDR             X9, [X8,#0x308]
+0x52a9424: LDR             X1, [X8,#0x310]
+0x52a9428: BLR             X9
+0x52a942c: MOV             X21, X0
+0x52a9430: ADRP            X0, #off_8B0F5F0@PAGE
+0x52a9434: LDR             X0, [X0,#off_8B0F5F0@PAGEOFF]; unk_8D600B8
+0x52a9438: BL              unk_3C3D294
+0x52a943c: MOV             X1, X20
+0x52a9440: MOV             X2, X21
+0x52a9444: MOV             X3, XZR
+0x52a9448: BL              sub_750AA4C
+0x52a944c: MOV             X20, X0
+0x52a9450: ADRP            X0, #off_8B0CF78@PAGE
+0x52a9454: LDR             X0, [X0,#off_8B0CF78@PAGEOFF]; unk_8CE7B50
+0x52a9458: BL              unk_3C3D294
+0x52a945c: BL              unk_3C3D4C4
+0x52a9460: MOV             X1, X20
+0x52a9464: MOV             X2, XZR
+0x52a9468: MOV             X21, X0
+0x52a946c: BL              GameFramework.GameFrameworkException$$.ctor
+0x52a9470: MOV             X0, X21
+0x52a9474: MOV             X1, X19
+0x52a9478: BL              unk_3C3D3A0
+0x52a947c: BL              il2cpp_codegen_raise_null_reference_exception

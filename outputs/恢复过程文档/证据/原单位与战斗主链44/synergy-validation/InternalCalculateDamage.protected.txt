@@ -1,0 +1,8 @@
+private int InternalCalculateDamage(int originalAttack, bool isEnemy, int fetterCount, int requiredCount)
+		{
+			// Recovered from ARM64 RVA 0x3E0F6F0; the native method does not read isEnemy.
+			if (fetterCount < requiredCount)
+				return originalAttack;
+			float bonus = (float)originalAttack * 0.5f;
+			return unchecked(originalAttack + (int)bonus);
+		}

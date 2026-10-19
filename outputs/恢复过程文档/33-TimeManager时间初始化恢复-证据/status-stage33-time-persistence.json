@@ -1,0 +1,127 @@
+{
+  "stage": "complete",
+  "methods": [
+    {
+      "name": "TimeModuleO.TimeManager$$SaveLastExitTime",
+      "address": 65295044,
+      "end": 65295208,
+      "signature": "void TimeModuleO_TimeManager__SaveLastExitTime (TimeModuleO_TimeManager_o* __this, const MethodInfo* method);",
+      "prototype": "void SaveLastExit(void* self,const MethodInfo* method);",
+      "range_analysis": 1,
+      "direct_callees": [
+        {
+          "callsite": "0x3e45314",
+          "address": "0x3e33908",
+          "name": "TimeModuleO.TimeManager$$GetLocalNetworkTime",
+          "signature": "System_DateTime_o TimeModuleO_TimeManager__GetLocalNetworkTime (TimeModuleO_TimeManager_o* __this, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x3e45354",
+          "address": "0x6af43d4",
+          "name": "DbtSaveDataManagerBase<object, object>$$Save",
+          "signature": "void DbtSaveDataManagerBase_object__object___Save (DbtSaveDataManagerBase_T__TD__o* __this, const MethodInfo_6AF43D4* method);"
+        }
+      ],
+      "prototype_applied": true,
+      "actual_function_start": "0x3e452c4",
+      "actual_function_end": "0x3e45368",
+      "pseudocode_chars": 965,
+      "unresolved_jumpout": false
+    },
+    {
+      "name": "TimeModuleO.TimeManager$$ChangeTimeInfoEndTime",
+      "address": 65294112,
+      "end": 65294492,
+      "signature": "void TimeModuleO_TimeManager__ChangeTimeInfoEndTime (System_String_o* key, System_DateTime_o endTime, const MethodInfo* method);",
+      "prototype": "void ChangeSavedEndTime(void* key,long long endTime,const MethodInfo* method);",
+      "range_analysis": 1,
+      "direct_callees": [
+        {
+          "callsite": "0x3e44ff4",
+          "address": "0x6c05f60",
+          "name": "System.Collections.Generic.Dictionary<object, object>$$.ctor",
+          "signature": "void System_Collections_Generic_Dictionary_object__object____ctor (System_Collections_Generic_Dictionary_object__object__o* __this, const MethodInfo_6C05F60* method);"
+        },
+        {
+          "callsite": "0x3e45014",
+          "address": "0x6c08430",
+          "name": "System.Collections.Generic.Dictionary<object, object>$$TryGetValue",
+          "signature": "bool System_Collections_Generic_Dictionary_object__object___TryGetValue (System_Collections_Generic_Dictionary_object__object__o* __this, Il2CppObject* key, Il2CppObject** value, const MethodInfo_6C08430* method);"
+        },
+        {
+          "callsite": "0x3e45034",
+          "address": "0x5978460",
+          "name": "ToolModule.ManagerBase<object>$$get_Instance",
+          "signature": "Il2CppObject* ToolModule_ManagerBase_object___get_Instance (const MethodInfo_5978460* method);"
+        },
+        {
+          "callsite": "0x3e45054",
+          "address": "0x6c06c40",
+          "name": "System.Collections.Generic.Dictionary<object, object>$$get_Item",
+          "signature": "Il2CppObject* System_Collections_Generic_Dictionary_object__object___get_Item (System_Collections_Generic_Dictionary_object__object__o* __this, Il2CppObject* key, const MethodInfo_6C06C40* method);"
+        },
+        {
+          "callsite": "0x3e45064",
+          "address": "0x3f6ca58",
+          "name": "TimeModuleO.TimeManager.Timer$$SetTargetEndTime",
+          "signature": "void TimeModuleO_TimeManager_Timer__SetTargetEndTime (TimeModuleO_TimeManager_Timer_o* __this, System_DateTime_o targetEndTime, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x3e45084",
+          "address": "0x6af43d4",
+          "name": "DbtSaveDataManagerBase<object, object>$$Save",
+          "signature": "void DbtSaveDataManagerBase_object__object___Save (DbtSaveDataManagerBase_T__TD__o* __this, const MethodInfo_6AF43D4* method);"
+        }
+      ],
+      "prototype_applied": true,
+      "actual_function_start": "0x3e44f20",
+      "actual_function_end": "0x3e4509c",
+      "pseudocode_chars": 2097,
+      "unresolved_jumpout": false
+    },
+    {
+      "name": "TimeModuleO.TimeManager$$RemoveTimerEvent",
+      "address": 65220684,
+      "end": 65220912,
+      "signature": "void TimeModuleO_TimeManager__RemoveTimerEvent (TimeModuleO_TimeManager_o* __this, System_String_o* timerKey, const MethodInfo* method);",
+      "prototype": "void RemoveCountdownEvent(void* self,void* key,const MethodInfo* method);",
+      "range_analysis": 1,
+      "direct_callees": [
+        {
+          "callsite": "0x3e330b8",
+          "address": "0x6c06eb4",
+          "name": "System.Collections.Generic.Dictionary<object, object>$$ContainsKey",
+          "signature": "bool System_Collections_Generic_Dictionary_object__object___ContainsKey (System_Collections_Generic_Dictionary_object__object__o* __this, Il2CppObject* key, const MethodInfo_6C06EB4* method);"
+        },
+        {
+          "callsite": "0x3e330d8",
+          "address": "0x6c08120",
+          "name": "System.Collections.Generic.Dictionary<object, object>$$Remove",
+          "signature": "bool System_Collections_Generic_Dictionary_object__object___Remove (System_Collections_Generic_Dictionary_object__object__o* __this, Il2CppObject* key, const MethodInfo_6C08120* method);"
+        },
+        {
+          "callsite": "0x3e330f4",
+          "address": "0x6c06eb4",
+          "name": "System.Collections.Generic.Dictionary<object, object>$$ContainsKey",
+          "signature": "bool System_Collections_Generic_Dictionary_object__object___ContainsKey (System_Collections_Generic_Dictionary_object__object__o* __this, Il2CppObject* key, const MethodInfo_6C06EB4* method);"
+        },
+        {
+          "callsite": "0x3e3311c",
+          "address": "0x6c08120",
+          "name": "System.Collections.Generic.Dictionary<object, object>$$Remove",
+          "signature": "bool System_Collections_Generic_Dictionary_object__object___Remove (System_Collections_Generic_Dictionary_object__object__o* __this, Il2CppObject* key, const MethodInfo_6C08120* method);"
+        }
+      ],
+      "prototype_applied": true,
+      "actual_function_start": "0x3e3304c",
+      "actual_function_end": "0x3e33130",
+      "pseudocode_chars": 1306,
+      "unresolved_jumpout": false
+    }
+  ],
+  "image_base": "0x0",
+  "type_errors": 0,
+  "hexrays_available": true,
+  "hexrays_version": "9.4.0.260713",
+  "database_saved": true
+}

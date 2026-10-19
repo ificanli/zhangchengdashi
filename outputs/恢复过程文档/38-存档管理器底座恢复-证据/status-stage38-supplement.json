@@ -1,0 +1,912 @@
+{
+  "stage": "complete",
+  "methods": [
+    {
+      "name": "L_Tools.DataCompressTools$$EncryptString",
+      "address": 71272848,
+      "end": 71273220,
+      "signature": "System_String_o* L_Tools_DataCompressTools__EncryptString (System_String_o* rawString, const MethodInfo* method);",
+      "prototype": "void* EncryptSaveString(void* value,const MethodInfo* method);",
+      "method_token": "0x6005E08",
+      "file": "Assets/Scripts/Assembly-CSharp/L_Tools/DataCompressTools.cs",
+      "note": "Actual save JSON consumer Gzip dependency; all current unknown; reconstruct exact format and invalid input contract, no MemoryPack replacement",
+      "range_analysis": 1,
+      "direct_callees": [
+        {
+          "callsite": "0x43f89e0",
+          "address": "0x750a620",
+          "name": "System.String$$IsNullOrEmpty",
+          "signature": "bool System_String__IsNullOrEmpty (System_String_o* value, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x43f8a08",
+          "address": "0x75293e8",
+          "name": "System.Text.Encoding$$get_UTF8",
+          "signature": "System_Text_Encoding_o* System_Text_Encoding__get_UTF8 (const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x43f8ab4",
+          "address": "0x76092e8",
+          "name": "System.Convert$$ToBase64String",
+          "signature": "System_String_o* System_Convert__ToBase64String (System_Byte_array* inArray, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x43f8af8",
+          "address": "0x74fe7a4",
+          "name": "System.String$$Concat",
+          "signature": "System_String_o* System_String__Concat (System_String_o* str0, System_String_o* str1, const MethodInfo* method);"
+        }
+      ],
+      "prototype_applied": true,
+      "actual_function_start": "0x43f8990",
+      "actual_function_end": "0x43f8b04",
+      "pseudocode_chars": 1956,
+      "unresolved_jumpout": false
+    },
+    {
+      "name": "L_Tools.DataCompressTools$$DecryptString",
+      "address": 71273220,
+      "end": 71273952,
+      "signature": "System_String_o* L_Tools_DataCompressTools__DecryptString (System_String_o* encryptedString, const MethodInfo* method);",
+      "prototype": "void* DecryptSaveString(void* value,const MethodInfo* method);",
+      "method_token": "0x6005E09",
+      "file": "Assets/Scripts/Assembly-CSharp/L_Tools/DataCompressTools.cs",
+      "note": "Actual save JSON consumer Gzip dependency; all current unknown; reconstruct exact format and invalid input contract, no MemoryPack replacement",
+      "range_analysis": 1,
+      "direct_callees": [
+        {
+          "callsite": "0x43f8b58",
+          "address": "0x750a620",
+          "name": "System.String$$IsNullOrEmpty",
+          "signature": "bool System_String__IsNullOrEmpty (System_String_o* value, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x43f8ba0",
+          "address": "0x75093e0",
+          "name": "System.String$$EndsWith",
+          "signature": "bool System_String__EndsWith (System_String_o* __this, System_String_o* value, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x43f8be0",
+          "address": "0x750bc6c",
+          "name": "System.String$$Substring",
+          "signature": "System_String_o* System_String__Substring (System_String_o* __this, int32_t startIndex, int32_t length, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x43f8c08",
+          "address": "0x7609de0",
+          "name": "System.Convert$$FromBase64String",
+          "signature": "System_Byte_array* System_Convert__FromBase64String (System_String_o* s, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x43f8c78",
+          "address": "0x75293e8",
+          "name": "System.Text.Encoding$$get_UTF8",
+          "signature": "System_Text_Encoding_o* System_Text_Encoding__get_UTF8 (const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x43f8d78",
+          "address": "0x74fe7a4",
+          "name": "System.String$$Concat",
+          "signature": "System_String_o* System_String__Concat (System_String_o* str0, System_String_o* str1, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x43f8da0",
+          "address": "0x82a2304",
+          "name": "UnityEngine.Debug$$LogWarning",
+          "signature": "void UnityEngine_Debug__LogWarning (Il2CppObject* message, const MethodInfo* method);"
+        }
+      ],
+      "prototype_applied": true,
+      "actual_function_start": "0x43f8b04",
+      "actual_function_end": "0x43f8de0",
+      "pseudocode_chars": 2637,
+      "unresolved_jumpout": false
+    },
+    {
+      "name": "L_Tools.DataCompressTools$$GZipCompressString",
+      "address": 71270756,
+      "end": 71271032,
+      "signature": "System_String_o* L_Tools_DataCompressTools__GZipCompressString (System_String_o* rawString, const MethodInfo* method);",
+      "prototype": "void* CompressSaveString(void* value,const MethodInfo* method);",
+      "method_token": "0x6005E0A",
+      "file": "Assets/Scripts/Assembly-CSharp/L_Tools/DataCompressTools.cs",
+      "note": "Actual save JSON consumer Gzip dependency; all current unknown; reconstruct exact format and invalid input contract, no MemoryPack replacement",
+      "range_analysis": 1,
+      "direct_callees": [
+        {
+          "callsite": "0x43f81b0",
+          "address": "0x750a620",
+          "name": "System.String$$IsNullOrEmpty",
+          "signature": "bool System_String__IsNullOrEmpty (System_String_o* value, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x43f81c8",
+          "address": "0x75293e8",
+          "name": "System.Text.Encoding$$get_UTF8",
+          "signature": "System_Text_Encoding_o* System_Text_Encoding__get_UTF8 (const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x43f8220",
+          "address": "0x43f8de0",
+          "name": "L_Tools.DataCompressTools$$Compress",
+          "signature": "System_Byte_array* L_Tools_DataCompressTools__Compress (System_Byte_array* rawData, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x43f824c",
+          "address": "0x76092e8",
+          "name": "System.Convert$$ToBase64String",
+          "signature": "System_String_o* System_Convert__ToBase64String (System_Byte_array* inArray, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x43f8258",
+          "address": "0x43f8990",
+          "name": "L_Tools.DataCompressTools$$EncryptString",
+          "signature": "System_String_o* L_Tools_DataCompressTools__EncryptString (System_String_o* rawString, const MethodInfo* method);"
+        }
+      ],
+      "prototype_applied": true,
+      "actual_function_start": "0x43f8164",
+      "actual_function_end": "0x43f8278",
+      "pseudocode_chars": 1561,
+      "unresolved_jumpout": false
+    },
+    {
+      "name": "L_Tools.DataCompressTools$$Compress",
+      "address": 71273952,
+      "end": 71274804,
+      "signature": "System_Byte_array* L_Tools_DataCompressTools__Compress (System_Byte_array* rawData, const MethodInfo* method);",
+      "prototype": "void* CompressSaveBytes(void* bytes,const MethodInfo* method);",
+      "method_token": "0x6005E0B",
+      "file": "Assets/Scripts/Assembly-CSharp/L_Tools/DataCompressTools.cs",
+      "note": "Actual save JSON consumer Gzip dependency; all current unknown; reconstruct exact format and invalid input contract, no MemoryPack replacement",
+      "range_analysis": 1,
+      "direct_callees": [
+        {
+          "callsite": "0x43f8e54",
+          "address": "0x75cf068",
+          "name": "System.IO.MemoryStream$$.ctor",
+          "signature": "void System_IO_MemoryStream___ctor (System_IO_MemoryStream_o* __this, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x43f8e74",
+          "address": "0x7d18448",
+          "name": "System.IO.Compression.GZipStream$$.ctor",
+          "signature": "void System_IO_Compression_GZipStream___ctor (System_IO_Compression_GZipStream_o* __this, System_IO_Stream_o* stream, int32_t mode, bool leaveOpen, const MethodInfo* method);"
+        }
+      ],
+      "prototype_applied": true,
+      "actual_function_start": "0x43f8de0",
+      "actual_function_end": "0x43f9134",
+      "pseudocode_chars": 2642,
+      "unresolved_jumpout": false
+    },
+    {
+      "name": "L_Tools.DataCompressTools$$GZipDecompressString",
+      "address": 71269976,
+      "end": 71270512,
+      "signature": "System_String_o* L_Tools_DataCompressTools__GZipDecompressString (System_String_o* zippedString, const MethodInfo* method);",
+      "prototype": "void* DecompressSaveString(void* value,const MethodInfo* method);",
+      "method_token": "0x6005E0C",
+      "file": "Assets/Scripts/Assembly-CSharp/L_Tools/DataCompressTools.cs",
+      "note": "Actual save JSON consumer Gzip dependency; all current unknown; reconstruct exact format and invalid input contract, no MemoryPack replacement",
+      "range_analysis": 1,
+      "direct_callees": [
+        {
+          "callsite": "0x43f7ea4",
+          "address": "0x750a620",
+          "name": "System.String$$IsNullOrEmpty",
+          "signature": "bool System_String__IsNullOrEmpty (System_String_o* value, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x43f7ed4",
+          "address": "0x43f8b04",
+          "name": "L_Tools.DataCompressTools$$DecryptString",
+          "signature": "System_String_o* L_Tools_DataCompressTools__DecryptString (System_String_o* encryptedString, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x43f7f14",
+          "address": "0x7609de0",
+          "name": "System.Convert$$FromBase64String",
+          "signature": "System_Byte_array* System_Convert__FromBase64String (System_String_o* s, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x43f7f20",
+          "address": "0x75293e8",
+          "name": "System.Text.Encoding$$get_UTF8",
+          "signature": "System_Text_Encoding_o* System_Text_Encoding__get_UTF8 (const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x43f7f2c",
+          "address": "0x43f9134",
+          "name": "L_Tools.DataCompressTools$$Decompress",
+          "signature": "System_Byte_array* L_Tools_DataCompressTools__Decompress (System_Byte_array* zippedData, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x43f8008",
+          "address": "0x74fe7a4",
+          "name": "System.String$$Concat",
+          "signature": "System_String_o* System_String__Concat (System_String_o* str0, System_String_o* str1, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x43f8030",
+          "address": "0x82a2304",
+          "name": "UnityEngine.Debug$$LogWarning",
+          "signature": "void UnityEngine_Debug__LogWarning (Il2CppObject* message, const MethodInfo* method);"
+        }
+      ],
+      "prototype_applied": true,
+      "actual_function_start": "0x43f7e58",
+      "actual_function_end": "0x43f8070",
+      "pseudocode_chars": 1614,
+      "unresolved_jumpout": false
+    },
+    {
+      "name": "L_Tools.DataCompressTools$$Decompress",
+      "address": 71274804,
+      "end": 71276052,
+      "signature": "System_Byte_array* L_Tools_DataCompressTools__Decompress (System_Byte_array* zippedData, const MethodInfo* method);",
+      "prototype": "void* DecompressSaveBytes(void* bytes,const MethodInfo* method);",
+      "method_token": "0x6005E0D",
+      "file": "Assets/Scripts/Assembly-CSharp/L_Tools/DataCompressTools.cs",
+      "note": "Actual save JSON consumer Gzip dependency; all current unknown; reconstruct exact format and invalid input contract, no MemoryPack replacement",
+      "range_analysis": 1,
+      "direct_callees": [
+        {
+          "callsite": "0x43f91bc",
+          "address": "0x75cf1dc",
+          "name": "System.IO.MemoryStream$$.ctor",
+          "signature": "void System_IO_MemoryStream___ctor (System_IO_MemoryStream_o* __this, System_Byte_array* buffer, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x43f91d8",
+          "address": "0x7d18440",
+          "name": "System.IO.Compression.GZipStream$$.ctor",
+          "signature": "void System_IO_Compression_GZipStream___ctor (System_IO_Compression_GZipStream_o* __this, System_IO_Stream_o* stream, int32_t mode, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x43f91ec",
+          "address": "0x75cf068",
+          "name": "System.IO.MemoryStream$$.ctor",
+          "signature": "void System_IO_MemoryStream___ctor (System_IO_MemoryStream_o* __this, const MethodInfo* method);"
+        }
+      ],
+      "prototype_applied": true,
+      "actual_function_start": "0x43f9134",
+      "actual_function_end": "0x43f9614",
+      "pseudocode_chars": 3885,
+      "unresolved_jumpout": false
+    },
+    {
+      "name": "L_Tools.DataCompressTools$$.cctor",
+      "address": 71276052,
+      "end": 71276164,
+      "signature": "void L_Tools_DataCompressTools___cctor (const MethodInfo* method);",
+      "prototype": "void SaveCompressionCctor(const MethodInfo* method);",
+      "method_token": "0x6005E0E",
+      "file": "Assets/Scripts/Assembly-CSharp/L_Tools/DataCompressTools.cs",
+      "note": "Actual save JSON consumer Gzip dependency; all current unknown; reconstruct exact format and invalid input contract, no MemoryPack replacement",
+      "range_analysis": 1,
+      "direct_callees": [],
+      "prototype_applied": true,
+      "actual_function_start": "0x43f9614",
+      "actual_function_end": "0x43f9684",
+      "pseudocode_chars": 383,
+      "unresolved_jumpout": false
+    },
+    {
+      "name": "GameFramework.DataManagerPool$$get_Instance",
+      "address": 118956980,
+      "end": 118957152,
+      "signature": "GameFramework_DataManagerPool_o* GameFramework_DataManagerPool__get_Instance (const MethodInfo* method);",
+      "prototype": "void* PoolInstance(const MethodInfo* method);",
+      "method_token": "0x6005866",
+      "file": "Assets/Scripts/GFRunning/GameFramework/DataManagerPool.cs",
+      "note": "Original producer of model registration and static I; readonly trace before scope approval",
+      "range_analysis": 1,
+      "direct_callees": [
+        {
+          "callsite": "0x7172418",
+          "address": "0x76c770c",
+          "name": "System.Object$$.ctor",
+          "signature": "void System_Object___ctor (Il2CppObject* __this, const MethodInfo* method);"
+        }
+      ],
+      "prototype_applied": true,
+      "actual_function_start": "0x71723b4",
+      "actual_function_end": "0x7172460",
+      "pseudocode_chars": 933,
+      "unresolved_jumpout": false
+    },
+    {
+      "name": "GameFramework.DataManagerPool$$.ctor",
+      "address": 118980060,
+      "end": 118980076,
+      "signature": "void GameFramework_DataManagerPool___ctor (GameFramework_DataManagerPool_o* __this, const MethodInfo* method);",
+      "prototype": "void PoolCtor(void* self,const MethodInfo* method);",
+      "method_token": "0x600585D",
+      "file": "Assets/Scripts/GFRunning/GameFramework/DataManagerPool.cs",
+      "note": "Original producer of model registration and static I; readonly trace before scope approval",
+      "range_analysis": 1,
+      "direct_callees": [
+        {
+          "callsite": "0x7177de8",
+          "address": "0x76c770c",
+          "name": "System.Object$$.ctor",
+          "signature": "void System_Object___ctor (Il2CppObject* __this, const MethodInfo* method);"
+        }
+      ],
+      "prototype_applied": true,
+      "actual_function_start": "0x7177ddc",
+      "actual_function_end": "0x7177dec",
+      "pseudocode_chars": 146,
+      "unresolved_jumpout": false
+    },
+    {
+      "name": "GameFramework.DataManagerPool$$OnInit",
+      "address": 118981540,
+      "end": 118981944,
+      "signature": "void GameFramework_DataManagerPool__OnInit (GameFramework_DataManagerPool_o* __this, const MethodInfo* method);",
+      "prototype": "void PoolInit(void* self,const MethodInfo* method);",
+      "method_token": "0x6005861",
+      "file": "Assets/Scripts/GFRunning/GameFramework/DataManagerPool.cs",
+      "note": "Original producer of model registration and static I; readonly trace before scope approval",
+      "range_analysis": 1,
+      "direct_callees": [
+        {
+          "callsite": "0x7178468",
+          "address": "0x6c05f60",
+          "name": "System.Collections.Generic.Dictionary<object, object>$$.ctor",
+          "signature": "void System_Collections_Generic_Dictionary_object__object____ctor (System_Collections_Generic_Dictionary_object__object__o* __this, const MethodInfo_6C05F60* method);"
+        },
+        {
+          "callsite": "0x7178480",
+          "address": "0x72b7900",
+          "name": "³¿d$$.ctor",
+          "signature": "void ____d____ctor (____d__o* __this, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x717849c",
+          "address": "0x72ba280",
+          "name": "³¿d$$}ye¼a",
+          "signature": "void ____d____ye__a (____d__o* __this, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x71784ac",
+          "address": "0x7178538",
+          "name": "GameFramework.DataManagerPool$$£ºFep",
+          "signature": "void GameFramework_DataManagerPool____Fe_p (GameFramework_DataManagerPool_o* __this, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x7178520",
+          "address": "0x72027c0",
+          "name": "GameFramework.CLog$$yEo}",
+          "signature": "void GameFramework_CLog___y_Eo_ (System_Object_array* iD_m__, const MethodInfo* method);"
+        }
+      ],
+      "prototype_applied": true,
+      "actual_function_start": "0x71783a4",
+      "actual_function_end": "0x7178538",
+      "pseudocode_chars": 2310,
+      "unresolved_jumpout": false
+    },
+    {
+      "name": "GameFramework.DataManagerPool$$d ³v",
+      "address": 118983992,
+      "end": 118984576,
+      "signature": "GameFramework_DataManagerBase_o* GameFramework_DataManagerPool__d____v (GameFramework_DataManagerPool_o* __this, System_Type_o* h____Y, const MethodInfo* method);",
+      "prototype": "void* PoolGetType(void* self,void* type,const MethodInfo* method);",
+      "method_token": "0x6005864",
+      "file": "Assets/Scripts/GFRunning/GameFramework/DataManagerPool.cs",
+      "note": "Original producer of model registration and static I; readonly trace before scope approval",
+      "range_analysis": 1,
+      "direct_callees": [
+        {
+          "callsite": "0x7178de4",
+          "address": "0x769c570",
+          "name": "System.Type$$op_Equality",
+          "signature": "bool System_Type__op_Equality (System_Type_o* left, System_Type_o* right, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x7178e5c",
+          "address": "0x71f3550",
+          "name": "GameFramework.CLog$$Error",
+          "signature": "void GameFramework_CLog__Error (System_Object_array* iD_m__, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x7178e7c",
+          "address": "0x6c06eb4",
+          "name": "System.Collections.Generic.Dictionary<object, object>$$ContainsKey",
+          "signature": "bool System_Collections_Generic_Dictionary_object__object___ContainsKey (System_Collections_Generic_Dictionary_object__object__o* __this, Il2CppObject* key, const MethodInfo_6C06EB4* method);"
+        },
+        {
+          "callsite": "0x7178ea8",
+          "address": "0x6c06c40",
+          "name": "System.Collections.Generic.Dictionary<object, object>$$get_Item",
+          "signature": "Il2CppObject* System_Collections_Generic_Dictionary_object__object___get_Item (System_Collections_Generic_Dictionary_object__object__o* __this, Il2CppObject* key, const MethodInfo_6C06C40* method);"
+        },
+        {
+          "callsite": "0x7178f00",
+          "address": "0x750a330",
+          "name": "System.String$$Concat",
+          "signature": "System_String_o* System_String__Concat (System_String_o* str0, System_String_o* str1, System_String_o* str2, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x7178f54",
+          "address": "0x71fef10",
+          "name": "GameFramework.CLog$$z|`X",
+          "signature": "void GameFramework_CLog___z___X (System_Object_array* iD_m__, const MethodInfo* method);"
+        }
+      ],
+      "prototype_applied": true,
+      "actual_function_start": "0x7178d38",
+      "actual_function_end": "0x7178f80",
+      "pseudocode_chars": 3326,
+      "unresolved_jumpout": true
+    },
+    {
+      "name": "GameFramework.DataManagerPool$$AddModel<object>",
+      "address": 79266732,
+      "end": 79267204,
+      "signature": "Il2CppObject* GameFramework_DataManagerPool__AddModel_object_ (GameFramework_DataManagerPool_o* __this, Il2CppObject* SqR_Z_, bool J_SX__, const MethodInfo_4B983AC* method);",
+      "prototype": "void* PoolAddModel(void* self,void* model,unsigned char init,const MethodInfo* method);",
+      "method_token": "0x600585B",
+      "file": "Assets/Scripts/GFRunning/GameFramework/DataManagerPool.cs",
+      "note": "Original producer of model registration and static I; readonly trace before scope approval",
+      "range_analysis": 1,
+      "direct_callees": [
+        {
+          "callsite": "0x4b9842c",
+          "address": "0x76c7ea0",
+          "name": "System.Object$$GetType",
+          "signature": "System_Type_o* System_Object__GetType (Il2CppObject* __this, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x4b98450",
+          "address": "0x6c06eb4",
+          "name": "System.Collections.Generic.Dictionary<object, object>$$ContainsKey",
+          "signature": "bool System_Collections_Generic_Dictionary_object__object___ContainsKey (System_Collections_Generic_Dictionary_object__object__o* __this, Il2CppObject* key, const MethodInfo_6C06EB4* method);"
+        },
+        {
+          "callsite": "0x4b98498",
+          "address": "0x74fe7a4",
+          "name": "System.String$$Concat",
+          "signature": "System_String_o* System_String__Concat (System_String_o* str0, System_String_o* str1, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x4b984e8",
+          "address": "0x71f3550",
+          "name": "GameFramework.CLog$$Error",
+          "signature": "void GameFramework_CLog__Error (System_Object_array* iD_m__, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x4b984f8",
+          "address": "0x76c7ea0",
+          "name": "System.Object$$GetType",
+          "signature": "System_Type_o* System_Object__GetType (Il2CppObject* __this, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x4b98508",
+          "address": "0x4b92d9c",
+          "name": "System.Reflection.CustomAttributeExtensions$$GetCustomAttribute<object>",
+          "signature": "Il2CppObject* System_Reflection_CustomAttributeExtensions__GetCustomAttribute_object_ (System_Reflection_MemberInfo_o* element, const MethodInfo_4B92D9C* method);"
+        },
+        {
+          "callsite": "0x4b98544",
+          "address": "0x6c06cac",
+          "name": "System.Collections.Generic.Dictionary<object, object>$$set_Item",
+          "signature": "void System_Collections_Generic_Dictionary_object__object___set_Item (System_Collections_Generic_Dictionary_object__object__o* __this, Il2CppObject* key, Il2CppObject* value, const MethodInfo_6C06CAC* method);"
+        }
+      ],
+      "prototype_applied": true,
+      "actual_function_start": "0x4b983ac",
+      "actual_function_end": "0x4b98584",
+      "pseudocode_chars": 2915,
+      "unresolved_jumpout": true
+    },
+    {
+      "name": "GameFramework.DataManagerPool$$GetModel<object>",
+      "address": 79267204,
+      "end": 79267748,
+      "signature": "Il2CppObject* GameFramework_DataManagerPool__GetModel_object_ (GameFramework_DataManagerPool_o* __this, const MethodInfo_4B98584* method);",
+      "prototype": "void* PoolGetModel(void* self,const MethodInfo* method);",
+      "method_token": "0x6005860",
+      "file": "Assets/Scripts/GFRunning/GameFramework/DataManagerPool.cs",
+      "note": "Original producer of model registration and static I; readonly trace before scope approval",
+      "range_analysis": 1,
+      "direct_callees": [
+        {
+          "callsite": "0x4b98628",
+          "address": "0x76935a4",
+          "name": "System.Type$$GetTypeFromHandle",
+          "signature": "System_Type_o* System_Type__GetTypeFromHandle (System_RuntimeTypeHandle_o handle, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x4b9864c",
+          "address": "0x6c06eb4",
+          "name": "System.Collections.Generic.Dictionary<object, object>$$ContainsKey",
+          "signature": "bool System_Collections_Generic_Dictionary_object__object___ContainsKey (System_Collections_Generic_Dictionary_object__object__o* __this, Il2CppObject* key, const MethodInfo_6C06EB4* method);"
+        },
+        {
+          "callsite": "0x4b9866c",
+          "address": "0x6c06c40",
+          "name": "System.Collections.Generic.Dictionary<object, object>$$get_Item",
+          "signature": "Il2CppObject* System_Collections_Generic_Dictionary_object__object___get_Item (System_Collections_Generic_Dictionary_object__object__o* __this, Il2CppObject* key, const MethodInfo_6C06C40* method);"
+        },
+        {
+          "callsite": "0x4b9872c",
+          "address": "0x750a330",
+          "name": "System.String$$Concat",
+          "signature": "System_String_o* System_String__Concat (System_String_o* str0, System_String_o* str1, System_String_o* str2, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x4b9877c",
+          "address": "0x71f7ad4",
+          "name": "GameFramework.CLog$$Warning",
+          "signature": "void GameFramework_CLog__Warning (System_Object_array* iD_m__, const MethodInfo* method);"
+        }
+      ],
+      "prototype_applied": true,
+      "actual_function_start": "0x4b98584",
+      "actual_function_end": "0x4b987a4",
+      "pseudocode_chars": 3521,
+      "unresolved_jumpout": true
+    },
+    {
+      "name": "ÂOkeÁ$$jg¡¶O",
+      "address": 118955036,
+      "end": 118955592,
+      "signature": "bool _Oke____j_g__O (System_String_o* ___iPJ, const MethodInfo* method);",
+      "prototype": "unsigned char ValidateDataKey(void* key,const MethodInfo* method);",
+      "method_token": "0x6005828",
+      "file": "Assets/Scripts/GFRunning/ÂOke-Á.cs",
+      "note": "Readonly lower native storage boundary evidence only; no emulator/user-data I/O authorized",
+      "range_analysis": 1,
+      "direct_callees": [
+        {
+          "callsite": "0x7171cb8",
+          "address": "0x750a330",
+          "name": "System.String$$Concat",
+          "signature": "System_String_o* System_String__Concat (System_String_o* str0, System_String_o* str1, System_String_o* str2, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x7171d08",
+          "address": "0x71ffd08",
+          "name": "GameFramework.CLog$$Log",
+          "signature": "void GameFramework_CLog__Log (System_Object_array* iD_m__, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x7171d14",
+          "address": "0x750a620",
+          "name": "System.String$$IsNullOrEmpty",
+          "signature": "bool System_String__IsNullOrEmpty (System_String_o* value, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x7171d38",
+          "address": "0x7505888",
+          "name": "System.String$$get_Chars",
+          "signature": "uint16_t System_String__get_Chars (System_String_o* __this, int32_t index, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x7171d60",
+          "address": "0x7505888",
+          "name": "System.String$$get_Chars",
+          "signature": "uint16_t System_String__get_Chars (System_String_o* __this, int32_t index, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x7171d98",
+          "address": "0x76008f8",
+          "name": "System.Char$$IsLetter",
+          "signature": "bool System_Char__IsLetter (uint16_t c, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x7171ddc",
+          "address": "0x7505888",
+          "name": "System.String$$get_Chars",
+          "signature": "uint16_t System_String__get_Chars (System_String_o* __this, int32_t index, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x7171e00",
+          "address": "0x7600c60",
+          "name": "System.Char$$IsLetterOrDigit",
+          "signature": "bool System_Char__IsLetterOrDigit (uint16_t c, const MethodInfo* method);"
+        }
+      ],
+      "prototype_applied": true,
+      "actual_function_start": "0x7171c1c",
+      "actual_function_end": "0x7171e48",
+      "pseudocode_chars": 3251,
+      "unresolved_jumpout": false
+    },
+    {
+      "name": "ÂOkeÁ$$DS",
+      "address": 118958324,
+      "end": 118959584,
+      "signature": "System_String_o* _Oke______D__S (System_String_o* ____u_, bool ____RS, const MethodInfo* method);",
+      "prototype": "void* ReadNativeData(void* key,unsigned char useServer,const MethodInfo* method);",
+      "method_token": "0x6005829",
+      "file": "Assets/Scripts/GFRunning/ÂOke-Á.cs",
+      "note": "Readonly lower native storage boundary evidence only; no emulator/user-data I/O authorized",
+      "range_analysis": 1,
+      "direct_callees": [
+        {
+          "callsite": "0x717299c",
+          "address": "0x7072514",
+          "name": "GamePath$$get_Instance",
+          "signature": "GamePath_o* GamePath__get_Instance (const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x71729b0",
+          "address": "0x7072514",
+          "name": "GamePath$$get_Instance",
+          "signature": "GamePath_o* GamePath__get_Instance (const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x71729d4",
+          "address": "0x750a330",
+          "name": "System.String$$Concat",
+          "signature": "System_String_o* System_String__Concat (System_String_o* str0, System_String_o* str1, System_String_o* str2, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x71729e0",
+          "address": "0x723dbf4",
+          "name": "GameFramework.Tools.FileManager$$get_Instance",
+          "signature": "GameFramework_Tools_FileManager_o* GameFramework_Tools_FileManager__get_Instance (const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x71729f0",
+          "address": "0x723f060",
+          "name": "GameFramework.Tools.FileManager$$IsFileExists",
+          "signature": "bool GameFramework_Tools_FileManager__IsFileExists (GameFramework_Tools_FileManager_o* __this, System_String_o* P_c___, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x71729fc",
+          "address": "0x723dbf4",
+          "name": "GameFramework.Tools.FileManager$$get_Instance",
+          "signature": "GameFramework_Tools_FileManager_o* GameFramework_Tools_FileManager__get_Instance (const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x7172a0c",
+          "address": "0x723fd5c",
+          "name": "GameFramework.Tools.FileManager$$ReadFileBytes",
+          "signature": "System_Byte_array* GameFramework_Tools_FileManager__ReadFileBytes (GameFramework_Tools_FileManager_o* __this, System_String_o* P_c___, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x7172a20",
+          "address": "0x72633a4",
+          "name": "GameFramework.Tools.UIGradientBlender$$SplitColors",
+          "signature": "System_Byte_array* GameFramework_Tools_UIGradientBlender__SplitColors (System_Byte_array* H__F_k, System_String_o* ____Y_, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x7172a2c",
+          "address": "0x752a5dc",
+          "name": "System.Text.Encoding$$get_Default",
+          "signature": "System_Text_Encoding_o* System_Text_Encoding__get_Default (const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x7172ae4",
+          "address": "0x750a744",
+          "name": "System.String$$Concat",
+          "signature": "System_String_o* System_String__Concat (System_String_array* values, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x7172b34",
+          "address": "0x72027c0",
+          "name": "GameFramework.CLog$$yEo}",
+          "signature": "void GameFramework_CLog___y_Eo_ (System_Object_array* iD_m__, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x7172c24",
+          "address": "0x76bc8fc",
+          "name": "System.Exception$$GetType",
+          "signature": "System_Type_o* System_Exception__GetType (System_Exception_o* __this, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x7172c74",
+          "address": "0x74fe7a4",
+          "name": "System.String$$Concat",
+          "signature": "System_String_o* System_String__Concat (System_String_o* str0, System_String_o* str1, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x7172c7c",
+          "address": "0x85470f4",
+          "name": "UnityEngine.Networking.UnityWebRequest$$EscapeURL",
+          "signature": "System_String_o* UnityEngine_Networking_UnityWebRequest__EscapeURL (System_String_o* s, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x7172cb4",
+          "address": "0x750a63c",
+          "name": "System.String$$Concat",
+          "signature": "System_String_o* System_String__Concat (System_String_o* str0, System_String_o* str1, System_String_o* str2, System_String_o* str3, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x7172ccc",
+          "address": "0x738c3e0",
+          "name": "DBTSDK.ReportManager$$Reportclient_Event",
+          "signature": "void DBTSDK_ReportManager__Reportclient_Event (DBTSDK_ReportManager_o* __this, int32_t eventId, System_String_o* msg, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x7172d2c",
+          "address": "0x750a63c",
+          "name": "System.String$$Concat",
+          "signature": "System_String_o* System_String__Concat (System_String_o* str0, System_String_o* str1, System_String_o* str2, System_String_o* str3, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x7172d7c",
+          "address": "0x71f3550",
+          "name": "GameFramework.CLog$$Error",
+          "signature": "void GameFramework_CLog__Error (System_Object_array* iD_m__, const MethodInfo* method);"
+        }
+      ],
+      "prototype_applied": true,
+      "actual_function_start": "0x71728f4",
+      "actual_function_end": "0x7172de0",
+      "pseudocode_chars": 9124,
+      "unresolved_jumpout": true
+    },
+    {
+      "name": "ÂOkeÁ$$A`¹ºU",
+      "address": 118957180,
+      "end": 118958156,
+      "signature": "void _Oke____A____U (System_String_o* ____u_, System_String_o* ___cf_, bool ____RS, const MethodInfo* method);",
+      "prototype": "void WriteNativeData(void* key,void* data,unsigned char useServer,const MethodInfo* method);",
+      "method_token": "0x6005843",
+      "file": "Assets/Scripts/GFRunning/ÂOke-Á.cs",
+      "note": "Readonly lower native storage boundary evidence only; no emulator/user-data I/O authorized",
+      "range_analysis": 1,
+      "direct_callees": [
+        {
+          "callsite": "0x7172510",
+          "address": "0x7072514",
+          "name": "GamePath$$get_Instance",
+          "signature": "GamePath_o* GamePath__get_Instance (const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x7172524",
+          "address": "0x7072514",
+          "name": "GamePath$$get_Instance",
+          "signature": "GamePath_o* GamePath__get_Instance (const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x7172548",
+          "address": "0x750a330",
+          "name": "System.String$$Concat",
+          "signature": "System_String_o* System_String__Concat (System_String_o* str0, System_String_o* str1, System_String_o* str2, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x71725e4",
+          "address": "0x750a744",
+          "name": "System.String$$Concat",
+          "signature": "System_String_o* System_String__Concat (System_String_array* values, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x7172634",
+          "address": "0x72027c0",
+          "name": "GameFramework.CLog$$yEo}",
+          "signature": "void GameFramework_CLog___y_Eo_ (System_Object_array* iD_m__, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x717263c",
+          "address": "0x752a5dc",
+          "name": "System.Text.Encoding$$get_Default",
+          "signature": "System_Text_Encoding_o* System_Text_Encoding__get_Default (const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x7172668",
+          "address": "0x7264108",
+          "name": "GameFramework.Tools.UIGradientBlender$$BlendColors",
+          "signature": "System_Byte_array* GameFramework_Tools_UIGradientBlender__BlendColors (System_Byte_array* ______, System_String_o* ____Y_, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x7172674",
+          "address": "0x723dbf4",
+          "name": "GameFramework.Tools.FileManager$$get_Instance",
+          "signature": "GameFramework_Tools_FileManager_o* GameFramework_Tools_FileManager__get_Instance (const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x7172688",
+          "address": "0x72405c0",
+          "name": "GameFramework.Tools.FileManager$$©²|t",
+          "signature": "void GameFramework_Tools_FileManager_______t (GameFramework_Tools_FileManager_o* __this, System_String_o* P_c___, System_Byte_array* lD____, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x71727a4",
+          "address": "0x74fe7a4",
+          "name": "System.String$$Concat",
+          "signature": "System_String_o* System_String__Concat (System_String_o* str0, System_String_o* str1, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x7172800",
+          "address": "0x71f3550",
+          "name": "GameFramework.CLog$$Error",
+          "signature": "void GameFramework_CLog__Error (System_Object_array* iD_m__, const MethodInfo* method);"
+        }
+      ],
+      "prototype_applied": true,
+      "actual_function_start": "0x717247c",
+      "actual_function_end": "0x717284c",
+      "pseudocode_chars": 3811,
+      "unresolved_jumpout": false
+    },
+    {
+      "name": "GameFramework.ModelRegister$$.ctor",
+      "address": 118954292,
+      "end": 118954364,
+      "signature": "void GameFramework_ModelRegister___ctor (GameFramework_ModelRegister_o* __this, System_String_o* __h_qn, bool ___u_J, bool __g_u_, const MethodInfo* method);",
+      "prototype": "void ModelRegisterCtor(void* self,void* name,unsigned char autoSyn,unsigned char compress,const MethodInfo* method);",
+      "method_token": "0x60057EB",
+      "file": "Assets/Scripts/GFRunning/GameFramework/ModelRegister.cs",
+      "note": "Original registration flags must remain real; current ctor/getters unknown; not online/login bypass",
+      "range_analysis": 1,
+      "direct_callees": [
+        {
+          "callsite": "0x717195c",
+          "address": "0x76ace30",
+          "name": "System.Attribute$$.ctor",
+          "signature": "void System_Attribute___ctor (System_Attribute_o* __this, const MethodInfo* method);"
+        }
+      ],
+      "prototype_applied": true,
+      "actual_function_start": "0x7171934",
+      "actual_function_end": "0x717197c",
+      "pseudocode_chars": 414,
+      "unresolved_jumpout": false
+    },
+    {
+      "name": "GameFramework.ModelRegister$$get_GameName",
+      "address": 118954236,
+      "end": 118954244,
+      "signature": "System_String_o* GameFramework_ModelRegister__get_GameName (GameFramework_ModelRegister_o* __this, const MethodInfo* method);",
+      "prototype": "void* ModelGameName(void* self,const MethodInfo* method);",
+      "method_token": "0x60057E4",
+      "file": "Assets/Scripts/GFRunning/GameFramework/ModelRegister.cs",
+      "note": "Original registration flags must remain real; current ctor/getters unknown; not online/login bypass",
+      "range_analysis": 1,
+      "direct_callees": [],
+      "prototype_applied": true,
+      "actual_function_start": "0x71718fc",
+      "actual_function_end": "0x7171904",
+      "pseudocode_chars": 121,
+      "unresolved_jumpout": false
+    },
+    {
+      "name": "GameFramework.ModelRegister$$get_AutoSyn",
+      "address": 118954084,
+      "end": 118954092,
+      "signature": "bool GameFramework_ModelRegister__get_AutoSyn (GameFramework_ModelRegister_o* __this, const MethodInfo* method);",
+      "prototype": "unsigned char ModelAutoSyn(void* self,const MethodInfo* method);",
+      "method_token": "0x60057D1",
+      "file": "Assets/Scripts/GFRunning/GameFramework/ModelRegister.cs",
+      "note": "Original registration flags must remain real; current ctor/getters unknown; not online/login bypass",
+      "range_analysis": 1,
+      "direct_callees": [],
+      "prototype_applied": true,
+      "actual_function_start": "0x7171864",
+      "actual_function_end": "0x717186c",
+      "pseudocode_chars": 131,
+      "unresolved_jumpout": false
+    },
+    {
+      "name": "GameFramework.ModelRegister$$get_CompressData",
+      "address": 118954404,
+      "end": 118954412,
+      "signature": "bool GameFramework_ModelRegister__get_CompressData (GameFramework_ModelRegister_o* __this, const MethodInfo* method);",
+      "prototype": "unsigned char ModelCompress(void* self,const MethodInfo* method);",
+      "method_token": "0x60057F1",
+      "file": "Assets/Scripts/GFRunning/GameFramework/ModelRegister.cs",
+      "note": "Original registration flags must remain real; current ctor/getters unknown; not online/login bypass",
+      "range_analysis": 1,
+      "direct_callees": [],
+      "prototype_applied": true,
+      "actual_function_start": "0x71719a4",
+      "actual_function_end": "0x71719ac",
+      "pseudocode_chars": 136,
+      "unresolved_jumpout": false
+    }
+  ],
+  "image_base": "0x0",
+  "type_errors": 0,
+  "hexrays_available": true,
+  "hexrays_version": "9.4.0.260713",
+  "database_saved": true
+}

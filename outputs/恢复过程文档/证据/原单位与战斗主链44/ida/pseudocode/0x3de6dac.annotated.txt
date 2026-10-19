@@ -1,0 +1,88 @@
+__int64 __fastcall GameModule_BattleGameManager__EndGame(__int64 a1)
+{
+  __int64 v2; // x20
+  __int64 v3; // x0
+  __int64 v4; // x8
+  __int64 v5; // x1
+  __int64 v6; // x0
+  __int64 v7; // x0
+  __int64 v8; // x0
+  __int64 v9; // x0
+  __int64 v10; // x0
+  __int64 result; // x0
+
+  if ( (byte_8FFD74A & 1) == 0 )
+  {
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8CFC678 /* Method$System.Collections.Generic.Dictionary<int, DeadUnitInfo>.Clear() */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8CFEA60 /* Method$System.Collections.Generic.Dictionary<string, int>.Clear() */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8CFCF38 /* Method$System.Collections.Generic.Dictionary<int, BattleGameManager.AnimationPauseSnapshot>.Clear() */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&off_8CEB3E0 /* UnityEngine.Object_TypeInfo */);
+    byte_8FFD74A = 1;
+  }
+  if ( byte_8FFD1AA == 0 )
+  {
+    il2cpp_codegen_initialize_runtime_metadata((void **)&off_8CE4A28 /* BattleFPSController_TypeInfo */);
+    byte_8FFD1AA = 1;
+  }
+  v2 = **((_QWORD **)off_8CE4A28 /* BattleFPSController_TypeInfo */ + 23);
+  if ( *((_DWORD *)off_8CEB3E0 /* UnityEngine.Object_TypeInfo */ + 56) == 0 )
+    il2cpp_codegen_runtime_class_init(off_8CEB3E0 /* UnityEngine.Object_TypeInfo */);
+  if ( (UnityEngine_Object__op_Inequality(v2, 0, 0) & 1) != 0 )
+  {
+    if ( byte_8FFD1AA == 0 )
+    {
+      il2cpp_codegen_initialize_runtime_metadata((void **)&off_8CE4A28 /* BattleFPSController_TypeInfo */);
+      byte_8FFD1AA = 1;
+    }
+    v3 = **((_QWORD **)off_8CE4A28 /* BattleFPSController_TypeInfo */ + 23);
+    if ( v3 == 0 )
+LABEL_22:
+      il2cpp_codegen_raise_null_reference_exception();
+    BattleFPSController__StopMonitoring(v3, 0);
+  }
+  v4 = *(_QWORD *)(a1 + 176);
+  *(_BYTE *)(a1 + 216) = 0;
+  if ( v4 != 0 )
+    (*(void (__fastcall **)(_QWORD, _QWORD, _QWORD))(v4 + 24))(
+      *(_QWORD *)(v4 + 64),
+      *(unsigned __int8 *)(a1 + 128),
+      *(_QWORD *)(v4 + 40));
+  *(_BYTE *)(a1 + 80) = 0;
+  *(_DWORD *)(a1 + 96) = 0;
+  *(_QWORD *)(a1 + 176) = 0;
+  *(_QWORD *)(a1 + 184) = 0;
+  *(_QWORD *)(a1 + 192) = 0;
+  v5 = *(_QWORD *)(a1 + 88);
+  if ( v5 != 0 )
+    UnityEngine_MonoBehaviour__StopCoroutine(a1, v5, 0);
+  v6 = *(_QWORD *)(a1 + 112);
+  *(_BYTE *)(a1 + 56) = 0;
+  *(_DWORD *)(a1 + 40) = 0;
+  *(_DWORD *)(a1 + 60) = 0;
+  if ( v6 == 0 )
+    goto LABEL_22;
+  System_Collections_Generic_Dictionary_object__int___Clear(v6, qword_8CFEA60 /* Method$System.Collections.Generic.Dictionary<string, int>.Clear() */);
+  v7 = *(_QWORD *)(a1 + 32);
+  *(_BYTE *)(a1 + 218) = 0;
+  if ( v7 == 0 )
+    goto LABEL_22;
+  System_Collections_Generic_Dictionary_int__BattleGameManager_AnimationPauseSnapshot___Clear(v7, qword_8CFCF38 /* Method$System.Collections.Generic.Dictionary<int, BattleGameManager.AnimationPauseSnapshot>.Clear() */);
+  v8 = *(_QWORD *)(a1 + 168);
+  if ( v8 == 0 )
+    goto LABEL_22;
+  System_Collections_Generic_Dictionary_int__object___Clear(v8, qword_8CFC678 /* Method$System.Collections.Generic.Dictionary<int, DeadUnitInfo>.Clear() */);
+  v9 = *(_QWORD *)(a1 + 120);
+  if ( v9 == 0 )
+    goto LABEL_22;
+  System_Collections_Generic_Dictionary_object__int___Clear(v9, qword_8CFEA60 /* Method$System.Collections.Generic.Dictionary<string, int>.Clear() */);
+  v10 = *(_QWORD *)(a1 + 152);
+  *(_BYTE *)(a1 + 100) = 0;
+  *(_DWORD *)(a1 + 104) = 1084227584;
+  if ( v10 == 0 )
+    goto LABEL_22;
+  result = System_Collections_Generic_Dictionary_object__int___Clear(v10, qword_8CFEA60 /* Method$System.Collections.Generic.Dictionary<string, int>.Clear() */);
+  *(_DWORD *)(a1 + 160) = 0;
+  *(_DWORD *)(a1 + 64) = 0;
+  *(_BYTE *)(a1 + 217) = 0;
+  return result;
+}

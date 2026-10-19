@@ -1,0 +1,70 @@
+0x4196788: fe0f1df8 str      x30, [sp, #-0x30]!
+0x419678c: f65701a9 stp      x22, x21, [sp, #0x10]
+0x4196790: f44f02a9 stp      x20, x19, [sp, #0x20]
+0x4196794: 547302b0 adrp     x20, #0x8fff000
+0x4196798: 88125b39 ldrb     w8, [x20, #0x6c4]
+0x419679c: f30300aa mov      x19, x0
+0x41967a0: 88010037 tbnz     w8, #0, #0x41967d0
+0x41967a4: 204a02f0 adrp     x0, #0x8add000
+0x41967a8: 008c42f9 ldr      x0, [x0, #0x518] // ToolModule.DebugExtend_TypeInfo
+0x41967ac: b59aea97 bl       #0x3c3d280
+0x41967b0: c0490290 adrp     x0, #0x8ace000
+0x41967b4: 00f847f9 ldr      x0, [x0, #0xff0] // Method$ToolModule.ManagerBase<CameraManager>.get_Instance()
+0x41967b8: b29aea97 bl       #0x3c3d280
+0x41967bc: a04902f0 adrp     x0, #0x8acd000
+0x41967c0: 001047f9 ldr      x0, [x0, #0xe20] // Cysharp.Threading.Tasks.UniTask_TypeInfo
+0x41967c4: af9aea97 bl       #0x3c3d280
+0x41967c8: 28008052 mov      w8, #1
+0x41967cc: 88121b39 strb     w8, [x20, #0x6c4]
+0x41967d0: c8ffff97 bl       #0x41966f0 // GameConfigModule.GameConfigManager$$get_GameGlobalConfig
+0x41967d4: 400600b4 cbz      x0, #0x419689c
+0x41967d8: 08404039 ldrb     w8, [x0, #0x10]
+0x41967dc: 08010034 cbz      w8, #0x41967fc
+0x41967e0: c8490290 adrp     x8, #0x8ace000
+0x41967e4: 08f947f9 ldr      x8, [x8, #0xff0] // Method$ToolModule.ManagerBase<CameraManager>.get_Instance()
+0x41967e8: 000140f9 ldr      x0, [x8]
+0x41967ec: 1d875f94 bl       #0x5978460 // ToolModule.ManagerBase<object>$$get_Instance
+0x41967f0: 600500b4 cbz      x0, #0x419689c
+0x41967f4: e1031faa mov      x1, xzr
+0x41967f8: 8deef597 bl       #0x3f1222c // CameraModule.CameraManager$$CameraAdaptation
+0x41967fc: bdffff97 bl       #0x41966f0 // GameConfigModule.GameConfigManager$$get_GameGlobalConfig
+0x4196800: e00400b4 cbz      x0, #0x419689c
+0x4196804: 354a02f0 adrp     x21, #0x8add000
+0x4196808: b58e42f9 ldr      x21, [x21, #0x518] // ToolModule.DebugExtend_TypeInfo
+0x419680c: 14444039 ldrb     w20, [x0, #0x11]
+0x4196810: a80240f9 ldr      x8, [x21]
+0x4196814: 09e140b9 ldr      w9, [x8, #0xe0]
+0x4196818: 69000035 cbnz     w9, #0x4196824
+0x419681c: e00308aa mov      x0, x8
+0x4196820: e49aea97 bl       #0x3c3d3b0
+0x4196824: 567302b0 adrp     x22, #0x8fff000
+0x4196828: c8525b39 ldrb     w8, [x22, #0x6d4]
+0x419682c: c8000035 cbnz     w8, #0x4196844
+0x4196830: 204a02f0 adrp     x0, #0x8add000
+0x4196834: 008c42f9 ldr      x0, [x0, #0x518] // ToolModule.DebugExtend_TypeInfo
+0x4196838: 929aea97 bl       #0x3c3d280
+0x419683c: 28008052 mov      w8, #1
+0x4196840: c8521b39 strb     w8, [x22, #0x6d4]
+0x4196844: a00240f9 ldr      x0, [x21]
+0x4196848: b64902f0 adrp     x22, #0x8acd000
+0x419684c: 08e040b9 ldr      w8, [x0, #0xe0]
+0x4196850: d61247f9 ldr      x22, [x22, #0xe20] // Cysharp.Threading.Tasks.UniTask_TypeInfo
+0x4196854: 68000035 cbnz     w8, #0x4196860
+0x4196858: d69aea97 bl       #0x3c3d3b0
+0x419685c: a00240f9 ldr      x0, [x21]
+0x4196860: 085c40f9 ldr      x8, [x0, #0xb8]
+0x4196864: 29008052 mov      w9, #1
+0x4196868: 14010039 strb     w20, [x8]
+0x419686c: 69820039 strb     w9, [x19, #0x20]
+0x4196870: c00240f9 ldr      x0, [x22]
+0x4196874: 08e040b9 ldr      w8, [x0, #0xe0]
+0x4196878: 68000035 cbnz     w8, #0x4196884
+0x419687c: cd9aea97 bl       #0x3c3d3b0
+0x4196880: c00240f9 ldr      x0, [x22]
+0x4196884: 085c40f9 ldr      x8, [x0, #0xb8]
+0x4196888: f44f42a9 ldp      x20, x19, [sp, #0x20]
+0x419688c: f65741a9 ldp      x22, x21, [sp, #0x10]
+0x4196890: 000541a9 ldp      x0, x1, [x8, #0x10]
+0x4196894: fe0743f8 ldr      x30, [sp], #0x30
+0x4196898: c0035fd6 ret      
+0x419689c: 0c9bea97 bl       #0x3c3d4cc

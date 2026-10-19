@@ -1,0 +1,21 @@
+0x44cd658: fe57bea9 stp      x30, x21, [sp, #-0x20]!
+0x44cd65c: f44f01a9 stp      x20, x19, [sp, #0x10]
+0x44cd660: b5590290 adrp     x21, #0x9001000
+0x44cd664: 943102f0 adrp     x20, #0x8b00000
+0x44cd668: a8fe4239 ldrb     w8, [x21, #0xbf]
+0x44cd66c: 94be46f9 ldr      x20, [x20, #0xd78] // Method$Unity.Collections.NativeList<TimeData>.Dispose()
+0x44cd670: f30300aa mov      x19, x0
+0x44cd674: c8000037 tbnz     w8, #0, #0x44cd68c
+0x44cd678: 803102f0 adrp     x0, #0x8b00000
+0x44cd67c: 00bc46f9 ldr      x0, [x0, #0xd78] // Method$Unity.Collections.NativeList<TimeData>.Dispose()
+0x44cd680: 00bfdd97 bl       #0x3c3d280
+0x44cd684: 28008052 mov      w8, #1
+0x44cd688: a8fe0239 strb     w8, [x21, #0xbf]
+0x44cd68c: 810240f9 ldr      x1, [x20]
+0x44cd690: 60a20091 add      x0, x19, #0x28
+0x44cd694: 331c5b94 bl       #0x5b94760 // Unity.Collections.NativeList<TimeData>$$Dispose
+0x44cd698: 810240f9 ldr      x1, [x20]
+0x44cd69c: 60c20091 add      x0, x19, #0x30
+0x44cd6a0: f44f41a9 ldp      x20, x19, [sp, #0x10]
+0x44cd6a4: fe57c2a8 ldp      x30, x21, [sp], #0x20
+0x44cd6a8: 2e1c5b14 b        #0x5b94760 // Unity.Collections.NativeList<TimeData>$$Dispose

@@ -1,0 +1,102 @@
+0x4c8f99c: STP             X30, X21, [SP,#var_20]!
+0x4c8f9a0: STP             X20, X19, [SP,#0x20+var_10]
+0x4c8f9a4: LDR             X8, [X3,#0x38]
+0x4c8f9a8: MOV             X19, X3
+0x4c8f9ac: MOV             X20, X2
+0x4c8f9b0: CBNZ            X8, loc_4C8F9DC
+0x4c8f9b4: ADRP            X0, #off_8AD5EB8@PAGE
+0x4c8f9b8: LDR             X0, [X0,#off_8AD5EB8@PAGEOFF]; off_8CE7AE8 ; slot
+0x4c8f9bc: BL              il2cpp_codegen_initialize_runtime_metadata
+0x4c8f9c0: ADRP            X0, #off_8ADD7D8@PAGE
+0x4c8f9c4: LDR             X0, [X0,#off_8ADD7D8@PAGEOFF]; off_8CE9A10 ; slot
+0x4c8f9c8: BL              il2cpp_codegen_initialize_runtime_metadata
+0x4c8f9cc: LDR             X8, [X19,#0x38]
+0x4c8f9d0: CBNZ            X8, loc_4C8F9DC
+0x4c8f9d4: MOV             X0, X19
+0x4c8f9d8: BL              unk_3C503FC
+0x4c8f9dc: ADRP            X8, #off_8AD5EB8@PAGE
+0x4c8f9e0: LDR             X8, [X8,#off_8AD5EB8@PAGEOFF]; off_8CE7AE8
+0x4c8f9e4: LDR             X0, [X8]; klass
+0x4c8f9e8: LDR             W8, [X0,#0xE0]
+0x4c8f9ec: CBNZ            W8, loc_4C8F9F4
+0x4c8f9f0: BL              il2cpp_codegen_runtime_class_init
+0x4c8f9f4: MOV             X0, X20
+0x4c8f9f8: MOV             X1, XZR
+0x4c8f9fc: BL              ToolModule.GZipTool$$DecompressFromBase64
+0x4c8fa00: ADRP            X8, #off_8ADD7D8@PAGE
+0x4c8fa04: LDR             X8, [X8,#off_8ADD7D8@PAGEOFF]; off_8CE9A10
+0x4c8fa08: MOV             X20, X0
+0x4c8fa0c: LDR             X8, [X8]
+0x4c8fa10: LDR             W9, [X8,#0xE0]
+0x4c8fa14: CBNZ            W9, loc_4C8FA20
+0x4c8fa18: MOV             X0, X8; klass
+0x4c8fa1c: BL              il2cpp_codegen_runtime_class_init
+0x4c8fa20: LDR             X8, [X19,#0x38]
+0x4c8fa24: LDR             X1, [X8]
+0x4c8fa28: MOV             X0, X20
+0x4c8fa2c: BL              LitJson.JsonMapper$$ToObject_object_
+0x4c8fa30: LDP             X20, X19, [SP,#0x20+var_10]
+0x4c8fa34: LDP             X30, X21, [SP+0x20+var_20],#0x20
+0x4c8fa38: RET
+0x4c8fa3c: B               loc_4C8FA40
+0x4c8fa40: MOV             X21, X0
+0x4c8fa44: CMP             W1, #1
+0x4c8fa48: B.NE            loc_4C8FB2C
+0x4c8fa4c: MOV             X0, X21
+0x4c8fa50: BL              .__cxa_begin_catch
+0x4c8fa54: MOV             X21, X0
+0x4c8fa58: ADRP            X0, #off_8ACCF90@PAGE
+0x4c8fa5c: LDR             X0, [X0,#off_8ACCF90@PAGEOFF]; unk_8CE71D0
+0x4c8fa60: BL              unk_3C3D294
+0x4c8fa64: LDR             X8, [X21]
+0x4c8fa68: LDR             X1, [X8]
+0x4c8fa6c: BL              unk_3C3D8F8
+0x4c8fa70: TBZ             W0, #0, loc_4C8FB04
+0x4c8fa74: LDR             X21, [X21]
+0x4c8fa78: BL              .__cxa_end_catch
+0x4c8fa7c: ADRP            X0, #off_8ADD710@PAGE
+0x4c8fa80: LDR             X0, [X0,#off_8ADD710@PAGEOFF]; unk_8CE5C08
+0x4c8fa84: BL              unk_3C3D294
+0x4c8fa88: BL              unk_35C0F50
+0x4c8fa8c: MOV             X0, X21
+0x4c8fa90: MOV             X1, XZR
+0x4c8fa94: BL              System.Console$$WriteLine
+0x4c8fa98: LDR             X8, [X19,#0x38]
+0x4c8fa9c: ADRP            X0, #off_8ACC830@PAGE
+0x4c8faa0: LDR             X19, [X8,#0x10]
+0x4c8faa4: LDR             X0, [X0,#off_8ACC830@PAGEOFF]; off_8CEEA50
+0x4c8faa8: BL              unk_3C3D294
+0x4c8faac: BL              unk_35C0F50
+0x4c8fab0: MOV             X0, X19
+0x4c8fab4: MOV             X1, XZR
+0x4c8fab8: BL              System.Type$$GetTypeFromHandle
+0x4c8fabc: MOV             X19, X0
+0x4c8fac0: ADRP            X0, #off_8B0DEE0@PAGE
+0x4c8fac4: LDR             X0, [X0,#off_8B0DEE0@PAGEOFF]; unk_8D61F58
+0x4c8fac8: BL              unk_3C3D294
+0x4c8facc: MOV             X1, X19
+0x4c8fad0: MOV             X2, X20
+0x4c8fad4: MOV             X3, XZR
+0x4c8fad8: BL              sub_750AA4C
+0x4c8fadc: MOV             X19, X0
+0x4c8fae0: ADRP            X0, #off_8ACC8C8@PAGE
+0x4c8fae4: LDR             X0, [X0,#off_8ACC8C8@PAGEOFF]; off_8CE64E8
+0x4c8fae8: BL              unk_3C3D294
+0x4c8faec: BL              unk_35C0F50
+0x4c8faf0: MOV             X0, X19
+0x4c8faf4: MOV             X1, XZR
+0x4c8faf8: BL              UnityEngine.Debug$$LogError
+0x4c8fafc: MOV             X0, X21
+0x4c8fb00: BL              sub_3C38CF8
+0x4c8fb04: MOV             W0, #8
+0x4c8fb08: BL              .__cxa_allocate_exception
+0x4c8fb0c: LDR             X8, [X21]
+0x4c8fb10: STR             X8, [X0]
+0x4c8fb14: ADRL            X1, _ZTI22Il2CppExceptionWrapper; `typeinfo for'Il2CppExceptionWrapper
+0x4c8fb1c: MOV             X2, XZR
+0x4c8fb20: BL              .__cxa_throw
+0x4c8fb24: MOV             X21, X0
+0x4c8fb28: BL              .__cxa_end_catch
+0x4c8fb2c: MOV             X0, X21
+0x4c8fb30: BL              sub_3CE73C4
+0x4c8fb34: BL              unk_35BC500

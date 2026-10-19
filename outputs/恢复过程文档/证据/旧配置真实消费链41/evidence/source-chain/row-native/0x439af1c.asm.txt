@@ -1,0 +1,23 @@
+0x439af1c: ffc300d1 sub      sp, sp, #0x30
+0x439af20: fe5701a9 stp      x30, x21, [sp, #0x10]
+0x439af24: f44f02a9 stp      x20, x19, [sp, #0x20]
+0x439af28: 356302d0 adrp     x21, #0x9000000
+0x439af2c: 943902f0 adrp     x20, #0x8acd000
+0x439af30: a8b26139 ldrb     w8, [x21, #0x86c]
+0x439af34: 946245f9 ldr      x20, [x20, #0xac0] // int_TypeInfo
+0x439af38: f30300aa mov      x19, x0
+0x439af3c: c8000037 tbnz     w8, #0, #0x439af54
+0x439af40: 803902f0 adrp     x0, #0x8acd000
+0x439af44: 006045f9 ldr      x0, [x0, #0xac0] // int_TypeInfo
+0x439af48: ce88e297 bl       #0x3c3d280
+0x439af4c: 28008052 mov      w8, #1
+0x439af50: a8b22139 strb     w8, [x21, #0x86c]
+0x439af54: 681240b9 ldr      w8, [x19, #0x10]
+0x439af58: 800240f9 ldr      x0, [x20]
+0x439af5c: e1330091 add      x1, sp, #0xc
+0x439af60: e80f00b9 str      w8, [sp, #0xc]
+0x439af64: 1589e297 bl       #0x3c3d3b8
+0x439af68: f44f42a9 ldp      x20, x19, [sp, #0x20]
+0x439af6c: fe5741a9 ldp      x30, x21, [sp, #0x10]
+0x439af70: ffc30091 add      sp, sp, #0x30
+0x439af74: c0035fd6 ret      

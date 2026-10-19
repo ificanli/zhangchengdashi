@@ -1,0 +1,57 @@
+0x72e75a0: STP             D9, D8, [SP,#var_30]!
+0x72e75a4: STR             X30, [SP,#0x30+var_20]
+0x72e75a8: STP             X20, X19, [SP,#0x30+var_10]
+0x72e75ac: ADRP            X20, #byte_900A044@PAGE
+0x72e75b0: LDRB            W8, [X20,#byte_900A044@PAGEOFF]
+0x72e75b4: MOV             X19, X0
+0x72e75b8: TBNZ            W8, #0, loc_72E75D0
+0x72e75bc: ADRP            X0, #off_8AF46A0@PAGE
+0x72e75c0: LDR             X0, [X0,#off_8AF46A0@PAGEOFF]; off_8CE7B30 ; slot
+0x72e75c4: BL              il2cpp_codegen_initialize_runtime_metadata
+0x72e75c8: MOV             W8, #1
+0x72e75cc: STRB            W8, [X20,#byte_900A044@PAGEOFF]
+0x72e75d0: LDRB            W8, [X19,#0x49]
+0x72e75d4: CBZ             W8, loc_72E75E8
+0x72e75d8: LDP             X20, X19, [SP,#0x30+var_10]
+0x72e75dc: LDR             X30, [SP,#0x30+var_20]
+0x72e75e0: LDP             D9, D8, [SP+0x30+var_30],#0x30
+0x72e75e4: RET
+0x72e75e8: LDRB            W8, [X19,#0x4A]
+0x72e75ec: CBZ             W8, loc_72E7630
+0x72e75f0: MOV             X0, XZR
+0x72e75f4: BL              UnityEngine.Time$$get_deltaTime
+0x72e75f8: MOV             X0, XZR
+0x72e75fc: MOV             V8.16B, V0.16B
+0x72e7600: BL              UnityEngine.Time$$get_unscaledDeltaTime
+0x72e7604: ADRP            X8, #off_8AF46A0@PAGE
+0x72e7608: LDR             X8, [X8,#off_8AF46A0@PAGEOFF]; off_8CE7B30
+0x72e760c: MOV             V9.16B, V0.16B
+0x72e7610: LDR             X0, [X8]; klass
+0x72e7614: LDR             W8, [X0,#0xE0]
+0x72e7618: CBNZ            W8, loc_72E7620
+0x72e761c: BL              il2cpp_codegen_runtime_class_init
+0x72e7620: MOV             V0.16B, V8.16B; elapsed
+0x72e7624: MOV             V1.16B, V9.16B; realElapsed
+0x72e7628: MOV             X0, XZR; method
+0x72e762c: BL              GameFramework.GameFrameEntry$$ResourcesModuleUpdate
+0x72e7630: LDRB            W8, [X19,#0x3C]
+0x72e7634: CBZ             W8, loc_72E75D8
+0x72e7638: MOV             X0, XZR
+0x72e763c: BL              UnityEngine.Time$$get_deltaTime
+0x72e7640: MOV             X0, XZR
+0x72e7644: MOV             V8.16B, V0.16B
+0x72e7648: BL              UnityEngine.Time$$get_unscaledDeltaTime
+0x72e764c: ADRP            X8, #off_8AF46A0@PAGE
+0x72e7650: LDR             X8, [X8,#off_8AF46A0@PAGEOFF]; off_8CE7B30
+0x72e7654: MOV             V9.16B, V0.16B
+0x72e7658: LDR             X0, [X8]; klass
+0x72e765c: LDR             W8, [X0,#0xE0]
+0x72e7660: CBNZ            W8, loc_72E7668
+0x72e7664: BL              il2cpp_codegen_runtime_class_init
+0x72e7668: LDP             X20, X19, [SP,#0x30+var_10]
+0x72e766c: LDR             X30, [SP,#0x30+var_20]
+0x72e7670: MOV             V0.16B, V8.16B
+0x72e7674: MOV             V1.16B, V9.16B
+0x72e7678: MOV             X0, XZR
+0x72e767c: LDP             D9, D8, [SP+0x30+var_30],#0x30
+0x72e7680: B               GameFramework.GameFrameEntry$$Update

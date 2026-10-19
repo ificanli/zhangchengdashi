@@ -1,0 +1,55 @@
+0x3dec72c: STR             X30, [SP,#var_20]!
+0x3dec730: STP             X20, X19, [SP,#0x20+var_10]
+0x3dec734: ADRP            X19, #byte_8FFD75F@PAGE
+0x3dec738: ADRP            X20, #off_8AD1388@PAGE
+0x3dec73c: LDRB            W8, [X19,#byte_8FFD75F@PAGEOFF]
+0x3dec740: LDR             X20, [X20,#off_8AD1388@PAGEOFF]; off_8CD9228
+0x3dec744: TBNZ            W8, #0, loc_3DEC78C
+0x3dec748: ADRP            X0, #off_8AD1380@PAGE
+0x3dec74c: LDR             X0, [X0,#off_8AD1380@PAGEOFF]; unk_8CFB2B8 ; slot
+0x3dec750: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3dec754: ADRP            X0, #off_8AD1388@PAGE
+0x3dec758: LDR             X0, [X0,#off_8AD1388@PAGEOFF]; off_8CD9228 ; slot
+0x3dec75c: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3dec760: ADRP            X0, #off_8ACDE60@PAGE
+0x3dec764: LDR             X0, [X0,#off_8ACDE60@PAGEOFF]; qword_8D178A0 ; slot
+0x3dec768: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3dec76c: ADRP            X0, #off_8ACDE58@PAGE
+0x3dec770: LDR             X0, [X0,#off_8ACDE58@PAGEOFF]; off_8CE1930 ; slot
+0x3dec774: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3dec778: ADRP            X0, #off_8AD1590@PAGE
+0x3dec77c: LDR             X0, [X0,#off_8AD1590@PAGEOFF]; qword_8D537F8 ; slot
+0x3dec780: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3dec784: MOV             W8, #1
+0x3dec788: STRB            W8, [X19,#byte_8FFD75F@PAGEOFF]
+0x3dec78c: LDR             X8, [X20]
+0x3dec790: LDR             X8, [X8,#0xB8]
+0x3dec794: LDR             X8, [X8]
+0x3dec798: CBZ             X8, loc_3DEC804
+0x3dec79c: LDR             X8, [X8,#0x30]
+0x3dec7a0: CBZ             X8, loc_3DEC804
+0x3dec7a4: LDRB            W8, [X8,#0x10]
+0x3dec7a8: CBZ             W8, loc_3DEC7BC
+0x3dec7ac: LDP             X20, X19, [SP,#0x20+var_10]
+0x3dec7b0: MOV             W0, WZR
+0x3dec7b4: LDR             X30, [SP+0x20+var_20],#0x20
+0x3dec7b8: RET
+0x3dec7bc: ADRP            X8, #off_8ACDE58@PAGE
+0x3dec7c0: LDR             X8, [X8,#off_8ACDE58@PAGEOFF]; off_8CE1930
+0x3dec7c4: LDR             X0, [X8]; klass
+0x3dec7c8: LDR             W8, [X0,#0xE0]
+0x3dec7cc: CBNZ            W8, loc_3DEC7D4
+0x3dec7d0: BL              il2cpp_codegen_runtime_class_init
+0x3dec7d4: ADRP            X8, #off_8ACDE60@PAGE
+0x3dec7d8: LDR             X8, [X8,#off_8ACDE60@PAGEOFF]; qword_8D178A0
+0x3dec7dc: LDR             X0, [X8]
+0x3dec7e0: BL              QuickTutor.Singleton_object_$$get_Instance
+0x3dec7e4: CBZ             X0, loc_3DEC804
+0x3dec7e8: ADRP            X8, #off_8AD1590@PAGE
+0x3dec7ec: LDR             X8, [X8,#off_8AD1590@PAGEOFF]; qword_8D537F8
+0x3dec7f0: LDP             X20, X19, [SP,#0x20+var_10]
+0x3dec7f4: MOV             X2, XZR
+0x3dec7f8: LDR             X1, [X8]
+0x3dec7fc: LDR             X30, [SP+0x20+var_20],#0x20
+0x3dec800: B               QuickTutor.TutorialManager$$IsStepComplete
+0x3dec804: BL              il2cpp_codegen_raise_null_reference_exception

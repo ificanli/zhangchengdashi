@@ -1,0 +1,116 @@
+0x71d805c: fe0f1df8 str      x30, [sp, #-0x30]!
+0x71d8060: f65701a9 stp      x22, x21, [sp, #0x10]
+0x71d8064: f44f02a9 stp      x20, x19, [sp, #0x20]
+0x71d8068: 95f100b0 adrp     x21, #0x9009000
+0x71d806c: a86e5739 ldrb     w8, [x21, #0x5db]
+0x71d8070: f30301aa mov      x19, x1
+0x71d8074: f40300aa mov      x20, x0
+0x71d8078: a8020037 tbnz     w8, #0, #0x71d80cc
+0x71d807c: a0c700b0 adrp     x0, #0x8acd000
+0x71d8080: 003044f9 ldr      x0, [x0, #0x860] // GameFramework.CLog_TypeInfo
+0x71d8084: 7f942997 bl       #0x3c3d280
+0x71d8088: c0c900d0 adrp     x0, #0x8b12000
+0x71d808c: 00d041f9 ldr      x0, [x0, #0x3a0] // Method$System.Collections.Generic.Dictionary<string, Transform>.Add()
+0x71d8090: 7c942997 bl       #0x3c3d280
+0x71d8094: a0c900d0 adrp     x0, #0x8b0e000
+0x71d8098: 005042f9 ldr      x0, [x0, #0x4a0] // Method$System.Collections.Generic.Dictionary<string, Transform>.TryGetValue()
+0x71d809c: 79942997 bl       #0x3c3d280
+0x71d80a0: a0c700b0 adrp     x0, #0x8acd000
+0x71d80a4: 002c44f9 ldr      x0, [x0, #0x858] // object[]_TypeInfo
+0x71d80a8: 76942997 bl       #0x3c3d280
+0x71d80ac: a0c70090 adrp     x0, #0x8acc000
+0x71d80b0: 006844f9 ldr      x0, [x0, #0x8d0] // UnityEngine.Object_TypeInfo
+0x71d80b4: 73942997 bl       #0x3c3d280
+0x71d80b8: 00ca0090 adrp     x0, #0x8b18000
+0x71d80bc: 005844f9 ldr      x0, [x0, #0x8b0] // 未找到UI节点:
+0x71d80c0: 70942997 bl       #0x3c3d280
+0x71d80c4: 28008052 mov      w8, #1
+0x71d80c8: a86e1739 strb     w8, [x21, #0x5db]
+0x71d80cc: ff0700f9 str      xzr, [sp, #8]
+0x71d80d0: 802240f9 ldr      x0, [x20, #0x40]
+0x71d80d4: 200a00b4 cbz      x0, #0x71d8218
+0x71d80d8: a8c900d0 adrp     x8, #0x8b0e000
+0x71d80dc: 085142f9 ldr      x8, [x8, #0x4a0] // Method$System.Collections.Generic.Dictionary<string, Transform>.TryGetValue()
+0x71d80e0: e2230091 add      x2, sp, #8
+0x71d80e4: e10313aa mov      x1, x19
+0x71d80e8: 030140f9 ldr      x3, [x8]
+0x71d80ec: d1c0e897 bl       #0x6c08430 // System.Collections.Generic.Dictionary<object, object>$$TryGetValue
+0x71d80f0: a0080037 tbnz     w0, #0, #0x71d8204
+0x71d80f4: 801640f9 ldr      x0, [x20, #0x28]
+0x71d80f8: 000900b4 cbz      x0, #0x71d8218
+0x71d80fc: e1031faa mov      x1, xzr
+0x71d8100: 80434494 bl       #0x82e8f00 // UnityEngine.Component$$get_transform
+0x71d8104: a00800b4 cbz      x0, #0x71d8218
+0x71d8108: e10313aa mov      x1, x19
+0x71d810c: e2031faa mov      x2, xzr
+0x71d8110: c28d4494 bl       #0x82fb818 // UnityEngine.Transform$$Find
+0x71d8114: a8c70090 adrp     x8, #0x8acc000
+0x71d8118: 086944f9 ldr      x8, [x8, #0x8d0] // UnityEngine.Object_TypeInfo
+0x71d811c: e00700f9 str      x0, [sp, #8]
+0x71d8120: f50300aa mov      x21, x0
+0x71d8124: 080140f9 ldr      x8, [x8]
+0x71d8128: 09e140b9 ldr      w9, [x8, #0xe0]
+0x71d812c: 69000035 cbnz     w9, #0x71d8138
+0x71d8130: e00308aa mov      x0, x8
+0x71d8134: 9f942997 bl       #0x3c3d3b0
+0x71d8138: e00315aa mov      x0, x21
+0x71d813c: e1031faa mov      x1, xzr
+0x71d8140: e2031faa mov      x2, xzr
+0x71d8144: 74554494 bl       #0x82ed714 // UnityEngine.Object$$op_Equality
+0x71d8148: e0040036 tbz      w0, #0, #0x71d81e4
+0x71d814c: a8c700b0 adrp     x8, #0x8acd000
+0x71d8150: 082d44f9 ldr      x8, [x8, #0x858] // object[]_TypeInfo
+0x71d8154: 21008052 mov      w1, #1
+0x71d8158: 000140f9 ldr      x0, [x8]
+0x71d815c: 71942997 bl       #0x3c3d320
+0x71d8160: 08ca0090 adrp     x8, #0x8b18000
+0x71d8164: 085944f9 ldr      x8, [x8, #0x8b0] // 未找到UI节点:
+0x71d8168: f50300aa mov      x21, x0
+0x71d816c: e10313aa mov      x1, x19
+0x71d8170: e2031faa mov      x2, xzr
+0x71d8174: 080140f9 ldr      x8, [x8]
+0x71d8178: e00308aa mov      x0, x8
+0x71d817c: 8a990c94 bl       #0x74fe7a4 // System.String$$Concat
+0x71d8180: d50400b4 cbz      x21, #0x71d8218
+0x71d8184: f60300aa mov      x22, x0
+0x71d8188: c00000b4 cbz      x0, #0x71d81a0
+0x71d818c: a80240f9 ldr      x8, [x21]
+0x71d8190: e00316aa mov      x0, x22
+0x71d8194: 012140f9 ldr      x1, [x8, #0x40]
+0x71d8198: 87942997 bl       #0x3c3d3b4
+0x71d819c: 200400b4 cbz      x0, #0x71d8220
+0x71d81a0: a81a40b9 ldr      w8, [x21, #0x18]
+0x71d81a4: c8030034 cbz      w8, #0x71d821c
+0x71d81a8: b61200f9 str      x22, [x21, #0x20]
+0x71d81ac: a8c700b0 adrp     x8, #0x8acd000
+0x71d81b0: 083144f9 ldr      x8, [x8, #0x860] // GameFramework.CLog_TypeInfo
+0x71d81b4: 000140f9 ldr      x0, [x8]
+0x71d81b8: 08e040b9 ldr      w8, [x0, #0xe0]
+0x71d81bc: 48000035 cbnz     w8, #0x71d81c4
+0x71d81c0: 7c942997 bl       #0x3c3d3b0
+0x71d81c4: e00315aa mov      x0, x21
+0x71d81c8: e1031faa mov      x1, xzr
+0x71d81cc: e16c0094 bl       #0x71f3550 // GameFramework.CLog$$Error
+0x71d81d0: 801240f9 ldr      x0, [x20, #0x20]
+0x71d81d4: 200200b4 cbz      x0, #0x71d8218
+0x71d81d8: e1031faa mov      x1, xzr
+0x71d81dc: 13504494 bl       #0x82ec228 // UnityEngine.GameObject$$get_transform
+0x71d81e0: e00700f9 str      x0, [sp, #8]
+0x71d81e4: 802240f9 ldr      x0, [x20, #0x40]
+0x71d81e8: 800100b4 cbz      x0, #0x71d8218
+0x71d81ec: c8c900d0 adrp     x8, #0x8b12000
+0x71d81f0: e20740f9 ldr      x2, [sp, #8]
+0x71d81f4: 08d141f9 ldr      x8, [x8, #0x3a0] // Method$System.Collections.Generic.Dictionary<string, Transform>.Add()
+0x71d81f8: e10313aa mov      x1, x19
+0x71d81fc: 030140f9 ldr      x3, [x8]
+0x71d8200: b0bae897 bl       #0x6c06cc0 // System.Collections.Generic.Dictionary<object, object>$$Add
+0x71d8204: e00740f9 ldr      x0, [sp, #8]
+0x71d8208: f44f42a9 ldp      x20, x19, [sp, #0x20]
+0x71d820c: f65741a9 ldp      x22, x21, [sp, #0x10]
+0x71d8210: fe0743f8 ldr      x30, [sp], #0x30
+0x71d8214: c0035fd6 ret      
+0x71d8218: ad942997 bl       #0x3c3d4cc
+0x71d821c: ae942997 bl       #0x3c3d4d4
+0x71d8220: b4942997 bl       #0x3c3d4f0
+0x71d8224: e1031faa mov      x1, xzr
+0x71d8228: 5e942997 bl       #0x3c3d3a0

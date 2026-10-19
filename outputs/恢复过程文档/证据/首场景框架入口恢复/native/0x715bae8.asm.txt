@@ -1,0 +1,45 @@
+0x715bae8: fe5fbda9 stp      x30, x23, [sp, #-0x30]!
+0x715baec: f65701a9 stp      x22, x21, [sp, #0x10]
+0x715baf0: f44f02a9 stp      x20, x19, [sp, #0x20]
+0x715baf4: 76f500d0 adrp     x22, #0x9009000
+0x715baf8: d7cd00f0 adrp     x23, #0x8b16000
+0x715bafc: d3cd00f0 adrp     x19, #0x8b16000
+0x715bb00: d5cc00b0 adrp     x21, #0x8af4000
+0x715bb04: 94cb00b0 adrp     x20, #0x8acc000
+0x715bb08: c86a4339 ldrb     w8, [x22, #0xda]
+0x715bb0c: f7f645f9 ldr      x23, [x23, #0xbe8] // System.Collections.Generic.LinkedList<GameFrameModule>_TypeInfo
+0x715bb10: 73fa45f9 ldr      x19, [x19, #0xbf0] // Method$System.Collections.Generic.LinkedList<GameFrameModule>..ctor()
+0x715bb14: b55243f9 ldr      x21, [x21, #0x6a0] // GameFramework.GameFrameEntry_TypeInfo
+0x715bb18: 948644f9 ldr      x20, [x20, #0x908] // 
+0x715bb1c: e8010037 tbnz     w8, #0, #0x715bb58
+0x715bb20: c0cc00b0 adrp     x0, #0x8af4000
+0x715bb24: 005043f9 ldr      x0, [x0, #0x6a0] // GameFramework.GameFrameEntry_TypeInfo
+0x715bb28: d6852b97 bl       #0x3c3d280
+0x715bb2c: c0cd00f0 adrp     x0, #0x8b16000
+0x715bb30: 00f845f9 ldr      x0, [x0, #0xbf0] // Method$System.Collections.Generic.LinkedList<GameFrameModule>..ctor()
+0x715bb34: d3852b97 bl       #0x3c3d280
+0x715bb38: c0cd00f0 adrp     x0, #0x8b16000
+0x715bb3c: 00f445f9 ldr      x0, [x0, #0xbe8] // System.Collections.Generic.LinkedList<GameFrameModule>_TypeInfo
+0x715bb40: d0852b97 bl       #0x3c3d280
+0x715bb44: 80cb00b0 adrp     x0, #0x8acc000
+0x715bb48: 008444f9 ldr      x0, [x0, #0x908] // 
+0x715bb4c: cd852b97 bl       #0x3c3d280
+0x715bb50: 28008052 mov      w8, #1
+0x715bb54: c86a0339 strb     w8, [x22, #0xda]
+0x715bb58: e00240f9 ldr      x0, [x23]
+0x715bb5c: 5a862b97 bl       #0x3c3d4c4
+0x715bb60: 610240f9 ldr      x1, [x19]
+0x715bb64: f30300aa mov      x19, x0
+0x715bb68: 50909197 bl       #0x55bfca8 // System.Collections.Generic.LinkedList<object>$$.ctor
+0x715bb6c: a80240f9 ldr      x8, [x21]
+0x715bb70: 085d40f9 ldr      x8, [x8, #0xb8]
+0x715bb74: 130100f9 str      x19, [x8]
+0x715bb78: a80240f9 ldr      x8, [x21]
+0x715bb7c: 890240f9 ldr      x9, [x20]
+0x715bb80: f44f42a9 ldp      x20, x19, [sp, #0x20]
+0x715bb84: f65741a9 ldp      x22, x21, [sp, #0x10]
+0x715bb88: 085d40f9 ldr      x8, [x8, #0xb8]
+0x715bb8c: 090d00f9 str      x9, [x8, #0x18]
+0x715bb90: 1f810039 strb     wzr, [x8, #0x20]
+0x715bb94: fe5fc3a8 ldp      x30, x23, [sp], #0x30
+0x715bb98: c0035fd6 ret      

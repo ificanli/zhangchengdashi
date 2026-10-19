@@ -1,0 +1,301 @@
+{
+  "passed": 27,
+  "cases": [
+    {
+      "case": "typed_name_None",
+      "value": "Owner.X",
+      "returnedOriginalFullName": true,
+      "error": null,
+      "trace": [
+        "Type.FullName",
+        "String.IsNullOrEmpty"
+      ]
+    },
+    {
+      "case": "typed_name_''",
+      "value": "Owner.X",
+      "returnedOriginalFullName": true,
+      "error": null,
+      "trace": [
+        "Type.FullName",
+        "String.IsNullOrEmpty"
+      ]
+    },
+    {
+      "case": "typed_name_'normal'",
+      "value": "Owner.X.normal",
+      "returnedOriginalFullName": false,
+      "error": null,
+      "trace": [
+        "Type.FullName",
+        "String.IsNullOrEmpty",
+        "String.Format"
+      ]
+    },
+    {
+      "case": "typed_name_'A.B'",
+      "value": "Owner.X.A.B",
+      "returnedOriginalFullName": false,
+      "error": null,
+      "trace": [
+        "Type.FullName",
+        "String.IsNullOrEmpty",
+        "String.Format"
+      ]
+    },
+    {
+      "case": "typed_name_' '",
+      "value": "Owner.X. ",
+      "returnedOriginalFullName": false,
+      "error": null,
+      "trace": [
+        "Type.FullName",
+        "String.IsNullOrEmpty",
+        "String.Format"
+      ]
+    },
+    {
+      "case": "typed_name_' name '",
+      "value": "Owner.X. name ",
+      "returnedOriginalFullName": false,
+      "error": null,
+      "trace": [
+        "Type.FullName",
+        "String.IsNullOrEmpty",
+        "String.Format"
+      ]
+    },
+    {
+      "case": "typed_name_'中文'",
+      "value": "Owner.X.中文",
+      "returnedOriginalFullName": false,
+      "error": null,
+      "trace": [
+        "Type.FullName",
+        "String.IsNullOrEmpty",
+        "String.Format"
+      ]
+    },
+    {
+      "case": "typed_name_'{0}'",
+      "value": "Owner.X.{0}",
+      "returnedOriginalFullName": false,
+      "error": null,
+      "trace": [
+        "Type.FullName",
+        "String.IsNullOrEmpty",
+        "String.Format"
+      ]
+    },
+    {
+      "case": "typed_name_'.'",
+      "value": "Owner.X..",
+      "returnedOriginalFullName": false,
+      "error": null,
+      "trace": [
+        "Type.FullName",
+        "String.IsNullOrEmpty",
+        "String.Format"
+      ]
+    },
+    {
+      "case": "typed_fullname_None_name_None",
+      "value": null,
+      "returnedOriginalFullName": true,
+      "error": null,
+      "trace": [
+        "Type.FullName",
+        "String.IsNullOrEmpty"
+      ]
+    },
+    {
+      "case": "typed_fullname_None_name_''",
+      "value": null,
+      "returnedOriginalFullName": true,
+      "error": null,
+      "trace": [
+        "Type.FullName",
+        "String.IsNullOrEmpty"
+      ]
+    },
+    {
+      "case": "typed_fullname_None_name_'X'",
+      "value": ".X",
+      "returnedOriginalFullName": false,
+      "error": null,
+      "trace": [
+        "Type.FullName",
+        "String.IsNullOrEmpty",
+        "String.Format"
+      ]
+    },
+    {
+      "case": "typed_fullname_''_name_None",
+      "value": "",
+      "returnedOriginalFullName": true,
+      "error": null,
+      "trace": [
+        "Type.FullName",
+        "String.IsNullOrEmpty"
+      ]
+    },
+    {
+      "case": "typed_fullname_''_name_''",
+      "value": "",
+      "returnedOriginalFullName": true,
+      "error": null,
+      "trace": [
+        "Type.FullName",
+        "String.IsNullOrEmpty"
+      ]
+    },
+    {
+      "case": "typed_fullname_''_name_'X'",
+      "value": ".X",
+      "returnedOriginalFullName": false,
+      "error": null,
+      "trace": [
+        "Type.FullName",
+        "String.IsNullOrEmpty",
+        "String.Format"
+      ]
+    },
+    {
+      "case": "null_type_None",
+      "value": null,
+      "returnedOriginalFullName": false,
+      "error": "NullReferenceException",
+      "trace": []
+    },
+    {
+      "case": "getter_abort_None",
+      "value": null,
+      "returnedOriginalFullName": false,
+      "error": "ProbeException",
+      "trace": [
+        "Type.FullName"
+      ]
+    },
+    {
+      "case": "null_type_''",
+      "value": null,
+      "returnedOriginalFullName": false,
+      "error": "NullReferenceException",
+      "trace": []
+    },
+    {
+      "case": "getter_abort_''",
+      "value": null,
+      "returnedOriginalFullName": false,
+      "error": "ProbeException",
+      "trace": [
+        "Type.FullName"
+      ]
+    },
+    {
+      "case": "null_type_'X'",
+      "value": null,
+      "returnedOriginalFullName": false,
+      "error": "NullReferenceException",
+      "trace": []
+    },
+    {
+      "case": "getter_abort_'X'",
+      "value": null,
+      "returnedOriginalFullName": false,
+      "error": "ProbeException",
+      "trace": [
+        "Type.FullName"
+      ]
+    },
+    {
+      "case": "generic_warm_None",
+      "value": "Owner.X",
+      "returnedOriginalFullName": true,
+      "error": null,
+      "trace": [
+        "Type.GetTypeFromHandle",
+        "Type.FullName",
+        "String.IsNullOrEmpty"
+      ]
+    },
+    {
+      "case": "generic_warm_''",
+      "value": "Owner.X",
+      "returnedOriginalFullName": true,
+      "error": null,
+      "trace": [
+        "Type.GetTypeFromHandle",
+        "Type.FullName",
+        "String.IsNullOrEmpty"
+      ]
+    },
+    {
+      "case": "generic_warm_'X'",
+      "value": "Owner.X.X",
+      "returnedOriginalFullName": false,
+      "error": null,
+      "trace": [
+        "Type.GetTypeFromHandle",
+        "Type.FullName",
+        "String.IsNullOrEmpty",
+        "String.Format"
+      ]
+    },
+    {
+      "case": "generic_cold_None",
+      "value": "Owner.X",
+      "returnedOriginalFullName": true,
+      "error": null,
+      "trace": [
+        "IL2CPP.initialize_runtime_metadata",
+        "IL2CPP.inflate_generic_context",
+        "Type.GetTypeFromHandle",
+        "Type.FullName",
+        "String.IsNullOrEmpty"
+      ]
+    },
+    {
+      "case": "generic_cold_''",
+      "value": "Owner.X",
+      "returnedOriginalFullName": true,
+      "error": null,
+      "trace": [
+        "IL2CPP.initialize_runtime_metadata",
+        "IL2CPP.inflate_generic_context",
+        "Type.GetTypeFromHandle",
+        "Type.FullName",
+        "String.IsNullOrEmpty"
+      ]
+    },
+    {
+      "case": "generic_cold_'X'",
+      "value": "Owner.X.X",
+      "returnedOriginalFullName": false,
+      "error": null,
+      "trace": [
+        "IL2CPP.initialize_runtime_metadata",
+        "IL2CPP.inflate_generic_context",
+        "Type.GetTypeFromHandle",
+        "Type.FullName",
+        "String.IsNullOrEmpty",
+        "String.Format"
+      ]
+    }
+  ],
+  "elfSha256": "72770d00b2b404acf44cc75cc8bf7a3e06850e9ace1237c9cbb2bc72894220ed",
+  "codeHashes": {
+    "0x511d668": "2b5716f4e85c23cc02a7e2c6bc616b444ed27f16c88f2ee877874806ad8becce",
+    "0x71e37c0": "671d05a445702feeed6b3e5338404086c0087db0fa9eaa5d139989f0e7bbece7"
+  },
+  "originalTemplate": {
+    "metadataAddress": "0x8D857D0",
+    "value": "{0}.{1}"
+  },
+  "boundaries": [
+    "System.Type.FullName virtual accessor, Type.GetTypeFromHandle, string.IsNullOrEmpty and string.Format are runtime boundary adapters",
+    "The original helper machine branches, generic dispatch, exact returned reference and ordering execute in Unicorn",
+    "Getter error stops at the callback boundary; managed exception unwinding is verified by C# fixtures"
+  ],
+  "independentBoundedNativeStatus": "work/ida-framework-assets/status-stage42-utility.json"
+}

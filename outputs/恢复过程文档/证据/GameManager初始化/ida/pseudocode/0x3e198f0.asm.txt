@@ -1,0 +1,13 @@
+0x3e198f0: STP             X30, X19, [SP,#var_10]!
+0x3e198f4: LDRB            W8, [X0,#0x20]
+0x3e198f8: CBZ             W8, loc_3E1991C
+0x3e198fc: LDR             X19, [X0,#0x28]
+0x3e19900: CBZ             X19, loc_3E1991C
+0x3e19904: MOV             X0, XZR
+0x3e19908: BL              UnityEngine.Time$$get_deltaTime
+0x3e1990c: MOV             X0, X19
+0x3e19910: MOV             X1, XZR
+0x3e19914: LDP             X30, X19, [SP+0x10+var_10],#0x10
+0x3e19918: B               GameModule.UpdateController$$ToUpdate
+0x3e1991c: LDP             X30, X19, [SP+0x10+var_10],#0x10
+0x3e19920: RET

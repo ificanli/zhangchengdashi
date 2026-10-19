@@ -1,0 +1,25 @@
+0x4275214: fe0f1ef8 str      x30, [sp, #-0x20]!
+0x4275218: f44f01a9 stp      x20, x19, [sp, #0x10]
+0x427521c: 011000f9 str      x1, [x0, #0x20]
+0x4275220: 346c02f0 adrp     x20, #0x8ffc000
+0x4275224: 88f67f39 ldrb     w8, [x20, #0xffd]
+0x4275228: f30301aa mov      x19, x1
+0x427522c: c8000035 cbnz     w8, #0x4275244
+0x4275230: a04202f0 adrp     x0, #0x8acc000
+0x4275234: 007c44f9 ldr      x0, [x0, #0x8f8] // UnityEngine.Vector3_TypeInfo
+0x4275238: 1220e797 bl       #0x3c3d280
+0x427523c: 28008052 mov      w8, #1
+0x4275240: 88f63f39 strb     w8, [x20, #0xffd]
+0x4275244: 930100b4 cbz      x19, #0x4275274
+0x4275248: a84202f0 adrp     x8, #0x8acc000
+0x427524c: 087d44f9 ldr      x8, [x8, #0x8f8] // UnityEngine.Vector3_TypeInfo
+0x4275250: e00313aa mov      x0, x19
+0x4275254: f44f41a9 ldp      x20, x19, [sp, #0x10]
+0x4275258: e1031faa mov      x1, xzr
+0x427525c: 080140f9 ldr      x8, [x8]
+0x4275260: 085d40f9 ldr      x8, [x8, #0xb8]
+0x4275264: 0189402d ldp      s1, s2, [x8, #4]
+0x4275268: 000140bd ldr      s0, [x8]
+0x427526c: fe0742f8 ldr      x30, [sp], #0x20
+0x4275270: af100215 b        #0x82f952c // UnityEngine.Transform$$set_localScale
+0x4275274: 9620e797 bl       #0x3c3d4cc

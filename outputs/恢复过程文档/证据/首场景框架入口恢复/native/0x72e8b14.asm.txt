@@ -1,0 +1,278 @@
+0x72e8b14: fe0f1cf8 str      x30, [sp, #-0x40]!
+0x72e8b18: f85f01a9 stp      x24, x23, [sp, #0x10]
+0x72e8b1c: f65702a9 stp      x22, x21, [sp, #0x20]
+0x72e8b20: f44f03a9 stp      x20, x19, [sp, #0x30]
+0x72e8b24: 16e900d0 adrp     x22, #0x900a000
+0x72e8b28: 35c100f0 adrp     x21, #0x8b0f000
+0x72e8b2c: 74c00090 adrp     x20, #0x8af4000
+0x72e8b30: c83e4139 ldrb     w8, [x22, #0x4f]
+0x72e8b34: b55e43f9 ldr      x21, [x21, #0x6b8] // UI模块初始化完成，开始初始化其他次级模块
+0x72e8b38: 945243f9 ldr      x20, [x20, #0x6a0] // GameFramework.GameFrameEntry_TypeInfo
+0x72e8b3c: f30300aa mov      x19, x0
+0x72e8b40: e8040037 tbnz     w8, #0, #0x72e8bdc
+0x72e8b44: 20bf00b0 adrp     x0, #0x8acd000
+0x72e8b48: 008844f9 ldr      x0, [x0, #0x910] // System.Action_TypeInfo
+0x72e8b4c: cd512597 bl       #0x3c3d280
+0x72e8b50: 20bf00b0 adrp     x0, #0x8acd000
+0x72e8b54: 003043f9 ldr      x0, [x0, #0x660] // Method$System.Array.Empty<object>()
+0x72e8b58: ca512597 bl       #0x3c3d280
+0x72e8b5c: 40c100d0 adrp     x0, #0x8b12000
+0x72e8b60: 00f045f9 ldr      x0, [x0, #0xbe0] // Method$GameFramework.GameFrameEntry.GetModule<EffectModule>()
+0x72e8b64: c7512597 bl       #0x3c3d280
+0x72e8b68: a0c00090 adrp     x0, #0x8afc000
+0x72e8b6c: 009044f9 ldr      x0, [x0, #0x920] // Method$GameFramework.GameFrameEntry.GetModule<FsmManager>()
+0x72e8b70: c4512597 bl       #0x3c3d280
+0x72e8b74: a0c00090 adrp     x0, #0x8afc000
+0x72e8b78: 000843f9 ldr      x0, [x0, #0x610] // Method$GameFramework.GameFrameEntry.GetModule<LangModule>()
+0x72e8b7c: c1512597 bl       #0x3c3d280
+0x72e8b80: 60c00090 adrp     x0, #0x8af4000
+0x72e8b84: 007443f9 ldr      x0, [x0, #0x6e8] // Method$GameFramework.GameFrameEntry.GetModule<MineGameLogicModule>()
+0x72e8b88: be512597 bl       #0x3c3d280
+0x72e8b8c: 80c100b0 adrp     x0, #0x8b19000
+0x72e8b90: 001045f9 ldr      x0, [x0, #0xa20] // Method$GameFramework.GameFrameEntry.GetModule<ObjectPoolManager>()
+0x72e8b94: bb512597 bl       #0x3c3d280
+0x72e8b98: 60c00090 adrp     x0, #0x8af4000
+0x72e8b9c: 004c43f9 ldr      x0, [x0, #0x698] // Method$GameFramework.GameFrameEntry.GetModule<ProcedureManager>()
+0x72e8ba0: b8512597 bl       #0x3c3d280
+0x72e8ba4: 60c00090 adrp     x0, #0x8af4000
+0x72e8ba8: 00f443f9 ldr      x0, [x0, #0x7e8] // Method$GameFramework.GameFrameEntry.GetModule<TimeModule>()
+0x72e8bac: b5512597 bl       #0x3c3d280
+0x72e8bb0: 60c00090 adrp     x0, #0x8af4000
+0x72e8bb4: 005043f9 ldr      x0, [x0, #0x6a0] // GameFramework.GameFrameEntry_TypeInfo
+0x72e8bb8: b2512597 bl       #0x3c3d280
+0x72e8bbc: 80c100d0 adrp     x0, #0x8b1a000
+0x72e8bc0: 003046f9 ldr      x0, [x0, #0xc60] // Method$GameFramework.Base.GameStartEntry.JKM¬()
+0x72e8bc4: af512597 bl       #0x3c3d280
+0x72e8bc8: 20c100f0 adrp     x0, #0x8b0f000
+0x72e8bcc: 005c43f9 ldr      x0, [x0, #0x6b8] // UI模块初始化完成，开始初始化其他次级模块
+0x72e8bd0: ac512597 bl       #0x3c3d280
+0x72e8bd4: 28008052 mov      w8, #1
+0x72e8bd8: c83e0139 strb     w8, [x22, #0x4f]
+0x72e8bdc: a10240f9 ldr      x1, [x21]
+0x72e8be0: b5c00090 adrp     x21, #0x8afc000
+0x72e8be4: 36bf00b0 adrp     x22, #0x8acd000
+0x72e8be8: b50a43f9 ldr      x21, [x21, #0x610] // Method$GameFramework.GameFrameEntry.GetModule<LangModule>()
+0x72e8bec: d63243f9 ldr      x22, [x22, #0x660] // Method$System.Array.Empty<object>()
+0x72e8bf0: e00313aa mov      x0, x19
+0x72e8bf4: 40f3ff97 bl       #0x72e58f4 // GameFramework.Base.GameStartEntry$$M¬a
+0x72e8bf8: 800240f9 ldr      x0, [x20]
+0x72e8bfc: 08e040b9 ldr      w8, [x0, #0xe0]
+0x72e8c00: 48000035 cbnz     w8, #0x72e8c08
+0x72e8c04: eb512597 bl       #0x3c3d3b0
+0x72e8c08: a00240f9 ldr      x0, [x21]
+0x72e8c0c: 6d8e6697 bl       #0x4c8c5c0 // GameFramework.GameFrameEntry$$GetModule<object>
+0x72e8c10: d50240f9 ldr      x21, [x22]
+0x72e8c14: f40300aa mov      x20, x0
+0x72e8c18: a81e40f9 ldr      x8, [x21, #0x38]
+0x72e8c1c: 880000b5 cbnz     x8, #0x72e8c2c
+0x72e8c20: e00315aa mov      x0, x21
+0x72e8c24: f69d2597 bl       #0x3c503fc
+0x72e8c28: a81e40f9 ldr      x8, [x21, #0x38]
+0x72e8c2c: 000940f9 ldr      x0, [x8, #0x10]
+0x72e8c30: 08d44439 ldrb     w8, [x0, #0x135]
+0x72e8c34: 48000037 tbnz     w8, #0, #0x72e8c3c
+0x72e8c38: da9d2597 bl       #0x3c503a0
+0x72e8c3c: 08e040b9 ldr      w8, [x0, #0xe0]
+0x72e8c40: 48000035 cbnz     w8, #0x72e8c48
+0x72e8c44: db512597 bl       #0x3c3d3b0
+0x72e8c48: a81e40f9 ldr      x8, [x21, #0x38]
+0x72e8c4c: b5c00090 adrp     x21, #0x8afc000
+0x72e8c50: 000940f9 ldr      x0, [x8, #0x10]
+0x72e8c54: 08d44439 ldrb     w8, [x0, #0x135]
+0x72e8c58: b59244f9 ldr      x21, [x21, #0x920] // Method$GameFramework.GameFrameEntry.GetModule<FsmManager>()
+0x72e8c5c: 48000037 tbnz     w8, #0, #0x72e8c64
+0x72e8c60: d09d2597 bl       #0x3c503a0
+0x72e8c64: 085c40f9 ldr      x8, [x0, #0xb8]
+0x72e8c68: e00314aa mov      x0, x20
+0x72e8c6c: e1031faa mov      x1, xzr
+0x72e8c70: e3031faa mov      x3, xzr
+0x72e8c74: 020140f9 ldr      x2, [x8]
+0x72e8c78: b7c8f997 bl       #0x715af54 // GameFramework.GameFrameEntry$$Initialize
+0x72e8c7c: a00240f9 ldr      x0, [x21]
+0x72e8c80: 508e6697 bl       #0x4c8c5c0 // GameFramework.GameFrameEntry$$GetModule<object>
+0x72e8c84: d50240f9 ldr      x21, [x22]
+0x72e8c88: f40300aa mov      x20, x0
+0x72e8c8c: a81e40f9 ldr      x8, [x21, #0x38]
+0x72e8c90: 880000b5 cbnz     x8, #0x72e8ca0
+0x72e8c94: e00315aa mov      x0, x21
+0x72e8c98: d99d2597 bl       #0x3c503fc
+0x72e8c9c: a81e40f9 ldr      x8, [x21, #0x38]
+0x72e8ca0: 000940f9 ldr      x0, [x8, #0x10]
+0x72e8ca4: 08d44439 ldrb     w8, [x0, #0x135]
+0x72e8ca8: 48000037 tbnz     w8, #0, #0x72e8cb0
+0x72e8cac: bd9d2597 bl       #0x3c503a0
+0x72e8cb0: 08e040b9 ldr      w8, [x0, #0xe0]
+0x72e8cb4: 48000035 cbnz     w8, #0x72e8cbc
+0x72e8cb8: be512597 bl       #0x3c3d3b0
+0x72e8cbc: a81e40f9 ldr      x8, [x21, #0x38]
+0x72e8cc0: 75c00090 adrp     x21, #0x8af4000
+0x72e8cc4: 000940f9 ldr      x0, [x8, #0x10]
+0x72e8cc8: 08d44439 ldrb     w8, [x0, #0x135]
+0x72e8ccc: b57643f9 ldr      x21, [x21, #0x6e8] // Method$GameFramework.GameFrameEntry.GetModule<MineGameLogicModule>()
+0x72e8cd0: 48000037 tbnz     w8, #0, #0x72e8cd8
+0x72e8cd4: b39d2597 bl       #0x3c503a0
+0x72e8cd8: 085c40f9 ldr      x8, [x0, #0xb8]
+0x72e8cdc: e00314aa mov      x0, x20
+0x72e8ce0: e1031faa mov      x1, xzr
+0x72e8ce4: e3031faa mov      x3, xzr
+0x72e8ce8: 020140f9 ldr      x2, [x8]
+0x72e8cec: 9ac8f997 bl       #0x715af54 // GameFramework.GameFrameEntry$$Initialize
+0x72e8cf0: a00240f9 ldr      x0, [x21]
+0x72e8cf4: 338e6697 bl       #0x4c8c5c0 // GameFramework.GameFrameEntry$$GetModule<object>
+0x72e8cf8: d50240f9 ldr      x21, [x22]
+0x72e8cfc: f40300aa mov      x20, x0
+0x72e8d00: a81e40f9 ldr      x8, [x21, #0x38]
+0x72e8d04: 880000b5 cbnz     x8, #0x72e8d14
+0x72e8d08: e00315aa mov      x0, x21
+0x72e8d0c: bc9d2597 bl       #0x3c503fc
+0x72e8d10: a81e40f9 ldr      x8, [x21, #0x38]
+0x72e8d14: 000940f9 ldr      x0, [x8, #0x10]
+0x72e8d18: 08d44439 ldrb     w8, [x0, #0x135]
+0x72e8d1c: 48000037 tbnz     w8, #0, #0x72e8d24
+0x72e8d20: a09d2597 bl       #0x3c503a0
+0x72e8d24: 08e040b9 ldr      w8, [x0, #0xe0]
+0x72e8d28: 48000035 cbnz     w8, #0x72e8d30
+0x72e8d2c: a1512597 bl       #0x3c3d3b0
+0x72e8d30: a81e40f9 ldr      x8, [x21, #0x38]
+0x72e8d34: 75c00090 adrp     x21, #0x8af4000
+0x72e8d38: 000940f9 ldr      x0, [x8, #0x10]
+0x72e8d3c: 08d44439 ldrb     w8, [x0, #0x135]
+0x72e8d40: b5f643f9 ldr      x21, [x21, #0x7e8] // Method$GameFramework.GameFrameEntry.GetModule<TimeModule>()
+0x72e8d44: 48000037 tbnz     w8, #0, #0x72e8d4c
+0x72e8d48: 969d2597 bl       #0x3c503a0
+0x72e8d4c: 085c40f9 ldr      x8, [x0, #0xb8]
+0x72e8d50: e00314aa mov      x0, x20
+0x72e8d54: e1031faa mov      x1, xzr
+0x72e8d58: e3031faa mov      x3, xzr
+0x72e8d5c: 020140f9 ldr      x2, [x8]
+0x72e8d60: 7dc8f997 bl       #0x715af54 // GameFramework.GameFrameEntry$$Initialize
+0x72e8d64: a00240f9 ldr      x0, [x21]
+0x72e8d68: 168e6697 bl       #0x4c8c5c0 // GameFramework.GameFrameEntry$$GetModule<object>
+0x72e8d6c: d50240f9 ldr      x21, [x22]
+0x72e8d70: f40300aa mov      x20, x0
+0x72e8d74: a81e40f9 ldr      x8, [x21, #0x38]
+0x72e8d78: 880000b5 cbnz     x8, #0x72e8d88
+0x72e8d7c: e00315aa mov      x0, x21
+0x72e8d80: 9f9d2597 bl       #0x3c503fc
+0x72e8d84: a81e40f9 ldr      x8, [x21, #0x38]
+0x72e8d88: 000940f9 ldr      x0, [x8, #0x10]
+0x72e8d8c: 08d44439 ldrb     w8, [x0, #0x135]
+0x72e8d90: 48000037 tbnz     w8, #0, #0x72e8d98
+0x72e8d94: 839d2597 bl       #0x3c503a0
+0x72e8d98: 08e040b9 ldr      w8, [x0, #0xe0]
+0x72e8d9c: 48000035 cbnz     w8, #0x72e8da4
+0x72e8da0: 84512597 bl       #0x3c3d3b0
+0x72e8da4: a81e40f9 ldr      x8, [x21, #0x38]
+0x72e8da8: 55c100d0 adrp     x21, #0x8b12000
+0x72e8dac: 000940f9 ldr      x0, [x8, #0x10]
+0x72e8db0: 08d44439 ldrb     w8, [x0, #0x135]
+0x72e8db4: b5f245f9 ldr      x21, [x21, #0xbe0] // Method$GameFramework.GameFrameEntry.GetModule<EffectModule>()
+0x72e8db8: 48000037 tbnz     w8, #0, #0x72e8dc0
+0x72e8dbc: 799d2597 bl       #0x3c503a0
+0x72e8dc0: 085c40f9 ldr      x8, [x0, #0xb8]
+0x72e8dc4: e00314aa mov      x0, x20
+0x72e8dc8: e1031faa mov      x1, xzr
+0x72e8dcc: e3031faa mov      x3, xzr
+0x72e8dd0: 020140f9 ldr      x2, [x8]
+0x72e8dd4: 60c8f997 bl       #0x715af54 // GameFramework.GameFrameEntry$$Initialize
+0x72e8dd8: a00240f9 ldr      x0, [x21]
+0x72e8ddc: f98d6697 bl       #0x4c8c5c0 // GameFramework.GameFrameEntry$$GetModule<object>
+0x72e8de0: d50240f9 ldr      x21, [x22]
+0x72e8de4: f40300aa mov      x20, x0
+0x72e8de8: a81e40f9 ldr      x8, [x21, #0x38]
+0x72e8dec: 880000b5 cbnz     x8, #0x72e8dfc
+0x72e8df0: e00315aa mov      x0, x21
+0x72e8df4: 829d2597 bl       #0x3c503fc
+0x72e8df8: a81e40f9 ldr      x8, [x21, #0x38]
+0x72e8dfc: 000940f9 ldr      x0, [x8, #0x10]
+0x72e8e00: 08d44439 ldrb     w8, [x0, #0x135]
+0x72e8e04: 48000037 tbnz     w8, #0, #0x72e8e0c
+0x72e8e08: 669d2597 bl       #0x3c503a0
+0x72e8e0c: 08e040b9 ldr      w8, [x0, #0xe0]
+0x72e8e10: 48000035 cbnz     w8, #0x72e8e18
+0x72e8e14: 67512597 bl       #0x3c3d3b0
+0x72e8e18: a81e40f9 ldr      x8, [x21, #0x38]
+0x72e8e1c: 95c100b0 adrp     x21, #0x8b19000
+0x72e8e20: 000940f9 ldr      x0, [x8, #0x10]
+0x72e8e24: 08d44439 ldrb     w8, [x0, #0x135]
+0x72e8e28: b51245f9 ldr      x21, [x21, #0xa20] // Method$GameFramework.GameFrameEntry.GetModule<ObjectPoolManager>()
+0x72e8e2c: 48000037 tbnz     w8, #0, #0x72e8e34
+0x72e8e30: 5c9d2597 bl       #0x3c503a0
+0x72e8e34: 085c40f9 ldr      x8, [x0, #0xb8]
+0x72e8e38: e00314aa mov      x0, x20
+0x72e8e3c: e1031faa mov      x1, xzr
+0x72e8e40: e3031faa mov      x3, xzr
+0x72e8e44: 020140f9 ldr      x2, [x8]
+0x72e8e48: 43c8f997 bl       #0x715af54 // GameFramework.GameFrameEntry$$Initialize
+0x72e8e4c: a00240f9 ldr      x0, [x21]
+0x72e8e50: dc8d6697 bl       #0x4c8c5c0 // GameFramework.GameFrameEntry$$GetModule<object>
+0x72e8e54: d50240f9 ldr      x21, [x22]
+0x72e8e58: f40300aa mov      x20, x0
+0x72e8e5c: a81e40f9 ldr      x8, [x21, #0x38]
+0x72e8e60: 880000b5 cbnz     x8, #0x72e8e70
+0x72e8e64: e00315aa mov      x0, x21
+0x72e8e68: 659d2597 bl       #0x3c503fc
+0x72e8e6c: a81e40f9 ldr      x8, [x21, #0x38]
+0x72e8e70: 000940f9 ldr      x0, [x8, #0x10]
+0x72e8e74: 08d44439 ldrb     w8, [x0, #0x135]
+0x72e8e78: 48000037 tbnz     w8, #0, #0x72e8e80
+0x72e8e7c: 499d2597 bl       #0x3c503a0
+0x72e8e80: 08e040b9 ldr      w8, [x0, #0xe0]
+0x72e8e84: 48000035 cbnz     w8, #0x72e8e8c
+0x72e8e88: 4a512597 bl       #0x3c3d3b0
+0x72e8e8c: a81e40f9 ldr      x8, [x21, #0x38]
+0x72e8e90: 78c00090 adrp     x24, #0x8af4000
+0x72e8e94: 37bf00b0 adrp     x23, #0x8acd000
+0x72e8e98: 95c100d0 adrp     x21, #0x8b1a000
+0x72e8e9c: 000940f9 ldr      x0, [x8, #0x10]
+0x72e8ea0: 08d44439 ldrb     w8, [x0, #0x135]
+0x72e8ea4: 184f43f9 ldr      x24, [x24, #0x698] // Method$GameFramework.GameFrameEntry.GetModule<ProcedureManager>()
+0x72e8ea8: f78a44f9 ldr      x23, [x23, #0x910] // System.Action_TypeInfo
+0x72e8eac: b53246f9 ldr      x21, [x21, #0xc60] // Method$GameFramework.Base.GameStartEntry.JKM¬()
+0x72e8eb0: 48000037 tbnz     w8, #0, #0x72e8eb8
+0x72e8eb4: 3b9d2597 bl       #0x3c503a0
+0x72e8eb8: 085c40f9 ldr      x8, [x0, #0xb8]
+0x72e8ebc: e00314aa mov      x0, x20
+0x72e8ec0: e1031faa mov      x1, xzr
+0x72e8ec4: e3031faa mov      x3, xzr
+0x72e8ec8: 020140f9 ldr      x2, [x8]
+0x72e8ecc: 22c8f997 bl       #0x715af54 // GameFramework.GameFrameEntry$$Initialize
+0x72e8ed0: 000340f9 ldr      x0, [x24]
+0x72e8ed4: bb8d6697 bl       #0x4c8c5c0 // GameFramework.GameFrameEntry$$GetModule<object>
+0x72e8ed8: e80240f9 ldr      x8, [x23]
+0x72e8edc: f40300aa mov      x20, x0
+0x72e8ee0: e00308aa mov      x0, x8
+0x72e8ee4: 78512597 bl       #0x3c3d4c4
+0x72e8ee8: a20240f9 ldr      x2, [x21]
+0x72e8eec: e10313aa mov      x1, x19
+0x72e8ef0: e3031faa mov      x3, xzr
+0x72e8ef4: f50300aa mov      x21, x0
+0x72e8ef8: 2b440c94 bl       #0x75f9fa4 // System.Action$$.ctor
+0x72e8efc: d30240f9 ldr      x19, [x22]
+0x72e8f00: 681e40f9 ldr      x8, [x19, #0x38]
+0x72e8f04: 880000b5 cbnz     x8, #0x72e8f14
+0x72e8f08: e00313aa mov      x0, x19
+0x72e8f0c: 3c9d2597 bl       #0x3c503fc
+0x72e8f10: 681e40f9 ldr      x8, [x19, #0x38]
+0x72e8f14: 000940f9 ldr      x0, [x8, #0x10]
+0x72e8f18: 08d44439 ldrb     w8, [x0, #0x135]
+0x72e8f1c: 48000037 tbnz     w8, #0, #0x72e8f24
+0x72e8f20: 209d2597 bl       #0x3c503a0
+0x72e8f24: 08e040b9 ldr      w8, [x0, #0xe0]
+0x72e8f28: 48000035 cbnz     w8, #0x72e8f30
+0x72e8f2c: 21512597 bl       #0x3c3d3b0
+0x72e8f30: 681e40f9 ldr      x8, [x19, #0x38]
+0x72e8f34: 000940f9 ldr      x0, [x8, #0x10]
+0x72e8f38: 08d44439 ldrb     w8, [x0, #0x135]
+0x72e8f3c: 48000037 tbnz     w8, #0, #0x72e8f44
+0x72e8f40: 189d2597 bl       #0x3c503a0
+0x72e8f44: 085c40f9 ldr      x8, [x0, #0xb8]
+0x72e8f48: e00314aa mov      x0, x20
+0x72e8f4c: e10315aa mov      x1, x21
+0x72e8f50: f44f43a9 ldp      x20, x19, [sp, #0x30]
+0x72e8f54: 020140f9 ldr      x2, [x8]
+0x72e8f58: f65742a9 ldp      x22, x21, [sp, #0x20]
+0x72e8f5c: f85f41a9 ldp      x24, x23, [sp, #0x10]
+0x72e8f60: e3031faa mov      x3, xzr
+0x72e8f64: fe0744f8 ldr      x30, [sp], #0x40
+0x72e8f68: fbc7f917 b        #0x715af54 // GameFramework.GameFrameEntry$$Initialize

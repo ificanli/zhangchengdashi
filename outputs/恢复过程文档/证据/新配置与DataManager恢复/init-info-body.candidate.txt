@@ -1,0 +1,183 @@
+if (ABTestManager.Instance.NewMachineCardIsB)
+{
+    HeadShotIDS.Add("1027");
+    HeadShotIDS.Add("1028");
+}
+if (ABTestManager.Instance.NewCardsV1IsB)
+{
+    HeadShotIDS.Add("1029");
+    HeadShotIDS.Add("1030");
+    HeadShotIDS.Add("1031");
+    HeadShotIDS.Add("1032");
+    HeadShotIDS.Add("1033");
+}
+if (ABTestManager.Instance.WeeklyCardEventIsB)
+{
+    HeadShotIDS.Add("1034");
+    HeadShotIDS.Add("1035");
+    HeadShotIDS.Add("1036");
+    HeadShotIDS.Add("1037");
+}
+HeadShotIDS.Add("1038");
+HeadShotIDS.Add("1039");
+HeadShotIDS.Add("1040");
+LoadGlobalInfo<GlobalAssetInfo>("Assets/_Res/Addressable/01FirstBundle/JsonData/GlobalBaseAssetsInfo.json", _003CInitInfo_003Eb__92_0);
+LoadGlobalInfo<GlobalFormulaInfo>("Assets/_Res/Addressable/01FirstBundle/JsonData/GlobalFormulasInfo.json", _003CInitInfo_003Eb__92_1);
+LoadGlobalInfo<GlobalStrategyInfo>("Assets/_Res/Addressable/01FirstBundle/JsonData/GlobalStrategyInfo.json", _003CInitInfo_003Eb__92_2);
+LoadGlobalInfo<GlobalMetaModuleInfo>("Assets/_Res/Addressable/01FirstBundle/JsonData/GlobalMetaModuleInfo.json", _003CInitInfo_003Eb__92_3);
+LoadGlobalInfo<GlobalSubMetaModuleInfo>("Assets/_Res/Addressable/01FirstBundle/JsonData/GlobalSubMetaModuleInfo.json", _003CInitInfo_003Eb__92_4);
+LoadGlobalInfo<GlobalShopInfo>("Assets/_Res/Addressable/01FirstBundle/JsonData/GlobalShopInfo.json", _003CInitInfo_003Eb__92_5);
+LoadGlobalInfo<GlobalIAPInfo>("Assets/_Res/Addressable/01FirstBundle/JsonData/GlobalIAPInfo.json", _003CInitInfo_003Eb__92_6);
+LoadGlobalInfo<GlobaMultistageNewcomerPackageInfo>("Assets/_Res/Addressable/01FirstBundle/JsonData/GlobaMultistageNewcomerPackageInfo.json", _003CInitInfo_003Eb__92_7);
+LoadGlobalInfo<UserLablePushPackInfo>("Assets/_Res/Addressable/01FirstBundle/JsonData/UserLablePushPackInfo.json", _003CInitInfo_003Eb__92_8);
+LoadGlobalInfo<GlobalMysteriousStore>("Assets/_Res/Addressable/01FirstBundle/JsonData/GlobalMysteriousStore.json", _003CInitInfo_003Eb__92_9);
+LoadGlobalInfo<GlobalSummonInfo>("Assets/_Res/Addressable/01FirstBundle/JsonData/GlobalSummonInfo.json", _003CInitInfo_003Eb__92_10);
+LoadGlobalInfo<GlobalArtifactsForgeInfo>("Assets/_Res/Addressable/01FirstBundle/JsonData/GlobalArtifactsForgeInfo.json", _003CInitInfo_003Eb__92_11);
+LoadGlobalInfo<GlobalArtifactAIReleaseInfo>("Assets/_Res/Addressable/01FirstBundle/JsonData/GlobalArtifactAIReleaseInfo.json", _003CInitInfo_003Eb__92_12);
+string propPath = ABTestManager.Instance.NewArtifactsPlayIsBTest ? "Assets/_Res/Addressable/01FirstBundle/JsonData/GlobalPropInfoBTest.json" : "Assets/_Res/Addressable/01FirstBundle/JsonData/GlobalPropInfoATest.json";
+LoadGlobalInfo<GlobalPropInfo>(propPath, _003CInitInfo_003Eb__92_13);
+LoadGlobalInfo<GlobalBannerInfo>("Assets/_Res/Addressable/01FirstBundle/JsonData/GlobalBannerInfo.json", _003CInitInfo_003Eb__92_14);
+LoadGlobalInfo<GlobalExpression>("Assets/_Res/Addressable/01FirstBundle/JsonData/GlobalExpression.json", _003CInitInfo_003Eb__92_15);
+LoadGlobalInfo<GlobaUpgradeReward>("Assets/_Res/Addressable/01FirstBundle/JsonData/GlobaUpgradeReward.json", _003CInitInfo_003Eb__92_16);
+string architecturePath;
+string rolePath;
+string heroCardPath;
+if (ABTestManager.Instance.ShopImproveV1IsBTest)
+{
+    architecturePath = "Assets/_Res/Addressable/01FirstBundle/JsonData/GlobalArchitectureInfoshop_improve_v1.json";
+    rolePath = "Assets/_Res/Addressable/01FirstBundle/JsonData/GlobalRoleInfoshop_improve_v1.json";
+    heroCardPath = "Assets/_Res/Addressable/01FirstBundle/JsonData/GlobalHeroCardInfoshop_improve_v1.json";
+    UnityEngine.Debug.Log("建筑角色卡牌表使用shop_improve_v1数值");
+}
+else
+{
+    architecturePath = "Assets/_Res/Addressable/01FirstBundle/JsonData/GlobalArchitectureInfogameplay_improve_01.json";
+    rolePath = "Assets/_Res/Addressable/01FirstBundle/JsonData/GlobalRoleInfogameplay_improve_01.json";
+    heroCardPath = "Assets/_Res/Addressable/01FirstBundle/JsonData/GlobalHeroCardInfoSheet5.json";
+    UnityEngine.Debug.Log("建筑角色卡牌表使用gameplay_improve_01数值");
+}
+LoadGlobalInfo<GlobalCardTalent2Info>("Assets/_Res/Addressable/01FirstBundle/JsonData/GlobalCardTalent2Info.json", _003CInitInfo_003Eb__92_17);
+if (ABTestManager.Instance.AbilitiesInAdvanceIsBTest)
+{
+    LoadGlobalInfo<GlobalUpgradeTalentPriceInfo>("Assets/_Res/Addressable/01FirstBundle/JsonData/GlobalUpgradeTalentPriceInfoabilities_in_advance.json", _003CInitInfo_003Eb__92_19);
+}
+else
+{
+    LoadGlobalInfo<GlobalUpgradeTalentPriceInfo>("Assets/_Res/Addressable/01FirstBundle/JsonData/GlobalUpgradeTalentPriceInfocontrol.json", _003CInitInfo_003Eb__92_18);
+}
+LoadGlobalInfo<GlobalCardTalentInfo>("Assets/_Res/Addressable/01FirstBundle/JsonData/GlobalCardTalentInfoSheet3.json", _003CInitInfo_003Eb__92_20);
+LoadGlobalInfo<GlobalHeroCardInfo>(heroCardPath, _003CInitInfo_003Eb__92_21);
+LoadGlobalInfo<GlobalArchitectureInfo>(architecturePath, _003CInitInfo_003Eb__92_22);
+LoadGlobalInfo<GlobalRoleInfo>(rolePath, _003CInitInfo_003Eb__92_23);
+LoadGlobalInfo<GlobalCardTalenTreeInfo>("Assets/_Res/Addressable/01FirstBundle/JsonData/GlobalCardTalenTreeInfoSheet2.json", _003CInitInfo_003Eb__92_24);
+LoadGlobalInfo<GlobalCardTalentInfo>("Assets/_Res/Addressable/01FirstBundle/JsonData/GlobalCardTalentInfoSheet2.json", _003CInitInfo_003Eb__92_25);
+LoadGlobalInfo<GlobalRandomHeroCardInfo>("Assets/_Res/Addressable/01FirstBundle/JsonData/GlobalRandomHeroCardInfo.json", _003CInitInfo_003Eb__92_26);
+if (ABTestManager.Instance.NewArenaProcessIsBTest)
+{
+    LoadGlobalInfo<GlobalDanInfo>("Assets/_Res/Addressable/01FirstBundle/JsonData/GlobalDanInfoSheet2.json", _003CInitInfo_003Eb__92_27);
+}
+else
+{
+    LoadGlobalInfo<GlobalDanInfo>("Assets/_Res/Addressable/01FirstBundle/JsonData/GlobalDanInfoSheet1.json", _003CInitInfo_003Eb__92_28);
+}
+LoadGlobalInfo<GlobalBotNameInfo>("Assets/_Res/Addressable/01FirstBundle/JsonData/GlobalBotNameInfo.json", _003CInitInfo_003Eb__92_29);
+LoadGlobalInfo<GlobalMainCityBuildTalentInfo>("Assets/_Res/Addressable/01FirstBundle/JsonData/GlobalMainCityBuildTalentInfoSheet2.json", _003CInitInfo_003Eb__92_30);
+LoadGlobalInfo<GlobalTalentFormulasInfo>("Assets/_Res/Addressable/01FirstBundle/JsonData/GlobalTalentFormulasInfoSheet2.json", _003CInitInfo_003Eb__92_31);
+if (ABTestManager.Instance.NewArenaProcessIsBTest)
+{
+    LoadGlobalInfo<GlobalArenaInfo>("Assets/_Res/Addressable/01FirstBundle/JsonData/GlobalArenaInfoSheet2.json", _003CInitInfo_003Eb__92_32);
+}
+else
+{
+    LoadGlobalInfo<GlobalArenaInfo>("Assets/_Res/Addressable/01FirstBundle/JsonData/GlobalArenaInfoSheet1.json", _003CInitInfo_003Eb__92_33);
+}
+if (ABTestManager.Instance.NewbieTutorialIsBTest)
+{
+    LoadGlobalInfo<GlobalTrainingMapInfo>("Assets/_Res/Addressable/01FirstBundle/JsonData/GlobalTrainingMapInfoSheet1.json", _003CInitInfo_003Eb__92_34);
+}
+else
+{
+    LoadGlobalInfo<GlobalTrainingMapInfo>("Assets/_Res/Addressable/01FirstBundle/JsonData/GlobalTrainingMapInfoSheet2.json", _003CInitInfo_003Eb__92_35);
+}
+LoadGlobalInfo<GlobalTrophyProgressInfo>("Assets/_Res/Addressable/01FirstBundle/JsonData/GlobalTrophyProgressInfo.json", _003CInitInfo_003Eb__92_36);
+LoadGlobalInfo<GlobalPolygonArenaInfo>("Assets/_Res/Addressable/01FirstBundle/JsonData/GlobalPolygonArenaInfoSheet2.json", _003CInitInfo_003Eb__92_37);
+LoadGlobalInfo<GlobalBoxInfo>("Assets/_Res/Addressable/01FirstBundle/JsonData/GlobalBoxInfo.json", _003CInitInfo_003Eb__92_38);
+if (ABTestManager.Instance.ShopImproveV1IsBTest)
+{
+    LoadGlobalInfo<ArenaEnemyCardsInfo>("Assets/_Res/Addressable/01FirstBundle/JsonData/ArenaEnemyCardsInfoSheet3.json", _003CInitInfo_003Eb__92_39);
+}
+else
+{
+    LoadGlobalInfo<ArenaEnemyCardsInfo>("Assets/_Res/Addressable/01FirstBundle/JsonData/ArenaEnemyCardsInfoSheet2.json", _003CInitInfo_003Eb__92_40);
+}
+string enemyDifficultyPath;
+string arenaBalancePath;
+int gameplayVariant = ABTestManager.Instance.GamePlayImproveV2Variant;
+if (gameplayVariant == 1)
+{
+    enemyDifficultyPath = "Assets/_Res/Addressable/01FirstBundle/JsonData/EnemyDifficultLevelInfosgameplay_improve_v2_01.json";
+    arenaBalancePath = "Assets/_Res/Addressable/01FirstBundle/JsonData/ArenaEnemyBalanceInfogameplay_improve_v2_01.json";
+}
+else if (gameplayVariant == 2)
+{
+    enemyDifficultyPath = "Assets/_Res/Addressable/01FirstBundle/JsonData/EnemyDifficultLevelInfosgameplay_improve_v2_02.json";
+    arenaBalancePath = "Assets/_Res/Addressable/01FirstBundle/JsonData/ArenaEnemyBalanceInfogameplay_improve_v2_02.json";
+}
+else
+{
+    enemyDifficultyPath = "Assets/_Res/Addressable/01FirstBundle/JsonData/EnemyDifficultLevelInfosgameplay_improve_01.json";
+    if (ABTestManager.Instance.BalanceAdjustment03IsBTest)
+    {
+        arenaBalancePath = "Assets/_Res/Addressable/01FirstBundle/JsonData/ArenaEnemyBalanceInfobalance_adjustment_03_on.json";
+        UnityEngine.Debug.Log("竞技场敌人平衡表使用 BalanceAdjustment03 的 B 组数值");
+    }
+    else
+    {
+        arenaBalancePath = "Assets/_Res/Addressable/01FirstBundle/JsonData/ArenaEnemyBalanceInfogameplay_improve_01.json";
+        UnityEngine.Debug.Log("竞技场敌人平衡表使用 BalanceAdjustment03 的 A 组数值");
+    }
+}
+LoadGlobalInfo<EnemyDifficultLevelInfos>(enemyDifficultyPath, _003CInitInfo_003Eb__92_41);
+LoadGlobalInfo<ArenaEnemyBalanceInfo>(arenaBalancePath, _003CInitInfo_003Eb__92_42);
+LoadGlobalInfo<GlobalHexInfo>("Assets/_Res/Addressable/01FirstBundle/JsonData/GlobalHexInfo.json", _003CInitInfo_003Eb__92_43);
+LoadGlobalInfo<GlobalBuildInfo>("Assets/_Res/Addressable/01FirstBundle/JsonData/GlobalBuildInfo.json", _003CInitInfo_003Eb__92_44);
+LoadGlobalInfo<UserLevelInfo>("Assets/_Res/Addressable/01FirstBundle/JsonData/UserLevelInfo.json", _003CInitInfo_003Eb__92_45);
+LoadGlobalInfo<GlobalTipInfo>("Assets/_Res/Addressable/01FirstBundle/JsonData/GlobalTipInfo.json", _003CInitInfo_003Eb__92_46);
+LoadGlobalInfo<GlobalMainCityMapInfo>("Assets/_Res/Addressable/01FirstBundle/JsonData/GlobalMainCityMapInfo.json", _003CInitInfo_003Eb__92_47);
+LoadGlobalInfo<GlobalBlessInfo>("Assets/_Res/Addressable/01FirstBundle/JsonData/GlobalBlessInfo.json", _003CInitInfo_003Eb__92_48);
+LoadGlobalInfo<SeasonInfo>("Assets/_Res/Addressable/01FirstBundle/JsonData/SeasonInfo.json", _003CInitInfo_003Eb__92_49);
+LoadGlobalInfo<GlobalMainCityAssetsInfo>("Assets/_Res/Addressable/01FirstBundle/JsonData/GlobalMainCityAssetsInfo.json", _003CInitInfo_003Eb__92_50);
+LoadGlobalInfo<GlobalMainCityTitleInfo>("Assets/_Res/Addressable/01FirstBundle/JsonData/GlobalMainCityTitleInfo.json", _003CInitInfo_003Eb__92_51);
+LoadGlobalInfo<GlobalMainCityHouseInfo>("Assets/_Res/Addressable/01FirstBundle/JsonData/GlobalMainCityHouseInfo.json", _003CInitInfo_003Eb__92_52);
+LoadGlobalInfo<GlobalFundInfo>("Assets/_Res/Addressable/01FirstBundle/JsonData/GlobalFundInfoAbilityFund.json", _003CInitInfo_003Eb__92_53);
+LoadGlobalInfo<GlobalFundInfo>("Assets/_Res/Addressable/01FirstBundle/JsonData/GlobalFundInfoSummonFund.json", _003CInitInfo_003Eb__92_54);
+LoadGlobalInfo<GlobalFundInfo>("Assets/_Res/Addressable/01FirstBundle/JsonData/GlobalFundInfoCardFund.json", _003CInitInfo_003Eb__92_55);
+LoadGlobalInfo<GlobalFundInfo>("Assets/_Res/Addressable/01FirstBundle/JsonData/GlobalFundInfoMainCityPass.json", _003CInitInfo_003Eb__92_56);
+LoadGlobalInfo<GlobalFundInfo>("Assets/_Res/Addressable/01FirstBundle/JsonData/GlobalFundInfoSeasonPass.json", _003CInitInfo_003Eb__92_57);
+LoadGlobalInfo<ShopArenaPackInfos>("Assets/_Res/Addressable/01FirstBundle/JsonData/ShopArenaPackInfos.json", _003CInitInfo_003Eb__92_58);
+LoadGlobalInfo<GlobalWeeklyCardDailyTaskInfo>("Assets/_Res/Addressable/01FirstBundle/JsonData/GlobalWeeklyCardDailyTaskInfo.json", _003CInitInfo_003Eb__92_59);
+LoadGlobalInfo<GlobalWeeklyCardStageInfo>("Assets/_Res/Addressable/01FirstBundle/JsonData/GlobalWeeklyCardStageInfo.json", _003CInitInfo_003Eb__92_60);
+LoadGlobalInfo<FundIAPInfo>("Assets/_Res/Addressable/01FirstBundle/JsonData/FundIAPInfo.json", _003CInitInfo_003Eb__92_61);
+LoadGlobalInfo<GlobalGiftChainInfo>("Assets/_Res/Addressable/01FirstBundle/JsonData/GlobalGiftChainInfo.json", _003CInitInfo_003Eb__92_62);
+LoadGlobalInfo<GlobalGiftChainInfo2>("Assets/_Res/Addressable/01FirstBundle/JsonData/GlobalGiftChainInfo2.json", _003CInitInfo_003Eb__92_63);
+LoadGlobalInfo<GlobalTutorialInfo>("Assets/_Res/Addressable/01FirstBundle/JsonData/GlobalTutorialInfo.json", _003CInitInfo_003Eb__92_64);
+LoadGlobalInfo<GlobalFeatureUnlockInfo>("Assets/_Res/Addressable/01FirstBundle/JsonData/GlobalFeatureUnlockInfo.json", _003CInitInfo_003Eb__92_65);
+if (ABTestManager.Instance.WeeklyClashImprove01IsBTest)
+{
+    LoadGlobalInfo<SeasonRankingRewardConfig>("Assets/_Res/Addressable/01FirstBundle/JsonData/SeasonRankingRewardConfigSheet2.json", _003CInitInfo_003Eb__92_66);
+}
+else
+{
+    LoadGlobalInfo<SeasonRankingRewardConfig>("Assets/_Res/Addressable/01FirstBundle/JsonData/SeasonRankingRewardConfigSheet1.json", _003CInitInfo_003Eb__92_67);
+}
+LoadGlobalInfo<GameSettingConfig>("Assets/_Res/Addressable/01FirstBundle/JsonData/GameSettingConfig.json", _003CInitInfo_003Eb__92_68);
+if (ABTestManager.Instance.WeeklyClashImprove01IsBTest)
+{
+    LoadGlobalInfo<WeeklyClashDifficultyConfig>("Assets/_Res/Addressable/01FirstBundle/JsonData/WeeklyClashDifficultyConfigSheet2.json", _003CInitInfo_003Eb__92_69);
+}
+else
+{
+    LoadGlobalInfo<WeeklyClashDifficultyConfig>("Assets/_Res/Addressable/01FirstBundle/JsonData/WeeklyClashDifficultyConfigSheet1.json", _003CInitInfo_003Eb__92_70);
+}
+LoadGlobalInfo<PanelConfig>("Assets/_Res/Addressable/01FirstBundle/JsonData/PanelConfig.json", _003CInitInfo_003Eb__92_71);
+await UniTask.WaitUntil(_003CInitInfo_003Eb__92_72);

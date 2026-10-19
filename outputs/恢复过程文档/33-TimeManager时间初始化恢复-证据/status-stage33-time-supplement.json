@@ -1,0 +1,705 @@
+{
+  "stage": "complete",
+  "methods": [
+    {
+      "name": "TimeModuleO.TimeManager$$SyncServerTime",
+      "address": 65298560,
+      "end": 65298632,
+      "signature": "void TimeModuleO_TimeManager__SyncServerTime (TimeModuleO_TimeManager_o* __this, const MethodInfo* method);",
+      "prototype": "void SyncServerTime(void* self,const MethodInfo* method);",
+      "file": "Assets/Scripts/Assembly-CSharp/TimeModuleO/TimeManager.cs",
+      "range_analysis": 1,
+      "direct_callees": [
+        {
+          "callsite": "0x3e460a0",
+          "address": "0x82ee034",
+          "name": "UnityEngine.MonoBehaviour$$StopCoroutine",
+          "signature": "void UnityEngine_MonoBehaviour__StopCoroutine (UnityEngine_MonoBehaviour_o* __this, UnityEngine_Coroutine_o* routine, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x3e460a8",
+          "address": "0x3e45650",
+          "name": "TimeModuleO.TimeManager$$SyncServerTimeCoroutine",
+          "signature": "System_Collections_IEnumerator_o* TimeModuleO_TimeManager__SyncServerTimeCoroutine (TimeModuleO_TimeManager_o* __this, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x3e460b8",
+          "address": "0x82eddc8",
+          "name": "UnityEngine.MonoBehaviour$$StartCoroutine",
+          "signature": "UnityEngine_Coroutine_o* UnityEngine_MonoBehaviour__StartCoroutine (UnityEngine_MonoBehaviour_o* __this, System_Collections_IEnumerator_o* routine, const MethodInfo* method);"
+        }
+      ],
+      "prototype_applied": true,
+      "actual_function_start": "0x3e46080",
+      "actual_function_end": "0x3e460c8",
+      "pseudocode_chars": 435,
+      "unresolved_jumpout": false
+    },
+    {
+      "name": "TimeModuleO.TimeManager.<SyncServerTimeCoroutine>d__38$$MoveNext",
+      "address": 66521192,
+      "end": 66521588,
+      "signature": "bool TimeModuleO_TimeManager__SyncServerTimeCoroutine_d__38__MoveNext (TimeModuleO_TimeManager__SyncServerTimeCoroutine_d__38_o* __this, const MethodInfo* method);",
+      "prototype": "unsigned char SyncServerTimeMoveNext(void* self,const MethodInfo* method);",
+      "file": "Assets/Scripts/Assembly-CSharp/TimeModuleO/TimeManager.cs",
+      "range_analysis": 1,
+      "direct_callees": [
+        {
+          "callsite": "0x3f70908",
+          "address": "0x5fa69f8",
+          "name": "L_Tools.RichControlBase<object>$$get_I",
+          "signature": "Il2CppObject* L_Tools_RichControlBase_object___get_I (const MethodInfo_5FA69F8* method);"
+        },
+        {
+          "callsite": "0x3f70918",
+          "address": "0x43b94e8",
+          "name": "L_Tools.ServerTimeMgr$$TryCheck",
+          "signature": "void L_Tools_ServerTimeMgr__TryCheck (L_Tools_ServerTimeMgr_o* __this, bool state, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x3f70994",
+          "address": "0x82f5d50",
+          "name": "UnityEngine.Time$$get_deltaTime",
+          "signature": "float UnityEngine_Time__get_deltaTime (const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x3f709bc",
+          "address": "0x5fa69f8",
+          "name": "L_Tools.RichControlBase<object>$$get_I",
+          "signature": "Il2CppObject* L_Tools_RichControlBase_object___get_I (const MethodInfo_5FA69F8* method);"
+        },
+        {
+          "callsite": "0x3f709cc",
+          "address": "0x43b94e8",
+          "name": "L_Tools.ServerTimeMgr$$TryCheck",
+          "signature": "void L_Tools_ServerTimeMgr__TryCheck (L_Tools_ServerTimeMgr_o* __this, bool state, const MethodInfo* method);"
+        }
+      ],
+      "prototype_applied": true,
+      "actual_function_start": "0x3f70868",
+      "actual_function_end": "0x3f709f4",
+      "pseudocode_chars": 2005,
+      "unresolved_jumpout": false
+    },
+    {
+      "name": "TimeModuleO.TimeManager.<LoadTimers>d__68$$MoveNext",
+      "address": 66517748,
+      "end": 66519108,
+      "signature": "bool TimeModuleO_TimeManager__LoadTimers_d__68__MoveNext (TimeModuleO_TimeManager__LoadTimers_d__68_o* __this, const MethodInfo* method);",
+      "prototype": "unsigned char LoadTimersMoveNext(void* self,const MethodInfo* method);",
+      "file": "Assets/Scripts/Assembly-CSharp/TimeModuleO/TimeManager.cs",
+      "range_analysis": 1,
+      "direct_callees": [
+        {
+          "callsite": "0x3f6fc94",
+          "address": "0x5978460",
+          "name": "ToolModule.ManagerBase<object>$$get_Instance",
+          "signature": "Il2CppObject* ToolModule_ManagerBase_object___get_Instance (const MethodInfo_5978460* method);"
+        },
+        {
+          "callsite": "0x3f6fce4",
+          "address": "0x6c06e48",
+          "name": "System.Collections.Generic.Dictionary<object, object>$$Clear",
+          "signature": "void System_Collections_Generic_Dictionary_object__object___Clear (System_Collections_Generic_Dictionary_object__object__o* __this, const MethodInfo_6C06E48* method);"
+        },
+        {
+          "callsite": "0x3f6fd20",
+          "address": "0x6c070e4",
+          "name": "System.Collections.Generic.Dictionary<object, object>$$GetEnumerator",
+          "signature": "System_Collections_Generic_Dictionary_Enumerator_TKey__TValue__o System_Collections_Generic_Dictionary_object__object___GetEnumerator (System_Collections_Generic_Dictionary_object__object__o* __this, const MethodInfo_6C070E4* method);"
+        },
+        {
+          "callsite": "0x3f6fd58",
+          "address": "0x6ea5088",
+          "name": "System.Collections.Generic.Dictionary.Enumerator<object, object>$$MoveNext",
+          "signature": "bool System_Collections_Generic_Dictionary_Enumerator_object__object___MoveNext (System_Collections_Generic_Dictionary_Enumerator_TKey__TValue__o __this, const MethodInfo_6EA5088* method);"
+        },
+        {
+          "callsite": "0x3f6fd74",
+          "address": "0x3f6ca60",
+          "name": "TimeModuleO.TimeManager.Timer$$.ctor",
+          "signature": "void TimeModuleO_TimeManager_Timer___ctor (TimeModuleO_TimeManager_Timer_o* __this, DataModule_TimeInfo_o* timeInfo, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x3f6fd8c",
+          "address": "0x6c06cc0",
+          "name": "System.Collections.Generic.Dictionary<object, object>$$Add",
+          "signature": "void System_Collections_Generic_Dictionary_object__object___Add (System_Collections_Generic_Dictionary_object__object__o* __this, Il2CppObject* key, Il2CppObject* value, const MethodInfo_6C06CC0* method);"
+        },
+        {
+          "callsite": "0x3f6fdcc",
+          "address": "0x6af43d4",
+          "name": "DbtSaveDataManagerBase<object, object>$$Save",
+          "signature": "void DbtSaveDataManagerBase_object__object___Save (DbtSaveDataManagerBase_T__TD__o* __this, const MethodInfo_6AF43D4* method);"
+        },
+        {
+          "callsite": "0x3f6fdec",
+          "address": "0x6c070e4",
+          "name": "System.Collections.Generic.Dictionary<object, object>$$GetEnumerator",
+          "signature": "System_Collections_Generic_Dictionary_Enumerator_TKey__TValue__o System_Collections_Generic_Dictionary_object__object___GetEnumerator (System_Collections_Generic_Dictionary_object__object__o* __this, const MethodInfo_6C070E4* method);"
+        },
+        {
+          "callsite": "0x3f6fe14",
+          "address": "0x6ea5088",
+          "name": "System.Collections.Generic.Dictionary.Enumerator<object, object>$$MoveNext",
+          "signature": "bool System_Collections_Generic_Dictionary_Enumerator_object__object___MoveNext (System_Collections_Generic_Dictionary_Enumerator_TKey__TValue__o __this, const MethodInfo_6EA5088* method);"
+        },
+        {
+          "callsite": "0x3f6fe28",
+          "address": "0x3e4659c",
+          "name": "TimeModuleO.TimeManager$$InitAddTimeInfo",
+          "signature": "void TimeModuleO_TimeManager__InitAddTimeInfo (TimeModuleO_TimeManager_o* __this, TimeModuleO_TimeManager_Timer_o* timer, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x3f6fe40",
+          "address": "0x6ea519c",
+          "name": "System.Collections.Generic.Dictionary.Enumerator<object, object>$$Dispose",
+          "signature": "void System_Collections_Generic_Dictionary_Enumerator_object__object___Dispose (System_Collections_Generic_Dictionary_Enumerator_TKey__TValue__o __this, const MethodInfo_6EA519C* method);"
+        },
+        {
+          "callsite": "0x3f6fe50",
+          "address": "0x5978460",
+          "name": "ToolModule.ManagerBase<object>$$get_Instance",
+          "signature": "Il2CppObject* ToolModule_ManagerBase_object___get_Instance (const MethodInfo_5978460* method);"
+        },
+        {
+          "callsite": "0x3f6fe6c",
+          "address": "0x3e456b8",
+          "name": "TimeModuleO.TimeManager$$InitToZeroTimer",
+          "signature": "void TimeModuleO_TimeManager__InitToZeroTimer (TimeModuleO_TimeManager_o* __this, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x3f6fe78",
+          "address": "0x3e45908",
+          "name": "TimeModuleO.TimeManager$$InitToWeekTimer",
+          "signature": "void TimeModuleO_TimeManager__InitToWeekTimer (TimeModuleO_TimeManager_o* __this, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x3f6fe8c",
+          "address": "0x82ee034",
+          "name": "UnityEngine.MonoBehaviour$$StopCoroutine",
+          "signature": "void UnityEngine_MonoBehaviour__StopCoroutine (UnityEngine_MonoBehaviour_o* __this, UnityEngine_Coroutine_o* routine, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x3f6fe98",
+          "address": "0x3e45f48",
+          "name": "TimeModuleO.TimeManager$$CheckTimerToZeroCoroutine",
+          "signature": "System_Collections_IEnumerator_o* TimeModuleO_TimeManager__CheckTimerToZeroCoroutine (TimeModuleO_TimeManager_o* __this, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x3f6fea8",
+          "address": "0x82eddc8",
+          "name": "UnityEngine.MonoBehaviour$$StartCoroutine",
+          "signature": "UnityEngine_Coroutine_o* UnityEngine_MonoBehaviour__StartCoroutine (UnityEngine_MonoBehaviour_o* __this, System_Collections_IEnumerator_o* routine, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x3f6fec0",
+          "address": "0x82ee034",
+          "name": "UnityEngine.MonoBehaviour$$StopCoroutine",
+          "signature": "void UnityEngine_MonoBehaviour__StopCoroutine (UnityEngine_MonoBehaviour_o* __this, UnityEngine_Coroutine_o* routine, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x3f6fecc",
+          "address": "0x3e45fb0",
+          "name": "TimeModuleO.TimeManager$$CheckTimerEndEventCoroutine",
+          "signature": "System_Collections_IEnumerator_o* TimeModuleO_TimeManager__CheckTimerEndEventCoroutine (TimeModuleO_TimeManager_o* __this, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x3f6fedc",
+          "address": "0x82eddc8",
+          "name": "UnityEngine.MonoBehaviour$$StartCoroutine",
+          "signature": "UnityEngine_Coroutine_o* UnityEngine_MonoBehaviour__StartCoroutine (UnityEngine_MonoBehaviour_o* __this, System_Collections_IEnumerator_o* routine, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x3f6fef4",
+          "address": "0x82ee034",
+          "name": "UnityEngine.MonoBehaviour$$StopCoroutine",
+          "signature": "void UnityEngine_MonoBehaviour__StopCoroutine (UnityEngine_MonoBehaviour_o* __this, UnityEngine_Coroutine_o* routine, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x3f6ff00",
+          "address": "0x3e46018",
+          "name": "TimeModuleO.TimeManager$$CheckWeekPassedCoroutine",
+          "signature": "System_Collections_IEnumerator_o* TimeModuleO_TimeManager__CheckWeekPassedCoroutine (TimeModuleO_TimeManager_o* __this, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x3f6ff10",
+          "address": "0x82eddc8",
+          "name": "UnityEngine.MonoBehaviour$$StartCoroutine",
+          "signature": "UnityEngine_Coroutine_o* UnityEngine_MonoBehaviour__StartCoroutine (UnityEngine_MonoBehaviour_o* __this, System_Collections_IEnumerator_o* routine, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x3f6ff5c",
+          "address": "0x6ea519c",
+          "name": "System.Collections.Generic.Dictionary.Enumerator<object, object>$$Dispose",
+          "signature": "void System_Collections_Generic_Dictionary_Enumerator_object__object___Dispose (System_Collections_Generic_Dictionary_Enumerator_TKey__TValue__o __this, const MethodInfo_6EA519C* method);"
+        },
+        {
+          "callsite": "0x3f6ff88",
+          "address": "0x6ea519c",
+          "name": "System.Collections.Generic.Dictionary.Enumerator<object, object>$$Dispose",
+          "signature": "void System_Collections_Generic_Dictionary_Enumerator_object__object___Dispose (System_Collections_Generic_Dictionary_Enumerator_TKey__TValue__o __this, const MethodInfo_6EA519C* method);"
+        },
+        {
+          "callsite": "0x3f6ffd0",
+          "address": "0x6ea519c",
+          "name": "System.Collections.Generic.Dictionary.Enumerator<object, object>$$Dispose",
+          "signature": "void System_Collections_Generic_Dictionary_Enumerator_object__object___Dispose (System_Collections_Generic_Dictionary_Enumerator_TKey__TValue__o __this, const MethodInfo_6EA519C* method);"
+        },
+        {
+          "callsite": "0x3f70028",
+          "address": "0x6ea519c",
+          "name": "System.Collections.Generic.Dictionary.Enumerator<object, object>$$Dispose",
+          "signature": "void System_Collections_Generic_Dictionary_Enumerator_object__object___Dispose (System_Collections_Generic_Dictionary_Enumerator_TKey__TValue__o __this, const MethodInfo_6EA519C* method);"
+        }
+      ],
+      "prototype_applied": true,
+      "actual_function_start": "0x3f6faf4",
+      "actual_function_end": "0x3f70044",
+      "pseudocode_chars": 7429,
+      "unresolved_jumpout": false
+    },
+    {
+      "name": "TimeModuleO.TimeManager$$InitAddTimeInfo",
+      "address": 65299868,
+      "end": 65300440,
+      "signature": "void TimeModuleO_TimeManager__InitAddTimeInfo (TimeModuleO_TimeManager_o* __this, TimeModuleO_TimeManager_Timer_o* timer, const MethodInfo* method);",
+      "prototype": "void InitAddTimeInfo(void* self,void* timer,const MethodInfo* method);",
+      "file": "Assets/Scripts/Assembly-CSharp/TimeModuleO/TimeManager.cs",
+      "range_analysis": 1,
+      "direct_callees": [
+        {
+          "callsite": "0x3e46660",
+          "address": "0x6c06eb4",
+          "name": "System.Collections.Generic.Dictionary<object, object>$$ContainsKey",
+          "signature": "bool System_Collections_Generic_Dictionary_object__object___ContainsKey (System_Collections_Generic_Dictionary_object__object__o* __this, Il2CppObject* key, const MethodInfo_6C06EB4* method);"
+        },
+        {
+          "callsite": "0x3e4667c",
+          "address": "0x6c06c40",
+          "name": "System.Collections.Generic.Dictionary<object, object>$$get_Item",
+          "signature": "Il2CppObject* System_Collections_Generic_Dictionary_object__object___get_Item (System_Collections_Generic_Dictionary_object__object__o* __this, Il2CppObject* key, const MethodInfo_6C06C40* method);"
+        },
+        {
+          "callsite": "0x3e46698",
+          "address": "0x6c06c40",
+          "name": "System.Collections.Generic.Dictionary<object, object>$$get_Item",
+          "signature": "Il2CppObject* System_Collections_Generic_Dictionary_object__object___get_Item (System_Collections_Generic_Dictionary_object__object__o* __this, Il2CppObject* key, const MethodInfo_6C06C40* method);"
+        },
+        {
+          "callsite": "0x3e466d0",
+          "address": "0x6c06c40",
+          "name": "System.Collections.Generic.Dictionary<object, object>$$get_Item",
+          "signature": "Il2CppObject* System_Collections_Generic_Dictionary_object__object___get_Item (System_Collections_Generic_Dictionary_object__object__o* __this, Il2CppObject* key, const MethodInfo_6C06C40* method);"
+        },
+        {
+          "callsite": "0x3e46708",
+          "address": "0x6c06c40",
+          "name": "System.Collections.Generic.Dictionary<object, object>$$get_Item",
+          "signature": "Il2CppObject* System_Collections_Generic_Dictionary_object__object___get_Item (System_Collections_Generic_Dictionary_object__object__o* __this, Il2CppObject* key, const MethodInfo_6C06C40* method);"
+        },
+        {
+          "callsite": "0x3e46734",
+          "address": "0x4376b90",
+          "name": "DataModule.TimeInfo$$.ctor",
+          "signature": "void DataModule_TimeInfo___ctor (DataModule_TimeInfo_o* __this, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x3e4676c",
+          "address": "0x6c06cc0",
+          "name": "System.Collections.Generic.Dictionary<object, object>$$Add",
+          "signature": "void System_Collections_Generic_Dictionary_object__object___Add (System_Collections_Generic_Dictionary_object__object__o* __this, Il2CppObject* key, Il2CppObject* value, const MethodInfo_6C06CC0* method);"
+        },
+        {
+          "callsite": "0x3e467a4",
+          "address": "0x6c0849c",
+          "name": "System.Collections.Generic.Dictionary<object, object>$$TryAdd",
+          "signature": "bool System_Collections_Generic_Dictionary_object__object___TryAdd (System_Collections_Generic_Dictionary_object__object__o* __this, Il2CppObject* key, Il2CppObject* value, const MethodInfo_6C0849C* method);"
+        },
+        {
+          "callsite": "0x3e467d0",
+          "address": "0x6af43d4",
+          "name": "DbtSaveDataManagerBase<object, object>$$Save",
+          "signature": "void DbtSaveDataManagerBase_object__object___Save (DbtSaveDataManagerBase_T__TD__o* __this, const MethodInfo_6AF43D4* method);"
+        }
+      ],
+      "prototype_applied": true,
+      "actual_function_start": "0x3e4659c",
+      "actual_function_end": "0x3e467d8",
+      "pseudocode_chars": 4246,
+      "unresolved_jumpout": false
+    },
+    {
+      "name": "TimeModuleO.TimeManager$$InitToZeroTimer",
+      "address": 65296056,
+      "end": 65296252,
+      "signature": "void TimeModuleO_TimeManager__InitToZeroTimer (TimeModuleO_TimeManager_o* __this, const MethodInfo* method);",
+      "prototype": "void InitToZeroTimer(void* self,const MethodInfo* method);",
+      "file": "Assets/Scripts/Assembly-CSharp/TimeModuleO/TimeManager.cs",
+      "range_analysis": 1,
+      "direct_callees": [
+        {
+          "callsite": "0x3e45700",
+          "address": "0x3e32a30",
+          "name": "TimeModuleO.TimeManager$$GetTimer",
+          "signature": "TimeModuleO_TimeManager_Timer_o* TimeModuleO_TimeManager__GetTimer (TimeModuleO_TimeManager_o* __this, System_String_o* key, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x3e4570c",
+          "address": "0x3e32c78",
+          "name": "TimeModuleO.TimeManager$$GetTimeSpanToZero",
+          "signature": "System_TimeSpan_o TimeModuleO_TimeManager__GetTimeSpanToZero (TimeModuleO_TimeManager_o* __this, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x3e45724",
+          "address": "0x3e32d10",
+          "name": "TimeModuleO.TimeManager$$CreateTimer",
+          "signature": "TimeModuleO_TimeManager_Timer_o* TimeModuleO_TimeManager__CreateTimer (TimeModuleO_TimeManager_o* __this, System_String_o* key, System_TimeSpan_o duration, bool isCountdown, bool useStandardNetTime, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x3e45740",
+          "address": "0x3e32a30",
+          "name": "TimeModuleO.TimeManager$$GetTimer",
+          "signature": "TimeModuleO_TimeManager_Timer_o* TimeModuleO_TimeManager__GetTimer (TimeModuleO_TimeManager_o* __this, System_String_o* key, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x3e4574c",
+          "address": "0x3e4577c",
+          "name": "TimeModuleO.TimeManager$$GetTimeSpanToZeroStandardNetworkTime",
+          "signature": "System_TimeSpan_o TimeModuleO_TimeManager__GetTimeSpanToZeroStandardNetworkTime (TimeModuleO_TimeManager_o* __this, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x3e45764",
+          "address": "0x3e32d10",
+          "name": "TimeModuleO.TimeManager$$CreateTimer",
+          "signature": "TimeModuleO_TimeManager_Timer_o* TimeModuleO_TimeManager__CreateTimer (TimeModuleO_TimeManager_o* __this, System_String_o* key, System_TimeSpan_o duration, bool isCountdown, bool useStandardNetTime, const MethodInfo* method);"
+        }
+      ],
+      "prototype_applied": true,
+      "actual_function_start": "0x3e456b8",
+      "actual_function_end": "0x3e4577c",
+      "pseudocode_chars": 1379,
+      "unresolved_jumpout": false
+    },
+    {
+      "name": "TimeModuleO.TimeManager$$InitToWeekTimer",
+      "address": 65296648,
+      "end": 65296772,
+      "signature": "void TimeModuleO_TimeManager__InitToWeekTimer (TimeModuleO_TimeManager_o* __this, const MethodInfo* method);",
+      "prototype": "void InitToWeekTimer(void* self,const MethodInfo* method);",
+      "file": "Assets/Scripts/Assembly-CSharp/TimeModuleO/TimeManager.cs",
+      "range_analysis": 1,
+      "direct_callees": [
+        {
+          "callsite": "0x3e45944",
+          "address": "0x3e32a30",
+          "name": "TimeModuleO.TimeManager$$GetTimer",
+          "signature": "TimeModuleO_TimeManager_Timer_o* TimeModuleO_TimeManager__GetTimer (TimeModuleO_TimeManager_o* __this, System_String_o* key, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x3e45950",
+          "address": "0x3e45814",
+          "name": "TimeModuleO.TimeManager$$GetTimeSpanToWeek",
+          "signature": "System_TimeSpan_o TimeModuleO_TimeManager__GetTimeSpanToWeek (TimeModuleO_TimeManager_o* __this, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x3e45968",
+          "address": "0x3e32d10",
+          "name": "TimeModuleO.TimeManager$$CreateTimer",
+          "signature": "TimeModuleO_TimeManager_Timer_o* TimeModuleO_TimeManager__CreateTimer (TimeModuleO_TimeManager_o* __this, System_String_o* key, System_TimeSpan_o duration, bool isCountdown, bool useStandardNetTime, const MethodInfo* method);"
+        }
+      ],
+      "prototype_applied": true,
+      "actual_function_start": "0x3e45908",
+      "actual_function_end": "0x3e45984",
+      "pseudocode_chars": 739,
+      "unresolved_jumpout": false
+    },
+    {
+      "name": "TimeModuleO.TimeManager$$HandleTimeToWeekCutDown",
+      "address": 65295804,
+      "end": 65295948,
+      "signature": "void TimeModuleO_TimeManager__HandleTimeToWeekCutDown (TimeModuleO_TimeManager_o* __this, const MethodInfo* method);",
+      "prototype": "void HandleTimeToWeekCutDown(void* self,const MethodInfo* method);",
+      "file": "Assets/Scripts/Assembly-CSharp/TimeModuleO/TimeManager.cs",
+      "range_analysis": 1,
+      "direct_callees": [
+        {
+          "callsite": "0x3e4560c",
+          "address": "0x75b003c",
+          "name": "System.Runtime.CompilerServices.AsyncVoidMethodBuilder$$Create",
+          "signature": "System_Runtime_CompilerServices_AsyncVoidMethodBuilder_o System_Runtime_CompilerServices_AsyncVoidMethodBuilder__Create (const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x3e45638",
+          "address": "0x4b0ce3c",
+          "name": "System.Runtime.CompilerServices.AsyncVoidMethodBuilder$$Start<TimeManager.<HandleTimeToWeekCutDown>d__36>",
+          "signature": "void System_Runtime_CompilerServices_AsyncVoidMethodBuilder__Start_TimeManager__HandleTimeToWeekCutDown_d__36_ (System_Runtime_CompilerServices_AsyncVoidMethodBuilder_o __this, TimeModuleO_TimeManager__HandleTimeToWeekCutDown_d__36_o* stateMachine, const MethodInfo_4B0CE3C* method);"
+        }
+      ],
+      "prototype_applied": true,
+      "actual_function_start": "0x3e455bc",
+      "actual_function_end": "0x3e4564c",
+      "pseudocode_chars": 694,
+      "unresolved_jumpout": false
+    },
+    {
+      "name": "TimeModuleO.TimeManager.<HandleTimeToWeekCutDown>d__36$$MoveNext",
+      "address": 66512768,
+      "end": 66513456,
+      "signature": "void TimeModuleO_TimeManager__HandleTimeToWeekCutDown_d__36__MoveNext (TimeModuleO_TimeManager__HandleTimeToWeekCutDown_d__36_o __this, const MethodInfo* method);",
+      "prototype": "void HandleTimeToWeekMoveNext(void* self,const MethodInfo* method);",
+      "file": "Assets/Scripts/Assembly-CSharp/TimeModuleO/TimeManager.cs",
+      "range_analysis": 1,
+      "direct_callees": [
+        {
+          "callsite": "0x3f6e818",
+          "address": "0x7d7f7ec",
+          "name": "Cysharp.Threading.Tasks.YieldAwaitable.Awaiter$$GetResult",
+          "signature": "void Cysharp_Threading_Tasks_YieldAwaitable_Awaiter__GetResult (Cysharp_Threading_Tasks_YieldAwaitable_Awaiter_o __this, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x3f6e83c",
+          "address": "0x7d7464c",
+          "name": "Cysharp.Threading.Tasks.UniTask$$Yield",
+          "signature": "Cysharp_Threading_Tasks_YieldAwaitable_o Cysharp_Threading_Tasks_UniTask__Yield (const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x3f6e84c",
+          "address": "0x7d7f7dc",
+          "name": "Cysharp.Threading.Tasks.YieldAwaitable$$GetAwaiter",
+          "signature": "Cysharp_Threading_Tasks_YieldAwaitable_Awaiter_o Cysharp_Threading_Tasks_YieldAwaitable__GetAwaiter (Cysharp_Threading_Tasks_YieldAwaitable_o __this, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x3f6e85c",
+          "address": "0x7d7f7e4",
+          "name": "Cysharp.Threading.Tasks.YieldAwaitable.Awaiter$$get_IsCompleted",
+          "signature": "bool Cysharp_Threading_Tasks_YieldAwaitable_Awaiter__get_IsCompleted (Cysharp_Threading_Tasks_YieldAwaitable_Awaiter_o __this, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x3f6e88c",
+          "address": "0x4af09c8",
+          "name": "System.Runtime.CompilerServices.AsyncVoidMethodBuilder$$AwaitUnsafeOnCompleted<YieldAwaitable.Awaiter, TimeManager.<HandleTimeToWeekCutDown>d__36>",
+          "signature": "void System_Runtime_CompilerServices_AsyncVoidMethodBuilder__AwaitUnsafeOnCompleted_YieldAwaitable_Awaiter__TimeManager__HandleTimeToWeekCutDown_d__36_ (System_Runtime_CompilerServices_AsyncVoidMethodBuilder_o __this, Cysharp_Threading_Tasks_YieldAwaitable_Awaiter_o* awaiter, TimeModuleO_TimeManager__HandleTimeToWeekCutDown_d__36_o* stateMachine, const MethodInfo_4AF09C8* method);"
+        },
+        {
+          "callsite": "0x3f6e894",
+          "address": "0x3f6e2c4",
+          "name": "TimeModuleO.TimeManager.Timer$$IsCompleted",
+          "signature": "bool TimeModuleO_TimeManager_Timer__IsCompleted (TimeModuleO_TimeManager_Timer_o* __this, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x3f6e8a8",
+          "address": "0x3e45814",
+          "name": "TimeModuleO.TimeManager$$GetTimeSpanToWeek",
+          "signature": "System_TimeSpan_o TimeModuleO_TimeManager__GetTimeSpanToWeek (TimeModuleO_TimeManager_o* __this, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x3f6e8bc",
+          "address": "0x3f6c934",
+          "name": "TimeModuleO.TimeManager.Timer$$Restart",
+          "signature": "void TimeModuleO_TimeManager_Timer__Restart (TimeModuleO_TimeManager_Timer_o* __this, System_TimeSpan_o duration, bool isCountdown, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x3f6e8d0",
+          "address": "0x75b0140",
+          "name": "System.Runtime.CompilerServices.AsyncVoidMethodBuilder$$SetResult",
+          "signature": "void System_Runtime_CompilerServices_AsyncVoidMethodBuilder__SetResult (System_Runtime_CompilerServices_AsyncVoidMethodBuilder_o __this, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x3f6e91c",
+          "address": "0x7d7464c",
+          "name": "Cysharp.Threading.Tasks.UniTask$$Yield",
+          "signature": "Cysharp_Threading_Tasks_YieldAwaitable_o Cysharp_Threading_Tasks_UniTask__Yield (const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x3f6e92c",
+          "address": "0x7d7f7dc",
+          "name": "Cysharp.Threading.Tasks.YieldAwaitable$$GetAwaiter",
+          "signature": "Cysharp_Threading_Tasks_YieldAwaitable_Awaiter_o Cysharp_Threading_Tasks_YieldAwaitable__GetAwaiter (Cysharp_Threading_Tasks_YieldAwaitable_o __this, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x3f6e93c",
+          "address": "0x7d7f7e4",
+          "name": "Cysharp.Threading.Tasks.YieldAwaitable.Awaiter$$get_IsCompleted",
+          "signature": "bool Cysharp_Threading_Tasks_YieldAwaitable_Awaiter__get_IsCompleted (Cysharp_Threading_Tasks_YieldAwaitable_Awaiter_o __this, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x3f6e94c",
+          "address": "0x7d7f7ec",
+          "name": "Cysharp.Threading.Tasks.YieldAwaitable.Awaiter$$GetResult",
+          "signature": "void Cysharp_Threading_Tasks_YieldAwaitable_Awaiter__GetResult (Cysharp_Threading_Tasks_YieldAwaitable_Awaiter_o __this, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x3f6e97c",
+          "address": "0x4af09c8",
+          "name": "System.Runtime.CompilerServices.AsyncVoidMethodBuilder$$AwaitUnsafeOnCompleted<YieldAwaitable.Awaiter, TimeManager.<HandleTimeToWeekCutDown>d__36>",
+          "signature": "void System_Runtime_CompilerServices_AsyncVoidMethodBuilder__AwaitUnsafeOnCompleted_YieldAwaitable_Awaiter__TimeManager__HandleTimeToWeekCutDown_d__36_ (System_Runtime_CompilerServices_AsyncVoidMethodBuilder_o __this, Cysharp_Threading_Tasks_YieldAwaitable_Awaiter_o* awaiter, TimeModuleO_TimeManager__HandleTimeToWeekCutDown_d__36_o* stateMachine, const MethodInfo_4AF09C8* method);"
+        },
+        {
+          "callsite": "0x3f6e9f4",
+          "address": "0x75b02a4",
+          "name": "System.Runtime.CompilerServices.AsyncVoidMethodBuilder$$SetException",
+          "signature": "void System_Runtime_CompilerServices_AsyncVoidMethodBuilder__SetException (System_Runtime_CompilerServices_AsyncVoidMethodBuilder_o __this, System_Exception_o* exception, const MethodInfo* method);"
+        }
+      ],
+      "prototype_applied": true,
+      "actual_function_start": "0x3f6e780",
+      "actual_function_end": "0x3f6ea30",
+      "pseudocode_chars": 3181,
+      "unresolved_jumpout": false
+    },
+    {
+      "name": "TimeModuleO.TimeManager$$GetStartOfWeekForTimeManager",
+      "address": 65295360,
+      "end": 65295536,
+      "signature": "System_DateTime_o TimeModuleO_TimeManager__GetStartOfWeekForTimeManager (TimeModuleO_TimeManager_o* __this, System_DateTime_o dt, const MethodInfo* method);",
+      "prototype": "long long StartOfWeek(void* self,long long datetime,const MethodInfo* method);",
+      "file": "Assets/Scripts/Assembly-CSharp/TimeModuleO/TimeManager.cs",
+      "range_analysis": 1,
+      "direct_callees": [
+        {
+          "callsite": "0x3e45450",
+          "address": "0x7665668",
+          "name": "System.DateTime$$get_DayOfWeek",
+          "signature": "int32_t System_DateTime__get_DayOfWeek (System_DateTime_o __this, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x3e4548c",
+          "address": "0x76640a4",
+          "name": "System.DateTime$$AddDays",
+          "signature": "System_DateTime_o System_DateTime__AddDays (System_DateTime_o __this, double value, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x3e4549c",
+          "address": "0x766538c",
+          "name": "System.DateTime$$get_Date",
+          "signature": "System_DateTime_o System_DateTime__get_Date (System_DateTime_o __this, const MethodInfo* method);"
+        }
+      ],
+      "prototype_applied": true,
+      "actual_function_start": "0x3e45400",
+      "actual_function_end": "0x3e454b0",
+      "pseudocode_chars": 690,
+      "unresolved_jumpout": false
+    },
+    {
+      "name": "TimeModuleO.TimeManager.Timer$$GetRemainingTime",
+      "address": 66505812,
+      "end": 66505964,
+      "signature": "System_TimeSpan_o TimeModuleO_TimeManager_Timer__GetRemainingTime (TimeModuleO_TimeManager_Timer_o* __this, const MethodInfo* method);",
+      "prototype": "long long TimerRemaining(void* self,const MethodInfo* method);",
+      "file": "Assets/Scripts/Assembly-CSharp/TimeModuleO/TimeManager.cs",
+      "range_analysis": 1,
+      "direct_callees": [
+        {
+          "callsite": "0x3f6cc9c",
+          "address": "0x5978460",
+          "name": "ToolModule.ManagerBase<object>$$get_Instance",
+          "signature": "Il2CppObject* ToolModule_ManagerBase_object___get_Instance (const MethodInfo_5978460* method);"
+        },
+        {
+          "callsite": "0x3f6ccb4",
+          "address": "0x3e454b0",
+          "name": "TimeModuleO.TimeManager$$GetNetworkTime",
+          "signature": "System_DateTime_o TimeModuleO_TimeManager__GetNetworkTime (TimeModuleO_TimeManager_o* __this, bool useStandardNetworkTime, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x3f6cce4",
+          "address": "0x766790c",
+          "name": "System.DateTime$$op_Subtraction",
+          "signature": "System_TimeSpan_o System_DateTime__op_Subtraction (System_DateTime_o d1, System_DateTime_o d2, const MethodInfo* method);"
+        }
+      ],
+      "prototype_applied": true,
+      "actual_function_start": "0x3f6cc54",
+      "actual_function_end": "0x3f6ccec",
+      "pseudocode_chars": 844,
+      "unresolved_jumpout": false
+    },
+    {
+      "name": "L_Tools.DateTools$$GetNow",
+      "address": 71276848,
+      "end": 71276984,
+      "signature": "System_DateTime_o L_Tools_DateTools__GetNow (const MethodInfo* method);",
+      "prototype": "long long DateGetNow(const MethodInfo* method);",
+      "file": "Assets/Scripts/Assembly-CSharp/L_Tools/DateTools.cs",
+      "range_analysis": 1,
+      "direct_callees": [],
+      "prototype_applied": true,
+      "actual_function_start": "0x43f9930",
+      "actual_function_end": "0x43f99b8",
+      "pseudocode_chars": 626,
+      "unresolved_jumpout": false
+    },
+    {
+      "name": "L_Tools.DateTools$$GetUTCNow",
+      "address": 71277172,
+      "end": 71277308,
+      "signature": "System_DateTime_o L_Tools_DateTools__GetUTCNow (const MethodInfo* method);",
+      "prototype": "long long DateGetUTCNow(const MethodInfo* method);",
+      "file": "Assets/Scripts/Assembly-CSharp/L_Tools/DateTools.cs",
+      "range_analysis": 1,
+      "direct_callees": [],
+      "prototype_applied": true,
+      "actual_function_start": "0x43f9a74",
+      "actual_function_end": "0x43f9afc",
+      "pseudocode_chars": 629,
+      "unresolved_jumpout": false
+    },
+    {
+      "name": "L_Tools.DateTools$$NowIsServerTime",
+      "address": 71276164,
+      "end": 71276260,
+      "signature": "bool L_Tools_DateTools__NowIsServerTime (const MethodInfo* method);",
+      "prototype": "unsigned char DateNowIsServerTime(const MethodInfo* method);",
+      "file": "Assets/Scripts/Assembly-CSharp/L_Tools/DateTools.cs",
+      "range_analysis": 1,
+      "direct_callees": [],
+      "prototype_applied": true,
+      "actual_function_start": "0x43f9684",
+      "actual_function_end": "0x43f96e4",
+      "pseudocode_chars": 423,
+      "unresolved_jumpout": false
+    },
+    {
+      "name": "L_Tools.DateTools$$UpdateTime",
+      "address": 71276260,
+      "end": 71276504,
+      "signature": "void L_Tools_DateTools__UpdateTime (int64_t serverTime, const MethodInfo* method);",
+      "prototype": "void DateUpdateTime(long long stamp,const MethodInfo* method);",
+      "file": "Assets/Scripts/Assembly-CSharp/L_Tools/DateTools.cs",
+      "range_analysis": 1,
+      "direct_callees": [
+        {
+          "callsite": "0x43f977c",
+          "address": "0x43f97d8",
+          "name": "L_Tools.DateTools$$StampToDatetime",
+          "signature": "System_DateTime_o L_Tools_DateTools__StampToDatetime (int64_t TimeStamp, bool isMinSeconds, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x43f97a0",
+          "address": "0x76650a4",
+          "name": "System.DateTime$$ToLocalTime",
+          "signature": "System_DateTime_o System_DateTime__ToLocalTime (System_DateTime_o __this, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x43f97b8",
+          "address": "0x43f97d8",
+          "name": "L_Tools.DateTools$$StampToDatetime",
+          "signature": "System_DateTime_o L_Tools_DateTools__StampToDatetime (int64_t TimeStamp, bool isMinSeconds, const MethodInfo* method);"
+        }
+      ],
+      "prototype_applied": true,
+      "actual_function_start": "0x43f96e4",
+      "actual_function_end": "0x43f97d8",
+      "pseudocode_chars": 1179,
+      "unresolved_jumpout": false
+    }
+  ],
+  "image_base": "0x0",
+  "type_errors": 0,
+  "hexrays_available": true,
+  "hexrays_version": "9.4.0.260713",
+  "database_saved": true
+}

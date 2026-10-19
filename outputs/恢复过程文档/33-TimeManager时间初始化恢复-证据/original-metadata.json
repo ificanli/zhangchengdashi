@@ -1,0 +1,2079 @@
+[
+  {
+    "FullName": "TimeModuleO.TimeManager",
+    "token": "0x20000DA",
+    "baseType": "ToolModule.ManagerBase\u00601\u003CTimeModuleO.TimeManager\u003E",
+    "fields": [
+      {
+        "Name": "_currentTimeSource",
+        "type": "TimeModuleO.TimeManager/TimeSource",
+        "IsStatic": false,
+        "token": "0x40004DD",
+        "offset": "0x20"
+      },
+      {
+        "Name": "_isFetchingNetworkTime",
+        "type": "System.Boolean",
+        "IsStatic": false,
+        "token": "0x40004DE",
+        "offset": "0x24"
+      },
+      {
+        "Name": "\u003CIsNetworkConnected\u003Ek__BackingField",
+        "type": "System.Boolean",
+        "IsStatic": false,
+        "token": "0x40004DF",
+        "offset": "0x25"
+      },
+      {
+        "Name": "_timers",
+        "type": "System.Collections.Generic.Dictionary\u00602\u003CSystem.String,TimeModuleO.TimeManager/Timer\u003E",
+        "IsStatic": false,
+        "token": "0x40004E0",
+        "offset": "0x28"
+      },
+      {
+        "Name": "_onTimeReachZero",
+        "type": "System.Action",
+        "IsStatic": false,
+        "token": "0x40004E1",
+        "offset": "0x30"
+      },
+      {
+        "Name": "_onStandardNetworkTimeReachZero",
+        "type": "System.Action",
+        "IsStatic": false,
+        "token": "0x40004E2",
+        "offset": "0x38"
+      },
+      {
+        "Name": "_onTimeReachMondayZero",
+        "type": "System.Action",
+        "IsStatic": false,
+        "token": "0x40004E3",
+        "offset": "0x40"
+      },
+      {
+        "Name": "_onWeekPassed",
+        "type": "System.Action",
+        "IsStatic": false,
+        "token": "0x40004E4",
+        "offset": "0x48"
+      },
+      {
+        "Name": "_offsetHours",
+        "type": "System.Int32",
+        "IsStatic": false,
+        "token": "0x40004E5",
+        "offset": "0x50"
+      },
+      {
+        "Name": "toZeroTimer",
+        "type": "TimeModuleO.TimeManager/Timer",
+        "IsStatic": false,
+        "token": "0x40004E6",
+        "offset": "0x58"
+      },
+      {
+        "Name": "toZeroStandardNetworkTime",
+        "type": "TimeModuleO.TimeManager/Timer",
+        "IsStatic": false,
+        "token": "0x40004E7",
+        "offset": "0x60"
+      },
+      {
+        "Name": "toWeekTimer",
+        "type": "TimeModuleO.TimeManager/Timer",
+        "IsStatic": false,
+        "token": "0x40004E8",
+        "offset": "0x68"
+      },
+      {
+        "Name": "initComplete",
+        "type": "System.Boolean",
+        "IsStatic": false,
+        "token": "0x40004E9",
+        "offset": "0x70"
+      },
+      {
+        "Name": "_cutdownTimerEvents",
+        "type": "System.Collections.Generic.Dictionary\u00602\u003CSystem.String,System.Action\u003E",
+        "IsStatic": false,
+        "token": "0x40004EA",
+        "offset": "0x78"
+      },
+      {
+        "Name": "_cutdownTimers",
+        "type": "System.Collections.Generic.Dictionary\u00602\u003CSystem.String,TimeModuleO.TimeManager/Timer\u003E",
+        "IsStatic": false,
+        "token": "0x40004EB",
+        "offset": "0x80"
+      },
+      {
+        "Name": "_toRemoveTimerKeys",
+        "type": "System.Collections.Generic.List\u00601\u003CSystem.String\u003E",
+        "IsStatic": false,
+        "token": "0x40004EC",
+        "offset": "0x88"
+      },
+      {
+        "Name": "_getTimeCoroutine",
+        "type": "UnityEngine.Coroutine",
+        "IsStatic": false,
+        "token": "0x40004ED",
+        "offset": "0x90"
+      },
+      {
+        "Name": "_checkTimerToZeroCoroutine",
+        "type": "UnityEngine.Coroutine",
+        "IsStatic": false,
+        "token": "0x40004EE",
+        "offset": "0x98"
+      },
+      {
+        "Name": "_checkTimerEndEventCoroutine",
+        "type": "UnityEngine.Coroutine",
+        "IsStatic": false,
+        "token": "0x40004EF",
+        "offset": "0xA0"
+      },
+      {
+        "Name": "_checkWeekPassedCoroutine",
+        "type": "UnityEngine.Coroutine",
+        "IsStatic": false,
+        "token": "0x40004F0",
+        "offset": "0xA8"
+      },
+      {
+        "Name": "FirstCheckNewWeekFinish",
+        "type": "System.Boolean",
+        "IsStatic": false,
+        "token": "0x40004F1",
+        "offset": "0xB0"
+      },
+      {
+        "Name": "lastFocusLossTime",
+        "type": "System.DateTime",
+        "IsStatic": false,
+        "token": "0x40004F2",
+        "offset": "0xB8"
+      }
+    ],
+    "methods": [
+      {
+        "Name": "get_IsNetworkConnected",
+        "FullName": "System.Boolean TimeModuleO.TimeManager::get_IsNetworkConnected()",
+        "IsStatic": false,
+        "IsPublic": true,
+        "IsPrivate": false,
+        "IsAssembly": false,
+        "token": "0x60004AF",
+        "rva": "0x3E44B04"
+      },
+      {
+        "Name": "set_IsNetworkConnected",
+        "FullName": "System.Void TimeModuleO.TimeManager::set_IsNetworkConnected(System.Boolean)",
+        "IsStatic": false,
+        "IsPublic": false,
+        "IsPrivate": true,
+        "IsAssembly": false,
+        "token": "0x60004B0",
+        "rva": "0x3E44B0C"
+      },
+      {
+        "Name": "get_OffsetHours",
+        "FullName": "System.Int32 TimeModuleO.TimeManager::get_OffsetHours()",
+        "IsStatic": false,
+        "IsPublic": true,
+        "IsPrivate": false,
+        "IsAssembly": false,
+        "token": "0x60004B1",
+        "rva": "0x3E44B18"
+      },
+      {
+        "Name": "AddOffsetHours",
+        "FullName": "System.Void TimeModuleO.TimeManager::AddOffsetHours(System.Int32)",
+        "IsStatic": false,
+        "IsPublic": true,
+        "IsPrivate": false,
+        "IsAssembly": false,
+        "token": "0x60004B2",
+        "rva": "0x3E44B20"
+      },
+      {
+        "Name": "ClearOffsetHours",
+        "FullName": "System.Void TimeModuleO.TimeManager::ClearOffsetHours()",
+        "IsStatic": false,
+        "IsPublic": true,
+        "IsPrivate": false,
+        "IsAssembly": false,
+        "token": "0x60004B3",
+        "rva": "0x3E4509C"
+      },
+      {
+        "Name": "Init",
+        "FullName": "Cysharp.Threading.Tasks.UniTask TimeModuleO.TimeManager::Init()",
+        "IsStatic": false,
+        "IsPublic": true,
+        "IsPrivate": false,
+        "IsAssembly": false,
+        "token": "0x60004B4",
+        "rva": "0x3E451B4"
+      },
+      {
+        "Name": "OnMiniGameOnShow",
+        "FullName": "System.Void TimeModuleO.TimeManager::OnMiniGameOnShow(System.Object[])",
+        "IsStatic": false,
+        "IsPublic": false,
+        "IsPrivate": true,
+        "IsAssembly": false,
+        "token": "0x60004B5",
+        "rva": "0x3E45250"
+      },
+      {
+        "Name": "InitializeTimeSource",
+        "FullName": "Cysharp.Threading.Tasks.UniTask TimeModuleO.TimeManager::InitializeTimeSource()",
+        "IsStatic": false,
+        "IsPublic": false,
+        "IsPrivate": true,
+        "IsAssembly": false,
+        "token": "0x60004B6",
+        "rva": "0x3E45368"
+      },
+      {
+        "Name": "GetStartOfWeekForTimeManager",
+        "FullName": "System.DateTime TimeModuleO.TimeManager::GetStartOfWeekForTimeManager(System.DateTime)",
+        "IsStatic": false,
+        "IsPublic": false,
+        "IsPrivate": true,
+        "IsAssembly": false,
+        "token": "0x60004B7",
+        "rva": "0x3E45400"
+      },
+      {
+        "Name": "SaveLastExitTime",
+        "FullName": "System.Void TimeModuleO.TimeManager::SaveLastExitTime()",
+        "IsStatic": false,
+        "IsPublic": true,
+        "IsPrivate": false,
+        "IsAssembly": false,
+        "token": "0x60004B8",
+        "rva": "0x3E452C4"
+      },
+      {
+        "Name": "RegisterOnWeekPassed",
+        "FullName": "System.Void TimeModuleO.TimeManager::RegisterOnWeekPassed(System.Action)",
+        "IsStatic": false,
+        "IsPublic": true,
+        "IsPrivate": false,
+        "IsAssembly": false,
+        "token": "0x60004B9",
+        "rva": "0x3E454BC"
+      },
+      {
+        "Name": "UnRegisterOnWeekPassed",
+        "FullName": "System.Void TimeModuleO.TimeManager::UnRegisterOnWeekPassed(System.Action)",
+        "IsStatic": false,
+        "IsPublic": true,
+        "IsPrivate": false,
+        "IsAssembly": false,
+        "token": "0x60004BA",
+        "rva": "0x3E4553C"
+      },
+      {
+        "Name": "HandleTimeToWeekCutDown",
+        "FullName": "System.Void TimeModuleO.TimeManager::HandleTimeToWeekCutDown()",
+        "IsStatic": false,
+        "IsPublic": false,
+        "IsPrivate": true,
+        "IsAssembly": false,
+        "token": "0x60004BB",
+        "rva": "0x3E455BC"
+      },
+      {
+        "Name": "Update",
+        "FullName": "System.Void TimeModuleO.TimeManager::Update()",
+        "IsStatic": false,
+        "IsPublic": false,
+        "IsPrivate": true,
+        "IsAssembly": false,
+        "token": "0x60004BC",
+        "rva": "0x3E4564C"
+      },
+      {
+        "Name": "SyncServerTimeCoroutine",
+        "FullName": "System.Collections.IEnumerator TimeModuleO.TimeManager::SyncServerTimeCoroutine()",
+        "IsStatic": false,
+        "IsPublic": false,
+        "IsPrivate": true,
+        "IsAssembly": false,
+        "token": "0x60004BD",
+        "rva": "0x3E45650"
+      },
+      {
+        "Name": "InitToZeroTimer",
+        "FullName": "System.Void TimeModuleO.TimeManager::InitToZeroTimer()",
+        "IsStatic": false,
+        "IsPublic": false,
+        "IsPrivate": true,
+        "IsAssembly": false,
+        "token": "0x60004BE",
+        "rva": "0x3E456B8"
+      },
+      {
+        "Name": "CheckTimerToZero",
+        "FullName": "System.Void TimeModuleO.TimeManager::CheckTimerToZero()",
+        "IsStatic": false,
+        "IsPublic": false,
+        "IsPrivate": true,
+        "IsAssembly": false,
+        "token": "0x60004BF",
+        "rva": "0x3E44C50"
+      },
+      {
+        "Name": "InitToWeekTimer",
+        "FullName": "System.Void TimeModuleO.TimeManager::InitToWeekTimer()",
+        "IsStatic": false,
+        "IsPublic": false,
+        "IsPrivate": true,
+        "IsAssembly": false,
+        "token": "0x60004C0",
+        "rva": "0x3E45908"
+      },
+      {
+        "Name": "CheckTimerToWeek",
+        "FullName": "System.Void TimeModuleO.TimeManager::CheckTimerToWeek()",
+        "IsStatic": false,
+        "IsPublic": false,
+        "IsPrivate": true,
+        "IsAssembly": false,
+        "token": "0x60004C1",
+        "rva": "0x3E45984"
+      },
+      {
+        "Name": "CheckWeekPassed",
+        "FullName": "System.Void TimeModuleO.TimeManager::CheckWeekPassed()",
+        "IsStatic": false,
+        "IsPublic": false,
+        "IsPrivate": true,
+        "IsAssembly": false,
+        "token": "0x60004C2",
+        "rva": "0x3E45ABC"
+      },
+      {
+        "Name": "CheckTimerEndEvent",
+        "FullName": "System.Void TimeModuleO.TimeManager::CheckTimerEndEvent()",
+        "IsStatic": false,
+        "IsPublic": false,
+        "IsPrivate": true,
+        "IsAssembly": false,
+        "token": "0x60004C3",
+        "rva": "0x3E45C00"
+      },
+      {
+        "Name": "CheckTimerToZeroCoroutine",
+        "FullName": "System.Collections.IEnumerator TimeModuleO.TimeManager::CheckTimerToZeroCoroutine()",
+        "IsStatic": false,
+        "IsPublic": false,
+        "IsPrivate": true,
+        "IsAssembly": false,
+        "token": "0x60004C4",
+        "rva": "0x3E45F48"
+      },
+      {
+        "Name": "CheckTimerEndEventCoroutine",
+        "FullName": "System.Collections.IEnumerator TimeModuleO.TimeManager::CheckTimerEndEventCoroutine()",
+        "IsStatic": false,
+        "IsPublic": false,
+        "IsPrivate": true,
+        "IsAssembly": false,
+        "token": "0x60004C5",
+        "rva": "0x3E45FB0"
+      },
+      {
+        "Name": "CheckWeekPassedCoroutine",
+        "FullName": "System.Collections.IEnumerator TimeModuleO.TimeManager::CheckWeekPassedCoroutine()",
+        "IsStatic": false,
+        "IsPublic": false,
+        "IsPrivate": true,
+        "IsAssembly": false,
+        "token": "0x60004C6",
+        "rva": "0x3E46018"
+      },
+      {
+        "Name": "SyncServerTime",
+        "FullName": "System.Void TimeModuleO.TimeManager::SyncServerTime()",
+        "IsStatic": false,
+        "IsPublic": false,
+        "IsPrivate": true,
+        "IsAssembly": false,
+        "token": "0x60004C7",
+        "rva": "0x3E46080"
+      },
+      {
+        "Name": "OnApplicationFocus",
+        "FullName": "System.Void TimeModuleO.TimeManager::OnApplicationFocus(System.Boolean)",
+        "IsStatic": false,
+        "IsPublic": false,
+        "IsPrivate": true,
+        "IsAssembly": false,
+        "token": "0x60004C8",
+        "rva": "0x3E460C8"
+      },
+      {
+        "Name": "OnApplicationQuit",
+        "FullName": "System.Void TimeModuleO.TimeManager::OnApplicationQuit()",
+        "IsStatic": false,
+        "IsPublic": false,
+        "IsPrivate": true,
+        "IsAssembly": false,
+        "token": "0x60004C9",
+        "rva": "0x3E46190"
+      },
+      {
+        "Name": "OnApplicationStateChange",
+        "FullName": "Cysharp.Threading.Tasks.UniTask TimeModuleO.TimeManager::OnApplicationStateChange(System.Boolean)",
+        "IsStatic": false,
+        "IsPublic": false,
+        "IsPrivate": true,
+        "IsAssembly": false,
+        "token": "0x60004CA",
+        "rva": "0x3E460E0"
+      },
+      {
+        "Name": "OnApplicationPause",
+        "FullName": "System.Void TimeModuleO.TimeManager::OnApplicationPause(System.Boolean)",
+        "IsStatic": false,
+        "IsPublic": false,
+        "IsPrivate": true,
+        "IsAssembly": false,
+        "token": "0x60004CB",
+        "rva": "0x3E46194"
+      },
+      {
+        "Name": "GetNetworkTime",
+        "FullName": "System.DateTime TimeModuleO.TimeManager::GetNetworkTime(System.Boolean)",
+        "IsStatic": false,
+        "IsPublic": true,
+        "IsPrivate": false,
+        "IsAssembly": false,
+        "token": "0x60004CC",
+        "rva": "0x3E454B0"
+      },
+      {
+        "Name": "GetLocalNetworkTime",
+        "FullName": "System.DateTime TimeModuleO.TimeManager::GetLocalNetworkTime()",
+        "IsStatic": false,
+        "IsPublic": true,
+        "IsPrivate": false,
+        "IsAssembly": false,
+        "token": "0x60004CD",
+        "rva": "0x3E33908"
+      },
+      {
+        "Name": "GetStandardNetworkTime",
+        "FullName": "System.DateTime TimeModuleO.TimeManager::GetStandardNetworkTime()",
+        "IsStatic": false,
+        "IsPublic": true,
+        "IsPrivate": false,
+        "IsAssembly": false,
+        "token": "0x60004CE",
+        "rva": "0x3E46278"
+      },
+      {
+        "Name": "ShowAllCutDowmLog",
+        "FullName": "System.Void TimeModuleO.TimeManager::ShowAllCutDowmLog()",
+        "IsStatic": false,
+        "IsPublic": true,
+        "IsPrivate": false,
+        "IsAssembly": false,
+        "token": "0x60004CF",
+        "rva": "0x3E46340"
+      },
+      {
+        "Name": "CreateTimer",
+        "FullName": "TimeModuleO.TimeManager/Timer TimeModuleO.TimeManager::CreateTimer(System.String,System.TimeSpan,System.Boolean,System.Boolean)",
+        "IsStatic": false,
+        "IsPublic": true,
+        "IsPrivate": false,
+        "IsAssembly": false,
+        "token": "0x60004D0",
+        "rva": "0x3E32D10"
+      },
+      {
+        "Name": "RegisterOnCutdownTimerEnd",
+        "FullName": "System.Void TimeModuleO.TimeManager::RegisterOnCutdownTimerEnd(System.String,System.Action)",
+        "IsStatic": false,
+        "IsPublic": true,
+        "IsPrivate": false,
+        "IsAssembly": false,
+        "token": "0x60004D1",
+        "rva": "0x3E32E1C"
+      },
+      {
+        "Name": "RemoveTimerEvent",
+        "FullName": "System.Void TimeModuleO.TimeManager::RemoveTimerEvent(System.String)",
+        "IsStatic": false,
+        "IsPublic": true,
+        "IsPrivate": false,
+        "IsAssembly": false,
+        "token": "0x60004D2",
+        "rva": "0x3E3304C"
+      },
+      {
+        "Name": "RemoveTimerEvent",
+        "FullName": "System.Void TimeModuleO.TimeManager::RemoveTimerEvent(System.String,System.Action)",
+        "IsStatic": false,
+        "IsPublic": true,
+        "IsPrivate": false,
+        "IsAssembly": false,
+        "token": "0x60004D3",
+        "rva": "0x3E467D8"
+      },
+      {
+        "Name": "RegisterOnTimeToZero",
+        "FullName": "System.Void TimeModuleO.TimeManager::RegisterOnTimeToZero(System.Action)",
+        "IsStatic": false,
+        "IsPublic": true,
+        "IsPrivate": false,
+        "IsAssembly": false,
+        "token": "0x60004D4",
+        "rva": "0x3E46904"
+      },
+      {
+        "Name": "RegisterOnStandardNetworkTimeToZero",
+        "FullName": "System.Void TimeModuleO.TimeManager::RegisterOnStandardNetworkTimeToZero(System.Action)",
+        "IsStatic": false,
+        "IsPublic": true,
+        "IsPrivate": false,
+        "IsAssembly": false,
+        "token": "0x60004D5",
+        "rva": "0x3E46984"
+      },
+      {
+        "Name": "UnRegisterOnTimeToZero",
+        "FullName": "System.Void TimeModuleO.TimeManager::UnRegisterOnTimeToZero(System.Action)",
+        "IsStatic": false,
+        "IsPublic": true,
+        "IsPrivate": false,
+        "IsAssembly": false,
+        "token": "0x60004D6",
+        "rva": "0x3E46A04"
+      },
+      {
+        "Name": "UnRegisterOnStandardNetworkTimeToZero",
+        "FullName": "System.Void TimeModuleO.TimeManager::UnRegisterOnStandardNetworkTimeToZero(System.Action)",
+        "IsStatic": false,
+        "IsPublic": true,
+        "IsPrivate": false,
+        "IsAssembly": false,
+        "token": "0x60004D7",
+        "rva": "0x3E46A84"
+      },
+      {
+        "Name": "RegisterOnTimeToMondayZero",
+        "FullName": "System.Void TimeModuleO.TimeManager::RegisterOnTimeToMondayZero(System.Action)",
+        "IsStatic": false,
+        "IsPublic": true,
+        "IsPrivate": false,
+        "IsAssembly": false,
+        "token": "0x60004D8",
+        "rva": "0x3E46B04"
+      },
+      {
+        "Name": "GetTimer",
+        "FullName": "TimeModuleO.TimeManager/Timer TimeModuleO.TimeManager::GetTimer(System.String)",
+        "IsStatic": false,
+        "IsPublic": true,
+        "IsPrivate": false,
+        "IsAssembly": false,
+        "token": "0x60004D9",
+        "rva": "0x3E32A30"
+      },
+      {
+        "Name": "LoadTimers",
+        "FullName": "System.Collections.IEnumerator TimeModuleO.TimeManager::LoadTimers()",
+        "IsStatic": false,
+        "IsPublic": false,
+        "IsPrivate": true,
+        "IsAssembly": false,
+        "token": "0x60004DA",
+        "rva": "0x3E46B84"
+      },
+      {
+        "Name": "RemoveTimer",
+        "FullName": "System.Void TimeModuleO.TimeManager::RemoveTimer(System.String)",
+        "IsStatic": false,
+        "IsPublic": true,
+        "IsPrivate": false,
+        "IsAssembly": false,
+        "token": "0x60004DB",
+        "rva": "0x3E46BEC"
+      },
+      {
+        "Name": "GetTimeSpanToZero",
+        "FullName": "System.TimeSpan TimeModuleO.TimeManager::GetTimeSpanToZero()",
+        "IsStatic": false,
+        "IsPublic": true,
+        "IsPrivate": false,
+        "IsAssembly": false,
+        "token": "0x60004DC",
+        "rva": "0x3E32C78"
+      },
+      {
+        "Name": "GetTimeSpanToZeroStandardNetworkTime",
+        "FullName": "System.TimeSpan TimeModuleO.TimeManager::GetTimeSpanToZeroStandardNetworkTime()",
+        "IsStatic": false,
+        "IsPublic": true,
+        "IsPrivate": false,
+        "IsAssembly": false,
+        "token": "0x60004DD",
+        "rva": "0x3E4577C"
+      },
+      {
+        "Name": "GetTimeSpanToWeek",
+        "FullName": "System.TimeSpan TimeModuleO.TimeManager::GetTimeSpanToWeek()",
+        "IsStatic": false,
+        "IsPublic": true,
+        "IsPrivate": false,
+        "IsAssembly": false,
+        "token": "0x60004DE",
+        "rva": "0x3E45814"
+      },
+      {
+        "Name": "GetTimeSpanToDayZero",
+        "FullName": "System.TimeSpan TimeModuleO.TimeManager::GetTimeSpanToDayZero(System.Int32)",
+        "IsStatic": false,
+        "IsPublic": true,
+        "IsPrivate": false,
+        "IsAssembly": false,
+        "token": "0x60004DF",
+        "rva": "0x3E46D80"
+      },
+      {
+        "Name": "InitAddTimeInfo",
+        "FullName": "System.Void TimeModuleO.TimeManager::InitAddTimeInfo(TimeModuleO.TimeManager/Timer)",
+        "IsStatic": false,
+        "IsPublic": true,
+        "IsPrivate": false,
+        "IsAssembly": false,
+        "token": "0x60004E0",
+        "rva": "0x3E4659C"
+      },
+      {
+        "Name": "ChangeTimeInfoEndTime",
+        "FullName": "System.Void TimeModuleO.TimeManager::ChangeTimeInfoEndTime(System.String,System.DateTime)",
+        "IsStatic": true,
+        "IsPublic": true,
+        "IsPrivate": false,
+        "IsAssembly": false,
+        "token": "0x60004E1",
+        "rva": "0x3E44F20"
+      },
+      {
+        "Name": "RemoveTimeInfo",
+        "FullName": "System.Void TimeModuleO.TimeManager::RemoveTimeInfo(System.String)",
+        "IsStatic": false,
+        "IsPublic": true,
+        "IsPrivate": false,
+        "IsAssembly": false,
+        "token": "0x60004E2",
+        "rva": "0x3E32AD8"
+      },
+      {
+        "Name": ".ctor",
+        "FullName": "System.Void TimeModuleO.TimeManager::.ctor()",
+        "IsStatic": false,
+        "IsPublic": true,
+        "IsPrivate": false,
+        "IsAssembly": false,
+        "token": "0x60004E3",
+        "rva": "0x3E46E8C"
+      }
+    ]
+  },
+  {
+    "FullName": "TimeModuleO.TimeManager/TimeSource",
+    "token": "0x20000DB",
+    "baseType": "System.Enum",
+    "fields": [
+      {
+        "Name": "value__",
+        "type": "System.Int32",
+        "IsStatic": false,
+        "token": "0x40004F3",
+        "offset": "0x0"
+      },
+      {
+        "Name": "NetworkTime",
+        "type": "TimeModuleO.TimeManager/TimeSource",
+        "IsStatic": true,
+        "token": "0x40004F4",
+        "offset": null
+      },
+      {
+        "Name": "LocalTime",
+        "type": "TimeModuleO.TimeManager/TimeSource",
+        "IsStatic": true,
+        "token": "0x40004F5",
+        "offset": null
+      }
+    ],
+    "methods": []
+  },
+  {
+    "FullName": "TimeModuleO.TimeManager/Timer",
+    "token": "0x20000DC",
+    "baseType": "System.Object",
+    "fields": [
+      {
+        "Name": "\u003CKey\u003Ek__BackingField",
+        "type": "System.String",
+        "IsStatic": false,
+        "token": "0x40004F6",
+        "offset": "0x10"
+      },
+      {
+        "Name": "\u003CStartTime\u003Ek__BackingField",
+        "type": "System.DateTime",
+        "IsStatic": false,
+        "token": "0x40004F7",
+        "offset": "0x18"
+      },
+      {
+        "Name": "\u003CTargetEndTime\u003Ek__BackingField",
+        "type": "System.DateTime",
+        "IsStatic": false,
+        "token": "0x40004F8",
+        "offset": "0x20"
+      },
+      {
+        "Name": "\u003CuseStandardNetTime\u003Ek__BackingField",
+        "type": "System.Boolean",
+        "IsStatic": false,
+        "token": "0x40004F9",
+        "offset": "0x28"
+      },
+      {
+        "Name": "hours",
+        "type": "System.Int32",
+        "IsStatic": false,
+        "token": "0x40004FA",
+        "offset": "0x2C"
+      },
+      {
+        "Name": "minutes",
+        "type": "System.Int32",
+        "IsStatic": false,
+        "token": "0x40004FB",
+        "offset": "0x30"
+      }
+    ],
+    "methods": [
+      {
+        "Name": "get_Key",
+        "FullName": "System.String TimeModuleO.TimeManager/Timer::get_Key()",
+        "IsStatic": false,
+        "IsPublic": true,
+        "IsPrivate": false,
+        "IsAssembly": false,
+        "token": "0x60004E4",
+        "rva": "0x3F6C8A0"
+      },
+      {
+        "Name": "set_Key",
+        "FullName": "System.Void TimeModuleO.TimeManager/Timer::set_Key(System.String)",
+        "IsStatic": false,
+        "IsPublic": false,
+        "IsPrivate": true,
+        "IsAssembly": false,
+        "token": "0x60004E5",
+        "rva": "0x3F6C8A8"
+      },
+      {
+        "Name": "get_StartTime",
+        "FullName": "System.DateTime TimeModuleO.TimeManager/Timer::get_StartTime()",
+        "IsStatic": false,
+        "IsPublic": true,
+        "IsPrivate": false,
+        "IsAssembly": false,
+        "token": "0x60004E6",
+        "rva": "0x3F6C8B0"
+      },
+      {
+        "Name": "set_StartTime",
+        "FullName": "System.Void TimeModuleO.TimeManager/Timer::set_StartTime(System.DateTime)",
+        "IsStatic": false,
+        "IsPublic": false,
+        "IsPrivate": true,
+        "IsAssembly": false,
+        "token": "0x60004E7",
+        "rva": "0x3F6C8B8"
+      },
+      {
+        "Name": "get_TargetEndTime",
+        "FullName": "System.DateTime TimeModuleO.TimeManager/Timer::get_TargetEndTime()",
+        "IsStatic": false,
+        "IsPublic": true,
+        "IsPrivate": false,
+        "IsAssembly": false,
+        "token": "0x60004E8",
+        "rva": "0x3F6C8C0"
+      },
+      {
+        "Name": "set_TargetEndTime",
+        "FullName": "System.Void TimeModuleO.TimeManager/Timer::set_TargetEndTime(System.DateTime)",
+        "IsStatic": false,
+        "IsPublic": false,
+        "IsPrivate": true,
+        "IsAssembly": false,
+        "token": "0x60004E9",
+        "rva": "0x3F6C8C8"
+      },
+      {
+        "Name": "get_useStandardNetTime",
+        "FullName": "System.Boolean TimeModuleO.TimeManager/Timer::get_useStandardNetTime()",
+        "IsStatic": false,
+        "IsPublic": true,
+        "IsPrivate": false,
+        "IsAssembly": false,
+        "token": "0x60004EA",
+        "rva": "0x3F6C8D0"
+      },
+      {
+        "Name": "set_useStandardNetTime",
+        "FullName": "System.Void TimeModuleO.TimeManager/Timer::set_useStandardNetTime(System.Boolean)",
+        "IsStatic": false,
+        "IsPublic": false,
+        "IsPrivate": true,
+        "IsAssembly": false,
+        "token": "0x60004EB",
+        "rva": "0x3F6C8D8"
+      },
+      {
+        "Name": ".ctor",
+        "FullName": "System.Void TimeModuleO.TimeManager/Timer::.ctor(System.String,System.TimeSpan,System.Boolean,System.Boolean)",
+        "IsStatic": false,
+        "IsPublic": true,
+        "IsPrivate": false,
+        "IsAssembly": false,
+        "token": "0x60004EC",
+        "rva": "0x3F6C8E4"
+      },
+      {
+        "Name": "SetTargetEndTime",
+        "FullName": "System.Void TimeModuleO.TimeManager/Timer::SetTargetEndTime(System.DateTime)",
+        "IsStatic": false,
+        "IsPublic": true,
+        "IsPrivate": false,
+        "IsAssembly": false,
+        "token": "0x60004ED",
+        "rva": "0x3F6CA58"
+      },
+      {
+        "Name": ".ctor",
+        "FullName": "System.Void TimeModuleO.TimeManager/Timer::.ctor(DataModule.TimeInfo)",
+        "IsStatic": false,
+        "IsPublic": true,
+        "IsPrivate": false,
+        "IsAssembly": false,
+        "token": "0x60004EE",
+        "rva": "0x3F6CA60"
+      },
+      {
+        "Name": "Restart",
+        "FullName": "System.Void TimeModuleO.TimeManager/Timer::Restart(System.TimeSpan,System.Boolean)",
+        "IsStatic": false,
+        "IsPublic": true,
+        "IsPrivate": false,
+        "IsAssembly": false,
+        "token": "0x60004EF",
+        "rva": "0x3F6C934"
+      },
+      {
+        "Name": "ChangeTime",
+        "FullName": "System.Void TimeModuleO.TimeManager/Timer::ChangeTime(System.TimeSpan,System.Boolean)",
+        "IsStatic": false,
+        "IsPublic": true,
+        "IsPrivate": false,
+        "IsAssembly": false,
+        "token": "0x60004F0",
+        "rva": "0x3F6CAAC"
+      },
+      {
+        "Name": "ChangeUseStandNetTime",
+        "FullName": "System.Void TimeModuleO.TimeManager/Timer::ChangeUseStandNetTime(System.Boolean)",
+        "IsStatic": false,
+        "IsPublic": true,
+        "IsPrivate": false,
+        "IsAssembly": false,
+        "token": "0x60004F1",
+        "rva": "0x3F6CB3C"
+      },
+      {
+        "Name": "GetElapsedTime",
+        "FullName": "System.TimeSpan TimeModuleO.TimeManager/Timer::GetElapsedTime()",
+        "IsStatic": false,
+        "IsPublic": true,
+        "IsPrivate": false,
+        "IsAssembly": false,
+        "token": "0x60004F2",
+        "rva": "0x3F6CBBC"
+      },
+      {
+        "Name": "GetRemainingTime",
+        "FullName": "System.TimeSpan TimeModuleO.TimeManager/Timer::GetRemainingTime()",
+        "IsStatic": false,
+        "IsPublic": true,
+        "IsPrivate": false,
+        "IsAssembly": false,
+        "token": "0x60004F3",
+        "rva": "0x3F6CC54"
+      },
+      {
+        "Name": "GetFormattedElapsedTime",
+        "FullName": "System.String TimeModuleO.TimeManager/Timer::GetFormattedElapsedTime(System.Int32)",
+        "IsStatic": false,
+        "IsPublic": true,
+        "IsPrivate": false,
+        "IsAssembly": false,
+        "token": "0x60004F4",
+        "rva": "0x3F6CCEC"
+      },
+      {
+        "Name": "GetFormattedRemainingTime",
+        "FullName": "System.String TimeModuleO.TimeManager/Timer::GetFormattedRemainingTime(System.Int32)",
+        "IsStatic": false,
+        "IsPublic": true,
+        "IsPrivate": false,
+        "IsAssembly": false,
+        "token": "0x60004F5",
+        "rva": "0x3F6E100"
+      },
+      {
+        "Name": "GetFormattedRemainingMinuteTime",
+        "FullName": "System.Int32 TimeModuleO.TimeManager/Timer::GetFormattedRemainingMinuteTime()",
+        "IsStatic": false,
+        "IsPublic": true,
+        "IsPrivate": false,
+        "IsAssembly": false,
+        "token": "0x60004F6",
+        "rva": "0x3F6E1B0"
+      },
+      {
+        "Name": "IsCompleted",
+        "FullName": "System.Boolean TimeModuleO.TimeManager/Timer::IsCompleted()",
+        "IsStatic": false,
+        "IsPublic": true,
+        "IsPrivate": false,
+        "IsAssembly": false,
+        "token": "0x60004F7",
+        "rva": "0x3F6E2C4"
+      }
+    ]
+  },
+  {
+    "FullName": "TimeModuleO.TimeManager/\u003C\u003Ec",
+    "token": "0x20000DD",
+    "baseType": "System.Object",
+    "fields": [
+      {
+        "Name": "\u003C\u003E9",
+        "type": "TimeModuleO.TimeManager/\u003C\u003Ec",
+        "IsStatic": true,
+        "token": "0x40004FC",
+        "offset": "0x0"
+      },
+      {
+        "Name": "\u003C\u003E9__31_0",
+        "type": "System.Func\u00601\u003CSystem.Boolean\u003E",
+        "IsStatic": true,
+        "token": "0x40004FD",
+        "offset": "0x8"
+      }
+    ],
+    "methods": [
+      {
+        "Name": ".cctor",
+        "FullName": "System.Void TimeModuleO.TimeManager/\u003C\u003Ec::.cctor()",
+        "IsStatic": true,
+        "IsPublic": false,
+        "IsPrivate": true,
+        "IsAssembly": false,
+        "token": "0x60004F8",
+        "rva": "0x3F6E35C"
+      },
+      {
+        "Name": ".ctor",
+        "FullName": "System.Void TimeModuleO.TimeManager/\u003C\u003Ec::.ctor()",
+        "IsStatic": false,
+        "IsPublic": true,
+        "IsPrivate": false,
+        "IsAssembly": false,
+        "token": "0x60004F9",
+        "rva": "0x3F6E3B8"
+      },
+      {
+        "Name": "\u003CInitializeTimeSource\u003Eb__31_0",
+        "FullName": "System.Boolean TimeModuleO.TimeManager/\u003C\u003Ec::\u003CInitializeTimeSource\u003Eb__31_0()",
+        "IsStatic": false,
+        "IsPublic": false,
+        "IsPrivate": false,
+        "IsAssembly": true,
+        "token": "0x60004FA",
+        "rva": "0x3F6E3C0"
+      }
+    ]
+  },
+  {
+    "FullName": "TimeModuleO.TimeManager/\u003CCheckTimerEndEventCoroutine\u003Ed__46",
+    "token": "0x20000DE",
+    "baseType": "System.Object",
+    "fields": [
+      {
+        "Name": "\u003C\u003E1__state",
+        "type": "System.Int32",
+        "IsStatic": false,
+        "token": "0x40004FE",
+        "offset": "0x10"
+      },
+      {
+        "Name": "\u003C\u003E2__current",
+        "type": "System.Object",
+        "IsStatic": false,
+        "token": "0x40004FF",
+        "offset": "0x18"
+      },
+      {
+        "Name": "\u003C\u003E4__this",
+        "type": "TimeModuleO.TimeManager",
+        "IsStatic": false,
+        "token": "0x4000500",
+        "offset": "0x20"
+      }
+    ],
+    "methods": [
+      {
+        "Name": ".ctor",
+        "FullName": "System.Void TimeModuleO.TimeManager/\u003CCheckTimerEndEventCoroutine\u003Ed__46::.ctor(System.Int32)",
+        "IsStatic": false,
+        "IsPublic": true,
+        "IsPrivate": false,
+        "IsAssembly": false,
+        "token": "0x60004FB",
+        "rva": "0x3F6E414"
+      },
+      {
+        "Name": "System.IDisposable.Dispose",
+        "FullName": "System.Void TimeModuleO.TimeManager/\u003CCheckTimerEndEventCoroutine\u003Ed__46::System.IDisposable.Dispose()",
+        "IsStatic": false,
+        "IsPublic": false,
+        "IsPrivate": true,
+        "IsAssembly": false,
+        "token": "0x60004FC",
+        "rva": "0x3F6E43C"
+      },
+      {
+        "Name": "MoveNext",
+        "FullName": "System.Boolean TimeModuleO.TimeManager/\u003CCheckTimerEndEventCoroutine\u003Ed__46::MoveNext()",
+        "IsStatic": false,
+        "IsPublic": false,
+        "IsPrivate": true,
+        "IsAssembly": false,
+        "token": "0x60004FD",
+        "rva": "0x3F6E440"
+      },
+      {
+        "Name": "System.Collections.Generic.IEnumerator\u003CSystem.Object\u003E.get_Current",
+        "FullName": "System.Object TimeModuleO.TimeManager/\u003CCheckTimerEndEventCoroutine\u003Ed__46::System.Collections.Generic.IEnumerator\u003CSystem.Object\u003E.get_Current()",
+        "IsStatic": false,
+        "IsPublic": false,
+        "IsPrivate": true,
+        "IsAssembly": false,
+        "token": "0x60004FE",
+        "rva": "0x3F6E4F0"
+      },
+      {
+        "Name": "System.Collections.IEnumerator.Reset",
+        "FullName": "System.Void TimeModuleO.TimeManager/\u003CCheckTimerEndEventCoroutine\u003Ed__46::System.Collections.IEnumerator.Reset()",
+        "IsStatic": false,
+        "IsPublic": false,
+        "IsPrivate": true,
+        "IsAssembly": false,
+        "token": "0x60004FF",
+        "rva": "0x3F6E4F8"
+      },
+      {
+        "Name": "System.Collections.IEnumerator.get_Current",
+        "FullName": "System.Object TimeModuleO.TimeManager/\u003CCheckTimerEndEventCoroutine\u003Ed__46::System.Collections.IEnumerator.get_Current()",
+        "IsStatic": false,
+        "IsPublic": false,
+        "IsPrivate": true,
+        "IsAssembly": false,
+        "token": "0x6000500",
+        "rva": "0x3F6E530"
+      }
+    ]
+  },
+  {
+    "FullName": "TimeModuleO.TimeManager/\u003CCheckTimerToZeroCoroutine\u003Ed__45",
+    "token": "0x20000DF",
+    "baseType": "System.Object",
+    "fields": [
+      {
+        "Name": "\u003C\u003E1__state",
+        "type": "System.Int32",
+        "IsStatic": false,
+        "token": "0x4000501",
+        "offset": "0x10"
+      },
+      {
+        "Name": "\u003C\u003E2__current",
+        "type": "System.Object",
+        "IsStatic": false,
+        "token": "0x4000502",
+        "offset": "0x18"
+      },
+      {
+        "Name": "\u003C\u003E4__this",
+        "type": "TimeModuleO.TimeManager",
+        "IsStatic": false,
+        "token": "0x4000503",
+        "offset": "0x20"
+      }
+    ],
+    "methods": [
+      {
+        "Name": ".ctor",
+        "FullName": "System.Void TimeModuleO.TimeManager/\u003CCheckTimerToZeroCoroutine\u003Ed__45::.ctor(System.Int32)",
+        "IsStatic": false,
+        "IsPublic": true,
+        "IsPrivate": false,
+        "IsAssembly": false,
+        "token": "0x6000501",
+        "rva": "0x3F6E538"
+      },
+      {
+        "Name": "System.IDisposable.Dispose",
+        "FullName": "System.Void TimeModuleO.TimeManager/\u003CCheckTimerToZeroCoroutine\u003Ed__45::System.IDisposable.Dispose()",
+        "IsStatic": false,
+        "IsPublic": false,
+        "IsPrivate": true,
+        "IsAssembly": false,
+        "token": "0x6000502",
+        "rva": "0x3F6E560"
+      },
+      {
+        "Name": "MoveNext",
+        "FullName": "System.Boolean TimeModuleO.TimeManager/\u003CCheckTimerToZeroCoroutine\u003Ed__45::MoveNext()",
+        "IsStatic": false,
+        "IsPublic": false,
+        "IsPrivate": true,
+        "IsAssembly": false,
+        "token": "0x6000503",
+        "rva": "0x3F6E564"
+      },
+      {
+        "Name": "System.Collections.Generic.IEnumerator\u003CSystem.Object\u003E.get_Current",
+        "FullName": "System.Object TimeModuleO.TimeManager/\u003CCheckTimerToZeroCoroutine\u003Ed__45::System.Collections.Generic.IEnumerator\u003CSystem.Object\u003E.get_Current()",
+        "IsStatic": false,
+        "IsPublic": false,
+        "IsPrivate": true,
+        "IsAssembly": false,
+        "token": "0x6000504",
+        "rva": "0x3F6E614"
+      },
+      {
+        "Name": "System.Collections.IEnumerator.Reset",
+        "FullName": "System.Void TimeModuleO.TimeManager/\u003CCheckTimerToZeroCoroutine\u003Ed__45::System.Collections.IEnumerator.Reset()",
+        "IsStatic": false,
+        "IsPublic": false,
+        "IsPrivate": true,
+        "IsAssembly": false,
+        "token": "0x6000505",
+        "rva": "0x3F6E61C"
+      },
+      {
+        "Name": "System.Collections.IEnumerator.get_Current",
+        "FullName": "System.Object TimeModuleO.TimeManager/\u003CCheckTimerToZeroCoroutine\u003Ed__45::System.Collections.IEnumerator.get_Current()",
+        "IsStatic": false,
+        "IsPublic": false,
+        "IsPrivate": true,
+        "IsAssembly": false,
+        "token": "0x6000506",
+        "rva": "0x3F6E654"
+      }
+    ]
+  },
+  {
+    "FullName": "TimeModuleO.TimeManager/\u003CCheckWeekPassedCoroutine\u003Ed__47",
+    "token": "0x20000E0",
+    "baseType": "System.Object",
+    "fields": [
+      {
+        "Name": "\u003C\u003E1__state",
+        "type": "System.Int32",
+        "IsStatic": false,
+        "token": "0x4000504",
+        "offset": "0x10"
+      },
+      {
+        "Name": "\u003C\u003E2__current",
+        "type": "System.Object",
+        "IsStatic": false,
+        "token": "0x4000505",
+        "offset": "0x18"
+      },
+      {
+        "Name": "\u003C\u003E4__this",
+        "type": "TimeModuleO.TimeManager",
+        "IsStatic": false,
+        "token": "0x4000506",
+        "offset": "0x20"
+      }
+    ],
+    "methods": [
+      {
+        "Name": ".ctor",
+        "FullName": "System.Void TimeModuleO.TimeManager/\u003CCheckWeekPassedCoroutine\u003Ed__47::.ctor(System.Int32)",
+        "IsStatic": false,
+        "IsPublic": true,
+        "IsPrivate": false,
+        "IsAssembly": false,
+        "token": "0x6000507",
+        "rva": "0x3F6E65C"
+      },
+      {
+        "Name": "System.IDisposable.Dispose",
+        "FullName": "System.Void TimeModuleO.TimeManager/\u003CCheckWeekPassedCoroutine\u003Ed__47::System.IDisposable.Dispose()",
+        "IsStatic": false,
+        "IsPublic": false,
+        "IsPrivate": true,
+        "IsAssembly": false,
+        "token": "0x6000508",
+        "rva": "0x3F6E684"
+      },
+      {
+        "Name": "MoveNext",
+        "FullName": "System.Boolean TimeModuleO.TimeManager/\u003CCheckWeekPassedCoroutine\u003Ed__47::MoveNext()",
+        "IsStatic": false,
+        "IsPublic": false,
+        "IsPrivate": true,
+        "IsAssembly": false,
+        "token": "0x6000509",
+        "rva": "0x3F6E688"
+      },
+      {
+        "Name": "System.Collections.Generic.IEnumerator\u003CSystem.Object\u003E.get_Current",
+        "FullName": "System.Object TimeModuleO.TimeManager/\u003CCheckWeekPassedCoroutine\u003Ed__47::System.Collections.Generic.IEnumerator\u003CSystem.Object\u003E.get_Current()",
+        "IsStatic": false,
+        "IsPublic": false,
+        "IsPrivate": true,
+        "IsAssembly": false,
+        "token": "0x600050A",
+        "rva": "0x3F6E738"
+      },
+      {
+        "Name": "System.Collections.IEnumerator.Reset",
+        "FullName": "System.Void TimeModuleO.TimeManager/\u003CCheckWeekPassedCoroutine\u003Ed__47::System.Collections.IEnumerator.Reset()",
+        "IsStatic": false,
+        "IsPublic": false,
+        "IsPrivate": true,
+        "IsAssembly": false,
+        "token": "0x600050B",
+        "rva": "0x3F6E740"
+      },
+      {
+        "Name": "System.Collections.IEnumerator.get_Current",
+        "FullName": "System.Object TimeModuleO.TimeManager/\u003CCheckWeekPassedCoroutine\u003Ed__47::System.Collections.IEnumerator.get_Current()",
+        "IsStatic": false,
+        "IsPublic": false,
+        "IsPrivate": true,
+        "IsAssembly": false,
+        "token": "0x600050C",
+        "rva": "0x3F6E778"
+      }
+    ]
+  },
+  {
+    "FullName": "TimeModuleO.TimeManager/\u003CHandleTimeToWeekCutDown\u003Ed__36",
+    "token": "0x20000E1",
+    "baseType": "System.ValueType",
+    "fields": [
+      {
+        "Name": "\u003C\u003E1__state",
+        "type": "System.Int32",
+        "IsStatic": false,
+        "token": "0x4000507",
+        "offset": "0x0"
+      },
+      {
+        "Name": "\u003C\u003Et__builder",
+        "type": "System.Runtime.CompilerServices.AsyncVoidMethodBuilder",
+        "IsStatic": false,
+        "token": "0x4000508",
+        "offset": "0x8"
+      },
+      {
+        "Name": "\u003C\u003E4__this",
+        "type": "TimeModuleO.TimeManager",
+        "IsStatic": false,
+        "token": "0x4000509",
+        "offset": "0x28"
+      },
+      {
+        "Name": "\u003C\u003Eu__1",
+        "type": "Cysharp.Threading.Tasks.YieldAwaitable/Awaiter",
+        "IsStatic": false,
+        "token": "0x400050A",
+        "offset": "0x30"
+      }
+    ],
+    "methods": [
+      {
+        "Name": "MoveNext",
+        "FullName": "System.Void TimeModuleO.TimeManager/\u003CHandleTimeToWeekCutDown\u003Ed__36::MoveNext()",
+        "IsStatic": false,
+        "IsPublic": false,
+        "IsPrivate": true,
+        "IsAssembly": false,
+        "token": "0x600050D",
+        "rva": "0x3F6E780"
+      },
+      {
+        "Name": "SetStateMachine",
+        "FullName": "System.Void TimeModuleO.TimeManager/\u003CHandleTimeToWeekCutDown\u003Ed__36::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)",
+        "IsStatic": false,
+        "IsPublic": false,
+        "IsPrivate": true,
+        "IsAssembly": false,
+        "token": "0x600050E",
+        "rva": "0x3F6EA30"
+      }
+    ]
+  },
+  {
+    "FullName": "TimeModuleO.TimeManager/\u003CInit\u003Ed__29",
+    "token": "0x20000E2",
+    "baseType": "System.ValueType",
+    "fields": [
+      {
+        "Name": "\u003C\u003E1__state",
+        "type": "System.Int32",
+        "IsStatic": false,
+        "token": "0x400050B",
+        "offset": "0x0"
+      },
+      {
+        "Name": "\u003C\u003Et__builder",
+        "type": "Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder",
+        "IsStatic": false,
+        "token": "0x400050C",
+        "offset": "0x8"
+      },
+      {
+        "Name": "\u003C\u003E4__this",
+        "type": "TimeModuleO.TimeManager",
+        "IsStatic": false,
+        "token": "0x400050D",
+        "offset": "0x18"
+      },
+      {
+        "Name": "\u003C\u003Eu__1",
+        "type": "Cysharp.Threading.Tasks.UniTask/Awaiter",
+        "IsStatic": false,
+        "token": "0x400050E",
+        "offset": "0x20"
+      },
+      {
+        "Name": "\u003CcheckCount\u003E5__2",
+        "type": "System.Int32",
+        "IsStatic": false,
+        "token": "0x400050F",
+        "offset": "0x30"
+      },
+      {
+        "Name": "\u003CchecksPerLog\u003E5__3",
+        "type": "System.Int32",
+        "IsStatic": false,
+        "token": "0x4000510",
+        "offset": "0x34"
+      }
+    ],
+    "methods": [
+      {
+        "Name": "MoveNext",
+        "FullName": "System.Void TimeModuleO.TimeManager/\u003CInit\u003Ed__29::MoveNext()",
+        "IsStatic": false,
+        "IsPublic": false,
+        "IsPrivate": true,
+        "IsAssembly": false,
+        "token": "0x600050F",
+        "rva": "0x3F6EA3C"
+      },
+      {
+        "Name": "SetStateMachine",
+        "FullName": "System.Void TimeModuleO.TimeManager/\u003CInit\u003Ed__29::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)",
+        "IsStatic": false,
+        "IsPublic": false,
+        "IsPrivate": true,
+        "IsAssembly": false,
+        "token": "0x6000510",
+        "rva": "0x3F6F444"
+      }
+    ]
+  },
+  {
+    "FullName": "TimeModuleO.TimeManager/\u003CInitializeTimeSource\u003Ed__31",
+    "token": "0x20000E3",
+    "baseType": "System.ValueType",
+    "fields": [
+      {
+        "Name": "\u003C\u003E1__state",
+        "type": "System.Int32",
+        "IsStatic": false,
+        "token": "0x4000511",
+        "offset": "0x0"
+      },
+      {
+        "Name": "\u003C\u003Et__builder",
+        "type": "Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder",
+        "IsStatic": false,
+        "token": "0x4000512",
+        "offset": "0x8"
+      },
+      {
+        "Name": "\u003C\u003E4__this",
+        "type": "TimeModuleO.TimeManager",
+        "IsStatic": false,
+        "token": "0x4000513",
+        "offset": "0x18"
+      },
+      {
+        "Name": "\u003C\u003Eu__1",
+        "type": "Cysharp.Threading.Tasks.UniTask\u00601/Awaiter\u003CSystem.Boolean\u003E",
+        "IsStatic": false,
+        "token": "0x4000514",
+        "offset": "0x20"
+      }
+    ],
+    "methods": [
+      {
+        "Name": "MoveNext",
+        "FullName": "System.Void TimeModuleO.TimeManager/\u003CInitializeTimeSource\u003Ed__31::MoveNext()",
+        "IsStatic": false,
+        "IsPublic": false,
+        "IsPrivate": true,
+        "IsAssembly": false,
+        "token": "0x6000511",
+        "rva": "0x3F6F450"
+      },
+      {
+        "Name": "SetStateMachine",
+        "FullName": "System.Void TimeModuleO.TimeManager/\u003CInitializeTimeSource\u003Ed__31::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)",
+        "IsStatic": false,
+        "IsPublic": false,
+        "IsPrivate": true,
+        "IsAssembly": false,
+        "token": "0x6000512",
+        "rva": "0x3F6FABC"
+      }
+    ]
+  },
+  {
+    "FullName": "TimeModuleO.TimeManager/\u003CLoadTimers\u003Ed__68",
+    "token": "0x20000E4",
+    "baseType": "System.Object",
+    "fields": [
+      {
+        "Name": "\u003C\u003E1__state",
+        "type": "System.Int32",
+        "IsStatic": false,
+        "token": "0x4000515",
+        "offset": "0x10"
+      },
+      {
+        "Name": "\u003C\u003E2__current",
+        "type": "System.Object",
+        "IsStatic": false,
+        "token": "0x4000516",
+        "offset": "0x18"
+      },
+      {
+        "Name": "\u003C\u003E4__this",
+        "type": "TimeModuleO.TimeManager",
+        "IsStatic": false,
+        "token": "0x4000517",
+        "offset": "0x20"
+      }
+    ],
+    "methods": [
+      {
+        "Name": ".ctor",
+        "FullName": "System.Void TimeModuleO.TimeManager/\u003CLoadTimers\u003Ed__68::.ctor(System.Int32)",
+        "IsStatic": false,
+        "IsPublic": true,
+        "IsPrivate": false,
+        "IsAssembly": false,
+        "token": "0x6000513",
+        "rva": "0x3F6FAC8"
+      },
+      {
+        "Name": "System.IDisposable.Dispose",
+        "FullName": "System.Void TimeModuleO.TimeManager/\u003CLoadTimers\u003Ed__68::System.IDisposable.Dispose()",
+        "IsStatic": false,
+        "IsPublic": false,
+        "IsPrivate": true,
+        "IsAssembly": false,
+        "token": "0x6000514",
+        "rva": "0x3F6FAF0"
+      },
+      {
+        "Name": "MoveNext",
+        "FullName": "System.Boolean TimeModuleO.TimeManager/\u003CLoadTimers\u003Ed__68::MoveNext()",
+        "IsStatic": false,
+        "IsPublic": false,
+        "IsPrivate": true,
+        "IsAssembly": false,
+        "token": "0x6000515",
+        "rva": "0x3F6FAF4"
+      },
+      {
+        "Name": "System.Collections.Generic.IEnumerator\u003CSystem.Object\u003E.get_Current",
+        "FullName": "System.Object TimeModuleO.TimeManager/\u003CLoadTimers\u003Ed__68::System.Collections.Generic.IEnumerator\u003CSystem.Object\u003E.get_Current()",
+        "IsStatic": false,
+        "IsPublic": false,
+        "IsPrivate": true,
+        "IsAssembly": false,
+        "token": "0x6000516",
+        "rva": "0x3F70044"
+      },
+      {
+        "Name": "System.Collections.IEnumerator.Reset",
+        "FullName": "System.Void TimeModuleO.TimeManager/\u003CLoadTimers\u003Ed__68::System.Collections.IEnumerator.Reset()",
+        "IsStatic": false,
+        "IsPublic": false,
+        "IsPrivate": true,
+        "IsAssembly": false,
+        "token": "0x6000517",
+        "rva": "0x3F7004C"
+      },
+      {
+        "Name": "System.Collections.IEnumerator.get_Current",
+        "FullName": "System.Object TimeModuleO.TimeManager/\u003CLoadTimers\u003Ed__68::System.Collections.IEnumerator.get_Current()",
+        "IsStatic": false,
+        "IsPublic": false,
+        "IsPrivate": true,
+        "IsAssembly": false,
+        "token": "0x6000518",
+        "rva": "0x3F70084"
+      }
+    ]
+  },
+  {
+    "FullName": "TimeModuleO.TimeManager/\u003COnApplicationStateChange\u003Ed__52",
+    "token": "0x20000E5",
+    "baseType": "System.ValueType",
+    "fields": [
+      {
+        "Name": "\u003C\u003E1__state",
+        "type": "System.Int32",
+        "IsStatic": false,
+        "token": "0x4000518",
+        "offset": "0x0"
+      },
+      {
+        "Name": "\u003C\u003Et__builder",
+        "type": "Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder",
+        "IsStatic": false,
+        "token": "0x4000519",
+        "offset": "0x8"
+      },
+      {
+        "Name": "hasFocus",
+        "type": "System.Boolean",
+        "IsStatic": false,
+        "token": "0x400051A",
+        "offset": "0x18"
+      },
+      {
+        "Name": "\u003C\u003E4__this",
+        "type": "TimeModuleO.TimeManager",
+        "IsStatic": false,
+        "token": "0x400051B",
+        "offset": "0x20"
+      },
+      {
+        "Name": "\u003Cstaytime\u003E5__2",
+        "type": "System.Single",
+        "IsStatic": false,
+        "token": "0x400051C",
+        "offset": "0x28"
+      },
+      {
+        "Name": "\u003C\u003Eu__1",
+        "type": "Cysharp.Threading.Tasks.YieldAwaitable/Awaiter",
+        "IsStatic": false,
+        "token": "0x400051D",
+        "offset": "0x2C"
+      },
+      {
+        "Name": "\u003C\u003Eu__2",
+        "type": "Cysharp.Threading.Tasks.UniTask\u00601/Awaiter\u003CUIFramework.UIPanel\u003E",
+        "IsStatic": false,
+        "token": "0x400051E",
+        "offset": "0x30"
+      }
+    ],
+    "methods": [
+      {
+        "Name": "MoveNext",
+        "FullName": "System.Void TimeModuleO.TimeManager/\u003COnApplicationStateChange\u003Ed__52::MoveNext()",
+        "IsStatic": false,
+        "IsPublic": false,
+        "IsPrivate": true,
+        "IsAssembly": false,
+        "token": "0x6000519",
+        "rva": "0x3F7008C"
+      },
+      {
+        "Name": "SetStateMachine",
+        "FullName": "System.Void TimeModuleO.TimeManager/\u003COnApplicationStateChange\u003Ed__52::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)",
+        "IsStatic": false,
+        "IsPublic": false,
+        "IsPrivate": true,
+        "IsAssembly": false,
+        "token": "0x600051A",
+        "rva": "0x3F70830"
+      }
+    ]
+  },
+  {
+    "FullName": "TimeModuleO.TimeManager/\u003CSyncServerTimeCoroutine\u003Ed__38",
+    "token": "0x20000E6",
+    "baseType": "System.Object",
+    "fields": [
+      {
+        "Name": "\u003C\u003E1__state",
+        "type": "System.Int32",
+        "IsStatic": false,
+        "token": "0x400051F",
+        "offset": "0x10"
+      },
+      {
+        "Name": "\u003C\u003E2__current",
+        "type": "System.Object",
+        "IsStatic": false,
+        "token": "0x4000520",
+        "offset": "0x18"
+      },
+      {
+        "Name": "\u003C\u003E4__this",
+        "type": "TimeModuleO.TimeManager",
+        "IsStatic": false,
+        "token": "0x4000521",
+        "offset": "0x20"
+      },
+      {
+        "Name": "\u003CrequestTimer\u003E5__2",
+        "type": "System.Single",
+        "IsStatic": false,
+        "token": "0x4000522",
+        "offset": "0x28"
+      }
+    ],
+    "methods": [
+      {
+        "Name": ".ctor",
+        "FullName": "System.Void TimeModuleO.TimeManager/\u003CSyncServerTimeCoroutine\u003Ed__38::.ctor(System.Int32)",
+        "IsStatic": false,
+        "IsPublic": true,
+        "IsPrivate": false,
+        "IsAssembly": false,
+        "token": "0x600051B",
+        "rva": "0x3F7083C"
+      },
+      {
+        "Name": "System.IDisposable.Dispose",
+        "FullName": "System.Void TimeModuleO.TimeManager/\u003CSyncServerTimeCoroutine\u003Ed__38::System.IDisposable.Dispose()",
+        "IsStatic": false,
+        "IsPublic": false,
+        "IsPrivate": true,
+        "IsAssembly": false,
+        "token": "0x600051C",
+        "rva": "0x3F70864"
+      },
+      {
+        "Name": "MoveNext",
+        "FullName": "System.Boolean TimeModuleO.TimeManager/\u003CSyncServerTimeCoroutine\u003Ed__38::MoveNext()",
+        "IsStatic": false,
+        "IsPublic": false,
+        "IsPrivate": true,
+        "IsAssembly": false,
+        "token": "0x600051D",
+        "rva": "0x3F70868"
+      },
+      {
+        "Name": "System.Collections.Generic.IEnumerator\u003CSystem.Object\u003E.get_Current",
+        "FullName": "System.Object TimeModuleO.TimeManager/\u003CSyncServerTimeCoroutine\u003Ed__38::System.Collections.Generic.IEnumerator\u003CSystem.Object\u003E.get_Current()",
+        "IsStatic": false,
+        "IsPublic": false,
+        "IsPrivate": true,
+        "IsAssembly": false,
+        "token": "0x600051E",
+        "rva": "0x3F709F4"
+      },
+      {
+        "Name": "System.Collections.IEnumerator.Reset",
+        "FullName": "System.Void TimeModuleO.TimeManager/\u003CSyncServerTimeCoroutine\u003Ed__38::System.Collections.IEnumerator.Reset()",
+        "IsStatic": false,
+        "IsPublic": false,
+        "IsPrivate": true,
+        "IsAssembly": false,
+        "token": "0x600051F",
+        "rva": "0x3F709FC"
+      },
+      {
+        "Name": "System.Collections.IEnumerator.get_Current",
+        "FullName": "System.Object TimeModuleO.TimeManager/\u003CSyncServerTimeCoroutine\u003Ed__38::System.Collections.IEnumerator.get_Current()",
+        "IsStatic": false,
+        "IsPublic": false,
+        "IsPrivate": true,
+        "IsAssembly": false,
+        "token": "0x6000520",
+        "rva": "0x3F70A34"
+      }
+    ]
+  },
+  {
+    "FullName": "DataModule.TimeInfo",
+    "token": "0x2000ED8",
+    "baseType": "System.Object",
+    "fields": [
+      {
+        "Name": "Key",
+        "type": "System.String",
+        "IsStatic": false,
+        "token": "0x4006700",
+        "offset": "0x10"
+      },
+      {
+        "Name": "StartTime",
+        "type": "System.DateTime",
+        "IsStatic": false,
+        "token": "0x4006701",
+        "offset": "0x18"
+      },
+      {
+        "Name": "TargetEndTime",
+        "type": "System.DateTime",
+        "IsStatic": false,
+        "token": "0x4006702",
+        "offset": "0x20"
+      },
+      {
+        "Name": "useStandardNetTime",
+        "type": "System.Boolean",
+        "IsStatic": false,
+        "token": "0x4006703",
+        "offset": "0x28"
+      }
+    ],
+    "methods": [
+      {
+        "Name": ".ctor",
+        "FullName": "System.Void DataModule.TimeInfo::.ctor()",
+        "IsStatic": false,
+        "IsPublic": true,
+        "IsPrivate": false,
+        "IsAssembly": false,
+        "token": "0x60059C5",
+        "rva": "0x4376B90"
+      }
+    ]
+  },
+  {
+    "FullName": "L_Tools.DateTools",
+    "token": "0x2000FB2",
+    "baseType": "System.Object",
+    "fields": [
+      {
+        "Name": "StartTime",
+        "type": "System.DateTime",
+        "IsStatic": true,
+        "token": "0x4006B93",
+        "offset": "0x0"
+      },
+      {
+        "Name": "StartTime_UTC",
+        "type": "System.DateTime",
+        "IsStatic": true,
+        "token": "0x4006B94",
+        "offset": "0x8"
+      },
+      {
+        "Name": "UseLocalTime",
+        "type": "System.Boolean",
+        "IsStatic": true,
+        "token": "0x4006B95",
+        "offset": "0x10"
+      },
+      {
+        "Name": "m_Now",
+        "type": "System.DateTime",
+        "IsStatic": true,
+        "token": "0x4006B96",
+        "offset": "0x18"
+      },
+      {
+        "Name": "m_UTCNow",
+        "type": "System.DateTime",
+        "IsStatic": true,
+        "token": "0x4006B97",
+        "offset": "0x20"
+      }
+    ],
+    "methods": [
+      {
+        "Name": "NowIsServerTime",
+        "FullName": "System.Boolean L_Tools.DateTools::NowIsServerTime()",
+        "IsStatic": true,
+        "IsPublic": true,
+        "IsPrivate": false,
+        "IsAssembly": false,
+        "token": "0x6005E0F",
+        "rva": "0x43F9684"
+      },
+      {
+        "Name": "UpdateTime",
+        "FullName": "System.Void L_Tools.DateTools::UpdateTime(System.Int64)",
+        "IsStatic": true,
+        "IsPublic": true,
+        "IsPrivate": false,
+        "IsAssembly": false,
+        "token": "0x6005E10",
+        "rva": "0x43F96E4"
+      },
+      {
+        "Name": "get_Now",
+        "FullName": "System.DateTime L_Tools.DateTools::get_Now()",
+        "IsStatic": true,
+        "IsPublic": false,
+        "IsPrivate": true,
+        "IsAssembly": false,
+        "token": "0x6005E11",
+        "rva": "0x43F9880"
+      },
+      {
+        "Name": "get_UTCNow",
+        "FullName": "System.DateTime L_Tools.DateTools::get_UTCNow()",
+        "IsStatic": true,
+        "IsPublic": false,
+        "IsPrivate": true,
+        "IsAssembly": false,
+        "token": "0x6005E12",
+        "rva": "0x43F98D8"
+      },
+      {
+        "Name": "GetNow",
+        "FullName": "System.DateTime L_Tools.DateTools::GetNow()",
+        "IsStatic": true,
+        "IsPublic": true,
+        "IsPrivate": false,
+        "IsAssembly": false,
+        "token": "0x6005E13",
+        "rva": "0x43F9930"
+      },
+      {
+        "Name": "GetNowDate",
+        "FullName": "System.DateTime L_Tools.DateTools::GetNowDate()",
+        "IsStatic": true,
+        "IsPublic": true,
+        "IsPrivate": false,
+        "IsAssembly": false,
+        "token": "0x6005E14",
+        "rva": "0x43F99B8"
+      },
+      {
+        "Name": "GetUTCNow",
+        "FullName": "System.DateTime L_Tools.DateTools::GetUTCNow()",
+        "IsStatic": true,
+        "IsPublic": true,
+        "IsPrivate": false,
+        "IsAssembly": false,
+        "token": "0x6005E15",
+        "rva": "0x43F9A74"
+      },
+      {
+        "Name": "GetUTCDate",
+        "FullName": "System.DateTime L_Tools.DateTools::GetUTCDate()",
+        "IsStatic": true,
+        "IsPublic": true,
+        "IsPrivate": false,
+        "IsAssembly": false,
+        "token": "0x6005E16",
+        "rva": "0x43F9AFC"
+      },
+      {
+        "Name": "GetNowZero",
+        "FullName": "System.Int64 L_Tools.DateTools::GetNowZero()",
+        "IsStatic": true,
+        "IsPublic": true,
+        "IsPrivate": false,
+        "IsAssembly": false,
+        "token": "0x6005E17",
+        "rva": "0x43F9BB8"
+      },
+      {
+        "Name": "GetNowZeroOffset",
+        "FullName": "System.Int64 L_Tools.DateTools::GetNowZeroOffset(System.Int32,System.Int32,System.Int32,System.Int32)",
+        "IsStatic": true,
+        "IsPublic": true,
+        "IsPrivate": false,
+        "IsAssembly": false,
+        "token": "0x6005E18",
+        "rva": "0x43F9CAC"
+      },
+      {
+        "Name": "StampToDatetime",
+        "FullName": "System.DateTime L_Tools.DateTools::StampToDatetime(System.Int64,System.Boolean)",
+        "IsStatic": true,
+        "IsPublic": true,
+        "IsPrivate": false,
+        "IsAssembly": false,
+        "token": "0x6005E19",
+        "rva": "0x43F97D8"
+      },
+      {
+        "Name": "ConvertMillisecondsToDateTime",
+        "FullName": "System.DateTime L_Tools.DateTools::ConvertMillisecondsToDateTime(System.Int64)",
+        "IsStatic": true,
+        "IsPublic": true,
+        "IsPrivate": false,
+        "IsAssembly": false,
+        "token": "0x6005E1A",
+        "rva": "0x43F9D4C"
+      },
+      {
+        "Name": "ConvertDateTimeToLong_Local",
+        "FullName": "System.Int64 L_Tools.DateTools::ConvertDateTimeToLong_Local(System.DateTime)",
+        "IsStatic": true,
+        "IsPublic": true,
+        "IsPrivate": false,
+        "IsAssembly": false,
+        "token": "0x6005E1B",
+        "rva": "0x43F9DD0"
+      },
+      {
+        "Name": "ConvertDateTimeToLong_UTC",
+        "FullName": "System.Int64 L_Tools.DateTools::ConvertDateTimeToLong_UTC(System.DateTime)",
+        "IsStatic": true,
+        "IsPublic": true,
+        "IsPrivate": false,
+        "IsAssembly": false,
+        "token": "0x6005E1C",
+        "rva": "0x43F9F00"
+      },
+      {
+        "Name": "SecondToHours",
+        "FullName": "System.String L_Tools.DateTools::SecondToHours(System.Int32)",
+        "IsStatic": true,
+        "IsPublic": true,
+        "IsPrivate": false,
+        "IsAssembly": false,
+        "token": "0x6005E1D",
+        "rva": "0x43FA060"
+      },
+      {
+        "Name": "SecondToHours",
+        "FullName": "System.String L_Tools.DateTools::SecondToHours(System.Int64)",
+        "IsStatic": true,
+        "IsPublic": true,
+        "IsPrivate": false,
+        "IsAssembly": false,
+        "token": "0x6005E1E",
+        "rva": "0x43FA1B0"
+      },
+      {
+        "Name": "GetCurrentTotalSecond_Long",
+        "FullName": "System.Int64 L_Tools.DateTools::GetCurrentTotalSecond_Long()",
+        "IsStatic": true,
+        "IsPublic": true,
+        "IsPrivate": false,
+        "IsAssembly": false,
+        "token": "0x6005E1F",
+        "rva": "0x43FA2E8"
+      },
+      {
+        "Name": "GetCurrentTime_TotalMilliseconds",
+        "FullName": "System.Int64 L_Tools.DateTools::GetCurrentTime_TotalMilliseconds()",
+        "IsStatic": true,
+        "IsPublic": true,
+        "IsPrivate": false,
+        "IsAssembly": false,
+        "token": "0x6005E20",
+        "rva": "0x43FA38C"
+      },
+      {
+        "Name": "CheckPassTime",
+        "FullName": "System.Boolean L_Tools.DateTools::CheckPassTime(System.Int64,System.Int32)",
+        "IsStatic": true,
+        "IsPublic": true,
+        "IsPrivate": false,
+        "IsAssembly": false,
+        "token": "0x6005E21",
+        "rva": "0x43FA3E4"
+      },
+      {
+        "Name": "SecondToHoursWithoutSecond",
+        "FullName": "System.String L_Tools.DateTools::SecondToHoursWithoutSecond(System.Int64)",
+        "IsStatic": true,
+        "IsPublic": true,
+        "IsPrivate": false,
+        "IsAssembly": false,
+        "token": "0x6005E22",
+        "rva": "0x43FA450"
+      },
+      {
+        "Name": "GetZeroToday",
+        "FullName": "System.Int64 L_Tools.DateTools::GetZeroToday(System.Int64)",
+        "IsStatic": true,
+        "IsPublic": true,
+        "IsPrivate": false,
+        "IsAssembly": false,
+        "token": "0x6005E23",
+        "rva": "0x43FA598"
+      },
+      {
+        "Name": "FormatToDay",
+        "FullName": "System.String L_Tools.DateTools::FormatToDay(System.Int32)",
+        "IsStatic": true,
+        "IsPublic": true,
+        "IsPrivate": false,
+        "IsAssembly": false,
+        "token": "0x6005E24",
+        "rva": "0x43FA5C4"
+      },
+      {
+        "Name": ".ctor",
+        "FullName": "System.Void L_Tools.DateTools::.ctor()",
+        "IsStatic": false,
+        "IsPublic": true,
+        "IsPrivate": false,
+        "IsAssembly": false,
+        "token": "0x6005E25",
+        "rva": "0x43FA7DC"
+      },
+      {
+        "Name": ".cctor",
+        "FullName": "System.Void L_Tools.DateTools::.cctor()",
+        "IsStatic": true,
+        "IsPublic": false,
+        "IsPrivate": true,
+        "IsAssembly": false,
+        "token": "0x6005E26",
+        "rva": "0x43FA7E4"
+      }
+    ]
+  }
+]

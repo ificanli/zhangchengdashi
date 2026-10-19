@@ -1,0 +1,38 @@
+0x4276180: SUB             SP, SP, #0x70
+0x4276184: STR             X30, [SP,#0x70+var_30]
+0x4276188: STP             X22, X21, [SP,#0x70+var_20]
+0x427618c: STP             X20, X19, [SP,#0x70+var_10]
+0x4276190: ADRP            X22, #byte_8FFFFD8@PAGE
+0x4276194: ADRP            X21, #off_8AEB6F8@PAGE
+0x4276198: LDRB            W8, [X22,#byte_8FFFFD8@PAGEOFF]
+0x427619c: LDR             X21, [X21,#off_8AEB6F8@PAGEOFF]; off_8D21040
+0x42761a0: MOV             X19, X1
+0x42761a4: MOV             X20, X0
+0x42761a8: TBNZ            W8, #0, loc_42761C0
+0x42761ac: ADRP            X0, #off_8AEB6F8@PAGE
+0x42761b0: LDR             X0, [X0,#off_8AEB6F8@PAGEOFF]; off_8D21040 ; slot
+0x42761b4: BL              il2cpp_codegen_initialize_runtime_metadata
+0x42761b8: MOV             W8, #1
+0x42761bc: STRB            W8, [X22,#byte_8FFFFD8@PAGEOFF]
+0x42761c0: LDR             X0, [X21]
+0x42761c4: MOVI            V0.2D, #0
+0x42761c8: MOV             W8, #0xFFFFFFFF
+0x42761cc: STP             Q0, Q0, [SP,#0x70+var_70]
+0x42761d0: STP             Q0, Q0, [SP,#0x70+var_50]
+0x42761d4: STP             X20, X19, [SP,#0x70+var_58]
+0x42761d8: STR             W8, [SP,#0x70+var_70]
+0x42761dc: LDR             X8, [X0,#0x38]
+0x42761e0: CBNZ            X8, loc_42761E8
+0x42761e4: BL              unk_3C503FC
+0x42761e8: MOV             X8, SP
+0x42761ec: MOV             X0, SP; self
+0x42761f0: ORR             X19, X8, #8
+0x42761f4: BL              UIFramework.UIManager._HidePanel_d__13$$MoveNext
+0x42761f8: MOV             X0, X19
+0x42761fc: MOV             X1, XZR
+0x4276200: BL              unk_3D17780
+0x4276204: LDP             X20, X19, [SP,#0x70+var_10]
+0x4276208: LDP             X22, X21, [SP,#0x70+var_20]
+0x427620c: LDR             X30, [SP,#0x70+var_30]
+0x4276210: ADD             SP, SP, #0x70 ; 'p'
+0x4276214: RET

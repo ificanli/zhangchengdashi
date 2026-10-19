@@ -1,0 +1,20 @@
+0x435dedc: fe0f1ef8 str      x30, [sp, #-0x20]!
+0x435dee0: f44f01a9 stp      x20, x19, [sp, #0x10]
+0x435dee4: 146502f0 adrp     x20, #0x9000000
+0x435dee8: 885e5a39 ldrb     w8, [x20, #0x697]
+0x435deec: f30300aa mov      x19, x0
+0x435def0: c8000037 tbnz     w8, #0, #0x435df08
+0x435def4: 803b0290 adrp     x0, #0x8acd000
+0x435def8: 009446f9 ldr      x0, [x0, #0xd28] // Method$System.Collections.Generic.List<string>.get_Count()
+0x435defc: e17ce397 bl       #0x3c3d280
+0x435df00: 28008052 mov      w8, #1
+0x435df04: 885e1a39 strb     w8, [x20, #0x697]
+0x435df08: 680a40f9 ldr      x8, [x19, #0x10]
+0x435df0c: e80000b4 cbz      x8, #0x435df28
+0x435df10: 081940b9 ldr      w8, [x8, #0x18]
+0x435df14: f44f41a9 ldp      x20, x19, [sp, #0x10]
+0x435df18: 1f050071 cmp      w8, #1
+0x435df1c: e0a79f1a cset     w0, lt
+0x435df20: fe0742f8 ldr      x30, [sp], #0x20
+0x435df24: c0035fd6 ret      
+0x435df28: 697de397 bl       #0x3c3d4cc

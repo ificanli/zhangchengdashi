@@ -1,0 +1,101 @@
+void UIFramework_UIManager__GetPanel_d__7__MoveNext(void *self, const MethodInfo *method)
+{
+  __int64 v3; // x20
+  __int64 v4; // x0
+  __int64 Result; // x0
+  __int64 *v6; // x21
+  __int64 v7; // x20
+  __int64 v8; // x0
+  __int64 v9; // x1
+  __int64 v10; // x8
+  __int64 v11; // x9
+  _DWORD *v12; // x10
+  __int64 v13; // x0
+  __int64 Awaiter; // [xsp+8h] [xbp-28h] BYREF
+
+  if ( (byte_8FFFFDD & 1) == 0 )
+  {
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8CF9670 /* Method$Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<UIPanel>.AwaitUnsafeOnCompleted<TaskAwaiter<UIPanel>, UIManager.<GetPanel>d__7>() */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&off_8CF9690 /* Method$Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<UIPanel>.SetResult() */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8CFF540 /* Method$System.Collections.Generic.Dictionary<string, UIPanel>.ContainsKey() */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8CFF558 /* Method$System.Collections.Generic.Dictionary<string, UIPanel>.get_Item() */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D186F8 /* Method$System.Runtime.CompilerServices.TaskAwaiter<UIPanel>.GetResult() */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D18700 /* Method$System.Runtime.CompilerServices.TaskAwaiter<UIPanel>.get_IsCompleted() */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D18B68 /* Method$System.Threading.Tasks.Task<UIPanel>.GetAwaiter() */);
+    byte_8FFFFDD = 1;
+  }
+  Awaiter = 0;
+  if ( *(_DWORD *)self == 0 )
+  {
+    Awaiter = *((_QWORD *)self + 6);
+    *((_QWORD *)self + 6) = 0;
+    *(_DWORD *)self = -1;
+LABEL_12:
+    Result = System_Runtime_CompilerServices_TaskAwaiter_object___GetResult(&Awaiter, qword_8D186F8 /* Method$System.Runtime.CompilerServices.TaskAwaiter<UIPanel>.GetResult() */);
+    goto LABEL_13;
+  }
+  v3 = *((_QWORD *)self + 4);
+  if ( v3 == 0 )
+    il2cpp_codegen_raise_null_reference_exception();
+  if ( *(_QWORD *)(v3 + 40) == 0 )
+    il2cpp_codegen_raise_null_reference_exception();
+  if ( (System_Collections_Generic_Dictionary_object__object___ContainsKey() & 1) == 0 )
+  {
+    if ( UIFramework_UIManager__LoadPanel(v3, *((_QWORD *)self + 5)) == 0 )
+      il2cpp_codegen_raise_null_reference_exception();
+    Awaiter = System_Threading_Tasks_Task_object___GetAwaiter();
+    if ( (System_Runtime_CompilerServices_TaskAwaiter_object___get_IsCompleted(&Awaiter, qword_8D18700 /* Method$System.Runtime.CompilerServices.TaskAwaiter<UIPanel>.get_IsCompleted() */) & 1) == 0 )
+    {
+      *(_DWORD *)self = 0;
+      *((_QWORD *)self + 6) = Awaiter;
+      ((void (__fastcall *)(char *, __int64 *, void *, __int64))unk_42891F0)(
+        (char *)self + 8,
+        &Awaiter,
+        self,
+        qword_8CF9670 /* Method$Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<UIPanel>.AwaitUnsafeOnCompleted<TaskAwaiter<UIPanel>, UIManager.<GetPanel>d__7>() */);
+      return;
+    }
+    goto LABEL_12;
+  }
+  v4 = *(_QWORD *)(v3 + 40);
+  if ( v4 == 0 )
+    il2cpp_codegen_raise_null_reference_exception();
+  Result = System_Collections_Generic_Dictionary_object__object___get_Item(v4, *((_QWORD *)self + 5), qword_8CFF558 /* Method$System.Collections.Generic.Dictionary<string, UIPanel>.get_Item() */);
+LABEL_13:
+  v6 = *((__int64 **)self + 1);
+  v7 = Result;
+  *(_DWORD *)self = -2;
+  if ( v6 != nullptr )
+  {
+    v8 = *((_QWORD *)off_8CF9690 /* Method$Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<UIPanel>.SetResult() */ + 4);
+    if ( (*(_BYTE *)(v8 + 309) & 1) == 0 )
+      v8 = ((__int64 (*)(void))unk_3C503A0)();
+    v9 = *(_QWORD *)(*(_QWORD *)(v8 + 192) + 8LL);
+    if ( (*(_BYTE *)(v9 + 309) & 1) == 0 )
+      v9 = ((__int64 (__fastcall *)(_QWORD))unk_3C503A0)(*(_QWORD *)(*(_QWORD *)(v8 + 192) + 8LL));
+    v10 = *v6;
+    v11 = *(unsigned __int16 *)(*v6 + 302);
+    if ( *(_WORD *)(*v6 + 302) != 0 )
+    {
+      v12 = (_DWORD *)(*(_QWORD *)(v10 + 176) + 8LL);
+      while ( *((_QWORD *)v12 - 1) != v9 )
+      {
+        --v11;
+        v12 += 4;
+        if ( v11 == 0 )
+          goto LABEL_22;
+      }
+      v13 = v10 + 16LL * (*v12 + 2) + 312;
+    }
+    else
+    {
+LABEL_22:
+      v13 = ((__int64 (__fastcall *)(__int64 *, __int64, __int64))unk_3C504A4)(v6, v9, 2);
+    }
+    (*(void (__fastcall **)(__int64 *, __int64, _QWORD))v13)(v6, v7, *(_QWORD *)(v13 + 8));
+  }
+  else
+  {
+    *((_QWORD *)self + 3) = Result;
+  }
+}

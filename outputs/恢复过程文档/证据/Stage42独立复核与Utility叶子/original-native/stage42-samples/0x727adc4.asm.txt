@@ -1,0 +1,54 @@
+0x727adc4: STR             X30, [SP,#var_30]!
+0x727adc8: STP             X22, X21, [SP,#0x30+var_20]
+0x727adcc: STP             X20, X19, [SP,#0x30+var_10]
+0x727add0: ADRP            X20, #byte_9009C35@PAGE
+0x727add4: LDRB            W8, [X20,#byte_9009C35@PAGEOFF]
+0x727add8: MOV             X19, X0
+0x727addc: TBNZ            W8, #0, loc_727ADF4
+0x727ade0: ADRP            X0, #off_8B199A8@PAGE
+0x727ade4: LDR             X0, [X0,#off_8B199A8@PAGEOFF]; off_8D2F558 ; slot
+0x727ade8: BL              il2cpp_codegen_initialize_runtime_metadata
+0x727adec: MOV             W8, #1
+0x727adf0: STRB            W8, [X20,#byte_9009C35@PAGEOFF]
+0x727adf4: LDR             X20, [X19,#0x20]
+0x727adf8: CBZ             X20, loc_727AE88
+0x727adfc: LDR             X21, [X19,#0x28]
+0x727ae00: CBZ             X21, loc_727AE84
+0x727ae04: ADRP            X9, #off_8B199A8@PAGE
+0x727ae08: LDR             X9, [X9,#off_8B199A8@PAGEOFF]; off_8D2F558
+0x727ae0c: LDR             X8, [X20]
+0x727ae10: LDR             X22, [X9]
+0x727ae14: LDRH            W9, [X8,#0x12E]
+0x727ae18: LDR             X1, [X22,#0x20]
+0x727ae1c: LDRH            W2, [X22,#0x50]
+0x727ae20: CBZ             X9, loc_727AE44
+0x727ae24: LDR             X10, [X8,#0xB0]
+0x727ae28: ADD             X10, X10, #8
+0x727ae2c: LDUR            X11, [X10,#-8]
+0x727ae30: CMP             X11, X1
+0x727ae34: B.EQ            loc_727AE50
+0x727ae38: SUBS            X9, X9, #1
+0x727ae3c: ADD             X10, X10, #0x10
+0x727ae40: B.NE            loc_727AE2C
+0x727ae44: MOV             X0, X20
+0x727ae48: BL              unk_3C504A4
+0x727ae4c: B               loc_727AE60
+0x727ae50: LDR             W9, [X10]
+0x727ae54: ADD             W9, W9, W2
+0x727ae58: ADD             X8, X8, W9,SXTW#4
+0x727ae5c: ADD             X0, X8, #0x138
+0x727ae60: LDR             X0, [X0,#8]
+0x727ae64: MOV             X1, X22
+0x727ae68: BL              unk_3C3D3AC
+0x727ae6c: LDR             X8, [X0,#8]
+0x727ae70: MOV             X2, X0
+0x727ae74: MOV             X0, X20
+0x727ae78: MOV             X1, X21
+0x727ae7c: BLR             X8
+0x727ae80: STR             XZR, [X19,#0x28]
+0x727ae84: STR             XZR, [X19,#0x20]
+0x727ae88: STRB            WZR, [X19,#0x10]
+0x727ae8c: LDP             X20, X19, [SP,#0x30+var_10]
+0x727ae90: LDP             X22, X21, [SP,#0x30+var_20]
+0x727ae94: LDR             X30, [SP+0x30+var_30],#0x30
+0x727ae98: RET

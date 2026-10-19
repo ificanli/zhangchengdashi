@@ -1,0 +1,813 @@
+.class public auto ansi beforefieldinit ljzs_lt.GameStart
+	extends [GFRunning]GameFramework.Base.IGameStart
+{
+	.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+		01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 32
+		30 30 30 46 34 34
+	)
+	// Nested Types
+	.class nested private auto ansi sealed beforefieldinit _003COpenLoadingUI_003Ed__4
+		extends [mscorlib]System.Object
+		implements class [mscorlib]System.Collections.Generic.IEnumerator`1<object>,
+		           [mscorlib]System.Collections.IEnumerator,
+		           [mscorlib]System.IDisposable
+	{
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+			01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 32
+			30 30 30 46 34 35
+		)
+		.custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = (
+			01 00 00 00
+		)
+		// Fields
+		.field private int32 _003C_003E1__state
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+			01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 34
+			30 30 36 39 41 32
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.FieldOffsetAttribute::.ctor() = (
+			01 00 01 00 53 0e 06 4f 66 66 73 65 74 04 30 78
+			31 30
+		)
+		.field private object _003C_003E2__current
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+			01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 34
+			30 30 36 39 41 33
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.FieldOffsetAttribute::.ctor() = (
+			01 00 01 00 53 0e 06 4f 66 66 73 65 74 04 30 78
+			31 38
+		)
+		.field public class [mscorlib]System.Action loadOver
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+			01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 34
+			30 30 36 39 41 34
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.FieldOffsetAttribute::.ctor() = (
+			01 00 01 00 53 0e 06 4f 66 66 73 65 74 04 30 78
+			32 30
+		)
+
+		// Methods
+		.method private final hidebysig specialname newslot virtual 
+			instance object 'System.Collections.Generic.IEnumerator<System.Object>.get_Current' () cil managed 
+		{
+			.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+				01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 36
+				30 30 35 42 34 45
+			)
+			.custom instance void [Il2CppDummyDll]Il2CppDummyDll.AddressAttribute::.ctor() = (
+				01 00 04 00 53 0e 03 52 56 41 09 30 78 34 33 39
+				43 31 39 43 53 0e 06 4f 66 66 73 65 74 09 30 78
+				34 33 39 38 31 39 43 53 0e 02 56 41 09 30 78 34
+				33 39 43 31 39 43 53 0e 04 53 6c 6f 74 01 34
+			)
+			.custom instance void [mscorlib]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = (
+				01 00 00 00
+			)
+			.override method instance !0 class [mscorlib]System.Collections.Generic.IEnumerator`1<object>::get_Current()
+			// Method begins at RVA 0x31ac4
+			// Header size: 12
+			// Code size: 12 (0xc)
+			.maxstack 1
+			.locals init (
+				[0] object
+			)
+
+			IL_0000: nop
+			IL_0001: ldarg.0
+			IL_0002: call instance object ljzs_lt.GameStart/_003COpenLoadingUI_003Ed__4::System_002ECollections_002EGeneric_002EIEnumerator_003CSystem_002EObject_003E_002Eget_Current()
+			IL_0007: stloc.0
+			IL_0008: br.s IL_000a
+
+			IL_000a: ldloc.0
+			IL_000b: ret
+		} // end of method _003COpenLoadingUI_003Ed__4::'System.Collections.Generic.IEnumerator<System.Object>.get_Current'
+
+		.method private final hidebysig specialname newslot virtual 
+			instance object System.Collections.IEnumerator.get_Current () cil managed 
+		{
+			.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+				01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 36
+				30 30 35 42 35 30
+			)
+			.custom instance void [Il2CppDummyDll]Il2CppDummyDll.AddressAttribute::.ctor() = (
+				01 00 04 00 53 0e 03 52 56 41 09 30 78 34 33 39
+				43 31 44 43 53 0e 06 4f 66 66 73 65 74 09 30 78
+				34 33 39 38 31 44 43 53 0e 02 56 41 09 30 78 34
+				33 39 43 31 44 43 53 0e 04 53 6c 6f 74 01 37
+			)
+			.custom instance void [mscorlib]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = (
+				01 00 00 00
+			)
+			.override method instance object [mscorlib]System.Collections.IEnumerator::get_Current()
+			// Method begins at RVA 0x31adc
+			// Header size: 12
+			// Code size: 12 (0xc)
+			.maxstack 1
+			.locals init (
+				[0] object
+			)
+
+			IL_0000: nop
+			IL_0001: ldarg.0
+			IL_0002: call instance object ljzs_lt.GameStart/_003COpenLoadingUI_003Ed__4::System_002ECollections_002EIEnumerator_002Eget_Current()
+			IL_0007: stloc.0
+			IL_0008: br.s IL_000a
+
+			IL_000a: ldloc.0
+			IL_000b: ret
+		} // end of method _003COpenLoadingUI_003Ed__4::System.Collections.IEnumerator.get_Current
+
+		.method public hidebysig specialname rtspecialname 
+			instance void .ctor (
+				int32 _003C_003E1__state
+			) cil managed 
+		{
+			.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+				01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 36
+				30 30 35 42 34 42
+			)
+			.custom instance void [Il2CppDummyDll]Il2CppDummyDll.AddressAttribute::.ctor() = (
+				01 00 03 00 53 0e 03 52 56 41 09 30 78 34 33 39
+				42 45 41 43 53 0e 06 4f 66 66 73 65 74 09 30 78
+				34 33 39 37 45 41 43 53 0e 02 56 41 09 30 78 34
+				33 39 42 45 41 43
+			)
+			.custom instance void [mscorlib]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = (
+				01 00 00 00
+			)
+			// Method begins at RVA 0x211f
+			// Header size: 1
+			// Code size: 9 (0x9)
+			.maxstack 8
+
+			IL_0000: ldarg.0
+			IL_0001: call instance void [mscorlib]System.Object::.ctor()
+			IL_0006: nop
+			IL_0007: nop
+			IL_0008: ret
+		} // end of method _003COpenLoadingUI_003Ed__4::.ctor
+
+		.method private final hidebysig newslot virtual 
+			instance void System.IDisposable.Dispose () cil managed 
+		{
+			.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+				01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 36
+				30 30 35 42 34 43
+			)
+			.custom instance void [Il2CppDummyDll]Il2CppDummyDll.AddressAttribute::.ctor() = (
+				01 00 04 00 53 0e 03 52 56 41 09 30 78 34 33 39
+				43 30 42 38 53 0e 06 4f 66 66 73 65 74 09 30 78
+				34 33 39 38 30 42 38 53 0e 02 56 41 09 30 78 34
+				33 39 43 30 42 38 53 0e 04 53 6c 6f 74 01 35
+			)
+			.custom instance void [mscorlib]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = (
+				01 00 00 00
+			)
+			.override method instance void [mscorlib]System.IDisposable::Dispose()
+			// Method begins at RVA 0x2050
+			// Header size: 1
+			// Code size: 2 (0x2)
+			.maxstack 8
+
+			IL_0000: nop
+			IL_0001: ret
+		} // end of method _003COpenLoadingUI_003Ed__4::System.IDisposable.Dispose
+
+		.method private final hidebysig newslot virtual 
+			instance bool System.Collections.IEnumerator.MoveNext () cil managed 
+		{
+			.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+				01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 36
+				30 30 35 42 34 44
+			)
+			.custom instance void [Il2CppDummyDll]Il2CppDummyDll.AddressAttribute::.ctor() = (
+				01 00 04 00 53 0e 03 52 56 41 09 30 78 34 33 39
+				43 30 42 43 53 0e 06 4f 66 66 73 65 74 09 30 78
+				34 33 39 38 30 42 43 53 0e 02 56 41 09 30 78 34
+				33 39 43 30 42 43 53 0e 04 53 6c 6f 74 01 36
+			)
+			.override method instance bool [mscorlib]System.Collections.IEnumerator::MoveNext()
+			// Method begins at RVA 0x31af4
+			// Header size: 12
+			// Code size: 7 (0x7)
+			.maxstack 1
+			.locals init (
+				[0] bool
+			)
+
+			IL_0000: nop
+			IL_0001: ldc.i4.0
+			IL_0002: stloc.0
+			IL_0003: br.s IL_0005
+
+			IL_0005: ldloc.0
+			IL_0006: ret
+		} // end of method _003COpenLoadingUI_003Ed__4::System.Collections.IEnumerator.MoveNext
+
+		.method private hidebysig 
+			instance object System_002ECollections_002EGeneric_002EIEnumerator_003CSystem_002EObject_003E_002Eget_Current () cil managed 
+		{
+			.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+				01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 36
+				30 30 35 42 34 45
+			)
+			.custom instance void [Il2CppDummyDll]Il2CppDummyDll.AddressAttribute::.ctor() = (
+				01 00 04 00 53 0e 03 52 56 41 09 30 78 34 33 39
+				43 31 39 43 53 0e 06 4f 66 66 73 65 74 09 30 78
+				34 33 39 38 31 39 43 53 0e 02 56 41 09 30 78 34
+				33 39 43 31 39 43 53 0e 04 53 6c 6f 74 01 34
+			)
+			.custom instance void [mscorlib]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = (
+				01 00 00 00
+			)
+			// Method begins at RVA 0x31b08
+			// Header size: 12
+			// Code size: 7 (0x7)
+			.maxstack 1
+			.locals init (
+				[0] object
+			)
+
+			IL_0000: nop
+			IL_0001: ldnull
+			IL_0002: stloc.0
+			IL_0003: br.s IL_0005
+
+			IL_0005: ldloc.0
+			IL_0006: ret
+		} // end of method _003COpenLoadingUI_003Ed__4::System_002ECollections_002EGeneric_002EIEnumerator_003CSystem_002EObject_003E_002Eget_Current
+
+		.method private final hidebysig newslot virtual 
+			instance void System.Collections.IEnumerator.Reset () cil managed 
+		{
+			.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+				01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 36
+				30 30 35 42 34 46
+			)
+			.custom instance void [Il2CppDummyDll]Il2CppDummyDll.AddressAttribute::.ctor() = (
+				01 00 04 00 53 0e 03 52 56 41 09 30 78 34 33 39
+				43 31 41 34 53 0e 06 4f 66 66 73 65 74 09 30 78
+				34 33 39 38 31 41 34 53 0e 02 56 41 09 30 78 34
+				33 39 43 31 41 34 53 0e 04 53 6c 6f 74 01 38
+			)
+			.custom instance void [mscorlib]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = (
+				01 00 00 00
+			)
+			.override method instance void [mscorlib]System.Collections.IEnumerator::Reset()
+			// Method begins at RVA 0x2050
+			// Header size: 1
+			// Code size: 2 (0x2)
+			.maxstack 8
+
+			IL_0000: nop
+			IL_0001: ret
+		} // end of method _003COpenLoadingUI_003Ed__4::System.Collections.IEnumerator.Reset
+
+		.method private hidebysig 
+			instance object System_002ECollections_002EIEnumerator_002Eget_Current () cil managed 
+		{
+			.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+				01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 36
+				30 30 35 42 35 30
+			)
+			.custom instance void [Il2CppDummyDll]Il2CppDummyDll.AddressAttribute::.ctor() = (
+				01 00 04 00 53 0e 03 52 56 41 09 30 78 34 33 39
+				43 31 44 43 53 0e 06 4f 66 66 73 65 74 09 30 78
+				34 33 39 38 31 44 43 53 0e 02 56 41 09 30 78 34
+				33 39 43 31 44 43 53 0e 04 53 6c 6f 74 01 37
+			)
+			.custom instance void [mscorlib]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = (
+				01 00 00 00
+			)
+			// Method begins at RVA 0x31b1c
+			// Header size: 12
+			// Code size: 7 (0x7)
+			.maxstack 1
+			.locals init (
+				[0] object
+			)
+
+			IL_0000: nop
+			IL_0001: ldnull
+			IL_0002: stloc.0
+			IL_0003: br.s IL_0005
+
+			IL_0005: ldloc.0
+			IL_0006: ret
+		} // end of method _003COpenLoadingUI_003Ed__4::System_002ECollections_002EIEnumerator_002Eget_Current
+
+		// Properties
+		.property instance object 'System.Collections.Generic.IEnumerator<System.Object>.Current'()
+		{
+			.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+				01 00 01 00 53 0e 05 54 6f 6b 65 6e 0a 30 78 31
+				37 30 30 30 46 36 45
+			)
+			.get instance object ljzs_lt.GameStart/_003COpenLoadingUI_003Ed__4::'System.Collections.Generic.IEnumerator<System.Object>.get_Current'()
+		}
+		.property instance object System.Collections.IEnumerator.Current()
+		{
+			.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+				01 00 01 00 53 0e 05 54 6f 6b 65 6e 0a 30 78 31
+				37 30 30 30 46 36 46
+			)
+			.get instance object ljzs_lt.GameStart/_003COpenLoadingUI_003Ed__4::System.Collections.IEnumerator.get_Current()
+		}
+
+	} // end of class _003COpenLoadingUI_003Ed__4
+
+	.class nested private auto ansi sealed beforefieldinit '<OpenLoadingUI>d__5'
+		extends [mscorlib]System.Object
+		implements class [mscorlib]System.Collections.Generic.IEnumerator`1<object>,
+		           [mscorlib]System.Collections.IEnumerator,
+		           [mscorlib]System.IDisposable
+	{
+		.custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = (
+			01 00 00 00
+		)
+		// Fields
+		.field private int32 '<>1__state'
+		.field private object '<>2__current'
+		.field public class [mscorlib]System.Action loadOver
+		.field public class ljzs_lt.GameStart '<>4__this'
+
+		// Methods
+		.method public hidebysig specialname rtspecialname 
+			instance void .ctor (
+				int32 '<>1__state'
+			) cil managed 
+		{
+			.custom instance void [mscorlib]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = (
+				01 00 00 00
+			)
+			// Method begins at RVA 0x31b2f
+			// Header size: 1
+			// Code size: 15 (0xf)
+			.maxstack 8
+
+			IL_0000: ldarg.0
+			IL_0001: call instance void [mscorlib]System.Object::.ctor()
+			IL_0006: nop
+			IL_0007: ldarg.0
+			IL_0008: ldarg.1
+			IL_0009: stfld int32 ljzs_lt.GameStart/'<OpenLoadingUI>d__5'::'<>1__state'
+			IL_000e: ret
+		} // end of method '<OpenLoadingUI>d__5'::.ctor
+
+		.method private final hidebysig newslot virtual 
+			instance void System.IDisposable.Dispose () cil managed 
+		{
+			.custom instance void [mscorlib]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = (
+				01 00 00 00
+			)
+			.override method instance void [mscorlib]System.IDisposable::Dispose()
+			// Method begins at RVA 0x303db
+			// Header size: 1
+			// Code size: 1 (0x1)
+			.maxstack 8
+
+			IL_0000: ret
+		} // end of method '<OpenLoadingUI>d__5'::System.IDisposable.Dispose
+
+		.method private final hidebysig newslot virtual 
+			instance bool MoveNext () cil managed 
+		{
+			.override method instance bool [mscorlib]System.Collections.IEnumerator::MoveNext()
+			// Method begins at RVA 0x31b40
+			// Header size: 12
+			// Code size: 91 (0x5b)
+			.maxstack 2
+			.locals init (
+				[0] int32
+			)
+
+			IL_0000: ldarg.0
+			IL_0001: ldfld int32 ljzs_lt.GameStart/'<OpenLoadingUI>d__5'::'<>1__state'
+			IL_0006: stloc.0
+			IL_0007: ldloc.0
+			IL_0008: brfalse.s IL_0012
+
+			IL_000a: br.s IL_000c
+
+			IL_000c: ldloc.0
+			IL_000d: ldc.i4.1
+			IL_000e: beq.s IL_0014
+
+			IL_0010: br.s IL_0016
+
+			IL_0012: br.s IL_0018
+
+			IL_0014: br.s IL_0040
+
+			IL_0016: ldc.i4.0
+			IL_0017: ret
+
+			IL_0018: ldarg.0
+			IL_0019: ldc.i4.m1
+			IL_001a: stfld int32 ljzs_lt.GameStart/'<OpenLoadingUI>d__5'::'<>1__state'
+			IL_001f: nop
+			IL_0020: ldstr "OpenLoadingUI"
+			IL_0025: call void [UnityEngine.CoreModule]UnityEngine.Debug::Log(object)
+			IL_002a: nop
+			IL_002b: ldarg.0
+			IL_002c: ldc.i4.0
+			IL_002d: box [mscorlib]System.Int32
+			IL_0032: stfld object ljzs_lt.GameStart/'<OpenLoadingUI>d__5'::'<>2__current'
+			IL_0037: ldarg.0
+			IL_0038: ldc.i4.1
+			IL_0039: stfld int32 ljzs_lt.GameStart/'<OpenLoadingUI>d__5'::'<>1__state'
+			IL_003e: ldc.i4.1
+			IL_003f: ret
+
+			IL_0040: ldarg.0
+			IL_0041: ldc.i4.m1
+			IL_0042: stfld int32 ljzs_lt.GameStart/'<OpenLoadingUI>d__5'::'<>1__state'
+			IL_0047: ldarg.0
+			IL_0048: ldfld class [mscorlib]System.Action ljzs_lt.GameStart/'<OpenLoadingUI>d__5'::loadOver
+			IL_004d: dup
+			IL_004e: brtrue.s IL_0053
+
+			IL_0050: pop
+			IL_0051: br.s IL_0059
+
+			IL_0053: callvirt instance void [mscorlib]System.Action::Invoke()
+			IL_0058: nop
+
+			IL_0059: ldc.i4.0
+			IL_005a: ret
+		} // end of method '<OpenLoadingUI>d__5'::MoveNext
+
+		.method private final hidebysig specialname newslot virtual 
+			instance object 'System.Collections.Generic.IEnumerator<System.Object>.get_Current' () cil managed 
+		{
+			.custom instance void [mscorlib]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = (
+				01 00 00 00
+			)
+			.override method instance !0 class [mscorlib]System.Collections.Generic.IEnumerator`1<object>::get_Current()
+			// Method begins at RVA 0x31ba7
+			// Header size: 1
+			// Code size: 7 (0x7)
+			.maxstack 8
+
+			IL_0000: ldarg.0
+			IL_0001: ldfld object ljzs_lt.GameStart/'<OpenLoadingUI>d__5'::'<>2__current'
+			IL_0006: ret
+		} // end of method '<OpenLoadingUI>d__5'::'System.Collections.Generic.IEnumerator<System.Object>.get_Current'
+
+		.method private final hidebysig newslot virtual 
+			instance void System.Collections.IEnumerator.Reset () cil managed 
+		{
+			.custom instance void [mscorlib]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = (
+				01 00 00 00
+			)
+			.override method instance void [mscorlib]System.Collections.IEnumerator::Reset()
+			// Method begins at RVA 0x30473
+			// Header size: 1
+			// Code size: 6 (0x6)
+			.maxstack 8
+
+			IL_0000: newobj instance void [mscorlib]System.NotSupportedException::.ctor()
+			IL_0005: throw
+		} // end of method '<OpenLoadingUI>d__5'::System.Collections.IEnumerator.Reset
+
+		.method private final hidebysig specialname newslot virtual 
+			instance object System.Collections.IEnumerator.get_Current () cil managed 
+		{
+			.custom instance void [mscorlib]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = (
+				01 00 00 00
+			)
+			.override method instance object [mscorlib]System.Collections.IEnumerator::get_Current()
+			// Method begins at RVA 0x31ba7
+			// Header size: 1
+			// Code size: 7 (0x7)
+			.maxstack 8
+
+			IL_0000: ldarg.0
+			IL_0001: ldfld object ljzs_lt.GameStart/'<OpenLoadingUI>d__5'::'<>2__current'
+			IL_0006: ret
+		} // end of method '<OpenLoadingUI>d__5'::System.Collections.IEnumerator.get_Current
+
+		// Properties
+		.property instance object 'System.Collections.Generic.IEnumerator<System.Object>.Current'()
+		{
+			.get instance object ljzs_lt.GameStart/'<OpenLoadingUI>d__5'::'System.Collections.Generic.IEnumerator<System.Object>.get_Current'()
+		}
+		.property instance object System.Collections.IEnumerator.Current()
+		{
+			.get instance object ljzs_lt.GameStart/'<OpenLoadingUI>d__5'::System.Collections.IEnumerator.get_Current()
+		}
+
+	} // end of class <OpenLoadingUI>d__5
+
+
+	// Methods
+	.method public hidebysig virtual 
+		instance void InitConfig (
+			class [GFRunning]GameFramework.Resources.ResourcesInfo resourcesInfo
+		) cil managed 
+	{
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+			01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 36
+			30 30 35 42 34 31
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.AddressAttribute::.ctor() = (
+			01 00 04 00 53 0e 03 52 56 41 09 30 78 34 33 39
+			42 39 42 30 53 0e 06 4f 66 66 73 65 74 09 30 78
+			34 33 39 37 39 42 30 53 0e 02 56 41 09 30 78 34
+			33 39 42 39 42 30 53 0e 04 53 6c 6f 74 01 36
+		)
+		// Method begins at RVA 0x1dcf1
+		// Header size: 1
+		// Code size: 32 (0x20)
+		.maxstack 8
+
+		IL_0000: nop
+		IL_0001: call class ljzs_lt.ConfigMgr ljzs_lt.ConfigMgr::get_Instance()
+		IL_0006: ldarg.1
+		IL_0007: callvirt instance void ljzs_lt.ConfigMgr::SetConfigABRes(class [GFRunning]GameFramework.Resources.ResourcesInfo)
+		IL_000c: nop
+		IL_000d: call class ljzs_lt.ConfigMgr ljzs_lt.ConfigMgr::get_Instance()
+		IL_0012: callvirt instance void ljzs_lt.ConfigMgr::Initialize()
+		IL_0017: nop
+		IL_0018: ldarg.0
+		IL_0019: call instance void [GFRunning]GameFramework.Base.IGameStart::InitConfigOver()
+		IL_001e: nop
+		IL_001f: ret
+	} // end of method GameStart::InitConfig
+
+	.method public hidebysig virtual 
+		instance void RegisterProcedure () cil managed 
+	{
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+			01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 36
+			30 30 35 42 34 32
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.AddressAttribute::.ctor() = (
+			01 00 04 00 53 0e 03 52 56 41 09 30 78 34 33 39
+			42 39 46 34 53 0e 06 4f 66 66 73 65 74 09 30 78
+			34 33 39 37 39 46 34 53 0e 02 56 41 09 30 78 34
+			33 39 42 39 46 34 53 0e 04 53 6c 6f 74 01 39
+		)
+		// Method begins at RVA 0x1dd14
+		// Header size: 12
+		// Code size: 68 (0x44)
+		.maxstack 2
+		.locals init (
+			[0] class [mscorlib]System.Collections.Generic.List`1<class [GFRunning]GameFramework.Procedure.ProcedureBase>
+		)
+
+		IL_0000: nop
+		IL_0001: ldarg.0
+		IL_0002: call instance void [GFRunning]GameFramework.Base.IGameStart::RegisterProcedure()
+		IL_0007: nop
+		IL_0008: newobj instance void class [mscorlib]System.Collections.Generic.List`1<class [GFRunning]GameFramework.Procedure.ProcedureBase>::.ctor()
+		IL_000d: stloc.0
+		IL_000e: ldloc.0
+		IL_000f: newobj instance void ljzs_lt.Procedure.ProcedurePreLoad::.ctor()
+		IL_0014: callvirt instance void class [mscorlib]System.Collections.Generic.List`1<class [GFRunning]GameFramework.Procedure.ProcedureBase>::Add(!0)
+		IL_0019: nop
+		IL_001a: ldloc.0
+		IL_001b: newobj instance void ljzs_lt.Procedure.ProcedureStarGame::.ctor()
+		IL_0020: callvirt instance void class [mscorlib]System.Collections.Generic.List`1<class [GFRunning]GameFramework.Procedure.ProcedureBase>::Add(!0)
+		IL_0025: nop
+		IL_0026: ldloc.0
+		IL_0027: newobj instance void ljzs_lt.Procedure.ProcedureExitGame::.ctor()
+		IL_002c: callvirt instance void class [mscorlib]System.Collections.Generic.List`1<class [GFRunning]GameFramework.Procedure.ProcedureBase>::Add(!0)
+		IL_0031: nop
+		IL_0032: call !!0 [GFRunning]GameFramework.GameFrameEntry::GetModule<class [GFRunning]GameFramework.Procedure.ProcedureManager>()
+		IL_0037: ldloc.0
+		IL_0038: callvirt instance !0[] class [mscorlib]System.Collections.Generic.List`1<class [GFRunning]GameFramework.Procedure.ProcedureBase>::ToArray()
+		IL_003d: callvirt instance void [GFRunning]GameFramework.Procedure.ProcedureManager::Register(class [GFRunning]GameFramework.Procedure.ProcedureBase[])
+		IL_0042: nop
+		IL_0043: ret
+	} // end of method GameStart::RegisterProcedure
+
+	.method public hidebysig virtual 
+		instance void InitPatchManager () cil managed 
+	{
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+			01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 36
+			30 30 35 42 34 33
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.AddressAttribute::.ctor() = (
+			01 00 04 00 53 0e 03 52 56 41 09 30 78 34 33 39
+			42 43 38 43 53 0e 06 4f 66 66 73 65 74 09 30 78
+			34 33 39 37 43 38 43 53 0e 02 56 41 09 30 78 34
+			33 39 42 43 38 43 53 0e 04 53 6c 6f 74 01 34
+		)
+		// Method begins at RVA 0x1dd64
+		// Header size: 1
+		// Code size: 27 (0x1b)
+		.maxstack 8
+
+		IL_0000: nop
+		IL_0001: ldarg.0
+		IL_0002: ldarg.0
+		IL_0003: ldarg.0
+		IL_0004: ldftn instance void [GFRunning]GameFramework.Base.IGameStart::LoadingUIShow()
+		IL_000a: newobj instance void [mscorlib]System.Action::.ctor(object, native int)
+		IL_000f: call instance class [mscorlib]System.Collections.IEnumerator ljzs_lt.GameStart::OpenLoadingUI(class [mscorlib]System.Action)
+		IL_0014: call instance class [UnityEngine.CoreModule]UnityEngine.Coroutine [UnityEngine.CoreModule]UnityEngine.MonoBehaviour::StartCoroutine(class [mscorlib]System.Collections.IEnumerator)
+		IL_0019: pop
+		IL_001a: ret
+	} // end of method GameStart::InitPatchManager
+
+	.method private hidebysig 
+		instance void PatchUpdateOverEventHandler (
+			object sender,
+			class [mscorlib]System.EventArgs e
+		) cil managed 
+	{
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+			01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 36
+			30 30 35 42 34 34
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.AddressAttribute::.ctor() = (
+			01 00 03 00 53 0e 03 52 56 41 09 30 78 34 33 39
+			42 44 37 38 53 0e 06 4f 66 66 73 65 74 09 30 78
+			34 33 39 37 44 37 38 53 0e 02 56 41 09 30 78 34
+			33 39 42 44 37 38
+		)
+		// Method begins at RVA 0x2050
+		// Header size: 1
+		// Code size: 2 (0x2)
+		.maxstack 8
+
+		IL_0000: nop
+		IL_0001: ret
+	} // end of method GameStart::PatchUpdateOverEventHandler
+
+	.method private hidebysig 
+		instance class [mscorlib]System.Collections.IEnumerator OpenLoadingUI (
+			class [mscorlib]System.Action loadOver
+		) cil managed 
+	{
+		.custom instance void [mscorlib]System.Runtime.CompilerServices.IteratorStateMachineAttribute::.ctor(class [mscorlib]System.Type) = (
+			01 00 25 6c 6a 7a 73 5f 6c 74 2e 47 61 6d 65 53
+			74 61 72 74 2b 3c 4f 70 65 6e 4c 6f 61 64 69 6e
+			67 55 49 3e 64 5f 5f 35 00 00
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+			01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 36
+			30 30 35 42 34 35
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.AddressAttribute::.ctor() = (
+			01 00 03 00 53 0e 03 52 56 41 09 30 78 34 33 39
+			42 44 31 38 53 0e 06 4f 66 66 73 65 74 09 30 78
+			34 33 39 37 44 31 38 53 0e 02 56 41 09 30 78 34
+			33 39 42 44 31 38
+		)
+		// Method begins at RVA 0x1dd80
+		// Header size: 1
+		// Code size: 21 (0x15)
+		.maxstack 8
+
+		IL_0000: ldc.i4.0
+		IL_0001: newobj instance void ljzs_lt.GameStart/'<OpenLoadingUI>d__5'::.ctor(int32)
+		IL_0006: dup
+		IL_0007: ldarg.0
+		IL_0008: stfld class ljzs_lt.GameStart ljzs_lt.GameStart/'<OpenLoadingUI>d__5'::'<>4__this'
+		IL_000d: dup
+		IL_000e: ldarg.1
+		IL_000f: stfld class [mscorlib]System.Action ljzs_lt.GameStart/'<OpenLoadingUI>d__5'::loadOver
+		IL_0014: ret
+	} // end of method GameStart::OpenLoadingUI
+
+	.method public hidebysig virtual 
+		instance void MnieGameProjectSetting () cil managed 
+	{
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+			01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 36
+			30 30 35 42 34 36
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.AddressAttribute::.ctor() = (
+			01 00 04 00 53 0e 03 52 56 41 09 30 78 34 33 39
+			42 45 44 34 53 0e 06 4f 66 66 73 65 74 09 30 78
+			34 33 39 37 45 44 34 53 0e 02 56 41 09 30 78 34
+			33 39 42 45 44 34 53 0e 04 53 6c 6f 74 01 38
+		)
+		// Method begins at RVA 0x2050
+		// Header size: 1
+		// Code size: 2 (0x2)
+		.maxstack 8
+
+		IL_0000: nop
+		IL_0001: ret
+	} // end of method GameStart::MnieGameProjectSetting
+
+	.method public hidebysig virtual 
+		instance void SetLayerCollisionMatrix () cil managed 
+	{
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+			01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 36
+			30 30 35 42 34 37
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.AddressAttribute::.ctor() = (
+			01 00 04 00 53 0e 03 52 56 41 09 30 78 34 33 39
+			42 45 44 43 53 0e 06 4f 66 66 73 65 74 09 30 78
+			34 33 39 37 45 44 43 53 0e 02 56 41 09 30 78 34
+			33 39 42 45 44 43 53 0e 04 53 6c 6f 74 02 31 31
+		)
+		// Method begins at RVA 0x2050
+		// Header size: 1
+		// Code size: 2 (0x2)
+		.maxstack 8
+
+		IL_0000: nop
+		IL_0001: ret
+	} // end of method GameStart::SetLayerCollisionMatrix
+
+	.method public hidebysig virtual 
+		instance void RegisterLogicCtr () cil managed 
+	{
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+			01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 36
+			30 30 35 42 34 38
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.AddressAttribute::.ctor() = (
+			01 00 04 00 53 0e 03 52 56 41 09 30 78 34 33 39
+			42 45 45 34 53 0e 06 4f 66 66 73 65 74 09 30 78
+			34 33 39 37 45 45 34 53 0e 02 56 41 09 30 78 34
+			33 39 42 45 45 34 53 0e 04 53 6c 6f 74 02 31 30
+		)
+		// Method begins at RVA 0x1dd96
+		// Header size: 1
+		// Code size: 60 (0x3c)
+		.maxstack 8
+
+		IL_0000: nop
+		IL_0001: ldarg.0
+		IL_0002: call instance void [GFRunning]GameFramework.Base.IGameStart::RegisterLogicCtr()
+		IL_0007: nop
+		IL_0008: call !!0 [GFRunning]GameFramework.GameFrameEntry::GetModule<class [GFRunning]GameFramework.MineGameLogicModule>()
+		IL_000d: call !0 class L_Tools.RichControlBase`1<class L_Tools.ServerTimeMgr>::get_I()
+		IL_0012: ldc.i4.0
+		IL_0013: callvirt instance void [GFRunning]GameFramework.MineGameLogicModule::RegisterLogicCtr(class [GFRunning]GameFramework.IControl, bool)
+		IL_0018: nop
+		IL_0019: call !!0 [GFRunning]GameFramework.GameFrameEntry::GetModule<class [GFRunning]GameFramework.MineGameLogicModule>()
+		IL_001e: call !0 class L_Tools.RichControlBase`1<class ljzs_lt.PurchaseControl>::get_I()
+		IL_0023: ldc.i4.0
+		IL_0024: callvirt instance void [GFRunning]GameFramework.MineGameLogicModule::RegisterLogicCtr(class [GFRunning]GameFramework.IControl, bool)
+		IL_0029: nop
+		IL_002a: call !!0 [GFRunning]GameFramework.GameFrameEntry::GetModule<class [GFRunning]GameFramework.MineGameLogicModule>()
+		IL_002f: call !0 class [GFRunning]GameFramework.ControlBase`1<class CommonGameModule.Email.EmailControl>::get_I()
+		IL_0034: ldc.i4.0
+		IL_0035: callvirt instance void [GFRunning]GameFramework.MineGameLogicModule::RegisterLogicCtr(class [GFRunning]GameFramework.IControl, bool)
+		IL_003a: nop
+		IL_003b: ret
+	} // end of method GameStart::RegisterLogicCtr
+
+	.method public hidebysig virtual 
+		instance void StartGame () cil managed 
+	{
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+			01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 36
+			30 30 35 42 34 39
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.AddressAttribute::.ctor() = (
+			01 00 04 00 53 0e 03 52 56 41 09 30 78 34 33 39
+			43 30 32 38 53 0e 06 4f 66 66 73 65 74 09 30 78
+			34 33 39 38 30 32 38 53 0e 02 56 41 09 30 78 34
+			33 39 43 30 32 38 53 0e 04 53 6c 6f 74 01 37
+		)
+		// Method begins at RVA 0x1ddd3
+		// Header size: 1
+		// Code size: 13 (0xd)
+		.maxstack 8
+
+		IL_0000: nop
+		IL_0001: call !!0 [GFRunning]GameFramework.GameFrameEntry::GetModule<class [GFRunning]GameFramework.Procedure.ProcedureManager>()
+		IL_0006: callvirt instance void [GFRunning]GameFramework.Procedure.ProcedureManager::StartProcedure<class ljzs_lt.Procedure.ProcedurePreLoad>()
+		IL_000b: nop
+		IL_000c: ret
+	} // end of method GameStart::StartGame
+
+	.method public hidebysig specialname rtspecialname 
+		instance void .ctor () cil managed 
+	{
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+			01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 36
+			30 30 35 42 34 41
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.AddressAttribute::.ctor() = (
+			01 00 03 00 53 0e 03 52 56 41 09 30 78 34 33 39
+			43 30 42 30 53 0e 06 4f 66 66 73 65 74 09 30 78
+			34 33 39 38 30 42 30 53 0e 02 56 41 09 30 78 34
+			33 39 43 30 42 30
+		)
+		// Method begins at RVA 0x1dde1
+		// Header size: 1
+		// Code size: 9 (0x9)
+		.maxstack 8
+
+		IL_0000: ldarg.0
+		IL_0001: call instance void [GFRunning]GameFramework.Base.IGameStart::.ctor()
+		IL_0006: nop
+		IL_0007: nop
+		IL_0008: ret
+	} // end of method GameStart::.ctor
+
+} // end of class ljzs_lt.GameStart
+

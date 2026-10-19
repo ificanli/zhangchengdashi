@@ -1,0 +1,49 @@
+0x436a224: STR             X30, [SP,#var_40]!
+0x436a228: STP             X24, X23, [SP,#0x40+var_30]
+0x436a22c: STP             X22, X21, [SP,#0x40+var_20]
+0x436a230: STP             X20, X19, [SP,#0x40+var_10]
+0x436a234: ADRP            X23, #byte_90006F9@PAGE
+0x436a238: ADRP            X24, #off_8AF3610@PAGE
+0x436a23c: ADRP            X20, #off_8AF3618@PAGE
+0x436a240: ADRP            X22, #off_8AF3620@PAGE
+0x436a244: ADRP            X21, #off_8AF3628@PAGE
+0x436a248: LDRB            W8, [X23,#byte_90006F9@PAGEOFF]
+0x436a24c: LDR             X24, [X24,#off_8AF3610@PAGEOFF]; qword_8CD9FC0
+0x436a250: LDR             X20, [X20,#off_8AF3618@PAGEOFF]; qword_8CFF240
+0x436a254: LDR             X22, [X22,#off_8AF3620@PAGEOFF]; qword_8CD9FC8
+0x436a258: LDR             X21, [X21,#off_8AF3628@PAGEOFF]; qword_8CFF258
+0x436a25c: MOV             X19, X0
+0x436a260: TBNZ            W8, #0, loc_436A29C
+0x436a264: ADRP            X0, #off_8AF3628@PAGE
+0x436a268: LDR             X0, [X0,#off_8AF3628@PAGEOFF]; qword_8CFF258 ; slot
+0x436a26c: BL              il2cpp_codegen_initialize_runtime_metadata
+0x436a270: ADRP            X0, #off_8AF3618@PAGE
+0x436a274: LDR             X0, [X0,#off_8AF3618@PAGEOFF]; qword_8CFF240 ; slot
+0x436a278: BL              il2cpp_codegen_initialize_runtime_metadata
+0x436a27c: ADRP            X0, #off_8AF3620@PAGE
+0x436a280: LDR             X0, [X0,#off_8AF3620@PAGEOFF]; qword_8CD9FC8 ; slot
+0x436a284: BL              il2cpp_codegen_initialize_runtime_metadata
+0x436a288: ADRP            X0, #off_8AF3610@PAGE
+0x436a28c: LDR             X0, [X0,#off_8AF3610@PAGEOFF]; qword_8CD9FC0 ; slot
+0x436a290: BL              il2cpp_codegen_initialize_runtime_metadata
+0x436a294: MOV             W8, #1
+0x436a298: STRB            W8, [X23,#byte_90006F9@PAGEOFF]
+0x436a29c: LDR             X0, [X24]
+0x436a2a0: BL              unk_3C3D4C4
+0x436a2a4: LDR             X1, [X20]
+0x436a2a8: MOV             X20, X0
+0x436a2ac: BL              System.Collections.Generic.Dictionary_object__object_$$.ctor
+0x436a2b0: STR             X20, [X19,#0x28]
+0x436a2b4: LDR             X0, [X22]
+0x436a2b8: BL              unk_3C3D4C4
+0x436a2bc: LDR             X1, [X21]
+0x436a2c0: MOV             X20, X0
+0x436a2c4: BL              System.Collections.Generic.Dictionary_object__object_$$.ctor
+0x436a2c8: STR             X20, [X19,#0x38]
+0x436a2cc: MOV             X0, X19
+0x436a2d0: LDP             X20, X19, [SP,#0x40+var_10]
+0x436a2d4: LDP             X22, X21, [SP,#0x40+var_20]
+0x436a2d8: LDP             X24, X23, [SP,#0x40+var_30]
+0x436a2dc: MOV             X1, XZR
+0x436a2e0: LDR             X30, [SP+0x40+var_40],#0x40
+0x436a2e4: B               System.Object$$.ctor

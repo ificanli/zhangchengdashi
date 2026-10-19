@@ -1,0 +1,156 @@
+__int64 __fastcall GameModule_BattleGameSceneManager__TryGetNearestRoleTargetFromHexRing(
+        GameModule_BattleGameSceneManager_o *a1,
+        char a2,
+        const MethodInfo *a3,
+        _BYTE *a4,
+        long double a5,
+        long double a6,
+        long double a7,
+        float a8,
+        float a9)
+{
+  bool RoleTargetHexSearchRing; // w8
+  char v19; // w0
+  __int64 v20; // x22
+  int32_t v21; // w11
+  int v22; // w29
+  float v23; // s12
+  int v24; // w13
+  int v25; // w27
+  int32_t v26; // w26
+  unsigned int v27; // w21
+  __int64 HexBehaviour; // x22
+  int RoleCountByCamp; // w0
+  int v30; // w23
+  unsigned int i; // w24
+  __int64 RoleByCamp; // x25
+  __int64 transform; // x0
+  long double position; // q0
+  float v35; // s1
+  float v36; // s2
+  float v37; // s0
+  __int64 v38; // x19
+  int v40; // [xsp+4h] [xbp-ACh]
+  int32_t v41; // [xsp+8h] [xbp-A8h]
+  int v42; // [xsp+Ch] [xbp-A4h]
+  __int64 v43; // [xsp+10h] [xbp-A0h] BYREF
+  __int64 v44; // [xsp+18h] [xbp-98h] BYREF
+  int v45; // [xsp+28h] [xbp-88h]
+  int32_t searchRing; // [xsp+2Ch] [xbp-84h] BYREF
+
+  if ( (byte_8FFD79C & 1) == 0 )
+  {
+    il2cpp_codegen_initialize_runtime_metadata((void **)&off_8CE4A38 /* GameModule.BattleGameSceneManager_TypeInfo */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&off_8CE81E8 /* HexManager_TypeInfo */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&off_8CEB3E0 /* UnityEngine.Object_TypeInfo */);
+    byte_8FFD79C = 1;
+  }
+  searchRing = 0;
+  v44 = 0;
+  *(_QWORD *)a3 = 0;
+  *a4 = 0;
+  RoleTargetHexSearchRing = GameModule_BattleGameSceneManager__TryGetRoleTargetHexSearchRing(a1, a8, &searchRing, a3);
+  v19 = 0;
+  if ( RoleTargetHexSearchRing )
+  {
+    if ( *((_DWORD *)off_8CE81E8 /* HexManager_TypeInfo */ + 56) == 0 )
+      il2cpp_codegen_runtime_class_init(off_8CE81E8 /* HexManager_TypeInfo */);
+    if ( (HexManager__TryGetHexAt(&v44, 0, a5, a6, a7) & 1) == 0 )
+      goto LABEL_10;
+    v20 = v44;
+    if ( *((_DWORD *)off_8CEB3E0 /* UnityEngine.Object_TypeInfo */ + 56) == 0 )
+      il2cpp_codegen_runtime_class_init(off_8CEB3E0 /* UnityEngine.Object_TypeInfo */);
+    if ( (UnityEngine_Object__op_Equality(v20, 0, 0) & 1) == 0 )
+    {
+      *a4 = 1;
+      if ( v44 == 0 )
+LABEL_45:
+        il2cpp_codegen_raise_null_reference_exception();
+      v21 = searchRing;
+      v42 = -searchRing;
+      if ( ((searchRing & 0x40000000) != 0) == __OFSUB__(searchRing, -searchRing) )
+      {
+        v22 = *(_DWORD *)(v44 + 36);
+        v23 = 3.4028e38;
+        v40 = *(_DWORD *)(v44 + 32);
+        v24 = -searchRing;
+        v41 = searchRing;
+        do
+        {
+          if ( -(v24 + v21) >= v42 )
+            v25 = -(v24 + v21);
+          else
+            v25 = v42;
+          if ( v21 >= v21 - v24 )
+            v26 = v21 - v24;
+          else
+            v26 = v21;
+          v45 = v24;
+          if ( v25 <= v26 )
+          {
+            v27 = v24 + v40;
+            do
+            {
+              v43 = 0;
+              HexManager_HexCoord___ctor(&v43, v27, (unsigned int)(v25 + v22), 0);
+              if ( *((_DWORD *)off_8CE81E8 /* HexManager_TypeInfo */ + 56) == 0 )
+                il2cpp_codegen_runtime_class_init(off_8CE81E8 /* HexManager_TypeInfo */);
+              HexBehaviour = HexManager__GetHexBehaviour(v43, 0);
+              if ( *((_DWORD *)off_8CEB3E0 /* UnityEngine.Object_TypeInfo */ + 56) == 0 )
+                il2cpp_codegen_runtime_class_init(off_8CEB3E0 /* UnityEngine.Object_TypeInfo */);
+              if ( (UnityEngine_Object__op_Equality(HexBehaviour, 0, 0) & 1) == 0 )
+              {
+                if ( HexBehaviour == 0 )
+                  goto LABEL_45;
+                RoleCountByCamp = GameModule_HexBehaviour__GetRoleCountByCamp(HexBehaviour, a2 & 1, 0);
+                if ( RoleCountByCamp >= 1 )
+                {
+                  v30 = RoleCountByCamp;
+                  for ( i = 0; v30 != i; ++i )
+                  {
+                    RoleByCamp = GameModule_HexBehaviour__GetRoleByCamp(HexBehaviour, a2 & 1, i, 0);
+                    if ( *((_DWORD *)off_8CE4A38 /* GameModule.BattleGameSceneManager_TypeInfo */ + 56) == 0 )
+                      il2cpp_codegen_runtime_class_init(off_8CE4A38 /* GameModule.BattleGameSceneManager_TypeInfo */);
+                    if ( GameModule_BattleGameSceneManager__IsRoleTargetValid(RoleByCamp) )
+                    {
+                      if ( RoleByCamp == 0 )
+                        goto LABEL_45;
+                      transform = UnityEngine_Component__get_transform(RoleByCamp, 0);
+                      if ( transform == 0 )
+                        goto LABEL_45;
+                      position = UnityEngine_Transform__get_position(transform, 0);
+                      v37 = (float)((float)(*(float *)&a7 - v36) * (float)(*(float *)&a7 - v36))
+                          + (float)((float)((float)(*(float *)&a5 - *(float *)&position)
+                                          * (float)(*(float *)&a5 - *(float *)&position))
+                                  + (float)((float)(*(float *)&a6 - v35) * (float)(*(float *)&a6 - v35)));
+                      if ( v37 <= a9 && v37 < v23 )
+                      {
+                        v23 = v37;
+                        *(_QWORD *)a3 = RoleByCamp;
+                      }
+                    }
+                  }
+                }
+              }
+              ++v25;
+            }
+            while ( v25 <= v26 );
+          }
+          v21 = v41;
+          v24 = v45 + 1;
+        }
+        while ( v41 >= v45 + 1 );
+      }
+      v38 = *(_QWORD *)a3;
+      if ( *((_DWORD *)off_8CEB3E0 /* UnityEngine.Object_TypeInfo */ + 56) == 0 )
+        il2cpp_codegen_runtime_class_init(off_8CEB3E0 /* UnityEngine.Object_TypeInfo */);
+      v19 = UnityEngine_Object__op_Inequality(v38, 0, 0);
+    }
+    else
+    {
+LABEL_10:
+      v19 = 0;
+    }
+  }
+  return v19 & 1;
+}

@@ -1,0 +1,32 @@
+{
+    TimeManager.Instance.RegisterOnWeekPassed(() =>
+    {
+        Dictionary<string, int> counts = DbtSaveDataManager_PlayerShopData.I.Data.cardPackBuyCountNowWeek;
+        foreach (string key in counts.Keys.ToList())
+            counts[key] = 0;
+        DbtSaveDataManager_PlayerShopData.I.Save();
+    });
+    TimeManager.Instance.RegisterOnTimeToZero(() =>
+    {
+        DbtSaveDataManager_PlayerCoreData.I.Data.PlayerDailyPlayGameCount = 0;
+        DbtSaveDataManager_PlayerCoreData.I.Data.PlayerDailyWonGameCount = 0;
+        DbtSaveDataManager_PlayerCoreData.I.Data.seasonData.PlayerDailyGetSeasonPassCount = 0;
+        DbtSaveDataManager_PlayerCoreData.I.Data.seasonData.PlayerDailyGetSeasonPassScore = 0;
+        DbtSaveDataManager_PlayerCoreData.I.Data.DailyNoBetGoldEarned = 0;
+        DbtSaveDataManager_PlayerCoreData.I.Save();
+    });
+    TimeManager.Instance.RegisterOnWeekPassed(() =>
+    {
+        DbtSaveDataManager_PlayerCoreData.I.Data.PlayerWeeklyPlayGameCount = 0;
+        DbtSaveDataManager_PlayerCoreData.I.Data.PlayerWeeklyWonGameCount = 0;
+        DbtSaveDataManager_PlayerCoreData.I.Save();
+    });
+    TimeManager.Instance.RegisterOnWeekPassed(() =>
+    {
+        Dictionary<string, bool> states = DbtSaveDataManager_PlayerShopData.I.Data.playerRuneStoneBuyState;
+        foreach (string key in states.Keys.ToList())
+            states[key] = false;
+        DbtSaveDataManager_PlayerShopData.I.Save();
+        EventManager.Instance.TriggerEvent("RefreshRuneStonePack", null);
+    });
+}

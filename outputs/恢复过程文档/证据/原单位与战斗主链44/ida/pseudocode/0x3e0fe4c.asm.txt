@@ -1,0 +1,15 @@
+0x3e0fe4c: STR             D8, [SP,#var_10]!
+0x3e0fe50: STR             X30, [SP,#0x10+var_8]
+0x3e0fe54: AND             W2, W1, #1
+0x3e0fe58: MOV             W1, WZR
+0x3e0fe5c: MOV             V8.16B, V0.16B
+0x3e0fe60: BL              GameModule.SynergyEffectManager$$GetAtkWayTypeCount
+0x3e0fe64: ADRP            X8, #dword_18374B8@PAGE
+0x3e0fe68: LDR             S0, [X8,#dword_18374B8@PAGEOFF]
+0x3e0fe6c: LDR             X30, [SP,#0x10+var_8]
+0x3e0fe70: CMP             W0, #3
+0x3e0fe74: FMUL            S0, S8, S0
+0x3e0fe78: FADD            S0, S8, S0
+0x3e0fe7c: FCSEL           S0, S8, S0, LT
+0x3e0fe80: LDR             D8, [SP+0x10+var_10],#0x10
+0x3e0fe84: RET

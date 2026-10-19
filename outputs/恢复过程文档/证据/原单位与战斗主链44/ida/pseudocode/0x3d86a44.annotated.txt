@@ -1,0 +1,270 @@
+void __fastcall GameModule_RoleBehaviour__Wound(
+        __int64 a1,
+        int a2,
+        __int64 a3,
+        char a4,
+        _BYTE *a5,
+        __int64 a6,
+        __int64 a7,
+        __int64 a8,
+        __int64 a9)
+{
+  __int64 v13; // x3
+  _BYTE **v14; // x0
+  __int64 v15; // x8
+  long double v16; // q0
+  __int64 v17; // x0
+  float v18; // s8
+  int v19; // w23
+  int v20; // w0
+  __int64 v21; // x8
+  float time; // s0
+  __int64 v23; // x8
+  float v24; // s0
+  int v25; // w8
+  float v26; // s0
+  int v27; // w9
+  signed int v28; // w23
+  signed int v29; // w0
+  __int64 v30; // x8
+  unsigned int i; // w27
+  __int64 Item; // x28
+  __int64 v33; // x0
+  float v34; // s0
+  unsigned int v35; // w28
+  __int64 v36; // x0
+  __int64 v37; // x0
+  __int64 v38; // x0
+  __int64 v39; // x0
+  __int64 v40; // x0
+  __int64 v41; // x24
+  void *Instance; // x0
+  __int64 v43; // x8
+  void *v44; // x24
+  __int64 transform; // x0
+  long double position; // q0
+  void *v47; // x0
+  void *v48; // x0
+  __int64 v49; // x8
+  void *v50; // x20
+  __int64 v51; // x0
+  _BOOL4 v52; // w8
+  __int64 v53; // x10
+
+  if ( (byte_8FFD47B & 1) == 0 )
+  {
+    il2cpp_codegen_initialize_runtime_metadata((void **)&off_8CE5E20 /* GameModule.CoreGameManager_TypeInfo */);
+    il2cpp_codegen_initialize_runtime_metadata(&qword_8D0DDC0 /* Method$System.Collections.Generic.List<RoleBehaviour>.get_Count() */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D0DDC8 /* Method$System.Collections.Generic.List<RoleBehaviour>.get_Item() */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D12168 /* Method$ToolModule.ManagerBase<FloatingTextManager>.get_Instance() */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D12128 /* Method$ToolModule.ManagerBase<EffectManager>.get_Instance() */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D12018 /* Method$ToolModule.ManagerBase<AudioManager>.get_Instance() */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D12048 /* Method$ToolModule.ManagerBase<BattleGameManager>.get_Instance() */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D12460 /* Method$ToolModule.ManagerBase<SynergyEffectManager>.get_Instance() */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&off_8CEB3E0 /* UnityEngine.Object_TypeInfo */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&off_8CECB08 /* GameModule.RoleBehaviour_TypeInfo */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D57AE8 /* Assets/_Res/Addressable/AudiosBundle/SFX/Hit1.mp3 */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D52658 /* - */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D537D8 /* 1012 */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D57BD0 /* Assets/_Res/Addressable/EffectsBundle/Effects/BloodExplosionSpiky.prefab */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D89380 /* 闪避 */);
+    byte_8FFD47B = 1;
+  }
+  if ( *((_DWORD *)off_8CEB3E0 /* UnityEngine.Object_TypeInfo */ + 56) == 0 )
+    il2cpp_codegen_runtime_class_init(off_8CEB3E0 /* UnityEngine.Object_TypeInfo */);
+  if ( (UnityEngine_Object__op_Equality(a1, 0, 0) & 1) == 0 )
+  {
+    if ( *((_DWORD *)off_8CE5E20 /* GameModule.CoreGameManager_TypeInfo */ + 56) == 0 )
+      il2cpp_codegen_runtime_class_init(off_8CE5E20 /* GameModule.CoreGameManager_TypeInfo */);
+    if ( byte_8FFD1AB == 0 )
+    {
+      il2cpp_codegen_initialize_runtime_metadata((void **)&off_8CE5E20 /* GameModule.CoreGameManager_TypeInfo */);
+      byte_8FFD1AB = 1;
+    }
+    v14 = (_BYTE **)off_8CE5E20 /* GameModule.CoreGameManager_TypeInfo */;
+    if ( *((_DWORD *)off_8CE5E20 /* GameModule.CoreGameManager_TypeInfo */ + 56) == 0 )
+    {
+      il2cpp_codegen_runtime_class_init(off_8CE5E20 /* GameModule.CoreGameManager_TypeInfo */);
+      v14 = (_BYTE **)off_8CE5E20 /* GameModule.CoreGameManager_TypeInfo */;
+    }
+    if ( *v14[23] != 0 && *(_BYTE *)(a1 + 33) == 0 )
+    {
+      v15 = *(_QWORD *)(a1 + 64);
+      if ( v15 != 0 )
+      {
+        if ( (System_String__op_Equality(*(_QWORD *)(v15 + 16), qword_8D537D8 /* 1012 */, 0, v13) & 1) != 0 )
+        {
+          if ( a2 == 0 || *(_BYTE *)(a1 + 188) != 0 )
+            return;
+        }
+        else if ( a2 == 0 )
+        {
+          return;
+        }
+        *(_QWORD *)(a1 + 368) = a5;
+        v17 = GameModule_RoleBehaviour__OnHurtTalentTrigger((_QWORD *)a1, a2, v16);
+        v18 = *((float *)&v17 + 1);
+        v19 = v17;
+        v20 = UnityEngine_Random__Range(0);
+        v21 = *(_QWORD *)(a1 + 64);
+        if ( v21 == 0 )
+          il2cpp_codegen_raise_null_reference_exception();
+        if ( (float)((float)(v18 + *(float *)(v21 + 64)) * 100.0) <= (float)v20 )
+        {
+          time = UnityEngine_Time__get_time(0);
+          v23 = *(_QWORD *)(a1 + 64);
+          *(float *)(a1 + 48) = time;
+          if ( v23 == 0 )
+            il2cpp_codegen_raise_null_reference_exception();
+          v24 = *(float *)(v23 + 76);
+          v25 = *(_DWORD *)(a1 + 200);
+          v26 = v24 * (float)v19;
+          v27 = (int)v26;
+          if ( v26 == INFINITY )
+            v27 = 0x80000000;
+          v28 = v19 - v27;
+          if ( v25 == 2 )
+          {
+            if ( ToolModule_ManagerBase_object___get_Instance((const MethodInfo *)qword_8D12460 /* Method$ToolModule.ManagerBase<SynergyEffectManager>.get_Instance() */) == nullptr )
+              il2cpp_codegen_raise_null_reference_exception();
+            v29 = GameModule_SynergyEffectManager__HumanFetter4_DamageReduction(1.0);
+            v25 = *(_DWORD *)(a1 + 200);
+            v28 = v29;
+          }
+          if ( v25 == 3 )
+          {
+            if ( ToolModule_ManagerBase_object___get_Instance((const MethodInfo *)qword_8D12460 /* Method$ToolModule.ManagerBase<SynergyEffectManager>.get_Instance() */) == nullptr )
+              il2cpp_codegen_raise_null_reference_exception();
+            v28 = GameModule_SynergyEffectManager__MachineFetter6_RemoteDamageReduction();
+          }
+          if ( v28 > 0 )
+          {
+            v30 = *(_QWORD *)(a1 + 384);
+            if ( v30 != 0 )
+            {
+              for ( i = 0; (signed int)i < *(_DWORD *)(v30 + 24); ++i )
+              {
+                Item = System_Collections_Generic_List_object___get_Item(v30, i, qword_8D0DDC8 /* Method$System.Collections.Generic.List<RoleBehaviour>.get_Item() */);
+                if ( *((_DWORD *)off_8CEB3E0 /* UnityEngine.Object_TypeInfo */ + 56) == 0 )
+                  il2cpp_codegen_runtime_class_init(off_8CEB3E0 /* UnityEngine.Object_TypeInfo */);
+                if ( (UnityEngine_Object__op_Equality(Item, 0, 0) & 1) == 0 )
+                {
+                  v33 = *(_QWORD *)(a1 + 384);
+                  v34 = *(float *)(a1 + 392) * (float)v28;
+                  if ( v34 == INFINITY )
+                    v35 = 0x80000000;
+                  else
+                    v35 = (int)v34;
+                  if ( v33 == 0 )
+                    il2cpp_codegen_raise_null_reference_exception();
+                  v36 = System_Collections_Generic_List_object___get_Item(v33, i, qword_8D0DDC8 /* Method$System.Collections.Generic.List<RoleBehaviour>.get_Item() */);
+                  if ( v36 == 0 )
+                    il2cpp_codegen_raise_null_reference_exception();
+                  (*(void (__fastcall **)(__int64, _QWORD))(*(_QWORD *)v36 + 376LL))(v36, v35);
+                  v28 -= v35;
+                  if ( v28 <= 0 )
+                    return;
+                }
+                v30 = *(_QWORD *)(a1 + 384);
+                if ( v30 == 0 )
+                  il2cpp_codegen_raise_null_reference_exception();
+              }
+            }
+            v37 = *(_QWORD *)(a1 + 544);
+            if ( v37 == 0 )
+              il2cpp_codegen_raise_null_reference_exception();
+            System_Text_StringBuilder__Clear(v37, 0);
+            v38 = *(_QWORD *)(a1 + 544);
+            if ( v38 == 0 )
+              il2cpp_codegen_raise_null_reference_exception();
+            System_Text_StringBuilder__Append(v38, qword_8D52658 /* - */, 0);
+            v39 = *(_QWORD *)(a1 + 544);
+            if ( v39 == 0 )
+              il2cpp_codegen_raise_null_reference_exception();
+            sub_751B730(v39, (unsigned int)v28, 0);
+            v40 = *(_QWORD *)(a1 + 544);
+            if ( v40 == 0 )
+              il2cpp_codegen_raise_null_reference_exception();
+            v41 = (*(__int64 (__fastcall **)(__int64, _QWORD))(*(_QWORD *)v40 + 360LL))(
+                    v40,
+                    *(_QWORD *)(*(_QWORD *)v40 + 368LL));
+            Instance = ToolModule_ManagerBase_object___get_Instance((const MethodInfo *)qword_8D12168 /* Method$ToolModule.ManagerBase<FloatingTextManager>.get_Instance() */);
+            if ( Instance == nullptr )
+              il2cpp_codegen_raise_null_reference_exception();
+            GameModule_FloatingTextManager__GetDamageTextColor(Instance, *(unsigned __int8 *)(a1 + 32), 0, 0);
+            GameModule_RoleBehaviour__ShowDamageText(a1, v41);
+            v43 = *(_QWORD *)(a1 + 64);
+            if ( v43 == 0 )
+              il2cpp_codegen_raise_null_reference_exception();
+            *(_DWORD *)(v43 + 24) -= v28;
+            v44 = ToolModule_ManagerBase_object___get_Instance((const MethodInfo *)qword_8D12128 /* Method$ToolModule.ManagerBase<EffectManager>.get_Instance() */);
+            transform = UnityEngine_Component__get_transform(a1, 0);
+            if ( transform == 0 )
+              il2cpp_codegen_raise_null_reference_exception();
+            position = UnityEngine_Transform__get_position(transform, 0);
+            if ( v44 == nullptr )
+              il2cpp_codegen_raise_null_reference_exception();
+            AssetsModule_EffectManager__ShowEffect(v44, qword_8D57BD0 /* Assets/_Res/Addressable/EffectsBundle/Effects/BloodExplosionSpiky.prefab */, 0, position);
+            if ( *(_BYTE *)(a1 + 32) != 0 )
+            {
+              if ( (a4 & 1) != 0 )
+              {
+                v47 = ToolModule_ManagerBase_object___get_Instance((const MethodInfo *)qword_8D12048 /* Method$ToolModule.ManagerBase<BattleGameManager>.get_Instance() */);
+                if ( v47 == nullptr )
+                  il2cpp_codegen_raise_null_reference_exception();
+                GameModule_BattleGameManager__RecordBuildDamage((__int64)v47, a3, v28);
+              }
+              else
+              {
+                v48 = ToolModule_ManagerBase_object___get_Instance((const MethodInfo *)qword_8D12048 /* Method$ToolModule.ManagerBase<BattleGameManager>.get_Instance() */);
+                if ( v48 == nullptr )
+                  il2cpp_codegen_raise_null_reference_exception();
+                GameModule_BattleGameManager__RecordDamage((__int64)v48, a3, v28);
+              }
+            }
+            (*(void (__fastcall **)(__int64, _QWORD))(*(_QWORD *)a1 + 680LL))(a1, *(_QWORD *)(*(_QWORD *)a1 + 688LL));
+            v49 = *(_QWORD *)(a1 + 64);
+            if ( v49 == 0 )
+              il2cpp_codegen_raise_null_reference_exception();
+            if ( *(int *)(v49 + 24) <= 0 )
+            {
+              *(_DWORD *)(v49 + 24) = 0;
+              if ( *((_DWORD *)off_8CEB3E0 /* UnityEngine.Object_TypeInfo */ + 56) == 0 )
+                il2cpp_codegen_runtime_class_init(off_8CEB3E0 /* UnityEngine.Object_TypeInfo */);
+              v52 = (UnityEngine_Object__op_Inequality(a9, 0, 0) & 1) != 0
+                 && (((__int64 (__fastcall *)(__int64, __int64))GameModule_RoleBehaviour__GetIsHellFireAtk)(a1, a9) & 1) != 0;
+              (*(void (__fastcall **)(__int64, _BOOL4, _QWORD))(*(_QWORD *)a1 + 696LL))(
+                a1,
+                v52,
+                *(_QWORD *)(*(_QWORD *)a1 + 704LL));
+              (*(void (__fastcall **)(__int64, _QWORD))(*(_QWORD *)a1 + 840LL))(a1, *(_QWORD *)(*(_QWORD *)a1 + 848LL));
+              if ( (a4 & 1) == 0 && a5 != nullptr )
+              {
+                v53 = *((unsigned __int8 *)off_8CECB08 /* GameModule.RoleBehaviour_TypeInfo */ + 304);
+                if ( *(unsigned __int8 *)(*(_QWORD *)a5 + 304LL) >= (unsigned int)v53
+                  && *(_UNKNOWN **)(*(_QWORD *)(*(_QWORD *)a5 + 200LL) + 8 * v53 - 8) == off_8CECB08 /* GameModule.RoleBehaviour_TypeInfo */
+                  && a5[33] == 0 )
+                {
+                  GameModule_RoleBehaviour__OnKillTalentTrigger((__int64)a5);
+                }
+              }
+            }
+            else
+            {
+              (*(void (__fastcall **)(__int64, _QWORD))(*(_QWORD *)a1 + 840LL))(a1, *(_QWORD *)(*(_QWORD *)a1 + 848LL));
+              v50 = ToolModule_ManagerBase_object___get_Instance((const MethodInfo *)qword_8D12018 /* Method$ToolModule.ManagerBase<AudioManager>.get_Instance() */);
+              v51 = UnityEngine_Component__get_transform(a1, 0);
+              if ( v50 == nullptr )
+                il2cpp_codegen_raise_null_reference_exception();
+              AudioManager__PlaySFX(v50, qword_8D57AE8 /* Assets/_Res/Addressable/AudiosBundle/SFX/Hit1.mp3 */, v51, 0, 0, 1.0);
+            }
+          }
+        }
+        else
+        {
+          GameModule_RoleBehaviour__ShowDamageText(a1, qword_8D89380 /* 闪避 */);
+        }
+      }
+    }
+  }
+}

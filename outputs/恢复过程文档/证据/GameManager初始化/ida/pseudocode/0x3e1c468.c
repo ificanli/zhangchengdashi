@@ -1,0 +1,49 @@
+void GameModule_GameManager___c___RegisterOnTimeToZero_b__21_4(void *self, const MethodInfo *method)
+{
+  __int64 v2; // x2
+  __int64 Instance; // x0
+  __int64 v4; // x1
+  __int64 v5; // x2
+  __int64 v6; // x19
+  __int64 v7; // x0
+  __int64 v8; // x1
+  __int64 v9; // x2
+  __int64 v10; // x0
+  __int64 v11; // x1
+  __int64 v12; // x2
+  __int64 v13; // x0
+  char v14[4]; // [xsp+Ch] [xbp-24h] BYREF
+  __int64 v15; // [xsp+18h] [xbp-18h] BYREF
+
+  if ( (byte_8FFD8A6 & 1) == 0 )
+  {
+    il2cpp_codegen_initialize_runtime_metadata((void **)&off_8CE4D90);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D12148);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D124C8);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D12108);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D576E0);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D5D9F0);
+    byte_8FFD8A6 = 1;
+  }
+  v15 = 0;
+  Instance = ToolModule_ManagerBase_object___get_Instance(qword_8D12108, method, v2);
+  if ( Instance == 0 )
+    goto LABEL_10;
+  GameModule_DailyBlessManager__RefreshDailyBless(Instance, 0);
+  v6 = ToolModule_ManagerBase_object___get_Instance(qword_8D12148, v4, v5);
+  v14[0] = 1;
+  v7 = ((__int64 (__fastcall *)(void *, char *))unk_3C3D3B8)(off_8CE4D90, v14);
+  if ( v6 == 0 )
+    goto LABEL_10;
+  EventModule_EventManager__TriggerEvent(v6, qword_8D5D9F0, v7, 0);
+  v10 = ToolModule_ManagerBase_object___get_Instance(qword_8D124C8, v8, v9);
+  if ( v10 == 0 )
+    goto LABEL_10;
+  if ( (UIFramework_UIManager__IsPanelShowing(v10, qword_8D576E0, &v15, 0) & 1) == 0 )
+    return;
+  v13 = ToolModule_ManagerBase_object___get_Instance(qword_8D124C8, v11, v12);
+  if ( v13 == 0 )
+LABEL_10:
+    il2cpp_codegen_raise_null_reference_exception();
+  UIFramework_UIManager__HidePanel(v13, qword_8D576E0, 0);
+}

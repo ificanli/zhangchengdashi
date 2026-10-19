@@ -1,0 +1,111 @@
+__int64 __fastcall GameModule_RoleBehaviour__ShowDamageText(
+        __int64 a1,
+        __int64 a2,
+        long double a3,
+        long double a4,
+        long double a5,
+        long double a6)
+{
+  __int64 GameGlobalConfig; // x0
+  void *Instance; // x21
+  __int64 transform; // x20
+  __int64 v16; // x22
+  void *v17; // x21
+  __int64 v18; // x0
+  unsigned int v19; // w8
+  __int64 v20; // x19
+  __int64 v21; // x0
+  long double position; // q0
+  _BYTE *v23; // x0
+  __int128 v24; // [xsp+20h] [xbp-F0h] BYREF
+  int v25; // [xsp+30h] [xbp-E0h]
+  __int128 v26; // [xsp+40h] [xbp-D0h] BYREF
+  int v27; // [xsp+50h] [xbp-C0h]
+  __int128 v28; // [xsp+60h] [xbp-B0h] BYREF
+  int v29; // [xsp+70h] [xbp-A0h]
+  __int128 v30; // [xsp+78h] [xbp-98h]
+  int v31; // [xsp+88h] [xbp-88h]
+  __int128 v32; // [xsp+90h] [xbp-80h]
+  int v33; // [xsp+A0h] [xbp-70h]
+  __int128 v34; // [xsp+A8h] [xbp-68h] BYREF
+  int v35; // [xsp+B8h] [xbp-58h]
+
+  if ( (byte_8FFD47C & 1) == 0 )
+  {
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D12168);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D124D8);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D156D0);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8CE3520);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D54A60);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D546E0);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D55238);
+    byte_8FFD47C = 1;
+  }
+  GameGlobalConfig = GameConfigModule_GameConfigManager__get_GameGlobalConfig(0, a2);
+  if ( GameGlobalConfig == 0 )
+    goto LABEL_16;
+  if ( *(_BYTE *)(GameGlobalConfig + 18) != 0 )
+  {
+    Instance = ToolModule_ManagerBase_object___get_Instance((const MethodInfo *)qword_8D12168);
+    transform = UnityEngine_Component__get_transform(a1, 0);
+    v34 = 0u;
+    v35 = 0;
+    System_Nullable_Color____ctor(&v34, qword_8D156D0, a3, a4, a5, a6);
+    v32 = 0u;
+    v33 = 0;
+    v30 = 0u;
+    v31 = 0;
+    if ( Instance != nullptr )
+    {
+      v28 = v34;
+      v29 = v35;
+      v27 = v33;
+      v26 = v32;
+      v24 = v30;
+      v25 = v31;
+      return ((__int64 (__fastcall *)(void *, __int64, __int64, _QWORD, __int128 *, _QWORD, _QWORD, _QWORD, float, _BYTE, __int128 *, __int128 *, _QWORD))GameModule_FloatingTextManager__ShowDamageText)(
+               Instance,
+               a2,
+               transform,
+               0,
+               &v28,
+               0,
+               0,
+               0,
+               1.0,
+               0,
+               &v26,
+               &v24,
+               0);
+    }
+LABEL_16:
+    il2cpp_codegen_raise_null_reference_exception();
+  }
+  v16 = ToolModule_ColorExtend__ColorToHex(0, a3, a4, a5, a6);
+  v17 = ToolModule_ManagerBase_object___get_Instance((const MethodInfo *)qword_8D124D8);
+  v18 = ((__int64 (__fastcall *)(__int64, __int64))unk_3C3D320)(qword_8CE3520, 5);
+  if ( v18 == 0 )
+    goto LABEL_16;
+  v19 = *(_DWORD *)(v18 + 24);
+  if ( v19 == 0
+    || (*(_QWORD *)(v18 + 32) = qword_8D54A60, v19 == 1)
+    || (*(_QWORD *)(v18 + 40) = v16, v19 <= 2)
+    || (*(_QWORD *)(v18 + 48) = qword_8D55238, v19 == 3)
+    || (*(_QWORD *)(v18 + 56) = a2, v19 <= 4) )
+  {
+    v23 = (_BYTE *)((__int64 (*)(void))unk_3C3D4D4)();
+    return GameModule_RoleBehaviour__get_WebGLNavigationIsValid(v23);
+  }
+  else
+  {
+    *(_QWORD *)(v18 + 64) = qword_8D546E0;
+    v20 = System_String__Concat();
+    v21 = UnityEngine_Component__get_transform(a1, 0);
+    if ( v21 == 0 )
+      goto LABEL_16;
+    position = UnityEngine_Transform__get_position(v21, 0);
+    if ( v17 == nullptr )
+      goto LABEL_16;
+    return UIModuleO_UITextEffectManager__ShowTextEffect(v17, v20, 0, 0, 0, position);
+  }
+}

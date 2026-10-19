@@ -1,0 +1,27 @@
+0x71758d0: STR             X30, [SP,#var_30]!
+0x71758d4: STP             X22, X21, [SP,#0x30+var_20]
+0x71758d8: STP             X20, X19, [SP,#0x30+var_10]
+0x71758dc: ADRP            X22, #byte_90091BF@PAGE
+0x71758e0: ADRP            X21, #off_8B12A00@PAGE
+0x71758e4: LDRB            W8, [X22,#byte_90091BF@PAGEOFF]
+0x71758e8: LDR             X21, [X21,#off_8B12A00@PAGEOFF]; qword_8D77EF0
+0x71758ec: MOV             X20, X1
+0x71758f0: MOV             X19, X0
+0x71758f4: TBNZ            W8, #0, loc_717590C
+0x71758f8: ADRP            X0, #off_8B12A00@PAGE
+0x71758fc: LDR             X0, [X0,#off_8B12A00@PAGEOFF]; qword_8D77EF0 ; slot
+0x7175900: BL              il2cpp_codegen_initialize_runtime_metadata
+0x7175904: MOV             W8, #1
+0x7175908: STRB            W8, [X22,#byte_90091BF@PAGEOFF]
+0x717590c: MOV             X0, X20
+0x7175910: MOV             X1, XZR
+0x7175914: BL              System.String$$IsNullOrEmpty
+0x7175918: LDR             X8, [X21]
+0x717591c: TST             W0, #1
+0x7175920: MOV             X0, X19
+0x7175924: LDP             X22, X21, [SP,#0x30+var_20]
+0x7175928: CSEL            X1, X8, X20, NE
+0x717592c: LDP             X20, X19, [SP,#0x30+var_10]
+0x7175930: MOV             X2, XZR
+0x7175934: LDR             X30, [SP+0x30+var_30],#0x30
+0x7175938: B               GameFramework.Tools.UIGradientBlender$$SplitColors

@@ -1,0 +1,18 @@
+0x3e0faf0: STR             X30, [SP,#var_10]!
+0x3e0faf4: LDRB            W8, [X0,#0x20]
+0x3e0faf8: CBZ             W8, loc_3E0FB10
+0x3e0fafc: AND             W2, W1, #1
+0x3e0fb00: MOV             W1, #1
+0x3e0fb04: BL              GameModule.SynergyEffectManager$$GetFetterCount
+0x3e0fb08: CMP             W0, #4
+0x3e0fb0c: B.GE            loc_3E0FB18
+0x3e0fb10: MOV             W0, WZR
+0x3e0fb14: B               loc_3E0FB30
+0x3e0fb18: MOV             W1, #0x64 ; 'd'
+0x3e0fb1c: MOV             W0, WZR
+0x3e0fb20: MOV             X2, XZR
+0x3e0fb24: BL              UnityEngine.Random$$Range
+0x3e0fb28: CMP             W0, #0xA
+0x3e0fb2c: CSET            W0, LT
+0x3e0fb30: LDR             X30, [SP+0x10+var_10],#0x10
+0x3e0fb34: RET

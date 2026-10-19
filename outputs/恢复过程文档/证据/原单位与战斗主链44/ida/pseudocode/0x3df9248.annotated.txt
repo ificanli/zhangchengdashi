@@ -1,0 +1,71 @@
+void GameModule_BattleGameSceneManager___ctor(GameModule_BattleGameSceneManager_o *this, const MethodInfo *method)
+{
+  __int64 v3; // x20
+  __int64 v4; // x20
+  __int64 v5; // x20
+  __int64 v6; // x20
+  __int64 v7; // x20
+  __int64 v8; // x20
+  __int64 v9; // x20
+  __int64 v10; // x20
+  __int64 v11; // x20
+  __int64 v12; // x20
+
+  if ( (byte_8FFD7DA & 1) == 0 )
+  {
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8CFB620 /* Method$System.Collections.Generic.Dictionary<Tuple<int, int>, HexMirrorInfo>..ctor() */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D00A20 /* Method$System.Collections.Generic.Dictionary<BattleGameSceneManager.RoleTargetFrameCacheKey, BattleGameSceneManager.RoleTargetFrameCacheValue>..ctor() */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8CFEA38 /* Method$System.Collections.Generic.Dictionary<string, int>..ctor() */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8CD9E48 /* System.Collections.Generic.Dictionary<string, int>_TypeInfo */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8CDA4C0 /* System.Collections.Generic.Dictionary<BattleGameSceneManager.RoleTargetFrameCacheKey, BattleGameSceneManager.RoleTargetFrameCacheValue>_TypeInfo */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8CD92A0 /* System.Collections.Generic.Dictionary<Tuple<int, int>, HexMirrorInfo>_TypeInfo */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D0AC80 /* Method$System.Collections.Generic.List<GameObject>..ctor() */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D0B498 /* Method$System.Collections.Generic.List<HellfireBehaviour>..ctor() */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D093B0 /* Method$System.Collections.Generic.List<BarracksArchitectureBehaviour>..ctor() */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8CDD780 /* System.Collections.Generic.List<GameObject>_TypeInfo */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8CDD880 /* System.Collections.Generic.List<HellfireBehaviour>_TypeInfo */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8CDD2E0 /* System.Collections.Generic.List<BarracksArchitectureBehaviour>_TypeInfo */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D12050 /* Method$ToolModule.ManagerBase<BattleGameSceneManager>..ctor() */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8CE36E0 /* UnityEngine.Vector3[]_TypeInfo */);
+    byte_8FFD7DA = 1;
+  }
+  *(_QWORD *)&this->fields._unknown_object_0010_to_01FF[40] = ((__int64 (__fastcall *)(__int64, __int64))unk_3C3D320)(
+                                                                qword_8CE36E0 /* UnityEngine.Vector3[]_TypeInfo */,
+                                                                6);
+  *(_DWORD *)&this->fields._unknown_object_0010_to_01FF[48] = -1082130432;
+  v3 = ((__int64 (__fastcall *)(__int64))unk_3C3D4C4)(qword_8CDA4C0 /* System.Collections.Generic.Dictionary<BattleGameSceneManager.RoleTargetFrameCacheKey, BattleGameSceneManager.RoleTargetFrameCacheValue>_TypeInfo */);
+  sub_6CB781C(v3, 128, qword_8D00A20 /* Method$System.Collections.Generic.Dictionary<BattleGameSceneManager.RoleTargetFrameCacheKey, BattleGameSceneManager.RoleTargetFrameCacheValue>..ctor() */);
+  *(_QWORD *)&this->fields._unknown_object_0010_to_01FF[64] = v3;
+  *(_DWORD *)&this->fields._unknown_object_0010_to_01FF[72] = -1;
+  v4 = ((__int64 (__fastcall *)(__int64))unk_3C3D4C4)(qword_8CDD880 /* System.Collections.Generic.List<HellfireBehaviour>_TypeInfo */);
+  System_Collections_Generic_List_object____ctor(v4, qword_8D0B498 /* Method$System.Collections.Generic.List<HellfireBehaviour>..ctor() */);
+  *(_QWORD *)&this->fields._unknown_object_0010_to_01FF[224] = v4;
+  v5 = ((__int64 (__fastcall *)(__int64))unk_3C3D4C4)(qword_8CDD780 /* System.Collections.Generic.List<GameObject>_TypeInfo */);
+  System_Collections_Generic_List_object____ctor(v5, qword_8D0AC80 /* Method$System.Collections.Generic.List<GameObject>..ctor() */);
+  *(_QWORD *)&this->fields._unknown_object_0010_to_01FF[256] = v5;
+  v6 = ((__int64 (__fastcall *)(__int64))unk_3C3D4C4)(qword_8CD92A0 /* System.Collections.Generic.Dictionary<Tuple<int, int>, HexMirrorInfo>_TypeInfo */);
+  System_Collections_Generic_Dictionary_object__object____ctor(v6, qword_8CFB620 /* Method$System.Collections.Generic.Dictionary<Tuple<int, int>, HexMirrorInfo>..ctor() */);
+  *(_QWORD *)&this->fields._unknown_object_0010_to_01FF[368] = v6;
+  *(_DWORD *)&this->fields._unknown_object_0010_to_01FF[376] = 1000;
+  v7 = ((__int64 (__fastcall *)(__int64))unk_3C3D4C4)(qword_8CDD2E0 /* System.Collections.Generic.List<BarracksArchitectureBehaviour>_TypeInfo */);
+  System_Collections_Generic_List_object____ctor(v7, qword_8D093B0 /* Method$System.Collections.Generic.List<BarracksArchitectureBehaviour>..ctor() */);
+  *((_QWORD *)this + 66) = v7;
+  v8 = ((__int64 (__fastcall *)(__int64))unk_3C3D4C4)(qword_8CDD2E0 /* System.Collections.Generic.List<BarracksArchitectureBehaviour>_TypeInfo */);
+  System_Collections_Generic_List_object____ctor(v8, qword_8D093B0 /* Method$System.Collections.Generic.List<BarracksArchitectureBehaviour>..ctor() */);
+  *((_QWORD *)this + 67) = v8;
+  v9 = ((__int64 (__fastcall *)(__int64))unk_3C3D4C4)(qword_8CD9E48 /* System.Collections.Generic.Dictionary<string, int>_TypeInfo */);
+  System_Collections_Generic_Dictionary_object__int____ctor(v9, qword_8CFEA38 /* Method$System.Collections.Generic.Dictionary<string, int>..ctor() */);
+  *((_QWORD *)this + 68) = v9;
+  v10 = ((__int64 (__fastcall *)(__int64))unk_3C3D4C4)(qword_8CD9E48 /* System.Collections.Generic.Dictionary<string, int>_TypeInfo */);
+  System_Collections_Generic_Dictionary_object__int____ctor(v10, qword_8CFEA38 /* Method$System.Collections.Generic.Dictionary<string, int>..ctor() */);
+  *((_QWORD *)this + 69) = v10;
+  v11 = ((__int64 (__fastcall *)(__int64))unk_3C3D4C4)(qword_8CD9E48 /* System.Collections.Generic.Dictionary<string, int>_TypeInfo */);
+  System_Collections_Generic_Dictionary_object__int____ctor(v11, qword_8CFEA38 /* Method$System.Collections.Generic.Dictionary<string, int>..ctor() */);
+  *((_QWORD *)this + 70) = v11;
+  v12 = ((__int64 (__fastcall *)(__int64))unk_3C3D4C4)(qword_8CD9E48 /* System.Collections.Generic.Dictionary<string, int>_TypeInfo */);
+  System_Collections_Generic_Dictionary_object__int____ctor(v12, qword_8CFEA38 /* Method$System.Collections.Generic.Dictionary<string, int>..ctor() */);
+  *((_QWORD *)this + 71) = v12;
+  *((_DWORD *)this + 145) = 1017370378;
+  *((_DWORD *)this + 148) = 1065353216;
+  ToolModule_ManagerBase_object____ctor(this, (const MethodInfo *)qword_8D12050 /* Method$ToolModule.ManagerBase<BattleGameSceneManager>..ctor() */);
+}

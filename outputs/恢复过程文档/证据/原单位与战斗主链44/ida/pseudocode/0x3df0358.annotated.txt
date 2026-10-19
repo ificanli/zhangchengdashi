@@ -1,0 +1,46 @@
+long double __usercall GameModule_BattleGameSceneManager__GetRoleTarget@<Q0>(
+        __int64 a1@<X0>,
+        __int64 a2@<X1>,
+        char a3@<W2>,
+        int a4@<W3>,
+        __int64 a5@<X8>,
+        float a6@<S0>)
+{
+  long double result; // q0
+  long double v13; // [xsp+8h] [xbp-B8h] BYREF
+  __int64 v14; // [xsp+18h] [xbp-A8h]
+  __int128 v15; // [xsp+20h] [xbp-A0h] BYREF
+  __int64 v16; // [xsp+30h] [xbp-90h]
+  __int64 v17; // [xsp+38h] [xbp-88h]
+  __int64 v18; // [xsp+40h] [xbp-80h]
+  __int64 v19; // [xsp+48h] [xbp-78h]
+  __int64 v20; // [xsp+50h] [xbp-70h]
+  int v21; // [xsp+58h] [xbp-68h]
+  float v22; // [xsp+5Ch] [xbp-64h]
+  __int128 v23; // [xsp+60h] [xbp-60h]
+
+  if ( (byte_8FFD78E & 1) == 0 )
+  {
+    il2cpp_codegen_initialize_runtime_metadata(&qword_8CF8ED8 /* Method$Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<List<RoleBehaviour>>.Create() */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&off_8CF8EC8 /* Method$Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<List<RoleBehaviour>>.Start<BattleGameSceneManager.<GetRoleTarget>d__175>() */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8CF8EF8 /* Method$Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<List<RoleBehaviour>>.get_Task() */);
+    byte_8FFD78E = 1;
+  }
+  v19 = a3 & 1;
+  v23 = 0u;
+  v16 = 0;
+  v17 = 0;
+  v20 = a1;
+  v18 = a2;
+  v22 = a6;
+  v21 = a4;
+  v15 = 0xFFFFFFFF;
+  if ( *((_QWORD *)off_8CF8EC8 /* Method$Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<List<RoleBehaviour>>.Start<BattleGameSceneManager.<GetRoleTarget>d__175>() */ + 7) == 0 )
+    ((void (__fastcall *)(void *))unk_3C503FC)(off_8CF8EC8 /* Method$Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<List<RoleBehaviour>>.Start<BattleGameSceneManager.<GetRoleTarget>d__175>() */);
+  GameModule_BattleGameSceneManager__GetRoleTarget_d__175__MoveNext((__int64)&v15);
+  ((void (__fastcall *)(long double *__return_ptr, char *, __int64))unk_3D31BC0)(&v13, (char *)&v15 + 8, qword_8CF8EF8 /* Method$Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<List<RoleBehaviour>>.get_Task() */);
+  result = v13;
+  *(_QWORD *)(a5 + 16) = v14;
+  *(long double *)a5 = result;
+  return result;
+}

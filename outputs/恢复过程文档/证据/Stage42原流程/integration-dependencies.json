@@ -1,0 +1,68 @@
+[
+  {
+    "severity": "integration_blocker",
+    "file": "Assets/Scripts/GFRunning/GameFramework/Utility.cs",
+    "members": [
+      {
+        "token": "0x0600603C",
+        "name": "Utility.Text.GetFullName<T>(string)",
+        "rva_shared_object": "0x511D668"
+      },
+      {
+        "token": "0x0600603D",
+        "name": "Utility.Text.GetFullName(Type,string)",
+        "rva": "0x71E37C0"
+      }
+    ],
+    "source_sha256": "136e8c6f72a38ed6281b046d8769b93a6b310289a7240f92cd4d5b40e606817f",
+    "current_behavior": "Both real methods return null; real complete candidate GFRunning assembly throws ArgumentNullException(key) before FSM construction.",
+    "native_behavior": "GetFullName<T>(name) delegates to GetFullName(typeof(T),name). Type overload reads type.FullName; null/empty name returns it, otherwise string.Format(\"{0}.{1}\",fullName,name).",
+    "evidence": "ida/pseudocode/0x511d668.c; ida/pseudocode/0x71e37c0.c; validation-research/unity-csc/production-dependency-negative.json",
+    "requested_main_action": "Restore these original helpers in their owned shared source before expecting Register/CreateFsm to execute in Unity. Stage42 does not modify this file."
+  },
+  {
+    "severity": "diagnostics_incomplete",
+    "file": "Assets/Scripts/GFRunning/GameFramework/GameFrameworkException.cs",
+    "members": [
+      {
+        "token": "0x060055F0",
+        "rva": "0x715BFDC",
+        "name": "GameFrameworkException(string)"
+      }
+    ],
+    "current_behavior": "Empty constructor still throws correct derived exception type when constructed, but does not forward the original message to Exception(string).",
+    "impact": "CLR tests validate exception type and state; they do not claim original exception Message is restored."
+  },
+  {
+    "severity": "diagnostics_incomplete",
+    "file": "Assets/Scripts/GFRunning/GameFramework/CLog.cs",
+    "members": [
+      {
+        "token": "0x06006211",
+        "rva": "0x7202818",
+        "name": "CLog.LogProcedure(params object[])"
+      }
+    ],
+    "current_behavior": "Current empty body does not display Procedure enter/leave calls.",
+    "impact": "Candidate preserves original call and string; no claim that production log is visible."
+  },
+  {
+    "severity": "unused_private_path_dependency",
+    "file": "Assets/Scripts/GFRunning/GameFramework/Procedure/ProcedureTypeAttribute.cs",
+    "members": [
+      {
+        "token": "0x06006A21",
+        "rva": "0x727A5C4",
+        "name": "ProcedureTypeAttribute(Type)"
+      }
+    ],
+    "current_behavior": "Empty constructor does not assign ProcedureType field.",
+    "impact": "Affects private reflection GetProceduresType; current GameStart.RegisterProcedure explicitly supplies the three real Procedure instances and does not use this helper."
+  },
+  {
+    "severity": "external_runtime_acceptance",
+    "file": "work/recovery-ledger/unity-play-main5.json",
+    "current_behavior": "Existing main5 observation has frame1 BLIT_DECODE_HDR missing keyword and CoreBlit invalid pass 1 errors.",
+    "impact": "Rendering, preloading/login, original scene/map and combat remain main-window integration/runtime work. Stage42 neither changes rendering nor launches Unity."
+  }
+]

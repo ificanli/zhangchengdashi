@@ -1,0 +1,83 @@
+PASS native NumberStyles value
+PASS ToInt null
+PASS ToInt ""
+PASS ToInt " "
+PASS ToInt "\r\n\t"
+PASS ToInt "0"
+FAIL ToInt "17": expected 17
+FAIL ToInt "-7": expected -7
+FAIL ToInt "\u002B42": expected 42
+FAIL ToInt " \t-12\r\n": expected -12
+FAIL ToInt "000012": expected 12
+FAIL ToInt "2147483647": expected 2147483647
+PASS ToInt "2147483648"
+FAIL ToInt "-2147483648": expected -2147483648
+PASS ToInt "-2147483649"
+PASS ToInt "99999999999999999999999999999999999"
+FAIL ToInt "3.0": expected 3
+FAIL ToInt "3.000": expected 3
+FAIL ToInt "3.": expected 3
+PASS ToInt "0.000"
+PASS ToInt "0.1"
+FAIL ToInt "-3.0": expected -3
+FAIL ToInt "2147483647.0": expected 2147483647
+FAIL ToInt "-2147483648.000": expected -2147483648
+FAIL ToInt "1e3": expected 1000
+FAIL ToInt "1E\u002B3": expected 1000
+FAIL ToInt "1.2e1": expected 12
+FAIL ToInt "120e-1": expected 12
+PASS ToInt "12e-1"
+PASS ToInt "1e-1"
+FAIL ToInt "1e0": expected 1
+FAIL ToInt "2.147483647e9": expected 2147483647
+PASS ToInt "2.147483648e9"
+FAIL ToInt "-2.147483648e9": expected -2147483648
+PASS ToInt "-2.147483649e9"
+PASS ToInt "1e100000"
+PASS ToInt "1,000"
+PASS ToInt "1,0"
+PASS ToInt "1 000"
+PASS ToInt "0x10"
+PASS ToInt "NaN"
+PASS ToInt "Infinity"
+PASS ToInt "123-"
+PASS ToInt "(123)"
+PASS ToInt "\uFFE53"
+PASS ToInt "text"
+PASS ToInt "\uFF11\uFF12"
+PASS ToInt "\u0661\u0662"
+PASS ToInt "\u221212"
+PASS ToInt "\u00A012\u00A0"
+FAIL InvariantCulture ignores current en-US: invariant decimal point
+FAIL InvariantCulture ignores current de-DE: invariant decimal point
+FAIL InvariantCulture ignores current fr-FR: invariant decimal point
+FAIL InvariantCulture ignores current tr-TR: invariant decimal point
+FAIL InvariantCulture ignores current ar-SA: invariant decimal point
+FAIL custom current-culture signs cannot change native conversion: invariant signs used
+FAIL IsNullOrEmpty null trim=True: native null/Trim/Length semantics
+FAIL IsNullOrEmpty null trim=False: native null/Trim/Length semantics
+FAIL IsNullOrEmpty "" trim=True: native null/Trim/Length semantics
+FAIL IsNullOrEmpty "" trim=False: native null/Trim/Length semantics
+FAIL IsNullOrEmpty " " trim=True: native null/Trim/Length semantics
+PASS IsNullOrEmpty " " trim=False
+FAIL IsNullOrEmpty "\t\r\n" trim=True: native null/Trim/Length semantics
+PASS IsNullOrEmpty "\t\r\n" trim=False
+FAIL IsNullOrEmpty "\u00A0\u2003\u202F\u3000" trim=True: native null/Trim/Length semantics
+PASS IsNullOrEmpty "\u00A0\u2003\u202F\u3000" trim=False
+PASS IsNullOrEmpty "\u200B" trim=True
+PASS IsNullOrEmpty "\uFEFF" trim=True
+PASS IsNullOrEmpty "\u0000" trim=True
+PASS IsNullOrEmpty " a " trim=True
+PASS IsNullOrEmpty " a " trim=False
+PASS IsNullOrEmpty " Assets/JsonData " trim=True
+FAIL trimSpaces default remains optional true: default invocation trims
+PASS ToEnum is diagnostic-only unrecovered member
+FAIL original dictionary keys original-addressable-81 EnemyDifficultLevelInfosgameplay_improve_01.json: original id key conversion index=0
+FAIL original dictionary keys original-addressable-81 EnemyDifficultLevelInfosgameplay_improve_v2_01.json: original id key conversion index=0
+FAIL original dictionary keys original-addressable-81 EnemyDifficultLevelInfosgameplay_improve_v2_02.json: original id key conversion index=0
+FAIL original dictionary keys original-addressable-81 UserLevelInfo.json: original level key conversion index=0
+FAIL original dictionary keys resources-matching-original-81 EnemyDifficultLevelInfosgameplay_improve_01.txt: original id key conversion index=0
+FAIL original dictionary keys resources-matching-original-81 EnemyDifficultLevelInfosgameplay_improve_v2_01.txt: original id key conversion index=0
+FAIL original dictionary keys resources-matching-original-81 EnemyDifficultLevelInfosgameplay_improve_v2_02.txt: original id key conversion index=0
+FAIL original dictionary keys resources-matching-original-81 UserLevelInfo.txt: original level key conversion index=0
+RESULT scenarios=82 checks=99 failures=42 dictionaryFilesPassed=0

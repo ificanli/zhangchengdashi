@@ -1,0 +1,12 @@
+0x72633c4: STP             X30, X19, [SP,#var_10]!
+0x72633c8: MOV             X19, X0
+0x72633cc: MOV             X0, XZR
+0x72633d0: BL              System.Text.Encoding$$get_Unicode
+0x72633d4: CBZ             X0, loc_72633F0
+0x72633d8: LDR             X8, [X0]
+0x72633dc: MOV             X1, X19
+0x72633e0: LDR             X3, [X8,#0x258]
+0x72633e4: LDR             X2, [X8,#0x260]
+0x72633e8: LDP             X30, X19, [SP+0x10+var_10],#0x10
+0x72633ec: BR              X3
+0x72633f0: BL              il2cpp_codegen_raise_null_reference_exception

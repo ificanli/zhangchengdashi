@@ -1,0 +1,9 @@
+0x3d7fef0: STP             X30, X19, [SP,#var_10]!
+0x3d7fef4: MOV             X19, X0
+0x3d7fef8: LDR             X0, [X0,#0x140]
+0x3d7fefc: CBNZ            X0, loc_3D7FF0C
+0x3d7ff00: MOV             X0, X19
+0x3d7ff04: BL              GameModule.RoleBehaviour$$ResolveAnimationBehaviour
+0x3d7ff08: STR             X0, [X19,#0x140]
+0x3d7ff0c: LDP             X30, X19, [SP+0x10+var_10],#0x10
+0x3d7ff10: RET

@@ -1,0 +1,40 @@
+void GameFramework_Base_GameStartEntry____r_Mu(void *self, const MethodInfo *method)
+{
+  __int64 Module_object; // x19
+  __int64 v4; // x20
+  _QWORD *v5; // x21
+  __int64 v6; // x8
+  __int64 v7; // x0
+  __int64 v8; // x0
+
+  if ( (byte_900A05E & 1) == 0 )
+  {
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8CE3CE0 /* System.Action_TypeInfo */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&off_8D1D5E8 /* Method$System.Array.Empty<object>() */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D2D190 /* Method$GameFramework.GameFrameEntry.GetModule<UIModule>() */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&off_8CE7B30 /* GameFramework.GameFrameEntry_TypeInfo */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D2E1C0 /* Method$GameFramework.Base.GameStartEntry.»f¸]() */);
+    byte_900A05E = 1;
+  }
+  if ( *((_DWORD *)off_8CE7B30 /* GameFramework.GameFrameEntry_TypeInfo */ + 56) == 0 )
+    il2cpp_codegen_runtime_class_init(off_8CE7B30 /* GameFramework.GameFrameEntry_TypeInfo */);
+  Module_object = GameFramework_GameFrameEntry__GetModule_object_(qword_8D2D190 /* Method$GameFramework.GameFrameEntry.GetModule<UIModule>() */);
+  v4 = ((__int64 (__fastcall *)(__int64))unk_3C3D4C4)(qword_8CE3CE0 /* System.Action_TypeInfo */);
+  System_Action___ctor(v4, self, qword_8D2E1C0 /* Method$GameFramework.Base.GameStartEntry.»f¸]() */, 0);
+  v5 = off_8D1D5E8 /* Method$System.Array.Empty<object>() */;
+  v6 = *((_QWORD *)off_8D1D5E8 /* Method$System.Array.Empty<object>() */ + 7);
+  if ( v6 == 0 )
+  {
+    ((void (__fastcall *)(void *))unk_3C503FC)(off_8D1D5E8 /* Method$System.Array.Empty<object>() */);
+    v6 = v5[7];
+  }
+  v7 = *(_QWORD *)(v6 + 16);
+  if ( (*(_BYTE *)(v7 + 309) & 1) == 0 )
+    v7 = ((__int64 (*)(void))unk_3C503A0)();
+  if ( *(_DWORD *)(v7 + 224) == 0 )
+    il2cpp_codegen_runtime_class_init((void *)v7);
+  v8 = *(_QWORD *)(v5[7] + 16LL);
+  if ( (*(_BYTE *)(v8 + 309) & 1) == 0 )
+    v8 = ((__int64 (*)(void))unk_3C503A0)();
+  GameFramework_GameFrameEntry__Initialize(Module_object, v4, **(_QWORD **)(v8 + 184), 0);
+}

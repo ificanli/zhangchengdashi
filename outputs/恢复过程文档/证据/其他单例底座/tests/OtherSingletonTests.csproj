@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+ <PropertyGroup><TargetFramework>net10.0</TargetFramework><OutputType>Exe</OutputType><LangVersion>latest</LangVersion><EnableDefaultCompileItems>false</EnableDefaultCompileItems></PropertyGroup>
+ <ItemGroup>
+  <Compile Include="Program.cs" />
+  <Compile Include="../../../outputs/OccupyCityRecovered/Assets/Scripts/Assembly-CSharp/L_Tools/Singleton.cs" Condition="'$(Baseline)'!='true'" />
+  <Compile Include="../../../outputs/OccupyCityRecovered/Assets/Scripts/Assembly-CSharp/QuickTutor/Singleton.cs" Condition="'$(Baseline)'!='true'" />
+  <Compile Include="baseline/L_Tools.Singleton.cs" Condition="'$(Baseline)'=='true'" />
+  <Compile Include="baseline/QuickTutor.Singleton.cs" Condition="'$(Baseline)'=='true'" />
+  <Reference Include="UniTask"><HintPath>../../../outputs/OccupyCityRecovered/Library/ScriptAssemblies/UniTask.dll</HintPath></Reference>
+  <Reference Include="Il2CppDummyDll"><HintPath>../../../outputs/OccupyCityRecovered/Library/ScriptAssemblies/Il2CppDummyDll.dll</HintPath></Reference>
+ </ItemGroup>
+</Project>

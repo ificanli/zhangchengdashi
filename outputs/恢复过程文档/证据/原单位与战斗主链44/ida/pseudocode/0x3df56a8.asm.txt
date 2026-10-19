@@ -1,0 +1,100 @@
+0x3df56a8: STR             X30, [SP,#var_50]!
+0x3df56ac: STP             X26, X25, [SP,#0x50+var_40]
+0x3df56b0: STP             X24, X23, [SP,#0x50+var_30]
+0x3df56b4: STP             X22, X21, [SP,#0x50+var_20]
+0x3df56b8: STP             X20, X19, [SP,#0x50+var_10]
+0x3df56bc: ADRP            X20, #byte_8FFD7B1@PAGE
+0x3df56c0: LDRB            W8, [X20,#byte_8FFD7B1@PAGEOFF]
+0x3df56c4: MOV             X19, X1
+0x3df56c8: TBNZ            W8, #0, loc_3DF5710
+0x3df56cc: ADRP            X0, #off_8AD3D90@PAGE
+0x3df56d0: LDR             X0, [X0,#off_8AD3D90@PAGEOFF]; qword_8D26940 ; slot
+0x3df56d4: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3df56d8: ADRP            X0, #off_8ACE708@PAGE
+0x3df56dc: LDR             X0, [X0,#off_8ACE708@PAGEOFF]; qword_8D0DDC0 ; slot
+0x3df56e0: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3df56e4: ADRP            X0, #off_8ACE710@PAGE
+0x3df56e8: LDR             X0, [X0,#off_8ACE710@PAGEOFF]; qword_8D0DDC8 ; slot
+0x3df56ec: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3df56f0: ADRP            X0, #off_8ACFC58@PAGE
+0x3df56f4: LDR             X0, [X0,#off_8ACFC58@PAGEOFF]; qword_8D12338 ; slot
+0x3df56f8: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3df56fc: ADRP            X0, #off_8ACC8D0@PAGE
+0x3df5700: LDR             X0, [X0,#off_8ACC8D0@PAGEOFF]; off_8CEB3E0 ; slot
+0x3df5704: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3df5708: MOV             W8, #1
+0x3df570c: STRB            W8, [X20,#byte_8FFD7B1@PAGEOFF]
+0x3df5710: STR             XZR, [SP,#0x50+var_48]
+0x3df5714: CBZ             X19, loc_3DF5834
+0x3df5718: LDR             W8, [X19,#0x18]
+0x3df571c: SUBS            W20, W8, #1
+0x3df5720: B.MI            loc_3DF581C
+0x3df5724: ADRP            X23, #off_8ACE710@PAGE
+0x3df5728: ADRP            X24, #off_8ACC8D0@PAGE
+0x3df572c: ADRP            X25, #off_8ACFC58@PAGE
+0x3df5730: ADRP            X26, #off_8AD3D90@PAGE
+0x3df5734: LDR             X23, [X23,#off_8ACE710@PAGEOFF]; qword_8D0DDC8
+0x3df5738: LDR             X24, [X24,#off_8ACC8D0@PAGEOFF]; off_8CEB3E0
+0x3df573c: LDR             X25, [X25,#off_8ACFC58@PAGEOFF]; qword_8D12338
+0x3df5740: LDR             X26, [X26,#off_8AD3D90@PAGEOFF]; qword_8D26940
+0x3df5744: LDR             X2, [X23]
+0x3df5748: MOV             X0, X19
+0x3df574c: MOV             W1, W20
+0x3df5750: BL              System.Collections.Generic.List_object_$$get_Item
+0x3df5754: LDR             X8, [X24]
+0x3df5758: MOV             X21, X0
+0x3df575c: LDR             W9, [X8,#0xE0]
+0x3df5760: CBNZ            W9, loc_3DF576C
+0x3df5764: MOV             X0, X8; klass
+0x3df5768: BL              il2cpp_codegen_runtime_class_init
+0x3df576c: MOV             X0, X21
+0x3df5770: MOV             X1, XZR
+0x3df5774: MOV             X2, XZR
+0x3df5778: BL              UnityEngine.Object$$op_Inequality
+0x3df577c: TBZ             W0, #0, loc_3DF5814
+0x3df5780: LDR             X0, [X25]; method
+0x3df5784: BL              ToolModule.ManagerBase_object_$$get_Instance
+0x3df5788: CBZ             X21, loc_3DF5834
+0x3df578c: MOV             X22, X0
+0x3df5790: MOV             X0, X21
+0x3df5794: MOV             X1, XZR
+0x3df5798: BL              UnityEngine.Component$$get_gameObject
+0x3df579c: CBZ             X0, loc_3DF5834
+0x3df57a0: MOV             X1, XZR
+0x3df57a4: BL              UnityEngine.Object$$get_name
+0x3df57a8: CBZ             X22, loc_3DF5834
+0x3df57ac: MOV             X1, X0
+0x3df57b0: MOV             X0, X22
+0x3df57b4: MOV             X2, XZR
+0x3df57b8: BL              AssetsModule.ObjPoolManager$$IsBattlePersistentPool
+0x3df57bc: TBZ             W0, #0, loc_3DF57E4
+0x3df57c0: LDR             X2, [X26]
+0x3df57c4: ADD             X1, SP, #0x50+var_48
+0x3df57c8: MOV             X0, X21
+0x3df57cc: BL              UnityEngine.Component$$TryGetComponent_object_
+0x3df57d0: TBZ             W0, #0, loc_3DF57E4
+0x3df57d4: MOV             X0, X21
+0x3df57d8: MOV             X1, XZR
+0x3df57dc: BL              GameModule.RoleBehaviour$$RecycleOnBattleEnd
+0x3df57e0: B               loc_3DF5814
+0x3df57e4: MOV             X0, X21
+0x3df57e8: MOV             X1, XZR
+0x3df57ec: BL              UnityEngine.Component$$get_gameObject
+0x3df57f0: LDR             X8, [X24]
+0x3df57f4: MOV             X21, X0
+0x3df57f8: LDR             W9, [X8,#0xE0]
+0x3df57fc: CBNZ            W9, loc_3DF5808
+0x3df5800: MOV             X0, X8; klass
+0x3df5804: BL              il2cpp_codegen_runtime_class_init
+0x3df5808: MOV             X0, X21
+0x3df580c: MOV             X1, XZR
+0x3df5810: BL              UnityEngine.Object$$Destroy
+0x3df5814: SUBS            W20, W20, #1
+0x3df5818: B.PL            loc_3DF5744
+0x3df581c: LDP             X20, X19, [SP,#0x50+var_10]
+0x3df5820: LDP             X22, X21, [SP,#0x50+var_20]
+0x3df5824: LDP             X24, X23, [SP,#0x50+var_30]
+0x3df5828: LDP             X26, X25, [SP,#0x50+var_40]
+0x3df582c: LDR             X30, [SP+0x50+var_50],#0x50
+0x3df5830: RET
+0x3df5834: BL              il2cpp_codegen_raise_null_reference_exception

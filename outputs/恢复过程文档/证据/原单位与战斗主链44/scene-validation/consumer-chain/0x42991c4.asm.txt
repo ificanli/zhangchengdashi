@@ -1,0 +1,84 @@
+0x42991c4: fe57bea9 stp      x30, x21, [sp, #-0x20]!
+0x42991c8: f44f01a9 stp      x20, x19, [sp, #0x10]
+0x42991cc: 356b02f0 adrp     x21, #0x9000000
+0x42991d0: b4410290 adrp     x20, #0x8acd000
+0x42991d4: a84e4339 ldrb     w8, [x21, #0xd3]
+0x42991d8: 94be47f9 ldr      x20, [x20, #0xf78] // QuickTutor.Singleton<ABTestManager>_TypeInfo
+0x42991dc: f30300aa mov      x19, x0
+0x42991e0: e8010037 tbnz     w8, #0, #0x429921c
+0x42991e4: a04102b0 adrp     x0, #0x8ace000
+0x42991e8: 008043f9 ldr      x0, [x0, #0x700] // Method$ToolModule.ManagerBase<BattleGameSceneManager>.get_Instance()
+0x42991ec: 2590e697 bl       #0x3c3d280
+0x42991f0: a0410290 adrp     x0, #0x8acd000
+0x42991f4: 00c447f9 ldr      x0, [x0, #0xf88] // Method$QuickTutor.Singleton<ABTestManager>.get_Instance()
+0x42991f8: 2290e697 bl       #0x3c3d280
+0x42991fc: a0410290 adrp     x0, #0x8acd000
+0x4299200: 00bc47f9 ldr      x0, [x0, #0xf78] // QuickTutor.Singleton<ABTestManager>_TypeInfo
+0x4299204: 1f90e697 bl       #0x3c3d280
+0x4299208: a0410290 adrp     x0, #0x8acd000
+0x429920c: 003c42f9 ldr      x0, [x0, #0x478] // string_TypeInfo
+0x4299210: 1c90e697 bl       #0x3c3d280
+0x4299214: 28008052 mov      w8, #1
+0x4299218: a84e0339 strb     w8, [x21, #0xd3]
+0x429921c: 800240f9 ldr      x0, [x20]
+0x4299220: b4410290 adrp     x20, #0x8acd000
+0x4299224: 08e040b9 ldr      w8, [x0, #0xe0]
+0x4299228: 94c647f9 ldr      x20, [x20, #0xf88] // Method$QuickTutor.Singleton<ABTestManager>.get_Instance()
+0x429922c: 48000035 cbnz     w8, #0x4299234
+0x4299230: 6090e697 bl       #0x3c3d3b0
+0x4299234: 800240f9 ldr      x0, [x20]
+0x4299238: 4b967494 bl       #0x5fbeb64 // QuickTutor.Singleton<object>$$get_Instance
+0x429923c: a00600b4 cbz      x0, #0x4299310
+0x4299240: e1031faa mov      x1, xzr
+0x4299244: ce64f397 bl       #0x3f7257c // SDKModule.ABTestManager$$get_GamePlayImprove01IsBTest
+0x4299248: 80040036 tbz      w0, #0, #0x42992d8
+0x429924c: 681e41b9 ldr      w8, [x19, #0x11c]
+0x4299250: 1f0d0071 cmp      w8, #3
+0x4299254: 61000054 b.ne     #0x4299260
+0x4299258: 68620391 add      x8, x19, #0xd8
+0x429925c: 05000014 b        #0x4299270
+0x4299260: a8410290 adrp     x8, #0x8acd000
+0x4299264: 083d42f9 ldr      x8, [x8, #0x478] // string_TypeInfo
+0x4299268: 080140f9 ldr      x8, [x8]
+0x429926c: 085d40f9 ldr      x8, [x8, #0xb8]
+0x4299270: 140140f9 ldr      x20, [x8]
+0x4299274: 609640f9 ldr      x0, [x19, #0x128]
+0x4299278: e2031faa mov      x2, xzr
+0x429927c: e10314aa mov      x1, x20
+0x4299280: 7d95c994 bl       #0x74fe874 // System.String$$op_Equality
+0x4299284: a0020037 tbnz     w0, #0, #0x42992d8
+0x4299288: 609640f9 ldr      x0, [x19, #0x128]
+0x429928c: 21008052 mov      w1, #1
+0x4299290: e2031faa mov      x2, xzr
+0x4299294: 6170f397 bl       #0x3f75418 // ToolModule.StringTool$$IsNullOrEmpty
+0x4299298: 40010037 tbnz     w0, #0, #0x42992c0
+0x429929c: a84102b0 adrp     x8, #0x8ace000
+0x42992a0: 088143f9 ldr      x8, [x8, #0x700] // Method$ToolModule.ManagerBase<BattleGameSceneManager>.get_Instance()
+0x42992a4: 000140f9 ldr      x0, [x8]
+0x42992a8: 6e7c5b94 bl       #0x5978460 // ToolModule.ManagerBase<object>$$get_Instance
+0x42992ac: 200300b4 cbz      x0, #0x4299310
+0x42992b0: 62824039 ldrb     w2, [x19, #0x20]
+0x42992b4: 619640f9 ldr      x1, [x19, #0x128]
+0x42992b8: e3031faa mov      x3, xzr
+0x42992bc: 937ced97 bl       #0x3df8508 // GameModule.BattleGameSceneManager$$RemoveLegendaryBarracks
+0x42992c0: 21008052 mov      w1, #1
+0x42992c4: e00314aa mov      x0, x20
+0x42992c8: e2031faa mov      x2, xzr
+0x42992cc: 749600f9 str      x20, [x19, #0x128]
+0x42992d0: 5270f397 bl       #0x3f75418 // ToolModule.StringTool$$IsNullOrEmpty
+0x42992d4: 80000036 tbz      w0, #0, #0x42992e4
+0x42992d8: f44f41a9 ldp      x20, x19, [sp, #0x10]
+0x42992dc: fe57c2a8 ldp      x30, x21, [sp], #0x20
+0x42992e0: c0035fd6 ret      
+0x42992e4: a84102b0 adrp     x8, #0x8ace000
+0x42992e8: 088143f9 ldr      x8, [x8, #0x700] // Method$ToolModule.ManagerBase<BattleGameSceneManager>.get_Instance()
+0x42992ec: 000140f9 ldr      x0, [x8]
+0x42992f0: 5c7c5b94 bl       #0x5978460 // ToolModule.ManagerBase<object>$$get_Instance
+0x42992f4: e00000b4 cbz      x0, #0x4299310
+0x42992f8: 62824039 ldrb     w2, [x19, #0x20]
+0x42992fc: 619640f9 ldr      x1, [x19, #0x128]
+0x4299300: f44f41a9 ldp      x20, x19, [sp, #0x10]
+0x4299304: e3031faa mov      x3, xzr
+0x4299308: fe57c2a8 ldp      x30, x21, [sp], #0x20
+0x429930c: 337ced17 b        #0x3df83d8 // GameModule.BattleGameSceneManager$$AddLegendaryBarracks
+0x4299310: 6f90e697 bl       #0x3c3d4cc

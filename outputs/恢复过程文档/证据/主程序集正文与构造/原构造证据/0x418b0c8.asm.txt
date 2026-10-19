@@ -1,0 +1,23 @@
+0x418b0c8: STP             X30, X21, [SP,#var_20]!
+0x418b0cc: STP             X20, X19, [SP,#0x20+var_10]
+0x418b0d0: MOV             X20, X1
+0x418b0d4: MOV             X1, XZR
+0x418b0d8: MOV             W21, W2
+0x418b0dc: MOV             X19, X0
+0x418b0e0: BL              System.Object$$.ctor
+0x418b0e4: AND             W8, W21, #1
+0x418b0e8: STR             X20, [X19,#0x18]
+0x418b0ec: STRB            W8, [X19,#0x10]
+0x418b0f0: CBZ             X20, loc_418B120
+0x418b0f4: LDR             X0, [X20,#0x28]
+0x418b0f8: MOV             X1, XZR
+0x418b0fc: BL              ToolModule.StringTool$$ToInt
+0x418b100: STR             W0, [X19,#0x20]
+0x418b104: MOV             X0, X19
+0x418b108: BL              TutorModule.FeatureWeeklyUnlock$$GetIsUnlock
+0x418b10c: AND             W8, W0, #1
+0x418b110: STRB            W8, [X19,#0x10]
+0x418b114: LDP             X20, X19, [SP,#0x20+var_10]
+0x418b118: LDP             X30, X21, [SP+0x20+var_20],#0x20
+0x418b11c: RET
+0x418b120: BL              il2cpp_codegen_raise_null_reference_exception

@@ -1,0 +1,15 @@
+void *ljzs_lt_GameStart__OpenLoadingUI(void *self, void *callback, const MethodInfo *method)
+{
+  __int64 v4; // x20
+
+  if ( (byte_900088A & 1) == 0 )
+  {
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8CF2F00 /* ljzs_lt.GameStart.<OpenLoadingUI>d__4_TypeInfo */);
+    byte_900088A = 1;
+  }
+  v4 = ((__int64 (__fastcall *)(__int64, void *, const MethodInfo *))unk_3C3D4C4)(qword_8CF2F00 /* ljzs_lt.GameStart.<OpenLoadingUI>d__4_TypeInfo */, callback, method);
+  System_Object___ctor(v4, 0);
+  *(_DWORD *)(v4 + 16) = 0;
+  *(_QWORD *)(v4 + 32) = callback;
+  return (void *)v4;
+}

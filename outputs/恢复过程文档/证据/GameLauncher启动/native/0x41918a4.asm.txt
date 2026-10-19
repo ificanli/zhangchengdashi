@@ -1,0 +1,52 @@
+0x41918a4: STP             X30, X21, [SP,#var_20]!
+0x41918a8: STP             X20, X19, [SP,#0x20+var_10]
+0x41918ac: ADRP            X20, #byte_8FFF6AE@PAGE
+0x41918b0: LDRB            W8, [X20,#byte_8FFF6AE@PAGEOFF]
+0x41918b4: MOV             X19, X0
+0x41918b8: TBNZ            W8, #0, loc_41918F4
+0x41918bc: ADRP            X0, #off_8ACDE30@PAGE
+0x41918c0: LDR             X0, [X0,#off_8ACDE30@PAGEOFF]; qword_8CD84E8 ; slot
+0x41918c4: BL              il2cpp_codegen_initialize_runtime_metadata
+0x41918c8: ADRP            X0, #off_8AE7528@PAGE
+0x41918cc: LDR             X0, [X0,#off_8AE7528@PAGEOFF]; qword_8D2D1E0 ; slot
+0x41918d0: BL              il2cpp_codegen_initialize_runtime_metadata
+0x41918d4: ADRP            X0, #off_8ACDE40@PAGE
+0x41918d8: LDR             X0, [X0,#off_8ACDE40@PAGEOFF]; qword_8D12148 ; slot
+0x41918dc: BL              il2cpp_codegen_initialize_runtime_metadata
+0x41918e0: ADRP            X0, #off_8AE2508@PAGE
+0x41918e4: LDR             X0, [X0,#off_8AE2508@PAGEOFF]; qword_8D69BA8 ; slot
+0x41918e8: BL              il2cpp_codegen_initialize_runtime_metadata
+0x41918ec: MOV             W8, #1
+0x41918f0: STRB            W8, [X20,#byte_8FFF6AE@PAGEOFF]
+0x41918f4: LDRB            W8, [X19,#0x30]
+0x41918f8: CBZ             W8, loc_4191964
+0x41918fc: ADRP            X8, #off_8ACDE40@PAGE
+0x4191900: LDR             X8, [X8,#off_8ACDE40@PAGEOFF]; qword_8D12148
+0x4191904: ADRP            X20, #off_8ACDE30@PAGE
+0x4191908: ADRP            X21, #off_8AE7528@PAGE
+0x419190c: LDR             X0, [X8]
+0x4191910: LDR             X20, [X20,#off_8ACDE30@PAGEOFF]; qword_8CD84E8
+0x4191914: LDR             X21, [X21,#off_8AE7528@PAGEOFF]; qword_8D2D1E0
+0x4191918: BL              ToolModule.ManagerBase_object_$$get_Instance
+0x419191c: LDR             X8, [X20]
+0x4191920: MOV             X20, X0
+0x4191924: MOV             X0, X8
+0x4191928: BL              unk_3C3D4C4
+0x419192c: LDR             X2, [X21]
+0x4191930: MOV             X1, X19
+0x4191934: MOV             X3, XZR
+0x4191938: MOV             X21, X0
+0x419193c: BL              System.Action_object_$$.ctor
+0x4191940: CBZ             X20, loc_4191970
+0x4191944: ADRP            X8, #off_8AE2508@PAGE
+0x4191948: LDR             X8, [X8,#off_8AE2508@PAGEOFF]; qword_8D69BA8
+0x419194c: MOV             X0, X20
+0x4191950: MOV             X2, X21
+0x4191954: MOV             X3, XZR
+0x4191958: LDR             X1, [X8]
+0x419195c: BL              EventModule.EventManager$$StopListening
+0x4191960: STRB            WZR, [X19,#0x30]
+0x4191964: LDP             X20, X19, [SP,#0x20+var_10]
+0x4191968: LDP             X30, X21, [SP+0x20+var_20],#0x20
+0x419196c: RET
+0x4191970: BL              il2cpp_codegen_raise_null_reference_exception

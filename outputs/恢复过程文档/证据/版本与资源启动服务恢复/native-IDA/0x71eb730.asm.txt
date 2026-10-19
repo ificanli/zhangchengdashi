@@ -1,0 +1,16 @@
+0x71eb730: STR             X30, [SP,#var_20]!
+0x71eb734: STP             X20, X19, [SP,#0x20+var_10]
+0x71eb738: MOV             X20, X0
+0x71eb73c: MOV             X0, XZR
+0x71eb740: BL              UpdateManager$$get_Instance
+0x71eb744: MOV             X19, X0
+0x71eb748: MOV             X0, X20
+0x71eb74c: BL              GameFramework.VersionMondule$$Init
+0x71eb750: CBZ             X19, loc_71EB76C
+0x71eb754: MOV             X1, X0
+0x71eb758: MOV             X0, X19
+0x71eb75c: LDP             X20, X19, [SP,#0x20+var_10]
+0x71eb760: MOV             X2, XZR
+0x71eb764: LDR             X30, [SP+0x20+var_20],#0x20
+0x71eb768: B               UnityEngine.MonoBehaviour$$StartCoroutine
+0x71eb76c: BL              il2cpp_codegen_raise_null_reference_exception

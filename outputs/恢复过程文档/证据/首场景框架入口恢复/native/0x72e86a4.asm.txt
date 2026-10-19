@@ -1,0 +1,284 @@
+0x72e86a4: fe5fbda9 stp      x30, x23, [sp, #-0x30]!
+0x72e86a8: f65701a9 stp      x22, x21, [sp, #0x10]
+0x72e86ac: f44f02a9 stp      x20, x19, [sp, #0x20]
+0x72e86b0: 15e900d0 adrp     x21, #0x900a000
+0x72e86b4: 34bf00b0 adrp     x20, #0x8acd000
+0x72e86b8: a83a4139 ldrb     w8, [x21, #0x4e]
+0x72e86bc: 94e242f9 ldr      x20, [x20, #0x5c0] // GameFramework.AppSetting_TypeInfo
+0x72e86c0: f30300aa mov      x19, x0
+0x72e86c4: 48050037 tbnz     w8, #0, #0x72e876c
+0x72e86c8: 20bf00b0 adrp     x0, #0x8acd000
+0x72e86cc: 008844f9 ldr      x0, [x0, #0x910] // System.Action_TypeInfo
+0x72e86d0: ec522597 bl       #0x3c3d280
+0x72e86d4: 20bf00b0 adrp     x0, #0x8acd000
+0x72e86d8: 00e042f9 ldr      x0, [x0, #0x5c0] // GameFramework.AppSetting_TypeInfo
+0x72e86dc: e9522597 bl       #0x3c3d280
+0x72e86e0: 20bf00b0 adrp     x0, #0x8acd000
+0x72e86e4: 003043f9 ldr      x0, [x0, #0x660] // Method$System.Array.Empty<object>()
+0x72e86e8: e6522597 bl       #0x3c3d280
+0x72e86ec: 20bf00b0 adrp     x0, #0x8acd000
+0x72e86f0: 003044f9 ldr      x0, [x0, #0x860] // GameFramework.CLog_TypeInfo
+0x72e86f4: e3522597 bl       #0x3c3d280
+0x72e86f8: 80c100d0 adrp     x0, #0x8b1a000
+0x72e86fc: 002446f9 ldr      x0, [x0, #0xc48] // Method$UnityEngine.Component.GetComponent<IGameStart>()
+0x72e8700: e0522597 bl       #0x3c3d280
+0x72e8704: 40c100d0 adrp     x0, #0x8b12000
+0x72e8708: 003442f9 ldr      x0, [x0, #0x468] // Method$GameFramework.GameFrameEntry.GetModule<VersionMondule>()
+0x72e870c: dd522597 bl       #0x3c3d280
+0x72e8710: 60c00090 adrp     x0, #0x8af4000
+0x72e8714: 005043f9 ldr      x0, [x0, #0x6a0] // GameFramework.GameFrameEntry_TypeInfo
+0x72e8718: da522597 bl       #0x3c3d280
+0x72e871c: 80c100d0 adrp     x0, #0x8b1a000
+0x72e8720: 002c46f9 ldr      x0, [x0, #0xc58] // Method$GameFramework.Base.GameStartEntry.vj·()
+0x72e8724: d7522597 bl       #0x3c3d280
+0x72e8728: 40c000d0 adrp     x0, #0x8af2000
+0x72e872c: 002841f9 ldr      x0, [x0, #0x250] // GameFramework.GlobalData_TypeInfo
+0x72e8730: d4522597 bl       #0x3c3d280
+0x72e8734: 20bf00b0 adrp     x0, #0x8acd000
+0x72e8738: 002c44f9 ldr      x0, [x0, #0x858] // object[]_TypeInfo
+0x72e873c: d1522597 bl       #0x3c3d280
+0x72e8740: 20bf0090 adrp     x0, #0x8acc000
+0x72e8744: 006844f9 ldr      x0, [x0, #0x8d0] // UnityEngine.Object_TypeInfo
+0x72e8748: ce522597 bl       #0x3c3d280
+0x72e874c: 60c00090 adrp     x0, #0x8af4000
+0x72e8750: 00dc44f9 ldr      x0, [x0, #0x9b8] // GameFramework.UserDataPrefs_TypeInfo
+0x72e8754: cb522597 bl       #0x3c3d280
+0x72e8758: 80c100b0 adrp     x0, #0x8b19000
+0x72e875c: 008c42f9 ldr      x0, [x0, #0x518] // 游戏启动失败，缺少游戏启动入口脚本
+0x72e8760: c8522597 bl       #0x3c3d280
+0x72e8764: 28008052 mov      w8, #1
+0x72e8768: a83a0139 strb     w8, [x21, #0x4e]
+0x72e876c: 800240f9 ldr      x0, [x20]
+0x72e8770: 75324139 ldrb     w21, [x19, #0x4c]
+0x72e8774: 08e040b9 ldr      w8, [x0, #0xe0]
+0x72e8778: 48000035 cbnz     w8, #0x72e8780
+0x72e877c: 0d532597 bl       #0x3c3d3b0
+0x72e8780: 16e900d0 adrp     x22, #0x900a000
+0x72e8784: c8ea4639 ldrb     w8, [x22, #0x1ba]
+0x72e8788: c8000035 cbnz     w8, #0x72e87a0
+0x72e878c: 20bf00b0 adrp     x0, #0x8acd000
+0x72e8790: 00e042f9 ldr      x0, [x0, #0x5c0] // GameFramework.AppSetting_TypeInfo
+0x72e8794: bb522597 bl       #0x3c3d280
+0x72e8798: 28008052 mov      w8, #1
+0x72e879c: c8ea0639 strb     w8, [x22, #0x1ba]
+0x72e87a0: 800240f9 ldr      x0, [x20]
+0x72e87a4: 08e040b9 ldr      w8, [x0, #0xe0]
+0x72e87a8: 68000035 cbnz     w8, #0x72e87b4
+0x72e87ac: 01532597 bl       #0x3c3d3b0
+0x72e87b0: 800240f9 ldr      x0, [x20]
+0x72e87b4: 085c40f9 ldr      x8, [x0, #0xb8]
+0x72e87b8: 16e900d0 adrp     x22, #0x900a000
+0x72e87bc: 15e90039 strb     w21, [x8, #0x3a]
+0x72e87c0: c8ee4639 ldrb     w8, [x22, #0x1bb]
+0x72e87c4: 751a40f9 ldr      x21, [x19, #0x30]
+0x72e87c8: c8000035 cbnz     w8, #0x72e87e0
+0x72e87cc: e00314aa mov      x0, x20
+0x72e87d0: ac522597 bl       #0x3c3d280
+0x72e87d4: 800240f9 ldr      x0, [x20]
+0x72e87d8: 28008052 mov      w8, #1
+0x72e87dc: c8ee0639 strb     w8, [x22, #0x1bb]
+0x72e87e0: 36bf0090 adrp     x22, #0x8acc000
+0x72e87e4: 08e040b9 ldr      w8, [x0, #0xe0]
+0x72e87e8: d66a44f9 ldr      x22, [x22, #0x8d0] // UnityEngine.Object_TypeInfo
+0x72e87ec: 68000035 cbnz     w8, #0x72e87f8
+0x72e87f0: f0522597 bl       #0x3c3d3b0
+0x72e87f4: 800240f9 ldr      x0, [x20]
+0x72e87f8: 085c40f9 ldr      x8, [x0, #0xb8]
+0x72e87fc: 151900f9 str      x21, [x8, #0x30]
+0x72e8800: c00240f9 ldr      x0, [x22]
+0x72e8804: 752a40f9 ldr      x21, [x19, #0x50]
+0x72e8808: 08e040b9 ldr      w8, [x0, #0xe0]
+0x72e880c: 48000035 cbnz     w8, #0x72e8814
+0x72e8810: e8522597 bl       #0x3c3d3b0
+0x72e8814: e00315aa mov      x0, x21
+0x72e8818: e1031faa mov      x1, xzr
+0x72e881c: e2031faa mov      x2, xzr
+0x72e8820: bd134094 bl       #0x82ed714 // UnityEngine.Object$$op_Equality
+0x72e8824: 20010036 tbz      w0, #0, #0x72e8848
+0x72e8828: 88c100d0 adrp     x8, #0x8b1a000
+0x72e882c: 082546f9 ldr      x8, [x8, #0xc48] // Method$UnityEngine.Component.GetComponent<IGameStart>()
+0x72e8830: e00313aa mov      x0, x19
+0x72e8834: 010140f9 ldr      x1, [x8]
+0x72e8838: 686c6297 bl       #0x4b839d8 // UnityEngine.Component$$GetComponent<object>
+0x72e883c: f50300aa mov      x21, x0
+0x72e8840: 602a00f9 str      x0, [x19, #0x50]
+0x72e8844: 02000014 b        #0x72e884c
+0x72e8848: 752a40f9 ldr      x21, [x19, #0x50]
+0x72e884c: c00240f9 ldr      x0, [x22]
+0x72e8850: 08e040b9 ldr      w8, [x0, #0xe0]
+0x72e8854: 48000035 cbnz     w8, #0x72e885c
+0x72e8858: d6522597 bl       #0x3c3d3b0
+0x72e885c: e00315aa mov      x0, x21
+0x72e8860: e1031faa mov      x1, xzr
+0x72e8864: e2031faa mov      x2, xzr
+0x72e8868: ab134094 bl       #0x82ed714 // UnityEngine.Object$$op_Equality
+0x72e886c: 00040036 tbz      w0, #0, #0x72e88ec
+0x72e8870: 28bf00b0 adrp     x8, #0x8acd000
+0x72e8874: 082d44f9 ldr      x8, [x8, #0x858] // object[]_TypeInfo
+0x72e8878: 21008052 mov      w1, #1
+0x72e887c: 000140f9 ldr      x0, [x8]
+0x72e8880: a8522597 bl       #0x3c3d320
+0x72e8884: e01300b4 cbz      x0, #0x72e8b00
+0x72e8888: 94c100b0 adrp     x20, #0x8b19000
+0x72e888c: 948e42f9 ldr      x20, [x20, #0x518] // 游戏启动失败，缺少游戏启动入口脚本
+0x72e8890: f30300aa mov      x19, x0
+0x72e8894: 800240f9 ldr      x0, [x20]
+0x72e8898: a00000b4 cbz      x0, #0x72e88ac
+0x72e889c: 680240f9 ldr      x8, [x19]
+0x72e88a0: 012140f9 ldr      x1, [x8, #0x40]
+0x72e88a4: c4522597 bl       #0x3c3d3b4
+0x72e88a8: 001300b4 cbz      x0, #0x72e8b08
+0x72e88ac: 681a40b9 ldr      w8, [x19, #0x18]
+0x72e88b0: a8120034 cbz      w8, #0x72e8b04
+0x72e88b4: 880240f9 ldr      x8, [x20]
+0x72e88b8: 681200f9 str      x8, [x19, #0x20]
+0x72e88bc: 28bf00b0 adrp     x8, #0x8acd000
+0x72e88c0: 083144f9 ldr      x8, [x8, #0x860] // GameFramework.CLog_TypeInfo
+0x72e88c4: 000140f9 ldr      x0, [x8]
+0x72e88c8: 08e040b9 ldr      w8, [x0, #0xe0]
+0x72e88cc: 48000035 cbnz     w8, #0x72e88d4
+0x72e88d0: b8522597 bl       #0x3c3d3b0
+0x72e88d4: e00313aa mov      x0, x19
+0x72e88d8: f44f42a9 ldp      x20, x19, [sp, #0x20]
+0x72e88dc: f65741a9 ldp      x22, x21, [sp, #0x10]
+0x72e88e0: e1031faa mov      x1, xzr
+0x72e88e4: fe5fc3a8 ldp      x30, x23, [sp], #0x30
+0x72e88e8: 1a2bfc17 b        #0x71f3550 // GameFramework.CLog$$Error
+0x72e88ec: 682a40f9 ldr      x8, [x19, #0x50]
+0x72e88f0: 881000b4 cbz      x8, #0x72e8b00
+0x72e88f4: 131100f9 str      x19, [x8, #0x20]
+0x72e88f8: 7f220139 strb     wzr, [x19, #0x48]
+0x72e88fc: 800240f9 ldr      x0, [x20]
+0x72e8900: 08e040b9 ldr      w8, [x0, #0xe0]
+0x72e8904: 48000035 cbnz     w8, #0x72e890c
+0x72e8908: aa522597 bl       #0x3c3d3b0
+0x72e890c: e0031faa mov      x0, xzr
+0x72e8910: c5dbf897 bl       #0x711f824 // GameFramework.AppSetting$$SetCultureBasedOnSetting
+0x72e8914: 15e90090 adrp     x21, #0x9008000
+0x72e8918: a8827539 ldrb     w8, [x21, #0xd60]
+0x72e891c: c8000035 cbnz     w8, #0x72e8934
+0x72e8920: 20bf00b0 adrp     x0, #0x8acd000
+0x72e8924: 00e042f9 ldr      x0, [x0, #0x5c0] // GameFramework.AppSetting_TypeInfo
+0x72e8928: 56522597 bl       #0x3c3d280
+0x72e892c: 28008052 mov      w8, #1
+0x72e8930: a8823539 strb     w8, [x21, #0xd60]
+0x72e8934: 800240f9 ldr      x0, [x20]
+0x72e8938: 08e040b9 ldr      w8, [x0, #0xe0]
+0x72e893c: 68000035 cbnz     w8, #0x72e8948
+0x72e8940: 9c522597 bl       #0x3c3d3b0
+0x72e8944: 800240f9 ldr      x0, [x20]
+0x72e8948: 085c40f9 ldr      x8, [x0, #0xb8]
+0x72e894c: 08654139 ldrb     w8, [x8, #0x59]
+0x72e8950: 28020034 cbz      w8, #0x72e8994
+0x72e8954: 55c000d0 adrp     x21, #0x8af2000
+0x72e8958: b52a41f9 ldr      x21, [x21, #0x250] // GameFramework.GlobalData_TypeInfo
+0x72e895c: a80240f9 ldr      x8, [x21]
+0x72e8960: 09e140b9 ldr      w9, [x8, #0xe0]
+0x72e8964: a9000035 cbnz     w9, #0x72e8978
+0x72e8968: e00308aa mov      x0, x8
+0x72e896c: 91522597 bl       #0x3c3d3b0
+0x72e8970: a80240f9 ldr      x8, [x21]
+0x72e8974: 800240f9 ldr      x0, [x20]
+0x72e8978: 085d40f9 ldr      x8, [x8, #0xb8]
+0x72e897c: 150540f9 ldr      x21, [x8, #8]
+0x72e8980: 751600f9 str      x21, [x19, #0x28]
+0x72e8984: 000940fd ldr      d0, [x8, #0x10]
+0x72e8988: 0008a00e rev64    v0.2s, v0.2s
+0x72e898c: 602200fd str      d0, [x19, #0x40]
+0x72e8990: 02000014 b        #0x72e8998
+0x72e8994: 751640f9 ldr      x21, [x19, #0x28]
+0x72e8998: 08e040b9 ldr      w8, [x0, #0xe0]
+0x72e899c: 48000035 cbnz     w8, #0x72e89a4
+0x72e89a0: 84522597 bl       #0x3c3d3b0
+0x72e89a4: 17e90090 adrp     x23, #0x9008000
+0x72e89a8: e8b25d39 ldrb     w8, [x23, #0x76c]
+0x72e89ac: c8000035 cbnz     w8, #0x72e89c4
+0x72e89b0: 20bf00b0 adrp     x0, #0x8acd000
+0x72e89b4: 00e042f9 ldr      x0, [x0, #0x5c0] // GameFramework.AppSetting_TypeInfo
+0x72e89b8: 32522597 bl       #0x3c3d280
+0x72e89bc: 28008052 mov      w8, #1
+0x72e89c0: e8b21d39 strb     w8, [x23, #0x76c]
+0x72e89c4: 800240f9 ldr      x0, [x20]
+0x72e89c8: 08e040b9 ldr      w8, [x0, #0xe0]
+0x72e89cc: 68000035 cbnz     w8, #0x72e89d8
+0x72e89d0: 78522597 bl       #0x3c3d3b0
+0x72e89d4: 800240f9 ldr      x0, [x20]
+0x72e89d8: 085c40f9 ldr      x8, [x0, #0xb8]
+0x72e89dc: 151500f9 str      x21, [x8, #0x28]
+0x72e89e0: c00240f9 ldr      x0, [x22]
+0x72e89e4: 08e040b9 ldr      w8, [x0, #0xe0]
+0x72e89e8: 48000035 cbnz     w8, #0x72e89f0
+0x72e89ec: 71522597 bl       #0x3c3d3b0
+0x72e89f0: e00313aa mov      x0, x19
+0x72e89f4: e1031faa mov      x1, xzr
+0x72e89f8: 48224094 bl       #0x82f1318 // UnityEngine.Object$$DontDestroyOnLoad
+0x72e89fc: 68c00090 adrp     x8, #0x8af4000
+0x72e8a00: 08dd44f9 ldr      x8, [x8, #0x9b8] // GameFramework.UserDataPrefs_TypeInfo
+0x72e8a04: 000140f9 ldr      x0, [x8]
+0x72e8a08: 08e040b9 ldr      w8, [x0, #0xe0]
+0x72e8a0c: 48000035 cbnz     w8, #0x72e8a14
+0x72e8a10: 68522597 bl       #0x3c3d3b0
+0x72e8a14: e0031faa mov      x0, xzr
+0x72e8a18: 0dd2fb97 bl       #0x71dd24c // GameFramework.UserDataPrefs$$OnInit
+0x72e8a1c: 602a40f9 ldr      x0, [x19, #0x50]
+0x72e8a20: 000700b4 cbz      x0, #0x72e8b00
+0x72e8a24: 080040f9 ldr      x8, [x0]
+0x72e8a28: 09855fa9 ldp      x9, x1, [x8, #0x1f8]
+0x72e8a2c: 20013fd6 blr      x9
+0x72e8a30: 68c00090 adrp     x8, #0x8af4000
+0x72e8a34: 085143f9 ldr      x8, [x8, #0x6a0] // GameFramework.GameFrameEntry_TypeInfo
+0x72e8a38: 000140f9 ldr      x0, [x8]
+0x72e8a3c: 08e040b9 ldr      w8, [x0, #0xe0]
+0x72e8a40: 48000035 cbnz     w8, #0x72e8a48
+0x72e8a44: 5b522597 bl       #0x3c3d3b0
+0x72e8a48: 48c100d0 adrp     x8, #0x8b12000
+0x72e8a4c: 083542f9 ldr      x8, [x8, #0x468] // Method$GameFramework.GameFrameEntry.GetModule<VersionMondule>()
+0x72e8a50: 000140f9 ldr      x0, [x8]
+0x72e8a54: db8e6697 bl       #0x4c8c5c0 // GameFramework.GameFrameEntry$$GetModule<object>
+0x72e8a58: 28bf00b0 adrp     x8, #0x8acd000
+0x72e8a5c: 088944f9 ldr      x8, [x8, #0x910] // System.Action_TypeInfo
+0x72e8a60: f40300aa mov      x20, x0
+0x72e8a64: 080140f9 ldr      x8, [x8]
+0x72e8a68: e00308aa mov      x0, x8
+0x72e8a6c: 96522597 bl       #0x3c3d4c4
+0x72e8a70: 88c100d0 adrp     x8, #0x8b1a000
+0x72e8a74: 082d46f9 ldr      x8, [x8, #0xc58] // Method$GameFramework.Base.GameStartEntry.vj·()
+0x72e8a78: e10313aa mov      x1, x19
+0x72e8a7c: e3031faa mov      x3, xzr
+0x72e8a80: f50300aa mov      x21, x0
+0x72e8a84: 020140f9 ldr      x2, [x8]
+0x72e8a88: 47450c94 bl       #0x75f9fa4 // System.Action$$.ctor
+0x72e8a8c: 28bf00b0 adrp     x8, #0x8acd000
+0x72e8a90: 083143f9 ldr      x8, [x8, #0x660] // Method$System.Array.Empty<object>()
+0x72e8a94: 130140f9 ldr      x19, [x8]
+0x72e8a98: 681e40f9 ldr      x8, [x19, #0x38]
+0x72e8a9c: 880000b5 cbnz     x8, #0x72e8aac
+0x72e8aa0: e00313aa mov      x0, x19
+0x72e8aa4: 569e2597 bl       #0x3c503fc
+0x72e8aa8: 681e40f9 ldr      x8, [x19, #0x38]
+0x72e8aac: 000940f9 ldr      x0, [x8, #0x10]
+0x72e8ab0: 08d44439 ldrb     w8, [x0, #0x135]
+0x72e8ab4: 48000037 tbnz     w8, #0, #0x72e8abc
+0x72e8ab8: 3a9e2597 bl       #0x3c503a0
+0x72e8abc: 08e040b9 ldr      w8, [x0, #0xe0]
+0x72e8ac0: 48000035 cbnz     w8, #0x72e8ac8
+0x72e8ac4: 3b522597 bl       #0x3c3d3b0
+0x72e8ac8: 681e40f9 ldr      x8, [x19, #0x38]
+0x72e8acc: 000940f9 ldr      x0, [x8, #0x10]
+0x72e8ad0: 08d44439 ldrb     w8, [x0, #0x135]
+0x72e8ad4: 48000037 tbnz     w8, #0, #0x72e8adc
+0x72e8ad8: 329e2597 bl       #0x3c503a0
+0x72e8adc: 085c40f9 ldr      x8, [x0, #0xb8]
+0x72e8ae0: e00314aa mov      x0, x20
+0x72e8ae4: e10315aa mov      x1, x21
+0x72e8ae8: f44f42a9 ldp      x20, x19, [sp, #0x20]
+0x72e8aec: 020140f9 ldr      x2, [x8]
+0x72e8af0: f65741a9 ldp      x22, x21, [sp, #0x10]
+0x72e8af4: e3031faa mov      x3, xzr
+0x72e8af8: fe5fc3a8 ldp      x30, x23, [sp], #0x30
+0x72e8afc: 16c9f917 b        #0x715af54 // GameFramework.GameFrameEntry$$Initialize
+0x72e8b00: 73522597 bl       #0x3c3d4cc
+0x72e8b04: 74522597 bl       #0x3c3d4d4
+0x72e8b08: 7a522597 bl       #0x3c3d4f0
+0x72e8b0c: e1031faa mov      x1, xzr
+0x72e8b10: 24522597 bl       #0x3c3d3a0

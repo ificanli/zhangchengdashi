@@ -1,0 +1,42 @@
+[
+  {
+    "file": "Assets/Scripts/Clipper2Lib/Pathfinding/Clipper2Lib/RectClipLines64.cs",
+    "kind": "Restore full native forwarding constructor",
+    "evidence": "0x4624B44 copies four 64-bit Rect64 fields and calls RectClip64.ctor; no other behavior",
+    "beforeSha256": "624cfa30e788d17f47da16eb6308d217c79f2dde7e0faf387c3943e018b9d0e6",
+    "afterSha256": "e77c2e8003aa8fd4b64aa7e3409ed06f715afcab795f4104006e905c7af9a12c",
+    "recoveredImplementationCount": 1
+  },
+  {
+    "file": "Assets/Scripts/DebugSystem.RuntimeInspector/IngameDebugConsole/HierarchyDataRootPseudoScene.cs",
+    "kind": "Restore required original base argument and explicitly flag remaining constructor body",
+    "evidence": "0x4652FF0 ASM passes original hierarchy as X1 to HierarchyDataRoot.ctor; derived initialization remains pending",
+    "beforeSha256": "de1b78ffc02e3a3d80ddd7232ad37bee3217ff68a2660a255bb7de01acfb7e49",
+    "afterSha256": "f998b562f770961e4110304117473c53af813f5a8b557b7c92d37c842c179a06",
+    "recoveredImplementationCount": 0
+  },
+  {
+    "file": "Assets/Scripts/DebugSystem.RuntimeInspector/IngameDebugConsole/HierarchyDataRootScene.cs",
+    "kind": "Restore required original base argument and explicitly flag remaining constructor body",
+    "evidence": "0x4652178 ASM passes original hierarchy as X1 to HierarchyDataRoot.ctor; derived initialization remains pending",
+    "beforeSha256": "dedc1072c200ca41d3792bd167d22ac6d954259ac9eed4b3edc38cf189bef770",
+    "afterSha256": "751665f7884a0f6f2ac2c48df24175c2326cd7bbe7197015ad3a2ba7c67cb76d",
+    "recoveredImplementationCount": 0
+  },
+  {
+    "file": "Assets/Scripts/DebugSystem.RuntimeInspector/IngameDebugConsole/HierarchyDataRootSearch.cs",
+    "kind": "Restore required original base argument and explicitly flag remaining constructor body",
+    "evidence": "0x465220C ASM passes original hierarchy as X1 to HierarchyDataRoot.ctor; derived initialization remains pending",
+    "beforeSha256": "766830b7afe80bb0e901709da12434e1e4bd0f92198162b76eabd36a749247b3",
+    "afterSha256": "a65c7152633189fb62c68e8012efdad14c07cfb0284515837be3940068dd0e5a",
+    "recoveredImplementationCount": 0
+  },
+  {
+    "file": "Assets/Scripts/Drawing/Pathfinding/Drawing/DrawingData.cs",
+    "kind": "Explicit diagnostic for two invalid ref-null export stubs",
+    "evidence": "Original returns references into arrays with state/version guards; none of those algorithms is claimed restored",
+    "beforeSha256": "a361733ad885d41442191de16977a13855e02a72dfb3554327c7f756852c0df4",
+    "afterSha256": "66affc11502582e610d2270980ff0a5f3d6946c02cd156144e00395d07aaf009",
+    "recoveredImplementationCount": 0
+  }
+]

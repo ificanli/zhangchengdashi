@@ -1,0 +1,8 @@
+0x3deef98: LDR             W8, [X0,#0x1AC]
+0x3deef9c: MOV             W9, #0x64 ; 'd'
+0x3deefa0: SUB             W8, W8, #1
+0x3deefa4: CMP             W8, #0x64 ; 'd'
+0x3deefa8: CSEL            W8, W8, W9, LT
+0x3deefac: BIC             W8, W8, W8,ASR#31
+0x3deefb0: STR             W8, [X0,#0x1AC]
+0x3deefb4: RET

@@ -1,0 +1,44 @@
+0x3d837bc: STR             D8, [SP,#var_30]!
+0x3d837c0: STP             X30, X21, [SP,#0x30+var_20]
+0x3d837c4: STP             X20, X19, [SP,#0x30+var_10]
+0x3d837c8: ADRP            X21, #byte_8FFD465@PAGE
+0x3d837cc: LDRB            W8, [X21,#byte_8FFD465@PAGEOFF]
+0x3d837d0: MOV             V8.16B, V0.16B
+0x3d837d4: MOV             X20, X1
+0x3d837d8: MOV             X19, X0
+0x3d837dc: TBNZ            W8, #0, loc_3D837F4
+0x3d837e0: ADRP            X0, #off_8ACFA90@PAGE
+0x3d837e4: LDR             X0, [X0,#off_8ACFA90@PAGEOFF]; off_8D0DD80 ; slot
+0x3d837e8: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3d837ec: MOV             W8, #1
+0x3d837f0: STRB            W8, [X21,#byte_8FFD465@PAGEOFF]
+0x3d837f4: LDR             X0, [X19,#0x180]
+0x3d837f8: CBZ             X0, loc_3D83868
+0x3d837fc: ADRP            X9, #off_8ACFA90@PAGE
+0x3d83800: LDR             X9, [X9,#off_8ACFA90@PAGEOFF]; off_8D0DD80
+0x3d83804: LDR             W10, [X0,#0x1C]
+0x3d83808: LDR             X8, [X0,#0x10]
+0x3d8380c: LDR             X9, [X9]
+0x3d83810: ADD             W10, W10, #1
+0x3d83814: STR             W10, [X0,#0x1C]
+0x3d83818: CBZ             X8, loc_3D83868
+0x3d8381c: LDRSW           X10, [X0,#0x18]
+0x3d83820: LDR             W11, [X8,#0x18]
+0x3d83824: CMP             W10, W11
+0x3d83828: B.CS            loc_3D83840
+0x3d8382c: ADD             W9, W10, #1
+0x3d83830: ADD             X8, X8, X10,LSL#3
+0x3d83834: STR             W9, [X0,#0x18]
+0x3d83838: STR             X20, [X8,#0x20]
+0x3d8383c: B               loc_3D83854
+0x3d83840: LDR             X8, [X9,#0x20]
+0x3d83844: MOV             X1, X20
+0x3d83848: LDR             X8, [X8,#0xC0]
+0x3d8384c: LDR             X2, [X8,#0x70]
+0x3d83850: BL              System.Collections.Generic.List_object_$$AddWithResize
+0x3d83854: STR             S8, [X19,#0x188]
+0x3d83858: LDP             X20, X19, [SP,#0x30+var_10]
+0x3d8385c: LDP             X30, X21, [SP,#0x30+var_20]
+0x3d83860: LDR             D8, [SP+0x30+var_30],#0x30
+0x3d83864: RET
+0x3d83868: BL              il2cpp_codegen_raise_null_reference_exception

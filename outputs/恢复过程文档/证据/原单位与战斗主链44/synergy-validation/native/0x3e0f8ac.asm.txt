@@ -1,0 +1,80 @@
+0x3e0f8ac: e80f1cfc str      d8, [sp, #-0x40]!
+0x3e0f8b0: fe5f01a9 stp      x30, x23, [sp, #0x10]
+0x3e0f8b4: f65702a9 stp      x22, x21, [sp, #0x20]
+0x3e0f8b8: f44f03a9 stp      x20, x19, [sp, #0x30]
+0x3e0f8bc: 778f02d0 adrp     x23, #0x8ffd000
+0x3e0f8c0: e85a6139 ldrb     w8, [x23, #0x856]
+0x3e0f8c4: 081ca04e mov      v8.16b, v0.16b
+0x3e0f8c8: f503032a mov      w21, w3
+0x3e0f8cc: f40302aa mov      x20, x2
+0x3e0f8d0: f303012a mov      w19, w1
+0x3e0f8d4: f60300aa mov      x22, x0
+0x3e0f8d8: 88010037 tbnz     w8, #0, #0x3e0f908
+0x3e0f8dc: e06502f0 adrp     x0, #0x8ace000
+0x3e0f8e0: 008443f9 ldr      x0, [x0, #0x708] // Method$System.Collections.Generic.List<RoleBehaviour>.get_Count()
+0x3e0f8e4: 67b6f897 bl       #0x3c3d280
+0x3e0f8e8: e06502f0 adrp     x0, #0x8ace000
+0x3e0f8ec: 008043f9 ldr      x0, [x0, #0x700] // Method$ToolModule.ManagerBase<BattleGameSceneManager>.get_Instance()
+0x3e0f8f0: 64b6f897 bl       #0x3c3d280
+0x3e0f8f4: 00660290 adrp     x0, #0x8acf000
+0x3e0f8f8: 005045f9 ldr      x0, [x0, #0xaa0] // GameModule.RoleBehaviour_TypeInfo
+0x3e0f8fc: 61b6f897 bl       #0x3c3d280
+0x3e0f900: 28008052 mov      w8, #1
+0x3e0f904: e85a2139 strb     w8, [x23, #0x856]
+0x3e0f908: c8824039 ldrb     w8, [x22, #0x20]
+0x3e0f90c: 28060034 cbz      w8, #0x3e0f9d0
+0x3e0f910: 140600b4 cbz      x20, #0x3e0f9d0
+0x3e0f914: 08660290 adrp     x8, #0x8acf000
+0x3e0f918: 085145f9 ldr      x8, [x8, #0xaa0] // GameModule.RoleBehaviour_TypeInfo
+0x3e0f91c: 890240f9 ldr      x9, [x20]
+0x3e0f920: 080140f9 ldr      x8, [x8]
+0x3e0f924: 2bc14439 ldrb     w11, [x9, #0x130]
+0x3e0f928: 0ac14439 ldrb     w10, [x8, #0x130]
+0x3e0f92c: 7f010a6b cmp      w11, w10
+0x3e0f930: 03050054 b.lo     #0x3e0f9d0
+0x3e0f934: 296540f9 ldr      x9, [x9, #0xc8]
+0x3e0f938: 290d0a8b add      x9, x9, x10, lsl #3
+0x3e0f93c: 29815ff8 ldur     x9, [x9, #-8]
+0x3e0f940: 3f0108eb cmp      x9, x8
+0x3e0f944: 61040054 b.ne     #0x3e0f9d0
+0x3e0f948: 88ca40b9 ldr      w8, [x20, #0xc8]
+0x3e0f94c: 1f090071 cmp      w8, #2
+0x3e0f950: 01040054 b.ne     #0x3e0f9d0
+0x3e0f954: a2020012 and      w2, w21, #1
+0x3e0f958: 41008052 mov      w1, #2
+0x3e0f95c: c9feff97 bl       #0x3e0f480 // GameModule.SynergyEffectManager$$GetFetterCount
+0x3e0f960: 1f100071 cmp      w0, #4
+0x3e0f964: 6b030054 b.lt     #0x3e0f9d0
+0x3e0f968: e86502f0 adrp     x8, #0x8ace000
+0x3e0f96c: 088143f9 ldr      x8, [x8, #0x700] // Method$ToolModule.ManagerBase<BattleGameSceneManager>.get_Instance()
+0x3e0f970: 000140f9 ldr      x0, [x8]
+0x3e0f974: bba26d94 bl       #0x5978460 // ToolModule.ManagerBase<object>$$get_Instance
+0x3e0f978: 800300b4 cbz      x0, #0x3e0f9e8
+0x3e0f97c: a1020012 and      w1, w21, #1
+0x3e0f980: 03008012 mov      w3, #-1
+0x3e0f984: e20314aa mov      x2, x20
+0x3e0f988: 001da84e mov      v0.16b, v8.16b
+0x3e0f98c: e4031faa mov      x4, xzr
+0x3e0f990: 518fff97 bl       #0x3df36d4 // GameModule.BattleGameSceneManager$$GetNearRole
+0x3e0f994: e00100b4 cbz      x0, #0x3e0f9d0
+0x3e0f998: 081840b9 ldr      w8, [x0, #0x18]
+0x3e0f99c: 1f050071 cmp      w8, #1
+0x3e0f9a0: 8b010054 b.lt     #0x3e0f9d0
+0x3e0f9a4: 48d1fe90 adrp     x8, #0x1837000
+0x3e0f9a8: 00b144bd ldr      s0, [x8, #0x4b0]
+0x3e0f9ac: 08f0af52 mov      w8, #0x7f800000
+0x3e0f9b0: 6102221e scvtf    s1, w19
+0x3e0f9b4: 0201271e fmov     s2, w8
+0x3e0f9b8: 2008201e fmul     s0, s1, s0
+0x3e0f9bc: 0800381e fcvtzs   w8, s0
+0x3e0f9c0: 0020221e fcmp     s0, s2
+0x3e0f9c4: 0900b052 mov      w9, #-0xffffffff80000000
+0x3e0f9c8: 2801881a csel     w8, w9, w8, eq
+0x3e0f9cc: 7302084b sub      w19, w19, w8
+0x3e0f9d0: e003132a mov      w0, w19
+0x3e0f9d4: f44f43a9 ldp      x20, x19, [sp, #0x30]
+0x3e0f9d8: f65742a9 ldp      x22, x21, [sp, #0x20]
+0x3e0f9dc: fe5f41a9 ldp      x30, x23, [sp, #0x10]
+0x3e0f9e0: e80744fc ldr      d8, [sp], #0x40
+0x3e0f9e4: c0035fd6 ret      
+0x3e0f9e8: b9b6f897 bl       #0x3c3d4cc

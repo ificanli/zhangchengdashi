@@ -1,0 +1,36 @@
+0x3e455bc: SUB             SP, SP, #0x80
+0x3e455c0: STP             X30, X21, [SP,#0x80+var_20]
+0x3e455c4: STP             X20, X19, [SP,#0x80+var_10]
+0x3e455c8: ADRP            X21, #byte_8FFD9F1@PAGE
+0x3e455cc: ADRP            X20, #off_8AD5FB8@PAGE
+0x3e455d0: LDRB            W8, [X21,#byte_8FFD9F1@PAGEOFF]
+0x3e455d4: LDR             X20, [X20,#off_8AD5FB8@PAGEOFF]; qword_8D234C8
+0x3e455d8: MOV             X19, X0
+0x3e455dc: TBNZ            W8, #0, loc_3E455F4
+0x3e455e0: ADRP            X0, #off_8AD5FB8@PAGE
+0x3e455e4: LDR             X0, [X0,#off_8AD5FB8@PAGEOFF]; qword_8D234C8 ; slot
+0x3e455e8: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3e455ec: MOV             W8, #1
+0x3e455f0: STRB            W8, [X21,#byte_8FFD9F1@PAGEOFF]
+0x3e455f4: MOVI            V0.2D, #0
+0x3e455f8: MOV             X8, SP
+0x3e455fc: MOV             X0, XZR
+0x3e45600: STR             XZR, [SP,#0x80+var_30]
+0x3e45604: STP             Q0, Q0, [SP,#0x80+var_50]
+0x3e45608: STR             Q0, [SP,#0x80+var_60]
+0x3e4560c: BL              System.Runtime.CompilerServices.AsyncVoidMethodBuilder$$Create
+0x3e45610: LDP             Q0, Q1, [SP,#0x80+var_80]
+0x3e45614: LDR             X2, [X20]
+0x3e45618: ADD             X8, SP, #0x80+var_60
+0x3e4561c: MOV             W9, #0xFFFFFFFF
+0x3e45620: ORR             X0, X8, #8
+0x3e45624: ADD             X1, SP, #0x80+var_60
+0x3e45628: STR             X19, [SP,#0x80+var_38]
+0x3e4562c: STUR            Q0, [SP,#0x80+var_60+8]
+0x3e45630: STUR            Q1, [SP,#0x80+var_50+8]
+0x3e45634: STR             W9, [SP,#0x80+var_60]
+0x3e45638: BL              System.Runtime.CompilerServices.AsyncVoidMethodBuilder$$Start_TimeManager._HandleTimeToWeekCutDown_d__36_
+0x3e4563c: LDP             X20, X19, [SP,#0x80+var_10]
+0x3e45640: LDP             X30, X21, [SP,#0x80+var_20]
+0x3e45644: ADD             SP, SP, #0x80
+0x3e45648: RET

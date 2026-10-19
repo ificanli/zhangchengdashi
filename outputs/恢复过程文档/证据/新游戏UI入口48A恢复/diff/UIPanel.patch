@@ -1,0 +1,10 @@
+--- before/UIPanel.cs
++++ after/UIPanel.cs
+@@ -168,6 +168,7 @@
+ 		[Address(RVA = "0x4275658", Offset = "0x4271658", VA = "0x4275658")]
+ 		public void Init(PanelConfig panelConfig)
+ 		{
++			this.panelConfig = panelConfig;
+ 		}
+ 
+ 		[Token(Token = "0x6004C4D")]

@@ -1,0 +1,26 @@
+int32_t GameModule_BattleGameSceneManager__GetLegendaryTileV1Price(const MethodInfo *method)
+{
+  char v1; // w0
+  int32_t v2; // w8
+  int v4; // [xsp+8h] [xbp-18h] BYREF
+  _BYTE v5[4]; // [xsp+Ch] [xbp-14h] BYREF
+
+  if ( (byte_8FFD761 & 1) == 0 )
+  {
+    il2cpp_codegen_initialize_runtime_metadata((void **)&off_8CE4A38);
+    byte_8FFD761 = 1;
+  }
+  v5[0] = 0;
+  v4 = 0;
+  if ( *((_DWORD *)off_8CE4A38 + 56) == 0 )
+    il2cpp_codegen_runtime_class_init(off_8CE4A38);
+  v1 = GameModule_BattleGameSceneManager__TryParseLegendaryTileV1OnlineParam(v5, &v4);
+  v2 = v4;
+  if ( v4 < 1 || (v1 & 1) == 0 )
+  {
+    if ( *((_DWORD *)off_8CE4A38 + 56) == 0 )
+      il2cpp_codegen_runtime_class_init(off_8CE4A38);
+    return GameModule_BattleGameSceneManager__GetLegendaryTileV1ConfigPriceFallback();
+  }
+  return v2;
+}

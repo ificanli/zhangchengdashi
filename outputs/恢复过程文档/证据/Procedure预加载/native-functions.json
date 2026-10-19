@@ -1,0 +1,845 @@
+[
+  {
+    "name": "ljzs_lt.Procedure.ProcedurePreLoad$$OnInit",
+    "address": 70907980,
+    "end": 70908020,
+    "signature": "void ljzs_lt_Procedure_ProcedurePreLoad__OnInit (ljzs_lt_Procedure_ProcedurePreLoad_o* __this, GameFramework_Fsm_IFsm_IProcedureManager__o* procedureOwner, const MethodInfo* method);",
+    "prototype": "void Function_439f84c(void* self,void* owner,const MethodInfo* method);",
+    "range_analysis": 1,
+    "direct_callees": [
+      {
+        "callsite": "0x439f860",
+        "address": "0x727a5ec",
+        "name": "GameFramework.Procedure.ProcedureBase$$OnInit",
+        "signature": "void GameFramework_Procedure_ProcedureBase__OnInit (GameFramework_Procedure_ProcedureBase_o* __this, GameFramework_Fsm_IFsm_IProcedureManager__o* procedureOwner, const MethodInfo* method);"
+      }
+    ],
+    "prototype_applied": true,
+    "actual_function_start": "0x439f84c",
+    "actual_function_end": "0x439f874",
+    "pseudocode_chars": 201,
+    "unresolved_jumpout": false
+  },
+  {
+    "name": "ljzs_lt.Procedure.ProcedurePreLoad$$OnEnter",
+    "address": 70908020,
+    "end": 70908048,
+    "signature": "void ljzs_lt_Procedure_ProcedurePreLoad__OnEnter (ljzs_lt_Procedure_ProcedurePreLoad_o* __this, GameFramework_Fsm_IFsm_IProcedureManager__o* procedureOwner, const MethodInfo* method);",
+    "prototype": "void Function_439f874(void* self,void* owner,const MethodInfo* method);",
+    "range_analysis": 1,
+    "direct_callees": [
+      {
+        "callsite": "0x439f880",
+        "address": "0x727a644",
+        "name": "GameFramework.Procedure.ProcedureBase$$OnEnter",
+        "signature": "void GameFramework_Procedure_ProcedureBase__OnEnter (GameFramework_Procedure_ProcedureBase_o* __this, GameFramework_Fsm_IFsm_IProcedureManager__o* procedureOwner, const MethodInfo* method);"
+      },
+      {
+        "callsite": "0x439f88c",
+        "address": "0x439f890",
+        "name": "ljzs_lt.Procedure.ProcedurePreLoad$$PreLoad",
+        "signature": "void ljzs_lt_Procedure_ProcedurePreLoad__PreLoad (ljzs_lt_Procedure_ProcedurePreLoad_o* __this, const MethodInfo* method);"
+      }
+    ],
+    "prototype_applied": true,
+    "actual_function_start": "0x439f874",
+    "actual_function_end": "0x439f890",
+    "pseudocode_chars": 223,
+    "unresolved_jumpout": false
+  },
+  {
+    "name": "ljzs_lt.Procedure.ProcedurePreLoad$$PreLoad",
+    "address": 70908048,
+    "end": 70908312,
+    "signature": "void ljzs_lt_Procedure_ProcedurePreLoad__PreLoad (ljzs_lt_Procedure_ProcedurePreLoad_o* __this, const MethodInfo* method);",
+    "prototype": "void Function_439f890(void* self,const MethodInfo* method);",
+    "range_analysis": 1,
+    "direct_callees": [
+      {
+        "callsite": "0x439f900",
+        "address": "0x439f998",
+        "name": "ljzs_lt.Procedure.ProcedurePreLoad$$PreLoadAsync",
+        "signature": "void ljzs_lt_Procedure_ProcedurePreLoad__PreLoadAsync (ljzs_lt_Procedure_ProcedurePreLoad_o* __this, const MethodInfo* method);"
+      },
+      {
+        "callsite": "0x439f91c",
+        "address": "0x82a3fc4",
+        "name": "UnityEngine.Debug$$Log",
+        "signature": "void UnityEngine_Debug__Log (Il2CppObject* message, const MethodInfo* method);"
+      },
+      {
+        "callsite": "0x439f994",
+        "address": "0x47327b4",
+        "name": "GameFramework.Fsm.FsmState<object>$$ChangeState<object>",
+        "signature": "void GameFramework_Fsm_FsmState_object___ChangeState_object_ (GameFramework_Fsm_FsmState_T__o* __this, GameFramework_Fsm_IFsm_T__o* fsm, System_Object_array* args, const MethodInfo_47327B4* method);"
+      }
+    ],
+    "prototype_applied": true,
+    "actual_function_start": "0x439f890",
+    "actual_function_end": "0x439f998",
+    "pseudocode_chars": 1371,
+    "unresolved_jumpout": false
+  },
+  {
+    "name": "ljzs_lt.Procedure.ProcedurePreLoad$$InitGameSetting",
+    "address": 70908456,
+    "end": 70908752,
+    "signature": "void ljzs_lt_Procedure_ProcedurePreLoad__InitGameSetting (ljzs_lt_Procedure_ProcedurePreLoad_o* __this, const MethodInfo* method);",
+    "prototype": "void Function_439fa28(void* self,const MethodInfo* method);",
+    "range_analysis": 1,
+    "direct_callees": [
+      {
+        "callsite": "0x439fa98",
+        "address": "0x43214d0",
+        "name": "I2.Loc.LocalizationManager$$EnableChangingCultureInfo",
+        "signature": "void I2_Loc_LocalizationManager__EnableChangingCultureInfo (bool bEnable, const MethodInfo* method);"
+      },
+      {
+        "callsite": "0x439faa0",
+        "address": "0x40806c4",
+        "name": "LocalizationModule.StartupLanguageHelper$$EnsureStartupLanguage",
+        "signature": "void LocalizationModule_StartupLanguageHelper__EnsureStartupLanguage (const MethodInfo* method);"
+      },
+      {
+        "callsite": "0x439fabc",
+        "address": "0x76483a8",
+        "name": "System.Globalization.CultureInfo$$GetCultureInfo",
+        "signature": "System_Globalization_CultureInfo_o* System_Globalization_CultureInfo__GetCultureInfo (System_String_o* name, const MethodInfo* method);"
+      },
+      {
+        "callsite": "0x439fac4",
+        "address": "0x764addc",
+        "name": "System.Globalization.CultureInfo$$set_DefaultThreadCurrentCulture",
+        "signature": "void System_Globalization_CultureInfo__set_DefaultThreadCurrentCulture (System_Globalization_CultureInfo_o* value, const MethodInfo* method);"
+      },
+      {
+        "callsite": "0x439fad0",
+        "address": "0x76483a8",
+        "name": "System.Globalization.CultureInfo$$GetCultureInfo",
+        "signature": "System_Globalization_CultureInfo_o* System_Globalization_CultureInfo__GetCultureInfo (System_String_o* name, const MethodInfo* method);"
+      },
+      {
+        "callsite": "0x439fad8",
+        "address": "0x764ae9c",
+        "name": "System.Globalization.CultureInfo$$set_DefaultThreadCurrentUICulture",
+        "signature": "void System_Globalization_CultureInfo__set_DefaultThreadCurrentUICulture (System_Globalization_CultureInfo_o* value, const MethodInfo* method);"
+      },
+      {
+        "callsite": "0x439fae0",
+        "address": "0x76f16fc",
+        "name": "System.Threading.Thread$$get_CurrentThread",
+        "signature": "System_Threading_Thread_o* System_Threading_Thread__get_CurrentThread (const MethodInfo* method);"
+      },
+      {
+        "callsite": "0x439faf4",
+        "address": "0x76483a8",
+        "name": "System.Globalization.CultureInfo$$GetCultureInfo",
+        "signature": "System_Globalization_CultureInfo_o* System_Globalization_CultureInfo__GetCultureInfo (System_String_o* name, const MethodInfo* method);"
+      },
+      {
+        "callsite": "0x439fb08",
+        "address": "0x76f3118",
+        "name": "System.Threading.Thread$$set_CurrentCulture",
+        "signature": "void System_Threading_Thread__set_CurrentCulture (System_Threading_Thread_o* __this, System_Globalization_CultureInfo_o* value, const MethodInfo* method);"
+      },
+      {
+        "callsite": "0x439fb10",
+        "address": "0x76f16fc",
+        "name": "System.Threading.Thread$$get_CurrentThread",
+        "signature": "System_Threading_Thread_o* System_Threading_Thread__get_CurrentThread (const MethodInfo* method);"
+      },
+      {
+        "callsite": "0x439fb24",
+        "address": "0x76483a8",
+        "name": "System.Globalization.CultureInfo$$GetCultureInfo",
+        "signature": "System_Globalization_CultureInfo_o* System_Globalization_CultureInfo__GetCultureInfo (System_String_o* name, const MethodInfo* method);"
+      },
+      {
+        "callsite": "0x439fb38",
+        "address": "0x76f2d94",
+        "name": "System.Threading.Thread$$set_CurrentUICulture",
+        "signature": "void System_Threading_Thread__set_CurrentUICulture (System_Threading_Thread_o* __this, System_Globalization_CultureInfo_o* value, const MethodInfo* method);"
+      },
+      {
+        "callsite": "0x439fb48",
+        "address": "0x3f81950",
+        "name": "ToolModule.LitJsonExtent$$Init",
+        "signature": "void ToolModule_LitJsonExtent__Init (const MethodInfo* method);"
+      }
+    ],
+    "prototype_applied": true,
+    "actual_function_start": "0x439fa28",
+    "actual_function_end": "0x439fb50",
+    "pseudocode_chars": 1726,
+    "unresolved_jumpout": false
+  },
+  {
+    "name": "ljzs_lt.Procedure.ProcedurePreLoad$$OnLoginValid",
+    "address": 70908752,
+    "end": 70909628,
+    "signature": "void ljzs_lt_Procedure_ProcedurePreLoad__OnLoginValid (ljzs_lt_Procedure_ProcedurePreLoad_o* __this, int32_t errorCode, const MethodInfo* method);",
+    "prototype": "void Function_439fb50(void* self,int errorCode,const MethodInfo* method);",
+    "range_analysis": 1,
+    "direct_callees": [
+      {
+        "callsite": "0x439fc5c",
+        "address": "0x431d804",
+        "name": "I2.Loc.LocalizationManager$$GetTranslation",
+        "signature": "System_String_o* I2_Loc_LocalizationManager__GetTranslation (System_String_o* Term, bool FixForRTL, int32_t maxLineLengthForRTL, bool ignoreRTLnumbers, bool applyParameters, UnityEngine_GameObject_o* localParametersRoot, System_String_o* overrideLanguage, bool allowLocalizedParameters, const MethodInfo* method);"
+      },
+      {
+        "callsite": "0x439fc8c",
+        "address": "0x431d804",
+        "name": "I2.Loc.LocalizationManager$$GetTranslation",
+        "signature": "System_String_o* I2_Loc_LocalizationManager__GetTranslation (System_String_o* Term, bool FixForRTL, int32_t maxLineLengthForRTL, bool ignoreRTLnumbers, bool applyParameters, UnityEngine_GameObject_o* localParametersRoot, System_String_o* overrideLanguage, bool allowLocalizedParameters, const MethodInfo* method);"
+      },
+      {
+        "callsite": "0x439fcbc",
+        "address": "0x431d804",
+        "name": "I2.Loc.LocalizationManager$$GetTranslation",
+        "signature": "System_String_o* I2_Loc_LocalizationManager__GetTranslation (System_String_o* Term, bool FixForRTL, int32_t maxLineLengthForRTL, bool ignoreRTLnumbers, bool applyParameters, UnityEngine_GameObject_o* localParametersRoot, System_String_o* overrideLanguage, bool allowLocalizedParameters, const MethodInfo* method);"
+      },
+      {
+        "callsite": "0x439fce0",
+        "address": "0x75f9fa4",
+        "name": "System.Action$$.ctor",
+        "signature": "void System_Action___ctor (System_Action_o* __this, Il2CppObject* object, intptr_t method, const MethodInfo* method);"
+      },
+      {
+        "callsite": "0x439fd3c",
+        "address": "0x431d804",
+        "name": "I2.Loc.LocalizationManager$$GetTranslation",
+        "signature": "System_String_o* I2_Loc_LocalizationManager__GetTranslation (System_String_o* Term, bool FixForRTL, int32_t maxLineLengthForRTL, bool ignoreRTLnumbers, bool applyParameters, UnityEngine_GameObject_o* localParametersRoot, System_String_o* overrideLanguage, bool allowLocalizedParameters, const MethodInfo* method);"
+      },
+      {
+        "callsite": "0x439fd6c",
+        "address": "0x431d804",
+        "name": "I2.Loc.LocalizationManager$$GetTranslation",
+        "signature": "System_String_o* I2_Loc_LocalizationManager__GetTranslation (System_String_o* Term, bool FixForRTL, int32_t maxLineLengthForRTL, bool ignoreRTLnumbers, bool applyParameters, UnityEngine_GameObject_o* localParametersRoot, System_String_o* overrideLanguage, bool allowLocalizedParameters, const MethodInfo* method);"
+      },
+      {
+        "callsite": "0x439fd90",
+        "address": "0x75f9fa4",
+        "name": "System.Action$$.ctor",
+        "signature": "void System_Action___ctor (System_Action_o* __this, Il2CppObject* object, intptr_t method, const MethodInfo* method);"
+      },
+      {
+        "callsite": "0x439fdc8",
+        "address": "0x3d0b7a4",
+        "name": "AccountMsgCanvas$$SetContent",
+        "signature": "void AccountMsgCanvas__SetContent (System_String_o* titleText, System_String_o* messageText, System_String_o* btnContent, System_Action_o* btnCallback, bool needShowFeedback, bool isShowBlockUI, const MethodInfo* method);"
+      },
+      {
+        "callsite": "0x439fdf8",
+        "address": "0x431d804",
+        "name": "I2.Loc.LocalizationManager$$GetTranslation",
+        "signature": "System_String_o* I2_Loc_LocalizationManager__GetTranslation (System_String_o* Term, bool FixForRTL, int32_t maxLineLengthForRTL, bool ignoreRTLnumbers, bool applyParameters, UnityEngine_GameObject_o* localParametersRoot, System_String_o* overrideLanguage, bool allowLocalizedParameters, const MethodInfo* method);"
+      },
+      {
+        "callsite": "0x439fe30",
+        "address": "0x7501e3c",
+        "name": "System.String$$Format",
+        "signature": "System_String_o* System_String__Format (System_String_o* format, Il2CppObject* arg0, const MethodInfo* method);"
+      },
+      {
+        "callsite": "0x439fe60",
+        "address": "0x431d804",
+        "name": "I2.Loc.LocalizationManager$$GetTranslation",
+        "signature": "System_String_o* I2_Loc_LocalizationManager__GetTranslation (System_String_o* Term, bool FixForRTL, int32_t maxLineLengthForRTL, bool ignoreRTLnumbers, bool applyParameters, UnityEngine_GameObject_o* localParametersRoot, System_String_o* overrideLanguage, bool allowLocalizedParameters, const MethodInfo* method);"
+      },
+      {
+        "callsite": "0x439fe84",
+        "address": "0x75f9fa4",
+        "name": "System.Action$$.ctor",
+        "signature": "void System_Action___ctor (System_Action_o* __this, Il2CppObject* object, intptr_t method, const MethodInfo* method);"
+      },
+      {
+        "callsite": "0x439fea4",
+        "address": "0x3d0b7a4",
+        "name": "AccountMsgCanvas$$SetContent",
+        "signature": "void AccountMsgCanvas__SetContent (System_String_o* titleText, System_String_o* messageText, System_String_o* btnContent, System_Action_o* btnCallback, bool needShowFeedback, bool isShowBlockUI, const MethodInfo* method);"
+      }
+    ],
+    "prototype_applied": true,
+    "actual_function_start": "0x439fb50",
+    "actual_function_end": "0x439febc",
+    "pseudocode_chars": 3129,
+    "unresolved_jumpout": false
+  },
+  {
+    "name": "ljzs_lt.Procedure.ProcedurePreLoad.<>c__DisplayClass4_0$$<PreLoadAsync>b__1",
+    "address": 70909812,
+    "end": 70910396,
+    "signature": "void ljzs_lt_Procedure_ProcedurePreLoad___c__DisplayClass4_0___PreLoadAsync_b__1 (ljzs_lt_Procedure_ProcedurePreLoad___c__DisplayClass4_0_o* __this, bool b, const MethodInfo* method);",
+    "prototype": "void Function_439ff74(void* self,unsigned char result,const MethodInfo* method);",
+    "range_analysis": 1,
+    "direct_callees": [
+      {
+        "callsite": "0x43a007c",
+        "address": "0x71ffd08",
+        "name": "GameFramework.CLog$$Log",
+        "signature": "void GameFramework_CLog__Log (System_Object_array* iD_m__, const MethodInfo* method);"
+      },
+      {
+        "callsite": "0x43a00ec",
+        "address": "0x431d804",
+        "name": "I2.Loc.LocalizationManager$$GetTranslation",
+        "signature": "System_String_o* I2_Loc_LocalizationManager__GetTranslation (System_String_o* Term, bool FixForRTL, int32_t maxLineLengthForRTL, bool ignoreRTLnumbers, bool applyParameters, UnityEngine_GameObject_o* localParametersRoot, System_String_o* overrideLanguage, bool allowLocalizedParameters, const MethodInfo* method);"
+      },
+      {
+        "callsite": "0x43a0124",
+        "address": "0x431d804",
+        "name": "I2.Loc.LocalizationManager$$GetTranslation",
+        "signature": "System_String_o* I2_Loc_LocalizationManager__GetTranslation (System_String_o* Term, bool FixForRTL, int32_t maxLineLengthForRTL, bool ignoreRTLnumbers, bool applyParameters, UnityEngine_GameObject_o* localParametersRoot, System_String_o* overrideLanguage, bool allowLocalizedParameters, const MethodInfo* method);"
+      },
+      {
+        "callsite": "0x43a0158",
+        "address": "0x75f9fa4",
+        "name": "System.Action$$.ctor",
+        "signature": "void System_Action___ctor (System_Action_o* __this, Il2CppObject* object, intptr_t method, const MethodInfo* method);"
+      },
+      {
+        "callsite": "0x43a0190",
+        "address": "0x3d0b7a4",
+        "name": "AccountMsgCanvas$$SetContent",
+        "signature": "void AccountMsgCanvas__SetContent (System_String_o* titleText, System_String_o* messageText, System_String_o* btnContent, System_Action_o* btnCallback, bool needShowFeedback, bool isShowBlockUI, const MethodInfo* method);"
+      }
+    ],
+    "prototype_applied": true,
+    "actual_function_start": "0x439ff74",
+    "actual_function_end": "0x43a01bc",
+    "pseudocode_chars": 2584,
+    "unresolved_jumpout": true
+  },
+  {
+    "name": "ljzs_lt.Procedure.ProcedurePreLoad.<PreLoadAsync>d__4$$MoveNext",
+    "address": 70910396,
+    "end": 70911896,
+    "signature": "void ljzs_lt_Procedure_ProcedurePreLoad__PreLoadAsync_d__4__MoveNext (ljzs_lt_Procedure_ProcedurePreLoad__PreLoadAsync_d__4_o __this, const MethodInfo* method);",
+    "prototype": "void Function_43a01bc(void* self,const MethodInfo* method);",
+    "range_analysis": 1,
+    "direct_callees": [
+      {
+        "callsite": "0x43a02b8",
+        "address": "0x76c770c",
+        "name": "System.Object$$.ctor",
+        "signature": "void System_Object___ctor (Il2CppObject* __this, const MethodInfo* method);"
+      },
+      {
+        "callsite": "0x43a02c4",
+        "address": "0x439fa28",
+        "name": "ljzs_lt.Procedure.ProcedurePreLoad$$InitGameSetting",
+        "signature": "void ljzs_lt_Procedure_ProcedurePreLoad__InitGameSetting (ljzs_lt_Procedure_ProcedurePreLoad_o* __this, const MethodInfo* method);"
+      },
+      {
+        "callsite": "0x43a02d4",
+        "address": "0x5978460",
+        "name": "ToolModule.ManagerBase<object>$$get_Instance",
+        "signature": "Il2CppObject* ToolModule_ManagerBase_object___get_Instance (const MethodInfo_5978460* method);"
+      },
+      {
+        "callsite": "0x43a02e8",
+        "address": "0x82e8f3c",
+        "name": "UnityEngine.Component$$get_gameObject",
+        "signature": "UnityEngine_GameObject_o* UnityEngine_Component__get_gameObject (UnityEngine_Component_o* __this, const MethodInfo* method);"
+      },
+      {
+        "callsite": "0x43a0310",
+        "address": "0x82f1318",
+        "name": "UnityEngine.Object$$DontDestroyOnLoad",
+        "signature": "void UnityEngine_Object__DontDestroyOnLoad (UnityEngine_Object_o* target, const MethodInfo* method);"
+      },
+      {
+        "callsite": "0x43a04bc",
+        "address": "0x408159c",
+        "name": "LocalizationModule.Runtime.CustomBundlesManager$$get_Instance",
+        "signature": "LocalizationModule_Runtime_CustomBundlesManager_o* LocalizationModule_Runtime_CustomBundlesManager__get_Instance (const MethodInfo* method);"
+      },
+      {
+        "callsite": "0x43a04c8",
+        "address": "0x4081950",
+        "name": "LocalizationModule.Runtime.CustomBundlesManager$$Preload",
+        "signature": "Cysharp_Threading_Tasks_UniTask_o LocalizationModule_Runtime_CustomBundlesManager__Preload (LocalizationModule_Runtime_CustomBundlesManager_o* __this, const MethodInfo* method);"
+      },
+      {
+        "callsite": "0x43a04d0",
+        "address": "0x7d83f54",
+        "name": "Cysharp.Threading.Tasks.UniTaskExtensions$$Forget",
+        "signature": "void Cysharp_Threading_Tasks_UniTaskExtensions__Forget (Cysharp_Threading_Tasks_UniTask_o task, const MethodInfo* method);"
+      },
+      {
+        "callsite": "0x43a04f8",
+        "address": "0x82ec80c",
+        "name": "UnityEngine.GameObject$$.ctor",
+        "signature": "void UnityEngine_GameObject___ctor (UnityEngine_GameObject_o* __this, System_String_o* name, const MethodInfo* method);"
+      },
+      {
+        "callsite": "0x43a0510",
+        "address": "0x4c8d1bc",
+        "name": "UnityEngine.GameObject$$AddComponent<object>",
+        "signature": "Il2CppObject* UnityEngine_GameObject__AddComponent_object_ (UnityEngine_GameObject_o* __this, const MethodInfo_4C8D1BC* method);"
+      },
+      {
+        "callsite": "0x43a0540",
+        "address": "0x6b41628",
+        "name": "System.Action<int>$$.ctor",
+        "signature": "void System_Action_int____ctor (System_Action_int__o* __this, Il2CppObject* object, intptr_t method, const MethodInfo_6B41628* method);"
+      },
+      {
+        "callsite": "0x43a0560",
+        "address": "0x43b6e30",
+        "name": "L_Tools.LoginControl$$.ctor",
+        "signature": "void L_Tools_LoginControl___ctor (L_Tools_LoginControl_o* __this, System_Action_int__o* onLoginVaild, const MethodInfo* method);"
+      },
+      {
+        "callsite": "0x43a0588",
+        "address": "0x73a141c",
+        "name": "DBTSDK.AppInfoManager$$GetAppChannelGroup",
+        "signature": "System_String_o* DBTSDK_AppInfoManager__GetAppChannelGroup (DBTSDK_AppInfoManager_o* __this, const MethodInfo* method);"
+      },
+      {
+        "callsite": "0x43a0594",
+        "address": "0x750a620",
+        "name": "System.String$$IsNullOrEmpty",
+        "signature": "bool System_String__IsNullOrEmpty (System_String_o* value, const MethodInfo* method);"
+      },
+      {
+        "callsite": "0x43a05bc",
+        "address": "0x82a3fc4",
+        "name": "UnityEngine.Debug$$Log",
+        "signature": "void UnityEngine_Debug__Log (Il2CppObject* message, const MethodInfo* method);"
+      },
+      {
+        "callsite": "0x43a05cc",
+        "address": "0x750dfa8",
+        "name": "System.String$$ToLower",
+        "signature": "System_String_o* System_String__ToLower (System_String_o* __this, const MethodInfo* method);"
+      },
+      {
+        "callsite": "0x43a05e4",
+        "address": "0x750e6e0",
+        "name": "System.String$$Contains",
+        "signature": "bool System_String__Contains (System_String_o* __this, System_String_o* value, const MethodInfo* method);"
+      },
+      {
+        "callsite": "0x43a0610",
+        "address": "0x439fee0",
+        "name": "ljzs_lt.Procedure.ProcedurePreLoad.<>c__DisplayClass4_0$$<PreLoadAsync>g__TryLogin|0",
+        "signature": "void ljzs_lt_Procedure_ProcedurePreLoad___c__DisplayClass4_0___PreLoadAsync_g__TryLogin_0 (ljzs_lt_Procedure_ProcedurePreLoad___c__DisplayClass4_0_o* __this, const MethodInfo* method);"
+      },
+      {
+        "callsite": "0x43a0628",
+        "address": "0x75b0140",
+        "name": "System.Runtime.CompilerServices.AsyncVoidMethodBuilder$$SetResult",
+        "signature": "void System_Runtime_CompilerServices_AsyncVoidMethodBuilder__SetResult (System_Runtime_CompilerServices_AsyncVoidMethodBuilder_o __this, const MethodInfo* method);"
+      },
+      {
+        "callsite": "0x43a0668",
+        "address": "0x4acb5fc",
+        "name": "System.Runtime.CompilerServices.AsyncVoidMethodBuilder$$AwaitUnsafeOnCompleted<UniTask.Awaiter, ProcedurePreLoad.<PreLoadAsync>d__4>",
+        "signature": "void System_Runtime_CompilerServices_AsyncVoidMethodBuilder__AwaitUnsafeOnCompleted_UniTask_Awaiter__ProcedurePreLoad__PreLoadAsync_d__4_ (System_Runtime_CompilerServices_AsyncVoidMethodBuilder_o __this, Cysharp_Threading_Tasks_UniTask_Awaiter_o* awaiter, ljzs_lt_Procedure_ProcedurePreLoad__PreLoadAsync_d__4_o* stateMachine, const MethodInfo_4ACB5FC* method);"
+      },
+      {
+        "callsite": "0x43a075c",
+        "address": "0x75b02a4",
+        "name": "System.Runtime.CompilerServices.AsyncVoidMethodBuilder$$SetException",
+        "signature": "void System_Runtime_CompilerServices_AsyncVoidMethodBuilder__SetException (System_Runtime_CompilerServices_AsyncVoidMethodBuilder_o __this, System_Exception_o* exception, const MethodInfo* method);"
+      }
+    ],
+    "prototype_applied": true,
+    "actual_function_start": "0x43a01bc",
+    "actual_function_end": "0x43a0798",
+    "pseudocode_chars": 7592,
+    "unresolved_jumpout": false
+  },
+  {
+    "name": "ljzs_lt.Procedure.ProcedureStarGame$$OnInit",
+    "address": 70911908,
+    "end": 70911948,
+    "signature": "void ljzs_lt_Procedure_ProcedureStarGame__OnInit (ljzs_lt_Procedure_ProcedureStarGame_o* __this, GameFramework_Fsm_IFsm_IProcedureManager__o* procedureOwner, const MethodInfo* method);",
+    "prototype": "void Function_43a07a4(void* self,void* owner,const MethodInfo* method);",
+    "range_analysis": 1,
+    "direct_callees": [
+      {
+        "callsite": "0x43a07b8",
+        "address": "0x727a5ec",
+        "name": "GameFramework.Procedure.ProcedureBase$$OnInit",
+        "signature": "void GameFramework_Procedure_ProcedureBase__OnInit (GameFramework_Procedure_ProcedureBase_o* __this, GameFramework_Fsm_IFsm_IProcedureManager__o* procedureOwner, const MethodInfo* method);"
+      }
+    ],
+    "prototype_applied": true,
+    "actual_function_start": "0x43a07a4",
+    "actual_function_end": "0x43a07cc",
+    "pseudocode_chars": 202,
+    "unresolved_jumpout": false
+  },
+  {
+    "name": "ljzs_lt.Procedure.ProcedureStarGame$$OnEnter",
+    "address": 70911948,
+    "end": 70912468,
+    "signature": "void ljzs_lt_Procedure_ProcedureStarGame__OnEnter (ljzs_lt_Procedure_ProcedureStarGame_o* __this, GameFramework_Fsm_IFsm_IProcedureManager__o* procedureOwner, const MethodInfo* method);",
+    "prototype": "void Function_43a07cc(void* self,void* owner,const MethodInfo* method);",
+    "range_analysis": 1,
+    "direct_callees": [
+      {
+        "callsite": "0x43a08b8",
+        "address": "0x727a644",
+        "name": "GameFramework.Procedure.ProcedureBase$$OnEnter",
+        "signature": "void GameFramework_Procedure_ProcedureBase__OnEnter (GameFramework_Procedure_ProcedureBase_o* __this, GameFramework_Fsm_IFsm_IProcedureManager__o* procedureOwner, const MethodInfo* method);"
+      },
+      {
+        "callsite": "0x43a08d4",
+        "address": "0x7185b30",
+        "name": "GameFramework.MsgDispatcher.EventHandler$$.ctor",
+        "signature": "void GameFramework_MsgDispatcher_EventHandler___ctor (GameFramework_MsgDispatcher_EventHandler_o* __this, Il2CppObject* _r__FU, intptr_t q___dt, const MethodInfo* method);"
+      },
+      {
+        "callsite": "0x43a08e4",
+        "address": "0x718518c",
+        "name": "GameFramework.MsgDispatcher$$AddEventListener",
+        "signature": "void GameFramework_MsgDispatcher__AddEventListener (System_String_o* _gpR_V, GameFramework_MsgDispatcher_EventHandler_o* ___B_x, const MethodInfo* method);"
+      },
+      {
+        "callsite": "0x43a08fc",
+        "address": "0x4c8c5c0",
+        "name": "GameFramework.GameFrameEntry$$GetModule<object>",
+        "signature": "Il2CppObject* GameFramework_GameFrameEntry__GetModule_object_ (const MethodInfo_4C8C5C0* method);"
+      },
+      {
+        "callsite": "0x43a0920",
+        "address": "0x6b41628",
+        "name": "System.Action<int>$$.ctor",
+        "signature": "void System_Action_int____ctor (System_Action_int__o* __this, Il2CppObject* object, intptr_t method, const MethodInfo_6B41628* method);"
+      },
+      {
+        "callsite": "0x43a094c",
+        "address": "0x71c4408",
+        "name": "GameFramework.TimeModule$$AddLoopTimer",
+        "signature": "int32_t GameFramework_TimeModule__AddLoopTimer (GameFramework_TimeModule_o* __this, int32_t LoopSteepTime, bool UseGamePause, System_Action_int__o* CompleteCallBack, bool AutoPaly, bool UseTimeScale, const MethodInfo* method);"
+      },
+      {
+        "callsite": "0x43a098c",
+        "address": "0x7391610",
+        "name": "DBTSDK.ReportManager$$StartGameModel",
+        "signature": "void DBTSDK_ReportManager__StartGameModel (DBTSDK_ReportManager_o* __this, int32_t mineGameModel, const MethodInfo* method);"
+      },
+      {
+        "callsite": "0x43a09b4",
+        "address": "0x7187ed8",
+        "name": "GameFramework.GlobalData$$CheckNewDay",
+        "signature": "void GameFramework_GlobalData__CheckNewDay (const MethodInfo* method);"
+      },
+      {
+        "callsite": "0x43a09cc",
+        "address": "0x43a09d4",
+        "name": "ljzs_lt.Procedure.ProcedureStarGame$$StarGame",
+        "signature": "void ljzs_lt_Procedure_ProcedureStarGame__StarGame (ljzs_lt_Procedure_ProcedureStarGame_o* __this, const MethodInfo* method);"
+      }
+    ],
+    "prototype_applied": true,
+    "actual_function_start": "0x43a07cc",
+    "actual_function_end": "0x43a09d4",
+    "pseudocode_chars": 2313,
+    "unresolved_jumpout": false
+  },
+  {
+    "name": "ljzs_lt.Procedure.ProcedureStarGame$$StarGame",
+    "address": 70912468,
+    "end": 70912668,
+    "signature": "void ljzs_lt_Procedure_ProcedureStarGame__StarGame (ljzs_lt_Procedure_ProcedureStarGame_o* __this, const MethodInfo* method);",
+    "prototype": "void Function_43a09d4(void* self,const MethodInfo* method);",
+    "range_analysis": 1,
+    "direct_callees": [
+      {
+        "callsite": "0x43a0a5c",
+        "address": "0x82a3fc4",
+        "name": "UnityEngine.Debug$$Log",
+        "signature": "void UnityEngine_Debug__Log (Il2CppObject* message, const MethodInfo* method);"
+      },
+      {
+        "callsite": "0x43a0a88",
+        "address": "0x7dba220",
+        "name": "UnityEngine.AddressableAssets.Addressables$$LoadSceneAsync",
+        "signature": "UnityEngine_ResourceManagement_AsyncOperations_AsyncOperationHandle_SceneInstance__o UnityEngine_AddressableAssets_Addressables__LoadSceneAsync (Il2CppObject* key, int32_t loadMode, bool activateOnLoad, int32_t priority, const MethodInfo* method);"
+      }
+    ],
+    "prototype_applied": true,
+    "actual_function_start": "0x43a09d4",
+    "actual_function_end": "0x43a0a9c",
+    "pseudocode_chars": 820,
+    "unresolved_jumpout": false
+  },
+  {
+    "name": "ljzs_lt.Procedure.ProcedureStarGame$$GotoTestScene",
+    "address": 70912776,
+    "end": 70912892,
+    "signature": "void ljzs_lt_Procedure_ProcedureStarGame__GotoTestScene (ljzs_lt_Procedure_ProcedureStarGame_o* __this, const MethodInfo* method);",
+    "prototype": "void Function_43a0b08(void* self,const MethodInfo* method);",
+    "range_analysis": 1,
+    "direct_callees": [
+      {
+        "callsite": "0x43a0b78",
+        "address": "0x713adec",
+        "name": "GameFramework.ResLoadHelper$$LoadScene",
+        "signature": "void GameFramework_ResLoadHelper__LoadScene (System_String_o* x____j, GameFramework_Resources_ResourcesModule_LoadAssetCompleteHandler_o* ___sB_, bool _dk_Ol, GameFramework_Resources_ResourcesModule_LoadProgressHandler_o* ____k_, const MethodInfo* method);"
+      }
+    ],
+    "prototype_applied": true,
+    "actual_function_start": "0x43a0b08",
+    "actual_function_end": "0x43a0b7c",
+    "pseudocode_chars": 470,
+    "unresolved_jumpout": false
+  },
+  {
+    "name": "ljzs_lt.Procedure.ProcedureStarGame$$ReadyExitGame",
+    "address": 70912892,
+    "end": 70913112,
+    "signature": "void ljzs_lt_Procedure_ProcedureStarGame__ReadyExitGame (ljzs_lt_Procedure_ProcedureStarGame_o* __this, System_Object_array* Args, const MethodInfo* method);",
+    "prototype": "void Function_43a0b7c(void* self,void* args,const MethodInfo* method);",
+    "range_analysis": 1,
+    "direct_callees": [
+      {
+        "callsite": "0x43a0bdc",
+        "address": "0x7185594",
+        "name": "GameFramework.MsgDispatcher$$SendMessage",
+        "signature": "void GameFramework_MsgDispatcher__SendMessage (System_String_o* _gpR_V, const MethodInfo* method);"
+      },
+      {
+        "callsite": "0x43a0c54",
+        "address": "0x47327b4",
+        "name": "GameFramework.Fsm.FsmState<object>$$ChangeState<object>",
+        "signature": "void GameFramework_Fsm_FsmState_object___ChangeState_object_ (GameFramework_Fsm_FsmState_T__o* __this, GameFramework_Fsm_IFsm_T__o* fsm, System_Object_array* args, const MethodInfo_47327B4* method);"
+      }
+    ],
+    "prototype_applied": true,
+    "actual_function_start": "0x43a0b7c",
+    "actual_function_end": "0x43a0c58",
+    "pseudocode_chars": 1183,
+    "unresolved_jumpout": false
+  },
+  {
+    "name": "ljzs_lt.Procedure.ProcedurePreLoad.<>c__DisplayClass4_0$$<PreLoadAsync>g__TryLogin|0",
+    "address": 70909664,
+    "end": 70909812,
+    "signature": "void ljzs_lt_Procedure_ProcedurePreLoad___c__DisplayClass4_0___PreLoadAsync_g__TryLogin_0 (ljzs_lt_Procedure_ProcedurePreLoad___c__DisplayClass4_0_o* __this, const MethodInfo* method);",
+    "prototype": "void Function_439fee0(void* self,const MethodInfo* method);",
+    "range_analysis": 1,
+    "direct_callees": [
+      {
+        "callsite": "0x439ff48",
+        "address": "0x6b3fe78",
+        "name": "System.Action<bool>$$.ctor",
+        "signature": "void System_Action_bool____ctor (System_Action_bool__o* __this, Il2CppObject* object, intptr_t method, const MethodInfo_6B3FE78* method);"
+      },
+      {
+        "callsite": "0x439ff6c",
+        "address": "0x43b70ec",
+        "name": "L_Tools.LoginControl$$Login",
+        "signature": "void L_Tools_LoginControl__Login (L_Tools_LoginControl_o* __this, System_Action_bool__o* loginCallBack, bool forceLogin, const MethodInfo* method);"
+      }
+    ],
+    "prototype_applied": true,
+    "actual_function_start": "0x439fee0",
+    "actual_function_end": "0x439ff74",
+    "pseudocode_chars": 702,
+    "unresolved_jumpout": false
+  },
+  {
+    "name": "ljzs_lt.Procedure.ProcedureStarGame$$ReportGameTimes",
+    "address": 70912668,
+    "end": 70912776,
+    "signature": "void ljzs_lt_Procedure_ProcedureStarGame__ReportGameTimes (ljzs_lt_Procedure_ProcedureStarGame_o* __this, int32_t times, const MethodInfo* method);",
+    "prototype": "void Function_43a0a9c(void* self,int times,const MethodInfo* method);",
+    "range_analysis": 1,
+    "direct_callees": [
+      {
+        "callsite": "0x43a0b00",
+        "address": "0x739160c",
+        "name": "DBTSDK.ReportManager$$ReportGamePlayTime",
+        "signature": "void DBTSDK_ReportManager__ReportGamePlayTime (DBTSDK_ReportManager_o* __this, int32_t times, const MethodInfo* method);"
+      }
+    ],
+    "prototype_applied": true,
+    "actual_function_start": "0x43a0a9c",
+    "actual_function_end": "0x43a0b08",
+    "pseudocode_chars": 608,
+    "unresolved_jumpout": false
+  },
+  {
+    "name": "ljzs_lt.Procedure.ProcedureStarGame$$OnLeave",
+    "address": 70913120,
+    "end": 70913480,
+    "signature": "void ljzs_lt_Procedure_ProcedureStarGame__OnLeave (ljzs_lt_Procedure_ProcedureStarGame_o* __this, GameFramework_Fsm_IFsm_IProcedureManager__o* procedureOwner, bool isShutdown, const MethodInfo* method);",
+    "prototype": "void Function_43a0c60(void* self,void* owner,unsigned char shutdown,const MethodInfo* method);",
+    "range_analysis": 1,
+    "direct_callees": [
+      {
+        "callsite": "0x43a0d14",
+        "address": "0x727a800",
+        "name": "GameFramework.Procedure.ProcedureBase$$OnLeave",
+        "signature": "void GameFramework_Procedure_ProcedureBase__OnLeave (GameFramework_Procedure_ProcedureBase_o* __this, GameFramework_Fsm_IFsm_IProcedureManager__o* procedureOwner, bool isShutdown, const MethodInfo* method);"
+      },
+      {
+        "callsite": "0x43a0d2c",
+        "address": "0x4c8c5c0",
+        "name": "GameFramework.GameFrameEntry$$GetModule<object>",
+        "signature": "Il2CppObject* GameFramework_GameFrameEntry__GetModule_object_ (const MethodInfo_4C8C5C0* method);"
+      },
+      {
+        "callsite": "0x43a0d54",
+        "address": "0x6b41628",
+        "name": "System.Action<int>$$.ctor",
+        "signature": "void System_Action_int____ctor (System_Action_int__o* __this, Il2CppObject* object, intptr_t method, const MethodInfo_6B41628* method);"
+      },
+      {
+        "callsite": "0x43a0d84",
+        "address": "0x71c4a10",
+        "name": "GameFramework.TimeModule$$RemoveLoopTimer",
+        "signature": "void GameFramework_TimeModule__RemoveLoopTimer (GameFramework_TimeModule_o* __this, int32_t Id, System_Action_int__o* RemoveLoopTimerCallBack, const MethodInfo* method);"
+      },
+      {
+        "callsite": "0x43a0da0",
+        "address": "0x7185b30",
+        "name": "GameFramework.MsgDispatcher.EventHandler$$.ctor",
+        "signature": "void GameFramework_MsgDispatcher_EventHandler___ctor (GameFramework_MsgDispatcher_EventHandler_o* __this, Il2CppObject* _r__FU, intptr_t q___dt, const MethodInfo* method);"
+      },
+      {
+        "callsite": "0x43a0dc0",
+        "address": "0x7184d9c",
+        "name": "GameFramework.MsgDispatcher$$RemoveEventListener",
+        "signature": "void GameFramework_MsgDispatcher__RemoveEventListener (System_String_o* _gpR_V, GameFramework_MsgDispatcher_EventHandler_o* ___B_x, const MethodInfo* method);"
+      }
+    ],
+    "prototype_applied": true,
+    "actual_function_start": "0x43a0c60",
+    "actual_function_end": "0x43a0dc8",
+    "pseudocode_chars": 1655,
+    "unresolved_jumpout": false
+  },
+  {
+    "name": "ljzs_lt.Procedure.ProcedurePreLoad$$OnUpdate",
+    "address": 70909628,
+    "end": 70909636,
+    "signature": "void ljzs_lt_Procedure_ProcedurePreLoad__OnUpdate (ljzs_lt_Procedure_ProcedurePreLoad_o* __this, GameFramework_Fsm_IFsm_IProcedureManager__o* procedureOwner, float elapseSeconds, float realElapseSeconds, const MethodInfo* method);",
+    "prototype": "void Function_439febc(void* self,void* owner,float elapsed,float realElapsed,const MethodInfo* method);",
+    "range_analysis": 1,
+    "direct_callees": [
+      {
+        "callsite": "0x439fec0",
+        "address": "0x727a790",
+        "name": "GameFramework.Procedure.ProcedureBase$$OnUpdate",
+        "signature": "void GameFramework_Procedure_ProcedureBase__OnUpdate (GameFramework_Procedure_ProcedureBase_o* __this, GameFramework_Fsm_IFsm_IProcedureManager__o* procedureOwner, float elapseSeconds, float realElapseSeconds, const MethodInfo* method);"
+      }
+    ],
+    "prototype_applied": true,
+    "actual_function_start": "0x439febc",
+    "actual_function_end": "0x439fec4",
+    "pseudocode_chars": 269,
+    "unresolved_jumpout": false
+  },
+  {
+    "name": "ljzs_lt.Procedure.ProcedurePreLoad$$OnLeave",
+    "address": 70909636,
+    "end": 70909648,
+    "signature": "void ljzs_lt_Procedure_ProcedurePreLoad__OnLeave (ljzs_lt_Procedure_ProcedurePreLoad_o* __this, GameFramework_Fsm_IFsm_IProcedureManager__o* procedureOwner, bool isShutdown, const MethodInfo* method);",
+    "prototype": "void Function_439fec4(void* self,void* owner,unsigned char shutdown,const MethodInfo* method);",
+    "range_analysis": 1,
+    "direct_callees": [
+      {
+        "callsite": "0x439fecc",
+        "address": "0x727a800",
+        "name": "GameFramework.Procedure.ProcedureBase$$OnLeave",
+        "signature": "void GameFramework_Procedure_ProcedureBase__OnLeave (GameFramework_Procedure_ProcedureBase_o* __this, GameFramework_Fsm_IFsm_IProcedureManager__o* procedureOwner, bool isShutdown, const MethodInfo* method);"
+      }
+    ],
+    "prototype_applied": true,
+    "actual_function_start": "0x439fec4",
+    "actual_function_end": "0x439fed0",
+    "pseudocode_chars": 243,
+    "unresolved_jumpout": false
+  },
+  {
+    "name": "ljzs_lt.Procedure.ProcedurePreLoad$$OnDestroy",
+    "address": 70909648,
+    "end": 70909656,
+    "signature": "void ljzs_lt_Procedure_ProcedurePreLoad__OnDestroy (ljzs_lt_Procedure_ProcedurePreLoad_o* __this, GameFramework_Fsm_IFsm_IProcedureManager__o* procedureOwner, const MethodInfo* method);",
+    "prototype": "void Function_439fed0(void* self,void* owner,const MethodInfo* method);",
+    "range_analysis": 1,
+    "direct_callees": [
+      {
+        "callsite": "0x439fed4",
+        "address": "0x727a95c",
+        "name": "GameFramework.Procedure.ProcedureBase$$OnDestroy",
+        "signature": "void GameFramework_Procedure_ProcedureBase__OnDestroy (GameFramework_Procedure_ProcedureBase_o* __this, GameFramework_Fsm_IFsm_IProcedureManager__o* procedureOwner, const MethodInfo* method);"
+      }
+    ],
+    "prototype_applied": true,
+    "actual_function_start": "0x439fed0",
+    "actual_function_end": "0x439fed8",
+    "pseudocode_chars": 174,
+    "unresolved_jumpout": false
+  },
+  {
+    "name": "ljzs_lt.Procedure.ProcedureStarGame$$OnUpdate",
+    "address": 70913112,
+    "end": 70913120,
+    "signature": "void ljzs_lt_Procedure_ProcedureStarGame__OnUpdate (ljzs_lt_Procedure_ProcedureStarGame_o* __this, GameFramework_Fsm_IFsm_IProcedureManager__o* procedureOwner, float elapseSeconds, float realElapseSeconds, const MethodInfo* method);",
+    "prototype": "void Function_43a0c58(void* self,void* owner,float elapsed,float realElapsed,const MethodInfo* method);",
+    "range_analysis": 1,
+    "direct_callees": [
+      {
+        "callsite": "0x43a0c5c",
+        "address": "0x727a790",
+        "name": "GameFramework.Procedure.ProcedureBase$$OnUpdate",
+        "signature": "void GameFramework_Procedure_ProcedureBase__OnUpdate (GameFramework_Procedure_ProcedureBase_o* __this, GameFramework_Fsm_IFsm_IProcedureManager__o* procedureOwner, float elapseSeconds, float realElapseSeconds, const MethodInfo* method);"
+      }
+    ],
+    "prototype_applied": true,
+    "actual_function_start": "0x43a0c58",
+    "actual_function_end": "0x43a0c60",
+    "pseudocode_chars": 270,
+    "unresolved_jumpout": false
+  },
+  {
+    "name": "ljzs_lt.Procedure.ProcedureStarGame$$OnDestroy",
+    "address": 70913480,
+    "end": 70913488,
+    "signature": "void ljzs_lt_Procedure_ProcedureStarGame__OnDestroy (ljzs_lt_Procedure_ProcedureStarGame_o* __this, GameFramework_Fsm_IFsm_IProcedureManager__o* procedureOwner, const MethodInfo* method);",
+    "prototype": "void Function_43a0dc8(void* self,void* owner,const MethodInfo* method);",
+    "range_analysis": 1,
+    "direct_callees": [
+      {
+        "callsite": "0x43a0dcc",
+        "address": "0x727a95c",
+        "name": "GameFramework.Procedure.ProcedureBase$$OnDestroy",
+        "signature": "void GameFramework_Procedure_ProcedureBase__OnDestroy (GameFramework_Procedure_ProcedureBase_o* __this, GameFramework_Fsm_IFsm_IProcedureManager__o* procedureOwner, const MethodInfo* method);"
+      }
+    ],
+    "prototype_applied": true,
+    "actual_function_start": "0x43a0dc8",
+    "actual_function_end": "0x43a0dd0",
+    "pseudocode_chars": 175,
+    "unresolved_jumpout": false
+  },
+  {
+    "name": "ljzs_lt.Procedure.ProcedureStarGame$$<OnLeave>b__9_0",
+    "address": 70913488,
+    "end": 70913492,
+    "signature": "void ljzs_lt_Procedure_ProcedureStarGame___OnLeave_b__9_0 (ljzs_lt_Procedure_ProcedureStarGame_o* __this, int32_t timer, const MethodInfo* method);",
+    "prototype": "void Function_43a0dd0(void* self,int time,const MethodInfo* method);",
+    "range_analysis": 1,
+    "direct_callees": [
+      {
+        "callsite": "0x43a0dd0",
+        "address": "0x43a0a9c",
+        "name": "ljzs_lt.Procedure.ProcedureStarGame$$ReportGameTimes",
+        "signature": "void ljzs_lt_Procedure_ProcedureStarGame__ReportGameTimes (ljzs_lt_Procedure_ProcedureStarGame_o* __this, int32_t times, const MethodInfo* method);"
+      }
+    ],
+    "prototype_applied": true,
+    "actual_function_start": "0x43a0dd0",
+    "actual_function_end": "0x43a0dd4",
+    "pseudocode_chars": 207,
+    "unresolved_jumpout": false
+  }
+]

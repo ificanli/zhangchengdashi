@@ -1,0 +1,36 @@
+0x4732b84: STR             X30, [SP,#var_30]!
+0x4732b88: STP             X22, X21, [SP,#0x30+var_20]
+0x4732b8c: STP             X20, X19, [SP,#0x30+var_10]
+0x4732b90: LDR             X8, [X2,#0x38]
+0x4732b94: MOV             X20, X2
+0x4732b98: MOV             X19, X1
+0x4732b9c: MOV             X21, X0
+0x4732ba0: CBNZ            X8, loc_4732BC4
+0x4732ba4: ADRP            X0, #off_8ACC830@PAGE
+0x4732ba8: LDR             X0, [X0,#off_8ACC830@PAGEOFF]; off_8CEEA50 ; slot
+0x4732bac: BL              il2cpp_codegen_initialize_runtime_metadata
+0x4732bb0: LDR             X8, [X20,#0x38]
+0x4732bb4: CBNZ            X8, loc_4732BC4
+0x4732bb8: MOV             X0, X20
+0x4732bbc: BL              unk_3C503FC
+0x4732bc0: LDR             X8, [X20,#0x38]
+0x4732bc4: ADRP            X9, #off_8ACC830@PAGE
+0x4732bc8: LDR             X9, [X9,#off_8ACC830@PAGEOFF]; off_8CEEA50
+0x4732bcc: LDR             X22, [X8]
+0x4732bd0: LDR             X0, [X9]; klass
+0x4732bd4: LDR             W9, [X0,#0xE0]
+0x4732bd8: CBNZ            W9, loc_4732BE0
+0x4732bdc: BL              il2cpp_codegen_runtime_class_init
+0x4732be0: MOV             X0, X22
+0x4732be4: MOV             X1, XZR
+0x4732be8: BL              System.Type$$GetTypeFromHandle
+0x4732bec: LDR             X8, [X20,#0x20]
+0x4732bf0: MOV             X1, X0
+0x4732bf4: MOV             X0, X21
+0x4732bf8: MOV             X2, X19
+0x4732bfc: LDR             X8, [X8,#0xC0]
+0x4732c00: LDP             X20, X19, [SP,#0x30+var_10]
+0x4732c04: LDP             X22, X21, [SP,#0x30+var_20]
+0x4732c08: LDR             X3, [X8,#0xD0]
+0x4732c0c: LDR             X30, [SP+0x30+var_30],#0x30
+0x4732c10: B               GameFramework.Fsm.Fsm_object_$$Start

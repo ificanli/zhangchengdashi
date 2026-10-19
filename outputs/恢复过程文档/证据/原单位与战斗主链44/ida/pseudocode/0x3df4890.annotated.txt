@@ -1,0 +1,26 @@
+long double __usercall sub_3DF4890@<Q0>(__int64 a1@<X8>)
+{
+  long double result; // q0
+  long double v3; // [xsp+8h] [xbp-68h] BYREF
+  __int64 v4; // [xsp+18h] [xbp-58h]
+  __int64 v5; // [xsp+20h] [xbp-50h] BYREF
+  _QWORD v6[3]; // [xsp+28h] [xbp-48h] BYREF
+
+  if ( (byte_8FFD7A9 & 1) == 0 )
+  {
+    il2cpp_codegen_initialize_runtime_metadata(&qword_8CF8E90 /* Method$Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<List<GameObject>>.Create() */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&off_8CF8E88 /* Method$Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<List<GameObject>>.Start<BattleGameSceneManager.<GetRoleTarget>d__207>() */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8CF8EB0 /* Method$Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<List<GameObject>>.get_Task() */);
+    byte_8FFD7A9 = 1;
+  }
+  memset(v6, 0, sizeof(v6));
+  v5 = 0xFFFFFFFFLL;
+  if ( *((_QWORD *)off_8CF8E88 /* Method$Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<List<GameObject>>.Start<BattleGameSceneManager.<GetRoleTarget>d__207>() */ + 7) == 0 )
+    ((void (__fastcall *)(void *))unk_3C503FC)(off_8CF8E88 /* Method$Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<List<GameObject>>.Start<BattleGameSceneManager.<GetRoleTarget>d__207>() */);
+  GameModule_BattleGameSceneManager__GetRoleTarget_d__207__MoveNext((__int64)&v5);
+  ((void (__fastcall *)(long double *__return_ptr, _QWORD *, __int64))unk_3D31BC0)(&v3, v6, qword_8CF8EB0 /* Method$Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<List<GameObject>>.get_Task() */);
+  result = v3;
+  *(_QWORD *)(a1 + 16) = v4;
+  *(long double *)a1 = result;
+  return result;
+}

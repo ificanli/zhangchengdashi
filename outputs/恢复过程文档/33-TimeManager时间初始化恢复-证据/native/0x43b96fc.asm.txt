@@ -1,0 +1,46 @@
+0x43b96fc: STR             X30, [SP,#var_20]!
+0x43b9700: STP             X20, X19, [SP,#0x20+var_10]
+0x43b9704: ADRP            X20, #byte_90009C2@PAGE
+0x43b9708: ADRP            X19, #off_8ACDB38@PAGE
+0x43b970c: LDRB            W8, [X20,#byte_90009C2@PAGEOFF]
+0x43b9710: LDR             X19, [X19,#off_8ACDB38@PAGEOFF]; off_8CED280
+0x43b9714: TBNZ            W8, #0, loc_43B9738
+0x43b9718: ADRP            X0, #off_8AF54A0@PAGE
+0x43b971c: LDR             X0, [X0,#off_8AF54A0@PAGEOFF]; off_8CE8348 ; slot
+0x43b9720: BL              il2cpp_codegen_initialize_runtime_metadata
+0x43b9724: ADRP            X0, #off_8ACDB38@PAGE
+0x43b9728: LDR             X0, [X0,#off_8ACDB38@PAGEOFF]; off_8CED280 ; slot
+0x43b972c: BL              il2cpp_codegen_initialize_runtime_metadata
+0x43b9730: MOV             W8, #1
+0x43b9734: STRB            W8, [X20,#byte_90009C2@PAGEOFF]
+0x43b9738: LDR             X0, [X19]; klass
+0x43b973c: LDR             W8, [X0,#0xE0]
+0x43b9740: CBNZ            W8, loc_43B974C
+0x43b9744: BL              il2cpp_codegen_runtime_class_init
+0x43b9748: LDR             X0, [X19]; klass
+0x43b974c: LDR             X8, [X0,#0xB8]
+0x43b9750: LDRB            W9, [X8]
+0x43b9754: CBZ             W9, loc_43B97A4
+0x43b9758: ADRP            X20, #off_8AF54A0@PAGE
+0x43b975c: LDR             W9, [X0,#0xE0]
+0x43b9760: LDR             X20, [X20,#off_8AF54A0@PAGEOFF]; off_8CE8348
+0x43b9764: CBNZ            W9, loc_43B9774
+0x43b9768: BL              il2cpp_codegen_runtime_class_init
+0x43b976c: LDR             X8, [X19]
+0x43b9770: LDR             X8, [X8,#0xB8]
+0x43b9774: STRB            WZR, [X8]
+0x43b9778: LDR             X0, [X20]; klass
+0x43b977c: LDR             W8, [X0,#0xE0]
+0x43b9780: CBNZ            W8, loc_43B9788
+0x43b9784: BL              il2cpp_codegen_runtime_class_init
+0x43b9788: MOV             X0, XZR
+0x43b978c: BL              GameFramework.Net.Http.HttpManager$$get_Instance
+0x43b9790: CBZ             X0, loc_43B97B0
+0x43b9794: LDP             X20, X19, [SP,#0x20+var_10]
+0x43b9798: MOV             X1, XZR
+0x43b979c: LDR             X30, [SP+0x20+var_20],#0x20
+0x43b97a0: B               GameFramework.Net.Http.HttpManager$$RequestServerTime
+0x43b97a4: LDP             X20, X19, [SP,#0x20+var_10]
+0x43b97a8: LDR             X30, [SP+0x20+var_20],#0x20
+0x43b97ac: RET
+0x43b97b0: BL              il2cpp_codegen_raise_null_reference_exception

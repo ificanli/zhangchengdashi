@@ -1,0 +1,28 @@
+0x436c114: STR             X30, [SP,#var_20]!
+0x436c118: STP             X20, X19, [SP,#0x20+var_10]
+0x436c11c: MOV             X1, XZR
+0x436c120: MOV             X19, X0
+0x436c124: BL              ServerBaseData$$Init
+0x436c128: MOV             X0, X19
+0x436c12c: BL              DataModule.PlayerArtifactData$$EnsureGroupsNotNull
+0x436c130: MOV             X0, X19
+0x436c134: BL              DataModule.PlayerArtifactData$$MergeLegacyKeysToGroupsIfNeeded
+0x436c138: BL              DataModule.PlayerArtifactData$$IsBGroup
+0x436c13c: MOV             W20, W0
+0x436c140: MOV             X0, X19
+0x436c144: BL              DataModule.PlayerArtifactData$$AbsorbLegacyActiveCacheToAIfNeeded
+0x436c148: AND             W20, W20, #1
+0x436c14c: MOV             X0, X19
+0x436c150: MOV             W1, W20
+0x436c154: BL              DataModule.PlayerArtifactData$$TryMigrateAToBOnFirstEnter
+0x436c158: MOV             X0, X19
+0x436c15c: MOV             W1, W20
+0x436c160: BL              DataModule.PlayerArtifactData$$LoadActiveFromGroup
+0x436c164: MOV             X0, X19
+0x436c168: BL              DataModule.PlayerArtifactData$$FillMissingByCurrentConfig
+0x436c16c: MOV             X0, X19
+0x436c170: MOV             W1, W20
+0x436c174: BL              DataModule.PlayerArtifactData$$SyncActiveToGroupMerge
+0x436c178: LDP             X20, X19, [SP,#0x20+var_10]
+0x436c17c: LDR             X30, [SP+0x20+var_20],#0x20
+0x436c180: B               DataModule.PlayerArtifactData$$TryInitLimitedSummonRotationOnArtifactsUnlock

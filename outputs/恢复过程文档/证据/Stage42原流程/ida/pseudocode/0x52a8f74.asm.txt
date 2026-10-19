@@ -1,0 +1,27 @@
+0x52a8f74: STR             X30, [SP,#var_20]!
+0x52a8f78: STP             X20, X19, [SP,#0x20+var_10]
+0x52a8f7c: STR             XZR, [SP,#0x20+var_18]
+0x52a8f80: CBZ             X1, loc_52A8FDC
+0x52a8f84: LDR             X8, [X1]
+0x52a8f88: LDR             X20, [X0,#0x28]
+0x52a8f8c: MOV             X0, X1
+0x52a8f90: MOV             X19, X2
+0x52a8f94: LDR             X9, [X8,#0x308]
+0x52a8f98: LDR             X8, [X8,#0x310]
+0x52a8f9c: MOV             X1, X8
+0x52a8fa0: BLR             X9
+0x52a8fa4: CBZ             X20, loc_52A8FDC
+0x52a8fa8: LDR             X8, [X19,#0x20]
+0x52a8fac: MOV             X1, X0
+0x52a8fb0: ADD             X2, SP, #0x20+var_18
+0x52a8fb4: MOV             X0, X20
+0x52a8fb8: LDR             X8, [X8,#0xC0]
+0x52a8fbc: LDR             X3, [X8,#0xF8]
+0x52a8fc0: BL              System.Collections.Generic.Dictionary_object__object_$$TryGetValue
+0x52a8fc4: LDR             X8, [SP,#0x20+var_18]
+0x52a8fc8: LDP             X20, X19, [SP,#0x20+var_10]
+0x52a8fcc: TST             W0, #1
+0x52a8fd0: CSEL            X0, X8, XZR, NE
+0x52a8fd4: LDR             X30, [SP+0x20+var_20],#0x20
+0x52a8fd8: RET
+0x52a8fdc: BL              il2cpp_codegen_raise_null_reference_exception

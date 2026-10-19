@@ -1,0 +1,33 @@
+0x44cd5d4: fe0f1ef8 str      x30, [sp, #-0x20]!
+0x44cd5d8: f44f01a9 stp      x20, x19, [sp, #0x10]
+0x44cd5dc: b4590290 adrp     x20, #0x9001000
+0x44cd5e0: 88e24239 ldrb     w8, [x20, #0xb8]
+0x44cd5e4: f30300aa mov      x19, x0
+0x44cd5e8: c8000037 tbnz     w8, #0, #0x44cd600
+0x44cd5ec: 803102f0 adrp     x0, #0x8b00000
+0x44cd5f0: 00a846f9 ldr      x0, [x0, #0xd50] // Pathfinding.ECS.AIMovementSystemGroup.TimeScaledRateManager_TypeInfo
+0x44cd5f4: 23bfdd97 bl       #0x3c3d280
+0x44cd5f8: 28008052 mov      w8, #1
+0x44cd5fc: 88e20239 strb     w8, [x20, #0xb8]
+0x44cd600: e00313aa mov      x0, x19
+0x44cd604: e1031faa mov      x1, xzr
+0x44cd608: d5d8e594 bl       #0x7e4395c // Unity.Entities.ComponentSystemGroup$$OnDestroy
+0x44cd60c: 604640f9 ldr      x0, [x19, #0x88]
+0x44cd610: 200200b4 cbz      x0, #0x44cd654
+0x44cd614: 883102f0 adrp     x8, #0x8b00000
+0x44cd618: 08a946f9 ldr      x8, [x8, #0xd50] // Pathfinding.ECS.AIMovementSystemGroup.TimeScaledRateManager_TypeInfo
+0x44cd61c: 090040f9 ldr      x9, [x0]
+0x44cd620: 080140f9 ldr      x8, [x8]
+0x44cd624: 2bc14439 ldrb     w11, [x9, #0x130]
+0x44cd628: 0ac14439 ldrb     w10, [x8, #0x130]
+0x44cd62c: 7f010a6b cmp      w11, w10
+0x44cd630: 23010054 b.lo     #0x44cd654
+0x44cd634: 296540f9 ldr      x9, [x9, #0xc8]
+0x44cd638: 290d0a8b add      x9, x9, x10, lsl #3
+0x44cd63c: 29815ff8 ldur     x9, [x9, #-8]
+0x44cd640: 3f0108eb cmp      x9, x8
+0x44cd644: 81000054 b.ne     #0x44cd654
+0x44cd648: f44f41a9 ldp      x20, x19, [sp, #0x10]
+0x44cd64c: fe0742f8 ldr      x30, [sp], #0x20
+0x44cd650: 02000014 b        #0x44cd658 // Pathfinding.ECS.AIMovementSystemGroup.TimeScaledRateManager$$Dispose
+0x44cd654: 9ebfdd97 bl       #0x3c3d4cc

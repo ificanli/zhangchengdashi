@@ -1,0 +1,58 @@
+__int64 __fastcall GameModule_BattleGameManager__CoinChangeUpdateGamePanel(__int64 a1)
+{
+  void *Instance; // x19
+  __int64 v3; // x21
+  __int64 v4; // x0
+  __int64 v5; // x22
+  unsigned int v6; // w8
+  __int64 v7; // x20
+  __int64 v9; // x0
+  __int64 v10; // x0
+  int v11; // [xsp+Ch] [xbp-34h] BYREF
+
+  if ( (byte_8FFD73B & 1) == 0 )
+  {
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8CE95C0 /* int_TypeInfo */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D121C0 /* Method$ToolModule.ManagerBase<GamePanelManager>.get_Instance() */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8CE3258 /* object[]_TypeInfo */);
+    byte_8FFD73B = 1;
+  }
+  Instance = ToolModule_ManagerBase_object___get_Instance((const MethodInfo *)qword_8D121C0 /* Method$ToolModule.ManagerBase<GamePanelManager>.get_Instance() */);
+  v3 = ((__int64 (__fastcall *)(__int64, __int64))unk_3C3D320)(qword_8CE3258 /* object[]_TypeInfo */, 2);
+  v11 = *(_DWORD *)(a1 + 40);
+  v4 = ((__int64 (__fastcall *)(__int64, int *))unk_3C3D3B8)(qword_8CE95C0 /* int_TypeInfo */, &v11);
+  if ( v3 == 0 )
+    goto LABEL_14;
+  v5 = v4;
+  if ( v4 == 0 || ((__int64 (__fastcall *)(__int64, _QWORD))unk_3C3D3B4)(v4, *(_QWORD *)(*(_QWORD *)v3 + 64LL)) != 0 )
+  {
+    v6 = *(_DWORD *)(v3 + 24);
+    if ( v6 == 0 )
+      goto LABEL_13;
+    *(_QWORD *)(v3 + 32) = v5;
+    v7 = *(_QWORD *)(a1 + 72);
+    if ( v7 == 0 )
+    {
+LABEL_10:
+      if ( v6 > 1 )
+      {
+        *(_QWORD *)(v3 + 40) = v7;
+        if ( Instance != nullptr )
+          return GameModule_GamePanelManager__UpdateInfo(Instance, v3, 0);
+LABEL_14:
+        il2cpp_codegen_raise_null_reference_exception();
+      }
+LABEL_13:
+      ((void (*)(void))unk_3C3D4D4)();
+      goto LABEL_14;
+    }
+    if ( ((__int64 (__fastcall *)(__int64, _QWORD))unk_3C3D3B4)(v7, *(_QWORD *)(*(_QWORD *)v3 + 64LL)) != 0 )
+    {
+      v6 = *(_DWORD *)(v3 + 24);
+      goto LABEL_10;
+    }
+  }
+  v9 = ((__int64 (*)(void))unk_3C3D4F0)();
+  v10 = ((__int64 (__fastcall *)(__int64, _QWORD))unk_3C3D3A0)(v9, 0);
+  return GameModule_BattleGameManager__Countdown(v10);
+}

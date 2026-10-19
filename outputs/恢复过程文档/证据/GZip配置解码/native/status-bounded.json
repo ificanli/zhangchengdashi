@@ -1,0 +1,243 @@
+{
+  "stage": "complete",
+  "methods": [
+    {
+      "name": "ToolModule.ListExtend$$IsNullOrEmpty<byte>",
+      "address": 81154720,
+      "end": 81154900,
+      "signature": "bool ToolModule_ListExtend__IsNullOrEmpty_byte_ (System_Collections_Generic_IList_T__o* list, const MethodInfo_4D652A0* method);",
+      "prototype": "unsigned char GZip_4d652a0(void* input, const MethodInfo* method);",
+      "range_analysis": 1,
+      "direct_callees": [],
+      "prototype_applied": true,
+      "actual_function_start": "0x4d652a0",
+      "actual_function_end": "0x4d65354",
+      "pseudocode_chars": 1165,
+      "unresolved_jumpout": false
+    },
+    {
+      "name": "ToolModule.GZipTool$$CompressToBase64",
+      "address": 66585692,
+      "end": 66585876,
+      "signature": "System_String_o* ToolModule_GZipTool__CompressToBase64 (System_String_o* json, const MethodInfo* method);",
+      "prototype": "void* GZip_3f8045c(void* input, const MethodInfo* method);",
+      "range_analysis": 1,
+      "direct_callees": [
+        {
+          "callsite": "0x3f8049c",
+          "address": "0x750a620",
+          "name": "System.String$$IsNullOrEmpty",
+          "signature": "bool System_String__IsNullOrEmpty (System_String_o* value, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x3f80500",
+          "address": "0x3f80514",
+          "name": "ToolModule.GZipTool$$CompressCore",
+          "signature": "System_Byte_array* ToolModule_GZipTool__CompressCore (System_Byte_array* input, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x3f8050c",
+          "address": "0x3f8089c",
+          "name": "ToolModule.StringTool$$ToBase64String",
+          "signature": "System_String_o* ToolModule_StringTool__ToBase64String (System_Byte_array* bytes, const MethodInfo* method);"
+        }
+      ],
+      "prototype_applied": true,
+      "actual_function_start": "0x3f8045c",
+      "actual_function_end": "0x3f80514",
+      "pseudocode_chars": 1050,
+      "unresolved_jumpout": false
+    },
+    {
+      "name": "ToolModule.GZipTool$$Compress",
+      "address": 66586916,
+      "end": 66587000,
+      "signature": "System_Byte_array* ToolModule_GZipTool__Compress (System_Byte_array* input, const MethodInfo* method);",
+      "prototype": "void* GZip_3f80924(void* input, const MethodInfo* method);",
+      "range_analysis": 1,
+      "direct_callees": [
+        {
+          "callsite": "0x3f80974",
+          "address": "0x3f80514",
+          "name": "ToolModule.GZipTool$$CompressCore",
+          "signature": "System_Byte_array* ToolModule_GZipTool__CompressCore (System_Byte_array* input, const MethodInfo* method);"
+        }
+      ],
+      "prototype_applied": true,
+      "actual_function_start": "0x3f80924",
+      "actual_function_end": "0x3f80978",
+      "pseudocode_chars": 368,
+      "unresolved_jumpout": false
+    },
+    {
+      "name": "ToolModule.GZipTool$$CompressCore",
+      "address": 66585876,
+      "end": 66586780,
+      "signature": "System_Byte_array* ToolModule_GZipTool__CompressCore (System_Byte_array* input, const MethodInfo* method);",
+      "prototype": "void* GZip_3f80514(void* input, const MethodInfo* method);",
+      "range_analysis": 1,
+      "direct_callees": [
+        {
+          "callsite": "0x3f80578",
+          "address": "0x4d652a0",
+          "name": "ToolModule.ListExtend$$IsNullOrEmpty<byte>",
+          "signature": "bool ToolModule_ListExtend__IsNullOrEmpty_byte_ (System_Collections_Generic_IList_T__o* list, const MethodInfo_4D652A0* method);"
+        },
+        {
+          "callsite": "0x3f805a0",
+          "address": "0x75cf068",
+          "name": "System.IO.MemoryStream$$.ctor",
+          "signature": "void System_IO_MemoryStream___ctor (System_IO_MemoryStream_o* __this, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x3f805c0",
+          "address": "0x7d18504",
+          "name": "System.IO.Compression.GZipStream$$.ctor",
+          "signature": "void System_IO_Compression_GZipStream___ctor (System_IO_Compression_GZipStream_o* __this, System_IO_Stream_o* stream, int32_t compressionLevel, bool leaveOpen, const MethodInfo* method);"
+        }
+      ],
+      "prototype_applied": true,
+      "actual_function_start": "0x3f80514",
+      "actual_function_end": "0x3f8089c",
+      "pseudocode_chars": 2794,
+      "unresolved_jumpout": false
+    },
+    {
+      "name": "ToolModule.GZipTool$$DecompressFromBase64",
+      "address": 66587000,
+      "end": 66587452,
+      "signature": "System_String_o* ToolModule_GZipTool__DecompressFromBase64 (System_String_o* base64Data, const MethodInfo* method);",
+      "prototype": "void* GZip_3f80978(void* input, const MethodInfo* method);",
+      "range_analysis": 1,
+      "direct_callees": [
+        {
+          "callsite": "0x3f809c4",
+          "address": "0x750a620",
+          "name": "System.String$$IsNullOrEmpty",
+          "signature": "bool System_String__IsNullOrEmpty (System_String_o* value, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x3f80a04",
+          "address": "0x7609de0",
+          "name": "System.Convert$$FromBase64String",
+          "signature": "System_Byte_array* System_Convert__FromBase64String (System_String_o* s, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x3f80a28",
+          "address": "0x3f80b3c",
+          "name": "ToolModule.GZipTool$$DecompressCore",
+          "signature": "System_Byte_array* ToolModule_GZipTool__DecompressCore (System_Byte_array* compressedData, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x3f80ac0",
+          "address": "0x74fe7a4",
+          "name": "System.String$$Concat",
+          "signature": "System_String_o* System_String__Concat (System_String_o* str0, System_String_o* str1, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x3f80ae0",
+          "address": "0x82a45d4",
+          "name": "UnityEngine.Debug$$LogError",
+          "signature": "void UnityEngine_Debug__LogError (Il2CppObject* message, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x3f80afc",
+          "address": "0x76cd0a0",
+          "name": "System.Console$$WriteLine",
+          "signature": "void System_Console__WriteLine (Il2CppObject* value, const MethodInfo* method);"
+        }
+      ],
+      "prototype_applied": true,
+      "actual_function_start": "0x3f80978",
+      "actual_function_end": "0x3f80b3c",
+      "pseudocode_chars": 1167,
+      "unresolved_jumpout": false
+    },
+    {
+      "name": "ToolModule.GZipTool$$Decompress",
+      "address": 66589212,
+      "end": 66589296,
+      "signature": "System_Byte_array* ToolModule_GZipTool__Decompress (System_Byte_array* compressedData, const MethodInfo* method);",
+      "prototype": "void* GZip_3f8121c(void* input, const MethodInfo* method);",
+      "range_analysis": 1,
+      "direct_callees": [
+        {
+          "callsite": "0x3f8126c",
+          "address": "0x3f80b3c",
+          "name": "ToolModule.GZipTool$$DecompressCore",
+          "signature": "System_Byte_array* ToolModule_GZipTool__DecompressCore (System_Byte_array* compressedData, const MethodInfo* method);"
+        }
+      ],
+      "prototype_applied": true,
+      "actual_function_start": "0x3f8121c",
+      "actual_function_end": "0x3f81270",
+      "pseudocode_chars": 372,
+      "unresolved_jumpout": false
+    },
+    {
+      "name": "ToolModule.GZipTool$$DecompressCore",
+      "address": 66587452,
+      "end": 66589212,
+      "signature": "System_Byte_array* ToolModule_GZipTool__DecompressCore (System_Byte_array* compressedData, const MethodInfo* method);",
+      "prototype": "void* GZip_3f80b3c(void* input, const MethodInfo* method);",
+      "range_analysis": 1,
+      "direct_callees": [
+        {
+          "callsite": "0x3f80bc4",
+          "address": "0x4d652a0",
+          "name": "ToolModule.ListExtend$$IsNullOrEmpty<byte>",
+          "signature": "bool ToolModule_ListExtend__IsNullOrEmpty_byte_ (System_Collections_Generic_IList_T__o* list, const MethodInfo_4D652A0* method);"
+        },
+        {
+          "callsite": "0x3f80be8",
+          "address": "0x75cf1dc",
+          "name": "System.IO.MemoryStream$$.ctor",
+          "signature": "void System_IO_MemoryStream___ctor (System_IO_MemoryStream_o* __this, System_Byte_array* buffer, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x3f80c0c",
+          "address": "0x7d18440",
+          "name": "System.IO.Compression.GZipStream$$.ctor",
+          "signature": "void System_IO_Compression_GZipStream___ctor (System_IO_Compression_GZipStream_o* __this, System_IO_Stream_o* stream, int32_t mode, const MethodInfo* method);"
+        },
+        {
+          "callsite": "0x3f80c20",
+          "address": "0x75cf068",
+          "name": "System.IO.MemoryStream$$.ctor",
+          "signature": "void System_IO_MemoryStream___ctor (System_IO_MemoryStream_o* __this, const MethodInfo* method);"
+        }
+      ],
+      "prototype_applied": true,
+      "actual_function_start": "0x3f80b3c",
+      "actual_function_end": "0x3f8121c",
+      "pseudocode_chars": 5271,
+      "unresolved_jumpout": false
+    },
+    {
+      "name": "ToolModule.GZipTool$$.cctor",
+      "address": 66589296,
+      "end": 66589376,
+      "signature": "void ToolModule_GZipTool___cctor (const MethodInfo* method);",
+      "prototype": "void GZip_3f81270(const MethodInfo* method);",
+      "range_analysis": 1,
+      "direct_callees": [
+        {
+          "callsite": "0x3f812a4",
+          "address": "0x75293e8",
+          "name": "System.Text.Encoding$$get_UTF8",
+          "signature": "System_Text_Encoding_o* System_Text_Encoding__get_UTF8 (const MethodInfo* method);"
+        }
+      ],
+      "prototype_applied": true,
+      "actual_function_start": "0x3f81270",
+      "actual_function_end": "0x3f812c0",
+      "pseudocode_chars": 268,
+      "unresolved_jumpout": false
+    }
+  ],
+  "image_base": "0x0",
+  "type_errors": 0,
+  "hexrays_available": true,
+  "hexrays_version": "9.4.0.260713",
+  "database_saved": true
+}

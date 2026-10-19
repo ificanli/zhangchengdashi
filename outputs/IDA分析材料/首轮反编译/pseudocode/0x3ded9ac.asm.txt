@@ -1,0 +1,50 @@
+0x3ded9ac: STR             X30, [SP,#var_30]!
+0x3ded9b0: STP             X22, X21, [SP,#0x30+var_20]
+0x3ded9b4: STP             X20, X19, [SP,#0x30+var_10]
+0x3ded9b8: ADRP            X22, #byte_8FFD76B@PAGE
+0x3ded9bc: ADRP            X21, #off_8ACDF78@PAGE
+0x3ded9c0: LDRB            W8, [X22,#byte_8FFD76B@PAGEOFF]
+0x3ded9c4: LDR             X21, [X21,#off_8ACDF78@PAGEOFF]; off_8CE1928
+0x3ded9c8: MOV             W20, W1
+0x3ded9cc: MOV             X19, X0
+0x3ded9d0: TBNZ            W8, #0, loc_3DED9F4
+0x3ded9d4: ADRP            X0, #off_8ACDF88@PAGE
+0x3ded9d8: LDR             X0, [X0,#off_8ACDF88@PAGEOFF]; qword_8D17890
+0x3ded9dc: BL              unk_3C3D280
+0x3ded9e0: ADRP            X0, #off_8ACDF78@PAGE
+0x3ded9e4: LDR             X0, [X0,#off_8ACDF78@PAGEOFF]; off_8CE1928
+0x3ded9e8: BL              unk_3C3D280
+0x3ded9ec: MOV             W8, #1
+0x3ded9f0: STRB            W8, [X22,#byte_8FFD76B@PAGEOFF]
+0x3ded9f4: LDR             X0, [X21]
+0x3ded9f8: ADRP            X21, #off_8ACDF88@PAGE
+0x3ded9fc: LDR             W8, [X0,#0xE0]
+0x3deda00: LDR             X21, [X21,#off_8ACDF88@PAGEOFF]; qword_8D17890
+0x3deda04: CBNZ            W8, loc_3DEDA0C
+0x3deda08: BL              unk_3C3D3B0
+0x3deda0c: LDR             X0, [X21]
+0x3deda10: BL              QuickTutor.Singleton_object_$$get_Instance
+0x3deda14: CBZ             X0, loc_3DEDA70
+0x3deda18: MOV             X1, XZR
+0x3deda1c: BL              SDKModule.ABTestManager$$get_GamePlayImprove01IsBTest
+0x3deda20: TBZ             W0, #0, loc_3DEDA5C
+0x3deda24: TST             W20, #1
+0x3deda28: MOV             W8, #0x200
+0x3deda2c: MOV             W9, #0x204
+0x3deda30: MOV             W10, #0x208
+0x3deda34: MOV             W11, #0x20C
+0x3deda38: CSEL            X8, X9, X8, NE
+0x3deda3c: CSEL            X9, X11, X10, NE
+0x3deda40: LDR             W8, [X19,X8]
+0x3deda44: LDR             W9, [X19,X9]
+0x3deda48: ADD             W8, W8, W9
+0x3deda4c: MOV             W9, #0x64 ; 'd'
+0x3deda50: SUB             W8, W9, W8
+0x3deda54: BIC             W0, W8, W8,ASR#31
+0x3deda58: B               loc_3DEDA60
+0x3deda5c: MOV             W0, #0x7FFFFFFF
+0x3deda60: LDP             X20, X19, [SP,#0x30+var_10]
+0x3deda64: LDP             X22, X21, [SP,#0x30+var_20]
+0x3deda68: LDR             X30, [SP+0x30+var_30],#0x30
+0x3deda6c: RET
+0x3deda70: BL              unk_3C3D4CC

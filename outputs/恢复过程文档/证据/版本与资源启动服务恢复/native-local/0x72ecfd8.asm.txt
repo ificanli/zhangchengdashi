@@ -1,0 +1,145 @@
+0x72ecfd8: fe5fbda9 stp      x30, x23, [sp, #-0x30]!
+0x72ecfdc: f65701a9 stp      x22, x21, [sp, #0x10]
+0x72ecfe0: f44f02a9 stp      x20, x19, [sp, #0x20]
+0x72ecfe4: f6e800d0 adrp     x22, #0x900a000
+0x72ecfe8: 77c100d0 adrp     x23, #0x8b1a000
+0x72ecfec: 75c100d0 adrp     x21, #0x8b1a000
+0x72ecff0: c8d24239 ldrb     w8, [x22, #0xb4]
+0x72ecff4: f75e46f9 ldr      x23, [x23, #0xcb8] // System.Collections.Generic.Dictionary<string, PatchElement>_TypeInfo
+0x72ecff8: b56246f9 ldr      x21, [x21, #0xcc0] // Method$System.Collections.Generic.Dictionary<string, PatchElement>..ctor()
+0x72ecffc: f40301aa mov      x20, x1
+0x72ed000: f30300aa mov      x19, x0
+0x72ed004: a8020037 tbnz     w8, #0, #0x72ed058
+0x72ed008: 00bf0090 adrp     x0, #0x8acd000
+0x72ed00c: 003044f9 ldr      x0, [x0, #0x860] // GameFramework.CLog_TypeInfo
+0x72ed010: 9c402597 bl       #0x3c3d280
+0x72ed014: 80bf0090 adrp     x0, #0x8add000
+0x72ed018: 007043f9 ldr      x0, [x0, #0x6e0] // System.Convert_TypeInfo
+0x72ed01c: 99402597 bl       #0x3c3d280
+0x72ed020: 60c100b0 adrp     x0, #0x8b1a000
+0x72ed024: 006046f9 ldr      x0, [x0, #0xcc0] // Method$System.Collections.Generic.Dictionary<string, PatchElement>..ctor()
+0x72ed028: 96402597 bl       #0x3c3d280
+0x72ed02c: 60c100b0 adrp     x0, #0x8b1a000
+0x72ed030: 005c46f9 ldr      x0, [x0, #0xcb8] // System.Collections.Generic.Dictionary<string, PatchElement>_TypeInfo
+0x72ed034: 93402597 bl       #0x3c3d280
+0x72ed038: 00bf0090 adrp     x0, #0x8acd000
+0x72ed03c: 002c44f9 ldr      x0, [x0, #0x858] // object[]_TypeInfo
+0x72ed040: 90402597 bl       #0x3c3d280
+0x72ed044: 60c100b0 adrp     x0, #0x8b1a000
+0x72ed048: 006446f9 ldr      x0, [x0, #0xcc8] // 清单文件为空
+0x72ed04c: 8d402597 bl       #0x3c3d280
+0x72ed050: 28008052 mov      w8, #1
+0x72ed054: c8d20239 strb     w8, [x22, #0xb4]
+0x72ed058: e00240f9 ldr      x0, [x23]
+0x72ed05c: 1a412597 bl       #0x3c3d4c4
+0x72ed060: a10240f9 ldr      x1, [x21]
+0x72ed064: f50300aa mov      x21, x0
+0x72ed068: be63e497 bl       #0x6c05f60 // System.Collections.Generic.Dictionary<object, object>$$.ctor
+0x72ed06c: e00313aa mov      x0, x19
+0x72ed070: e1031faa mov      x1, xzr
+0x72ed074: 751a00f9 str      x21, [x19, #0x30]
+0x72ed078: a5690f94 bl       #0x76c770c // System.Object$$.ctor
+0x72ed07c: e00314aa mov      x0, x20
+0x72ed080: e1031faa mov      x1, xzr
+0x72ed084: 67750894 bl       #0x750a620 // System.String$$IsNullOrEmpty
+0x72ed088: 00040036 tbz      w0, #0, #0x72ed108
+0x72ed08c: 08bf0090 adrp     x8, #0x8acd000
+0x72ed090: 082d44f9 ldr      x8, [x8, #0x858] // object[]_TypeInfo
+0x72ed094: 21008052 mov      w1, #1
+0x72ed098: 000140f9 ldr      x0, [x8]
+0x72ed09c: a1402597 bl       #0x3c3d320
+0x72ed0a0: 600b00b4 cbz      x0, #0x72ed20c
+0x72ed0a4: 74c100b0 adrp     x20, #0x8b1a000
+0x72ed0a8: 946646f9 ldr      x20, [x20, #0xcc8] // 清单文件为空
+0x72ed0ac: f30300aa mov      x19, x0
+0x72ed0b0: 800240f9 ldr      x0, [x20]
+0x72ed0b4: a00000b4 cbz      x0, #0x72ed0c8
+0x72ed0b8: 680240f9 ldr      x8, [x19]
+0x72ed0bc: 012140f9 ldr      x1, [x8, #0x40]
+0x72ed0c0: bd402597 bl       #0x3c3d3b4
+0x72ed0c4: 600a00b4 cbz      x0, #0x72ed210
+0x72ed0c8: 681a40b9 ldr      w8, [x19, #0x18]
+0x72ed0cc: e8090034 cbz      w8, #0x72ed208
+0x72ed0d0: 880240f9 ldr      x8, [x20]
+0x72ed0d4: 681200f9 str      x8, [x19, #0x20]
+0x72ed0d8: 08bf0090 adrp     x8, #0x8acd000
+0x72ed0dc: 083144f9 ldr      x8, [x8, #0x860] // GameFramework.CLog_TypeInfo
+0x72ed0e0: 000140f9 ldr      x0, [x8]
+0x72ed0e4: 08e040b9 ldr      w8, [x0, #0xe0]
+0x72ed0e8: 48000035 cbnz     w8, #0x72ed0f0
+0x72ed0ec: b1402597 bl       #0x3c3d3b0
+0x72ed0f0: e00313aa mov      x0, x19
+0x72ed0f4: f44f42a9 ldp      x20, x19, [sp, #0x20]
+0x72ed0f8: f65741a9 ldp      x22, x21, [sp, #0x10]
+0x72ed0fc: e1031faa mov      x1, xzr
+0x72ed100: fe5fc3a8 ldp      x30, x23, [sp], #0x30
+0x72ed104: 5b4afc17 b        #0x71ffa70 // GameFramework.CLog$$R½¯ue
+0x72ed108: 340800b4 cbz      x20, #0x72ed20c
+0x72ed10c: 41018052 mov      w1, #0xa
+0x72ed110: e00314aa mov      x0, x20
+0x72ed114: e2031f2a mov      w2, wzr
+0x72ed118: e3031faa mov      x3, xzr
+0x72ed11c: 057d0894 bl       #0x750c530 // System.String$$Split
+0x72ed120: 600700b4 cbz      x0, #0x72ed20c
+0x72ed124: 081840b9 ldr      w8, [x0, #0x18]
+0x72ed128: f40300aa mov      x20, x0
+0x72ed12c: e8060034 cbz      w8, #0x72ed208
+0x72ed130: 801240f9 ldr      x0, [x20, #0x20]
+0x72ed134: c00600b4 cbz      x0, #0x72ed20c
+0x72ed138: 810f8052 mov      w1, #0x7c
+0x72ed13c: e2031f2a mov      w2, wzr
+0x72ed140: e3031faa mov      x3, xzr
+0x72ed144: fb7c0894 bl       #0x750c530 // System.String$$Split
+0x72ed148: 200600b4 cbz      x0, #0x72ed20c
+0x72ed14c: 081840b9 ldr      w8, [x0, #0x18]
+0x72ed150: f50300aa mov      x21, x0
+0x72ed154: a8050034 cbz      w8, #0x72ed208
+0x72ed158: 88bf0090 adrp     x8, #0x8add000
+0x72ed15c: 087143f9 ldr      x8, [x8, #0x6e0] // System.Convert_TypeInfo
+0x72ed160: b61240f9 ldr      x22, [x21, #0x20]
+0x72ed164: 000140f9 ldr      x0, [x8]
+0x72ed168: 08e040b9 ldr      w8, [x0, #0xe0]
+0x72ed16c: 48000035 cbnz     w8, #0x72ed174
+0x72ed170: 90402597 bl       #0x3c3d3b0
+0x72ed174: e00316aa mov      x0, x22
+0x72ed178: e1031faa mov      x1, xzr
+0x72ed17c: 75650c94 bl       #0x7606750 // System.Convert$$ToInt32
+0x72ed180: 602200b9 str      w0, [x19, #0x20]
+0x72ed184: a81a40b9 ldr      w8, [x21, #0x18]
+0x72ed188: 1f090071 cmp      w8, #2
+0x72ed18c: e9030054 b.ls     #0x72ed208
+0x72ed190: a91a40f9 ldr      x9, [x21, #0x30]
+0x72ed194: 1f110071 cmp      w8, #4
+0x72ed198: 691e00f9 str      x9, [x19, #0x38]
+0x72ed19c: ab000054 b.lt     #0x72ed1b0
+0x72ed1a0: 28008052 mov      w8, #1
+0x72ed1a4: 68420039 strb     w8, [x19, #0x10]
+0x72ed1a8: a81e40f9 ldr      x8, [x21, #0x38]
+0x72ed1ac: 680e00f9 str      x8, [x19, #0x18]
+0x72ed1b0: a81640f9 ldr      x8, [x21, #0x28]
+0x72ed1b4: 681600f9 str      x8, [x19, #0x28]
+0x72ed1b8: 880e40f9 ldr      x8, [x20, #0x18]
+0x72ed1bc: 1f090071 cmp      w8, #2
+0x72ed1c0: cb010054 b.lt     #0x72ed1f8
+0x72ed1c4: 087d4092 and      x8, x8, #0xffffffff
+0x72ed1c8: b5008052 mov      w21, #5
+0x72ed1cc: a91200d1 sub      x9, x21, #4
+0x72ed1d0: 3f4128eb cmp      x9, w8, uxtw
+0x72ed1d4: a2010054 b.hs     #0x72ed208
+0x72ed1d8: 817a75f8 ldr      x1, [x20, x21, lsl #3]
+0x72ed1dc: e00313aa mov      x0, x19
+0x72ed1e0: e50d0094 bl       #0x72f0974 // GameFramework.Resources.PatchManifest$$neB
+0x72ed1e4: 881a40b9 ldr      w8, [x20, #0x18]
+0x72ed1e8: a90e00d1 sub      x9, x21, #3
+0x72ed1ec: b5060091 add      x21, x21, #1
+0x72ed1f0: 3fc128eb cmp      x9, w8, sxtw
+0x72ed1f4: cbfeff54 b.lt     #0x72ed1cc
+0x72ed1f8: f44f42a9 ldp      x20, x19, [sp, #0x20]
+0x72ed1fc: f65741a9 ldp      x22, x21, [sp, #0x10]
+0x72ed200: fe5fc3a8 ldp      x30, x23, [sp], #0x30
+0x72ed204: c0035fd6 ret      
+0x72ed208: b3402597 bl       #0x3c3d4d4
+0x72ed20c: b0402597 bl       #0x3c3d4cc
+0x72ed210: b8402597 bl       #0x3c3d4f0
+0x72ed214: e1031faa mov      x1, xzr
+0x72ed218: 62402597 bl       #0x3c3d3a0

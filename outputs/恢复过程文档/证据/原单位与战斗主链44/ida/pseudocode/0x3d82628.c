@@ -1,0 +1,241 @@
+__int64 __fastcall GameModule_RoleBehaviour__InitTalent(__int64 a1)
+{
+  void *Instance; // x0
+  __int64 result; // x0
+  void *v4; // x0
+  __int64 BattleCardAbility; // x0
+  __int64 v6; // x20
+  _QWORD *v7; // x0
+  __int64 v8; // x8
+  __int64 v9; // x0
+  __int64 Item; // x0
+  __int64 v11; // x20
+  long double v12; // q0
+  void *v13; // x0
+  __int64 Talent; // x0
+  __int64 v15; // x21
+  __int64 v16; // x20
+  __int64 v17; // x8
+  _QWORD *v18; // x9
+  __int64 v19; // x10
+  void *v20; // x0
+  __int64 v21; // x8
+  __int64 v22; // x0
+  __int64 v23; // x20
+  __int64 v24; // x3
+  __int64 v25; // x3
+  __int64 v26; // x3
+  void *v27; // x0
+  __int64 v28; // x0
+  __int64 v29; // x21
+  __int64 v30; // x20
+  __int64 v31; // x8
+  _QWORD *v32; // x9
+  __int64 v33; // x10
+  __int128 v34; // [xsp+8h] [xbp-D8h] BYREF
+  __int128 v35; // [xsp+18h] [xbp-C8h]
+  __int64 v36; // [xsp+28h] [xbp-B8h]
+  __int128 v37; // [xsp+30h] [xbp-B0h] BYREF
+  __int64 v38; // [xsp+40h] [xbp-A0h]
+  int v39; // [xsp+4Ch] [xbp-94h] BYREF
+  __int128 v40; // [xsp+50h] [xbp-90h] BYREF
+  __int128 v41; // [xsp+60h] [xbp-80h]
+  __int64 v42; // [xsp+70h] [xbp-70h]
+
+  if ( (byte_8FFD45D & 1) == 0 )
+  {
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8CFC5C8);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8CFE720);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D03028);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D043D0);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D043D8);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D03030);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&unk_8D03038);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&unk_8D043E0);
+    il2cpp_codegen_initialize_runtime_metadata(&qword_8D073C8);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&unk_8D073D0);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&off_8D0EBC8);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D0E638);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D0EBC0);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8CDE278);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D12118);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D120A8);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D12098);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D53D58);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D53D68);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D53D60);
+    byte_8FFD45D = 1;
+  }
+  v42 = 0;
+  v39 = 0;
+  v40 = 0u;
+  v41 = 0u;
+  v37 = 0u;
+  v38 = 0;
+  Instance = ToolModule_ManagerBase_object___get_Instance((const MethodInfo *)qword_8D120A8);
+  if ( Instance == nullptr )
+    goto LABEL_60;
+  result = GameModule_CardTalent_2Manager__NewAbility2IsBTest(Instance, 0);
+  if ( (result & 1) != 0 )
+  {
+    if ( *(_QWORD *)(a1 + 64) == 0 || *(_QWORD *)(a1 + 176) == 0 )
+      return result;
+    v4 = ToolModule_ManagerBase_object___get_Instance((const MethodInfo *)qword_8D120A8);
+    if ( v4 != nullptr )
+    {
+      BattleCardAbility = GameModule_CardTalent_2Manager__GetBattleCardAbility(
+                            v4,
+                            *(unsigned __int8 *)(a1 + 32),
+                            *(_QWORD *)(a1 + 176),
+                            0);
+      if ( BattleCardAbility != 0 )
+      {
+        System_Collections_Generic_List_object___GetEnumerator(&v34, BattleCardAbility, qword_8D0E638);
+        v37 = v34;
+        v38 = v35;
+        while ( (System_Collections_Generic_List_Enumerator_object___MoveNext(&v37, qword_8D03030) & 1) != 0 )
+        {
+          v6 = v38;
+          if ( v38 == 0 )
+            il2cpp_codegen_raise_null_reference_exception();
+          if ( (unsigned __int16)System_String__get_Chars(v38, 0, 0) == 52 )
+          {
+            v7 = ToolModule_ManagerBase_object___get_Instance((const MethodInfo *)qword_8D12118);
+            if ( v7 == nullptr )
+              il2cpp_codegen_raise_null_reference_exception();
+            v8 = v7[5];
+            if ( v8 == 0 )
+              il2cpp_codegen_raise_null_reference_exception();
+            v9 = *(_QWORD *)(v8 + 648);
+            if ( v9 == 0 )
+              il2cpp_codegen_raise_null_reference_exception();
+            Item = System_Collections_Generic_Dictionary_object__object___get_Item(v9, v6, qword_8CFE720);
+            v11 = Item;
+            if ( Item == 0 )
+              il2cpp_codegen_raise_null_reference_exception();
+            if ( (unsigned int)DataModule_GlobalCardTalentInfo__GetTriggerType(Item, 0) == 6 )
+              *(_DWORD *)(a1 + 316) = 6;
+            v12 = ToolModule_StringTool__ToFloat(*(_QWORD *)(v11 + 56), 0);
+            *(_DWORD *)(a1 + 312) = LODWORD(v12);
+          }
+          else
+          {
+            v13 = ToolModule_ManagerBase_object___get_Instance((const MethodInfo *)qword_8D120A8);
+            if ( v13 == nullptr )
+              il2cpp_codegen_raise_null_reference_exception();
+            Talent = GameModule_CardTalent_2Manager__CreateTalent(v13, v6, 0);
+            v15 = *(_QWORD *)(a1 + 360);
+            v16 = Talent;
+            if ( v15 == 0 )
+            {
+              v15 = ((__int64 (__fastcall *)(__int64))unk_3C3D4C4)(qword_8CDE278);
+              System_Collections_Generic_List_object____ctor(v15, qword_8D0EBC0);
+              *(_QWORD *)(a1 + 360) = v15;
+              if ( v15 == 0 )
+                il2cpp_codegen_raise_null_reference_exception();
+            }
+            v17 = *(_QWORD *)(v15 + 16);
+            v18 = off_8D0EBC8;
+            ++*(_DWORD *)(v15 + 28);
+            if ( v17 == 0 )
+              il2cpp_codegen_raise_null_reference_exception();
+            v19 = *(int *)(v15 + 24);
+            if ( (unsigned int)v19 >= *(_DWORD *)(v17 + 24) )
+            {
+              System_Collections_Generic_List_object___AddWithResize(
+                v15,
+                v16,
+                *(_QWORD *)(*(_QWORD *)(v18[4] + 192LL) + 112LL));
+            }
+            else
+            {
+              *(_DWORD *)(v15 + 24) = v19 + 1;
+              *(_QWORD *)(v17 + 8 * v19 + 32) = v16;
+            }
+          }
+        }
+        return System_Collections_Generic_List_Enumerator_object___Dispose(&v37, qword_8D03028);
+      }
+    }
+    goto LABEL_60;
+  }
+  result = ToolModule_StringTool__IsNullOrEmpty(*(_QWORD *)(a1 + 176), 1, 0);
+  if ( (result & 1) == 0 )
+  {
+    v20 = ToolModule_ManagerBase_object___get_Instance((const MethodInfo *)qword_8D12098);
+    if ( v20 == nullptr )
+      goto LABEL_60;
+    result = GameModule_CardTalentManager__GetCardTalentTreeData(
+               v20,
+               *(_QWORD *)(a1 + 176),
+               *(unsigned __int8 *)(a1 + 32),
+               0);
+    *(_QWORD *)(a1 + 344) = result;
+  }
+  if ( *(_QWORD *)(a1 + 64) == 0 )
+    return result;
+  v21 = *(_QWORD *)(a1 + 344);
+  if ( v21 == 0 )
+    return result;
+  v22 = *(_QWORD *)(v21 + 16);
+  if ( v22 == 0 )
+LABEL_60:
+    il2cpp_codegen_raise_null_reference_exception();
+  System_Collections_Generic_Dictionary_int__object___GetEnumerator(&v34, v22, qword_8CFC5C8);
+  v40 = v34;
+  v41 = v35;
+  v42 = v36;
+  while ( (System_Collections_Generic_Dictionary_Enumerator_int__object___MoveNext(&v40, qword_8D043D8) & 1) != 0 )
+  {
+    if ( *((_QWORD *)&v41 + 1) == 0 )
+      il2cpp_codegen_raise_null_reference_exception();
+    if ( *(_BYTE *)(*((_QWORD *)&v41 + 1) + 20LL) != 0 )
+    {
+      v39 = v41;
+      v23 = System_Int32__ToString(&v39, 0);
+      if ( (System_String__op_Equality(v23, qword_8D53D58, 0, v24) & 1) == 0
+        && (System_String__op_Equality(v23, qword_8D53D60, 0, v25) & 1) == 0
+        && (System_String__op_Equality(v23, qword_8D53D68, 0, v26) & 1) == 0 )
+      {
+        if ( v23 == 0 )
+          il2cpp_codegen_raise_null_reference_exception();
+        if ( (unsigned __int16)System_String__get_Chars(v23, 0, 0) != 52 )
+        {
+          v27 = ToolModule_ManagerBase_object___get_Instance((const MethodInfo *)qword_8D12098);
+          if ( v27 == nullptr )
+            il2cpp_codegen_raise_null_reference_exception();
+          v28 = GameModule_CardTalentManager__CreateTalent(v27, v23, 0);
+          v29 = *(_QWORD *)(a1 + 352);
+          v30 = v28;
+          if ( v29 == 0 )
+          {
+            v29 = ((__int64 (__fastcall *)(__int64))unk_3C3D4C4)(qword_8CDE278);
+            System_Collections_Generic_List_object____ctor(v29, qword_8D0EBC0);
+            *(_QWORD *)(a1 + 352) = v29;
+            if ( v29 == 0 )
+              il2cpp_codegen_raise_null_reference_exception();
+          }
+          v31 = *(_QWORD *)(v29 + 16);
+          v32 = off_8D0EBC8;
+          ++*(_DWORD *)(v29 + 28);
+          if ( v31 == 0 )
+            il2cpp_codegen_raise_null_reference_exception();
+          v33 = *(int *)(v29 + 24);
+          if ( (unsigned int)v33 >= *(_DWORD *)(v31 + 24) )
+          {
+            System_Collections_Generic_List_object___AddWithResize(
+              v29,
+              v30,
+              *(_QWORD *)(*(_QWORD *)(v32[4] + 192LL) + 112LL));
+          }
+          else
+          {
+            *(_DWORD *)(v29 + 24) = v33 + 1;
+            *(_QWORD *)(v31 + 8 * v33 + 32) = v30;
+          }
+        }
+      }
+    }
+  }
+  return System_Collections_Generic_Dictionary_Enumerator_int__object___Dispose(&v40, qword_8D043D0);
+}

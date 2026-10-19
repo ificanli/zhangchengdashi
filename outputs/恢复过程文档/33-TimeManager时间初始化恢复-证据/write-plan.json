@@ -1,0 +1,268 @@
+{
+  "files": [
+    {
+      "path": "Assets/Scripts/Assembly-CSharp/TimeModuleO/TimeManager.cs",
+      "methods": [
+        {
+          "token": "0x60004B4",
+          "body": "{\n_timers = new Dictionary<string, Timer>();\n_cutdownTimerEvents = new Dictionary<string, Action>();\n_cutdownTimers = new Dictionary<string, Timer>();\n_toRemoveTimerKeys = new List<string>();\nawait InitializeTimeSource();\nSyncServerTime();\nStartCoroutine(LoadTimers());\n_offsetHours = L_Tools.PlayerPrefs2Center.GetInt(\"OffsetHours\", 0);\ninitComplete = true;\nif (_currentTimeSource == TimeSource.NetworkTime)\n{\n    int count = 0;\n    while (!IsNetworkConnected)\n    {\n        await UniTask.WaitForSeconds(0.1f);\n        count++;\n        if (count % 100 == 0) DBTSDK.SDKToolManager.Instance.ShowToast(\"服务器时间同步异常\");\n    }\n    UnityEngine.Debug.Log(\"[TimeManager] 服务器时间同步成功\");\n}\nawait UniTask.WaitForSeconds(0.1f);\nHandleTimeToWeekCutDown();\n}",
+          "makeAsync": true,
+          "iterator": false
+        },
+        {
+          "token": "0x60004B6",
+          "body": "{\n// Editor provider adapter: select the original LocalTime branch without changing server/data readiness.\n#if UNITY_EDITOR\nif (Application.isEditor)\n{\n    _currentTimeSource = TimeSource.LocalTime;\n    UnityEngine.Debug.Log(\"[TimeManager] Time source: LocalEditor (original LocalTime provider)\");\n    return;\n}\n#endif\nbool timedOut = await UniTask.WaitUntil(() => DBTSDK.AppInfoManager.Instance.IsOnlineParamReady_Override())\n    .TimeoutWithoutException(TimeSpan.FromSeconds(10));\n_currentTimeSource = timedOut ? TimeSource.NetworkTime\n    : L_Tools.OnlineParamControl.Instance.GetOnlineParam(\"UseLocalTime\", \"\") == \"1\"\n        ? TimeSource.LocalTime : TimeSource.NetworkTime;\n}",
+          "makeAsync": true,
+          "iterator": false
+        },
+        {
+          "token": "0x60004B7",
+          "body": "{\nreturn dt.AddDays(-(((int)dt.DayOfWeek + 6) % 7)).Date;\n}",
+          "makeAsync": false,
+          "iterator": false
+        },
+        {
+          "token": "0x60004B8",
+          "body": "{\nDateTime time = GetLocalNetworkTime();\nDbtSaveDataManager_PlayerTimeData.I.Data.lastExitGameTime = time;\nDbtSaveDataManager_PlayerTimeData.I.Save();\n}",
+          "makeAsync": false,
+          "iterator": false
+        },
+        {
+          "token": "0x60004BB",
+          "body": "{\nwhile (!IsNetworkConnected) await UniTask.Yield();\nwhile (toWeekTimer == null) await UniTask.Yield();\nif (toWeekTimer.IsCompleted()) toWeekTimer.Restart(GetTimeSpanToWeek(), true);\n}",
+          "makeAsync": true,
+          "iterator": false
+        },
+        {
+          "token": "0x60004BD",
+          "body": "{\nif (_currentTimeSource != TimeSource.NetworkTime)\n{\n    IsNetworkConnected = true;\n    yield break;\n}\n_isFetchingNetworkTime = true;\nL_Tools.ServerTimeMgr.I.TryCheck(true);\nfloat requestTimer = 0f;\nwhile (!L_Tools.ServerTimeMgr.IsUpdateFinish)\n{\n    requestTimer += Time.deltaTime;\n    if (requestTimer > 3f)\n    {\n        requestTimer = 0f;\n        L_Tools.ServerTimeMgr.I.TryCheck(true);\n    }\n    yield return null;\n}\n_isFetchingNetworkTime = false;\nIsNetworkConnected = true;\n}",
+          "makeAsync": false,
+          "iterator": true
+        },
+        {
+          "token": "0x60004BE",
+          "body": "{\ntoZeroTimer = GetTimer(\"TimeToZeroKey\") ?? CreateTimer(\"TimeToZeroKey\", GetTimeSpanToZero(), true, false);\ntoZeroStandardNetworkTime = GetTimer(\"TimeToZeroKeyStandardNetworkTime\")\n    ?? CreateTimer(\"TimeToZeroKeyStandardNetworkTime\", GetTimeSpanToZeroStandardNetworkTime(), true, true);\n}",
+          "makeAsync": false,
+          "iterator": false
+        },
+        {
+          "token": "0x60004BF",
+          "body": "{\nif (toZeroTimer != null && toZeroTimer.IsCompleted())\n{\n    toZeroTimer.Restart(GetTimeSpanToZero(), true);\n    _onTimeReachZero?.Invoke();\n    ChangeTimeInfoEndTime(\"TimeToZeroKey\", toZeroTimer.TargetEndTime);\n    UnityEngine.Debug.Log(\"每日零点到达 执行了\");\n    EventModule.EventManager.Instance.TriggerEvent(\"TimeToZero\", null);\n    if (GetLocalNetworkTime().DayOfWeek == DayOfWeek.Monday)\n    {\n        toWeekTimer.Restart(GetTimeSpanToWeek(), true);\n        _onTimeReachMondayZero?.Invoke();\n        UnityEngine.Debug.Log(\"周一零点到达 执行了\");\n        EventModule.EventManager.Instance.TriggerEvent(\"TimeToMonDayZero\", null);\n    }\n}\nif (toZeroStandardNetworkTime != null && toZeroStandardNetworkTime.IsCompleted())\n{\n    toZeroStandardNetworkTime.Restart(GetTimeSpanToZeroStandardNetworkTime(), true);\n    _onStandardNetworkTimeReachZero?.Invoke();\n    ChangeTimeInfoEndTime(\"TimeToZeroKeyStandardNetworkTime\", toZeroStandardNetworkTime.TargetEndTime);\n    EventModule.EventManager.Instance.TriggerEvent(\"TimeToZeroStandardNetworkTime\", null);\n}\n}",
+          "makeAsync": false,
+          "iterator": false
+        },
+        {
+          "token": "0x60004C0",
+          "body": "{\ntoWeekTimer = GetTimer(\"TimeToWeekKey\") ?? CreateTimer(\"TimeToWeekKey\", GetTimeSpanToWeek(), true, false);\n}",
+          "makeAsync": false,
+          "iterator": false
+        },
+        {
+          "token": "0x60004C1",
+          "body": "{\nif (toWeekTimer.IsCompleted())\n{\n    toWeekTimer.Restart(GetTimeSpanToWeek(), true);\n    _onTimeReachMondayZero?.Invoke();\n    ChangeTimeInfoEndTime(\"TimeToWeekKey\", toWeekTimer.TargetEndTime);\n    UnityEngine.Debug.Log(\"周一零点到达 执行了\");\n    EventModule.EventManager.Instance.TriggerEvent(\"TimeToMonDayZero\", null);\n}\n}",
+          "makeAsync": false,
+          "iterator": false
+        },
+        {
+          "token": "0x60004C2",
+          "body": "{\nif (_onWeekPassed != null)\n{\n    DateTime last = DbtSaveDataManager_PlayerTimeData.I.Data.lastExitGameTime;\n    if (last != default(DateTime))\n    {\n        if (GetStartOfWeekForTimeManager(GetLocalNetworkTime()) > GetStartOfWeekForTimeManager(last))\n        {\n            _onWeekPassed?.Invoke();\n            SaveLastExitTime();\n        }\n        if (FirstCheckNewWeekFinish) return;\n        FirstCheckNewWeekFinish = true;\n    }\n    SaveLastExitTime();\n}\n}",
+          "makeAsync": false,
+          "iterator": false
+        },
+        {
+          "token": "0x60004C3",
+          "body": "{\n_toRemoveTimerKeys.Clear();\nforeach (var pair in _cutdownTimers)\n{\n    if (pair.Value.IsCompleted() && _cutdownTimerEvents.ContainsKey(pair.Key))\n        _toRemoveTimerKeys.Add(pair.Key);\n}\nfor (int i = 0; i < _toRemoveTimerKeys.Count; i++)\n{\n    string key = _toRemoveTimerKeys[i];\n    if (_cutdownTimerEvents.TryGetValue(key, out Action action) && action != null) action.Invoke();\n    RemoveTimerEvent(key);\n}\n_toRemoveTimerKeys.Clear();\n}",
+          "makeAsync": false,
+          "iterator": false
+        },
+        {
+          "token": "0x60004C4",
+          "body": "{\nyield return new WaitForSeconds(1f);\nwhile (true)\n{\n    CheckTimerToZero();\n    yield return new WaitForSeconds(1f);\n}\n}",
+          "makeAsync": false,
+          "iterator": true
+        },
+        {
+          "token": "0x60004C5",
+          "body": "{\nyield return new WaitForSeconds(1f);\nwhile (true)\n{\n    CheckTimerEndEvent();\n    yield return new WaitForSeconds(1f);\n}\n}",
+          "makeAsync": false,
+          "iterator": true
+        },
+        {
+          "token": "0x60004C6",
+          "body": "{\nyield return new WaitForSeconds(1f);\nwhile (true)\n{\n    CheckWeekPassed();\n    yield return new WaitForSeconds(1f);\n}\n}",
+          "makeAsync": false,
+          "iterator": true
+        },
+        {
+          "token": "0x60004C7",
+          "body": "{\nif (!_isFetchingNetworkTime)\n{\n    if (_getTimeCoroutine != null) StopCoroutine(_getTimeCoroutine);\n    _getTimeCoroutine = StartCoroutine(SyncServerTimeCoroutine());\n}\n}",
+          "makeAsync": false,
+          "iterator": false
+        },
+        {
+          "token": "0x60004CC",
+          "body": "{\nreturn useStandardNetworkTime ? GetStandardNetworkTime() : GetLocalNetworkTime();\n}",
+          "makeAsync": false,
+          "iterator": false
+        },
+        {
+          "token": "0x60004CD",
+          "body": "{\nreturn (_currentTimeSource == TimeSource.LocalTime ? DateTime.Now : L_Tools.DateTools.GetNow()).AddHours(_offsetHours);\n}",
+          "makeAsync": false,
+          "iterator": false
+        },
+        {
+          "token": "0x60004CE",
+          "body": "{\nreturn (_currentTimeSource == TimeSource.LocalTime ? DateTime.UtcNow : L_Tools.DateTools.GetUTCNow()).AddHours(_offsetHours);\n}",
+          "makeAsync": false,
+          "iterator": false
+        },
+        {
+          "token": "0x60004D0",
+          "body": "{\nif (StringTool.IsNullOrEmpty(key, true) || _timers.ContainsKey(key)) return null;\nTimer timer = new Timer(key, duration, isCountdown, useStandardNetTime);\n_timers.Add(key, timer);\nInitAddTimeInfo(timer);\nreturn timer;\n}",
+          "makeAsync": false,
+          "iterator": false
+        },
+        {
+          "token": "0x60004D2",
+          "body": "{\nif (_cutdownTimerEvents.ContainsKey(timerKey)) _cutdownTimerEvents.Remove(timerKey);\nif (_cutdownTimers.ContainsKey(timerKey)) _cutdownTimers.Remove(timerKey);\n}",
+          "makeAsync": false,
+          "iterator": false
+        },
+        {
+          "token": "0x60004D4",
+          "body": "{\n_onTimeReachZero += action;\n}",
+          "makeAsync": false,
+          "iterator": false
+        },
+        {
+          "token": "0x60004D8",
+          "body": "{\n_onTimeReachMondayZero += action;\n}",
+          "makeAsync": false,
+          "iterator": false
+        },
+        {
+          "token": "0x60004D9",
+          "body": "{\nif (!StringTool.IsNullOrEmpty(key, true) && _timers.ContainsKey(key)) return _timers[key];\nreturn null;\n}",
+          "makeAsync": false,
+          "iterator": false
+        },
+        {
+          "token": "0x60004DA",
+          "body": "{\nwhile (!IsNetworkConnected) yield return null;\nwhile (!DataManager.Instance.LoadDataCompleted) yield return null;\nif (DbtSaveDataManager_PlayerCoreData.I.Data.playerTimeInfoConverted)\n{\n    _timers.Clear();\n    foreach (var pair in DbtSaveDataManager_PlayerTimeData.I.Data.timeInfoDic)\n        _timers.Add(pair.Key, new Timer(pair.Value));\n}\nelse\n{\n    DbtSaveDataManager_PlayerCoreData.I.Data.playerTimeInfoConverted = true;\n    DbtSaveDataManager_PlayerCoreData.I.Save();\n    foreach (var pair in _timers) InitAddTimeInfo(pair.Value);\n}\nwhile (!LoadingModule.LoadingManager.Instance.IsLoadingCompleted) yield return null;\nInitToZeroTimer();\nInitToWeekTimer();\nif (_checkTimerToZeroCoroutine != null) StopCoroutine(_checkTimerToZeroCoroutine);\n_checkTimerToZeroCoroutine = StartCoroutine(CheckTimerToZeroCoroutine());\nif (_checkTimerEndEventCoroutine != null) StopCoroutine(_checkTimerEndEventCoroutine);\n_checkTimerEndEventCoroutine = StartCoroutine(CheckTimerEndEventCoroutine());\nif (_checkWeekPassedCoroutine != null) StopCoroutine(_checkWeekPassedCoroutine);\n_checkWeekPassedCoroutine = StartCoroutine(CheckWeekPassedCoroutine());\n}",
+          "makeAsync": false,
+          "iterator": true
+        },
+        {
+          "token": "0x60004DC",
+          "body": "{\nDateTime now = GetLocalNetworkTime();\nreturn now.Date.AddDays(1) - now;\n}",
+          "makeAsync": false,
+          "iterator": false
+        },
+        {
+          "token": "0x60004DD",
+          "body": "{\nDateTime now = GetStandardNetworkTime();\nreturn now.Date.AddDays(1) - now;\n}",
+          "makeAsync": false,
+          "iterator": false
+        },
+        {
+          "token": "0x60004DE",
+          "body": "{\nDateTime now = GetLocalNetworkTime();\nint days = (8 - (int)now.DayOfWeek) % 7;\nif (days == 0) days = 7;\nreturn now.AddDays(days).Date - now;\n}",
+          "makeAsync": false,
+          "iterator": false
+        },
+        {
+          "token": "0x60004E0",
+          "body": "{\nvar dict = DbtSaveDataManager_PlayerTimeData.I.Data.timeInfoDic;\nif (dict.ContainsKey(timer.Key))\n{\n    dict[timer.Key].StartTime = timer.StartTime;\n    dict[timer.Key].TargetEndTime = timer.TargetEndTime;\n    DbtSaveDataManager_PlayerTimeData.I.Data.timeInfoDic[timer.Key].StartTime = timer.StartTime;\n    DbtSaveDataManager_PlayerTimeData.I.Data.timeInfoDic[timer.Key].TargetEndTime = timer.TargetEndTime;\n}\nelse\n{\n    var info = new TimeInfo { Key = timer.Key, StartTime = timer.StartTime, TargetEndTime = timer.TargetEndTime };\n    dict.Add(timer.Key, info);\n    DbtSaveDataManager_PlayerTimeData.I.Data.timeInfoDic.TryAdd(timer.Key, info);\n}\nDbtSaveDataManager_PlayerTimeData.I.Save();\n}",
+          "makeAsync": false,
+          "iterator": false
+        },
+        {
+          "token": "0x60004E1",
+          "body": "{\nvar dict = DbtSaveDataManager_PlayerTimeData.I.Data.timeInfoDic;\nif (dict == null) dict = new Dictionary<string, TimeInfo>();\nif (!dict.TryGetValue(key, out TimeInfo info)) return;\ninfo.TargetEndTime = endTime;\nTimeManager.Instance._timers[key].SetTargetEndTime(endTime);\nDbtSaveDataManager_PlayerTimeData.I.Save();\n}",
+          "makeAsync": false,
+          "iterator": false
+        },
+        {
+          "token": "0x60004EC",
+          "body": "{\nKey = key;\nthis.useStandardNetTime = useStandardNetTime;\nRestart(duration, isCountdown);\n}",
+          "makeAsync": false,
+          "iterator": false
+        },
+        {
+          "token": "0x60004ED",
+          "body": "{\nTargetEndTime = targetEndTime;\n}",
+          "makeAsync": false,
+          "iterator": false
+        },
+        {
+          "token": "0x60004EE",
+          "body": "{\nKey = timeInfo.Key;\nStartTime = timeInfo.StartTime;\nTargetEndTime = timeInfo.TargetEndTime;\nuseStandardNetTime = timeInfo.useStandardNetTime;\n}",
+          "makeAsync": false,
+          "iterator": false
+        },
+        {
+          "token": "0x60004EF",
+          "body": "{\nStartTime = TimeManager.Instance.GetNetworkTime(useStandardNetTime);\nTargetEndTime = isCountdown ? StartTime + duration : DateTime.MaxValue;\nTimeManager.Instance.InitAddTimeInfo(this);\nDbtSaveDataManager_PlayerTimeData.I.Save();\n}",
+          "makeAsync": false,
+          "iterator": false
+        },
+        {
+          "token": "0x60004F3",
+          "body": "{\nreturn TargetEndTime - TimeManager.Instance.GetNetworkTime(useStandardNetTime);\n}",
+          "makeAsync": false,
+          "iterator": false
+        },
+        {
+          "token": "0x60004F7",
+          "body": "{\nreturn TimeManager.Instance.GetNetworkTime(useStandardNetTime) >= TargetEndTime;\n}",
+          "makeAsync": false,
+          "iterator": false
+        }
+      ],
+      "autoProperties": [
+        "0x1700003C",
+        "0x1700003D",
+        "0x1700003E"
+      ]
+    },
+    {
+      "path": "Assets/Scripts/Assembly-CSharp/L_Tools/DateTools.cs",
+      "methods": [
+        {
+          "token": "0x6005E0F",
+          "body": "{\nreturn !UseLocalTime;\n}",
+          "makeAsync": false,
+          "iterator": false
+        },
+        {
+          "token": "0x6005E10",
+          "body": "{\nif (UseLocalTime) UseLocalTime = false;\nm_Now = StampToDatetime(serverTime, false).ToLocalTime();\nm_UTCNow = StampToDatetime(serverTime, false);\n}",
+          "makeAsync": false,
+          "iterator": false
+        },
+        {
+          "token": "0x6005E13",
+          "body": "{\nreturn m_Now;\n}",
+          "makeAsync": false,
+          "iterator": false
+        },
+        {
+          "token": "0x6005E15",
+          "body": "{\nreturn m_UTCNow;\n}",
+          "makeAsync": false,
+          "iterator": false
+        },
+        {
+          "token": "0x6005E19",
+          "body": "{\nreturn isMinSeconds ? StartTime_UTC.AddMilliseconds(TimeStamp) : StartTime_UTC.AddSeconds(TimeStamp);\n}",
+          "makeAsync": false,
+          "iterator": false
+        }
+      ],
+      "autoProperties": [],
+      "helperClassToken": "0x2000FB2",
+      "addHelper": "[Token(Token = \"0x6005E26\")]\n[Address(RVA = \"0x43FA7E4\", Offset = \"0x43F67E4\", VA = \"0x43FA7E4\")]\nstatic DateTools()\n{\n    StartTime = new DateTime(1970, 1, 1, 8, 0, 0, DateTimeKind.Utc);\n    StartTime_UTC = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);\n    UseLocalTime = true;\n}"
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+0x7263658: STP             X30, X21, [SP,#var_20]!
+0x726365c: STP             X20, X19, [SP,#0x20+var_10]
+0x7263660: ADRP            X21, #byte_9009ADB@PAGE
+0x7263664: LDRB            W8, [X21,#byte_9009ADB@PAGEOFF]
+0x7263668: MOV             W20, W1
+0x726366c: MOV             X19, X0
+0x7263670: TBNZ            W8, #0, loc_7263688
+0x7263674: ADRP            X0, #off_8AD1278@PAGE
+0x7263678: LDR             X0, [X0,#off_8AD1278@PAGEOFF]; qword_8CE36B0 ; slot
+0x726367c: BL              il2cpp_codegen_initialize_runtime_metadata
+0x7263680: MOV             W8, #1
+0x7263684: STRB            W8, [X21,#byte_9009ADB@PAGEOFF]
+0x7263688: CBZ             X19, loc_7263754
+0x726368c: ADRP            X9, #off_8AD1278@PAGE
+0x7263690: LDR             X8, [X19,#0x18]
+0x7263694: LDR             X9, [X9,#off_8AD1278@PAGEOFF]; qword_8CE36B0
+0x7263698: TST             X8, #3
+0x726369c: LDR             X0, [X9]
+0x72636a0: ASR             W8, W8, #2
+0x72636a4: CINC            W21, W8, NE
+0x72636a8: TBZ             W20, #0, loc_72636D4
+0x72636ac: ADD             W1, W21, #1
+0x72636b0: BL              unk_3C3D320
+0x72636b4: CBZ             X0, loc_7263754
+0x72636b8: LDR             W8, [X0,#0x18]
+0x72636bc: CMP             W21, W8
+0x72636c0: B.CS            loc_7263750
+0x72636c4: LDR             W12, [X19,#0x18]
+0x72636c8: ADD             X8, X0, W21,SXTW#2
+0x72636cc: STR             W12, [X8,#0x20]
+0x72636d0: B               loc_72636E0
+0x72636d4: MOV             W1, W21
+0x72636d8: BL              unk_3C3D320
+0x72636dc: LDR             W12, [X19,#0x18]
+0x72636e0: CMP             W12, #1
+0x72636e4: B.LT            loc_7263744
+0x72636e8: CBZ             X0, loc_7263754
+0x72636ec: LDR             W10, [X0,#0x18]
+0x72636f0: MOV             W8, WZR
+0x72636f4: MOV             X9, XZR
+0x72636f8: MOV             W11, W12
+0x72636fc: SXTW            X12, W12
+0x7263700: ADD             X13, X19, #0x20 ; ' '
+0x7263704: ASR             W14, W9, #2
+0x7263708: CMP             W14, W10
+0x726370c: B.CS            loc_7263750
+0x7263710: CMP             X9, X11
+0x7263714: B.CS            loc_7263750
+0x7263718: ADD             X14, X0, W14,SXTW#2
+0x726371c: LDRB            W15, [X13,X9]
+0x7263720: LDR             W17, [X14,#0x20]!
+0x7263724: AND             W16, W8, #0x18
+0x7263728: ADD             X9, X9, #1
+0x726372c: LSL             W15, W15, W16
+0x7263730: CMP             X9, X12
+0x7263734: ORR             W15, W15, W17
+0x7263738: ADD             W8, W8, #8
+0x726373c: STR             W15, [X14]
+0x7263740: B.LT            loc_7263704
+0x7263744: LDP             X20, X19, [SP,#0x20+var_10]
+0x7263748: LDP             X30, X21, [SP+0x20+var_20],#0x20
+0x726374c: RET
+0x7263750: BL              unk_3C3D4D4
+0x7263754: BL              il2cpp_codegen_raise_null_reference_exception

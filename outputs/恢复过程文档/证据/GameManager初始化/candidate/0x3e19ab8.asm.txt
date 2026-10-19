@@ -1,0 +1,66 @@
+0x3e19ab8: fe57bea9 stp      x30, x21, [sp, #-0x20]!
+0x3e19abc: f44f01a9 stp      x20, x19, [sp, #0x10]
+0x3e19ac0: 338f0290 adrp     x19, #0x8ffd000
+0x3e19ac4: b56502b0 adrp     x21, #0x8ace000
+0x3e19ac8: 946502f0 adrp     x20, #0x8acc000
+0x3e19acc: 68526239 ldrb     w8, [x19, #0x894]
+0x3e19ad0: b54642f9 ldr      x21, [x21, #0x488] // Method$ToolModule.ManagerBase<BattleGameManager>.get_Instance()
+0x3e19ad4: 946a44f9 ldr      x20, [x20, #0x8d0] // UnityEngine.Object_TypeInfo
+0x3e19ad8: 88010037 tbnz     w8, #0, #0x3e19b08
+0x3e19adc: a06502b0 adrp     x0, #0x8ace000
+0x3e19ae0: 004442f9 ldr      x0, [x0, #0x488] // Method$ToolModule.ManagerBase<BattleGameManager>.get_Instance()
+0x3e19ae4: e78df897 bl       #0x3c3d280
+0x3e19ae8: a06502d0 adrp     x0, #0x8acf000
+0x3e19aec: 009447f9 ldr      x0, [x0, #0xf28] // Method$ToolModule.ManagerBase<AIBehaviourManager>.get_Instance()
+0x3e19af0: e48df897 bl       #0x3c3d280
+0x3e19af4: 806502f0 adrp     x0, #0x8acc000
+0x3e19af8: 006844f9 ldr      x0, [x0, #0x8d0] // UnityEngine.Object_TypeInfo
+0x3e19afc: e18df897 bl       #0x3c3d280
+0x3e19b00: 28008052 mov      w8, #1
+0x3e19b04: 68522239 strb     w8, [x19, #0x894]
+0x3e19b08: a00240f9 ldr      x0, [x21]
+0x3e19b0c: 557a6d94 bl       #0x5978460 // ToolModule.ManagerBase<object>$$get_Instance
+0x3e19b10: 880240f9 ldr      x8, [x20]
+0x3e19b14: f30300aa mov      x19, x0
+0x3e19b18: 09e140b9 ldr      w9, [x8, #0xe0]
+0x3e19b1c: 69000035 cbnz     w9, #0x3e19b28
+0x3e19b20: e00308aa mov      x0, x8
+0x3e19b24: 238ef897 bl       #0x3c3d3b0
+0x3e19b28: e00313aa mov      x0, x19
+0x3e19b2c: e1031faa mov      x1, xzr
+0x3e19b30: e2031faa mov      x2, xzr
+0x3e19b34: 4e481395 bl       #0x82ebc6c // UnityEngine.Object$$op_Inequality
+0x3e19b38: e0000036 tbz      w0, #0, #0x3e19b54
+0x3e19b3c: a00240f9 ldr      x0, [x21]
+0x3e19b40: 487a6d94 bl       #0x5978460 // ToolModule.ManagerBase<object>$$get_Instance
+0x3e19b44: c00300b4 cbz      x0, #0x3e19bbc
+0x3e19b48: e1031f2a mov      w1, wzr
+0x3e19b4c: e2031faa mov      x2, xzr
+0x3e19b50: ec2dff97 bl       #0x3de5300 // GameModule.BattleGameManager$$SetGamePaused
+0x3e19b54: b56502d0 adrp     x21, #0x8acf000
+0x3e19b58: b59647f9 ldr      x21, [x21, #0xf28] // Method$ToolModule.ManagerBase<AIBehaviourManager>.get_Instance()
+0x3e19b5c: a00240f9 ldr      x0, [x21]
+0x3e19b60: 407a6d94 bl       #0x5978460 // ToolModule.ManagerBase<object>$$get_Instance
+0x3e19b64: 880240f9 ldr      x8, [x20]
+0x3e19b68: f30300aa mov      x19, x0
+0x3e19b6c: 09e140b9 ldr      w9, [x8, #0xe0]
+0x3e19b70: 69000035 cbnz     w9, #0x3e19b7c
+0x3e19b74: e00308aa mov      x0, x8
+0x3e19b78: 0e8ef897 bl       #0x3c3d3b0
+0x3e19b7c: e00313aa mov      x0, x19
+0x3e19b80: e1031faa mov      x1, xzr
+0x3e19b84: e2031faa mov      x2, xzr
+0x3e19b88: 39481395 bl       #0x82ebc6c // UnityEngine.Object$$op_Inequality
+0x3e19b8c: 20010036 tbz      w0, #0, #0x3e19bb0
+0x3e19b90: a00240f9 ldr      x0, [x21]
+0x3e19b94: 337a6d94 bl       #0x5978460 // ToolModule.ManagerBase<object>$$get_Instance
+0x3e19b98: 200100b4 cbz      x0, #0x3e19bbc
+0x3e19b9c: f44f41a9 ldp      x20, x19, [sp, #0x10]
+0x3e19ba0: e1031f2a mov      w1, wzr
+0x3e19ba4: e2031faa mov      x2, xzr
+0x3e19ba8: fe57c2a8 ldp      x30, x21, [sp], #0x20
+0x3e19bac: 9ae7fe17 b        #0x3dd3a14 // GameModule.AIBehaviourManager$$SetGamePaused
+0x3e19bb0: f44f41a9 ldp      x20, x19, [sp, #0x10]
+0x3e19bb4: fe57c2a8 ldp      x30, x21, [sp], #0x20
+0x3e19bb8: c0035fd6 ret      
+0x3e19bbc: 448ef897 bl       #0x3c3d4cc

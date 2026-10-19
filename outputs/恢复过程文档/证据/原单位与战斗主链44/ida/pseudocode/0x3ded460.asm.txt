@@ -1,0 +1,19 @@
+0x3ded460: CMP             W0, #3
+0x3ded464: B.EQ            loc_3DED48C
+0x3ded468: CMP             W1, #1
+0x3ded46c: B.EQ            loc_3DED494
+0x3ded470: CMP             W1, #2
+0x3ded474: B.EQ            loc_3DED49C
+0x3ded478: CMP             W1, #3
+0x3ded47c: B.NE            loc_3DED48C
+0x3ded480: CMP             W0, #2
+0x3ded484: CSET            W0, EQ
+0x3ded488: RET
+0x3ded48c: MOV             W0, WZR
+0x3ded490: RET
+0x3ded494: CMP             W0, #3
+0x3ded498: B               loc_3DED4A4
+0x3ded49c: SUB             W8, W0, #1
+0x3ded4a0: CMP             W8, #2
+0x3ded4a4: CSET            W0, CC
+0x3ded4a8: RET

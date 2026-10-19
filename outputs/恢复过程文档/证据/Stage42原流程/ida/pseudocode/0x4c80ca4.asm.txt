@@ -1,0 +1,29 @@
+0x4c80ca4: STP             X30, X21, [SP,#var_20]!
+0x4c80ca8: STP             X20, X19, [SP,#0x20+var_10]
+0x4c80cac: LDR             X8, [X2,#0x38]
+0x4c80cb0: MOV             X19, X1
+0x4c80cb4: MOV             X20, X0
+0x4c80cb8: CBNZ            X8, loc_4C80CE0
+0x4c80cbc: ADRP            X0, #off_8B0DD08@PAGE
+0x4c80cc0: LDR             X0, [X0,#off_8B0DD08@PAGEOFF]; qword_8CFE4D8 ; slot
+0x4c80cc4: MOV             X21, X2
+0x4c80cc8: BL              il2cpp_codegen_initialize_runtime_metadata
+0x4c80ccc: LDR             X8, [X21,#0x38]
+0x4c80cd0: CBNZ            X8, loc_4C80CE0
+0x4c80cd4: MOV             X0, X21
+0x4c80cd8: BL              unk_3C503FC
+0x4c80cdc: LDR             X8, [X21,#0x38]
+0x4c80ce0: LDR             X1, [X8]
+0x4c80ce4: LDR             X20, [X20,#0x20]
+0x4c80ce8: MOV             X0, X19
+0x4c80cec: BL              GameFramework.Utility.Text$$GetFullName_object_
+0x4c80cf0: CBZ             X20, loc_4C80D14
+0x4c80cf4: ADRP            X8, #off_8B0DD08@PAGE
+0x4c80cf8: LDR             X8, [X8,#off_8B0DD08@PAGEOFF]; qword_8CFE4D8
+0x4c80cfc: MOV             X1, X0
+0x4c80d00: MOV             X0, X20
+0x4c80d04: LDP             X20, X19, [SP,#0x20+var_10]
+0x4c80d08: LDR             X2, [X8]
+0x4c80d0c: LDP             X30, X21, [SP+0x20+var_20],#0x20
+0x4c80d10: B               System.Collections.Generic.Dictionary_object__object_$$ContainsKey
+0x4c80d14: BL              il2cpp_codegen_raise_null_reference_exception

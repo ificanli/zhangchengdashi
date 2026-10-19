@@ -1,0 +1,6 @@
+0x4082dec: 0188452d ldp      s1, s2, [x0, #0x2c]
+0x4082df0: 2028201e fadd     s0, s1, s0
+0x4082df4: 0020221e fcmp     s0, s2
+0x4082df8: 004c221e fcsel    s0, s0, s2, mi
+0x4082dfc: 002c00bd str      s0, [x0, #0x2c]
+0x4082e00: c0035fd6 ret      

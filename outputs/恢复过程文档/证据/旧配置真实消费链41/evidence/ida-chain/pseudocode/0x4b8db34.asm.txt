@@ -1,0 +1,49 @@
+0x4b8db34: SUB             SP, SP, #0x80
+0x4b8db38: STP             X30, X21, [SP,#0x80+var_20]
+0x4b8db3c: STP             X20, X19, [SP,#0x80+var_10]
+0x4b8db40: LDR             X8, [X2,#0x38]
+0x4b8db44: MOV             X19, X2
+0x4b8db48: MOV             X21, X1
+0x4b8db4c: MOV             X20, X0
+0x4b8db50: CBNZ            X8, loc_4B8DB70
+0x4b8db54: ADRP            X0, #off_8AD5AD0@PAGE
+0x4b8db58: LDR             X0, [X0,#off_8AD5AD0@PAGEOFF]; off_8CE4558 ; slot
+0x4b8db5c: BL              il2cpp_codegen_initialize_runtime_metadata
+0x4b8db60: LDR             X8, [X19,#0x38]
+0x4b8db64: CBNZ            X8, loc_4B8DB70
+0x4b8db68: MOV             X0, X19
+0x4b8db6c: BL              unk_3C503FC
+0x4b8db70: STR             XZR, [SP,#0x80+var_30]
+0x4b8db74: ADRP            X8, #off_8AD5AD0@PAGE
+0x4b8db78: LDR             X8, [X8,#off_8AD5AD0@PAGEOFF]; off_8CE4558
+0x4b8db7c: MOVI            V0.2D, #0
+0x4b8db80: STP             Q0, Q0, [SP,#0x80+var_50]
+0x4b8db84: STR             Q0, [SP,#0x80+var_60]
+0x4b8db88: LDR             X0, [X8]; klass
+0x4b8db8c: LDR             W8, [X0,#0xE0]
+0x4b8db90: CBNZ            W8, loc_4B8DB98
+0x4b8db94: BL              il2cpp_codegen_runtime_class_init
+0x4b8db98: ADD             X8, SP, #0x80+var_78
+0x4b8db9c: MOV             X0, XZR
+0x4b8dba0: BL              System.Runtime.CompilerServices.AsyncTaskMethodBuilder$$Create
+0x4b8dba4: LDUR            Q0, [SP,#0x80+var_78]
+0x4b8dba8: LDR             X8, [SP,#0x80+var_68]
+0x4b8dbac: MOV             W9, #0xFFFFFFFF
+0x4b8dbb0: STP             X20, X21, [SP,#0x80+var_40]
+0x4b8dbb4: STUR            Q0, [SP,#0x80+var_60+8]
+0x4b8dbb8: STR             X8, [SP,#0x80+var_50+8]
+0x4b8dbbc: STR             W9, [SP,#0x80+var_60]
+0x4b8dbc0: LDR             X8, [X19,#0x38]
+0x4b8dbc4: ADD             X1, SP, #0x80+var_60
+0x4b8dbc8: LDR             X2, [X8,#0x10]
+0x4b8dbcc: ADD             X8, SP, #0x80+var_60
+0x4b8dbd0: ORR             X19, X8, #8
+0x4b8dbd4: MOV             X0, X19
+0x4b8dbd8: BL              System.Runtime.CompilerServices.AsyncTaskMethodBuilder$$Start_ConfigRead.f___mX_object__
+0x4b8dbdc: MOV             X0, X19
+0x4b8dbe0: MOV             X1, XZR
+0x4b8dbe4: BL              System.Runtime.CompilerServices.AsyncTaskMethodBuilder$$get_Task
+0x4b8dbe8: LDP             X20, X19, [SP,#0x80+var_10]
+0x4b8dbec: LDP             X30, X21, [SP,#0x80+var_20]
+0x4b8dbf0: ADD             SP, SP, #0x80
+0x4b8dbf4: RET

@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup><OutputType>Exe</OutputType><TargetFramework>net10.0</TargetFramework><LangVersion>9.0</LangVersion><EnableDefaultCompileItems>false</EnableDefaultCompileItems><NoWarn>CS0169;CS0649</NoWarn>
+    <SourceRoot Condition="'$(Baseline)'=='true'">../source-before</SourceRoot>
+    <SourceRoot Condition="'$(Baseline)'!='true' and '$(Actual)'=='true'">../../../outputs/OccupyCityRecovered</SourceRoot>
+    <SourceRoot Condition="'$(Baseline)'!='true' and '$(Actual)'!='true'">../candidate</SourceRoot>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(SourceRoot)/Assets/Scripts/GFRunning/GameFramework/Base/GameStartEntry.cs"/>
+    <Compile Include="$(SourceRoot)/Assets/Scripts/GFRunning/GameFramework/GameFrameEntry.cs"/>
+    <Compile Include="$(SourceRoot)/Assets/Scripts/GFRunning/GameFramework/Base/IGameStart.cs"/>
+    <Compile Include="$(SourceRoot)/Assets/Scripts/Assembly-CSharp/ljzs_lt/GameStart.cs"/>
+    <Compile Include="../../../outputs/OccupyCityRecovered/Assets/Scripts/GFRunning/GameFramework/GameFrameModule.cs"/>
+    <Compile Include="Adapters.cs"/><Compile Include="Program.cs"/>
+    <Reference Include="Il2CppDummyDll"><HintPath>../../../outputs/OccupyCityRecovered/Library/ScriptAssemblies/Il2CppDummyDll.dll</HintPath></Reference>
+  </ItemGroup>
+</Project>

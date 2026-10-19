@@ -1,0 +1,88 @@
+0x712fe70: ff4301d1 sub      sp, sp, #0x50
+0x712fe74: fe6701a9 stp      x30, x25, [sp, #0x10]
+0x712fe78: f85f02a9 stp      x24, x23, [sp, #0x20]
+0x712fe7c: f65703a9 stp      x22, x21, [sp, #0x30]
+0x712fe80: f44f04a9 stp      x20, x19, [sp, #0x40]
+0x712fe84: d5f600b0 adrp     x21, #0x9008000
+0x712fe88: f9cc00d0 adrp     x25, #0x8acd000
+0x712fe8c: 38cf00f0 adrp     x24, #0x8b16000
+0x712fe90: a8b27a39 ldrb     w8, [x21, #0xeac]
+0x712fe94: 392f44f9 ldr      x25, [x25, #0x858] // object[]_TypeInfo
+0x712fe98: 188340f9 ldr      x24, [x24, #0x100] // YooAsset.EPlayMode_TypeInfo
+0x712fe9c: f603032a mov      w22, w3
+0x712fea0: f703022a mov      w23, w2
+0x712fea4: f30301aa mov      x19, x1
+0x712fea8: f40300aa mov      x20, x0
+0x712feac: e8010037 tbnz     w8, #0, #0x712fee8
+0x712feb0: 20cf00f0 adrp     x0, #0x8b16000
+0x712feb4: 008040f9 ldr      x0, [x0, #0x100] // YooAsset.EPlayMode_TypeInfo
+0x712feb8: f2342c97 bl       #0x3c3d280
+0x712febc: 20ce00b0 adrp     x0, #0x8af4000
+0x712fec0: 005043f9 ldr      x0, [x0, #0x6a0] // GameFramework.GameFrameEntry_TypeInfo
+0x712fec4: ef342c97 bl       #0x3c3d280
+0x712fec8: e0cc00d0 adrp     x0, #0x8acd000
+0x712fecc: 002c44f9 ldr      x0, [x0, #0x858] // object[]_TypeInfo
+0x712fed0: ec342c97 bl       #0x3c3d280
+0x712fed4: 20cf00f0 adrp     x0, #0x8b16000
+0x712fed8: 008440f9 ldr      x0, [x0, #0x108] // GameFramework.TeamType_TypeInfo
+0x712fedc: e9342c97 bl       #0x3c3d280
+0x712fee0: 28008052 mov      w8, #1
+0x712fee4: a8b23a39 strb     w8, [x21, #0xeac]
+0x712fee8: 200340f9 ldr      x0, [x25]
+0x712feec: 41008052 mov      w1, #2
+0x712fef0: 0c352c97 bl       #0x3c3d320
+0x712fef4: f50300aa mov      x21, x0
+0x712fef8: 000340f9 ldr      x0, [x24]
+0x712fefc: e1330091 add      x1, sp, #0xc
+0x712ff00: f70f00b9 str      w23, [sp, #0xc]
+0x712ff04: 2d352c97 bl       #0x3c3d3b8
+0x712ff08: 350600b4 cbz      x21, #0x712ffcc
+0x712ff0c: f70300aa mov      x23, x0
+0x712ff10: c00000b4 cbz      x0, #0x712ff28
+0x712ff14: a80240f9 ldr      x8, [x21]
+0x712ff18: e00317aa mov      x0, x23
+0x712ff1c: 012140f9 ldr      x1, [x8, #0x40]
+0x712ff20: 25352c97 bl       #0x3c3d3b4
+0x712ff24: e00400b4 cbz      x0, #0x712ffc0
+0x712ff28: a81a40b9 ldr      w8, [x21, #0x18]
+0x712ff2c: 88040034 cbz      w8, #0x712ffbc
+0x712ff30: 28cf00f0 adrp     x8, #0x8b16000
+0x712ff34: 088540f9 ldr      x8, [x8, #0x108] // GameFramework.TeamType_TypeInfo
+0x712ff38: b71200f9 str      x23, [x21, #0x20]
+0x712ff3c: e1230091 add      x1, sp, #8
+0x712ff40: f60b00b9 str      w22, [sp, #8]
+0x712ff44: 000140f9 ldr      x0, [x8]
+0x712ff48: 1c352c97 bl       #0x3c3d3b8
+0x712ff4c: f60300aa mov      x22, x0
+0x712ff50: c00000b4 cbz      x0, #0x712ff68
+0x712ff54: a80240f9 ldr      x8, [x21]
+0x712ff58: e00316aa mov      x0, x22
+0x712ff5c: 012140f9 ldr      x1, [x8, #0x40]
+0x712ff60: 15352c97 bl       #0x3c3d3b4
+0x712ff64: e00200b4 cbz      x0, #0x712ffc0
+0x712ff68: a81a40b9 ldr      w8, [x21, #0x18]
+0x712ff6c: 1f050071 cmp      w8, #1
+0x712ff70: 69020054 b.ls     #0x712ffbc
+0x712ff74: 28ce00b0 adrp     x8, #0x8af4000
+0x712ff78: 085143f9 ldr      x8, [x8, #0x6a0] // GameFramework.GameFrameEntry_TypeInfo
+0x712ff7c: b61600f9 str      x22, [x21, #0x28]
+0x712ff80: 000140f9 ldr      x0, [x8]
+0x712ff84: 08e040b9 ldr      w8, [x0, #0xe0]
+0x712ff88: 48000035 cbnz     w8, #0x712ff90
+0x712ff8c: 09352c97 bl       #0x3c3d3b0
+0x712ff90: e00314aa mov      x0, x20
+0x712ff94: e10313aa mov      x1, x19
+0x712ff98: e20315aa mov      x2, x21
+0x712ff9c: e3031faa mov      x3, xzr
+0x712ffa0: edab0094 bl       #0x715af54 // GameFramework.GameFrameEntry$$Initialize
+0x712ffa4: f44f44a9 ldp      x20, x19, [sp, #0x40]
+0x712ffa8: f65743a9 ldp      x22, x21, [sp, #0x30]
+0x712ffac: f85f42a9 ldp      x24, x23, [sp, #0x20]
+0x712ffb0: fe6741a9 ldp      x30, x25, [sp, #0x10]
+0x712ffb4: ff430191 add      sp, sp, #0x50
+0x712ffb8: c0035fd6 ret      
+0x712ffbc: 46352c97 bl       #0x3c3d4d4
+0x712ffc0: 4c352c97 bl       #0x3c3d4f0
+0x712ffc4: e1031faa mov      x1, xzr
+0x712ffc8: f6342c97 bl       #0x3c3d3a0
+0x712ffcc: 40352c97 bl       #0x3c3d4cc

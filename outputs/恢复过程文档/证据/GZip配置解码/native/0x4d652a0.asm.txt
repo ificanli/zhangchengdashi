@@ -1,0 +1,45 @@
+0x4d652a0: STR             X30, [SP,#var_20]!
+0x4d652a4: STP             X20, X19, [SP,#0x20+var_10]
+0x4d652a8: LDR             X8, [X1,#0x38]
+0x4d652ac: MOV             X20, X1
+0x4d652b0: MOV             X19, X0
+0x4d652b4: CBZ             X8, loc_4D65314
+0x4d652b8: CBZ             X19, loc_4D65320
+0x4d652bc: LDR             X8, [X20,#0x38]
+0x4d652c0: LDR             X1, [X8,#8]
+0x4d652c4: LDRB            W8, [X1,#0x135]
+0x4d652c8: TBNZ            W8, #0, loc_4D652D8
+0x4d652cc: MOV             X0, X1
+0x4d652d0: BL              unk_3C503A0
+0x4d652d4: MOV             X1, X0
+0x4d652d8: LDR             X8, [X19]
+0x4d652dc: LDRH            W9, [X8,#0x12E]
+0x4d652e0: CBZ             X9, loc_4D65304
+0x4d652e4: LDR             X10, [X8,#0xB0]
+0x4d652e8: ADD             X10, X10, #8
+0x4d652ec: LDUR            X11, [X10,#-8]
+0x4d652f0: CMP             X11, X1
+0x4d652f4: B.EQ            loc_4D65328
+0x4d652f8: SUBS            X9, X9, #1
+0x4d652fc: ADD             X10, X10, #0x10
+0x4d65300: B.NE            loc_4D652EC
+0x4d65304: MOV             X0, X19
+0x4d65308: MOV             W2, WZR
+0x4d6530c: BL              unk_3C504A4
+0x4d65310: B               loc_4D65334
+0x4d65314: MOV             X0, X20
+0x4d65318: BL              unk_3C503FC
+0x4d6531c: CBNZ            X19, loc_4D652BC
+0x4d65320: MOV             W0, #1
+0x4d65324: B               loc_4D65348
+0x4d65328: LDRSW           X9, [X10]
+0x4d6532c: ADD             X8, X8, X9,LSL#4
+0x4d65330: ADD             X0, X8, #0x138
+0x4d65334: LDP             X8, X1, [X0]
+0x4d65338: MOV             X0, X19
+0x4d6533c: BLR             X8
+0x4d65340: CMP             W0, #0
+0x4d65344: CSET            W0, EQ
+0x4d65348: LDP             X20, X19, [SP,#0x20+var_10]
+0x4d6534c: LDR             X30, [SP+0x20+var_20],#0x20
+0x4d65350: RET

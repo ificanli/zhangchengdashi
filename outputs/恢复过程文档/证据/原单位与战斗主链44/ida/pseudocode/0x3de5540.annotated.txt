@@ -1,0 +1,408 @@
+__int64 __fastcall GameModule_BattleGameManager__ApplyAnimationPauseToSingleRole(__int64 a1, __int64 a2, char a3)
+{
+  unsigned int InstanceID; // w0
+  unsigned int v7; // w20
+  __int64 result; // x0
+  __int64 v9; // x22
+  __int64 v10; // x0
+  __int64 v11; // x8
+  __int64 v12; // x23
+  unsigned __int64 v13; // x26
+  __int64 v14; // x24
+  unsigned int v15; // w0
+  unsigned int v16; // w25
+  long double v17; // q0
+  float speed; // s0
+  __int64 v19; // x24
+  __int64 v20; // x23
+  int AnimationDriverType; // w0
+  __int64 ComponentsInChildren_object; // x0
+  __int64 v23; // x8
+  __int64 v24; // x22
+  unsigned __int64 i; // x24
+  __int64 v26; // x23
+  unsigned int v27; // w0
+  long double v28; // q0
+  __int64 Component_object; // x22
+  __int64 AnimationBehaviour; // x0
+  __int64 v31; // x10
+  __int64 v32; // x22
+  __int64 v33; // x21
+  __int64 v34; // x0
+  __int64 v35; // x9
+  void *v36; // x8
+  unsigned int v37; // w11
+  __int64 v38; // x10
+  float v39; // s8
+  __int64 v40; // x21
+  __int64 v41; // x8
+  __int64 v42; // x9
+  _DWORD *v43; // x10
+  __int64 v44; // x0
+  __int64 v45; // x24
+  __int64 v46; // x21
+  unsigned int v47; // w0
+  __int64 v48; // x8
+  unsigned int v49; // w24
+  __int64 v50; // x9
+  _DWORD *v51; // x10
+  __int64 v52; // x0
+  __int64 v53; // x8
+  char v54; // w9
+  __int64 v55; // x0
+  __int64 v56; // x0
+  __int64 v57; // x1
+  __int64 v58; // x2
+  __int64 v59; // [xsp+10h] [xbp-A0h] BYREF
+  __int64 v60; // [xsp+18h] [xbp-98h]
+  __int64 v61; // [xsp+20h] [xbp-90h]
+  __int64 v62; // [xsp+28h] [xbp-88h] BYREF
+  char v63; // [xsp+30h] [xbp-80h]
+  __int16 v64; // [xsp+31h] [xbp-7Fh]
+  char v65; // [xsp+33h] [xbp-7Dh]
+  float v66; // [xsp+34h] [xbp-7Ch]
+  __int64 v67; // [xsp+38h] [xbp-78h]
+  int v68; // [xsp+48h] [xbp-68h] BYREF
+  __int16 v69; // [xsp+4Ch] [xbp-64h]
+  char v70; // [xsp+4Eh] [xbp-62h]
+
+  if ( (byte_8FFD740 & 1) == 0 )
+  {
+    il2cpp_codegen_initialize_runtime_metadata((void **)&off_8CE3F98 /* AnimationInstancing.AnimationInstancing_TypeInfo */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8CFCB20 /* Method$System.Collections.Generic.Dictionary<int, float>.Add() */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8CFCF30 /* Method$System.Collections.Generic.Dictionary<int, BattleGameManager.AnimationPauseSnapshot>.Add() */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8CFCB28 /* Method$System.Collections.Generic.Dictionary<int, float>.ContainsKey() */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8CFCF40 /* Method$System.Collections.Generic.Dictionary<int, BattleGameManager.AnimationPauseSnapshot>.ContainsKey() */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8CFCF48 /* Method$System.Collections.Generic.Dictionary<int, BattleGameManager.AnimationPauseSnapshot>.Remove() */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8CFCF50 /* Method$System.Collections.Generic.Dictionary<int, BattleGameManager.AnimationPauseSnapshot>.TryGetValue() */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8CFCB40 /* Method$System.Collections.Generic.Dictionary<int, float>.TryGetValue() */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8CFCB18 /* Method$System.Collections.Generic.Dictionary<int, float>..ctor() */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8CD9738 /* System.Collections.Generic.Dictionary<int, float>_TypeInfo */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D2D978 /* Method$UnityEngine.GameObject.GetComponent<GPUICrowdPrefab>() */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D2D980 /* Method$UnityEngine.GameObject.GetComponent<GPUInstanceAnimationBehaviour>() */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D2DBF0 /* Method$UnityEngine.GameObject.GetComponent<RoleBehaviour>() */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8D2DEC0 /* Method$UnityEngine.GameObject.GetComponentsInChildren<Animator>() */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&qword_8CE8430 /* IAnimation_TypeInfo */);
+    il2cpp_codegen_initialize_runtime_metadata((void **)&off_8CEB3E0 /* UnityEngine.Object_TypeInfo */);
+    byte_8FFD740 = 1;
+  }
+  v59 = 0;
+  v60 = 0;
+  v61 = 0;
+  v68 = 0;
+  if ( a2 == 0 )
+    goto LABEL_118;
+  InstanceID = UnityEngine_Object__GetInstanceID(a2, 0);
+  if ( *(_QWORD *)(a1 + 32) == 0 )
+    goto LABEL_118;
+  v7 = InstanceID;
+  if ( (a3 & 1) == 0 )
+  {
+    result = System_Collections_Generic_Dictionary_int__BattleGameManager_AnimationPauseSnapshot___TryGetValue(
+               *(_QWORD *)(a1 + 32),
+               InstanceID,
+               &v59,
+               qword_8CFCF50 /* Method$System.Collections.Generic.Dictionary<int, BattleGameManager.AnimationPauseSnapshot>.TryGetValue() */);
+    if ( (result & 1) == 0 )
+      return result;
+    ComponentsInChildren_object = UnityEngine_GameObject__GetComponentsInChildren_object_(a2, 1, qword_8D2DEC0 /* Method$UnityEngine.GameObject.GetComponentsInChildren<Animator>() */);
+    if ( ComponentsInChildren_object != 0 )
+    {
+      v23 = *(_QWORD *)(ComponentsInChildren_object + 24);
+      v24 = ComponentsInChildren_object;
+      if ( v23 != 0 && (int)v23 >= 1 )
+      {
+        for ( i = 0; (__int64)i < (int)v23; ++i )
+        {
+          if ( i >= (unsigned int)v23 )
+            goto LABEL_119;
+          v26 = *(_QWORD *)(v24 + 32 + 8 * i);
+          if ( *((_DWORD *)off_8CEB3E0 /* UnityEngine.Object_TypeInfo */ + 56) == 0 )
+            il2cpp_codegen_runtime_class_init(off_8CEB3E0 /* UnityEngine.Object_TypeInfo */);
+          if ( (UnityEngine_Object__op_Equality(v26, 0, 0) & 1) == 0 )
+          {
+            if ( v26 == 0 )
+              goto LABEL_118;
+            v27 = UnityEngine_Object__GetInstanceID(v26, 0);
+            if ( v59 != 0
+              && (System_Collections_Generic_Dictionary_int__float___TryGetValue(v59, v27, &v68, qword_8CFCB40 /* Method$System.Collections.Generic.Dictionary<int, float>.TryGetValue() */) & 1) != 0 )
+            {
+              LODWORD(v28) = v68;
+LABEL_47:
+              UnityEngine_Animator__set_speed(v26, 0, v28);
+              goto LABEL_48;
+            }
+            if ( UnityEngine_Animator__get_speed(v26, 0) == 0.0 )
+            {
+              LODWORD(v28) = 1.0;
+              goto LABEL_47;
+            }
+          }
+LABEL_48:
+          LODWORD(v23) = *(_DWORD *)(v24 + 24);
+        }
+      }
+    }
+    Component_object = UnityEngine_GameObject__GetComponent_object_(a2, qword_8D2DBF0 /* Method$UnityEngine.GameObject.GetComponent<RoleBehaviour>() */);
+    if ( *((_DWORD *)off_8CEB3E0 /* UnityEngine.Object_TypeInfo */ + 56) == 0 )
+      il2cpp_codegen_runtime_class_init(off_8CEB3E0 /* UnityEngine.Object_TypeInfo */);
+    if ( (UnityEngine_Object__op_Inequality(Component_object, 0, 0) & 1) != 0 )
+    {
+      if ( Component_object == 0 )
+        goto LABEL_118;
+      AnimationBehaviour = GameModule_RoleBehaviour__GetAnimationBehaviour(Component_object, 0);
+      if ( (v61 & 1) != 0 )
+      {
+        if ( AnimationBehaviour != 0 )
+        {
+          v31 = *((unsigned __int8 *)off_8CE3F98 /* AnimationInstancing.AnimationInstancing_TypeInfo */ + 304);
+          if ( *(unsigned __int8 *)(*(_QWORD *)AnimationBehaviour + 304LL) >= (unsigned int)v31 )
+          {
+            if ( *(_UNKNOWN **)(*(_QWORD *)(*(_QWORD *)AnimationBehaviour + 200LL) + 8 * v31 - 8) == off_8CE3F98 /* AnimationInstancing.AnimationInstancing_TypeInfo */ )
+              v32 = AnimationBehaviour;
+            else
+              v32 = 0;
+LABEL_61:
+            if ( *((_DWORD *)off_8CEB3E0 /* UnityEngine.Object_TypeInfo */ + 56) == 0 )
+              il2cpp_codegen_runtime_class_init(off_8CEB3E0 /* UnityEngine.Object_TypeInfo */);
+            if ( (UnityEngine_Object__op_Inequality(v32, 0, 0) & 1) != 0 )
+            {
+              if ( v32 == 0 )
+                goto LABEL_118;
+              if ( (AnimationInstancing_AnimationInstancing__IsPause(v32, 0) & 1) != 0 )
+                AnimationInstancing_AnimationInstancing__Resume(v32, 0);
+            }
+            goto LABEL_67;
+          }
+        }
+LABEL_60:
+        v32 = 0;
+        goto LABEL_61;
+      }
+    }
+    else if ( (v61 & 1) != 0 )
+    {
+      goto LABEL_60;
+    }
+LABEL_67:
+    if ( (v60 & 1) != 0 && (GameModule_HWGPUInstancerManager__IsGPUInstancerSupported(0) & 1) != 0 )
+    {
+      v33 = UnityEngine_GameObject__GetComponent_object_(a2, qword_8D2D978 /* Method$UnityEngine.GameObject.GetComponent<GPUICrowdPrefab>() */);
+      if ( *((_DWORD *)off_8CEB3E0 /* UnityEngine.Object_TypeInfo */ + 56) == 0 )
+        il2cpp_codegen_runtime_class_init(off_8CEB3E0 /* UnityEngine.Object_TypeInfo */);
+      if ( (UnityEngine_Object__op_Inequality(v33, 0, 0) & 1) != 0 )
+        GPUInstancer_CrowdAnimations_GPUICrowdAPI__SetAnimationSpeed(v33, 0, *((float *)&v60 + 1));
+    }
+    v34 = *(_QWORD *)(a1 + 32);
+    if ( v34 != 0 )
+      return System_Collections_Generic_Dictionary_int__BattleGameManager_AnimationPauseSnapshot___Remove(
+               v34,
+               v7,
+               qword_8CFCF48 /* Method$System.Collections.Generic.Dictionary<int, BattleGameManager.AnimationPauseSnapshot>.Remove() */);
+    goto LABEL_118;
+  }
+  result = System_Collections_Generic_Dictionary_int__BattleGameManager_AnimationPauseSnapshot___ContainsKey(
+             *(_QWORD *)(a1 + 32),
+             InstanceID,
+             qword_8CFCF40 /* Method$System.Collections.Generic.Dictionary<int, BattleGameManager.AnimationPauseSnapshot>.ContainsKey() */);
+  if ( (result & 1) != 0 )
+    return result;
+  v9 = ((__int64 (__fastcall *)(__int64))unk_3C3D4C4)(qword_8CD9738 /* System.Collections.Generic.Dictionary<int, float>_TypeInfo */);
+  System_Collections_Generic_Dictionary_int__float____ctor(v9, 4, qword_8CFCB18 /* Method$System.Collections.Generic.Dictionary<int, float>..ctor() */);
+  v70 = 0;
+  v69 = 0;
+  v10 = UnityEngine_GameObject__GetComponentsInChildren_object_(a2, 1, qword_8D2DEC0 /* Method$UnityEngine.GameObject.GetComponentsInChildren<Animator>() */);
+  if ( v10 == 0 || (v11 = *(_QWORD *)(v10 + 24), v12 = v10, v11 == 0) || (int)v11 < 1 )
+  {
+LABEL_21:
+    v19 = UnityEngine_GameObject__GetComponent_object_(a2, qword_8D2DBF0 /* Method$UnityEngine.GameObject.GetComponent<RoleBehaviour>() */);
+    if ( *((_DWORD *)off_8CEB3E0 /* UnityEngine.Object_TypeInfo */ + 56) == 0 )
+      il2cpp_codegen_runtime_class_init(off_8CEB3E0 /* UnityEngine.Object_TypeInfo */);
+    v20 = 0;
+    if ( (UnityEngine_Object__op_Inequality(v19, 0, 0) & 1) != 0 )
+    {
+      if ( v19 == 0 )
+        goto LABEL_118;
+      v20 = GameModule_RoleBehaviour__GetAnimationBehaviour(v19, 0);
+    }
+    if ( *((_DWORD *)off_8CEB3E0 /* UnityEngine.Object_TypeInfo */ + 56) == 0 )
+      il2cpp_codegen_runtime_class_init(off_8CEB3E0 /* UnityEngine.Object_TypeInfo */);
+    if ( (UnityEngine_Object__op_Inequality(v19, 0, 0) & 1) != 0 )
+    {
+      if ( v19 == 0 )
+        goto LABEL_118;
+      AnimationDriverType = GameModule_RoleBehaviour__GetAnimationDriverType(v19, 0);
+      if ( v20 == 0 )
+      {
+LABEL_78:
+        v39 = 1.0;
+        if ( (GameModule_HWGPUInstancerManager__IsGPUInstancerSupported(0) & 1) != 0 )
+        {
+          v40 = UnityEngine_GameObject__GetComponent_object_(a2, qword_8D2D978 /* Method$UnityEngine.GameObject.GetComponent<GPUICrowdPrefab>() */);
+          if ( *((_DWORD *)off_8CEB3E0 /* UnityEngine.Object_TypeInfo */ + 56) == 0 )
+            il2cpp_codegen_runtime_class_init(off_8CEB3E0 /* UnityEngine.Object_TypeInfo */);
+          if ( (UnityEngine_Object__op_Inequality(v40, 0, 0) & 1) != 0 )
+          {
+            v39 = 1.0;
+            if ( v20 != 0 )
+            {
+              v41 = *(_QWORD *)v20;
+              v42 = *(unsigned __int16 *)(*(_QWORD *)v20 + 302LL);
+              if ( *(_WORD *)(*(_QWORD *)v20 + 302LL) != 0 )
+              {
+                v43 = (_DWORD *)(*(_QWORD *)(v41 + 176) + 8LL);
+                while ( *((_QWORD *)v43 - 1) != qword_8CE8430 /* IAnimation_TypeInfo */ )
+                {
+                  --v42;
+                  v43 += 4;
+                  if ( v42 == 0 )
+                    goto LABEL_87;
+                }
+                v44 = v41 + 16LL * (*v43 + 2) + 312;
+              }
+              else
+              {
+LABEL_87:
+                v44 = ((__int64 (__fastcall *)(__int64, __int64, __int64))unk_3C504A4)(v20, qword_8CE8430 /* IAnimation_TypeInfo */, 2);
+              }
+              v47 = (*(__int64 (__fastcall **)(__int64, _QWORD))v44)(v20, *(_QWORD *)(v44 + 8));
+              v48 = *(_QWORD *)v20;
+              v49 = v47;
+              v50 = *(unsigned __int16 *)(*(_QWORD *)v20 + 302LL);
+              if ( *(_WORD *)(*(_QWORD *)v20 + 302LL) != 0 )
+              {
+                v51 = (_DWORD *)(*(_QWORD *)(v48 + 176) + 8LL);
+                while ( *((_QWORD *)v51 - 1) != qword_8CE8430 /* IAnimation_TypeInfo */ )
+                {
+                  --v50;
+                  v51 += 4;
+                  if ( v50 == 0 )
+                    goto LABEL_100;
+                }
+                v52 = v48 + 16LL * (*v51 + 1) + 312;
+              }
+              else
+              {
+LABEL_100:
+                v52 = ((__int64 (__fastcall *)(__int64, __int64, __int64))unk_3C504A4)(v20, qword_8CE8430 /* IAnimation_TypeInfo */, 1);
+              }
+              v39 = COERCE_FLOAT(
+                      COERCE_UNSIGNED_INT128(
+                        ((long double (__fastcall *)(__int64, _QWORD, _QWORD))*(_QWORD *)v52)(
+                          v20,
+                          v49,
+                          *(_QWORD *)(v52 + 8))));
+              if ( v39 <= 0.0 )
+                v39 = 1.0;
+            }
+            GPUInstancer_CrowdAnimations_GPUICrowdAPI__SetAnimationSpeed(v40, 0, 0.0);
+            v53 = 0;
+            v54 = 1;
+LABEL_114:
+            v55 = *(_QWORD *)(a1 + 32);
+            if ( v55 != 0 )
+            {
+              v63 = v54;
+              v62 = v9;
+              v66 = v39;
+              v64 = v69;
+              v65 = v70;
+              v67 = v53;
+              return System_Collections_Generic_Dictionary_int__BattleGameManager_AnimationPauseSnapshot___Add(
+                       v55,
+                       v7,
+                       &v62,
+                       qword_8CFCF30 /* Method$System.Collections.Generic.Dictionary<int, BattleGameManager.AnimationPauseSnapshot>.Add() */);
+            }
+LABEL_118:
+            il2cpp_codegen_raise_null_reference_exception();
+          }
+        }
+        goto LABEL_113;
+      }
+    }
+    else
+    {
+      AnimationDriverType = 0;
+      if ( v20 == 0 )
+        goto LABEL_78;
+    }
+    v35 = *(_QWORD *)v20;
+    v36 = off_8CE3F98 /* AnimationInstancing.AnimationInstancing_TypeInfo */;
+    v37 = *(unsigned __int8 *)(*(_QWORD *)v20 + 304LL);
+    v38 = *((unsigned __int8 *)off_8CE3F98 /* AnimationInstancing.AnimationInstancing_TypeInfo */ + 304);
+    if ( v37 < (unsigned int)v38 || *(_UNKNOWN **)(*(_QWORD *)(v35 + 200) + 8 * v38 - 8) != off_8CE3F98 /* AnimationInstancing.AnimationInstancing_TypeInfo */ )
+      goto LABEL_78;
+    if ( AnimationDriverType != 1 )
+    {
+      v45 = UnityEngine_GameObject__GetComponent_object_(a2, qword_8D2D980 /* Method$UnityEngine.GameObject.GetComponent<GPUInstanceAnimationBehaviour>() */);
+      if ( *((_DWORD *)off_8CEB3E0 /* UnityEngine.Object_TypeInfo */ + 56) == 0 )
+        il2cpp_codegen_runtime_class_init(off_8CEB3E0 /* UnityEngine.Object_TypeInfo */);
+      if ( (UnityEngine_Object__op_Equality(v45, 0, 0) & 1) == 0 )
+        goto LABEL_78;
+      v35 = *(_QWORD *)v20;
+      v36 = off_8CE3F98 /* AnimationInstancing.AnimationInstancing_TypeInfo */;
+      v37 = *(unsigned __int8 *)(*(_QWORD *)v20 + 304LL);
+      LODWORD(v38) = *((unsigned __int8 *)off_8CE3F98 /* AnimationInstancing.AnimationInstancing_TypeInfo */ + 304);
+    }
+    if ( v37 >= (unsigned int)v38 )
+    {
+      if ( *(void **)(*(_QWORD *)(v35 + 200) + 8LL * (unsigned int)v38 - 8) == v36 )
+        v46 = v20;
+      else
+        v46 = 0;
+    }
+    else
+    {
+      v46 = 0;
+    }
+    if ( *((_DWORD *)off_8CEB3E0 /* UnityEngine.Object_TypeInfo */ + 56) == 0 )
+      il2cpp_codegen_runtime_class_init(off_8CEB3E0 /* UnityEngine.Object_TypeInfo */);
+    v39 = 1.0;
+    if ( (UnityEngine_Object__op_Inequality(v46, 0, 0) & 1) != 0 )
+    {
+      if ( v46 == 0 )
+        goto LABEL_118;
+      if ( (AnimationInstancing_AnimationInstancing__IsPause(v46, 0) & 1) == 0 )
+      {
+        AnimationInstancing_AnimationInstancing__Pause(v46, 0);
+        v54 = 0;
+        v53 = 1;
+        goto LABEL_114;
+      }
+    }
+LABEL_113:
+    v53 = 0;
+    v54 = 0;
+    goto LABEL_114;
+  }
+  v13 = 0;
+  while ( v13 < (unsigned int)v11 )
+  {
+    v14 = *(_QWORD *)(v12 + 32 + 8 * v13);
+    if ( *((_DWORD *)off_8CEB3E0 /* UnityEngine.Object_TypeInfo */ + 56) == 0 )
+      il2cpp_codegen_runtime_class_init(off_8CEB3E0 /* UnityEngine.Object_TypeInfo */);
+    if ( (UnityEngine_Object__op_Equality(v14, 0, 0) & 1) == 0 )
+    {
+      if ( v14 == 0 )
+        goto LABEL_118;
+      v15 = UnityEngine_Object__GetInstanceID(v14, 0);
+      if ( v9 == 0 )
+        goto LABEL_118;
+      v16 = v15;
+      if ( (System_Collections_Generic_Dictionary_int__float___ContainsKey(v9, v15, qword_8CFCB28 /* Method$System.Collections.Generic.Dictionary<int, float>.ContainsKey() */) & 1) == 0 )
+      {
+        speed = UnityEngine_Animator__get_speed(v14, 0);
+        System_Collections_Generic_Dictionary_int__float___Add(v9, v16, qword_8CFCB20 /* Method$System.Collections.Generic.Dictionary<int, float>.Add() */, speed);
+      }
+      LODWORD(v17) = 0;
+      UnityEngine_Animator__set_speed(v14, 0, v17);
+    }
+    LODWORD(v11) = *(_DWORD *)(v12 + 24);
+    if ( (__int64)++v13 >= (int)v11 )
+      goto LABEL_21;
+  }
+LABEL_119:
+  v56 = ((__int64 (*)(void))unk_3C3D4D4)();
+  return GameModule_BattleGameManager__TryApplyPauseToNewRole(v56, v57, v58);
+}

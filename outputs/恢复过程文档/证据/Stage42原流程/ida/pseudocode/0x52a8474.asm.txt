@@ -1,0 +1,22 @@
+0x52a8474: STR             X30, [SP,#var_20]!
+0x52a8478: STP             X20, X19, [SP,#0x20+var_10]
+0x52a847c: MOV             X20, X1
+0x52a8480: MOV             X1, XZR
+0x52a8484: MOV             X19, X0
+0x52a8488: BL              System.Object$$.ctor
+0x52a848c: LDR             X8, [X20,#0x20]
+0x52a8490: LDR             X8, [X8,#0xC0]
+0x52a8494: LDR             X0, [X8]
+0x52a8498: LDRB            W8, [X0,#0x135]
+0x52a849c: TBNZ            W8, #0, loc_52A84A4
+0x52a84a0: BL              unk_3C503A0
+0x52a84a4: BL              unk_3C3D4C4
+0x52a84a8: LDR             X8, [X20,#0x20]
+0x52a84ac: MOV             X20, X0
+0x52a84b0: LDR             X8, [X8,#0xC0]
+0x52a84b4: LDR             X1, [X8,#8]
+0x52a84b8: BL              System.Collections.Generic.Dictionary_int__object_$$.ctor
+0x52a84bc: STR             X20, [X19,#0x10]
+0x52a84c0: LDP             X20, X19, [SP,#0x20+var_10]
+0x52a84c4: LDR             X30, [SP+0x20+var_20],#0x20
+0x52a84c8: RET

@@ -1,0 +1,12 @@
+0x3e0fb38: fe0f1ff8 str      x30, [sp, #-0x10]!
+0x3e0fb3c: 08804039 ldrb     w8, [x0, #0x20]
+0x3e0fb40: e8000034 cbz      w8, #0x3e0fb5c
+0x3e0fb44: 22000012 and      w2, w1, #1
+0x3e0fb48: 21008052 mov      w1, #1
+0x3e0fb4c: 4dfeff97 bl       #0x3e0f480 // GameModule.SynergyEffectManager$$GetFetterCount
+0x3e0fb50: 1f140071 cmp      w0, #5
+0x3e0fb54: e0d79f1a cset     w0, gt
+0x3e0fb58: 02000014 b        #0x3e0fb60
+0x3e0fb5c: e0031f2a mov      w0, wzr
+0x3e0fb60: fe0741f8 ldr      x30, [sp], #0x10
+0x3e0fb64: c0035fd6 ret      

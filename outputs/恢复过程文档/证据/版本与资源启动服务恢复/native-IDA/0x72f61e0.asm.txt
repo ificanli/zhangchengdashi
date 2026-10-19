@@ -1,0 +1,46 @@
+0x72f61e0: STR             X30, [SP,#var_40]!
+0x72f61e4: STP             X24, X23, [SP,#0x40+var_30]
+0x72f61e8: STP             X22, X21, [SP,#0x40+var_20]
+0x72f61ec: STP             X20, X19, [SP,#0x40+var_10]
+0x72f61f0: ADRP            X23, #byte_900A105@PAGE
+0x72f61f4: ADRP            X24, #off_8AF4A78@PAGE
+0x72f61f8: LDRB            W8, [X23,#byte_900A105@PAGEOFF]
+0x72f61fc: LDR             X24, [X24,#off_8AF4A78@PAGEOFF]; off_8CEC898
+0x72f6200: MOV             X19, X3
+0x72f6204: MOV             X20, X2
+0x72f6208: MOV             X22, X1
+0x72f620c: MOV             X21, X0
+0x72f6210: TBNZ            W8, #0, loc_72F6234
+0x72f6214: ADRP            X0, #off_8AF4A78@PAGE
+0x72f6218: LDR             X0, [X0,#off_8AF4A78@PAGEOFF]; off_8CEC898 ; slot
+0x72f621c: BL              il2cpp_codegen_initialize_runtime_metadata
+0x72f6220: ADRP            X0, #off_8B113C0@PAGE
+0x72f6224: LDR             X0, [X0,#off_8B113C0@PAGEOFF]; qword_8D52E18 ; slot
+0x72f6228: BL              il2cpp_codegen_initialize_runtime_metadata
+0x72f622c: MOV             W8, #1
+0x72f6230: STRB            W8, [X23,#byte_900A105@PAGEOFF]
+0x72f6234: LDR             X0, [X24]; klass
+0x72f6238: LDR             W8, [X0,#0xE0]
+0x72f623c: CBNZ            W8, loc_72F6244
+0x72f6240: BL              il2cpp_codegen_runtime_class_init
+0x72f6244: MOV             X0, XZR
+0x72f6248: BL              GameFramework.ResLoadHelper$$CheckUseRightResLoad
+0x72f624c: CBZ             X22, loc_72F6294
+0x72f6250: ADRP            X23, #off_8B113C0@PAGE
+0x72f6254: LDR             X23, [X23,#off_8B113C0@PAGEOFF]; qword_8D52E18
+0x72f6258: MOV             X0, X22
+0x72f625c: MOV             X1, XZR
+0x72f6260: BL              System.String$$ToLower
+0x72f6264: LDR             X1, [X23]
+0x72f6268: MOV             X2, XZR
+0x72f626c: BL              sub_74FE7A4
+0x72f6270: MOV             X1, X0
+0x72f6274: MOV             X0, X21
+0x72f6278: MOV             X3, X20
+0x72f627c: MOV             X4, X19
+0x72f6280: LDP             X20, X19, [SP,#0x40+var_10]
+0x72f6284: LDP             X22, X21, [SP,#0x40+var_20]
+0x72f6288: LDP             X24, X23, [SP,#0x40+var_30]
+0x72f628c: LDR             X30, [SP+0x40+var_40],#0x40
+0x72f6290: B               GameFramework.Resources.ResourcesModule$$Load
+0x72f6294: BL              il2cpp_codegen_raise_null_reference_exception

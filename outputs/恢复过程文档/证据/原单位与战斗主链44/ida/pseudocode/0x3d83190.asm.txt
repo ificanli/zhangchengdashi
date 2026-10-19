@@ -1,0 +1,25 @@
+0x3d83190: STP             X30, X21, [SP,#var_20]!
+0x3d83194: STP             X20, X19, [SP,#0x20+var_10]
+0x3d83198: ADRP            X20, #byte_8FFD464@PAGE
+0x3d8319c: ADRP            X21, #off_8ACE700@PAGE
+0x3d831a0: LDRB            W8, [X20,#byte_8FFD464@PAGEOFF]
+0x3d831a4: LDR             X21, [X21,#off_8ACE700@PAGEOFF]; qword_8D12058
+0x3d831a8: MOV             X19, X0
+0x3d831ac: TBNZ            W8, #0, loc_3D831C4
+0x3d831b0: ADRP            X0, #off_8ACE700@PAGE
+0x3d831b4: LDR             X0, [X0,#off_8ACE700@PAGEOFF]; qword_8D12058 ; slot
+0x3d831b8: BL              il2cpp_codegen_initialize_runtime_metadata
+0x3d831bc: MOV             W8, #1
+0x3d831c0: STRB            W8, [X20,#byte_8FFD464@PAGEOFF]
+0x3d831c4: LDR             X0, [X21]; method
+0x3d831c8: BL              ToolModule.ManagerBase_object_$$get_Instance
+0x3d831cc: CBZ             X0, loc_3D831F0
+0x3d831d0: LDRB            W1, [X19,#0x20]
+0x3d831d4: MOV             X2, X19
+0x3d831d8: LDP             X20, X19, [SP,#0x20+var_10]
+0x3d831dc: FMOV            S0, #1.0
+0x3d831e0: MOV             W3, #0xFFFFFFFF
+0x3d831e4: MOV             X4, XZR
+0x3d831e8: LDP             X30, X21, [SP+0x20+var_20],#0x20
+0x3d831ec: B               GameModule.BattleGameSceneManager$$GetNearRole
+0x3d831f0: BL              il2cpp_codegen_raise_null_reference_exception

@@ -1,0 +1,1880 @@
+.class public auto ansi beforefieldinit GameFramework.Base.GameStartEntry
+	extends [UnityEngine.CoreModule]UnityEngine.MonoBehaviour
+{
+	.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+		01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 32
+		30 30 30 34 42 44
+	)
+	// Fields
+	.field public bool isShowInitGameLog
+	.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+		01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 34
+		30 30 31 46 36 37
+	)
+	.custom instance void [Il2CppDummyDll]Il2CppDummyDll.FieldOffsetAttribute::.ctor() = (
+		01 00 01 00 53 0e 06 4f 66 66 73 65 74 04 30 78
+		32 30
+	)
+	.custom instance void [UnityEngine.CoreModule]UnityEngine.HeaderAttribute::.ctor(string) = (
+		01 00 24 e6 98 af e5 90 a6 e5 b1 8f e8 94 bd e6
+		8e 89 e6 a1 86 e6 9e b6 e5 90 af e5 8a a8 e6 97
+		b6 e7 9a 84 6c 6f 67 00 00
+	)
+	.field public string AppName
+	.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+		01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 34
+		30 30 31 46 36 38
+	)
+	.custom instance void [Il2CppDummyDll]Il2CppDummyDll.FieldOffsetAttribute::.ctor() = (
+		01 00 01 00 53 0e 06 4f 66 66 73 65 74 04 30 78
+		32 38
+	)
+	.field public string gameCode
+	.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+		01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 34
+		30 30 31 46 36 39
+	)
+	.custom instance void [Il2CppDummyDll]Il2CppDummyDll.FieldOffsetAttribute::.ctor() = (
+		01 00 01 00 53 0e 06 4f 66 66 73 65 74 04 30 78
+		33 30
+	)
+	.custom instance void [UnityEngine.CoreModule]UnityEngine.HeaderAttribute::.ctor(string) = (
+		01 00 33 e7 8e a9 e6 b3 95 e7 bb 84 e4 bb b6 e4
+		bb a3 e7 a0 81 ef bc 8c e9 a3 9e e4 b9 a6 e4 bb
+		bb e5 8a a1 e8 8e b7 e5 8f 96 e5 85 b7 e4 bd 93
+		e7 9a 84 e5 80 bc 00 00
+	)
+	.field private int32 tRJqx_0095
+	.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+		01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 34
+		30 30 31 46 36 41
+	)
+	.custom instance void [Il2CppDummyDll]Il2CppDummyDll.FieldOffsetAttribute::.ctor() = (
+		01 00 01 00 53 0e 06 4f 66 66 73 65 74 04 30 78
+		33 38
+	)
+	.field private bool x_0080_008D_00B1f_0086
+	.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+		01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 34
+		30 30 31 46 36 42
+	)
+	.custom instance void [Il2CppDummyDll]Il2CppDummyDll.FieldOffsetAttribute::.ctor() = (
+		01 00 01 00 53 0e 06 4f 66 66 73 65 74 04 30 78
+		33 43
+	)
+	.field public static bool EnterGame
+	.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+		01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 34
+		30 30 31 46 36 43
+	)
+	.custom instance void [Il2CppDummyDll]Il2CppDummyDll.FieldOffsetAttribute::.ctor() = (
+		01 00 01 00 53 0e 06 4f 66 66 73 65 74 03 30 78 30
+	)
+	.field private valuetype GameFramework.LocalELangLibrary langLibrary
+	.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+		01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 34
+		30 30 31 46 36 44
+	)
+	.custom instance void [Il2CppDummyDll]Il2CppDummyDll.FieldOffsetAttribute::.ctor() = (
+		01 00 01 00 53 0e 06 4f 66 66 73 65 74 04 30 78
+		34 30
+	)
+	.custom instance void [UnityEngine.CoreModule]UnityEngine.HeaderAttribute::.ctor(string) = (
+		01 00 1e 2d 2d 2d 2d 2d 2d 41 50 50 e5 a4 9a e8
+		af ad e8 a8 80 e8 ae be e7 bd ae 2d 2d 2d 2d 2d
+		2d 00 00
+	)
+	.custom instance void [UnityEngine.CoreModule]UnityEngine.SerializeField::.ctor() = (
+		01 00 00 00
+	)
+	.custom instance void GameFramework.EnumFlags::.ctor() = (
+		01 00 00 00
+	)
+	.field private valuetype GameFramework.ELangType appDefaultLangType
+	.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+		01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 34
+		30 30 31 46 36 45
+	)
+	.custom instance void [Il2CppDummyDll]Il2CppDummyDll.FieldOffsetAttribute::.ctor() = (
+		01 00 01 00 53 0e 06 4f 66 66 73 65 74 04 30 78
+		34 34
+	)
+	.custom instance void [UnityEngine.CoreModule]UnityEngine.SerializeField::.ctor() = (
+		01 00 00 00
+	)
+	.field private bool Á_008A_008F_008Bvh
+	.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+		01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 34
+		30 30 31 46 36 46
+	)
+	.custom instance void [Il2CppDummyDll]Il2CppDummyDll.FieldOffsetAttribute::.ctor() = (
+		01 00 01 00 53 0e 06 4f 66 66 73 65 74 04 30 78
+		34 38
+	)
+	.field private bool _00BDm_00B9_008F_0096h
+	.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+		01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 34
+		30 30 31 46 37 30
+	)
+	.custom instance void [Il2CppDummyDll]Il2CppDummyDll.FieldOffsetAttribute::.ctor() = (
+		01 00 01 00 53 0e 06 4f 66 66 73 65 74 04 30 78
+		34 39
+	)
+	.field private bool tÂ_007DµJ_008F
+	.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+		01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 34
+		30 30 31 46 37 31
+	)
+	.custom instance void [Il2CppDummyDll]Il2CppDummyDll.FieldOffsetAttribute::.ctor() = (
+		01 00 01 00 53 0e 06 4f 66 66 73 65 74 04 30 78
+		34 41
+	)
+	.field public bool m_Fastmode
+	.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+		01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 34
+		30 30 31 46 37 32
+	)
+	.custom instance void [Il2CppDummyDll]Il2CppDummyDll.FieldOffsetAttribute::.ctor() = (
+		01 00 01 00 53 0e 06 4f 66 66 73 65 74 04 30 78
+		34 42
+	)
+	.custom instance void [UnityEngine.CoreModule]UnityEngine.HeaderAttribute::.ctor(string) = (
+		01 00 4e e5 bf ab e9 80 9f e6 a8 a1 e5 bc 8f ef
+		bc 9a e5 bc 80 e5 90 af e6 ad a4 e6 a8 a1 e5 bc
+		8f e5 90 8e ef bc 8c e6 95 b0 e6 8d ae e7 b1 bb
+		e5 92 8c e9 80 bb e8 be 91 e7 b1 bb e4 b8 8d e5
+		86 8d e8 87 aa e5 8a a8 e5 88 9d e5 a7 8b e5 8c
+		96 00 00
+	)
+	.field private bool m_AutoSaveData
+	.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+		01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 34
+		30 30 31 46 37 33
+	)
+	.custom instance void [Il2CppDummyDll]Il2CppDummyDll.FieldOffsetAttribute::.ctor() = (
+		01 00 01 00 53 0e 06 4f 66 66 73 65 74 04 30 78
+		34 43
+	)
+	.custom instance void [UnityEngine.CoreModule]UnityEngine.SerializeField::.ctor() = (
+		01 00 00 00
+	)
+	.custom instance void [UnityEngine.CoreModule]UnityEngine.HeaderAttribute::.ctor(string) = (
+		01 00 66 e8 87 aa e5 8a a8 e5 ad 98 e5 82 a8 e6
+		95 b0 e6 8d ae ef bc 9a e5 bc 80 e5 90 af e5 90
+		8e ef bc 8c e6 b8 b8 e6 88 8f e5 88 87 e6 8d a2
+		e5 89 8d e5 90 8e e5 8f b0 e6 97 b6 ef bc 8c e6
+		a1 86 e6 9e b6 e4 bc 9a e8 87 aa e5 8a a8 e8 a7
+		a6 e5 8f 91 e6 89 80 e6 9c 89 e7 9a 84 e6 95 b0
+		e6 8d ae e5 ad 98 e5 82 a8 00 00
+	)
+	.field private class GameFramework.Base.IGameStart _008ANUO_008B_0084
+	.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+		01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 34
+		30 30 31 46 37 34
+	)
+	.custom instance void [Il2CppDummyDll]Il2CppDummyDll.FieldOffsetAttribute::.ctor() = (
+		01 00 01 00 53 0e 06 4f 66 66 73 65 74 04 30 78
+		35 30
+	)
+
+	// Methods
+	.method private hidebysig 
+		instance void ª_008C_0098_00ABV_005E () cil managed 
+	{
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+			01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 36
+			30 30 37 31 37 35
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.AddressAttribute::.ctor() = (
+			01 00 03 00 53 0e 03 52 56 41 09 30 78 37 32 45
+			35 36 39 30 53 0e 06 4f 66 66 73 65 74 09 30 78
+			37 32 45 31 36 39 30 53 0e 02 56 41 09 30 78 37
+			32 45 35 36 39 30
+		)
+		// Method begins at RVA 0x20e8c
+		// Header size: 12
+		// Code size: 187 (0xbb)
+		.maxstack 3
+		.locals init (
+			[0] bool
+		)
+
+		IL_0000: nop
+		IL_0001: ldarg.0
+		IL_0002: ldstr "开始初始化进游戏前的逻辑"
+		IL_0007: call instance void GameFramework.Base.GameStartEntry::_008A_0080M_00ACa_0083(string)
+		IL_000c: nop
+		IL_000d: call bool GameFramework.AppSetting::get_IsGameColletion()
+		IL_0012: stloc.0
+		IL_0013: ldloc.0
+		IL_0014: brfalse.s IL_001d
+
+		IL_0016: ldarg.0
+		IL_0017: call instance void GameFramework.Base.GameStartEntry::_009EªOl_0097F()
+		IL_001c: nop
+
+		IL_001d: ldarg.0
+		IL_001e: ldfld class GameFramework.Base.IGameStart GameFramework.Base.GameStartEntry::_008ANUO_008B_0084
+		IL_0023: callvirt instance void GameFramework.Base.IGameStart::SetLayerCollisionMatrix()
+		IL_0028: nop
+		IL_0029: ldarg.0
+		IL_002a: ldfld class GameFramework.Base.IGameStart GameFramework.Base.GameStartEntry::_008ANUO_008B_0084
+		IL_002f: callvirt instance void GameFramework.Base.IGameStart::MnieGameProjectSetting()
+		IL_0034: nop
+		IL_0035: ldarg.0
+		IL_0036: ldfld class GameFramework.Base.IGameStart GameFramework.Base.GameStartEntry::_008ANUO_008B_0084
+		IL_003b: callvirt instance void GameFramework.Base.IGameStart::RegisterProcedure()
+		IL_0040: nop
+		IL_0041: ldarg.0
+		IL_0042: ldfld class GameFramework.Base.IGameStart GameFramework.Base.GameStartEntry::_008ANUO_008B_0084
+		IL_0047: callvirt instance void GameFramework.Base.IGameStart::RegisterLogicCtr()
+		IL_004c: nop
+		IL_004d: call class GameFramework.AudioManager GameFramework.AudioManager::get_Instance()
+		IL_0052: callvirt instance void GameFramework.AudioManager::InitAudioManager()
+		IL_0057: nop
+		IL_0058: call !!0 GameFramework.GameFrameEntry::GetModule<class GameFramework.MineGameLogicModule>()
+		IL_005d: ldarg.0
+		IL_005e: ldfld bool GameFramework.Base.GameStartEntry::m_Fastmode
+		IL_0063: ldc.i4.0
+		IL_0064: ceq
+		IL_0066: callvirt instance void GameFramework.MineGameLogicModule::InitCtrl(bool)
+		IL_006b: nop
+		IL_006c: ldarg.0
+		IL_006d: ldc.i4.1
+		IL_006e: stfld bool GameFramework.Base.GameStartEntry::x_0080_008D_00B1f_0086
+		IL_0073: ldarg.0
+		IL_0074: ldc.i4.0
+		IL_0075: stfld bool GameFramework.Base.GameStartEntry::tÂ_007DµJ_008F
+		IL_007a: ldarg.0
+		IL_007b: ldstr "开始游戏"
+		IL_0080: call instance void GameFramework.Base.GameStartEntry::_008A_0080M_00ACa_0083(string)
+		IL_0085: nop
+		IL_0086: call void GameFramework.GameFrameEntry::CommonSettings()
+		IL_008b: nop
+		IL_008c: ldsfld class DBTSDK.ReportManager DBTSDK.ReportManager::Instance
+		IL_0091: callvirt instance void DBTSDK.ReportManager::StartMineGame()
+		IL_0096: nop
+		IL_0097: ldstr "ExitGame"
+		IL_009c: ldarg.0
+		IL_009d: ldftn instance void GameFramework.Base.GameStartEntry::_007Ea_00AEºgf(object[])
+		IL_00a3: newobj instance void GameFramework.MsgDispatcher/EventHandler::.ctor(object, native int)
+		IL_00a8: call void GameFramework.MsgDispatcher::AddEventListener(string, class GameFramework.MsgDispatcher/EventHandler)
+		IL_00ad: nop
+		IL_00ae: ldarg.0
+		IL_00af: ldfld class GameFramework.Base.IGameStart GameFramework.Base.GameStartEntry::_008ANUO_008B_0084
+		IL_00b4: callvirt instance void GameFramework.Base.IGameStart::StartGame()
+		IL_00b9: nop
+		IL_00ba: ret
+	} // end of method GameStartEntry::ª_008C_0098_00ABV_005E
+
+	.method private hidebysig 
+		instance void OnApplicationFocus (
+			bool _0084_0060ÁjW_00BB
+		) cil managed 
+	{
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+			01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 36
+			30 30 37 31 37 36
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.AddressAttribute::.ctor() = (
+			01 00 03 00 53 0e 03 52 56 41 09 30 78 37 32 45
+			35 41 46 38 53 0e 06 4f 66 66 73 65 74 09 30 78
+			37 32 45 31 41 46 38 53 0e 02 56 41 09 30 78 37
+			32 45 35 41 46 38
+		)
+		// Method begins at RVA 0x2092
+		// Header size: 1
+		// Code size: 2 (0x2)
+		.maxstack 8
+
+		IL_0000: nop
+		IL_0001: ret
+	} // end of method GameStartEntry::OnApplicationFocus
+
+	.method private hidebysig 
+		instance void _008A_0080M_00ACa_0083 (
+			string iD_00B7m_0094À
+		) cil managed 
+	{
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+			01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 36
+			30 30 37 31 37 37
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.AddressAttribute::.ctor() = (
+			01 00 03 00 53 0e 03 52 56 41 09 30 78 37 32 45
+			35 38 46 34 53 0e 06 4f 66 66 73 65 74 09 30 78
+			37 32 45 31 38 46 34 53 0e 02 56 41 09 30 78 37
+			32 45 35 38 46 34
+		)
+		// Method begins at RVA 0x20f54
+		// Header size: 12
+		// Code size: 28 (0x1c)
+		.maxstack 4
+		.locals init (
+			[0] bool
+		)
+
+		IL_0000: nop
+		IL_0001: ldarg.0
+		IL_0002: ldfld bool GameFramework.Base.GameStartEntry::isShowInitGameLog
+		IL_0007: stloc.0
+		IL_0008: ldloc.0
+		IL_0009: brfalse.s IL_001b
+
+		IL_000b: ldc.i4.1
+		IL_000c: newarr [mscorlib]System.Object
+		IL_0011: dup
+		IL_0012: ldc.i4.0
+		IL_0013: ldarg.1
+		IL_0014: stelem.ref
+		IL_0015: call void GameFramework.CLog::Log(object[])
+		IL_001a: nop
+
+		IL_001b: ret
+	} // end of method GameStartEntry::_008A_0080M_00ACa_0083
+
+	.method private hidebysig 
+		instance void q_0084W_0095C_008A (
+			class YooAsset.AllAssetsOperationHandle _00A7_00BDt_0091_00B3_00AE
+		) cil managed 
+	{
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+			01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 36
+			30 30 37 31 37 38
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.AddressAttribute::.ctor() = (
+			01 00 03 00 53 0e 03 52 56 41 09 30 78 37 32 45
+			35 44 35 34 53 0e 06 4f 66 66 73 65 74 09 30 78
+			37 32 45 31 44 35 34 53 0e 02 56 41 09 30 78 37
+			32 45 35 44 35 34
+		)
+		// Method begins at RVA 0x2092
+		// Header size: 1
+		// Code size: 2 (0x2)
+		.maxstack 8
+
+		IL_0000: nop
+		IL_0001: ret
+	} // end of method GameStartEntry::q_0084W_0095C_008A
+
+	.method private hidebysig 
+		instance void vj_00B7_0098_008A_007F () cil managed 
+	{
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+			01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 36
+			30 30 37 31 37 39
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.AddressAttribute::.ctor() = (
+			01 00 03 00 53 0e 03 52 56 41 09 30 78 37 32 45
+			35 44 44 30 53 0e 06 4f 66 66 73 65 74 09 30 78
+			37 32 45 31 44 44 30 53 0e 02 56 41 09 30 78 37
+			32 45 35 44 44 30
+		)
+		// Method begins at RVA 0x20f7c
+		// Header size: 12
+		// Code size: 262 (0x106)
+		.maxstack 7
+		.locals init (
+			[0] bool,
+			[1] class GameFramework.GameFrameModule,
+			[2] bool,
+			[3] valuetype GameFramework.TeamType,
+			[4] valuetype YooAsset.EPlayMode,
+			[5] bool
+		)
+
+		IL_0000: nop
+		IL_0001: ldarg.0
+		IL_0002: ldstr "VersionMondule初始化完成"
+		IL_0007: call instance void GameFramework.Base.GameStartEntry::_008A_0080M_00ACa_0083(string)
+		IL_000c: nop
+		IL_000d: call bool GameFramework.AppSetting::get_UseNewRes()
+		IL_0012: stloc.0
+		IL_0013: ldloc.0
+		IL_0014: brfalse IL_00e9
+
+		IL_0019: nop
+		IL_001a: call bool GameFramework.AppSetting::get_IsKeWan()
+		IL_001f: call class GameFramework.GameFrameModule GameFramework.NewResLoadHelper::GetNewResModule(bool)
+		IL_0024: stloc.1
+		IL_0025: call bool GameFramework.AppSetting::get_IsXYXEnvironment()
+		IL_002a: brfalse.s IL_0036
+
+		IL_002c: call bool GameFramework.AppSetting::get_IsXYXNativeMode()
+		IL_0031: ldc.i4.0
+		IL_0032: ceq
+		IL_0034: br.s IL_0037
+
+		IL_0036: ldc.i4.0
+
+		IL_0037: stloc.2
+		IL_0038: ldarg.0
+		IL_0039: ldfld class GameFramework.Base.IGameStart GameFramework.Base.GameStartEntry::_008ANUO_008B_0084
+		IL_003e: callvirt instance valuetype GameFramework.TeamType GameFramework.Base.IGameStart::GetNewResLoadCDNTeamType()
+		IL_0043: stloc.3
+		IL_0044: ldloc.2
+		IL_0045: stloc.s 5
+		IL_0047: ldloc.s 5
+		IL_0049: brfalse.s IL_008a
+
+		IL_004b: nop
+		IL_004c: ldc.i4.4
+		IL_004d: stloc.s 4
+		IL_004f: ldc.i4.1
+		IL_0050: newarr [mscorlib]System.Object
+		IL_0055: dup
+		IL_0056: ldc.i4.0
+		IL_0057: ldstr "cdnTeamTypeXYX:"
+		IL_005c: ldloca.s 3
+		IL_005e: constrained. GameFramework.TeamType
+		IL_0064: callvirt instance string [mscorlib]System.Object::ToString()
+		IL_0069: ldstr " appPlayMode:"
+		IL_006e: ldloca.s 4
+		IL_0070: constrained. YooAsset.EPlayMode
+		IL_0076: callvirt instance string [mscorlib]System.Object::ToString()
+		IL_007b: call string [mscorlib]System.String::Concat(string, string, string, string)
+		IL_0080: stelem.ref
+		IL_0081: call void GameFramework.CLog::Log(object[])
+		IL_0086: nop
+		IL_0087: nop
+		IL_0088: br.s IL_00d1
+
+		IL_008a: nop
+		IL_008b: ldarg.0
+		IL_008c: ldfld class GameFramework.Base.IGameStart GameFramework.Base.GameStartEntry::_008ANUO_008B_0084
+		IL_0091: callvirt instance valuetype YooAsset.EPlayMode GameFramework.Base.IGameStart::GetNewResLoadAppPlayMode()
+		IL_0096: stloc.s 4
+		IL_0098: ldc.i4.1
+		IL_0099: newarr [mscorlib]System.Object
+		IL_009e: dup
+		IL_009f: ldc.i4.0
+		IL_00a0: ldstr "cdnTeamType:"
+		IL_00a5: ldloca.s 3
+		IL_00a7: constrained. GameFramework.TeamType
+		IL_00ad: callvirt instance string [mscorlib]System.Object::ToString()
+		IL_00b2: ldstr " appPlayMode:"
+		IL_00b7: ldloca.s 4
+		IL_00b9: constrained. YooAsset.EPlayMode
+		IL_00bf: callvirt instance string [mscorlib]System.Object::ToString()
+		IL_00c4: call string [mscorlib]System.String::Concat(string, string, string, string)
+		IL_00c9: stelem.ref
+		IL_00ca: call void GameFramework.CLog::Log(object[])
+		IL_00cf: nop
+		IL_00d0: nop
+
+		IL_00d1: ldloc.1
+		IL_00d2: ldarg.0
+		IL_00d3: ldftn instance void GameFramework.Base.GameStartEntry::fÂ_00A7_0096_005D_009C()
+		IL_00d9: newobj instance void [mscorlib]System.Action::.ctor(object, native int)
+		IL_00de: ldloc.s 4
+		IL_00e0: ldloc.3
+		IL_00e1: call void GameFramework.NewResLoadHelper::Initialize(class GameFramework.GameFrameModule, class [mscorlib]System.Action, valuetype YooAsset.EPlayMode, valuetype GameFramework.TeamType)
+		IL_00e6: nop
+		IL_00e7: br.s IL_0105
+
+		IL_00e9: call !!0 GameFramework.GameFrameEntry::GetModule<class GameFramework.AssetbundleModule>()
+		IL_00ee: ldarg.0
+		IL_00ef: ldftn instance void GameFramework.Base.GameStartEntry::fÂ_00A7_0096_005D_009C()
+		IL_00f5: newobj instance void [mscorlib]System.Action::.ctor(object, native int)
+		IL_00fa: call !!0[] [mscorlib]System.Array::Empty<object>()
+		IL_00ff: call void GameFramework.GameFrameEntry::Initialize(class GameFramework.GameFrameModule, class [mscorlib]System.Action, object[])
+		IL_0104: nop
+
+		IL_0105: ret
+	} // end of method GameStartEntry::vj_00B7_0098_008A_007F
+
+	.method private hidebysig 
+		instance void _00BC_008D_0087H_00A6_00B6 () cil managed 
+	{
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+			01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 36
+			30 30 37 31 37 41
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.AddressAttribute::.ctor() = (
+			01 00 03 00 53 0e 03 52 56 41 09 30 78 37 32 45
+			36 33 32 43 53 0e 06 4f 66 66 73 65 74 09 30 78
+			37 32 45 32 33 32 43 53 0e 02 56 41 09 30 78 37
+			32 45 36 33 32 43
+		)
+		// Method begins at RVA 0x2092
+		// Header size: 1
+		// Code size: 2 (0x2)
+		.maxstack 8
+
+		IL_0000: nop
+		IL_0001: ret
+	} // end of method GameStartEntry::_00BC_008D_0087H_00A6_00B6
+
+	.method private hidebysig 
+		instance void m_00AFj_007B_0084k (
+			class YooAsset.AllAssetsOperationHandle _00A7_00BDt_0091_00B3_00AE
+		) cil managed 
+	{
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+			01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 36
+			30 30 37 31 37 42
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.AddressAttribute::.ctor() = (
+			01 00 03 00 53 0e 03 52 56 41 09 30 78 37 32 45
+			36 34 31 30 53 0e 06 4f 66 66 73 65 74 09 30 78
+			37 32 45 32 34 31 30 53 0e 02 56 41 09 30 78 37
+			32 45 36 34 31 30
+		)
+		// Method begins at RVA 0x2092
+		// Header size: 1
+		// Code size: 2 (0x2)
+		.maxstack 8
+
+		IL_0000: nop
+		IL_0001: ret
+	} // end of method GameStartEntry::m_00AFj_007B_0084k
+
+	.method private hidebysig 
+		instance void _0091GX_0094zA () cil managed 
+	{
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+			01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 36
+			30 30 37 31 37 43
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.AddressAttribute::.ctor() = (
+			01 00 03 00 53 0e 03 52 56 41 09 30 78 37 32 45
+			36 34 38 43 53 0e 06 4f 66 66 73 65 74 09 30 78
+			37 32 45 32 34 38 43 53 0e 02 56 41 09 30 78 37
+			32 45 36 34 38 43
+		)
+		// Method begins at RVA 0x2092
+		// Header size: 1
+		// Code size: 2 (0x2)
+		.maxstack 8
+
+		IL_0000: nop
+		IL_0001: ret
+	} // end of method GameStartEntry::_0091GX_0094zA
+
+	.method private hidebysig 
+		instance void ÂN_007E_0080_00BC_0087 () cil managed 
+	{
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+			01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 36
+			30 30 37 31 37 44
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.AddressAttribute::.ctor() = (
+			01 00 03 00 53 0e 03 52 56 41 09 30 78 37 32 45
+			36 35 37 30 53 0e 06 4f 66 66 73 65 74 09 30 78
+			37 32 45 32 35 37 30 53 0e 02 56 41 09 30 78 37
+			32 45 36 35 37 30
+		)
+		// Method begins at RVA 0x2092
+		// Header size: 1
+		// Code size: 2 (0x2)
+		.maxstack 8
+
+		IL_0000: nop
+		IL_0001: ret
+	} // end of method GameStartEntry::ÂN_007E_0080_00BC_0087
+
+	.method private hidebysig 
+		instance void g_0095_00AC_00B3_009FB (
+			string iD_00B7m_0094À
+		) cil managed 
+	{
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+			01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 36
+			30 30 37 31 37 45
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.AddressAttribute::.ctor() = (
+			01 00 03 00 53 0e 03 52 56 41 09 30 78 37 32 45
+			36 36 41 38 53 0e 06 4f 66 66 73 65 74 09 30 78
+			37 32 45 32 36 41 38 53 0e 02 56 41 09 30 78 37
+			32 45 36 36 41 38
+		)
+		// Method begins at RVA 0x2092
+		// Header size: 1
+		// Code size: 2 (0x2)
+		.maxstack 8
+
+		IL_0000: nop
+		IL_0001: ret
+	} // end of method GameStartEntry::g_0095_00AC_00B3_009FB
+
+	.method private hidebysig 
+		instance void _0094_0087_0095_00A1_0089_00A9 (
+			string iD_00B7m_0094À
+		) cil managed 
+	{
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+			01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 36
+			30 30 37 31 37 46
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.AddressAttribute::.ctor() = (
+			01 00 03 00 53 0e 03 52 56 41 09 30 78 37 32 45
+			36 37 37 43 53 0e 06 4f 66 66 73 65 74 09 30 78
+			37 32 45 32 37 37 43 53 0e 02 56 41 09 30 78 37
+			32 45 36 37 37 43
+		)
+		// Method begins at RVA 0x2092
+		// Header size: 1
+		// Code size: 2 (0x2)
+		.maxstack 8
+
+		IL_0000: nop
+		IL_0001: ret
+	} // end of method GameStartEntry::_0094_0087_0095_00A1_0089_00A9
+
+	.method assembly hidebysig 
+		instance void whJq_00B8_00B9 () cil managed 
+	{
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+			01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 36
+			30 30 37 31 38 30
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.AddressAttribute::.ctor() = (
+			01 00 03 00 53 0e 03 52 56 41 09 30 78 37 32 45
+			36 38 34 43 53 0e 06 4f 66 66 73 65 74 09 30 78
+			37 32 45 32 38 34 43 53 0e 02 56 41 09 30 78 37
+			32 45 36 38 34 43
+		)
+		// Method begins at RVA 0x2108e
+		// Header size: 1
+		// Code size: 16 (0x10)
+		.maxstack 8
+
+		IL_0000: nop
+		IL_0001: ldarg.0
+		IL_0002: ldc.i4.1
+		IL_0003: stfld bool GameFramework.Base.GameStartEntry::Á_008A_008F_008Bvh
+		IL_0008: ldarg.0
+		IL_0009: call instance void GameFramework.Base.GameStartEntry::ª_008C_0098_00ABV_005E()
+		IL_000e: nop
+		IL_000f: ret
+	} // end of method GameStartEntry::whJq_00B8_00B9
+
+	.method private hidebysig 
+		instance void _00A2KT_007E_00A6A (
+			string iD_00B7m_0094À
+		) cil managed 
+	{
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+			01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 36
+			30 30 37 31 38 31
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.AddressAttribute::.ctor() = (
+			01 00 03 00 53 0e 03 52 56 41 09 30 78 37 32 45
+			36 38 35 38 53 0e 06 4f 66 66 73 65 74 09 30 78
+			37 32 45 32 38 35 38 53 0e 02 56 41 09 30 78 37
+			32 45 36 38 35 38
+		)
+		// Method begins at RVA 0x2092
+		// Header size: 1
+		// Code size: 2 (0x2)
+		.maxstack 8
+
+		IL_0000: nop
+		IL_0001: ret
+	} // end of method GameStartEntry::_00A2KT_007E_00A6A
+
+	.method private hidebysig 
+		instance void fÂ_00A7_0096_005D_009C () cil managed 
+	{
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+			01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 36
+			30 30 37 31 38 32
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.AddressAttribute::.ctor() = (
+			01 00 03 00 53 0e 03 52 56 41 09 30 78 37 32 45
+			36 39 32 43 53 0e 06 4f 66 66 73 65 74 09 30 78
+			37 32 45 32 39 32 43 53 0e 02 56 41 09 30 78 37
+			32 45 36 39 32 43
+		)
+		// Method begins at RVA 0x210a0
+		// Header size: 12
+		// Code size: 99 (0x63)
+		.maxstack 3
+		.locals init (
+			[0] bool
+		)
+
+		IL_0000: nop
+		IL_0001: ldarg.0
+		IL_0002: ldfld class GameFramework.Base.IGameStart GameFramework.Base.GameStartEntry::_008ANUO_008B_0084
+		IL_0007: dup
+		IL_0008: brtrue.s IL_000d
+
+		IL_000a: pop
+		IL_000b: br.s IL_0013
+
+		IL_000d: callvirt instance void GameFramework.Base.IGameStart::AfterGameFrameworkInit()
+		IL_0012: nop
+
+		IL_0013: ldarg.0
+		IL_0014: ldstr "资源模块初始化完成"
+		IL_0019: call instance void GameFramework.Base.GameStartEntry::_008A_0080M_00ACa_0083(string)
+		IL_001e: nop
+		IL_001f: call bool GameFramework.AppSetting::get_UseNewRes()
+		IL_0024: stloc.0
+		IL_0025: ldloc.0
+		IL_0026: brfalse.s IL_0046
+
+		IL_0028: call !!0 GameFramework.GameFrameEntry::GetModule<class GameFramework.UIModule>()
+		IL_002d: ldarg.0
+		IL_002e: ldftn instance void GameFramework.Base.GameStartEntry::_0082_00BBf_0090_00B8_005D()
+		IL_0034: newobj instance void [mscorlib]System.Action::.ctor(object, native int)
+		IL_0039: call !!0[] [mscorlib]System.Array::Empty<object>()
+		IL_003e: call void GameFramework.GameFrameEntry::Initialize(class GameFramework.GameFrameModule, class [mscorlib]System.Action, object[])
+		IL_0043: nop
+		IL_0044: br.s IL_0062
+
+		IL_0046: call !!0 GameFramework.GameFrameEntry::GetModule<class GameFramework.Resources.ResourcesModule>()
+		IL_004b: ldarg.0
+		IL_004c: ldftn instance void GameFramework.Base.GameStartEntry::_009F_008Br_00B7Mu()
+		IL_0052: newobj instance void [mscorlib]System.Action::.ctor(object, native int)
+		IL_0057: call !!0[] [mscorlib]System.Array::Empty<object>()
+		IL_005c: call void GameFramework.GameFrameEntry::Initialize(class GameFramework.GameFrameModule, class [mscorlib]System.Action, object[])
+		IL_0061: nop
+
+		IL_0062: ret
+	} // end of method GameStartEntry::fÂ_00A7_0096_005D_009C
+
+	.method private hidebysig 
+		instance void O_00A9_00B3_00A7_00A0i () cil managed 
+	{
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+			01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 36
+			30 30 37 31 38 33
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.AddressAttribute::.ctor() = (
+			01 00 03 00 53 0e 03 52 56 41 09 30 78 37 32 45
+			36 42 34 34 53 0e 06 4f 66 66 73 65 74 09 30 78
+			37 32 45 32 42 34 34 53 0e 02 56 41 09 30 78 37
+			32 45 36 42 34 34
+		)
+		// Method begins at RVA 0x2092
+		// Header size: 1
+		// Code size: 2 (0x2)
+		.maxstack 8
+
+		IL_0000: nop
+		IL_0001: ret
+	} // end of method GameStartEntry::O_00A9_00B3_00A7_00A0i
+
+	.method private hidebysig 
+		instance void v_00A6n_00BD_00A7_00BF () cil managed 
+	{
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+			01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 36
+			30 30 37 31 38 34
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.AddressAttribute::.ctor() = (
+			01 00 03 00 53 0e 03 52 56 41 09 30 78 37 32 45
+			36 44 38 30 53 0e 06 4f 66 66 73 65 74 09 30 78
+			37 32 45 32 44 38 30 53 0e 02 56 41 09 30 78 37
+			32 45 36 44 38 30
+		)
+		// Method begins at RVA 0x2092
+		// Header size: 1
+		// Code size: 2 (0x2)
+		.maxstack 8
+
+		IL_0000: nop
+		IL_0001: ret
+	} // end of method GameStartEntry::v_00A6n_00BD_00A7_00BF
+
+	.method private hidebysig 
+		instance void J_009DK_0099M_00AC () cil managed 
+	{
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+			01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 36
+			30 30 37 31 38 35
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.AddressAttribute::.ctor() = (
+			01 00 03 00 53 0e 03 52 56 41 09 30 78 37 32 45
+			36 46 42 43 53 0e 06 4f 66 66 73 65 74 09 30 78
+			37 32 45 32 46 42 43 53 0e 02 56 41 09 30 78 37
+			32 45 36 46 42 43
+		)
+		// Method begins at RVA 0x21110
+		// Header size: 12
+		// Code size: 184 (0xb8)
+		.maxstack 3
+		.locals init (
+			[0] bool,
+			[1] bool,
+			[2] bool,
+			[3] bool
+		)
+
+		IL_0000: nop
+		IL_0001: call void GameFramework.GameFrameEntry::Start()
+		IL_0006: nop
+		IL_0007: ldarg.0
+		IL_0008: ldstr "核心模块初始化完成"
+		IL_000d: call instance void GameFramework.Base.GameStartEntry::_008A_0080M_00ACa_0083(string)
+		IL_0012: nop
+		IL_0013: call bool GameFramework.GlobalData::get_IsReleaseVersion()
+		IL_0018: brfalse.s IL_0026
+
+		IL_001a: ldsfld class DBTSDK.SDKToolManager DBTSDK.SDKToolManager::Instance
+		IL_001f: callvirt instance bool DBTSDK.SDKToolManager::IsSupportLogStatic()
+		IL_0024: br.s IL_0027
+
+		IL_0026: ldc.i4.1
+
+		IL_0027: stloc.0
+		IL_0028: ldloc.0
+		IL_0029: call void GameFramework.CLog::SetIsShowLog(bool)
+		IL_002e: nop
+		IL_002f: call bool GameFramework.GlobalData::get_IsReleaseVersion()
+		IL_0034: stloc.1
+		IL_0035: ldloc.1
+		IL_0036: brfalse.s IL_005e
+
+		IL_0038: nop
+		IL_0039: ldloc.0
+		IL_003a: stloc.2
+		IL_003b: ldloc.2
+		IL_003c: brfalse.s IL_005b
+
+		IL_003e: nop
+		IL_003f: ldsfld class DBTSDK.SDKToolManager DBTSDK.SDKToolManager::Instance
+		IL_0044: ldstr "警告：正式包开启了日志"
+		IL_0049: callvirt instance void DBTSDK.SDKToolManager::ShowToast(string)
+		IL_004e: nop
+		IL_004f: ldsfld class DBTSDK.ReportManager DBTSDK.ReportManager::Instance
+		IL_0054: callvirt instance void DBTSDK.ReportManager::ReportGMLogOpen()
+		IL_0059: nop
+		IL_005a: nop
+
+		IL_005b: nop
+		IL_005c: br.s IL_0077
+
+		IL_005e: call bool GameFramework.NewResLoadHelper::GetIsDeepObf()
+		IL_0063: stloc.3
+		IL_0064: ldloc.3
+		IL_0065: brfalse.s IL_0077
+
+		IL_0067: ldsfld class DBTSDK.SDKToolManager DBTSDK.SDKToolManager::Instance
+		IL_006c: ldstr "警告：当前测试包开启了深度混淆，请注意验证数据存储"
+		IL_0071: callvirt instance void DBTSDK.SDKToolManager::ShowToast(string)
+		IL_0076: nop
+
+		IL_0077: call class GamePath GamePath::get_Instance()
+		IL_007c: callvirt instance void GamePath::FindMineGamePath()
+		IL_0081: nop
+		IL_0082: ldarg.0
+		IL_0083: ldc.i4.1
+		IL_0084: stfld bool GameFramework.Base.GameStartEntry::tÂ_007DµJ_008F
+		IL_0089: call !!0 GameFramework.GameFrameEntry::GetModule<class GameFramework.LangModule>()
+		IL_008e: ldarg.0
+		IL_008f: ldfld valuetype GameFramework.LocalELangLibrary GameFramework.Base.GameStartEntry::langLibrary
+		IL_0094: ldarg.0
+		IL_0095: ldfld valuetype GameFramework.ELangType GameFramework.Base.GameStartEntry::appDefaultLangType
+		IL_009a: callvirt instance void GameFramework.LangModule::SetLocalLangLibrary(valuetype GameFramework.LocalELangLibrary, valuetype GameFramework.ELangType)
+		IL_009f: nop
+		IL_00a0: ldstr "GF_InitFinish"
+		IL_00a5: call void GameFramework.MsgDispatcher::SendMessage(string)
+		IL_00aa: nop
+		IL_00ab: ldarg.0
+		IL_00ac: ldfld class GameFramework.Base.IGameStart GameFramework.Base.GameStartEntry::_008ANUO_008B_0084
+		IL_00b1: callvirt instance void GameFramework.Base.IGameStart::InitPatchManager()
+		IL_00b6: nop
+		IL_00b7: ret
+	} // end of method GameStartEntry::J_009DK_0099M_00AC
+
+	.method private hidebysig 
+		instance void r_00A9_008CeS_00AE (
+			class YooAsset.AllAssetsOperationHandle _00A7_00BDt_0091_00B3_00AE
+		) cil managed 
+	{
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+			01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 36
+			30 30 37 31 38 36
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.AddressAttribute::.ctor() = (
+			01 00 03 00 53 0e 03 52 56 41 09 30 78 37 32 45
+			37 32 32 43 53 0e 06 4f 66 66 73 65 74 09 30 78
+			37 32 45 33 32 32 43 53 0e 02 56 41 09 30 78 37
+			32 45 37 32 32 43
+		)
+		// Method begins at RVA 0x2092
+		// Header size: 1
+		// Code size: 2 (0x2)
+		.maxstack 8
+
+		IL_0000: nop
+		IL_0001: ret
+	} // end of method GameStartEntry::r_00A9_008CeS_00AE
+
+	.method private hidebysig 
+		instance void ÁH_00B7s_007Bh () cil managed 
+	{
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+			01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 36
+			30 30 37 31 38 37
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.AddressAttribute::.ctor() = (
+			01 00 03 00 53 0e 03 52 56 41 09 30 78 37 32 45
+			37 32 41 38 53 0e 06 4f 66 66 73 65 74 09 30 78
+			37 32 45 33 32 41 38 53 0e 02 56 41 09 30 78 37
+			32 45 37 32 41 38
+		)
+		// Method begins at RVA 0x2092
+		// Header size: 1
+		// Code size: 2 (0x2)
+		.maxstack 8
+
+		IL_0000: nop
+		IL_0001: ret
+	} // end of method GameStartEntry::ÁH_00B7s_007Bh
+
+	.method private hidebysig 
+		instance void OnApplicationQuit () cil managed 
+	{
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+			01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 36
+			30 30 37 31 38 38
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.AddressAttribute::.ctor() = (
+			01 00 03 00 53 0e 03 52 56 41 09 30 78 37 32 45
+			37 35 31 34 53 0e 06 4f 66 66 73 65 74 09 30 78
+			37 32 45 33 35 31 34 53 0e 02 56 41 09 30 78 37
+			32 45 37 35 31 34
+		)
+		// Method begins at RVA 0x2092
+		// Header size: 1
+		// Code size: 2 (0x2)
+		.maxstack 8
+
+		IL_0000: nop
+		IL_0001: ret
+	} // end of method GameStartEntry::OnApplicationQuit
+
+	.method private hidebysig 
+		instance void Update () cil managed 
+	{
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+			01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 36
+			30 30 37 31 38 39
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.AddressAttribute::.ctor() = (
+			01 00 03 00 53 0e 03 52 56 41 09 30 78 37 32 45
+			37 35 41 30 53 0e 06 4f 66 66 73 65 74 09 30 78
+			37 32 45 33 35 41 30 53 0e 02 56 41 09 30 78 37
+			32 45 37 35 41 30
+		)
+		// Method begins at RVA 0x211d4
+		// Header size: 12
+		// Code size: 66 (0x42)
+		.maxstack 2
+		.locals init (
+			[0] bool,
+			[1] bool,
+			[2] bool
+		)
+
+		IL_0000: nop
+		IL_0001: ldarg.0
+		IL_0002: ldfld bool GameFramework.Base.GameStartEntry::_00BDm_00B9_008F_0096h
+		IL_0007: stloc.0
+		IL_0008: ldloc.0
+		IL_0009: brfalse.s IL_000d
+
+		IL_000b: br.s IL_0041
+
+		IL_000d: ldarg.0
+		IL_000e: ldfld bool GameFramework.Base.GameStartEntry::tÂ_007DµJ_008F
+		IL_0013: stloc.1
+		IL_0014: ldloc.1
+		IL_0015: brfalse.s IL_0027
+
+		IL_0017: call float32 [UnityEngine.CoreModule]UnityEngine.Time::get_deltaTime()
+		IL_001c: call float32 [UnityEngine.CoreModule]UnityEngine.Time::get_unscaledDeltaTime()
+		IL_0021: call void GameFramework.GameFrameEntry::ResourcesModuleUpdate(float32, float32)
+		IL_0026: nop
+
+		IL_0027: ldarg.0
+		IL_0028: ldfld bool GameFramework.Base.GameStartEntry::x_0080_008D_00B1f_0086
+		IL_002d: stloc.2
+		IL_002e: ldloc.2
+		IL_002f: brfalse.s IL_0041
+
+		IL_0031: call float32 [UnityEngine.CoreModule]UnityEngine.Time::get_deltaTime()
+		IL_0036: call float32 [UnityEngine.CoreModule]UnityEngine.Time::get_unscaledDeltaTime()
+		IL_003b: call void GameFramework.GameFrameEntry::Update(float32, float32)
+		IL_0040: nop
+
+		IL_0041: ret
+	} // end of method GameStartEntry::Update
+
+	.method private hidebysig 
+		instance void _009CTSB_00AFv (
+			class GameFramework.Resources.ResourcesInfo _0088_00AB_0084E_0082F
+		) cil managed 
+	{
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+			01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 36
+			30 30 37 31 38 41
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.AddressAttribute::.ctor() = (
+			01 00 03 00 53 0e 03 52 56 41 09 30 78 37 32 45
+			37 36 38 34 53 0e 06 4f 66 66 73 65 74 09 30 78
+			37 32 45 33 36 38 34 53 0e 02 56 41 09 30 78 37
+			32 45 37 36 38 34
+		)
+		// Method begins at RVA 0x2092
+		// Header size: 1
+		// Code size: 2 (0x2)
+		.maxstack 8
+
+		IL_0000: nop
+		IL_0001: ret
+	} // end of method GameStartEntry::_009CTSB_00AFv
+
+	.method private hidebysig 
+		instance void m_00A4_008Dc_00A6_00B9 () cil managed 
+	{
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+			01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 36
+			30 30 37 31 38 42
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.AddressAttribute::.ctor() = (
+			01 00 03 00 53 0e 03 52 56 41 09 30 78 37 32 45
+			37 36 46 34 53 0e 06 4f 66 66 73 65 74 09 30 78
+			37 32 45 33 36 46 34 53 0e 02 56 41 09 30 78 37
+			32 45 37 36 46 34
+		)
+		// Method begins at RVA 0x2092
+		// Header size: 1
+		// Code size: 2 (0x2)
+		.maxstack 8
+
+		IL_0000: nop
+		IL_0001: ret
+	} // end of method GameStartEntry::m_00A4_008Dc_00A6_00B9
+
+	.method private hidebysig 
+		instance void _00BBF_0090T_00A2_0092 () cil managed 
+	{
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+			01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 36
+			30 30 37 31 38 43
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.AddressAttribute::.ctor() = (
+			01 00 03 00 53 0e 03 52 56 41 09 30 78 37 32 45
+			37 37 44 38 53 0e 06 4f 66 66 73 65 74 09 30 78
+			37 32 45 33 37 44 38 53 0e 02 56 41 09 30 78 37
+			32 45 37 37 44 38
+		)
+		// Method begins at RVA 0x2092
+		// Header size: 1
+		// Code size: 2 (0x2)
+		.maxstack 8
+
+		IL_0000: nop
+		IL_0001: ret
+	} // end of method GameStartEntry::_00BBF_0090T_00A2_0092
+
+	.method private hidebysig 
+		instance void Á_0060_0090_00A3aM () cil managed 
+	{
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+			01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 36
+			30 30 37 31 38 44
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.AddressAttribute::.ctor() = (
+			01 00 03 00 53 0e 03 52 56 41 09 30 78 37 32 45
+			37 41 33 34 53 0e 06 4f 66 66 73 65 74 09 30 78
+			37 32 45 33 41 33 34 53 0e 02 56 41 09 30 78 37
+			32 45 37 41 33 34
+		)
+		// Method begins at RVA 0x2092
+		// Header size: 1
+		// Code size: 2 (0x2)
+		.maxstack 8
+
+		IL_0000: nop
+		IL_0001: ret
+	} // end of method GameStartEntry::Á_0060_0090_00A3aM
+
+	.method private hidebysig 
+		instance void _007Ea_00AEºgf (
+			object[] h_00A6_00BB_00B2_0089w
+		) cil managed 
+	{
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+			01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 36
+			30 30 37 31 38 45
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.AddressAttribute::.ctor() = (
+			01 00 03 00 53 0e 03 52 56 41 09 30 78 37 32 45
+			37 45 41 38 53 0e 06 4f 66 66 73 65 74 09 30 78
+			37 32 45 33 45 41 38 53 0e 02 56 41 09 30 78 37
+			32 45 37 45 41 38
+		)
+		// Method begins at RVA 0x2092
+		// Header size: 1
+		// Code size: 2 (0x2)
+		.maxstack 8
+
+		IL_0000: nop
+		IL_0001: ret
+	} // end of method GameStartEntry::_007Ea_00AEºgf
+
+	.method private hidebysig 
+		instance void _008B_00A7_0099YW_0091 (
+			class GameFramework.Resources.ResourcesInfo _0088_00AB_0084E_0082F
+		) cil managed 
+	{
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+			01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 36
+			30 30 37 31 38 46
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.AddressAttribute::.ctor() = (
+			01 00 03 00 53 0e 03 52 56 41 09 30 78 37 32 45
+			37 46 46 34 53 0e 06 4f 66 66 73 65 74 09 30 78
+			37 32 45 33 46 46 34 53 0e 02 56 41 09 30 78 37
+			32 45 37 46 46 34
+		)
+		// Method begins at RVA 0x21222
+		// Header size: 1
+		// Code size: 27 (0x1b)
+		.maxstack 8
+
+		IL_0000: nop
+		IL_0001: ldarg.0
+		IL_0002: ldstr "ConfigLoadOver"
+		IL_0007: call instance void GameFramework.Base.GameStartEntry::_008A_0080M_00ACa_0083(string)
+		IL_000c: nop
+		IL_000d: ldarg.0
+		IL_000e: ldfld class GameFramework.Base.IGameStart GameFramework.Base.GameStartEntry::_008ANUO_008B_0084
+		IL_0013: ldarg.1
+		IL_0014: callvirt instance void GameFramework.Base.IGameStart::InitConfig(class GameFramework.Resources.ResourcesInfo)
+		IL_0019: nop
+		IL_001a: ret
+	} // end of method GameStartEntry::_008B_00A7_0099YW_0091
+
+	.method private hidebysig 
+		instance void _007F_008EdP_0088_0081 (
+			class YooAsset.AllAssetsOperationHandle _00A7_00BDt_0091_00B3_00AE
+		) cil managed 
+	{
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+			01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 36
+			30 30 37 31 39 30
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.AddressAttribute::.ctor() = (
+			01 00 03 00 53 0e 03 52 56 41 09 30 78 37 32 45
+			38 30 36 34 53 0e 06 4f 66 66 73 65 74 09 30 78
+			37 32 45 34 30 36 34 53 0e 02 56 41 09 30 78 37
+			32 45 38 30 36 34
+		)
+		.custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = (
+			01 00 00 00
+		)
+		// Method begins at RVA 0x2092
+		// Header size: 1
+		// Code size: 2 (0x2)
+		.maxstack 8
+
+		IL_0000: nop
+		IL_0001: ret
+	} // end of method GameStartEntry::_007F_008EdP_0088_0081
+
+	.method private hidebysig 
+		instance void _0083_00B8_0088_0082M_0085 (
+			object[] h_00A6_00BB_00B2_0089w
+		) cil managed 
+	{
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+			01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 36
+			30 30 37 31 39 31
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.AddressAttribute::.ctor() = (
+			01 00 03 00 53 0e 03 52 56 41 09 30 78 37 32 45
+			38 30 45 30 53 0e 06 4f 66 66 73 65 74 09 30 78
+			37 32 45 34 30 45 30 53 0e 02 56 41 09 30 78 37
+			32 45 38 30 45 30
+		)
+		// Method begins at RVA 0x2092
+		// Header size: 1
+		// Code size: 2 (0x2)
+		.maxstack 8
+
+		IL_0000: nop
+		IL_0001: ret
+	} // end of method GameStartEntry::_0083_00B8_0088_0082M_0085
+
+	.method private hidebysig 
+		instance void _0080_00BF_00A7_009CKµ () cil managed 
+	{
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+			01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 36
+			30 30 37 31 39 32
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.AddressAttribute::.ctor() = (
+			01 00 03 00 53 0e 03 52 56 41 09 30 78 37 32 45
+			38 32 32 43 53 0e 06 4f 66 66 73 65 74 09 30 78
+			37 32 45 34 32 32 43 53 0e 02 56 41 09 30 78 37
+			32 45 38 32 32 43
+		)
+		// Method begins at RVA 0x2092
+		// Header size: 1
+		// Code size: 2 (0x2)
+		.maxstack 8
+
+		IL_0000: nop
+		IL_0001: ret
+	} // end of method GameStartEntry::_0080_00BF_00A7_009CKµ
+
+	.method private hidebysig 
+		instance void Awake () cil managed 
+	{
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+			01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 36
+			30 30 37 31 39 33
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.AddressAttribute::.ctor() = (
+			01 00 03 00 53 0e 03 52 56 41 09 30 78 37 32 45
+			38 36 41 34 53 0e 06 4f 66 66 73 65 74 09 30 78
+			37 32 45 34 36 41 34 53 0e 02 56 41 09 30 78 37
+			32 45 38 36 41 34
+		)
+		// Method begins at RVA 0x21240
+		// Header size: 12
+		// Code size: 231 (0xe7)
+		.maxstack 4
+		.locals init (
+			[0] bool,
+			[1] bool,
+			[2] bool
+		)
+
+		IL_0000: nop
+		IL_0001: ldarg.0
+		IL_0002: ldfld bool GameFramework.Base.GameStartEntry::m_AutoSaveData
+		IL_0007: call void GameFramework.AppSetting::set_AutoSaveData(bool)
+		IL_000c: nop
+		IL_000d: ldarg.0
+		IL_000e: ldfld string GameFramework.Base.GameStartEntry::gameCode
+		IL_0013: call void GameFramework.AppSetting::set_gameCode(string)
+		IL_0018: nop
+		IL_0019: ldarg.0
+		IL_001a: ldfld class GameFramework.Base.IGameStart GameFramework.Base.GameStartEntry::_008ANUO_008B_0084
+		IL_001f: ldnull
+		IL_0020: call bool [UnityEngine.CoreModule]UnityEngine.Object::op_Equality(class [UnityEngine.CoreModule]UnityEngine.Object, class [UnityEngine.CoreModule]UnityEngine.Object)
+		IL_0025: stloc.0
+		IL_0026: ldloc.0
+		IL_0027: brfalse.s IL_0035
+
+		IL_0029: ldarg.0
+		IL_002a: ldarg.0
+		IL_002b: call instance !!0 [UnityEngine.CoreModule]UnityEngine.Component::GetComponent<class GameFramework.Base.IGameStart>()
+		IL_0030: stfld class GameFramework.Base.IGameStart GameFramework.Base.GameStartEntry::_008ANUO_008B_0084
+
+		IL_0035: ldarg.0
+		IL_0036: ldfld class GameFramework.Base.IGameStart GameFramework.Base.GameStartEntry::_008ANUO_008B_0084
+		IL_003b: ldnull
+		IL_003c: call bool [UnityEngine.CoreModule]UnityEngine.Object::op_Equality(class [UnityEngine.CoreModule]UnityEngine.Object, class [UnityEngine.CoreModule]UnityEngine.Object)
+		IL_0041: stloc.1
+		IL_0042: ldloc.1
+		IL_0043: brfalse.s IL_005f
+
+		IL_0045: nop
+		IL_0046: ldc.i4.1
+		IL_0047: newarr [mscorlib]System.Object
+		IL_004c: dup
+		IL_004d: ldc.i4.0
+		IL_004e: ldstr "游戏启动失败，缺少游戏启动入口脚本"
+		IL_0053: stelem.ref
+		IL_0054: call void GameFramework.CLog::Error(object[])
+		IL_0059: nop
+		IL_005a: br IL_00e6
+
+		IL_005f: ldarg.0
+		IL_0060: ldfld class GameFramework.Base.IGameStart GameFramework.Base.GameStartEntry::_008ANUO_008B_0084
+		IL_0065: ldarg.0
+		IL_0066: callvirt instance void GameFramework.Base.IGameStart::_007Dye_0080_00BCa(class GameFramework.Base.GameStartEntry)
+		IL_006b: nop
+		IL_006c: ldarg.0
+		IL_006d: ldc.i4.0
+		IL_006e: stfld bool GameFramework.Base.GameStartEntry::Á_008A_008F_008Bvh
+		IL_0073: call void GameFramework.AppSetting::SetCultureBasedOnSetting()
+		IL_0078: nop
+		IL_0079: call bool GameFramework.AppSetting::get_IsGameColletion()
+		IL_007e: stloc.2
+		IL_007f: ldloc.2
+		IL_0080: brfalse.s IL_00a5
+
+		IL_0082: nop
+		IL_0083: ldarg.0
+		IL_0084: ldsfld string GameFramework.GlobalData::MineAppName
+		IL_0089: stfld string GameFramework.Base.GameStartEntry::AppName
+		IL_008e: ldarg.0
+		IL_008f: ldsfld valuetype GameFramework.LocalELangLibrary GameFramework.GlobalData::localELangLibrary
+		IL_0094: stfld valuetype GameFramework.LocalELangLibrary GameFramework.Base.GameStartEntry::langLibrary
+		IL_0099: ldarg.0
+		IL_009a: ldsfld valuetype GameFramework.ELangType GameFramework.GlobalData::appDefaultLangType
+		IL_009f: stfld valuetype GameFramework.ELangType GameFramework.Base.GameStartEntry::appDefaultLangType
+		IL_00a4: nop
+
+		IL_00a5: ldarg.0
+		IL_00a6: ldfld string GameFramework.Base.GameStartEntry::AppName
+		IL_00ab: call void GameFramework.AppSetting::set_MineGameName(string)
+		IL_00b0: nop
+		IL_00b1: ldarg.0
+		IL_00b2: call void [UnityEngine.CoreModule]UnityEngine.Object::DontDestroyOnLoad(class [UnityEngine.CoreModule]UnityEngine.Object)
+		IL_00b7: nop
+		IL_00b8: call void GameFramework.UserDataPrefs::OnInit()
+		IL_00bd: nop
+		IL_00be: ldarg.0
+		IL_00bf: ldfld class GameFramework.Base.IGameStart GameFramework.Base.GameStartEntry::_008ANUO_008B_0084
+		IL_00c4: callvirt instance void GameFramework.Base.IGameStart::BeforeGameFrameworkInit()
+		IL_00c9: nop
+		IL_00ca: call !!0 GameFramework.GameFrameEntry::GetModule<class GameFramework.VersionMondule>()
+		IL_00cf: ldarg.0
+		IL_00d0: ldftn instance void GameFramework.Base.GameStartEntry::vj_00B7_0098_008A_007F()
+		IL_00d6: newobj instance void [mscorlib]System.Action::.ctor(object, native int)
+		IL_00db: call !!0[] [mscorlib]System.Array::Empty<object>()
+		IL_00e0: call void GameFramework.GameFrameEntry::Initialize(class GameFramework.GameFrameModule, class [mscorlib]System.Action, object[])
+		IL_00e5: nop
+
+		IL_00e6: ret
+	} // end of method GameStartEntry::Awake
+
+	.method private hidebysig 
+		instance void _0082_00BBf_0090_00B8_005D () cil managed 
+	{
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+			01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 36
+			30 30 37 31 39 34
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.AddressAttribute::.ctor() = (
+			01 00 03 00 53 0e 03 52 56 41 09 30 78 37 32 45
+			38 42 31 34 53 0e 06 4f 66 66 73 65 74 09 30 78
+			37 32 45 34 42 31 34 53 0e 02 56 41 09 30 78 37
+			32 45 38 42 31 34
+		)
+		// Method begins at RVA 0x21334
+		// Header size: 12
+		// Code size: 144 (0x90)
+		.maxstack 3
+
+		IL_0000: nop
+		IL_0001: ldarg.0
+		IL_0002: ldstr "UI模块初始化完成，开始初始化其他次级模块"
+		IL_0007: call instance void GameFramework.Base.GameStartEntry::_008A_0080M_00ACa_0083(string)
+		IL_000c: nop
+		IL_000d: call !!0 GameFramework.GameFrameEntry::GetModule<class GameFramework.LangModule>()
+		IL_0012: ldnull
+		IL_0013: call !!0[] [mscorlib]System.Array::Empty<object>()
+		IL_0018: call void GameFramework.GameFrameEntry::Initialize(class GameFramework.GameFrameModule, class [mscorlib]System.Action, object[])
+		IL_001d: nop
+		IL_001e: call !!0 GameFramework.GameFrameEntry::GetModule<class GameFramework.Fsm.FsmManager>()
+		IL_0023: ldnull
+		IL_0024: call !!0[] [mscorlib]System.Array::Empty<object>()
+		IL_0029: call void GameFramework.GameFrameEntry::Initialize(class GameFramework.GameFrameModule, class [mscorlib]System.Action, object[])
+		IL_002e: nop
+		IL_002f: call !!0 GameFramework.GameFrameEntry::GetModule<class GameFramework.MineGameLogicModule>()
+		IL_0034: ldnull
+		IL_0035: call !!0[] [mscorlib]System.Array::Empty<object>()
+		IL_003a: call void GameFramework.GameFrameEntry::Initialize(class GameFramework.GameFrameModule, class [mscorlib]System.Action, object[])
+		IL_003f: nop
+		IL_0040: call !!0 GameFramework.GameFrameEntry::GetModule<class GameFramework.TimeModule>()
+		IL_0045: ldnull
+		IL_0046: call !!0[] [mscorlib]System.Array::Empty<object>()
+		IL_004b: call void GameFramework.GameFrameEntry::Initialize(class GameFramework.GameFrameModule, class [mscorlib]System.Action, object[])
+		IL_0050: nop
+		IL_0051: call !!0 GameFramework.GameFrameEntry::GetModule<class GameFramework.EffectModule>()
+		IL_0056: ldnull
+		IL_0057: call !!0[] [mscorlib]System.Array::Empty<object>()
+		IL_005c: call void GameFramework.GameFrameEntry::Initialize(class GameFramework.GameFrameModule, class [mscorlib]System.Action, object[])
+		IL_0061: nop
+		IL_0062: call !!0 GameFramework.GameFrameEntry::GetModule<class GameFramework.ObjectPool.ObjectPoolManager>()
+		IL_0067: ldnull
+		IL_0068: call !!0[] [mscorlib]System.Array::Empty<object>()
+		IL_006d: call void GameFramework.GameFrameEntry::Initialize(class GameFramework.GameFrameModule, class [mscorlib]System.Action, object[])
+		IL_0072: nop
+		IL_0073: call !!0 GameFramework.GameFrameEntry::GetModule<class GameFramework.Procedure.ProcedureManager>()
+		IL_0078: ldarg.0
+		IL_0079: ldftn instance void GameFramework.Base.GameStartEntry::J_009DK_0099M_00AC()
+		IL_007f: newobj instance void [mscorlib]System.Action::.ctor(object, native int)
+		IL_0084: call !!0[] [mscorlib]System.Array::Empty<object>()
+		IL_0089: call void GameFramework.GameFrameEntry::Initialize(class GameFramework.GameFrameModule, class [mscorlib]System.Action, object[])
+		IL_008e: nop
+		IL_008f: ret
+	} // end of method GameStartEntry::_0082_00BBf_0090_00B8_005D
+
+	.method private hidebysig 
+		instance void J_00B3_007D_007D_00B4q () cil managed 
+	{
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+			01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 36
+			30 30 37 31 39 35
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.AddressAttribute::.ctor() = (
+			01 00 03 00 53 0e 03 52 56 41 09 30 78 37 32 45
+			38 46 36 43 53 0e 06 4f 66 66 73 65 74 09 30 78
+			37 32 45 34 46 36 43 53 0e 02 56 41 09 30 78 37
+			32 45 38 46 36 43
+		)
+		// Method begins at RVA 0x2092
+		// Header size: 1
+		// Code size: 2 (0x2)
+		.maxstack 8
+
+		IL_0000: nop
+		IL_0001: ret
+	} // end of method GameStartEntry::J_00B3_007D_007D_00B4q
+
+	.method private hidebysig 
+		instance void i_005EN_00A5D_00A3 (
+			class GameFramework.Resources.ResourcesInfo _0088_00AB_0084E_0082F
+		) cil managed 
+	{
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+			01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 36
+			30 30 37 31 39 36
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.AddressAttribute::.ctor() = (
+			01 00 03 00 53 0e 03 52 56 41 09 30 78 37 32 45
+			39 30 39 43 53 0e 06 4f 66 66 73 65 74 09 30 78
+			37 32 45 35 30 39 43 53 0e 02 56 41 09 30 78 37
+			32 45 39 30 39 43
+		)
+		// Method begins at RVA 0x2092
+		// Header size: 1
+		// Code size: 2 (0x2)
+		.maxstack 8
+
+		IL_0000: nop
+		IL_0001: ret
+	} // end of method GameStartEntry::i_005EN_00A5D_00A3
+
+	.method private hidebysig 
+		instance void _00BBC_00BCª_00A1h (
+			bool _0084_0060ÁjW_00BB
+		) cil managed 
+	{
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+			01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 36
+			30 30 37 31 39 37
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.AddressAttribute::.ctor() = (
+			01 00 03 00 53 0e 03 52 56 41 09 30 78 37 32 45
+			39 31 30 43 53 0e 06 4f 66 66 73 65 74 09 30 78
+			37 32 45 35 31 30 43 53 0e 02 56 41 09 30 78 37
+			32 45 39 31 30 43
+		)
+		// Method begins at RVA 0x2092
+		// Header size: 1
+		// Code size: 2 (0x2)
+		.maxstack 8
+
+		IL_0000: nop
+		IL_0001: ret
+	} // end of method GameStartEntry::_00BBC_00BCª_00A1h
+
+	.method public hidebysig specialname rtspecialname 
+		instance void .ctor () cil managed 
+	{
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+			01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 36
+			30 30 37 31 39 38
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.AddressAttribute::.ctor() = (
+			01 00 03 00 53 0e 03 52 56 41 09 30 78 37 32 45
+			39 33 36 38 53 0e 06 4f 66 66 73 65 74 09 30 78
+			37 32 45 35 33 36 38 53 0e 02 56 41 09 30 78 37
+			32 45 39 33 36 38
+		)
+		// Method begins at RVA 0x213d0
+		// Header size: 1
+		// Code size: 34 (0x22)
+		.maxstack 8
+
+		IL_0000: ldarg.0
+		IL_0001: ldc.i4.1
+		IL_0002: stfld bool GameFramework.Base.GameStartEntry::isShowInitGameLog
+		IL_0007: ldarg.0
+		IL_0008: ldc.i4 3001
+		IL_000d: stfld int32 GameFramework.Base.GameStartEntry::tRJqx_0095
+		IL_0012: ldarg.0
+		IL_0013: ldc.i4.1
+		IL_0014: stfld valuetype GameFramework.LocalELangLibrary GameFramework.Base.GameStartEntry::langLibrary
+		IL_0019: ldarg.0
+		IL_001a: call instance void [UnityEngine.CoreModule]UnityEngine.MonoBehaviour::.ctor()
+		IL_001f: nop
+		IL_0020: nop
+		IL_0021: ret
+	} // end of method GameStartEntry::.ctor
+
+	.method assembly hidebysig 
+		instance void _00B2RBA_0083ª () cil managed 
+	{
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+			01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 36
+			30 30 37 31 39 39
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.AddressAttribute::.ctor() = (
+			01 00 03 00 53 0e 03 52 56 41 09 30 78 37 32 45
+			39 33 38 34 53 0e 06 4f 66 66 73 65 74 09 30 78
+			37 32 45 35 33 38 34 53 0e 02 56 41 09 30 78 37
+			32 45 39 33 38 34
+		)
+		// Method begins at RVA 0x2092
+		// Header size: 1
+		// Code size: 2 (0x2)
+		.maxstack 8
+
+		IL_0000: nop
+		IL_0001: ret
+	} // end of method GameStartEntry::_00B2RBA_0083ª
+
+	.method private hidebysig 
+		instance void _009EªOl_0097F () cil managed 
+	{
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+			01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 36
+			30 30 37 31 39 41
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.AddressAttribute::.ctor() = (
+			01 00 03 00 53 0e 03 52 56 41 09 30 78 37 32 45
+			35 39 43 34 53 0e 06 4f 66 66 73 65 74 09 30 78
+			37 32 45 31 39 43 34 53 0e 02 56 41 09 30 78 37
+			32 45 35 39 43 34
+		)
+		// Method begins at RVA 0x2092
+		// Header size: 1
+		// Code size: 2 (0x2)
+		.maxstack 8
+
+		IL_0000: nop
+		IL_0001: ret
+	} // end of method GameStartEntry::_009EªOl_0097F
+
+	.method private hidebysig 
+		instance void Fr_0081j_0082_00A0 () cil managed 
+	{
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+			01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 36
+			30 30 37 31 39 42
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.AddressAttribute::.ctor() = (
+			01 00 03 00 53 0e 03 52 56 41 09 30 78 37 32 45
+			39 36 37 30 53 0e 06 4f 66 66 73 65 74 09 30 78
+			37 32 45 35 36 37 30 53 0e 02 56 41 09 30 78 37
+			32 45 39 36 37 30
+		)
+		// Method begins at RVA 0x2092
+		// Header size: 1
+		// Code size: 2 (0x2)
+		.maxstack 8
+
+		IL_0000: nop
+		IL_0001: ret
+	} // end of method GameStartEntry::Fr_0081j_0082_00A0
+
+	.method assembly hidebysig 
+		instance void _008DªcBl_007D () cil managed 
+	{
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+			01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 36
+			30 30 37 31 39 43
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.AddressAttribute::.ctor() = (
+			01 00 03 00 53 0e 03 52 56 41 09 30 78 37 32 45
+			39 38 43 38 53 0e 06 4f 66 66 73 65 74 09 30 78
+			37 32 45 35 38 43 38 53 0e 02 56 41 09 30 78 37
+			32 45 39 38 43 38
+		)
+		// Method begins at RVA 0x2092
+		// Header size: 1
+		// Code size: 2 (0x2)
+		.maxstack 8
+
+		IL_0000: nop
+		IL_0001: ret
+	} // end of method GameStartEntry::_008DªcBl_007D
+
+	.method private hidebysig 
+		instance void Â_00AD_00ADzW_007B (
+			object[] h_00A6_00BB_00B2_0089w
+		) cil managed 
+	{
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+			01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 36
+			30 30 37 31 39 44
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.AddressAttribute::.ctor() = (
+			01 00 03 00 53 0e 03 52 56 41 09 30 78 37 32 45
+			39 42 32 43 53 0e 06 4f 66 66 73 65 74 09 30 78
+			37 32 45 35 42 32 43 53 0e 02 56 41 09 30 78 37
+			32 45 39 42 32 43
+		)
+		// Method begins at RVA 0x2092
+		// Header size: 1
+		// Code size: 2 (0x2)
+		.maxstack 8
+
+		IL_0000: nop
+		IL_0001: ret
+	} // end of method GameStartEntry::Â_00AD_00ADzW_007B
+
+	.method private hidebysig 
+		instance void _0098Y_00A2_00A0j_00BB () cil managed 
+	{
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+			01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 36
+			30 30 37 31 39 45
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.AddressAttribute::.ctor() = (
+			01 00 03 00 53 0e 03 52 56 41 09 30 78 37 32 45
+			39 38 44 30 53 0e 06 4f 66 66 73 65 74 09 30 78
+			37 32 45 35 38 44 30 53 0e 02 56 41 09 30 78 37
+			32 45 39 38 44 30
+		)
+		// Method begins at RVA 0x2092
+		// Header size: 1
+		// Code size: 2 (0x2)
+		.maxstack 8
+
+		IL_0000: nop
+		IL_0001: ret
+	} // end of method GameStartEntry::_0098Y_00A2_00A0j_00BB
+
+	.method assembly hidebysig 
+		instance void _008B_00BEq_00B4hc () cil managed 
+	{
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+			01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 36
+			30 30 37 31 39 46
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.AddressAttribute::.ctor() = (
+			01 00 03 00 53 0e 03 52 56 41 09 30 78 37 32 45
+			39 43 37 43 53 0e 06 4f 66 66 73 65 74 09 30 78
+			37 32 45 35 43 37 43 53 0e 02 56 41 09 30 78 37
+			32 45 39 43 37 43
+		)
+		// Method begins at RVA 0x2092
+		// Header size: 1
+		// Code size: 2 (0x2)
+		.maxstack 8
+
+		IL_0000: nop
+		IL_0001: ret
+	} // end of method GameStartEntry::_008B_00BEq_00B4hc
+
+	.method private hidebysig 
+		instance void _007B_00A5xª_00BD_00AF () cil managed 
+	{
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+			01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 36
+			30 30 37 31 41 30
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.AddressAttribute::.ctor() = (
+			01 00 03 00 53 0e 03 52 56 41 09 30 78 37 32 45
+			39 45 36 38 53 0e 06 4f 66 66 73 65 74 09 30 78
+			37 32 45 35 45 36 38 53 0e 02 56 41 09 30 78 37
+			32 45 39 45 36 38
+		)
+		// Method begins at RVA 0x2092
+		// Header size: 1
+		// Code size: 2 (0x2)
+		.maxstack 8
+
+		IL_0000: nop
+		IL_0001: ret
+	} // end of method GameStartEntry::_007B_00A5xª_00BD_00AF
+
+	.method private hidebysig 
+		instance void y_00B6_008E_007CI_0084 () cil managed 
+	{
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+			01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 36
+			30 30 37 31 41 31
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.AddressAttribute::.ctor() = (
+			01 00 03 00 53 0e 03 52 56 41 09 30 78 37 32 45
+			41 33 45 34 53 0e 06 4f 66 66 73 65 74 09 30 78
+			37 32 45 36 33 45 34 53 0e 02 56 41 09 30 78 37
+			32 45 41 33 45 34
+		)
+		// Method begins at RVA 0x2092
+		// Header size: 1
+		// Code size: 2 (0x2)
+		.maxstack 8
+
+		IL_0000: nop
+		IL_0001: ret
+	} // end of method GameStartEntry::y_00B6_008E_007CI_0084
+
+	.method private hidebysig 
+		instance void D_005EMD_00A1_00A3 (
+			object[] h_00A6_00BB_00B2_0089w
+		) cil managed 
+	{
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+			01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 36
+			30 30 37 31 41 32
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.AddressAttribute::.ctor() = (
+			01 00 03 00 53 0e 03 52 56 41 09 30 78 37 32 45
+			41 35 46 43 53 0e 06 4f 66 66 73 65 74 09 30 78
+			37 32 45 36 35 46 43 53 0e 02 56 41 09 30 78 37
+			32 45 41 35 46 43
+		)
+		// Method begins at RVA 0x2092
+		// Header size: 1
+		// Code size: 2 (0x2)
+		.maxstack 8
+
+		IL_0000: nop
+		IL_0001: ret
+	} // end of method GameStartEntry::D_005EMD_00A1_00A3
+
+	.method assembly hidebysig 
+		instance void KV_009C_00B2_0081_00B7 () cil managed 
+	{
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+			01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 36
+			30 30 37 31 41 33
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.AddressAttribute::.ctor() = (
+			01 00 03 00 53 0e 03 52 56 41 09 30 78 37 32 45
+			41 37 34 34 53 0e 06 4f 66 66 73 65 74 09 30 78
+			37 32 45 36 37 34 34 53 0e 02 56 41 09 30 78 37
+			32 45 41 37 34 34
+		)
+		// Method begins at RVA 0x2092
+		// Header size: 1
+		// Code size: 2 (0x2)
+		.maxstack 8
+
+		IL_0000: nop
+		IL_0001: ret
+	} // end of method GameStartEntry::KV_009C_00B2_0081_00B7
+
+	.method assembly hidebysig 
+		instance void _008CdSH_00AB_007B () cil managed 
+	{
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+			01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 36
+			30 30 37 31 41 34
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.AddressAttribute::.ctor() = (
+			01 00 03 00 53 0e 03 52 56 41 09 30 78 37 32 45
+			41 39 33 30 53 0e 06 4f 66 66 73 65 74 09 30 78
+			37 32 45 36 39 33 30 53 0e 02 56 41 09 30 78 37
+			32 45 41 39 33 30
+		)
+		// Method begins at RVA 0x2092
+		// Header size: 1
+		// Code size: 2 (0x2)
+		.maxstack 8
+
+		IL_0000: nop
+		IL_0001: ret
+	} // end of method GameStartEntry::_008CdSH_00AB_007B
+
+	.method assembly hidebysig 
+		instance void O_008AJy_0085_00BF () cil managed 
+	{
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+			01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 36
+			30 30 37 31 41 35
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.AddressAttribute::.ctor() = (
+			01 00 03 00 53 0e 03 52 56 41 09 30 78 37 32 45
+			41 39 33 43 53 0e 06 4f 66 66 73 65 74 09 30 78
+			37 32 45 36 39 33 43 53 0e 02 56 41 09 30 78 37
+			32 45 41 39 33 43
+		)
+		// Method begins at RVA 0x213f4
+		// Header size: 12
+		// Code size: 71 (0x47)
+		.maxstack 3
+		.locals init (
+			[0] bool
+		)
+
+		IL_0000: nop
+		IL_0001: ldarg.0
+		IL_0002: ldstr "LoadingUIOpen"
+		IL_0007: call instance void GameFramework.Base.GameStartEntry::_008A_0080M_00ACa_0083(string)
+		IL_000c: nop
+		IL_000d: ldsfld class DBTSDK.SDKToolManager DBTSDK.SDKToolManager::Instance
+		IL_0012: callvirt instance void DBTSDK.SDKToolManager::U3DGameStart_Override()
+		IL_0017: nop
+		IL_0018: call bool GameFramework.AppSetting::get_UseNewRes()
+		IL_001d: stloc.0
+		IL_001e: ldloc.0
+		IL_001f: brfalse.s IL_002a
+
+		IL_0021: ldarg.0
+		IL_0022: call instance void GameFramework.Base.GameStartEntry::O_00A9_00B3_00A7_00A0i()
+		IL_0027: nop
+		IL_0028: br.s IL_0046
+
+		IL_002a: ldstr "data/config"
+		IL_002f: ldarg.0
+		IL_0030: ldftn instance void GameFramework.Base.GameStartEntry::_008B_00A7_0099YW_0091(class GameFramework.Resources.ResourcesInfo)
+		IL_0036: newobj instance void GameFramework.Resources.ResourcesModule/LoadAssetCompleteHandler::.ctor(object, native int)
+		IL_003b: call !!0[] [mscorlib]System.Array::Empty<object>()
+		IL_0040: call class GameFramework.Resources.ResLoader GameFramework.ResLoadHelper::LoadAsset(string, class GameFramework.Resources.ResourcesModule/LoadAssetCompleteHandler, object[])
+		IL_0045: pop
+
+		IL_0046: ret
+	} // end of method GameStartEntry::O_008AJy_0085_00BF
+
+	.method private hidebysig 
+		instance void _009F_008Br_00B7Mu () cil managed 
+	{
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+			01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 36
+			30 30 37 31 41 36
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.AddressAttribute::.ctor() = (
+			01 00 03 00 53 0e 03 52 56 41 09 30 78 37 32 45
+			41 42 32 38 53 0e 06 4f 66 66 73 65 74 09 30 78
+			37 32 45 36 42 32 38 53 0e 02 56 41 09 30 78 37
+			32 45 41 42 32 38
+		)
+		// Method begins at RVA 0x21447
+		// Header size: 1
+		// Code size: 30 (0x1e)
+		.maxstack 8
+
+		IL_0000: nop
+		IL_0001: call !!0 GameFramework.GameFrameEntry::GetModule<class GameFramework.UIModule>()
+		IL_0006: ldarg.0
+		IL_0007: ldftn instance void GameFramework.Base.GameStartEntry::_0082_00BBf_0090_00B8_005D()
+		IL_000d: newobj instance void [mscorlib]System.Action::.ctor(object, native int)
+		IL_0012: call !!0[] [mscorlib]System.Array::Empty<object>()
+		IL_0017: call void GameFramework.GameFrameEntry::Initialize(class GameFramework.GameFrameModule, class [mscorlib]System.Action, object[])
+		IL_001c: nop
+		IL_001d: ret
+	} // end of method GameStartEntry::_009F_008Br_00B7Mu
+
+	.method private hidebysig 
+		instance void J_0092_0090X_00ABn () cil managed 
+	{
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.TokenAttribute::.ctor() = (
+			01 00 01 00 53 0e 05 54 6f 6b 65 6e 09 30 78 36
+			30 30 37 31 41 37
+		)
+		.custom instance void [Il2CppDummyDll]Il2CppDummyDll.AddressAttribute::.ctor() = (
+			01 00 03 00 53 0e 03 52 56 41 09 30 78 37 32 45
+			41 43 35 38 53 0e 06 4f 66 66 73 65 74 09 30 78
+			37 32 45 36 43 35 38 53 0e 02 56 41 09 30 78 37
+			32 45 41 43 35 38
+		)
+		// Method begins at RVA 0x2092
+		// Header size: 1
+		// Code size: 2 (0x2)
+		.maxstack 8
+
+		IL_0000: nop
+		IL_0001: ret
+	} // end of method GameStartEntry::J_0092_0090X_00ABn
+
+} // end of class GameFramework.Base.GameStartEntry
+
