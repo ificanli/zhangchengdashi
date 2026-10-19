@@ -1,0 +1,365 @@
+using System;
+using System.Collections.Generic;
+using System.Runtime.CompilerServices;
+using Il2CppDummyDll;
+using Pathfinding.Collections;
+using Pathfinding.Util;
+using Unity.Burst;
+using Unity.Mathematics;
+using UnityEngine;
+
+namespace Pathfinding
+{
+	[Token(Token = "0x2000052")]
+	[BurstCompile]
+	public static class Polygon
+	{
+		[Token(Token = "0x2000053")]
+		public struct BarycentricTriangleInterpolator
+		{
+			[Token(Token = "0x40001FC")]
+			[FieldOffset(Offset = "0x0")]
+			private int2 origin;
+
+			[Token(Token = "0x40001FD")]
+			[FieldOffset(Offset = "0x8")]
+			private double2x2 barycentricMapping;
+
+			[Token(Token = "0x40001FE")]
+			[FieldOffset(Offset = "0x28")]
+			private double3 thresholds;
+
+			[Token(Token = "0x40001FF")]
+			[FieldOffset(Offset = "0x40")]
+			private double3 linear1;
+
+			[Token(Token = "0x4000200")]
+			[FieldOffset(Offset = "0x58")]
+			private double3 linear2;
+
+			[Token(Token = "0x4000201")]
+			[FieldOffset(Offset = "0x70")]
+			private double3 linear3;
+
+			[Token(Token = "0x4000202")]
+			[FieldOffset(Offset = "0x88")]
+			private double3 ys;
+
+			[Token(Token = "0x6000363")]
+			[Address(RVA = "0x44F18D0", Offset = "0x44ED8D0", VA = "0x44F18D0")]
+			public BarycentricTriangleInterpolator(Int3 p1, Int3 p2, Int3 p3)
+			{
+    throw new global::System.NotImplementedException("RECOVERY_UNIMPLEMENTED Polygon.BarycentricTriangleInterpolator..ctor RVA=0x44F18D0 Token=0x6000363");
+}
+
+			[Token(Token = "0x6000364")]
+			[Address(RVA = "0x44F1B10", Offset = "0x44EDB10", VA = "0x44F1B10")]
+			public int SampleY(int2 p)
+			{
+				return default;
+			}
+		}
+
+		[Token(Token = "0x2000054")]
+		public delegate bool ContainsPoint_00000352_0024PostfixBurstDelegate(ref int3 aWorld, ref int3 bWorld, ref int3 cWorld, ref int3 pWorld, ref NativeMovementPlane movementPlane);
+
+		[Token(Token = "0x2000055")]
+		internal static class ContainsPoint_00000352_0024BurstDirectCall
+		{
+			[Token(Token = "0x4000203")]
+			[FieldOffset(Offset = "0x0")]
+			private static IntPtr Pointer;
+
+			[Token(Token = "0x4000204")]
+			[FieldOffset(Offset = "0x8")]
+			private static IntPtr DeferredCompilation;
+
+			[Token(Token = "0x600036A")]
+			[Address(RVA = "0x44F1ECC", Offset = "0x44EDECC", VA = "0x44F1ECC")]
+			[BurstDiscard]
+			private static void GetFunctionPointerDiscard(ref IntPtr P_0)
+			{
+			}
+
+			[Token(Token = "0x600036B")]
+			[Address(RVA = "0x44F1FE8", Offset = "0x44EDFE8", VA = "0x44F1FE8")]
+			private static IntPtr GetFunctionPointer()
+			{
+				return default;
+			}
+
+			[Token(Token = "0x600036C")]
+			[Address(RVA = "0x44F2044", Offset = "0x44EE044", VA = "0x44F2044")]
+			public static void Constructor()
+			{
+			}
+
+			[Token(Token = "0x600036D")]
+			[Address(RVA = "0x44F20EC", Offset = "0x44EE0EC", VA = "0x44F20EC")]
+			public static void Initialize()
+			{
+			}
+
+			[Token(Token = "0x600036F")]
+			[Address(RVA = "0x44F20F4", Offset = "0x44EE0F4", VA = "0x44F20F4")]
+			public static bool Invoke(ref int3 aWorld, ref int3 bWorld, ref int3 cWorld, ref int3 pWorld, ref NativeMovementPlane movementPlane)
+			{
+				return default;
+			}
+		}
+
+		[Token(Token = "0x2000056")]
+		public delegate bool ClosestPointOnTriangleByRef_00000358_0024PostfixBurstDelegate(in float3 a, in float3 b, in float3 c, in float3 p, [NoAlias] out float3 output);
+
+		[Token(Token = "0x2000057")]
+		internal static class ClosestPointOnTriangleByRef_00000358_0024BurstDirectCall
+		{
+			[Token(Token = "0x4000205")]
+			[FieldOffset(Offset = "0x0")]
+			private static IntPtr Pointer;
+
+			[Token(Token = "0x4000206")]
+			[FieldOffset(Offset = "0x8")]
+			private static IntPtr DeferredCompilation;
+
+			[Token(Token = "0x6000374")]
+			[Address(RVA = "0x44F2464", Offset = "0x44EE464", VA = "0x44F2464")]
+			[BurstDiscard]
+			private static void GetFunctionPointerDiscard(ref IntPtr P_0)
+			{
+			}
+
+			[Token(Token = "0x6000375")]
+			[Address(RVA = "0x44F2580", Offset = "0x44EE580", VA = "0x44F2580")]
+			private static IntPtr GetFunctionPointer()
+			{
+				return default;
+			}
+
+			[Token(Token = "0x6000376")]
+			[Address(RVA = "0x44F25DC", Offset = "0x44EE5DC", VA = "0x44F25DC")]
+			public static void Constructor()
+			{
+			}
+
+			[Token(Token = "0x6000377")]
+			[Address(RVA = "0x44F2684", Offset = "0x44EE684", VA = "0x44F2684")]
+			public static void Initialize()
+			{
+			}
+
+			[Token(Token = "0x6000379")]
+			[Address(RVA = "0x44F268C", Offset = "0x44EE68C", VA = "0x44F268C")]
+			public static bool Invoke(in float3 a, in float3 b, in float3 c, in float3 p, [NoAlias] out float3 output)
+			{
+    throw new global::System.NotImplementedException("RECOVERY_UNIMPLEMENTED Polygon.ClosestPointOnTriangleByRef_00000358_0024BurstDirectCall.Invoke RVA=0x44F268C Token=0x6000379");
+}
+		}
+
+		[Token(Token = "0x2000058")]
+		public delegate void ClosestPointOnTriangleProjected_0000035B_0024PostfixBurstDelegate(ref Int3 vi1, ref Int3 vi2, ref Int3 vi3, ref BBTree.ProjectionParams projection, ref float3 point, [NoAlias] out float3 closest, [NoAlias] out float sqrDist, [NoAlias] out float distAlongProjection);
+
+		[Token(Token = "0x2000059")]
+		internal static class ClosestPointOnTriangleProjected_0000035B_0024BurstDirectCall
+		{
+			[Token(Token = "0x4000207")]
+			[FieldOffset(Offset = "0x0")]
+			private static IntPtr Pointer;
+
+			[Token(Token = "0x4000208")]
+			[FieldOffset(Offset = "0x8")]
+			private static IntPtr DeferredCompilation;
+
+			[Token(Token = "0x600037E")]
+			[Address(RVA = "0x44F29DC", Offset = "0x44EE9DC", VA = "0x44F29DC")]
+			[BurstDiscard]
+			private static void GetFunctionPointerDiscard(ref IntPtr P_0)
+			{
+			}
+
+			[Token(Token = "0x600037F")]
+			[Address(RVA = "0x44F2AF8", Offset = "0x44EEAF8", VA = "0x44F2AF8")]
+			private static IntPtr GetFunctionPointer()
+			{
+				return default;
+			}
+
+			[Token(Token = "0x6000380")]
+			[Address(RVA = "0x44F2B54", Offset = "0x44EEB54", VA = "0x44F2B54")]
+			public static void Constructor()
+			{
+			}
+
+			[Token(Token = "0x6000381")]
+			[Address(RVA = "0x44F2BFC", Offset = "0x44EEBFC", VA = "0x44F2BFC")]
+			public static void Initialize()
+			{
+			}
+
+			[Token(Token = "0x6000383")]
+			[Address(RVA = "0x44F2C04", Offset = "0x44EEC04", VA = "0x44F2C04")]
+			public static void Invoke(ref Int3 vi1, ref Int3 vi2, ref Int3 vi3, ref BBTree.ProjectionParams projection, ref float3 point, [NoAlias] out float3 closest, [NoAlias] out float sqrDist, [NoAlias] out float distAlongProjection)
+			{
+    throw new global::System.NotImplementedException("RECOVERY_UNIMPLEMENTED Polygon.ClosestPointOnTriangleProjected_0000035B_0024BurstDirectCall.Invoke RVA=0x44F2C04 Token=0x6000383");
+}
+		}
+
+		[Token(Token = "0x40001FB")]
+		[FieldOffset(Offset = "0x0")]
+		private static readonly Dictionary<Int3, int> cached_Int3_int_dict;
+
+		[Token(Token = "0x600034D")]
+		[Address(RVA = "0x4465E9C", Offset = "0x4461E9C", VA = "0x4465E9C")]
+		public static bool ContainsPointXZ(Vector3 a, Vector3 b, Vector3 c, Vector3 p)
+		{
+			return default;
+		}
+
+		[Token(Token = "0x600034E")]
+		[Address(RVA = "0x4465F3C", Offset = "0x4461F3C", VA = "0x4465F3C")]
+		public static bool ContainsPointXZ(Int3 a, Int3 b, Int3 c, Int3 p)
+		{
+			return default;
+		}
+
+		[Token(Token = "0x600034F")]
+		[Address(RVA = "0x4465FA8", Offset = "0x4461FA8", VA = "0x4465FA8")]
+		public static bool ContainsPoint(Vector2Int a, Vector2Int b, Vector2Int c, Vector2Int p)
+		{
+			return default;
+		}
+
+		[Token(Token = "0x6000350")]
+		[Address(RVA = "0x4466050", Offset = "0x4462050", VA = "0x4466050")]
+		public static bool ContainsPoint(Vector2[] polyPoints, Vector2 p)
+		{
+			return default;
+		}
+
+		[Token(Token = "0x6000351")]
+		[Address(RVA = "0x4466118", Offset = "0x4462118", VA = "0x4466118")]
+		public static bool ContainsPointXZ(Vector3[] polyPoints, Vector3 p)
+		{
+			return default;
+		}
+
+		[Token(Token = "0x6000352")]
+		[Address(RVA = "0x44661E8", Offset = "0x44621E8", VA = "0x44661E8")]
+		[BurstCompile]
+		public static bool ContainsPoint(ref int3 aWorld, ref int3 bWorld, ref int3 cWorld, ref int3 pWorld, ref NativeMovementPlane movementPlane)
+		{
+			return default;
+		}
+
+		[Token(Token = "0x6000353")]
+		[Address(RVA = "0x4466270", Offset = "0x4462270", VA = "0x4466270")]
+		public static bool ContainsPoint(ref int3 aWorld, ref int3 bWorld, ref int3 cWorld, ref int3 pWorld, in float2x3 planeProjection)
+		{
+			return default;
+		}
+
+		[Token(Token = "0x6000354")]
+		[Address(RVA = "0x44664B8", Offset = "0x44624B8", VA = "0x44664B8")]
+		public static Vector3[] ConvexHullXZ(Vector3[] points)
+		{
+			return null;
+		}
+
+		[Token(Token = "0x6000355")]
+		[Address(RVA = "0x44667E8", Offset = "0x44627E8", VA = "0x44667E8")]
+		public static Vector2 ClosestPointOnTriangle(Vector2 a, Vector2 b, Vector2 c, Vector2 p)
+		{
+			return default;
+		}
+
+		[Token(Token = "0x6000356")]
+		[Address(RVA = "0x446697C", Offset = "0x446297C", VA = "0x446697C")]
+		public static Vector3 ClosestPointOnTriangleXZ(Vector3 a, Vector3 b, Vector3 c, Vector3 p)
+		{
+			return default;
+		}
+
+		[Token(Token = "0x6000357")]
+		[Address(RVA = "0x4466B9C", Offset = "0x4462B9C", VA = "0x4466B9C")]
+		public static float3 ClosestPointOnTriangle(float3 a, float3 b, float3 c, float3 p)
+		{
+			return default;
+		}
+
+		[Token(Token = "0x6000358")]
+		[Address(RVA = "0x4466C48", Offset = "0x4462C48", VA = "0x4466C48")]
+		[BurstCompile]
+		public static bool ClosestPointOnTriangleByRef(in float3 a, in float3 b, in float3 c, in float3 p, [NoAlias] out float3 output)
+		{
+    throw new global::System.NotImplementedException("RECOVERY_UNIMPLEMENTED Polygon.ClosestPointOnTriangleByRef RVA=0x4466C48 Token=0x6000358");
+}
+
+		[Token(Token = "0x6000359")]
+		[Address(RVA = "0x4466CD0", Offset = "0x4462CD0", VA = "0x4466CD0")]
+		public static float3 ClosestPointOnTriangleBarycentric(float2 a, float2 b, float2 c, float2 p)
+		{
+			return default;
+		}
+
+		[Token(Token = "0x600035A")]
+		[Address(RVA = "0x4466E68", Offset = "0x4462E68", VA = "0x4466E68")]
+		public static float3 ClosestPointOnTriangleBarycentric(float3 a, float3 b, float3 c, float3 p)
+		{
+			return default;
+		}
+
+		[Token(Token = "0x600035B")]
+		[Address(RVA = "0x4467054", Offset = "0x4463054", VA = "0x4467054")]
+		[BurstCompile]
+		public static void ClosestPointOnTriangleProjected(ref Int3 vi1, ref Int3 vi2, ref Int3 vi3, ref BBTree.ProjectionParams projection, ref float3 point, [NoAlias] out float3 closest, [NoAlias] out float sqrDist, [NoAlias] out float distAlongProjection)
+		{
+    throw new global::System.NotImplementedException("RECOVERY_UNIMPLEMENTED Polygon.ClosestPointOnTriangleProjected RVA=0x4467054 Token=0x600035B");
+}
+
+		[Token(Token = "0x600035C")]
+		[Address(RVA = "0x4467104", Offset = "0x4463104", VA = "0x4467104")]
+		public static void CompressMesh(List<Int3> vertices, List<int> triangles, List<uint> tags, out Int3[] outVertices, out int[] outTriangles, out uint[] outTags)
+		{
+    throw new global::System.NotImplementedException("RECOVERY_UNIMPLEMENTED Polygon.CompressMesh RVA=0x4467104 Token=0x600035C");
+}
+
+		[Token(Token = "0x600035D")]
+		[Address(RVA = "0x4467580", Offset = "0x4463580", VA = "0x4467580")]
+		public static void TraceContours(Dictionary<int, int> outline, HashSet<int> hasInEdge, Action<List<int>, bool> results)
+		{
+		}
+
+		[Token(Token = "0x600035E")]
+		[Address(RVA = "0x446790C", Offset = "0x446390C", VA = "0x446790C")]
+		public static void Subdivide(List<Vector3> points, List<Vector3> result, int subSegments)
+		{
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		[Token(Token = "0x6000360")]
+		[Address(RVA = "0x4467BCC", Offset = "0x4463BCC", VA = "0x4467BCC")]
+		[BurstCompile]
+		public static bool ContainsPoint_0024BurstManaged(ref int3 aWorld, ref int3 bWorld, ref int3 cWorld, ref int3 pWorld, ref NativeMovementPlane movementPlane)
+		{
+			return default;
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		[Token(Token = "0x6000361")]
+		[Address(RVA = "0x4467C9C", Offset = "0x4463C9C", VA = "0x4467C9C")]
+		[BurstCompile]
+		public static bool ClosestPointOnTriangleByRef_0024BurstManaged(in float3 a, in float3 b, in float3 c, in float3 p, [NoAlias] out float3 output)
+		{
+    throw new global::System.NotImplementedException("RECOVERY_UNIMPLEMENTED Polygon.ClosestPointOnTriangleByRef_0024BurstManaged RVA=0x4467C9C Token=0x6000361");
+}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		[Token(Token = "0x6000362")]
+		[Address(RVA = "0x4467EE8", Offset = "0x4463EE8", VA = "0x4467EE8")]
+		[BurstCompile]
+		public static void ClosestPointOnTriangleProjected_0024BurstManaged(ref Int3 vi1, ref Int3 vi2, ref Int3 vi3, ref BBTree.ProjectionParams projection, ref float3 point, [NoAlias] out float3 closest, [NoAlias] out float sqrDist, [NoAlias] out float distAlongProjection)
+		{
+    throw new global::System.NotImplementedException("RECOVERY_UNIMPLEMENTED Polygon.ClosestPointOnTriangleProjected_0024BurstManaged RVA=0x4467EE8 Token=0x6000362");
+}
+	}
+}
