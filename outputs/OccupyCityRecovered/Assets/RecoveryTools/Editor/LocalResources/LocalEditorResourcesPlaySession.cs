@@ -1,0 +1,86 @@
+using System;
+using System.IO;
+using System.Runtime.CompilerServices;
+using System.Text;
+using GameFramework.Recovery;
+using UnityEditor;
+using UnityEngine;
+
+namespace OccupyCity.Recovery.LocalResources.Editor
+{
+    [InitializeOnLoad]
+    internal static class LocalEditorResourcesPlaySession
+    {
+        [Serializable] private sealed class BoundaryReceipt
+        {
+            public string utc, boundary, action, runId, failure;
+            public long leaseId;
+            public int providerIdentityBefore, providerIdentityAfter;
+            public bool cancelled, freshProviderRegistered, readyBefore, servicesBefore;
+            public bool originalModuleFlagsChanged, originalStartupCallbackInvoked, privateProbeRegistered;
+        }
+
+        static LocalEditorResourcesPlaySession()
+        {
+            EditorApplication.playModeStateChanged += OnPlayModeStateChanged;
+            AssemblyReloadEvents.beforeAssemblyReload += BeforeAssemblyReload;
+        }
+
+        private static void OnPlayModeStateChanged(PlayModeStateChange state)
+        {
+            if (state == PlayModeStateChange.ExitingPlayMode) CancelSharedPlayLease("ExitingPlayMode");
+            else if (state == PlayModeStateChange.ExitingEditMode)
+            {
+                bool skipsDomainReload = EditorSettings.enterPlayModeOptionsEnabled
+                    && (EditorSettings.enterPlayModeOptions & EnterPlayModeOptions.DisableDomainReload) != 0;
+                if (skipsDomainReload)
+                {
+                    const string reason = "The recovered original framework requires domain reload for a new Play session; no original static module/cache/ready state is reset by the Editor resource adapter.";
+                    Record("ExitingEditMode", "unsupported_without_domain_reload", null, false, false, reason);
+                    Debug.LogError(reason);
+                    return;
+                }
+                var previous = LocalEditorResourceBridge.Provider as LocalEditorResourcesProvider;
+                if (previous != null && previous.IsInitializing && !previous.InitializationStartedInPlayMode)
+                {
+                    const string reason = "A shared Editor-owned resource initialization is active; the Play boundary will not replace it. Private resource probes must remain unregistered.";
+                    Record("ExitingEditMode", "preserved_active_editor_owned_provider", previous, false, false, reason);
+                    Debug.LogError(reason);
+                    return;
+                }
+                CancelSharedPlayLease("ExitingEditMode:new_normal_reload_session");
+                LocalEditorResourceBridge.Register(new LocalEditorResourcesProvider());
+                Record("ExitingEditMode", "fresh_shared_provider_for_normal_reload_session", previous, false, true, string.Empty);
+            }
+        }
+
+        private static void BeforeAssemblyReload() { CancelSharedPlayLease("beforeAssemblyReload"); }
+
+        private static void CancelSharedPlayLease(string boundary)
+        {
+            var provider = LocalEditorResourceBridge.Provider as LocalEditorResourcesProvider;
+            if (provider == null || !provider.IsInitializing || !provider.InitializationStartedInPlayMode) return;
+            long lease = provider.ActiveInitializationLeaseId;
+            bool cancelled = provider.CancelInitialization(lease, boundary + " ended the owner Play session before resource initialization completed.");
+            Record(boundary, "cancelled_owned_shared_play_initialization", provider, cancelled, false, string.Empty, lease);
+        }
+
+        private static void Record(string boundary, string action, LocalEditorResourcesProvider before, bool cancelled, bool replaced, string failure, long lease = 0)
+        {
+            var receipt = new BoundaryReceipt
+            {
+                utc = DateTime.UtcNow.ToString("o"), boundary = boundary, action = action,
+                runId = before == null ? string.Empty : before.CurrentRunId,
+                leaseId = lease == 0 && before != null ? before.ActiveInitializationLeaseId : lease,
+                providerIdentityBefore = before == null ? 0 : RuntimeHelpers.GetHashCode(before),
+                providerIdentityAfter = LocalEditorResourceBridge.Provider == null ? 0 : RuntimeHelpers.GetHashCode(LocalEditorResourceBridge.Provider),
+                cancelled = cancelled, freshProviderRegistered = replaced,
+                readyBefore = before != null && before.IsReady, servicesBefore = before != null && before.BundleServices != null,
+                failure = failure
+            };
+            string path = Path.Combine(Directory.GetParent(Application.dataPath).FullName, "RecoveryReports", "local-editor-resources-lifecycle.jsonl");
+            Directory.CreateDirectory(Path.GetDirectoryName(path));
+            File.AppendAllText(path, JsonUtility.ToJson(receipt) + Environment.NewLine, new UTF8Encoding(false));
+        }
+    }
+}

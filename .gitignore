@@ -1,0 +1,37 @@
+# Rebuildable Unity state
+outputs/OccupyCityRecovered/Library/
+outputs/OccupyCityRecovered/Temp/
+outputs/OccupyCityRecovered/Logs/
+outputs/OccupyCityRecovered/obj/
+outputs/OccupyCityRecovered/UserSettings/
+
+# Complete analysis workspace is delivered through content-addressed Release parts.
+work/
+
+# Large original materials are in the verified Release archive.
+outputs/占城大师-1.04.apk
+outputs/IDA分析材料/libil2cpp-arm64.so
+outputs/IDA分析材料/Il2Cpp导出/dump.cs
+outputs/IDA分析材料/Il2Cpp导出/il2cpp.h
+outputs/IDA分析材料/Il2Cpp导出/script.json
+outputs/IDA分析材料/首轮反编译/*.i64
+outputs/IDA分析材料/首轮反编译/*.id0
+outputs/IDA分析材料/首轮反编译/*.id1
+outputs/IDA分析材料/首轮反编译/*.id2
+outputs/IDA分析材料/首轮反编译/*.nam
+outputs/IDA分析材料/首轮反编译/*.til
+
+# Build outputs duplicated by source/evidence
+**/obj/
+**/bin/
+**/__pycache__/
+*.pyc
+
+# Credentials and local activation material are never part of the delivery.
+*.hexlic
+.env
+.env.*
+*.pfx
+*.p12
+credentials.json
+

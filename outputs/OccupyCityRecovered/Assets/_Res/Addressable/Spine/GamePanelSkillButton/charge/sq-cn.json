@@ -1,0 +1,91 @@
+{
+"skeleton": { "hash": "ZwunKvZxK2o", "spine": "4.2.43", "images": "./images/", "audio": "./audio" },
+"bones": [
+	{ "name": "root" },
+	{ "name": "cn", "parent": "root", "scaleX": 1.0261, "scaleY": 1.0261 },
+	{ "name": "cn2", "parent": "root", "scaleX": 1.0261, "scaleY": 1.0261 }
+],
+"slots": [
+	{ "name": "cn", "bone": "cn", "blend": "additive" },
+	{ "name": "kuang02", "bone": "cn2", "blend": "additive" }
+],
+"skins": [
+	{
+		"name": "default",
+		"attachments": {
+			"cn": {
+				"1": { "x": -5.36, "width": 168, "height": 175 },
+				"2": { "x": -2.65, "width": 168, "height": 175 },
+				"3": { "x": -2.32, "y": 1.99, "width": 168, "height": 175 },
+				"4": { "width": 168, "height": 175 }
+			},
+			"kuang02": {
+				"kuang01": { "x": 1.21, "y": 0.29, "scaleX": 1.3112, "scaleY": 1.3112, "width": 104, "height": 104 }
+			}
+		}
+	}
+],
+"animations": {
+	"animation": {
+		"slots": {
+			"cn": {
+				"rgba": [
+					{
+						"color": "ffffff00",
+						"curve": [ 0.033, 1, 0.067, 1, 0.033, 1, 0.067, 1, 0.033, 1, 0.067, 1, 0.033, 0, 0.067, 1 ]
+					},
+					{ "time": 0.1, "color": "ffffffff", "curve": "stepped" },
+					{
+						"time": 0.3,
+						"color": "ffffffff",
+						"curve": [ 0.333, 1, 0.367, 1, 0.333, 1, 0.367, 1, 0.333, 1, 0.367, 1, 0.333, 1, 0.367, 0 ]
+					},
+					{ "time": 0.4, "color": "ffffff00" }
+				],
+				"attachment": [
+					{ "name": "1" },
+					{ "time": 0.1667, "name": "2" },
+					{ "time": 0.2333, "name": "3" },
+					{ "time": 0.3, "name": "4" }
+				]
+			},
+			"kuang02": {
+				"rgba": [
+					{
+						"color": "ffffff00",
+						"curve": [ 0.1, 1, 0.2, 1, 0.1, 1, 0.2, 1, 0.1, 1, 0.2, 1, 0.1, 0.27, 0.2, 0.61 ]
+					},
+					{
+						"time": 0.3,
+						"color": "ffffff9c",
+						"curve": [ 0.333, 1, 0.367, 1, 0.333, 1, 0.367, 1, 0.333, 1, 0.367, 1, 0.333, 0.61, 0.367, 0.33 ]
+					},
+					{ "time": 0.4, "color": "ffffff00" }
+				],
+				"attachment": [
+					{ "name": "kuang01" },
+					{ "time": 0.4 }
+				]
+			}
+		},
+		"bones": {
+			"cn": {
+				"rotate": [
+					{
+						"time": 0.3,
+						"curve": [ 0.333, 0, 0.367, 10 ]
+					},
+					{ "time": 0.4, "value": 10 }
+				],
+				"scale": [
+					{
+						"time": 0.3,
+						"curve": [ 0.333, 1, 0.367, 1.085, 0.333, 1, 0.367, 1.085 ]
+					},
+					{ "time": 0.4, "x": 1.085, "y": 1.085 }
+				]
+			}
+		}
+	}
+}
+}

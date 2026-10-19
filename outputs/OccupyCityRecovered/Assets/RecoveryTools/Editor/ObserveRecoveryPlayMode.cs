@@ -1,0 +1,303 @@
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Linq;
+using System.Reflection;
+using UnityEditor;
+using UnityEditor.SceneManagement;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
+namespace OccupyCity.Recovery.Editor
+{
+    // This observer never invokes game methods or changes an initialization gate.
+    // SessionState keeps the observation alive across the normal PlayMode domain reload.
+    [InitializeOnLoad]
+    public static class ObserveRecoveryPlayMode
+    {
+        private const string SessionKey = "OccupyCity.Recovery.PlayObservation";
+        private static Observation _report;
+        private static string _path;
+        private static bool _hooked;
+        private static double _nextSnapshot;
+
+        [Serializable] public sealed class Message
+        {
+            public string type;
+            public string message;
+            public string stackTrace;
+            public int frame;
+        }
+
+        [Serializable] public sealed class ComponentState
+        {
+            public string type;
+            public string objectName;
+            public string scene;
+            public bool active;
+            public bool enabled;
+            public string[] primitiveFields;
+        }
+
+        [Serializable] public sealed class Snapshot
+        {
+            public double editorElapsed;
+            public int frame;
+            public float gameTime;
+            public float timeScale;
+            public string[] scenes;
+            public ComponentState[] managers;
+            public FrameworkState framework;
+        }
+
+        [Serializable] public sealed class ModuleState
+        {
+            public string type;
+            public string[] fields;
+        }
+
+        [Serializable] public sealed class FrameworkState
+        {
+            public bool observedExistingEntry;
+            public string diagnostic;
+            public string[] entryFields;
+            public ModuleState[] modules;
+        }
+
+        [Serializable] public sealed class Observation
+        {
+            public string startedUtc;
+            public string scenePath;
+            public string unityVersion;
+            public string status;
+            public double startedEditorTime;
+            public double enteredPlayEditorTime;
+            public double duration;
+            public bool batchMode;
+            public bool coreGameplayAccepted;
+            public List<Message> errors = new List<Message>();
+            public List<Snapshot> snapshots = new List<Snapshot>();
+        }
+
+        static ObserveRecoveryPlayMode()
+        {
+            _path = SessionState.GetString(SessionKey, "");
+            if (string.IsNullOrEmpty(_path) || !File.Exists(_path)) return;
+            _report = JsonUtility.FromJson<Observation>(File.ReadAllText(_path));
+            if (_report != null) Hook();
+        }
+
+        // Launch without -quit: this method exits batchmode after leaving PlayMode.
+        public static void Run()
+        {
+            string[] args = Environment.GetCommandLineArgs();
+            string scene = Argument(args, "-recoveryScene", "Assets/gameres/bundleres/Scene/MineGameMain.unity");
+            string workspace = Directory.GetParent(Directory.GetParent(Application.dataPath).FullName).Parent.FullName;
+            string ledger = Path.Combine(workspace, "work", "recovery-ledger");
+            string path = Argument(args, "-recoveryReportPath", Path.Combine(ledger, "unity-play-observation.json"));
+            if (!double.TryParse(Argument(args, "-recoveryPlaySeconds", "30"), NumberStyles.Float,
+                    CultureInfo.InvariantCulture, out double duration))
+                throw new ArgumentException("Observation duration must be a number.");
+            RunConfigured(scene, path, duration);
+        }
+
+        // The interactive Editor bridge uses the same observation and normal domain reload.
+        // A separate name keeps Unity's parameterless executeMethod lookup unambiguous.
+        public static void RunConfigured(string scene, string path, double duration, bool discardUnsavedEdits = false)
+        {
+            if (EditorApplication.isPlayingOrWillChangePlaymode)
+                throw new InvalidOperationException("A PlayMode session is already active.");
+            string workspace = Directory.GetParent(Directory.GetParent(Application.dataPath).FullName).Parent.FullName;
+            string ledger = Path.Combine(workspace, "work", "recovery-ledger");
+            _path = Path.GetFullPath(path);
+            if (!_path.StartsWith(Path.GetFullPath(ledger) + Path.DirectorySeparatorChar, StringComparison.OrdinalIgnoreCase))
+                throw new ArgumentException("Observation report must stay inside the recovery work ledger.");
+            if (!scene.StartsWith("Assets/", StringComparison.Ordinal) || !scene.EndsWith(".unity", StringComparison.Ordinal)
+                || !File.Exists(Path.Combine(Directory.GetParent(Application.dataPath).FullName, scene)))
+                throw new ArgumentException("The requested original scene does not exist: " + scene);
+            if (double.IsNaN(duration) || double.IsInfinity(duration) || duration < 10 || duration > 180)
+                throw new ArgumentException("Observation duration must be from 10 to 180 seconds.");
+            if (!discardUnsavedEdits && !Application.isBatchMode && Enumerable.Range(0, SceneManager.sceneCount)
+                    .Any(i => SceneManager.GetSceneAt(i).isDirty))
+                throw new InvalidOperationException("An open scene has unsaved edits; interactive observation was not started.");
+            _report = new Observation
+            {
+                startedUtc = DateTime.UtcNow.ToString("o"), scenePath = scene,
+                unityVersion = Application.unityVersion, status = "entering_playmode",
+                startedEditorTime = EditorApplication.timeSinceStartup, duration = duration,
+                batchMode = Application.isBatchMode, coreGameplayAccepted = false
+            };
+            Directory.CreateDirectory(ledger);
+            SessionState.SetString(SessionKey, _path);
+            Save();
+            Hook();
+            EditorSceneManager.OpenScene(scene, OpenSceneMode.Single);
+            EditorApplication.EnterPlaymode();
+        }
+
+        private static string Argument(string[] args, string key, string fallback)
+        {
+            int index = Array.IndexOf(args, key);
+            return index >= 0 && index + 1 < args.Length ? args[index + 1] : fallback;
+        }
+
+        private static void Hook()
+        {
+            if (_hooked) return;
+            _hooked = true;
+            Application.logMessageReceived += OnMessage;
+            EditorApplication.playModeStateChanged += OnPlayModeState;
+            EditorApplication.update += Update;
+        }
+
+        private static void OnMessage(string message, string stackTrace, LogType type)
+        {
+            if (_report == null || _report.errors.Count >= 50) return;
+            if (type != LogType.Error && type != LogType.Exception && type != LogType.Assert) return;
+            _report.errors.Add(new Message { type = type.ToString(), message = message,
+                stackTrace = stackTrace, frame = Time.frameCount });
+        }
+
+        private static void OnPlayModeState(PlayModeStateChange state)
+        {
+            if (_report == null) return;
+            if (state == PlayModeStateChange.EnteredPlayMode)
+            {
+                _report.enteredPlayEditorTime = EditorApplication.timeSinceStartup;
+                _report.status = "observing";
+                Save();
+            }
+            else if (state == PlayModeStateChange.ExitingPlayMode)
+            {
+                if (_report.status == "observing") _report.status = "playmode_ended_early";
+                Save();
+            }
+        }
+
+        private static void Update()
+        {
+            if (_report == null) return;
+            double now = EditorApplication.timeSinceStartup;
+            if (_report.status == "entering_playmode")
+            {
+                if (now - _report.startedEditorTime > 90) Finish("playmode_entry_timeout");
+                return;
+            }
+            if (_report.status == "observing")
+            {
+                if (now >= _nextSnapshot)
+                {
+                    Capture(now);
+                    _nextSnapshot = now + 2;
+                    Save();
+                }
+                if (_report.errors.Count > 0) Finish("runtime_error_observed");
+                else if (now - _report.enteredPlayEditorTime >= _report.duration)
+                    Finish("observation_completed_core_gameplay_not_accepted");
+                return;
+            }
+            if (EditorApplication.isPlayingOrWillChangePlaymode) return;
+            bool batch = _report.batchMode;
+            int exit = _report.status == "observation_completed_core_gameplay_not_accepted" ? 0 : 2;
+            Save();
+            SessionState.EraseString(SessionKey);
+            Application.logMessageReceived -= OnMessage;
+            EditorApplication.playModeStateChanged -= OnPlayModeState;
+            EditorApplication.update -= Update;
+            _hooked = false;
+            _report = null;
+            if (batch) EditorApplication.Exit(exit);
+        }
+
+        private static void Finish(string status)
+        {
+            _report.status = status;
+            _report.coreGameplayAccepted = false;
+            Save();
+            if (EditorApplication.isPlaying) EditorApplication.ExitPlaymode();
+            else if (EditorApplication.isPlayingOrWillChangePlaymode) EditorApplication.isPlaying = false;
+        }
+
+        private static void Capture(double now)
+        {
+            string[] scenes = Enumerable.Range(0, SceneManager.sceneCount)
+                .Select(i => SceneManager.GetSceneAt(i).path).ToArray();
+            var managers = Resources.FindObjectsOfTypeAll<MonoBehaviour>()
+                .Where(c => c != null && c.gameObject.scene.IsValid() && c.gameObject.scene.isLoaded)
+                .Where(c => c.GetType().Name.Contains("Manager") || c.GetType().Name == "GameLauncher"
+                    || c.GetType().Name == "LoginControl" || c.GetType().Name == "GameStartEntry")
+                .Select(c => new ComponentState { type = c.GetType().FullName, objectName = c.name,
+                    scene = c.gameObject.scene.path, active = c.gameObject.activeInHierarchy,
+                    enabled = c.enabled, primitiveFields = PrimitiveFields(c) }).ToArray();
+            _report.snapshots.Add(new Snapshot { editorElapsed = now - _report.startedEditorTime,
+                frame = Time.frameCount, gameTime = Time.time, timeScale = Time.timeScale,
+                scenes = scenes, managers = managers, framework = ObserveExistingFramework() });
+        }
+
+        private static FrameworkState ObserveExistingFramework()
+        {
+            var state = new FrameworkState { modules = Array.Empty<ModuleState>(), entryFields = Array.Empty<string>() };
+            // Inspect only the framework already reached by the original scene's Awake.
+            // No GetModule/Instance/property/method invocation and no gate writes are allowed here.
+            var entry = Resources.FindObjectsOfTypeAll<MonoBehaviour>().FirstOrDefault(c => c != null
+                && c.gameObject.scene.IsValid() && c.GetType().FullName == "GameFramework.Base.GameStartEntry");
+            if (entry == null) { state.diagnostic = "No existing GameStartEntry"; return state; }
+            try
+            {
+                Type type = entry.GetType().Assembly.GetType("GameFramework.GameFrameEntry", false);
+                if (type == null) { state.diagnostic = "GameFrameEntry type absent"; return state; }
+                FieldInfo listField = type.GetField("y_0086A_0094F_0083", BindingFlags.Static | BindingFlags.NonPublic);
+                var list = listField?.GetValue(null) as System.Collections.IEnumerable;
+                if (list == null) { state.diagnostic = "Existing module list absent"; return state; }
+                state.observedExistingEntry = true;
+                state.entryFields = type.GetFields(BindingFlags.Static | BindingFlags.Public | BindingFlags.NonPublic)
+                    .Where(f => f.FieldType.IsPrimitive || f.FieldType.IsEnum || f.FieldType == typeof(string))
+                    .Select(f => DescribeField(f, null)).ToArray();
+                var modules = new List<ModuleState>();
+                foreach (object module in list)
+                {
+                    if (module == null || modules.Count >= 64) break;
+                    var fields = new List<string>();
+                    for (Type current = module.GetType(); current != null && current != typeof(object); current = current.BaseType)
+                        fields.AddRange(current.GetFields(BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.DeclaredOnly)
+                            .Take(80).Select(f => DescribeField(f, module)));
+                    modules.Add(new ModuleState { type = module.GetType().FullName, fields = fields.ToArray() });
+                }
+                state.modules = modules.ToArray();
+                state.diagnostic = "Existing BCL module collection and fields only";
+            }
+            catch (Exception exception)
+            {
+                state.diagnostic = exception.GetType().Name + ": " + exception.Message;
+            }
+            return state;
+        }
+
+        private static string DescribeField(FieldInfo field, object instance)
+        {
+            object value = field.GetValue(instance);
+            string label = field.DeclaringType.Name + "." + field.Name + "=";
+            if (value == null) return label + "<null>";
+            if (field.FieldType.IsPrimitive || field.FieldType.IsEnum || field.FieldType == typeof(string))
+                return label + Convert.ToString(value, CultureInfo.InvariantCulture);
+            if (value is Delegate callback)
+                return label + "delegate:" + callback.Method.DeclaringType.FullName + "." + callback.Method.Name;
+            return label + "reference:" + value.GetType().FullName;
+        }
+
+        private static string[] PrimitiveFields(MonoBehaviour component)
+        {
+            // Reading fields does not execute game property getters or singleton accessors.
+            return component.GetType().GetFields(BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic)
+                .Where(f => f.FieldType.IsPrimitive || f.FieldType.IsEnum || f.FieldType == typeof(string))
+                .Take(40).Select(f => f.Name + "=" + Convert.ToString(f.GetValue(component), CultureInfo.InvariantCulture)).ToArray();
+        }
+
+        private static void Save()
+        {
+            if (_report != null && !string.IsNullOrEmpty(_path))
+                File.WriteAllText(_path, JsonUtility.ToJson(_report, true));
+        }
+    }
+}
