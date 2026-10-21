@@ -9,7 +9,7 @@ namespace SDKModule
 	{
 		[Token(Token = "0x4001A1B")]
 		[FieldOffset(Offset = "0x10")]
-		public int ChainRewards2;
+		public int ChainRewards2 = -1;
 
 		[Token(Token = "0x60005B9")]
 		[Address(RVA = "0x3F7366C", Offset = "0x3F6F66C", VA = "0x3F7366C")]

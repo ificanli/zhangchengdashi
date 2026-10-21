@@ -9,7 +9,7 @@ namespace SDKModule
 	{
 		[Token(Token = "0x4001A15")]
 		[FieldOffset(Offset = "0x10")]
-		public int MaxArtifactUsage;
+		public int MaxArtifactUsage = -1;
 
 		[Token(Token = "0x60005B3")]
 		[Address(RVA = "0x3F7360C", Offset = "0x3F6F60C", VA = "0x3F7360C")]

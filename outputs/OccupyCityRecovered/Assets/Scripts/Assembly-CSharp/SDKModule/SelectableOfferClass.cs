@@ -9,7 +9,7 @@ namespace SDKModule
 	{
 		[Token(Token = "0x4001A16")]
 		[FieldOffset(Offset = "0x10")]
-		public int SelectableOffer;
+		public int SelectableOffer = -1;
 
 		[Token(Token = "0x60005B4")]
 		[Address(RVA = "0x3F7361C", Offset = "0x3F6F61C", VA = "0x3F7361C")]

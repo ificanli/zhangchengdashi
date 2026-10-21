@@ -9,7 +9,7 @@ namespace SDKModule
 	{
 		[Token(Token = "0x4001A11")]
 		[FieldOffset(Offset = "0x10")]
-		public int DynamicCoins;
+		public int DynamicCoins = -1;
 
 		[Token(Token = "0x60005AF")]
 		[Address(RVA = "0x3F735CC", Offset = "0x3F6F5CC", VA = "0x3F735CC")]

@@ -9,7 +9,7 @@ namespace SDKModule
 	{
 		[Token(Token = "0x4001A17")]
 		[FieldOffset(Offset = "0x10")]
-		public int NewMainCitySystem;
+		public int NewMainCitySystem = -1;
 
 		[Token(Token = "0x60005B5")]
 		[Address(RVA = "0x3F7362C", Offset = "0x3F6F62C", VA = "0x3F7362C")]
