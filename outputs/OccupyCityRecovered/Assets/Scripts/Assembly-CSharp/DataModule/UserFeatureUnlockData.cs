@@ -15,7 +15,7 @@ namespace DataModule
 
 		[Token(Token = "0x40065E7")]
 		[Il2CppDummyDll.FieldOffset(Offset = "0x20")]
-		public Dictionary<string, object> extraData;
+		public Dictionary<string, object> extraData = new Dictionary<string, object>();
 
 		[Token(Token = "0x60058F7")]
 		[Address(RVA = "0x4367D88", Offset = "0x4363D88", VA = "0x4367D88")]

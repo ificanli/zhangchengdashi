@@ -31,15 +31,17 @@ namespace TutorModule
 			[Address(RVA = "0x418EC5C", Offset = "0x418AC5C", VA = "0x418EC5C", Slot = "4")]
 			get
 			{
-				return default;
-			}
+                return true;
+            }
 		}
 
 		[Token(Token = "0x6000843")]
 		[Address(RVA = "0x418E6F4", Offset = "0x418A6F4", VA = "0x418E6F4")]
 		protected FeatureUnlockBase(GlobalFeatureUnlockInfo info, bool isUnlock)
 		{
-		}
+            _info = info;
+            IsUnlock = isUnlock;
+        }
 
 		[Token(Token = "0x6000844")]
 		public abstract void StartCheck();

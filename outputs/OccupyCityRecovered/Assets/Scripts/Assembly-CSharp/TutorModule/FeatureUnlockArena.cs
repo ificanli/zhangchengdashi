@@ -15,8 +15,8 @@ namespace TutorModule
 		[Address(RVA = "0x418B07C", Offset = "0x418707C", VA = "0x418B07C")]
 		public FeatureUnlockArena(GlobalFeatureUnlockInfo info, bool isUnlock) : base(info, isUnlock)
 		{
-			throw new global::System.NotImplementedException("RECOVERY_UNIMPLEMENTED FeatureUnlockArena..ctor RVA=0x418B07C Token=0x0600083B; original base constructor arguments recovered; remaining original constructor body pending.");
-		}
+            _arena = ToolModule.StringTool.ToInt(info.args);
+        }
 
 		[Token(Token = "0x600083C")]
 		[Address(RVA = "0x418E728", Offset = "0x418A728", VA = "0x418E728", Slot = "5")]

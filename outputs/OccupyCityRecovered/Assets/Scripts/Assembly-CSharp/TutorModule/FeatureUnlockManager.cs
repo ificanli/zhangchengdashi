@@ -58,43 +58,58 @@ void System.Runtime.CompilerServices.IAsyncStateMachine.SetStateMachine(IAsyncSt
 		[Token(Token = "0x6000818")]
 		[Address(RVA = "0x418BA68", Offset = "0x4187A68", VA = "0x418BA68", Slot = "4")]
 		[AsyncStateMachine(typeof(_003CInit_003Ed__1))]
-		public override UniTask Init()
+		public override async UniTask Init()
 		{
-			return default;
+		    TutorialResourceManager resourceManager = new TutorialResourceManager();
+		    await resourceManager.Init();
+		    QuickTutor.TutorialManager.Instance.Init(resourceManager);
+		    _featureUnlockCtrl = new FeatureUnlockCtrl();
+		    _featureUnlockCtrl.Init();
 		}
 
 		[Token(Token = "0x6000819")]
 		[Address(RVA = "0x418BAF4", Offset = "0x4187AF4", VA = "0x418BAF4")]
 		private void Update()
 		{
-		}
+            _featureUnlockCtrl?.ToUpdate();
+        }
 
 		[Token(Token = "0x600081A")]
 		[Address(RVA = "0x418BB04", Offset = "0x4187B04", VA = "0x418BB04")]
 		public bool IsUnlock(string infoId, bool showTip = false)
 		{
-			return default;
-		}
+            if (DBTSDK.AppInfoManager.Instance.GetDesignModeStatic() == 1)
+                return true;
+            bool isUnlock = Instance._featureUnlockCtrl != null && Instance._featureUnlockCtrl.IsUnlock(infoId);
+            if (!isUnlock && showTip)
+                ShowUnlockTip(infoId);
+            return isUnlock;
+        }
 
 		[Token(Token = "0x600081B")]
 		[Address(RVA = "0x418BC3C", Offset = "0x4187C3C", VA = "0x418BC3C")]
 		public UserFeatureUnlockData GetFeatureData(string infoId)
 		{
-			return null;
-		}
+            if (Instance._featureUnlockCtrl != null)
+                return Instance._featureUnlockCtrl.GetFeatureData(infoId);
+            return null;
+        }
 
 		[Token(Token = "0x600081C")]
 		[Address(RVA = "0x418BBD8", Offset = "0x4187BD8", VA = "0x418BBD8")]
 		public void ShowUnlockTip(string infoId)
 		{
-		}
+            PufferMiniGame.TipManager.ShowTip(Instance._featureUnlockCtrl.GetUnlockTip(infoId));
+        }
 
 		[Token(Token = "0x600081D")]
 		[Address(RVA = "0x418BCBC", Offset = "0x4187CBC", VA = "0x418BCBC")]
 		public string GetUnlockTip(string infoId)
 		{
-			return null;
-		}
+            if (Instance == null || Instance._featureUnlockCtrl == null)
+                return null;
+            return Instance._featureUnlockCtrl.GetUnlockTip(infoId);
+        }
 
 		[Token(Token = "0x600081E")]
 		[Address(RVA = "0x418BD90", Offset = "0x4187D90", VA = "0x418BD90")]

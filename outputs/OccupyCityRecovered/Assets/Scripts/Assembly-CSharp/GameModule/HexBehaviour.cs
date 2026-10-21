@@ -55,8 +55,8 @@ namespace GameModule
 			[Address(RVA = "0x442BF04", Offset = "0x4427F04", VA = "0x442BF04")]
 			internal bool _003CCreatSoldierPile_003Eb__0(GlobalRoleInfo x)
 			{
-				return default;
-			}
+		    return x.id == _003C_003E4__this._info.roleID;
+		}
 		}
 
 		[Token(Token = "0x2000299")]
@@ -81,7 +81,24 @@ namespace GameModule
 			[Address(RVA = "0x442BF3C", Offset = "0x4427F3C", VA = "0x442BF3C")]
 			internal void _003CCreatSoldierPile_003Eb__1()
 			{
-			}
+		    if (!CoreGameManager.Gaming) return;
+		    _003C_003Ec__DisplayClass132_0 context = CS_0024_003C_003E8__locals1;
+		    GameObject obj = AssetsModule.ObjPoolManager.Instance.GetFromPool(context._rolePrefabRes, -1f, true, 3);
+		    obj.transform.position = context.allPos[index];
+		    obj.transform.rotation = Quaternion.identity;
+		    obj.gameObject.SetActive(false);
+		    RoleBehaviour role = obj.GetComponent<RoleBehaviour>();
+		    HexBehaviour hex = context._003C_003E4__this;
+		    GlobalHeroCardInfo card = DataManager.Instance.GlobalInfo.heroCardDic[hex._id];
+		    CardFettersType fetters = (CardFettersType)ToolModule.StringTool.ToInt(card.cardFetters);
+		    card = DataManager.Instance.GlobalInfo.heroCardDic[hex._id];
+		    AtkWayType attackWay = (AtkWayType)ToolModule.StringTool.ToInt(card.atkType);
+		    role.Init(context._roleInfo, hex.isEnemyHex, context.CardLevel, hex.rareLevel, hex._id, fetters, attackWay);
+		    if (hex.isEnemyHex) BattleGameSceneManager.Instance.AddEnemyRole(obj, false, false);
+		    else BattleGameSceneManager.Instance.AddPlayerRole(obj, false, false);
+		    if (CheatControl.DisableSpawnEffect) return;
+		    AssetsModule.EffectManager.Instance.ShowEffect(context.path2, context.allPos[index], Vector3.zero, 1f);
+		}
 		}
 
 		[StructLayout((LayoutKind)3)]
@@ -109,14 +126,95 @@ namespace GameModule
 			[Address(RVA = "0x442C34C", Offset = "0x442834C", VA = "0x442C34C", Slot = "4")]
 void System.Runtime.CompilerServices.IAsyncStateMachine.MoveNext()
 			{
-			}
+                HexBehaviour self = _003C_003E4__this;
+                try
+                {
+                    UniTask<GameObject>.Awaiter awaiter;
+                    if (_003C_003E1__state != 0)
+                    {
+                        self.hasArchitecture = false;
+                        self.isDestroy = true;
+                        bool season = BattleGameSceneManager.Instance.isSeasonPVP_BTest;
+                        MeshRenderer renderer = self.transform.GetChild(0).GetChild(1).GetComponent<MeshRenderer>();
+                        if (self.isEnemyHex)
+                        {
+                            renderer.material = global::AssetsModule.MaterialsManager.Instance.GetHexMaterialByKey(false, self.key, season);
+                            self.isEnemyHex = false;
+                            BattleGameSceneManager.Instance.RemoveEnemyHasHex(self.gameObject);
+                            BattleGameSceneManager.Instance.AddPlayerHasHex(self.gameObject);
+                        }
+                        else
+                        {
+                            renderer.material = global::AssetsModule.MaterialsManager.Instance.GetHexMaterialByKey(true, self.key, season);
+                            self.isEnemyHex = true;
+                            BattleGameSceneManager.Instance.RemovePlayerHasHex(self.gameObject);
+                            BattleGameSceneManager.Instance.AddEnemyHasHex(self.gameObject);
+                        }
+                        SubGameBuffManager.Instance.NotifyHexOwnershipChanged(self);
+                        self.DestroyWall(self.leftUpWall, true);
+                        self.DestroyWall(self.rightUpWall, true);
+                        self.DestroyWall(self.upWall, true);
+                        self.DestroyWall(self.downWall, true);
+                        self.DestroyWall(self.leftDownWall, true);
+                        self.DestroyWall(self.rightDownWall, true);
+                        UnityEngine.Object.Destroy(self._obj);
+                        self._obj = null;
+                        global::AssetsModule.EffectManager.Instance.ShowEffect("Assets/_Res/Addressable/EffectsBundle/Effects/ArchitectureExplosion.prefab",
+                            new Vector3(self.transform.position.x, 0f, self.transform.position.z), default, 1f);
+                        awaiter = global::AssetsModule.AssetsManager.Instance.LoadAssetAsync<GameObject>("Assets/_Res/Addressable/02CoreGameBundle/Prefabs/CoreGame/Build/Build_Destory.prefab").GetAwaiter();
+                        if (!awaiter.IsCompleted)
+                        {
+                            _003C_003E1__state = 0;
+                            _003C_003Eu__1 = awaiter;
+                            _003C_003Et__builder.AwaitUnsafeOnCompleted(ref awaiter, ref this);
+                            return;
+                        }
+                    }
+                    else
+                    {
+                        awaiter = _003C_003Eu__1;
+                        _003C_003Eu__1 = default;
+                        _003C_003E1__state = -1;
+                    }
+                    GameObject prefab = awaiter.GetResult();
+                    self._obj = UnityEngine.Object.Instantiate(prefab, new Vector3(self.transform.position.x, 0f, self.transform.position.z), Quaternion.identity);
+                    BattleGameSceneManager.Instance.SetDestroyObjParent(self._obj);
+                    global::EventModule.EventManager.Instance.StopListening("CraetHexEnd", self.UpdateHexItemUIEvent);
+                    global::EventModule.EventManager.Instance.StopListening("HasHexOpen", self.UpdateHexItemUIEvent);
+                    global::EventModule.EventManager.Instance.StopListening("UpdateHexItemUI", self.UpdateHexItemUIEvent);
+                    global::EventModule.EventManager.Instance.StopListening("CraetHexEnd", self.CheckCanOpen);
+                    global::EventModule.EventManager.Instance.StopListening("HasHexOpen", self.CheckCanOpen);
+                    global::EventModule.EventManager.Instance.StopListening("HasHexOpen", self.CreatWallJudge);
+                    global::EventModule.EventManager.Instance.StopListening("HasHexDestroy", self.CreatWallJudge);
+                    global::EventModule.EventManager.Instance.StopListening("CraetHexEndCreatMainTower", self.CreatMainTower);
+                    global::EventModule.EventManager.Instance.StopListening("PlayerCoinChange", self.UpdateCoinColorEvent);
+                    global::EventModule.EventManager.Instance.StopListening("HasHexOpen", self.HexOpenAndHexDestroyCheckNullHexShouldCreatWall);
+                    global::EventModule.EventManager.Instance.StopListening("HasHexDestroy", self.HexOpenAndHexDestroyCheckNullHexShouldCreatWall);
+                    global::EventModule.EventManager.Instance.StopListening("HasHexOpen", self.CheckGraphUpdateScene);
+                    global::EventModule.EventManager.Instance.StopListening("HasHexDestroy", self.CheckGraphUpdateScene);
+                    global::EventModule.EventManager.Instance.StopListening("HasWallDestroy", self.UpdateAllWallState);
+                    self.RemoveFromDirtyHexUIBatches();
+                    global::EventModule.EventManager.Instance.TriggerEvent("HasHexDestroy", self);
+                    global::EventModule.EventManager.Instance.TriggerEvent("BothHexCountChange");
+                    global::EventModule.EventManager.Instance.TriggerEvent("UpdateHexItemUI");
+                }
+                catch (Exception exception)
+                {
+                    _003C_003E1__state = -2;
+                    _003C_003Et__builder.SetException(exception);
+                    return;
+                }
+                _003C_003E1__state = -2;
+                _003C_003Et__builder.SetResult();
+            }
 
 			[Token(Token = "0x6000BBB")]
 			[Address(RVA = "0x442D1F4", Offset = "0x44291F4", VA = "0x442D1F4", Slot = "5")]
 			[DebuggerHidden]
 void System.Runtime.CompilerServices.IAsyncStateMachine.SetStateMachine(IAsyncStateMachine stateMachine)
 			{
-			}
+                _003C_003Et__builder.SetStateMachine(stateMachine);
+            }
 		}
 
 		[StructLayout((LayoutKind)3)]
@@ -1024,19 +1122,19 @@ void System.Runtime.CompilerServices.IAsyncStateMachine.SetStateMachine(IAsyncSt
 
 		[Token(Token = "0x400207E")]
 		[Il2CppDummyDll.FieldOffset(Offset = "0x0")]
-		private static readonly HashSet<HexBehaviour> DirtyCoinColorHexes;
+		private static readonly HashSet<HexBehaviour> DirtyCoinColorHexes = new HashSet<HexBehaviour>();
 
 		[Token(Token = "0x400207F")]
 		[Il2CppDummyDll.FieldOffset(Offset = "0x8")]
-		private static readonly HashSet<HexBehaviour> DirtyHexItemUIHexes;
+		private static readonly HashSet<HexBehaviour> DirtyHexItemUIHexes = new HashSet<HexBehaviour>();
 
 		[Token(Token = "0x4002080")]
 		[Il2CppDummyDll.FieldOffset(Offset = "0x10")]
-		private static readonly List<HexBehaviour> DirtyCoinColorBuffer;
+		private static readonly List<HexBehaviour> DirtyCoinColorBuffer = new List<HexBehaviour>(256);
 
 		[Token(Token = "0x4002081")]
 		[Il2CppDummyDll.FieldOffset(Offset = "0x18")]
-		private static readonly List<HexBehaviour> DirtyHexItemUIBuffer;
+		private static readonly List<HexBehaviour> DirtyHexItemUIBuffer = new List<HexBehaviour>(256);
 
 		[Token(Token = "0x4002082")]
 		[Il2CppDummyDll.FieldOffset(Offset = "0x20")]
@@ -1391,18 +1489,36 @@ void System.Runtime.CompilerServices.IAsyncStateMachine.SetStateMachine(IAsyncSt
 		[Address(RVA = "0x4420AD8", Offset = "0x441CAD8", VA = "0x4420AD8")]
 		private void CacheGraphUpdateScene()
 		{
+		    if (_graphUpdateScene == null) _graphUpdateScene = transform.GetComponent<Pathfinding.GraphUpdateScene>();
+		    if (Pathfinding.AstarWebGLRuntimeConfig.DisableAstarRuntime && _graphUpdateScene != null) _graphUpdateScene.enabled = false;
 		}
 
 		[Token(Token = "0x6000B4B")]
 		[Address(RVA = "0x4420BC4", Offset = "0x441CBC4", VA = "0x4420BC4")]
 		private void InitGraphUpdateScene()
 		{
+		    CacheGraphUpdateScene();
+		    if (_graphUpdateScene == null) return;
+		    graphPoints = _graphUpdateScene.points;
+		    if (Pathfinding.AstarWebGLRuntimeConfig.DisableAstarRuntime) return;
+		    _graphUpdateScene.points = null;
+		    _graphUpdateScene.setTag = 0;
+		    _graphUpdateScene.Apply();
 		}
 
 		[Token(Token = "0x6000B4C")]
 		[Address(RVA = "0x4420C88", Offset = "0x441CC88", VA = "0x4420C88")]
 		private void Start()
 		{
+		    if (transform.position == new Vector3(0f, 0f, -6f)) SteerManager.Instance.playerGoldMine = transform;
+		    if (transform.position == new Vector3(-1.73f, 0f, -9f)) SteerManager.Instance.playerOneStartHex = transform;
+		    if (transform.position == new Vector3(-1.73f, 0f, -7f)) SteerManager.Instance.playerDefense1 = transform;
+		    if (transform.position == new Vector3(0f, 0f, -6f)) SteerManager.Instance.playerDefense2 = transform;
+		    if (transform.position == new Vector3(-1.73f, 0f, -9f)) SteerManager.Instance.playerGodMine1 = transform;
+		    if (transform.position == new Vector3(-1.73f, 0f, -11f)) SteerManager.Instance.playerGodMine2 = transform;
+		    if (transform.position == new Vector3(1.73f, 0f, -7f)) SteerManager.Instance.playerTutor3Unchart1 = transform;
+		    if (transform.position == new Vector3(1.73f, 0f, -5f)) SteerManager.Instance.playerTutor3Unchart2 = transform;
+		    if (transform.position == new Vector3(3.46f, 0f, -4f)) SteerManager.Instance.playerTutor3Defense = transform;
 		}
 
 		[Token(Token = "0x6000B4D")]
@@ -1415,14 +1531,21 @@ void System.Runtime.CompilerServices.IAsyncStateMachine.SetStateMachine(IAsyncSt
 		[Address(RVA = "0x4421098", Offset = "0x441D098", VA = "0x4421098")]
 		private GlobalHexInfo GetLandPriceHexGlobalInfo()
 		{
-			return null;
+		    List<GlobalHexInfo> configs = DataManager.Instance.GlobalInfo.hexInfos;
+		    if (LegendaryTileGuaranteed)
+		    {
+		        foreach (GlobalHexInfo config in configs) if (config.id == "1005") return config;
+		        return configs[2];
+		    }
+		    return configs[(int)quality];
 		}
 
 		[Token(Token = "0x6000B4F")]
 		[Address(RVA = "0x4421294", Offset = "0x441D294", VA = "0x4421294")]
 		private int GetLandPriceInt(GlobalHexInfo landCfg)
 		{
-			return default;
+		    if (LegendaryTileGuaranteed) return BattleGameSceneManager.GetLegendaryTileV1Price();
+		    return ToolModule.StringTool.ToInt(landCfg.price);
 		}
 
 		[Token(Token = "0x6000B50")]
@@ -1435,6 +1558,16 @@ void System.Runtime.CompilerServices.IAsyncStateMachine.SetStateMachine(IAsyncSt
 		[Address(RVA = "0x44216D4", Offset = "0x441D6D4", VA = "0x44216D4")]
 		private void RefreshLegendaryTileCardForCurrentCamp()
 		{
+		    if (!LegendaryTileGuaranteed || isOpened) return;
+		    rareLevel = RareLevel.SSSR;
+		    bool isMirror = SDKModule.ABTestManager.Instance.BalanceAdjustment01IsBTest;
+		    (_info, _id) = isEnemyHex ? AIBehaviourManager.Instance.RandomSSSRArchitectureLevelInfo(isMirror, hexBuildType, false) : EquipCardInfoManager.Instance.RandomSSSRArchitectureLevelInfo(isMirror, hexBuildType, false);
+		    if (_info != null && !ToolModule.StringTool.IsNullOrEmpty(_id, true)) rareLevel = DbtSaveDataManager_PlayerCardData.I.Data.userHeroCardDataDic[_id].GetRareLevel();
+		    RecordHexType();
+		    _res = null;
+		    _enemyRes = null;
+		    _playerRes = null;
+		    LoadArchitectureRes();
 		}
 
 		[Token(Token = "0x6000B52")]
@@ -1456,20 +1589,244 @@ void System.Runtime.CompilerServices.IAsyncStateMachine.SetStateMachine(IAsyncSt
 		[Address(RVA = "0x44219B8", Offset = "0x441D9B8", VA = "0x44219B8")]
 		private void SyncLegendaryGridEffectWithPriceUi()
 		{
+		    if (!LegendaryTileGuaranteed || _legendaryGridEffectObj == null) return;
+		    if (_uiObj != null)
+		    {
+		        bool active = _uiObj.activeSelf;
+		        _legendaryGridEffectObj.SetActive(active);
+		        if (active)
+		        {
+		            ParticleSystem[] particles = _legendaryGridEffectObj.GetComponentsInChildren<ParticleSystem>(true);
+		            for (int i = 0; i < particles.Length; ++i) particles[i].Play();
+		        }
+		    }
+		    else _legendaryGridEffectObj.SetActive(false);
 		}
 
 		[Token(Token = "0x6000B55")]
 		[Address(RVA = "0x4415734", Offset = "0x4411734", VA = "0x4415734")]
 		[AsyncStateMachine(typeof(_003CInit_003Ed__89))]
-		public void Init(string key, bool isEnemyHex, Quality _quality, bool setGoldMine = false, bool isNoGoldCard = false, bool setOneStar = false, bool setUnchart = false, bool setDefense = false, bool setSoldier = false)
+		public async void Init(string key, bool isEnemyHex, Quality _quality, bool setGoldMine = false, bool isNoGoldCard = false, bool setOneStar = false, bool setUnchart = false, bool setDefense = false, bool setSoldier = false)
 		{
+		    Priority = 1;
+		    this.key = key;
+		    this.isEnemyHex = isEnemyHex;
+		    _isInitFixed = false;
+		    quality = _quality;
+		    if (setOneStar | setSoldier) quality = Quality.OneStar;
+		    if (setUnchart) quality = Quality.UnCharted;
+		    bool isNoneTutorGame = BattleGameSceneManager.Instance.IsNoneTutorGame;
+		
+		    EventModule.EventManager.Instance.StartListening("CraetHexEndCreatMainTower", CreatMainTower);
+		    EventModule.EventManager.Instance.StartListening("PlayerCoinChange", UpdateCoinColorEvent);
+		    EventModule.EventManager.Instance.StartListening("CraetHexEnd", UpdateHexItemUIEvent);
+		    EventModule.EventManager.Instance.StartListening("HasHexOpen", UpdateHexItemUIEvent);
+		    EventModule.EventManager.Instance.StartListening("CraetHexEnd", CheckCanOpen);
+		    EventModule.EventManager.Instance.StartListening("HasHexOpen", CheckCanOpen);
+		    EventModule.EventManager.Instance.StartListening("UpdateHexItemUI", UpdateHexItemUIEvent);
+		    EventModule.EventManager.Instance.StartListening("HasHexOpen", HexOpenAndHexDestroyCheckNullHexShouldCreatWall);
+		    EventModule.EventManager.Instance.StartListening("HasHexDestroy", HexOpenAndHexDestroyCheckNullHexShouldCreatWall);
+		    EventModule.EventManager.Instance.StartListening("HasHexOpen", CreatWallJudge);
+		    EventModule.EventManager.Instance.StartListening("HasHexDestroy", CreatWallJudge);
+		    EventModule.EventManager.Instance.StartListening("HasHexOpen", CheckGraphUpdateScene);
+		    EventModule.EventManager.Instance.StartListening("HasHexDestroy", CheckGraphUpdateScene);
+		    EventModule.EventManager.Instance.StartListening("HasWallDestroy", UpdateAllWallState);
+		    if (UserLableManager.Instance.UserLableIsOpen())
+		    {
+		        EventModule.EventManager.Instance.StartListening("LableSystemPlayerRefreshHex", LableTestPlayerRefeshHex);
+		        EventModule.EventManager.Instance.StartListening("LableSystemEnemyRefreshHex", LableSystemEnemyRefreshHex);
+		    }
+		    InitGraphUpdateScene();
+		
+		    rareLevel = RareLevel.R;
+		    RandomHexRare(true);
+		    bool guided = TrainingGroundManager.IsInGuidedGame;
+		    if (!LegendaryTileGuaranteed)
+		    {
+		        if (rareLevel == RareLevel.SSSR && ((guided && isEnemyHex) || (isNoGoldCard && transform.position.z > 0f)))
+		        {
+		            rareLevel = quality == Quality.OneStar ? RareLevel.R : quality == Quality.TwoStar ? RareLevel.SR : quality == Quality.ThreeStar ? RareLevel.SSR : RareLevel.Null;
+		        }
+		        if (!LegendaryTileGuaranteed && CoreGameManager.Instance.canCheat && CoreGameManager.Instance.goldCardTest && quality == Quality.UnCharted)
+		            rareLevel = RareLevel.SSSR;
+		    }
+		    HexMirrorInfo mirror = BattleGameSceneManager.Instance.GetMirror(this.key);
+		    RandomArchitectureInfoAndCardID(true, mirror);
+		    if ((setOneStar | setSoldier) && mirror == null)
+		    {
+		        (GlobalArchitectureInfo, string, string) tuple = (null, "", "");
+		        if (_info.type != "barracks" && isEnemyHex)
+		        {
+		            tuple = AIBehaviourManager.Instance.RandomBarracksArchitectureInfo();
+		            _info = tuple.Item1; _id = tuple.Item2;
+		        }
+		        else if (_info.type != "barracks" && !isEnemyHex)
+		        {
+		            tuple = EquipCardInfoManager.Instance.RandomBarracksArchitectureInfo();
+		            _info = tuple.Item1; _id = tuple.Item2;
+		        }
+		        if (tuple.Item3 == "R") rareLevel = RareLevel.R;
+		        else if (tuple.Item3 == "SR") rareLevel = RareLevel.SR;
+		        else if (tuple.Item3 == "SSR") rareLevel = RareLevel.SSR;
+		        else if (tuple.Item3 == "SSSR") rareLevel = RareLevel.SSSR;
+		    }
+		    if (setDefense && mirror == null)
+		    {
+		        bool arrow = isEnemyHex ? AIBehaviourManager.Instance.EqipDefenseArrowTowerCard : EquipCardInfoManager.Instance.EqipDefenseArrowTowerCard;
+		        bool catapults = isEnemyHex ? AIBehaviourManager.Instance.EqipDefenseCatapultsCard : EquipCardInfoManager.Instance.EqipDefenseCatapultsCard;
+		        if (arrow | catapults)
+		        {
+		            quality = (Quality)UnityEngine.Random.Range(0, 3);
+		            int choose = UnityEngine.Random.Range(0, 101);
+		            if ((arrow & catapults) ? choose <= 49 : arrow)
+		            {
+		                rareLevel = RareLevel.SR;
+		                (_info, _id) = EquipCardInfoManager.Instance.GetArrowTowerInfo();
+		            }
+		            else
+		            {
+		                rareLevel = RareLevel.SSR;
+		                (_info, _id) = EquipCardInfoManager.Instance.GetCatapultsInfo();
+		            }
+		        }
+		    }
+		    if (setGoldMine && mirror == null)
+		    {
+		        if (!ToolModule.StringTool.IsNullOrEmpty(_id, true) && _id != "1001") BattleGameSceneManager.Instance.GoldMineCountLimitRecordHexCreat();
+		        quality = Quality.OneStar;
+		        rareLevel = RareLevel.R;
+		        if (setGoldMine) (_info, _id) = EquipCardInfoManager.Instance.GetGoldMineInfo();
+		        else (_info, _id) = EquipCardInfoManager.Instance.GetSkeletonInfo();
+		    }
+		    SetHexSoldierPile(setOneStar, setSoldier);
+		    RecordHexType();
+		    bool applySubGameQuestionMark = false;
+		    if (SubGameBuffManager.Instance.IsActive)
+		    {
+		        applySubGameQuestionMark = SubGameBuffManager.Instance.HasBuff(1001);
+		        if (applySubGameQuestionMark) ApplySubGameQuestionMarkInitState();
+		    }
+		    if (isNoneTutorGame && SDKModule.ABTestManager.Instance.BalanceAdjustment01IsBTest)
+		        BattleGameSceneManager.Instance.AddToRecord(this.key, quality, rareLevel, hexBuildType);
+		
+		    _stoneWallRes = await AssetsModule.AssetsManager.Instance.LoadAssetAsync<GameObject>(isEnemyHex
+		        ? "Assets/_Res/Addressable/02CoreGameBundle/Prefabs/CoreGame/Wall/EnemyStoneWallRoot.prefab"
+		        : "Assets/_Res/Addressable/02CoreGameBundle/Prefabs/CoreGame/Wall/PlayerStoneWallRoot.prefab");
+		    if (quality != Quality.UnCharted) LoadShowIconRes();
+		    _enemyHexUIRes = await AssetsModule.AssetsManager.Instance.LoadAssetAsync<GameObject>("Assets/_Res/Addressable/02CoreGameBundle/Prefabs/CoreGame/SpriteUI/BeelzebubUI.prefab");
+		    GlobalHexInfo landConfig = GetLandPriceHexGlobalInfo();
+		    price = GetLandPriceInt(landConfig);
+		    _uiRes = await AssetsModule.AssetsManager.Instance.LoadAssetAsync<GameObject>(landConfig.uiResPath);
+		    if (!applySubGameQuestionMark && _info != null && _info.id == "1001")
+		    {
+		        price = BattleGameSceneManager.Instance.GetGoldMinePrice(isEnemyHex);
+		        _uiRes = await AssetsModule.AssetsManager.Instance.LoadAssetAsync<GameObject>(DataManager.Instance.GlobalInfo.hexInfos[0].uiResPath);
+		    }
+		    if (_enemyHexUIObj == null)
+		    {
+		        _enemyHexUIObj = UnityEngine.Object.Instantiate(_enemyHexUIRes);
+		        _enemyHexUIObj.transform.SetParent(transform, false);
+		        _enemyHexUIObj.SetActive(false);
+		    }
+		    if (_uiObj == null)
+		    {
+		        _uiObj = UnityEngine.Object.Instantiate(_uiRes);
+		        tmpUI = _uiObj.transform.Find("TextRenderer").GetComponent<TMPro.TextMeshPro>();
+		        _uiObj.transform.localPosition = quality == Quality.UnCharted ? new Vector3(0f, 0f, 0.214f) : Vector3.zero;
+		        _uiObj.transform.SetParent(transform, false);
+		        _uiObj.SetActive(false);
+		    }
+		    RefreshSubGameInflationPrice();
+		    if (quality != Quality.UnCharted) CreatShowUIObj();
+		    LoadArchitectureRes();
 		}
 
 		[Token(Token = "0x6000B56")]
 		[Address(RVA = "0x4415CF4", Offset = "0x4411CF4", VA = "0x4415CF4")]
 		[AsyncStateMachine(typeof(_003CInitFixed_003Ed__90))]
-		public void InitFixed(string key, bool isEnemyHex, Quality _quality, HexType hexType, string fixedCardId, [Optional] string endTriggerEventId)
+		public async void InitFixed(string key, bool isEnemyHex, Quality _quality, HexType hexType, string fixedCardId, [Optional] string endTriggerEventId)
 		{
+		    Priority = 1;
+		    this.key = key;
+		    this.isEnemyHex = isEnemyHex;
+		    quality = _quality;
+		    hexBuildType = hexType;
+		    trainingEndTriggerEventId = endTriggerEventId;
+		    bool eventIsEmpty = string.IsNullOrEmpty(endTriggerEventId);
+		    _isInitFixed = true;
+		    trainingLocked = !eventIsEmpty;
+		    bool isNoneTutorGame = BattleGameSceneManager.Instance.IsNoneTutorGame;
+		
+		    EventModule.EventManager.Instance.StartListening("CraetHexEndCreatMainTower", CreatMainTower);
+		    EventModule.EventManager.Instance.StartListening("PlayerCoinChange", UpdateCoinColorEvent);
+		    EventModule.EventManager.Instance.StartListening("CraetHexEnd", UpdateHexItemUIEvent);
+		    EventModule.EventManager.Instance.StartListening("HasHexOpen", UpdateHexItemUIEvent);
+		    EventModule.EventManager.Instance.StartListening("CraetHexEnd", CheckCanOpen);
+		    EventModule.EventManager.Instance.StartListening("HasHexOpen", CheckCanOpen);
+		    EventModule.EventManager.Instance.StartListening("UpdateHexItemUI", UpdateHexItemUIEvent);
+		    EventModule.EventManager.Instance.StartListening("HasHexOpen", HexOpenAndHexDestroyCheckNullHexShouldCreatWall);
+		    EventModule.EventManager.Instance.StartListening("HasHexDestroy", HexOpenAndHexDestroyCheckNullHexShouldCreatWall);
+		    EventModule.EventManager.Instance.StartListening("HasHexOpen", CreatWallJudge);
+		    EventModule.EventManager.Instance.StartListening("HasHexDestroy", CreatWallJudge);
+		    EventModule.EventManager.Instance.StartListening("HasHexOpen", CheckGraphUpdateScene);
+		    EventModule.EventManager.Instance.StartListening("HasHexDestroy", CheckGraphUpdateScene);
+		    EventModule.EventManager.Instance.StartListening("HasWallDestroy", UpdateAllWallState);
+		    if (UserLableManager.Instance.UserLableIsOpen())
+		    {
+		        EventModule.EventManager.Instance.StartListening("LableSystemPlayerRefreshHex", LableTestPlayerRefeshHex);
+		        EventModule.EventManager.Instance.StartListening("LableSystemEnemyRefreshHex", LableSystemEnemyRefreshHex);
+		    }
+		    InitGraphUpdateScene();
+		
+		    rareLevel = RareLevel.R;
+		    if (!string.IsNullOrEmpty(fixedCardId) && DataManager.Instance.GlobalInfo.heroCardDic.ContainsKey(fixedCardId))
+		    {
+		        GlobalHeroCardInfo card = DataManager.Instance.GlobalInfo.heroCardDic[fixedCardId];
+		        if (card != null)
+		        {
+		            _id = fixedCardId;
+		            _info = DataManager.Instance.GlobalInfo.architectureInfoDic.ContainsKey(card.architecturdID)
+		                ? DataManager.Instance.GlobalInfo.architectureInfoDic[card.architecturdID] : null;
+		            if (card.rareLevel == "R") rareLevel = RareLevel.R;
+		            else if (card.rareLevel == "SR") rareLevel = RareLevel.SR;
+		            else if (card.rareLevel == "SSR") rareLevel = RareLevel.SSR;
+		            else if (card.rareLevel == "SSSR") rareLevel = RareLevel.SSSR;
+		        }
+		    }
+		    hexBuildType = hexType;
+		    hexUIType = hexType;
+		    RecordHexType();
+		
+		    _stoneWallRes = await AssetsModule.AssetsManager.Instance.LoadAssetAsync<GameObject>(isEnemyHex
+		        ? "Assets/_Res/Addressable/02CoreGameBundle/Prefabs/CoreGame/Wall/EnemyStoneWallRoot.prefab"
+		        : "Assets/_Res/Addressable/02CoreGameBundle/Prefabs/CoreGame/Wall/PlayerStoneWallRoot.prefab");
+		    LoadShowIconRes();
+		    _enemyHexUIRes = await AssetsModule.AssetsManager.Instance.LoadAssetAsync<GameObject>("Assets/_Res/Addressable/02CoreGameBundle/Prefabs/CoreGame/SpriteUI/BeelzebubUI.prefab");
+		    GlobalHexInfo landConfig = GetLandPriceHexGlobalInfo();
+		    price = GetLandPriceInt(landConfig);
+		    _uiRes = await AssetsModule.AssetsManager.Instance.LoadAssetAsync<GameObject>(landConfig.uiResPath);
+		    if (_info != null && _info.id == "1001")
+		    {
+		        price = BattleGameSceneManager.Instance.GetGoldMinePrice(isEnemyHex);
+		        _uiRes = await AssetsModule.AssetsManager.Instance.LoadAssetAsync<GameObject>(DataManager.Instance.GlobalInfo.hexInfos[0].uiResPath);
+		    }
+		    if (_enemyHexUIObj == null)
+		    {
+		        _enemyHexUIObj = UnityEngine.Object.Instantiate(_enemyHexUIRes);
+		        _enemyHexUIObj.transform.SetParent(transform, false);
+		        _enemyHexUIObj.SetActive(false);
+		    }
+		    if (_uiObj == null)
+		    {
+		        _uiObj = UnityEngine.Object.Instantiate(_uiRes);
+		        tmpUI = _uiObj.transform.Find("TextRenderer").GetComponent<TMPro.TextMeshPro>();
+		        _uiObj.transform.localPosition = _quality == Quality.UnCharted ? new Vector3(0f, 0f, 0.214f) : Vector3.zero;
+		        _uiObj.transform.SetParent(transform, false);
+		        _uiObj.SetActive(false);
+		    }
+		    
+		    if (quality != Quality.UnCharted) CreatShowUIObj();
+		    LoadArchitectureRes();
 		}
 
 		[Token(Token = "0x6000B57")]
@@ -1482,12 +1839,50 @@ void System.Runtime.CompilerServices.IAsyncStateMachine.SetStateMachine(IAsyncSt
 		[Address(RVA = "0x4422670", Offset = "0x441E670", VA = "0x4422670")]
 		private void SetHexSoldierPile(bool SetOneStar, bool SetSoldier)
 		{
+		    if (ArenaManager.Instance.GetUnLockArenaCount() < 8 || SetOneStar) return;
+		    if (!QuickTutor.TutorialManager.Instance.IsStepComplete("1015")) return;
+		    if (_info != null)
+		    {
+		        if (_info.type == "defense" && hexBuildType == HexType.soldierpile)
+		            hexBuildType = hexUIType = HexType.defense;
+		    }
+		    else if (hexBuildType == HexType.soldierpile) hexBuildType = hexUIType;
+		    if (!SDKModule.ABTestManager.Instance.NewHexaTypeABIsBTest || _info == null || _info.type != "barracks") return;
+		    if (!SDKModule.ABTestManager.Instance.BalanceAdjustment01IsBTest)
+		    {
+		        int value = UnityEngine.Random.Range(0, 100);
+		        if (value >= 30 && !SetSoldier) return;
+		        hexBuildType = HexType.soldierpile;
+		        if (quality != Quality.UnCharted) hexUIType = HexType.soldierpile;
+		        return;
+		    }
+		    if (BattleGameSceneManager.Instance.GetMirror(key) == null)
+		    {
+		        int value = UnityEngine.Random.Range(0, 100);
+		        if (value < 30 || SetSoldier)
+		        {
+		            hexBuildType = HexType.soldierpile;
+		            if (quality != Quality.UnCharted) hexUIType = HexType.soldierpile;
+		            return;
+		        }
+		    }
+		    if (BattleGameSceneManager.Instance.GetMirror(key) != null && hexBuildType == HexType.soldierpile && quality != Quality.UnCharted)
+		        hexUIType = HexType.soldierpile;
 		}
 
 		[Token(Token = "0x6000B59")]
 		[Address(RVA = "0x44214D8", Offset = "0x441D4D8", VA = "0x44214D8")]
 		private void RecordHexType()
 		{
+		    if (hexBuildType == HexType.soldierpile) return;
+		    if (_info == null) hexBuildType = HexType.UnCharted;
+		    else if (_info.type == "barracks") hexBuildType = HexType.barracks;
+		    else if (_info.type == "defense") hexBuildType = HexType.defense;
+		    else if (_info.type == "resources") hexBuildType = HexType.resources;
+		    if (quality == Quality.UnCharted) hexUIType = HexType.UnCharted;
+		    else if (_info != null && _info.type == "barracks") hexUIType = HexType.barracks;
+		    else if (_info != null && _info.type == "defense") hexUIType = HexType.defense;
+		    else if (_info != null && _info.type == "resources") hexUIType = HexType.resources;
 		}
 
 		[Token(Token = "0x6000B5A")]
@@ -1507,26 +1902,154 @@ void System.Runtime.CompilerServices.IAsyncStateMachine.SetStateMachine(IAsyncSt
 		[Address(RVA = "0x4421B5C", Offset = "0x441DB5C", VA = "0x4421B5C")]
 		private void RandomHexRare(bool isInit, bool UserLablePlayerReset = false, bool UserLableEnemyReset = false)
 		{
+		    if (LegendaryTileGuaranteed) { rareLevel = RareLevel.SSSR; return; }
+		    string[] weights = DataManager.Instance.GlobalInfo.hexInfos[(int)quality].probabilityProfile.Split(',');
+		    int total = 0;
+		    for (int i = 0; i < weights.Length; ++i) total = unchecked(total + ToolModule.StringTool.ToInt(weights[i]));
+		    int userBonus = 0;
+		    if (UserLableManager.Instance.UserLableIsOpen() && !isEnemyHex && BattleGameManager.Instance.GameType != GameType.PVE)
+		        userBonus = UserLableManager.Instance.UserOpenLendaryCardOddHandle(UserLablePlayerReset);
+		    if (UserLableManager.Instance.UserLableIsOpen() && isEnemyHex && BattleGameManager.Instance.GameType != GameType.PVE)
+		        userBonus = UserLableManager.Instance.EnemyOpenLendaryCardOddHandle(UserLableEnemyReset);
+		    int blessingBonus = DailyBlessManager.Instance.GoldCardOddHandle(isEnemyHex);
+		    SubGameBuffManager buffManager = SubGameBuffManager.Instance;
+		    int baseSssr = ToolModule.StringTool.ToInt(weights[3]);
+		    int goldBonus = unchecked(blessingBonus + userBonus + buffManager.GetGoldCardOddBonus(baseSssr, isEnemyHex));
+		    if (isEnemyHex)
+		    {
+		        if (WeeklyCardActivityManager.Instance.GetEnemyCardDeckHasCycleCard()) ++goldBonus;
+		        else if (!isEnemyHex && WeeklyCardActivityManager.Instance.GetPlayerCardDeckHasCycleCard()) ++goldBonus;
+		    }
+		    else if (WeeklyCardActivityManager.Instance.GetPlayerCardDeckHasCycleCard()) ++goldBonus;
+		    int value = UnityEngine.Random.Range(0, unchecked(goldBonus + total));
+		    int first = SDKModule.ABTestManager.Instance.BalanceAdjustment01IsBTest && quality == Quality.TwoStar ? 0 : ToolModule.StringTool.ToInt(weights[0]);
+		    if (value < first) rareLevel = RareLevel.R;
+		    else if (value < unchecked(ToolModule.StringTool.ToInt(weights[0]) + ToolModule.StringTool.ToInt(weights[1]))) rareLevel = RareLevel.SR;
+		    else if (value < unchecked(ToolModule.StringTool.ToInt(weights[0]) + ToolModule.StringTool.ToInt(weights[1]) + ToolModule.StringTool.ToInt(weights[2]))) rareLevel = RareLevel.SSR;
+		    else if (value < unchecked(ToolModule.StringTool.ToInt(weights[0]) + goldBonus + ToolModule.StringTool.ToInt(weights[1]) + ToolModule.StringTool.ToInt(weights[2]) + ToolModule.StringTool.ToInt(weights[3]))) rareLevel = RareLevel.SSSR;
+		    else rareLevel = RareLevel.Null;
 		}
 
 		[Token(Token = "0x6000B5D")]
 		[Address(RVA = "0x4421898", Offset = "0x441D898", VA = "0x4421898")]
 		[AsyncStateMachine(typeof(_003CLoadArchitectureRes_003Ed__99))]
-		private void LoadArchitectureRes()
+		private async void LoadArchitectureRes()
 		{
+		    GlobalArchitectureInfo info = _info;
+		    if (info == null) return;
+		    string id = _id;
+		    if (AssetsModule.AssetsManager.Instance == null) return;
+		    if (!ToolModule.StringTool.IsNullOrEmpty(info.prefabPath, true) && id != "1001")
+		    {
+		        string enemyPath = info.GetPath(false);
+		        string playerPath = info.GetPath(true);
+		        if (ToolModule.StringTool.IsNullOrEmpty(enemyPath, true) || ToolModule.StringTool.IsNullOrEmpty(playerPath, true)) return;
+		        _enemyRes = await AssetsModule.AssetsManager.Instance.LoadAssetAsync<GameObject>(enemyPath);
+		        _playerRes = await AssetsModule.AssetsManager.Instance.LoadAssetAsync<GameObject>(playerPath);
+		        _res = isEnemyHex ? _enemyRes : _playerRes;
+		    }
+		    else if (id == "1001")
+		    {
+		        int level;
+		        if (isEnemyHex)
+		        {
+		            if (AIBehaviourManager.Instance == null) return;
+		            if (!AIBehaviourManager.Instance.cardLevelDic.ContainsKey(id)) return;
+		            level = AIBehaviourManager.Instance.cardLevelDic[id];
+		        }
+		        else
+		        {
+		            if (DbtSaveDataManager_PlayerCardData.I.Data.userHeroCardDataDic == null || !DbtSaveDataManager_PlayerCardData.I.Data.userHeroCardDataDic.ContainsKey(id)) return;
+		            level = DbtSaveDataManager_PlayerCardData.I.Data.userHeroCardDataDic[id].level;
+		        }
+		        int index = level >= 3 ? 2 : new int[] { 0, 0, 1 }[level];
+		        string enemyPath = info.GetPath(false, index);
+		        string playerPath = info.GetPath(true, index);
+		        if (ToolModule.StringTool.IsNullOrEmpty(enemyPath, true) || ToolModule.StringTool.IsNullOrEmpty(playerPath, true)) return;
+		        _enemyRes = await AssetsModule.AssetsManager.Instance.LoadAssetAsync<GameObject>(enemyPath);
+		        _playerRes = await AssetsModule.AssetsManager.Instance.LoadAssetAsync<GameObject>(playerPath);
+		        _res = isEnemyHex ? _enemyRes : _playerRes;
+		    }
+		    foreach (Renderer renderer in GetComponentsInChildren<Renderer>()) renderer.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.Off;
 		}
 
 		[Token(Token = "0x6000B5E")]
 		[Address(RVA = "0x4422004", Offset = "0x441E004", VA = "0x4422004")]
 		private void RandomArchitectureInfoAndCardID(bool isInit, [Optional] HexMirrorInfo info)
 		{
+		    bool isMirror = SDKModule.ABTestManager.Instance.BalanceAdjustment01IsBTest;
+		    if (isInit)
+		    {
+		        if (info != null)
+		        {
+		            hexBuildType = info.HexType;
+		            quality = info.Quality;
+		            RandomHexRare(false);
+		        }
+		        else isMirror = false;
+		    }
+		    switch (rareLevel)
+		    {
+		        case RareLevel.R:
+		            (_info, _id) = isEnemyHex ? AIBehaviourManager.Instance.RandomRArchitectureLevelInfo(isMirror, hexBuildType, isInit) : EquipCardInfoManager.Instance.RandomRArchitectureLevelInfo(isMirror, hexBuildType, isInit);
+		            if (_id == "1001" && isInit) BattleGameSceneManager.Instance.GoldMineCountLimitRecordHexCreat();
+		            break;
+		        case RareLevel.SR:
+		            (_info, _id) = isEnemyHex ? AIBehaviourManager.Instance.RandomSRArchitectureLevelInfo(isMirror, hexBuildType, isInit) : EquipCardInfoManager.Instance.RandomSRArchitectureLevelInfo(isMirror, hexBuildType, isInit);
+		            break;
+		        case RareLevel.SSR:
+		            (_info, _id) = isEnemyHex ? AIBehaviourManager.Instance.RandomSSRArchitectureLevelInfo(isMirror, hexBuildType, isInit) : EquipCardInfoManager.Instance.RandomSSRArchitectureLevelInfo(isMirror, hexBuildType, isInit);
+		            break;
+		        case RareLevel.SSSR:
+		            (_info, _id) = isEnemyHex ? AIBehaviourManager.Instance.RandomSSSRArchitectureLevelInfo(isMirror, hexBuildType, isInit) : EquipCardInfoManager.Instance.RandomSSSRArchitectureLevelInfo(isMirror, hexBuildType, isInit);
+		            break;
+		        case RareLevel.Null:
+		            _info = null;
+		            break;
+		    }
+		    List<int> battleCards = DbtSaveDataManager_PlayerCardData.I.Data.GetBattleCardIDList();
+		    bool inBattleDeck = battleCards != null && !ToolModule.StringTool.IsNullOrEmpty(_id, true) && battleCards.Contains(ToolModule.StringTool.ToInt(_id));
+		    bool unopenedGold = BattleGameManager.Instance != null && !BattleGameManager.Instance.playerNowGameOpenGoldCardEd;
+		    bool artifacts = !isEnemyHex && SDKModule.ABTestManager.Instance.NewArtifactsPlayIsBTest;
+		    if ((unopenedGold & inBattleDeck & artifacts) && rareLevel != RareLevel.SSSR && _info != null && !ToolModule.StringTool.IsNullOrEmpty(_id, true))
+		    {
+		        if (DataManager.Instance.GlobalInfo.heroCardDic.TryGetValue(_id, out GlobalHeroCardInfo card))
+		        {
+		            CardFettersType fetters = (CardFettersType)ToolModule.StringTool.ToInt(card.cardFetters);
+		            if ((int)fetters != 4)
+		            {
+		                float chance = PropManager.Instance.GetEquippedArtifactTraitPercent(fetters, (ArtifactTraitAttrType)3);
+		                if (chance > 0f && UnityEngine.Random.Range(0f, 1f) < chance)
+		                {
+		                    (_info, _id) = EquipCardInfoManager.Instance.RandomSSSRArchitectureLevelInfoByFetters(fetters, isMirror, hexBuildType, isInit);
+		                    rareLevel = RareLevel.SSSR;
+		                }
+		            }
+		        }
+		    }
+		    if (info != null && !ToolModule.StringTool.IsNullOrEmpty(_id, true))
+		        rareLevel = DbtSaveDataManager_PlayerCardData.I.Data.userHeroCardDataDic[_id].GetRareLevel();
+		    if (_info != null && !ToolModule.StringTool.IsNullOrEmpty(_id, true))
+		        rareLevel = DbtSaveDataManager_PlayerCardData.I.Data.userHeroCardDataDic[_id].GetRareLevel();
+		    RecordHexType();
 		}
 
 		[Token(Token = "0x6000B5F")]
 		[Address(RVA = "0x4422908", Offset = "0x441E908", VA = "0x4422908")]
 		[AsyncStateMachine(typeof(_003CLoadShowIconRes_003Ed__101))]
-		private void LoadShowIconRes()
+		private async void LoadShowIconRes()
 		{
+		    if (_info == null) return;
+		    if (LegendaryTileGuaranteed)
+		        _showIconUIRes = await AssetsModule.AssetsManager.Instance.LoadAssetAsync<GameObject>("Assets/_Res/Addressable/02CoreGameBundle/Prefabs/CoreGame/SpriteUI/ShowIconUILegendaryTile.prefab");
+		    else if (hexBuildType == HexType.soldierpile)
+		        _showIconUIRes = await AssetsModule.AssetsManager.Instance.LoadAssetAsync<GameObject>("Assets/_Res/Addressable/02CoreGameBundle/Prefabs/CoreGame/SpriteUI/ShowIconUISoldier.prefab");
+		    else if (_info.type == "resources")
+		        _showIconUIRes = await AssetsModule.AssetsManager.Instance.LoadAssetAsync<GameObject>("Assets/_Res/Addressable/02CoreGameBundle/Prefabs/CoreGame/SpriteUI/ShowIconUIRes.prefab");
+		    else if (_info.type == "defense")
+		        _showIconUIRes = await AssetsModule.AssetsManager.Instance.LoadAssetAsync<GameObject>("Assets/_Res/Addressable/02CoreGameBundle/Prefabs/CoreGame/SpriteUI/ShowIconUIDef.prefab");
+		    else if (_info.type == "barracks")
+		        _showIconUIRes = await AssetsModule.AssetsManager.Instance.LoadAssetAsync<GameObject>("Assets/_Res/Addressable/02CoreGameBundle/Prefabs/CoreGame/SpriteUI/ShowIconUIBar.prefab");
 		}
 
 		[Token(Token = "0x6000B60")]
@@ -1545,21 +2068,63 @@ void System.Runtime.CompilerServices.IAsyncStateMachine.SetStateMachine(IAsyncSt
 		[Address(RVA = "0x44233B4", Offset = "0x441F3B4", VA = "0x44233B4")]
 		public bool Wound(int num, string id, bool isBuild, Transform target, AtkWayType atkWayType)
 		{
-			return default;
-		}
+            if (!CoreGameManager.Gaming) return false;
+            StoneWallBehaviour wall = GetTargetWallNearPos(target.position);
+            if (wall != null && !wall.isDead && wall.gameObject.activeSelf)
+            {
+                EntityBase attacker = target != null ? target.GetComponent<EntityBase>() : null;
+                wall.Wound(num, id, isBuild, attacker, false, AtkWayType.Melee, CardFettersType.Null, null);
+                if (wall.isDead)
+                {
+                    UpdateAllWallState(this);
+                    global::AudioManager.Instance.PlaySFX("Assets/_Res/Addressable/AudiosBundle/SFX/BuildDead.mp3", transform, 1f, 0);
+                }
+                return false;
+            }
+            if (wall != null && wall.isDead) UpdateAllWallState(this);
+            return true;
+        }
 
 		[Token(Token = "0x6000B63")]
 		[Address(RVA = "0x4424050", Offset = "0x4420050", VA = "0x4424050")]
 		private void UpdateAllWallState(object o)
 		{
-		}
+            if ((o as HexBehaviour) != this) return;
+            if (leftUpWall != null && leftUpWallBe.isDead) leftUpWallIsDead = true;
+            if (upWall != null && upWallBe.isDead) upWallIsDead = true;
+            if (rightUpWall != null && rightUpWallBe.isDead) rightUpWallIsDead = true;
+            if (leftDownWall != null && leftDownWallBe.isDead) leftDownWallIsDead = true;
+            if (downWall != null && downWallBe.isDead) downWallIsDead = true;
+            if (rightDownWall != null && rightDownWallBe.isDead) rightDownWallIsDead = true;
+        }
 
 		[Token(Token = "0x6000B64")]
 		[Address(RVA = "0x4423624", Offset = "0x441F624", VA = "0x4423624")]
 		private StoneWallBehaviour GetTargetWallNearPos(Vector3 target)
 		{
-			return null;
-		}
+            List<GameObject> walls = new List<GameObject>();
+            List<Vector3> missingPositions = new List<Vector3>();
+            if (leftUpWall != null) walls.Add(leftUpWall); else missingPositions.Add(CalcWallPos(WallType.LeftUp));
+            if (upWall != null) walls.Add(upWall); else missingPositions.Add(CalcWallPos(WallType.Up));
+            if (rightUpWall != null) walls.Add(rightUpWall); else missingPositions.Add(CalcWallPos(WallType.RightUp));
+            if (leftDownWall != null) walls.Add(leftDownWall); else missingPositions.Add(CalcWallPos(WallType.LeftDown));
+            if (downWall != null) walls.Add(downWall); else missingPositions.Add(CalcWallPos(WallType.Down));
+            if (rightDownWall != null) walls.Add(rightDownWall); else missingPositions.Add(CalcWallPos(WallType.RightDown));
+            if (walls.Count < 1) return null;
+            int selected = 0;
+            float distance = Vector3.Distance(target, walls[0].transform.position);
+            for (int i = 1; i < walls.Count; i++)
+            {
+                if (distance > Vector3.Distance(target, walls[i].transform.position))
+                {
+                    distance = Vector3.Distance(target, walls[i].transform.position);
+                    selected = i;
+                }
+            }
+            for (int i = 0; i < missingPositions.Count; i++)
+                if (distance > Vector3.Distance(missingPositions[i], walls[selected].transform.position)) return null;
+            return walls[selected].GetComponent<StoneWallBehaviour>();
+        }
 
 		[Token(Token = "0x6000B65")]
 		[Address(RVA = "0x4424420", Offset = "0x4420420", VA = "0x4424420")]
@@ -1571,32 +2136,105 @@ void System.Runtime.CompilerServices.IAsyncStateMachine.SetStateMachine(IAsyncSt
 		[Address(RVA = "0x44244FC", Offset = "0x44204FC", VA = "0x44244FC")]
 		private void CheckCanOpen(object o)
 		{
+		    if (isOpened) return;
+		    canOpen = NearHasOpen();
+		    if (IsTrainingHexLocked()) canOpen = false;
 		}
 
 		[Token(Token = "0x6000B67")]
 		[Address(RVA = "0x4424614", Offset = "0x4420614", VA = "0x4424614")]
 		private void HexOpen()
 		{
+		    canOpen = false;
+		    trainingLocked = false;
+		    isOpened = true;
+		    Priority = 2;
 		}
 
 		[Token(Token = "0x6000B68")]
 		[Address(RVA = "0x442462C", Offset = "0x442062C", VA = "0x442462C")]
 		public void RefreshTrainingLock()
 		{
+		    CheckCanOpen(null);
+		    UpdateHexItemUI(null);
 		}
 
 		[Token(Token = "0x6000B69")]
 		[Address(RVA = "0x4424568", Offset = "0x4420568", VA = "0x4424568")]
 		private bool IsTrainingHexLocked()
 		{
-			return default;
+		    if (!TrainingGroundManager.IsInGuidedGame) return false;
+		    TrainingHexConfig config = TrainingGroundManager.Instance.GetFixedHexConfig(transform.position);
+		    if (config == null || string.IsNullOrEmpty(config.endTriggerEventId)) return false;
+		    return trainingLocked;
 		}
 
 		[Token(Token = "0x6000B6A")]
 		[Address(RVA = "0x44246D0", Offset = "0x44206D0", VA = "0x44246D0")]
 		[AsyncStateMachine(typeof(_003CCreatMainTower_003Ed__120))]
-		private void CreatMainTower(object o)
+		private async void CreatMainTower(object o)
 		{
+		    if (key != BattleGameSceneManager.Instance.enemyMainTowerKey && key != BattleGameSceneManager.Instance.playerMainTowerKey) return;
+		    HexOpen();
+		    int playerTalent = UpgradeMainTowerManager.Instance.GetMainTowerTalentInfo();
+		    int enemyTalent = AIBehaviourManager.Instance.GetMainTowerTalentInfo();
+		    if (!SDKModule.ABTestManager.Instance.NewMainCity2)
+		    {
+		        playerTalent = playerTalent == -1 ? 1 : 5 - playerTalent;
+		        enemyTalent = enemyTalent == -1 ? 1 : 5 - enemyTalent;
+		        _mainTowerRes = await AssetsModule.AssetsManager.Instance.LoadAssetAsync<GameObject>(isEnemyHex
+		            ? "Assets/_Res/Addressable/02CoreGameBundle/Prefabs/CoreGame/Build/Build_MainTower_Red_" + enemyTalent.ToString() + ".prefab"
+		            : "Assets/_Res/Addressable/02CoreGameBundle/Prefabs/CoreGame/Build/Build_MainTower_Blue_" + playerTalent.ToString() + ".prefab");
+		    }
+		    else if (!isEnemyHex)
+		    {
+		        _mainTowerRes = await AssetsModule.AssetsManager.Instance.LoadAssetAsync<GameObject>(string.Format("Assets/_Res/Addressable/04MetaGameBundle/Prefabs/NewMainCity_Building/NewMainCity_Building_MainCity_Lv{0}_Player.prefab", playerTalent));
+		    }
+		    else
+		    {
+		        int maxLevel = DataManager.Instance.GlobalInfo.mainCityTitleInfos.Count;
+		        enemyTalent = enemyTalent < 1 ? 1 : enemyTalent > maxLevel ? maxLevel : enemyTalent;
+		        string path = BattleGameManager.Instance.GameType == GameType.PVE
+		            ? "Assets/_Res/Addressable/04MetaGameBundle/Prefabs/NewMainCity_Building/NewMainCity_Building_MainCity_Lv{0}_KuLou.prefab"
+		            : "Assets/_Res/Addressable/04MetaGameBundle/Prefabs/NewMainCity_Building/NewMainCity_Building_MainCity_Lv{0}_Enemy.prefab";
+		        _mainTowerRes = await AssetsModule.AssetsManager.Instance.LoadAssetAsync<GameObject>(string.Format(path, enemyTalent));
+		    }
+		    _isDoOpenHexAni = true;
+		    if (transform != null) DG.Tweening.ShortcutExtensions.DOMoveY(transform, 1f, 0.2f);
+		    DG.Tweening.ShortcutExtensions.DOLocalRotate(transform, new Vector3(0f, 0f, 180f), 0.3f).onComplete += () =>
+		    {
+		        if (transform != null)
+		            DG.Tweening.ShortcutExtensions.DOMoveY(transform, -1f, 0.1f).onComplete += async () =>
+		            {
+		                _isDoOpenHexAni = false;
+		                hasArchitecture = true;
+		                _obj = UnityEngine.Object.Instantiate(_mainTowerRes);
+		                if (!isEnemyHex && DbtSaveDataManager_PlayerGuideData.I.Data.isFirstThroghGame)
+		                    SteerManager.Instance.playerMainTower = _obj.transform;
+		                ArchitectureBehaviour architecture = _obj.GetComponent<ArchitectureBehaviour>();
+		                architecture.Init(this, null, isEnemyHex, 0, RareLevel.R, ArchitectureDeadCallBack, (CardFettersType)4, (AtkWayType)2);
+		                _obj.transform.position = new Vector3(transform.position.x, 0f, isEnemyHex ? transform.position.z : transform.position.z - 0.5f);
+		                if (isEnemyHex) BattleGameSceneManager.Instance.AddEnemyArchitecture(_obj);
+		                else BattleGameSceneManager.Instance.AddPlayerArchitecture(_obj);
+		                BattleGameSceneManager.Instance.AddArchitectureBehaviour(architecture);
+		                if (isEnemyHex)
+		                {
+		                    BattleGameSceneManager.Instance.RemoveEnemyStayHex(gameObject);
+		                    BattleGameSceneManager.Instance.AddEnemyHasHex(gameObject);
+		                }
+		                else
+		                {
+		                    BattleGameSceneManager.Instance.RemovePlayerStayHex(gameObject);
+		                    BattleGameSceneManager.Instance.AddPlayerHasHex(gameObject);
+		                    BattleGameSceneManager.Instance.playerMainTowerPos = transform.position;
+		                }
+		                EventModule.EventManager.Instance.TriggerEvent("HasHexOpen", this);
+		                EventModule.EventManager.Instance.TriggerEvent("PlayerCoinChange", BattleGameManager.Instance.hasCoin);
+		                if (!isEnemyHex) EventModule.EventManager.Instance.TriggerEvent("CreatMainTowerEnd");
+		                if (SDKModule.ABTestManager.Instance.NewMainCity2 && !isEnemyHex)
+		                    _obj.transform.localRotation = Quaternion.Euler(0f, 180f, 0f);
+		            };
+		    };
 		}
 
 		[Token(Token = "0x6000B6B")]
@@ -1641,12 +2279,16 @@ void System.Runtime.CompilerServices.IAsyncStateMachine.SetStateMachine(IAsyncSt
 		[Address(RVA = "0x4424A58", Offset = "0x4420A58", VA = "0x4424A58")]
 		private void RemoveFromDirtyHexUIBatches()
 		{
-		}
+            DirtyCoinColorHexes.Remove(this);
+            DirtyHexItemUIHexes.Remove(this);
+        }
 
 		[Token(Token = "0x6000B72")]
 		[Address(RVA = "0x4424AF4", Offset = "0x4420AF4", VA = "0x4424AF4")]
 		public void UpdateCoinColor(int coinNum)
 		{
+		    if (tmpUI == null) return;
+		    tmpUI.color = price > coinNum ? Color.black : Color.white;
 		}
 
 		[Token(Token = "0x6000B73")]
@@ -1703,15 +2345,180 @@ void System.Runtime.CompilerServices.IAsyncStateMachine.SetStateMachine(IAsyncSt
 		[Token(Token = "0x6000B75")]
 		[Address(RVA = "0x4425210", Offset = "0x4421210", VA = "0x4425210")]
 		[AsyncStateMachine(typeof(_003CHandleOnComplete_003Ed__131))]
-		private void HandleOnComplete()
+		private async void HandleOnComplete()
 		{
+		    _isDoOpenHexAni = false;
+		    bool mayReroll;
+		    if (isEnemyHex) mayReroll = !_isInitFixed && AIBehaviourManager.Instance.openHexCount < 4;
+		    else mayReroll = BattleGameManager.Instance.openHexCount <= 3;
+		    if (mayReroll && _info != null && _info.type != "resources" && _info.type != "defense" && price <= 249 && (uint)rareLevel >= 2u)
+		    {
+		        UnityEngine.Debug.Log(isEnemyHex.ToString() + "前三次重新随机卡牌了");
+		        (GlobalArchitectureInfo, string) selected = isEnemyHex ? AIBehaviourManager.Instance.RandomRArchitectureLevelInfoAndNoGoldMine() : EquipCardInfoManager.Instance.RandomRArchitectureLevelInfoAndNoGoldMine();
+		        bool balance = SDKModule.ABTestManager.Instance.BalanceAdjustment01IsBTest;
+		        (_info, _id) = selected;
+		        _enemyRes = await AssetsModule.AssetsManager.Instance.LoadAssetAsync<GameObject>(_info.GetPath(false));
+		        _playerRes = await AssetsModule.AssetsManager.Instance.LoadAssetAsync<GameObject>(_info.GetPath(true));
+		        _res = isEnemyHex ? _enemyRes : _playerRes;
+		        rareLevel = RareLevel.R;
+		    }
+		    if (!isEnemyHex && !TutorialManager.Instance.IsStepComplete("1015") && TrainingGroundManager.Instance != null)
+		    {
+		        if (TrainingGroundManager.Instance.ShouldForceDragonKnightForHex(transform.position))
+		        {
+		            _res = await AssetsModule.AssetsManager.Instance.LoadAssetAsync<GameObject>("Assets/_Res/Addressable/02CoreGameBundle/Prefabs/CoreGame/Build/Build_DragonKnight_Blue_New.prefab");
+		            (_info, _id) = EquipCardInfoManager.Instance.GetDragonKnightInfo();
+		            rareLevel = RareLevel.SSSR;
+		            SteerManager.Instance.playerDrgonKnightHex = transform;
+		            EventModule.EventManager.Instance.TriggerEvent("SkillSteerIngBanCameraMove");
+		            TutorialManager.Instance.RegisterTutorialCheck("1015", () => true);
+		        }
+		    }
+		    if (DailyBlessManager.Instance.IsBTest() && !LegendaryTileGuaranteed)
+		    {
+		        if (isEnemyHex)
+		        {
+		            if (DailyBlessManager.Instance.NowEnemySuperSummon && (uint)((int)hexUIType - 1) <= 1u)
+		            {
+		                rareLevel = RareLevel.SSSR;
+		                RandomArchitectureInfoAndCardID(false);
+		                LoadArchitectureRes();
+		                DailyBlessManager.Instance.NowEnemySuperSummon = false;
+		            }
+		        }
+		        else if (DailyBlessManager.Instance.NowPlayerSuperSummon && (uint)((int)hexUIType - 1) <= 1u)
+		        {
+		            rareLevel = RareLevel.SSSR;
+		            RandomArchitectureInfoAndCardID(false);
+		            LoadArchitectureRes();
+		            DailyBlessManager.Instance.NowPlayerSuperSummon = false;
+		        }
+		    }
+		    if (!isEnemyHex) BattleGameSceneManager.Instance.RecordPlayerOpenHexCount();
+		    if (hexBuildType == HexType.soldierpile) CreatSoldierPile();
+		    else if (_info != null)
+		    {
+		        hasArchitecture = true;
+		        if (!CoreGameManager.Gaming) return;
+		        if (_res == null)
+		        {
+		            LoadArchitectureRes();
+		            UnityEngine.Debug.Log("要实例化的建筑资源是空的，开始等待");
+		        }
+		        while (_res == null)
+		        {
+		            UnityEngine.Debug.Log("不是空格子，但是资源没加载完，等待中");
+		            await UniTask.WaitForEndOfFrame();
+		        }
+		        if (!isEnemyHex) BattleGameManager.Instance.RecordCardCount(_id);
+		        _obj = UnityEngine.Object.Instantiate(_res);
+		        ArchitectureBehaviour architecture = _obj.GetComponent<ArchitectureBehaviour>();
+		        int cardLevel = isEnemyHex ? AIBehaviourManager.Instance.cardLevelDic[_id] : DbtSaveDataManager_PlayerCardData.I.Data.userHeroCardDataDic[_id].level;
+		        GlobalHeroCardInfo card = DataManager.Instance.GlobalInfo.heroCardDic[_id];
+		        CardFettersType fetters = (CardFettersType)ToolModule.StringTool.ToInt(card.cardFetters);
+		        card = DataManager.Instance.GlobalInfo.heroCardDic[_id];
+		        AtkWayType attackWay = (AtkWayType)ToolModule.StringTool.ToInt(card.atkType);
+		        architecture.Init(this, _info, isEnemyHex, cardLevel, rareLevel, ArchitectureDeadCallBack, fetters, attackWay);
+		        _obj.transform.position = new Vector3(transform.position.x, 0f, transform.position.z);
+		        if (isEnemyHex) BattleGameSceneManager.Instance.AddEnemyArchitecture(_obj);
+		        else BattleGameSceneManager.Instance.AddPlayerArchitecture(_obj);
+		        BattleGameSceneManager.Instance.AddArchitectureBehaviour(architecture);
+		        if (!isEnemyHex) UIModuleO.UITextEffectManager.Instance.ShowCardUIEffect(rareLevel, _id, new Vector3(transform.position.x, 0f, transform.position.z));
+		        EventModule.EventManager.Instance.TriggerEvent("HasBuildCreat");
+		    }
+		    if (_info != null && _info.id != "1001" && !isEnemyHex) BattleGameSceneManager.Instance.RecordPlayerOpenHexTypeCount(quality);
+		    EventModule.EventManager.Instance.TriggerEvent("HasHexOpen", this);
+		    if (rareLevel == RareLevel.SSSR)
+		    {
+		        EventModule.EventManager.Instance.TriggerEvent(isEnemyHex ? "LableSystemEnemyRefreshHex" : "LableSystemPlayerRefreshHex", this);
+		        int odds = 0;
+		        switch (quality)
+		        {
+		            case Quality.OneStar: odds = 1; break;
+		            case Quality.TwoStar: odds = 2; break;
+		            case Quality.ThreeStar: odds = 5; break;
+		            case Quality.UnCharted: odds = 5; break;
+		        }
+		        GoldCardAnimationPanelManager.Instance.AddQuene(new GoldCardAniConfig(isEnemyHex, odds, _id));
+		        if (!isEnemyHex && UnityEngine.Random.Range(0, 101) <= 49) EventModule.EventManager.Instance.TriggerEvent("PlayerOpenGoldCard", 2);
+		    }
+		    if (isEnemyHex)
+		    {
+		        if (rareLevel == RareLevel.SSSR) AIBehaviourManager.Instance.enemyNowGameOpenGoldCardEd = true;
+		    }
+		    else
+		    {
+		        if (rareLevel == RareLevel.SSSR)
+		        {
+		            AssetsModule.EffectManager.Instance.ShowEffect("Assets/_Res/Addressable/EffectsBundle/Effects/LegendaryHexFlip.prefab", transform.position + Vector3.up, Vector3.one + Vector3.one, 1f);
+		            BattleGameManager.Instance.playerNowGameOpenGoldCardEd = true;
+		        }
+		        if (rareLevel == RareLevel.SSR) AssetsModule.EffectManager.Instance.ShowEffect("Assets/_Res/Addressable/EffectsBundle/Effects/EpicHexFlip.prefab", transform.position + Vector3.up, Vector3.one + Vector3.one, 1f);
+		    }
+		    AudioManager.Instance.PlaySFX("Assets/_Res/Addressable/AudiosBundle/SFX/BuildComplete.mp3", transform, 1f, 0);
 		}
 
 		[Token(Token = "0x6000B76")]
 		[Address(RVA = "0x44252A0", Offset = "0x44212A0", VA = "0x44252A0")]
 		[AsyncStateMachine(typeof(_003CCreatSoldierPile_003Ed__132))]
-		private void CreatSoldierPile()
+		private async void CreatSoldierPile()
 		{
+		    _003C_003Ec__DisplayClass132_0 context = new _003C_003Ec__DisplayClass132_0();
+		    context._003C_003E4__this = this;
+		    int num = 0;
+		    string path = string.Empty;
+		    context.path2 = string.Empty;
+		    if (_info == null)
+		    {
+		        UnityEngine.Debug.LogError("此格子的角色信息为空");
+		        UnityEngine.Debug.LogError("此格子的" + hexBuildType.ToString());
+		    }
+		    context._roleInfo = DataManager.Instance.GlobalInfo.roleInfos.Find(context._003CCreatSoldierPile_003Eb__0);
+		    if (context._roleInfo == null) UnityEngine.Debug.LogError("为空" + gameObject.ToString() + key);
+		    _info = null;
+		    context.CardLevel = isEnemyHex ? AIBehaviourManager.Instance.cardLevelDic[_id] : DbtSaveDataManager_PlayerCardData.I.Data.userHeroCardDataDic[_id].level;
+		    switch (rareLevel)
+		    {
+		        case RareLevel.R:
+		            num = 8;
+		            path = "Assets/_Res/Addressable/EffectsBundle/Effects/MagicMissileSoftGreen.prefab";
+		            context.path2 = "Assets/_Res/Addressable/EffectsBundle/Effects/MagicCircleGreen.prefab";
+		            break;
+		        case RareLevel.SR:
+		            num = 5;
+		            path = "Assets/_Res/Addressable/EffectsBundle/Effects/MagicMissileSoftBlue.prefab";
+		            context.path2 = "Assets/_Res/Addressable/EffectsBundle/Effects/MagicCircleBlue.prefab";
+		            break;
+		        case RareLevel.SSR:
+		            num = 3;
+		            path = "Assets/_Res/Addressable/EffectsBundle/Effects/MagicMissileSoftPurple.prefab";
+		            context.path2 = "Assets/_Res/Addressable/EffectsBundle/Effects/MagicCirclePurple.prefab";
+		            break;
+		        case RareLevel.SSSR:
+		            num = 2;
+		            path = "Assets/_Res/Addressable/EffectsBundle/Effects/MagicMissileSoftGold.prefab";
+		            context.path2 = "Assets/_Res/Addressable/EffectsBundle/Effects/MagicCircleYellow.prefab";
+		            break;
+		        default:
+		            num = 0;
+		            path = "Assets/_Res/Addressable/EffectsBundle/Effects/MagicMissileSoftGreen.prefab";
+		            context.path2 = "Assets/_Res/Addressable/EffectsBundle/Effects/MagicCircleGreen.prefab";
+		            break;
+		    }
+		    context._rolePrefabRes = await CoreGameManager.Instance.LoadRoleAssets(context._roleInfo, isEnemyHex ? 1 : 0);
+		    context.allPos = BattleGameSceneManager.Instance.GetHexTargetPosNoThisFoot(transform.position, num);
+		    GameObject effectRes = await AssetsModule.AssetsManager.Instance.LoadAssetAsync<GameObject>(path);
+		    for (int i = 0; i < num; ++i)
+		    {
+		        _003C_003Ec__DisplayClass132_1 spawn = new _003C_003Ec__DisplayClass132_1();
+		        spawn.CS_0024_003C_003E8__locals1 = context;
+		        if (i % 5 == 0) await UniTask.Yield();
+		        GameObject effect = AssetsModule.ObjPoolManager.Instance.GetFromPool(effectRes, 0.9f, true, 3);
+		        effect.transform.position = transform.position + Vector3.up;
+		        effect.GetComponent<ParticleSystem>().Play();
+		        spawn.index = i;
+		        DG.Tweening.ShortcutExtensions.DOJump(effect.transform, context.allPos[spawn.index] + new Vector3(0f, 0.1f, 0f), 1f, 1, 0.5f).onComplete += spawn._003CCreatSoldierPile_003Eb__1;
+		    }
 		}
 
 		[Token(Token = "0x6000B77")]
@@ -1719,42 +2526,113 @@ void System.Runtime.CompilerServices.IAsyncStateMachine.SetStateMachine(IAsyncSt
 		[AsyncStateMachine(typeof(_003CArchitectureDeadCallBack_003Ed__133))]
 		private void ArchitectureDeadCallBack()
 		{
-		}
+            _003CArchitectureDeadCallBack_003Ed__133 stateMachine = new _003CArchitectureDeadCallBack_003Ed__133
+            {
+                _003C_003Et__builder = AsyncVoidMethodBuilder.Create(),
+                _003C_003E4__this = this,
+                _003C_003E1__state = -1
+            };
+            stateMachine._003C_003Et__builder.Start(ref stateMachine);
+        }
 
 		[Token(Token = "0x6000B78")]
 		[Address(RVA = "0x44253C8", Offset = "0x44213C8", VA = "0x44253C8")]
 		public void UIHide()
 		{
+		    if (_uiObj != null) _uiObj.SetActive(false);
+		    if (_showIconUIObj != null) _showIconUIObj.SetActive(false);
+		    if (_enemyHexUIObj != null) _enemyHexUIObj.SetActive(false);
+		    if (leftUpWall != null) leftUpWallBe.UIHide();
+		    if (upWall != null) upWallBe.UIHide();
+		    if (rightUpWall != null) rightUpWallBe.UIHide();
+		    if (leftDownWall != null) leftDownWallBe.UIHide();
+		    if (downWall != null) downWallBe.UIHide();
+		    if (rightDownWall != null) rightDownWallBe.UIHide();
+		    SyncLegendaryGridEffectWithPriceUi();
 		}
 
 		[Token(Token = "0x6000B79")]
 		[Address(RVA = "0x4422CA8", Offset = "0x441ECA8", VA = "0x4422CA8")]
 		[AsyncStateMachine(typeof(_003CCreatUIObj_003Ed__135))]
-		private void CreatUIObj()
+		private async void CreatUIObj()
 		{
+		    await CreatUIObjInternalAsync();
 		}
 
 		[Token(Token = "0x6000B7A")]
 		[Address(RVA = "0x4425614", Offset = "0x4421614", VA = "0x4425614")]
 		[AsyncStateMachine(typeof(_003CCreatUIObjInternalAsync_003Ed__136))]
-		private UniTask CreatUIObjInternalAsync()
+		private async UniTask CreatUIObjInternalAsync()
 		{
-			return default;
+		    GlobalHexInfo landCfg = GetLandPriceHexGlobalInfo();
+		    price = GetLandPriceInt(landCfg);
+		    _uiRes = await AssetsModule.AssetsManager.Instance.LoadAssetAsync<GameObject>(landCfg.uiResPath);
+		    if (_info != null && _info.id == "1001")
+		    {
+		        price = BattleGameSceneManager.Instance.GetGoldMinePrice(isEnemyHex);
+		        _uiRes = await AssetsModule.AssetsManager.Instance.LoadAssetAsync<GameObject>(DataManager.Instance.GlobalInfo.hexInfos[0].uiResPath);
+		    }
+		    if (_uiObj != null)
+		    {
+		        if (tmpUI != null) DG.Tweening.ShortcutExtensions.DOKill(tmpUI.transform, false);
+		        UnityEngine.Object.Destroy(_uiObj);
+		    }
+		    _uiObj = UnityEngine.Object.Instantiate(_uiRes);
+		    tmpUI = _uiObj.transform.Find("TextRenderer").GetComponent<TextMeshPro>();
+		    UpdateCoinColor(BattleGameManager.Instance.hasCoin);
+		    _uiObj.transform.localPosition = quality == Quality.UnCharted ? new Vector3(0f, 0f, 0.214f) : Vector3.zero;
+		    _uiObj.transform.SetParent(transform, false);
+		    if (_uiObj != null && isEnemyHex) _uiObj.SetActive(false);
+		    if (_showIconUIObj != null && quality != Quality.UnCharted)
+		    {
+		        if (LegendaryTileGuaranteed || quality == Quality.ThreeStar) _uiObj.transform.localPosition = new Vector3(0f, 0f, -0.47f);
+		        else if (quality == Quality.TwoStar) _uiObj.transform.localPosition = new Vector3(0f, 0f, -0.49f);
+		        else if (quality == Quality.OneStar) _uiObj.transform.localPosition = new Vector3(0f, 0f, -0.53f);
+		    }
+		    RefreshSubGameInflationPrice();
 		}
 
 		[Token(Token = "0x6000B7B")]
 		[Address(RVA = "0x4422D34", Offset = "0x441ED34", VA = "0x4422D34")]
 		[AsyncStateMachine(typeof(_003CCreatShowUIObj_003Ed__137))]
-		private void CreatShowUIObj()
+		private async void CreatShowUIObj()
 		{
+		    await CreatShowUIObjInternalAsync();
 		}
 
 		[Token(Token = "0x6000B7C")]
 		[Address(RVA = "0x44256B0", Offset = "0x44216B0", VA = "0x44256B0")]
 		[AsyncStateMachine(typeof(_003CCreatShowUIObjInternalAsync_003Ed__138))]
-		private UniTask CreatShowUIObjInternalAsync()
+		private async UniTask CreatShowUIObjInternalAsync()
 		{
-			return default;
+		    if (_showIconUIObj != null) UnityEngine.Object.Destroy(_showIconUIObj);
+		    if (_showIconUIRes == null && _info != null)
+		    {
+		        if (LegendaryTileGuaranteed)
+		            _showIconUIRes = await AssetsModule.AssetsManager.Instance.LoadAssetAsync<GameObject>("Assets/_Res/Addressable/02CoreGameBundle/Prefabs/CoreGame/SpriteUI/ShowIconUILegendaryTile.prefab");
+		        else if (hexBuildType == HexType.soldierpile)
+		            _showIconUIRes = await AssetsModule.AssetsManager.Instance.LoadAssetAsync<GameObject>("Assets/_Res/Addressable/02CoreGameBundle/Prefabs/CoreGame/SpriteUI/ShowIconUISoldier.prefab");
+		        else if (_info.type == "resources")
+		            _showIconUIRes = await AssetsModule.AssetsManager.Instance.LoadAssetAsync<GameObject>("Assets/_Res/Addressable/02CoreGameBundle/Prefabs/CoreGame/SpriteUI/ShowIconUIRes.prefab");
+		        else if (_info.type == "defense")
+		            _showIconUIRes = await AssetsModule.AssetsManager.Instance.LoadAssetAsync<GameObject>("Assets/_Res/Addressable/02CoreGameBundle/Prefabs/CoreGame/SpriteUI/ShowIconUIDef.prefab");
+		        else if (_info.type == "barracks")
+		            _showIconUIRes = await AssetsModule.AssetsManager.Instance.LoadAssetAsync<GameObject>("Assets/_Res/Addressable/02CoreGameBundle/Prefabs/CoreGame/SpriteUI/ShowIconUIBar.prefab");
+		    }
+		    if (_showIconUIRes == null) return;
+		    _showIconUIObj = UnityEngine.Object.Instantiate(_showIconUIRes);
+		    _showIconUIObj.transform.SetParent(transform, false);
+		    _showIconUIObj.transform.localPosition = new Vector3(0f, 0.01f, 0.29f);
+		    _showIconUIObj.SetActive(true);
+		    if (_uiObj != null)
+		    {
+		        if (LegendaryTileGuaranteed || quality == Quality.ThreeStar)
+		            _uiObj.transform.localPosition = new Vector3(0f, 0f, -0.47f);
+		        else if (quality == Quality.TwoStar)
+		            _uiObj.transform.localPosition = new Vector3(0f, 0f, -0.49f);
+		        else if (quality == Quality.OneStar)
+		            _uiObj.transform.localPosition = new Vector3(0f, 0f, -0.53f);
+		    }
 		}
 
 		[Token(Token = "0x6000B7D")]
@@ -1808,68 +2686,244 @@ void System.Runtime.CompilerServices.IAsyncStateMachine.SetStateMachine(IAsyncSt
 		[Token(Token = "0x6000B84")]
 		[Address(RVA = "0x4424644", Offset = "0x4420644", VA = "0x4424644")]
 		[AsyncStateMachine(typeof(_003CUpdateHexItemUI_003Ed__146))]
-		private void UpdateHexItemUI(object o)
+		private async void UpdateHexItemUI(object o)
 		{
+		    if (isBridge || isOpened) return;
+		    bool near = NearHasOpen();
+		    if (isEnemyHex)
+		    {
+		        if (near)
+		        {
+		            if (_enemyHexUIObj != null) _enemyHexUIObj.SetActive(true);
+		            if (_uiObj != null) _uiObj.SetActive(false);
+		            if (_showIconUIObj != null) _showIconUIObj.SetActive(false);
+		            canOpen = true;
+		            if (!LegendaryTileGuaranteed && !ToolModule.StringTool.IsNullOrEmpty(_id, true) && !AIBehaviourManager.Instance.aiBattleCardID.Contains(_id))
+		            {
+		                if (TrainingGroundManager.IsInGuidedGame && rareLevel == RareLevel.SSSR)
+		                {
+		                    if (quality == Quality.ThreeStar) rareLevel = RareLevel.SSR;
+		                    else if (quality == Quality.TwoStar) rareLevel = RareLevel.SR;
+		                    else if (quality == Quality.OneStar) rareLevel = RareLevel.R;
+		                    else rareLevel = RareLevel.Null;
+		                }
+		                RandomArchitectureInfoAndCardID(false);
+		                if (_info != null && _id == "1001") quality = Quality.OneStar;
+		                LoadShowIconRes();
+		                CreatUIObj();
+		                if (quality != Quality.UnCharted) CreatShowUIObj();
+		                LoadArchitectureRes();
+		            }
+		            else if (_info != null && _info.id == "1001" && SDKModule.ABTestManager.Instance.GoldMinePriceV2IsBTest) RefreshSubGameInflationPrice();
+		        }
+		        else
+		        {
+		            if (_enemyHexUIObj != null) _enemyHexUIObj.SetActive(false);
+		            if (_uiObj != null) _uiObj.SetActive(false);
+		            if (_showIconUIObj != null) _showIconUIObj.SetActive(false);
+		            canOpen = false;
+		        }
+		    }
+		    else
+		    {
+		        if (near)
+		        {
+		            if (LegendaryTileGuaranteed || ToolModule.StringTool.IsNullOrEmpty(_id, true) || DbtSaveDataManager_PlayerCardData.I.Data.GetBattleCardIDList().Contains(ToolModule.StringTool.ToInt(_id)))
+		            {
+		                if (_info != null && _info.id == "1001" && SDKModule.ABTestManager.Instance.GoldMinePriceV2IsBTest) RefreshSubGameInflationPrice();
+		                if (_uiObj != null) _uiObj.SetActive(true);
+		                if (_showIconUIObj != null) _showIconUIObj.SetActive(true);
+		                else if (quality != Quality.UnCharted) CreatShowUIObj();
+		                if (_enemyHexUIObj != null) _enemyHexUIObj.SetActive(false);
+		            }
+		            else
+		            {
+		                RandomArchitectureInfoAndCardID(false);
+		                if (_info != null && _id == "1001") quality = Quality.OneStar;
+		                LoadShowIconRes();
+		                CreatUIObj();
+		                if (quality != Quality.UnCharted) CreatShowUIObj();
+		                LoadArchitectureRes();
+		            }
+		            canOpen = near;
+		            UpdateCoinColor(BattleGameManager.Instance.hasCoin);
+		        }
+		        else
+		        {
+		            if (_uiObj != null) _uiObj.SetActive(false);
+		            if (_showIconUIObj != null) _showIconUIObj.SetActive(false);
+		            if (_enemyHexUIObj != null) _enemyHexUIObj.SetActive(false);
+		            canOpen = false;
+		        }
+		    }
+		    if (IsTrainingHexLocked()) canOpen = false;
+		    SyncLegendaryGridEffectWithPriceUi();
 		}
 
 		[Token(Token = "0x6000B85")]
 		[Address(RVA = "0x4425DD8", Offset = "0x4421DD8", VA = "0x4425DD8")]
 		private void CreatWallJudge(object o)
 		{
-		}
+            if (isBridge) return;
+            if (isOpened && _info == null && !hasArchitecture)
+            {
+                if (CheckNullHexShouldCreatWall())
+                {
+                    if (NullHexDesWallJudge(leftUpHexBehaviour) || (leftUpHexBehaviour != null && leftUpHexBehaviour.isSpecialHex && !leftUpHexBehaviour.isOpened)) DestroyWall(leftUpWall);
+                    else if (leftUpWall == null || !leftUpWall.activeSelf) CreatWall(ref leftUpWall, WallType.LeftUp);
+                    if (NullHexDesWallJudge(rightUpHexBehaviour) || (rightUpHexBehaviour != null && rightUpHexBehaviour.isSpecialHex && !rightUpHexBehaviour.isOpened)) DestroyWall(rightUpWall);
+                    else if (rightUpWall == null || !rightUpWall.activeSelf) CreatWall(ref rightUpWall, WallType.RightUp);
+                    if (NullHexDesWallJudge(upHexBehaviour) || (upHexBehaviour != null && upHexBehaviour.isSpecialHex && !upHexBehaviour.isOpened)) DestroyWall(upWall);
+                    else if (upWall == null || !upWall.activeSelf) CreatWall(ref upWall, WallType.Up);
+                    if (NullHexDesWallJudge(downHexBehaviour) || (downHexBehaviour != null && downHexBehaviour.isSpecialHex && !downHexBehaviour.isOpened)) DestroyWall(downWall);
+                    else if (downWall == null || !downWall.activeSelf) CreatWall(ref downWall, WallType.Down);
+                    if (NullHexDesWallJudge(leftDownHexBehaviour) || (leftDownHexBehaviour != null && leftDownHexBehaviour.isSpecialHex && !leftDownHexBehaviour.isOpened)) DestroyWall(leftDownWall);
+                    else if (leftDownWall == null || !leftDownWall.activeSelf) CreatWall(ref leftDownWall, WallType.LeftDown);
+                    if (NullHexDesWallJudge(rightDownHexBehaviour) || (rightDownHexBehaviour != null && rightDownHexBehaviour.isSpecialHex && !rightDownHexBehaviour.isOpened)) DestroyWall(rightDownWall);
+                    else if (rightDownWall == null || !rightDownWall.activeSelf) CreatWall(ref rightDownWall, WallType.RightDown);
+                    if (leftUpWallBe != null) leftUpWallBe.ChangeTagToOne();
+                    if (upWallBe != null) upWallBe.ChangeTagToOne();
+                    if (rightUpWallBe != null) rightUpWallBe.ChangeTagToOne();
+                    if (leftDownWallBe != null) leftDownWallBe.ChangeTagToOne();
+                    if (downWallBe != null) downWallBe.ChangeTagToOne();
+                    if (rightDownWallBe != null) rightDownWallBe.ChangeTagToOne();
+                    return;
+                }
+            }
+            else
+            {
+                if (NearHasArchitecture())
+                {
+                    if (!NearHasOpen() || !hasArchitecture) return;
+                    if (!NoNullHexCreatWallJudge(leftUpHexBehaviour) || (leftUpHexBehaviour != null && leftUpHexBehaviour.isSpecialHex && !leftUpHexBehaviour.isOpened)) DestroyWall(leftUpWall);
+                    else if (leftUpWall == null || !leftUpWall.activeSelf) CreatWall(ref leftUpWall, WallType.LeftUp);
+                    if (!NoNullHexCreatWallJudge(rightUpHexBehaviour) || (rightUpHexBehaviour != null && rightUpHexBehaviour.isSpecialHex && !rightUpHexBehaviour.isOpened)) DestroyWall(rightUpWall);
+                    else if (rightUpWall == null || !rightUpWall.activeSelf) CreatWall(ref rightUpWall, WallType.RightUp);
+                    if (!NoNullHexCreatWallJudge(upHexBehaviour) || (upHexBehaviour != null && upHexBehaviour.isSpecialHex && !upHexBehaviour.isOpened)) DestroyWall(upWall);
+                    else if (upWall == null || !upWall.activeSelf) CreatWall(ref upWall, WallType.Up);
+                    if (!NoNullHexCreatWallJudge(downHexBehaviour) || (downHexBehaviour != null && downHexBehaviour.isSpecialHex && !downHexBehaviour.isOpened)) DestroyWall(downWall);
+                    else if (downWall == null || !downWall.activeSelf) CreatWall(ref downWall, WallType.Down);
+                    if (!NoNullHexCreatWallJudge(leftDownHexBehaviour) || (leftDownHexBehaviour != null && leftDownHexBehaviour.isSpecialHex && !leftDownHexBehaviour.isOpened)) DestroyWall(leftDownWall);
+                    else if (leftDownWall == null || !leftDownWall.activeSelf) CreatWall(ref leftDownWall, WallType.LeftDown);
+                    if (!NoNullHexCreatWallJudge(rightDownHexBehaviour) || (rightDownHexBehaviour != null && rightDownHexBehaviour.isSpecialHex && !rightDownHexBehaviour.isOpened)) DestroyWall(rightDownWall);
+                    else if (rightDownWall == null || !rightDownWall.activeSelf) CreatWall(ref rightDownWall, WallType.RightDown);
+                    return;
+                }
+            }
+            DestroyWall(leftUpWall); DestroyWall(rightUpWall); DestroyWall(upWall);
+            DestroyWall(downWall); DestroyWall(leftDownWall); DestroyWall(rightDownWall);
+        }
 
 		[Token(Token = "0x6000B86")]
 		[Address(RVA = "0x4426924", Offset = "0x4422924", VA = "0x4426924")]
 		private void DestroyWall(GameObject wall, bool isReally = false)
 		{
-		}
+            if (wall == null) return;
+            if (isReally) UnityEngine.Object.Destroy(wall);
+            else wall.SetActive(false);
+        }
 
 		[Token(Token = "0x6000B87")]
 		[Address(RVA = "0x4426AA4", Offset = "0x4422AA4", VA = "0x4426AA4")]
 		private void CreatWall(ref GameObject wall, WallType wallType)
 		{
-		}
+            switch ((int)wallType)
+            {
+                case 0: if (leftUpWallIsDead) return; break;
+                case 1: if (upWallIsDead) return; break;
+                case 2: if (rightUpWallIsDead) return; break;
+                case 3: if (leftDownWallIsDead) return; break;
+                case 4: if (downWallIsDead) return; break;
+                case 5: if (rightDownWallIsDead) return; break;
+            }
+            if (wall != null) { wall.SetActive(true); return; }
+            if (_isDoOpenHexAni) return;
+            if (_stoneWallRes == null) UnityEngine.Debug.Log("想要实例化的墙资源是空的");
+            wall = UnityEngine.Object.Instantiate(_stoneWallRes);
+            StoneWallBehaviour behaviour = wall.AddComponent<StoneWallBehaviour>();
+            behaviour.InitInfo(100, wallType, isEnemyHex, this);
+            switch ((int)wallType)
+            {
+                case 0: wall.transform.Rotate(0f, 210f, 0f); wall.name += "_LeftUp"; leftUpWallBe = behaviour; break;
+                case 1: wall.transform.Rotate(0f, 270f, 0f); wall.name += "_Up"; upWallBe = behaviour; break;
+                case 2: wall.transform.Rotate(0f, 330f, 0f); wall.name += "_RightUp"; rightUpWallBe = behaviour; break;
+                case 3: wall.transform.Rotate(0f, 150f, 0f); wall.name += "_LeftDown"; leftDownWallBe = behaviour; break;
+                case 4: wall.transform.Rotate(0f, 90f, 0f); wall.name += "_Down"; downWallBe = behaviour; break;
+                case 5: wall.transform.Rotate(0f, 30f, 0f); wall.name += "_RightDown"; rightDownWallBe = behaviour; break;
+            }
+            Vector3 position = CalcWallPos(wallType);
+            if (wall != null)
+            {
+                wall.transform.localPosition = new Vector3(position.x, -1f, position.z);
+                wall.transform.SetParent(transform);
+                wall.transform.SetAsLastSibling();
+                wall.transform.localScale = Vector3.one;
+                if (!Pathfinding.AstarWebGLRuntimeConfig.DisableAstarRuntime && behaviour.uc != null)
+                    behaviour.uc.Apply();
+            }
+        }
 
 		[Token(Token = "0x6000B88")]
 		[Address(RVA = "0x4424294", Offset = "0x4420294", VA = "0x4424294")]
 		private Vector3 CalcWallPos(WallType type)
 		{
-			return default;
-		}
+            float angle;
+            switch ((int)type)
+            {
+                case 0: angle = 300f; break;
+                case 1: angle = 0f; break;
+                case 2: angle = 60f; break;
+                case 3: angle = 240f; break;
+                case 4: angle = 180f; break;
+                case 5: angle = 120f; break;
+                default: angle = 0f; break;
+            }
+            return (Quaternion.Euler(0f, angle, 0f) * transform.forward).normalized * 0.9f + transform.position;
+        }
 
 		[Token(Token = "0x6000B89")]
 		[Address(RVA = "0x44269E4", Offset = "0x44229E4", VA = "0x44269E4")]
 		private bool NullHexDesWallJudge(HexBehaviour hex)
 		{
-			return default;
-		}
+            if (hex == null) return false;
+            if (hex.hasArchitecture && !hex.isDestroy) return hex.isEnemyHex == isEnemyHex;
+            return hex._info == null && hex.isOpened && !hex.hasArchitecture && !hex.isDestroy && hex.isEnemyHex == isEnemyHex;
+        }
 
 		[Token(Token = "0x6000B8A")]
 		[Address(RVA = "0x44274BC", Offset = "0x44234BC", VA = "0x44274BC")]
 		private bool NoNullHexCreatWallJudge(HexBehaviour hex)
 		{
-			return default;
-		}
+            if (hex == null || hex.isEnemyHex != isEnemyHex) return true;
+            if (hex.isEnemyHex == isEnemyHex && !hex.hasArchitecture && !hex.isOpened && !hex.isDestroy) return true;
+            return hex.isEnemyHex == isEnemyHex && !hex.hasArchitecture && hex.isOpened && hex.isDestroy;
+        }
 
 		[Token(Token = "0x6000B8C")]
 		[Address(RVA = "0x442763C", Offset = "0x442363C", VA = "0x442763C")]
 		private void HexOpenAndHexDestroyCheckNullHexShouldCreatWall(object o)
 		{
-		}
+            shouldHasWall = isOpened && _info == null && !hasArchitecture && CheckNullHexShouldCreatWall();
+        }
 
 		[Token(Token = "0x6000B8D")]
 		[Address(RVA = "0x44268A8", Offset = "0x44228A8", VA = "0x44268A8")]
 		private bool CheckNullHexShouldCreatWall()
-		{
-			return default;
-		}
+		{ return RecursiveCheck(this, new List<HexBehaviour>()); }
 
 		[Token(Token = "0x6000B8E")]
 		[Address(RVA = "0x442767C", Offset = "0x442367C", VA = "0x442767C")]
 		private bool RecursiveCheck(HexBehaviour hexagon, List<HexBehaviour> hexs)
 		{
-			return default;
-		}
+            hexs.Add(hexagon);
+            if (hexagon.NearHasHasArchitectureReally()) return true;
+            if (hexagon.leftUpHexBehaviour != null && hexagon.leftUpHexBehaviour.isOpened && hexagon.leftUpHexBehaviour._info == null && hexagon.leftUpHexBehaviour.isEnemyHex == isEnemyHex && !hexs.Contains(hexagon.leftUpHexBehaviour) && RecursiveCheck(hexagon.leftUpHexBehaviour, hexs)) return true;
+            if (hexagon.upHexBehaviour != null && hexagon.upHexBehaviour.isOpened && hexagon.upHexBehaviour._info == null && hexagon.upHexBehaviour.isEnemyHex == isEnemyHex && !hexs.Contains(hexagon.upHexBehaviour) && RecursiveCheck(hexagon.upHexBehaviour, hexs)) return true;
+            if (hexagon.rightUpHexBehaviour != null && hexagon.rightUpHexBehaviour.isOpened && hexagon.rightUpHexBehaviour._info == null && hexagon.rightUpHexBehaviour.isEnemyHex == isEnemyHex && !hexs.Contains(hexagon.rightUpHexBehaviour) && RecursiveCheck(hexagon.rightUpHexBehaviour, hexs)) return true;
+            if (hexagon.leftDownHexBehaviour != null && hexagon.leftDownHexBehaviour.isOpened && hexagon.leftDownHexBehaviour._info == null && hexagon.leftDownHexBehaviour.isEnemyHex == isEnemyHex && !hexs.Contains(hexagon.leftDownHexBehaviour) && RecursiveCheck(hexagon.leftDownHexBehaviour, hexs)) return true;
+            if (hexagon.downHexBehaviour != null && hexagon.downHexBehaviour.isOpened && hexagon.downHexBehaviour._info == null && hexagon.downHexBehaviour.isEnemyHex == isEnemyHex && !hexs.Contains(hexagon.downHexBehaviour) && RecursiveCheck(hexagon.downHexBehaviour, hexs)) return true;
+            return hexagon.rightDownHexBehaviour != null && hexagon.rightDownHexBehaviour.isOpened && hexagon.rightDownHexBehaviour._info == null && hexagon.rightDownHexBehaviour.isEnemyHex == isEnemyHex && !hexs.Contains(hexagon.rightDownHexBehaviour) && RecursiveCheck(hexagon.rightDownHexBehaviour, hexs);
+        }
 
 		[Token(Token = "0x6000B8F")]
 		[Address(RVA = "0x4427C50", Offset = "0x4423C50", VA = "0x4427C50")]
@@ -1889,22 +2943,39 @@ void System.Runtime.CompilerServices.IAsyncStateMachine.SetStateMachine(IAsyncSt
 		[Address(RVA = "0x4422DC0", Offset = "0x441EDC0", VA = "0x4422DC0")]
 		public bool NearHasOpen()
 		{
-			return default;
+		    if (leftUpHexBehaviour != null && leftUpHexBehaviour.isOpened && leftUpHexBehaviour.isEnemyHex == isEnemyHex) return true;
+		    if (rightUpHexBehaviour != null && rightUpHexBehaviour.isOpened && rightUpHexBehaviour.isEnemyHex == isEnemyHex) return true;
+		    if (upHexBehaviour != null && upHexBehaviour.isOpened && upHexBehaviour.isEnemyHex == isEnemyHex) return true;
+		    if (downHexBehaviour != null && downHexBehaviour.isOpened && downHexBehaviour.isEnemyHex == isEnemyHex) return true;
+		    if (leftDownHexBehaviour != null && leftDownHexBehaviour.isOpened && leftDownHexBehaviour.isEnemyHex == isEnemyHex) return true;
+		    return rightDownHexBehaviour != null && rightDownHexBehaviour.isOpened && rightDownHexBehaviour.isEnemyHex == isEnemyHex;
 		}
 
 		[Token(Token = "0x6000B92")]
 		[Address(RVA = "0x4427128", Offset = "0x4423128", VA = "0x4427128")]
 		private bool NearHasArchitecture()
 		{
-			return default;
-		}
+            if (leftUpHexBehaviour != null && (leftUpHexBehaviour.hasArchitecture || (leftUpHexBehaviour.isOpened && leftUpHexBehaviour._info == null && !leftUpHexBehaviour.isDestroy)) && leftUpHexBehaviour.isEnemyHex == isEnemyHex) return true;
+            if (rightUpHexBehaviour != null && (rightUpHexBehaviour.hasArchitecture || (rightUpHexBehaviour.isOpened && rightUpHexBehaviour._info == null && !rightUpHexBehaviour.isDestroy)) && rightUpHexBehaviour.isEnemyHex == isEnemyHex) return true;
+            if (upHexBehaviour != null && (upHexBehaviour.hasArchitecture || (upHexBehaviour.isOpened && upHexBehaviour._info == null && !upHexBehaviour.isDestroy)) && upHexBehaviour.isEnemyHex == isEnemyHex) return true;
+            if (downHexBehaviour != null && (downHexBehaviour.hasArchitecture || (downHexBehaviour.isOpened && downHexBehaviour._info == null && !downHexBehaviour.isDestroy)) && downHexBehaviour.isEnemyHex == isEnemyHex) return true;
+            if (leftDownHexBehaviour != null && (leftDownHexBehaviour.hasArchitecture || (leftDownHexBehaviour.isOpened && leftDownHexBehaviour._info == null && !leftDownHexBehaviour.isDestroy)) && leftDownHexBehaviour.isEnemyHex == isEnemyHex) return true;
+            if (rightDownHexBehaviour != null && (rightDownHexBehaviour.hasArchitecture || (rightDownHexBehaviour.isOpened && rightDownHexBehaviour._info == null && !rightDownHexBehaviour.isDestroy)) && rightDownHexBehaviour.isEnemyHex == isEnemyHex) return true;
+            return false;
+        }
 
 		[Token(Token = "0x6000B93")]
 		[Address(RVA = "0x4427A4C", Offset = "0x4423A4C", VA = "0x4427A4C")]
 		private bool NearHasHasArchitectureReally()
 		{
-			return default;
-		}
+            if (leftUpHexBehaviour != null && leftUpHexBehaviour.hasArchitecture && leftUpHexBehaviour.isEnemyHex == isEnemyHex) return true;
+            if (rightUpHexBehaviour != null && rightUpHexBehaviour.hasArchitecture && rightUpHexBehaviour.isEnemyHex == isEnemyHex) return true;
+            if (upHexBehaviour != null && upHexBehaviour.hasArchitecture && upHexBehaviour.isEnemyHex == isEnemyHex) return true;
+            if (downHexBehaviour != null && downHexBehaviour.hasArchitecture && downHexBehaviour.isEnemyHex == isEnemyHex) return true;
+            if (leftDownHexBehaviour != null && leftDownHexBehaviour.hasArchitecture && leftDownHexBehaviour.isEnemyHex == isEnemyHex) return true;
+            if (rightDownHexBehaviour != null && rightDownHexBehaviour.hasArchitecture && rightDownHexBehaviour.isEnemyHex == isEnemyHex) return true;
+            return false;
+        }
 
 		[Token(Token = "0x6000B94")]
 		[Address(RVA = "0x4427F00", Offset = "0x4423F00", VA = "0x4427F00")]
@@ -1917,72 +2988,331 @@ void System.Runtime.CompilerServices.IAsyncStateMachine.SetStateMachine(IAsyncSt
 		[Address(RVA = "0x4428134", Offset = "0x4424134", VA = "0x4428134")]
 		public int GetRoleCountByCamp(bool isEnemyRole)
 		{
-			return default;
+		    return (isEnemyRole ? _roleEnemyList : _rolePlayerList).Count;
 		}
 
 		[Token(Token = "0x6000B96")]
 		[Address(RVA = "0x442818C", Offset = "0x442418C", VA = "0x442818C")]
 		public RoleBehaviour GetRoleByCamp(bool isEnemyRole, int index)
 		{
-			return null;
+		    List<RoleBehaviour> roles = isEnemyRole ? _roleEnemyList : _rolePlayerList;
+		    if (index < 0 || index >= roles.Count) return null;
+		    return roles[index];
 		}
 
 		[Token(Token = "0x6000B97")]
 		[Address(RVA = "0x4428230", Offset = "0x4424230", VA = "0x4428230")]
 		public void MyUpdate()
 		{
+		    if (leftUpWallBe != null) leftUpWallBe.MyUpdate();
+		    if (upWallBe != null) upWallBe.MyUpdate();
+		    if (rightUpWallBe != null) rightUpWallBe.MyUpdate();
+		    if (leftDownWallBe != null) leftDownWallBe.MyUpdate();
+		    if (downWallBe != null) downWallBe.MyUpdate();
+		    if (rightDownWallBe != null) rightDownWallBe.MyUpdate();
 		}
 
 		[Token(Token = "0x6000B98")]
 		[Address(RVA = "0x4428468", Offset = "0x4424468", VA = "0x4428468")]
 		[AsyncStateMachine(typeof(_003CEncroachmentEnemy_003Ed__169))]
-		private void EncroachmentEnemy()
+		private async void EncroachmentEnemy()
 		{
+		    isEnemyHex = false;
+		    BattleGameSceneManager.Instance.AddPlayerStayHex(gameObject);
+		    BattleGameSceneManager.Instance.RemoveEnemyStayHex(gameObject);
+		    ChangeWallLayer(isEnemyHex);
+		    ChangeWallIsEnemy(isEnemyHex);
+		    _stoneWallRes = await AssetsModule.AssetsManager.Instance.LoadAssetAsync<GameObject>(isEnemyHex
+		        ? "Assets/_Res/Addressable/02CoreGameBundle/Prefabs/CoreGame/Wall/EnemyStoneWallRoot.prefab"
+		        : "Assets/_Res/Addressable/02CoreGameBundle/Prefabs/CoreGame/Wall/PlayerStoneWallRoot.prefab");
+		    if (isOpened && _info == null) EventModule.EventManager.Instance.TriggerEvent("UpdateHexItemUI");
+		    MeshRenderer renderer = transform.GetChild(0).GetChild(1).GetComponent<MeshRenderer>();
+		    renderer.material = AssetsModule.MaterialsManager.Instance.GetHexMaterialByKey(false, key, BattleGameSceneManager.Instance.isSeasonPVP_BTest);
+		    EventModule.EventManager.Instance.TriggerEvent("BothHexCountChange");
+		    RefreshLegendaryTileCardForCurrentCamp();
+		    if (!isSpecialHex)
+		    {
+		        RareLevel oldRare = rareLevel;
+		        if (_id != "1001" && !LegendaryTileGuaranteed) RandomHexRare(false, BattleGameManager.Instance.playerNowGameOpenGoldCardEd, false);
+		        if (NearHasOpen())
+		        {
+		            if (isBridge) goto AfterCardChanges;
+		            bool reroll = false;
+		            if (!LegendaryTileGuaranteed)
+		            {
+		                if (!ToolModule.StringTool.IsNullOrEmpty(_id, true) && !DbtSaveDataManager_PlayerCardData.I.Data.GetBattleCardIDList().Contains(ToolModule.StringTool.ToInt(_id))) reroll = true;
+		                if (!reroll && oldRare != rareLevel) reroll = true;
+		            }
+		            if (!reroll)
+		            {
+		                if (_info != null && _info.id == "1001" && SDKModule.ABTestManager.Instance.GoldMinePrice01IsBTest) RefreshSubGameInflationPrice();
+		                if (_uiObj != null) _uiObj.SetActive(true);
+		                if (_showIconUIObj != null)
+		                {
+		                    if (quality != Quality.UnCharted) _showIconUIObj.SetActive(true);
+		                }
+		                else if (quality != Quality.UnCharted) CreatShowUIObj();
+		                Transform priceTransform = _uiObj.transform;
+		                switch (quality)
+		                {
+		                    case Quality.OneStar: priceTransform.localPosition = new Vector3(0f, 0f, -0.53f); break;
+		                    case Quality.TwoStar: priceTransform.localPosition = new Vector3(0f, 0f, -0.49f); break;
+		                    case Quality.ThreeStar: priceTransform.localPosition = new Vector3(0f, 0f, -0.47f); break;
+		                    default: priceTransform.localPosition = _uiObj.transform.localPosition; break;
+		                }
+		            }
+		            else
+		            {
+		                RandomArchitectureInfoAndCardID(false);
+		                SetHexSoldierPile(false, false);
+		                if (_info != null && _id == "1001") quality = Quality.OneStar;
+		                LoadShowIconRes();
+		                CreatUIObj();
+		                if (quality != Quality.UnCharted) CreatShowUIObj();
+		                LoadArchitectureRes();
+		            }
+		            if (!ToolModule.StringTool.IsNullOrEmpty(_id, true) && _id == "1001" && DbtSaveDataManager_PlayerCardData.I.Data.userHeroCardDataDic["1001"].level != AIBehaviourManager.Instance.cardLevelDic["1001"]) LoadArchitectureRes();
+		        }
+		        else
+		        {
+		            bool reroll = false;
+		            if (!LegendaryTileGuaranteed)
+		            {
+		                if (!ToolModule.StringTool.IsNullOrEmpty(_id, true) && !DbtSaveDataManager_PlayerCardData.I.Data.GetBattleCardIDList().Contains(ToolModule.StringTool.ToInt(_id))) reroll = true;
+		                if (!reroll && oldRare != rareLevel) reroll = true;
+		            }
+		            if (!reroll)
+		            {
+		                if (_info != null && _info.id == "1001" && SDKModule.ABTestManager.Instance.GoldMinePrice01IsBTest) RefreshSubGameInflationPrice();
+		            }
+		            else
+		            {
+		                RandomArchitectureInfoAndCardID(false);
+		                SetHexSoldierPile(false, false);
+		                if (_info != null && _id == "1001") quality = Quality.OneStar;
+		                LoadShowIconRes();
+		                CreatUIObj();
+		                if (quality != Quality.UnCharted) CreatShowUIObj();
+		                if (_uiObj != null) _uiObj.SetActive(false);
+		                if (_showIconUIObj != null) _showIconUIObj.SetActive(false);
+		                if (_enemyHexUIObj != null) _enemyHexUIObj.SetActive(false);
+		                LoadArchitectureRes();
+		            }
+		            if (!ToolModule.StringTool.IsNullOrEmpty(_id, true) && _id == "1001" && DbtSaveDataManager_PlayerCardData.I.Data.userHeroCardDataDic["1001"].level != AIBehaviourManager.Instance.cardLevelDic["1001"]) LoadArchitectureRes();
+		        }
+		AfterCardChanges:
+		        if (_enemyHexUIObj != null) _enemyHexUIObj.SetActive(false);
+		        _res = isEnemyHex ? _enemyRes : _playerRes;
+		        if (!isOpened)
+		        {
+		            canOpen = NearHasOpen();
+		            if (canOpen)
+		            {
+		                if (_uiObj != null) _uiObj.gameObject.SetActive(!isEnemyHex);
+		                if (_showIconUIObj != null) _showIconUIObj.gameObject.SetActive(!isEnemyHex);
+		                if (_enemyHexUIObj != null) _enemyHexUIObj.gameObject.SetActive(isEnemyHex);
+		            }
+		            SyncLegendaryGridEffectWithPriceUi();
+		        }
+		    }
+		    SubGameBuffManager.Instance.NotifyHexOwnershipChanged(this);
 		}
 
 		[Token(Token = "0x6000B99")]
 		[Address(RVA = "0x44284F8", Offset = "0x44244F8", VA = "0x44284F8")]
 		private void SetLayerRecursively(Transform objTransform, string layerName)
 		{
+		    int layer = LayerMask.NameToLayer(layerName);
+		    if (layer == -1)
+		    {
+		        UnityEngine.Debug.LogError("层级错误: " + layerName);
+		        return;
+		    }
+		    objTransform.gameObject.layer = layer;
+		    foreach (Transform child in objTransform) SetLayerRecursively(child, layerName);
 		}
 
 		[Token(Token = "0x6000B9A")]
 		[Address(RVA = "0x442887C", Offset = "0x442487C", VA = "0x442887C")]
 		private void ChangeWallLayer(bool toEnemyWall)
 		{
+		    if (leftUpWall != null) SetLayerRecursively(leftUpWall.transform, toEnemyWall ? "EnemyWall" : "PlayerWall");
+		    if (upWall != null) SetLayerRecursively(upWall.transform, toEnemyWall ? "EnemyWall" : "PlayerWall");
+		    if (rightUpWall != null) SetLayerRecursively(rightUpWall.transform, toEnemyWall ? "EnemyWall" : "PlayerWall");
+		    if (leftDownWall != null) SetLayerRecursively(leftDownWall.transform, toEnemyWall ? "EnemyWall" : "PlayerWall");
+		    if (downWall != null) SetLayerRecursively(downWall.transform, toEnemyWall ? "EnemyWall" : "PlayerWall");
+		    if (rightDownWall != null) SetLayerRecursively(rightDownWall.transform, toEnemyWall ? "EnemyWall" : "PlayerWall");
 		}
 
 		[Token(Token = "0x6000B9B")]
 		[Address(RVA = "0x4428B30", Offset = "0x4424B30", VA = "0x4428B30")]
 		private void ChangeWallIsEnemy(bool isEnemy)
 		{
+		    if (leftUpWallBe != null) leftUpWallBe.isEnemy = isEnemy;
+		    if (upWallBe != null) upWallBe.isEnemy = isEnemy;
+		    if (rightUpWallBe != null) rightUpWallBe.isEnemy = isEnemy;
+		    if (leftDownWallBe != null) leftDownWallBe.isEnemy = isEnemy;
+		    if (downWallBe != null) downWallBe.isEnemy = isEnemy;
+		    if (rightDownWallBe != null) rightDownWallBe.isEnemy = isEnemy;
 		}
 
 		[Token(Token = "0x6000B9C")]
 		[Address(RVA = "0x4428CD0", Offset = "0x4424CD0", VA = "0x4428CD0")]
 		[AsyncStateMachine(typeof(_003CEncroachmentPlayer_003Ed__173))]
-		private void EncroachmentPlayer()
+		private async void EncroachmentPlayer()
 		{
+		    isEnemyHex = true;
+		    BattleGameSceneManager.Instance.AddEnemyStayHex(gameObject);
+		    BattleGameSceneManager.Instance.RemovePlayerStayHex(gameObject);
+		    MeshRenderer renderer = transform.GetChild(0).GetChild(1).GetComponent<MeshRenderer>();
+		    renderer.material = AssetsModule.MaterialsManager.Instance.GetHexMaterialByKey(true, key, BattleGameSceneManager.Instance.isSeasonPVP_BTest);
+		    ChangeWallLayer(isEnemyHex);
+		    ChangeWallIsEnemy(isEnemyHex);
+		    _stoneWallRes = await AssetsModule.AssetsManager.Instance.LoadAssetAsync<GameObject>(isEnemyHex
+		        ? "Assets/_Res/Addressable/02CoreGameBundle/Prefabs/CoreGame/Wall/EnemyStoneWallRoot.prefab"
+		        : "Assets/_Res/Addressable/02CoreGameBundle/Prefabs/CoreGame/Wall/PlayerStoneWallRoot.prefab");
+		    if (isOpened && _info == null) EventModule.EventManager.Instance.TriggerEvent("UpdateHexItemUI");
+		    EventModule.EventManager.Instance.TriggerEvent("BothHexCountChange");
+		    RefreshLegendaryTileCardForCurrentCamp();
+		    if (!isSpecialHex)
+		    {
+		        if (!isBridge)
+		        {
+		            if (_showIconUIObj != null) _showIconUIObj.SetActive(false);
+		            if (_uiObj != null) _uiObj.SetActive(false);
+		            if (_enemyHexUIObj == null)
+		            {
+		                _enemyHexUIObj = UnityEngine.Object.Instantiate(_enemyHexUIRes);
+		                _enemyHexUIObj.transform.SetParent(transform, false);
+		            }
+		            GameObject enemyUi = _enemyHexUIObj;
+		            bool near = NearHasOpen();
+		            enemyUi.SetActive(near);
+		        }
+		        RareLevel oldRare = rareLevel;
+		        if (_id != "1001" && !LegendaryTileGuaranteed)
+		        {
+		            RandomHexRare(false, false, AIBehaviourManager.Instance.enemyNowGameOpenGoldCardEd);
+		            if (TrainingGroundManager.IsInGuidedGame && rareLevel == RareLevel.SSSR)
+		            {
+		                if (quality == Quality.ThreeStar) rareLevel = RareLevel.SSR;
+		                else if (quality == Quality.TwoStar) rareLevel = RareLevel.SR;
+		                else if (quality == Quality.OneStar) rareLevel = RareLevel.R;
+		                else rareLevel = RareLevel.Null;
+		            }
+		        }
+		        bool reroll = false;
+		        if (!LegendaryTileGuaranteed)
+		        {
+		            if (!ToolModule.StringTool.IsNullOrEmpty(_id, true) && !AIBehaviourManager.Instance.aiBattleCardID.Contains(_id)) reroll = true;
+		            if (!reroll && oldRare != rareLevel) reroll = true;
+		        }
+		        if (!reroll)
+		        {
+		            if (_info != null && _info.id == "1001" && SDKModule.ABTestManager.Instance.GoldMinePriceV2IsBTest) RefreshSubGameInflationPrice();
+		        }
+		        else
+		        {
+		            RandomArchitectureInfoAndCardID(false);
+		            SetHexSoldierPile(false, false);
+		            if (_info != null && _id == "1001") quality = Quality.OneStar;
+		            LoadShowIconRes();
+		            CreatUIObj();
+		            if (quality != Quality.UnCharted) CreatShowUIObj();
+		            _uiObj.SetActive(false);
+		            if (_showIconUIObj != null) _showIconUIObj.SetActive(false);
+		            LoadArchitectureRes();
+		        }
+		        if (!ToolModule.StringTool.IsNullOrEmpty(_id, true) && _id == "1001" && DbtSaveDataManager_PlayerCardData.I.Data.userHeroCardDataDic["1001"].level != AIBehaviourManager.Instance.cardLevelDic["1001"]) LoadArchitectureRes();
+		        _res = isEnemyHex ? _enemyRes : _playerRes;
+		        if (!isOpened)
+		        {
+		            canOpen = NearHasOpen();
+		            if (canOpen)
+		            {
+		                if (_uiObj != null) _uiObj.gameObject.SetActive(!isEnemyHex);
+		                if (_showIconUIObj != null) _showIconUIObj.gameObject.SetActive(!isEnemyHex);
+		                if (_enemyHexUIObj != null) _enemyHexUIObj.gameObject.SetActive(isEnemyHex);
+		            }
+		            SyncLegendaryGridEffectWithPriceUi();
+		        }
+		    }
+		    SubGameBuffManager.Instance.NotifyHexOwnershipChanged(this);
 		}
 
 		[Token(Token = "0x6000B9D")]
 		[Address(RVA = "0x4428D60", Offset = "0x4424D60", VA = "0x4428D60")]
 		private int GetInflationBasePrice()
 		{
-			return default;
+		    if (_info != null && (_info.id == "1001" || _info.id == "1001")) return BattleGameSceneManager.Instance.GetGoldMinePrice(isEnemyHex);
+		    if (LegendaryTileGuaranteed) return GetLandPriceInt(GetLandPriceHexGlobalInfo());
+		    if (SubGameBuffManager.Instance.IsActive && SubGameBuffManager.Instance.HasBuff(1001) && quality == Quality.UnCharted) return 25;
+		    return ToolModule.StringTool.ToInt(DataManager.Instance.GlobalInfo.hexInfos[(int)quality].price);
 		}
 
 		[Token(Token = "0x6000B9E")]
 		[Address(RVA = "0x4428EDC", Offset = "0x4424EDC", VA = "0x4428EDC")]
 		public void RefreshSubGameInflationPrice()
 		{
+		    price = GetInflationBasePrice();
+		    SubGameBuffManager.Instance.ModifyHexOpenPrice(ref price, isEnemyHex);
+		    if (tmpUI != null)
+		    {
+		        tmpUI.text = price.ToString();
+		        UpdateCoinColor(BattleGameManager.Instance.hasCoin);
+		    }
 		}
 
 		[Token(Token = "0x6000B9F")]
 		[Address(RVA = "0x4428FD4", Offset = "0x4424FD4", VA = "0x4428FD4")]
 		private void OnDestroy()
 		{
-		}
+            RemoveFromDirtyHexUIBatches();
+            if (transform != null) DG.Tweening.ShortcutExtensions.DOKill(transform, false);
+            if (tmpUI != null) DG.Tweening.ShortcutExtensions.DOKill(tmpUI.transform, false);
+            DestroyWall(leftUpWall, true);
+            DestroyWall(rightUpWall, true);
+            DestroyWall(upWall, true);
+            DestroyWall(downWall, true);
+            DestroyWall(leftDownWall, true);
+            DestroyWall(rightDownWall, true);
+            if (resBoxObj != null) UnityEngine.Object.Destroy(resBoxObj);
+            if (soilderObj != null)
+            {
+                for (int i = 0; i < soilderObj.Length; i++)
+                    UnityEngine.Object.Destroy(soilderObj[i]);
+            }
+            if (_obj != null) UnityEngine.Object.Destroy(_obj);
+            global::EventModule.EventManager.Instance.StopListening("CraetHexEnd", UpdateHexItemUIEvent);
+            global::EventModule.EventManager.Instance.StopListening("HasHexOpen", UpdateHexItemUIEvent);
+            global::EventModule.EventManager.Instance.StopListening("UpdateHexItemUI", UpdateHexItemUIEvent);
+            global::EventModule.EventManager.Instance.StopListening("CraetHexEnd", CheckCanOpen);
+            global::EventModule.EventManager.Instance.StopListening("HasHexOpen", CheckCanOpen);
+            global::EventModule.EventManager.Instance.StopListening("HasHexOpen", CreatWallJudge);
+            global::EventModule.EventManager.Instance.StopListening("HasHexDestroy", CreatWallJudge);
+            global::EventModule.EventManager.Instance.StopListening("CraetHexEndCreatMainTower", CreatMainTower);
+            global::EventModule.EventManager.Instance.StopListening("PlayerCoinChange", UpdateCoinColorEvent);
+            global::EventModule.EventManager.Instance.StopListening("HasHexOpen", CheckGraphUpdateScene);
+            global::EventModule.EventManager.Instance.StopListening("HasHexDestroy", CheckGraphUpdateScene);
+            global::EventModule.EventManager.Instance.StopListening("HasHexOpen", HexOpenAndHexDestroyCheckNullHexShouldCreatWall);
+            global::EventModule.EventManager.Instance.StopListening("HasHexDestroy", HexOpenAndHexDestroyCheckNullHexShouldCreatWall);
+            global::EventModule.EventManager.Instance.StopListening("HasWallDestroy", UpdateAllWallState);
+            global::EventModule.EventManager.Instance.StopListening("HasHexOpen", BeGetSpecialHex);
+            global::EventModule.EventManager.Instance.StopListening("LableSystemPlayerRefreshHex", LableTestPlayerRefeshHex);
+            global::EventModule.EventManager.Instance.StopListening("LableSystemEnemyRefreshHex", LableSystemEnemyRefreshHex);
+            leftDownHexBehaviour = null;
+            rightDownHexBehaviour = null;
+            upHexBehaviour = null;
+            downHexBehaviour = null;
+            leftUpHexBehaviour = null;
+            rightUpHexBehaviour = null;
+            if (tmpUI != null)
+            {
+                UnityEngine.Object.Destroy(tmpUI);
+                tmpUI = null;
+            }
+            if (resBoxObj != null) UnityEngine.Object.Destroy(resBoxObj);
+        }
 
 		[Token(Token = "0x6000BA0")]
 		[Address(RVA = "0x44298EC", Offset = "0x44258EC", VA = "0x44298EC")]
@@ -2044,7 +3374,10 @@ void System.Runtime.CompilerServices.IAsyncStateMachine.SetStateMachine(IAsyncSt
 		[Address(RVA = "0x4429E70", Offset = "0x4425E70", VA = "0x4429E70")]
 		public void HideRole()
 		{
-		}
+            GameObject[] roles = soilderObj;
+            if (roles != null)
+                for (int i = 0; i < roles.Length; i++) roles[i].gameObject.SetActive(false);
+        }
 
 		[Token(Token = "0x6000BA6")]
 		[Address(RVA = "0x4429EE4", Offset = "0x4425EE4", VA = "0x4429EE4")]
@@ -2056,6 +3389,7 @@ void System.Runtime.CompilerServices.IAsyncStateMachine.SetStateMachine(IAsyncSt
 		[Address(RVA = "0x4429F84", Offset = "0x4425F84", VA = "0x4429F84", Slot = "4")]
 		public void OnTutorialClick()
 		{
+		    OpenHex(isEnemyHex, false);
 		}
 
 		[Token(Token = "0x6000BA8")]
