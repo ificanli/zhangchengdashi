@@ -9,7 +9,7 @@ namespace SDKModule
 	{
 		[Token(Token = "0x4001A25")]
 		[FieldOffset(Offset = "0x10")]
-		public int NewHexaType;
+		public int NewHexaType = -1;
 
 		[Token(Token = "0x60005C3")]
 		[Address(RVA = "0x3F7370C", Offset = "0x3F6F70C", VA = "0x3F7370C")]

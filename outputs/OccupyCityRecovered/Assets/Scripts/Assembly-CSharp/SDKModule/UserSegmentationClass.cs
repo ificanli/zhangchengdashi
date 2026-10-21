@@ -9,7 +9,7 @@ namespace SDKModule
 	{
 		[Token(Token = "0x4001A24")]
 		[FieldOffset(Offset = "0x10")]
-		public int UserSegmentation;
+		public int UserSegmentation = -1;
 
 		[Token(Token = "0x60005C2")]
 		[Address(RVA = "0x3F736FC", Offset = "0x3F6F6FC", VA = "0x3F736FC")]
