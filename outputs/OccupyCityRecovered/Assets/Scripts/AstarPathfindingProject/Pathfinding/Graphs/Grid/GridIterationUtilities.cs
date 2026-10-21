@@ -46,7 +46,11 @@ namespace Pathfinding.Graphs.Grid
 		[Token(Token = "0x6000DBD")]
 		public static void ForEachCellIn3DSlice<T>(Slice3D slice, ref T action) where T : struct, ISliceAction
 		{
-		}
+ var size=slice.slice.size;var strides=slice.outerStrides;int start=slice.outerStartIndex;uint index=0;
+ for (int y=0;y<size.y;y++)
+  for (int z=0;z<size.z;z++)
+   for (int x=0;x<size.x;x++) action.Execute(unchecked((uint)(start+y*strides.Item2+z*strides.Item3+x)),index++);
+}
 
 		[Token(Token = "0x6000DBE")]
 		public static void ForEachCellIn3DSliceWithCoords<T>(Slice3D slice, ref T action) where T : struct, ISliceActionWithCoords
@@ -56,7 +60,11 @@ namespace Pathfinding.Graphs.Grid
 		[Token(Token = "0x6000DBF")]
 		public static void ForEachCellIn3DArray<T>(int3 size, ref T action) where T : struct, ICellAction
 		{
-		}
+ uint index=unchecked((uint)(size.z*size.x*size.y-1));
+ for (int y=unchecked(size.y-1);y>=0;y--)
+  for (int z=unchecked(size.z-1);z>=0;z--)
+   for (int x=unchecked(size.x-1);x>=0;x--) action.Execute(index--,x,y,z);
+}
 
 		[Token(Token = "0x6000DC0")]
 		public static void ForEachNode<T>(int3 arrayBounds, NativeArray<float4> nodeNormals, ref T callback) where T : struct, INodeModifier

@@ -222,9 +222,7 @@ IEnumerator System.Collections.IEnumerable.GetEnumerator()
 			[Token(Token = "0x6000F20")]
 			[Address(RVA = "0x448B7A4", Offset = "0x44877A4", VA = "0x448B7A4")]
 			get
-			{
-				return default;
-			}
+			{ return Capacity > 0; }
 		}
 
 		[Token(Token = "0x1700023A")]
@@ -233,14 +231,19 @@ IEnumerator System.Collections.IEnumerable.GetEnumerator()
 			[Token(Token = "0x6000F22")]
 			[Address(RVA = "0x448B7EC", Offset = "0x44877EC", VA = "0x448B7EC")]
 			get
-			{
-				return default;
-			}
+			{ return unchecked(l1.Length << 6); }
 			[Token(Token = "0x6000F23")]
 			[Address(RVA = "0x448B8AC", Offset = "0x44878AC", VA = "0x448B8AC")]
 			set
 			{
-			}
+ if (Capacity > value) throw new ArgumentException("Shrinking the bitset is not supported");
+ if (Capacity != value) {
+  var result = new HierarchicalBitset(value, allocator);
+  l1.CopyTo(result.l1); l2.CopyTo(result.l2); l3.CopyTo(result.l3);
+  Dispose();
+  this = result;
+ }
+}
 		}
 
 		[Token(Token = "0x1700023B")]
@@ -258,14 +261,17 @@ IEnumerator System.Collections.IEnumerable.GetEnumerator()
 		[Address(RVA = "0x448B66C", Offset = "0x448766C", VA = "0x448B66C")]
 		public HierarchicalBitset(int size, Allocator allocator)
 		{
-    throw new global::System.NotImplementedException("RECOVERY_UNIMPLEMENTED HierarchicalBitset..ctor RVA=0x448B66C Token=0x6000F1F");
+ this.allocator = allocator;
+ l1 = new UnsafeSpan<ulong>(allocator, unchecked(size + 63) >> 6);
+ l2 = new UnsafeSpan<ulong>(allocator, unchecked(size + 4095) >> 12);
+ l3 = new UnsafeSpan<ulong>(allocator, unchecked(size + 262143) >> 18);
+ l1.FillZeros(); l2.FillZeros(); l3.FillZeros();
 }
 
 		[Token(Token = "0x6000F21")]
 		[Address(RVA = "0x448B82C", Offset = "0x448782C", VA = "0x448B82C")]
 		public void Dispose()
-		{
-		}
+		{ l1.Free(allocator); l2.Free(allocator); l3.Free(allocator); this = default; }
 
 		[Token(Token = "0x6000F24")]
 		[Address(RVA = "0x448B9E4", Offset = "0x44879E4", VA = "0x448B9E4")]
@@ -291,8 +297,16 @@ IEnumerator System.Collections.IEnumerable.GetEnumerator()
 		[Address(RVA = "0x448BEB4", Offset = "0x4487EB4", VA = "0x448BEB4")]
 		private static bool SetAtomic(ref UnsafeSpan<ulong> span, int index)
 		{
-			return default;
-		}
+ int word = index >> 6;
+ ulong value = span[word];
+ ulong mask = 1UL << index;
+ if ((value & mask) != 0) return true;
+ for (;;) {
+  long previous = System.Threading.Interlocked.CompareExchange(ref Unity.Collections.LowLevel.Unsafe.UnsafeUtility.As<ulong,long>(ref span[word]), unchecked((long)(value | mask)), unchecked((long)value));
+  if (unchecked((ulong)previous) == value) return false;
+  value = unchecked((ulong)previous);
+ }
+}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		[Token(Token = "0x6000F29")]
@@ -314,8 +328,7 @@ IEnumerator System.Collections.IEnumerable.GetEnumerator()
 		[Token(Token = "0x6000F2B")]
 		[Address(RVA = "0x448C1AC", Offset = "0x44881AC", VA = "0x448C1AC")]
 		public void Set(int index)
-		{
-		}
+		{ if (!SetAtomic(ref l1, index)) { SetAtomic(ref l2, index >> 6); SetAtomic(ref l3, index >> 12); } }
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		[Token(Token = "0x6000F2C")]

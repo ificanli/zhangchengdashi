@@ -16,7 +16,7 @@ namespace Pathfinding
 
 		[Token(Token = "0x400014F")]
 		[FieldOffset(Offset = "0x0")]
-		public static readonly DistanceMetric Euclidean;
+		public static readonly DistanceMetric Euclidean = new DistanceMetric { projectionAxis = Vector3.zero, distanceScaleAlongProjectionDirection = 0 };
 
 		[Token(Token = "0x170000B6")]
 		public bool isProjectedDistance
@@ -24,9 +24,7 @@ namespace Pathfinding
 			[Token(Token = "0x600024C")]
 			[Address(RVA = "0x445D39C", Offset = "0x445939C", VA = "0x445D39C")]
 			get
-			{
-				return default;
-			}
+			{ float x=projectionAxis.x,y=projectionAxis.y,z=projectionAxis.z; return !((z*z+(x*x+y*y)) < 9.999999439624929e-11f); }
 		}
 
 		[Token(Token = "0x600024D")]

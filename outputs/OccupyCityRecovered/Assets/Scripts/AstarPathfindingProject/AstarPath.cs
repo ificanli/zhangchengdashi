@@ -417,15 +417,15 @@ void System.Collections.IEnumerator.Reset()
 
 	[Token(Token = "0x4000001")]
 	[Il2CppDummyDll.FieldOffset(Offset = "0x0")]
-	public static readonly Version Version;
+	public static readonly Version Version = new Version(5,4,4);
 
 	[Token(Token = "0x4000002")]
 	[Il2CppDummyDll.FieldOffset(Offset = "0x8")]
-	public static readonly AstarDistribution Distribution;
+	public static readonly AstarDistribution Distribution = AstarDistribution.AssetStore;
 
 	[Token(Token = "0x4000003")]
 	[Il2CppDummyDll.FieldOffset(Offset = "0x10")]
-	public static readonly string Branch;
+	public static readonly string Branch = (waitForPathDepth = 0) == 0 ? "master" : "master";
 
 	[Token(Token = "0x4000004")]
 	[Il2CppDummyDll.FieldOffset(Offset = "0x28")]
@@ -683,9 +683,7 @@ void System.Collections.IEnumerator.Reset()
 		[Token(Token = "0x6000004")]
 		[Address(RVA = "0x4440CAC", Offset = "0x443CCAC", VA = "0x4440CAC")]
 		get
-		{
-			return default;
-		}
+		{ return maxNearestNodeDistance * maxNearestNodeDistance; }
 	}
 
 	[Token(Token = "0x17000003")]
@@ -717,22 +715,22 @@ void System.Collections.IEnumerator.Reset()
 		}
 	}
 
-	[Token(Token = "0x17000005")]
+	[field: Token(Token = "0x4000022")]
+[field: Il2CppDummyDll.FieldOffset(Offset = "0xA8")]
+[field: System.NonSerialized]
+[Token(Token = "0x17000005")]
 	public bool isScanning
 	{
 		[Token(Token = "0x6000008")]
 		[Address(RVA = "0x4440CE0", Offset = "0x443CCE0", VA = "0x4440CE0")]
 		[CompilerGenerated]
 		get
-		{
-			return default;
-		}
+		;
 		[Token(Token = "0x6000009")]
 		[Address(RVA = "0x4440CE8", Offset = "0x443CCE8", VA = "0x4440CE8")]
 		[CompilerGenerated]
 		private set
-		{
-		}
+		;
 	}
 
 	[Token(Token = "0x17000006")]
@@ -785,9 +783,7 @@ void System.Collections.IEnumerator.Reset()
 		[Token(Token = "0x600000E")]
 		[Address(RVA = "0x4440D64", Offset = "0x443CD64", VA = "0x4440D64")]
 		get
-		{
-			return default;
-		}
+		{ return workItems.workItemsInProgress; }
 	}
 
 	[Token(Token = "0x1700000B")]
@@ -982,15 +978,12 @@ void System.Collections.IEnumerator.Reset()
 
 	[Token(Token = "0x600002D")]
 	public JobHandle AllocateNodes<T>(T[] result, int count, Func<T> createNode, uint variantsPerNode) where T : GraphNode
-	{
-		return default;
-	}
+	{ if (!pathProcessor.queue.allReceiversBlocked) throw new Exception("Trying to initialize a node when it is not safe to initialize any nodes. Must be done during a graph update. See http://arongranberg.com/astar/docs/graph-updates.html#direct"); return nodeStorage.AllocateNodesJob(result, count, createNode, variantsPerNode); }
 
 	[Token(Token = "0x600002E")]
 	[Address(RVA = "0x4443270", Offset = "0x443F270", VA = "0x4443270")]
 	internal void InitializeNode(GraphNode node)
-	{
-	}
+	{ if (!pathProcessor.queue.allReceiversBlocked) throw new Exception("Trying to initialize a node when it is not safe to initialize any nodes. Must be done during a graph update. See http://arongranberg.com/astar/docs/graph-updates.html#direct"); nodeStorage.InitializeNode(node); }
 
 	[Token(Token = "0x600002F")]
 	[Address(RVA = "0x444332C", Offset = "0x443F32C", VA = "0x444332C")]
@@ -1001,8 +994,7 @@ void System.Collections.IEnumerator.Reset()
 	[Token(Token = "0x6000030")]
 	[Address(RVA = "0x444342C", Offset = "0x443F42C", VA = "0x444342C")]
 	internal void DestroyNode(GraphNode node)
-	{
-	}
+	{ nodeStorage.DestroyNode(node); }
 
 	[Token(Token = "0x6000031")]
 	[Address(RVA = "0x44425B4", Offset = "0x443E5B4", VA = "0x44425B4")]
@@ -1116,16 +1108,45 @@ void System.Collections.IEnumerator.Reset()
 	[Token(Token = "0x6000041")]
 	[Address(RVA = "0x4444658", Offset = "0x4440658", VA = "0x4444658")]
 	public NNInfo GetNearest(Vector3 position, NearestNodeConstraint constraint)
-	{
-		return default;
-	}
+	{ return GetNearest(position, ref constraint); }
 
 	[Token(Token = "0x6000042")]
 	[Address(RVA = "0x4444688", Offset = "0x4440688", VA = "0x4444688")]
 	internal NNInfo GetNearest(Vector3 position, ref NearestNodeConstraint constraint)
 	{
-		return default;
-	}
+ var graphs = data.graphs;
+ constraint.maxDistanceSqr = constraint.maxDistanceSqrOrDefault(AstarPath.active);
+ NNInfo nearest = NNInfo.Empty;
+ if (graphs == null || graphs.Length == 0) return nearest;
+ if (graphs.Length == 1) {
+  var graph = graphs[0];
+  if (graph != null && constraint.graphMask.Contains(graph)) nearest = graph.GetNearest(position, ref constraint);
+  return nearest;
+ }
+ unsafe {
+  var buffer = stackalloc System.ValueTuple<float, uint>[graphs.Length];
+  global::Unity.Collections.LowLevel.Unsafe.UnsafeUtility.MemClear(buffer, graphs.Length * 8L);
+  var candidates = new Pathfinding.Collections.UnsafeSpan<System.ValueTuple<float, uint>>(buffer, graphs.Length);
+  int count = 0;
+  for (uint i = 0; i < graphs.Length; i++) {
+   var graph = graphs[i];
+   if (graph == null || !constraint.graphMask.Contains(i)) continue;
+   float lowerBound = graph.NearestNodeDistanceSqrLowerBound(position, ref constraint);
+   if (lowerBound <= constraint.maxDistanceSqr) candidates[count++] = (lowerBound, i);
+  }
+  candidates = candidates.Slice(0, count);
+  Pathfinding.Collections.SpanExtensions.Sort(candidates);
+  for (int i = 0; i < candidates.Length; i++) {
+   if (candidates[i].Item1 > constraint.maxDistanceSqr) break;
+   var candidate = graphs[candidates[i].Item2].GetNearest(position, ref constraint);
+   if (candidate.distanceCostSqr < constraint.maxDistanceSqr) {
+    constraint.maxDistanceSqr = candidate.distanceCostSqr;
+    nearest = candidate;
+   }
+  }
+ }
+ return nearest;
+}
 
 	[Token(Token = "0x6000043")]
 	[Address(RVA = "0x4444C0C", Offset = "0x4440C0C", VA = "0x4444C0C")]

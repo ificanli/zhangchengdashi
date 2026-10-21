@@ -16,13 +16,18 @@ namespace Pathfinding.Collections
 
 		[Token(Token = "0x6000FA1")]
 		public static void FillZeros<T>(this UnsafeSpan<T> span) where T : unmanaged
-		{
-		}
+		{ unsafe { if (span.length != 0) UnsafeUtility.MemSet(span.ptr, 0, (long)span.length * sizeof(T)); } }
 
 		[Token(Token = "0x6000FA2")]
 		public static void Fill<T>(this UnsafeSpan<T> span, T value) where T : unmanaged
 		{
-		}
+ if (span.length != 0) {
+  unsafe {
+   if (span.length > int.MaxValue / sizeof(T)) throw new System.ArgumentException("Span is too large to fill");
+   UnsafeUtility.MemCpyReplicate(span.ptr, &value, sizeof(T), unchecked((int)span.length));
+  }
+ }
+}
 
 		[Token(Token = "0x6000FA3")]
 		public static void CopyFrom<T>(this UnsafeSpan<T> span, NativeArray<T> array) where T : unmanaged
@@ -50,15 +55,13 @@ namespace Pathfinding.Collections
 		[Token(Token = "0x6000FA7")]
 		public static UnsafeSpan<T> AsUnsafeSpan<T>(this NativeList<T> list) where T : unmanaged
 		{
-			return default;
-		}
+ unsafe { return new UnsafeSpan<T>(Unity.Collections.LowLevel.Unsafe.NativeListUnsafeUtility.GetUnsafePtr(list), list.Length); }
+}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		[Token(Token = "0x6000FA8")]
 		public static UnsafeSpan<T> AsUnsafeSpan<T>(this NativeArray<T> arr) where T : unmanaged
-		{
-			return default;
-		}
+		{ unsafe { return new UnsafeSpan<T>(Unity.Collections.LowLevel.Unsafe.NativeArrayUnsafeUtility.GetUnsafePtr(arr),arr.Length); } }
 
 		[Token(Token = "0x6000FA9")]
 		public static UnsafeSpan<T> MoveToUnsafeSpan<T>(this NativeArray<T> arr) where T : unmanaged
@@ -77,8 +80,8 @@ namespace Pathfinding.Collections
 		[Token(Token = "0x6000FAB")]
 		public static UnsafeSpan<T> AsUnsafeReadOnlySpan<T>(this NativeArray<T> arr) where T : unmanaged
 		{
-			return default;
-		}
+ unsafe { return new UnsafeSpan<T>(Unity.Collections.LowLevel.Unsafe.NativeArrayUnsafeUtility.GetUnsafeReadOnlyPtr(arr),arr.Length); }
+}
 
 		[Token(Token = "0x6000FAC")]
 		public static Allocator GetAllocator<T>(this NativeArray<T> arr) where T : struct
@@ -115,7 +118,8 @@ namespace Pathfinding.Collections
 		[Token(Token = "0x6000FB1")]
 		public static void Sort<T>(this UnsafeSpan<T> span) where T : unmanaged, IComparable<T>
 		{
-		}
+ unsafe { Unity.Collections.NativeSortExtension.Sort(span.ptr, span.Length); }
+}
 
 		[Token(Token = "0x6000FB2")]
 		public static void Sort<T, U>(this UnsafeSpan<T> span, U comp) where T : unmanaged where U : IComparer<T>

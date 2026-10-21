@@ -35,8 +35,8 @@ namespace Pathfinding
 			[Address(RVA = "0x445B954", Offset = "0x4457954", VA = "0x445B954")]
 			get
 			{
-				return default;
-			}
+                return new GraphMask { value = -1 };
+            }
 		}
 
 		[Token(Token = "0x170000C1")]
@@ -45,9 +45,7 @@ namespace Pathfinding
 			[Token(Token = "0x6000287")]
 			[Address(RVA = "0x445C39C", Offset = "0x445839C", VA = "0x445C39C")]
 			get
-			{
-				return default;
-			}
+			{ return value == -1; }
 		}
 
 		[Token(Token = "0x170000C2")]

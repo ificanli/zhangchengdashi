@@ -93,9 +93,7 @@ namespace Pathfinding
 			[Token(Token = "0x600051C")]
 			[Address(RVA = "0x450A218", Offset = "0x4506218", VA = "0x450A218")]
 			get
-			{
-				return null;
-			}
+			{ return AstarData.GetGraph(this); }
 		}
 
 		[Token(Token = "0x1700010F")]
@@ -105,9 +103,7 @@ namespace Pathfinding
 			[Address(RVA = "0x4509334", Offset = "0x4505334", VA = "0x4509334")]
 			[IgnoredByDeepProfiler]
 			get
-			{
-				return default;
-			}
+			{ return (unchecked((uint)nodeIndex) & NodeIndexMask) == DestroyedNodeIndex; }
 		}
 
 		[Token(Token = "0x17000110")]
@@ -117,15 +113,12 @@ namespace Pathfinding
 			[Address(RVA = "0x450C85C", Offset = "0x450885C", VA = "0x450C85C")]
 			[IgnoredByDeepProfiler]
 			get
-			{
-				return default;
-			}
+			{ return (uint)nodeIndex & NodeIndexMask; }
 			[Token(Token = "0x6000520")]
 			[Address(RVA = "0x450E2BC", Offset = "0x450A2BC", VA = "0x450E2BC")]
 			[IgnoredByDeepProfiler]
 			internal set
-			{
-			}
+			{ nodeIndex = unchecked((nodeIndex & (int)0xF0000000u) | (int)value); }
 		}
 
 		[Token(Token = "0x17000111")]
@@ -134,9 +127,7 @@ namespace Pathfinding
 			[Token(Token = "0x6000521")]
 			[Address(RVA = "0x450E2D0", Offset = "0x450A2D0", VA = "0x450E2D0", Slot = "4")]
 			get
-			{
-				return default;
-			}
+			{ return 1; }
 		}
 
 		[Token(Token = "0x17000112")]
@@ -193,14 +184,11 @@ namespace Pathfinding
 			[Token(Token = "0x6000528")]
 			[Address(RVA = "0x450E360", Offset = "0x450A360", VA = "0x450E360")]
 			get
-			{
-				return default;
-			}
+			{ return penalty; }
 			[Token(Token = "0x6000529")]
 			[Address(RVA = "0x450E368", Offset = "0x450A368", VA = "0x450E368")]
 			set
-			{
-			}
+			{ if (value>0x00ffffffu) UnityEngine.Debug.LogWarning("Very high penalty applied. Are you sure negative values haven't underflowed?\nPenalty values this high could with long paths cause overflows and in some cases infinite loops because of that.\nPenalty value applied: "+value.ToString()); penalty=value; }
 		}
 
 		[Token(Token = "0x17000116")]
@@ -210,15 +198,12 @@ namespace Pathfinding
 			[Address(RVA = "0x450E420", Offset = "0x450A420", VA = "0x450E420")]
 			[IgnoredByDeepProfiler]
 			get
-			{
-				return default;
-			}
+			{ return (flags & 1) != 0; }
 			[Token(Token = "0x600052B")]
 			[Address(RVA = "0x450E42C", Offset = "0x450A42C", VA = "0x450E42C")]
 			[IgnoredByDeepProfiler]
 			set
-			{
-			}
+			{ flags=(flags&0xfffffffeu)|(value?1u:0u); AstarPath.active.hierarchicalGraph.AddDirtyNode(this); }
 		}
 
 		[Token(Token = "0x17000117")]
@@ -229,9 +214,7 @@ namespace Pathfinding
 			[Address(RVA = "0x450E578", Offset = "0x450A578", VA = "0x450E578")]
 			[IgnoredByDeepProfiler]
 			get
-			{
-				return default;
-			}
+			{ return (int)((flags >> 1) & 0x1FFFF); }
 			[MethodImpl(MethodImplOptions.AggressiveInlining)]
 			[Token(Token = "0x600052D")]
 			[Address(RVA = "0x450E584", Offset = "0x450A584", VA = "0x450E584")]
@@ -249,16 +232,13 @@ namespace Pathfinding
 			[Address(RVA = "0x450E598", Offset = "0x450A598", VA = "0x450E598")]
 			[IgnoredByDeepProfiler]
 			get
-			{
-				return default;
-			}
+			{ return (flags & 0x40000u) != 0; }
 			[MethodImpl(MethodImplOptions.AggressiveInlining)]
 			[Token(Token = "0x600052F")]
 			[Address(RVA = "0x450E5A4", Offset = "0x450A5A4", VA = "0x450E5A4")]
 			[IgnoredByDeepProfiler]
 			set
-			{
-			}
+			{ flags = (flags & 0xFFFBFFFFu) | (value ? 0x40000u : 0u); }
 		}
 
 		[Token(Token = "0x17000119")]
@@ -267,9 +247,7 @@ namespace Pathfinding
 			[Token(Token = "0x6000530")]
 			[Address(RVA = "0x450E5D4", Offset = "0x450A5D4", VA = "0x450E5D4")]
 			get
-			{
-				return default;
-			}
+			{ return AstarPath.active.hierarchicalGraph.GetConnectedComponent(HierarchicalNodeIndex); }
 		}
 
 		[Token(Token = "0x1700011A")]
@@ -280,14 +258,11 @@ namespace Pathfinding
 			[Address(RVA = "0x450E678", Offset = "0x450A678", VA = "0x450E678")]
 			[IgnoredByDeepProfiler]
 			get
-			{
-				return default;
-			}
+			{ return flags >> 24; }
 			[Token(Token = "0x6000532")]
 			[Address(RVA = "0x450E680", Offset = "0x450A680", VA = "0x450E680")]
 			set
-			{
-			}
+			{ flags=unchecked((flags&0x00ffffffu)|(value<<24)); }
 		}
 
 		[Token(Token = "0x1700011B")]
@@ -296,21 +271,22 @@ namespace Pathfinding
 			[Token(Token = "0x6000533")]
 			[Address(RVA = "0x450E688", Offset = "0x450A688", VA = "0x450E688")]
 			get
-			{
-				return default;
-			}
+			{ return (flags >> 19) & 31u; }
 			[Token(Token = "0x6000534")]
 			[Address(RVA = "0x450C788", Offset = "0x4508788", VA = "0x450C788")]
 			set
-			{
-			}
+			{ flags=(flags&0xff07ffffu)|((value&31u)<<19); }
 		}
 
 		[Token(Token = "0x600051D")]
 		[Address(RVA = "0x450E1BC", Offset = "0x450A1BC", VA = "0x450E1BC")]
 		public void Destroy()
 		{
-		}
+ if (Destroyed) return;
+ ClearConnections(true);
+ if (AstarPath.active!=null) AstarPath.active.DestroyNode(this);
+ nodeIndex=unchecked((nodeIndex&(int)0xf0000000u)|(int)DestroyedNodeIndex);
+}
 
 		[Token(Token = "0x6000535")]
 		[Address(RVA = "0x450E694", Offset = "0x450A694", VA = "0x450E694")]
@@ -469,7 +445,6 @@ namespace Pathfinding
 		[Token(Token = "0x6000551")]
 		[Address(RVA = "0x450ED38", Offset = "0x450AD38", VA = "0x450ED38")]
 		protected GraphNode()
-		{
-		}
+		{}
 	}
 }

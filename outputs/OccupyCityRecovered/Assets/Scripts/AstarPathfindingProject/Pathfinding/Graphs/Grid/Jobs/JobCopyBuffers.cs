@@ -33,6 +33,17 @@ namespace Pathfinding.Graphs.Grid.Jobs
 		[Address(RVA = "0x447B520", Offset = "0x4477520", VA = "0x447B520", Slot = "4")]
 		public void Execute()
 		{
-		}
+ var inputSlice = new Slice3D(input.bounds, bounds);
+ var outputSlice = new Slice3D(output.bounds, bounds);
+ JobCopyRectangle<UnityEngine.Vector3>.Copy(input.positions, output.positions, inputSlice, outputSlice);
+ JobCopyRectangle<Unity.Mathematics.float4>.Copy(input.normals, output.normals, inputSlice, outputSlice);
+ JobCopyRectangle<ulong>.Copy(input.connections, output.connections, inputSlice, outputSlice);
+ if (copyPenaltyAndTags) {
+  JobCopyRectangle<uint>.Copy(input.penalties, output.penalties, inputSlice, outputSlice);
+  JobCopyRectangle<int>.Copy(input.tags, output.tags, inputSlice, outputSlice);
+ }
+ JobCopyRectangle<bool>.Copy(input.walkable, output.walkable, inputSlice, outputSlice);
+ JobCopyRectangle<bool>.Copy(input.walkableWithErosion, output.walkableWithErosion, inputSlice, outputSlice);
+}
 	}
 }

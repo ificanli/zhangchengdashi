@@ -38,6 +38,18 @@ namespace Pathfinding.Graphs.Grid.Jobs
 		[Address(RVA = "0x4479FFC", Offset = "0x4475FFC", VA = "0x4479FFC", Slot = "4")]
 		public void Execute()
 		{
-		}
+ var size=dataBounds.size;
+ var normals=Pathfinding.Collections.SpanExtensions.AsUnsafeReadOnlySpan(nodeNormals);
+ for (int y=1;y<size.y;y++)
+  for (int z=0;z<size.z;z++)
+   for (int x=0;x<size.x;x++) {
+    int index=unchecked(dataBounds.min.x+x+nodeArrayBounds.x*(dataBounds.min.z+z+nodeArrayBounds.z*(y+dataBounds.min.y)));
+    bool present=Unity.Mathematics.math.any(normals[unchecked((uint)index)]!=default(float4));
+    var node=nodes[index];
+    if (present==(node!=null)) continue;
+    if (present) { nodes[index]=newGridNodeDelegate();active.InitializeNode(nodes[index]); }
+    else { node.ClearCustomConnections(true);node.ResetConnectionsInternal();node.Destroy();nodes[index]=null; }
+   }
+}
 	}
 }

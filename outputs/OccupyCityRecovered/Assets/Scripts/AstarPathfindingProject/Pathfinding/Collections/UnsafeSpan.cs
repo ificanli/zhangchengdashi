@@ -28,9 +28,7 @@ namespace Pathfinding.Collections
 		{
 			[Token(Token = "0x6000F8B")]
 			get
-			{
-				return default;
-			}
+			{ return (int)length; }
 		}
 
 		[Token(Token = "0x17000250")]
@@ -41,8 +39,10 @@ namespace Pathfinding.Collections
 			[IgnoredByDeepProfiler]
 			get
 			{
-				return ref *(T*)null;
-			}
+ if ((uint)index >= length) throw new System.IndexOutOfRangeException();
+ Unity.Burst.CompilerServices.Hint.Assume(ptr != null);
+ return ref ptr[index];
+}
 		}
 
 		[Token(Token = "0x17000251")]
@@ -53,15 +53,22 @@ namespace Pathfinding.Collections
 			[IgnoredByDeepProfiler]
 			get
 			{
-				return ref *(T*)null;
-			}
+ if (index >= length) throw new System.IndexOutOfRangeException();
+ Unity.Burst.CompilerServices.Hint.Assume(ptr != null);
+ Unity.Burst.CompilerServices.Hint.Assume(ptr + index != null);
+ return ref ptr[index];
+}
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		[Token(Token = "0x6000F8C")]
 		public unsafe UnsafeSpan(void* ptr, int length, Allocator allocator = Allocator.None)
 		{
-    throw new global::System.NotImplementedException("RECOVERY_UNIMPLEMENTED UnsafeSpan..ctor RVA= Token=0x6000F8C");
+ if (length < 0) throw new System.ArgumentOutOfRangeException();
+ if (ptr == null && length != 0) throw new System.ArgumentNullException();
+ this.ptr = (T*)ptr;
+ this.length = (uint)length;
+ this.Allocator = allocator;
 }
 
 		[Token(Token = "0x6000F8D")]
@@ -85,28 +92,32 @@ namespace Pathfinding.Collections
 		[Token(Token = "0x6000F90")]
 		public UnsafeSpan(Allocator allocator, int length)
 		{
-    throw new global::System.NotImplementedException("RECOVERY_UNIMPLEMENTED UnsafeSpan..ctor RVA= Token=0x6000F90");
-}
+  if (length < 0) throw new System.ArgumentOutOfRangeException();
+  unsafe { this.ptr = length == 0 ? null : (T*)UnsafeUtility.MallocTracked((long)sizeof(T) * length, UnsafeUtility.AlignOf<T>(), allocator, 1); }
+  this.length = unchecked((uint)length);
+  this.Allocator = allocator;
+ }
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		[Token(Token = "0x6000F93")]
 		public UnsafeSpan<U> Reinterpret<U>() where U : unmanaged
 		{
-			return default;
-		}
+ unsafe { return new UnsafeSpan<U>(ptr,unchecked((int)length),Allocator); }
+}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		[Token(Token = "0x6000F94")]
 		public UnsafeSpan<U> Reinterpret<U>(int expectedOriginalTypeSize) where U : unmanaged
 		{
-			return default;
-		}
+ unsafe { return new UnsafeSpan<U>(ptr,unchecked((int)(length*(uint)sizeof(T)))/sizeof(U),Allocator); }
+}
 
 		[Token(Token = "0x6000F95")]
 		public UnsafeSpan<T> Slice(int start, int length)
 		{
-			return default;
-		}
+ if ((start | length) < 0 || (long)start + length > this.length) throw new System.ArgumentOutOfRangeException();
+ unsafe { return new UnsafeSpan<T>(ptr + start, length, Allocator); }
+}
 
 		[Token(Token = "0x6000F96")]
 		public UnsafeSpan<T> Slice(int start)
@@ -126,8 +137,7 @@ namespace Pathfinding.Collections
 
 		[Token(Token = "0x6000F99")]
 		public void CopyTo(UnsafeSpan<T> other)
-		{
-		}
+		{ if (length > other.length) throw new System.ArgumentException(); unsafe { if (length != 0) UnsafeUtility.MemCpy(other.ptr, ptr, (long)length * sizeof(T)); } }
 
 		[Token(Token = "0x6000F9A")]
 		public void CopyTo(List<T> buffer)
@@ -154,13 +164,11 @@ namespace Pathfinding.Collections
 
 		[Token(Token = "0x6000F9E")]
 		public void Free(Allocator expectedAllocator)
-		{
-		}
+		{ unsafe { if (length != 0) UnsafeUtility.FreeTracked(ptr, expectedAllocator); } }
 
 		[Token(Token = "0x6000F9F")]
 		public void Free()
-		{
-		}
+		{ unsafe { if (length != 0) UnsafeUtility.FreeTracked(ptr, Allocator); } }
 
 		[Token(Token = "0x6000FA0")]
 		public UnsafeSpan<T> Reallocate(Allocator allocator, int newSize)

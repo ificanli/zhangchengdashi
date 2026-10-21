@@ -247,7 +247,7 @@ IEnumerator System.Collections.IEnumerable.GetEnumerator()
 		[NonSerialized]
 		[Token(Token = "0x40001DE")]
 		[FieldOffset(Offset = "0x48")]
-		public NavGraph[] graphs;
+		public NavGraph[] graphs = new NavGraph[0];
 
 		[Token(Token = "0x40001DF")]
 		[FieldOffset(Offset = "0x50")]
@@ -265,7 +265,7 @@ IEnumerator System.Collections.IEnumerable.GetEnumerator()
 
 		[Token(Token = "0x40001E2")]
 		[FieldOffset(Offset = "0x68")]
-		private List<bool> graphStructureLocked;
+		private List<bool> graphStructureLocked = new List<bool>();
 
 		[Token(Token = "0x40001E3")]
 		[FieldOffset(Offset = "0x8")]
@@ -440,8 +440,7 @@ IEnumerator System.Collections.IEnumerable.GetEnumerator()
 		[Token(Token = "0x60002B8")]
 		[Address(RVA = "0x445FC7C", Offset = "0x445BC7C", VA = "0x445FC7C")]
 		internal AstarData(AstarPath active)
-		{
-		}
+		{ this.active = active; }
 
 		[Token(Token = "0x60002B9")]
 		[Address(RVA = "0x445FD30", Offset = "0x445BD30", VA = "0x445FD30")]
@@ -615,8 +614,10 @@ IEnumerator System.Collections.IEnumerable.GetEnumerator()
 		[Address(RVA = "0x4461F1C", Offset = "0x445DF1C", VA = "0x4461F1C")]
 		internal NavGraph CreateGraph(Type type)
 		{
-			return null;
-		}
+ var graph = Activator.CreateInstance(type) as NavGraph;
+ graph.active = active;
+ return graph;
+}
 
 		[Token(Token = "0x60002D4")]
 		public T AddGraph<T>() where T : NavGraph
@@ -655,8 +656,11 @@ IEnumerator System.Collections.IEnumerable.GetEnumerator()
 		[Address(RVA = "0x4457F00", Offset = "0x4453F00", VA = "0x4457F00")]
 		public static NavGraph GetGraph(GraphNode node)
 		{
-			return null;
-		}
+ if (node == null || node.Destroyed) return null;
+ var astar = AstarPath.active;
+ if (astar == null || astar.data == null || astar.data.graphs == null) return null;
+ return astar.data.graphs[node.GraphIndex];
+}
 
 		[Token(Token = "0x60002DA")]
 		[Address(RVA = "0x445F524", Offset = "0x445B524", VA = "0x445F524")]
