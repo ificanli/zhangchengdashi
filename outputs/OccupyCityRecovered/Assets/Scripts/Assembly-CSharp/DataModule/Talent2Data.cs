@@ -30,9 +30,7 @@ namespace DataModule
 		[Token(Token = "0x60059C3")]
 		[Address(RVA = "0x4376B78", Offset = "0x4372B78", VA = "0x4376B78")]
 		public bool IsUnLock()
-		{
-			return default;
-		}
+		{ return level > 0; }
 
 		[Token(Token = "0x60059C4")]
 		[Address(RVA = "0x4376B88", Offset = "0x4372B88", VA = "0x4376B88")]

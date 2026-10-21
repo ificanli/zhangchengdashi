@@ -31,6 +31,11 @@ namespace DataModule
 		[Address(RVA = "0x43647E0", Offset = "0x43607E0", VA = "0x43647E0")]
 		public TrainingHexConfig(Vector3 pos, HexType type, Quality qual, string cardId, string endTriggerEventId)
 		{
+            position = pos;
+            hexType = type;
+            quality = qual;
+            fixedCardId = cardId;
+            this.endTriggerEventId = endTriggerEventId;
 		}
 	}
 }

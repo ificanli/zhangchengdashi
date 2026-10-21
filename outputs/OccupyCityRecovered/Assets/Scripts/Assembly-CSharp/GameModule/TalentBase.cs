@@ -7,39 +7,33 @@ namespace GameModule
 	public abstract class TalentBase : ITalentEffect
 	{
 		[Token(Token = "0x170000BD")]
+		[field: Token(Token = "0x4001E41")]
+		[field: Il2CppDummyDll.FieldOffset(Offset = "0x10")]
 		public string TalentId
 		{
 			[Token(Token = "0x60009C2")]
 			[Address(RVA = "0x4295674", Offset = "0x4291674", VA = "0x4295674")]
 			[CompilerGenerated]
-			get
-			{
-				return null;
-			}
+			get;
 			[Token(Token = "0x60009C3")]
 			[Address(RVA = "0x429567C", Offset = "0x429167C", VA = "0x429567C")]
 			[CompilerGenerated]
-			protected set
-			{
-			}
+			protected set;
 		}
 
 		[Token(Token = "0x170000BE")]
+		[field: Token(Token = "0x4001E42")]
+		[field: Il2CppDummyDll.FieldOffset(Offset = "0x18")]
 		public GameEventType EventType
 		{
 			[Token(Token = "0x60009C4")]
 			[Address(RVA = "0x4295684", Offset = "0x4291684", VA = "0x4295684")]
 			[CompilerGenerated]
-			get
-			{
-				return default;
-			}
+			get;
 			[Token(Token = "0x60009C5")]
 			[Address(RVA = "0x429568C", Offset = "0x429168C", VA = "0x429568C")]
 			[CompilerGenerated]
-			protected set
-			{
-			}
+			protected set;
 		}
 
 		[Token(Token = "0x170000BF")]
@@ -72,6 +66,9 @@ namespace GameModule
 		[Address(RVA = "0x42956B8", Offset = "0x42916B8", VA = "0x42956B8")]
 		public TalentBase(string talentId, GameEventType eventType, float value)
 		{
+            TalentId = talentId;
+            EventType = eventType;
+            Value = value;
 		}
 
 		[Token(Token = "0x60009CB")]
