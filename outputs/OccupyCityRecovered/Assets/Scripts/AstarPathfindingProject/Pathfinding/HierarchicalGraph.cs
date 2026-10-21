@@ -310,27 +310,28 @@ namespace Pathfinding
 		[Token(Token = "0x60005A6")]
 		[Address(RVA = "0x45100C4", Offset = "0x450C0C4", VA = "0x45100C4")]
 		internal void OnDestroyedNode(GraphNode node)
-		{
-		}
+		{ dirty[node.HierarchicalNodeIndex]=1;dirtyNodes.Reset(unchecked((int)node.NodeIndex));node.IsHierarchicalNodeDirty=false;anyNodesDestroyed=true; }
 
 		[Token(Token = "0x60005A7")]
 		[Address(RVA = "0x450E4B0", Offset = "0x450A4B0", VA = "0x450E4B0")]
 		public void AddDirtyNode(GraphNode node)
 		{
-		}
+ if (!node.IsHierarchicalNodeDirty && dirtyNodes.IsCreated && !node.Destroyed) {
+  dirtyNodes.Set(unchecked((int)node.NodeIndex));
+  dirty[node.HierarchicalNodeIndex] = 1;
+  node.IsHierarchicalNodeDirty = true;
+ }
+}
 
 		[Token(Token = "0x60005A8")]
 		[Address(RVA = "0x450FE6C", Offset = "0x450BE6C", VA = "0x450FE6C")]
 		public void ReserveNodeIndices(uint nodeIndexCount)
-		{
-		}
+		{ dirtyNodes.Capacity = System.Math.Max(dirtyNodes.Capacity, unchecked((int)nodeIndexCount)); }
 
 		[Token(Token = "0x60005AB")]
 		[Address(RVA = "0x450E648", Offset = "0x450A648", VA = "0x450E648")]
 		public uint GetConnectedComponent(int hierarchicalNodeIndex)
-		{
-			return default;
-		}
+		{ return unchecked((uint)areas[hierarchicalNodeIndex]); }
 
 		[Token(Token = "0x60005AC")]
 		[Address(RVA = "0x450D4A8", Offset = "0x45094A8", VA = "0x450D4A8")]

@@ -49,11 +49,11 @@ namespace Pathfinding
 
 			[Token(Token = "0x4000462")]
 			[Il2CppDummyDll.FieldOffset(Offset = "0x20")]
-			public float[] factors;
+			public float[] factors = new float[3];
 
 			[Token(Token = "0x4000463")]
 			[Il2CppDummyDll.FieldOffset(Offset = "0x28")]
-			public ChannelUse[] channels;
+			public ChannelUse[] channels = new ChannelUse[3];
 
 			[Token(Token = "0x4000464")]
 			[Il2CppDummyDll.FieldOffset(Offset = "0x30")]
@@ -80,8 +80,7 @@ namespace Pathfinding
 			[Token(Token = "0x60006EF")]
 			[Address(RVA = "0x4528710", Offset = "0x4524710", VA = "0x4528710")]
 			public TextureData()
-			{
-			}
+			{}
 		}
 
 		[Token(Token = "0x20000CA")]
@@ -255,8 +254,7 @@ void System.Collections.IEnumerator.Reset()
 				[Token(Token = "0x6000700")]
 				[Address(RVA = "0x4528C5C", Offset = "0x4524C5C", VA = "0x4528C5C")]
 				public NodesHolder()
-				{
-				}
+				{}
 			}
 
 			[Token(Token = "0x20000CF")]
@@ -310,9 +308,7 @@ JobHandle System.Collections.Generic.IEnumerator<Unity.Jobs.JobHandle>.Current
 					[Address(RVA = "0x452B724", Offset = "0x4527724", VA = "0x452B724", Slot = "4")]
 					[DebuggerHidden]
 					get
-					{
-						return System_002ECollections_002EGeneric_002EIEnumerator_003CUnity_002EJobs_002EJobHandle_003E_002Eget_Current();
-					}
+					{ return _003C_003E2__current; }
 				}
 
 				[Token(Token = "0x1700015E")]
@@ -322,31 +318,157 @@ object System.Collections.IEnumerator.Current
 					[Address(RVA = "0x452B768", Offset = "0x4527768", VA = "0x452B768", Slot = "7")]
 					[DebuggerHidden]
 					get
-					{
-						return System_002ECollections_002EIEnumerator_002Eget_Current();
-					}
+					{ return _003C_003E2__current; }
 				}
 
 				[Token(Token = "0x6000701")]
 				[Address(RVA = "0x4529950", Offset = "0x4525950", VA = "0x4529950")]
 				[DebuggerHidden]
 				public _003CPrepare_003Ed__22(int _003C_003E1__state)
-				{
-				}
+				{ this._003C_003E1__state=_003C_003E1__state; }
 
 				[Token(Token = "0x6000702")]
 				[Address(RVA = "0x4529D9C", Offset = "0x4525D9C", VA = "0x4529D9C", Slot = "5")]
 				[DebuggerHidden]
 void System.IDisposable.Dispose()
-				{
-				}
+				{}
 
 				[Token(Token = "0x6000703")]
 				[Address(RVA = "0x4529DA0", Offset = "0x4525DA0", VA = "0x4529DA0", Slot = "6")]
 bool System.Collections.IEnumerator.MoveNext()
 				{
-					return default;
-				}
+ var p=_003C_003E4__this;
+ switch (_003C_003E1__state) {
+  case 0: _003C_003E1__state=-1;break;
+  case 1: _003C_003E1__state=-1;goto HeightReady;
+  case 2: _003C_003E1__state=-1;goto WaitBeforeCollision;
+  case 3: _003C_003E1__state=-1;p.context.tracker.timeSlice=TimeSlice.MillisFromNow(2f);goto WaitCollision;
+  case 4: _003C_003E1__state=-1;goto WaitBeforeConnections;
+  case 5: _003C_003E1__state=-1;goto WaitAfterConnections;
+  case 6: _003C_003E1__state=-1;goto WaitAfterErosion;
+  case 7: _003C_003E1__state=-1;goto WaitAfterErodedConnections;
+  case 8: _003C_003E1__state=-1;goto WaitPostProcess;
+  case 9: _003C_003E1__state=-1;goto WaitFinalWrites;
+  case 10: _003C_003E1__state=-1;p.dependencyTracker.ClearMemory();return false;
+  default:return false;
+ }
+ if (p.emptyUpdate) return false;
+ _003Ccollision_003E5__2=p.graph.collision;
+ _003Crules_003E5__3=p.graph.rules;
+ if (p.recalculationMode!=RecalculationMode.RecalculateFromScratch) {
+  _003CminLayers_003E5__4=p.graph.nodeData.bounds.max.y;
+  p.readBounds.max.y=p.fullRecalculationBounds.max.y=p.writeMaskBounds.max.y=_003CminLayers_003E5__4;
+  if (p.recalculationMode==RecalculationMode.RecalculateMinimal && p.readBounds==p.fullRecalculationBounds) p.recalculationMode=RecalculationMode.RecalculateFromScratch;
+ } else _003CminLayers_003E5__4=1;
+ _003ClayeredDataLayout_003E5__5=p.graph is LayerGridGraph;
+ _003CcharacterHeight_003E5__6=p.graph is LayerGridGraph layered ? layered.characterHeight : float.PositiveInfinity;
+ p.context=new GridGraphRules.Context { graph=p.graph,data=new GridGraphScanData { dependencyTracker=p.dependencyTracker,up=p.transform.TransformVector(Vector3.up).normalized,transform=p.transform } };
+ if (unchecked((uint)p.recalculationMode)>1u) {
+  p.context.data.nodes=new GridGraphNodeData { allocationMethod=p.allocationMethod,numNodes=p.readBounds.volume,bounds=p.readBounds,layeredDataLayout=_003ClayeredDataLayout_003E5__5 };
+  p.context.data.nodes.AllocateBuffers(p.dependencyTracker);
+  p.context.data.nodes.CopyFrom(p.graph.nodeData,true,p.dependencyTracker);
+  goto DefaultsReady;
+ }
+ if (_003Ccollision_003E5__2.heightCheck && !_003Ccollision_003E5__2.use2D) {
+  _003ClayerCount_003E5__7=p.dependencyTracker.NewNativeArray<int>(1,p.allocationMethod,NativeArrayOptions.UninitializedMemory);
+  float nodeWidth=p.graph.nodeSize;
+  if (p.graph.neighbours==NumNeighbours.Six) nodeWidth=ConvertNodeSizeToHexagonSize(InspectorGridHexagonNodeSize.Width,nodeWidth);
+  _003C_003E2__current=p.context.data.HeightCheck(_003Ccollision_003E5__2,nodeWidth,p.graph.MaxLayers,p.fullRecalculationBounds,_003ClayerCount_003E5__7,_003CcharacterHeight_003E5__6,p.allocationMethod);
+  _003C_003E1__state=1;return true;
+ }
+ p.context.data.nodes=new GridGraphNodeData { allocationMethod=p.allocationMethod,numNodes=p.fullRecalculationBounds.volume,bounds=p.fullRecalculationBounds,layeredDataLayout=_003ClayeredDataLayout_003E5__5 };
+ p.context.data.nodes.AllocateBuffers(p.dependencyTracker);
+ p.context.data.SetDefaultNodePositions(p.transform);
+ p.context.data.nodes.walkable.MemSet(true).Schedule(p.dependencyTracker);
+ p.context.data.nodes.normals.MemSet(new float4(p.context.data.up,0f)).Schedule(p.dependencyTracker);
+ goto DefaultsReady;
+HeightReady:
+ {
+  int layers=System.Math.Max(_003CminLayers_003E5__4,_003ClayerCount_003E5__7[0]);
+  p.writeMaskBounds.max.y=p.fullRecalculationBounds.max.y=p.readBounds.max.y=layers;
+  p.context.data.heightHitsBounds.max.y=_003ClayerCount_003E5__7[0];
+  p.context.data.nodes=new GridGraphNodeData { allocationMethod=p.allocationMethod,numNodes=p.fullRecalculationBounds.volume,bounds=p.fullRecalculationBounds,layeredDataLayout=_003ClayeredDataLayout_003E5__5 };
+  p.context.data.nodes.AllocateBuffers(p.dependencyTracker);
+  p.context.data.SetDefaultNodePositions(p.transform);
+  p.context.data.CopyHits(p.context.data.heightHitsBounds);
+  p.context.data.CalculateWalkabilityFromHeightData(p.graph.useRaycastNormal,_003Ccollision_003E5__2.unwalkableWhenNoGround,p.graph.maxSlope,_003CcharacterHeight_003E5__6);
+  _003ClayerCount_003E5__7=default(NativeArray<int>);
+ }
+DefaultsReady:
+ p.context.data.SetDefaultPenalties(p.graph.initialPenalty);
+ JobHandle.ScheduleBatchedJobs();
+ _003Crules_003E5__3.RebuildIfNecessary();
+ _003Cwait_003E5__8=_003Crules_003E5__3.ExecuteRule(GridGraphRule.Pass.BeforeCollision,p.context);
+WaitBeforeCollision:
+ if (_003Cwait_003E5__8.MoveNext()) { _003C_003E2__current=_003Cwait_003E5__8.Current;_003C_003E1__state=2;return true; }
+ _003Cwait_003E5__8=null;
+ if (!_003Ccollision_003E5__2.collisionCheck) goto CollisionFinished;
+ p.context.tracker.timeSlice=TimeSlice.MillisFromNow(1f);
+ _003Cwait_003E5__8=p.context.data.CollisionCheck(_003Ccollision_003E5__2,p.fullRecalculationBounds);
+WaitCollision:
+  if (_003Cwait_003E5__8!=null && _003Cwait_003E5__8.MoveNext()) { _003C_003E2__current=_003Cwait_003E5__8.Current;_003C_003E1__state=3;return true; }
+  _003Cwait_003E5__8=null;
+CollisionFinished:
+ _003Cwait_003E5__8=_003Crules_003E5__3.ExecuteRule(GridGraphRule.Pass.BeforeConnections,p.context);
+WaitBeforeConnections:
+ if (_003Cwait_003E5__8.MoveNext()) { _003C_003E2__current=_003Cwait_003E5__8.Current;_003C_003E1__state=4;return true; }
+ _003Cwait_003E5__8=null;
+ if (p.recalculationMode==RecalculationMode.RecalculateMinimal) {
+  var data=new GridGraphNodeData { allocationMethod=p.allocationMethod,numNodes=p.readBounds.volume,bounds=p.readBounds,layeredDataLayout=_003ClayeredDataLayout_003E5__5 };
+  data.AllocateBuffers(p.dependencyTracker);
+  data.normals.MemSet(float4.zero).Schedule(p.dependencyTracker);
+  data.walkable.MemSet(false).Schedule(p.dependencyTracker);
+  data.walkableWithErosion.MemSet(false).Schedule(p.dependencyTracker);
+  data.CopyFrom(p.graph.nodeData,true,p.dependencyTracker);
+  data.CopyFrom(p.context.data.nodes,p.graphUpdateObject==null||p.graphUpdateObject.resetPenaltyOnPhysics,p.dependencyTracker);
+  p.context.data.nodes=data;
+ }
+ if (p.graphUpdateObject!=null) {
+  if (p.graphUpdateObject.GetType()!=typeof(GraphUpdateObject)) {
+   for (int y=p.writeMaskBounds.min.y;y<p.writeMaskBounds.max.y;y++)
+    for (int z=p.writeMaskBounds.min.z;z<p.writeMaskBounds.max.z;z++)
+     for (int x=p.writeMaskBounds.min.x;x<p.writeMaskBounds.max.x;x++) p.graphUpdateObject.WillUpdateNode(p.nodes.nodes[unchecked(x+p.nodeArrayBounds.x*(z+y*p.nodeArrayBounds.z))]);
+  }
+  if (p.rect.IsValid()) {
+   var area=new IntBounds(p.rect.xmin,0,p.rect.ymin,unchecked(p.rect.xmax+1),p.context.data.nodes.layers,unchecked(p.rect.ymax+1));
+   area=area.Offset(-p.context.data.nodes.bounds.min);
+   var indices=p.dependencyTracker.NewNativeArray<int>(area.volume,p.context.data.nodes.allocationMethod,NativeArrayOptions.ClearMemory);
+   var dimensions=p.context.data.nodes.bounds.size;int cursor=0;
+   for (int y=area.min.y;y<area.max.y;y++) for (int z=area.min.z;z<area.max.z;z++) for (int x=area.min.x;x<area.max.x;x++) indices[cursor++]=unchecked(x+dimensions.x*(z+y*dimensions.z));
+   p.graphUpdateObject.ApplyJob(new GraphUpdateObject.GraphUpdateData { nodePositions=p.context.data.nodes.positions,nodePenalties=p.context.data.nodes.penalties,nodeWalkable=p.context.data.nodes.walkable,nodeTags=p.context.data.nodes.tags,nodeNormals=p.context.data.nodes.normals,nodeIndices=indices },p.dependencyTracker);
+  }
+ }
+ p.context.data.Connections(p.graph.maxStepHeight,p.graph.maxStepUsesSlope,p.context.data.nodes.bounds,p.graph.neighbours,p.graph.cutCorners,_003Ccollision_003E5__2.use2D,false,_003CcharacterHeight_003E5__6);
+ _003Cwait_003E5__8=_003Crules_003E5__3.ExecuteRule(GridGraphRule.Pass.AfterConnections,p.context);
+WaitAfterConnections:
+ if (_003Cwait_003E5__8.MoveNext()) { _003C_003E2__current=_003Cwait_003E5__8.Current;_003C_003E1__state=5;return true; }
+ _003Cwait_003E5__8=null;
+ if (p.graph.erodeIterations<1) { p.context.data.nodes.walkable.CopyToJob(p.context.data.nodes.walkableWithErosion).Schedule(p.dependencyTracker);goto ErosionFinished; }
+  p.context.data.Erosion(p.graph.neighbours,p.graph.erodeIterations,p.writeMaskBounds,p.graph.erosionUseTags,p.graph.erosionFirstTag,p.graph.erosionTagsPrecedenceMask);
+  _003Cwait_003E5__8=_003Crules_003E5__3.ExecuteRule(GridGraphRule.Pass.AfterErosion,p.context);
+WaitAfterErosion:
+  if (_003Cwait_003E5__8.MoveNext()) { _003C_003E2__current=_003Cwait_003E5__8.Current;_003C_003E1__state=6;return true; }
+  _003Cwait_003E5__8=null;
+  p.context.data.Connections(p.graph.maxStepHeight,p.graph.maxStepUsesSlope,p.context.data.nodes.bounds,p.graph.neighbours,p.graph.cutCorners,_003Ccollision_003E5__2.use2D,true,_003CcharacterHeight_003E5__6);
+  _003Cwait_003E5__8=_003Crules_003E5__3.ExecuteRule(GridGraphRule.Pass.AfterConnections,p.context);
+WaitAfterErodedConnections:
+  if (_003Cwait_003E5__8.MoveNext()) { _003C_003E2__current=_003Cwait_003E5__8.Current;_003C_003E1__state=7;return true; }
+  _003Cwait_003E5__8=null;
+ErosionFinished:
+ _003Cwait_003E5__8=_003Crules_003E5__3.ExecuteRule(GridGraphRule.Pass.PostProcess,p.context);
+WaitPostProcess:
+ if (_003Cwait_003E5__8.MoveNext()) { _003C_003E2__current=_003Cwait_003E5__8.Current;_003C_003E1__state=8;return true; }
+ _003Cwait_003E5__8=null;
+ p.graph.nodeData.TrackBuffers(p.dependencyTracker);
+ if (p.recalculationMode!=RecalculationMode.RecalculateFromScratch) {
+  p.graph.nodeData.ResizeLayerCount(p.context.data.nodes.layers,p.dependencyTracker);
+  p.graph.nodeData.CopyFrom(p.context.data.nodes,p.writeMaskBounds,true,p.dependencyTracker);
+ } else p.graph.nodeData=p.context.data.nodes;
+ p.graph.nodeData.PersistBuffers(p.dependencyTracker);
+ _003C_003E2__current=p.nodesDependsOn;_003C_003E1__state=9;return true;
+WaitFinalWrites:
+ _003C_003E2__current=p.dependencyTracker.AllWritesDependency;_003C_003E1__state=10;return true;
+}
 
 				[Token(Token = "0x6000704")]
 				[Address(RVA = "0x452B724", Offset = "0x4527724", VA = "0x452B724", Slot = "4")]
@@ -360,8 +482,7 @@ bool System.Collections.IEnumerator.MoveNext()
 				[Address(RVA = "0x452B730", Offset = "0x4527730", VA = "0x452B730", Slot = "8")]
 				[DebuggerHidden]
 void System.Collections.IEnumerator.Reset()
-				{
-				}
+				{ throw new System.NotSupportedException(); }
 
 				[Token(Token = "0x6000706")]
 				[Address(RVA = "0x452B768", Offset = "0x4527768", VA = "0x452B768", Slot = "7")]
@@ -446,43 +567,87 @@ void System.Collections.IEnumerator.Reset()
 				[Token(Token = "0x60006FA")]
 				[Address(RVA = "0x4529748", Offset = "0x4525748", VA = "0x4529748")]
 				get
-				{
-					return default;
-				}
+				{ return fullRecalculationBounds.volume; }
 			}
 
 			[Token(Token = "0x60006FB")]
 			[Address(RVA = "0x4528C64", Offset = "0x4524C64", VA = "0x4528C64")]
 			public GridGraphUpdatePromise(GridGraph graph, GraphTransform transform, NodesHolder nodes, int3 nodeArrayBounds, IntRect rect, JobDependencyTracker dependencyTracker, JobHandle nodesDependsOn, Allocator allocationMethod, RecalculationMode recalculationMode, GraphUpdateObject graphUpdateObject, bool ownsJobDependencyTracker, bool isFinalUpdate)
 			{
-			}
+ this.graph=graph; this.nodes=nodes; this.nodeArrayBounds=nodeArrayBounds; this.transform=transform;
+ this.dependencyTracker=dependencyTracker; this.nodesDependsOn=nodesDependsOn;
+ this.allocationMethod=allocationMethod; this.recalculationMode=recalculationMode; this.graphUpdateObject=graphUpdateObject;
+ this.ownsJobDependencyTracker=ownsJobDependencyTracker; this.isFinalUpdate=isFinalUpdate;
+ IntRect full, mask, read;
+ CalculateRectangles(graph, rect, out this.rect, out full, out mask, out read);
+ if (recalculationMode == RecalculationMode.RecalculateFromScratch) full=read;
+ if (!full.IsValid()) emptyUpdate=true;
+ readBounds=new IntBounds(read.xmin,0,read.ymin,unchecked(read.xmax+1),nodeArrayBounds.y,unchecked(read.ymax+1));
+ fullRecalculationBounds=new IntBounds(full.xmin,0,full.ymin,unchecked(full.xmax+1),nodeArrayBounds.y,unchecked(full.ymax+1));
+ writeMaskBounds=new IntBounds(mask.xmin,0,mask.ymin,unchecked(mask.xmax+1),nodeArrayBounds.y,unchecked(mask.ymax+1));
+ if (ownsJobDependencyTracker) dependencyTracker.SetLinearDependencies(fullRecalculationBounds.volume < 500);
+}
 
 			[Token(Token = "0x60006FC")]
 			[Address(RVA = "0x4529754", Offset = "0x4525754", VA = "0x4529754")]
 			public static void CalculateRectangles(GridGraph graph, IntRect rect, out IntRect originalRect, out IntRect fullRecalculationRect, out IntRect writeMaskRect, out IntRect readRect)
 			{
-    throw new global::System.NotImplementedException("RECOVERY_UNIMPLEMENTED GridGraph.GridGraphUpdatePromise.CalculateRectangles RVA=0x4529754 Token=0x60006FC");
+ fullRecalculationRect = rect;
+ if (graph.collision.collisionCheck && graph.collision.type != ColliderType.Ray) {
+  float value = graph.collision.diameter * 0.5f + 0.5f;
+  int radius = float.IsNaN(value) ? 0 : float.IsPositiveInfinity(value) ? int.MinValue : value >= int.MaxValue ? int.MaxValue : value <= int.MinValue ? int.MinValue : (int)Math.Floor(value);
+  fullRecalculationRect = fullRecalculationRect.Expand(radius);
+ }
+ writeMaskRect = fullRecalculationRect.Expand(unchecked(graph.erodeIterations + 1));
+ readRect = writeMaskRect.Expand(unchecked(graph.erodeIterations + 1));
+ var bounds = new IntRect(0,0,unchecked(graph.width-1),unchecked(graph.depth-1));
+ readRect = IntRect.Intersection(readRect, bounds);
+ fullRecalculationRect = IntRect.Intersection(fullRecalculationRect, bounds);
+ writeMaskRect = IntRect.Intersection(writeMaskRect, bounds);
+ originalRect = IntRect.Intersection(rect, bounds);
 }
 
 			[Token(Token = "0x60006FD")]
 			[Address(RVA = "0x45298F0", Offset = "0x45258F0", VA = "0x45298F0", Slot = "5")]
 			[IteratorStateMachine(typeof(_003CPrepare_003Ed__22))]
 			public IEnumerator<JobHandle> Prepare()
-			{
-				return null;
-			}
+			{ return new _003CPrepare_003Ed__22(0) { _003C_003E4__this=this }; }
 
 			[Token(Token = "0x60006FE")]
 			[Address(RVA = "0x4529978", Offset = "0x4525978", VA = "0x4529978", Slot = "6")]
 			public void Apply(IGraphUpdateContext ctx)
 			{
-			}
+ graph.AssertSafeToUpdateGraph();
+ if (emptyUpdate) {
+  Dispose();
+  if (isFinalUpdate) graph.rules.ExecuteRuleMainThread(GridGraphRule.Pass.AfterApplied,context??new GridGraphRules.Context { graph=graph });
+  return;
+ }
+ var originalHolderNodes=nodes.nodes; var originalGraphNodes=graph.nodes;
+ if (context.data.nodes.layers>=2) {
+  nodeArrayBounds.y=context.data.nodes.layers;
+  Pathfinding.Util.Memory.Realloc(ref nodes.nodes,unchecked(nodeArrayBounds.x*nodeArrayBounds.y*nodeArrayBounds.z));
+  new Pathfinding.Graphs.Grid.Jobs.JobAllocateNodes { active=graph.active,nodeNormals=context.data.nodes.normals,dataBounds=context.data.nodes.bounds,nodeArrayBounds=nodeArrayBounds,nodes=nodes.nodes,newGridNodeDelegate=graph.newGridNodeDelegate }.Execute();
+ }
+ graph.nodeData.AssignToNodes(nodes.nodes,nodeArrayBounds,writeMaskBounds,graph.graphIndex,default(JobHandle),dependencyTracker).Complete();
+ if (nodes.nodes!=graph.nodes) {
+  if (originalHolderNodes!=originalGraphNodes) graph.DestroyAllNodes();
+  graph.nodes=nodes.nodes;graph.LayerCount=context.data.nodes.layers;
+ }
+ ctx.DirtyBounds(graph.GetBoundsFromRect(new IntRect(writeMaskBounds.min.x,writeMaskBounds.min.z,unchecked(writeMaskBounds.max.x-1),unchecked(writeMaskBounds.max.z-1))));
+ Dispose();
+ if (isFinalUpdate) graph.rules.ExecuteRuleMainThread(GridGraphRule.Pass.AfterApplied,context);
+}
 
 			[Token(Token = "0x60006FF")]
 			[Address(RVA = "0x4529D3C", Offset = "0x4525D3C", VA = "0x4529D3C")]
 			public void Dispose()
 			{
-			}
+ if (ownsJobDependencyTracker) {
+  Pathfinding.Pooling.ObjectPool<JobDependencyTracker>.Release(ref dependencyTracker);
+  if (context!=null) context.data.dependencyTracker=null;
+ }
+}
 		}
 
 		[Token(Token = "0x20000D0")]
@@ -657,7 +822,7 @@ void System.Collections.IEnumerator.Reset()
 		[Token(Token = "0x4000434")]
 		[Il2CppDummyDll.FieldOffset(Offset = "0x60")]
 		[JsonMember]
-		public float aspectRatio;
+		public float aspectRatio = 1f;
 
 		[Token(Token = "0x4000435")]
 		[Il2CppDummyDll.FieldOffset(Offset = "0x64")]
@@ -666,11 +831,11 @@ void System.Collections.IEnumerator.Reset()
 
 		[Token(Token = "0x4000436")]
 		[Il2CppDummyDll.FieldOffset(Offset = "0x0")]
-		public static readonly float StandardIsometricAngle;
+		public static readonly float StandardIsometricAngle = 54.7356109619140625f;
 
 		[Token(Token = "0x4000437")]
 		[Il2CppDummyDll.FieldOffset(Offset = "0x4")]
-		public static readonly float StandardDimetricAngle;
+		public static readonly float StandardDimetricAngle = 60.000003814697265625f;
 
 		[Token(Token = "0x4000438")]
 		[Il2CppDummyDll.FieldOffset(Offset = "0x68")]
@@ -690,32 +855,32 @@ void System.Collections.IEnumerator.Reset()
 		[Token(Token = "0x400043B")]
 		[Il2CppDummyDll.FieldOffset(Offset = "0x84")]
 		[JsonMember]
-		public Vector2 unclampedSize;
+		public Vector2 unclampedSize = new Vector2(10f, 10f);
 
 		[Token(Token = "0x400043C")]
 		[Il2CppDummyDll.FieldOffset(Offset = "0x8C")]
 		[JsonMember]
-		public float nodeSize;
+		public float nodeSize = 1f;
 
 		[Token(Token = "0x400043D")]
 		[Il2CppDummyDll.FieldOffset(Offset = "0x90")]
 		[JsonMember]
-		public GraphCollision collision;
+		public GraphCollision collision = new GraphCollision();
 
 		[Token(Token = "0x400043E")]
 		[Il2CppDummyDll.FieldOffset(Offset = "0x98")]
 		[JsonMember]
-		public float maxStepHeight;
+		public float maxStepHeight = 0.4f;
 
 		[Token(Token = "0x400043F")]
 		[Il2CppDummyDll.FieldOffset(Offset = "0x9C")]
 		[JsonMember]
-		public bool maxStepUsesSlope;
+		public bool maxStepUsesSlope = true;
 
 		[Token(Token = "0x4000440")]
 		[Il2CppDummyDll.FieldOffset(Offset = "0xA0")]
 		[JsonMember]
-		public float maxSlope;
+		public float maxSlope = 90f;
 
 		[Token(Token = "0x4000441")]
 		[Il2CppDummyDll.FieldOffset(Offset = "0xA4")]
@@ -730,22 +895,22 @@ void System.Collections.IEnumerator.Reset()
 		[Token(Token = "0x4000443")]
 		[Il2CppDummyDll.FieldOffset(Offset = "0xAC")]
 		[JsonMember]
-		public int erosionFirstTag;
+		public int erosionFirstTag = 1;
 
 		[Token(Token = "0x4000444")]
 		[Il2CppDummyDll.FieldOffset(Offset = "0xB0")]
 		[JsonMember]
-		public int erosionTagsPrecedenceMask;
+		public int erosionTagsPrecedenceMask = -1;
 
 		[Token(Token = "0x4000445")]
 		[Il2CppDummyDll.FieldOffset(Offset = "0xB4")]
 		[JsonMember]
-		public NumNeighbours neighbours;
+		public NumNeighbours neighbours = NumNeighbours.Eight;
 
 		[Token(Token = "0x4000446")]
 		[Il2CppDummyDll.FieldOffset(Offset = "0xB8")]
 		[JsonMember]
-		public bool cutCorners;
+		public bool cutCorners = true;
 
 		[Token(Token = "0x4000447")]
 		[Il2CppDummyDll.FieldOffset(Offset = "0xBC")]
@@ -763,7 +928,7 @@ void System.Collections.IEnumerator.Reset()
 		[Il2CppDummyDll.FieldOffset(Offset = "0xC4")]
 		[JsonMember]
 		[Obsolete("Use the RuleElevationPenalty class instead")]
-		public float penaltyPositionFactor;
+		public float penaltyPositionFactor = 1f;
 
 		[Token(Token = "0x400044A")]
 		[Il2CppDummyDll.FieldOffset(Offset = "0xC8")]
@@ -775,23 +940,23 @@ void System.Collections.IEnumerator.Reset()
 		[Il2CppDummyDll.FieldOffset(Offset = "0xCC")]
 		[Obsolete("Use the RuleAnglePenalty class instead")]
 		[JsonMember]
-		public float penaltyAngleFactor;
+		public float penaltyAngleFactor = 100f;
 
 		[Token(Token = "0x400044C")]
 		[Il2CppDummyDll.FieldOffset(Offset = "0xD0")]
 		[Obsolete("Use the RuleAnglePenalty class instead")]
 		[JsonMember]
-		public float penaltyAnglePower;
+		public float penaltyAnglePower = 1f;
 
 		[Token(Token = "0x400044D")]
 		[Il2CppDummyDll.FieldOffset(Offset = "0xD8")]
 		[JsonMember]
-		public GridGraphRules rules;
+		public GridGraphRules rules = new GridGraphRules();
 
 		[Token(Token = "0x400044E")]
 		[Il2CppDummyDll.FieldOffset(Offset = "0xE0")]
 		[JsonMember]
-		public bool showMeshOutline;
+		public bool showMeshOutline = true;
 
 		[Token(Token = "0x400044F")]
 		[Il2CppDummyDll.FieldOffset(Offset = "0xE1")]
@@ -801,43 +966,43 @@ void System.Collections.IEnumerator.Reset()
 		[Token(Token = "0x4000450")]
 		[Il2CppDummyDll.FieldOffset(Offset = "0xE2")]
 		[JsonMember]
-		public bool showMeshSurface;
+		public bool showMeshSurface = true;
 
 		[Token(Token = "0x4000451")]
 		[Il2CppDummyDll.FieldOffset(Offset = "0xE8")]
 		[JsonMember]
 		[Obsolete("Use the RuleTexture class instead")]
-		public TextureData textureData;
+		public TextureData textureData = new TextureData();
 
 		[NonSerialized]
 		[Token(Token = "0x4000453")]
 		[Il2CppDummyDll.FieldOffset(Offset = "0xF8")]
-		public readonly int[] neighbourOffsets;
+		public readonly int[] neighbourOffsets = new int[8];
 
 		[NonSerialized]
 		[Token(Token = "0x4000454")]
 		[Il2CppDummyDll.FieldOffset(Offset = "0x100")]
-		public readonly float[] neighbourCosts;
+		public readonly float[] neighbourCosts = new float[8];
 
 		[Token(Token = "0x4000455")]
 		[Il2CppDummyDll.FieldOffset(Offset = "0x8")]
-		public static readonly int[] neighbourXOffsets;
+		public static readonly int[] neighbourXOffsets = new int[] { 0,1,0,-1,1,1,-1,-1 };
 
 		[Token(Token = "0x4000456")]
 		[Il2CppDummyDll.FieldOffset(Offset = "0x10")]
-		public static readonly int[] neighbourZOffsets;
+		public static readonly int[] neighbourZOffsets = new int[] { -1,0,1,0,-1,1,1,-1 };
 
 		[Token(Token = "0x4000457")]
 		[Il2CppDummyDll.FieldOffset(Offset = "0x18")]
-		internal static readonly int[] hexagonNeighbourIndices;
+		internal static readonly int[] hexagonNeighbourIndices = new int[] { 0,1,5,2,3,7 };
 
 		[Token(Token = "0x4000458")]
 		[Il2CppDummyDll.FieldOffset(Offset = "0x20")]
-		internal static readonly int[] axisAlignedNeighbourIndices;
+		internal static readonly int[] axisAlignedNeighbourIndices = new int[] { 0,1,2,3 };
 
 		[Token(Token = "0x4000459")]
 		[Il2CppDummyDll.FieldOffset(Offset = "0x28")]
-		internal static readonly int[] allNeighbourIndices;
+		internal static readonly int[] allNeighbourIndices = new int[] { 0,1,2,3,4,5,6,7 };
 
 		[Token(Token = "0x400045A")]
 		internal const int HexagonConnectionMask = 175;
@@ -850,9 +1015,24 @@ void System.Collections.IEnumerator.Reset()
 		[Il2CppDummyDll.FieldOffset(Offset = "0x110")]
 		protected GridGraphNodeData nodeData;
 
+		[Token(Token = "0x17000154")]
+		public GraphTransform transform
+		{
+			[Token(Token = "0x600069E")]
+			[Address(RVA = "0x451D0BC", Offset = "0x45190BC", VA = "0x451D0BC", Slot = "37")]
+			[CompilerGenerated]
+			get
+			;
+			[Token(Token = "0x600069F")]
+			[Address(RVA = "0x451D0C4", Offset = "0x45190C4", VA = "0x451D0C4")]
+			[CompilerGenerated]
+			private set
+			;
+		} = new GraphTransform(Matrix4x4.identity);
+
 		[Token(Token = "0x400045E")]
 		[Il2CppDummyDll.FieldOffset(Offset = "0x1B0")]
-		protected Func<GridNodeBase> newGridNodeDelegate;
+		protected Func<GridNodeBase> newGridNodeDelegate = () => new GridNode();
 
 		[Token(Token = "0x400045F")]
 		public const int FixedPrecisionScale = 1024;
@@ -863,14 +1043,11 @@ void System.Collections.IEnumerator.Reset()
 			[Token(Token = "0x6000691")]
 			[Address(RVA = "0x451CE98", Offset = "0x4518E98", VA = "0x451CE98", Slot = "48")]
 			get
-			{
-				return default;
-			}
+			{ return 1; }
 			[Token(Token = "0x6000692")]
 			[Address(RVA = "0x451CEA0", Offset = "0x4518EA0", VA = "0x451CEA0", Slot = "49")]
 			protected set
-			{
-			}
+			{ if (value!=1) throw new System.NotSupportedException("Grid graphs cannot have multiple layers"); }
 		}
 
 		[Token(Token = "0x1700014F")]
@@ -879,9 +1056,7 @@ void System.Collections.IEnumerator.Reset()
 			[Token(Token = "0x6000693")]
 			[Address(RVA = "0x451CEF8", Offset = "0x4518EF8", VA = "0x451CEF8", Slot = "50")]
 			get
-			{
-				return default;
-			}
+			{ return 1; }
 		}
 
 		[Token(Token = "0x17000150")]
@@ -907,9 +1082,7 @@ void System.Collections.IEnumerator.Reset()
 			[Token(Token = "0x6000699")]
 			[Address(RVA = "0x451CF98", Offset = "0x4518F98", VA = "0x451CF98")]
 			get
-			{
-				return default;
-			}
+			{ return math.abs(90f-maxSlope)>float.Epsilon; }
 		}
 
 		[Token(Token = "0x17000152")]
@@ -919,15 +1092,12 @@ void System.Collections.IEnumerator.Reset()
 			[Address(RVA = "0x451D010", Offset = "0x4519010", VA = "0x451D010")]
 			[CompilerGenerated]
 			get
-			{
-				return default;
-			}
+			;
 			[Token(Token = "0x600069B")]
 			[Address(RVA = "0x451D018", Offset = "0x4519018", VA = "0x451D018")]
 			[CompilerGenerated]
 			protected set
-			{
-			}
+			;
 		}
 
 		[Token(Token = "0x17000153")]
@@ -941,23 +1111,7 @@ void System.Collections.IEnumerator.Reset()
 			}
 		}
 
-		[Token(Token = "0x17000154")]
-		public GraphTransform transform
-		{
-			[Token(Token = "0x600069E")]
-			[Address(RVA = "0x451D0BC", Offset = "0x45190BC", VA = "0x451D0BC", Slot = "37")]
-			[CompilerGenerated]
-			get
-			{
-				return null;
-			}
-			[Token(Token = "0x600069F")]
-			[Address(RVA = "0x451D0C4", Offset = "0x45190C4", VA = "0x451D0C4")]
-			[CompilerGenerated]
-			private set
-			{
-			}
-		}
+
 
 		[Token(Token = "0x17000155")]
 		public bool is2D
@@ -1039,7 +1193,9 @@ void System.Collections.IEnumerator.Reset()
 		[Address(RVA = "0x451CDA4", Offset = "0x4518DA4", VA = "0x451CDA4", Slot = "28")]
 		protected override void DestroyAllNodes()
 		{
-		}
+ GetNodes(node=>{ var gridNode=node as GridNodeBase; gridNode.ClearCustomConnections(true); node.ClearConnections(false); node.Destroy(); });
+ nodes=null;
+}
 
 		[Token(Token = "0x6000694")]
 		[Address(RVA = "0x451CF00", Offset = "0x4518F00", VA = "0x451CF00", Slot = "17")]
@@ -1051,8 +1207,7 @@ void System.Collections.IEnumerator.Reset()
 		[Token(Token = "0x6000695")]
 		[Address(RVA = "0x451CF18", Offset = "0x4518F18", VA = "0x451CF18", Slot = "18")]
 		public override void GetNodes(Action<GraphNode> action)
-		{
-		}
+		{ if (nodes!=null) for (int i=0;i<nodes.Length;i++) if (nodes[i]!=null) action(nodes[i]); }
 
 		[Token(Token = "0x6000696")]
 		public override void GetNodes<T>(GraphNode.NodeActionWithData<T> action, ref T data)
@@ -1069,9 +1224,7 @@ void System.Collections.IEnumerator.Reset()
 		[Token(Token = "0x60006A3")]
 		[Address(RVA = "0x451D268", Offset = "0x4519268", VA = "0x451D268", Slot = "51")]
 		protected virtual GridNodeBase[] AllocateNodesJob(int size, out JobHandle dependency)
-		{
-    throw new global::System.NotImplementedException("RECOVERY_UNIMPLEMENTED GridGraph.AllocateNodesJob RVA=0x451D268 Token=0x60006A3");
-}
+		{ var result = new GridNodeBase[size]; dependency = active.AllocateNodes(result, size, newGridNodeDelegate, 1); return result; }
 
 		[Token(Token = "0x60006A4")]
 		[Address(RVA = "0x451D30C", Offset = "0x451930C", VA = "0x451D30C", Slot = "22")]
@@ -1110,8 +1263,10 @@ void System.Collections.IEnumerator.Reset()
 		[Address(RVA = "0x451DA20", Offset = "0x4519A20", VA = "0x451DA20")]
 		public static float ConvertNodeSizeToHexagonSize(InspectorGridHexagonNodeSize mode, float value)
 		{
-			return default;
-		}
+ if (mode == InspectorGridHexagonNodeSize.Width) return value * 0.8164966106414795f;
+ if (mode == InspectorGridHexagonNodeSize.Diameter) return value * 0.9428090453147888f;
+ return value;
+}
 
 		[Token(Token = "0x60006AF")]
 		[Address(RVA = "0x451DADC", Offset = "0x4519ADC", VA = "0x451DADC")]
@@ -1148,36 +1303,203 @@ void System.Collections.IEnumerator.Reset()
 		[Address(RVA = "0x451F15C", Offset = "0x451B15C", VA = "0x451F15C")]
 		public GraphTransform CalculateTransform()
 		{
-			return null;
-		}
+ int width,depth; float size;
+ CalculateDimensions(out width,out depth,out size);
+ Matrix4x4 layout;
+ if (neighbours==NumNeighbours.Six) {
+  float horizontal=size*aspectRatio;
+  layout=new Matrix4x4(new Vector4(horizontal*0.8164966106414795f,0f,0f,0f),new Vector4(0f,1f,0f,0f),new Vector4((horizontal*-0.5f)*0.8164966106414795f,0f,size*0.7071067690849304f,0f),new Vector4(0f,0f,0f,1f));
+  var centered=Matrix4x4.TRS(center,Quaternion.Euler(rotation),Vector3.one)*layout;
+  var origin=centered.MultiplyPoint3x4(new Vector3((float)width*-0.5f,-0.0f,(float)depth*-0.5f));
+  return new GraphTransform(Matrix4x4.TRS(origin,Quaternion.Euler(rotation),Vector3.one)*layout);
+ }
+ float cosine=Mathf.Cos(isometricAngle*0.01745329238474369f);
+ layout=Matrix4x4.Scale(new Vector3(size*aspectRatio,1f,size));
+ float angle=Mathf.Atan2(size,size*aspectRatio)*57.295780181884766f;
+ var isometric=Matrix4x4.Rotate(Quaternion.Euler(0f,-angle,0f))*Matrix4x4.Scale(new Vector3(cosine,1f,1f))*Matrix4x4.Rotate(Quaternion.Euler(0f,angle,0f));
+ layout=isometric*layout;
+ var positioned=Matrix4x4.TRS(center,Quaternion.Euler(rotation),Vector3.one)*layout;
+ var corner=positioned.MultiplyPoint3x4(new Vector3((float)width*-0.5f,-0.0f,(float)depth*-0.5f));
+ return new GraphTransform(Matrix4x4.TRS(corner,Quaternion.Euler(rotation),Vector3.one)*layout);
+}
 
 		[Token(Token = "0x60006B5")]
 		[Address(RVA = "0x451EDB8", Offset = "0x451ADB8", VA = "0x451EDB8")]
 		private void CalculateDimensions(out int width, out int depth, out float nodeSize)
 		{
-    throw new global::System.NotImplementedException("RECOVERY_UNIMPLEMENTED GridGraph.CalculateDimensions RVA=0x451EDB8 Token=0x60006B5");
+ float x = unclampedSize.x < 0 ? -unclampedSize.x : unclampedSize.x;
+ float y = unclampedSize.y < 0 ? -unclampedSize.y : unclampedSize.y;
+ nodeSize = this.nodeSize > x * (1f / 1024f) ? this.nodeSize : x * (1f / 1024f);
+ nodeSize = this.nodeSize > y * (1f / 1024f) ? this.nodeSize : y * (1f / 1024f);
+ size = new Vector2(x >= nodeSize ? x : nodeSize, y >= nodeSize ? y : nodeSize);
+ width = Mathf.FloorToInt(size.x / nodeSize);
+ depth = Mathf.FloorToInt(size.y / nodeSize);
+ if (Mathf.Approximately(Mathf.CeilToInt(size.x / nodeSize), size.x / nodeSize)) width = Mathf.CeilToInt(size.x / nodeSize);
+ if (Mathf.Approximately(Mathf.CeilToInt(size.y / nodeSize), size.y / nodeSize)) depth = Mathf.CeilToInt(size.y / nodeSize);
 }
 
 		[Token(Token = "0x60006B6")]
 		[Address(RVA = "0x451F8F4", Offset = "0x451B8F4", VA = "0x451F8F4", Slot = "23")]
 		public override float NearestNodeDistanceSqrLowerBound(Vector3 position, ref NearestNodeConstraint constraint)
 		{
-			return default;
-		}
+ if (nodes == null) return float.PositiveInfinity;
+ int capturedWidth = width;
+ int capturedDepth = depth;
+ int layers = LayerCount;
+ if (nodes.Length != unchecked(capturedWidth * capturedDepth * layers)) return float.PositiveInfinity;
+ Vector3 graphPosition = transform.InverseTransform(position);
+ float clampedX = graphPosition.x > width ? width : graphPosition.x;
+ if (graphPosition.x < 0f) clampedX = 0f;
+ float clampedZ = graphPosition.z > depth ? depth : graphPosition.z;
+ if (graphPosition.z < 0f) clampedZ = 0f;
+ float dx = graphPosition.x - clampedX;
+ float dz = graphPosition.z - clampedZ;
+ return dx * dx + dz * dz;
+}
 
 		[Token(Token = "0x60006B7")]
 		[Address(RVA = "0x451F9D0", Offset = "0x451B9D0", VA = "0x451F9D0", Slot = "52")]
 		protected virtual GridNodeBase GetNearestFromGraphSpace(Vector3 positionGraphSpace)
 		{
-			return null;
-		}
+ if (nodes == null || nodes.Length != unchecked(width * depth)) return null;
+ float px = positionGraphSpace.x, pz = positionGraphSpace.z;
+ int x = float.IsNaN(px) ? 0 : float.IsPositiveInfinity(px) ? int.MinValue : px >= int.MaxValue ? int.MaxValue : px <= int.MinValue ? int.MinValue : (int)px;
+ int z = float.IsNaN(pz) ? 0 : float.IsPositiveInfinity(pz) ? int.MinValue : pz >= int.MaxValue ? int.MaxValue : pz <= int.MinValue ? int.MinValue : (int)pz;
+ x = x < 0 ? 0 : x > unchecked(width - 1) ? unchecked(width - 1) : x;
+ z = z < 0 ? 0 : z > unchecked(depth - 1) ? unchecked(depth - 1) : z;
+ return nodes[unchecked(z * width + x)];
+}
 
 		[Token(Token = "0x60006B8")]
 		[Address(RVA = "0x451FA64", Offset = "0x451BA64", VA = "0x451FA64", Slot = "24")]
 		public override NNInfo GetNearest(Vector3 position, ref NearestNodeConstraint constraint)
 		{
-			return default;
-		}
+ if (nodes == null || nodes.Length != unchecked(width * depth * LayerCount)) return NNInfo.Empty;
+ Vector3 graphPosition = transform.InverseTransform(position);
+ float px = graphPosition.x, pz = graphPosition.z;
+ int x = float.IsNaN(px) ? 0 : float.IsPositiveInfinity(px) ? int.MinValue : px >= int.MaxValue ? int.MaxValue : px <= int.MinValue ? int.MinValue : (int)px;
+ int z = float.IsNaN(pz) ? 0 : float.IsPositiveInfinity(pz) ? int.MinValue : pz >= int.MaxValue ? int.MaxValue : pz <= int.MinValue ? int.MinValue : (int)pz;
+ x = x < 0 ? 0 : x > unchecked(width - 1) ? unchecked(width - 1) : x;
+ z = z < 0 ? 0 : z > unchecked(depth - 1) ? unchecked(depth - 1) : z;
+ bool projected = constraint.distanceMetric.isProjectedDistance;
+ float maximum = constraint.maxDistanceSqrOrDefault(active);
+ int layers = LayerCount, planeSize = unchecked(width * depth);
+ Int3 up = default;
+ long queryDot = 0;
+ float projectionScale = 0;
+ if (projected) {
+  up = (Int3)transform.WorldUpAtGraphPosition(graphPosition);
+  queryDot = Int3.DotLong((Int3)position,up);
+  projectionScale = (constraint.distanceMetric.distanceScaleAlongProjectionDirection * 0.001f) * 0.001f;
+ }
+ bool allSuitable = constraint.allNodesAreSuitable;
+ GridNodeBase best = null;
+ float bestCost = maximum;
+ float cx = px < (float)x + 1f ? px : (float)x + 1f;
+ cx = cx > (float)x ? cx : (float)x;
+ float cz = pz < (float)z + 1f ? pz : (float)z + 1f;
+ cz = cz > (float)z ? cz : (float)z;
+ float dx = cx - px, dz = cz - pz;
+ float cellDistance = dx * dx + dz * dz;
+ int index = unchecked(z * width + x);
+ for (int layer = 0; layer < layers; layer++, index = unchecked(index + planeSize)) {
+  GridNodeBase node = nodes[index];
+  if (node == null || (!allSuitable && !constraint.Suitable(node))) continue;
+  float cost;
+  if (projected) {
+   float lateral = (float)System.Math.Sqrt(cellDistance * (nodeSize * nodeSize));
+   float vertical = System.Math.Abs(projectionScale * (float)unchecked(Int3.DotLong(node.position,up) - queryDot));
+   float distance = lateral + vertical;
+   cost = distance * distance;
+  } else {
+   float nx = node.position.x * 0.001f - position.x;
+   float ny = node.position.y * 0.001f - position.y;
+   float nz = node.position.z * 0.001f - position.z;
+   cost = nz * nz + (nx * nx + ny * ny);
+  }
+  if (cost <= bestCost) { bestCost = cost; best = node; }
+ }
+ float bx = px - (float)x, bz = pz - (float)z;
+ bx = bx < 1f - bx ? bx : 1f - bx;
+ bz = bz < 1f - bz ? bz : 1f - bz;
+ float border = (bx < bz ? bx : bz) * nodeSize;
+ float initialBound = border + nodeSize * 0f;
+ if (!(bestCost - 0.00001f <= initialBound * initialBound)) {
+  for (int radius = 1; ; radius = unchecked(radius + 1)) {
+   int tx = unchecked(x + radius), tz = z, stepX = -1, stepZ = 1;
+   bool anyInside = false;
+   for (int side = 0; side < 4; side++) {
+    for (int point = 0; point < radius; point++) {
+     if ((tx | tz) >= 0 && tx < width && tz < depth) {
+      anyInside = true;
+      cx = px < (float)tx + 1f ? px : (float)tx + 1f;
+      cx = cx > (float)tx ? cx : (float)tx;
+      cz = pz < (float)tz + 1f ? pz : (float)tz + 1f;
+      cz = cz > (float)tz ? cz : (float)tz;
+      dx = cx - px; dz = cz - pz;
+      cellDistance = dz * dz + dx * dx;
+      index = unchecked(tz * width + tx);
+      for (int layer = 0; layer < layers; layer++, index = unchecked(index + planeSize)) {
+       GridNodeBase node = nodes[index];
+       if (node == null || (!allSuitable && !constraint.Suitable(node))) continue;
+       float cost;
+       if (projected) {
+        float lateral = (float)System.Math.Sqrt(cellDistance * (nodeSize * nodeSize));
+        float vertical = System.Math.Abs(projectionScale * (float)unchecked(Int3.DotLong(node.position,up) - queryDot));
+        float distance = lateral + vertical;
+        cost = distance * distance;
+       } else {
+        float nx = node.position.x * 0.001f - position.x;
+        float ny = node.position.y * 0.001f - position.y;
+        float nz = node.position.z * 0.001f - position.z;
+        cost = nz * nz + (nx * nx + ny * ny);
+       }
+       if (cost <= bestCost) { bestCost = cost; best = node; }
+      }
+     }
+     tx = unchecked(tx + stepX); tz = unchecked(tz + stepZ);
+    }
+    int oldStepZ = stepZ; stepZ = stepX; stepX = unchecked(-oldStepZ);
+   }
+   if (!anyInside) break;
+   int expansion = unchecked(radius - 1);
+   float bound = border + nodeSize * (float)(expansion < 0 ? 0 : expansion);
+   if (bestCost - 0.00001f <= bound * bound) break;
+  }
+ }
+ if (best == null) return NNInfo.Empty;
+ if (projected) {
+  int diffX = unchecked(x - best.XCoordinateInGrid), diffZ = unchecked(z - best.ZCoordinateInGrid);
+  while ((diffX | diffZ) != 0) {
+   int xDirection = diffX > 0 ? 1 : diffX < 0 ? 3 : -1;
+   int zDirection = diffZ > 0 ? 2 : diffZ < 0 ? 0 : -1;
+   uint absX = unchecked((uint)(diffX < 0 ? -diffX : diffX));
+   uint absZ = unchecked((uint)(diffZ < 0 ? -diffZ : diffZ));
+   int primary = absX >= absZ ? xDirection : zDirection;
+   int secondary = absX >= absZ ? zDirection : xDirection;
+   GridNodeBase next = best.GetNeighbourAlongDirection(primary);
+   if (next == null || (!allSuitable && !constraint.Suitable(next))) {
+    if (secondary == -1) break;
+    next = best.GetNeighbourAlongDirection(secondary);
+    if (next == null || (!allSuitable && !constraint.Suitable(next))) break;
+   }
+   best = next;
+   diffX = unchecked(x - best.XCoordinateInGrid); diffZ = unchecked(z - best.ZCoordinateInGrid);
+  }
+ }
+ int nodeX = best.XCoordinateInGrid, nodeZ = best.ZCoordinateInGrid;
+ float finalX = px > (float)nodeX + 1f ? (float)nodeX + 1f : px;
+ finalX = px < (float)nodeX ? (float)nodeX : finalX;
+ float finalZ = pz > (float)nodeZ + 1f ? (float)nodeZ + 1f : pz;
+ finalZ = pz < (float)nodeZ ? (float)nodeZ : finalZ;
+ Vector3 nodeGraphPosition = transform.InverseTransform((Vector3)best.position);
+ Vector3 finalPosition = transform.Transform(new Vector3 { x = finalX, y = nodeGraphPosition.y, z = finalZ });
+ if (!projected) {
+  float nx = finalPosition.x - position.x, ny = finalPosition.y - position.y, nz = finalPosition.z - position.z;
+  bestCost = nz * nz + (nx * nx + ny * ny);
+ }
+ return bestCost <= maximum ? new NNInfo(best,finalPosition,bestCost) : NNInfo.Empty;
+}
 
 		[Token(Token = "0x60006B9")]
 		[Address(RVA = "0x4520530", Offset = "0x451C530", VA = "0x4520530", Slot = "25")]
@@ -1190,7 +1512,39 @@ void System.Collections.IEnumerator.Reset()
 		[Address(RVA = "0x45206C8", Offset = "0x451C6C8", VA = "0x45206C8", Slot = "53")]
 		public virtual void SetUpOffsetsAndCosts()
 		{
-		}
+ neighbourOffsets[0] = unchecked(-width);
+ neighbourOffsets[1] = 1;
+ neighbourOffsets[2] = width;
+ neighbourOffsets[3] = -1;
+ neighbourOffsets[4] = unchecked(1-width);
+ neighbourOffsets[5] = unchecked(width+1);
+ neighbourOffsets[6] = unchecked(width-1);
+ neighbourOffsets[7] = unchecked(-width-1);
+ float edge = nodeSize;
+ if (neighbours == NumNeighbours.Six) edge = ConvertNodeSizeToHexagonSize(InspectorGridHexagonNodeSize.Width,edge);
+ float value = edge * 1000f;
+ double whole = Math.Truncate(value);
+ double fraction = (double)value - whole;
+ float cost;
+ if (value >= 0f) cost = fraction == 0.5 ? (((long)whole & 1) == 0 ? (float)whole : (float)whole + 1f) : (float)Math.Floor(value + 0.5f);
+ else cost = fraction == -0.5 ? (((long)whole & 1) == 0 ? (float)whole : (float)whole - 1f) : (float)Math.Ceiling(value - 0.5f);
+ float diagonal = cost;
+ if (!uniformEdgeCosts) {
+  value = (edge * 1.4142135381698608f) * 1000f;
+  whole = Math.Truncate(value);
+  fraction = (double)value - whole;
+  if (value >= 0f) diagonal = fraction == 0.5 ? (((long)whole & 1) == 0 ? (float)whole : (float)whole + 1f) : (float)Math.Floor(value + 0.5f);
+  else diagonal = fraction == -0.5 ? (((long)whole & 1) == 0 ? (float)whole : (float)whole - 1f) : (float)Math.Ceiling(value - 0.5f);
+ }
+ neighbourCosts[0] = cost;
+ neighbourCosts[1] = cost;
+ neighbourCosts[2] = cost;
+ neighbourCosts[3] = cost;
+ neighbourCosts[4] = diagonal;
+ neighbourCosts[5] = diagonal;
+ neighbourCosts[6] = diagonal;
+ neighbourCosts[7] = diagonal;
+}
 
 		[Token(Token = "0x60006BB")]
 		[Address(RVA = "0x4520968", Offset = "0x451C968", VA = "0x4520968")]
@@ -1203,8 +1557,19 @@ void System.Collections.IEnumerator.Reset()
 		[Address(RVA = "0x45209DC", Offset = "0x451C9DC", VA = "0x45209DC", Slot = "31")]
 		protected override IGraphUpdatePromise ScanInternal(bool async)
 		{
-			return null;
-		}
+ if (!(nodeSize > 0f)) return null;
+ CalculateDimensions(out width, out depth, out nodeSize);
+ transform = CalculateTransform();
+ if (width > 1024 || depth > 1024) { UnityEngine.Debug.LogError("One of the grid's sides is longer than 1024 nodes"); return null; }
+ SetUpOffsetsAndCosts();
+ GridNode.SetGridGraph(unchecked((int)graphIndex), this);
+ if (collision == null) collision = new GraphCollision();
+ collision.Initialize(transform, nodeSize);
+ var tracker = Pathfinding.Pooling.ObjectPool<JobDependencyTracker>.Claim();
+ JobHandle dependency;
+ var allocatedNodes = AllocateNodesJob(unchecked(width * depth), out dependency);
+ return new GridGraphUpdatePromise(this, transform, new GridGraphUpdatePromise.NodesHolder { nodes=allocatedNodes }, new int3(width,1,depth), new IntRect(0,0,unchecked(width-1),unchecked(depth-1)), tracker, dependency, Allocator.Persistent, RecalculationMode.RecalculateFromScratch, null, true, true);
+}
 
 		[Token(Token = "0x60006BD")]
 		[Address(RVA = "0x4520C6C", Offset = "0x451CC6C", VA = "0x4520C6C")]
@@ -1260,8 +1625,12 @@ void System.Collections.IEnumerator.Reset()
 		[Address(RVA = "0x45215E0", Offset = "0x451D5E0", VA = "0x45215E0")]
 		public Bounds GetBoundsFromRect(IntRect rect)
 		{
-			return default;
-		}
+ rect=IntRect.Intersection(rect,new IntRect(0,0,unchecked(width-1),unchecked(depth-1)));
+ if (!rect.IsValid()) return default(Bounds);
+ var center=new Vector3(unchecked(rect.xmin+rect.xmax)*0.5f,collision.fromHeight*0.5f,unchecked(rect.ymin+rect.ymax)*0.5f);
+ var size=new Vector3(unchecked(rect.Width+1),collision.fromHeight,unchecked(rect.Height+1));
+ return transform.Transform(new Bounds(center,size));
+}
 
 		[Token(Token = "0x60006C6")]
 		[Address(RVA = "0x4522CB8", Offset = "0x451ECB8", VA = "0x4522CB8")]
@@ -1519,7 +1888,6 @@ IGraphUpdatePromise IUpdatableGraph.ScheduleGraphUpdates(List<GraphUpdateObject>
 		[Token(Token = "0x60006EA")]
 		[Address(RVA = "0x45271E8", Offset = "0x45231E8", VA = "0x45271E8")]
 		public GridGraph()
-		{
-		}
+		{}
 	}
 }

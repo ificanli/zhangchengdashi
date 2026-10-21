@@ -27,19 +27,17 @@ namespace Pathfinding.Graphs.Grid.Jobs
 		[Address(RVA = "0x447BEA4", Offset = "0x4477EA4", VA = "0x447BEA4")]
 		public static Vector3 NodePosition(Matrix4x4 graphToWorld, int x, int z, float height = 0f)
 		{
-			return default;
-		}
+ return graphToWorld.MultiplyPoint3x4(new Vector3((float)x+0.5f,height,(float)z+0.5f));
+}
 
 		[Token(Token = "0x6000E12")]
 		[Address(RVA = "0x447BEC4", Offset = "0x4477EC4", VA = "0x447BEC4", Slot = "4")]
 		public void Execute()
-		{
-		}
+		{ GridIterationUtilities.ForEachCellIn3DArray(bounds.size, ref this); }
 
 		[Token(Token = "0x6000E13")]
 		[Address(RVA = "0x447BF1C", Offset = "0x4477F1C", VA = "0x447BF1C", Slot = "5")]
 		public void Execute(uint innerIndex, int x, int y, int z)
-		{
-		}
+		{ nodePositions[unchecked((int)innerIndex)]=NodePosition(graphToWorld,unchecked(bounds.min.x+x),unchecked(bounds.min.z+z),0f); }
 	}
 }

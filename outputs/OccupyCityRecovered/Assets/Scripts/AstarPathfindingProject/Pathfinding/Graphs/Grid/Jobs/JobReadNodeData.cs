@@ -46,7 +46,24 @@ namespace Pathfinding.Graphs.Grid.Jobs
 			[Address(RVA = "0x447D254", Offset = "0x4479254", VA = "0x447D254", Slot = "4")]
 			public void Execute(uint outerIdx, uint innerIdx)
 			{
-			}
+ var node = outerIdx < nodes.Length ? nodes[outerIdx] : null;
+ if (node != null) {
+  nodePositions[(int)innerIdx] = (Vector3)node.position;
+  nodePenalties[(int)innerIdx] = node.Penalty;
+  nodeTags[(int)innerIdx] = (int)node.Tag;
+  var gridNode = node as GridNode;
+  nodeConnections[(int)innerIdx] = gridNode != null ? unchecked((ulong)gridNode.GetAllConnectionInternal()) : (node as LevelGridNode).gridConnections;
+  nodeWalkableWithErosion[(int)innerIdx] = node.Walkable;
+  nodeWalkable[(int)innerIdx] = node.WalkableErosion;
+ } else {
+  nodePositions[(int)innerIdx] = Vector3.zero;
+  nodePenalties[(int)innerIdx] = 0;
+  nodeTags[(int)innerIdx] = 0;
+  nodeConnections[(int)innerIdx] = 0;
+  nodeWalkableWithErosion[(int)innerIdx] = false;
+  nodeWalkable[(int)innerIdx] = false;
+ }
+}
 		}
 
 		[Token(Token = "0x4000A7C")]
@@ -97,15 +114,15 @@ namespace Pathfinding.Graphs.Grid.Jobs
 			[Token(Token = "0x6000E1A")]
 			[Address(RVA = "0x447D14C", Offset = "0x447914C", VA = "0x447D14C", Slot = "4")]
 			get
-			{
-				return default;
-			}
+			{ return false; }
 		}
 
 		[Token(Token = "0x6000E1B")]
 		[Address(RVA = "0x447D154", Offset = "0x4479154", VA = "0x447D154", Slot = "5")]
 		public void Execute(int startIndex, int count)
 		{
-		}
+ var reader = new Reader { nodes = (GridNodeBase[])nodesHandle.Target, nodePositions = nodePositions, nodePenalties = nodePenalties, nodeTags = nodeTags, nodeConnections = nodeConnections, nodeWalkableWithErosion = nodeWalkableWithErosion, nodeWalkable = nodeWalkable };
+ GridIterationUtilities.ForEachCellIn3DSlice(slice, ref reader);
+}
 	}
 }

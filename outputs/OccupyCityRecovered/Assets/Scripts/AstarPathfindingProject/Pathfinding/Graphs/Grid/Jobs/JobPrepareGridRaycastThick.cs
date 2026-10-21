@@ -47,6 +47,11 @@ namespace Pathfinding.Graphs.Grid.Jobs
 		[Address(RVA = "0x447C7D8", Offset = "0x44787D8", VA = "0x447C7D8", Slot = "4")]
 		public void Execute()
 		{
-		}
+ var size=bounds.size;
+ var commands=Pathfinding.Collections.SpanExtensions.AsUnsafeSpan(raycastCommands);
+ var template=new SpherecastCommand(physicsScene,Vector3.zero,radius,raycastDirection.normalized,new QueryParameters(raycastMask,false,QueryTriggerInteraction.Ignore,false),raycastDirection.magnitude);
+ Pathfinding.Collections.SpanExtensions.Fill(commands,template);
+ for (int z=0;z<size.z;z++) for (int x=0;x<size.x;x++) commands[unchecked(x+z*size.x)].origin=JobNodeGridLayout.NodePosition(graphToWorld,unchecked(bounds.min.x+x),unchecked(bounds.min.z+z),0f)+raycastOffset;
+}
 	}
 }

@@ -53,6 +53,21 @@ namespace Pathfinding.Graphs.Grid.Jobs
 		[Address(RVA = "0x447BF84", Offset = "0x4477F84", VA = "0x447BF84", Slot = "4")]
 		public void Execute()
 		{
-		}
+ float threshold=(float)System.Math.Cos((double)(maxSlope*0.01745329238474369f));
+ var up4=new float4(up.x,up.y,up.z,0f);
+ for (int i=0;i<nodeNormals.Length;i++) {
+  bool found=true;
+  var normal=nodeNormals[i];
+  if (math.all(normal==default(float4))) {
+   if (unwalkableWhenNoGround || i>=layerStride) { nodeWalkable[i]=false; continue; }
+   found=false;
+   normal=up4;
+   nodeNormals[i]=normal;
+  }
+  if (found && useRaycastNormal && !(math.dot(up4,normal)>=threshold)) { nodeWalkable[i]=false; continue; }
+  int above=unchecked(i+layerStride);
+  nodeWalkable[i]=above>=nodeNormals.Length || math.all(nodeNormals[above]==default(float4)) || math.dot(new float3(up.x,up.y,up.z),nodePositions[above]-nodePositions[i])>=characterHeight;
+ }
+}
 	}
 }

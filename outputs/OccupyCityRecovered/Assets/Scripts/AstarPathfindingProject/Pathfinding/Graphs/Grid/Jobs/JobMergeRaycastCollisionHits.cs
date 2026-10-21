@@ -29,6 +29,8 @@ namespace Pathfinding.Graphs.Grid.Jobs
 		[Address(RVA = "0x447BD00", Offset = "0x4477D00", VA = "0x447BD00", Slot = "4")]
 		public void Execute()
 		{
-		}
+ for (int i = 0; i < hit1.Length; i++)
+  result[i] = hit1[i].normal == Vector3.zero && hit2[i].normal == Vector3.zero;
+}
 	}
 }

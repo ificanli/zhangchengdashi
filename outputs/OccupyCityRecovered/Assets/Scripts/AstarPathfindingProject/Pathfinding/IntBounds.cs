@@ -20,9 +20,7 @@ namespace Pathfinding
 			[Token(Token = "0x60003D3")]
 			[Address(RVA = "0x44F6508", Offset = "0x44F2508", VA = "0x44F6508")]
 			get
-			{
-				return default;
-			}
+			{ return max-min; }
 		}
 
 		[Token(Token = "0x170000DA")]
@@ -31,31 +29,23 @@ namespace Pathfinding
 			[Token(Token = "0x60003D4")]
 			[Address(RVA = "0x44F6534", Offset = "0x44F2534", VA = "0x44F6534")]
 			get
-			{
-				return default;
-			}
+			{ var size=max-min; return unchecked(size.x * size.y * size.z); }
 		}
 
 		[Token(Token = "0x60003D1")]
 		[Address(RVA = "0x44F64E4", Offset = "0x44F24E4", VA = "0x44F64E4")]
 		public IntBounds(int xmin, int ymin, int zmin, int xmax, int ymax, int zmax)
-		{
-    throw new global::System.NotImplementedException("RECOVERY_UNIMPLEMENTED IntBounds..ctor RVA=0x44F64E4 Token=0x60003D1");
-}
+		{ min=new int3(xmin,ymin,zmin); max=new int3(xmax,ymax,zmax); }
 
 		[Token(Token = "0x60003D2")]
 		[Address(RVA = "0x44F64F4", Offset = "0x44F24F4", VA = "0x44F64F4")]
 		public IntBounds(int3 min, int3 max)
-		{
-    throw new global::System.NotImplementedException("RECOVERY_UNIMPLEMENTED IntBounds..ctor RVA=0x44F64F4 Token=0x60003D2");
-}
+		{ this.min=min; this.max=max; }
 
 		[Token(Token = "0x60003D5")]
 		[Address(RVA = "0x44F6564", Offset = "0x44F2564", VA = "0x44F6564")]
 		public static IntBounds Intersection(IntBounds a, IntBounds b)
-		{
-			return default;
-		}
+		{ return new IntBounds(Unity.Mathematics.math.max(a.min, b.min), Unity.Mathematics.math.min(a.max, b.max)); }
 
 		[Token(Token = "0x60003D6")]
 		[Address(RVA = "0x44F65E0", Offset = "0x44F25E0", VA = "0x44F65E0")]
@@ -67,9 +57,7 @@ namespace Pathfinding
 		[Token(Token = "0x60003D7")]
 		[Address(RVA = "0x44F6650", Offset = "0x44F2650", VA = "0x44F6650")]
 		public IntBounds Offset(int3 offset)
-		{
-			return default;
-		}
+		{ return new IntBounds(min+offset,max+offset); }
 
 		[Token(Token = "0x60003D8")]
 		[Address(RVA = "0x44F66A0", Offset = "0x44F26A0", VA = "0x44F66A0")]

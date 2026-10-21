@@ -40,7 +40,7 @@ namespace Pathfinding
 
 		[Token(Token = "0x4000520")]
 		[FieldOffset(Offset = "0x0")]
-		internal static readonly int[] offsetToDirection;
+		internal static readonly int[] offsetToDirection = new int[] { 7,0,4,3,-1,1,6,2,5 };
 
 		[Token(Token = "0x17000181")]
 		public int NodeInGridIndex
@@ -48,14 +48,11 @@ namespace Pathfinding
 			[Token(Token = "0x6000811")]
 			[Address(RVA = "0x453B710", Offset = "0x4537710", VA = "0x453B710")]
 			get
-			{
-				return default;
-			}
+			{ return nodeInGridIndex&0x00ffffff; }
 			[Token(Token = "0x6000812")]
 			[Address(RVA = "0x453CF7C", Offset = "0x4538F7C", VA = "0x453CF7C")]
 			set
-			{
-			}
+			{ nodeInGridIndex=unchecked(value|(nodeInGridIndex&(int)0xff000000u)); }
 		}
 
 		[Token(Token = "0x17000182")]
@@ -64,9 +61,7 @@ namespace Pathfinding
 			[Token(Token = "0x6000813")]
 			[Address(RVA = "0x453CF8C", Offset = "0x4538F8C", VA = "0x453CF8C")]
 			get
-			{
-				return default;
-			}
+			{ int index=NodeInGridIndex; int graphWidth=GridNode.GetGridGraph(GraphIndex).width; return graphWidth == 0 ? index : index % graphWidth; }
 		}
 
 		[Token(Token = "0x17000183")]
@@ -75,9 +70,7 @@ namespace Pathfinding
 			[Token(Token = "0x6000814")]
 			[Address(RVA = "0x453D004", Offset = "0x4539004", VA = "0x453D004")]
 			get
-			{
-				return default;
-			}
+			{ int index=NodeInGridIndex; int graphWidth=GridNode.GetGridGraph(GraphIndex).width; return graphWidth == 0 ? 0 : index / graphWidth; }
 		}
 
 		[Token(Token = "0x17000184")]
@@ -98,14 +91,11 @@ namespace Pathfinding
 			[Token(Token = "0x6000816")]
 			[Address(RVA = "0x453D0F4", Offset = "0x45390F4", VA = "0x453D0F4")]
 			get
-			{
-				return default;
-			}
+			{ return (gridFlags&256)!=0; }
 			[Token(Token = "0x6000817")]
 			[Address(RVA = "0x453D100", Offset = "0x4539100", VA = "0x453D100")]
 			set
-			{
-			}
+			{ gridFlags=unchecked((ushort)((gridFlags&0xfeff)|(value?256:0))); }
 		}
 
 		[Token(Token = "0x17000186")]
@@ -258,7 +248,11 @@ namespace Pathfinding
 		[Address(RVA = "0x453D9B8", Offset = "0x45399B8", VA = "0x453D9B8")]
 		public void ClearCustomConnections(bool alsoReverse)
 		{
-		}
+ if (connections!=null) {
+  for (int i=0;i<connections.Length;i++) connections[i].node.RemovePartialConnection(this);
+  connections=null;AstarPath.active.hierarchicalGraph.AddDirtyNode(this);
+ }
+}
 
 		[Token(Token = "0x600082F")]
 		[Address(RVA = "0x453BABC", Offset = "0x4537ABC", VA = "0x453BABC", Slot = "9")]
@@ -298,7 +292,6 @@ namespace Pathfinding
 		[Token(Token = "0x6000835")]
 		[Address(RVA = "0x453B1F4", Offset = "0x45371F4", VA = "0x453B1F4")]
 		protected GridNodeBase()
-		{
-		}
+		{}
 	}
 }

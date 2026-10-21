@@ -9,7 +9,7 @@ namespace Pathfinding
 	{
 		[Token(Token = "0x4000510")]
 		[FieldOffset(Offset = "0x0")]
-		private static GridGraph[] _gridGraphs;
+		private static GridGraph[] _gridGraphs = new GridGraph[0];
 
 		[Token(Token = "0x4000511")]
 		private const int GridFlagsConnectionOffset = 0;
@@ -97,27 +97,29 @@ namespace Pathfinding
 		[Token(Token = "0x60007F3")]
 		[Address(RVA = "0x453B19C", Offset = "0x453719C", VA = "0x453B19C")]
 		public GridNode()
-		{
-		}
+		{}
 
 		[Token(Token = "0x60007F4")]
 		[Address(RVA = "0x453B1FC", Offset = "0x45371FC", VA = "0x453B1FC")]
 		public GridNode(AstarPath astar)
-		{
-		}
+		{ astar.InitializeNode(this); }
 
 		[Token(Token = "0x60007F5")]
 		[Address(RVA = "0x453B278", Offset = "0x4537278", VA = "0x453B278")]
 		public static GridGraph GetGridGraph(uint graphIndex)
-		{
-			return null;
-		}
+		{ return _gridGraphs[graphIndex]; }
 
 		[Token(Token = "0x60007F6")]
 		[Address(RVA = "0x453B2F4", Offset = "0x45372F4", VA = "0x453B2F4")]
 		public static void SetGridGraph(int graphIndex, GridGraph graph)
 		{
-		}
+ if (_gridGraphs.Length <= graphIndex) {
+  var graphs = new GridGraph[unchecked(graphIndex + 1)];
+  for (int i = 0; i < _gridGraphs.Length; i++) graphs[i] = _gridGraphs[i];
+  _gridGraphs = graphs;
+ }
+ _gridGraphs[graphIndex] = graph;
+}
 
 		[Token(Token = "0x60007F7")]
 		[Address(RVA = "0x453B490", Offset = "0x4537490", VA = "0x453B490")]
@@ -128,9 +130,7 @@ namespace Pathfinding
 		[Token(Token = "0x60007FC")]
 		[Address(RVA = "0x453B5B4", Offset = "0x45375B4", VA = "0x453B5B4", Slot = "29")]
 		public override bool HasConnectionInDirection(int dir)
-		{
-			return default;
-		}
+		{ return ((gridFlags >> dir) & 1) != 0; }
 
 		[Token(Token = "0x60007FD")]
 		[Address(RVA = "0x453B5C4", Offset = "0x45375C4", VA = "0x453B5C4")]
@@ -147,34 +147,33 @@ namespace Pathfinding
 		[Token(Token = "0x60007FF")]
 		[Address(RVA = "0x453B724", Offset = "0x4537724", VA = "0x453B724")]
 		public void SetAllConnectionInternal(int connections)
-		{
-		}
+		{ gridFlags=unchecked((ushort)((gridFlags&0xff00)|connections)); AstarPath.active.hierarchicalGraph.AddDirtyNode(this); }
 
 		[Token(Token = "0x6000800")]
 		[Address(RVA = "0x453B71C", Offset = "0x453771C", VA = "0x453B71C")]
 		public int GetAllConnectionInternal()
-		{
-			return default;
-		}
+		{ return gridFlags&255; }
 
 		[Token(Token = "0x6000802")]
 		[Address(RVA = "0x453B7C0", Offset = "0x45377C0", VA = "0x453B7C0", Slot = "31")]
 		public override void ResetConnectionsInternal()
-		{
-		}
+		{ gridFlags=unchecked((ushort)(gridFlags&0xff00));AstarPath.active.hierarchicalGraph.AddDirtyNode(this); }
 
 		[Token(Token = "0x6000805")]
 		[Address(RVA = "0x453B87C", Offset = "0x453787C", VA = "0x453B87C", Slot = "28")]
 		public override GridNodeBase GetNeighbourAlongDirection(int direction)
-		{
-			return null;
-		}
+		{ if (!HasConnectionInDirection(direction)) return null; GridGraph graph=GetGridGraph(GraphIndex); return graph.nodes[unchecked(NodeInGridIndex + graph.neighbourOffsets[direction])]; }
 
 		[Token(Token = "0x6000806")]
 		[Address(RVA = "0x453B950", Offset = "0x4537950", VA = "0x453B950", Slot = "9")]
 		public override void ClearConnections(bool alsoReverse)
 		{
-		}
+ if (alsoReverse) for (int i=0;i<8;i++) {
+  var node=GetNeighbourAlongDirection(i) as GridNode;
+  if (node!=null) node.SetConnectionInternal(i<4?(i+2)&3:((i-2)&3)+4,false);
+ }
+ ResetConnectionsInternal();ClearCustomConnections(false);
+}
 
 		[Token(Token = "0x6000807")]
 		public override void GetConnections<T>(NodeActionWithData<T> action, ref T data, int connectionFilter)
@@ -192,8 +191,13 @@ namespace Pathfinding
 		[Address(RVA = "0x453C0FC", Offset = "0x45380FC", VA = "0x453C0FC")]
 		public static int FilterDiagonalConnections(int conns, NumNeighbours neighbours, bool cutCorners)
 		{
-			return default;
-		}
+ if (neighbours==NumNeighbours.Six) return conns&0xaf;
+ if (neighbours==NumNeighbours.Four) return conns&0xf;
+ int cardinal=conns&0xf;
+ int rotated=unchecked((cardinal<<3)|(int)(((uint)conns>>1)&7));
+ int allowed=cutCorners?rotated|cardinal:rotated&cardinal;
+ return unchecked((conns&(allowed<<4))|cardinal);
+}
 
 		[Token(Token = "0x600080A")]
 		[Address(RVA = "0x453C144", Offset = "0x4538144", VA = "0x453C144", Slot = "12")]

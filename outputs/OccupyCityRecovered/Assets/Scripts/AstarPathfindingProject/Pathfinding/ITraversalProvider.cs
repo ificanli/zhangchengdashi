@@ -20,16 +20,12 @@ namespace Pathfinding
 		[Token(Token = "0x60005BD")]
 		[Address(RVA = "0x4515484", Offset = "0x4511484", VA = "0x4515484", Slot = "1")]
 		bool CanTraverse(ref TraversalConstraint traversalConstraint, GraphNode node)
-		{
-			return default;
-		}
+		{ return true; }
 
 		[Token(Token = "0x60005BE")]
 		[Address(RVA = "0x451548C", Offset = "0x451148C", VA = "0x451548C", Slot = "2")]
 		bool CanTraverse(ref TraversalConstraint traversalConstraint, GraphNode from, GraphNode to)
-		{
-			return default;
-		}
+		{ return CanTraverse(ref traversalConstraint, to); }
 
 		[Token(Token = "0x60005BF")]
 		[Address(RVA = "0x451553C", Offset = "0x451153C", VA = "0x451553C", Slot = "3")]

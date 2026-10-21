@@ -44,6 +44,13 @@ namespace Pathfinding.Graphs.Grid.Jobs
 		[Address(RVA = "0x447CC10", Offset = "0x4478C10", VA = "0x447CC10", Slot = "4")]
 		public void Execute()
 		{
-		}
+ var normalizedDirection = direction.normalized;
+ var commands = Pathfinding.Collections.SpanExtensions.AsUnsafeSpan(raycastCommands);
+ var query = new QueryParameters(mask, false, QueryTriggerInteraction.Ignore, false);
+ var template = new RaycastCommand(physicsScene, Vector3.zero, normalizedDirection, query, distance);
+ Pathfinding.Collections.SpanExtensions.Fill(commands, template);
+ for (int i = 0; i < raycastCommands.Length; i++)
+  commands[i].from = origins[i] + originOffset;
+}
 	}
 }

@@ -146,17 +146,22 @@ namespace Pathfinding
 		[IgnoredByDeepProfiler]
 		public static explicit operator Int3(Vector3 ob)
 		{
-			return default;
-		}
+ double x = System.Math.Round((double)(ob.x * 1000f));
+ double y = System.Math.Round((double)(ob.y * 1000f));
+ double z = System.Math.Round((double)(ob.z * 1000f));
+ return new Int3 {
+  x = double.IsNaN(x) ? 0 : double.IsPositiveInfinity(x) ? int.MinValue : x >= int.MaxValue ? int.MaxValue : x <= int.MinValue ? int.MinValue : (int)x,
+  y = double.IsNaN(y) ? 0 : double.IsPositiveInfinity(y) ? int.MinValue : y >= int.MaxValue ? int.MaxValue : y <= int.MinValue ? int.MinValue : (int)y,
+  z = double.IsNaN(z) ? 0 : double.IsPositiveInfinity(z) ? int.MinValue : z >= int.MaxValue ? int.MaxValue : z <= int.MinValue ? int.MinValue : (int)z
+ };
+}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		[Token(Token = "0x60003B6")]
 		[Address(RVA = "0x44F56FC", Offset = "0x44F16FC", VA = "0x44F56FC")]
 		[IgnoredByDeepProfiler]
 		public static explicit operator Vector3(Int3 ob)
-		{
-			return default;
-		}
+		{ return new Vector3(ob.x * 0.001f, ob.y * 0.001f, ob.z * 0.001f); }
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		[Token(Token = "0x60003B7")]
@@ -266,9 +271,7 @@ namespace Pathfinding
 		[Token(Token = "0x60003C6")]
 		[Address(RVA = "0x44F6124", Offset = "0x44F2124", VA = "0x44F6124")]
 		public static long DotLong(Int3 lhs, Int3 rhs)
-		{
-			return default;
-		}
+		{ return unchecked((long)lhs.x * rhs.x + (long)lhs.y * rhs.y + (long)lhs.z * rhs.z); }
 
 		[Token(Token = "0x60003C7")]
 		[Address(RVA = "0x44F6140", Offset = "0x44F2140", VA = "0x44F6140")]

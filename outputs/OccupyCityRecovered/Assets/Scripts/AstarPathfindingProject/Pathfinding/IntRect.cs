@@ -53,9 +53,7 @@ namespace Pathfinding
 			[Token(Token = "0x6000274")]
 			[Address(RVA = "0x445E470", Offset = "0x445A470", VA = "0x445E470")]
 			get
-			{
-				return default;
-			}
+			{ return unchecked(xmax-xmin+1); }
 		}
 
 		[Token(Token = "0x170000BE")]
@@ -64,9 +62,7 @@ namespace Pathfinding
 			[Token(Token = "0x6000275")]
 			[Address(RVA = "0x445E484", Offset = "0x445A484", VA = "0x445E484")]
 			get
-			{
-				return default;
-			}
+			{ return unchecked(ymax-ymin+1); }
 		}
 
 		[Token(Token = "0x170000BF")]
@@ -83,9 +79,7 @@ namespace Pathfinding
 		[Token(Token = "0x600026F")]
 		[Address(RVA = "0x445E3D4", Offset = "0x445A3D4", VA = "0x445E3D4")]
 		public IntRect(int xmin, int ymin, int xmax, int ymax)
-		{
-    throw new global::System.NotImplementedException("RECOVERY_UNIMPLEMENTED IntRect..ctor RVA=0x445E3D4 Token=0x600026F");
-}
+		{ this.xmin=xmin; this.ymin=ymin; this.xmax=xmax; this.ymax=ymax; }
 
 		[Token(Token = "0x6000270")]
 		[Address(RVA = "0x445E3E0", Offset = "0x445A3E0", VA = "0x445E3E0")]
@@ -104,9 +98,7 @@ namespace Pathfinding
 		[Token(Token = "0x6000277")]
 		[Address(RVA = "0x445E4B4", Offset = "0x445A4B4", VA = "0x445E4B4")]
 		public bool IsValid()
-		{
-			return default;
-		}
+		{ return xmin <= xmax && ymin <= ymax; }
 
 		[Token(Token = "0x6000278")]
 		[Address(RVA = "0x445E4E0", Offset = "0x445A4E0", VA = "0x445E4E0")]
@@ -146,9 +138,7 @@ namespace Pathfinding
 		[Token(Token = "0x600027D")]
 		[Address(RVA = "0x445E664", Offset = "0x445A664", VA = "0x445E664")]
 		public static IntRect Intersection(IntRect a, IntRect b)
-		{
-			return default;
-		}
+		{ return new IntRect(Math.Max(a.xmin,b.xmin),Math.Max(a.ymin,b.ymin),Math.Min(a.xmax,b.xmax),Math.Min(a.ymax,b.ymax)); }
 
 		[Token(Token = "0x600027E")]
 		[Address(RVA = "0x445E740", Offset = "0x445A740", VA = "0x445E740")]
@@ -188,9 +178,7 @@ namespace Pathfinding
 		[Token(Token = "0x6000283")]
 		[Address(RVA = "0x445EAC4", Offset = "0x445AAC4", VA = "0x445EAC4")]
 		public IntRect Expand(int range)
-		{
-			return default;
-		}
+		{ return new IntRect(unchecked(xmin-range),unchecked(ymin-range),unchecked(xmax+range),unchecked(ymax+range)); }
 
 		[Token(Token = "0x6000284")]
 		[Address(RVA = "0x445EAEC", Offset = "0x445AAEC", VA = "0x445EAEC", Slot = "3")]
