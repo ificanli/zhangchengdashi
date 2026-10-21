@@ -29,8 +29,7 @@ namespace Pathfinding.Util
 
 		[Token(Token = "0x6001021")]
 		public static void Realloc<T>(ref T[] arr, int newSize)
-		{
-		}
+		{ if (arr != null && arr.Length >= newSize) return; var result = new T[newSize]; if (arr != null) arr.CopyTo(result, 0); arr = result; }
 
 		[Token(Token = "0x6001022")]
 		public static T[] UnsafeAppendBufferToArray<T>(UnsafeAppendBuffer src) where T : struct

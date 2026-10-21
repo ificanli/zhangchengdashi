@@ -76,14 +76,11 @@ namespace Pathfinding.Sync
 			[Token(Token = "0x6000E21")]
 			[CompilerGenerated]
 			get
-			{
-				return default;
-			}
+			;
 			[Token(Token = "0x6000E22")]
 			[CompilerGenerated]
 			private set
-			{
-			}
+			;
 		}
 
 		[Token(Token = "0x17000223")]
@@ -117,9 +114,7 @@ namespace Pathfinding.Sync
 		{
 			[Token(Token = "0x6000E26")]
 			get
-			{
-				return default;
-			}
+			{ bool value = blocked; Thread.MemoryBarrier(); if (!value) return false; int waiting = waitingReceivers; Thread.MemoryBarrier(); return waiting == numReceivers; }
 		}
 
 		[Token(Token = "0x17000226")]

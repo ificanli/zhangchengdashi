@@ -37,7 +37,11 @@ namespace Pathfinding.Serialization
 		[Address(RVA = "0x447DB5C", Offset = "0x4479B5C", VA = "0x447DB5C")]
 		public GraphSerializationContext(BinaryReader reader, GraphNode[] id2NodeMapping, uint graphIndex, GraphMeta meta)
 		{
-		}
+ this.id2NodeMapping = id2NodeMapping;
+ this.reader = reader;
+ this.graphIndex = graphIndex;
+ this.meta = meta;
+}
 
 		[Token(Token = "0x6000E52")]
 		[Address(RVA = "0x447DBA0", Offset = "0x4479BA0", VA = "0x447DBA0")]

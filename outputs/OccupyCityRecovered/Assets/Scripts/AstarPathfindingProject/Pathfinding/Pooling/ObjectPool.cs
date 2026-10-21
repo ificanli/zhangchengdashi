@@ -7,13 +7,10 @@ namespace Pathfinding.Pooling
 	{
 		[Token(Token = "0x6000EC4")]
 		public static T Claim()
-		{
-			return null;
-		}
+		{ return ObjectPoolSimple<T>.Claim(); }
 
 		[Token(Token = "0x6000EC5")]
 		public static void Release(ref T obj)
-		{
-		}
+		{ obj.OnEnterPool(); ObjectPoolSimple<T>.Release(ref obj); }
 	}
 }

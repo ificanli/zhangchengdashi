@@ -8,15 +8,15 @@ namespace Pathfinding.Pooling
 	{
 		[Token(Token = "0x4000AFB")]
 		[FieldOffset(Offset = "0x0")]
-		private static readonly List<List<T>> pool;
+		private static readonly List<List<T>> pool = new List<List<T>>();
 
 		[Token(Token = "0x4000AFC")]
 		[FieldOffset(Offset = "0x0")]
-		private static readonly List<List<T>> largePool;
+		private static readonly List<List<T>> largePool = new List<List<T>>();
 
 		[Token(Token = "0x4000AFD")]
 		[FieldOffset(Offset = "0x0")]
-		private static readonly HashSet<List<T>> inPool;
+		private static readonly HashSet<List<T>> inPool = new HashSet<List<T>>();
 
 		[Token(Token = "0x4000AFE")]
 		private const int MaxCapacitySearchLength = 8;
@@ -30,20 +30,50 @@ namespace Pathfinding.Pooling
 		[Token(Token = "0x6000EBA")]
 		public static List<T> Claim()
 		{
-			return null;
-		}
+ lock (pool) {
+  if (pool.Count==0) return new List<T>();
+  var result=pool[pool.Count-1];
+  pool.RemoveAt(pool.Count-1);
+  inPool.Remove(result);
+  return result;
+ }
+}
 
 		[Token(Token = "0x6000EBB")]
 		private static int FindCandidate(List<List<T>> pool, int capacity)
 		{
-			return default;
-		}
+ List<T> best=null; int result=-1; int maximum=unchecked(capacity*16);
+ for (int i=0;i<8 && i<pool.Count;i++) {
+  int index=unchecked(pool.Count-1-i);
+  var candidate=pool[index];
+  if (best==null || candidate.Capacity>best.Capacity) {
+   if (candidate.Capacity<maximum) {
+    if (candidate.Capacity>=capacity) return index;
+    result=index; best=candidate;
+   }
+  }
+ }
+ return result;
+}
 
 		[Token(Token = "0x6000EBC")]
 		public static List<T> Claim(int capacity)
 		{
-			return null;
-		}
+ lock (pool) {
+  var selected=pool;
+  int index=FindCandidate(pool,capacity);
+  if (capacity>5000) {
+   int largeIndex=FindCandidate(largePool,capacity);
+   if (largeIndex!=-1) { selected=largePool; index=largeIndex; }
+  }
+  if (index==-1) return new List<T>(capacity);
+  var result=selected[index];
+  inPool.Remove(result);
+  selected[index]=selected[selected.Count-1];
+  selected.RemoveAt(selected.Count-1);
+  return result;
+ }
+}
 
 		[Token(Token = "0x6000EBD")]
 		public static void Warmup(int count, int size)
@@ -52,23 +82,24 @@ namespace Pathfinding.Pooling
 
 		[Token(Token = "0x6000EBE")]
 		public static void Release(ref List<T> list)
-		{
-		}
+		{ Release(list); list=null; }
 
 		[Token(Token = "0x6000EBF")]
 		public static void Release(List<T> list)
 		{
-		}
+ list.ClearFast();
+ lock (pool) {
+  if (list.Capacity>5000) { largePool.Add(list); if (largePool.Count>8) largePool.RemoveAt(0); }
+  else pool.Add(list);
+ }
+}
 
 		[Token(Token = "0x6000EC0")]
 		public static void Clear()
-		{
-		}
+		{ lock (pool) pool.Clear(); }
 
 		[Token(Token = "0x6000EC1")]
 		public static int GetSize()
-		{
-			return default;
-		}
+		{ return pool.Count; }
 	}
 }

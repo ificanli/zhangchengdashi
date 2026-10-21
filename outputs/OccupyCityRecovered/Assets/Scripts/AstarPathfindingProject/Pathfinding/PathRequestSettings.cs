@@ -53,30 +53,41 @@ namespace Pathfinding
 			[Address(RVA = "0x450CA50", Offset = "0x4508A50", VA = "0x450CA50")]
 			get
 			{
-				return default;
-			}
+ var mask = GraphMask.everything;
+ var multipliers = new float[32];
+ var entryCosts = new uint[32];
+ for (int i = 0; i < multipliers.Length; i++) multipliers[i] = 1f;
+ return new PathRequestSettings { graphMask = mask, traversableTags = -1, tagCostMultipliers = multipliers, tagEntryCosts = entryCosts, traversalProvider = null };
+}
 		}
 
 		[Token(Token = "0x60004E7")]
 		[Address(RVA = "0x450CB24", Offset = "0x4508B24", VA = "0x450CB24")]
 		public NearestNodeConstraint ToNearestNodeConstraint()
 		{
-			return default;
-		}
+ var traversalConstraint = ToTraversalConstraint();
+ return new NearestNodeConstraint { distanceMetric = DistanceMetric.Euclidean, area = -1, maxDistanceSqr = -1,
+  traversal = traversalConstraint, walkable = NearestNodeConstraint.WalkabilityConstraint.Walkable };
+}
 
 		[Token(Token = "0x60004E8")]
 		[Address(RVA = "0x450CC3C", Offset = "0x4508C3C", VA = "0x450CC3C")]
 		public TraversalConstraint ToTraversalConstraint()
 		{
-			return default;
-		}
+ return new TraversalConstraint { filterObj = traversalProvider, tags = traversableTags, graphMask = graphMask,
+  filterType = traversalProvider != null ? TraversalConstraint.FilterType.TraversalProvider : TraversalConstraint.FilterType.None };
+}
 
 		[Token(Token = "0x60004E9")]
 		[Address(RVA = "0x450CCCC", Offset = "0x4508CCC", VA = "0x450CCCC")]
 		public TraversalCosts ToTraversalCosts()
 		{
-			return default;
-		}
+ var costs = new TraversalCosts();
+ costs.tagEntryCosts = tagEntryCosts;
+ costs.tagCostMultipliers = tagCostMultipliers;
+ costs.traversalProvider = traversalProvider;
+ return costs;
+}
 
 		[Token(Token = "0x60004EA")]
 		[Address(RVA = "0x450CDF0", Offset = "0x4508DF0", VA = "0x450CDF0", Slot = "4")]

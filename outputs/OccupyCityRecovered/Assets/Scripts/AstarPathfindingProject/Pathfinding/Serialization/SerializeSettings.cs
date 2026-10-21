@@ -7,7 +7,7 @@ namespace Pathfinding.Serialization
 	{
 		[Token(Token = "0x4000AE9")]
 		[FieldOffset(Offset = "0x10")]
-		public bool nodes;
+		public bool nodes = true;
 
 		[Token(Token = "0x1700022B")]
 		public static SerializeSettings Settings
@@ -15,9 +15,7 @@ namespace Pathfinding.Serialization
 			[Token(Token = "0x6000E92")]
 			[Address(RVA = "0x447E3F8", Offset = "0x447A3F8", VA = "0x447E3F8")]
 			get
-			{
-				return null;
-			}
+			{ return new SerializeSettings { nodes = false }; }
 		}
 
 		[Token(Token = "0x1700022C")]
@@ -34,7 +32,6 @@ namespace Pathfinding.Serialization
 		[Token(Token = "0x6000E94")]
 		[Address(RVA = "0x4482F48", Offset = "0x447EF48", VA = "0x4482F48")]
 		public SerializeSettings()
-		{
-		}
+		{}
 	}
 }

@@ -19,7 +19,7 @@ namespace Pathfinding
 
 		[Token(Token = "0x40003E6")]
 		[FieldOffset(Offset = "0x0")]
-		public static readonly PathNode Default;
+		public static readonly PathNode Default = new PathNode { heapIndex=65535 };
 
 		[Token(Token = "0x40003E7")]
 		private const uint ParentIndexMask = 67108863u;

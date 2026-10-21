@@ -46,8 +46,9 @@ namespace Pathfinding
 		[Address(RVA = "0x44638B0", Offset = "0x445F8B0", VA = "0x44638B0")]
 		public static float3 ClosestPointOnLine(float3 lineStart, float3 lineEnd, float3 point)
 		{
-			return default;
-		}
+ float factor=ClosestPointOnLineFactor(lineStart,lineEnd,point);
+ return lineStart+(lineEnd-lineStart)*factor;
+}
 
 		[Token(Token = "0x6000305")]
 		[Address(RVA = "0x4463994", Offset = "0x445F994", VA = "0x4463994")]
@@ -60,8 +61,12 @@ namespace Pathfinding
 		[Address(RVA = "0x4463930", Offset = "0x445F930", VA = "0x4463930")]
 		public static float ClosestPointOnLineFactor(float3 lineStart, float3 lineEnd, float3 point)
 		{
-			return default;
-		}
+ var direction=lineEnd-lineStart;
+ float length=direction.z*direction.z+(direction.x*direction.x+direction.y*direction.y);
+ var offset=point-lineStart;
+ float result=(direction.z*offset.z+(direction.x*offset.x+direction.y*offset.y))/length;
+ return length>0.000001f ? result : 0f;
+}
 
 		[Token(Token = "0x6000307")]
 		[Address(RVA = "0x44639FC", Offset = "0x445F9FC", VA = "0x44639FC")]

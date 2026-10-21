@@ -157,22 +157,21 @@ namespace Pathfinding
 			}
 		}
 
-		[Token(Token = "0x17000105")]
+		[field: Token(Token = "0x4000336")]
+[field: Il2CppDummyDll.FieldOffset(Offset = "0x3A")]
+[Token(Token = "0x17000105")]
 		public bool workItemsInProgress
 		{
 			[Token(Token = "0x60004F9")]
 			[Address(RVA = "0x450D06C", Offset = "0x450906C", VA = "0x450D06C")]
 			[CompilerGenerated]
 			get
-			{
-				return default;
-			}
+			;
 			[Token(Token = "0x60004FA")]
 			[Address(RVA = "0x450D074", Offset = "0x4509074", VA = "0x450D074")]
 			[CompilerGenerated]
 			private set
-			{
-			}
+			;
 		}
 
 		[Token(Token = "0x14000001")]

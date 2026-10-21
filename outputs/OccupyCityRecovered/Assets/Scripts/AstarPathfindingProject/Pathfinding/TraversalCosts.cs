@@ -29,14 +29,14 @@ namespace Pathfinding
 			[Token(Token = "0x6000684")]
 			[Address(RVA = "0x451CA14", Offset = "0x4518A14", VA = "0x451CA14")]
 			get
-			{
-				return null;
-			}
+			{ return tagEntryCostsInternal; }
 			[Token(Token = "0x6000685")]
 			[Address(RVA = "0x450CD20", Offset = "0x4508D20", VA = "0x450CD20")]
 			set
 			{
-			}
+ if (value != null && value.Length != 32) throw new ArgumentException("Entry costs array must be of length 32");
+ tagEntryCostsInternal = value;
+}
 		}
 
 		[Token(Token = "0x1700014C")]
@@ -45,14 +45,14 @@ namespace Pathfinding
 			[Token(Token = "0x6000686")]
 			[Address(RVA = "0x451CA1C", Offset = "0x4518A1C", VA = "0x451CA1C")]
 			get
-			{
-				return null;
-			}
+			{ return tagCostMultipliersInternal; }
 			[Token(Token = "0x6000687")]
 			[Address(RVA = "0x450CD88", Offset = "0x4508D88", VA = "0x450CD88")]
 			set
 			{
-			}
+ if (value != null && value.Length != 32) throw new ArgumentException("Tag cost multiplier array must be of length 32");
+ tagCostMultipliersInternal = value;
+}
 		}
 
 		[Token(Token = "0x1700014D")]
@@ -61,9 +61,7 @@ namespace Pathfinding
 			[Token(Token = "0x6000688")]
 			[Address(RVA = "0x451CA24", Offset = "0x4518A24", VA = "0x451CA24")]
 			get
-			{
-				return default;
-			}
+			{ return tagCostMultipliersInternal != null || tagEntryCostsInternal != null || traversalProvider != null; }
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]

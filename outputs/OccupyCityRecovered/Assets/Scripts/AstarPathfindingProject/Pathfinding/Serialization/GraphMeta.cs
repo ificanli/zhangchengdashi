@@ -27,8 +27,10 @@ namespace Pathfinding.Serialization
 		[Address(RVA = "0x4480AD8", Offset = "0x447CAD8", VA = "0x4480AD8")]
 		public Type GetGraphType(int index, Type[] availableGraphTypes)
 		{
-			return null;
-		}
+ if (string.IsNullOrEmpty(typeNames[index])) return null;
+ for (int i = 0; i < availableGraphTypes.Length; i++) if (availableGraphTypes[i].FullName == typeNames[index]) return availableGraphTypes[i];
+ throw new Exception("No graph of type '" + typeNames[index] + "' could be created, type does not exist");
+}
 
 		[Token(Token = "0x6000E91")]
 		[Address(RVA = "0x447E61C", Offset = "0x447A61C", VA = "0x447E61C")]
