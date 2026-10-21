@@ -38,8 +38,10 @@ namespace Pathfinding.ECS
 		[Token(Token = "0x60012FF")]
 		public ManagedEntityAccess(bool readOnly)
 		{
-    throw new global::System.NotImplementedException("RECOVERY_UNIMPLEMENTED ManagedEntityAccess..ctor RVA= Token=0x60012FF");
-}
+            entityManager = default;
+            handle = default;
+            this.readOnly = readOnly;
+        }
 
 		[Token(Token = "0x6001300")]
 		public ManagedEntityAccess(EntityManager entityManager, bool readOnly)

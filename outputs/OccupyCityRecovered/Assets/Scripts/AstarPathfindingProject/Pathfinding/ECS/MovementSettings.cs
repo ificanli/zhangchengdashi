@@ -35,27 +35,26 @@ namespace Pathfinding.ECS
 		[FieldOffset(Offset = "0x34")]
 		public LayerMask groundMask;
 
-		[Token(Token = "0x4000DBC")]
-		[FieldOffset(Offset = "0x39")]
-		public bool isStopped;
-
+		[field: Token(Token = "0x4000DBB")]
+		[field: FieldOffset(Offset = "0x38")]
 		[Token(Token = "0x1700030E")]
 		[Obsolete("Use the AgentMovementPlaneSource component instead, or the movementPlaneSource property on the FollowerEntity component", true)]
 		public MovementPlaneSource movementPlaneSource
 		{
 			[Token(Token = "0x60012DC")]
 			[Address(RVA = "0x44B59A4", Offset = "0x44B19A4", VA = "0x44B59A4")]
-			[CompilerGenerated]
 			readonly get
-			{
-				return default;
-			}
+			;
 			[Token(Token = "0x60012DD")]
 			[Address(RVA = "0x44B59AC", Offset = "0x44B19AC", VA = "0x44B59AC")]
-			[CompilerGenerated]
 			set
-			{
-			}
+			;
 		}
+
+		[Token(Token = "0x4000DBC")]
+		[FieldOffset(Offset = "0x39")]
+		public bool isStopped;
+
+
 	}
 }

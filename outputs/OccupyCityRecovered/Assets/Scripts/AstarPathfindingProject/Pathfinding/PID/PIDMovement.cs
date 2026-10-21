@@ -167,23 +167,23 @@ namespace Pathfinding.PID
 
 		[Token(Token = "0x4000B10")]
 		[FieldOffset(Offset = "0x0")]
-		private static readonly ProfilerMarker MarkerSidewaysAvoidance;
+		private static readonly ProfilerMarker MarkerSidewaysAvoidance = new ProfilerMarker("SidewaysAvoidance");
 
 		[Token(Token = "0x4000B11")]
 		[FieldOffset(Offset = "0x8")]
-		private static readonly ProfilerMarker MarkerPID;
+		private static readonly ProfilerMarker MarkerPID = new ProfilerMarker("PID");
 
 		[Token(Token = "0x4000B12")]
 		[FieldOffset(Offset = "0x10")]
-		private static readonly ProfilerMarker MarkerOptimizeDirection;
+		private static readonly ProfilerMarker MarkerOptimizeDirection = new ProfilerMarker("OptimizeDirection");
 
 		[Token(Token = "0x4000B13")]
 		[FieldOffset(Offset = "0x18")]
-		private static readonly ProfilerMarker MarkerSmallestDistance;
+		private static readonly ProfilerMarker MarkerSmallestDistance = new ProfilerMarker("ClosestDistance");
 
 		[Token(Token = "0x4000B14")]
 		[FieldOffset(Offset = "0x20")]
-		private static readonly ProfilerMarker MarkerConvertObstacles;
+		private static readonly ProfilerMarker MarkerConvertObstacles = new ProfilerMarker("ConvertObstacles");
 
 		[Token(Token = "0x4000B15")]
 		private const float ALLOWED_OVERLAP_FACTOR = 0.1f;
@@ -209,8 +209,7 @@ namespace Pathfinding.PID
 			[Token(Token = "0x6000ED8")]
 			[Address(RVA = "0x4486CC8", Offset = "0x4482CC8", VA = "0x4486CC8")]
 			set
-			{
-			}
+			{ allowRotatingOnSpotBacking = value ? (byte)1 : (byte)0; }
 		}
 
 		[Token(Token = "0x6000ED9")]

@@ -38,22 +38,40 @@ namespace Pathfinding
 		[Token(Token = "0x40000D4")]
 		[Il2CppDummyDll.FieldOffset(Offset = "0x28")]
 		[SerializeField]
-		private AgentCylinderShape shape;
+		private AgentCylinderShape shape = new AgentCylinderShape { radius = 0.5f, height = 2f };
 
 		[Token(Token = "0x40000D5")]
 		[Il2CppDummyDll.FieldOffset(Offset = "0x30")]
 		[SerializeField]
-		private MovementSettings movement;
+		private MovementSettings movement = new MovementSettings
+        {
+            follower = new PIDMovement
+            {
+                rotationSpeed = 600f, speed = 5f, maxRotationSpeed = 720f,
+                maxOnSpotRotationSpeed = 720f, slowdownTime = 0.5f,
+                desiredWallDistance = 0.5f, allowRotatingOnSpot = true,
+                leadInRadiusWhenApproachingDestination = 1f
+            },
+            debugFlags = PIDMovement.DebugFlags.Path,
+            stopDistance = 0.2f, groundMask = -1
+        };
 
 		[Token(Token = "0x40000D6")]
 		[Il2CppDummyDll.FieldOffset(Offset = "0x70")]
 		[SerializeField]
-		private ManagedState managedState;
+		private ManagedState managedState = new ManagedState
+        {
+            enableLocalAvoidance = false,
+            pathfindingSettings = PathRequestSettings.Default
+        };
 
 		[Token(Token = "0x40000D7")]
 		[Il2CppDummyDll.FieldOffset(Offset = "0x78")]
 		[SerializeField]
-		private ManagedSettings managedSettings;
+		private ManagedSettings managedSettings = new ManagedSettings
+        {
+            pathfindingSettings = PathRequestSettings.Default
+        };
 
 		[Token(Token = "0x40000D8")]
 		[Il2CppDummyDll.FieldOffset(Offset = "0x80")]
@@ -63,17 +81,17 @@ namespace Pathfinding
 		[Token(Token = "0x40000D9")]
 		[Il2CppDummyDll.FieldOffset(Offset = "0x81")]
 		[SerializeField]
-		private bool enableGravityBacking;
+		private bool enableGravityBacking = true;
 
 		[Token(Token = "0x40000DA")]
 		[Il2CppDummyDll.FieldOffset(Offset = "0x84")]
 		[SerializeField]
-		private RVOAgent rvoSettingsBacking;
+		private RVOAgent rvoSettingsBacking = RVOAgent.Default;
 
 		[Token(Token = "0x40000DB")]
 		[Il2CppDummyDll.FieldOffset(Offset = "0xA8")]
 		[SerializeField]
-		private Pathfinding.ECS.AutoRepathPolicy autoRepathBacking;
+		private Pathfinding.ECS.AutoRepathPolicy autoRepathBacking = Pathfinding.ECS.AutoRepathPolicy.Default;
 
 		[Token(Token = "0x40000DC")]
 		[Il2CppDummyDll.FieldOffset(Offset = "0xC0")]
@@ -88,12 +106,12 @@ namespace Pathfinding
 		[Token(Token = "0x40000DE")]
 		[Il2CppDummyDll.FieldOffset(Offset = "0xC2")]
 		[SerializeField]
-		private bool syncPosition;
+		private bool syncPosition = true;
 
 		[Token(Token = "0x40000DF")]
 		[Il2CppDummyDll.FieldOffset(Offset = "0xC3")]
 		[SerializeField]
-		private bool syncRotation;
+		private bool syncRotation = true;
 
 		[Token(Token = "0x40000E0")]
 		[Il2CppDummyDll.FieldOffset(Offset = "0xC8")]
@@ -177,8 +195,10 @@ namespace Pathfinding
 			[Address(RVA = "0x4452004", Offset = "0x444E004", VA = "0x4452004")]
 			get
 			{
-    throw new global::System.NotImplementedException("RECOVERY_UNIMPLEMENTED FollowerEntity.pathfindingSettings.get RVA=0x4452004 Token=0x600013C");
-}
+                if (proxy.world != null)
+                    FollowerEntityProxy.movementStateAccessRW.Update(proxy.world.EntityManager);
+                return ref managedSettings.pathfindingSettings;
+            }
 		}
 
 		[Token(Token = "0x17000050")]

@@ -28,6 +28,38 @@ namespace Pathfinding.ECS
 			}
 		}
 
+		[field: Token(Token = "0x4000D53") ]
+		[field: Il2CppDummyDll.FieldOffset(Offset = "0x0")]
+		[Token(Token = "0x170002CC")]
+		public Entity entity
+		{
+			[Token(Token = "0x6001222")]
+			[Address(RVA = "0x44A8718", Offset = "0x44A4718", VA = "0x44A8718")]
+			[IgnoredByDeepProfiler]
+			readonly get
+			;
+			[Token(Token = "0x6001223")]
+			[Address(RVA = "0x44A8720", Offset = "0x44A4720", VA = "0x44A8720")]
+			private set
+			;
+		}
+
+		[field: Token(Token = "0x4000D54") ]
+		[field: Il2CppDummyDll.FieldOffset(Offset = "0x8")]
+		[Token(Token = "0x170002CD")]
+		public World world
+		{
+			[Token(Token = "0x6001224")]
+			[Address(RVA = "0x44A8728", Offset = "0x44A4728", VA = "0x44A8728")]
+			[IgnoredByDeepProfiler]
+			readonly get
+			;
+			[Token(Token = "0x6001225")]
+			[Address(RVA = "0x44A8730", Offset = "0x44A4730", VA = "0x44A8730")]
+			private set
+			;
+		}
+
 		[Token(Token = "0x4000D55")]
 		[Il2CppDummyDll.FieldOffset(Offset = "0x0")]
 		private static NativeList<float3> nextCornersScratch;
@@ -38,157 +70,119 @@ namespace Pathfinding.ECS
 
 		[Token(Token = "0x4000D57")]
 		[Il2CppDummyDll.FieldOffset(Offset = "0x18")]
-		internal static EntityAccess<DestinationPoint> destinationPointAccessRW;
+		internal static EntityAccess<DestinationPoint> destinationPointAccessRW = new EntityAccess<DestinationPoint>(false);
 
 		[Token(Token = "0x4000D58")]
 		[Il2CppDummyDll.FieldOffset(Offset = "0x58")]
-		internal static EntityAccess<DestinationPoint> destinationPointAccessRO;
+		internal static EntityAccess<DestinationPoint> destinationPointAccessRO = new EntityAccess<DestinationPoint>(true);
 
 		[Token(Token = "0x4000D59")]
 		[Il2CppDummyDll.FieldOffset(Offset = "0x98")]
-		internal static EntityAccess<AgentMovementPlane> movementPlaneAccessRW;
+		internal static EntityAccess<AgentMovementPlane> movementPlaneAccessRW = new EntityAccess<AgentMovementPlane>(false);
 
 		[Token(Token = "0x4000D5A")]
 		[Il2CppDummyDll.FieldOffset(Offset = "0xD8")]
-		internal static EntityAccess<AgentMovementPlane> movementPlaneAccessRO;
+		internal static EntityAccess<AgentMovementPlane> movementPlaneAccessRO = new EntityAccess<AgentMovementPlane>(true);
 
 		[Token(Token = "0x4000D5B")]
 		[Il2CppDummyDll.FieldOffset(Offset = "0x118")]
-		internal static EntityAccess<MovementState> movementStateAccessRW;
+		internal static EntityAccess<MovementState> movementStateAccessRW = new EntityAccess<MovementState>(false);
 
 		[Token(Token = "0x4000D5C")]
 		[Il2CppDummyDll.FieldOffset(Offset = "0x158")]
-		internal static EntityAccess<MovementState> movementStateAccessRO;
+		internal static EntityAccess<MovementState> movementStateAccessRO = new EntityAccess<MovementState>(true);
 
 		[Token(Token = "0x4000D5D")]
 		[Il2CppDummyDll.FieldOffset(Offset = "0x198")]
-		internal static EntityAccess<MovementStatistics> movementOutputAccessRW;
+		internal static EntityAccess<MovementStatistics> movementOutputAccessRW = new EntityAccess<MovementStatistics>(false);
 
 		[Token(Token = "0x4000D5E")]
 		[Il2CppDummyDll.FieldOffset(Offset = "0x1D8")]
-		internal static EntityAccess<ResolvedMovement> resolvedMovementAccessRO;
+		internal static EntityAccess<ResolvedMovement> resolvedMovementAccessRO = new EntityAccess<ResolvedMovement>(true);
 
 		[Token(Token = "0x4000D5F")]
 		[Il2CppDummyDll.FieldOffset(Offset = "0x218")]
-		internal static EntityAccess<ResolvedMovement> resolvedMovementAccessRW;
+		internal static EntityAccess<ResolvedMovement> resolvedMovementAccessRW = new EntityAccess<ResolvedMovement>(false);
 
 		[Token(Token = "0x4000D60")]
 		[Il2CppDummyDll.FieldOffset(Offset = "0x258")]
-		internal static EntityAccess<MovementControl> movementControlAccessRO;
+		internal static EntityAccess<MovementControl> movementControlAccessRO = new EntityAccess<MovementControl>(true);
 
 		[Token(Token = "0x4000D61")]
 		[Il2CppDummyDll.FieldOffset(Offset = "0x298")]
-		internal static EntityAccess<MovementControl> movementControlAccessRW;
+		internal static EntityAccess<MovementControl> movementControlAccessRW = new EntityAccess<MovementControl>(false);
 
 		[Token(Token = "0x4000D62")]
 		[Il2CppDummyDll.FieldOffset(Offset = "0x2D8")]
-		internal static EntityAccess<MovementStatistics> movementStatisticsAccessRW;
+		internal static EntityAccess<MovementStatistics> movementStatisticsAccessRW = new EntityAccess<MovementStatistics>(false);
 
 		[Token(Token = "0x4000D63")]
 		[Il2CppDummyDll.FieldOffset(Offset = "0x318")]
-		internal static EntityAccess<MovementStatistics> movementStatisticsAccessRO;
+		internal static EntityAccess<MovementStatistics> movementStatisticsAccessRO = new EntityAccess<MovementStatistics>(true);
 
 		[Token(Token = "0x4000D64")]
 		[Il2CppDummyDll.FieldOffset(Offset = "0x358")]
-		internal static ManagedEntityAccess<ManagedState> managedStateAccessRO;
+		internal static ManagedEntityAccess<ManagedState> managedStateAccessRO = new ManagedEntityAccess<ManagedState>(true);
 
 		[Token(Token = "0x4000D65")]
 		[Il2CppDummyDll.FieldOffset(Offset = "0x390")]
-		internal static ManagedEntityAccess<ManagedState> managedStateAccessRW;
+		internal static ManagedEntityAccess<ManagedState> managedStateAccessRW = new ManagedEntityAccess<ManagedState>(false);
 
 		[Token(Token = "0x4000D66")]
 		[Il2CppDummyDll.FieldOffset(Offset = "0x3C8")]
-		internal static ManagedEntityAccess<ManagedSettings> managedSettingsAccessRO;
+		internal static ManagedEntityAccess<ManagedSettings> managedSettingsAccessRO = new ManagedEntityAccess<ManagedSettings>(true);
 
 		[Token(Token = "0x4000D67")]
 		[Il2CppDummyDll.FieldOffset(Offset = "0x400")]
-		internal static ManagedEntityAccess<ManagedSettings> managedSettingsAccessRW;
+		internal static ManagedEntityAccess<ManagedSettings> managedSettingsAccessRW = new ManagedEntityAccess<ManagedSettings>(false);
 
 		[Token(Token = "0x4000D68")]
 		[Il2CppDummyDll.FieldOffset(Offset = "0x438")]
-		internal static EntityAccess<AutoRepathPolicy> autoRepathPolicyRW;
+		internal static EntityAccess<AutoRepathPolicy> autoRepathPolicyRW = new EntityAccess<AutoRepathPolicy>(false);
 
 		[Token(Token = "0x4000D69")]
 		[Il2CppDummyDll.FieldOffset(Offset = "0x478")]
-		internal static EntityAccess<LocalTransform> localTransformAccessRO;
+		internal static EntityAccess<LocalTransform> localTransformAccessRO = new EntityAccess<LocalTransform>(true);
 
 		[Token(Token = "0x4000D6A")]
 		[Il2CppDummyDll.FieldOffset(Offset = "0x4B8")]
-		internal static EntityAccess<LocalTransform> localTransformAccessRW;
+		internal static EntityAccess<LocalTransform> localTransformAccessRW = new EntityAccess<LocalTransform>(false);
 
 		[Token(Token = "0x4000D6B")]
 		[Il2CppDummyDll.FieldOffset(Offset = "0x4F8")]
-		internal static EntityAccess<AgentCylinderShape> agentCylinderShapeAccessRO;
+		internal static EntityAccess<AgentCylinderShape> agentCylinderShapeAccessRO = new EntityAccess<AgentCylinderShape>(true);
 
 		[Token(Token = "0x4000D6C")]
 		[Il2CppDummyDll.FieldOffset(Offset = "0x538")]
-		internal static EntityAccess<AgentCylinderShape> agentCylinderShapeAccessRW;
+		internal static EntityAccess<AgentCylinderShape> agentCylinderShapeAccessRW = new EntityAccess<AgentCylinderShape>(false);
 
 		[Token(Token = "0x4000D6D")]
 		[Il2CppDummyDll.FieldOffset(Offset = "0x578")]
-		internal static EntityAccess<MovementSettings> movementSettingsAccessRO;
+		internal static EntityAccess<MovementSettings> movementSettingsAccessRO = new EntityAccess<MovementSettings>(true);
 
 		[Token(Token = "0x4000D6E")]
 		[Il2CppDummyDll.FieldOffset(Offset = "0x5B8")]
-		internal static EntityAccess<MovementSettings> movementSettingsAccessRW;
+		internal static EntityAccess<MovementSettings> movementSettingsAccessRW = new EntityAccess<MovementSettings>(false);
 
 		[Token(Token = "0x4000D6F")]
 		[Il2CppDummyDll.FieldOffset(Offset = "0x5F8")]
-		internal static EntityAccess<AgentOffMeshLinkTraversal> agentOffMeshLinkTraversalRO;
+		internal static EntityAccess<AgentOffMeshLinkTraversal> agentOffMeshLinkTraversalRO = new EntityAccess<AgentOffMeshLinkTraversal>(true);
 
 		[Token(Token = "0x4000D70")]
 		[Il2CppDummyDll.FieldOffset(Offset = "0x638")]
-		internal static EntityAccess<ReadyToTraverseOffMeshLink> readyToTraverseOffMeshLinkRW;
+		internal static EntityAccess<ReadyToTraverseOffMeshLink> readyToTraverseOffMeshLinkRW = new EntityAccess<ReadyToTraverseOffMeshLink>(false);
 
 		[Token(Token = "0x4000D71")]
 		[Il2CppDummyDll.FieldOffset(Offset = "0x678")]
-		internal static EntityAccess<RVOAgent> rvoSettingsAccessRO;
+		internal static EntityAccess<RVOAgent> rvoSettingsAccessRO = new EntityAccess<RVOAgent>(true);
 
 		[Token(Token = "0x4000D72")]
 		[Il2CppDummyDll.FieldOffset(Offset = "0x6B8")]
-		internal static EntityAccess<RVOAgent> rvoSettingsAccessRW;
+		internal static EntityAccess<RVOAgent> rvoSettingsAccessRW = new EntityAccess<RVOAgent>(false);
 
 		[Token(Token = "0x4000D73")]
 		[Il2CppDummyDll.FieldOffset(Offset = "0x6F8")]
 		internal static EntityStorageCache entityStorageCache;
-
-		[Token(Token = "0x170002CC")]
-		public Entity entity
-		{
-			[Token(Token = "0x6001222")]
-			[Address(RVA = "0x44A8718", Offset = "0x44A4718", VA = "0x44A8718")]
-			[IgnoredByDeepProfiler]
-			[CompilerGenerated]
-			readonly get
-			{
-				return default;
-			}
-			[Token(Token = "0x6001223")]
-			[Address(RVA = "0x44A8720", Offset = "0x44A4720", VA = "0x44A8720")]
-			[CompilerGenerated]
-			private set
-			{
-			}
-		}
-
-		[Token(Token = "0x170002CD")]
-		public World world
-		{
-			[Token(Token = "0x6001224")]
-			[Address(RVA = "0x44A8728", Offset = "0x44A4728", VA = "0x44A8728")]
-			[CompilerGenerated]
-			[IgnoredByDeepProfiler]
-			readonly get
-			{
-				return null;
-			}
-			[Token(Token = "0x6001225")]
-			[Address(RVA = "0x44A8730", Offset = "0x44A4730", VA = "0x44A8730")]
-			[CompilerGenerated]
-			private set
-			{
-			}
-		}
 
 		[Token(Token = "0x170002CE")]
 		public bool entityExists
@@ -886,7 +880,9 @@ Action IAstarAI.onSearchPath		{
 		[Address(RVA = "0x44A8A8C", Offset = "0x44A4A8C", VA = "0x44A8A8C")]
 		public FollowerEntityProxy(World world, Entity entity)
 		{
-		}
+            this.entity = entity;
+            this.world = world;
+        }
 
 		[Token(Token = "0x600122B")]
 		[Address(RVA = "0x44A8D34", Offset = "0x44A4D34", VA = "0x44A8D34")]

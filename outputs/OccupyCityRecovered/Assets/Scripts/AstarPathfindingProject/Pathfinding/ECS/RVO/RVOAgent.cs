@@ -61,6 +61,11 @@ namespace Pathfinding.ECS.RVO
 
 		[Token(Token = "0x4000FA4")]
 		[FieldOffset(Offset = "0x0")]
-		public static readonly RVOAgent Default;
+		public static readonly RVOAgent Default = new RVOAgent
+        {
+            agentTimeHorizon = 1f, obstacleTimeHorizon = 0.5f, maxNeighbours = 10,
+            layer = RVOLayer.DefaultAgent, collidesWith = (RVOLayer)(-1),
+            priority = 0.5f, priorityMultiplier = 1f
+        };
 	}
 }

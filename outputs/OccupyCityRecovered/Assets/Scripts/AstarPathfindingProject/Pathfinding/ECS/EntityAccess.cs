@@ -37,13 +37,34 @@ namespace Pathfinding.ECS
 		[Token(Token = "0x60012FB")]
 		public EntityAccess(bool readOnly)
 		{
-    throw new global::System.NotImplementedException("RECOVERY_UNIMPLEMENTED EntityAccess..ctor RVA= Token=0x60012FB");
-}
+            handle = default;
+            lastSystemVersion = 0;
+            this.readOnly = readOnly;
+            worldSequenceNumber = 0;
+        }
 
 		[Token(Token = "0x60012FC")]
 		public void Update(EntityManager entityManager)
 		{
-		}
+            uint version = entityManager.GlobalSystemVersion;
+            ulong sequence = entityManager.WorldUnmanaged.SequenceNumber;
+            if (lastSystemVersion != version || worldSequenceNumber != sequence)
+            {
+                if (lastSystemVersion == 0 || worldSequenceNumber != sequence)
+                    handle = entityManager.GetComponentTypeHandle<T>(readOnly);
+                lastSystemVersion = version;
+                worldSequenceNumber = sequence;
+                if (readOnly)
+                    entityManager.CompleteDependencyBeforeRO<T>();
+                else
+                    entityManager.CompleteDependencyBeforeRW<T>();
+            }
+            unsafe
+            {
+                *(uint*)((byte*)Unity.Collections.LowLevel.Unsafe.UnsafeUtility.AddressOf(ref handle)
+                    + EntityAccessHelper.GlobalSystemVersionOffset) = version;
+            }
+        }
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		[Token(Token = "0x60012FD")]

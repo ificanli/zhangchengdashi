@@ -23,7 +23,7 @@ namespace Pathfinding.ECS
 		[FormerlySerializedAs("rvoAgent")]
 		[Obsolete("Use FollowerEntity.rvoSettings or the RVOAgent ECS component instead", false)]
 		[DontCreateProperty]
-		public RVOAgent rvoSettings;
+		public RVOAgent rvoSettings = RVOAgent.Default;
 
 		[NonSerialized]
 		[Token(Token = "0x4000DA1")]
@@ -49,7 +49,7 @@ namespace Pathfinding.ECS
 		[FieldOffset(Offset = "0x151")]
 		[Obsolete("Use FollowerEntity.enableGravity or toggle the enabled state of the GravityState ECS component instead", false)]
 		[DontCreateProperty]
-		public bool enableGravity;
+		public bool enableGravity = true;
 
 		[Token(Token = "0x1700030B")]
 		[Obsolete("Use FollowerEntity.autoRepath, or the Pathfinding.ECS.AutoRepathPolicy component instead", true)]

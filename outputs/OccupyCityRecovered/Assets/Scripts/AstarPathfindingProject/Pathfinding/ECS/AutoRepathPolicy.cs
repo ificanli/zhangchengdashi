@@ -39,8 +39,14 @@ namespace Pathfinding.ECS
 			[Address(RVA = "0x44B2868", Offset = "0x44AE868", VA = "0x44B2868")]
 			get
 			{
-				return default;
-			}
+                return new AutoRepathPolicy
+                {
+                    mode = Pathfinding.AutoRepathPolicy.Mode.Dynamic,
+                    period = 2f,
+                    lastDestination = new float3(float.PositiveInfinity),
+                    lastRepathTime = float.NegativeInfinity
+                };
+            }
 		}
 
 		[Token(Token = "0x60012A9")]
