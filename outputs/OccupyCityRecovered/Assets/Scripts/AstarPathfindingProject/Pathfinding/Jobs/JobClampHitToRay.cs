@@ -23,6 +23,11 @@ namespace Pathfinding.Jobs
 		[Address(RVA = "0x4581A78", Offset = "0x457DA78", VA = "0x4581A78", Slot = "4")]
 		public void Execute()
 		{
-		}
+ for (int i=0;i<hits.Length;i++) {
+  var hit=hits[i];var command=commands[i];
+  hit.point=Pathfinding.VectorMath.ClosestPointOnLine((Unity.Mathematics.float3)command.origin,(Unity.Mathematics.float3)(command.origin+command.direction),(Unity.Mathematics.float3)hit.point);
+  hits[i]=hit;
+ }
+}
 	}
 }

@@ -34,13 +34,17 @@ namespace Pathfinding.Jobs
 		[Token(Token = "0x6000BA4")]
 		[Address(RVA = "0x4581BF8", Offset = "0x457DBF8", VA = "0x4581BF8", Slot = "4")]
 		public void Execute()
-		{
-		}
+		{ slice.AssertMatchesOuter(points);slice.AssertMatchesOuter(normals);GridIterationUtilities.ForEachCellIn3DSlice(slice,ref this); }
 
 		[Token(Token = "0x6000BA5")]
 		[Address(RVA = "0x4581CB4", Offset = "0x457DCB4", VA = "0x4581CB4", Slot = "5")]
 		public void Execute(uint outerIdx, uint innerIdx)
 		{
-		}
+ Unity.Burst.CompilerServices.Aliasing.ExpectNotAliased(in points,in normals);
+ float4 normal=new float4(hits[unchecked((int)innerIdx)].normal,0f);
+ float lengthSquared=math.lengthsq(normal);
+ normals[unchecked((int)outerIdx)]=math.normalizesafe(normal);
+ if (lengthSquared>1.17549435e-38f) points[unchecked((int)outerIdx)]=hits[unchecked((int)innerIdx)].point;
+}
 	}
 }

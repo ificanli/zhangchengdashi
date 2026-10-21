@@ -32,6 +32,16 @@ namespace Pathfinding.Jobs
 		[Address(RVA = "0x458197C", Offset = "0x457D97C", VA = "0x458197C", Slot = "4")]
 		public void Execute()
 		{
-		}
+ int layers=0;
+ for (;layers<maxHits;layers++) {
+  bool found=false;int first=unchecked(layerStride*layers);
+  for (int i=first;i<unchecked(first+layerStride);i++) {
+   Unity.Mathematics.float3 normal=hits[i].normal;
+   if (Unity.Mathematics.math.any(normal!=Unity.Mathematics.float3.zero)) { found=true;break; }
+  }
+  if (!found) break;
+ }
+ maxHitCount[0]=System.Math.Max(1,layers);
+}
 	}
 }

@@ -21,6 +21,18 @@ namespace Pathfinding.Jobs
 		[Token(Token = "0x6000B9D")]
 		public void Execute()
 		{
-		}
+ unsafe {
+  void* pointer=Unity.Collections.LowLevel.Unsafe.NativeArrayUnsafeUtility.GetUnsafePtr(data);
+  int length=data.Length;
+  if (length<0) throw new System.ArgumentOutOfRangeException();
+  if (pointer==null && length!=0) throw new System.ArgumentNullException();
+  T element=value;
+  if (length!=0) {
+   int size=Unity.Collections.LowLevel.Unsafe.UnsafeUtility.SizeOf<T>();
+   if ((uint)length>int.MaxValue/size) throw new System.ArgumentException("Span is too large to fill");
+   Unity.Collections.LowLevel.Unsafe.UnsafeUtility.MemCpyReplicate(pointer,Unity.Collections.LowLevel.Unsafe.UnsafeUtility.AddressOf(ref element),size,length);
+  }
+ }
+}
 	}
 }

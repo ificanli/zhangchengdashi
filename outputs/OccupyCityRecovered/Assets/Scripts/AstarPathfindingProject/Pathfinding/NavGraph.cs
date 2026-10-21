@@ -42,7 +42,7 @@ namespace Pathfinding
 		[Token(Token = "0x40004BA")]
 		[FieldOffset(Offset = "0x40")]
 		[JsonMember]
-		public bool drawGizmos;
+		public bool drawGizmos = true;
 
 		[Token(Token = "0x40004BB")]
 		[FieldOffset(Offset = "0x41")]
@@ -162,7 +162,8 @@ string IGraphInternals.SerializedEditorSettings
 		[Address(RVA = "0x45293BC", Offset = "0x45253BC", VA = "0x45293BC")]
 		protected void AssertSafeToUpdateGraph()
 		{
-		}
+ if (!active.IsAnyWorkItemInProgress && !active.isScanning) throw new System.Exception("Trying to update graphs when it is not safe to do so. Graph updates must be done inside a work item or when a graph is being scanned. See AstarPath.AddWorkItem");
+}
 
 		[Token(Token = "0x6000755")]
 		[Address(RVA = "0x452E550", Offset = "0x452A550", VA = "0x452E550")]
@@ -378,7 +379,6 @@ void IGraphInternals.PostDeserialization(GraphSerializationContext ctx)
 		[Token(Token = "0x6000775")]
 		[Address(RVA = "0x452D94C", Offset = "0x452994C", VA = "0x452D94C")]
 		protected NavGraph()
-		{
-		}
+		{}
 	}
 }

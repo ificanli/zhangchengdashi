@@ -22,7 +22,7 @@ namespace Pathfinding
 
 		[Token(Token = "0x4000153")]
 		[FieldOffset(Offset = "0x0")]
-		public static readonly NNInfo Empty;
+		public static readonly NNInfo Empty = new NNInfo(null, Vector3.positiveInfinity, float.PositiveInfinity);
 
 		[Token(Token = "0x170000B7")]
 		[Obsolete("This field has been renamed to 'position'", true)]
@@ -41,7 +41,9 @@ namespace Pathfinding
 		[Address(RVA = "0x445D558", Offset = "0x4459558", VA = "0x445D558")]
 		public NNInfo(GraphNode node, Vector3 position, float distanceCostSqr)
 		{
-    throw new global::System.NotImplementedException("RECOVERY_UNIMPLEMENTED NNInfo..ctor RVA=0x445D558 Token=0x6000253");
+ this.node = node;
+ this.position = node != null ? position : Vector3.positiveInfinity;
+ this.distanceCostSqr = node != null ? distanceCostSqr : float.PositiveInfinity;
 }
 
 		[Token(Token = "0x6000254")]

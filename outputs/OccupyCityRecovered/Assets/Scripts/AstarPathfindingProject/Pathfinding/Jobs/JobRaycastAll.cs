@@ -34,7 +34,16 @@ namespace Pathfinding.Jobs
 			[Address(RVA = "0x458117C", Offset = "0x457D17C", VA = "0x458117C", Slot = "4")]
 			public void Execute(int index)
 			{
-			}
+ var hit=raycastHits[index];
+ if (hit.normal.sqrMagnitude<1e-10f) {
+  commands[index]=new RaycastCommand(physicsScene,Vector3.zero,Vector3.up,new QueryParameters(0,false,QueryTriggerInteraction.Ignore,false),1f);
+ } else {
+  var old=commands[index];
+  var origin=hit.point+old.direction.normalized*minStep;
+  float distance=old.distance-Vector3.Distance(origin,old.from);
+  commands[index]=new RaycastCommand(physicsScene,origin,old.direction,new QueryParameters(old.queryParameters.layerMask,false,QueryTriggerInteraction.Ignore,false),distance);
+ }
+}
 		}
 
 		[Token(Token = "0x2000175")]
@@ -58,7 +67,15 @@ namespace Pathfinding.Jobs
 			[Address(RVA = "0x45814D4", Offset = "0x457D4D4", VA = "0x45814D4", Slot = "4")]
 			public void Execute()
 			{
-			}
+ int stride=maxHits==0?0:semiResults.Length==int.MinValue&&maxHits==-1?int.MinValue:semiResults.Length/maxHits;
+ for (int i=0;i<stride;i++) {
+  int write=i;
+  for (int layer=unchecked(maxHits-1);layer>=0;layer--) {
+   var hit=semiResults[unchecked(i+stride*layer)];Unity.Mathematics.float3 normal=hit.normal;
+   if (Unity.Mathematics.math.any(normal!=Unity.Mathematics.float3.zero)) { results[write]=hit;write=unchecked(write+stride); }
+  }
+ }
+}
 		}
 
 		[Token(Token = "0x4000773")]
@@ -89,14 +106,23 @@ namespace Pathfinding.Jobs
 		[Address(RVA = "0x4580E70", Offset = "0x457CE70", VA = "0x4580E70")]
 		public JobRaycastAll(NativeArray<RaycastCommand> commands, NativeArray<RaycastHit> results, PhysicsScene physicsScene, int maxHits, Allocator allocator, JobDependencyTracker dependencyTracker, float minStep = 0.0001f)
 		{
-    throw new global::System.NotImplementedException("RECOVERY_UNIMPLEMENTED JobRaycastAll..ctor RVA=0x4580E70 Token=0x6000B85");
+ if (maxHits<=0) throw new System.ArgumentException("maxHits should be greater than zero");
+ if (unchecked(commands.Length*maxHits)>results.Length) throw new System.ArgumentException("Results array length does not match maxHits count");
+ if (minStep<0f) throw new System.ArgumentException("minStep should be more or equal to zero");
+ this.results=results;this.maxHits=maxHits;this.minStep=minStep;this.commands=commands;this.physicsScene=physicsScene;
+ semiResults=dependencyTracker.NewNativeArray<RaycastHit>(unchecked(commands.Length*maxHits),allocator,NativeArrayOptions.ClearMemory);
 }
 
 		[Token(Token = "0x6000B86")]
 		[Address(RVA = "0x4580FC8", Offset = "0x457CFC8", VA = "0x4580FC8")]
 		public JobHandle Schedule(JobHandle dependency)
 		{
-			return default;
-		}
+ for (int i=0;i<maxHits;i++) {
+  var sub=semiResults.GetSubArray(unchecked(commands.Length*i),commands.Length);
+  dependency=RaycastCommand.ScheduleBatch(commands,sub,128,dependency);
+  if (i<unchecked(maxHits-1)) dependency=new JobCreateCommands { commands=commands,raycastHits=sub,minStep=minStep,physicsScene=physicsScene }.Schedule(commands.Length,256,dependency);
+ }
+ return new JobCombineResults { maxHits=maxHits,semiResults=semiResults,results=results }.Schedule(dependency);
+}
 	}
 }

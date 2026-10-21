@@ -19,7 +19,6 @@ namespace Pathfinding.Jobs
 
 		[Token(Token = "0x6000B9F")]
 		public void Execute()
-		{
-		}
+		{ for (int i = 0; i < length; i++) action.Execute((uint)i, (uint)i); }
 	}
 }

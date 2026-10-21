@@ -82,14 +82,11 @@ namespace Pathfinding
 			[Token(Token = "0x6000840")]
 			[Address(RVA = "0x453E140", Offset = "0x453A140", VA = "0x453E140")]
 			get
-			{
-				return default;
-			}
+			{ return nodeInGridIndex>>24; }
 			[Token(Token = "0x6000841")]
 			[Address(RVA = "0x453E14C", Offset = "0x453A14C", VA = "0x453E14C")]
 			set
-			{
-			}
+			{ nodeInGridIndex=unchecked((nodeInGridIndex&0x00ffffff)|(value<<24)); }
 		}
 
 		[Token(Token = "0x6000837")]
@@ -126,8 +123,7 @@ namespace Pathfinding
 		[Token(Token = "0x600083C")]
 		[Address(RVA = "0x453E030", Offset = "0x453A030", VA = "0x453E030", Slot = "31")]
 		public override void ResetConnectionsInternal()
-		{
-		}
+		{ gridConnections=uint.MaxValue;AstarPath.active.hierarchicalGraph.AddDirtyNode(this); }
 
 		[Token(Token = "0x6000842")]
 		[Address(RVA = "0x453E154", Offset = "0x453A154", VA = "0x453E154")]
@@ -153,7 +149,19 @@ namespace Pathfinding
 		[Address(RVA = "0x453E294", Offset = "0x453A294", VA = "0x453E294", Slot = "9")]
 		public override void ClearConnections(bool alsoReverse)
 		{
-		}
+ if (alsoReverse) {
+  var graph=GetGridGraph(GraphIndex);
+  var offsets=graph.neighbourOffsets;var nodes=graph.nodes;
+  for (int i=0;i<8;i++) {
+   int layer=unchecked((int)((gridConnections>>(i*4))&15));
+   if (layer!=15) {
+    var node=nodes[unchecked(offsets[i]+NodeInGridIndex+graph.lastScannedWidth*layer*graph.lastScannedDepth)] as LevelGridNode;
+    if (node!=null) node.SetConnectionValue((i+2)&3,15);
+   }
+  }
+ }
+ ResetConnectionsInternal();ClearCustomConnections(false);
+}
 
 		[Token(Token = "0x6000846")]
 		public override void GetConnections<T>(NodeActionWithData<T> action, ref T data, int connectionFilter)
@@ -176,8 +184,7 @@ namespace Pathfinding
 		[Token(Token = "0x6000849")]
 		[Address(RVA = "0x453E4BC", Offset = "0x453A4BC", VA = "0x453E4BC")]
 		public void SetAllConnectionInternal(ulong value)
-		{
-		}
+		{ gridConnections=unchecked((uint)value); }
 
 		[Token(Token = "0x600084A")]
 		[Address(RVA = "0x453E280", Offset = "0x453A280", VA = "0x453E280")]
