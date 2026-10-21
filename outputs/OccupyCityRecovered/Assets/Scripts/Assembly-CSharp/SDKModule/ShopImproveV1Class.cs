@@ -9,7 +9,7 @@ namespace SDKModule
 	{
 		[Token(Token = "0x4001A34")]
 		[FieldOffset(Offset = "0x10")]
-		public int ShopImproveV1;
+		public int ShopImproveV1 = -1;
 
 		[Token(Token = "0x60005D2")]
 		[Address(RVA = "0x3F737FC", Offset = "0x3F6F7FC", VA = "0x3F737FC")]

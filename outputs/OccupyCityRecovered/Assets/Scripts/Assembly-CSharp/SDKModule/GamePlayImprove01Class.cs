@@ -9,7 +9,7 @@ namespace SDKModule
 	{
 		[Token(Token = "0x4001A38")]
 		[FieldOffset(Offset = "0x10")]
-		public int GamePlayImprove01;
+		public int GamePlayImprove01 = -1;
 
 		[Token(Token = "0x60005D6")]
 		[Address(RVA = "0x3F7383C", Offset = "0x3F6F83C", VA = "0x3F7383C")]

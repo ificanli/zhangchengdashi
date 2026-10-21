@@ -9,7 +9,7 @@ namespace SDKModule
 	{
 		[Token(Token = "0x4001A42")]
 		[FieldOffset(Offset = "0x10")]
-		public int UnitCollisionEnable;
+		public int UnitCollisionEnable = -1;
 
 		[Token(Token = "0x60005E0")]
 		[Address(RVA = "0x3F738DC", Offset = "0x3F6F8DC", VA = "0x3F738DC")]

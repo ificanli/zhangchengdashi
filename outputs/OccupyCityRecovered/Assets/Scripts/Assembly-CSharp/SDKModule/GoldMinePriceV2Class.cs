@@ -9,7 +9,7 @@ namespace SDKModule
 	{
 		[Token(Token = "0x4001A40")]
 		[FieldOffset(Offset = "0x10")]
-		public int GoldMinePriceV2;
+		public int GoldMinePriceV2 = -1;
 
 		[Token(Token = "0x60005DE")]
 		[Address(RVA = "0x3F738BC", Offset = "0x3F6F8BC", VA = "0x3F738BC")]
