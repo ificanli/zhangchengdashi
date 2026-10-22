@@ -363,14 +363,11 @@ namespace Pathfinding
 			[Token(Token = "0x600014F")]
 			[Address(RVA = "0x4452B20", Offset = "0x444EB20", VA = "0x4452B20", Slot = "22")]
 			get
-			{
-				return default;
-			}
+			{ return movement.follower.speed; }
 			[Token(Token = "0x6000150")]
 			[Address(RVA = "0x4452B28", Offset = "0x444EB28", VA = "0x4452B28", Slot = "23")]
 			set
-			{
-			}
+			{ movement.follower.speed = value; proxy.maxSpeed = value; }
 		}
 
 		[Token(Token = "0x1700005C")]
@@ -617,14 +614,11 @@ namespace Pathfinding
 			[Token(Token = "0x600016D")]
 			[Address(RVA = "0x44534FC", Offset = "0x444F4FC", VA = "0x44534FC", Slot = "36")]
 			get
-			{
-				return default;
-			}
+			{ return !entityExists || proxy.simulateMovement; }
 			[Token(Token = "0x600016E")]
 			[Address(RVA = "0x4453574", Offset = "0x444F574", VA = "0x4453574", Slot = "37")]
 			set
-			{
-			}
+			{ proxy.simulateMovement = value; }
 		}
 
 		[Token(Token = "0x1700006E")]
@@ -634,14 +628,11 @@ namespace Pathfinding
 			[Token(Token = "0x600016F")]
 			[Address(RVA = "0x44535DC", Offset = "0x444F5DC", VA = "0x44535DC", Slot = "38")]
 			get
-			{
-				return default;
-			}
+			{ return simulateMovement; }
 			[Token(Token = "0x6000170")]
 			[Address(RVA = "0x44535E0", Offset = "0x444F5E0", VA = "0x44535E0", Slot = "39")]
 			set
-			{
-			}
+			{ simulateMovement = value; }
 		}
 
 		[Token(Token = "0x1700006F")]
@@ -845,9 +836,7 @@ Action IAstarAI.onSearchPath
 			[Token(Token = "0x600018D")]
 			[Address(RVA = "0x4451BF0", Offset = "0x444DBF0", VA = "0x4451BF0")]
 			get
-			{
-				return default;
-			}
+			{ return proxy.entityExists; }
 		}
 
 		[Token(Token = "0x6000133")]

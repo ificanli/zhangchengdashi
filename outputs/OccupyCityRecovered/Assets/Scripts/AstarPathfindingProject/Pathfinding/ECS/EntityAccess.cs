@@ -30,8 +30,11 @@ namespace Pathfinding.ECS
 			[Token(Token = "0x60012FE")]
 			get
 			{
-    throw new global::System.NotImplementedException("RECOVERY_UNIMPLEMENTED EntityAccess.indexer.get RVA= Token=0x60012FE");
-}
+                void* data = readOnly
+                    ? storage.Chunk.GetRequiredComponentDataPtrRO(ref handle)
+                    : storage.Chunk.GetRequiredComponentDataPtrRW(ref handle);
+                return ref Unity.Collections.LowLevel.Unsafe.UnsafeUtility.ArrayElementAsRef<T>(data, storage.IndexInChunk);
+            }
 		}
 
 		[Token(Token = "0x60012FB")]

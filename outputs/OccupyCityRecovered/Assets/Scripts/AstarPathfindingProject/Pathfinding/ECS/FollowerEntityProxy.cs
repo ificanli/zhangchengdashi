@@ -190,9 +190,7 @@ namespace Pathfinding.ECS
 			[Token(Token = "0x6001229")]
 			[Address(RVA = "0x44A8AF0", Offset = "0x44A4AF0", VA = "0x44A8AF0")]
 			get
-			{
-				return default;
-			}
+			{ return world != null && world.IsCreated && world.EntityManager.Exists(entity); }
 		}
 
 		[Token(Token = "0x170002CF")]
@@ -417,8 +415,7 @@ namespace Pathfinding.ECS
 			[Token(Token = "0x6001244")]
 			[Address(RVA = "0x44AAFC4", Offset = "0x44A6FC4", VA = "0x44AAFC4", Slot = "12")]
 			set
-			{
-			}
+			{ if (entityStorageCache.GetComponentData(world, entity, ref movementSettingsAccessRW, out ComponentRef<MovementSettings> settings)) settings.value.follower.speed = value; }
 		}
 
 		[Token(Token = "0x170002DF")]
@@ -665,14 +662,11 @@ namespace Pathfinding.ECS
 			[Token(Token = "0x6001261")]
 			[Address(RVA = "0x44AD85C", Offset = "0x44A985C", VA = "0x44AD85C", Slot = "25")]
 			get
-			{
-				return default;
-			}
+			{ return entityExists && world.EntityManager.HasComponent<SimulateMovement>(entity); }
 			[Token(Token = "0x6001262")]
 			[Address(RVA = "0x44AD944", Offset = "0x44A9944", VA = "0x44AD944", Slot = "26")]
 			set
-			{
-			}
+			{ ToggleComponent<SimulateMovement>(world, entity, value, true); }
 		}
 
 		[Token(Token = "0x170002F1")]
@@ -963,7 +957,16 @@ void IAstarAI.MovementUpdate(float deltaTime, out Vector3 nextPosition, out Quat
 		[Token(Token = "0x6001280")]
 		internal static void ToggleComponent<T>(World world, Entity entity, bool enabled, bool mustExist) where T : struct, IComponentData
 		{
-		}
+            if (world != null && world.IsCreated && world.EntityManager.Exists(entity))
+            {
+                if (enabled) world.EntityManager.AddComponent<T>(entity);
+                else world.EntityManager.RemoveComponent<T>(entity);
+            }
+            else if (!mustExist)
+            {
+                throw new System.InvalidOperationException("Entity does not exist. You can only access this if the component is active and enabled.");
+            }
+        }
 
 		[Token(Token = "0x6001281")]
 		internal static void ToggleComponentEnabled<T>(World world, Entity entity, bool enabled, bool mustExist) where T : struct, IComponentData, IEnableableComponent

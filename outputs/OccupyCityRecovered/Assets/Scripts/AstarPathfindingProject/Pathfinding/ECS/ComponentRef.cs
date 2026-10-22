@@ -16,15 +16,11 @@ namespace Pathfinding.ECS
 			[MethodImpl(MethodImplOptions.AggressiveInlining)]
 			[Token(Token = "0x60012F7")]
 			get
-			{
-    throw new global::System.NotImplementedException("RECOVERY_UNIMPLEMENTED ComponentRef.value.get RVA= Token=0x60012F7");
-}
+			{ return ref Unity.Collections.LowLevel.Unsafe.UnsafeUtility.AsRef<T>(ptr); }
 		}
 
 		[Token(Token = "0x60012F6")]
 		public unsafe ComponentRef(byte* ptr)
-		{
-    throw new global::System.NotImplementedException("RECOVERY_UNIMPLEMENTED ComponentRef..ctor RVA= Token=0x60012F6");
-}
+		{ this.ptr = ptr; }
 	}
 }
