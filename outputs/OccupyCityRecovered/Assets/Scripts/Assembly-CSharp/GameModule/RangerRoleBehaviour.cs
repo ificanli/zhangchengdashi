@@ -41,14 +41,63 @@ namespace GameModule
 			[Address(RVA = "0x3D7D0C0", Offset = "0x3D790C0", VA = "0x3D7D0C0", Slot = "4")]
 void System.Runtime.CompilerServices.IAsyncStateMachine.MoveNext()
 			{
-			}
+                RangerRoleBehaviour role = _003C_003E4__this;
+                try {
+                    UniTask<GameObject>.Awaiter awaiter;
+                    if (_003C_003E1__state != 0) {
+                        if (role.isDead) goto Completed;
+                        if (!role.Skilling) {
+                            role._003C_003En__1(attackNum);
+                            goto Completed;
+                        }
+                        if (role.bulletProRes == null) {
+                            awaiter = global::AssetsModule.AssetsManager.Instance.LoadAssetAsync<GameObject>(
+                                "Assets/_Res/Addressable/02CoreGameBundle/Prefabs/CoreGame/Bullet/ArrowPro.prefab").GetAwaiter();
+                            if (!awaiter.IsCompleted) {
+                                _003C_003E1__state = 0;
+                                _003C_003Eu__1 = awaiter;
+                                _003C_003Et__builder.AwaitUnsafeOnCompleted(ref awaiter, ref this);
+                                return;
+                            }
+                            role.bulletProRes = awaiter.GetResult();
+                        }
+                    } else {
+                        awaiter = _003C_003Eu__1;
+                        _003C_003Eu__1 = default;
+                        _003C_003E1__state = -1;
+                        role.bulletProRes = awaiter.GetResult();
+                    }
+                    if (role.SkillTartget == null) goto Completed;
+                    GameObject bulletObject = global::AssetsModule.ObjPoolManager.Instance.GetFromPool(role.bulletProRes, -1f, true, 3);
+                    Transform bulletTransform = bulletObject.transform;
+                    bulletTransform.position = role.transform.position;
+                    RangerBulletBehaviour bullet = bulletObject.GetComponent<RangerBulletBehaviour>();
+                    bullet.InitID(role.PropertyTemp.id);
+                    EntityBase target = role.SkillTartget.GetComponent<EntityBase>();
+                    int attack = role.PropertyTemp.attack;
+                    float multiplier = role.SkillNumber;
+                    bool enemy = role.isEnemy;
+                    bool land = role.PropertyTemp.roleType == "land";
+                    bullet.InitInfo(target, (int)multiplier * attack, enemy, false, role, land, role.CardFettersType);
+                    if (role.PropertyTemp.vampireObb > 0f)
+                        bullet.AddCallBack(role.Vampire);
+                    role.Skilling = false;
+                Completed:
+                    _003C_003E1__state = -2;
+                    _003C_003Et__builder.SetResult();
+                } catch (System.Exception exception) {
+                    _003C_003E1__state = -2;
+                    _003C_003Et__builder.SetException(exception);
+                }
+            }
 
 			[Token(Token = "0x6000EF9")]
 			[Address(RVA = "0x3D7D690", Offset = "0x3D79690", VA = "0x3D7D690", Slot = "5")]
 			[DebuggerHidden]
 void System.Runtime.CompilerServices.IAsyncStateMachine.SetStateMachine(IAsyncStateMachine stateMachine)
 			{
-			}
+                _003C_003Et__builder.SetStateMachine(stateMachine);
+            }
 		}
 
 		[StructLayout((LayoutKind)3)]
@@ -104,14 +153,40 @@ void System.Runtime.CompilerServices.IAsyncStateMachine.SetStateMachine(IAsyncSt
 			[Address(RVA = "0x3D7D69C", Offset = "0x3D7969C", VA = "0x3D7D69C", Slot = "4")]
 void System.Runtime.CompilerServices.IAsyncStateMachine.MoveNext()
 			{
-			}
+                RangerRoleBehaviour role = _003C_003E4__this;
+                try {
+                    UniTask<GameObject>.Awaiter awaiter;
+                    if (_003C_003E1__state != 0) {
+                        role._003C_003En__0(info, isEnemy, cardLevel, rareLevel, relativeCardID, fettersType, atkWayType);
+                        awaiter = global::AssetsModule.AssetsManager.Instance.LoadAssetAsync<GameObject>(
+                            "Assets/_Res/Addressable/02CoreGameBundle/Prefabs/CoreGame/Bullet/ArrowPro.prefab").GetAwaiter();
+                        if (!awaiter.IsCompleted) {
+                            _003C_003E1__state = 0;
+                            _003C_003Eu__1 = awaiter;
+                            _003C_003Et__builder.AwaitUnsafeOnCompleted(ref awaiter, ref this);
+                            return;
+                        }
+                    } else {
+                        awaiter = _003C_003Eu__1;
+                        _003C_003Eu__1 = default;
+                        _003C_003E1__state = -1;
+                    }
+                    role.bulletProRes = awaiter.GetResult();
+                    _003C_003E1__state = -2;
+                    _003C_003Et__builder.SetResult();
+                } catch (System.Exception exception) {
+                    _003C_003E1__state = -2;
+                    _003C_003Et__builder.SetException(exception);
+                }
+            }
 
 			[Token(Token = "0x6000EFB")]
 			[Address(RVA = "0x3D7D9B4", Offset = "0x3D799B4", VA = "0x3D7D9B4", Slot = "5")]
 			[DebuggerHidden]
 void System.Runtime.CompilerServices.IAsyncStateMachine.SetStateMachine(IAsyncStateMachine stateMachine)
 			{
-			}
+                _003C_003Et__builder.SetStateMachine(stateMachine);
+            }
 		}
 
 		[StructLayout((LayoutKind)3)]
@@ -162,7 +237,16 @@ void System.Runtime.CompilerServices.IAsyncStateMachine.SetStateMachine(IAsyncSt
 		[AsyncStateMachine(typeof(_003CInit_003Ed__1))]
 		public override void Init(GlobalRoleInfo info, bool isEnemy, int cardLevel, RareLevel rareLevel, [Optional] string relativeCardID, CardFettersType fettersType = CardFettersType.Null, AtkWayType atkWayType = AtkWayType.Null)
 		{
-		}
+            var stateMachine = new _003CInit_003Ed__1 {
+                _003C_003Et__builder = AsyncVoidMethodBuilder.Create(),
+                _003C_003E4__this = this,
+                info = info, isEnemy = isEnemy, cardLevel = cardLevel,
+                rareLevel = rareLevel, relativeCardID = relativeCardID,
+                fettersType = fettersType, atkWayType = atkWayType,
+                _003C_003E1__state = -1
+            };
+            stateMachine._003C_003Et__builder.Start(ref stateMachine);
+        }
 
 		[Token(Token = "0x6000EF2")]
 		[Address(RVA = "0x3D7CF6C", Offset = "0x3D78F6C", VA = "0x3D7CF6C", Slot = "31")]
@@ -182,12 +266,37 @@ void System.Runtime.CompilerServices.IAsyncStateMachine.SetStateMachine(IAsyncSt
 		[AsyncStateMachine(typeof(_003CAtkCallBack_003Ed__4))]
 		protected override void AtkCallBack(int attackNum)
 		{
-		}
+            var stateMachine = new _003CAtkCallBack_003Ed__4 {
+                _003C_003Et__builder = AsyncVoidMethodBuilder.Create(),
+                _003C_003E4__this = this,
+                attackNum = attackNum,
+                _003C_003E1__state = -1
+            };
+            stateMachine._003C_003Et__builder.Start(ref stateMachine);
+        }
 
 		[Token(Token = "0x6000EF5")]
 		[Address(RVA = "0x3D7D0A4", Offset = "0x3D790A4", VA = "0x3D7D0A4")]
 		public RangerRoleBehaviour()
 		{
 		}
+        [Token(Token = "0x6000EF6")]
+        [Address(RVA = "0x3D7D0AC", Offset = "0x3D790AC", VA = "0x3D7D0AC")]
+        [CompilerGenerated]
+        [DebuggerHidden]
+        private void _003C_003En__0(GlobalRoleInfo info, bool isEnemy, int cardLevel, RareLevel rareLevel, string relativeCardID, CardFettersType fettersType, AtkWayType atkWayType)
+        {
+            base.Init(info, isEnemy, cardLevel, rareLevel, relativeCardID, fettersType, atkWayType);
+        }
+
+        [Token(Token = "0x6000EF7")]
+        [Address(RVA = "0x3D7D0B8", Offset = "0x3D790B8", VA = "0x3D7D0B8")]
+        [CompilerGenerated]
+        [DebuggerHidden]
+        private void _003C_003En__1(int attackNum)
+        {
+            base.AtkCallBack(attackNum);
+        }
+
 	}
 }

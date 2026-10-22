@@ -323,8 +323,8 @@ void System.Runtime.CompilerServices.IAsyncStateMachine.SetStateMachine(IAsyncSt
 		[Address(RVA = "0x3E5DBB0", Offset = "0x3E59BB0", VA = "0x3E5DBB0")]
 		public bool IsBTest()
 		{
-			return default;
-		}
+            return global::SDKModule.ABTestManager.Instance.WeeklyCardEventIsB;
+        }
 
 		[Token(Token = "0x600177E")]
 		[Address(RVA = "0x3E5DC24", Offset = "0x3E59C24", VA = "0x3E5DC24")]

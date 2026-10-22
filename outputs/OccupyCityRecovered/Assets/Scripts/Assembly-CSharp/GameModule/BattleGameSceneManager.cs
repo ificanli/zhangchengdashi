@@ -145,14 +145,124 @@ namespace GameModule
 			[Address(RVA = "0x3DF9AB4", Offset = "0x3DF5AB4", VA = "0x3DF9AB4", Slot = "4")]
 void System.Runtime.CompilerServices.IAsyncStateMachine.MoveNext()
 			{
-			}
+            var self = _003C_003E4__this;
+            Cysharp.Threading.Tasks.YieldAwaitable.Awaiter awaiter;
+            try
+            {
+                if (_003C_003E1__state == 0)
+                {
+                    awaiter = _003C_003Eu__1;
+                    _003C_003Eu__1 = default;
+                    _003C_003E1__state = -1;
+                    goto AfterYield;
+                }
+                RoleShadowManager.Instance.RecycleAll();
+                self.ShutdownWebGLNavigationManager();
+                if (self._generateHexObjRoot != null)
+                {
+                    var generator = self._generateHexObjRoot.GetComponent<GenerateHexBehaviour>();
+                    if (generator != null) generator.ReleaseReferences();
+                }
+                global::HexManager.Clear();
+                if (self.allHellfireBehaviours.Count >= 1)
+                {
+                    int i = 0;
+                    do
+                    {
+                        if (self.allHellfireBehaviours[i] != null && self.allHellfireBehaviours[i].gameObject != null)
+                            UnityEngine.Object.Destroy(self.allHellfireBehaviours[i].gameObject);
+                        i++;
+                    }
+                    while (i < self.allHellfireBehaviours.Count);
+                    self.allHellfireBehaviours.Clear();
+                }
+                for (int i = 0; i < self.allHexObj.Count; i++) UnityEngine.Object.Destroy(self.allHexObj[i]);
+                for (int i = 0; i < self.allPlayerArchitectureObj.Count; i++) UnityEngine.Object.Destroy(self.allPlayerArchitectureObj[i]);
+                for (int i = 0; i < self.allEnemyArchitectureObj.Count; i++) UnityEngine.Object.Destroy(self.allEnemyArchitectureObj[i]);
+                self.DestroyAllROle();
+                if (self._waterPlane != null) UnityEngine.Object.Destroy(self._waterPlane);
+                UnityEngine.Object.Destroy(self._groundPlane);
+                self.needDestroyPoolPrefabOnEndGame.Clear();
+                self._waterPlane = null;
+                self._groundPlane = null;
+                self.allPlayerStayOpenHexObj.Clear();
+                self.allEnemyStayOpenHexObj.Clear();
+                self.allHexObj.Clear();
+                self.allPlayerHasOpenHexObj.Clear();
+                self.allEnemyHasOpenHexObj.Clear();
+                self.allPlayerArchitectureObj.Clear();
+                self.allEnemyArchitectureObj.Clear();
+                self.allPlayerRoleObj.Clear();
+                self.allEnemyRoleObj.Clear();
+                self._playerComboWallCount = 0;
+                self._enemyComboWallCount = 0;
+                self.allHexObjBehaviour.Clear();
+                self.allHexObjMat.Clear();
+                self.allPlayerRoleBehaviour.Clear();
+                self.allRoleBehaviour.Clear();
+                self.allEnemyRoleBehaviour.Clear();
+                self._mirrorMap.Clear();
+                self.allEnemyStayOpenHexObjBehaviours.Clear();
+                self.allArchitectureBehaviours.Clear();
+                self.allPlayerArchitectureBehaviours.Clear();
+                self.allEnemyArchitectureBehaviours.Clear();
+                self.specialHexPos.Clear();
+                self.sceneGoldMineCanCreatCount = 0;
+                self.sceneGoldMineMirrorSideCount = 0;
+                self.scenePLayerUseGoldMineCount = 0;
+                self.sceneEnemyUseGoldMineCount = 0;
+                self.playerRoleDebutCount = 0;
+                self.playerOpenOneStarCount = 0;
+                self.playerOpenTwoStarCount = 0;
+                self.playerOpenThereStarCount = 0;
+                self.playerOpenUnChartCount = 0;
+                global::EventModule.EventManager.Instance.TriggerEvent("UpdateUpgradeMainTowerHexGroundActive");
+                global::EventModule.EventManager.Instance.TriggerEvent("UpgradeMainTowerHexSetActive", true);
+                awaiter = UniTask.Yield().GetAwaiter();
+                if (!awaiter.IsCompleted)
+                {
+                    _003C_003E1__state = 0;
+                    _003C_003Eu__1 = awaiter;
+                    _003C_003Et__builder.AwaitUnsafeOnCompleted(ref awaiter, ref this);
+                    return;
+                }
+            AfterYield:
+                awaiter.GetResult();
+                global::AnimationInstancing.AnimationManager.ClearRuntimeAnimationInfoIfExists();
+                global::EventModule.EventManager.Instance.TriggerEvent("UpdateUpgradeMainTowerHexScanState");
+                global::EventModule.EventManager.Instance.TriggerEvent("UpdateMainTowerPanelSmallRoleState");
+                self._currentRoleInstanceID = 0;
+                self.playerMainTowerIsDestroy = false;
+                self.enemyMainTowerIsDestroy = false;
+                self.playerOpenHexCount = 0;
+                self._playerRoleCount = 0;
+                self._enemyRoleCount = 0;
+                self._playerWaitingBarracks.Clear();
+                self._enemyWaitingBarracks.Clear();
+                self._playerReservedCount = 0;
+                self._enemyReservedCount = 0;
+                self._playerLegendaryUnitCount.Clear();
+                self._enemyLegendaryUnitCount.Clear();
+                self._playerLegendaryBarracksCount.Clear();
+                self._enemyLegendaryBarracksCount.Clear();
+            }
+            catch (global::System.Exception exception)
+            {
+                _003C_003E1__state = -2;
+                _003C_003Et__builder.SetException(exception);
+                return;
+            }
+            _003C_003E1__state = -2;
+            _003C_003Et__builder.SetResult();
+        }
 
 			[Token(Token = "0x6001465")]
 			[Address(RVA = "0x3DFA894", Offset = "0x3DF6894", VA = "0x3DFA894", Slot = "5")]
 			[DebuggerHidden]
 void System.Runtime.CompilerServices.IAsyncStateMachine.SetStateMachine(IAsyncStateMachine stateMachine)
 			{
-			}
+            _003C_003Et__builder.SetStateMachine(stateMachine);
+        }
 		}
 
 		[StructLayout((LayoutKind)3)]
@@ -1796,7 +1906,14 @@ void System.Runtime.CompilerServices.IAsyncStateMachine.SetStateMachine(IAsyncSt
 		[Address(RVA = "0x3DEF330", Offset = "0x3DEB330", VA = "0x3DEF330")]
 		public void RecordPlayerOpenHexTypeCount(Quality quality)
 		{
-		}
+            switch (quality)
+            {
+                case Quality.OneStar: playerOpenOneStarCount = unchecked(playerOpenOneStarCount + 1); break;
+                case Quality.TwoStar: playerOpenTwoStarCount = unchecked(playerOpenTwoStarCount + 1); break;
+                case Quality.ThreeStar: playerOpenThereStarCount = unchecked(playerOpenThereStarCount + 1); break;
+                case Quality.UnCharted: playerOpenUnChartCount = unchecked(playerOpenUnChartCount + 1); break;
+            }
+        }
 
 		[Token(Token = "0x60013F2")]
 		[Address(RVA = "0x3DEF394", Offset = "0x3DEB394", VA = "0x3DEF394")]
@@ -2244,15 +2361,88 @@ void System.Runtime.CompilerServices.IAsyncStateMachine.SetStateMachine(IAsyncSt
 		[Address(RVA = "0x3DF2A58", Offset = "0x3DEEA58", VA = "0x3DF2A58")]
 		public List<EntityBase> GetRandomNumberRole(bool isEnemy, int num, bool onlyRole = false)
 		{
-			return null;
-		}
+            var result = new List<EntityBase>();
+            var roles = new List<RoleBehaviour>(isEnemy ? allPlayerRoleBehaviour : allEnemyRoleBehaviour);
+            var buildings = new List<ArchitectureBehaviour>(isEnemy ? allPlayerArchitectureBehaviours : allEnemyArchitectureBehaviours);
+            for (int i = roles.Count - 1; i >= 0; i--)
+                if (roles[i].StealthIng) roles.RemoveAt(i);
+            if (onlyRole) {
+                if (roles.Count >= num) {
+                    int added = 0;
+                    while (added < num) {
+                        RoleBehaviour role = roles[UnityEngine.Random.Range(0, roles.Count)];
+                        if (!result.Contains(role)) {
+                            roles.Remove(role);
+                            result.Add(role);
+                            added++;
+                        }
+                    }
+                } else {
+                    for (int i = 0; i < roles.Count; i++) result.Add(roles[i]);
+                }
+                return result;
+            }
+            if (roles.Count + buildings.Count < num) {
+                for (int i = 0; i < roles.Count; i++) result.Add(roles[i]);
+                for (int i = 0; i < buildings.Count; i++) result.Add(buildings[i]);
+                return result;
+            }
+            if (roles.Count > num) {
+                for (int i = 0; i < num; i++) result.Add(roles[i]);
+            } else {
+                for (int i = 0; i < roles.Count; i++) result.Add(roles[i]);
+            }
+            if (result.Count < num) {
+                int remaining = num - result.Count;
+                if (remaining >= buildings.Count) {
+                    for (int i = 0; i < buildings.Count; i++) result.Add(buildings[i]);
+                } else {
+                    for (int i = 0; i < remaining; i++) result.Add(buildings[i]);
+                }
+            }
+            return result;
+        }
 
 		[Token(Token = "0x6001411")]
 		[Address(RVA = "0x3DF3188", Offset = "0x3DEF188", VA = "0x3DF3188")]
 		public EntityBase GetNearObj(bool isEnemy, Vector3 pos, [Optional][DefaultParameterValue(false)] bool isRole, [Optional][DefaultParameterValue(false)] bool isRandom, [Optional][DefaultParameterValue(-1f)] float range, [Optional] GameObject excludeObj)
 		{
-			return null;
-		}
+            List<GameObject> candidates;
+            if (UnityEngine.Random.Range(0, 100) > 49 || isRole) {
+                candidates = new List<GameObject>(isEnemy ? allPlayerRoleObj : allEnemyRoleObj);
+                for (int i = candidates.Count - 1; i >= 0; i--)
+                    if (candidates[i].GetComponent<RoleBehaviour>().StealthIng)
+                        candidates.RemoveAt(i);
+            } else {
+                candidates = new List<GameObject>(isEnemy ? allPlayerArchitectureObj : allEnemyArchitectureObj);
+            }
+            if (excludeObj != null && candidates.Contains(excludeObj))
+                candidates.Remove(excludeObj);
+            if (candidates.Count <= 0)
+                candidates = new List<GameObject>(isEnemy ? allPlayerArchitectureObj : allEnemyArchitectureObj);
+            int selected = 0;
+            if (isRandom) {
+                selected = UnityEngine.Random.Range(0, candidates.Count);
+            } else {
+                if (range > 0f) {
+                    for (int i = candidates.Count - 1; i >= 0; i--)
+                        if (Vector3.Distance(pos, candidates[i].transform.position) > range)
+                            candidates.RemoveAt(i);
+                }
+                if (candidates.Count == 0) return null;
+                float nearest = Vector3.Distance(pos, candidates[0].transform.position);
+                for (int i = 1; i < candidates.Count; i++) {
+                    float distance = Vector3.Distance(pos, candidates[i].transform.position);
+                    if (nearest > distance) {
+                        selected = i;
+                        nearest = distance;
+                    }
+                }
+            }
+            if (candidates.Count >= 1)
+                return candidates[selected].GetComponent<EntityBase>();
+            return null;
+        }
 
 		[Token(Token = "0x6001412")]
 		[Address(RVA = "0x3DF36D4", Offset = "0x3DEF6D4", VA = "0x3DF36D4")]
@@ -2368,8 +2558,28 @@ void System.Runtime.CompilerServices.IAsyncStateMachine.SetStateMachine(IAsyncSt
 		[Address(RVA = "0x3DF4E34", Offset = "0x3DF0E34", VA = "0x3DF4E34")]
 		public List<HexBehaviour> GetSpecialNearHex()
 		{
-			return null;
-		}
+            if (specialHexPos.Count == 0) return null;
+            var result = new List<HexBehaviour>();
+            var openable = new List<HexBehaviour>();
+            for (int i = 0; i < allEnemyStayOpenHexObjBehaviours.Count; i++)
+                if (allEnemyStayOpenHexObjBehaviours[i].canOpen)
+                    openable.Add(allEnemyStayOpenHexObjBehaviours[i]);
+            for (int i = 0; i < specialHexPos.Count; i++)
+            {
+                Vector3 position = specialHexPos[i];
+                var distances = new List<ValueTuple<float, HexBehaviour>>(openable.Count);
+                for (int j = 0; j < openable.Count; j++)
+                    distances.Add(new ValueTuple<float, HexBehaviour>(Vector3.Distance(position, openable[j].transform.position), openable[j]));
+                distances.Sort(_003C_003Ec._003C_003E9__209_0 ??
+                    (_003C_003Ec._003C_003E9__209_0 = _003C_003Ec._003C_003E9._003CGetSpecialNearHex_003Eb__209_0));
+                if (distances.Count > 0)
+                {
+                    HexBehaviour nearest = distances[0].Item2;
+                    if (!result.Contains(nearest)) result.Add(nearest);
+                }
+            }
+            return result;
+        }
 
 		[Token(Token = "0x600141D")]
 		[Address(RVA = "0x3DF5394", Offset = "0x3DF1394", VA = "0x3DF5394")]
@@ -2415,13 +2625,30 @@ void System.Runtime.CompilerServices.IAsyncStateMachine.SetStateMachine(IAsyncSt
 		[Address(RVA = "0x3DF55FC", Offset = "0x3DF15FC", VA = "0x3DF55FC")]
 		private void DestroyAllROle()
 		{
-		}
+            DestroyRoleList(allPlayerRoleBehaviour);
+            DestroyRoleList(allEnemyRoleBehaviour);
+            allPlayerRoleBehaviour.Clear();
+            allEnemyRoleBehaviour.Clear();
+        }
 
 		[Token(Token = "0x6001423")]
 		[Address(RVA = "0x3DF56A8", Offset = "0x3DF16A8", VA = "0x3DF56A8")]
 		private void DestroyRoleList(List<RoleBehaviour> roleList)
 		{
-		}
+            global::AssetsModule.PoolObjBase poolObjBase = null;
+            for (int i = roleList.Count - 1; i >= 0; i--)
+            {
+                RoleBehaviour role = roleList[i];
+                if (role != null)
+                {
+                    var poolManager = global::AssetsModule.ObjPoolManager.Instance;
+                    if (poolManager.IsBattlePersistentPool(role.gameObject.name) && role.TryGetComponent(out poolObjBase))
+                        role.RecycleOnBattleEnd();
+                    else
+                        UnityEngine.Object.Destroy(role.gameObject);
+                }
+            }
+        }
 
 		[Token(Token = "0x6001424")]
 		[Address(RVA = "0x3DEAFB0", Offset = "0x3DE6FB0", VA = "0x3DEAFB0")]
@@ -2459,26 +2686,32 @@ void System.Runtime.CompilerServices.IAsyncStateMachine.SetStateMachine(IAsyncSt
 		[Address(RVA = "0x3DF5B60", Offset = "0x3DF1B60", VA = "0x3DF5B60")]
 		public void RecoredSpecialHex(Vector3 pos)
 		{
-		}
+            specialHexPos.Add(pos);
+        }
 
 		[Token(Token = "0x6001429")]
 		[Address(RVA = "0x3DF5C34", Offset = "0x3DF1C34", VA = "0x3DF5C34")]
 		public void RemoveSpecialHex(Vector3 pos)
 		{
-		}
+            specialHexPos.Remove(pos);
+        }
 
 		[Token(Token = "0x600142A")]
 		[Address(RVA = "0x3DF5CAC", Offset = "0x3DF1CAC", VA = "0x3DF5CAC")]
 		[AsyncStateMachine(typeof(_003CEndGame_003Ed__223))]
 		public void EndGame()
 		{
-		}
+            _003CEndGame_003Ed__223 sm = default;
+            sm._003C_003Et__builder = AsyncVoidMethodBuilder.Create();
+            sm._003C_003E4__this = this;
+            sm._003C_003E1__state = -1;
+            sm._003C_003Et__builder.Start(ref sm);
+        }
 
 		[Token(Token = "0x600142B")]
 		[Address(RVA = "0x3DF5D3C", Offset = "0x3DF1D3C", VA = "0x3DF5D3C")]
 		public void RecordPlayerOpenHexCount()
-		{
-		}
+		{ playerOpenHexCount = unchecked(playerOpenHexCount + 1); }
 
 		[Token(Token = "0x600142C")]
 		[Address(RVA = "0x3DF5D4C", Offset = "0x3DF1D4C", VA = "0x3DF5D4C")]
@@ -2862,13 +3095,17 @@ void System.Runtime.CompilerServices.IAsyncStateMachine.SetStateMachine(IAsyncSt
 		[Address(RVA = "0x3DF8CC0", Offset = "0x3DF4CC0", VA = "0x3DF8CC0")]
 		public void AddHellfire(HellfireBehaviour hellfire)
 		{
-		}
+            if (hellfire != null && !allHellfireBehaviours.Contains(hellfire))
+                allHellfireBehaviours.Add(hellfire);
+        }
 
 		[Token(Token = "0x600144B")]
 		[Address(RVA = "0x3DF8DD4", Offset = "0x3DF4DD4", VA = "0x3DF8DD4")]
 		public void RemoveHellfire(HellfireBehaviour hellfire)
 		{
-		}
+            if (hellfire != null && allHellfireBehaviours.Contains(hellfire))
+                allHellfireBehaviours.Remove(hellfire);
+        }
 
 		[Token(Token = "0x600144C")]
 		[Address(RVA = "0x3DF8EA8", Offset = "0x3DF4EA8", VA = "0x3DF8EA8")]
@@ -2941,5 +3178,27 @@ void System.Runtime.CompilerServices.IAsyncStateMachine.SetStateMachine(IAsyncSt
 		public BattleGameSceneManager()
 		{
 		}
-	}
+	
+        [Serializable]
+        [CompilerGenerated]
+        [Token(Token = "0x2000427")]
+        private sealed class _003C_003Ec
+        {
+            [Token(Token = "0x4002990")]
+            [Il2CppDummyDll.FieldOffset(Offset = "0x0")]
+            public static readonly _003C_003Ec _003C_003E9 = new _003C_003Ec();
+            [Token(Token = "0x4002991")]
+            [Il2CppDummyDll.FieldOffset(Offset = "0x8")]
+            public static Comparison<ValueTuple<float, HexBehaviour>> _003C_003E9__209_0;
+            [Token(Token = "0x600145E")]
+            [Address(RVA = "0x3DF97EC", Offset = "0x3DF57EC", VA = "0x3DF97EC")]
+            public _003C_003Ec() { }
+            [Token(Token = "0x600145F")]
+            [Address(RVA = "0x3DF97F4", Offset = "0x3DF57F4", VA = "0x3DF97F4")]
+            internal int _003CGetSpecialNearHex_003Eb__209_0(ValueTuple<float, HexBehaviour> left, ValueTuple<float, HexBehaviour> right)
+            {
+                return left.Item1.CompareTo(right.Item1);
+            }
+        }
+}
 }
