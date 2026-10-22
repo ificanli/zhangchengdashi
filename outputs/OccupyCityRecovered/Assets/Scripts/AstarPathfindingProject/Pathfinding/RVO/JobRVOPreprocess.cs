@@ -35,6 +35,31 @@ namespace Pathfinding.RVO
 		[Token(Token = "0x60010FB")]
 		public void Execute()
 		{
-		}
+            MovementPlaneWrapper plane = default;
+            for (int i = startIndex; i < endIndex; i++)
+            {
+                if (!agentData.version[i].Valid) continue;
+                if (agentData.locked[i] && !agentData.manuallyControlled[i])
+                {
+                    temporaryAgentData.desiredTargetPointInVelocitySpace[i] = Unity.Mathematics.float2.zero;
+                    temporaryAgentData.desiredVelocity[i] = Unity.Mathematics.float3.zero;
+                    temporaryAgentData.currentVelocity[i] = Unity.Mathematics.float3.zero;
+                }
+                else
+                {
+                    plane = default;
+                    plane.Set(agentData.movementPlane[i]);
+                    Unity.Mathematics.float2 target = plane.ToPlane(agentData.targetPoint[i] - agentData.position[i]);
+                    temporaryAgentData.desiredTargetPointInVelocitySpace[i] = target;
+                    Unity.Mathematics.float3 current = Unity.Mathematics.math.normalizesafe(previousOutput.targetPoint[i] - agentData.position[i]) * previousOutput.speed[i];
+                    Unity.Mathematics.float2 direction = Unity.Mathematics.math.normalizesafe(target);
+                    temporaryAgentData.desiredVelocity[i] = plane.ToWorld(direction * agentData.desiredSpeed[i], 0f);
+                    Unity.Mathematics.float3 normal = Unity.Mathematics.math.normalizesafe(agentData.collisionNormal[i]);
+                    float towardsNormal = Unity.Mathematics.math.dot(current, normal);
+                    if (float.IsNaN(towardsNormal) || towardsNormal > 0f) towardsNormal = 0f;
+                    temporaryAgentData.currentVelocity[i] = current - normal * towardsNormal;
+                }
+            }
+        }
 	}
 }
