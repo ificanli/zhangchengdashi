@@ -9,8 +9,8 @@ namespace Pathfinding.ECS
 		[Address(RVA = "0x44B4EA0", Offset = "0x44B0EA0", VA = "0x44B4EA0")]
 		public object Clone()
 		{
-			return null;
-		}
+            return new ManagedMovementOverrideAfterControl();
+        }
 
 		[Token(Token = "0x60012C9")]
 		[Address(RVA = "0x44B4EF0", Offset = "0x44B0EF0", VA = "0x44B4EF0")]

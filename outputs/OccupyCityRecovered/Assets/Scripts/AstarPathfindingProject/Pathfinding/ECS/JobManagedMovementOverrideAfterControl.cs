@@ -21,12 +21,18 @@ namespace Pathfinding.ECS
 		[Address(RVA = "0x44BEBA8", Offset = "0x44BABA8", VA = "0x44BEBA8")]
 		public void Execute(ManagedMovementOverrideAfterControl managedOverride, Entity entity, ref LocalTransform localTransform, ref AgentCylinderShape shape, ref AgentMovementPlane movementPlane, ref DestinationPoint destination, ref MovementState movementState, ref MovementSettings movementSettings, ref MovementControl movementControl)
 		{
-		}
+            var callback = managedOverride.callback;
+            if (callback == null) return;
+            callback(entity, dt, ref localTransform, ref shape, ref movementPlane, ref destination,
+                ref movementState, ref movementSettings, ref movementControl);
+            movementState.pathTracerVersion = unchecked((ushort)(movementState.pathTracerVersion - 1));
+        }
 
 		[Token(Token = "0x6001423")]
 		[Address(RVA = "0x44BF5CC", Offset = "0x44BB5CC", VA = "0x44BF5CC", Slot = "4")]
 void IJobChunk.Execute(in ArchetypeChunk chunk, int unfilteredChunkIndex, bool useEnabledMask, in v128 chunkEnabledMask)
 		{
-		}
+            Execute(in chunk, unfilteredChunkIndex, useEnabledMask, in chunkEnabledMask);
+        }
 	}
 }

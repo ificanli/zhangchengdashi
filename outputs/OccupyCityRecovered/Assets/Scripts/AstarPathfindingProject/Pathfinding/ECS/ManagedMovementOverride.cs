@@ -15,13 +15,15 @@ namespace Pathfinding.ECS
 		[Token(Token = "0x60012C3")]
 		public void AddCallback(T callback)
 		{
-		}
+            this.callback = (T)Delegate.Combine(this.callback, callback);
+        }
 
 		[Token(Token = "0x60012C4")]
 		public bool RemoveCallback(T callback)
 		{
-			return default;
-		}
+            this.callback = (T)Delegate.Remove(this.callback, callback);
+            return this.callback != null;
+        }
 
 		[Token(Token = "0x60012C5")]
 		[Preserve]
