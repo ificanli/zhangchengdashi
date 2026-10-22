@@ -45,6 +45,21 @@ namespace Pathfinding.ECS
 		[Address(RVA = "0x44CB97C", Offset = "0x44C797C", VA = "0x44CB97C", Slot = "4")]
 		public void Execute(int index, TransformAccess transform)
 		{
-		}
+            var entity = entities[index];
+            if (!entityPositions.HasComponent(entity)) return;
+            MovementState state;
+            bool hasMovementState = movementState.TryGetComponent(entity, out state);
+            ref readonly var localTransform = ref entityPositions.GetRefRO(entity).ValueRO;
+            if (syncPositionWithTransform.HasComponent(entity)) {
+                transform.position = (UnityEngine.Vector3)((hasMovementState ? state.positionOffset : Unity.Mathematics.float3.zero) + localTransform.Position);
+            }
+            if (syncRotationWithTransform.HasComponent(entity)) {
+                var rotation = localTransform.Rotation;
+                if (orientationYAxisForward.HasComponent(entity)) {
+                    rotation = Unity.Mathematics.math.mul(rotation, SyncTransformsToEntitiesSystem.ZAxisForwardToYAxisForward);
+                }
+                transform.rotation = (UnityEngine.Quaternion)rotation;
+            }
+}
 	}
 }

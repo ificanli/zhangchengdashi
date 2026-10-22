@@ -18,12 +18,13 @@ namespace Pathfinding.ECS
 		[Address(RVA = "0x44B809C", Offset = "0x44B409C", VA = "0x44B809C")]
 		public void Execute(ref MovementState movementState, ref MovementControl movementControl)
 		{
-		}
+            movementState.hierarchicalNodeIndex = -1;
+            movementControl.hierarchicalNodeIndex = -1;
+        }
 
 		[Token(Token = "0x6001368")]
 		[Address(RVA = "0x44B8504", Offset = "0x44B4504", VA = "0x44B8504", Slot = "4")]
 void IJobChunk.Execute(in ArchetypeChunk chunk, int unfilteredChunkIndex, bool useEnabledMask, in v128 chunkEnabledMask)
-		{
-		}
+		{ Execute(in chunk, unfilteredChunkIndex, useEnabledMask, in chunkEnabledMask); }
 	}
 }

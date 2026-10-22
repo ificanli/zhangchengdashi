@@ -120,27 +120,40 @@ namespace Pathfinding
 
 			[Token(Token = "0x4000206")]
 			[FieldOffset(Offset = "0x8")]
-			private static IntPtr DeferredCompilation;
+			private static unsafe IntPtr DeferredCompilation = BurstCompiler.CompileILPPMethod2(((ClosestPointOnTriangleByRef_00000358_0024PostfixBurstDelegate)Polygon.ClosestPointOnTriangleByRef).Method.MethodHandle);
 
 			[Token(Token = "0x6000374")]
 			[Address(RVA = "0x44F2464", Offset = "0x44EE464", VA = "0x44F2464")]
 			[BurstDiscard]
 			private static void GetFunctionPointerDiscard(ref IntPtr P_0)
 			{
-			}
+                if (Pointer == IntPtr.Zero)
+                {
+                    unsafe
+                    {
+                        Pointer = (IntPtr)BurstCompiler.GetILPPMethodFunctionPointer2(DeferredCompilation,
+                            ((ClosestPointOnTriangleByRef_00000358_0024PostfixBurstDelegate)Polygon.ClosestPointOnTriangleByRef_0024BurstManaged).Method.MethodHandle,
+                            typeof(ClosestPointOnTriangleByRef_00000358_0024PostfixBurstDelegate).TypeHandle);
+                    }
+                }
+                P_0 = Pointer;
+            }
 
 			[Token(Token = "0x6000375")]
 			[Address(RVA = "0x44F2580", Offset = "0x44EE580", VA = "0x44F2580")]
 			private static IntPtr GetFunctionPointer()
 			{
-				return default;
-			}
+                IntPtr pointer = IntPtr.Zero;
+                GetFunctionPointerDiscard(ref pointer);
+                return pointer;
+            }
 
 			[Token(Token = "0x6000376")]
 			[Address(RVA = "0x44F25DC", Offset = "0x44EE5DC", VA = "0x44F25DC")]
 			public static void Constructor()
 			{
-			}
+                unsafe { DeferredCompilation = BurstCompiler.CompileILPPMethod2(((ClosestPointOnTriangleByRef_00000358_0024PostfixBurstDelegate)Polygon.ClosestPointOnTriangleByRef).Method.MethodHandle); }
+            }
 
 			[Token(Token = "0x6000377")]
 			[Address(RVA = "0x44F2684", Offset = "0x44EE684", VA = "0x44F2684")]
@@ -152,8 +165,30 @@ namespace Pathfinding
 			[Address(RVA = "0x44F268C", Offset = "0x44EE68C", VA = "0x44F268C")]
 			public static bool Invoke(in float3 a, in float3 b, in float3 c, in float3 p, [NoAlias] out float3 output)
 			{
-    throw new global::System.NotImplementedException("RECOVERY_UNIMPLEMENTED Polygon.ClosestPointOnTriangleByRef_00000358_0024BurstDirectCall.Invoke RVA=0x44F268C Token=0x6000379");
-}
+                if (BurstCompiler.IsEnabled)
+                {
+                    IntPtr pointer = GetFunctionPointer();
+                    if (pointer != IntPtr.Zero)
+                    {
+                        unsafe
+                        {
+                            float3 result;
+                            bool inside;
+                            fixed (float3* pa = &a)
+                            fixed (float3* pb = &b)
+                            fixed (float3* pc = &c)
+                            fixed (float3* pp = &p)
+                            {
+                                var target = (delegate* unmanaged[Cdecl]<float3*, float3*, float3*, float3*, float3*, bool>)(void*)pointer;
+                                inside = target(pa, pb, pc, pp, &result);
+                            }
+                            output = result;
+                            return inside;
+                        }
+                    }
+                }
+                return Polygon.ClosestPointOnTriangleByRef_0024BurstManaged(in a, in b, in c, in p, out output);
+            }
 		}
 
 		[Token(Token = "0x2000058")]
@@ -291,8 +326,8 @@ namespace Pathfinding
 		[BurstCompile]
 		public static bool ClosestPointOnTriangleByRef(in float3 a, in float3 b, in float3 c, in float3 p, [NoAlias] out float3 output)
 		{
-    throw new global::System.NotImplementedException("RECOVERY_UNIMPLEMENTED Polygon.ClosestPointOnTriangleByRef RVA=0x4466C48 Token=0x6000358");
-}
+            return ClosestPointOnTriangleByRef_00000358_0024BurstDirectCall.Invoke(in a, in b, in c, in p, out output);
+        }
 
 		[Token(Token = "0x6000359")]
 		[Address(RVA = "0x4466CD0", Offset = "0x4462CD0", VA = "0x4466CD0")]
@@ -305,8 +340,48 @@ namespace Pathfinding
 		[Address(RVA = "0x4466E68", Offset = "0x4462E68", VA = "0x4466E68")]
 		public static float3 ClosestPointOnTriangleBarycentric(float3 a, float3 b, float3 c, float3 p)
 		{
-			return default;
-		}
+            float3 ab = b - a;
+            float3 ac = c - a;
+            float3 ap = p - a;
+            float d1 = ab.z * ap.z + (ab.x * ap.x + ab.y * ap.y);
+            float d2 = ac.z * ap.z + (ac.x * ap.x + ac.y * ap.y);
+            if (d1 <= 0f && d2 <= 0f) return new float3(1f, 0f, 0f);
+            float3 bp = p - b;
+            float d3 = ab.z * bp.z + (ab.x * bp.x + ab.y * bp.y);
+            float d4 = ac.z * bp.z + (ac.x * bp.x + ac.y * bp.y);
+            if (d3 >= 0f && d4 <= d3) return new float3(0f, 1f, 0f);
+            float vc = d1 * d4 - d3 * d2;
+            if (d1 >= 0f && d3 <= 0f && vc <= 0f)
+            {
+                float v = d1 / (d1 - d3);
+                return new float3(1f - v, v, 0f);
+            }
+            float3 cp = p - c;
+            float d5 = ab.z * cp.z + (ab.x * cp.x + ab.y * cp.y);
+            float d6 = ac.z * cp.z + (ac.x * cp.x + ac.y * cp.y);
+            if (d6 >= 0f && d5 <= d6) return new float3(0f, 0f, 1f);
+            float vb = d5 * d2 - d1 * d6;
+            if (d2 >= 0f && d6 <= 0f && vb <= 0f)
+            {
+                float w = d2 / (d2 - d6);
+                return new float3(1f - w, 0f, w);
+            }
+            float va = d3 * d6 - d5 * d4;
+            float edgeB = d4 - d3;
+            if (edgeB >= 0f)
+            {
+                float edgeC = d5 - d6;
+                if (edgeC >= 0f && va <= 0f)
+                {
+                    float w = edgeB / (edgeB + edgeC);
+                    return new float3(0f, 1f - w, w);
+                }
+            }
+            float inverse = 1f / (vc + (va + vb));
+            float interiorV = vb * inverse;
+            float interiorW = vc * inverse;
+            return new float3((1f - interiorV) - interiorW, interiorV, interiorW);
+        }
 
 		[Token(Token = "0x600035B")]
 		[Address(RVA = "0x4467054", Offset = "0x4463054", VA = "0x4467054")]
@@ -367,8 +442,52 @@ namespace Pathfinding
 		[BurstCompile]
 		public static bool ClosestPointOnTriangleByRef_0024BurstManaged(in float3 a, in float3 b, in float3 c, in float3 p, [NoAlias] out float3 output)
 		{
-    throw new global::System.NotImplementedException("RECOVERY_UNIMPLEMENTED Polygon.ClosestPointOnTriangleByRef_0024BurstManaged RVA=0x4467C9C Token=0x6000361");
-}
+            float3 ab = b - a;
+            float3 ac = c - a;
+            float3 ap = p - a;
+            float d1 = ab.z * ap.z + (ab.x * ap.x + ab.y * ap.y);
+            float d2 = ac.z * ap.z + (ac.x * ap.x + ac.y * ap.y);
+            if (d1 <= 0f && d2 <= 0f) { output = a; return false; }
+            float3 bp = p - b;
+            float d3 = ab.z * bp.z + (ab.x * bp.x + ab.y * bp.y);
+            float d4 = ac.z * bp.z + (ac.x * bp.x + ac.y * bp.y);
+            if (d3 >= 0f && d4 <= d3) { output = b; return false; }
+            float vc = d1 * d4 - d3 * d2;
+            if (d1 >= 0f && d3 <= 0f && vc <= 0f)
+            {
+                float v = d1 / (d1 - d3);
+                output = a + ab * v;
+                return false;
+            }
+            float3 cp = p - c;
+            float d5 = ab.z * cp.z + (ab.x * cp.x + ab.y * cp.y);
+            float d6 = ac.z * cp.z + (ac.x * cp.x + ac.y * cp.y);
+            if (d6 >= 0f && d5 <= d6) { output = c; return false; }
+            float vb = d5 * d2 - d1 * d6;
+            if (d2 >= 0f && d6 <= 0f && vb <= 0f)
+            {
+                float w = d2 / (d2 - d6);
+                output = a + ac * w;
+                return false;
+            }
+            float va = d3 * d6 - d5 * d4;
+            float edgeB = d4 - d3;
+            if (edgeB >= 0f)
+            {
+                float edgeC = d5 - d6;
+                if (edgeC >= 0f && va <= 0f)
+                {
+                    float w = edgeB / (edgeB + edgeC);
+                    output = b + (c - b) * w;
+                    return false;
+                }
+            }
+            float inverse = 1f / (vc + (va + vb));
+            float interiorV = vb * inverse;
+            float interiorW = vc * inverse;
+            output = ac * interiorW + (a + ab * interiorV);
+            return true;
+        }
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		[Token(Token = "0x6000362")]
