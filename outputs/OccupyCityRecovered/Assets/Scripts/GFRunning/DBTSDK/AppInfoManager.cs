@@ -52,7 +52,8 @@ namespace DBTSDK
 		[Address(RVA = "0x739C764", Offset = "0x7398764", VA = "0x739C764")]
 		private void Awake()
 		{
-		}
+            Instance = this;
+        }
 
 		[Token(Token = "0x60017FC")]
 		[Address(RVA = "0x739C7B0", Offset = "0x73987B0", VA = "0x739C7B0")]
@@ -333,8 +334,16 @@ namespace DBTSDK
 		[Address(RVA = "0x739FF0C", Offset = "0x739BF0C", VA = "0x739FF0C")]
 		public int GetDesignModeStatic()
 		{
-			return default;
-		}
+#if UNITY_EDITOR
+            if (GameFramework.Recovery.LocalEditorSession.Selected)
+                return GameFramework.Recovery.LocalEditorPlatformMetadata.ReadDesignMode();
+#endif
+            System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(DBTSDKManager).TypeHandle);
+            if (GameFramework.AppSetting.IsIgnoreSDK) return 0;
+            if (DBTSDKManager.IsXYXNativeMode && DBTSDKManager.Instance.otherPlatformSdk != null)
+                return DBTSDKManager.Instance.otherPlatformSdk.GetDesignModeStatic();
+            return AppInfoAndroid.GetDesignModeStatic();
+        }
 
 		[Token(Token = "0x6001825")]
 		[Address(RVA = "0x73A0034", Offset = "0x739C034", VA = "0x73A0034")]

@@ -119,7 +119,7 @@ void System.Collections.IEnumerator.Reset()
 
 		[Token(Token = "0x4000584")]
 		[FieldOffset(Offset = "0x8")]
-		public static bool useCommonGameActHelper;
+		public static bool useCommonGameActHelper = true;
 
 		[Token(Token = "0x4000585")]
 		[FieldOffset(Offset = "0x38")]
@@ -147,11 +147,11 @@ void System.Collections.IEnumerator.Reset()
 
 		[Token(Token = "0x400058B")]
 		[FieldOffset(Offset = "0x9")]
-		public static bool CloseAdsTips;
+		public static bool CloseAdsTips = false;
 
 		[Token(Token = "0x400058C")]
 		[FieldOffset(Offset = "0x10")]
-		private static string VideoCallBackCode;
+		private static string VideoCallBackCode = "code";
 
 		[Token(Token = "0x400058D")]
 		[FieldOffset(Offset = "0x68")]
