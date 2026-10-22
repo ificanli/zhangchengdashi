@@ -82,8 +82,9 @@ namespace Pathfinding.ECS
 				[Address(RVA = "0x44CD7CC", Offset = "0x44C97CC", VA = "0x44CD7CC")]
 				get
 				{
-					return default;
-				}
+                    if (!inGroup) throw new InvalidOperationException("Cannot call this method outside of a simulation group using TimeScaledRateManager");
+                    return cheapSimulationOnly;
+                }
 			}
 
 			[Token(Token = "0x17000320")]
@@ -93,8 +94,9 @@ namespace Pathfinding.ECS
 				[Address(RVA = "0x44CD864", Offset = "0x44C9864", VA = "0x44CD864")]
 				get
 				{
-					return default;
-				}
+                    if (!inGroup) throw new InvalidOperationException("Cannot call this method outside of a simulation group using TimeScaledRateManager");
+                    return cheapTimeData.DeltaTime;
+                }
 			}
 
 			[Token(Token = "0x17000321")]
@@ -104,8 +106,9 @@ namespace Pathfinding.ECS
 				[Address(RVA = "0x44CD8FC", Offset = "0x44C98FC", VA = "0x44CD8FC")]
 				get
 				{
-					return default;
-				}
+                    if (!inGroup) throw new InvalidOperationException("Cannot call this method outside of a simulation group using TimeScaledRateManager");
+                    return isLastSubstep;
+                }
 			}
 
 			[Token(Token = "0x17000322")]
@@ -115,8 +118,9 @@ namespace Pathfinding.ECS
 				[Address(RVA = "0x44CD994", Offset = "0x44C9994", VA = "0x44CD994")]
 				get
 				{
-					return default;
-				}
+                    if (!inGroup) throw new InvalidOperationException("Cannot call this method outside of a simulation group using TimeScaledRateManager");
+                    return isFirstSubstep;
+                }
 			}
 
 			[Token(Token = "0x17000323")]
@@ -125,9 +129,7 @@ namespace Pathfinding.ECS
 				[Token(Token = "0x600154D")]
 				[Address(RVA = "0x44CDA2C", Offset = "0x44C9A2C", VA = "0x44CDA2C")]
 				get
-				{
-					return default;
-				}
+				{ return numUpdatesThisFrame; }
 			}
 
 			[Token(Token = "0x17000324")]
@@ -136,14 +138,11 @@ namespace Pathfinding.ECS
 				[Token(Token = "0x6001552")]
 				[Address(RVA = "0x44CDE6C", Offset = "0x44C9E6C", VA = "0x44CDE6C", Slot = "5")]
 				get
-				{
-					return default;
-				}
+				{ return maximumDt; }
 				[Token(Token = "0x6001553")]
 				[Address(RVA = "0x44CDE74", Offset = "0x44C9E74", VA = "0x44CDE74", Slot = "6")]
 				set
-				{
-				}
+				{ maximumDt = value; }
 			}
 
 			[Token(Token = "0x600154E")]
@@ -166,14 +165,61 @@ namespace Pathfinding.ECS
 			[Address(RVA = "0x44CD568", Offset = "0x44C9568", VA = "0x44CD568")]
 			public void OnSimulationStepsFinished(float totalSimulationProcessingTime)
 			{
-			}
+                if (!cheapSimulationOnly)
+                    ownProcessingTimePerIteration = totalSimulationProcessingTime / (float)numUpdatesThisFrame;
+            }
 
 			[Token(Token = "0x6001551")]
 			[Address(RVA = "0x44CDA34", Offset = "0x44C9A34", VA = "0x44CDA34", Slot = "4")]
 			public bool ShouldGroupUpdate(ComponentSystemGroup group)
 			{
-				return default;
-			}
+                if (inGroup) {
+                    group.World.PopTime();
+                    updateIndex = unchecked(updateIndex + 1);
+                    if (updateIndex >= numUpdatesThisFrame) {
+                        inGroup = false;
+                        return false;
+                    }
+                } else {
+                    cheapTimeDataQueue.Clear();
+                    timeDataQueue.Clear();
+                    if (inGroup) throw new InvalidOperationException("Cannot nest simulation groups using TimeScaledRateManager");
+                    double scaledElapsedTime = group.World.Time.ElapsedTime * CustomTimeScale;
+                    float elapsed = (float)(scaledElapsedTime - lastFullSimulation);
+                    if (elapsed <= 0f) elapsed = 0f;
+                    float stepEstimate = Unity.Mathematics.math.pow(
+                        elapsed / (maximumDt + ownProcessingTimePerIteration), 0.8f);
+                    numUpdatesThisFrame = unchecked((int)Unity.Mathematics.math.floor(stepEstimate));
+                    cheapSimulationOnly = numUpdatesThisFrame == 0;
+                    if (numUpdatesThisFrame != 0) {
+                        stepDt = elapsed / numUpdatesThisFrame;
+                        if (numUpdatesThisFrame >= 1) {
+                            int i = 1;
+                            while (true) {
+                                double stepEnd = lastFullSimulation + (double)(stepDt * i);
+                                timeDataQueue.Add(new TimeData(stepEnd, stepDt));
+                                cheapTimeDataQueue.Add(new TimeData(stepEnd, (float)(stepEnd - lastCheapSimulation)));
+                                lastCheapSimulation = stepEnd;
+                                if (i >= numUpdatesThisFrame) break;
+                                i = unchecked(i + 1);
+                            }
+                        }
+                        lastFullSimulation = scaledElapsedTime;
+                    } else {
+                        timeDataQueue.Add(new TimeData(lastFullSimulation, 0f));
+                        cheapTimeDataQueue.Add(new TimeData(scaledElapsedTime, (float)(scaledElapsedTime - lastCheapSimulation)));
+                        lastCheapSimulation = scaledElapsedTime;
+                    }
+                    numUpdatesThisFrame = Math.Max(numUpdatesThisFrame, 1);
+                    inGroup = true;
+                    updateIndex = 0;
+                }
+                group.World.PushTime(timeDataQueue[updateIndex]);
+                cheapTimeData = cheapTimeDataQueue[updateIndex];
+                isLastSubstep = unchecked(updateIndex + 1) >= numUpdatesThisFrame;
+                isFirstSubstep = updateIndex == 0;
+                return true;
+            }
 		}
 
 		[Token(Token = "0x1700031E")]
@@ -182,14 +228,11 @@ namespace Pathfinding.ECS
 			[Token(Token = "0x6001543")]
 			[Address(RVA = "0x44CD06C", Offset = "0x44C906C", VA = "0x44CD06C")]
 			get
-			{
-				return default;
-			}
+			{ return (RateManager as TimeScaledRateManager).CustomTimeScale; }
 			[Token(Token = "0x6001544")]
 			[Address(RVA = "0x44CD0E8", Offset = "0x44C90E8", VA = "0x44CD0E8")]
 			set
-			{
-			}
+			{ (RateManager as TimeScaledRateManager).CustomTimeScale = value; }
 		}
 
 		[Token(Token = "0x6001545")]
@@ -197,7 +240,27 @@ namespace Pathfinding.ECS
 		[Preserve]
 		protected override void OnUpdate()
 		{
-		}
+            var graphReadLock = AstarPath.active != null
+                ? AstarPath.active.LockGraphDataForReading()
+                : default(Pathfinding.Sync.RWLock.ReadLockAsync);
+            var systems = GetUnmanagedSystems(Allocator.Temp);
+            for (int i = 0; i < systems.Length; i++) {
+                ref var state = ref World.Unmanaged.ResolveSystemStateRef(systems[i]);
+                state.Dependency = Unity.Jobs.JobHandle.CombineDependencies(state.Dependency, graphReadLock.dependency);
+            }
+            long start = System.Diagnostics.Stopwatch.GetTimestamp();
+            base.OnUpdate();
+            long end = System.Diagnostics.Stopwatch.GetTimestamp();
+            (RateManager as TimeScaledRateManager).OnSimulationStepsFinished(
+                (float)((end - start) / (double)System.Diagnostics.Stopwatch.Frequency));
+            var dependency = default(Unity.Jobs.JobHandle);
+            for (int i = 0; i < systems.Length; i++) {
+                ref var state = ref World.Unmanaged.ResolveSystemStateRef(systems[i]);
+                dependency = Unity.Jobs.JobHandle.CombineDependencies(dependency, state.Dependency);
+            }
+            systems.Dispose();
+            graphReadLock.UnlockAfter(dependency);
+        }
 
 		[Token(Token = "0x6001546")]
 		[Address(RVA = "0x44CD5D4", Offset = "0x44C95D4", VA = "0x44CD5D4", Slot = "9")]

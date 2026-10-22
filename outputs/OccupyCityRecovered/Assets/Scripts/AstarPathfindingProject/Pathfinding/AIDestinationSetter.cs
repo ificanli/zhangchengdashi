@@ -35,31 +35,54 @@ namespace Pathfinding
 		[Address(RVA = "0x4447854", Offset = "0x4443854", VA = "0x4447854")]
 		private void OnEnable()
 		{
-		}
+            ai = GetComponent<IAstarAI>();
+            if (ai != null)
+            {
+                if (ai is FollowerEntity follower)
+                {
+                    follower.RegisterRuntimeBaker(this);
+                    return;
+                }
+                ai.onSearchPath += UpdateDestination;
+            }
+            BatchedEvents.Add(this, BatchedEvents.Event.Update, OnUpdate, 0);
+        }
 
 		[Token(Token = "0x6000078")]
 		[Address(RVA = "0x4447C30", Offset = "0x4443C30", VA = "0x4447C30")]
 		private void OnDisable()
 		{
-		}
+            if (world != null && world.IsCreated && world.EntityManager.Exists(entity))
+                world.EntityManager.RemoveComponent<AIDestinationSetter>(entity);
+            if (ai != null && !(ai is FollowerEntity))
+                ai.onSearchPath -= UpdateDestination;
+            BatchedEvents.Remove(this);
+        }
 
 		[Token(Token = "0x6000079")]
 		[Address(RVA = "0x4447EE8", Offset = "0x4443EE8", VA = "0x4447EE8", Slot = "15")]
 void IRuntimeBaker.OnCreatedEntity(World world, Entity entity)
 		{
-		}
+            this.entity = entity;
+            this.world = world;
+            world.EntityManager.AddComponentObject(entity, this);
+        }
 
 		[Token(Token = "0x600007A")]
 		[Address(RVA = "0x4447F7C", Offset = "0x4443F7C", VA = "0x4447F7C")]
 		private static void OnUpdate(AIDestinationSetter[] components, int count)
 		{
-		}
+            for (int i = 0; i < count; i++)
+                components[i].UpdateDestination();
+        }
 
 		[Token(Token = "0x600007B")]
 		[Address(RVA = "0x4447FD8", Offset = "0x4443FD8", VA = "0x4447FD8")]
 		private void UpdateDestination()
 		{
-		}
+            if (target != null && ai != null)
+                ai.destination = target.position;
+        }
 
 		[Token(Token = "0x600007C")]
 		[Address(RVA = "0x4448104", Offset = "0x4444104", VA = "0x4448104")]
