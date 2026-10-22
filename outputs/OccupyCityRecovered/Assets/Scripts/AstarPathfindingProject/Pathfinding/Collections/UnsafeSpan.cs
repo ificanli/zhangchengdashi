@@ -74,19 +74,24 @@ namespace Pathfinding.Collections
 		[Token(Token = "0x6000F8D")]
 		public UnsafeSpan(T[] data, Allocator allocator)
 		{
-    throw new global::System.NotImplementedException("RECOVERY_UNIMPLEMENTED UnsafeSpan..ctor RVA= Token=0x6000F8D");
+ this = new UnsafeSpan<T>(allocator, data.Length);
+ SpanExtensions.CopyFrom(this, data);
 }
 
 		[Token(Token = "0x6000F8E")]
 		public UnsafeSpan(T[] data, out ulong gcHandle)
 		{
-    throw new global::System.NotImplementedException("RECOVERY_UNIMPLEMENTED UnsafeSpan..ctor RVA= Token=0x6000F8E");
+ unsafe { this.ptr = (T*)UnsafeUtility.PinGCArrayAndGetDataAddress(data, out gcHandle); }
+ this.length = unchecked((uint)data.Length);
+ this.Allocator = Unity.Collections.Allocator.None;
 }
 
 		[Token(Token = "0x6000F8F")]
 		public UnsafeSpan(T[,] data, out ulong gcHandle)
 		{
-    throw new global::System.NotImplementedException("RECOVERY_UNIMPLEMENTED UnsafeSpan..ctor RVA= Token=0x6000F8F");
+ unsafe { this.ptr = (T*)UnsafeUtility.PinGCArrayAndGetDataAddress(data, out gcHandle); }
+ this.length = unchecked((uint)data.Length);
+ this.Allocator = Unity.Collections.Allocator.None;
 }
 
 		[Token(Token = "0x6000F90")]
@@ -121,19 +126,24 @@ namespace Pathfinding.Collections
 
 		[Token(Token = "0x6000F96")]
 		public UnsafeSpan<T> Slice(int start)
-		{
-			return default;
-		}
+		{ return Slice(start, unchecked((int)length - start)); }
 
 		[Token(Token = "0x6000F97")]
 		public void Move(int startIndex, int toIndex, int count)
 		{
-		}
+ if (count < 0 || startIndex < 0 || (long)unchecked(startIndex + count) > length || toIndex < 0 || (long)unchecked(toIndex + count) > length) throw new System.ArgumentOutOfRangeException();
+ unsafe {
+  if (count != 0) UnsafeUtility.MemMove(ptr + toIndex, ptr + startIndex, (long)count * sizeof(T));
+ }
+}
 
 		[Token(Token = "0x6000F98")]
 		public static void RemoveAt(ref UnsafeSpan<T> span, int index)
 		{
-		}
+ if (index < 0 || (uint)index >= span.length) throw new System.ArgumentOutOfRangeException();
+ span.Move(unchecked(index + 1), index, unchecked((int)span.length - index - 1));
+ span = span.Slice(0, unchecked((int)span.length - 1));
+}
 
 		[Token(Token = "0x6000F99")]
 		public void CopyTo(UnsafeSpan<T> other)
@@ -142,25 +152,35 @@ namespace Pathfinding.Collections
 		[Token(Token = "0x6000F9A")]
 		public void CopyTo(List<T> buffer)
 		{
-		}
+ if (buffer.Capacity < unchecked(buffer.Count + (int)length)) buffer.Capacity = unchecked(buffer.Count + (int)length);
+ for (int i = 0; i < unchecked((int)length); i = unchecked(i + 1)) buffer.Add(this[i]);
+}
 
 		[Token(Token = "0x6000F9B")]
 		public UnsafeSpan<T> Clone(Allocator allocator)
 		{
-			return default;
-		}
+ var result = new UnsafeSpan<T>(allocator, unchecked((int)length));
+ CopyTo(result);
+ return result;
+}
 
 		[Token(Token = "0x6000F9C")]
 		public T[] ToArray()
 		{
-			return null;
-		}
+ var result = new T[length];
+ unsafe {
+  if (length != 0) {
+   fixed (T* destination = result) UnsafeUtility.MemCpy(destination, ptr, (long)length * sizeof(T));
+  }
+ }
+ return result;
+}
 
 		[Token(Token = "0x6000F9D")]
 		public NativeArray<T> MoveToNativeArray(Allocator allocator)
 		{
-			return default;
-		}
+ unsafe { return NativeArrayUnsafeUtility.ConvertExistingDataToNativeArray<T>(ptr, unchecked((int)length), allocator); }
+}
 
 		[Token(Token = "0x6000F9E")]
 		public void Free(Allocator expectedAllocator)
@@ -173,7 +193,12 @@ namespace Pathfinding.Collections
 		[Token(Token = "0x6000FA0")]
 		public UnsafeSpan<T> Reallocate(Allocator allocator, int newSize)
 		{
-			return default;
-		}
+    if (newSize < 0) throw new System.ArgumentOutOfRangeException(nameof(newSize), "New size must be non-negative");
+    if (length == unchecked((uint)newSize)) return this;
+    UnsafeSpan<T> result = new UnsafeSpan<T>(allocator, newSize);
+    Slice(0, System.Math.Min(newSize, unchecked((int)length))).CopyTo(result);
+    Free(allocator);
+    return result;
+}
 	}
 }

@@ -32,17 +32,29 @@ namespace Pathfinding.Collections
 		[Token(Token = "0x6000FA3")]
 		public static void CopyFrom<T>(this UnsafeSpan<T> span, NativeArray<T> array) where T : unmanaged
 		{
-		}
+ unsafe {
+  var source = new UnsafeSpan<T>(NativeArrayUnsafeUtility.GetUnsafeReadOnlyPtr(array), array.Length, Allocator.None);
+  source.CopyTo(span);
+ }
+}
 
 		[Token(Token = "0x6000FA4")]
 		public static void CopyFrom<T>(this UnsafeSpan<T> span, UnsafeSpan<T> other) where T : unmanaged
-		{
-		}
+		{ other.CopyTo(span); }
 
 		[Token(Token = "0x6000FA5")]
 		public static void CopyFrom<T>(this UnsafeSpan<T> span, T[] array) where T : unmanaged
 		{
-		}
+ if (unchecked((int)span.length) < array.Length) throw new System.InvalidOperationException();
+ if (array.Length != 0) {
+  unsafe {
+   ulong gcHandle;
+   void* source = UnsafeUtility.PinGCArrayAndGetDataAddress(array, out gcHandle);
+   UnsafeUtility.MemCpy(span.ptr, source, (long)array.Length * sizeof(T));
+   UnsafeUtility.ReleaseGCObject(gcHandle);
+  }
+ }
+}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		[Token(Token = "0x6000FA6")]

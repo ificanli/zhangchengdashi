@@ -173,20 +173,48 @@ namespace Pathfinding
 			[Address(RVA = "0x4518900", Offset = "0x4514900", VA = "0x4518900")]
 			public readonly void TemporaryEndNodesBoundingBox(out int3 mn, out int3 mx)
 			{
-    throw new global::System.NotImplementedException("RECOVERY_UNIMPLEMENTED Path.SearchContext.TemporaryEndNodesBoundingBox RVA=0x4518900 Token=0x600061B");
+ mn = new int3(int.MaxValue);
+ mx = new int3(int.MinValue);
+ for (int i = 0; i < pathHandler.numTemporaryNodes; i++) {
+  ref TemporaryNode node = ref pathHandler.GetTemporaryNode(unchecked(pathHandler.temporaryNodeStartIndex + (uint)i));
+  if (node.type != TemporaryNodeType.End) continue;
+  Int3 position = node.position;
+  mn.x = mn.x < position.x ? mn.x : position.x;
+  mn.y = mn.y < position.y ? mn.y : position.y;
+  mn.z = mn.z < position.z ? mn.z : position.z;
+  mx.x = mx.x > position.x ? mx.x : position.x;
+  mx.y = mx.y > position.y ? mx.y : position.y;
+  mx.z = mx.z > position.z ? mx.z : position.z;
+ }
 }
 
 			[Token(Token = "0x600061C")]
 			[Address(RVA = "0x4518A04", Offset = "0x4514A04", VA = "0x4518A04")]
 			public void MarkNodesAdjacentToTemporaryEndNodes()
 			{
-			}
+ var nodes = pathHandler.pathNodes;
+ for (int i = 0; i < pathHandler.numTemporaryNodes; i++) {
+  ref TemporaryNode temporary = ref pathHandler.GetTemporaryNode(unchecked(pathHandler.temporaryNodeStartIndex + (uint)i));
+  if (temporary.type != TemporaryNodeType.End) continue;
+  GraphNode node = pathHandler.GetNode(temporary.associatedNode);
+  for (int variant = 0; variant < node.PathNodeVariants; variant++) {
+   uint index = unchecked(temporary.associatedNode + (uint)variant);
+   nodes[index].flag1 = true;
+  }
+ }
+}
 
 			[Token(Token = "0x600061D")]
 			[Address(RVA = "0x4518BAC", Offset = "0x4514BAC", VA = "0x4518BAC")]
 			public void AddStartNodesToHeap()
 			{
-			}
+ var nodes = pathHandler.pathNodes;
+ for (int i = 0; i < pathHandler.numTemporaryNodes; i++) {
+  uint index = unchecked(pathHandler.temporaryNodeStartIndex + (uint)i);
+  ref TemporaryNode node = ref pathHandler.GetTemporaryNode(index);
+  if (node.type == TemporaryNodeType.Start) pathHandler.heap.Add(nodes, index, 0, 0);
+ }
+}
 
 			[MethodImpl(MethodImplOptions.AggressiveInlining)]
 			[Token(Token = "0x600061E")]
@@ -290,9 +318,39 @@ void System.Collections.IEnumerator.Reset()
 		[FieldOffset(Offset = "0x18")]
 		public OnPathDelegate immediateCallback;
 
+		[field: Token(Token = "0x40003BC")]
+		[field: FieldOffset(Offset = "0x20")]
+		[Token(Token = "0x1700012C")]
+		public PathState PipelineState
+		{
+			[Token(Token = "0x60005D5")]
+			[Address(RVA = "0x4515E04", Offset = "0x4511E04", VA = "0x4515E04")]
+			get
+			;
+			[Token(Token = "0x60005D6")]
+			[Address(RVA = "0x4515E0C", Offset = "0x4511E0C", VA = "0x4515E0C")]
+			private set
+			;
+		}
+
 		[Token(Token = "0x40003BD")]
 		[FieldOffset(Offset = "0x24")]
 		protected PathCompleteState completeState;
+
+		[field: Token(Token = "0x40003BE")]
+		[field: FieldOffset(Offset = "0x28")]
+		[Token(Token = "0x17000130")]
+		public string errorLog
+		{
+			[Token(Token = "0x60005DC")]
+			[Address(RVA = "0x4515FB8", Offset = "0x4511FB8", VA = "0x4515FB8")]
+			get
+			;
+			[Token(Token = "0x60005DD")]
+			[Address(RVA = "0x4515FC0", Offset = "0x4511FC0", VA = "0x4515FC0")]
+			private set
+			;
+		}
 
 		[Token(Token = "0x40003BF")]
 		[FieldOffset(Offset = "0x30")]
@@ -301,6 +359,36 @@ void System.Collections.IEnumerator.Reset()
 		[Token(Token = "0x40003C0")]
 		[FieldOffset(Offset = "0x38")]
 		public List<Vector3> vectorPath;
+
+		[field: Token(Token = "0x40003C1")]
+		[field: FieldOffset(Offset = "0x40")]
+		[Token(Token = "0x17000131")]
+		public float duration
+		{
+			[Token(Token = "0x60005DE")]
+			[Address(RVA = "0x4515FC8", Offset = "0x4511FC8", VA = "0x4515FC8")]
+			get
+			;
+			[Token(Token = "0x60005DF")]
+			[Address(RVA = "0x4515FD0", Offset = "0x4511FD0", VA = "0x4515FD0")]
+			internal set
+			;
+		}
+
+		[field: Token(Token = "0x40003C2")]
+		[field: FieldOffset(Offset = "0x44")]
+		[Token(Token = "0x17000132")]
+		public int searchedNodes
+		{
+			[Token(Token = "0x60005E0")]
+			[Address(RVA = "0x4515FD8", Offset = "0x4511FD8", VA = "0x4515FD8")]
+			get
+			;
+			[Token(Token = "0x60005E1")]
+			[Address(RVA = "0x4515FE0", Offset = "0x4511FE0", VA = "0x4515FE0")]
+			protected set
+			;
+		}
 
 		[Token(Token = "0x40003C3")]
 		[FieldOffset(Offset = "0x48")]
@@ -316,7 +404,7 @@ void System.Collections.IEnumerator.Reset()
 
 		[Token(Token = "0x40003C6")]
 		[FieldOffset(Offset = "0x68")]
-		public TraversalConstraint traversalConstraint;
+		public TraversalConstraint traversalConstraint = TraversalConstraint.None;
 
 		[Token(Token = "0x40003C7")]
 		[FieldOffset(Offset = "0x80")]
@@ -328,7 +416,22 @@ void System.Collections.IEnumerator.Reset()
 
 		[Token(Token = "0x40003C9")]
 		[FieldOffset(Offset = "0x94")]
-		public float heuristicScale;
+		public float heuristicScale = 1f;
+
+		[field: Token(Token = "0x40003CA")]
+		[field: FieldOffset(Offset = "0x98")]
+		[Token(Token = "0x17000135")]
+		public ushort pathID
+		{
+			[Token(Token = "0x60005E5")]
+			[Address(RVA = "0x4516058", Offset = "0x4512058", VA = "0x4516058")]
+			get
+			;
+			[Token(Token = "0x60005E6")]
+			[Address(RVA = "0x4516060", Offset = "0x4512060", VA = "0x4516060")]
+			private set
+			;
+		}
 
 		[Token(Token = "0x40003CB")]
 		[FieldOffset(Offset = "0x0")]
@@ -340,7 +443,7 @@ void System.Collections.IEnumerator.Reset()
 
 		[Token(Token = "0x40003CD")]
 		[FieldOffset(Offset = "0xA0")]
-		private object[] claimed;
+		private object[] private object[] claimed = new object[2];
 
 		[Token(Token = "0x40003CE")]
 		[FieldOffset(Offset = "0xA8")]
@@ -350,23 +453,7 @@ void System.Collections.IEnumerator.Reset()
 		[FieldOffset(Offset = "0xAC")]
 		private bool releasedNotSilent;
 
-		[Token(Token = "0x1700012C")]
-		public PathState PipelineState
-		{
-			[Token(Token = "0x60005D5")]
-			[Address(RVA = "0x4515E04", Offset = "0x4511E04", VA = "0x4515E04")]
-			[CompilerGenerated]
-			get
-			{
-				return default;
-			}
-			[Token(Token = "0x60005D6")]
-			[Address(RVA = "0x4515E0C", Offset = "0x4511E0C", VA = "0x4515E0C")]
-			[CompilerGenerated]
-			private set
-			{
-			}
-		}
+
 
 		[Token(Token = "0x1700012D")]
 		[Obsolete("Use path.traversalConstraint.traversalProvider and path.traversalCosts.traversalProvider instead")]
@@ -391,14 +478,15 @@ void System.Collections.IEnumerator.Reset()
 			[Token(Token = "0x60005D9")]
 			[Address(RVA = "0x4515ED8", Offset = "0x4511ED8", VA = "0x4515ED8")]
 			get
-			{
-				return default;
-			}
+			{ return completeState; }
 			[Token(Token = "0x60005DA")]
 			[Address(RVA = "0x4515EE0", Offset = "0x4511EE0", VA = "0x4515EE0")]
 			protected set
 			{
-			}
+ lock (this) {
+  if (completeState != PathCompleteState.Error) completeState = value;
+ }
+}
 		}
 
 		[Token(Token = "0x1700012F")]
@@ -407,64 +495,14 @@ void System.Collections.IEnumerator.Reset()
 			[Token(Token = "0x60005DB")]
 			[Address(RVA = "0x4515FA8", Offset = "0x4511FA8", VA = "0x4515FA8")]
 			get
-			{
-				return default;
-			}
+			{ return completeState == PathCompleteState.Error; }
 		}
 
-		[Token(Token = "0x17000130")]
-		public string errorLog
-		{
-			[Token(Token = "0x60005DC")]
-			[Address(RVA = "0x4515FB8", Offset = "0x4511FB8", VA = "0x4515FB8")]
-			[CompilerGenerated]
-			get
-			{
-				return null;
-			}
-			[Token(Token = "0x60005DD")]
-			[Address(RVA = "0x4515FC0", Offset = "0x4511FC0", VA = "0x4515FC0")]
-			[CompilerGenerated]
-			private set
-			{
-			}
-		}
 
-		[Token(Token = "0x17000131")]
-		public float duration
-		{
-			[Token(Token = "0x60005DE")]
-			[Address(RVA = "0x4515FC8", Offset = "0x4511FC8", VA = "0x4515FC8")]
-			[CompilerGenerated]
-			get
-			{
-				return default;
-			}
-			[Token(Token = "0x60005DF")]
-			[Address(RVA = "0x4515FD0", Offset = "0x4511FD0", VA = "0x4515FD0")]
-			[CompilerGenerated]
-			internal set
-			{
-			}
-		}
 
-		[Token(Token = "0x17000132")]
-		public int searchedNodes
-		{
-			[Token(Token = "0x60005E0")]
-			[Address(RVA = "0x4515FD8", Offset = "0x4511FD8", VA = "0x4515FD8")]
-			[CompilerGenerated]
-			get
-			{
-				return default;
-			}
-			[Token(Token = "0x60005E1")]
-			[Address(RVA = "0x4515FE0", Offset = "0x4511FE0", VA = "0x4515FE0")]
-			[CompilerGenerated]
-			protected set
-			{
-			}
-		}
+
+
+
 
 		[Token(Token = "0x17000133")]
 bool IPathInternals.Pooled
@@ -495,23 +533,7 @@ bool IPathInternals.Pooled
 			}
 		}
 
-		[Token(Token = "0x17000135")]
-		public ushort pathID
-		{
-			[Token(Token = "0x60005E5")]
-			[Address(RVA = "0x4516058", Offset = "0x4512058", VA = "0x4516058")]
-			[CompilerGenerated]
-			get
-			{
-				return default;
-			}
-			[Token(Token = "0x60005E6")]
-			[Address(RVA = "0x4516060", Offset = "0x4512060", VA = "0x4516060")]
-			[CompilerGenerated]
-			private set
-			{
-			}
-		}
+
 
 		[Token(Token = "0x17000136")]
 		[Obsolete("Use traversalConstraint.tags instead")]
@@ -554,28 +576,33 @@ bool IPathInternals.Pooled
 			[Address(RVA = "0x4516088", Offset = "0x4512088", VA = "0x4516088")]
 			get
 			{
-				return default;
-			}
+ return new NearestNodeConstraint {
+  distanceMetric = nearestNodeDistanceMetric,
+  area = -1,
+  maxDistanceSqr = -1f,
+  traversal = traversalConstraint,
+  walkable = NearestNodeConstraint.WalkabilityConstraint.Walkable
+ };
+}
 		}
 
 		[Token(Token = "0x60005E2")]
 		[Address(RVA = "0x4515FE8", Offset = "0x4511FE8", VA = "0x4515FE8", Slot = "4")]
 		private bool Pathfinding_002EIPathInternals_002Eget_Pooled()
-		{
-			return default;
-		}
+		{ return Pathfinding_002EIPathInternals_002EPooled__BackingField; }
 
 		[Token(Token = "0x60005E3")]
 		[Address(RVA = "0x4515FF0", Offset = "0x4511FF0", VA = "0x4515FF0", Slot = "5")]
 		private void Pathfinding_002EIPathInternals_002Eset_Pooled(bool value)
-		{
-		}
+		{ Pathfinding_002EIPathInternals_002EPooled__BackingField = value; }
 
 		[Token(Token = "0x60005EC")]
 		[Address(RVA = "0x4516198", Offset = "0x4512198", VA = "0x4516198")]
 		public void UseSettings(PathRequestSettings settings)
 		{
-		}
+ traversalConstraint = settings.ToTraversalConstraint();
+ traversalCosts = settings.ToTraversalCosts();
+}
 
 		[Token(Token = "0x60005ED")]
 		[Address(RVA = "0x45161F4", Offset = "0x45121F4", VA = "0x45161F4")]
@@ -633,33 +660,39 @@ bool IPathInternals.Pooled
 		[Token(Token = "0x60005F4")]
 		[Address(RVA = "0x4516534", Offset = "0x4512534", VA = "0x4516534")]
 		public bool IsDone()
-		{
-			return default;
-		}
+		{ return PipelineState >= PathState.ReturnQueue; }
 
 		[Token(Token = "0x60005F5")]
 		[Address(RVA = "0x4516544", Offset = "0x4512544", VA = "0x4516544", Slot = "6")]
 void IPathInternals.AdvanceState(PathState s)
 		{
-		}
+ lock (this) {
+  PipelineState = (PathState)System.Math.Max((int)PipelineState, (int)s);
+ }
+}
 
 		[Token(Token = "0x60005F6")]
 		[Address(RVA = "0x4516650", Offset = "0x4512650", VA = "0x4516650")]
 		public void FailWithError(string msg)
 		{
-		}
+ CompleteState = PathCompleteState.Error;
+ if (errorLog != string.Empty) msg = string.Concat(errorLog, "\n", msg);
+ errorLog = msg;
+}
 
 		[Token(Token = "0x60005F7")]
 		[Address(RVA = "0x45166EC", Offset = "0x45126EC", VA = "0x45166EC")]
 		public void Error()
-		{
-		}
+		{ CompleteState = PathCompleteState.Error; }
 
 		[Token(Token = "0x60005F8")]
 		[Address(RVA = "0x45166F4", Offset = "0x45126F4", VA = "0x45166F4")]
 		private void ErrorCheck()
 		{
-		}
+ if (!hasBeenReset) FailWithError("Please use the static Construct function for creating paths, do not use the normal constructors.");
+ if (((IPathInternals)this).Pooled) FailWithError("The path is currently in a path pool. Are you sending the path for calculation twice?");
+ if (PipelineState >= PathState.ReturnQueue) FailWithError("This path has already been processed. Do not request a path with the same path object twice.");
+}
 
 		[Token(Token = "0x60005F9")]
 		[Address(RVA = "0x451680C", Offset = "0x451280C", VA = "0x451680C")]
@@ -671,13 +704,38 @@ void IPathInternals.AdvanceState(PathState s)
 		[Address(RVA = "0x4516810", Offset = "0x4512810", VA = "0x4516810", Slot = "15")]
 		protected virtual void OnEnterPool()
 		{
-		}
+ if (vectorPath != null) Pathfinding.Pooling.ListPool<UnityEngine.Vector3>.Release(ref vectorPath);
+ if (path != null) Pathfinding.Pooling.ListPool<GraphNode>.Release(ref path);
+ callback = null;
+ immediateCallback = null;
+ traversalCosts = default;
+ traversalConstraint = TraversalConstraint.None;
+}
 
 		[Token(Token = "0x60005FB")]
 		[Address(RVA = "0x451692C", Offset = "0x451292C", VA = "0x451692C", Slot = "16")]
 		protected virtual void Reset()
 		{
-		}
+ if (object.ReferenceEquals(AstarPath.active, null)) throw new System.NullReferenceException("No AstarPath object found in the scene. Make sure there is one or do not create paths in Awake");
+ releasedNotSilent = false;
+ callback = null;
+ immediateCallback = null;
+ PipelineState = PathState.Created;
+ hasBeenReset = true;
+ completeState = PathCompleteState.NotCalculated;
+ errorLog = string.Empty;
+ path = Pathfinding.Pooling.ListPool<GraphNode>.Claim();
+ vectorPath = Pathfinding.Pooling.ListPool<UnityEngine.Vector3>.Claim();
+ duration = 0f;
+ searchedNodes = 0;
+ var astar = AstarPath.active;
+ heuristic = astar.heuristic;
+ heuristicScale = astar.heuristicScale;
+ pathID = astar.GetNextPathID();
+ traversalCosts = default;
+ traversalConstraint = TraversalConstraint.None;
+ nearestNodeDistanceMetric = DistanceMetric.Euclidean;
+}
 
 		[Token(Token = "0x60005FC")]
 		[Address(RVA = "0x4516B50", Offset = "0x4512B50", VA = "0x4516B50")]
@@ -731,7 +789,13 @@ void IPathInternals.AdvanceState(PathState s)
 		[Address(RVA = "0x45178DC", Offset = "0x45138DC", VA = "0x45178DC")]
 		protected void PrepareBase(PathHandler pathHandler)
 		{
-		}
+ pathHandler.InitializeForPath(this);
+ try {
+  ErrorCheck();
+ } catch (System.Exception exception) {
+  FailWithError(exception.ToString());
+ }
+}
 
 		[Token(Token = "0x6000605")]
 		protected abstract void Prepare(ref SearchContext ctx);
@@ -763,14 +827,12 @@ void IPathInternals.AdvanceState(PathState s)
 		[Token(Token = "0x600060B")]
 		[Address(RVA = "0x4517F34", Offset = "0x4513F34", VA = "0x4517F34", Slot = "7")]
 void IPathInternals.OnEnterPool()
-		{
-		}
+		{ OnEnterPool(); }
 
 		[Token(Token = "0x600060C")]
 		[Address(RVA = "0x4517F44", Offset = "0x4513F44", VA = "0x4517F44", Slot = "8")]
 void IPathInternals.Reset()
-		{
-		}
+		{ Reset(); }
 
 		[Token(Token = "0x600060D")]
 		[Address(RVA = "0x4517F54", Offset = "0x4513F54", VA = "0x4517F54", Slot = "9")]
@@ -781,14 +843,14 @@ void IPathInternals.ReturnPath()
 		[Token(Token = "0x600060E")]
 		[Address(RVA = "0x4517F64", Offset = "0x4513F64", VA = "0x4517F64", Slot = "10")]
 void IPathInternals.PrepareBase(PathHandler handler)
-		{
-		}
+		{ PrepareBase(handler); }
 
 		[Token(Token = "0x600060F")]
 		[Address(RVA = "0x4517F68", Offset = "0x4513F68", VA = "0x4517F68", Slot = "11")]
 void IPathInternals.Prepare(ref SearchContext ctx)
 		{
-		}
+ Prepare(ref ctx);
+}
 
 		[Token(Token = "0x6000610")]
 		[Address(RVA = "0x4517F78", Offset = "0x4513F78", VA = "0x4517F78", Slot = "12")]

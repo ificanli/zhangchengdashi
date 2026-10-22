@@ -333,7 +333,24 @@ namespace Pathfinding
 		[Address(RVA = "0x446790C", Offset = "0x446390C", VA = "0x446790C")]
 		public static void Subdivide(List<Vector3> points, List<Vector3> result, int subSegments)
 		{
-		}
+            float denominator = (float)subSegments;
+            for (int i = 0; i < unchecked(points.Count - 1); i = unchecked(i + 1))
+            {
+                for (int j = 0; j < subSegments; j = unchecked(j + 1))
+                {
+                    Vector3 start = points[i];
+                    Vector3 end = points[unchecked(i + 1)];
+                    float t = (float)j / denominator;
+                    if (t > 1f) t = 1f;
+                    if (t < 0f) t = 0f;
+                    result.Add(new Vector3(
+                        start.x + t * (end.x - start.x),
+                        start.y + t * (end.y - start.y),
+                        start.z + t * (end.z - start.z)));
+                }
+            }
+            result.Add(points[unchecked(points.Count - 1)]);
+        }
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		[Token(Token = "0x6000360")]

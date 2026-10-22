@@ -827,8 +827,18 @@ void System.Collections.IEnumerator.Reset()
 	[Address(RVA = "0x44416EC", Offset = "0x443D6EC", VA = "0x44416EC")]
 	internal ushort GetNextPathID()
 	{
-		return default;
-	}
+ if (nextFreePathID == 0) {
+  nextFreePathID = 1;
+  var overflow = On65KOverflow;
+  if (overflow != null) {
+   On65KOverflow = null;
+   overflow();
+  }
+ }
+ ushort result = nextFreePathID;
+ nextFreePathID = unchecked((ushort)(nextFreePathID + 1));
+ return result;
+}
 
 	[Token(Token = "0x6000015")]
 	[Address(RVA = "0x44417A4", Offset = "0x443D7A4", VA = "0x44417A4")]
@@ -1221,7 +1231,5 @@ void System.Collections.IEnumerator.Reset()
 	[Token(Token = "0x600004D")]
 	[Address(RVA = "0x4444F04", Offset = "0x4440F04", VA = "0x4444F04")]
 	public NavmeshEdges.NavmeshBorderData GetNavmeshBorderData(out RWLock.CombinedReadLockAsync readLock)
-	{
-    throw new global::System.NotImplementedException("RECOVERY_UNIMPLEMENTED AstarPath.GetNavmeshBorderData RVA=0x4444F04 Token=0x600004D");
-}
+	{ return hierarchicalGraph.navmeshEdges.GetNavmeshEdgeData(out readLock); }
 }

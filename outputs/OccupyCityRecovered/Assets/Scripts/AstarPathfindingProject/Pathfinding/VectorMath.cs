@@ -18,15 +18,19 @@ namespace Pathfinding
 		[Address(RVA = "0x446371C", Offset = "0x445F71C", VA = "0x446371C")]
 		public static float2 ComplexMultiply(float2 a, float2 b)
 		{
-			return default;
-		}
+            float real = a.x * b.x - a.y * b.y;
+            float imaginary = a.x * b.y + a.y * b.x;
+            return new float2(real, imaginary);
+        }
 
 		[Token(Token = "0x6000301")]
 		[Address(RVA = "0x4463738", Offset = "0x445F738", VA = "0x4463738")]
 		public static float2 ComplexMultiplyConjugate(float2 a, float2 b)
 		{
-			return default;
-		}
+            float real = a.x * b.x + a.y * b.y;
+            float imaginary = a.y * b.x - a.x * b.y;
+            return new float2(real, imaginary);
+        }
 
 		[Token(Token = "0x6000302")]
 		[Address(RVA = "0x4463754", Offset = "0x445F754", VA = "0x4463754")]
@@ -128,8 +132,8 @@ namespace Pathfinding
 		[Address(RVA = "0x4464190", Offset = "0x4460190", VA = "0x4464190")]
 		public static float Determinant(float2 c1, float2 c2)
 		{
-			return default;
-		}
+            return c1.x * c2.y - c1.y * c2.x;
+        }
 
 		[Token(Token = "0x6000310")]
 		[Address(RVA = "0x44641A0", Offset = "0x44601A0", VA = "0x44641A0")]
@@ -205,8 +209,9 @@ namespace Pathfinding
 		[Address(RVA = "0x445B5C4", Offset = "0x44575C4", VA = "0x445B5C4")]
 		public static bool RightOrColinearXZ(Vector3 a, Vector3 b, Vector3 p)
 		{
-			return default;
-		}
+            float area = (b.x - a.x) * (p.z - a.z) - (b.z - a.z) * (p.x - a.x);
+            return area <= 0f;
+        }
 
 		[Token(Token = "0x600031B")]
 		[Address(RVA = "0x4464330", Offset = "0x4460330", VA = "0x4464330")]
@@ -261,8 +266,15 @@ namespace Pathfinding
 		[Address(RVA = "0x4464474", Offset = "0x4460474", VA = "0x4464474")]
 		public static bool IsColinear(Vector3 a, Vector3 b, Vector3 c)
 		{
-			return default;
-		}
+            float ux = b.x - a.x, uy = b.y - a.y, uz = b.z - a.z;
+            float vx = c.x - a.x, vy = c.y - a.y, vz = c.z - a.z;
+            float lengthsProduct = (uz * uz + (ux * ux + uy * uy)) * (vz * vz + (vx * vx + vy * vy));
+            float crossY = uz * vx - ux * vz;
+            float crossZ = ux * vy - uy * vx;
+            float crossX = uy * vz - uz * vy;
+            float crossSquared = crossZ * crossZ + (crossX * crossX + crossY * crossY);
+            return crossSquared <= (float)System.Math.Sqrt(lengthsProduct) * 0.0001f || lengthsProduct == 0f;
+        }
 
 		[Token(Token = "0x6000323")]
 		[Address(RVA = "0x4464580", Offset = "0x4460580", VA = "0x4464580")]
@@ -289,8 +301,9 @@ namespace Pathfinding
 		[Address(RVA = "0x445B578", Offset = "0x4457578", VA = "0x445B578")]
 		public static bool IsColinearXZ(Vector3 a, Vector3 b, Vector3 c)
 		{
-			return default;
-		}
+            float area = (b.x - a.x) * (c.z - a.z) - (b.z - a.z) * (c.x - a.x);
+            return area <= 1e-7f && area >= -1e-7f;
+        }
 
 		[Token(Token = "0x6000327")]
 		[Address(RVA = "0x4464620", Offset = "0x4460620", VA = "0x4464620")]
@@ -331,15 +344,42 @@ namespace Pathfinding
 		[Address(RVA = "0x4464BF4", Offset = "0x4460BF4", VA = "0x4464BF4")]
 		public static bool LineLineIntersectionFactor(float2 start1, float2 dir1, float2 start2, float2 dir2, out float t)
 		{
-    throw new global::System.NotImplementedException("RECOVERY_UNIMPLEMENTED VectorMath.LineLineIntersectionFactor RVA=0x4464BF4 Token=0x600032C");
-}
+            float firstProduct = dir1.x * dir2.y;
+            float secondProduct = dir1.y * dir2.x;
+            float absoluteDeterminant = System.Math.Abs(firstProduct - secondProduct);
+            if (absoluteDeterminant < 0.0001f)
+            {
+                t = 0f;
+                return false;
+            }
+            float dy = start1.y - start2.y;
+            float dx = start1.x - start2.x;
+            t = (dir2.x * dy - dir2.y * dx) / (firstProduct - secondProduct);
+            return true;
+        }
 
 		[Token(Token = "0x600032D")]
 		[Address(RVA = "0x4464C44", Offset = "0x4460C44", VA = "0x4464C44")]
 		public static bool LineLineIntersectionFactors(float2 start1, float2 dir1, float2 start2, float2 dir2, out float factor1, out float factor2)
 		{
-    throw new global::System.NotImplementedException("RECOVERY_UNIMPLEMENTED VectorMath.LineLineIntersectionFactors RVA=0x4464C44 Token=0x600032D");
-}
+            float firstProduct = dir1.x * dir2.y;
+            float secondProduct = dir1.y * dir2.x;
+            float absoluteDeterminant = System.Math.Abs(firstProduct - secondProduct);
+            if (absoluteDeterminant < 0.0001f)
+            {
+                factor2 = 0f;
+                factor1 = 0f;
+                return false;
+            }
+            float dy = start1.y - start2.y;
+            float dx = start1.x - start2.x;
+            float numerator1 = dir2.x * dy - dir2.y * dx;
+            float numerator2 = dir1.x * dy - dir1.y * dx;
+            float determinant = firstProduct - secondProduct;
+            factor1 = numerator1 / determinant;
+            factor2 = numerator2 / determinant;
+            return true;
+        }
 
 		[Token(Token = "0x600032E")]
 		[Address(RVA = "0x4464CAC", Offset = "0x4460CAC", VA = "0x4464CAC")]
@@ -415,8 +455,24 @@ namespace Pathfinding
 		[Address(RVA = "0x4465088", Offset = "0x4461088", VA = "0x4465088")]
 		public static Vector2 LineIntersectionPoint(Vector2 start1, Vector2 end1, Vector2 start2, Vector2 end2, out bool intersects)
 		{
-    throw new global::System.NotImplementedException("RECOVERY_UNIMPLEMENTED VectorMath.LineIntersectionPoint RVA=0x4465088 Token=0x6000338");
-}
+            float dx1 = end1.x - start1.x;
+            float dy1 = end1.y - start1.y;
+            float dx2 = end2.x - start2.x;
+            float dy2 = end2.y - start2.y;
+            float determinant = dx1 * dy2 - dy1 * dx2;
+            if (determinant == 0f)
+            {
+                intersects = false;
+                return start1;
+            }
+            float deltaY = start1.y - start2.y;
+            float deltaX = start1.x - start2.x;
+            float factor = (deltaY * dx2 - deltaX * dy2) / determinant;
+            float x = start1.x + dx1 * factor;
+            float y = start1.y + dy1 * factor;
+            intersects = true;
+            return new Vector2(x, y);
+        }
 
 		[Token(Token = "0x6000339")]
 		[Address(RVA = "0x44650E8", Offset = "0x44610E8", VA = "0x44650E8")]
@@ -443,8 +499,30 @@ namespace Pathfinding
 		[Address(RVA = "0x44653EC", Offset = "0x44613EC", VA = "0x44653EC")]
 		public static bool SegmentCircleIntersectionFactors(float2 point1, float2 point2, float radiusSq, out float t1, out float t2)
 		{
-    throw new global::System.NotImplementedException("RECOVERY_UNIMPLEMENTED VectorMath.SegmentCircleIntersectionFactors RVA=0x44653EC Token=0x600033C");
-}
+            float dx = point2.x - point1.x;
+            float dy = point2.y - point1.y;
+            float pxSquared = point1.x * point1.x;
+            float pySquared = point1.y * point1.y;
+            float dotX = point1.x * dx;
+            float dotY = point1.y * dy;
+            float lengthSquared = dx * dx + dy * dy;
+            float projection = (dotX + dotY) / lengthSquared;
+            float distanceSquared = (pxSquared + pySquared) / lengthSquared;
+            float offset = distanceSquared - projection * projection;
+            float discriminant = radiusSq / lengthSquared - offset;
+            if (discriminant < 0f)
+            {
+                t1 = float.PositiveInfinity;
+                t2 = float.NegativeInfinity;
+                return false;
+            }
+            float root = (float)System.Math.Sqrt(discriminant);
+            t1 = (-projection) - root;
+            t2 = root - projection;
+            t1 = float.IsNaN(t1) || t1 < 0f ? 0f : t1;
+            t2 = float.IsNaN(t2) || t2 > 1f ? 1f : t2;
+            return !(t1 >= 1f) && (float.IsNaN(t2) || t2 > 0f);
+        }
 
 		[Token(Token = "0x600033D")]
 		[Address(RVA = "0x4465520", Offset = "0x4461520", VA = "0x4465520")]
@@ -492,7 +570,11 @@ namespace Pathfinding
 		[Address(RVA = "0x446589C", Offset = "0x446189C", VA = "0x446589C")]
 		public static float QuaternionAngle(quaternion rot)
 		{
-			return default;
-		}
+            float4 q = rot.value;
+            float lengthSq = (q.x * q.x + q.y * q.y) + q.z * q.z;
+            float length = (float)Math.Sqrt(lengthSq);
+            float angle = (float)Math.Atan2(length, q.w);
+            return angle + angle;
+        }
 	}
 }
